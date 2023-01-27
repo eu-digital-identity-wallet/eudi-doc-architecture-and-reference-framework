@@ -51,10 +51,8 @@ repository](https://code.europa.eu/eudi/architecture-and-reference-framework/-/t
 
 ## Authors
 
-* **Paolo De Rosa** - *Initial work* -
-  [@paolo-de-rosa](https://code.europa.eu/paolo-de-rosa)
 
-See also the list of [contributors](CONTRIBUTING.md) who participated in
+See the list of [contributors](CONTRIBUTING.md) who participated in
 this project.
 
 ## License
