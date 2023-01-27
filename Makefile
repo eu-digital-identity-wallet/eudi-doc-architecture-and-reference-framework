@@ -8,16 +8,15 @@
 GENERATED=	arf.html \
 			arf.docx
 
-
 all: $(GENERATED)
 
 # Gerenate html, doc from the html
-arf.html: README.md
-	pandoc -s -o $@ $<
+arf.html: arf.md
+	pandoc -s -o $@ $< --metadata title="The European Digital Identity Wallet Architecture and Reference Framework"
 	pandoc -o $@.docx $@
 
 # Generate docx
-arf.docx: README.md
+arf.docx: arf.md
 	pandoc -o $@ $<
 
 clean:
