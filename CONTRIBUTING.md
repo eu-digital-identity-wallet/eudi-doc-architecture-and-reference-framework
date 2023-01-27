@@ -1,4 +1,4 @@
-# Contributing to [Project Name]
+# Contributing to The European Digital Identity Wallet Architecture and Reference Framework
 
 We welcome contributions to [The European Digital Identity Wallet Architecture and Reference Framework](README.md) Whether it's fixing a bug, proposing a new feature, or improving documentation, we appreciate any and all contributions that can help make [Project Name] better.
 
