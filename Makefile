@@ -12,12 +12,12 @@ GENERATED=	arf.html \
 all: $(GENERATED)
 
 # Gerenate html, doc from the html
-arf.html: README.md
+arf.html: arf.md
 	pandoc -s -o $@ $<
 	pandoc -o $@.docx $@
 
 # Generate docx
-arf.docx: README.md
+arf.docx: arf.md
 	pandoc -o $@ $<
 
 clean:
