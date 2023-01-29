@@ -1,15 +1,26 @@
-# The European Digital Identity Wallet Architecture and Reference Framework - ARF 
-This repository contains a set of common standards and technical
-specifications and a set of common guidelines and best practices named
-as "[Architecture and Reference Framework](arf.md)" (hereinafter the
-[ARF](arf.md)).
+# The European Digital Identity Wallet 
+## The Architecture and Reference Framework
+On 3 June 2021, the European Commission adopted a Recommendation
+calling on Member States to work towards the development of a Toolbox
+including a technical Architecture and Reference Framework (hereinafter
+the ARF), a set of common standards and technical specifications and a
+set of common guidelines and best practices.
+The Recommendation specifies that these outcomes will serve as a basis
+for the implementation of the proposal for a European Digital Identity
+Framework, without the process of developing the Toolbox interfering
+with, or prejudging the legislative process.
+The Recommendation foresees that the Toolbox is developed by Member
+States’ experts in the eIDAS Expert Group  in close coordination with
+the Commission and, where relevant for the functioning of the European
+Digital Identity (EUDI) Wallet infrastructure, other concerned public
+and private sector parties.
 
-# The ARF
+This repository contains the "[Architecture and Reference Framework](arf.md)" 
+(hereinafter the[ARF](arf.md)).
+
 The currect authoritatave version is tagged as [realease/tag in this
 repository](https://code.europa.eu/eudi/architecture-and-reference-framework/-/tags).
 
-## Overview
-{TBD}
 
 ## Build 
 While the ARF is maintained in `Markdown`, this repository provides a
