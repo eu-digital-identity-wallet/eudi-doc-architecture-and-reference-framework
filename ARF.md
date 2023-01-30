@@ -344,7 +344,7 @@ Wallet, Relying Parties identifying and authenticating Users at LoA High
 with a defined set of Person Identification Data for the purposes of
 allowing access to online public and private services as well as using
 them is a specific use case as already established for existing eID
-means. For instance, private Relying Parties shall accept the use of
+means. For instance, private Relying Parties must accept the use of
 EUDI Wallets where they are required to use strong User authentication
 for online identification.
 
@@ -370,7 +370,7 @@ costly and time-consuming for end Users, companies and employers,
 education and training providers, and other academic institutions. For
 example, digital diploma attestations could be presented cross-border in
 a verifiable, trusted, and consumable format to another education or
-training institution or a prospective employer. The EUDI Wallet can be a
+training institution or a prospective employer. The EUDI Wallet may be a
 repository for educational digital credentials as Electronic
 Attestations of Attributes and a means for exchanging them by a learner.
 
@@ -588,7 +588,7 @@ attributes, either directly or via designated intermediaries recognised
 at national level. Authentic Sources may also issue (Q)EAA-s themselves
 if they meet the requirements of the eIDAS Regulation. It is up to the
 Member States to define terms and conditions for the provisioning of
-these services, but according to with the minimum technical
+these services, but according to the minimum technical
 specifications, standards, and procedures applicable to the verification
 procedures for qualified electronic attestations of attributes.
 
@@ -1509,21 +1509,21 @@ format.</td>
 </tr>
 <tr class="odd">
 <td>Signature formats -1</td>
-<td>EUDI Wallet Solution [...] support signatures and encryptions in
+<td>EUDI Wallet Solution [...] support signature and encryption formats in
 accordance with JOSE(JWT) specifications.</td>
 <td>MUST</td>
 <td>MAY</td>
 </tr>
 <tr class="even">
 <td>Signature formats - 2</td>
-<td>EUDI Wallet Solution [...] support signatures and encryptions in
+<td>EUDI Wallet Solution [...] support signature and encryption formats in
 accordance with COSE specifications.</td>
 <td>MUST</td>
 <td>MAY</td>
 </tr>
 <tr class="odd">
 <td>Signature formats - 3</td>
-<td>EUDI Wallet Solution [...] support signatures and encryptions in
+<td>EUDI Wallet Solution [...] support signature and encryption formats in
 accordance with LD-Proof specifications.</td>
 <td>MUST NOT</td>
 <td>MAY</td>
