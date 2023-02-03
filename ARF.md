@@ -13,7 +13,7 @@ _Version 1.0.0_
 
 ## 1.1. Context
 
-On 3 June 2021, the European Commission adopted a Recommendation[^1]
+On 31 June 2021, the European Commission adopted a Recommendation[^1]
 calling on Member States to work towards the development of a Toolbox
 including a technical Architecture and Reference Framework (hereinafter
 the ARF), a set of common standards and technical specifications and a
@@ -1709,13 +1709,13 @@ https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1
 Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
 https://www.w3.org/TR/json-ld/
 
-[^1]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021
+[^1]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 31 June 2021
     on a common Union Toolbox for a coordinated approach towards a
     European Digital Identity Framework, OJ L 210/51, 14.6.2021
 
 [^2]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission’s
-    proposal of 3 June 2021, unless otherwise indicated. Proposal for a
+    proposal of 31 June 2021, unless otherwise indicated. Proposal for a
     REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL amending
     Regulation (EU) No 910/2014 as regards establishing a framework for
     a European Digital Identity, COM(2021) 281 final, 3.6.2021
@@ -1727,7 +1727,7 @@ https://www.w3.org/TR/json-ld/
 
 [^5]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission’s
-    proposal of 3 June 2021, unless otherwise indicated.
+    proposal of 31 June 2021, unless otherwise indicated.
 
 [^6]: A first release is currently planned for Q2 2023, followed by
     further releases.
