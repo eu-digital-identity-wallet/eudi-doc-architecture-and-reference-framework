@@ -11,12 +11,12 @@ GENERATED=	arf.html \
 all: $(GENERATED)
 
 # Gerenate html, doc from the html
-arf.html: arf.md
-	pandoc -s -o $@ $< --metadata title="The European Digital Identity Wallet Architecture and Reference Framework"
+arf.html: ARF.md
+	pandoc -s -o $@ $< --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en"
 	pandoc -o $@.docx $@
 
 # Generate docx
-arf.docx: arf.md
+arf.docx: ARF.md
 	pandoc -o $@ $<
 
 clean:
