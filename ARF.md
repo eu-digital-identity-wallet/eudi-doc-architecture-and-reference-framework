@@ -400,7 +400,6 @@ The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet roles](media/image1.png){ width=100% }
-<img src="media/image1.png" style="width:6.75521in;height:3.73425in" />
 
 *Figure 1: Overview of the EUDI Wallet roles*
 
