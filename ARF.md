@@ -233,7 +233,7 @@ present a subset of attributes provided by the PID and/or
 <td><strong>Trust is the characteristic that one party, is willing to
 rely upon a third-party entity to execute a set of actions and/or to
 make a set of assertions about a set of subjects and/or
-scopes</strong><a href="#fn1" class="footnote-ref" id="fnref1"
+scopes</strong><a href="#table1-fn1" class="footnote-ref" id="table1-fnref1"
 role="doc-noteref"><sup>1</sup></a><strong>.</strong></td>
 </tr>
 <tr class="odd">
@@ -311,7 +311,7 @@ CAB.</strong></td>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>“OASIS Trust,” [Online]. Available:
+<li id="table1-fn1"><p>“OASIS Trust,” [Online]. Available:
 http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.<a
 href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -1436,7 +1436,7 @@ binding (i.e., attribute request for PID).</td>
 <tr class="odd">
 <td>Attestation exchange Protocol – 4</td>
 <td>EUDI Wallet Solution [...] support attestation exchange protocol
-alternatives<a href="#fn1" class="footnote-ref" id="fnref1"
+alternatives<a href="#table7-fn1" class="footnote-ref" id="fnref1.2"
 role="doc-noteref"><sup>1</sup></a>.</td>
 <td>MAY</td>
 <td>MAY</td>
@@ -1541,7 +1541,7 @@ Mechanisms Version 1.2.</td>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>A noteworthy mention is the mdoc REST API as detailed in
+<li id="table7-fn1"><p>A noteworthy mention is the mdoc REST API as detailed in
 the draft ISO/IEC 23220-4<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
