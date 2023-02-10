@@ -707,6 +707,7 @@ to and is controlled by a User.
 
 ![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png){ width=100% }
 <!-- <img src="media/image2.png" style="width:2.70313in;height:2.37745in" /> -->
+
 *Figure 2: Simplified EUDI Wallet Object Model*
 
 This definition is not prescriptive of form factor, hence depending on
@@ -734,6 +735,7 @@ that PID could be “pre-issued”.
 
 ![Figure 3: State-chart of PID](media/image3.png){ width=100% }
 <!-- <img src="media/image3.png" style="width:2.26443in;height:2.54875in" /> -->
+
 *Figure 3: State-chart of PID*
 
 There are two possible transitions from a valid PID: either it
@@ -763,6 +765,7 @@ Users.
 
 ![Figure 4: State-chart of Wallet Solution](media/image4.png){ width=100% }
 <!-- <img src="media/image4.png" style="width:2.80793in;height:2.68666in" /> -->
+
 *Figure 4: State-chart of Wallet Solution*
 
 Under the legal conditions in Article 10a, paragraph 1, the issuing
@@ -795,6 +798,7 @@ may affect the validity of a (Q)EAA or a certificate for QES.
 
 ![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
 <!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
+
 *Figure 5: State-chart of Wallet Instance*
 
 It is currently assumed that only the User[^12] will be able to
@@ -1066,6 +1070,7 @@ Wallet components:
 
 ![Figure 6: EUDI Wallet configurations conceptual model](media/image6.png){ width=100% }
 <!-- <img src="media/image6.png" style="width:6.26389in;height:2.31944in" /> -->
+
 *Figure 6: EUDI Wallet configurations conceptual model*
 
 The table below maps the EUDI Wallet components with the conceptual
@@ -1561,6 +1566,7 @@ mandatory for PID.
 
 ![Figure 7. EUDI Wallet configurations.](media/image7.png){ width=100% }
 <!-- <img src="media/image7.png" style="width:6.25641in;height:5.92615in" /> -->
+
 *Figure 7. EUDI Wallet configurations.*
 
 # 7. The Certification process of EUDI Wallets
