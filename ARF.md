@@ -137,6 +137,12 @@ additional terms not defined in the legal text (denoted with a \*).
 <col style="width: 23%" />
 <col style="width: 76%" />
 </colgroup>
+<thead>
+  <tr>
+    <th>Term</th>
+    <th>Description</th>
+  </tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><em>Attribute</em></td>
@@ -233,8 +239,8 @@ present a subset of attributes provided by the PID and/or
 <td><strong>Trust is the characteristic that one party, is willing to
 rely upon a third-party entity to execute a set of actions and/or to
 make a set of assertions about a set of subjects and/or
-scopes</strong><a href="#table1-fn1" class="footnote-ref" id="table1-fnref1"
-role="doc-noteref"><sup>1</sup></a><strong>.</strong></td>
+scopes<a href="#table1-fn1" class="footnote-ref" id="table1-fnref1"
+role="doc-noteref"><sup>1</sup></a>.</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Trust Framework*</em></td>
@@ -852,9 +858,8 @@ The below table provides an overview of the current PID attributes that
 are included in the eIDAS framework, and the proposed additional
 optional attributes that are suggested to also be included.
 
-|                            |                           |                                                                                               |
-|----------------------------|---------------------------|-----------------------------------------------------------------------------------------------|
 | Mandatory eIDAS Attributes | Optional eIDAS Attributes | Possible additional optional attributes                                                       |
+|----------------------------|---------------------------|-----------------------------------------------------------------------------------------------|
 | **Current Family Name**    | **Family Name at Birth**  | **Nationality/Citizenship\***                                                                 |
 | **Current First Names**    | **First Names at Birth**  |                                                                                               |
 | **Date of Birth**          | **Place of Birth**        | **Optional attributes used at national level, e.g., tax number, social security number etc.** |
@@ -892,9 +897,8 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-|        |                                                                                                                                                                                                       |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | \#     | Requirement                                                                                                                                                                                           |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | **PID attestation MUST contain the information required to identify the PID Provider.**                                                                                                               |
 | **2**  | **PID attestation MUST contain the information required to perform a data integrity check.**                                                                                                          |
 | **3**  | **PID attestation MUST contain the information required for verifying the authenticity.**                                                                                                             |
@@ -924,9 +928,8 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-|        |                                                                                                                                                                                                                               |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | \#     | Requirement                                                                                                                                                                                                                   |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | **(Q)EAA MUST contain the information required to identify the Issuer.**                                                                                                                                                      |
 | **2**  | **(Q)EAA MUST contain the information required to perform a data integrity check.**                                                                                                                                           |
 | **3**  | **(Q)EAA MUST contain the information required for verifying the authenticity of the (Q)EAA.**                                                                                                                                |
@@ -1385,13 +1388,15 @@ Solution components to support the two configurations.
 <col style="width: 13%" />
 <col style="width: 14%" />
 </colgroup>
+<thead>
+  <tr>
+    <th><strong>Component</strong></th>
+    <th><strong>Requirement</strong></th>
+    <th><strong>Type 1</strong></th>
+    <th><strong>Type 2</strong></th>
+  </tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td><strong>Component</strong></td>
-<td><strong>Requirement</strong></td>
-<td><strong>Type 1</strong></td>
-<td><strong>Type 2</strong></td>
-</tr>
 <tr class="even">
 <td>Cryptographic keys management system - 1</td>
 <td><p>EUDI Wallet Solution [...] rely on one of the following
