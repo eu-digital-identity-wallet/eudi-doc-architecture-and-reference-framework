@@ -400,8 +400,7 @@ The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet roles](media/image1.png){ width=100% }
-<img src="media/image1.png" style="width:6.75521in;height:3.73425in" />
-
+<!-- <img src="media/image1.png" style="width:6.75521in;height:3.73425in" /> -->
 *Figure 1: Overview of the EUDI Wallet roles*
 
 1.  *End Users of EUDI Wallets*
@@ -705,8 +704,8 @@ and/or service provided by a EUDI Wallet Provider. A EUDI Wallet
 Instance is a personal instance of a EUDI Wallet Solution that belongs
 to and is controlled by a User.
 
-<img src="media/image2.png" style="width:2.70313in;height:2.37745in" />
-
+![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png){ width=100% }
+<!-- <img src="media/image2.png" style="width:2.70313in;height:2.37745in" /> -->
 *Figure 2: Simplified EUDI Wallet Object Model*
 
 This definition is not prescriptive of form factor, hence depending on
@@ -732,8 +731,8 @@ is issued on or after the validity start date, it is immediately
 considered the state directly changes to valid. This means, however,
 that PID could be “pre-issued”.
 
-<img src="media/image3.png" style="width:2.26443in;height:2.54875in" />
-
+![Figure 3: State-chart of PID](media/image3.png){ width=100% }
+<!-- <img src="media/image3.png" style="width:2.26443in;height:2.54875in" /> -->
 *Figure 3: State-chart of PID*
 
 There are two possible transitions from a valid PID: either it
@@ -761,8 +760,8 @@ of their EUDI Wallet Solutions. This means the EUDI Wallet Solution can
 be officially launched, and Instances of the Solution can be provided to
 Users.
 
-<img src="media/image4.png" style="width:2.80793in;height:2.68666in" />
-
+![Figure 4: State-chart of Wallet Solution](media/image4.png){ width=100% }
+<!-- <img src="media/image4.png" style="width:2.80793in;height:2.68666in" /> -->
 *Figure 4: State-chart of Wallet Solution*
 
 Under the legal conditions in Article 10a, paragraph 1, the issuing
@@ -793,8 +792,8 @@ If the PID expires or is revoked, the EUDI Wallet is not automatically
 unusable, its state is merely downgraded back to **operational**. This
 may affect the validity of a (Q)EAA or a certificate for QES.
 
-<img src="media/image5.png" style="width:2.08195in;height:2.53535in" />
-
+![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
+<!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
 *Figure 5: State-chart of Wallet Instance*
 
 It is currently assumed that only the User[^12] will be able to
@@ -1064,8 +1063,8 @@ embedded trusted hardware or other remote EUDI Wallets components. Below
 is a conceptual representation of variations in implementing the EUDI
 Wallet components:
 
-<img src="media/image6.png" style="width:6.26389in;height:2.31944in" />
-
+![Figure 6: EUDI Wallet configurations conceptual model](media/image6.png){ width=100% }
+<!-- <img src="media/image6.png" style="width:6.26389in;height:2.31944in" /> -->
 *Figure 6: EUDI Wallet configurations conceptual model*
 
 The table below maps the EUDI Wallet components with the conceptual
@@ -1559,9 +1558,8 @@ specifications.*
 EUDI Wallet Solutions **MUST** support **Type 1** configuration that is
 mandatory for PID.
 
-.
-<img src="media/image7.png" style="width:6.25641in;height:5.92615in" />
-
+![Figure 7. EUDI Wallet configurations.](media/image7.png){ width=100% }
+<!-- <img src="media/image7.png" style="width:6.25641in;height:5.92615in" /> -->
 *Figure 7. EUDI Wallet configurations.*
 
 # 7. The Certification process of EUDI Wallets
