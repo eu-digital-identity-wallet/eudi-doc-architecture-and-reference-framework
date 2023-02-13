@@ -21,8 +21,8 @@ and private sector parties.
 This repository contains the "[Architecture and Reference Framework](ARF.md)"
 (hereinafter the[ARF](ARF.md)).
 
-The current authoritatave version is tagged as [realease/tag in this
-repository](https://code.europa.eu/eudi/architecture-and-reference-framework/-/tags).
+The current authoritative version is tagged as [realease/tag in this
+repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
 
 ## Build
