@@ -1,4 +1,4 @@
-# EU Digital Covid Certificates Vulnerability Disclosure Policy (VDP)
+# EU Digital Identity Wallet Vulnerability Disclosure Policy (VDP)
 At the European Commission, we treat the security of our Communication and Information Systems as a top priority, in line with Commission Decision EC 2017/46. However, vulnerabilities can never be completely eliminated, despite all efforts. If exploited, such vulnerabilities can harm the confidentiality, integrity or availability of the Commission's systems and of the information processed therein. To identify and remediate vulnerabilities as soon as possible, we value the input of external entities acting in good faith, and we encourage responsible vulnerability research and disclosure. This document sets out our definition of good faith in the context of finding and reporting vulnerabilities, as well as what you can expect from us in return.
 
 ## Scope 
