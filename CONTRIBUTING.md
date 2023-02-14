@@ -1,6 +1,6 @@
 # Contributing to The European Digital Identity Wallet Architecture and Reference Framework
 
-We welcome contributions to [The European Digital Identity Wallet Architecture and Reference Framework](README.md) Whether it's fixing a bug, proposing a new feature, or improving documentation, we appreciate any and all contributions that can help make [Project Name] better.
+We welcome contributions to [The European Digital Identity Wallet Architecture and Reference Framework](README.md) (ARF) Whether it's fixing a bug, proposing a new feature, or improving documentation, we appreciate any and all contributions that can help make the ARF better.
 
 ## How to contribute
 
@@ -21,4 +21,4 @@ We expect all contributors to abide by our [Code of Conduct](link) (pending). Pl
 
 ## License
 
-By contributing to [The European Digital Identity Wallet Architecture and Reference Framework], you agree that your contributions will be licensed under the [Project's License](LICENSE).
+By contributing to [The European Digital Identity Wallet Architecture and Reference Framework](README.md), you agree that your contributions will be licensed under the [Project's License](LICENSE).
