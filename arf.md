@@ -1678,7 +1678,7 @@ https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
 
 \[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, "OpenID for
 Verifiable Credential Issuance", 30 December 2022,
-https://openid.net/specs/openid-4-verifiable-credential-issuance.html
+https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html
 
 \[SIOPv2\] K. Yasuda, T. Lodderstedt, M. Jones, "Self-Issued OpenID
 Provider V2", 1 January 2023,
