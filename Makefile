@@ -13,14 +13,14 @@ GENERATED=	arf.html \
 all: $(GENERATED)
 
 # Gerenate html, doc from the html
-arf.html: ARF.md
+arf.html: arf.md
 	pandoc -s -o $@ $< --toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --self-contained --css=styles/style.css
 	node fix.js
 	cp output.html $@ && rm output.html
 	pandoc -o $@.docx $@ --reference-doc=styles/reference.docx
 
 # Generate docx
-arf.docx: ARF.md
+arf.docx: arf.md
 	pandoc -o $@ $<
 
 # Run a local http server
