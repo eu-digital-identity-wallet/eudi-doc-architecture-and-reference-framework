@@ -19,9 +19,6 @@ jobs:
     
     - name: Install pandoc
       run: sudo apt install -y pandoc
-      
-    - name: configure
-      run: ./configure
 
     - name: Install dependencies
       run: make prepare
