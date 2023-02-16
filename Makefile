@@ -14,22 +14,24 @@ all: $(GENERATED)
 
 # Gerenate html, doc from the html
 arf.html: arf.md
-	pandoc -s -o $@ $< --toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --self-contained --css=styles/style.css
+	pandoc -s -o ./dist/$@ $< --toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --self-contained --css=styles/style.css
 	node fix.js
-	cp output.html $@ && rm output.html
-	pandoc -o $@.docx $@ --reference-doc=styles/reference.docx
+	cd ./dist && cp output.html $@ && rm output.html
+	pandoc -o ./dist/$@.docx ./dist/$@ --reference-doc=styles/reference.docx
 
 # Generate docx
 arf.docx: arf.md
-	pandoc -o $@ $<
+	pandoc -o ./dist/$@ $<
 
 # Run a local http server
 serve:
 	npx http-server .
 
 prepare:
+	mkdir -p dist
 	npm install
 	
 clean:
 	echo $(GENERATED)
 	rm -f $(GENERATED) arf.html.docx
+	rm -f ./dist -R
