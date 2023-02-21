@@ -4,8 +4,8 @@ const { JSDOM } = jsdom;
 
 let idDict = {};
 
-const inputFilePath = "arf.html";
-const outputFilePath = "output.html";
+const inputFilePath = "./dist/arf.html";
+const outputFilePath = "./dist/output.html";
 
 fs.readFile(inputFilePath, "utf-8", (err, html) => {
   if (err) {
