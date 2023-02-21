@@ -137,6 +137,12 @@ additional terms not defined in the legal text (denoted with a \*).
 <col style="width: 23%" />
 <col style="width: 76%" />
 </colgroup>
+<thead>
+  <tr>
+    <th>Term</th>
+    <th>Description</th>
+  </tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><em>Attribute</em></td>
@@ -233,8 +239,8 @@ present a subset of attributes provided by the PID and/or
 <td><strong>Trust is the characteristic that one party, is willing to
 rely upon a third-party entity to execute a set of actions and/or to
 make a set of assertions about a set of subjects and/or
-scopes</strong><a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a><strong>.</strong></td>
+scopes<a href="#table1-fn1" class="footnote-ref" id="table1-fnref1"
+role="doc-noteref"><sup>1</sup></a>.</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Trust Framework*</em></td>
@@ -311,7 +317,7 @@ CAB.</strong></td>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>“OASIS Trust,” [Online]. Available:
+<li id="table1-fn1"><p>“OASIS Trust,” [Online]. Available:
 http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.<a
 href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -400,6 +406,7 @@ The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet roles](media/image1.png){ width=100% }
+<!-- <img src="media/image1.png" style="width:6.75521in;height:3.73425in" /> -->
 
 *Figure 1: Overview of the EUDI Wallet roles*
 
@@ -704,7 +711,8 @@ and/or service provided by a EUDI Wallet Provider. A EUDI Wallet
 Instance is a personal instance of a EUDI Wallet Solution that belongs
 to and is controlled by a User.
 
-<img src="media/image2.png" style="width:2.70313in;height:2.37745in" />
+![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png){ width=100% }
+<!-- <img src="media/image2.png" style="width:2.70313in;height:2.37745in" /> -->
 
 *Figure 2: Simplified EUDI Wallet Object Model*
 
@@ -731,7 +739,8 @@ is issued on or after the validity start date, it is immediately
 considered the state directly changes to valid. This means, however,
 that PID could be “pre-issued”.
 
-<img src="media/image3.png" style="width:2.26443in;height:2.54875in" />
+![Figure 3: State-chart of PID](media/image3.png){ width=100% }
+<!-- <img src="media/image3.png" style="width:2.26443in;height:2.54875in" /> -->
 
 *Figure 3: State-chart of PID*
 
@@ -760,7 +769,8 @@ of their EUDI Wallet Solutions. This means the EUDI Wallet Solution can
 be officially launched, and Instances of the Solution can be provided to
 Users.
 
-<img src="media/image4.png" style="width:2.80793in;height:2.68666in" />
+![Figure 4: State-chart of Wallet Solution](media/image4.png){ width=100% }
+<!-- <img src="media/image4.png" style="width:2.80793in;height:2.68666in" /> -->
 
 *Figure 4: State-chart of Wallet Solution*
 
@@ -792,7 +802,8 @@ If the PID expires or is revoked, the EUDI Wallet is not automatically
 unusable, its state is merely downgraded back to **operational**. This
 may affect the validity of a (Q)EAA or a certificate for QES.
 
-<img src="media/image5.png" style="width:2.08195in;height:2.53535in" />
+![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
+<!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
 
 *Figure 5: State-chart of Wallet Instance*
 
@@ -847,9 +858,8 @@ The below table provides an overview of the current PID attributes that
 are included in the eIDAS framework, and the proposed additional
 optional attributes that are suggested to also be included.
 
-|                            |                           |                                                                                               |
-|----------------------------|---------------------------|-----------------------------------------------------------------------------------------------|
 | Mandatory eIDAS Attributes | Optional eIDAS Attributes | Possible additional optional attributes                                                       |
+|----------------------------|---------------------------|-----------------------------------------------------------------------------------------------|
 | **Current Family Name**    | **Family Name at Birth**  | **Nationality/Citizenship\***                                                                 |
 | **Current First Names**    | **First Names at Birth**  |                                                                                               |
 | **Date of Birth**          | **Place of Birth**        | **Optional attributes used at national level, e.g., tax number, social security number etc.** |
@@ -887,9 +897,8 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-|        |                                                                                                                                                                                                       |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | \#     | Requirement                                                                                                                                                                                           |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | **PID attestation MUST contain the information required to identify the PID Provider.**                                                                                                               |
 | **2**  | **PID attestation MUST contain the information required to perform a data integrity check.**                                                                                                          |
 | **3**  | **PID attestation MUST contain the information required for verifying the authenticity.**                                                                                                             |
@@ -919,9 +928,8 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-|        |                                                                                                                                                                                                                               |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | \#     | Requirement                                                                                                                                                                                                                   |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | **(Q)EAA MUST contain the information required to identify the Issuer.**                                                                                                                                                      |
 | **2**  | **(Q)EAA MUST contain the information required to perform a data integrity check.**                                                                                                                                           |
 | **3**  | **(Q)EAA MUST contain the information required for verifying the authenticity of the (Q)EAA.**                                                                                                                                |
@@ -1063,7 +1071,8 @@ embedded trusted hardware or other remote EUDI Wallets components. Below
 is a conceptual representation of variations in implementing the EUDI
 Wallet components:
 
-<img src="media/image6.png" style="width:6.26389in;height:2.31944in" />
+![Figure 6: EUDI Wallet configurations conceptual model](media/image6.png){ width=100% }
+<!-- <img src="media/image6.png" style="width:6.26389in;height:2.31944in" /> -->
 
 *Figure 6: EUDI Wallet configurations conceptual model*
 
@@ -1379,13 +1388,15 @@ Solution components to support the two configurations.
 <col style="width: 13%" />
 <col style="width: 14%" />
 </colgroup>
+<thead>
+  <tr>
+    <th><strong>Component</strong></th>
+    <th><strong>Requirement</strong></th>
+    <th><strong>Type 1</strong></th>
+    <th><strong>Type 2</strong></th>
+  </tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td><strong>Component</strong></td>
-<td><strong>Requirement</strong></td>
-<td><strong>Type 1</strong></td>
-<td><strong>Type 2</strong></td>
-</tr>
 <tr class="even">
 <td>Cryptographic keys management system - 1</td>
 <td><p>EUDI Wallet Solution [...] rely on one of the following
@@ -1436,7 +1447,7 @@ binding (i.e., attribute request for PID).</td>
 <tr class="odd">
 <td>Attestation exchange Protocol – 4</td>
 <td>EUDI Wallet Solution [...] support attestation exchange protocol
-alternatives<a href="#fn1" class="footnote-ref" id="fnref1"
+alternatives<a href="#table7-fn1" class="footnote-ref" id="fnref1.2"
 role="doc-noteref"><sup>1</sup></a>.</td>
 <td>MAY</td>
 <td>MAY</td>
@@ -1541,7 +1552,7 @@ Mechanisms Version 1.2.</td>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>A noteworthy mention is the mdoc REST API as detailed in
+<li id="table7-fn1"><p>A noteworthy mention is the mdoc REST API as detailed in
 the draft ISO/IEC 23220-4<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -1558,8 +1569,8 @@ specifications.*
 EUDI Wallet Solutions **MUST** support **Type 1** configuration that is
 mandatory for PID.
 
-.
-<img src="media/image7.png" style="width:6.25641in;height:5.92615in" />
+![Figure 7. EUDI Wallet configurations.](media/image7.png){ width=100% }
+<!-- <img src="media/image7.png" style="width:6.25641in;height:5.92615in" /> -->
 
 *Figure 7. EUDI Wallet configurations.*
 
