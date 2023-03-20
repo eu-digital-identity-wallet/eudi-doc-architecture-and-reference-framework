@@ -25,7 +25,7 @@ The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
 
-In addition to the authoritative versions, note that **non-authoritative builds** of the main branch are automatically created and made available as Github pages. You can access these builds in both HTML and DOCX formats using the following links:
+In addition to the authoritative versions, note that **non-authoritative builds** of the `main` branch are automatically created and made available as Github pages. You can access these builds in both HTML and DOCX formats using the following links:
  
 * HTML: https://eu-digital-identity-wallet.github.io/architecture-and-reference-framework/arf.html
 * DOCX: https://eu-digital-identity-wallet.github.io/architecture-and-reference-framework/arf.html.docx
