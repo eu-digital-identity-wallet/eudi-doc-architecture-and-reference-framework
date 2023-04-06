@@ -477,7 +477,7 @@ requirements for EUDI Wallets.
 PID Providers are trusted entities responsible to:
 
 - verify the identity of the EUDI Wallet User in compliance with LoA
-  high requirements,
+  High requirements,
 
 - issue PID to the EUDI Wallet in a harmonised common format and
 
@@ -653,7 +653,7 @@ For secure cryptographic material storage, specific devices or services
 may be interfaced with. Other related entities may be service providers
 such as cloud service providers, app store providers etc.
 
-The legal proposal sets constraints (e.g., compliance with LoA high) for
+The legal proposal sets constraints (e.g., compliance with LoA High) for
 which kinds of devices and services may be used for the purpose of
 issuing the EUDI Wallet. Likewise, the availability as well as terms and
 conditions of device interface providers and related service providers
