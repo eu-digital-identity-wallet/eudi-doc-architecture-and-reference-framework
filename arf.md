@@ -1612,10 +1612,12 @@ requirements.
 
 ## 8.1. Publication
 
-This document and the backlog items are made publicly available at
-[<u>https://code.europa.eu/eudi/architecture-and-reference-framework</u>](https://code.europa.eu/eudi/architecture-and-reference-framework)
-where it will be regularly updated according to the workflow described
+This document and the backlog items are made publicly available at 
+the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described 
 in Chapter 8.2.
+
+* https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/
+
 
 ## 8.2. Update
 
