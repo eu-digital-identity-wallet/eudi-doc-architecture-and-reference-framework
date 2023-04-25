@@ -1818,24 +1818,24 @@ https://www.w3.org/TR/json-ld/
 ## Annex 01 - initialisation and activation
 The service blueprint about initialisation and activation of the Wallet
 is described in the attached file:
-* Annex 01 - EUDI Wallet – Initialisation and Activation.pdf 
+* [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf) 
 
 ## Annex 02 – online identification and authentication
 The service blueprint about online identification and authentication for
 the Wallet is described in the attached file:
-* Annex 02- EUDI Wallet – Online Identification and Authentication.pdf 
+* [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf) 
 
 ## Annex 03 – issuing mDL
 The service blueprint about issuing mDL is described in the attached
 file: 
-* Annex 03 – EUDI Wallet – issuing mDL.pdf.
+* [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
 
 ## Annex 04 – presenting mDL (proximity-supervised)
 The service blueprint about presenting mDL (proximity-supervised) is
 described in the attached file:
-* Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf.
+* [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
 
 ## Annex 05 – presenting mDL (proximity-unsupervised)
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
-* Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf.
+* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
