@@ -2,8 +2,14 @@
 
 **The European Digital Identity Wallet Architecture and Reference Framework**
 
-_January 2023_
-_Version 1.0.0_
+_April 2023_
+_Version 1.1.0_
+
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0.0   | 26 January 2023 | Initial version |
+| 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
 
 
 [[_TOC_]]
@@ -45,8 +51,9 @@ for public feedback. When the feedback period closed on 15 April 2022,
 
 The eIDAS Expert Group has since further developed the concepts and
 specifications for the European Digital Identity Framework based on the
-Commission’s legislative proposal[^5], resulting in the current
-document.
+Commission’s legislative proposal[^5], and will continue to do so until 
+the legislative negotiations have been concluded and implementing acts 
+have been adopted.
 
 The eIDAS Expert Group adopted the present document on 26 January 2023.
 
@@ -328,40 +335,68 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 *\* Additional to definitions in Article 3 of the eIDAS Regulation or
 its amendment proposal.*
 
-# 3. Objectives of the EUDI Wallet
+# 3. Use cases for the EUDI Wallet
 
-The primary objective of the proposed European Digital Identity Wallet
-is to guarantee access to trusted digital identities for all Europeans
-allowing Users to be in control of their own online interactions and
-presence. It can be seen as a combination of several products and Trust
-Services that enables Users to securely request, obtain and store their
-information allowing them to access online services, present data about
-them and electronically sign or seal documents.
+The development of EUDI Wallet specifications is steered by use cases
+that facilitate understanding of user experience while capturing the
+value proposition and business requirements of the EUDI Wallet. To
+accomplish this, the eIDAS Expert Group begins by creating service
+blueprints for each EUDI Wallet use case. These blueprints are visual
+representations of the various components and processes involved in
+providing a service to users and serve as a tool for pinpointing
+potential areas for enhancement, optimising user experience, and
+streamlining service delivery. These blueprints then act as the basis
+for establishing use case rulebooks and common specifications for all
+use cases. The service blueprints of the use case can be found in the
+annexes as attached documents. It is important to note that the service
+blueprint documents offer a viable solution for each use case, but
+alternatives and optional steps do exist. For instance, displaying
+stored data to which the user has already given consent might be
+optional. Furthermore, user journeys may differ depending on the chosen
+implementation approach, such as asynchronous attribute storage or
+synchronous retrieval. This could affect aspects like providing consent
+to retrieve and share data. The eIDAS Expert Group has described service
+blueprints for the following use cases. 
 
-Several use cases will underpin the development of the EUDI Wallet to
-deliver effectively and seamlessly on its functionalities in all Member
-States. The eIDAS expert group has worked on a few first use-case areas
-which include:
+## 3.1 Identification and  authentication to access online services 
 
-- *Secure and trusted identification to access online services*
+The primary purpose of the EUDI Wallet is to offer secure identification
+and authentication of users at a high Level of Assurance (LoA) for both
+public and private online services. This essential functionality ensures
+that Relying Parties can confidently verify that they are interacting
+with the correct individual. In this use case, the User is utilising the
+EUDI Wallet to confirm their identity. They frequently access online
+services that demand authentication and currently employ multiple
+methods for identity verification while accessing these services. The
+User is also concerned about sharing person identification data (PID)
+during online interactions. Their objectives include identifying
+themselves with services requiring user identification and maintaining
+control over personal data sharing. This use case encompasses the entire
+EUDI Wallet life cycle from the User's viewpoint, from obtaining a valid
+wallet to identifying and authenticating the user within an online
+service. The focus of the current description is a workable remote
+same-device flow (refer to section 6.4), where a natural person User
+employs a single mobile device for both securing the session and
+accessing the service's information. 
 
-While secure authentication of the User is a functionality of the EUDI
-Wallet, Relying Parties identifying and authenticating Users at LoA High
-with a defined set of Person Identification Data for the purposes of
-allowing access to online public and private services as well as using
-them is a specific use case as already established for existing eID
-means. For instance, private Relying Parties must accept the use of
-EUDI Wallets where they are required to use strong User authentication
-for online identification.
+## 3.2 Mobile Driving Licence 
 
-- *Mobility and digital driving licence*
+A significant use case for the EUDI Wallet involves allowing Users to
+acquire, store, and display a digital document as the mobile Driving
+Licence (mDL) to prove their driving privileges. In this use case the
+User employs an EUDI Wallet to present a mDL to a third party like a
+police officer. The use case description concentrates on proximity
+supervised and unsupervised flows, which involve scenarios where the
+User is physically near a Relying Party, and the mDL attribute exchange
+and disclosure occurs using proximity technologies (e.g. NFC,
+Bluetooth). The two proximity flows have one significant difference: in
+the supervised flow, the EUDI Wallet presents mDL attributes to a human
+Relying Party or under their supervision (who may also use a device);
+whereas in the unsupervised flow, the EUDI Wallet presents mDL
+attributes to a machine without human oversight.
 
-The EUDI Wallet must enable a fully digital European Driving Licence for
-online and offline scenarios. It could link to a series of further
-attestations offered by public or private providers covering legal
-requirements (e.g., Certificate of Professional Capacity) or business
-requirements and standards (e.g., for road tolling) in the road
-transport area.
+## 3.3. Other use cases 
+In subsequent versions of this document, the following use cases will be detailed as service blueprints:
 
 - *Health*
 
@@ -464,7 +499,7 @@ in the legal proposal, which give the User full control over the use of
 their Person Identification Data (PID) and Qualified or non-qualified
 Electronic Attestations of Attributes (QEAA or EAA), and any other
 personal data within their EUDI Wallet. From a technical viewpoint, this
-may also implies guaranteeing a User sole control over sensitive
+may also imply guaranteeing a User sole control over sensitive
 cryptographic material (e.g., private keys) related to the use of these
 data in some scenarios, including electronic identification, signature /
 seal.
@@ -494,8 +529,8 @@ organisations as PID Providers.
 
 ### 4.1.4. Trusted List Providers
 
-The specific status of a role in the EUDI Wallet ecosystem shall need to
-be verified in a trustworthy manner. Such roles are:
+The specific status of a role in the EUDI Wallet ecosystem shall be
+verified in a trustworthy manner. Such roles are:
 
 - EUDI Wallet Providers
 
@@ -682,7 +717,7 @@ CABs to which they have issued an accreditation certificate.
 ## 4.2. Lifecycle of an EUDI Wallet
 
 The legal text defines the EUDI Wallet on a high level of abstraction,
-as well as for the EUDI Wallet Providers that carries the legal
+as well as for the EUDI Wallet Providers that carry the legal
 obligation to make sure that the inhabitants/residents of a Member State
 can get a valid and fully functional EUDI Wallet. The lifecycle of an
 EUDI Wallet will have some interactions with the Trusted List Providers
@@ -1778,3 +1813,29 @@ https://www.w3.org/TR/json-ld/
     European Parliament and of the Council on electronic identification
     and trust services for electronic transactions in the internal
     market**
+
+# Annexes 
+## Annex 01 - initialisation and activation
+The service blueprint about initialisation and activation of the Wallet
+is described in the attached file:
+* [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf) 
+
+## Annex 02 – online identification and authentication
+The service blueprint about online identification and authentication for
+the Wallet is described in the attached file:
+* [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf) 
+
+## Annex 03 – issuing mDL
+The service blueprint about issuing mDL is described in the attached
+file: 
+* [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
+
+## Annex 04 – presenting mDL (proximity-supervised)
+The service blueprint about presenting mDL (proximity-supervised) is
+described in the attached file:
+* [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
+
+## Annex 05 – presenting mDL (proximity-unsupervised)
+The service blueprint about presenting mDL (proximity-unsupervised) is
+described in the attached file:
+* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
