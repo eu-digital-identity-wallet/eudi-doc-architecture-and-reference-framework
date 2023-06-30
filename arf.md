@@ -2,15 +2,15 @@
 
 **The European Digital Identity Wallet Architecture and Reference Framework**
 
-_April 2023_
-_Version 1.1.0_
+_June 2023_
+_Version 1.2.0_
 
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
-
+| 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
 
 [[_TOC_]]
 
