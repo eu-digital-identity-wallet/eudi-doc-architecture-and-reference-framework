@@ -838,32 +838,48 @@ completely withdrawn.
 
 ### 4.2.4. EUDI Wallet Instance Lifecycle
 
-A EUDI Wallet Instance starts its life based on a valid EUDI Wallet
-Solution. The EUDI Wallet Provider provides a EUDI Wallet Solution to
-the User which is considered a Wallet Instance in **operational** state
-once installed and activated by the User. Depending on the form factor
-and implementation, providing an instance can require several actions,
-e.g., installation and initialization in case of a mobile EUDI Wallet.
-Such an EUDI Wallet Instance could already be used for non EUDI specific
-functions, such as storing loyalty cards or non-personalized train
-tickets or any other attestation that does not mandate a binding to a
-valid PID.
+An EUDI Wallet Instance lifecycle begins when the User installs the
+mobile app component of the EUDI Wallet solution provided by The EUDI
+Wallet Provider.  Once an EUDI Wallet Instance is installed and
+activated by the User and the EUDI Wallet Provider, it is in an
+**operational** state. In this state, the User manages the EUDI Wallet
+Instance, which may involve:
 
-Once an EUDI Wallet Instance is initialised, it is considered **valid**,
-meaning it is recognized by a PID Provider and it holds a valid PID set.
-If the PID expires or is revoked, the EUDI Wallet is not automatically
-unusable, its state is merely downgraded back to **operational**. This
-may affect the validity of a (Q)EAA or a certificate for QES.
+* The EUDI Wallet Provider updating the EUDI Wallet Instance,
+* The EUDI Wallet Provider revoking the EUDI Wallet Instance, possibly
+  at the User's request. Revocation of the Wallet Instance is
+  accomplished by revoking the Wallet Instance attestation (refer to
+  section 5.2.2),
+* The User uninstalling the EUDI Wallet Instance.
+
+In the **operational** state of the EUDI Wallet Instance:
+
+* The User can request an attestation, such as a PID or a (Q)EAA. The
+  EUDI Wallet Instance may also fulfil non-EUDI specific functions, like
+  storing loyalty cards, or any other type of certification that doesn't
+  explicitly necessitate a link to a valid PID.
+* Once an attestation is issued to the EUDI Wallet Instance, the User
+  has the capability to release the attributes from this attestation to
+  a Relying Party, based on their discretion.
+* The PID/(Q)EAA Provider continues to be responsible for the management
+  of the attestation, which may include re-issuing it. The PID/(Q)EAA
+  Provider can also revoke the attestation, possibly at the User's
+  request. The specific management options will be detailed in
+  subsequent documents. =
+
+Once an EUDI Wallet Instance holds a **valid** PID set, it is
+considered valid. If the PID expires or is revoked, the EUDI Wallet is
+not automatically unusable, its state is merely downgraded back to
+**operational**. This may affect the validity of a (Q)EAA or a certificate
+for QES.
 
 ![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
 <!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
 
 *Figure 5: State-chart of Wallet Instance*
 
-It is currently assumed that only the User[^12] will be able to
-deactivate a EUDI Wallet Instance. Please note that this is independent
-from the possibility of a PID or (Q)EAA Provider to revoke their
-attestations.
+Please note that this is independent from the possibility of a PID or
+(Q)EAA Provider to revoke their attestations.
 
 # 5. Requirements for Issuing PID and (Q)EAA
 
