@@ -368,20 +368,26 @@ The primary purpose of the EUDI Wallet is to offer secure identification
 and authentication of users at a high Level of Assurance (LoA) for both
 public and private online services. This essential functionality ensures
 that Relying Parties can confidently verify that they are interacting
-with the correct individual. In this use case, the User is utilising the
-EUDI Wallet to confirm their identity. They frequently access online
-services that demand authentication and currently employ multiple
-methods for identity verification while accessing these services. The
-User is also concerned about sharing person identification data (PID)
-during online interactions. Their objectives include identifying
-themselves with services requiring user identification and maintaining
-control over personal data sharing. This use case encompasses the entire
-EUDI Wallet life cycle from the User's viewpoint, from obtaining a valid
-wallet to identifying and authenticating the user within an online
-service. The focus of the current description is a workable remote
-same-device flow (refer to section 6.4), where a natural person User
-employs a single mobile device for both securing the session and
-accessing the service's information. 
+with the correct individual. 
+
+In this use case, the User is utilising the EUDI Wallet to confirm their
+identity. They frequently access online services that demand
+authentication and currently employ multiple methods for identity
+verification while accessing these services. The User is also concerned
+about sharing person identification data (PID) during online
+interactions. Their objectives include identifying themselves with
+services requiring user identification and maintaining control over
+personal data sharing. 
+
+This use case encompasses the entire EUDI Wallet life cycle from the
+User's viewpoint, from obtaining a valid wallet to identifying and
+authenticating the user within an online service. The focus of the
+current description is a workable remote same-device flow (refer to
+section 7.4), where a natural person User employs a single mobile device
+for both securing the session and accessing the service's information. 
+
+PID issuance requirements, PID attribute schema and Trust Infrastructure
+details are further detailed in Chapter 6 and Annex 06.
 
 ## 3.2 Mobile Driving Licence 
 
