@@ -152,6 +152,10 @@ additional terms not defined in the legal text (denoted with a \*).
 </thead>
 <tbody>
 <tr class="odd">
+<td><em>Attestation</em></td>
+<td><strong>A signed set of attributes, in either the mdoc format specified in [ISO18013-5] or the SD-JWT format specified in [SD-JWT]. This may be a PID, QEAA or EAA. </strong></td>
+</tr>
+<tr class="odd">
 <td><em>Attribute</em></td>
 <td><strong>A feature, characteristic or quality of a natural or legal
 person or of an entity, in electronic form. - <em>eIDAS Regulation
