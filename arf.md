@@ -65,15 +65,15 @@ standards and practices. The document presents a state-of-play of
 ongoing work of the eIDAS Expert Group and does not imply any formal
 agreement regarding its content or the legislative proposal. This
 document will be complemented and updated over time through the process
-of establishing the toolbox, as described in Chapter 8. Once completed
+of establishing the toolbox, as described in Chapter 9. Once completed
 the document will describe a comprehensive Architecture and Reference
 Framework covering all the specifications needed to implement an
 European Digital Identity Wallet Solution.
 
-While chapters 2-4 and 7-8 are descriptive, Chapter 5 and 6 specify
+While chapters 2-5 and 8-9 are descriptive, Chapter 6 and 7 specify 
 requirements for PID and (Q)EAA Providers and EUDI Wallet Solution
-implementers. The capitalised imperatives in the document are used in
-accordance with RFC 2119.
+implementers. The capitalised imperatives in the document are used in 
+accordance with RFC 2119. 
 
 The document itself holds no legal value and shall not prejudge the
 forthcoming legislative process and the final mandatory legal
@@ -90,7 +90,7 @@ developing a reference implementation of an EUDI Wallet and the
 consortia piloting the use of the reference implementation in the
 context of Large Scale Pilots. Experience of implementing this
 specification may lead to improvements of this document, in accordance
-with Chapter 8.
+with Chapter 9.
 
 ### 1.3.1. The Reference Implementation of an EUDI Wallet
 
