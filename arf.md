@@ -796,12 +796,13 @@ that PID could be “pre-issued”.
 
 *Figure 3: State-chart of PID*
 
-There are two possible transitions from a valid PID: either it
-automatically expires, by passage to the *‘validity end date*’ or it is
-actively revoked by its Provider. Expiration and revocation are
-essentially independent transitions. Once PID is expired or revoked, it
-cannot transition back to valid. Update of PID (i.e., because of a name
-change) always requires re-issuing.
+There are twothree possible transitions from a valid PID: eitherit is
+delete by the user, it automatically expires, by passage to the
+‘validity end date’ or it is actively revoked by its Provider.
+Expiration and revocation are essentially independent transitions. Once
+PID is expired, deleted or revoked, it cannot transition back to valid.
+Update of PID (i.e., because of a name change) always requires
+re-issuing.
 
 ### 4.2.3. EUDI Wallet Solution Lifecycle
 
