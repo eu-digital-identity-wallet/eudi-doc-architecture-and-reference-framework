@@ -92,7 +92,3 @@ International](http://creativecommons.org/licenses/by/4.0/) - see the
 * [Contact the European Commission](https://commission.europa.eu/about-european-commission/contact_en)
 * [Follow the European Commission on social media ](https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission)
 * [Resources for partners](https://commission.europa.eu/resources-partners_en)
-* [Language policy](https://commission.europa.eu/language-policy_en)
-* [Cookies](https://commission.europa.eu/cookies_en)
-* [Privacy policy](https://commission.europa.eu/privacy-policy_en)
-* [Legal notice](https://commission.europa.eu/legal-notice_en)
