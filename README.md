@@ -1,3 +1,23 @@
+[Digital Strategy](https://digital-strategy.ec.europa.eu//en)> [Policies](https://digital-strategy.ec.europa.eu/en/policies)>[Electronic Identification](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
+
+![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
+
+# The EU Digital Identity Wallet 
+## The propsed Digital Identity Regulation
+
+Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
+Yet, there is no requirement for Member States to develop a national electronic identification and to make it interoperable with those in other Member States. This has led to discrepancies between countries.
+The new proposal for a Regulation on digital identity will address shortcomings in eIDAS by improving the effectiveness of the framework and extending its benefits to the private sector.
+Member States will offer citizens and businesses digital wallets that will be able to link various aspects of their national digital identities. These may be provided by public authorities or the private sector, if they are recognized by the Member States.
+
+The EU Digital Identity Wallet will be:
+
+* **made available to anyone who wants to use it**:  Any EU citizen, resident, and business in the EU who would like to make use of the EU Digital Identity will be able to do so.
+* **used widely**: EU Digital Identity Wallets will be used as a way to identify users when providing them with access to public and private digital services across the EU.
+* **controlled by users**: The EU Digital Identity Wallets will enable people to choose and keep track of their identity, data and certificates which they share with third parties. Anything which is not necessary to share will not be shared.
+
+Consumers should also be able to access services online without having to use private platforms or unnecessarily sharing personal data. They will have full control of the data they share.
+
 # The European Digital Identity Wallet 
 ## The Architecture and Reference Framework
 
@@ -67,3 +87,13 @@ See the list of [contributors](https://github.com/eu-digital-identity-wallet/arc
 This project is licensed under the [Attribution 4.0
 International](http://creativecommons.org/licenses/by/4.0/) - see the
 [LICENSE.txt](LICENSE) file for details.
+
+## [European Commission website](https://commission.europa.eu/index_en)
+
+* [Contact the European Commission](https://commission.europa.eu/about-european-commission/contact_en)
+* [Follow the European Commission on social media ](https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission)
+* [Resources for partners](https://commission.europa.eu/resources-partners_en)
+* [Language policy](https://commission.europa.eu/language-policy_en)
+* [Cookies](https://commission.europa.eu/cookies_en)
+* [Privacy policy](https://commission.europa.eu/privacy-policy_en)
+* [Legal notice](https://commission.europa.eu/legal-notice_en)
