@@ -2,7 +2,7 @@
 
 ![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
 
-# The EU Digital Identity Wallet 
+# The European Digital Identity Wallet 
 ## The propsed Digital Identity Regulation
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
@@ -18,7 +18,6 @@ The EU Digital Identity Wallet will be:
 
 Consumers should also be able to access services online without having to use private platforms or unnecessarily sharing personal data. They will have full control of the data they share.
 
-# The European Digital Identity Wallet 
 ## The Architecture and Reference Framework
 
 On 3 June 2021, the European Commission adopted a Recommendation
