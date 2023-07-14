@@ -61,10 +61,15 @@ make clean
 
 ### Prerequisites
 * `pandoc`
+* `npm dependencies`
 
-Install it (Ubuntu 22.04)
+Install pandoc (Ubuntu 22.04):
 ```bash
 sudo apt install pandoc
+```
+install npm dependencies:
+```bash
+npm install package.json
 ```
 
 ## Contributing
