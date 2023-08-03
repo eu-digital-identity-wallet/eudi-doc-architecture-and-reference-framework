@@ -14,6 +14,7 @@ all: $(GENERATED)
 
 # Gerenate html, doc from the html
 arf.html: arf.md
+	mkdir -p dist
 	pandoc -s -o ./dist/$@ $< --toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --self-contained --css=styles/style.css
 	node fix.js
 	cd ./dist && cp output.html $@ && rm output.html
