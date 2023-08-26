@@ -1,8 +1,9 @@
+# The European Digital Identity Wallet
+
 [Digital Strategy](https://digital-strategy.ec.europa.eu//en)> [Policies](https://digital-strategy.ec.europa.eu/en/policies)>[Electronic Identification](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
 
 ![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
 
-# The European Digital Identity Wallet 
 ## The propsed Digital Identity Regulation
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
@@ -43,31 +44,37 @@ This repository contains the "[Architecture and Reference Framework](arf.md)"
 The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
-
 ## Build
+
 While the ARF is maintained in `Markdown`, this repository provides a
 process for generating `HTML`, `DOCX`, and `PDF` (work in progress)
 instances.
 
 Generate the derived files
+
 ```bash
 make all
 ```
 
 Clean up
+
 ```bash
 make clean
 ```
 
 ### Prerequisites
+
 * `pandoc`
 * `npm dependencies`
 
 Install pandoc (Ubuntu 22.04):
+
 ```bash
 sudo apt install pandoc
 ```
+
 install npm dependencies:
+
 ```bash
 npm install package.json
 ```
@@ -79,8 +86,8 @@ and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, 
-see the [tags on this repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available,
+see the [tags on this repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/tags).
 
 ## Authors
 
@@ -95,5 +102,5 @@ International](http://creativecommons.org/licenses/by/4.0/) - see the
 ## [European Commission website](https://commission.europa.eu/index_en)
 
 * [Contact the European Commission](https://commission.europa.eu/about-european-commission/contact_en)
-* [Follow the European Commission on social media ](https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission)
+* [Follow the European Commission on social media](https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission)
 * [Resources for partners](https://commission.europa.eu/resources-partners_en)
