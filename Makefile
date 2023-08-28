@@ -1,37 +1,67 @@
+# Makefile
+# Converts Markdown to other formats (HTML, PDF, DOCX, EPUB) using Pandoc and MkDocs
+#
+# Run "make" (or "make all") to convert to all other formats
+# Run "make clean" to delete converted files
+
 # Prerequisites
-# pandoc 
-# 
-# sudo apt install pandoc
+# Install pandoc, latex and mkdocs in your environment 
 #
 # Parameters and Variables
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables
-GENERATED=	arf.html \
-			arf.docx
+#
+
+SOURCE_DOCS := $(wildcard docs/*.md)
+BUILD_DIR :=./build
+SITE_DIR :=./site
+EXPORTED_DOCS=\
+ $(SOURCE_DOCS:.md=.html) \
+ $(SOURCE_DOCS:.md=.pdf) \
+ $(SOURCE_DOCS:.md=.docx) \
+ $(SOURCE_DOCS:.md=.epub)
+
+RM=/bin/rm
+PANDOC=pandoc
+MKDOCS=mkdocs
+
+PANDOC_OPTIONS=--toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --data-dir docs/media
+
+PANDOC_HTML_OPTIONS=--to html5 --embed-resources --standalone --css=styles/style.css
+PANDOC_PDF_OPTIONS= --pdf-engine=xelatex
+PANDOC_DOCX_OPTIONS=
+PANDOC_EPUB_OPTIONS=--to epub3
+
+# Pattern-matching Rules
+
+%.html : %.md
+	mkdir -p $(BUILD_DIR)/html
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $(BUILD_DIR)/html/$(notdir $@) $<
+
+%.pdf : %.md
+	mkdir -p $(BUILD_DIR)/pdf
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $(BUILD_DIR)/pdf/$(notdir $@) $<
+
+%.docx : %.md
+	mkdir -p $(BUILD_DIR)/docx
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_DOCX_OPTIONS) -o $(BUILD_DIR)/docx/$(notdir $@) $<
+
+%.epub : %.md
+	mkdir -p $(BUILD_DIR)/epub
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/$(notdir $@) $<
 
 
+# Targets and dependencies
 
-all: $(GENERATED)
+.PHONY: all clean
 
-# Gerenate html, doc from the html
-arf.html: arf.md
-	pandoc -s -o ./dist/$@ $< --toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --self-contained --css=styles/style.css
-	node fix.js
-	cd ./dist && cp output.html $@ && rm output.html
-	pandoc -o ./dist/$@.docx ./dist/$@ --reference-doc=styles/reference.docx
+all : $(EXPORTED_DOCS)
 
-# Generate docx
-arf.docx: arf.md
-	pandoc -o ./dist/$@ $<
+mkdocs:
+	$(MKDOCS) build
 
-# Run a local http server
 serve:
-	npx http-server .
+	$(MKDOCS) serve
 
-prepare:
-	mkdir -p dist
-	npm install
-	
 clean:
-	echo $(GENERATED)
-	rm -f $(GENERATED) arf.html.docx
-	rm -f ./dist -R
+	- $(RM) -rf $(BUILD_DIR) $(SITE_DIR)
+

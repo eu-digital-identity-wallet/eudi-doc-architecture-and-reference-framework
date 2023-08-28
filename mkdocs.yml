@@ -1,0 +1,9 @@
+site_name: EUDI Wallet - Architecture and Reference Framework
+nav:
+  - Home: arf.md
+theme:
+  name: material
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
