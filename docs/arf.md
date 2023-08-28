@@ -1,23 +1,16 @@
-**The Common Union Toolbox for a Coordinated Approach Towards a European Digital Identity Framework**
-
-**The European Digital Identity Wallet Architecture and Reference Framework**
+# Architecture and Reference Framework
 
 _April 2023_
 _Version 1.1.0_
-
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
 
+## 1. Introduction
 
-[[_TOC_]]
-
-
-# 1. Introduction
-
-## 1.1. Context
+### 1.1. Context
 
 On 3 June 2021, the European Commission adopted a Recommendation[^1]
 calling on Member States to work towards the development of a Toolbox
@@ -51,13 +44,13 @@ for public feedback. When the feedback period closed on 15 April 2022,
 
 The eIDAS Expert Group has since further developed the concepts and
 specifications for the European Digital Identity Framework based on the
-Commission’s legislative proposal[^5], and will continue to do so until 
-the legislative negotiations have been concluded and implementing acts 
+Commission’s legislative proposal[^5], and will continue to do so until
+the legislative negotiations have been concluded and implementing acts
 have been adopted.
 
 The eIDAS Expert Group adopted the present document on 26 January 2023.
 
-## 1.2. Purpose of This Document
+### 1.2. Purpose of This Document
 
 The purpose of the document is to provide all the specifications needed
 to develop an interoperable EUDI Wallet Solution based on common
@@ -83,7 +76,7 @@ for a European Digital Identity Framework. Only the finally adopted
 European Digital Identity Framework Regulation, and the implementing and
 delegated acts adopted under that legal basis, will be mandatory.
 
-## 1.3. Use of This Document
+### 1.3. Use of This Document
 
 This document is mainly meant to be used by the European Commission
 developing a reference implementation of an EUDI Wallet and the
@@ -92,7 +85,7 @@ context of Large Scale Pilots. Experience of implementing this
 specification may lead to improvements of this document, in accordance
 with Chapter 8.
 
-### 1.3.1. The Reference Implementation of an EUDI Wallet
+#### 1.3.1. The Reference Implementation of an EUDI Wallet
 
 The Commission will provide a reference implementation of an EUDI Wallet
 in a mobile form factor[^6]. The code for the EUDI Wallet reference
@@ -107,7 +100,7 @@ the EUDI Wallet reference implementation.
 The Commission intends to use the ARF to develop the EUDI Wallet
 reference implementation.
 
-### 1.3.2. Guidance for the Large Scale Pilots (LSP)
+#### 1.3.2. Guidance for the Large Scale Pilots (LSP)
 
 To support the development of a reference implementation of an EUDI
 Wallet and to pilot its usage across different priority use cases, the
@@ -132,7 +125,7 @@ Electronic Attestations of Attributes (Q)EAA Providers, Person
 Identification Data (PID) Providers and Users in meaningful transactions
 under the proposed use cases.
 
-# 2. Definitions
+## 2. Definitions
 
 In addition to Article 3 of the proposed amendment to the legal text,
 the following definitions are provided to either highlight those most
@@ -335,7 +328,7 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 *\* Additional to definitions in Article 3 of the eIDAS Regulation or
 its amendment proposal.*
 
-# 3. Use cases for the EUDI Wallet
+## 3. Use cases for the EUDI Wallet
 
 The development of EUDI Wallet specifications is steered by use cases
 that facilitate understanding of user experience while capturing the
@@ -356,9 +349,9 @@ optional. Furthermore, user journeys may differ depending on the chosen
 implementation approach, such as asynchronous attribute storage or
 synchronous retrieval. This could affect aspects like providing consent
 to retrieve and share data. The eIDAS Expert Group has described service
-blueprints for the following use cases. 
+blueprints for the following use cases.
 
-## 3.1 Identification and  authentication to access online services 
+### 3.1 Identification and  authentication to access online services
 
 The primary purpose of the EUDI Wallet is to offer secure identification
 and authentication of users at a high Level of Assurance (LoA) for both
@@ -377,9 +370,9 @@ wallet to identifying and authenticating the user within an online
 service. The focus of the current description is a workable remote
 same-device flow (refer to section 6.4), where a natural person User
 employs a single mobile device for both securing the session and
-accessing the service's information. 
+accessing the service's information.
 
-## 3.2 Mobile Driving Licence 
+### 3.2 Mobile Driving Licence
 
 A significant use case for the EUDI Wallet involves allowing Users to
 acquire, store, and display a digital document as the mobile Driving
@@ -395,7 +388,8 @@ Relying Party or under their supervision (who may also use a device);
 whereas in the unsupervised flow, the EUDI Wallet presents mDL
 attributes to a machine without human oversight.
 
-## 3.3. Other use cases 
+### 3.3. Other use cases
+
 In subsequent versions of this document, the following use cases will be detailed as service blueprints:
 
 - *Health*
@@ -430,12 +424,12 @@ benefit from more seamless travel.
 
 This work may in future be extended to additional use cases.
 
-# 4. European Digital Identity Wallet Ecosystem
+## 4. European Digital Identity Wallet Ecosystem
 
 This chapter describes the EUDI Wallet ecosystem as it is foreseen in
 the Commission’s legislative proposal.
 
-## 4.1. Roles in the Ecosystem
+### 4.1. Roles in the Ecosystem
 
 The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
@@ -445,24 +439,24 @@ detailed in the following sections.
 
 *Figure 1: Overview of the EUDI Wallet roles*
 
-1.  *End Users of EUDI Wallets*
+1. *End Users of EUDI Wallets*
 
-2.  *EUDI Wallet Providers*
+2. *EUDI Wallet Providers*
 
-3.  *Person Identification Data Providers*
+3. *Person Identification Data Providers*
 
-4.  *Trusted Lists providers*
+4. *Trusted Lists providers*
 
-5.  *Qualified Electronic Attestation of Attributes (QEAA) Providers*
+5. *Qualified Electronic Attestation of Attributes (QEAA) Providers*
 
-6.  *Non-qualified Electronic Attestation of Attributes (EAA) Providers*
+6. *Non-qualified Electronic Attestation of Attributes (EAA) Providers*
 
-7.  *Qualified and non-qualified certificate for electronic
+7. *Qualified and non-qualified certificate for electronic
     signature/seal Providers*
 
-8.  *Authentic Sources*
+8. *Authentic Sources*
 
-9.  *Relying Parties*
+9. *Relying Parties*
 
 10. *Conformity Assessment Bodies (CAB)*
 
@@ -474,7 +468,7 @@ detailed in the following sections.
 
 14. *National Accreditation Bodies*
 
-### 4.1.1. Users of EUDI Wallet
+#### 4.1.1. Users of EUDI Wallet
 
 Users of EUDI Wallets use the EUDI Wallet to receive, store and present
 attestations (PID, QEAA or EAA) about themselves, including to prove
@@ -486,7 +480,7 @@ an EUDI Wallet by citizens is not mandatory under the legislative
 proposal. However, Member States are obliged to offer at least one EUDI
 Wallet Solution to their citizens.
 
-### 4.1.2. EUDI Wallet Provider
+#### 4.1.2. EUDI Wallet Provider
 
 EUDI Wallet Provider are Member States or organisations either mandated
 or recognized by Member States making the EUDI Wallet available for end
@@ -507,7 +501,7 @@ seal.
 EUDI Wallet Providers are responsible for ensuring compliance with the
 requirements for EUDI Wallets.
 
-### 4.1.3. Person Identification Data (PID) Providers
+#### 4.1.3. Person Identification Data (PID) Providers
 
 PID Providers are trusted entities responsible to:
 
@@ -527,7 +521,7 @@ official identity documents, electronic identity means, EUDI Wallet
 Providers etc. EUDI Wallet Providers may or may not be the same
 organisations as PID Providers.
 
-### 4.1.4. Trusted List Providers
+#### 4.1.4. Trusted List Providers
 
 The specific status of a role in the EUDI Wallet ecosystem shall be
 verified in a trustworthy manner. Such roles are:
@@ -562,7 +556,7 @@ to the registry information. The terms and conditions of entities to
 become registered are for each registrar to determine unless specified
 in e.g., sectoral rules.
 
-### 4.1.5. Qualified Electronic Attestation of Attributes Providers
+#### 4.1.5. Qualified Electronic Attestation of Attributes Providers
 
 Qualified EAA are provided by QTSPs. The general Trust Framework for
 QTSPs apply also to QEAA, but specific rules for this Trust Service need
@@ -576,7 +570,7 @@ receive any information about the use of the attestations. The terms and
 conditions of these services are for each QTSP to determine, beyond what
 is specified in the eIDAS Regulation.
 
-### 4.1.6. Non-Qualified Electronic Attestation of Attributes Providers
+#### 4.1.6. Non-Qualified Electronic Attestation of Attributes Providers
 
 Non-qualified EAA can be provided by any Trust Service Provider. While
 they are supervised under eIDAS, it can be assumed that other legal or
@@ -592,7 +586,7 @@ ability to receive any information about the use of the EAA. The terms
 and conditions of issuing EAAs and related services are subject to
 sectoral rules.
 
-### 4.1.7. Qualified and Non-Qualified Certificates for Electronic Signature/Seal Providers
+#### 4.1.7. Qualified and Non-Qualified Certificates for Electronic Signature/Seal Providers
 
 Article 6a(3) of COM(2021)281 final requires the EUDI Wallet to enable
 the User to create qualified electronic signatures or seals. This goal
@@ -608,13 +602,13 @@ can be reached by several ways:
 EUDI Wallet interfaces with QSCDs will be further expanded in future
 versions of this document.
 
-### 4.1.8. Providers of other Trust Services
+#### 4.1.8. Providers of other Trust Services
 
 EUDI Wallet interaction with providers of other qualified or
 non-qualified Trust Services such as timestamps may be further described
 in future versions of the ARF.
 
-### 4.1.9. Authentic Sources
+#### 4.1.9. Authentic Sources
 
 Authentic Sources are the public or private repositories or systems
 recognised or required by law containing attributes about a natural or
@@ -633,7 +627,7 @@ these services, but according to the minimum technical
 specifications, standards, and procedures applicable to the verification
 procedures for qualified electronic attestations of attributes.
 
-### 4.1.10. Relying Parties
+#### 4.1.10. Relying Parties
 
 Relying Parties are natural or legal persons that rely upon an
 electronic identification or a Trust Service. In the context of EUDI
@@ -648,7 +642,7 @@ intention for doing so. Relying Parties need to maintain an interface
 with the EUDI Wallet to request attestations with mutual authentication.
 Relying Parties are responsible for authenticating PID and (Q)EAA.
 
-### 4.1.11. Conformity Assessment Bodies (CAB)
+#### 4.1.11. Conformity Assessment Bodies (CAB)
 
 The EUDI Wallets must be certified by accredited public or private
 bodies designated by Member States[^10]. QTSPs need to be audited
@@ -660,13 +654,13 @@ status to a Trust Service Provider. The standards and schemes used by
 CABs to fulfil their tasks to certify EUDI Wallets are specified further
 in the Toolbox process.
 
-### 4.1.12. Supervisory Bodies
+#### 4.1.12. Supervisory Bodies
 
 The supervisory bodies are notified to the Commission by the Member
 States, which supervise QTSPs and act, if necessary, in relation to
 non-qualified Trust Service Providers.
 
-### 4.1.13. Device Manufacturers and Related Entities
+#### 4.1.13. Device Manufacturers and Related Entities
 
 EUDI Wallets will have several interfaces with the devices they are
 based on, which may be for the following purposes:
@@ -694,7 +688,7 @@ issuing the EUDI Wallet. Likewise, the availability as well as terms and
 conditions of device interface providers and related service providers
 will set further constraints for EUDI Wallet Providers.
 
-### 4.1.14. Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
+#### 4.1.14. Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
 
 (Q)EAA Schema Providers publish schemas and vocabularies describing
 (Q)EAA structure and semantics. It may enable other entities such as
@@ -703,7 +697,7 @@ the minimum technical specifications, standards, and procedures for this
 purpose. Common schemas, including by sector- specific organisations are
 critical for wide-spread adoption of (Q)EAAs.
 
-### 4.1.15. National Accreditation Bodies 
+#### 4.1.15. National Accreditation Bodies
 
 National Accreditation Bodies (NAB) under Regulation (EC) No
 765/2008[^11] are the bodies in Member States that performs
@@ -714,7 +708,7 @@ against normative document(s) establishing the requirements (e.g.,
 legislations, specifications, protection profiles). NABs monitor the
 CABs to which they have issued an accreditation certificate.
 
-## 4.2. Lifecycle of an EUDI Wallet
+### 4.2. Lifecycle of an EUDI Wallet
 
 The legal text defines the EUDI Wallet on a high level of abstraction,
 as well as for the EUDI Wallet Providers that carry the legal
@@ -738,7 +732,7 @@ consequently misunderstandings.
 *The object model will be extended as required in future versions of the
 ARF.*
 
-### 4.2.1. Simplified EUDI Wallet Object Model
+#### 4.2.1. Simplified EUDI Wallet Object Model
 
 Figure 2 below distinguishes the concepts of EUDI Wallet Solution and
 EUDI Wallet Instance. An EUDI Wallet Solution is the entire product
@@ -756,7 +750,7 @@ the implementation a EUDI Wallet Instance may consist of a single mobile
 app, or a set of local and remote components available to a specific
 User.
 
-### 4.2.2. PID and (Q)EAA Lifecycles
+#### 4.2.2. PID and (Q)EAA Lifecycles
 
 The lifecycles of PID and (Q)EAA are essentially identical, however, for
 the scope of this description we refer subsequently only to PID. The
@@ -780,13 +774,13 @@ that PID could be “pre-issued”.
 *Figure 3: State-chart of PID*
 
 There are two possible transitions from a valid PID: either it
-automatically expires, by passage to the *‘validity end date*’ or it is
+automatically expires, by passage to the _‘validity end date_’ or it is
 actively revoked by its Provider. Expiration and revocation are
 essentially independent transitions. Once PID is expired or revoked, it
 cannot transition back to valid. Update of PID (i.e., because of a name
 change) always requires re-issuing.
 
-### 4.2.3. EUDI Wallet Solution Lifecycle
+#### 4.2.3. EUDI Wallet Solution Lifecycle
 
 An EUDI Wallet Solution has a state of its own, as defined by Article
 10a of the Regulation. The state of the Solution affects the state of
@@ -818,7 +812,7 @@ Solution and continue issuance, bringing the Solution back to the
 **valid** state. Under paragraph 3, the EUDI Wallet Solution can be
 completely withdrawn.
 
-### 4.2.4. EUDI Wallet Instance Lifecycle
+#### 4.2.4. EUDI Wallet Instance Lifecycle
 
 A EUDI Wallet Instance starts its life based on a valid EUDI Wallet
 Solution. The EUDI Wallet Provider provides a EUDI Wallet Solution to
@@ -847,9 +841,9 @@ deactivate a EUDI Wallet Instance. Please note that this is independent
 from the possibility of a PID or (Q)EAA Provider to revoke their
 attestations.
 
-# 5. Requirements for Issuing PID and (Q)EAA
+## 5. Requirements for Issuing PID and (Q)EAA
 
-## 5.1. Person Identification Data
+### 5.1. Person Identification Data
 
 This chapter details the PID set as presented by the EUDI Wallet.
 
@@ -866,9 +860,9 @@ In the following the data format as presented to the Relying Party will
 be described, without any assumptions on how the EUDI Wallet retrieved
 or generated this data beforehand.
 
-### 5.1.1 The Dataset
+#### 5.1.1 The Dataset
 
-#### 5.1.2.1. Principles for PID set revision
+##### 5.1.2.1. Principles for PID set revision
 
 This chapter proposes a revision of the eIDAS optional datasets
 specified in eIDAS CIR 2015/1501[^13] and discusses further
@@ -887,7 +881,7 @@ constructed based on the following principles:
   legal persons and what is needed for electronic identification
   purposes.
 
-#### 5.1.1.1. PID Attributes for Natural Persons
+##### 5.1.1.1. PID Attributes for Natural Persons
 
 The below table provides an overview of the current PID attributes that
 are included in the eIDAS framework, and the proposed additional
@@ -920,7 +914,7 @@ possession, the information or location of the services that can be used
 to enquire about the validity status of and potentially more
 information.
 
-### 5.1.2 Issuing requirements for PID
+#### 5.1.2 Issuing requirements for PID
 
 The following table defines the requirements applicable to PID regarding
 what information is included in the attestation, such as for purposes of
@@ -947,9 +941,9 @@ may change as the specifications evolve.
 
 *Table 3 - Issuing requirements for PID*
 
-## 5.2. Qualified and Non-Qualified Electronic Attestation of Attribute
+### 5.2. Qualified and Non-Qualified Electronic Attestation of Attribute
 
-### 5.2.1 Issuing requirements for (Q)EAA
+#### 5.2.1 Issuing requirements for (Q)EAA
 
 The following table defines the requirements applicable to (Q)EAA-s
 regarding what information is included in the attestation, such as for
@@ -980,7 +974,7 @@ may change as the specifications evolve.
 
 *Table 4 - Issuing requirements for (Q)EAA*
 
-# 6. Reference Architecture and Flows
+## 6. Reference Architecture and Flows
 
 The reference architecture represents a set of choices made during the
 architecture design process for EUDI Wallet Solutions. These choices
@@ -989,7 +983,7 @@ scenarios where either the User or the Relying Party, or both, are
 offline while providing flexibility for Member States to implement an
 EUDI Wallet Solution in various configurations of components.
 
-## 6.1. Design considerations
+### 6.1. Design considerations
 
 To limit complexity, the initial EUDI Wallet Solution specifications
 will include only a minimum number of solution components that enable
@@ -1006,7 +1000,7 @@ The solution components proposed herein evidence the current expectation
 of using the ISO/IEC 23220 standard series, once publicly available, for
 future ARF versions.
 
-## 6.2. Architecture Components
+### 6.2. Architecture Components
 
 The following components have been identified as the building blocks of
 the EUDI Wallet architecture needed to implement an EUDI Wallet
@@ -1086,7 +1080,7 @@ Solution:
 - **Validity status check**. Mechanism to publish and obtain information
   about validity status of, inter alia, PID, (Q)EAA, certificate, etc.
 
-## 6.3. Logical architecture
+### 6.3. Logical architecture
 
 Where an EUDI Wallet Solution has an application running on a mobile
 device, there may be a need for additional trusted components which are
@@ -1293,18 +1287,18 @@ accelerometer etc.</p>
 
 *Table 6: mapping of the EUDI Wallet components to perimeters*
 
-## 6.4. Types of Flows
+### 6.4. Types of Flows
 
 This section describes the four types of flows that the EUDI Wallet MUST
 support on a general level. The four flows are as follows:
 
-1.  Proximity supervised flow.
+1. Proximity supervised flow.
 
-2.  Proximity unsupervised flow.
+2. Proximity unsupervised flow.
 
-3.  Remote cross-device flow.
+3. Remote cross-device flow.
 
-4.  Remote same-device flow.
+4. Remote same-device flow.
 
 Flows 1 and 2 are related to a scenario where the EUDI Wallet User is
 physically close to a Relying Party and the attestation exchange and
@@ -1352,9 +1346,9 @@ exchange.
 The initial PID and EAA configurations are detailed next (configurations
 may be added as required in the future).
 
-## 6.5. The Wallet Configurations
+### 6.5. The Wallet Configurations
 
-### 6.5.1. Rationale
+#### 6.5.1. Rationale
 
 One of the goals of EUDI Wallet development is to harmonise PID and
 (Q)EAA across borders. Ideally, this means a very small number of
@@ -1382,7 +1376,7 @@ that cannot be met with the existing configurations. The governance and
 process of how new configurations could be added, is described in
 chapter 8.
 
-### 6.5.2. Initial Configurations
+#### 6.5.2. Initial Configurations
 
 EUDI Wallet Solutions will initially support two configurations:
 
@@ -1403,7 +1397,7 @@ finance, health, access to premises) and will have requirements that are
 satisfied by Type 1 configuration. If so, these (Q)EAAs will be issued
 in accordance with Type 1 configuration.
 
-### 6.5.3. Configuration Requirements
+#### 6.5.3. Configuration Requirements
 
 This section sets the requirements for the configurations by comparing
 Type 1 and Type 2 configuration across different groups of requirements.
@@ -1609,7 +1603,7 @@ mandatory for PID.
 
 *Figure 7. EUDI Wallet configurations.*
 
-# 7. The Certification process of EUDI Wallets
+## 7. The Certification process of EUDI Wallets
 
 Member States, according to Article 6c (3) of the proposal, must
 designate accredited CABs which will oversee carrying out conformity
@@ -1643,18 +1637,17 @@ certification schemes, or parts thereof, to certify the compliance of
 wallets, or parts thereof, with the applicable cybersecurity
 requirements.
 
-# 8. The Architecture and Reference Framework Development Process
+## 8. The Architecture and Reference Framework Development Process
 
-## 8.1. Publication
+### 8.1. Publication
 
-This document and the backlog items are made publicly available at 
-the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described 
+This document and the backlog items are made publicly available at
+the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described
 in Chapter 8.2.
 
-* https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/
+- <https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/>
 
-
-## 8.2. Update
+### 8.2. Update
 
 To ensure steady and fast progress on elaborating and updating this
 document, the following process and work methodology is applied.
@@ -1688,7 +1681,7 @@ This document will be aligned to the outcome of the legislative
 negotiations of the proposal for a European Digital Identity Framework
 with updates being made accordingly.
 
-### 8.2.1. Document versioning
+#### 8.2.1. Document versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
 version control system and the following semantic versioning scheme will
@@ -1707,54 +1700,54 @@ the document or information has been removed from the document, and
 **PATCH** version is incremented when minor changes have been made
 (e.g., fixing typos).
 
-# 9. References
+## 9. References
 
 \[Key words for use in ARF to indicate requirement levels\]
-https://www.rfc-editor.org/rfc/rfc2119
+<https://www.rfc-editor.org/rfc/rfc2119>
 
-\[ISO/IEC 18013-5\] https://www.iso.org/standard/69084.html
+\[ISO/IEC 18013-5\] <https://www.iso.org/standard/69084.html>
 
-\[ISO/IEC AWI TS 23220-4\] https://www.iso.org/standard/79126.html
+\[ISO/IEC AWI TS 23220-4\] <https://www.iso.org/standard/79126.html>
 
 \[W3C-VC-DATA-MODEL\] Sporny, M., Noble, G., Longley, D., Burnett, D.
 C., Zundel, B., and D. Chadwick, "Verifiable Credentials Data Model
-1.0", 19 November 2019, \<https://www.w3.org/TR/vc-data-model\>.
+1.0", 19 November 2019, \<<https://www.w3.org/TR/vc-data-model\>>.
 
 \[OpenID4VP\] Terbu, O., Lodderstedt, T., Yasuda, K., Lemmon, A., and T.
 Looker, "OpenID for Verifiable Presentations", 30 December 2022,
-https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
+<https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>
 
 \[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, "OpenID for
 Verifiable Credential Issuance", 30 December 2022,
-https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html
+<https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html>
 
 \[SIOPv2\] K. Yasuda, T. Lodderstedt, M. Jones, "Self-Issued OpenID
 Provider V2", 1 January 2023,
-https://openid.net/specs/openid-connect-self-issued-v2-1_0.html
+<https://openid.net/specs/openid-connect-self-issued-v2-1_0.html>
 
 \[SD-JWT\]
-https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-02.html
+<https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-02.html>
 
-\[W3C StatusList2021\] https://w3c-ccg.github.io/vc-status-list-2021/
+\[W3C StatusList2021\] <https://w3c-ccg.github.io/vc-status-list-2021/>
 
-\[COSE\] RFC9052 https://www.rfc-editor.org/rfc/rfc9052,
+\[COSE\] RFC9052 <https://www.rfc-editor.org/rfc/rfc9052>,
 
-> RFC9053 https://www.rfc-editor.org/rfc/rfc9053
+> RFC9053 <https://www.rfc-editor.org/rfc/rfc9053>
 
-\[JOSE\] RFC7515 https://www.rfc-editor.org/rfc/rfc7515.html,
+\[JOSE\] RFC7515 <https://www.rfc-editor.org/rfc/rfc7515.html>,
 
-> RFC7516 https://www.rfc-editor.org/rfc/rfc7516.html,
+> RFC7516 <https://www.rfc-editor.org/rfc/rfc7516.html>,
 >
-> RFC7517 https://www.rfc-editor.org/rfc/rfc7517.html,
+> RFC7517 <https://www.rfc-editor.org/rfc/rfc7517.html>,
 >
-> RFC7518 https://www.rfc-editor.org/rfc/rfc7518.html
+> RFC7518 <https://www.rfc-editor.org/rfc/rfc7518.html>
 
 \[SOG-IS\] Agreed Cryptographic Mechanisms v1.2
-https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1.2.pdf
+<https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1.2.pdf>
 
 \[JSON-LD\] JSON-LD 1.1 Manu Sporny, Dave Longley, Gregg Kellogg, Markus
 Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
-https://www.w3.org/TR/json-ld/
+<https://www.w3.org/TR/json-ld/>
 
 [^1]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021
     on a common Union Toolbox for a coordinated approach towards a
@@ -1767,10 +1760,10 @@ https://www.w3.org/TR/json-ld/
     Regulation (EU) No 910/2014 as regards establishing a framework for
     a European Digital Identity, COM(2021) 281 final, 3.6.2021
 
-[^3]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert
+[^3]: <https://ec.europa.eu/transparency/expert-groups-register/screen/expert>
     groups/consult?do=groupDetail.groupDetail&groupID=3032
 
-[^4]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
+[^4]: <https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline>
 
 [^5]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission’s
@@ -1814,28 +1807,39 @@ https://www.w3.org/TR/json-ld/
     and trust services for electronic transactions in the internal
     market**
 
-# Annexes 
-## Annex 01 - initialisation and activation
+## Annexes
+
+### Annex 01 - initialisation and activation
+
 The service blueprint about initialisation and activation of the Wallet
 is described in the attached file:
-* [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf) 
 
-## Annex 02 – online identification and authentication
+- [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf)
+
+### Annex 02 – online identification and authentication
+
 The service blueprint about online identification and authentication for
 the Wallet is described in the attached file:
-* [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf) 
 
-## Annex 03 – issuing mDL
+- [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf)
+
+### Annex 03 – issuing mDL
+
 The service blueprint about issuing mDL is described in the attached
-file: 
-* [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
+file:
 
-## Annex 04 – presenting mDL (proximity-supervised)
+- [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
+
+### Annex 04 – presenting mDL (proximity-supervised)
+
 The service blueprint about presenting mDL (proximity-supervised) is
 described in the attached file:
-* [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
 
-## Annex 05 – presenting mDL (proximity-unsupervised)
+- [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
+
+### Annex 05 – presenting mDL (proximity-unsupervised)
+
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
-* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
+
+- [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
