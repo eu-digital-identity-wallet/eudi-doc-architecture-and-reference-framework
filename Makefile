@@ -15,7 +15,6 @@ SOURCE_DOCS := $(wildcard docs/*.md)
 BUILD_DIR :=./build
 SITE_DIR :=./site
 EXPORTED_DOCS=\
- $(SOURCE_DOCS:.md=.html) \
  $(SOURCE_DOCS:.md=.pdf) \
  $(SOURCE_DOCS:.md=.docx) \
  $(SOURCE_DOCS:.md=.epub)
@@ -25,17 +24,11 @@ PANDOC=pandoc
 MKDOCS=mkdocs
 
 PANDOC_OPTIONS=--toc --metadata title="The European Digital Identity Wallet Architecture and Reference Framework" --metadata lang="en" --data-dir docs/media
-
-PANDOC_HTML_OPTIONS=--to html5 --embed-resources --standalone --css=styles/style.css
 PANDOC_PDF_OPTIONS= --pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_EPUB_OPTIONS=--to epub3
 
 # Pattern-matching Rules
-
-%.html : %.md
-	mkdir -p $(BUILD_DIR)/html
-	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $(BUILD_DIR)/html/$(notdir $@) $<
 
 %.pdf : %.md
 	mkdir -p $(BUILD_DIR)/pdf
@@ -54,7 +47,7 @@ PANDOC_EPUB_OPTIONS=--to epub3
 
 .PHONY: all clean
 
-all : $(EXPORTED_DOCS)
+all : $(EXPORTED_DOCS) mkdocs
 
 mkdocs:
 	$(MKDOCS) build

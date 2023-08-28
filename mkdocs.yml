@@ -1,6 +1,9 @@
 site_name: EUDI Wallet
 theme:
   name: material
-  highlightjs: true
-  hljs_languages:
-    - yaml
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
