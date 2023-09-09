@@ -38,46 +38,11 @@ the Commission and, where relevant for the functioning of the European
 Digital Identity (EUDI) Wallet infrastructure, other concerned public
 and private sector parties.
 
-This repository contains the "[Architecture and Reference Framework](arf.md)"
-(hereinafter the [ARF](arf.md)).
+This repository contains the "[Architecture and Reference Framework](docs/arf.md)"
+(hereinafter the [ARF](docs/arf.md)).
 
 The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
-
-## Build
-
-While the ARF is maintained in `Markdown`, this repository provides a
-process for generating `HTML`, `DOCX`, and `PDF` (work in progress)
-instances.
-
-Generate the derived files
-
-```bash
-make all
-```
-
-Clean up
-
-```bash
-make clean
-```
-
-### Prerequisites
-
-* `pandoc`
-* `npm dependencies`
-
-Install pandoc (Ubuntu 22.04):
-
-```bash
-sudo apt install pandoc
-```
-
-install npm dependencies:
-
-```bash
-npm install package.json
-```
 
 ## Contributing
 
