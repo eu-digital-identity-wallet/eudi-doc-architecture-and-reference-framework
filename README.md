@@ -1,14 +1,10 @@
 # The European Digital Identity Wallet
 
-[Digital Strategy](https://digital-strategy.ec.europa.eu//en)>
-[Policies](https://digital-strategy.ec.europa.eu/en/policies)>[Electronic
-Identification](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
 
-![An illustrative header graphic reading Digital Identity for all Europeans -
-Apersonal digital wallet for EU citizens and
-residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
+![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
 
-## The propsed Digital Identity Regulation
+
+## The proposed Digital Identity Regulation
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS)
 Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation),
