@@ -434,7 +434,8 @@ the Commission’s legislative proposal.
 The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
 
-![Figure 1: Overview of the EUDI Wallet roles](media/image1.png){ width=100% }
+
+![Figure 1: Overview of the EUDI Wallet roles](media/image1.png)
 <!-- <img src="media/image1.png" style="width:6.75521in;height:3.73425in" /> -->
 
 *Figure 1: Overview of the EUDI Wallet roles*
@@ -740,7 +741,7 @@ and/or service provided by a EUDI Wallet Provider. A EUDI Wallet
 Instance is a personal instance of a EUDI Wallet Solution that belongs
 to and is controlled by a User.
 
-![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png){ width=100% }
+![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png)
 <!-- <img src="media/image2.png" style="width:2.70313in;height:2.37745in" /> -->
 
 *Figure 2: Simplified EUDI Wallet Object Model*
@@ -768,7 +769,7 @@ is issued on or after the validity start date, it is immediately
 considered the state directly changes to valid. This means, however,
 that PID could be “pre-issued”.
 
-![Figure 3: State-chart of PID](media/image3.png){ width=100% }
+![Figure 3: State-chart of PID](media/image3.png)
 <!-- <img src="media/image3.png" style="width:2.26443in;height:2.54875in" /> -->
 
 *Figure 3: State-chart of PID*
@@ -798,7 +799,7 @@ of their EUDI Wallet Solutions. This means the EUDI Wallet Solution can
 be officially launched, and Instances of the Solution can be provided to
 Users.
 
-![Figure 4: State-chart of Wallet Solution](media/image4.png){ width=100% }
+![Figure 4: State-chart of Wallet Solution](media/image4.png)
 <!-- <img src="media/image4.png" style="width:2.80793in;height:2.68666in" /> -->
 
 *Figure 4: State-chart of Wallet Solution*
@@ -831,7 +832,7 @@ If the PID expires or is revoked, the EUDI Wallet is not automatically
 unusable, its state is merely downgraded back to **operational**. This
 may affect the validity of a (Q)EAA or a certificate for QES.
 
-![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
+![Figure 5: State-chart of Wallet Instance](media/image5.png)
 <!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
 
 *Figure 5: State-chart of Wallet Instance*
@@ -1100,7 +1101,7 @@ embedded trusted hardware or other remote EUDI Wallets components. Below
 is a conceptual representation of variations in implementing the EUDI
 Wallet components:
 
-![Figure 6: EUDI Wallet configurations conceptual model](media/image6.png){ width=100% }
+![Figure 6: EUDI Wallet configurations conceptual model](media/image6.png)
 <!-- <img src="media/image6.png" style="width:6.26389in;height:2.31944in" /> -->
 
 *Figure 6: EUDI Wallet configurations conceptual model*
@@ -1598,7 +1599,7 @@ specifications.*
 EUDI Wallet Solutions **MUST** support **Type 1** configuration that is
 mandatory for PID.
 
-![Figure 7. EUDI Wallet configurations.](media/image7.png){ width=100% }
+![Figure 7. EUDI Wallet configurations.](media/image7.png)
 <!-- <img src="media/image7.png" style="width:6.25641in;height:5.92615in" /> -->
 
 *Figure 7. EUDI Wallet configurations.*
@@ -1732,15 +1733,15 @@ Provider V2", 1 January 2023,
 
 \[COSE\] RFC9052 <https://www.rfc-editor.org/rfc/rfc9052>,
 
-> RFC9053 <https://www.rfc-editor.org/rfc/rfc9053>
+RFC9053 <https://www.rfc-editor.org/rfc/rfc9053>
 
 \[JOSE\] RFC7515 <https://www.rfc-editor.org/rfc/rfc7515.html>,
 
-> RFC7516 <https://www.rfc-editor.org/rfc/rfc7516.html>,
->
-> RFC7517 <https://www.rfc-editor.org/rfc/rfc7517.html>,
->
-> RFC7518 <https://www.rfc-editor.org/rfc/rfc7518.html>
+RFC7516 <https://www.rfc-editor.org/rfc/rfc7516.html>,
+
+RFC7517 <https://www.rfc-editor.org/rfc/rfc7517.html>,
+
+RFC7518 <https://www.rfc-editor.org/rfc/rfc7518.html>
 
 \[SOG-IS\] Agreed Cryptographic Mechanisms v1.2
 <https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1.2.pdf>
@@ -1760,8 +1761,7 @@ Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
     Regulation (EU) No 910/2014 as regards establishing a framework for
     a European Digital Identity, COM(2021) 281 final, 3.6.2021
 
-[^3]: <https://ec.europa.eu/transparency/expert-groups-register/screen/expert>
-    groups/consult?do=groupDetail.groupDetail&groupID=3032
+[^3]: <https://ec.europa.eu/transparency/expert-groups-register/screen/expert/groups/consult?do=groupDetail.groupDetail&groupID=3032>
 
 [^4]: <https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline>
 
@@ -1793,21 +1793,21 @@ Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
 [^12]: E.g. in case of death of User or in case of vulnerabilities to
     EUDI Wallet security.
 
-[^13]: **Commission Implementing Regulation (EU) 2015/1501 of 8
+[^13]: Commission Implementing Regulation (EU) 2015/1501 of 8
     September 2015 on the interoperability framework pursuant to Article
     12(8) of Regulation (EU) No 910/2014 of the European Parliament and
     of the Council on electronic identification and trust services for
-    electronic transactions in the internal market**
+    electronic transactions in the internal market
 
-[^14]: **Commission Implementing Regulation (EU) 2015/1502 of 8
+[^14]: Commission Implementing Regulation (EU) 2015/1502 of 8
     September 2015 on setting out minimum technical specifications and
     procedures for assurance levels for electronic identification means
     pursuant to Article 8(3) of Regulation (EU) No 910/2014 of the
     European Parliament and of the Council on electronic identification
     and trust services for electronic transactions in the internal
-    market**
+    market
 
-## Annexes
+## 10. Annexes
 
 ### Annex 01 - initialisation and activation
 
