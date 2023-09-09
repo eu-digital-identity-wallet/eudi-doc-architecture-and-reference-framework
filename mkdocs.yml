@@ -9,5 +9,5 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Home: index.md
+  - European digital identity: index.md
   - Architecture and reference framework: arf.md
