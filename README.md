@@ -1,10 +1,8 @@
 # The European Digital Identity Wallet
 
-[Digital Strategy](https://digital-strategy.ec.europa.eu//en)> [Policies](https://digital-strategy.ec.europa.eu/en/policies)>[Electronic Identification](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
-
 ![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
 
-## The propsed Digital Identity Regulation
+## The proposed Digital Identity Regulation
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
 Yet, there is no requirement for Member States to develop a national electronic identification and to make it interoperable with those in other Member States. This has led to discrepancies between countries.
