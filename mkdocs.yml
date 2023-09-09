@@ -7,3 +7,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+nav:
+  - European digital identity: index.md
+  - Architecture and reference framework: arf.md
