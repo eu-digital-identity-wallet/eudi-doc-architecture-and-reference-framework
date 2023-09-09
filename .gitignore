@@ -2,3 +2,5 @@
 /*.docx
 node_modules
 dist
+build
+site
