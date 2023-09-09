@@ -1,8 +1,6 @@
 # The European Digital Identity Wallet
 
-[Digital Strategy](https://digital-strategy.ec.europa.eu//en)>
-[Policies](https://digital-strategy.ec.europa.eu/en/policies)>[Electronic
-Identification](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
+[Digital Identity](https://digital-strategy.ec.europa.eu//en/policies/electronic-identification)
 
 ![An illustrative header graphic reading Digital Identity for all Europeans -
 Apersonal digital wallet for EU citizens and
@@ -53,15 +51,15 @@ the Commission and, where relevant for the functioning of the European
 Digital Identity (EUDI) Wallet infrastructure, other concerned public
 and private sector parties.
 
-This repository contains the "[Architecture and Reference Framework](docs/arf.md)"
-(hereinafter the [ARF](docs/arf.md)).
+This repository contains the "[Architecture and Reference Framework](arf.md)"
+(hereinafter the [ARF](arf.md)).
 
 The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct,
+Please read [CONTRIBUTING.md](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/CONTRIBUTING.md) for details on our code of conduct,
 and the process for submitting pull requests to us.
 
 ## Versioning
@@ -77,7 +75,7 @@ See the list of [contributors](https://github.com/eu-digital-identity-wallet/arc
 
 This project is licensed under the [Attribution 4.0
 International](http://creativecommons.org/licenses/by/4.0/) - see the
-[LICENSE.txt](LICENSE) file for details.
+[LICENSE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENSE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 
