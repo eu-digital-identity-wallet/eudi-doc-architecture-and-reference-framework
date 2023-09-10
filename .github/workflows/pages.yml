@@ -34,4 +34,4 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mike
-      - run: mike deploy --push
+      - run: mike deploy --push 1.1.0
