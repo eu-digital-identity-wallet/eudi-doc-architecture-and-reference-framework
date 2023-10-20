@@ -2507,3 +2507,13 @@ described in the attached file:
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
 * [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
+
+## Annex 06 – PID rulebook
+The PID attribute schema, indicative EUDI Wallet Instance Attestation
+and Trust Infrastructure details are further detailed in the attached
+file:
+* [Annex 06 – EUDI Wallet – PID rulebook.pdf](./annexes/annex-06-pid-rulebook.pdf)
+
+## Annex 07 - mDL rulebook
+The mDL attribute schema is further detailed in the attached file:
+* [Annex 07 – EUDI Wallet – mDL rulebook.pdf](./annexes/annex-07-mdl-rulebook.pdf)
