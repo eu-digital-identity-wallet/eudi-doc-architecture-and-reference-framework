@@ -1243,9 +1243,9 @@ may change as the specifications evolve.
 
 *Table 3 - Issuing requirements for PID*
 
-## 5.2. Qualified and Non-Qualified Electronic Attestation of Attribute
+## 6.3. Qualified and Non-Qualified Electronic Attestation of Attributes
 
-### 5.2.1 Issuing requirements for (Q)EAA
+### 6.3.1 Issuing requirements for (Q)EAA
 
 The following table defines the requirements applicable to (Q)EAA-s
 regarding what information is included in the attestation, such as for
@@ -1259,20 +1259,22 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-| \#     | Requirement                                                                                                                                                                                                                   |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1**  | **(Q)EAA MUST contain the information required to identify the Issuer.**                                                                                                                                                      |
-| **2**  | **(Q)EAA MUST contain the information required to perform a data integrity check.**                                                                                                                                           |
-| **3**  | **(Q)EAA MUST contain the information required for verifying the authenticity of the (Q)EAA.**                                                                                                                                |
-| **4**  | **(Q)EAA MUST contain all the information required to perform validity status checks on the (Q)EAA.**                                                                                                                         |
-| **6**  | **(Q)EAA SHOULD include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.**                                                       |
-| **7**  | **(Q)EAA MUST be issued in accordance with one of the data model specifications: ISO/IEC 18013-5:2021, W3C Verifiable Credentials Data Model 1.1.**                                                                           |
-| **8**  | **(Q)EAA SHOULD be encoded as one of the following formats: CBOR or JSON accordingly to the data model used for the attestation.**                                                                                            |
-| **9**  | **EAA MAY be encoded as JSON-LD.**                                                                                                                                                                                            |
+Mobile Driving Licence attestations are further specified in mDL Rule Book in Annex 07.
+
+| \#     | Requirement  |
+|--------|--------------|
+| **1**  | **(Q)EAA MUST contain the information required to identify the Issuer.**                              |
+| **2**  | **(Q)EAA MUST contain the information required to perform a data integrity check.**                   |
+| **3**  | **(Q)EAA MUST contain the information required for verifying the authenticity of the (Q)EAA.**        |
+| **4**  | **(Q)EAA MUST contain all the information required to perform validity status checks on the (Q)EAA.** |
+| **6**  | **(Q)EAA SHOULD include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.** |
+| **7**  | **(Q)EAA MUST be issued in accordance with one of the data model specifications: ISO/IEC 18013-5:2021, W3C Verifiable Credentials Data Model 1.1.**                     |
+| **8**  | **(Q)EAA SHOULD be encoded as one of the following formats: CBOR or JSON accordingly to the data model used for the attestation.**                                      |
+| **9**  | **EAA MAY be encoded as JSON-LD.**  |
 | **10** | **(Q)EAA SHOULD enable Selective Disclosure of attributes either by using Selective Disclosure for JWTs (SD-JWT) or Mobile Security Object (ISO/IEC 18013-5) scheme accordingly to the data model used for the attestation.** |
-| **11** | **(Q)EAA SHOULD use one of the following signature and encryption formats as detailed in: JOSE RFCs, COSE RFCs accordingly to data model used for the attestation.**                                                          |
-| **12** | **(Q)EAA SHOULD use signature and encryption algorithms in accordance with SOG-IS ACM.**                                                                                                                                      |
-| **13** | **(Q)EAA SHOULD be issued accordingly to OpenID4VCI protocol.**                                                                                                                                                               |
+| **11** | **(Q)EAA SHOULD use one of the following signature and encryption formats as detailed in: JOSE RFCs, COSE RFCs accordingly to data model used for the attestation.**      |
+| **12** | **(Q)EAA SHOULD use signature and encryption algorithms in accordance with SOG-IS ACM.** |
+| **13** | **(Q)EAA SHOULD be issued accordingly to OpenID4VCI protocol.**                          |
 
 *Table 4 - Issuing requirements for (Q)EAA*
 
