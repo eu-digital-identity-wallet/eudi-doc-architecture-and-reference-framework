@@ -1278,7 +1278,7 @@ Mobile Driving Licence attestations are further specified in mDL Rule Book in An
 
 *Table 4 - Issuing requirements for (Q)EAA*
 
-# 6. Reference Architecture and Flows
+# 7. Reference Architecture and Flows
 
 The reference architecture represents a set of choices made during the
 architecture design process for EUDI Wallet Solutions. These choices
@@ -1287,7 +1287,7 @@ scenarios where either the User or the Relying Party, or both, are
 offline while providing flexibility for Member States to implement an
 EUDI Wallet Solution in various configurations of components.
 
-## 6.1. Design considerations
+## 7.1. Design considerations
 
 To limit complexity, the initial EUDI Wallet Solution specifications
 will include only a minimum number of solution components that enable
@@ -1304,7 +1304,7 @@ The solution components proposed herein evidence the current expectation
 of using the ISO/IEC 23220 standard series, once publicly available, for
 future ARF versions.
 
-## 6.2. Architecture Components
+## 7.2. Architecture Components
 
 The following components have been identified as the building blocks of
 the EUDI Wallet architecture needed to implement an EUDI Wallet
@@ -1384,7 +1384,7 @@ Solution:
 - **Validity status check**. Mechanism to publish and obtain information
   about validity status of, inter alia, PID, (Q)EAA, certificate, etc.
 
-## 6.3. Logical architecture
+## 7.3. Logical architecture
 
 Where an EUDI Wallet Solution has an application running on a mobile
 device, there may be a need for additional trusted components which are
@@ -1591,7 +1591,7 @@ accelerometer etc.</p>
 
 *Table 6: mapping of the EUDI Wallet components to perimeters*
 
-## 6.4. Types of Flows
+## 7.4. Types of Flows
 
 This section describes the four types of flows that the EUDI Wallet MUST
 support on a general level. The four flows are as follows:
@@ -1650,9 +1650,9 @@ exchange.
 The initial PID and EAA configurations are detailed next (configurations
 may be added as required in the future).
 
-## 6.5. The Wallet Configurations
+## 7.5. The Wallet Configurations
 
-### 6.5.1. Rationale
+### 7.5.1. Rationale
 
 One of the goals of EUDI Wallet development is to harmonise PID and
 (Q)EAA across borders. Ideally, this means a very small number of
@@ -1680,7 +1680,7 @@ that cannot be met with the existing configurations. The governance and
 process of how new configurations could be added, is described in
 chapter 8.
 
-### 6.5.2. Initial Configurations
+### 7.5.2. Initial Configurations
 
 EUDI Wallet Solutions will initially support two configurations:
 
@@ -1701,7 +1701,7 @@ finance, health, access to premises) and will have requirements that are
 satisfied by Type 1 configuration. If so, these (Q)EAAs will be issued
 in accordance with Type 1 configuration.
 
-### 6.5.3. Configuration Requirements
+### 7.5.3. Configuration Requirements
 
 This section sets the requirements for the configurations by comparing
 Type 1 and Type 2 configuration across different groups of requirements.
@@ -1907,7 +1907,7 @@ mandatory for PID.
 
 *Figure 7. EUDI Wallet configurations.*
 
-# 7. The Certification process of EUDI Wallets
+### 7.5.4 The Certification process of EUDI Wallets
 
 Member States, according to Article 6c (3) of the proposal, must
 designate accredited CABs which will oversee carrying out conformity
