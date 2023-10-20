@@ -1941,18 +1941,18 @@ certification schemes, or parts thereof, to certify the compliance of
 wallets, or parts thereof, with the applicable cybersecurity
 requirements.
 
-# 8. The Architecture and Reference Framework Development Process
+# 8 The Architecture and Reference Framework Development Process
 
-## 8.1. Publication
+## 8.1 Publication
 
 This document and the backlog items are made publicly available at 
 the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described 
-in Chapter 8.2.
+in Chapter 9.2.
 
 * https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/
 
 
-## 8.2. Update
+## 8.2 Update
 
 To ensure steady and fast progress on elaborating and updating this
 document, the following process and work methodology is applied.
@@ -1986,7 +1986,7 @@ This document will be aligned to the outcome of the legislative
 negotiations of the proposal for a European Digital Identity Framework
 with updates being made accordingly.
 
-### 8.2.1. Document versioning
+### 8.2.1 Document versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
 version control system and the following semantic versioning scheme will
@@ -2005,7 +2005,10 @@ the document or information has been removed from the document, and
 **PATCH** version is incremented when minor changes have been made
 (e.g., fixing typos).
 
-# 9. References
+# 9 References
+\[2015/1505\] COMMISSION IMPLEMENTING DECISION (EU) 2015/1505
+of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market
+
 
 \[Key words for use in ARF to indicate requirement levels\]
 https://www.rfc-editor.org/rfc/rfc2119
@@ -2022,16 +2025,15 @@ C., Zundel, B., and D. Chadwick, "Verifiable Credentials Data Model
 Looker, "OpenID for Verifiable Presentations", 30 December 2022,
 https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
 
-\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, "OpenID for
-Verifiable Credential Issuance", 30 December 2022,
-https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html
+\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023   Retrievable from https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
+
+\[Prop_eIDAS\] COM(2021) 281 final
 
 \[SIOPv2\] K. Yasuda, T. Lodderstedt, M. Jones, "Self-Issued OpenID
 Provider V2", 1 January 2023,
 https://openid.net/specs/openid-connect-self-issued-v2-1_0.html
 
-\[SD-JWT\]
-https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-02.html
+\[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023 (TODO: Add the footnote 24)
 
 \[W3C StatusList2021\] https://w3c-ccg.github.io/vc-status-list-2021/
 
