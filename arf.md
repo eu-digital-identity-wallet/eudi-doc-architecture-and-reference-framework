@@ -1137,18 +1137,17 @@ How to enable trust for the Relying Party to be sure that the RP will not over-a
 ### 5.3.3 Attestation management
 Throughout its lifetime, an attestation needs to be managed by the Issuer. This means that for the purposes of this Trust Model, attestation management has similarities to the part of EUDI Wallet Instance management that involves the EUDI Wallet Provider as the issuer of a EUDI Wallet Instance attestation, which was already discussed in section 5.2.3..
 
+# 6. Requirements for Issuing PID and (Q)EAA
 
+## 6.1 Attestation rulebook
 
+Since version 1.2.0 of this document, the concept of an attestation rulebook has been introduced. This is designed to compile a set of rules, guidelines and standards governing the verification, management, and usage of a specific attestation or group of attestations related to a use case within the EUDI ecosystem. The primary goal of the rulebooks is to ensure interoperability, security, privacy, and trust for EUDI Wallet’s attestations (PID and (Q)EAA).
 
-//// --- change the text below --- /////
+Common compulsory specifications, rules, and guidelines are outlined in the architecture and reference framework document, while those specific to use cases are collated in the attestation's rulebooks. Two such rulebooks, namely the PID and mDL rulebooks, have currently been included as annexes to this document.
 
+## 6.2 Person Identification Data
 
-
-# 5. Requirements for Issuing PID and (Q)EAA
-
-## 5.1. Person Identification Data
-
-This chapter details the PID set as presented by the EUDI Wallet.
+This chapter details the PID set as presented by the EUDI Wallet. Further specifications regarding PID are detailed in the PID Rule Book, found in Annex 06.
 
 A PID Provider may issue a PID set to the EUDI Wallet and enable the use
 of the EUDI Wallet as an electronic identification means when accessing
@@ -1163,12 +1162,12 @@ In the following the data format as presented to the Relying Party will
 be described, without any assumptions on how the EUDI Wallet retrieved
 or generated this data beforehand.
 
-### 5.1.1 The Dataset
+### 6.2.1 The Dataset
 
-#### 5.1.2.1. Principles for PID set revision
+#### 6.2.1.1. Principles for PID set revision
 
 This chapter proposes a revision of the eIDAS optional datasets
-specified in eIDAS CIR 2015/1501[^13] and discusses further
+specified in eIDAS CIR 2015/1501[^13] (TODO: Update this footnote number to 20) and discusses further
 specification, data minimization and identifiers.
 
 The revision of the eIDAS optional dataset proposed herein is
@@ -1184,40 +1183,40 @@ constructed based on the following principles:
   legal persons and what is needed for electronic identification
   purposes.
 
-#### 5.1.1.1. PID Attributes for Natural Persons
+#### 6.2.1.2 PID Attributes for Natural Persons
 
-The below table provides an overview of the current PID attributes that
-are included in the eIDAS framework, and the proposed additional
-optional attributes that are suggested to also be included.
+The below table provides an overview of and optional PID attributes for natural persons. 
 
-| Mandatory eIDAS Attributes | Optional eIDAS Attributes | Possible additional optional attributes                                                       |
-|----------------------------|---------------------------|-----------------------------------------------------------------------------------------------|
-| **Current Family Name**    | **Family Name at Birth**  | **Nationality/Citizenship\***                                                                 |
-| **Current First Names**    | **First Names at Birth**  |                                                                                               |
-| **Date of Birth**          | **Place of Birth**        | **Optional attributes used at national level, e.g., tax number, social security number etc.** |
-| **Unique Identifier**      | **Current Address**       |                                                                                               |
-|                            | **Gender**                |                                                                                               |
+| Mandatory PID Attributes   | Optional PID Attributes   |
+|----------------------------|---------------------------|
+| family_name                | family_name_birth         |
+| given_name                 | given_name_birth          |
+| birth_date                 | birth_place               | 
+| unique_id                  | resident_address          |
+|                            | gender                    |
+|                            | age_over_18               |
+|                            | age_over_NN               |
+|                            | age_in_years              |
+|                            | age_birth_year            |
+|                            | birth_country             |
+|                            | birth_state               |
+|                            | birth_city                |
+|                            | resident_address          |
+|                            | resident_country          | 
+|                            | resident_state            | 
+|                            | resident_city             |
+|                            | resident_postal_code      |
+|                            | resident_street           |
+|                            | resident_house_number     | 
+|                            | nationality               |
 
 *Table 2 - Mandatory and optional PID attributes for natural persons*
 
-*\*Nationality/Citizenship – this is a potential multi-value attribute
-because citizens may have more than one nationality. However,
-Nationality/Citizenship may also be communicated in the form of
-(Q)EAA’s, to allow citizens to demonstrate a given nationality, without
-updating the PID set or involving the PID Provider.*
-
 Possible additional optional attributes have been added to facilitate a
 wider range of authentication options both online and offline as well as
-addressing learning from the current eIDAS implementations.
+addressing learning from the current eIDAS implementations. Metadata associated with a PID set is further detailed in Annex 06.
 
-Metadata associated with the PID may additionally detail the date of
-issuance and/or expiration, the issuing authority and/or Member State,
-information necessary to perform holder binding and/or proof of
-possession, the information or location of the services that can be used
-to enquire about the validity status of and potentially more
-information.
-
-### 5.1.2 Issuing requirements for PID
+### 6.2.2 Issuing requirements for PID
 
 The following table defines the requirements applicable to PID regarding
 what information is included in the attestation, such as for purposes of
@@ -1229,18 +1228,18 @@ requirements. Note that these requirements are primarily aimed at the
 first version of the EUDI Wallet Solution specifications, and that they
 may change as the specifications evolve.
 
-| \#     | Requirement                                                                                                                                                                                           |
-|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1**  | **PID attestation MUST contain the information required to identify the PID Provider.**                                                                                                               |
-| **2**  | **PID attestation MUST contain the information required to perform a data integrity check.**                                                                                                          |
-| **3**  | **PID attestation MUST contain the information required for verifying the authenticity.**                                                                                                             |
-| **4**  | **PID attestation MUST contain all the information required to perform validity status checks on the attestation.**                                                                                   |
-| **5**  | **PID attestation MUST include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.**                        |
-| **6**  | **PID attestation MUST be issued to be presented in accordance with both the data model specified in ISO/IEC 18013-5:2021 and the W3C Verifiable Credentials Data Model 1.1.**                        |
-| **7**  | **PID attestation MUST be encoded as CBOR and JSON format.**                                                                                                                                          |
+| \#     | Requirement |
+|--------|-------------|
+| **1**  | **PID attestation MUST contain the information required to identify the PID Provider**        |
+| **2**  | **PID attestation MUST contain the information required to perform a data integrity check.**  |
+| **3**  | **PID attestation MUST contain the information required for verifying the authenticity.**     |
+| **4**  | **PID attestation MUST contain all the information required to perform validity status checks on the attestation.** |
+| **5**  | **PID attestation MUST include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.** |
+| **6**  | **PID attestation MUST be issued to be presented in accordance with both the data model specified in ISO/IEC 18013-5:2021 and the W3C Verifiable Credentials Data Model 1.1.** |
+| **7**  | **PID attestation MUST be encoded as CBOR and JSON format.** |
 | **8**  | **PID attestation MUST enable Selective Disclosure of attributes by using Selective Disclosure for JWTs (SD-JWT) and Mobile Security Object (ISO/IEC 18013-5) scheme accordingly to the data model.** |
-| **9**  | **PID attestation MUST use signatures and encryptions formats as detailed in JOSE RFCs and COSE RFCs.**                                                                                               |
-| **10** | **PID attestation MUST use signature and encryption algorithms in accordance with SOG-IS ACM.**                                                                                                       |
+| **9**  | **PID attestation MUST use signatures and encryptions formats as detailed in JOSE RFCs and COSE RFCs.** |
+| **10** | **PID attestation MUST use signature and encryption algorithms in accordance with SOG-IS ACM.**         |
 
 *Table 3 - Issuing requirements for PID*
 
