@@ -866,7 +866,6 @@ for QES.
 
 ![Figure 5: State-chart of Wallet Instance](media/image5.png){ width=100% }
 <!-- <img src="media/image5.png" style="width:2.08195in;height:2.53535in" /> -->
-TODO: Update the image
 *Figure 5: State-chart of Wallet Instance*
 
 Please note that this is independent from the possibility of a PID or
