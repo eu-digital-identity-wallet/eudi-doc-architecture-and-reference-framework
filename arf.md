@@ -1491,9 +1491,8 @@ or generated this data beforehand.
 #### 6.2.1.1. Principles for PID set revision
 
 This chapter proposes a revision of the eIDAS optional datasets
-specified in eIDAS CIR 2015/1501[^19] (TODO: Update this footnote number
-to 20) and discusses further specification, data minimization and
-identifiers.
+specified in eIDAS CIR 2015/1501[^19] and discusses further
+specification, data minimization and identifiers.
 
 The revision of the eIDAS optional dataset proposed herein is
 constructed based on the following principles:
