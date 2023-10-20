@@ -6,7 +6,7 @@ _June 2023_
 _Version 1.2.0_
 
 
-| Version | Date | Changes |
+| Version | Date[^1] | Changes |
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
@@ -19,7 +19,7 @@ _Version 1.2.0_
 
 ## 1.1. Context
 
-On 3 June 2021, the European Commission adopted a Recommendation[^1]
+On 3 June 2021, the European Commission adopted a Recommendation[^2]
 calling on Member States to work towards the development of a Toolbox
 including a technical Architecture and Reference Framework (hereinafter
 the ARF), a set of common standards and technical specifications and a
@@ -27,11 +27,11 @@ set of common guidelines and best practices.
 
 The Recommendation specifies that these outcomes will serve as a basis
 for the implementation of the proposal for a European Digital Identity
-Framework[^2], without the process of developing the Toolbox interfering
+Framework[^3], without the process of developing the Toolbox interfering
 with, or prejudging the legislative process.
 
 The Recommendation foresees that the Toolbox is developed by Member
-States’ experts in the eIDAS Expert Group[^3] in close coordination with
+States’ experts in the eIDAS Expert Group[^4] in close coordination with
 the Commission and, where relevant for the functioning of the European
 Digital Identity (EUDI) Wallet infrastructure, other concerned public
 and private sector parties.
@@ -45,13 +45,13 @@ On this basis, an outline was defined providing a more detailed
 description of the EUDI Wallet concept, its functionalities and security
 aspects and on several core, use cases between October and December
 2021. That work resulted in the Outline of the ARF, adopted by the eIDAS
-Expert Group in February 2022. The Outline was published on Futurium[^4]
+Expert Group in February 2022. The Outline was published on Futurium[^5]
 for public feedback. When the feedback period closed on 15 April 2022,
 36 stakeholders had provided their feedback on the Outline.
 
 The eIDAS Expert Group has since further developed the concepts and
 specifications for the European Digital Identity Framework based on the
-Commission’s legislative proposal[^5], and will continue to do so until 
+Commission’s legislative proposal[^6], and will continue to do so until 
 the legislative negotiations have been concluded and implementing acts 
 have been adopted.
 
@@ -95,7 +95,7 @@ with Chapter 9.
 ### 1.3.1. The Reference Implementation of an EUDI Wallet
 
 The Commission will provide a reference implementation of an EUDI Wallet
-in a mobile form factor[^6]. The code for the EUDI Wallet reference
+in a mobile form factor[^7]. The code for the EUDI Wallet reference
 implementation will be provided as open source for re-use by
 implementers across Europe. The first implementers will be the projects
 selected to carry out Large Scale Pilots (LSPs), following a call for
@@ -250,8 +250,7 @@ present a subset of attributes provided by the PID and/or
 <td><strong>Trust is the characteristic that one party, is willing to
 rely upon a third-party entity to execute a set of actions and/or to
 make a set of assertions about a set of subjects and/or
-scopes<a href="#table1-fn1" class="footnote-ref" id="table1-fnref1"
-role="doc-noteref"><sup>1</sup></a>.</strong></td>
+scopes[^8].</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Trust Framework*</em></td>
@@ -324,15 +323,6 @@ CAB.</strong></td>
 </tr>
 </tbody>
 </table>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="table1-fn1"><p>“OASIS Trust,” [Online]. Available:
-http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 *Table 1: Definitions*
 
@@ -437,7 +427,7 @@ Attestations of Attributes and a means for exchanging them by a learner.
 
 The EUDI Wallet shall facilitate complying with strong customer
 authentication requirements. In line with the Commission’s Retail
-Payments Strategy[^7], the use case would be developed in close
+Payments Strategy[^9], the use case would be developed in close
 coordination with Member States’ advisory groups on retail payments and
 the finance industry.
 
@@ -534,7 +524,7 @@ PID Providers are trusted entities responsible to:
 
 - issue PID to the EUDI Wallet in a harmonised common format and
 
-- make available information[^8] for Relying Parties to verify the
+- make available information[^10] for Relying Parties to verify the
   validity of the PID.
 
 The terms and conditions of these services are for each Member State to
@@ -574,7 +564,7 @@ mentioned depending on the specific role and their criticality for
 example the different roles and actors involved with remote signing
 processes.
 
-When used, Trusted List[^9] need to provide a registration service for
+When used, Trusted List[^11] need to provide a registration service for
 the relevant entities, maintain a registry and enable third party access
 to the registry information. The terms and conditions of entities to
 become registered are for each registrar to determine unless specified
@@ -669,7 +659,7 @@ Relying Parties are responsible for authenticating PID and (Q)EAA.
 ### 4.1.11. Conformity Assessment Bodies (CAB)
 
 The EUDI Wallets must be certified by accredited public or private
-bodies designated by Member States[^10]. QTSPs need to be audited
+bodies designated by Member States[^12]. QTSPs need to be audited
 regularly by Conformity Assessment Bodies (CABs). CABs are accredited by
 a national accreditation body according to Regulation 765/2008 as
 responsible for carrying out assessments on which Member States will
@@ -724,7 +714,7 @@ critical for wide-spread adoption of (Q)EAAs.
 ### 4.1.15. National Accreditation Bodies 
 
 National Accreditation Bodies (NAB) under Regulation (EC) No
-765/2008[^11] are the bodies in Member States that performs
+765/2008[^13] are the bodies in Member States that performs
 accreditation with authority derived from the Member State. NABs
 accredit CABs as competent, independent, and supervised professional
 certification bodies in charge of certifying products/services/processes
@@ -985,7 +975,7 @@ To be done.
 
 ### 5.2.2	EUDI Wallet Instance activation
 
-#### 5.2.2.1	Required trust relationships (TODO: Add the footnote)
+#### 5.2.2.1	Required trust relationships[^14]
 
 After its' installation, a new EUDI Wallet Instance will need to be
 activated by the Wallet Provider. Activation has at least the following
@@ -1330,8 +1320,8 @@ Regarding the technical implementation of these steps:
     ARF. Concrete ideas for such a mechanism have already been proposed
     within the eIDAS Expert Group and will be included in a later
     version of this Trust Model.
-* For remote flows, Chapters 6 and 7 require support for [SD-JWT]  .
-  * For step 1 above, [SD-JWT] provides a similar trust mechanism as the
+* For remote flows, Chapters 6 and 7 require support for \[SD-JWT\][^15]  .
+  * For step 1 above, \[SD-JWT\] provides a similar trust mechanism as the
     MSO mechanism in ISO/IEC 18013-5.
   * Like ISO/IEC 18013-5, SD-JWT does not define a revocation mechanism. 
 
@@ -1340,8 +1330,7 @@ Regarding the technical implementation of these steps:
 
 The Relying Party must be able to trust that an attestation it receives
 was not copied and replayed. In other words, the RP trusts that the
-attestation is bound to the same device to which the Issuer issued it
-(TODO: Add the footnote 17). 
+attestation is bound to the same device to which the Issuer issued it [^16]. 
 
 The RP can trust that this is the case if the EUDI Wallet Instance signs
 some contextual information with the private key of the attestation.
@@ -1402,8 +1391,7 @@ The mechanism(s) for User binding depend on the type of use case:
   transaction, on behalf of  the Relying Party. If User binding is
   required in such cases, the RP must request the User portrait, next to
   other attributes, and the EUDI Wallet Instance must release it. The
-  portrait must be signed by a trusted Issuer. (TODO: Add the footnote
-  18) The human supervisor then visually compares this portrait to the
+  portrait must be signed by a trusted Issuer [^17]. The human supervisor then visually compares this portrait to the
   face of the person presenting the attestation. However, please note
   that the presence and use of the User portrait (as well as other
   biometrics) in the PID will be further detailed in a future version of
@@ -1418,8 +1406,7 @@ The mechanism(s) for User binding depend on the type of use case:
   User portrait for user authentication by the RP is generally
   considered to be impractical. Relying Parties must therefore trust
   User authentication mechanisms present on or connected to the device
-  which the EUDI Wallet Instance is installed on. (TODO: Add footnote
-  19)
+  which the EUDI Wallet Instance is installed on [^18].
 
 #### 5.3.2.6 User trusts the identity of the Relying Party
 
@@ -1505,7 +1492,7 @@ or generated this data beforehand.
 #### 6.2.1.1. Principles for PID set revision
 
 This chapter proposes a revision of the eIDAS optional datasets
-specified in eIDAS CIR 2015/1501[^13] (TODO: Update this footnote number
+specified in eIDAS CIR 2015/1501[^19] (TODO: Update this footnote number
 to 20) and discusses further specification, data minimization and
 identifiers.
 
@@ -2027,7 +2014,7 @@ EUDI Wallet Solutions will initially support two configurations:
 
 - Type 1 configuration is aimed specifically at use cases where the
   Relying Party relies on guarantees required for the LoA High as
-  defined in CIR 2015/1502[^14], to enable cross border identification
+  defined in CIR 2015/1502[^20], to enable cross border identification
   using PID attributes at LoA High. Type 1 configuration is mainly
   designed for purposes of PID.
 
@@ -2121,8 +2108,7 @@ binding (i.e., attribute request for PID).</td>
 <tr class="odd">
 <td>Attestation exchange Protocol – 4</td>
 <td>EUDI Wallet Solution [...] support attestation exchange protocol
-alternatives<a href="#table7-fn1" class="footnote-ref" id="fnref1.2"
-role="doc-noteref"><sup>1</sup></a>.</td>
+alternatives [^21].</td>
 <td>MAY</td>
 <td>MAY</td>
 </tr>
@@ -2366,7 +2352,7 @@ C., Zundel, B., and D. Chadwick, "Verifiable Credentials Data Model
 Looker, "OpenID for Verifiable Presentations", 30 December 2022,
 https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
 
-\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023   Retrievable from https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
+\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023 [^22] Retrievable from https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
 
 \[Prop_eIDAS\] COM(2021) 281 final
 
@@ -2374,7 +2360,7 @@ https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
 Provider V2", 1 January 2023,
 https://openid.net/specs/openid-connect-self-issued-v2-1_0.html
 
-\[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023 (TODO: Add the footnote 24)
+\[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023 [^23]
 
 \[W3C StatusList2021\] https://w3c-ccg.github.io/vc-status-list-2021/
 
@@ -2397,63 +2383,104 @@ https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1
 Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
 https://www.w3.org/TR/json-ld/
 
-[^1]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021
+[^1]: The date of adoption by the eIDAS Expert Group.
+
+[^2]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021
     on a common Union Toolbox for a coordinated approach towards a
     European Digital Identity Framework, OJ L 210/51, 14.6.2021
 
-[^2]: All references in the document to the revision of the eIDAS
+[^3]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission’s
     proposal of 3 June 2021, unless otherwise indicated. Proposal for a
     REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL amending
     Regulation (EU) No 910/2014 as regards establishing a framework for
     a European Digital Identity, COM(2021) 281 final, 3.6.2021
 
-[^3]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert
+[^4]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert
     groups/consult?do=groupDetail.groupDetail&groupID=3032
 
-[^4]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
+[^5]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
 
-[^5]: All references in the document to the revision of the eIDAS
+[^6]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission’s
     proposal of 3 June 2021, unless otherwise indicated.
 
-[^6]: A first release is currently planned for Q2 2023, followed by
+[^7]: A first release is currently planned for Q2 2023, followed by
     further releases.
 
-[^7]: Communication from the Commission to the European Parliament, the
+[^8]: “OASIS Trust,” \[Online\]. Available: http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.
+
+[^9]: Communication from the Commission to the European Parliament, the
     Council, the European Economic and Social Committee and the
     Committee of the Regions on a Retail Payments Strategy for the EU
     COM/2020/592 final.
 
-[^8]: Without prejudice to the actual mechanism of how the information
+[^10]: Without prejudice to the actual mechanism of how the information
     is provided, including whether directly or indirectly.
 
-[^9]: Further precisions to the specifics about how the trusted lists
+[^11]: Further precisions to the specifics about how the trusted lists
     could be implemented will be brought later.
 
-[^10]: Article 6c (3)
+[^12]: Article 6c (3)
 
-[^11]: Regulation (EC) No 765/2008 of the European Parliament and of the
+[^13]: Regulation (EC) No 765/2008 of the European Parliament and of the
     Council of 9 July 2008 setting out the requirements for
     accreditation and market surveillance relating to the marketing of
     products and repealing Regulation (EEC) No 339/93
 
-[^12]: E.g. in case of death of User or in case of vulnerabilities to
-    EUDI Wallet security.
+[^14]: Please note that work on further specifying the EUDI Wallet
+    Instance Attestation is planned to be carried out. This section may
+    need to be revised depending on the results of that work. For
+    instance, EUDI Wallet Instance Attestation may not be issued in all
+    cases nor are alternative possibilities excluded from consideration.  
 
-[^13]: **Commission Implementing Regulation (EU) 2015/1501 of 8
+[^15]: *TODO: The note is empty. The Word docuement has only the reference.*
+
+[^16]: The ARF implicitly requires device binding for Type 1 Wallet
+    configurations (by requiring support for ISO/IEC 18013-5 and SD-JWT)
+    and recommends it for Type 2 configurations.  However, Type 2 Wallet
+    configurations are out of scope of this version of the Trust Model.
+
+[^17]: Preferably the same Issuer that also signed the other attributes
+    that were released. However, the combined presentation of attributes
+    originating from different attestations will be further detailed in
+    a future version of this document.
+
+[^18]: Note that this implies that Relying Parties must also trust
+    device binding, see section 5.3.2.4.. The RP trusts that the
+    attestation is bound a device trusted by the Issuer, and
+    subsequently trusts that this device has properly authenticated the
+    User.
+
+[^19]: Commission Implementing Regulation (EU) 2015/1501 of 8
     September 2015 on the interoperability framework pursuant to Article
     12(8) of Regulation (EU) No 910/2014 of the European Parliament and
     of the Council on electronic identification and trust services for
-    electronic transactions in the internal market**
+    electronic transactions in the internal market
 
-[^14]: **Commission Implementing Regulation (EU) 2015/1502 of 8
+[^20]: Commission Implementing Regulation (EU) 2015/1502 of 8
     September 2015 on setting out minimum technical specifications and
     procedures for assurance levels for electronic identification means
     pursuant to Article 8(3) of Regulation (EU) No 910/2014 of the
     European Parliament and of the Council on electronic identification
     and trust services for electronic transactions in the internal
-    market**
+    market
+
+[^21]: A noteworthy mention is the mdoc REST API as detailed in the
+    draft ISO/IEC 23220-4
+
+[^22]: The exact version to be referenced is to be determined. [ARF]
+    references v0.14 of 30 December 2022. Draft 18 is the latest version
+    available at the time of writing of this document. The level of
+    interoperability between these versions is not known. As [OpenID4VP]
+    is still under development, presumably later versions will become
+    available over time.
+
+[^23]: The exact version to be referenced is to be determined. [ARF]
+    references v0.2. v0.4 is the latest version available at the time of
+    writing of this document. The level of interoperability between
+    these versions is not known. As [SD-JWT] is still under development,
+    presumably later versions will become available over time.
 
 # Annexes 
 ## Annex 01 - initialisation and activation
