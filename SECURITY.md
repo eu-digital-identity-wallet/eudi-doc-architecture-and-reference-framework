@@ -10,14 +10,14 @@ At the European Commission, we treat the security of our Communication and Infor
 ## If you have identified a vulnerability, please do the following
 
 - E-mail your findings to <EC-VULNERABILITY-DISCLOSURE@ec.europa.eu>, specifying whether or not you agree to your name or pseudonym being made publicly available as the discoverer of the problem.
-- Encrypt your findings using our [PGP key](https://sks.hnet.se/pks/lookup?search=EC-VULNERABILITY-DISCLOSURE%40ec.europa.eu&fingerprint=on&op=index) to prevent this critical information from falling into the wrong hands.
-- Provide us sufficient information to reproduce the problem so that we can resolve it as quickly as possible. Usually, the IP address or the URL of the affected system and a description of the vulnerability will be sufficient, but complex vulnerabilities may require further explanation in terms of technical information or potential proof-of-concept code.
+- Encrypt your findings using our [PGP key](https://pgp.mit.edu/pks/lookup?op=get&search=0x6773AACDF09F6628) to prevent this critical information from falling into the wrong hands.
+- Provide us with sufficient information to reproduce the problem so that we can resolve it as quickly as possible. Usually, the IP address or the URL of the affected system and a description of the vulnerability will be sufficient, but complex vulnerabilities may require further explanation in terms of technical information or potential proof-of-concept code.
 - Provide your report in English, preferably, or in any other official language of the European Union.
 - Inform us if you agree to make your name/pseudonym publicly available as the discoverer of the vulnerability.
 
 ## Please do not do the following
 
-- Do not take advantage of the vulnerability or problem you have discovered, for example by downloading more data than necessary to demonstrate the vulnerability, deleting, or modifying other people’s data.
+- Do not take advantage of the vulnerability or problem you have discovered, for example, by downloading more data than necessary to demonstrate the vulnerability, deleting, or modifying other people’s data.
 - Do not reveal any data downloaded during the discovery to any other parties.
 - Do not reveal the problem to others until it has been resolved.
 - Do not perform the following actions:
@@ -29,7 +29,7 @@ At the European Commission, we treat the security of our Communication and Infor
   - Changing access rights for any other users.
   - Using automated scanning tools.
   - Using the so-called "brute force" of access to the system.
-  - Using denial-of-service or social engineering (phishing, vishing, spam etc.).
+  - Using denial-of-service or social engineering (phishing, vishing, spam, etc.).
 - Do not use attacks on physical security.
 
 ## What we promise
