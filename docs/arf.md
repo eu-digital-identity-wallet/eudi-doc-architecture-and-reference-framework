@@ -1,6 +1,6 @@
 # Architecture and Reference Framework
 
-_June 2023_
+_November 2023_
 _Version 1.2.0_
 
 
@@ -10,7 +10,9 @@ _Version 1.2.0_
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
 | 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
 
-### 1.1. Context
+## 1 Introduction
+
+### 1.1 Context
 
 On 3 June 2021, the European Commission adopted a Recommendation[^2]
 calling on Member States to work towards the development of a Toolbox
@@ -50,7 +52,7 @@ have been adopted.
 
 The eIDAS Expert Group adopted the present document on 26 January 2023.
 
-### 1.2. Purpose of This Document
+### 1.2 Purpose of This Document
 
 The purpose of the document is to provide all the specifications needed
 to develop an interoperable EUDI Wallet Solution based on common
@@ -58,7 +60,7 @@ standards and practices. The document presents a state-of-play of
 ongoing work of the eIDAS Expert Group and does not imply any formal
 agreement regarding its content or the legislative proposal. This
 document will be complemented and updated over time through the process
-of establishing the toolbox, as described in Chapter 9. Once completed
+of establishing the toolbox, as described in Chapter 8. Once completed
 the document will describe a comprehensive Architecture and Reference
 Framework covering all the specifications needed to implement an
 European Digital Identity Wallet Solution.
@@ -76,7 +78,7 @@ for a European Digital Identity Framework. Only the finally adopted
 European Digital Identity Framework Regulation, and the implementing and
 delegated acts adopted under that legal basis, will be mandatory.
 
-### 1.3. Use of This Document
+### 1.3 Use of This Document
 
 This document is mainly meant to be used by the European Commission
 developing a reference implementation of an EUDI Wallet and the
@@ -85,7 +87,7 @@ context of Large Scale Pilots. Experience of implementing this
 specification may lead to improvements of this document, in accordance
 with Chapter 9.
 
-#### 1.3.1. The Reference Implementation of an EUDI Wallet
+#### 1.3.1 The Reference Implementation of an EUDI Wallet
 
 The Commission will provide a reference implementation of an EUDI Wallet
 in a mobile form factor[^7]. The code for the EUDI Wallet reference
@@ -100,7 +102,7 @@ the EUDI Wallet reference implementation.
 The Commission intends to use the ARF to develop the EUDI Wallet
 reference implementation.
 
-#### 1.3.2. Guidance for the Large Scale Pilots (LSP)
+#### 1.3.2 Guidance for the Large Scale Pilots (LSP)
 
 To support the development of a reference implementation of an EUDI
 Wallet and to pilot its usage across different priority use cases, the
@@ -125,7 +127,7 @@ Electronic Attestations of Attributes (Q)EAA Providers, Person
 Identification Data (PID) Providers and Users in meaningful transactions
 under the proposed use cases.
 
-## 2. Definitions
+## 2 Definitions
 
 In addition to Article 3 of the proposed amendment to the legal text,
 the following definitions are provided to either highlight those most
@@ -144,7 +146,7 @@ additional terms not defined in the legal text (denoted with a \*).
   </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr class="even">
 <td><em>Attestation</em></td>
 <td><strong>A signed set of attributes, in either the mdoc format specified in [ISO18013-5] or the SD-JWT format specified in [SD-JWT]. This may be a PID, QEAA or EAA. </strong></td>
 </tr>
@@ -202,8 +204,7 @@ validating and verifying the public keys mapping to an
 entity.</strong></td>
 </tr>
 <tr class="odd">
-<td><em>Qualified Electronic Attestations of Attributes
-Provider</em></td>
+<td><em>Qualified Electronic Attestations of Attributes</em></td>
 <td><p><strong>An Electronic Attestation of Attributes, which is issued
 by a Qualified Trust Service Provider and meets the requirements laid
 down in Annex V. - <em>eIDAS Regulation amendment
@@ -322,7 +323,7 @@ CAB.</strong></td>
 *\* Additional to definitions in Article 3 of the eIDAS Regulation or
 its amendment proposal.*
 
-## 3. Use cases for the EUDI Wallet
+## 3 Use cases for the EUDI Wallet
 
 The development of EUDI Wallet specifications is steered by use cases
 that facilitate understanding of user experience while capturing the
@@ -395,7 +396,7 @@ without human oversight.
 (Q)EAA issuance requirements, mDL attribute schema and Trust
 Infrastructure details are further detailed in Chapter 6 and Annex 07.
 
-## 3.3. Other use cases 
+## 3.3 Other use cases 
 In subsequent versions of this document, the following use cases will be
 detailed as service blueprints:
 
@@ -431,12 +432,12 @@ benefit from more seamless travel.
 
 This work may in future be extended to additional use cases.
 
-## 4. European Digital Identity Wallet Ecosystem
+## 4 European Digital Identity Wallet Ecosystem
 
 This chapter describes the EUDI Wallet ecosystem as it is foreseen in
 the Commission’s legislative proposal.
 
-### 4.1. Roles in the Ecosystem
+### 4.1 Roles in the Ecosystem
 
 The roles of the EUDI Wallet ecosystem are described in Figure 1 and
 detailed in the following sections.
@@ -476,7 +477,7 @@ detailed in the following sections.
 
 14. *National Accreditation Bodies*
 
-#### 4.1.1. Users of EUDI Wallet
+#### 4.1.1 Users of EUDI Wallet
 
 Users of EUDI Wallets use the EUDI Wallet to receive, store and present
 attestations (PID, QEAA or EAA) about themselves, including to prove
@@ -488,7 +489,7 @@ an EUDI Wallet by citizens is not mandatory under the legislative
 proposal. However, Member States are obliged to offer at least one EUDI
 Wallet Solution to their citizens.
 
-#### 4.1.2. EUDI Wallet Provider
+#### 4.1.2 EUDI Wallet Provider
 
 EUDI Wallet Provider are Member States or organisations either mandated
 or recognized by Member States making the EUDI Wallet available for end
@@ -509,7 +510,7 @@ seal.
 EUDI Wallet Providers are responsible for ensuring compliance with the
 requirements for EUDI Wallets.
 
-#### 4.1.3. Person Identification Data (PID) Providers
+#### 4.1.3 Person Identification Data (PID) Providers
 
 PID Providers are trusted entities responsible to:
 
@@ -529,7 +530,7 @@ official identity documents, electronic identity means, EUDI Wallet
 Providers etc. EUDI Wallet Providers may or may not be the same
 organisations as PID Providers.
 
-#### 4.1.4. Trusted List Providers
+#### 4.1.4 Trusted List Providers
 
 The specific status of a role in the EUDI Wallet ecosystem shall be
 verified in a trustworthy manner. Such roles are:
@@ -562,23 +563,23 @@ When used, Trusted List[^11] need to provide a registration service for
 the relevant entities, maintain a registry and enable third party access
 to the registry information. The terms and conditions of entities to
 become registered are for each registrar to determine unless specified
-in e.g., sectoral rules.
+in e.g., EU law or sectoral rules.
 
-#### 4.1.5. Qualified Electronic Attestation of Attributes Providers
+#### 4.1.5 Qualified Electronic Attestation of Attributes Providers
 
-Qualified EAA are provided by QTSPs. The general Trust Framework for
+Qualified EAA are provided by QTSPs. The IDAS Regulation Trust Framework for
 QTSPs apply also to QEAA, but specific rules for this Trust Service need
 to be defined as well. QEAA Providers maintain an interface for
 requesting and providing QEAAs, including a mutual authentication
 interface with EUDI Wallets and potentially an interface towards
-Authentic Sources to verify attributes. QEAA Providers provide
+Authentic Sources to verify attributes. QEAAs provide
 information or the location of the services that can be used to enquire
-about the validity status of the QEAAs, without having an ability to
-receive any information about the use of the attestations. The terms and
-conditions of these services are for each QTSP to determine, beyond what
-is specified in the eIDAS Regulation.
+about the validity status of the QEAAs, without having an ability for the 
+QEAA Providers to receive any information about the use of the attestations. 
+The terms and conditions of these services are for each QTSP to determine, 
+beyond what is specified in the eIDAS Regulation.
 
-#### 4.1.6. Non-Qualified Electronic Attestation of Attributes Providers
+#### 4.1.6 Non-Qualified Electronic Attestation of Attributes Providers
 
 Non-qualified EAA can be provided by any Trust Service Provider. While
 they are supervised under eIDAS, it can be assumed that other legal or
@@ -586,15 +587,15 @@ contractual frameworks than eIDAS mostly govern the rules for provision,
 use and recognition of EAA. Such other frameworks may cover policy areas
 such as driving licences, educational credentials, digital payments,
 although they may also rely on qualified Electronic Attestation of
-Attributes Providers. For EAA to be used, TSPs offer Users a way to
-request and obtain EAA, meaning they need to technically comply with
-EUDI Wallet interface specifications. Depending on the domain rules, EAA
-providers may provide validity information about EAA, without having an
-ability to receive any information about the use of the EAA. The terms
-and conditions of issuing EAAs and related services are subject to
+Attributes Providers. For EAA to be used in the context of the EUDI Wallet, 
+TSPs offer Users a way to request and obtain EAA, meaning they need to 
+technically comply with EUDI Wallet interface specifications. Depending on 
+the domain rules, EAA providers may provide validity information about EAA, 
+without having an ability to receive any information about the use of the EAA. 
+The terms and conditions of issuing EAAs and related services are subject to
 sectoral rules.
 
-#### 4.1.7. Qualified and Non-Qualified Certificates for Electronic Signature/Seal Providers
+#### 4.1.7 Qualified and Non-Qualified Certificates for Electronic Signature/Seal Providers
 
 Article 6a(3) of COM(2021)281 final requires the EUDI Wallet to enable
 the User to create qualified electronic signatures or seals. This goal
@@ -610,13 +611,13 @@ can be reached by several ways:
 EUDI Wallet interfaces with QSCDs will be further expanded in future
 versions of this document.
 
-#### 4.1.8. Providers of other Trust Services
+#### 4.1.8 Providers of other Trust Services
 
 EUDI Wallet interaction with providers of other qualified or
 non-qualified Trust Services such as timestamps may be further described
 in future versions of the ARF.
 
-#### 4.1.9. Authentic Sources
+#### 4.1.9 Authentic Sources
 
 Authentic Sources are the public or private repositories or systems
 recognised or required by law containing attributes about a natural or
@@ -635,7 +636,7 @@ these services, but according to the minimum technical
 specifications, standards, and procedures applicable to the verification
 procedures for qualified electronic attestations of attributes.
 
-#### 4.1.10. Relying Parties
+#### 4.1.10 Relying Parties
 
 Relying Parties are natural or legal persons that rely upon an
 electronic identification or a Trust Service. In the context of EUDI
@@ -650,7 +651,7 @@ intention for doing so. Relying Parties need to maintain an interface
 with the EUDI Wallet to request attestations with mutual authentication.
 Relying Parties are responsible for authenticating PID and (Q)EAA.
 
-#### 4.1.11. Conformity Assessment Bodies (CAB)
+#### 4.1.11 Conformity Assessment Bodies (CAB)
 
 The EUDI Wallets must be certified by accredited public or private
 bodies designated by Member States[^12]. QTSPs need to be audited
@@ -662,13 +663,13 @@ status to a Trust Service Provider. The standards and schemes used by
 CABs to fulfil their tasks to certify EUDI Wallets are specified further
 in the Toolbox process.
 
-#### 4.1.12. Supervisory Bodies
+#### 4.1.12 Supervisory Bodies
 
 The supervisory bodies are notified to the Commission by the Member
 States, which supervise QTSPs and act, if necessary, in relation to
 non-qualified Trust Service Providers.
 
-#### 4.1.13. Device Manufacturers and Related Entities
+#### 4.1.13 Device Manufacturers and Related Entities
 
 EUDI Wallets will have several interfaces with the devices they are
 based on, which may be for the following purposes:
@@ -696,7 +697,7 @@ issuing the EUDI Wallet. Likewise, the availability as well as terms and
 conditions of device interface providers and related service providers
 will set further constraints for EUDI Wallet Providers.
 
-#### 4.1.14. Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
+#### 4.1.14 Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
 
 (Q)EAA Schema Providers publish schemas and vocabularies describing
 (Q)EAA structure and semantics. It may enable other entities such as
@@ -705,7 +706,7 @@ the minimum technical specifications, standards, and procedures for this
 purpose. Common schemas, including by sector- specific organisations are
 critical for wide-spread adoption of (Q)EAAs.
 
-#### 4.1.15. National Accreditation Bodies
+#### 4.1.15 National Accreditation Bodies
 
 National Accreditation Bodies (NAB) under Regulation (EC) No
 765/2008[^13] are the bodies in Member States that performs
@@ -716,7 +717,7 @@ against normative document(s) establishing the requirements (e.g.,
 legislations, specifications, protection profiles). NABs monitor the
 CABs to which they have issued an accreditation certificate.
 
-### 4.2. Lifecycle of an EUDI Wallet
+### 4.2 Lifecycle of an EUDI Wallet
 
 The legal text defines the EUDI Wallet on a high level of abstraction,
 as well as for the EUDI Wallet Providers that carry the legal
@@ -740,7 +741,7 @@ consequently misunderstandings.
 *The object model will be extended as required in future versions of the
 ARF.*
 
-#### 4.2.1. Simplified EUDI Wallet Object Model
+#### 4.2.1 Simplified EUDI Wallet Object Model
 
 Figure 2 below distinguishes the concepts of EUDI Wallet Solution and
 EUDI Wallet Instance. An EUDI Wallet Solution is the entire product
@@ -758,7 +759,7 @@ the implementation a EUDI Wallet Instance may consist of a single mobile
 app, or a set of local and remote components available to a specific
 User.
 
-#### 4.2.2. PID and (Q)EAA Lifecycles
+#### 4.2.2 PID and (Q)EAA Lifecycles
 
 The lifecycles of PID and (Q)EAA are essentially identical, however, for
 the scope of this description we refer subsequently only to PID. The
@@ -781,7 +782,7 @@ that PID could be “pre-issued”.
 
 *Figure 3: State-chart of PID*
 
-There are twothree possible transitions from a valid PID: eitherit is
+There are three possible transitions from a valid PID: it is
 delete by the user, it automatically expires, by passage to the
 ‘validity end date’ or it is actively revoked by its Provider.
 Expiration and revocation are essentially independent transitions. Once
@@ -789,7 +790,7 @@ PID is expired, deleted or revoked, it cannot transition back to valid.
 Update of PID (i.e., because of a name change) always requires
 re-issuing.
 
-#### 4.2.3. EUDI Wallet Solution Lifecycle
+#### 4.2.3 EUDI Wallet Solution Lifecycle
 
 An EUDI Wallet Solution has a state of its own, as defined by Article
 10a of the Regulation. The state of the Solution affects the state of
@@ -821,7 +822,7 @@ Solution and continue issuance, bringing the Solution back to the
 **valid** state. Under paragraph 3, the EUDI Wallet Solution can be
 completely withdrawn.
 
-#### 4.2.4. EUDI Wallet Instance Lifecycle
+#### 4.2.4 EUDI Wallet Instance Lifecycle
 
 An EUDI Wallet Instance lifecycle begins when the User installs the
 mobile app component of the EUDI Wallet solution provided by The EUDI
@@ -866,9 +867,9 @@ Please note that this is independent from the possibility of a PID or
 (Q)EAA Provider to revoke their attestations.
 
 
-# 5. Trust Model
+## 5 Trust Model
 
-## 5.1 Overview and scope
+### 5.1 Overview and scope
 The Trust Model describes, for all interactions in the lifecycle of a
 EUDI Wallet Instance and an attestation, which trust relationships must
 exist between the interacting parties to enable these interactions.
@@ -893,7 +894,7 @@ Please note:
   the Type 1 configuration specified in section 7.5.
 * User privacy is not specifically discussed in this document.
 
-### 5.1.1	Authentication and authorization
+#### 5.1.1	Authentication and authorization
 
 Within the EUDI Wallet ecosystem, many interactions take place between
 parties in which one party requests another party to release data or
@@ -909,7 +910,7 @@ generally requires the existence of the following two conditions:
 2. The requestee is sure that the requester **has the right** to request
    the data or task requested. This is referred to as *authorization*.
 
-### 5.1.2	Assumptions on trust
+#### 5.1.2	Assumptions on trust
 
 This document makes the following assumptions regarding the need for
 trust in the EUDI Wallet ecosystem:
@@ -924,7 +925,7 @@ trust in the EUDI Wallet ecosystem:
   with.No authenticated party can be presumed trustworthy enough not to
   ask for attributes beyond their rights.
 
-### 5.1.3	Other trust relations
+#### 5.1.3	Other trust relations
 
 Besides the trust relationships described in this chapter, other trust
 relations must exist as well. For instance, Users, Issuers and Relying
@@ -941,11 +942,11 @@ authorization of other parties in the ecosystem, parties must also be
 able to trust that the communication with such parties is confidential.
 Measures to ensure this are not explicitly discussed in this document.
 
-## 5.2	Trust throughout a EUDI Wallet Instance lifecycle
+### 5.2	Trust throughout a EUDI Wallet Instance lifecycle
 
-### 5.2.1	Wallet Instance installation
+#### 5.2.1	Wallet Instance installation
 
-#### 5.2.1.1	Required trust relationships
+##### 5.2.1.1	Required trust relationships
 
 When a User decides to install an EUDI Wallet Instance on their device,
 the following trust relationships must exist:
@@ -958,17 +959,17 @@ the following trust relationships must exist:
 
 The next sections discuss these trust relationships.
 
-#### 5.2.1.2	User's trust in the EUDI Wallet Solution
+##### 5.2.1.2	User's trust in the EUDI Wallet Solution
 
 To be done.
 
-#### 5.2.1.3	User's trust that the EUDI Wallet Solution is supporting the required attestations
+##### 5.2.1.3	User's trust that the EUDI Wallet Solution is supporting the required attestations
 
 To be done.
 
-### 5.2.2	EUDI Wallet Instance activation
+#### 5.2.2	EUDI Wallet Instance activation
 
-#### 5.2.2.1	Required trust relationships[^14]
+##### 5.2.2.1	Required trust relationships[^14]
 
 After its' installation, a new EUDI Wallet Instance will need to be
 activated by the Wallet Provider. Activation has at least the following
@@ -1042,17 +1043,17 @@ relations need to exist:
 
 The next sections discuss these trust relationships.
 
-#### 5.2.2.2	EUDI Wallet Instance trusts Wallet Provider
+##### 5.2.2.2	EUDI Wallet Instance trusts Wallet Provider
 
 To be done.
 
-#### 5.2.2.3	EUDI Wallet Provider trusts Wallet Instance
+##### 5.2.2.3	EUDI Wallet Provider trusts Wallet Instance
 
 To be done.
 
-### 5.2.3	EUDI Wallet Instance management
+#### 5.2.3	EUDI Wallet Instance management
 
-#### 5.2.3.1	Required trust relationships
+##### 5.2.3.1	Required trust relationships
 Starting from EUDI Wallet Instance activation and throughout its
 lifetime, a EUDI Wallet Instance must be managed by the EUDI Wallet
 Provider. Management actions could be initiated by the following
@@ -1086,30 +1087,30 @@ For this, the following trust relations need to exist:
 
 The next sections discuss these trust relationships.
 
-#### 5.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
+##### 5.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
 
 Section 5.2.2.2. describeshow a EUDI Wallet Instance can trust a Wallet
 Provider.
 
-#### 5.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
+##### 5.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
 
 Section 5.2.2.3. describes how a EUDI Wallet Provider can trust a Wallet
 Instance.
 
-#### 5.2.3.4	User trust in the EUDI Wallet Provider
+##### 5.2.3.4	User trust in the EUDI Wallet Provider
 
 To be done.
 
-#### 5.2.3.5	EUDI Wallet Provider trust in the User
+##### 5.2.3.5	EUDI Wallet Provider trust in the User
 
 To be done.
 
 
-## 5.3	Trust throughout an attestation lifecycle
+### 5.3	Trust throughout an attestation lifecycle
 
-### 5.3.1	Attestation issuance
+#### 5.3.1	Attestation issuance
 
-#### 5.3.1.1	Required trust relationships
+##### 5.3.1.1	Required trust relationships
 
 When a User requests an Issuer to issue a PID or (Q)EAA to their EUDI
 Wallet Instance, the following trust relationships must exist:
@@ -1133,21 +1134,21 @@ Wallet Instance, the following trust relationships must exist:
 
 The next sections discuss these trust relationships.
 
-#### 5.3.1.2	User trust in the Issuer
+##### 5.3.1.2	User trust in the Issuer
 
 To be done.
 
-#### 5.3.1.3	Issuer trust in the User
+##### 5.3.1.3	Issuer trust in the User
 
 To be done.
 
-#### 5.3.1.4	Issuer trust in the EUDI Wallet Instance
+##### 5.3.1.4	Issuer trust in the EUDI Wallet Instance
 
 To be done.
 
-### 5.3.2	Attestation releasing
+#### 5.3.2	Attestation releasing
 
-#### 5.3.2.1	Required trust relationships
+##### 5.3.2.1	Required trust relationships
 
 When a Relying Party (RP) requests a User to release some attributes
 from his/her EUDI Wallet Instance, the following trust relationships
@@ -1209,7 +1210,7 @@ well as the attestation.
   in scope of the current version of this document.
 
 
-#### 5.3.2.2	Relying Party trusts Issuer
+##### 5.3.2.2	Relying Party trusts Issuer
 An RP must be able to verify that the issuer is trusted to issue the
 type of attestation in question. For instance, an Issuer may be trusted
 to issue a diploma, but not a PID, or conversely. 
@@ -1278,7 +1279,7 @@ verified that the Issuer of a PID or QEAA indeed can be trusted, they
 must accept attestations issued by that Issuer.
 
 
-#### 5.3.2.3 Relying Party trusts the authenticity of the attestation
+##### 5.3.2.3 Relying Party trusts the authenticity of the attestation
 
 The following steps are essential for ensuring that the Relying Party
 can trust the attestation:
@@ -1319,7 +1320,7 @@ Regarding the technical implementation of these steps:
   * Like ISO/IEC 18013-5, SD-JWT does not define a revocation mechanism. 
 
 
-#### 5.3.2.4 Relying Party trusts device binding
+##### 5.3.2.4 Relying Party trusts device binding
 
 The Relying Party must be able to trust that an attestation it receives
 was not copied and replayed. In other words, the RP trusts that the
@@ -1367,7 +1368,7 @@ However, the RP must verify that the Issuer did not revoke the
 attestation. In addition, the RP can verify that the EUDI Wallet
 Provider did not revoke the EUDI Wallet Instance Attestation.
 
-#### 5.3.2.5 Relying Party trusts User binding
+##### 5.3.2.5 Relying Party trusts User binding
 An RP must be able to trust User binding. This means that the person
 presenting the attestation is the same one as the User, i.e., the person
 to whom the attributes in the attestation apply. 
@@ -1401,7 +1402,7 @@ The mechanism(s) for User binding depend on the type of use case:
   User authentication mechanisms present on or connected to the device
   which the EUDI Wallet Instance is installed on [^18].
 
-#### 5.3.2.6 User trusts the identity of the Relying Party
+##### 5.3.2.6 User trusts the identity of the Relying Party
 
 To ensure that the User knows and trusts the identity of the Relying
 Party, a mechanism for Relying Party authentication must be implemented.
@@ -1429,13 +1430,13 @@ to the User and/or to the Issuer of the attributes in question to decide
 if an RP must be authenticated before attributes can be released to that
 RP.
 
-#### 5.3.2.7 User trusts that the Relying Party does not over-ask
+##### 5.3.2.7 User trusts that the Relying Party does not over-ask
 
 How to enable trust for the Relying Party to be sure that the RP will
 not over-ask, will be further detailed in a future version of this
 document.
 
-### 5.3.3 Attestation management
+#### 5.3.3 Attestation management
 Throughout its lifetime, an attestation needs to be managed by the
 Issuer. This means that for the purposes of this Trust Model,
 attestation management has similarities to the part of EUDI Wallet
@@ -1443,9 +1444,9 @@ Instance management that involves the EUDI Wallet Provider as the issuer
 of a EUDI Wallet Instance attestation, which was already discussed in
 section 5.2.3..
 
-# 6. Requirements for Issuing PID and (Q)EAA
+## 6 Requirements for Issuing PID and (Q)EAA
 
-## 6.1 Attestation rulebook
+### 6.1 Attestation rulebook
 
 Since version 1.2.0 of this document, the concept of an attestation
 rulebook has been introduced. This is designed to compile a set of
@@ -1461,7 +1462,7 @@ to use cases are collated in the attestation's rulebooks. Two such
 rulebooks, namely the PID and mDL rulebooks, have currently been
 included as annexes to this document.
 
-## 6.2 Person Identification Data
+### 6.2 Person Identification Data
 
 This chapter details the PID set as presented by the EUDI Wallet.
 Further specifications regarding PID are detailed in the PID Rule Book,
@@ -1480,28 +1481,27 @@ In the following the data format as presented to the Relying Party will
 be described, without any assumptions on how the EUDI Wallet retrieved
 or generated this data beforehand.
 
-### 6.2.1 The Dataset
+#### 6.2.1 The Dataset
 
-#### 6.2.1.1. Principles for PID set revision
+##### 6.2.1.1 Principles for the PID set
 
-This chapter proposes a revision of the eIDAS optional datasets
-specified in eIDAS CIR 2015/1501[^19] and discusses further
-specification, data minimization and identifiers.
+This chapter proposes the definition of the PID set and discusses 
+further specification, data minimization and identifiers.
 
-The revision of the eIDAS optional dataset proposed herein is
-constructed based on the following principles:
+The dataset proposed herein is constructed based on the following 
+principles:
 
 - No two persons should have the same PID set of mandatory attributes.
 
 - The PID set should at least contain the minimum set of attributes
-  specified in eIDAS CIR 2015/1501 as mandatory.
+  alligned with eIDAS CIR 2015/1501[21] (TODO: fix the reference) as mandatory.
 
 - The mandatory data set is by nature limited to the (narrow)
   intersection of what all Member States can provide for all natural and
   legal persons and what is needed for electronic identification
   purposes.
 
-#### 6.2.1.2 PID Attributes for Natural Persons
+##### 6.2.1.2 PID Attributes for Natural Persons
 
 The below table provides an overview of and optional PID attributes for natural persons. 
 
@@ -1510,7 +1510,7 @@ The below table provides an overview of and optional PID attributes for natural 
 | family_name                | family_name_birth         |
 | given_name                 | given_name_birth          |
 | birth_date                 | birth_place               | 
-| unique_id                  | resident_address          |
+| unique_id (as persistent as possible in time) | resident_address |
 |                            | gender                    |
 |                            | age_over_18               |
 |                            | age_over_NN               |
@@ -1535,7 +1535,7 @@ wider range of authentication options both online and offline as well as
 addressing learning from the current eIDAS implementations. Metadata
 associated with a PID set is further detailed in Annex 06.
 
-### 6.2.2 Issuing requirements for PID
+#### 6.2.2 Issuing requirements for PID
 
 The following table defines the requirements applicable to PID regarding
 what information is included in the attestation, such as for purposes of
@@ -1562,9 +1562,9 @@ may change as the specifications evolve.
 
 *Table 3 - Issuing requirements for PID*
 
-## 6.3. Qualified and Non-Qualified Electronic Attestation of Attributes
+### 6.3 Qualified and Non-Qualified Electronic Attestation of Attributes
 
-### 6.3.1 Issuing requirements for (Q)EAA
+#### 6.3.1 Issuing requirements for (Q)EAA
 
 The following table defines the requirements applicable to (Q)EAA-s
 regarding what information is included in the attestation, such as for
@@ -1598,7 +1598,7 @@ Book in Annex 07.
 
 *Table 4 - Issuing requirements for (Q)EAA*
 
-# 7. Reference Architecture and Flows
+## 7 Reference Architecture and Flows
 
 The reference architecture represents a set of choices made during the
 architecture design process for EUDI Wallet Solutions. These choices
@@ -1607,7 +1607,7 @@ scenarios where either the User or the Relying Party, or both, are
 offline while providing flexibility for Member States to implement an
 EUDI Wallet Solution in various configurations of components.
 
-## 7.1. Design considerations
+### 7.1 Design considerations
 
 To limit complexity, the initial EUDI Wallet Solution specifications
 will include only a minimum number of solution components that enable
@@ -1624,7 +1624,7 @@ The solution components proposed herein evidence the current expectation
 of using the ISO/IEC 23220 standard series, once publicly available, for
 future ARF versions.
 
-## 7.2. Architecture Components
+### 7.2 Architecture Components
 
 The following components have been identified as the building blocks of
 the EUDI Wallet architecture needed to implement an EUDI Wallet
@@ -1704,7 +1704,7 @@ Solution:
 - **Validity status check**. Mechanism to publish and obtain information
   about validity status of, inter alia, PID, (Q)EAA, certificate, etc.
 
-## 7.3. Logical architecture
+### 7.3 Logical architecture
 
 Where an EUDI Wallet Solution has an application running on a mobile
 device, there may be a need for additional trusted components which are
@@ -1783,7 +1783,7 @@ TLS).</p>
 <p>EUDI Wallet Data Storage Components</p>
 </blockquote></td>
 <td><blockquote>
-<p>User unique and persistent unique identifier</p>
+<p>User unique identifier (as persistent as possible in time)</p>
 </blockquote></td>
 </tr>
 <tr class="even">
@@ -1911,7 +1911,7 @@ accelerometer etc.</p>
 
 *Table 6: mapping of the EUDI Wallet components to perimeters*
 
-## 7.4. Types of Flows
+### 7.4 Types of Flows
 
 This section describes the four types of flows that the EUDI Wallet MUST
 support on a general level. The four flows are as follows:
@@ -1970,9 +1970,9 @@ exchange.
 The initial PID and EAA configurations are detailed next (configurations
 may be added as required in the future).
 
-## 7.5. The Wallet Configurations
+### 7.5 The Wallet Configurations
 
-### 7.5.1. Rationale
+#### 7.5.1 Rationale
 
 One of the goals of EUDI Wallet development is to harmonise PID and
 (Q)EAA across borders. Ideally, this means a very small number of
@@ -1998,9 +1998,9 @@ rely on an existing EUDI Wallet Solution configuration, it introduces a
 need to include an additional configuration to support the requirements
 that cannot be met with the existing configurations. The governance and
 process of how new configurations could be added, is described in
-chapter 8.
+chapter 9.
 
-### 7.5.2. Initial Configurations
+#### 7.5.2 Initial Configurations
 
 EUDI Wallet Solutions will initially support two configurations:
 
@@ -2021,7 +2021,7 @@ finance, health, access to premises) and will have requirements that are
 satisfied by Type 1 configuration. If so, these (Q)EAAs will be issued
 in accordance with Type 1 configuration.
 
-### 7.5.3. Configuration Requirements
+#### 7.5.3 Configuration Requirements
 
 This section sets the requirements for the configurations by comparing
 Type 1 and Type 2 configuration across different groups of requirements.
@@ -2226,7 +2226,7 @@ mandatory for PID.
 
 *Figure 7. EUDI Wallet configurations.*
 
-### 7.5.4 The Certification process of EUDI Wallets
+#### 7.5.4 The Certification process of EUDI Wallets
 
 Member States, according to Article 6c (3) of the proposal, must
 designate accredited CABs which will oversee carrying out conformity
@@ -2260,9 +2260,9 @@ certification schemes, or parts thereof, to certify the compliance of
 wallets, or parts thereof, with the applicable cybersecurity
 requirements.
 
-# 8 The Architecture and Reference Framework Development Process
+## 8 The Architecture and Reference Framework Development Process
 
-## 8.1 Publication
+### 8.1 Publication
 
 This document and the backlog items are made publicly available at 
 the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described 
@@ -2271,7 +2271,7 @@ in Chapter 9.2.
 - <https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/>
 
 
-## 8.2 Update
+### 8.2 Update
 
 To ensure steady and fast progress on elaborating and updating this
 document, the following process and work methodology is applied.
@@ -2305,7 +2305,7 @@ This document will be aligned to the outcome of the legislative
 negotiations of the proposal for a European Digital Identity Framework
 with updates being made accordingly.
 
-### 8.2.1 Document versioning
+#### 8.2.1 Document versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
 version control system and the following semantic versioning scheme will
@@ -2324,7 +2324,7 @@ the document or information has been removed from the document, and
 **PATCH** version is incremented when minor changes have been made
 (e.g., fixing typos).
 
-# 9 References
+## 9 References
 \[2015/1505\] COMMISSION IMPLEMENTING DECISION (EU) 2015/1505
 of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market
 
