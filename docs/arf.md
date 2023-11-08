@@ -1494,7 +1494,7 @@ principles:
 - No two persons should have the same PID set of mandatory attributes.
 
 - The PID set should at least contain the minimum set of attributes
-  alligned with eIDAS CIR 2015/1501[21] (TODO: fix the reference) as mandatory.
+  alligned with eIDAS CIR 2015/1501[^19] (TODO: fix the reference) as mandatory.
 
 - The mandatory data set is by nature limited to the (narrow)
   intersection of what all Member States can provide for all natural and
@@ -2422,7 +2422,7 @@ https://www.w3.org/TR/json-ld/
     instance, EUDI Wallet Instance Attestation may not be issued in all
     cases nor are alternative possibilities excluded from consideration.  
 
-[^15]: *TODO: The note is empty. The Word docuement has only the reference.*
+[^15]: -
 
 [^16]: The ARF implicitly requires device binding for Type 1 Wallet
     configurations (by requiring support for ISO/IEC 18013-5 and SD-JWT)
