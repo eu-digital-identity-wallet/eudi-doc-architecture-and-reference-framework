@@ -8,7 +8,7 @@ _Version 1.2.0_
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
-| 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
+| 1.2.0   | November 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
 
 ## 1 Introduction
 
@@ -62,7 +62,7 @@ agreement regarding its content or the legislative proposal. This
 document will be complemented and updated over time through the process
 of establishing the toolbox, as described in Chapter 8. Once completed
 the document will describe a comprehensive Architecture and Reference
-Framework covering all the specifications needed to implement an
+Framework covering all the specifications needed to implement a
 European Digital Identity Wallet Solution.
 
 While chapters 2-5 and 8-9 are descriptive, Chapter 6 and 7 specify 
@@ -102,7 +102,7 @@ the EUDI Wallet reference implementation.
 The Commission intends to use the ARF to develop the EUDI Wallet
 reference implementation.
 
-#### 1.3.2 Guidance for the Large Scale Pilots (LSP)
+#### 1.3.2 Guidance for the Large-Scale Pilots (LSP)
 
 To support the development of a reference implementation of an EUDI
 Wallet and to pilot its usage across different priority use cases, the
@@ -208,8 +208,7 @@ entity.</strong></td>
 <td><p><strong>An Electronic Attestation of Attributes, which is issued
 by a Qualified Trust Service Provider and meets the requirements laid
 down in Annex V. - <em>eIDAS Regulation amendment
-proposal</em></strong></p>
-<p><strong>.</strong></p></td>
+proposal</em></strong></td>
 </tr>
 <tr class="even">
 <td><em>Qualified Electronic Signature Creation Device (QSCD)</em></td>
@@ -396,17 +395,17 @@ without human oversight.
 (Q)EAA issuance requirements, mDL attribute schema and Trust
 Infrastructure details are further detailed in Chapter 6 and Annex 07.
 
-## 3.3 Other use cases 
+### 3.3 Other use cases 
 In subsequent versions of this document, the following use cases will be
 detailed as service blueprints:
 
-- **Health**
+#### Health
 
 Easy access to health data is crucial in both national and cross-border
 contexts. EUDI Wallet may enable access to patient summary,
 ePrescriptions, etc.
 
-- **Educational credentials and professional qualifications**
+#### Educational credentials and professional qualifications
 
 Providing documents for qualification recognition procedures can be
 costly and time-consuming for end Users, companies and employers,
@@ -417,7 +416,7 @@ training institution or a prospective employer. The EUDI Wallet may be a
 repository for educational digital credentials as Electronic
 Attestations of Attributes and a means for exchanging them by a learner.
 
-- **Digital Finance**
+#### Digital Finance
 
 The EUDI Wallet shall facilitate complying with strong customer
 authentication requirements. In line with the Commission’s Retail
@@ -425,7 +424,7 @@ Payments Strategy[^9], the use case would be developed in close
 coordination with Member States’ advisory groups on retail payments and
 the finance industry.
 
-- **Digital Travel Credential**
+#### Digital Travel Credential
 
 EUDI Wallet can store Digital Travel Credentials enabling Users to
 benefit from more seamless travel.
@@ -658,7 +657,7 @@ bodies designated by Member States[^12]. QTSPs need to be audited
 regularly by Conformity Assessment Bodies (CABs). CABs are accredited by
 a national accreditation body according to Regulation 765/2008 as
 responsible for carrying out assessments on which Member States will
-have to rely before issuing a EUDI Wallet or providing the qualified
+have to rely before issuing a EUDI Wallet or granting the qualified
 status to a Trust Service Provider. The standards and schemes used by
 CABs to fulfil their tasks to certify EUDI Wallets are specified further
 in the Toolbox process.
@@ -854,7 +853,7 @@ In the **operational** state of the EUDI Wallet Instance:
   subsequent documents.
 
 Once an EUDI Wallet Instance holds a **valid** PID set, it is
-considered valid. If the PID expires or is revoked, the EUDI Wallet is
+considered **valid**. If the PID expires or is revoked, the EUDI Wallet is
 not automatically unusable, its state is merely downgraded back to
 **operational**. This may affect the validity of a (Q)EAA or a certificate
 for QES.
@@ -1054,6 +1053,7 @@ To be done.
 #### 5.2.3	EUDI Wallet Instance management
 
 ##### 5.2.3.1	Required trust relationships
+
 Starting from EUDI Wallet Instance activation and throughout its
 lifetime, a EUDI Wallet Instance must be managed by the EUDI Wallet
 Provider. Management actions could be initiated by the following
@@ -1089,7 +1089,7 @@ The next sections discuss these trust relationships.
 
 ##### 5.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
 
-Section 5.2.2.2. describeshow a EUDI Wallet Instance can trust a Wallet
+Section 5.2.2.2. describes how a EUDI Wallet Instance can trust a Wallet
 Provider.
 
 ##### 5.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
@@ -1298,7 +1298,7 @@ trust the authenticity of the attestation.
 Regarding the technical implementation of these steps: 
 
 * For proximity flows, the Chapters 6 and 7 require support for
-  [ISO18013-5]. This standard describes a mechanism for this
+  \[ISO18013-5]\. This standard describes a mechanism for this
   authentication, called issuer data authentication.
   * For step 1 above, this mechanism uses a cryptographically signed
     data construct called a Mobile Security Object (MSO). The seal or
@@ -1353,9 +1353,9 @@ namely its ephemeral public key for session encryption. The standard
 specifies which algorithms can be used for signing and how the
 attestation public key is incorporated in the MSO.
 
-[SD-JWT] similarly specifies how an attestation public key can be
-incorporated in the JWT. [SD-JWT] does not specify how to use an RP
-nonce; however, [OpenID4VP], required by the ARF for remote flows,
+\[SD-JWT\] similarly specifies how an attestation public key can be
+incorporated in the JWT. \[SD-JWT\] does not specify how to use an RP
+nonce; however, \[OpenID4VP\], required by the ARF for remote flows,
 specifies this.
 
 To trust these mechanisms, the RP must trust that the security of the
@@ -1421,8 +1421,8 @@ ISO/IEC 18013-5 specifies such a mechanism, called mdoc reader
 authentication. The standard specifies cryptographic algorithms, a PKI
 and certificate formats for mdoc reader authentication.
 
-[SD-JWT] does not specify a mechanism for Relying Party authentication.
-However, [OpenID4VP], required by the ARF for remote flows, specifies
+\[SD-JWT\] does not specify a mechanism for Relying Party authentication.
+However, \[OpenID4VP\], required by the ARF for remote flows, specifies
 such a mechanism.
 
 Relying Party authentication is not mandatory in all use cases. It is up
@@ -1739,118 +1739,118 @@ model in Figure 6 above.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p><strong>Functional block in the conceptual model</strong></p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p><strong>Applicable EUDI Wallet Solution components</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td rowspan="5"><blockquote>
+<td rowspan="5">
 <p>EUDI Wallet Secure Cryptographic Device</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>User Keys &amp; Certificates</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Secure and isolated environment for keys and data</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Cryptographic algorithms (e.g., symmetric, asymmetric key derivation,
 hash functions, random number generation) and protocols (e.g., ECDH,
 TLS).</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>HW-defined secure environment for keys and data: a secure Elements
 (SE), Trusted Execution Environments (TEEs), Hardware Security Module
 (HSM) etc. (remote or local)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Authentication data (PIN, biometrics)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td rowspan="4"><blockquote>
+<td rowspan="4">
 <p>EUDI Wallet Data Storage Components</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>User unique identifier (as persistent as possible in time)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>User attributes</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>User personal data and attributes</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Secure environment for keys and data</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td rowspan="3"><blockquote>
+<td rowspan="3">
 <p>EUDI Wallet “PID/EAA Presentation” Creation Application (WCA)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Logs, history of EUDI Wallet Instance operations, telemetry</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>EUDI Wallet Instance application identifier (e.g., configuration,
 manufacturer, and version)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Internal EUDI Wallet Instance interfaces (e.g., between storage,
 components, encryption)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td rowspan="3"><blockquote>
+<td rowspan="3">
 <p>EUDI Wallet Driving Application (WDA)</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Logs, history of EUDI Wallet Instance operations, telemetry</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>EUDI Wallet Instance application identifier (e.g., configuration,
 manufacturer, and version)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>EUDI Wallet User interface</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Relying Party interface</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>EUDI Wallet interface to (Q)TSP, (Q)EAA providers, Member States
 Infrastructures, National e-ID, Relying Parties, and other sources of
 EEAs</p>
 <p>Communication channels (online/offline) between the EUDI Wallet and
 other parties</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1873,38 +1873,38 @@ represented in Figure 6.
 </tr>
 <tr class="even">
 <td rowspan="4">Potential trusted components perimeters</td>
-<td><blockquote>
+<td>
 <p>Device Information (type, configuration, firmware version, status,
 etc)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>System Keys &amp; Certificates</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
-<td><blockquote>
+<td>
 <p>Back-end systems (Database servers)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Trusted Connected devices</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="even">
 <td rowspan="2">Potential mobile perimeter</td>
-<td><blockquote>
+<td>
 <p>Device Information (type, configuration, firmware version, status,
 etc)</p>
-</blockquote></td>
+</td>
 </tr>
 <tr class="odd">
-<td><blockquote>
+<td>
 <p>Smartphone sensors: camera, NFC reader, fingerprint sensor,
 accelerometer etc.</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2356,24 +2356,20 @@ Provider V2", 1 January 2023,
 
 \[W3C StatusList2021\] <https://w3c-ccg.github.io/vc-status-list-2021/>
 
-\[COSE\] RFC9052 <https://www.rfc-editor.org/rfc/rfc9052>,
-
+\[COSE\] RFC9052 <https://www.rfc-editor.org/rfc/rfc9052>,  
 RFC9053 <https://www.rfc-editor.org/rfc/rfc9053>
 
-\[JOSE\] RFC7515 <https://www.rfc-editor.org/rfc/rfc7515.html>,
-
-RFC7516 <https://www.rfc-editor.org/rfc/rfc7516.html>,
-
-RFC7517 <https://www.rfc-editor.org/rfc/rfc7517.html>,
-
-RFC7518 <https://www.rfc-editor.org/rfc/rfc7518.html>
+\[JOSE\] RFC7515 <https://www.rfc-editor.org/rfc/rfc7515.html>,  
+RFC7516 <https://www.rfc-editor.org/rfc/rfc7516.html>,  
+RFC7517 <https://www.rfc-editor.org/rfc/rfc7517.html>,  
+RFC7518 <https://www.rfc-editor.org/rfc/rfc7518.html>  
 
 \[SOG-IS\] Agreed Cryptographic Mechanisms v1.2
 <https://www.sogis.eu/documents/cc/crypto/SOGIS-Agreed-Cryptographic-Mechanisms-1.2.pdf>
 
 \[JSON-LD\] JSON-LD 1.1 Manu Sporny, Dave Longley, Gregg Kellogg, Markus
 Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
-<https://www.w3.org/TR/json-ld/>
+https://www.w3.org/TR/json-ld/
 
 [^1]: The date of adoption by the eIDAS Expert Group.
 
@@ -2474,44 +2470,46 @@ Lanthaler, Pierre-Antoine Champin, Niklas Lindström,
     these versions is not known. As [SD-JWT] is still under development,
     presumably later versions will become available over time.
 
+### A.1 Annex 01 - initialisation and activation
+
 The service blueprint about initialisation and activation of the Wallet
 is described in the attached file:
 
 - [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf)
 
-### Annex 02 – online identification and authentication
+### A.2 Annex 02 – online identification and authentication
 
 The service blueprint about online identification and authentication for
 the Wallet is described in the attached file:
 
 - [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf)
 
-### Annex 03 – issuing mDL
+### A.3 Annex 03 – issuing mDL
 
 The service blueprint about issuing mDL is described in the attached
 file:
 
 - [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
 
-### Annex 04 – presenting mDL (proximity-supervised)
+### A.4 Annex 04 – presenting mDL (proximity-supervised)
 
 The service blueprint about presenting mDL (proximity-supervised) is
 described in the attached file:
 
 - [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
 
-### Annex 05 – presenting mDL (proximity-unsupervised)
+### A.5 Annex 05 – presenting mDL (proximity-unsupervised)
 
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
 * [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
 
-## Annex 06 – PID rulebook
+## A.6 Annex 06 – PID rulebook
 The PID attribute schema, indicative EUDI Wallet Instance Attestation
 and Trust Infrastructure details are further detailed in the attached
 file:
 * [Annex 06 – EUDI Wallet – PID rulebook.pdf](./annexes/annex-06-pid-rulebook.pdf)
 
-## Annex 07 - mDL rulebook
+## A.7 Annex 07 - mDL rulebook
 The mDL attribute schema is further detailed in the attached file:
 * [Annex 07 – EUDI Wallet – mDL rulebook.pdf](./annexes/annex-07-mdl-rulebook.pdf)
