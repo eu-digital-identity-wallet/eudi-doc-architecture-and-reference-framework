@@ -2511,3 +2511,7 @@ file:
 ## A.7 Annex 07 - mDL rulebook
 The mDL attribute schema is further detailed in the attached file:
 * [Annex 07 – EUDI Wallet – mDL rulebook.pdf](./annexes/annex-07-mdl-rulebook.pdf)
+
+## A.8 Annex 08 - EUDI Wallet Design Guide 
+The Wallet Design Guide is further detailed in the attached file:
+* [Annex 08 – EUDI Wallet Design Guide.pdf](./annexes/annex-08-eudi-wallet-design-guide.pdf)
