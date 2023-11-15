@@ -1,6 +1,9 @@
 # Architecture and Reference Framework
 
-_November 2023_
+> This is a working document that holds no legal value and does not reflect any common agreement or position of the co-legislators. It presents a state-of-play of ongoing work of the eIDAS Expert Group. This document is being continuously updated and should not be considered final.
+
+
+_November 2023_  
 _Version 1.2.0_
 
 
@@ -1022,11 +1025,9 @@ purposes:
     services. It is up to the EUDI Wallet Provider to determine the
     conditions for creating an online account, and to the User to accept
     or refuse these conditions.
-  * The information in the User account, especially the identifier(s)
-    for the User, the User’s device, and the EUDI Wallet Instance (if
-    any), shall be stored and used only in the EUDI Wallet Provider back
-    office. The EUDI Wallet Provider shall not put this information in
-    the EUDI Wallet Instance attestation.
+  * The information in the User account shall be stored and used only in 
+    the EUDI Wallet Provider back office. The EUDI Wallet Provider shall 
+    not put this information in the EUDI Wallet Instance attestation.
 
 
 For successful EUDI Wallet Instance activation, the following trust
@@ -1509,8 +1510,8 @@ The below table provides an overview of and optional PID attributes for natural 
 |----------------------------|---------------------------|
 | family_name                | family_name_birth         |
 | given_name                 | given_name_birth          |
-| birth_date                 | birth_place               | 
-| unique_id (as persistent as possible in time) | resident_address |
+| birth_date (approach to be determined when birth_date is not known)                 | birth_place               | 
+|                            | resident_address |
 |                            | gender                    |
 |                            | age_over_18               |
 |                            | age_over_NN               |
@@ -1781,9 +1782,6 @@ TLS).</p>
 <tr class="odd">
 <td rowspan="4">
 <p>EUDI Wallet Data Storage Components</p>
-</td>
-<td>
-<p>User unique identifier (as persistent as possible in time)</p>
 </td>
 </tr>
 <tr class="even">
