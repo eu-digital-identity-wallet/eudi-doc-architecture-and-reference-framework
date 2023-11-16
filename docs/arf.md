@@ -569,7 +569,7 @@ in e.g., EU law or sectoral rules.
 
 #### 4.1.5 Qualified Electronic Attestation of Attributes Providers
 
-Qualified EAA are provided by QTSPs. The IDAS Regulation Trust Framework for
+Qualified EAA are provided by QTSPs. The eIDAS Regulation Trust Framework for
 QTSPs apply also to QEAA, but specific rules for this Trust Service need
 to be defined as well. QEAA Providers maintain an interface for
 requesting and providing QEAAs, including a mutual authentication
