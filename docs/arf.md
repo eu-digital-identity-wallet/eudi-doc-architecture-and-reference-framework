@@ -182,9 +182,9 @@ proposal</em></strong></td>
 </tr>
 <tr class="odd">
 <td><em>National Accreditation Bodies (NAB)*</em></td>
-<td><strong>National Accreditation Bodies (NAB) under Regulation (EC) No
-765/2008 are the bodies in Member States that perform accreditation with
-authority derived from the State.</strong></td>
+<td><strong>A body that performs accreditation with authority 
+derived from a Member State under Regulation (EC) No 765/2008.
+</strong></td>
 </tr>
 <tr class="even">
 <td><em>Person Identification Data (PID)</em></td>
