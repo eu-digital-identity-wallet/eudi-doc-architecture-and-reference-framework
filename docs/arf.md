@@ -3,15 +3,17 @@
 > This is a working document that holds no legal value and does not reflect any common agreement or position of the co-legislators. It presents a state-of-play of ongoing work of the eIDAS Expert Group. This document is being continuously updated and should not be considered final.
 
 
-_November 2023_  
-_Version 1.2.0_
+_February 2024_  
+_Version 1.3.0_
 
 
 | Version | Date[^1] | Changes |
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
-| 1.2.0   | November 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
+| 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
+| 1.3.0   | 30 November 2023 | <ul><li>Updates according to the resolution of comments of the Member States</li><li>Editorial updates initiated by the EC to enhance the clarity of the document</li></ul> |
+| 1.3.0   | 15 December 2023 | <ul><li>Includes comments after EC review</li><li>Includes resolution of comments after meetings with NL, SE and FR</li></ul> |
 
 ## 1 Introduction
 
