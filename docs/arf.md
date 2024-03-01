@@ -177,11 +177,8 @@ authentication of attributes - <em>eIDAS Regulation amendment
 proposal</em></strong></td>
 </tr>
 <tr class="even">
-<td><em>Issuer*</em></td>
-<td><strong>A Person Identification Data Provider issuing PID or a
-(Qualified) Trust Service Provider issuing (Q)EAA. In the case of the
-EUDI Wallet there may be multiple Issuers for PID and
-(Q)EAA.</strong></td>
+<td><em></em></td>
+<td><strong></strong></td>
 </tr>
 <tr class="odd">
 <td><em>National Accreditation Bodies (NAB)*</em></td>
