@@ -313,6 +313,14 @@ is controlled by a User.</strong></td>
 <td><em>EUDI Wallet Solution*</em></td>
 <td><strong>An EUDI Wallet Solution is the entire product and service provided by an EUDI Wallet Provider, and offered to all Users of that Solution.</strong></td>
 </tr>
+<tr class="odd">
+<td><em>Wallet Secure Cryptographic Application (WSCA)*</em></td>
+<td><strong>A Wallet Secure Cryptographic Application (WSCA) is software provisioned within the Wallet Secure Cryptographic Device (WSCD). It is tasked with executing all security-sensitive operations such as generating, safeguarding, and handling cryptographic keys and assets. Additionally, it facilitates communication with the Wallet Instance.</strong></td>
+</tr>
+<tr class="odd">
+<td><em>Wallet Secure Cryptographic Device (WSCD)*</em></td>
+<td><strong>Hardware-backed secure environment for creating, storing, and/or managing cryptographic keys and data. Examples include Secure Elements (SE), Trusted Execution Environments (TEEs), and (remote or local) Hardware Security Module (HSM).</strong></td>
+</tr>
 </tbody>
 </table>
 
