@@ -344,15 +344,19 @@ for establishing use case rulebooks and common specifications for all
 use cases. 
 
 The service blueprints of the use case can be found in the annexes as
-attached documents. It is important to note that the service blueprint
-documents offer a viable solution for each use case, but alternatives
-and optional steps do exist. For instance, displaying stored data to
-which the user has already given consent might be optional. Furthermore,
-user journeys may differ depending on the chosen implementation
-approach, such as asynchronous attribute storage or synchronous
-retrieval. This could affect aspects like providing consent to retrieve
-and share data. The eIDAS Expert Group has described service blueprints
-for the following use cases. 
+attached documents. It is important to note that the service blueprint 
+documents offer a viable solution for each use case, but alternatives 
+and optional steps do exist. For instance, displaying stored data which 
+the user has already approved to release might be optional. Furthermore, 
+user journeys may differ depending on the chosen implementation approach, 
+such as asynchronous attribute storage or synchronous retrieval. This 
+could affect aspects like providing approval to retrieve and release data.
+
+The eIDAS Expert Group has described service blueprints for the following use cases:
+* Identification and authentication to access online services, see section 3.13.1,
+* Mobile Driving Licence, see section 3.2,
+* A number of other use cases that will be detailed in subsequent versions of this document, see section 3.3.
+
 
 ### 3.1 Identification and  authentication to access online services
 
@@ -360,10 +364,10 @@ The primary purpose of the EUDI Wallet is to offer secure identification
 and authentication of users at a high Level of Assurance (LoA) for both
 public and private online services. This essential functionality ensures
 that Relying Parties can confidently verify that they are interacting
-with the correct individual. 
+with the correct User. 
 
-In this use case, the User is utilising the EUDI Wallet to confirm their
-identity. They frequently access online services that demand
+In this use case, the User is utilising the EUDI Wallet Instance to 
+confirm their identity. They access online services that demand
 authentication and currently employ multiple methods for identity
 verification while accessing these services. The User is also concerned
 about sharing person identification data (PID) during online
@@ -372,22 +376,21 @@ services requiring user identification and maintaining control over
 personal data sharing. 
 
 This use case encompasses the entire EUDI Wallet life cycle from the
-User's viewpoint, from obtaining a valid wallet to identifying and
-authenticating the user within an online service. The focus of the
+User's viewpoint, from obtaining a valid Wallet Instance to identifying and
+authenticating the User within an online service. The focus of the
 current description is a workable remote same-device flow (refer to
 section 7.4), where a natural person User employs a single mobile device
 for both securing the session and accessing the service's information. 
 
 PID issuance requirements, PID attribute schema and Trust Infrastructure
-details are further detailed in Chapter 6 and Annex 06.
+details are further detailed in Chapter 6 and Annex A.6.
 
 ### 3.2 Mobile Driving Licence
-
-A significant use case for the EUDI Wallet involves allowing Users to
-acquire, store, and display a digital document as the mobile Driving
-Licence (mDL) to prove their driving privileges. In this use case the
-User employs an EUDI Wallet to present a mDL to a third party like a
-police officer. 
+A significant use case for the EUDI Wallet involves allowing Users to 
+acquire, store, and display a mobile Driving Licence (mDL) as an 
+attestation to prove their driving privileges. In this use case, the 
+User employs an EUDI Wallet to present a mDL to a Relying Party 
+(e.g., the Traffic Police)[^8]. 
 
 The use case description concentrates on proximity supervised and
 unsupervised flows, which involve scenarios where the User is physically
@@ -400,36 +403,34 @@ unsupervised flow, the EUDI Wallet presents mDL attributes to a machine
 without human oversight.
 
 (Q)EAA issuance requirements, mDL attribute schema and Trust
-Infrastructure details are further detailed in Chapter 6 and Annex 07.
+Infrastructure details are further detailed in Chapter 6 and Annex A.7.
 
 ### 3.3 Other use cases 
 In subsequent versions of this document, the following use cases will be
 detailed as service blueprints:
 
 #### Health
-
-Easy access to health data is crucial in both national and cross-border
-contexts. EUDI Wallet may enable access to patient summary,
+Easy access to health data is crucial in both national and cross-border 
+contexts. An EUDI Wallet Instance MAY enable access to patient summary, 
 ePrescriptions, etc.
 
 #### Educational credentials and professional qualifications
-
-Providing documents for qualification recognition procedures can be
-costly and time-consuming for end Users, companies and employers,
-education and training providers, and other academic institutions. For
-example, digital diploma attestations could be presented cross-border in
-a verifiable, trusted, and consumable format to another education or
-training institution or a prospective employer. The EUDI Wallet may be a
-repository for educational digital credentials as Electronic
-Attestations of Attributes and a means for exchanging them by a learner.
+Providing documents for qualification recognition procedures can be 
+costly and time-consuming for end Users, Relying Parties such as companies 
+and employers, and (Q)EAA providers such as education and training 
+providers or other academic institutions. For example, digital diploma 
+attestations could be presented cross-border in a verifiable, trusted, 
+and consumable format to another education or training institution or a 
+prospective employer. An EUDI Wallet Instance may be a repository for 
+educational digital credentials as Electronic Attestations of Attributes 
+and a means for exchanging them by a learner.
 
 #### Digital Finance
-
-The EUDI Wallet shall facilitate complying with strong customer
-authentication requirements. In line with the Commission’s Retail
-Payments Strategy[^9], the use case would be developed in close
-coordination with Member States’ advisory groups on retail payments and
-the finance industry.
+The EUDI Wallet Solutions SHALL facilitate complying with strong customer 
+authentication requirements. In line with the Commission’s Retail 
+Payments Strategy[^9], the use case would be developed in close 
+coordination with Member States’ advisory groups on retail payments 
+and the finance industry.
 
 #### Digital Travel Credential
 
