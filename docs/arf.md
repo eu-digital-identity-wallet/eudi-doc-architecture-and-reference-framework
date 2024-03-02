@@ -194,17 +194,12 @@ established - <em>eIDAS Regulation</em>.</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Person Identification Data Provider*</em></td>
-<td><strong>A Member State or legal entity providing Person
+<td><strong>A Member State or other legal entity providing Person
 Identification Data to Users.</strong></td>
 </tr>
 <tr class="even">
 <td><em>Public Key Infrastructure (PKI)*</em></td>
-<td><strong>Public Key Infrastructure (PKI) denote systems, software,
-and communication protocols that are used by EUDI Wallet components to
-distribute, manage</strong>, <strong>and control public keys. A PKI
-publishes public keys and establishes trust within an environment by
-validating and verifying the public keys mapping to an
-entity.</strong></td>
+<td><strong>Systems, software, and communication protocols that are used by EUDI Wallet ecosystem components to distribute, manage, and control public keys. A PKI publishes public keys and establishes trust within an environment by validating and verifying the public keys mapping to an entity.</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Qualified Electronic Attestations of Attributes</em></td>
@@ -213,9 +208,13 @@ by a Qualified Trust Service Provider and meets the requirements laid
 down in Annex V. - <em>eIDAS Regulation amendment
 proposal</em></strong></td>
 </tr>
+<tr class="odd">
+<td><em>Qualified Electronic Attestations of Attributes (QEAA) provider*</em></td>
+<td><p><strong>(Qualified) Trust Service Provider issuing (Q)EAA. Note: there may be multiple (Q)EAA Providers.</em></strong></td>
+</tr>
 <tr class="even">
 <td><em>Qualified Electronic Signature Creation Device (QSCD)</em></td>
-<td><strong>Configured software or hardware used to create an electronic
+<td><strong>Software or hardware used to create an electronic
 signature that meets the requirements laid down in Annex II of the eIDAS
 Regulation amendment proposal. <em>-eIDAS Regulation and eIDAS
 Regulation amendment proposal</em></strong></td>
@@ -290,12 +289,11 @@ ledger. - <em>eIDAS Regulation amendment proposal</em></strong></p></td>
 <td><em>Trusted List*</em></td>
 <td><strong>Repository of information about authoritative entities in a
 particular legal or contractual context which provides information about
-their current and historical status. Trusted Lists can be implemented in
-different ways.</strong></td>
+their current and historical status.</strong></td>
 </tr>
 <tr class="even">
 <td><em>User*</em></td>
-<td><strong>Is a natural or legal person using an EUDI
+<td><strong>A natural or legal person using an EUDI
 Wallet.</strong></td>
 </tr>
 <tr class="odd">
@@ -303,19 +301,17 @@ Wallet.</strong></td>
 <td><strong>Instance of an EUDI Wallet Solution belonging to and which
 is controlled by a User.</strong></td>
 </tr>
+<tr class="odd">
+<td><em>Relying Party Instance*</em></td>
+<td><strong>A software module with the capability to interact with a Wallet Instance and to perform Relying Party authentication, that is controlled by a Relying Party.</strong></td>
+</tr>
 <tr class="even">
-<td><em>EUDI Wallet Providers*</em></td>
-<td><strong>An organisation, public or private, responsible for the
-operation of a eIDAS-compliant EUDI Wallet Solution that can be
-instantiated, e.g. through installation and
-initialization.</strong></td>
+<td><em>EUDI Wallet Provider*</em></td>
+<td><strong>A public or private organisation, responsible for the operation of an eIDAS-compliant EUDI Wallet Solution that can be instantiated on a User's device, e.g., through installation and initialization.</strong></td>
 </tr>
 <tr class="odd">
 <td><em>EUDI Wallet Solution*</em></td>
-<td><strong>An EUDI Wallet Solution is the entire product and service
-owned by an EUDI Wallet Provider, offered to all Users of that solution.
-An EUDI Wallet solution can be certified as being EUDI-compliant by a
-CAB.</strong></td>
+<td><strong>An EUDI Wallet Solution is the entire product and service provided by an EUDI Wallet Provider, and offered to all Users of that Solution.</strong></td>
 </tr>
 </tbody>
 </table>
