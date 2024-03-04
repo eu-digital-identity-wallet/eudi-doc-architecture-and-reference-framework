@@ -2557,35 +2557,32 @@ Note that use cases in which the User and the subject of the attributes
 are two different persons, such as when somebody has power of attorney or
 custodianship, are out of scope of this version of this document. 
 
-------
-
-#### 7.5.4 The Certification process of EUDI Wallets
-
-Member States, according to Article 6c (3) of the proposal, must
+## 8	The Certification process of EUDI Wallets Solutions
+Member States, according to Article 6c (3) of the proposal, SHALL
 designate accredited CABs which will oversee carrying out conformity
-assessment of EUDI Wallets. This designation process should be
+assessment of EUDI Wallets Solutions. This designation process should be
 harmonised between Member States.
 
-Once this designation has been made, Member States shall communicate to
+Once this designation has been made, Member States SHALL communicate to
 the European Commission the names and addresses of these public or
-private bodies under Article 6c(5) of the proposal.
+private bodies under Article 6c(5) of the proposal. 
 
-EUDI Wallet Provider must request (select, contract) one or more
-designated CABs to assess and certify the conformity of their EUDI
-Wallet against the requirements of the eIDAS Regulation.
+EUDI Wallet Provider SHALL request (select, contract) one or more
+designated CABs to assess and certify the conformity of their EUDI Wallet
+Solution against the requirements of the eIDAS Regulation.
 
-EUDI Wallet certification is conducted by the CAB to evaluate and
-certify the conformity of the EUDI Wallet (target of the certification)
+EUDI Wallet certification is conducted by the CAB to evaluate and certify
+the conformity of the EUDI Wallet Solution (target of the certification)
 against normative document(s) which will be the Art. 6a(11) implementing
 act(s) on technical and operational specifications and reference
-standards.
+standards. The EUDI Wallet SHALL be certified to ensure conformity
+assessments but also security robustness assessment of conformance to a
+high level of security.
 
-The EUDI Wallet shall be certified to ensure conformity assessments but
-also security robustness assessment of conformance to a high level of
-security. The use of a cybersecurity certification scheme should bring a
-harmonised level of trust in the security of EUDI Wallet. The secure
+The use of a cybersecurity certification scheme should bring a harmonised
+level of trust in the security of EUDI Wallet Solution. The secure
 storage of cryptographic material is expected to become subject to
-cybersecurity certification too.
+cybersecurity certification too. 
 
 The Certification process of EUDI Wallet Providers should leverage, rely
 on, and mandate the use of relevant and existing Cybersecurity Act
