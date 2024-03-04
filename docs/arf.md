@@ -862,6 +862,173 @@ Please note that this is independent from the possibility of a PID or
 (Q)EAA Provider to revoke their attestations.
 
 
+## 5	EUDI data model
+The European Digital Identity Ecosystem data model manages the following
+types of attestations:
+* **Person Identification Data (PID)**: An attestation in electronic form
+  that allows the authentication of attributes proofing the identity of a
+  natural or legal person, or a natural person representing a legal
+  person, or of an object. 
+* **Electronic Attestation of Attributes (EAA)**: An attestation in
+  electronic form that allows the authentication of attributes describing
+  features, characteristics or qualities of a natural or legal person or
+  of an entity, or a natural person representing a legal person, or of an
+  object.
+* **Qualified Electronic Attestation of Attributes (QEAA)**: an
+  electronic attestation of attributes (EAA), which is issued by a
+  qualified trust service provide, and adhering to Annex V of the
+  regulation. 
+
+### 5.1	Person Identification Data
+This section details the PID set as presented by the EUDI Wallet. Further
+specifications regarding PID are detailed in the PID Rule Book, found in
+Annex A.6.
+
+A PID Provider May issue a PID set to the EUDI Wallet and enable the use
+of the EUDI Wallet as an electronic identification means when accessing
+online and offline services.
+
+The mechanisms through which the PID is generated and provided to the
+EUDI Wallet are up to the Member States and are only constrained by legal
+requirements such as the requirements of LoA High, GDPR or any other
+national or union law. 
+
+In the following the data format as presented to the Relying Party will
+be described, without any assumptions on how the EUDI Wallet retrieved or
+generated this data beforehand.
+
+#### 5.1.1 PID format and associated requirements 
+
+##### 5.1.1.1	Principles for the PID set 
+This chapter proposes the definition of the PID set and discusses further
+specification, data minimization and identifiers. The dataset proposed
+herein is constructed based on the following principles:
+
+* No two persons SHALL have the same PID set of values for mandatory
+  attributes. 
+* The PID set SHALL at least contain the minimum set of attributes
+  aligned with eIDAS CIR 2015/1501[^14] as mandatory. 
+* The mandatory data set is by nature limited to the (narrow)
+  intersection of what all Member States can provide for all natural and
+  legal persons and what is needed for electronic identification
+  purposes. The mandatory data set will be complemented by optional
+  attributes available only in some Member States to ensure it is usable
+  for electronic identification purposes. 
+
+##### 5.1.1.2	PID Attributes for Natural Persons
+The below table provides an overview of mandatory and optional PID
+attributes for natural persons. 
+
+| Mandatory PID Attributes   | Optional PID Attributes   |
+|----------------------------|---------------------------|
+| family_name                | family_name_birth         |
+| given_name                 | given_name_birth          |
+| birth_date                 | birth_place               | 
+|                            | resident_address          |
+|                            | gender                    |
+|                            | age_over_18               |
+|                            | age_over_NN               |
+|                            | age_in_years              |
+|                            | age_birth_year            |
+|                            | birth_country             |
+|                            | birth_state               |
+|                            | birth_city                |
+|                            | resident_address          |
+|                            | resident_country          | 
+|                            | resident_state            | 
+|                            | resident_city             |
+|                            | resident_postal_code      |
+|                            | resident_street           |
+|                            | resident_house_number     | 
+|                            | nationality               |
+
+*Table 2 - Mandatory and optional PID attributes for natural persons
+
+Possible additional optional attributes have been added to facilitate a
+wider range of authentication options both online and offline as well as
+addressing learning from the current eIDAS implementations. Metadata
+associated with a PID set is further detailed in Annex A.6.
+
+#### 5.1.2	Issuing requirements for PID
+The following table defines the requirements applicable to PID regarding
+what information is included in the attestation, such as for purposes of
+validity checks, authenticity, validation, policies, the data model, and
+formats.
+
+Future versions of this text may expand the table to specify
+requirements. Note that these requirements are primarily aimed at the
+first version of the EUDI Wallet Solution specifications, and that they
+may change as the specifications evolve.
+
+
+| \#     | Requirement |
+|--------|-------------|
+| **1**  | **PID attestation MUST contain the information required to identify the PID Provider.**        |
+| **2**  | **PID attestation MUST contain the information required to perform a data integrity check.**  |
+| **3**  | **PID attestation MUST contain the information required for verifying the authenticity.**     |
+| **4**  | **PID attestation MUST contain all the information required to perform validity status checks on the attestation.** |
+| **5**  | **PID attestation MUST include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.** |
+| **6**  | **PID attestation MUST be issued to be presented in accordance with both the data model specified in ISO/IEC 18013-5:2021 and the W3C Verifiable Credentials Data Model 1.1.** |
+| **7**  | **PID attestation MUST be encoded as CBOR and JSON format.** |
+| **8**  | **PID attestation MUST enable Selective Disclosure of attributes by using Selective Disclosure for JWTs (SD-JWT) and Mobile Security Object (ISO/IEC 18013-5) scheme accordingly to the data model.** |
+| **9**  | **PID attestation MUST use signatures and encryptions formats as detailed in JOSE RFCs and COSE RFCs.** |
+| **10** | **PID attestation MUST use signature and encryption algorithms in accordance with SOG-IS ACM.**         |
+
+*Table 3 - Issuing requirements for PID*
+
+### 5.2	Qualified and Non-Qualified Electronic Attestation of Attributes
+#### 5.2.1	Issuing requirements for (Q)EAA
+The following table defines the requirements applicable to (Q)EAA-s
+regarding what information is included in the attestation, such as for
+purposes of validity checks, authenticity, validation, policies related
+to key management, the data model, and formats.
+
+(Q)EAA-s can be also issued under requirements applicable for PID.
+
+Future versions of this text may expand the table to specify
+requirements. Note that these requirements are primarily aimed at the
+first version of the EUDI Wallet Solution specifications, and that they
+may change as the specifications evolve.
+
+Mobile Driving Licence attestations are further specified in mDL Rule
+Book in Annex A.7.
+
+
+| \#     | Requirement  |
+|--------|--------------|
+| **1**  | **(Q)EAA MUST contain the information required to identify the Provider.**                              |
+| **2**  | **(Q)EAA MUST contain the information required to perform a data integrity check.**                   |
+| **3**  | **(Q)EAA MUST contain the information required for verifying the authenticity of the (Q)EAA.**        |
+| **4**  | **(Q)EAA MUST contain all the information required to perform validity status checks on the (Q)EAA.** |
+| **5**  | **(Q)EAA SHOULD include all the information (as an attribute or as any other signed value) required to perform verification of the holder binding by a Relying Party.** |
+| **6**  | **(Q)EAA MUST be issued in accordance with one of the data model specifications: ISO/IEC 18013-5:2021, W3C Verifiable Credentials Data Model 1.1.**                     |
+| **7**  | **(Q)EAA SHOULD be encoded as one of the following formats: CBOR or JSON accordingly to the data model used for the attestation **                                      |
+| **8**  | **EAA MAY be encoded as JSON-LD, see [JSON-LD].**  |
+| **9** | **(Q)EAA SHOULD enable Selective Disclosure of attributes either by using Selective Disclosure for JWTs (SD-JWT) or Mobile Security Object (ISO/IEC 18013-5) scheme accordingly to the data model used for the attestation.** |
+| **10** | **(Q)EAA SHOULD use one of the following signature and encryption formats as detailed in: JOSE RFCs, COSE RFCs accordingly to data model used for the attestation.**      |
+| **11** | **(Q)EAA SHOULD use signature and encryption algorithms in accordance with SOG-IS ACM.** |
+| **12** | **(Q)EAA SHOULD be issued accordingly to OpenID4VCI protocol.**                          |
+
+*Table 4 - Issuing requirements for (Q)EAA*
+
+### 5.3	Attestation rulebooks
+Since version 1.2.0 of this document, the concept of an attestation
+rulebook has been introduced. This is designed to compile a set of rules,
+guidelines and standards governing the verification, management, and
+usage of a specific attestation or group of attestations related to a use
+case within the EUDI ecosystem. The primary goal of the rulebooks is to
+ensure interoperability, security, privacy, and trust for EUDI Wallet’s
+attestations (PID and (Q)EAA).
+
+Common compulsory specifications, rules, and guidelines are outlined in
+the architecture and reference framework document, while those specific
+to use cases are collated in the attestation's rulebooks. Two such
+rulebooks, namely the PID and mDL rulebooks, have currently been included
+as annexes to this document.
+
+
+-------------------------------------------
+
 ## 5 Trust Model
 
 ### 5.1 Overview and scope
