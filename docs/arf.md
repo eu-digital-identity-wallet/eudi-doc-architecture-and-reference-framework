@@ -96,7 +96,7 @@ Chapter 9.
 #### 1.3.1 The Reference Implementation of an EUDI Wallet
 
 The Commission will provide a reference implementation of an EUDI Wallet
-in a mobile form factor[^7]. The source code for the EUDI Wallet reference
+in a mobile form factor. The source code for the EUDI Wallet reference
 implementation will be provided as open source for re-use by
 implementers across Europe. The first implementers will be the projects
 selected to carry out Large Scale Pilots (LSPs), following a call for
@@ -245,7 +245,7 @@ present a subset of attributes provided by the PID and/or
 <td><strong>Trust is the characteristic that one party, is willing to
 rely upon a third-party entity to execute a set of actions and/or to
 make a set of assertions about a set of subjects and/or
-scopes[^8].</strong></td>
+scopes[^7].</strong></td>
 </tr>
 <tr class="odd">
 <td><em>Trust Framework*</em></td>
@@ -520,12 +520,10 @@ requirements for EUDI Wallets.
 
 PID Providers are trusted entities responsible to:
 
-- verify the identity of the EUDI Wallet User in compliance with LoA
+* verify the identity of the EUDI Wallet User in compliance with LoA
   High requirements,
-
-- issue PID to the EUDI Wallet in a harmonised common format and
-
-- make available information[^10] for Relying Parties to verify the
+* issue PID to the EUDI Wallet in a harmonised common format and
+* make available information[^10] for Relying Parties to verify the
   validity of the PID.
 
 The terms and conditions of these services are for each Member State to
@@ -1546,7 +1544,7 @@ of such a document and has a cryptographic proof of its authenticity with
 a validity period that is typically short, for example - several weeks. 
 
 This implies that an attestation Provider will renew the attestation
-regularly during the validity period of the document . Also, an
+regularly during the validity period of the document[^19]. Also, an
 attestation Provider MAY issue multiple attestations that are
 simultaneously valid but represent the same document. For example, a User
 MAY have a mobile passport on their private phone and their work phone.
@@ -1601,7 +1599,7 @@ invalidate an attestation. For example, in many jurisdictions the police
 are allowed to confiscate a driving license if the User is caught is a
 serious traffic violation. Another example is an electronic prescription
 for medicines that is valid only once and must not be usable anymore
-after the User has received the medicines [^20] . A third example is when
+after the User has received the medicines[^20] . A third example is when
 the attestation Provider and the Authentic Source for that attestation
 are different parties. If so, the Authentic Source contains the
 authoritative information about whether an attribute value must be
@@ -2265,7 +2263,7 @@ In essence, a Relying Party authentication mechanism works as follows:
 1. The Relying Party Instance SHALL create a signature over some data in
    the protocol for the request, using a Relying Party Instance private
    key. 
-2. The Relying Party Instance SHALL include its certificate [^22] (and all
+2. The Relying Party Instance SHALL include its certificate[^22] (and all
    other certificates in the trust chain leading up to its trust anchor)
    associated with the private key in the request. The certificate SHALL
    be signed (directly or indirectly) by a Certification Authority, whose
@@ -2678,7 +2676,7 @@ C., Zundel, B., and D. Chadwick, "Verifiable Credentials Data Model
 Looker, "OpenID for Verifiable Presentations", 30 December 2022,
 <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>
 
-\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023 [^23]   Retrievable from [OpenID for Verifiable Credential Issuance - draft 12](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) 
+\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023[^23]   Retrievable from [OpenID for Verifiable Credential Issuance - draft 12](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) 
 
 \[Prop_eIDAS\] COM(2021) 281 final
 
@@ -2686,7 +2684,7 @@ Looker, "OpenID for Verifiable Presentations", 30 December 2022,
 
 \[DP_Revoc\] eIDAS Expert Group WG1 Discussion Paper Revocation for PID and (Q)EAA, v.1.0
 
-\[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023 [^23]
+\[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023[^24]
 
 \[W3C StatusList2021\] <https://w3c-ccg.github.io/vc-status-list-2021/>
 
@@ -2707,30 +2705,31 @@ https://www.w3.org/TR/json-ld/
 
 [^1]: The date of adoption by the eIDAS Expert Group.
 
-[^2]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021
-    on a common Union Toolbox for a coordinated approach towards a
-    European Digital Identity Framework, OJ L 210/51, 14.6.2021
+[^2]: COMMISSION RECOMMENDATION (EU) C(2021) 3968 final of 3 June 2021 on
+    a common Union Toolbox for a coordinated approach towards a European
+    Digital Identity Framework, OJ L 210/51, 14.6.2021
 
 [^3]: All references in the document to the revision of the eIDAS
     regulation are to be understood as a reference to the Commission's
     proposal of 3 June 2021, unless otherwise indicated. Proposal for a
     REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL amending
-    Regulation (EU) No 910/2014 as regards establishing a framework for
-    a European Digital Identity, COM(2021) 281 final, 3.6.2021
+    Regulation (EU) No 910/2014 as regards establishing a framework for a
+    European Digital Identity, COM(2021) 281 final, 3.6.2021
 
-[^4]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert
-    groups/consult?do=groupDetail.groupDetail&groupID=3032
+[^4]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert groups/consult?do=groupDetail.groupDetail&groupID=3032
 
 [^5]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
 
 [^6]: All references in the document to the revision of the eIDAS
-    regulation are to be understood as a reference to the Commission's
+    Regulation are to be understood as a reference to the Commission's
     proposal of 3 June 2021, unless otherwise indicated.
 
-[^7]: A first release is currently planned for Q2 2023, followed by
-    further releases.
+[^7]: "OASIS Trust," \[Online\]. Available: http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.
 
-[^8]: "OASIS Trust," \[Online\]. Available: http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.
+[^8]: Regarding registration of Relying Pary entities, please refer to
+    epic 27 that deals with Relying Party Registry. Also, under no
+    circumstances, Police Relying Party Instances should not be open to
+    the general public
 
 [^9]: Communication from the Commission to the European Parliament, the
     Council, the European Economic and Social Committee and the
@@ -2750,59 +2749,68 @@ https://www.w3.org/TR/json-ld/
     accreditation and market surveillance relating to the marketing of
     products and repealing Regulation (EEC) No 339/93
 
-[^14]: Please note that work on further specifying the EUDI Wallet
+[^14]: Commission Implementing Regulation (EU)2015/1501 of 8 September
+    2015 on the interoperability framework pursuant to Article 12(8) of
+    Regulation (EU) No 910/2014 of the European Parliament and of the Council
+    on electronic identification and trust services for electronic
+    transactions in the internal market.
+
+[^15]: Please note that work on further specifying the EUDI Wallet
     Instance Attestation is planned to be carried out. This section may
     need to be revised depending on the results of that work. For
     instance, EUDI Wallet Instance Attestation may not be issued in all
     cases nor are alternative possibilities excluded from consideration.  
 
-[^15]: -
-
-[^16]: The ARF implicitly requires device binding for Type 1 Wallet
-    configurations (by requiring support for ISO/IEC 18013-5 and SD-JWT)
-    and recommends it for Type 2 configurations.  However, Type 2 Wallet
-    configurations are out of scope of this version of the Trust Model.
+[^16]: The ARF implicitly requires device binding for the Wallet Instance
+    (by requiring support for ISO/IEC 18013-5 and SD-JWT)
 
 [^17]: Preferably the same Issuer that also signed the other attributes
     that were released. However, the combined presentation of attributes
     originating from different attestations will be further detailed in
     a future version of this document.
 
-[^18]: Note that this implies that Relying Parties must also trust
-    device binding, see section 5.3.2.4.. The RP trusts that the
-    attestation is bound a device trusted by the Issuer, and
+[^18]: Note that this implies that Relying Parties SHALL also trust
+    device binding, see section 6.2.3.4. The Relying Party trusts that
+    the attestation is bound to a device trusted by the Provider, and
     subsequently trusts that this device has properly authenticated the
     User.
 
-[^19]: Commission Implementing Regulation (EU) 2015/1501 of 8
-    September 2015 on the interoperability framework pursuant to Article
-    12(8) of Regulation (EU) No 910/2014 of the European Parliament and
-    of the Council on electronic identification and trust services for
-    electronic transactions in the internal market
+[^19]: A PID MAY be an exception: because the concept of a PID is new, it
+    is not known yet what validity period PID Providers will use for
+    their PIDs, and if there will be a difference between the
+    administrative validity period as seen by the User and the
+    cryptographic validity period of the attestation.
 
-[^20]: Commission Implementing Regulation (EU) 2015/1502 of 8
-    September 2015 on setting out minimum technical specifications and
-    procedures for assurance levels for electronic identification means
-    pursuant to Article 8(3) of Regulation (EU) No 910/2014 of the
-    European Parliament and of the Council on electronic identification
-    and trust services for electronic transactions in the internal
-    market
+[^20]: In this case, an alternative to revocation is that the pharmacy
+    backend marks the prescription as used, and all pharmacies check that
+    backend before handing out the medicines. This goes in fact for any
+    attestation: if there is a backend system that allows Relying Parties
+    to verify whether the attestation is still usable, then revocation is
+    not needed. However, we cannot assume that such a backend system
+    exists for all attestations that can be ‘consumed’, i.e., that must
+    become unusable once they have been used.
 
-[^21]: A noteworthy mention is the mdoc REST API as detailed in the
-    draft ISO/IEC 23220-4
+[^21]: The current version of \[JWTStatusList\] does not explicitly
+    describe such a procedure. The EC will point out to the authors that
+    this should be added.
 
-[^22]: The exact version to be referenced is to be determined. [ARF]
+[^22]: Please note that the term "certificate" does not mean only X.509
+    certificates, but it includes also other formats of certificates,
+    such as in Distributed Ledgers.
+
+[^23]: The exact version to be referenced is to be determined. \[ARF\]
     references v0.14 of 30 December 2022. Draft 18 is the latest version
     available at the time of writing of this document. The level of
-    interoperability between these versions is not known. As [OpenID4VP]
+    interoperability between these versions is not known. As \[OpenID4VP\]
     is still under development, presumably later versions will become
     available over time.
 
-[^23]: The exact version to be referenced is to be determined. [ARF]
-    references v0.2. v0.4 is the latest version available at the time of
-    writing of this document. The level of interoperability between
-    these versions is not known. As [SD-JWT] is still under development,
-    presumably later versions will become available over time.
+[^24]: The exact version to be referenced is to be determined. Draft 18
+    the latest version available at the time of writing of this document.
+    The level of interoperability between these versions is not known. As
+    \[SD-JWT\] is still under development, presumably later versions may
+    become available over time.
+
 
 ### A.1 Annex 01 - initialisation and activation
 
