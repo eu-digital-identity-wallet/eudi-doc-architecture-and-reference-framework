@@ -2590,10 +2590,9 @@ certification schemes, or parts thereof, to certify the compliance of
 wallets, or parts thereof, with the applicable cybersecurity
 requirements.
 
-## 8 The Architecture and Reference Framework Development Process
+## 9 The Architecture and Reference Framework Development Process
 
-### 8.1 Publication
-
+### 9.1 Publication
 This document and the backlog items are made publicly available at 
 the [EU Digital Identity Wallet repository in GitHub](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/), where it will be regularly updated according to the workflow described 
 in Chapter 9.2.
@@ -2601,41 +2600,41 @@ in Chapter 9.2.
 - <https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/>
 
 
-### 8.2 Update
-
+### 9.2 Update
 To ensure steady and fast progress on elaborating and updating this
 document, the following process and work methodology is applied.
 
-The eIDAS Expert Group should maintain a backlog, which is a prioritised
-list of work items to complete the ARF. The backlog will be updated
-based on feedback from the eIDAS Expert Group, LSPs, the Commission or
-other stakeholders such as international standardisation organisations.
-For instance, feedback from the development of the reference
-implementation of an EUDI Wallet and ensuing drafts of detailed
-technical specifications may prompt new work items.
+The eIDAS Expert Group SHOULD maintain a backlog, which is a prioritised
+list of work items to complete the ARF. The backlog will be updated based
+on feedback from the eIDAS Expert Group, LSPs, the Commission or other
+stakeholders such as international standardisation organisations. For
+instance, feedback from the development of the reference implementation
+of an EUDI Wallet and ensuing drafts of detailed technical specifications
+may prompt new work items.
 
 The European Commission (DG CONNECT) will organise the work on the
 backlog items and will facilitate that work is progressing according to
 the expected timeline.
 
 The eIDAS Expert Group will regularly discuss and compare different
-proposals regarding technical solutions, recommendations and
-requirements related to the relevant backlog issue with a view of
-updating the ARF. The eIDAS Expert Group shall in this regard maintain a
-list of Architecture Decision Records (ADRs), so that it is possible to
-keep track of and understand the motivation behind technical decisions
+proposals regarding technical solutions, recommendations and requirements
+related to the relevant backlog issue with a view of updating the ARF.
+The eIDAS Expert Group SHALL in this regard maintain a list of
+Architecture Decision Records (ADRs), so that it is possible to keep
+track of and understand the motivation behind technical decisions
 described in the ARF.
 
-Any changes and/or updates to this document shall be agreed by the eIDAS
+Any changes and/or updates to this document SHALL be agreed by the eIDAS
 Expert Group. The eIDAS Expert Group will convene in regular meetings,
 with the objective to discuss and approve new release of this document,
-as well as updating the development backlog.
+as well as updating the development backlog. 
 
 This document will be aligned to the outcome of the legislative
 negotiations of the proposal for a European Digital Identity Framework
 with updates being made accordingly.
 
-#### 8.2.1 Document versioning
+
+#### 9.2.1 Document versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
 version control system and the following semantic versioning scheme will
@@ -2653,6 +2652,8 @@ the document or information has been removed from the document, and
 
 **PATCH** version is incremented when minor changes have been made
 (e.g., fixing typos).
+
+----
 
 ## 9 References
 \[2015/1505\] COMMISSION IMPLEMENTING DECISION (EU) 2015/1505
