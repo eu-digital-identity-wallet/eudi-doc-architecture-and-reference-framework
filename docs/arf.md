@@ -11,7 +11,7 @@ _Version 1.3.0_
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
 | 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
-| 1.3.0   | 15 December 2023 | <ul><li>Updated Chapter 5 EUDI data model</li><li>Updated Chapter 6 Trust model chapter</li><li>Updated Chapter 7 Specifications for Wallet Solutions</li><li>Updated Annex 6 PID rulebook</li><li>Added Annex 8 EUDI Wallet Design Guide</li><li>Added Annex 9 Design guide data sharing scenarios</li></ul> |
+| 1.3.0   | 15 December 2023 | <ul><li>Updated Chapter 5 EUDI data model</li><li>Updated Chapter 6 Trust model</li><li>Updated Chapter 7 Specifications for Wallet Solutions</li><li>Updated Annex 6 PID rulebook</li><li>Added Annex 8 EUDI Wallet Design Guide</li><li>Added Annex 9 Design guide data sharing scenarios</li></ul> |
 
 ## 1 Introduction
 
