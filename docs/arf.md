@@ -484,35 +484,34 @@ detailed in the following sections.
 
 14. *National Accreditation Bodies*
 
-#### 4.1.1 Users of EUDI Wallet
-
-Users of EUDI Wallets use the EUDI Wallet to receive, store and present
-attestations (PID, QEAA or EAA) about themselves, including to prove
-their identity. Users may create Qualified Electronic Signatures and
-Seals (QES) using an EUDI Wallet.
+#### 4.1.1 Users of EUDI Wallets
+Users of EUDI Wallets use the EUDI Wallet instance to receive, store and
+present PID, QEAA or EAA about themselves, including to prove their
+identity. Users can create Qualified Electronic Signatures and Seals
+(QES) using an EUDI Wallet instance.
 
 Who can be a User of an EUDI Wallet depends on national law. The use of
 an EUDI Wallet by citizens is not mandatory under the legislative
-proposal. However, Member States are obliged to offer at least one EUDI
-Wallet Solution to their citizens.
+proposal. However, each Member State SHALL provide at least one European
+Digital Identity Wallet within 24 months after the entry into force of
+the implementing acts referred to in the Regulation.
 
-#### 4.1.2 EUDI Wallet Provider
-
-EUDI Wallet Provider are Member States or organisations either mandated
+#### 4.1.2 EUDI Wallet Providers
+EUDI Wallet Providers are Member States or organisations either mandated
 or recognized by Member States making the EUDI Wallet available for end
 Users. The terms and conditions of the mandate or recognition are for
 each Member State to determine.
 
-The EUDI Wallet Providers make available to Users through an EUDI Wallet
-Solution a combination of several products and Trust Services foreseen
-in the legal proposal, which give the User full control over the use of
-their Person Identification Data (PID) and Qualified or non-qualified
-Electronic Attestations of Attributes (QEAA or EAA), and any other
-personal data within their EUDI Wallet. From a technical viewpoint, this
-may also imply guaranteeing a User sole control over sensitive
-cryptographic material (e.g., private keys) related to the use of these
-data in some scenarios, including electronic identification, signature /
-seal.
+The EUDI Wallet Providers make available to a User, through an instance
+of their EUDI Wallet Solution, a combination of several products and
+Trust Services foreseen in the legal proposal, which give the User full
+control over the use of their Person Identification Data (PID) and
+Qualified or non-qualified Electronic Attestations of Attributes (QEAA or
+EAA), and any other personal data within their EUDI Wallet. From a
+technical viewpoint, this may also imply  guaranteeing a User sole
+control over sensitive cryptographic material (e.g., private keys)
+related to their PID and/or (Q)EAA, including in use cases for electronic
+identification and creating a signature or seal.
 
 EUDI Wallet Providers are responsible for ensuring compliance with the
 requirements for EUDI Wallets.
@@ -532,10 +531,12 @@ PID Providers are trusted entities responsible to:
 The terms and conditions of these services are for each Member State to
 determine.
 
-PID Providers may e.g., be the same organisations that today issue
+PID Providers MAY e.g., be the same organisations that today issue
 official identity documents, electronic identity means, EUDI Wallet
-Providers etc. EUDI Wallet Providers may or may not be the same
-organisations as PID Providers.
+Providers etc. EUDI Wallet Providers MAY be the same organisations as PID
+Providers. In case an organisation acts as both a PID Provider and a
+Wallet Provider, it SHALL comply with all requirements for both PID
+Providers and Wallet Providers.
 
 #### 4.1.4 Trusted List Providers
 
@@ -543,21 +544,13 @@ The specific status of a role in the EUDI Wallet ecosystem shall be
 verified in a trustworthy manner. Such roles are:
 
 - EUDI Wallet Providers
-
 - Person Identification Data Providers
-
 - Qualified Electronic Attestation of Attributes (QEAA) providers
-
 - Qualified certificate for electronic signature/seal (QC) providers
-
 - Relying Parties
-
 - Non-qualified Electronic Attestation of Attributes (EAA) providers
-
 - Non-qualified certificate for electronic signature/seal providers
-
 - Providers of other Trust Services
-
 - Catalogues of attributes and schemes for the attestations of attribute
   providers
 
@@ -570,36 +563,34 @@ When used, Trusted List[^11] need to provide a registration service for
 the relevant entities, maintain a registry and enable third party access
 to the registry information. The terms and conditions of entities to
 become registered are for each registrar to determine unless specified
-in e.g., EU law or sectoral rules.
+in e.g., sectoral rules.
 
 #### 4.1.5 Qualified Electronic Attestation of Attributes Providers
-
-Qualified EAA are provided by QTSPs. The eIDAS Regulation Trust Framework for
+Qualified EAA are provided by QTSPs. The general Trust Framework for
 QTSPs apply also to QEAA, but specific rules for this Trust Service need
 to be defined as well. QEAA Providers maintain an interface for
 requesting and providing QEAAs, including a mutual authentication
 interface with EUDI Wallets and potentially an interface towards
-Authentic Sources to verify attributes. QEAAs provide
+Authentic Sources to verify attributes. QEAA Providers provide
 information or the location of the services that can be used to enquire
-about the validity status of the QEAAs, without having an ability for the 
-QEAA Providers to receive any information about the use of the attestations. 
-The terms and conditions of these services are for each QTSP to determine, 
-beyond what is specified in the eIDAS Regulation.
+about the validity status of the QEAAs, without having an ability to
+receive any information about the use of the attestations. The terms and
+conditions of these services are for each QTSP to determine, beyond what
+is specified in the eIDAS Regulation.
 
 #### 4.1.6 Non-Qualified Electronic Attestation of Attributes Providers
-
 Non-qualified EAA can be provided by any Trust Service Provider. While
 they are supervised under eIDAS, it can be assumed that other legal or
 contractual frameworks than eIDAS mostly govern the rules for provision,
 use and recognition of EAA. Such other frameworks may cover policy areas
 such as driving licences, educational credentials, digital payments,
 although they may also rely on qualified Electronic Attestation of
-Attributes Providers. For EAA to be used in the context of the EUDI Wallet, 
-TSPs offer Users a way to request and obtain EAA, meaning they need to 
-technically comply with EUDI Wallet interface specifications. Depending on 
-the domain rules, EAA providers may provide validity information about EAA, 
-without having an ability to receive any information about the use of the EAA. 
-The terms and conditions of issuing EAAs and related services are subject to
+Attributes Providers. For EAA to be used, TSPs offer Users a way to
+request and obtain EAA, meaning they need to technically comply with EUDI
+Wallet interface specifications. Depending on the domain rules, EAA
+providers may provide validity information about EAA, without having an
+ability to receive any information about the use of the EAA. The terms
+and conditions of issuing EAAs and related services are subject to
 sectoral rules.
 
 #### 4.1.7 Qualified and Non-Qualified Certificates for Electronic Signature/Seal Providers
@@ -625,23 +616,26 @@ non-qualified Trust Services such as timestamps may be further described
 in future versions of the ARF.
 
 #### 4.1.9 Authentic Sources
-
 Authentic Sources are the public or private repositories or systems
 recognised or required by law containing attributes about a natural or
 legal persons. The Authentic Sources in scope of Annex VI of the
-legislative proposal are sources for attributes on address, age, gender,
-civil status, family composition, nationality, education and training
-qualifications titles and licences, professional qualifications titles
-and licences, public permits and licences, financial and company data.
-Authentic Sources in scope of Annex VI are required to provide
-interfaces to QEAA Providers to verify the authenticity of the above
-attributes, either directly or via designated intermediaries recognised
-at national level. Authentic Sources may also issue (Q)EAA-s themselves
-if they meet the requirements of the eIDAS Regulation. It is up to the
-Member States to define terms and conditions for the provisioning of
-these services, but according to the minimum technical
-specifications, standards, and procedures applicable to the verification
-procedures for qualified electronic attestations of attributes.
+legislative proposal are sources for, for instance, attributes on
+address, age, gender, civil status, family composition, nationality,
+education and training qualifications titles and licences, professional
+qualifications titles and licences, public permits and licences,
+financial and company data. Authentic Sources in scope of Annex VI are
+required to provide interfaces to (Q)EAA Providers to verify the
+authenticity of the above attributes, either directly or via designated
+intermediaries recognised at national level. Authentic Sources MAY also
+issue (Q)EAAs themselves if they meet the requirements of the eIDAS
+Regulation. 
+
+It is up to the Member States to define terms and conditions for the
+provisioning of these attestations, but according to the minimum
+technical specifications, standards, and procedures applicable to the
+verification procedures for qualified electronic attestations of
+attributes.
+
 
 #### 4.1.10 Relying Parties
 
@@ -659,16 +653,15 @@ with the EUDI Wallet to request attestations with mutual authentication.
 Relying Parties are responsible for authenticating PID and (Q)EAA.
 
 #### 4.1.11 Conformity Assessment Bodies (CAB)
-
-The EUDI Wallets must be certified by accredited public or private
-bodies designated by Member States[^12]. QTSPs need to be audited
-regularly by Conformity Assessment Bodies (CABs). CABs are accredited by
-a national accreditation body according to Regulation 765/2008 as
-responsible for carrying out assessments on which Member States will
-have to rely before issuing a EUDI Wallet or granting the qualified
-status to a Trust Service Provider. The standards and schemes used by
-CABs to fulfil their tasks to certify EUDI Wallets are specified further
-in the Toolbox process.
+The EUDI Wallets SHALL be certified by accredited public or private
+bodies designated by Member States[^12]. QTSPs SHALL be audited regularly
+by Conformity Assessment Bodies (CABs). CABs are accredited by a national
+accreditation body according to Regulation 765/2008 as responsible for
+carrying out assessments on which Member States will have to rely before
+issuing a EUDI Wallet or providing the qualified status to a Trust
+Service Provider. The standards and schemes used by CABs to fulfil their
+tasks to certify EUDI Wallets are specified further in the Toolbox
+process.
 
 #### 4.1.12 Supervisory Bodies
 
@@ -682,17 +675,14 @@ EUDI Wallets will have several interfaces with the devices they are
 based on, which may be for the following purposes:
 
 - Local storage.
-
 - Online Internet access.
-
 - Sensors such as smartphone cameras, IR sensors, microphones, etc.
+- Proximity communication channels such as Bluetooth Low Energy (BLE),
+  Wi-Fi Aware, Near Field Communication (NFC).
+- User interfaces such as screen, flashlights, speakers etc.
+- Smart cards and secure elements for generating, storing and using
+  private keys and other sensitive cryptographic material.
 
-- Offline communication channels such as Bluetooth Low Energy (BLE),
-  WIFI Aware, Near Field Communication (NFC).
-
-- Emitters such as screens, flashlights, speakers etc.
-
-- Smart cards and secure elements.
 
 For secure cryptographic material storage, specific devices or services
 may be interfaced with. Other related entities may be service providers
@@ -716,7 +706,7 @@ critical for wide-spread adoption of (Q)EAAs.
 #### 4.1.15 National Accreditation Bodies
 
 National Accreditation Bodies (NAB) under Regulation (EC) No
-765/2008[^13] are the bodies in Member States that performs
+765/2008[^13] are the bodies in Member States that perform
 accreditation with authority derived from the Member State. NABs
 accredit CABs as competent, independent, and supervised professional
 certification bodies in charge of certifying products/services/processes
@@ -726,17 +716,16 @@ CABs to which they have issued an accreditation certificate.
 
 ### 4.2 Lifecycle of an EUDI Wallet
 
-The legal text defines the EUDI Wallet on a high level of abstraction,
-as well as for the EUDI Wallet Providers that carry the legal
-obligation to make sure that the inhabitants/residents of a Member State
-can get a valid and fully functional EUDI Wallet. The lifecycle of an
-EUDI Wallet will have some interactions with the Trusted List Providers
-that specify the status of a role in the EUDI Wallet ecosystem in a
-trustworthy manner. Developing an Architecture and Reference Framework
-that must provide guidance to the development of such EUDI Wallet
-requires a more detailed level of abstraction to be efficient and to
-yield a sufficiently expressive architecture description to be
-prescriptive.
+The legal text defines the EUDI Wallet on a high level of abstraction, as
+well as for the EUDI Wallet Providers that carry the legal obligation to
+make sure that the Users can get a valid and fully functional EUDI
+Wallet. The lifecycle of an EUDI Wallet will have some interactions with
+the Trusted List Providers that specify the status of a role in the EUDI
+Wallet ecosystem in a trustworthy manner. Developing an Architecture and
+Reference Framework that SHALL provide guidance to the development of
+such EUDI Wallet requires a more detailed level of abstraction to be
+efficient and to yield a sufficiently expressive architecture description
+to be prescriptive. 
 
 This chapter starts from a minimal object model and defines the
 lifecycle of the core concepts: EUDI Wallet Solution, PID, (Q)EAA, and
@@ -789,13 +778,12 @@ that PID could be “pre-issued”.
 
 *Figure 3: State-chart of PID*
 
-There are three possible transitions from a valid PID: it is
-delete by the user, it automatically expires, by passage to the
-‘validity end date’ or it is actively revoked by its Provider.
-Expiration and revocation are essentially independent transitions. Once
-PID is expired, deleted or revoked, it cannot transition back to valid.
-Update of PID (i.e., because of a name change) always requires
-re-issuing.
+There are two possible transitions from a valid PID: it automatically
+expires, by passage to the ‘validity end date’ or it is actively revoked
+by its Provider. Expiration and revocation are essentially independent
+transitions. Once PID is expired or revoked, it cannot transition back to
+valid. If a change needs to be made to the PID (i.e., because of a User
+name change), the PID Provider SHALL always issue a new PID.
 
 #### 4.2.3 EUDI Wallet Solution Lifecycle
 
@@ -839,10 +827,10 @@ activated by the User and the EUDI Wallet Provider, it is in an
 Instance, which may involve:
 
 * The EUDI Wallet Provider updating the EUDI Wallet Instance,
-* The EUDI Wallet Provider revoking the EUDI Wallet Instance, possibly
-  at the User's request. Revocation of the Wallet Instance is
+* The EUDI Wallet Provider revoking the EUDI Wallet Instance, possibly at
+  the User's request. Revocation of the Wallet Instance MAY be
   accomplished by revoking the Wallet Instance attestation (refer to
-  section 5.2.2),
+  section 6.3.4.2),
 * The User uninstalling the EUDI Wallet Instance.
 
 In the **operational** state of the EUDI Wallet Instance:
