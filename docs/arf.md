@@ -455,7 +455,7 @@ detailed in the following sections.
 
 *Figure 1: Overview of the EUDI Wallet roles*
 
-1. *End Users of EUDI Wallets*
+1. *Users of EUDI Wallets*
 
 2. *EUDI Wallet Providers*
 
@@ -540,7 +540,7 @@ Providers and Wallet Providers.
 
 #### 4.1.4 Trusted List Providers
 
-The specific status of a role in the EUDI Wallet ecosystem shall be
+The specific status of a role in the EUDI Wallet ecosystem SHALL be
 verified in a trustworthy manner. Such roles are:
 
 - EUDI Wallet Providers
@@ -942,7 +942,7 @@ attributes for natural persons.
 |                            | resident_house_number     | 
 |                            | nationality               |
 
-*Table 2 - Mandatory and optional PID attributes for natural persons
+*Table 2 - Mandatory and optional PID attributes for natural persons*
 
 Possible additional optional attributes have been added to facilitate a
 wider range of authentication options both online and offline as well as
@@ -977,6 +977,7 @@ may change as the specifications evolve.
 *Table 3 - Issuing requirements for PID*
 
 ### 5.2	Qualified and Non-Qualified Electronic Attestation of Attributes
+
 #### 5.2.1	Issuing requirements for (Q)EAA
 The following table defines the requirements applicable to (Q)EAA-s
 regarding what information is included in the attestation, such as for
@@ -1028,7 +1029,7 @@ as annexes to this document.
 
 ## 6 Trust Model
 
-### 5.1 Overview and scope
+### 6.1 Overview and scope
 The Trust Model describes, for all interactions in the lifecycle of a
 EUDI Wallet Instance and an attestation, which trust relationships SHALL
 exist between the interacting parties to enable these interactions.
@@ -1047,7 +1048,9 @@ characteristics of the interacting parties.
 
 Please note:
 
-* For interactions other than the ‘Attestation releasing’ interaction in section 6.3.2, the technical measures are not yet described, although section headings have been added already. 
+* For interactions other than the ‘Attestation releasing’ interaction in
+  section 6.3.2, the technical measures are not yet described, although
+  section headings have been added already. 
 * User privacy is not specifically discussed in this document.
 
 
@@ -1104,19 +1107,20 @@ Measures to ensure this are not explicitly discussed in this document.
 When a User decides to install an EUDI Wallet Instance on their device,
 the following trust relationships SHALL exist:
 
-1.	The User SHALL be able to trust that the Wallet Solution (i.e., the
+1. The User SHALL be able to trust that the Wallet Solution (i.e., the
 app or application the user is installing) is genuine, authentic and does
-not contain any malware or other threats. 2.	The User SHALL be able to
-trust that the PID Provider will issue the PID into an instance of a EUDI
-Wallet Solution. 3.	 The User SHALL trust the EUDIW solution. This means
-that the User trusts the App store  and the App publisher.
+not contain any malware or other threats. 
+2. The User SHALL be able to trust that the PID Provider will issue the
+PID into an instance of a EUDI Wallet Solution. 
+3. The User SHALL trust the EUDIW solution. This means that the User
+trusts the App store  and the App publisher.
 
 The next sections discuss these trust relationships.
 
 ##### 6.2.1.2	User's trust in the EUDI Wallet Solution
 To be done.
 
-##### 6.2.1.3	6.2.1.3	User's trust that the EUDI Wallet Solution is supporting the attestations
+##### 6.2.1.3	User's trust that the EUDI Wallet Solution is supporting the attestations
 To be done.
 
 #### 6.2.2	EUDI Wallet Instance activation
@@ -2557,7 +2561,7 @@ Note that use cases in which the User and the subject of the attributes
 are two different persons, such as when somebody has power of attorney or
 custodianship, are out of scope of this version of this document. 
 
-## 8	The Certification process of EUDI Wallets Solutions
+## 8 The Certification process of EUDI Wallets Solutions
 Member States, according to Article 6c (3) of the proposal, SHALL
 designate accredited CABs which will oversee carrying out conformity
 assessment of EUDI Wallets Solutions. This designation process should be
@@ -2819,20 +2823,20 @@ the Wallet is described in the attached file:
 The service blueprint about issuing mDL is described in the attached
 file:
 
-- [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mDL.pdf)
+- [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mdl.pdf)
 
 ### A.4 Annex 04 – presenting mDL (proximity-supervised)
 
 The service blueprint about presenting mDL (proximity-supervised) is
 described in the attached file:
 
-- [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mDL-proximity-supervised.pdf).
+- [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mdl-proximity-supervised.pdf).
 
 ### A.5 Annex 05 – presenting mDL (proximity-unsupervised)
 
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
-* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mDL-proximity-unsupervised.pdf)
+* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mdl-proximity-unsupervised.pdf)
 
 ## A.6 Annex 06 – PID rulebook
 The PID attribute schema, indicative EUDI Wallet Instance Attestation
@@ -2847,3 +2851,6 @@ The mDL attribute schema is further detailed in the attached file:
 ## A.8 Annex 08 - Design Guide 
 A first iteration of an EUDI Wallet Design Guide can be found in the attached file:
 * [Annex 08 – EUDI Wallet Design Guide.pdf](./annexes/annex-08-eudi-wallet-design-guide.pdf)
+
+## A.9	Annex 09 - Design guide data sharing scenarios
+* [Annex 09 – EUDI Wallet Design Guide Data Sharing Scenarios.pdf](./annexes/annex-09-eudi-wallet-design-guide-data-sharing-scenarios.pdf)
