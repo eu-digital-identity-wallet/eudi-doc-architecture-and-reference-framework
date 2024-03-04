@@ -1026,44 +1026,38 @@ to use cases are collated in the attestation's rulebooks. Two such
 rulebooks, namely the PID and mDL rulebooks, have currently been included
 as annexes to this document.
 
-
--------------------------------------------
-
-## 5 Trust Model
+## 6 Trust Model
 
 ### 5.1 Overview and scope
 The Trust Model describes, for all interactions in the lifecycle of a
-EUDI Wallet Instance and an attestation, which trust relationships must
+EUDI Wallet Instance and an attestation, which trust relationships SHALL
 exist between the interacting parties to enable these interactions.
 
-Moreover, for the 'Attestation releasing' interaction in section 5.3.2,
+Moreover, for the ‘Attestation releasing’ interaction in section 6.3.2,
 this version of this document also describes, on a high level, how this
 required trust can be established. This description includes references
 to existing or draft standards that define detailed security measures.
 
 The trust model is valid for both remote and proximity use cases.
 However, technical measures taken to ensure that the requirements on
-trust are fulfilled may differ between these two use cases. Moreover,
-the authentication and authorization mechanisms will depend on the
+trust are fulfilled may differ between these two use cases. Moreover, the
+authentication and authorization mechanisms will depend on the
 characteristics of the interacting parties.
+
 
 Please note:
 
-* For interactions other than the ‘Attestation releasing’ interaction in
-  section 5.3.2., the technical measures are not yet described, although
-  section headings have been added already. 
-* The current version of this document focusses on attestations using
-  the Type 1 configuration specified in section 7.5.
+* For interactions other than the ‘Attestation releasing’ interaction in section 6.3.2, the technical measures are not yet described, although section headings have been added already. 
 * User privacy is not specifically discussed in this document.
 
-#### 5.1.1	Authentication and authorization
 
+#### 6.1.1	Authentication and authorization
 Within the EUDI Wallet ecosystem, many interactions take place between
 parties in which one party requests another party to release data or
-perform a task. For example, a User may ask an Issuer to provide a PID
+perform a task. For example, a User may ask a Provider to provide a PID
 or (Q)EAA to a Wallet, or a Relying Party may ask a User to release a
 specific attestation from its EUDI Wallet Instance. To be able to comply
-with such requests, these parties must trust each other. This trust
+with such requests, these parties SHALL trust each other. This trust
 generally requires the existence of the following two conditions:
 
 1. The requestee is sure about **the identity** of the requester, and
@@ -1072,66 +1066,62 @@ generally requires the existence of the following two conditions:
 2. The requestee is sure that the requester **has the right** to request
    the data or task requested. This is referred to as *authorization*.
 
-#### 5.1.2	Assumptions on trust
-
+#### 6.1.2	Assumptions on trust
 This document makes the following assumptions regarding the need for
 trust in the EUDI Wallet ecosystem:
 
 * For any party in the EUDI Wallet ecosystem, there is a risk that it
   could be impersonated by an attacker. Therefore, when any interaction
-  between two parties takes place, both parties must be able to
+  between two parties takes place, both parties SHALL be able to
   authenticate the other. Note that this assumption does not mean that
-  mutual authentication shall always take place; it just means that the
-  possibility to do so must exist and be available if one party has a
-  business need to authenticate the other party it is interacting
-  with.No authenticated party can be presumed trustworthy enough not to
-  ask for attributes beyond their rights.
+  mutual authentication SHALL always take place; it just means that the
+  possibility to do so SHALL exist and be available if one party has a
+  business need to authenticate the other party it is interacting with.
+  No authenticated party can be presumed trustworthy enough not to ask
+  for attributes beyond their rights. 
 
-#### 5.1.3	Other trust relations
-
+#### 6.1.3	Other trust relations
 Besides the trust relationships described in this chapter, other trust
-relations must exist as well. For instance, Users, Issuers and Relying
-Parties must implicitly trust certification bodies, trusted list
+relations SHALL exist as well. For instance, Users, Providers and Relying
+Parties SHALL implicitly trust certification bodies, trusted list
 providers, vendors, OEMs, operating systems, and app stores. In many
 contexts, this trust is primarily be rooted in authority and in
 procedural measures, such as public oversight, published security and
-operational policies, audits, etc., rather than in technical measures.
-To verify that parties are indeed interacting with a trusted authority,
-standard technical measures suitable for the context shall be used.
+operational policies, audits, etc., rather than in technical measures. To
+verify that parties are indeed interacting with a trusted authority,
+standard technical measures suitable for the context SHALL be used.
 
 Moreover, besides the need for trust in the authenticity and
-authorization of other parties in the ecosystem, parties must also be
+authorization of other parties in the ecosystem, parties SHALL also be
 able to trust that the communication with such parties is confidential.
 Measures to ensure this are not explicitly discussed in this document.
 
-### 5.2	Trust throughout a EUDI Wallet Instance lifecycle
+### 6.2	Trust throughout a EUDI Wallet Instance lifecycle
 
-#### 5.2.1	Wallet Instance installation
+#### 6.2.1	Wallet Instance installation
 
-##### 5.2.1.1	Required trust relationships
-
+##### 6.2.1.1	Required trust relationships
 When a User decides to install an EUDI Wallet Instance on their device,
-the following trust relationships must exist:
+the following trust relationships SHALL exist:
 
-1. The User must be able to trust that the Wallet Solution (i.e., the
-   app or application the user is installing) is genuine, authentic and
-   does not contain any malware or other threats. 
-2. The User must be able to trust that the PID Provider will issue the
-   PID into an instance of a EUDI Wallet Solution.
+1.	The User SHALL be able to trust that the Wallet Solution (i.e., the
+app or application the user is installing) is genuine, authentic and does
+not contain any malware or other threats. 2.	The User SHALL be able to
+trust that the PID Provider will issue the PID into an instance of a EUDI
+Wallet Solution. 3.	 The User SHALL trust the EUDIW solution. This means
+that the User trusts the App store  and the App publisher.
 
 The next sections discuss these trust relationships.
 
-##### 5.2.1.2	User's trust in the EUDI Wallet Solution
-
+##### 6.2.1.2	User's trust in the EUDI Wallet Solution
 To be done.
 
-##### 5.2.1.3	User's trust that the EUDI Wallet Solution is supporting the required attestations
-
+##### 6.2.1.3	6.2.1.3	User's trust that the EUDI Wallet Solution is supporting the attestations
 To be done.
 
-#### 5.2.2	EUDI Wallet Instance activation
+#### 6.2.2	EUDI Wallet Instance activation
 
-##### 5.2.2.1	Required trust relationships[^14]
+##### 6.2.2.1	Required trust relationships[^15]
 
 After its' installation, a new EUDI Wallet Instance will need to be
 activated by the Wallet Provider. Activation has at least the following
@@ -1140,55 +1130,52 @@ purposes:
 * The EUDI Wallet Provider makes the EUDI Wallet Instance identifiable,
   by assigning an identifier to the Wallet Instance. This identifier is
   internal; its purpose is to allow the EUDI Wallet Provider to identify
-  the EUDI Wallet Instance, for example when an update to the EUDI
-  Wallet Attestation (see below) is needed, or when the User requests
-  that the EUDI Wallet Instance must be revoked.
-* The EUDI Wallet Provider sets up a secure (authenticated)
-  communication channel between the EUDI Wallet Instance and the EUDI
-  Wallet Provider backend, for future use.
-* The EUDI Wallet Provider requests data about the User’s device from
-  the EUDI Wallet Instance. This data may include the communication
+  the EUDI Wallet Instance, for example when the User requests that the
+  EUDI Wallet Instance SHALL be revoked.
+* The EUDI Wallet Provider sets up a secure (authenticated) communication
+  channel between the EUDI Wallet Instance and the EUDI Wallet Provider
+  backend, for future use.
+* The EUDI Wallet Provider requests data about the User’s device from the
+  EUDI Wallet Instance. This data may include the communication
   technologies supported by the device and the characteristics of the
-  secure area used by the device to securely store cryptographic keys
-  and data associated with the EUDI Wallet Instance and the
-  attestations.
+  WSCD used by the device to securely store cryptographic keys and data
+  associated with the EUDI Wallet Instance and the attestations.
 * The EUDI Wallet Provider issues a EUDI Wallet Instance Attestation to
-  the EUDI Wallet Instance. This attestation contains data about the
-  EUDI Wallet Provider, the EUDI Wallet Solution, the EUDI Wallet
-  Instance, the device and the secure area. The EUDI Wallet Instance
-  attestation has the same technical format and content as other
-  attestations, as defined in section 5.3.2.. This implies that the
-  attestation will contain a Wallet Instance public key. The EUDI Wallet
-  Instance key pair is generated by the EUDI Wallet Instance during
-  activation, using the secure area present in, or connected to, the
+  the EUDI Wallet Instance. This attestation contains data about the EUDI
+  Wallet Provider, the EUDI Wallet Solution, the EUDI Wallet Instance,
+  the device and the WSCD. The EUDI Wallet Instance attestation has the
+  same technical format and content as other attestations. This implies
+  that the attestation will contain a Wallet Instance public key. The
+  EUDI Wallet Instance key pair is generated by the EUDI Wallet Instance
+  during activation, using the WSCD present in, or connected to, the
   User’s device. The EUDI Wallet Instance attestation also contains
-  information that allows an Issuer or RP to verify that the EUDI Wallet
-  Provider did not revoke the EUDI Wallet Instance attestation, and
-  hence the EUDI Wallet Instance itself.
+  information that allows a Provider or Relying Party to verify that the
+  EUDI Wallet Provider did not revoke the EUDI Wallet Instance
+  attestation, and hence the EUDI Wallet Instance itself.
 * The EUDI Wallet Provider locally associates the EUDI Wallet Instance
   with a particular User, including on-device or backend-based User
-  authentication methods that will be used by the EUDI Wallet Instance
-  to authenticate the User towards the EUDI Wallet Provider only. The
-  User details shall not be included in the EUDI Wallet Instance
-  attestation.
+  authentication methods that will be used by the EUDI Wallet Instance to
+  authenticate the User towards the EUDI Wallet Provider only. The User
+  details SHALL NOT be included in the EUDI Wallet Instance attestation.
 * The EUDI Wallet Provider sets up a User account. This User account is
   needed if the User wants to interact with the EUDI Wallet Provider
   without using their EUDI Wallet Instance. An example of this is a
   request to revoke a EUDI Wallet Instance in case the User’s device is
-  lost or stolen. EUDI Wallet Providers may also offer other
+  lost or stolen. EUDI Wallet Providers MAY also offer other
   instance-related services through this User account. Please note the
   following:
   * In general, the EUDI Wallet Provider does not need to know the true
-    identity of the User. An alias, for example an e-mail address,
-    should be sufficient. However, the EUDI Wallet Provider may request
-    the true identity of the User to be able to offer additional
-    services. It is up to the EUDI Wallet Provider to determine the
-    conditions for creating an online account, and to the User to accept
-    or refuse these conditions.
-  * The information in the User account shall be stored and used only in 
-    the EUDI Wallet Provider back office. The EUDI Wallet Provider shall 
-    not put this information in the EUDI Wallet Instance attestation.
-
+    identity of the User. An alias, for example an e-mail address, is
+    sufficient. However, the EUDI Wallet Provider MAY request the true
+    identity of the User to be able to offer additional services. It is
+    up to the EUDI Wallet Provider to determine the conditions for
+    creating an online account, and to the User to accept or refuse these
+    conditions.
+  * The information in the User account, especially the identifier(s) for
+    the User, the User’s device, and the EUDI Wallet Instance (if any),
+    SHALL be stored and used only in the EUDI Wallet Provider back
+    office. The EUDI Wallet Provider SHALL NOT put this information in
+    the EUDI Wallet Instance attestation.
 
 For successful EUDI Wallet Instance activation, the following trust
 relations need to exist:
@@ -1203,20 +1190,17 @@ relations need to exist:
 
 The next sections discuss these trust relationships.
 
-##### 5.2.2.2	EUDI Wallet Instance trusts Wallet Provider
-
+##### 6.2.2.2	EUDI Wallet Instance trusts Wallet Provider
 To be done.
 
-##### 5.2.2.3	EUDI Wallet Provider trusts Wallet Instance
-
+##### 6.2.2.3	EUDI Wallet Provider trusts Wallet Instance
 To be done.
 
-#### 5.2.3	EUDI Wallet Instance management
+#### 6.2.3	EUDI Wallet Instance management
 
-##### 5.2.3.1	Required trust relationships
-
+##### 6.2.3.1	Required trust relationships
 Starting from EUDI Wallet Instance activation and throughout its
-lifetime, a EUDI Wallet Instance must be managed by the EUDI Wallet
+lifetime, a EUDI Wallet Instance SHALL be managed by the EUDI Wallet
 Provider. Management actions could be initiated by the following
 entities.
 
@@ -1227,7 +1211,7 @@ entities.
   the Wallet Instance in case of loss or theft.
 * **The EUDI Wallet Instance**, potentially. For example, to request an
   update of the EUDI Wallet Instance Attestation, as defined in section
-  5.2.2..
+  6.2.2.
 
 For this, the following trust relations need to exist:
 
@@ -1244,91 +1228,80 @@ For this, the following trust relations need to exist:
 4. The EUDI Wallet Provider needs to be able to trust the User. This
    means that the EUDI Wallet Provider is sure that the User is indeed
    the User that was associated with the EUDI Wallet Instance during
-   activation; see section 5.2.2.1..
+   activation; see section 6.2.2.1.
 
 The next sections discuss these trust relationships.
 
-##### 5.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
-
-Section 5.2.2.2. describes how a EUDI Wallet Instance can trust a Wallet
+##### 6.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
+Section 6.2.2.2. describes how a EUDI Wallet Instance can trust a Wallet
 Provider.
 
-##### 5.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
-
-Section 5.2.2.3. describes how a EUDI Wallet Provider can trust a Wallet
+##### 6.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
+Section 6.2.3.3. describes how a EUDI Wallet Provider can trust a Wallet
 Instance.
 
-##### 5.2.3.4	User trust in the EUDI Wallet Provider
-
+##### 6.2.3.4	User trust in the EUDI Wallet Provider
 To be done.
 
-##### 5.2.3.5	EUDI Wallet Provider trust in the User
-
+##### 6.2.3.5	EUDI Wallet Provider trust in the User
 To be done.
 
+### 6.3	Trust throughout an attestation lifecycle
 
-### 5.3	Trust throughout an attestation lifecycle
+#### 6.3.1	Attestation issuance
 
-#### 5.3.1	Attestation issuance
+##### 6.3.1.1	Required trust relationships
+When a User requests a Provider to issue a PID or (Q)EAA to their EUDI
+Wallet Instance, the following trust relationships SHALL exist:
 
-##### 5.3.1.1	Required trust relationships
-
-When a User requests an Issuer to issue a PID or (Q)EAA to their EUDI
-Wallet Instance, the following trust relationships must exist:
-
-1. The User must be able to trust the Issuer, meaning that the User is
+1. The User SHALL be able to trust the Provider, meaning that the User is
    sure that the attestation they receive is issued by an authorized
-   issuer.
-2. The Issuer must be able to trust the User, meaning that the Issuer is
-   sure about the identity of the User. This is necessary to be able to
-   determine the value of the attributes that the Issuer will attest to.
-   For instance, a PID Issuer must ensure it provides the correct family
-   name and date of birth to the Wallet Instance.
-3. The Issuer must be able to trust the EUDI Wallet Provider. 
-4. The Issuer must be able to trust the EUDI Wallet Instance. This means
-   the Issuer can verify that the app that it is interacting with is
-   indeed an instance of the approved Wallet Solution of a trusted EUDI
-   Wallet Provider. Moreover, If the Issuer has specific functional
-   requirements for EUDI Wallet Instances containing ‘their’
-   attestations, the Issuer must be able to trust that the User’s EUDI
+   Provider. 
+2. The Provider SHALL be able to trust the User, meaning that the
+   Provider is sure about the identity of the User. This is necessary to
+   be able to determine the value of the attributes that the Provider
+   will attest to. For instance, a PID Provider SHALL ensure it provides
+   the correct family name and date of birth to the Wallet Instance.
+   Please note that the method by which the provider performs user
+   identification and authentication is out of scope of this document. 
+3. The Provider SHALL be able to trust the EUDI Wallet Provider. 
+4. The Provider SHALL be able to trust the EUDI Wallet Instance. This
+   means the Provider can verify that the app that it is interacting with
+   is indeed an instance of the approved Wallet Solution of a trusted
+   EUDI Wallet Provider. Moreover, If the Provider has specific
+   functional requirements for EUDI Wallet Instances containing ‘their’
+   attestations, the Provider SHALL be able to trust that the User’s EUDI
    Wallet Instance indeed supports all these features. 
 
 The next sections discuss these trust relationships.
 
-##### 5.3.1.2	User trust in the Issuer
-
+##### 6.3.1.2 User trust in the Provider
 To be done.
 
-##### 5.3.1.3	Issuer trust in the User
-
+##### 6.3.1.3	Provider trust in the User
 To be done.
 
-##### 5.3.1.4	Issuer trust in the EUDI Wallet Instance
-
+##### 6.3.1.4	Provider trust in the EUDI Wallet Instance
 To be done.
 
-#### 5.3.2	Attestation releasing
+#### 6.3.2	Attestation releasing
 
-##### 5.3.2.1	Required trust relationships
+##### 6.3.2.1	Required trust relationships
 
-When a Relying Party (RP) requests a User to release some attributes
-from his/her EUDI Wallet Instance, the following trust relationships
-must exist:
+When a Relying Party (RP) requests a User to release some attributes from his/her EUDI Wallet Instance, the following trust relationships mustSHALL exist:
 
-1. The RP must be able to trust the Issuer.
-2. The RP must be able to trust that the attestation released by the
-   EUDI Wallet Instance is authentic, meaning that it originated from a
-   trusted Issuer and has not been changed.
-3. The RP must be able to trust that the Issuer issued this attestation
-   to the EUDI Wallet Instance that provided it to the RP. In other
-   words, the attestation was not copied and replayed. This is generally
-   called device binding.
-4. The RP must be able to trust User binding. This means that the person
-   presenting the attestation is the same one as the User, i.e., the
-   person to whom the attributes in the attestation apply. 
-5. The User must be able to trust the Relying Party, meaning that the
-   User is sure about the RP’s identity.
-6. In some use cases the User must be able to trust that the RP does not
+1. The Relying Party SHALL be able to trust the attestation Provider.
+2. The Relying Party SHALL be able to trust that the attestation released
+   by the EUDI Wallet Instance is authentic, meaning that it originated
+   from a trusted Provider and has not been changed.
+3. The Relying Party SHALL be able to trust that the attestation Provider
+   issued this attestation to the EUDI Wallet Instance that provided it
+   to the Relying Party. In other words, the attestation was not copied
+   and replayed. This is generally called device binding.
+4. The Relying Party SHALL be able to trust the EUDI Wallet. 
+5. The User SHALL be able to trust the Relying Party, meaning that the
+   User is sure about the Relying Party’s identity.
+6. The User SHALL be able to trust that the Relying Party does not
    request more data than it reasonably needs for the use case.
 
 The next sections discuss these trust relationships.
@@ -1336,292 +1309,542 @@ The next sections discuss these trust relationships.
 Please note the following assumptions, which are valid at least for the
 current version of this document: 
 
-* All attestations are assumed to be signed by the Issuer, rather than
-  by the EUDI Wallet Instance (the latter are sometimes called
-  self-signed attestations). The only attestations that will be trusted
-  by Relying Parties are those that are signed by a trusted Issuer. The
-  only potential exception may be a pseudonym for the User. If the value
-  of a pseudonym attribute is assigned by the User or generated by the
-  Wallet instance, it may be signed by the EUDI Wallet Instance rather
-  than the Issuer. If so, a Relying Party using such a pseudonym must
-  accept the associated risks or mitigate it in an out-of-band manner.
-  These risks may include the possibility of fake pseudonyms, created by
-  an attacker capable of lifting an attestation private key from a
-  secure area. 
-* A Relying Party is assumed to trust the Issuer to have verified the
-technical properties of the EUDI Wallet Instance and the User’s device
-and secure area (as documented in the Wallet Instance attestation) at
-the time it issued the attestation. Consequently, the RP does not verify
-these technical properties during the attestation release process. To
-elaborate: a Relying Party typically has a list of attestations that it
-accepts for a certain use case. For example, an RP may accept a mobile
-driving license as a proof of identity. If so, that RP must accept any
-valid and authentic mDL, regardless of the mobile device it is installed
-on. If the Relying Party were to make its own independent assessment of
-the security of the User’s device, there is a possibility that an mDL
-will not be accepted, even though it is valid. That would be confusing
-to Users and might diminish their trust in the EUDI Wallet Instance as
-well as the attestation.
+* All attestations are assumed to be signed by the attestation Provider,
+  rather than by the EUDI Wallet Instance (the latter are sometimes
+  called self-signed attestations). The only attestations that will be
+  trusted by Relying Parties are those that are signed by a trusted
+  attestation Provider. The only potential exception may be a pseudonym
+  for the User. If the value of a pseudonym attribute is assigned by the
+  User or generated by the Wallet instance, it MAY be signed by the EUDI
+  Wallet Instance rather than the Provider. If so, a Relying Party using
+  such a pseudonym SHALL accept the associated risks or mitigate it in an
+  out-of-band manner. These risks may include the possibility of fake
+  pseudonyms, created by an attacker capable of lifting an attestation
+  private key from a WSCD. 
+* A Relying Party is assumed to trust the attestation Provider to have
+  verified the technical properties of the EUDI Wallet Instance and the
+  User’s device and  WSCD (as documented in the Wallet Instance
+  attestation) at the time it issued the attestation. Consequently, the
+  Relying Party does not verify these technical properties during the
+  attestation release process. To elaborate: A Relying Party typically has
+  a list of attestations that it accepts for a certain use case. For
+  example, a Relying Party MAY accept a mobile driving license as a proof
+  of identity. If so, that Relying Party SHALL accept any valid and
+  authentic mDL, regardless of the mobile device it is installed on. If the
+  Relying Party were to make its own independent assessment of the security
+  of the User’s device, there is a possibility that an mDL will not be
+  accepted, even though it is valid. That would be confusing to Users and
+  might diminish their trust in the EUDI Wallet Instance as well as the
+  attestation.
 * An attestation is assumed to be bound to the EUDI Wallet Instance (and
-  thus the device) to which the Issuer issued it, and the Relying Party
-  will verify that this is indeed the case. In other words, a RP
-  verifies device binding as described in section 5.3.2.4. This is a
-  consequence of the fact that either ISO/IEC 18013-5 or OpenID4VP is
-  mandatory for the Type 1 configuration EUDI Wallet Solutions that are
-  in scope of the current version of this document.
+  thus the device) to which the Provider issued it, and the Relying Party
+  will verify that this is indeed the case. In other words, a Relying
+  Party verifies device binding as described in section 6.3.2.4. This is
+  a consequence of the fact that either ISO/IEC 18013-5 or OpenID4VP is
+  mandatory for the EUDI Wallet Solutions that are in scope of the
+  current version of this document.
 
+##### 6.3.2.2	Relying Party trusts Provider
+A Relying Party SHALL be able to verify that the Provider is trusted to
+issue the type of attestation in question. For instance, a Provider may
+be trusted to issue a diploma, but not a PID, or conversely. 
 
-##### 5.3.2.2	Relying Party trusts Issuer
-An RP must be able to verify that the issuer is trusted to issue the
-type of attestation in question. For instance, an Issuer may be trusted
-to issue a diploma, but not a PID, or conversely. 
+As part of this verification process, the Relying Party also obtains a
+public key of the Provider, which functions as a trust anchor and allows
+it to verify the attestation signatures created by the Provider. There
+are at least two methods to communicate this public key, using
+peer-to-peer communication, or using a trusted list. The public key
+itself may be encapsulated, for instance in a X.509 certificate or in an
+Entity Statement according to OpenID Federation.
 
-As part of this verification process, the RP also obtains a (root)
-certificate of the Issuer, which allows it to verify the attestation
-signatures created by the Issuer. In essence, there are two methods to
-do so, either peer-to-peer or via a trusted list. 
+Peer-to-peer communication of the Provider public key (trust anchor)
+means that every Relying Party individually decides to trust each
+Provider. The Relying Party then obtains the Provider’s public key via a
+manual or automated process agreed between the Provider and the Relying
+Party, for instance by downloading it from the Provider’s website. A
+peer-to-peer process has the advantages of flexibility and low overhead.
+However, it is hardly scalable and therefore not suitable for
+attestations such as PIDs, mDLs, diplomas, or health insurance cards, for
+which there many tens to hundreds of different providers in the EU and
+thousands of Relying Parties, which moreover do not (necessarily) know
+each other. Moreover, a peer-to-peer process assumes that each Relying
+Party has sufficient technical knowledge and budget to judge the level of
+security of each Provider’s systems and processes for, among others,
+private key management. This is not realistic for high-value
+attestations. A peer-to-peer process may therefore be suitable for
+low-value attestations in contexts where Providers and Relying Parties
+know each other, for example membership cards or vouchers.
 
-Peer-to-peer means that every RP individually decides to trust each
-Issuer. The RP then obtains the Issuer’s (root) certificate via a manual
-or automated process agreed between the Issuer and the RP, for instance
-by downloading it from the Issuer’s website. A peer-to-peer process has
-the advantages of flexibility and low overhead. However, it is hardly
-scalable and therefore not suitable for attestations such as PIDs, mDLs,
-diplomas, or health insurance cards, for which there many tens to
-hundreds of different issuers in the EU and thousands of RPs, which
-moreover do not (necessarily) know each other. Moreover, a peer-to-peer
-process assumes that each RP has sufficient technical knowledge and
-budget to judge the level of security of each Issuer’s systems and
-processes for, among others, private key management. This is not
-realistic for high-value attestations. A peer-to-peer process may
-therefore be suitable for low-value attestations in contexts where
-Issuers and Relying Parties know each other, for example membership
-cards or vouchers.
-
-For more valuable attestations, or for attestations for which Issuers
-and Relying Parties do not know each other, a trusted list of Issuers is
-a better solution. This trusted list is provided by a trusted list
+For more valuable attestations, or for attestations for which Providers
+and Relying Parties do not know each other, a trusted list of Providers
+is a better solution. This trusted list is provided by a trusted list
 provider, which is a central party responsible for (and capable of)
-verifying that the level of security of an Issuer’s systems and
+verifying that the level of security of an Providers’ systems and
 processes is sufficient for the type of attestation it issues, and
-comparable to the level of security of other Issuers for the same type
-of attestation. This may include requiring that an issuer documents
+comparable to the level of security of other Providers for the same type
+of attestation. This may include requiring that a Provider documents
 these systems and processes, for example in a certificate policy
-complying with RFC 3647, and is audited regularly for compliance to that
-policy. The trusted list provider also validates that each Issuer is
-(legally) allowed to issue the type(s) of attestation it wants to issue.
-The trusted list provider documents that in its trusted list, together
-with the (root) certificate of each trusted Issuer. The list is signed
-by the trusted list provider and can be downloaded and processed by an
-RP in an automated fashion.
+complying with EN 319 411, and is audited regularly for compliance to
+that policy. The trusted list provider also validates that each Provider
+is (legally) allowed to issue the type(s) of attestation it wants to
+issue. The trusted list provider documents that in its trusted list,
+together with the public key (trust anchor) of each trusted Provider. The
+list is signed by the trusted list provider and can be downloaded and
+processed by a Relying Party in an automated fashion.
 
 Please note the following: 
 
 * A trusted list provider may become a single point of failure. A
-  successful attack may mean that untrusted issuers are put on the
+  successful attack may mean that untrusted Providers are put on the
   trusted list. It is therefore essential that the systems and processes
   used by a trusted list provider are secure.
 * There can be multiple trusted list providers. It is conceivable that
-  there will be trusted list providers on the EU level and for
-  individual member states, as well as trusted list provider per sector,
-  for example education or health care. 
-* It is not mandatory for each RP to possess the root certificates of
-  all issuers. RPs will choose which trusted list providers they need to
-  subscribe to, depending on the Member States and industries they are
-  operating in.
+  there will be trusted list providers on the EU level and for individual
+  member states, as well as trusted list providers per sector, for
+  example education or health care. 
+* It is not mandatory for each Relying Party to possess the root
+  certificates of all Providers. Relying Parties will choose which
+  trusted list providers they need to subscribe to, depending on the
+  Member States and industries they are operating in.
 
-Finally, note that freedom of contract applies to all RPs. This means
-that an RP can determine itself which Issuers they want to recognize,
-except if there is a legal requirement that the attestations of certain
-Issuers must be accepted. That is generally the case for PID providers
-and QEAA providers. However, this does not mean that the above process
-is not necessary for these issuers. It only means that, once an RP has
-verified that the Issuer of a PID or QEAA indeed can be trusted, they
-must accept attestations issued by that Issuer.
+Finally, note that freedom of contract applies to all Relying Parties.
+This means that a Relying Party can determine itself which Providers they
+want to recognize, except if there is a legal requirement that the
+attestations of certain Providers SHALL be accepted. That is generally
+the case for PID Providers and QEAA Providers. However, this does not
+mean that the above process is not necessary for these providers. 
 
 
-##### 5.3.2.3 Relying Party trusts the authenticity of the attestation
-
+##### 6.3.2.3 Relying Party trusts the authenticity of the attestation
 The following steps are essential for ensuring that the Relying Party
 can trust the attestation:
 
-1. The Relying Party verifies the seal or signature over the
-   attestation. 
+1. The Relying Party verifies the seal or signature over the attestation. 
 2. The Relying Party verifies that the public key it used for verifying
-   the seal or signature is protected by means of a chain of trust that
-   ends in a trusted Issuer (root) certificate. Section 5.3.2.2.
-   describes how the RP can obtain this Issuer certificate. 
-3. The RP validates that the Issuer has not revoked the attestation. 
+   the seal or signature can be trusted, either because the Relying Party
+   obtained the key in a manner described in section 6.3.2.2, or because
+   is protected by means of a chain of trust that ends in a trusted
+   Provider public key that was obtained in such a manner.  
+3. The Relying Party validates that the Provider has not revoked the
+   attestation. 
 
 If and only if all these verifications succeed, the Relying Party can
 trust the authenticity of the attestation.
 
 Regarding the technical implementation of these steps: 
 
-* For proximity flows, the Chapters 6 and 7 require support for
-  \[ISO18013-5]\. This standard describes a mechanism for this
-  authentication, called issuer data authentication.
-  * For step 1 above, this mechanism uses a cryptographically signed
-    data construct called a Mobile Security Object (MSO). The seal or
-    signature over the MSO is created by a Document Signer, which is a
-    function of the Issuer. The Document Signer certificate is signed by
-    the Issuer certificate.
-  * For step 2 above, ISO/IEC 18013-5 specifies a Public Key
-    Infrastructure, including certificate formats and a format for
-    implementing a trust list. 
-  * The ISO/IEC 18013-5 standard does not specify a mechanism for step
-    3, which is a revocation of attestations, which means that a
-    revocation mechanism will need to be specified in the context of the
-    ARF. Concrete ideas for such a mechanism have already been proposed
-    within the eIDAS Expert Group and will be included in a later
-    version of this Trust Model.
-* For remote flows, Chapters 6 and 7 require support for \[SD-JWT\][^15]  .
-  * For step 1 above, \[SD-JWT\] provides a similar trust mechanism as the
-    MSO mechanism in ISO/IEC 18013-5.
-  * Like ISO/IEC 18013-5, SD-JWT does not define a revocation mechanism. 
+* For proximity flows, requirements 6 and 7 in section 5.1.2 require support for \[ISO18013-5\]. This standard describes a mechanism for this authentication, called Provider data authentication.
+  * For step 1 above, this mechanism uses a cryptographically signed data construct called a Mobile Security Object (MSO). The seal or signature over the MSO is created by a Document Signer, which is a function of the Provider. The Document Signer certificate is signed by the Provider's certificate.
+  * For step 2 above, ISO/IEC 18013-5 specifies a Public Key Infrastructure, including certificate formats and a format for implementing a trust list. 
+  * The mechanism for step 3 is described in section 6.3.4.
+* For remote flows,  requirements 6 and 7 in section 5.1.2 require support for \[SD-JWT\].
+  * For step 1 above, \[SD-JWT\] provides a similar trust mechanism as the MSO mechanism in ISO/IEC 18013-5.
+  * The mechanism for step 3 is described in section 6.3.4. 
 
+##### 6.3.2.4 Relying Party trusts device binding
+The Relying Party SHALL be able to trust that an attestation it receives was not copied and replayed. In other words, the Relying Party trusts that the attestation is bound to the same device to which the Provider issued it [^16].
 
-##### 5.3.2.4 Relying Party trusts device binding
+The Relying Party can trust that this is the case if the EUDI Wallet Instance signs some contextual information with the private key of the attestation. This information SHALL include a random number generated by the Relying Party. To verify this signature, the Relying Party needs to receive the public key of the attestation, which SHALL be signed (directly or indirectly) by the Provider of the attestation. By signing the public key, the Provider certifies that the public key indeed belongs to the attestation. The Relying Party SHALL additionally verify that the Wallet Instance is in possession of the corresponding private key; the Relying Party does so by verifying the signature over the random number generated by the Relying Party. 
 
-The Relying Party must be able to trust that an attestation it receives
-was not copied and replayed. In other words, the RP trusts that the
-attestation is bound to the same device to which the Issuer issued it [^16]. 
+Note that a EUDI Wallet Instance can contain multiple attestations, originating from multiple Providers. For each attestation, the EUDI Wallet Instance has access to an attestation private key, which is stored in the WSCD in (or connected to) the User’s device. As discussed in section ‎6.2.2, the EUDI Wallet Instance also contains a EUDI Wallet Instance private key. Depending on the attestation requested by the 6.3.2.4, the EUDI Wallet Instance SHALL use the correct private key for signing the random number generated by the Relying Party. 
 
-The RP can trust that this is the case if the EUDI Wallet Instance signs
-some contextual information with the private key of the attestation.
-This information must include a random number (known as a nonce)
-generated by the RP. To verify this signature, the Relying Party needs
-to receive the public key of the attestation, which must be signed
-(directly or indirectly) by the Issuer of the attestation. By signing
-the public key, the Issuer certifies that the public key indeed belongs
-to the attestation. The Relying Party must additionally verify that the
-Wallet Instance is in possession of the corresponding private key; the
-RP does so by verifying the signature over the nonce.
+\[ISO/IEC 18013-5\] specifies a mechanism for this, called mdoc authentication. The EUDI Wallet Instance signs contextual information (called the SessionTranscript), which includes a nonce from the Relying Party, namely its ephemeral public key for session encryption. The standard specifies which algorithms can be used for signing and how the attestation public key is incorporated in the MSO.
 
-Note that a EUDI Wallet Instance can contain multiple attestations,
-originating from multiple Issuers. For each attestation, the EUDI Wallet
-Instance has access to an attestation private key, which is stored in
-the secure area in (or connected to) the User’s device. As discussed in
-section 5.2.2., the EUDI Wallet Instance also contains a EUDI Wallet
-Instance private key. Depending on the attestation requested by the RP,
-the EUDI Wallet Instance must use the correct private key for signing
-the nonce. 
+\[SD-JWT\] similarly specifies how an attestation public key can be incorporated in the JWT. 
 
-[ISO/IEC 18013-5] specifies a mechanism for this, called *mdoc
-authentication*. The EUDI Wallet Instance signs contextual information
-(called the SessionTranscript), which includes a nonce from the RP,
-namely its ephemeral public key for session encryption. The standard
-specifies which algorithms can be used for signing and how the
-attestation public key is incorporated in the MSO.
+To trust these mechanisms, the Relying Party SHALL trust that the security of the attestation private key has not been compromised. This private key is stored in a WSCD, or connected to, the device on which the EUDI Wallet Instance is installed. As discussed in section 6.3.2.1, the Relying Party does not need to perform an independent evaluation of the security of the WSCD, because it trusts the Provider to have done this. However, the Relying Party SHALL verify that the Provider did not revoke the attestation.
 
-\[SD-JWT\] similarly specifies how an attestation public key can be
-incorporated in the JWT. \[SD-JWT\] does not specify how to use an RP
-nonce; however, \[OpenID4VP\], required by the ARF for remote flows,
-specifies this.
-
-To trust these mechanisms, the RP must trust that the security of the
-attestation private key has not been compromised. This private key is
-stored in a secure erea in, or connected to, the device on which the
-EUDI Wallet Instance is installed. As discussed in section 5.3.2.1., the
-RP does not need to perform an independent evaluation of the security of
-this Secure Area, because it trusts the Issuer to have done this.
-However, the RP must verify that the Issuer did not revoke the
-attestation. In addition, the RP can verify that the EUDI Wallet
-Provider did not revoke the EUDI Wallet Instance Attestation.
-
-##### 5.3.2.5 Relying Party trusts User binding
-An RP must be able to trust User binding. This means that the person
-presenting the attestation is the same one as the User, i.e., the person
-to whom the attributes in the attestation apply. 
+##### 6.3.2.5 Relying Party trusts User binding
+A Relying Party SHALL be able to trust the EUDI Wallet. 
 
 Note: Use cases involving legal representation and similar situations,
 which imply that the person presenting is different from the User, but
-the same as the person having the legal representation rights, are out
-of scope of the current version of the Trust Model and will be explored
-in future versions of this document.
+the same as the person having the legal representation rights, are out of
+scope of the current version of the Trust Model and will be explored in
+future versions of this document. 
 
 The mechanism(s) for User binding depend on the type of use case:
 
 * For supervised proximity flows, a human is present during the
-  transaction, on behalf of  the Relying Party. If User binding is
-  required in such cases, the RP must request the User portrait, next to
-  other attributes, and the EUDI Wallet Instance must release it. The
-  portrait must be signed by a trusted Issuer [^17]. The human supervisor then visually compares this portrait to the
-  face of the person presenting the attestation. However, please note
-  that the presence and use of the User portrait (as well as other
-  biometrics) in the PID will be further detailed in a future version of
-  this document.
+  transaction, on behalf of the Relying Party. If User binding is
+  required in such cases, the Relying Party can request the User
+  portrait, next to other attributes, and the EUDI Wallet Instance can
+  release it. The portrait SHALL be signed by a trusted Provider [^17].
+  The human supervisor then visually compares this portrait to the face
+  of the person presenting the attestation. However, please note that the
+  presence and use of the User portrait in the PID will be further
+  detailed in a future version of this document.
 * For some unsupervised proximity flows, the User portrait may similarly
   be released and be used for face recognition by a machine. This may
   happen for example in automatic border control systems. However, to
-  generate trustworthy outcomes this process requires special
-  conditions, such as good lighting and clear instructions for the User
-  for positioning their face.
+  generate trustworthy outcomes this process requires special conditions,
+  such as good lighting and clear instructions for the User for
+  positioning their face.
 * For other unsupervised use cases and for remote use cases, using the
-  User portrait for user authentication by the RP is generally
-  considered to be impractical. Relying Parties must therefore trust
+  User portrait for user authentication by the Relying Party is generally
+  considered to be impractical. Relying Parties SHALL therefore trust
   User authentication mechanisms present on or connected to the device
-  which the EUDI Wallet Instance is installed on [^18].
+  which the EUDI Wallet Instance is installed on [^18].  
 
-##### 5.3.2.6 User trusts the identity of the Relying Party
 
+##### 6.3.2.6 User trusts the identity of the Relying Party
 To ensure that the User knows and trusts the identity of the Relying
-Party, a mechanism for Relying Party authentication must be implemented.
-In essence, such a mechanism works as follows:
+Party, a mechanism for Relying Party authentication mustSHALL be
+implemented. In essence, such a mechanism works as follows:
 
-1. The Relying Party creates a signature over the request using a RP
-   private key. The RP includes the associated RP certificate in the
-   request. This certificate is signed by a certificate authority (CA)
-   trusted by the Wallet Instance for this purpose. 
+1. The Relying Party creates a signature over the request using a Relying
+   Party private key. The Relying Party includes the associated Relying
+   Party certificate in the request. This certificate is signed by a
+   certificate authority (CA) trusted by the Wallet Instance for this
+   purpose. This step will include mechanisms that will prevent replay
+   attacks and possible other attacks.
 2. The Wallet Instance verifies the signature over the request, and
-   verifies that the RP certificate is indeed issued by the trusted CA.
+   verifies that the Relying Party certificate is indeed issued by the
+   trusted CA.
 3. The Wallet Instance validates that the trusted CA has not revoked the
-   RP certificate.
+   Relying Party certificate.
 
-ISO/IEC 18013-5 specifies such a mechanism, called mdoc reader
-authentication. The standard specifies cryptographic algorithms, a PKI
-and certificate formats for mdoc reader authentication.
+##### 6.3.2.7 User trusts that the Relying Party does not over-ask
+How this trust relationship is established is described in section 7.6 on Relying Party authorization.
 
-\[SD-JWT\] does not specify a mechanism for Relying Party authentication.
-However, \[OpenID4VP\], required by the ARF for remote flows, specifies
-such a mechanism.
-
-Relying Party authentication is not mandatory in all use cases. It is up
-to the User and/or to the Issuer of the attributes in question to decide
-if an RP must be authenticated before attributes can be released to that
-RP.
-
-##### 5.3.2.7 User trusts that the Relying Party does not over-ask
-
-How to enable trust for the Relying Party to be sure that the RP will
-not over-ask, will be further detailed in a future version of this
-document.
-
-#### 5.3.3 Attestation management
+#### 6.3.3 Attestation management
 Throughout its lifetime, an attestation needs to be managed by the
-Issuer. This means that for the purposes of this Trust Model,
+Provider. This means that for the purposes of this Trust Model,
 attestation management has similarities to the part of EUDI Wallet
-Instance management that involves the EUDI Wallet Provider as the issuer
-of a EUDI Wallet Instance attestation, which was already discussed in
-section 5.2.3..
+Instance management that involves the EUDI Wallet Provider as the
+Provider of a EUDI Wallet Instance attestation, which was already
+discussed in section 6.2.3.
 
-## 6 Requirements for Issuing PID and (Q)EAA
+#### 6.3.4 Attestation revocation
+Attestation revocation is a process whereby the Provider of an
+attestation declares that Relying Parties SHOULD no longer trust a
+particular attestation, even though the attestation is still valid
+temporally and contains a valid Provider signature. As described in
+section 4.2.4 of \[TrustModel\], during the process of releasing an
+attestation, a Relying Party SHOULD verify that the Provider has not
+revoked the attestation. Revocation checking is a process that takes
+place after the Relying Party has validated that the validity period of
+the attestation has not expired and the signature over the attestation is
+correct.
 
-### 6.1 Attestation rulebook
+The Relying Party uses a Relying Party Instance to interact with the
+User’s Wallet Instance. This includes carrying out attestation revocation
+checking.
 
-Since version 1.2.0 of this document, the concept of an attestation
-rulebook has been introduced. This is designed to compile a set of
-rules, guidelines and standards governing the verification, management,
-and usage of a specific attestation or group of attestations related to
-a use case within the EUDI ecosystem. The primary goal of the rulebooks
-is to ensure interoperability, security, privacy, and trust for EUDI
-Wallet’s attestations (PID and (Q)EAA).
+When discussing attestation revocation, it is essential to realize that
+in many cases there is a difference between an attestation and the
+document it represents, for instance a driving license, passport,
+recurring medicine prescription, health insurance card, vehicle
+registration card, etc. Such a document typically has an administrative
+validity period of multiple years. A diploma typically even has no end of
+validity at all. In contrast, an attestation is a digital representation
+of such a document and has a cryptographic proof of its authenticity with
+a validity period that is typically short, for example - several weeks. 
 
-Common compulsory specifications, rules, and guidelines are outlined in
-the architecture and reference framework document, while those specific
-to use cases are collated in the attestation's rulebooks. Two such
-rulebooks, namely the PID and mDL rulebooks, have currently been
-included as annexes to this document.
+This implies that an attestation Provider will renew the attestation
+regularly during the validity period of the document . Also, an
+attestation Provider MAY issue multiple attestations that are
+simultaneously valid but represent the same document. For example, a User
+MAY have a mobile passport on their private phone and their work phone.
+The attestations representing the passport on both phones will be
+different, even though they contain the same attributes. The difference
+is in the MSO (for ISO-compliant attestation) or SD-JWT + JWS (for SD-JWT
+compliant attestation).
+ 
+In some cases, this difference is relevant for revocation. For example,
+if the above User loses their personal phone, the Provider will probably
+revoke the mobile passport on that phone. But the attestations on the
+work phone will remain valid, and the User will continue to be able to
+use their passport on that phone. On the other hand, if the passport
+itself is revoked, then all attestations representing their passport,
+across both devices, will be revoked.
+
+##### 6.3.4.1 Use cases for revocation of an attestation
+Within the EUDI Wallet ecosystem, an attestation SHALL be revoked if one
+of the following conditions occur:
+
+* The value of some attributes in the attestation has changed, and the
+  attestation can be valid still for some time. In such cases, the
+  Provider can issue a new attestation to the Wallet Instance, containing
+  the new, correct value for the changed attribute. However, the Provider
+  also needs to ensure that Relying Parties can no longer accept the
+  existing attestation. For example, 
+  * A PID contains the `age_over_18 attribute`, and the User has their
+    18th birthday. The value of the attribute needs to change from False
+    to True.
+  * A User loses an existing driving category. A category needs to be
+    removed.
+* The attestation was wrongly issued.
+* The attestation Provider suspects or knows the User has committed fraud
+  or other relevant crime.
+* The User notified the attestation Provider.
+* In case of any (suspected) breach of security.
+
+The attestation Provider SHALL analyze whether revocation is required in
+these circumstances. Also, the Provider SHALL analyze if there are more
+situations in which attestation revocation is required. 
+
+A PID Provider or a (Q)EAA Provider MAY outsource the responsibility of
+operating the revocation solution to a third party. However, the Provider
+SHALL always remain responsible for triggering the revocation process for
+an attestation if needed, and for the correctness of the revocation
+information.
+
+The only party in the EUDI Wallet ecosystem capable of revoking an
+attestation SHALL be the attestation Provider. This is important, because
+in some use cases, there are third parties that have the (legal) right to
+invalidate an attestation. For example, in many jurisdictions the police
+are allowed to confiscate a driving license if the User is caught is a
+serious traffic violation. Another example is an electronic prescription
+for medicines that is valid only once and must not be usable anymore
+after the User has received the medicines [^20] . A third example is when
+the attestation Provider and the Authentic Source for that attestation
+are different parties. If so, the Authentic Source contains the
+authoritative information about whether an attribute value must be
+changed, and an attestation revoked or reissued. It must be the
+responsibility of attestation Providers to regularly query the authentic
+source for changes and reissue or revoke the relevant attestations
+accordingly.
+
+However, third parties that want to invalidate an attestation SHALL use
+an out-of-band mechanism to notify the Providers about the attestation
+that must be revoked. It is then up to the Provider to revoke the
+attestation.
+
+Comment: In case an attestation Provider is hacked, lost or ceases to
+operate permanently for any reason, regular procedures SHALL be initiated
+according to the situation. Instead of revoking each attestation that was
+issued by that attestation Provider, the Provider itself  SHALL be
+revoked and taken out from the relevant Trusted List, for example, so
+that each time that attestation will be verified, it will fail because
+the Providers' anchor of trust was not found in the Trusted List.   
+
+##### 6.3.4.2 Use cases for revocation of a Wallet Instance
+This document assumes that in some circumstances, a Wallet Provider
+(perhaps on the initiative of a Member State) will need to revoke a
+Wallet Instance. For example:
+
+* if a major security incident has been found in the Wallet Solution. In
+  this case, all instances of that Wallet Solution might be revoked (or
+  suspended, see section 6.3.4.3).
+* if a major security Incident has been found in the mobile device on
+  which the Wallet Instance runs, or in the WSCD it uses. 
+* if a particular Wallet Instance has been the subject of an attack.
+* if the User notified the Wallet Provider that their device is lost or
+  stolen. 
+
+As can be seen from these examples, Wallet Instance revocation is more
+complicated than attestation revocation, as a Wallet Instance consists of
+multiple components that each may fail for different reasons. This
+document does not specify a mechanism to be used by a Wallet Provider to
+revoke a Wallet Instance, and by a Relying Party to verify if a Wallet
+Instance has been revoked. Such a mechanism will be specified in a future
+Epic.
+
+##### 6.3.4.3 Use cases for suspension
+In addition to revocation, there is the concept of suspension of an attestation. The main difference between these concepts is that suspension is reversible, whereas revocation SHALL be irreversible. However, suspension is inherently more complex to manage than revocation. Moreover, in the EUDI Wallet ecosystem, in which issuance of a new attestation to replace a revoked one is typically easy, the advantages of a suspension mechanism are limited. Therefore, a Provider SHOULD NOT suspend any attestation. No mechanisms for suspension of attributes are foreseen in this document.
+
+A (possible) exception to this rule is that Wallet Providers MAY be able to suspend a Wallet Instance in case the corresponding Wallet Solution is suspended. As described in section 4.2.3, this MAY be a legal requirement. This will be discussed in a future Epic. 
+
+Unless indicated otherwise, all requirements and other statements in this document for a revocation mechanism are applicable for a suspension mechanism as well. 
+
+##### 6.3.4.4 Revocation checking in wallet-to-wallet use cases
+To be done.
+
+##### 6.3.4.5 Cross-border and cross-sector use cases
+To be done.
+
+##### 6.3.4.6 Revocation chaining
+To be done.
+
+##### 6.3.4.7 Requirements for attestation revocation mechanisms
+A mechanism for attestation revocation and revocation checking SHALL comply with the following requirements:
+
+1. The revocation mechanism SHALL be easy to implement and be integrated
+   with Wallet Instances based on ISO/IEC 18013-5 and \[SD-JWT\].
+2. The revocation mechanism SHALL be independent of the Wallet Instance,
+   meaning that even if the Wallet Instance is not trustworthy anymore,
+   the Relying Party Instance can still verify, in a trustworthy manner,
+   whether the attestation has been revoked. This implies that the
+   Relying Party SHALL be able to obtain revocation status information
+   independently from the Wallet Instance.
+3. The revocation mechanism SHALL be privacy-preserving, to the maximum
+   extent feasible given operational constraints. 
+   1. The Provider SHALL NOT be able to learn anything about the User’s
+     use of an attestation based upon interactions between Relying
+     Parties and the Provider related to attestation revocation checking. 
+   2. Any attestation identifiers and other values used for enabling
+     revocation checking SHALL NOT allow Relying Parties to correlate
+     (and thus track) the User, even if they collude with other Relying
+     Parties. 
+4. The revocation mechanism SHALL be efficient, meaning that it SHALL
+   require minimal resources from both the Provider and the Relying
+   Parties in terms of bandwidth and storage.
+5. The revocation mechanism SHALL be timely, meaning that revocation
+   updates SHALL be fresh enough to satisfy the needs of Relying Parties
+   that need to trust the attestation.
+6. The revocation mechanism SHALL support use cases in which the Relying
+   Party Instance is offline.
+7. If required by national legislation, the revocation mechanism SHALL
+   allow a Relying Party to prove afterwards that an attestation was not
+   revoked at the time of verification, for example in case of a dispute
+   between the Relying Party and the User.
+8. The revocation mechanism SHOULD be mature, meaning that many different
+   parties have experience with implementing and operating the mechanism.
+
+
+##### 6.3.4.8 Possible revocation mechanisms
+The concept of an attestation, is in many ways similar to digital
+certificates in Public Key Infrastructures (PKI). The experience of
+revoking such certificates can therefore be drawn upon. Two main
+revocation mechanisms are generally supported in a PKI:
+
+* In the first place, the Provider of the digital certificate can create
+  a list of revoked certificates, sign it, and make it available to all
+  interested Relying Parties. When a Relying Party needs to use a
+  certificate, it SHALL verify that the identifier of this certificate is
+  not included in the list of revoked certificates. Such a list is known
+  as a Certificate Revocation List (CRL). In the context of the EUDI
+  Wallet ecosystem, we will refer to it as an Attestation Revocation List
+  (ARL).
+* Secondly, the Provider of the digital certificate can set up a service
+  that may be interrogated by a Relying Party in real time when the
+  Relying Party needs to use a certificate. The Relying Party provides an
+  identifier of the certificate, and the Provider responds with the
+  corresponding current status, e.g., 'valid' or 'revoked'. A variation
+  of this mechanism is possible, where it’s not the Relying Party, but
+  rather the subject of the certificate that requests the current
+  revocation status of the certificate from the Provider service. The
+  certificate subject then sends the response to the Relying Party
+  together with the certificate itself. This mechanism is known as the
+  Online Certificate Status Protocol (OCSP), and the variation is known
+  as ‘OCSP stapling’. The server from which a Relying Party can get
+  information regarding the revocation status of an attestation is the
+  OCSP Responder. In the context of the EUDI Wallet ecosystem, we will
+  refer to it as an Online Attestation Status Protocol (OASP), OASP
+  stapling and an OASP Responder.
+
+Apart from these two mechanisms, Attestation Status Lists (ASL) are often
+mentioned as a third possible revocation mechanism. The basic idea of an
+Attestation Status List is that an attestation Provider, or a trusted
+party acting on its behalf, publishes revocation status information for
+all of its valid attestations in the form of a bitstring or byte array.
+Each attestation is associated with a specific position in the
+Attestation Status List. If the binary value of the position in the list
+is 1, the associated attestation has status Revoked. If it is 0, it is
+Valid. To verify whether a specific attestation has been revoked, a
+Relying Party needs to retrieve the Attestation Status List. Therefore,
+each attestation contains the URL where the ASL is located. The
+attestation also contains an index, which is the position of the bit
+associated with the attestation within the Attestation Status List. The
+Relying Party then verifies if the value of the bit at the index position
+is equal to 0 (Valid) or 1 (Revoked).
+
+Other approaches to revocation exist. However, these have not been
+implemented widely compared to the CRL and OCSP mechanisms described
+above, and sometimes require comparatively more advanced cryptography. 
+
+##### 6.3.4.9 Requirements for support of attestation revocation mechanisms
+Relying Party Instances and Relying Parties SHALL support the Attestation
+Status List mechanism and the Attestation Revocation List mechanism
+specified in section 6.3.4.8. Relying Party Instances and Relying Parties
+MAY additionally support the Online Attestation Status Protocol specified
+in section 6.3.4.8.
+
+Wallet Instances SHALL support the Attestation Status List mechanism
+specified below and the Attestation Revocation List mechanism specified
+in section 6.3.4.8. Wallet Instances MAY additionally support the Online
+Attestation Status Protocol specified in section 6.3.4.8.
+
+Wallet Instances and Relying Party instances MAY additionally support
+OASP stapling. However, the current version of this document does not
+contain a full specification of this mechanism.
+
+Attestation Providers SHALL support one of the following methods for
+attestation revocation:
+
+1. Use short-lived attestations only, such that attestation revocation
+   will never be necessary since the revocation process will take longer
+   than the validity period of the attestation. In this case, the
+   Provider does not need to support any of the revocation methods
+   specified in this chapter and attestations do not need to contain any
+   information enabling the Relying Party to do a revocation check.
+   According to requirement REV-6.2.4-03A in ETSI EN 319 411-1 (Trust
+   Service Providers issuing certificates; Part 1: General requirements),
+   the revocation process must take at most 24 hours. Therefore,
+   Providers SHALL NOT use this method for attestations having a validity
+   period of more than 24 hours except for non-qualified attestations.
+2. The Attestation Status List mechanism specified in section 6.3.4.8. In
+   this case, depending on whether the attestations are ISO-compliant or
+   SD-JWT-compliant, the Provider SHALL extend the MSO of its
+   attestations, or the Provider SHALL extend the SD-JWT of its
+   attestations.
+3. Regarding the Attestation Revocation List mechanism, depending on
+   whether the attestations are ISO-compliant or SD-JWT-compliant, the
+   Provider SHALL extend the MSO of its attestations, or the Provider
+   SHALL extend the SD-JWT of its attestations.
+
+Providers MAY additionally support the Online Attestation Status
+Protocol. In this case, depending on whether the attestations are
+ISO-compliant or SD-JWT-compliant, the Provider SHALL extend the MSO of
+its attestations or the Provider SHALL extend the SD-JWT of its
+attestations.
+
+##### 6.3.4.10 Specification of revocation mechanisms in the EUDI Wallet ecosystem
+To be done.
+
+##### 6.3.4.11 Revocation validation by a Relying Party Instance
+After obtaining an attestation from a Wallet Instance, a Relying Party
+Instance SHALL verify the revocation status of the attestation. To do so,
+the Relying Party Instance SHALL perform the following steps:
+
+1. The Relying Party Instance SHALL inspect the MSO or SD-JWT of the
+   attestation to see if it contains any revocation information. If not,
+   the Relying Party Instance SHALL verify that the validity period of
+   the attestation is equal to or less than 24 hours. If this is not the
+   case, the Relying Party SHALL conclude that no reliable information
+   regarding the revocation status of the attestation could be obtained.
+2. The Relying Party Instance SHALL inspect the MSO or SD-JWT of the
+   attestation to see if it contains Attestation Status List information.
+   If so, the Relying Party Instance SHALL use the inspection procedure
+   specified in \[JWTStatusList\][^21]  to find out the current status of
+   the attestation.
+3. The Relying Party Instance SHALL inspect the MSO or SD-JWT of the
+   attestation to see if it contains Attestation Revocation List
+   information. If so, the Relying Party Instance SHALL use the CRL
+   Validation process described in Section 6.3 of \[RFC 5280\] to verify
+   whether the attestation is revoked.
+4. The Relying Party Instance SHALL inspect the response from the Wallet
+   Instance to see if it contains an OASP response for the attestation
+   (i.e., the attestation supports OASP stapling). If so, and if the
+   Relying Party Instance supports OASP stapling, it SHALL inspect the
+   OASP response as described in \[RFC 6960\] to find out the current
+   status of the attestation.
+5. The Relying Party Instance SHALL inspect the MSO or SD-JWT of the
+   attestation to see if it contains Online Attestation Status Protocol
+   information. If so, and if the Relying Party Instance supports OASP,
+   the Relying Party Instance SHALL send an OASP request 1.1.1.1to the
+   OASP Responder. The Relying Party Instance SHALL verify the signature
+   over the OASP response and SHALL inspect the OASP response as
+   described in \[RFC 6960\] to find out the current status of the
+   attestation.
+
+If none of these methods result in reliable information regarding the
+revocation status of the attestation, it is up to the Relying Party to
+take a decision on acceptance or refusal of the attestation. A Relying
+Party SHALL perform a risk analysis to support this decision and SHALL
+consider all relevant factors for the use case.
+
+
+
+
+
+
+
+
+
+
+----------
 
 ### 6.2 Person Identification Data
 
