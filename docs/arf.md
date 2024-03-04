@@ -30,7 +30,7 @@ Framework[^3], without the process of developing the Toolbox interfering
 with, or prejudging the legislative process.
 
 The Recommendation foresees that the Toolbox is developed by Member
-States’ experts in the eIDAS Expert Group[^4] in close coordination with
+States' experts in the eIDAS Expert Group[^4] in close coordination with
 the Commission and, where relevant for the functioning of the European
 Digital Identity (EUDI) Wallet infrastructure, other concerned public
 and private sector parties.
@@ -50,7 +50,7 @@ for public feedback. When the feedback period closed on 15 April 2022,
 
 The eIDAS Expert Group has since further developed the concepts and
 specifications for the European Digital Identity Framework based on the
-Commission’s legislative proposal[^6], and will continue to do so until 
+Commission's legislative proposal[^6], and will continue to do so until 
 the legislative negotiations have been concluded and implementing acts 
 have been adopted.
 
@@ -427,9 +427,9 @@ and a means for exchanging them by a learner.
 
 #### Digital Finance
 The EUDI Wallet Solutions SHALL facilitate complying with strong customer 
-authentication requirements. In line with the Commission’s Retail 
+authentication requirements. In line with the Commission's Retail 
 Payments Strategy[^9], the use case would be developed in close 
-coordination with Member States’ advisory groups on retail payments 
+coordination with Member States' advisory groups on retail payments 
 and the finance industry.
 
 #### Digital Travel Credential
@@ -442,7 +442,7 @@ This work may in future be extended to additional use cases.
 ## 4 European Digital Identity Wallet Ecosystem
 
 This chapter describes the EUDI Wallet ecosystem as it is foreseen in
-the Commission’s legislative proposal.
+the Commission's legislative proposal.
 
 ### 4.1 Roles in the Ecosystem
 
@@ -771,7 +771,7 @@ Note that for certain use cases, the PID may be pre-provisioned, meaning
 it is not yet valid when issued, but reaches its validity later. If PID
 is issued on or after the validity start date, it is immediately
 considered the state directly changes to valid. This means, however,
-that PID could be “pre-issued”.
+that PID could be "pre-issued".
 
 ![Figure 3: State-chart of PID](media/image3.png)
 <!-- <img src="media/image3.png" style="width:2.26443in;height:2.54875in" /> -->
@@ -779,7 +779,7 @@ that PID could be “pre-issued”.
 *Figure 3: State-chart of PID*
 
 There are two possible transitions from a valid PID: it automatically
-expires, by passage to the ‘validity end date’ or it is actively revoked
+expires, by passage to the 'validity end date' or it is actively revoked
 by its Provider. Expiration and revocation are essentially independent
 transitions. Once PID is expired or revoked, it cannot transition back to
 valid. If a change needs to be made to the PID (i.e., because of a User
@@ -797,7 +797,7 @@ solution to be certified as EUDI Wallet.
 If all the legal and technical criteria have been met, including the
 certification of the Wallet Solution by CAB(s), then a Member State may
 decide to start providing Instances of the Solution to Users. The state
-of the Solution becomes “**valid”**. According to Article 6d, Member
+of the Solution becomes "**valid"**. According to Article 6d, Member
 State informs the Commission of each change in the certification status
 of their EUDI Wallet Solutions. This means the EUDI Wallet Solution can
 be officially launched, and Instances of the Solution can be provided to
@@ -1018,7 +1018,7 @@ rulebook has been introduced. This is designed to compile a set of rules,
 guidelines and standards governing the verification, management, and
 usage of a specific attestation or group of attestations related to a use
 case within the EUDI ecosystem. The primary goal of the rulebooks is to
-ensure interoperability, security, privacy, and trust for EUDI Wallet’s
+ensure interoperability, security, privacy, and trust for EUDI Wallet's
 attestations (PID and (Q)EAA).
 
 Common compulsory specifications, rules, and guidelines are outlined in
@@ -1034,7 +1034,7 @@ The Trust Model describes, for all interactions in the lifecycle of a
 EUDI Wallet Instance and an attestation, which trust relationships SHALL
 exist between the interacting parties to enable these interactions.
 
-Moreover, for the ‘Attestation releasing’ interaction in section 6.3.2,
+Moreover, for the 'Attestation releasing' interaction in section 6.3.2,
 this version of this document also describes, on a high level, how this
 required trust can be established. This description includes references
 to existing or draft standards that define detailed security measures.
@@ -1048,7 +1048,7 @@ characteristics of the interacting parties.
 
 Please note:
 
-* For interactions other than the ‘Attestation releasing’ interaction in
+* For interactions other than the 'Attestation releasing' interaction in
   section 6.3.2, the technical measures are not yet described, although
   section headings have been added already. 
 * User privacy is not specifically discussed in this document.
@@ -1139,7 +1139,7 @@ purposes:
 * The EUDI Wallet Provider sets up a secure (authenticated) communication
   channel between the EUDI Wallet Instance and the EUDI Wallet Provider
   backend, for future use.
-* The EUDI Wallet Provider requests data about the User’s device from the
+* The EUDI Wallet Provider requests data about the User's device from the
   EUDI Wallet Instance. This data may include the communication
   technologies supported by the device and the characteristics of the
   WSCD used by the device to securely store cryptographic keys and data
@@ -1152,7 +1152,7 @@ purposes:
   that the attestation will contain a Wallet Instance public key. The
   EUDI Wallet Instance key pair is generated by the EUDI Wallet Instance
   during activation, using the WSCD present in, or connected to, the
-  User’s device. The EUDI Wallet Instance attestation also contains
+  User's device. The EUDI Wallet Instance attestation also contains
   information that allows a Provider or Relying Party to verify that the
   EUDI Wallet Provider did not revoke the EUDI Wallet Instance
   attestation, and hence the EUDI Wallet Instance itself.
@@ -1164,7 +1164,7 @@ purposes:
 * The EUDI Wallet Provider sets up a User account. This User account is
   needed if the User wants to interact with the EUDI Wallet Provider
   without using their EUDI Wallet Instance. An example of this is a
-  request to revoke a EUDI Wallet Instance in case the User’s device is
+  request to revoke a EUDI Wallet Instance in case the User's device is
   lost or stolen. EUDI Wallet Providers MAY also offer other
   instance-related services through this User account. Please note the
   following:
@@ -1176,7 +1176,7 @@ purposes:
     creating an online account, and to the User to accept or refuse these
     conditions.
   * The information in the User account, especially the identifier(s) for
-    the User, the User’s device, and the EUDI Wallet Instance (if any),
+    the User, the User's device, and the EUDI Wallet Instance (if any),
     SHALL be stored and used only in the EUDI Wallet Provider back
     office. The EUDI Wallet Provider SHALL NOT put this information in
     the EUDI Wallet Instance attestation.
@@ -1273,8 +1273,8 @@ Wallet Instance, the following trust relationships SHALL exist:
    means the Provider can verify that the app that it is interacting with
    is indeed an instance of the approved Wallet Solution of a trusted
    EUDI Wallet Provider. Moreover, If the Provider has specific
-   functional requirements for EUDI Wallet Instances containing ‘their’
-   attestations, the Provider SHALL be able to trust that the User’s EUDI
+   functional requirements for EUDI Wallet Instances containing 'their'
+   attestations, the Provider SHALL be able to trust that the User's EUDI
    Wallet Instance indeed supports all these features. 
 
 The next sections discuss these trust relationships.
@@ -1304,7 +1304,7 @@ When a Relying Party (RP) requests a User to release some attributes from his/he
    and replayed. This is generally called device binding.
 4. The Relying Party SHALL be able to trust the EUDI Wallet. 
 5. The User SHALL be able to trust the Relying Party, meaning that the
-   User is sure about the Relying Party’s identity.
+   User is sure about the Relying Party's identity.
 6. The User SHALL be able to trust that the Relying Party does not
    request more data than it reasonably needs for the use case.
 
@@ -1327,7 +1327,7 @@ current version of this document:
   private key from a WSCD. 
 * A Relying Party is assumed to trust the attestation Provider to have
   verified the technical properties of the EUDI Wallet Instance and the
-  User’s device and  WSCD (as documented in the Wallet Instance
+  User's device and  WSCD (as documented in the Wallet Instance
   attestation) at the time it issued the attestation. Consequently, the
   Relying Party does not verify these technical properties during the
   attestation release process. To elaborate: A Relying Party typically has
@@ -1336,7 +1336,7 @@ current version of this document:
   of identity. If so, that Relying Party SHALL accept any valid and
   authentic mDL, regardless of the mobile device it is installed on. If the
   Relying Party were to make its own independent assessment of the security
-  of the User’s device, there is a possibility that an mDL will not be
+  of the User's device, there is a possibility that an mDL will not be
   accepted, even though it is valid. That would be confusing to Users and
   might diminish their trust in the EUDI Wallet Instance as well as the
   attestation.
@@ -1363,9 +1363,9 @@ Entity Statement according to OpenID Federation.
 
 Peer-to-peer communication of the Provider public key (trust anchor)
 means that every Relying Party individually decides to trust each
-Provider. The Relying Party then obtains the Provider’s public key via a
+Provider. The Relying Party then obtains the Provider's public key via a
 manual or automated process agreed between the Provider and the Relying
-Party, for instance by downloading it from the Provider’s website. A
+Party, for instance by downloading it from the Provider's website. A
 peer-to-peer process has the advantages of flexibility and low overhead.
 However, it is hardly scalable and therefore not suitable for
 attestations such as PIDs, mDLs, diplomas, or health insurance cards, for
@@ -1373,7 +1373,7 @@ which there many tens to hundreds of different providers in the EU and
 thousands of Relying Parties, which moreover do not (necessarily) know
 each other. Moreover, a peer-to-peer process assumes that each Relying
 Party has sufficient technical knowledge and budget to judge the level of
-security of each Provider’s systems and processes for, among others,
+security of each Provider's systems and processes for, among others,
 private key management. This is not realistic for high-value
 attestations. A peer-to-peer process may therefore be suitable for
 low-value attestations in contexts where Providers and Relying Parties
@@ -1383,7 +1383,7 @@ For more valuable attestations, or for attestations for which Providers
 and Relying Parties do not know each other, a trusted list of Providers
 is a better solution. This trusted list is provided by a trusted list
 provider, which is a central party responsible for (and capable of)
-verifying that the level of security of an Providers’ systems and
+verifying that the level of security of an Providers' systems and
 processes is sufficient for the type of attestation it issues, and
 comparable to the level of security of other Providers for the same type
 of attestation. This may include requiring that a Provider documents
@@ -1450,7 +1450,7 @@ The Relying Party SHALL be able to trust that an attestation it receives was not
 
 The Relying Party can trust that this is the case if the EUDI Wallet Instance signs some contextual information with the private key of the attestation. This information SHALL include a random number generated by the Relying Party. To verify this signature, the Relying Party needs to receive the public key of the attestation, which SHALL be signed (directly or indirectly) by the Provider of the attestation. By signing the public key, the Provider certifies that the public key indeed belongs to the attestation. The Relying Party SHALL additionally verify that the Wallet Instance is in possession of the corresponding private key; the Relying Party does so by verifying the signature over the random number generated by the Relying Party. 
 
-Note that a EUDI Wallet Instance can contain multiple attestations, originating from multiple Providers. For each attestation, the EUDI Wallet Instance has access to an attestation private key, which is stored in the WSCD in (or connected to) the User’s device. As discussed in section 6.2.2, the EUDI Wallet Instance also contains a EUDI Wallet Instance private key. Depending on the attestation requested by the 6.3.2.4, the EUDI Wallet Instance SHALL use the correct private key for signing the random number generated by the Relying Party. 
+Note that a EUDI Wallet Instance can contain multiple attestations, originating from multiple Providers. For each attestation, the EUDI Wallet Instance has access to an attestation private key, which is stored in the WSCD in (or connected to) the User's device. As discussed in section 6.2.2, the EUDI Wallet Instance also contains a EUDI Wallet Instance private key. Depending on the attestation requested by the 6.3.2.4, the EUDI Wallet Instance SHALL use the correct private key for signing the random number generated by the Relying Party. 
 
 \[ISO/IEC 18013-5\] specifies a mechanism for this, called mdoc authentication. The EUDI Wallet Instance signs contextual information (called the SessionTranscript), which includes a nonce from the Relying Party, namely its ephemeral public key for session encryption. The standard specifies which algorithms can be used for signing and how the attestation public key is incorporated in the MSO.
 
@@ -1532,7 +1532,7 @@ the attestation has not expired and the signature over the attestation is
 correct.
 
 The Relying Party uses a Relying Party Instance to interact with the
-User’s Wallet Instance. This includes carrying out attestation revocation
+User's Wallet Instance. This includes carrying out attestation revocation
 checking.
 
 When discussing attestation revocation, it is essential to realize that
@@ -1674,7 +1674,7 @@ A mechanism for attestation revocation and revocation checking SHALL comply with
    independently from the Wallet Instance.
 3. The revocation mechanism SHALL be privacy-preserving, to the maximum
    extent feasible given operational constraints. 
-   1. The Provider SHALL NOT be able to learn anything about the User’s
+   1. The Provider SHALL NOT be able to learn anything about the User's
      use of an attestation based upon interactions between Relying
      Parties and the Provider related to attestation revocation checking. 
    2. Any attestation identifiers and other values used for enabling
@@ -1716,13 +1716,13 @@ revocation mechanisms are generally supported in a PKI:
   Relying Party needs to use a certificate. The Relying Party provides an
   identifier of the certificate, and the Provider responds with the
   corresponding current status, e.g., 'valid' or 'revoked'. A variation
-  of this mechanism is possible, where it’s not the Relying Party, but
+  of this mechanism is possible, where it's not the Relying Party, but
   rather the subject of the certificate that requests the current
   revocation status of the certificate from the Provider service. The
   certificate subject then sends the response to the Relying Party
   together with the certificate itself. This mechanism is known as the
   Online Certificate Status Protocol (OCSP), and the variation is known
-  as ‘OCSP stapling’. The server from which a Relying Party can get
+  as 'OCSP stapling'. The server from which a Relying Party can get
   information regarding the revocation status of an attestation is the
   OCSP Responder. In the context of the EUDI Wallet ecosystem, we will
   refer to it as an Online Attestation Status Protocol (OASP), OASP
@@ -1915,7 +1915,7 @@ Solution:
   - Providers identification.
   - Providers registration.
   - Recognised data models and schemas.
-  - Relying Parties’ registration and authentication.
+  - Relying Parties' registration and authentication.
   - Mechanisms to establish the trust in a cross-domain scenario.
 
 
@@ -2036,7 +2036,7 @@ TLS).</p>
 </tr>
 <tr class="odd">
 <td rowspan="3">
-<p>EUDI Wallet “PID/EAA Presentation” Creation Application (WCA)</p>
+<p>EUDI Wallet "PID/EAA Presentation" Creation Application (WCA)</p>
 </td>
 <td>
 <p>Logs, history of EUDI Wallet Instance operations, telemetry</p>
@@ -2208,15 +2208,15 @@ may be added as required in the future).
 To perform Relying Party authentication, the Wallet Instance needs to
 check and validate the module entity with which it communicates, which is
 called a "Relying Party Instance". There could be multiple Relying Party
-Instances for each Relying Party. Let’s take for example a Relying Party
-called the “Traffic Police”, which is represented by numerous policemen
+Instances for each Relying Party. Let's take for example a Relying Party
+called the "Traffic Police", which is represented by numerous policemen
 stationed along the highways and in the cities, each policeman carrying a
 hand-held Relying Party device and a suitable application, that has the
 capability to authenticate the Traffic Police to a User holding a Wallet
 Instance and an mDL stored inside it. The concept of a Relying Party
 Instance is readily understood in this proximity scenario.
 
-The same could be visualized for the remote scenarios. Let’s take for
+The same could be visualized for the remote scenarios. Let's take for
 example the Tax Authority as a Relying Party that wants to communicate
 with Wallet Instances. To do so, the Tax Authority needs a software
 module that is capable of sending ISO-compliant or SD-JWT-compliant
@@ -2225,8 +2225,8 @@ responses. The Tax Authority can have one Relying Party Instance for all
 of its activities, or alternatively, it can decide to have several
 Relying Party Instances, for separate operational purposes. For example,
 it could have separate Relying Party Instances for different geographical
-regions, or one Relying Party Instance for natural persons’ Wallet
-Instances and a separate Relying Party Instance for legal persons’ Wallet
+regions, or one Relying Party Instance for natural persons' Wallet
+Instances and a separate Relying Party Instance for legal persons' Wallet
 Instances. In each use case, a User will authenticate the relevant
 Relying Party Instance that has contacted him during the session.
 
@@ -2342,14 +2342,14 @@ for how the Wallet Instance must do this. However, it requires that,
   SHALL show the name in the Relying Party name extension of the Relying
   Party Instance certificate (see 7.5.8.2) to the User. The Wallet
   Instance can do this when asking for User approval (see section 7.7).
-  For example, the Wallet Instance MAY use a phrase like ‘<Relying Party
+  For example, the Wallet Instance MAY use a phrase like '<Relying Party
   name> asks for the following: <first_name, birth_date, etc.>. Do you
-  agree?” This is only an example of a response.
+  agree?" This is only an example of a response.
 * If Relying Party authentication fails, the Wallet Instance SHALL inform
-  the User. For example, the Wallet Instance MAY use a phrase like “A
-  party claiming to be ‘<Relying Party name>’ is asking for data. This
+  the User. For example, the Wallet Instance MAY use a phrase like "A
+  party claiming to be '<Relying Party name>' is asking for data. This
   party is untrusted. For your security, the transaction will be
-  cancelled.”
+  cancelled."
 
 Additionally, if Relying Party authentication fails, the Wallet Instance
 MAY inform the User about the reason for failure
@@ -2418,7 +2418,7 @@ B.1.7 of \[ISO/IEC18013-5\], with the following exceptions:
   Party Instance certificates contain a relying party unique ID
   extension. 
 * The Relying Party Instance certificate SHALL contain the legal name for
-  the Relying Party in the subject’s Common Name, which the Wallet
+  the Relying Party in the subject's Common Name, which the Wallet
   Instance can show to the User when asking for User approval, see
   section 7.6.1. The Relying Party Instance certificate MAY contain a
   Relying Party name extension that further defines the Relying Party
@@ -2464,7 +2464,7 @@ as described below:
 
 * Firstly, it makes the User solely responsible for verifying (and
   preventing) that the Relying Party does not misbehave. This puts a
-  heavy burden on the User’s level of knowledge and awareness. For
+  heavy burden on the User's level of knowledge and awareness. For
   example, if a Relying Party present the release of all requested
   attributes as a precondition for the use case that is going on, a User
   may not have the resources to determine whether this is indeed the
@@ -2481,7 +2481,7 @@ as described below:
 
 
 ### 7.7 User approval
-In this document the term ‘User approval' exclusively refers to a User’s
+In this document the term 'User approval' exclusively refers to a User's
 decision to release an attribute to the Relying Party requesting it.
 Under no circumstances User approval to releasing data from their EUDI
 Wallet Instance SHOULD be construed as lawful grounds for the processing
@@ -2503,7 +2503,7 @@ document requires the following:
 3. A Relying Party SHALL be able to distinguish between attributes that
    are critical for its use case, and those that are optional. If so, a
    Wallet Instance SHALL ensure that the User approval for critical
-   attributes is granted on an ‘all or nothing’ basis. For optional
+   attributes is granted on an 'all or nothing' basis. For optional
    attributes, User approval is granted per attribute.
 
 These requirements are explained in more detail in the next subsections.
@@ -2524,17 +2524,17 @@ remote, and including:
   no (legal) need to ask for the User's approval because another legal
   basis exists for requesting the attributes.
 
-This principle is a basic protection of the User’s privacy. It also
+This principle is a basic protection of the User's privacy. It also
 ensures a consistent User experience. Moreover, this principle means that
 the level of control Users have over their attributes is not less than in
-the existing ‘plastic-card based’ situation. That is, a User SHALL always
+the existing 'plastic-card based' situation. That is, a User SHALL always
 be able to refuse presenting an attribute that is requested by a Relying
 Party, even when knowing that the consequence of that refusal may have
 negative consequences for the User.
 
 Note: Attributes that the Relying Party intends to store is regulated
-GDPR. This feature is seen as preference known in ISO as “intent to
-retain” and is included in the ARF as “privacy by design” element.
+GDPR. This feature is seen as preference known in ISO as "intent to
+retain" and is included in the ARF as "privacy by design" element.
 
 #### 7.7.3 User authentication and User approval
 A Wallet Instance SHALL authenticate the User before allowing the User to
@@ -2712,7 +2712,7 @@ https://www.w3.org/TR/json-ld/
     European Digital Identity Framework, OJ L 210/51, 14.6.2021
 
 [^3]: All references in the document to the revision of the eIDAS
-    regulation are to be understood as a reference to the Commission’s
+    regulation are to be understood as a reference to the Commission's
     proposal of 3 June 2021, unless otherwise indicated. Proposal for a
     REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL amending
     Regulation (EU) No 910/2014 as regards establishing a framework for
@@ -2724,13 +2724,13 @@ https://www.w3.org/TR/json-ld/
 [^5]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
 
 [^6]: All references in the document to the revision of the eIDAS
-    regulation are to be understood as a reference to the Commission’s
+    regulation are to be understood as a reference to the Commission's
     proposal of 3 June 2021, unless otherwise indicated.
 
 [^7]: A first release is currently planned for Q2 2023, followed by
     further releases.
 
-[^8]: “OASIS Trust,” \[Online\]. Available: http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.
+[^8]: "OASIS Trust," \[Online\]. Available: http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html.
 
 [^9]: Communication from the Commission to the European Parliament, the
     Council, the European Economic and Social Committee and the
