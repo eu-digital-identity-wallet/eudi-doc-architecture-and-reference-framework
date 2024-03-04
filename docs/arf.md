@@ -2653,12 +2653,11 @@ the document or information has been removed from the document, and
 **PATCH** version is incremented when minor changes have been made
 (e.g., fixing typos).
 
-----
-
-## 9 References
+## 10 References
 \[2015/1505\] COMMISSION IMPLEMENTING DECISION (EU) 2015/1505
 of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market
 
+\[RFC 2119\] RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels, S. Bradner, March 1997
 
 \[Key words for use in ARF to indicate requirement levels\]
 <https://www.rfc-editor.org/rfc/rfc2119>
@@ -2675,13 +2674,13 @@ C., Zundel, B., and D. Chadwick, "Verifiable Credentials Data Model
 Looker, "OpenID for Verifiable Presentations", 30 December 2022,
 <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>
 
-\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023 [^22] Retrievable from https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
+\[OpenID4VCI\] Lodderstedt, T., Yasuda, K., and T. Looker, OpenID for Verifiable Presentations – draft 18, 21 April 2023 [^23]   Retrievable from [OpenID for Verifiable Credential Issuance - draft 12](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) 
 
 \[Prop_eIDAS\] COM(2021) 281 final
 
-\[SIOPv2\] K. Yasuda, T. Lodderstedt, M. Jones, "Self-Issued OpenID
-Provider V2", 1 January 2023,
-<https://openid.net/specs/openid-connect-self-issued-v2-1_0.html>
+\[SIOPv2\] K. Yasuda, T. Lodderstedt, M. Jones, "Self-Issued OpenID Provider V2", 1 January 2023, https://openid.net/specs/openid-connect-self-issued-v2-1_0.html
+
+\[DP_Revoc\] eIDAS Expert Group WG1 Discussion Paper Revocation for PID and (Q)EAA, v.1.0
 
 \[SD-JWT\] Selective Disclosure for JWTs (SD-JWT) draft-ietf-oauth-selective-disclosure-jwt 04, 11 April 2023 [^23]
 
