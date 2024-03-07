@@ -10,7 +10,7 @@ _Version 1.3.0_
 |---------|------|---------|
 | 1.0.0   | 26 January 2023 | Initial version |
 | 1.1.0   | 20 April 2023   | Addition of services blueprints for use cases on: <ul><li>Identification & authentication to access online services</li><li>Mobile driving licence</li></ul>  |
-| 1.2.0   | 22 June 2023   | <ul><li>New chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
+| 1.2.0   | 22 June 2023   | <ul><li>New Chapter 5 describing the EUDI Wallet ecosystem trust model</li><li>Annex 06 describing the first iteration of PID Rule Book</li><li>Annex 07 describing the first iteration of the mDL Rule Book</li></ul> |
 | 1.3.0   | 15 December 2023 | <ul><li>Updated Chapter 5 EUDI data model</li><li>Updated Chapter 6 Trust model</li><li>Updated Chapter 7 Specifications for Wallet Solutions</li><li>Added Annex 8 EUDI Wallet Design Guide</li><li>Added Annex 9 Design guide data sharing scenarios</li></ul> |
 
 ## 1 Introduction
@@ -68,7 +68,7 @@ the document will describe a comprehensive Architecture and Reference
 Framework covering all the specifications needed to implement a
 European Digital Identity Wallet Solution.
 
-While chapters 2-5 and 8-10 are descriptive, chapters 6 and 7 specify 
+While Chapters 2-5 and 8-10 are descriptive, Chapters 6 and 7 specify 
 requirements for PID Providers, (Q)EAA Providers, EUDI Wallet Solution 
 Providers, Relying Parties and other parties in the EUDI Wallet 
 ecosystem. The capitalised imperatives in the document are used in 
@@ -440,7 +440,7 @@ This work may in future be extended to additional use cases.
 
 ## 4 European Digital Identity Wallet Ecosystem
 
-This chapter describes the EUDI Wallet ecosystem as it is foreseen in
+This Chapter describes the EUDI Wallet ecosystem as it is foreseen in
 the Commission's legislative proposal.
 
 ### 4.1 Roles in the Ecosystem
@@ -724,7 +724,7 @@ such EUDI Wallet requires a more detailed level of abstraction to be
 efficient and to yield a sufficiently expressive architecture description
 to be prescriptive. 
 
-This chapter starts from a minimal object model and defines the
+This Chapter starts from a minimal object model and defines the
 lifecycle of the core concepts: EUDI Wallet Solution, PID, (Q)EAA, and
 EUDI Wallet Instance. These are chosen as a starting point because the
 joint development of the ARF showed that the lifecycles of these
@@ -897,7 +897,7 @@ generated this data beforehand.
 #### 5.1.1 PID format and associated requirements 
 
 ##### 5.1.1.1	Principles for the PID set 
-This chapter proposes the definition of the PID set and discusses further
+This Chapter proposes the definition of the PID set and discusses further
 specification, data minimization and identifiers. The dataset proposed
 herein is constructed based on the following principles:
 
@@ -1081,7 +1081,7 @@ trust in the EUDI Wallet ecosystem:
   for attributes beyond their rights. 
 
 #### 6.1.3	Other trust relations
-Besides the trust relationships described in this chapter, other trust
+Besides the trust relationships described in this Chapter, other trust
 relations SHALL exist as well. For instance, Users, Providers and Relying
 Parties SHALL implicitly trust certification bodies, trusted list
 providers, vendors, OEMs, operating systems, and app stores. In many
@@ -1768,7 +1768,7 @@ attestation revocation:
    will never be necessary since the revocation process will take longer
    than the validity period of the attestation. In this case, the
    Provider does not need to support any of the revocation methods
-   specified in this chapter and attestations do not need to contain any
+   specified in this Chapter and attestations do not need to contain any
    information enabling the Relying Party to do a revocation check.
    According to requirement REV-6.2.4-03A in ETSI EN 319 411-1 (Trust
    Service Providers issuing certificates; Part 1: General requirements),
@@ -2443,7 +2443,7 @@ instance for more attributes than the Relying Party reasonably needs for
 its use case. This is obviously a risk for the privacy of the user, and
 this risk must be mitigated. At least three approaches can in principle
 be used to protect the user against over-asking: the user approval
-mechanism discussed in chapter 4, technical measures in the Wallet
+mechanism discussed in Chapter 4, technical measures in the Wallet
 Instance, and legal and organizational measures on Member State or EU
 level. 
 
