@@ -53,7 +53,8 @@ Commission's legislative proposal[^6], and will continue to do so until
 the legislative negotiations have been concluded and implementing acts 
 have been adopted.
 
-The eIDAS Expert Group adopted the present document on 26 January 2023.
+The eIDAS Expert Group adopted version 1.2.0 of this document on 21st of June 2023.
+As of version 1.3.0, this document has been released as a draft to gather public feedback prior to its adoption by the Expert Group.
 
 ### 1.2 Purpose of This Document
 
