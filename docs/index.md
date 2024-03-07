@@ -49,8 +49,8 @@ the Commission and, where relevant for the functioning of the European
 Digital Identity (EUDI) Wallet infrastructure, other concerned public
 and private sector parties.
 
-This repository contains the "[Architecture and Reference Framework](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/)"
-(hereinafter the [ARF](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/)).
+This repository contains the "[Architecture and Reference Framework](./arf.md)"
+(hereinafter the [ARF](./arf.md)).
 
 The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
