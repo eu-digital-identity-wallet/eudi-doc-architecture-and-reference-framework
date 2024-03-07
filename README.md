@@ -1,7 +1,7 @@
 # The European Digital Identity Wallet
 
 
-![An illustrative header graphic reading Digital Identity for all Europeans - Apersonal digital wallet for EU citizens and residents](https://joinup.ec.europa.eu/sites/default/files/inline-images/EUDI.png)
+![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner.png)
 
 
 ## The proposed Digital Identity Regulation
