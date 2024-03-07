@@ -201,7 +201,7 @@ Identification Data to Users.</strong></td>
 <td><strong>Systems, software, and communication protocols that are used by EUDI Wallet ecosystem components to distribute, manage, and control public keys. A PKI publishes public keys and establishes trust within an environment by validating and verifying the public keys mapping to an entity.</strong></td>
 </tr>
 <tr class="odd">
-<td><em>Qualified Electronic Attestations of Attributes</em></td>
+<td><em>Qualified Electronic Attestations of Attributes (QEAA)</em></td>
 <td><p><strong>An Electronic Attestation of Attributes, which is issued
 by a Qualified Trust Service Provider and meets the requirements laid
 down in Annex V. - <em>eIDAS Regulation amendment
