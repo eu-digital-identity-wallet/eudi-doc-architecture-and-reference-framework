@@ -2715,7 +2715,7 @@ https://www.w3.org/TR/json-ld/
     Regulation (EU) No 910/2014 as regards establishing a framework for a
     European Digital Identity, COM(2021) 281 final, 3.6.2021
 
-[^4]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert groups/consult?do=groupDetail.groupDetail&groupID=3032
+[^4]: https://ec.europa.eu/transparency/expert-groups-register/screen/expert-groups/consult?lang=en&groupID=3032
 
 [^5]: https://futurium.ec.europa.eu/en/digital-identity/toolbox/architecture-and-reference-framework-outline
 
