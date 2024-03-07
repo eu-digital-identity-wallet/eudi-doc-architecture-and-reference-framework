@@ -6,10 +6,14 @@
 
 # Prerequisites
 # Install pandoc, latex and mkdocs in your environment 
+#  - Ubuntu: `sudo apt-get install pandoc`
 #
 # Parameters and Variables
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables
 #
+
+# Convert .docx to .md
+# pandoc --extract-media ./assets input.docx -o output.md
 
 SOURCE_DOCS := $(wildcard docs/*.md)
 BUILD_DIR :=./build
