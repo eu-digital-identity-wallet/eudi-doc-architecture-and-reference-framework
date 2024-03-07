@@ -2817,48 +2817,52 @@ https://www.w3.org/TR/json-ld/
 The service blueprint about initialisation and activation of the Wallet
 is described in the attached file:
 
-- [Annex 01 - EUDI Wallet – Initialisation and Activation.pdf](./annexes/annex-01-initialisation-and-activation.pdf)
+- [Annex 01 - EUDI Wallet – Initialisation and Activation `PDF`](./annexes/annex-01-initialisation-and-activation.pdf)
 
 ### A.2 Annex 02 – online identification and authentication
 
 The service blueprint about online identification and authentication for
 the Wallet is described in the attached file:
 
-- [Annex 02- EUDI Wallet – Online Identification and Authentication.pdf](./annexes/annex-02-online-identification-and-authentication.pdf)
+- [Annex 02- EUDI Wallet – Online Identification and Authentication `PDF`](./annexes/annex-02-online-identification-and-authentication.pdf)
 
 ### A.3 Annex 03 – issuing mDL
 
 The service blueprint about issuing mDL is described in the attached
 file:
 
-- [Annex 03 – EUDI Wallet – issuing mDL.pdf](./annexes/annex-03-issuing-mdl.pdf)
+- [Annex 03 – EUDI Wallet – issuing mDL `PDF`](./annexes/annex-03-issuing-mdl.pdf)
 
 ### A.4 Annex 04 – presenting mDL (proximity-supervised)
 
 The service blueprint about presenting mDL (proximity-supervised) is
 described in the attached file:
 
-- [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised).pdf](./annexes/annex-04-presenting-mdl-proximity-supervised.pdf).
+- [Annex 04 – EUDI Wallet – presenting mDL (proximity-supervised) `PDF`](./annexes/annex-04-presenting-mdl-proximity-supervised.pdf).
 
 ### A.5 Annex 05 – presenting mDL (proximity-unsupervised)
 
 The service blueprint about presenting mDL (proximity-unsupervised) is
 described in the attached file:
-* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised).pdf](./annexes/annex-05-presenting-mdl-proximity-unsupervised.pdf)
+* [Annex 05 – EUDI Wallet – presenting mDL (proximity-unsupervised) `PDF`](./annexes/annex-05-presenting-mdl-proximity-unsupervised.pdf)
 
 ## A.6 Annex 06 – PID rulebook
 The PID attribute schema, indicative EUDI Wallet Instance Attestation
 and Trust Infrastructure details are further detailed in the attached
-file:
-* [Annex 06 – EUDI Wallet – PID rulebook.pdf](./annexes/annex-06-pid-rulebook.pdf)
+file(s):
+* [Annex 06 – EUDI Wallet – PID rulebook ](./annexes/annex-06-pid-rulebook.md)
+* [Annex 06 – EUDI Wallet – PID rulebook `PDF`](./annexes/annex-06-pid-rulebook.pdf)
 
 ## A.7 Annex 07 - mDL rulebook
-The mDL attribute schema is further detailed in the attached file:
-* [Annex 07 – EUDI Wallet – mDL rulebook.pdf](./annexes/annex-07-mdl-rulebook.pdf)
+The mDL attribute schema is further detailed in the attached file(s):
+* [Annex 07 – EUDI Wallet – mDL rulebook](./annexes/annex-07-mdl-rulebook.md)
+* [Annex 07 – EUDI Wallet – mDL rulebook `PDF`](./annexes/annex-07-mdl-rulebook.pdf)
 
 ## A.8 Annex 08 - Design Guide 
 A first iteration of an EUDI Wallet Design Guide can be found in the attached file:
-* [Annex 08 – EUDI Wallet Design Guide.pdf](./annexes/annex-08-eudi-wallet-design-guide.pdf)
+* [Annex 08 – EUDI Wallet Design Guide](./annexes/annex-08-design-guide.md)
+* [Annex 08 – EUDI Wallet Design Guide `PDF`](./annexes/annex-08-eudi-wallet-design-guide.pdf)
 
 ## A.9	Annex 09 - Design guide data sharing scenarios
-* [Annex 09 – EUDI Wallet Design Guide Data Sharing Scenarios.pdf](./annexes/annex-09-eudi-wallet-design-guide-data-sharing-scenarios.pdf)
+* [Annex 09 – EUDI Wallet Design Guide Data Sharing Scenarios](./annexes/annex-09-design-guide-data-sharing-scenarios.md)
+* [Annex 09 – EUDI Wallet Design Guide Data Sharing Scenarios `PDF`](./annexes/annex-09-design-guide-data-sharing-scenarios.pdf)
