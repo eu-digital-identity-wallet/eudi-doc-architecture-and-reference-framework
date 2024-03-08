@@ -437,6 +437,17 @@ and the finance industry.
 EUDI Wallet can store Digital Travel Credentials enabling Users to
 benefit from more seamless travel.
 
+#### Digital Car Key
+
+EUDI Wallet can store industry standardized Digital Car Keys 
+allowing users to conveniently store multiple car keys on their 
+smartphone. This feature enhances the car-sharing experience 
+across Europe, making it more seamless and efficient. It also 
+promotes sustainability by facilitating a more efficient and 
+eco-friendly car-sharing experience across Europe. This use case
+also has the potential to augment existing standards and regulations 
+for the protection of motor vehicles against unauthorized use.
+
 This work may in future be extended to additional use cases.
 
 ## 4 European Digital Identity Wallet Ecosystem
