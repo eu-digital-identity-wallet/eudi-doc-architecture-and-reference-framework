@@ -1367,7 +1367,7 @@ Party, for instance by downloading it from the Provider's website. A
 peer-to-peer process has the advantages of flexibility and low overhead.
 However, it is hardly scalable and therefore not suitable for
 attestations such as PIDs, mDLs, diplomas, or health insurance cards, for
-which there many tens to hundreds of different providers in the EU and
+which there are tens to hundreds of different providers in the EU and
 thousands of Relying Parties, which moreover do not (necessarily) know
 each other. Moreover, a peer-to-peer process assumes that each Relying
 Party has sufficient technical knowledge and budget to judge the level of
