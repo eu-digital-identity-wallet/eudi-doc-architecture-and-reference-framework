@@ -54,7 +54,7 @@ However, mobile driving licenses are legally specified in the proposed
 EC Regulation 2023\_127 (4^th^ Driving License Regulation). This
 Regulation specifies that mDLs shall comply with the ISO/IEC 18013-5
 standard. It does not mention any other standards, in particular not
-\[SD JWT\]. Consequently, mDLs issued to an EUDI Wallet instance shall
+\[SD JWT\]. Consequently, mDLs issued to an EUDI Wallet Instance shall
 not be implemented as \[SD JWT\]-compliant document. This document
 therefore specified only an ISO/IEC 18013-5 compliant encoding.
 
