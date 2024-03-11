@@ -1125,7 +1125,7 @@ To be done.
 
 ##### 6.2.2.1	Required trust relationships[^15]
 
-After its' installation, a new EUDI Wallet Instance will need to be
+After its installation, a new EUDI Wallet Instance will need to be
 activated by the Wallet Provider. Activation has at least the following
 purposes:
 
