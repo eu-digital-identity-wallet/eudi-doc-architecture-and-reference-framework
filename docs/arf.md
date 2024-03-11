@@ -1111,7 +1111,7 @@ not contain any malware or other threats.
 2. The User SHALL be able to trust that the PID Provider will issue the
 PID into an instance of a EUDI Wallet Solution. 
 3. The User SHALL trust the EUDI Wallet solution. This means that the User
-trusts the App store  and the App publisher.
+trusts the app store and the app publisher.
 
 The next sections discuss these trust relationships.
 
