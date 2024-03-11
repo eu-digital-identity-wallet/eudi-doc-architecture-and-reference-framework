@@ -1110,7 +1110,7 @@ app or application the user is installing) is genuine, authentic and does
 not contain any malware or other threats. 
 2. The User SHALL be able to trust that the PID Provider will issue the
 PID into an instance of a EUDI Wallet Solution. 
-3. The User SHALL trust the EUDIW solution. This means that the User
+3. The User SHALL trust the EUDI Wallet solution. This means that the User
 trusts the App store  and the App publisher.
 
 The next sections discuss these trust relationships.
