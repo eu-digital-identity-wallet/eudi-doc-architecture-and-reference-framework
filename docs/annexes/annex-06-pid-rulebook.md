@@ -27,8 +27,8 @@ This PID Rule Book contains the following topics:
     also describes how Member States can specify any possible national
     attributes. Two encodings for these attributes are specified, one
     compliant with \[ISO18013-5\], the other compliant with \[SD-JWT\].
-* Chapter 3 specifies the Wallet Instance attestation schema, which
-    describes the same information for the Wallet Instance attestation
+* Chapter 3 specifies the Wallet Instance Attestation schema, which
+    describes the same information for the Wallet Instance Attestation
     signed by the Wallet Provider for each Wallet Instance. This
     information will be moved to another document in the future.
 * Chapter 4 specifies details about the trust infrastructure necessary
@@ -501,7 +501,7 @@ Instance.
 At the discretion of the PID Provider, domestic data elements (see
 section 2.2.2) MAY be released in either a VP Token or an ID Token.
 
-## 3 Wallet Instance attestation attribute schema
+## 3 Wallet Instance Attestation attribute schema
 > NOTE: the information in this chapter does not pertain to the PID
 > directly. It will be included in a separate Wallet Attestation
 > Rulebook, to be detailed in a future version of ARF.
