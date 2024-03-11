@@ -1300,7 +1300,7 @@ When a Relying Party (RP) requests a User to release some attributes from his/he
    issued this attestation to the EUDI Wallet Instance that provided it
    to the Relying Party. In other words, the attestation was not copied
    and replayed. This is generally called device binding.
-4. The Relying Party SHALL be able to trust the EUDI Wallet. 
+4. The Relying Party SHALL be able to trust the EUDI Wallet Instance. 
 5. The User SHALL be able to trust the Relying Party, meaning that the
    User is sure about the Relying Party's identity.
 6. The User SHALL be able to trust that the Relying Party does not
