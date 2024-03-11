@@ -1381,7 +1381,7 @@ For more valuable attestations, or for attestations for which Providers
 and Relying Parties do not know each other, a trusted list of Providers
 is a better solution. This trusted list is provided by a trusted list
 provider, which is a central party responsible for (and capable of)
-verifying that the level of security of an Providers' systems and
+verifying that the level of security of a Providers' systems and
 processes is sufficient for the type of attestation it issues, and
 comparable to the level of security of other Providers for the same type
 of attestation. This may include requiring that a Provider documents
