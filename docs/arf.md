@@ -904,8 +904,6 @@ herein is constructed based on the following principles:
 
 * No two persons SHALL have the same PID set of values for mandatory
   attributes. 
-* The PID set SHALL at least contain the minimum set of attributes
-  aligned with eIDAS CIR 2015/1501[^14] as mandatory. 
 * The mandatory data set is by nature limited to the (narrow)
   intersection of what all Member States can provide for all natural and
   legal persons and what is needed for electronic identification
