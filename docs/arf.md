@@ -1425,7 +1425,7 @@ can trust the attestation:
 2. The Relying Party verifies that the public key it used for verifying
    the seal or signature can be trusted, either because the Relying Party
    obtained the key in a manner described in section 6.3.2.2, or because
-   is protected by means of a chain of trust that ends in a trusted
+   the key is protected by means of a chain of trust that ends in a trusted
    Provider public key that was obtained in such a manner.  
 3. The Relying Party validates that the Provider has not revoked the
    attestation. 
