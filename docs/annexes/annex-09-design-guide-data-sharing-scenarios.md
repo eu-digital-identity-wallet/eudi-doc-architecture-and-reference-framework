@@ -344,7 +344,7 @@ indicating the success or failure of their login attempt.
 
 ![A screenshot of a login screen Description automatically generated with medium confidence](./assets/annex-09/media/image6.png)
 
-The user gets an error message indicating that his credentials were wrong:\
+The user gets an error message indicating that his/her credentials were wrong:\
 
 
 

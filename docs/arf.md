@@ -1218,7 +1218,7 @@ entities.
 For this, the following trust relations need to exist:
 
 1. The User needs to be able to trust the EUDI Wallet Provider. This
-   means that the User is sure that he is dealing with the genuine EUDI
+   means that the User is sure that he/she is dealing with the genuine EUDI
    Wallet Provider responsible for their EUDI Wallet Instance.
 2. The EUDI Wallet Instance needs to be able to trust the EUDI Wallet
    Provider, meaning that the EUDI Wallet Instance is sure that it is
@@ -2226,7 +2226,7 @@ it could have separate Relying Party Instances for different geographical
 regions, or one Relying Party Instance for natural persons' Wallet
 Instances and a separate Relying Party Instance for legal persons' Wallet
 Instances. In each use case, a User will authenticate the relevant
-Relying Party Instance that has contacted him during the session.
+Relying Party Instance that has contacted him/her during the session.
 
 When a Relying Party requests a User to release some attributes from
 their Wallet Instance, the User SHALL be able to trust that they are
