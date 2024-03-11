@@ -1290,7 +1290,7 @@ To be done.
 
 ##### 6.3.2.1	Required trust relationships
 
-When a Relying Party (RP) requests a User to release some attributes from his/her EUDI Wallet Instance, the following trust relationships mustSHALL exist:
+When a Relying Party (RP) requests a User to release some attributes from his/her EUDI Wallet Instance, the following trust relationships SHALL exist:
 
 1. The Relying Party SHALL be able to trust the attestation Provider.
 2. The Relying Party SHALL be able to trust that the attestation released
@@ -1491,7 +1491,7 @@ The mechanism(s) for User binding depend on the type of use case:
 
 ##### 6.3.2.6 User trusts the identity of the Relying Party
 To ensure that the User knows and trusts the identity of the Relying
-Party, a mechanism for Relying Party authentication mustSHALL be
+Party, a mechanism for Relying Party authentication SHALL be
 implemented. In essence, such a mechanism works as follows:
 
 1. The Relying Party creates a signature over the request using a Relying
