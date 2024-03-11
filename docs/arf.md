@@ -209,7 +209,7 @@ down in Annex V. - <em>eIDAS Regulation amendment
 proposal</em></strong></td>
 </tr>
 <tr class="odd">
-<td><em>Qualified Electronic Attestations of Attributes (QEAA) provider*</em></td>
+<td><em>Qualified Electronic Attestations of Attributes (QEAA) Provider*</em></td>
 <td><p><strong>(Qualified) Trust Service Provider issuing (Q)EAA. Note: there may be multiple (Q)EAA Providers.</em></strong></td>
 </tr>
 <tr class="even">
@@ -417,7 +417,7 @@ ePrescriptions, etc.
 #### Educational credentials and professional qualifications
 Providing documents for qualification recognition procedures can be 
 costly and time-consuming for end Users, Relying Parties such as companies 
-and employers, and (Q)EAA providers such as education and training 
+and employers, and (Q)EAA Providers such as education and training 
 providers or other academic institutions. For example, digital diploma 
 attestations could be presented cross-border in a verifiable, trusted, 
 and consumable format to another education or training institution or a 
@@ -543,11 +543,11 @@ verified in a trustworthy manner. Such roles are:
 
 - EUDI Wallet Providers
 - Person Identification Data Providers
-- Qualified Electronic Attestation of Attributes (QEAA) providers
-- Qualified certificate for electronic signature/seal (QC) providers
+- Qualified Electronic Attestation of Attributes (QEAA) Providers
+- Qualified certificate for electronic signature/seal (QC) Providers
 - Relying Parties
-- Non-qualified Electronic Attestation of Attributes (EAA) providers
-- Non-qualified certificate for electronic signature/seal providers
+- Non-qualified Electronic Attestation of Attributes (EAA) Providers
+- Non-qualified certificate for electronic signature/seal Providers
 - Providers of other Trust Services
 - Catalogues of attributes and schemes for the attestations of attribute
   providers
@@ -586,7 +586,7 @@ although they may also rely on qualified Electronic Attestation of
 Attributes Providers. For EAA to be used, TSPs offer Users a way to
 request and obtain EAA, meaning they need to technically comply with EUDI
 Wallet interface specifications. Depending on the domain rules, EAA
-providers may provide validity information about EAA, without having an
+Providers may provide validity information about EAA, without having an
 ability to receive any information about the use of the EAA. The terms
 and conditions of issuing EAAs and related services are subject to
 sectoral rules.
@@ -1238,7 +1238,7 @@ The next sections discuss these trust relationships.
 Section 6.2.2.2. describes how an EUDI Wallet Instance can trust a Wallet
 Provider.
 
-##### 6.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
+##### 6.2.3.3	EUDI Wallet Provider trust in the EUDI Wallet Instance
 Section 6.2.3.3. describes how an EUDI Wallet Provider can trust a Wallet
 Instance.
 
@@ -1264,7 +1264,7 @@ Wallet Instance, the following trust relationships SHALL exist:
    be able to determine the value of the attributes that the Provider
    will attest to. For instance, a PID Provider SHALL ensure it provides
    the correct family name and date of birth to the Wallet Instance.
-   Please note that the method by which the provider performs user
+   Please note that the method by which the Provider performs user
    identification and authentication is out of scope of this document. 
 3. The Provider SHALL be able to trust the EUDI Wallet Provider. 
 4. The Provider SHALL be able to trust the EUDI Wallet Instance. This
@@ -1414,7 +1414,7 @@ This means that a Relying Party can determine itself which Providers they
 want to recognize, except if there is a legal requirement that the
 attestations of certain Providers SHALL be accepted. That is generally
 the case for PID Providers and QEAA Providers. However, this does not
-mean that the above process is not necessary for these providers. 
+mean that the above process is not necessary for these Providers. 
 
 
 ##### 6.3.2.3 Relying Party trusts the authenticity of the attestation
@@ -2076,7 +2076,7 @@ manufacturer, and version)</p>
 <p>Relying Party interface</p>
 </td>
 <td>
-<p>EUDI Wallet interface to (Q)TSP, (Q)EAA providers, Member States
+<p>EUDI Wallet interface to (Q)TSP, (Q)EAA Providers, Member States
 Infrastructures, National e-ID, Relying Parties, and other sources of
 EEAs</p>
 <p>Communication channels (online/offline) between the EUDI Wallet and
