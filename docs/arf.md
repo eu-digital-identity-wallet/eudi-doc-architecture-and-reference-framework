@@ -1290,7 +1290,7 @@ To be done.
 
 ##### 6.3.2.1	Required trust relationships
 
-When a Relying Party (RP) requests a User to release some attributes from his/her EUDI Wallet Instance, the following trust relationships mustSHALL exist:
+When a Relying Party (RP) requests a User to release some attributes from his/her EUDI Wallet Instance, the following trust relationships SHALL exist:
 
 1. The Relying Party SHALL be able to trust the attestation Provider.
 2. The Relying Party SHALL be able to trust that the attestation released
@@ -1300,7 +1300,7 @@ When a Relying Party (RP) requests a User to release some attributes from his/he
    issued this attestation to the EUDI Wallet Instance that provided it
    to the Relying Party. In other words, the attestation was not copied
    and replayed. This is generally called device binding.
-4. The Relying Party SHALL be able to trust the EUDI Wallet. 
+4. The Relying Party SHALL be able to trust the EUDI Wallet Instance. 
 5. The User SHALL be able to trust the Relying Party, meaning that the
    User is sure about the Relying Party's identity.
 6. The User SHALL be able to trust that the Relying Party does not
@@ -1367,7 +1367,7 @@ Party, for instance by downloading it from the Provider's website. A
 peer-to-peer process has the advantages of flexibility and low overhead.
 However, it is hardly scalable and therefore not suitable for
 attestations such as PIDs, mDLs, diplomas, or health insurance cards, for
-which there many tens to hundreds of different providers in the EU and
+which there are tens to hundreds of different providers in the EU and
 thousands of Relying Parties, which moreover do not (necessarily) know
 each other. Moreover, a peer-to-peer process assumes that each Relying
 Party has sufficient technical knowledge and budget to judge the level of
@@ -1425,7 +1425,7 @@ can trust the attestation:
 2. The Relying Party verifies that the public key it used for verifying
    the seal or signature can be trusted, either because the Relying Party
    obtained the key in a manner described in section 6.3.2.2, or because
-   is protected by means of a chain of trust that ends in a trusted
+   the key is protected by means of a chain of trust that ends in a trusted
    Provider public key that was obtained in such a manner.  
 3. The Relying Party validates that the Provider has not revoked the
    attestation. 
@@ -1491,7 +1491,7 @@ The mechanism(s) for User binding depend on the type of use case:
 
 ##### 6.3.2.6 User trusts the identity of the Relying Party
 To ensure that the User knows and trusts the identity of the Relying
-Party, a mechanism for Relying Party authentication mustSHALL be
+Party, a mechanism for Relying Party authentication SHALL be
 implemented. In essence, such a mechanism works as follows:
 
 1. The Relying Party creates a signature over the request using a Relying
