@@ -1582,8 +1582,8 @@ of the following conditions occur:
 * The User notified the attestation Provider.
 * In case of any (suspected) breach of security.
 
-The attestation Provider SHALL analyze whether revocation is required in
-these circumstances. Also, the Provider SHALL analyze if there are more
+The attestation Provider SHALL analyse whether revocation is required in
+these circumstances. Also, the Provider SHALL analyse if there are more
 situations in which attestation revocation is required. 
 
 A PID Provider or a (Q)EAA Provider MAY outsource the responsibility of
