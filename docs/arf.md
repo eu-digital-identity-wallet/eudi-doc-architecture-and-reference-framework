@@ -1533,7 +1533,7 @@ The Relying Party uses a Relying Party Instance to interact with the
 User's Wallet Instance. This includes carrying out attestation revocation
 checking.
 
-When discussing attestation revocation, it is essential to realize that
+When discussing attestation revocation, it is essential to realise that
 in many cases there is a difference between an attestation and the
 document it represents, for instance a driving licence, passport,
 recurring medicine prescription, health insurance card, vehicle
