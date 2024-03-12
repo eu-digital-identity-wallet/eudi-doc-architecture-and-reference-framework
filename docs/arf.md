@@ -209,7 +209,7 @@ down in Annex V. - <em>eIDAS Regulation amendment
 proposal</em></strong></td>
 </tr>
 <tr class="odd">
-<td><em>Qualified Electronic Attestations of Attributes (QEAA) provider*</em></td>
+<td><em>Qualified Electronic Attestations of Attributes (QEAA) Provider*</em></td>
 <td><p><strong>(Qualified) Trust Service Provider issuing (Q)EAA. Note: there may be multiple (Q)EAA Providers.</em></strong></td>
 </tr>
 <tr class="even">
@@ -255,7 +255,7 @@ specific types of transactions among a community of participants and
 bound by a common set of requirements.</strong></td>
 </tr>
 <tr class="even">
-<td><em>Trust model*</em></td>
+<td><em>Trust Model*</em></td>
 <td><strong>Collection of rules that ensure the legitimacy of the
 components and the entities involved in the EUDI Wallet
 ecosystem.</strong></td>
@@ -417,7 +417,7 @@ ePrescriptions, etc.
 #### Educational credentials and professional qualifications
 Providing documents for qualification recognition procedures can be 
 costly and time-consuming for end Users, Relying Parties such as companies 
-and employers, and (Q)EAA providers such as education and training 
+and employers, and (Q)EAA Providers such as education and training 
 providers or other academic institutions. For example, digital diploma 
 attestations could be presented cross-border in a verifiable, trusted, 
 and consumable format to another education or training institution or a 
@@ -485,10 +485,10 @@ detailed in the following sections.
 14. *National Accreditation Bodies*
 
 #### 4.1.1 Users of EUDI Wallets
-Users of EUDI Wallets use the EUDI Wallet instance to receive, store and
+Users of EUDI Wallets use the EUDI Wallet Instance to receive, store and
 present PID, QEAA or EAA about themselves, including to prove their
 identity. Users can create Qualified Electronic Signatures and Seals
-(QES) using an EUDI Wallet instance.
+(QES) using an EUDI Wallet Instance.
 
 Who can be a User of an EUDI Wallet depends on national law. The use of
 an EUDI Wallet by citizens is not mandatory under the legislative
@@ -543,11 +543,11 @@ verified in a trustworthy manner. Such roles are:
 
 - EUDI Wallet Providers
 - Person Identification Data Providers
-- Qualified Electronic Attestation of Attributes (QEAA) providers
-- Qualified certificate for electronic signature/seal (QC) providers
+- Qualified Electronic Attestation of Attributes (QEAA) Providers
+- Qualified certificate for electronic signature/seal (QC) Providers
 - Relying Parties
-- Non-qualified Electronic Attestation of Attributes (EAA) providers
-- Non-qualified certificate for electronic signature/seal providers
+- Non-qualified Electronic Attestation of Attributes (EAA) Providers
+- Non-qualified certificate for electronic signature/seal Providers
 - Providers of other Trust Services
 - Catalogues of attributes and schemes for the attestations of attribute
   providers
@@ -586,7 +586,7 @@ although they may also rely on qualified Electronic Attestation of
 Attributes Providers. For EAA to be used, TSPs offer Users a way to
 request and obtain EAA, meaning they need to technically comply with EUDI
 Wallet interface specifications. Depending on the domain rules, EAA
-providers may provide validity information about EAA, without having an
+Providers may provide validity information about EAA, without having an
 ability to receive any information about the use of the EAA. The terms
 and conditions of issuing EAAs and related services are subject to
 sectoral rules.
@@ -656,7 +656,7 @@ bodies designated by Member States[^12]. QTSPs SHALL be audited regularly
 by Conformity Assessment Bodies (CABs). CABs are accredited by a national
 accreditation body according to Regulation 765/2008 as responsible for
 carrying out assessments on which Member States will have to rely before
-issuing a EUDI Wallet or providing the qualified status to a Trust
+issuing an EUDI Wallet or providing the qualified status to a Trust
 Service Provider. The standards and schemes used by CABs to fulfil their
 tasks to certify EUDI Wallets are specified further in the Toolbox
 process.
@@ -739,8 +739,8 @@ ARF.*
 
 Figure 2 below distinguishes the concepts of EUDI Wallet Solution and
 EUDI Wallet Instance. An EUDI Wallet Solution is the entire product
-and/or service provided by a EUDI Wallet Provider. A EUDI Wallet
-Instance is a personal instance of a EUDI Wallet Solution that belongs
+and/or service provided by an EUDI Wallet Provider. An EUDI Wallet
+Instance is a personal instance of an EUDI Wallet Solution that belongs
 to and is controlled by a User.
 
 ![Figure 2: Simplified EUDI Wallet Object Model](media/image2.png)
@@ -749,7 +749,7 @@ to and is controlled by a User.
 *Figure 2: Simplified EUDI Wallet Object Model*
 
 This definition is not prescriptive of form factor, hence depending on
-the implementation a EUDI Wallet Instance may consist of a single mobile
+the implementation an EUDI Wallet Instance may consist of a single mobile
 app, or a set of local and remote components available to a specific
 User.
 
@@ -760,7 +760,7 @@ the scope of this description we refer subsequently only to PID. The
 text of this section applied to PID applies mutatis mutandis to (Q)EAA.
 
 PID in the context of the EUDI Wallet begins its lifecycle when being
-issued to a EUDI Wallet Instance. Please note that this means that the
+issued to an EUDI Wallet Instance. Please note that this means that the
 management of attributes in the Authentic Source (adhering to national
 structures and attribute definitions) is outside of the scope of the
 ARF.
@@ -788,7 +788,7 @@ name change), the PID Provider SHALL always issue a new PID.
 An EUDI Wallet Solution has a state of its own, as defined by Article
 10a of the Regulation. The state of the Solution affects the state of
 all EUDI Wallet Instances of that EUDI Wallet Solution. The
-**Candidate** state is the first state of a EUDI Wallet Solution. This
+**Candidate** state is the first state of an EUDI Wallet Solution. This
 means it is fully implemented and the EUDI Wallet Provider requests the
 solution to be certified as EUDI Wallet.
 
@@ -818,8 +818,8 @@ completely withdrawn.
 #### 4.2.4 EUDI Wallet Instance Lifecycle
 
 An EUDI Wallet Instance lifecycle begins when the User installs the
-mobile app component of the EUDI Wallet solution provided by The EUDI
-Wallet Provider.  Once an EUDI Wallet Instance is installed and
+mobile app component of the EUDI Wallet Solution provided by the EUDI
+Wallet Provider. Once an EUDI Wallet Instance is installed and
 activated by the User and the EUDI Wallet Provider, it is in an
 **operational** state. In this state, the User manages the EUDI Wallet
 Instance, which may involve:
@@ -827,7 +827,7 @@ Instance, which may involve:
 * The EUDI Wallet Provider updating the EUDI Wallet Instance,
 * The EUDI Wallet Provider revoking the EUDI Wallet Instance, possibly at
   the User's request. Revocation of the Wallet Instance MAY be
-  accomplished by revoking the Wallet Instance attestation (refer to
+  accomplished by revoking the Wallet Instance Attestation (refer to
   section 6.3.4.2),
 * The User uninstalling the EUDI Wallet Instance.
 
@@ -1028,7 +1028,7 @@ as annexes to this document.
 ## 6 Trust Model
 
 ### 6.1 Overview and scope
-The Trust Model describes, for all interactions in the lifecycle of a
+The Trust Model describes, for all interactions in the lifecycle of an
 EUDI Wallet Instance and an attestation, which trust relationships SHALL
 exist between the interacting parties to enable these interactions.
 
@@ -1037,7 +1037,7 @@ this version of this document also describes, on a high level, how this
 required trust can be established. This description includes references
 to existing or draft standards that define detailed security measures.
 
-The trust model is valid for both remote and proximity use cases.
+The Trust Model is valid for both remote and proximity use cases.
 However, technical measures taken to ensure that the requirements on
 trust are fulfilled may differ between these two use cases. Moreover, the
 authentication and authorization mechanisms will depend on the
@@ -1097,7 +1097,7 @@ authorization of other parties in the ecosystem, parties SHALL also be
 able to trust that the communication with such parties is confidential.
 Measures to ensure this are not explicitly discussed in this document.
 
-### 6.2	Trust throughout a EUDI Wallet Instance lifecycle
+### 6.2	Trust throughout an EUDI Wallet Instance lifecycle
 
 #### 6.2.1	Wallet Instance installation
 
@@ -1109,9 +1109,9 @@ the following trust relationships SHALL exist:
 app or application the user is installing) is genuine, authentic and does
 not contain any malware or other threats. 
 2. The User SHALL be able to trust that the PID Provider will issue the
-PID into an instance of a EUDI Wallet Solution. 
-3. The User SHALL trust the EUDIW solution. This means that the User
-trusts the App store  and the App publisher.
+PID into an instance of an EUDI Wallet Solution. 
+3. The User SHALL trust the EUDI Wallet Solution. This means that the User
+trusts the app store and the app publisher.
 
 The next sections discuss these trust relationships.
 
@@ -1125,7 +1125,7 @@ To be done.
 
 ##### 6.2.2.1	Required trust relationships[^15]
 
-After its' installation, a new EUDI Wallet Instance will need to be
+After its installation, a new EUDI Wallet Instance will need to be
 activated by the Wallet Provider. Activation has at least the following
 purposes:
 
@@ -1142,27 +1142,27 @@ purposes:
   technologies supported by the device and the characteristics of the
   WSCD used by the device to securely store cryptographic keys and data
   associated with the EUDI Wallet Instance and the attestations.
-* The EUDI Wallet Provider issues a EUDI Wallet Instance Attestation to
+* The EUDI Wallet Provider issues an EUDI Wallet Instance Attestation to
   the EUDI Wallet Instance. This attestation contains data about the EUDI
   Wallet Provider, the EUDI Wallet Solution, the EUDI Wallet Instance,
-  the device and the WSCD. The EUDI Wallet Instance attestation has the
+  the device and the WSCD. The EUDI Wallet Instance Attestation has the
   same technical format and content as other attestations. This implies
   that the attestation will contain a Wallet Instance public key. The
   EUDI Wallet Instance key pair is generated by the EUDI Wallet Instance
   during activation, using the WSCD present in, or connected to, the
-  User's device. The EUDI Wallet Instance attestation also contains
+  User's device. The EUDI Wallet Instance Attestation also contains
   information that allows a Provider or Relying Party to verify that the
   EUDI Wallet Provider did not revoke the EUDI Wallet Instance
-  attestation, and hence the EUDI Wallet Instance itself.
+  Attestation, and hence the EUDI Wallet Instance itself.
 * The EUDI Wallet Provider locally associates the EUDI Wallet Instance
   with a particular User, including on-device or backend-based User
   authentication methods that will be used by the EUDI Wallet Instance to
   authenticate the User towards the EUDI Wallet Provider only. The User
-  details SHALL NOT be included in the EUDI Wallet Instance attestation.
+  details SHALL NOT be included in the EUDI Wallet Instance Attestation.
 * The EUDI Wallet Provider sets up a User account. This User account is
   needed if the User wants to interact with the EUDI Wallet Provider
   without using their EUDI Wallet Instance. An example of this is a
-  request to revoke a EUDI Wallet Instance in case the User's device is
+  request to revoke an EUDI Wallet Instance in case the User's device is
   lost or stolen. EUDI Wallet Providers MAY also offer other
   instance-related services through this User account. Please note the
   following:
@@ -1177,7 +1177,7 @@ purposes:
     the User, the User's device, and the EUDI Wallet Instance (if any),
     SHALL be stored and used only in the EUDI Wallet Provider back
     office. The EUDI Wallet Provider SHALL NOT put this information in
-    the EUDI Wallet Instance attestation.
+    the EUDI Wallet Instance Attestation.
 
 For successful EUDI Wallet Instance activation, the following trust
 relations need to exist:
@@ -1202,7 +1202,7 @@ To be done.
 
 ##### 6.2.3.1	Required trust relationships
 Starting from EUDI Wallet Instance activation and throughout its
-lifetime, a EUDI Wallet Instance SHALL be managed by the EUDI Wallet
+lifetime, an EUDI Wallet Instance SHALL be managed by the EUDI Wallet
 Provider. Management actions could be initiated by the following
 entities.
 
@@ -1235,11 +1235,11 @@ For this, the following trust relations need to exist:
 The next sections discuss these trust relationships.
 
 ##### 6.2.3.2	EUDI Wallet Instance trust in the Wallet Provider
-Section 6.2.2.2. describes how a EUDI Wallet Instance can trust a Wallet
+Section 6.2.2.2. describes how an EUDI Wallet Instance can trust a Wallet
 Provider.
 
-##### 6.2.3.3	EUDI Wallet provider trust in the EUDI Wallet Instance
-Section 6.2.3.3. describes how a EUDI Wallet Provider can trust a Wallet
+##### 6.2.3.3	EUDI Wallet Provider trust in the EUDI Wallet Instance
+Section 6.2.3.3. describes how an EUDI Wallet Provider can trust a Wallet
 Instance.
 
 ##### 6.2.3.4	User trust in the EUDI Wallet Provider
@@ -1264,7 +1264,7 @@ Wallet Instance, the following trust relationships SHALL exist:
    be able to determine the value of the attributes that the Provider
    will attest to. For instance, a PID Provider SHALL ensure it provides
    the correct family name and date of birth to the Wallet Instance.
-   Please note that the method by which the provider performs user
+   Please note that the method by which the Provider performs user
    identification and authentication is out of scope of this document. 
 3. The Provider SHALL be able to trust the EUDI Wallet Provider. 
 4. The Provider SHALL be able to trust the EUDI Wallet Instance. This
@@ -1317,7 +1317,7 @@ current version of this document:
   trusted by Relying Parties are those that are signed by a trusted
   attestation Provider. The only potential exception may be a pseudonym
   for the User. If the value of a pseudonym attribute is assigned by the
-  User or generated by the Wallet instance, it MAY be signed by the EUDI
+  User or generated by the Wallet Instance, it MAY be signed by the EUDI
   Wallet Instance rather than the Provider. If so, a Relying Party using
   such a pseudonym SHALL accept the associated risks or mitigate it in an
   out-of-band manner. These risks may include the possibility of fake
@@ -1326,11 +1326,11 @@ current version of this document:
 * A Relying Party is assumed to trust the attestation Provider to have
   verified the technical properties of the EUDI Wallet Instance and the
   User's device and  WSCD (as documented in the Wallet Instance
-  attestation) at the time it issued the attestation. Consequently, the
+  Attestation) at the time it issued the attestation. Consequently, the
   Relying Party does not verify these technical properties during the
   attestation release process. To elaborate: A Relying Party typically has
   a list of attestations that it accepts for a certain use case. For
-  example, a Relying Party MAY accept a mobile driving license as a proof
+  example, a Relying Party MAY accept a mobile driving licence as a proof
   of identity. If so, that Relying Party SHALL accept any valid and
   authentic mDL, regardless of the mobile device it is installed on. If the
   Relying Party were to make its own independent assessment of the security
@@ -1381,7 +1381,7 @@ For more valuable attestations, or for attestations for which Providers
 and Relying Parties do not know each other, a trusted list of Providers
 is a better solution. This trusted list is provided by a trusted list
 provider, which is a central party responsible for (and capable of)
-verifying that the level of security of an Providers' systems and
+verifying that the level of security of a Providers' systems and
 processes is sufficient for the type of attestation it issues, and
 comparable to the level of security of other Providers for the same type
 of attestation. This may include requiring that a Provider documents
@@ -1414,7 +1414,7 @@ This means that a Relying Party can determine itself which Providers they
 want to recognize, except if there is a legal requirement that the
 attestations of certain Providers SHALL be accepted. That is generally
 the case for PID Providers and QEAA Providers. However, this does not
-mean that the above process is not necessary for these providers. 
+mean that the above process is not necessary for these Providers. 
 
 
 ##### 6.3.2.3 Relying Party trusts the authenticity of the attestation
@@ -1448,7 +1448,7 @@ The Relying Party SHALL be able to trust that an attestation it receives was not
 
 The Relying Party can trust that this is the case if the EUDI Wallet Instance signs some contextual information with the private key of the attestation. This information SHALL include a random number generated by the Relying Party. To verify this signature, the Relying Party needs to receive the public key of the attestation, which SHALL be signed (directly or indirectly) by the Provider of the attestation. By signing the public key, the Provider certifies that the public key indeed belongs to the attestation. The Relying Party SHALL additionally verify that the Wallet Instance is in possession of the corresponding private key; the Relying Party does so by verifying the signature over the random number generated by the Relying Party. 
 
-Note that a EUDI Wallet Instance can contain multiple attestations, originating from multiple Providers. For each attestation, the EUDI Wallet Instance has access to an attestation private key, which is stored in the WSCD in (or connected to) the User's device. As discussed in section 6.2.2, the EUDI Wallet Instance also contains a EUDI Wallet Instance private key. Depending on the attestation requested by the 6.3.2.4, the EUDI Wallet Instance SHALL use the correct private key for signing the random number generated by the Relying Party. 
+Note that an EUDI Wallet Instance can contain multiple attestations, originating from multiple Providers. For each attestation, the EUDI Wallet Instance has access to an attestation private key, which is stored in the WSCD in (or connected to) the User's device. As discussed in section 6.2.2, the EUDI Wallet Instance also contains an EUDI Wallet Instance private key. Depending on the attestation requested by the 6.3.2.4, the EUDI Wallet Instance SHALL use the correct private key for signing the random number generated by the Relying Party. 
 
 \[ISO/IEC 18013-5\] specifies a mechanism for this, called mdoc authentication. The EUDI Wallet Instance signs contextual information (called the SessionTranscript), which includes a nonce from the Relying Party, namely its ephemeral public key for session encryption. The standard specifies which algorithms can be used for signing and how the attestation public key is incorporated in the MSO.
 
@@ -1514,7 +1514,7 @@ Throughout its lifetime, an attestation needs to be managed by the
 Provider. This means that for the purposes of this Trust Model,
 attestation management has similarities to the part of EUDI Wallet
 Instance management that involves the EUDI Wallet Provider as the
-Provider of a EUDI Wallet Instance attestation, which was already
+Provider of an EUDI Wallet Instance Attestation, which was already
 discussed in section 6.2.3.
 
 #### 6.3.4 Attestation revocation
@@ -1533,9 +1533,9 @@ The Relying Party uses a Relying Party Instance to interact with the
 User's Wallet Instance. This includes carrying out attestation revocation
 checking.
 
-When discussing attestation revocation, it is essential to realize that
+When discussing attestation revocation, it is essential to realise that
 in many cases there is a difference between an attestation and the
-document it represents, for instance a driving license, passport,
+document it represents, for instance a driving licence, passport,
 recurring medicine prescription, health insurance card, vehicle
 registration card, etc. Such a document typically has an administrative
 validity period of multiple years. A diploma typically even has no end of
@@ -1582,8 +1582,8 @@ of the following conditions occur:
 * The User notified the attestation Provider.
 * In case of any (suspected) breach of security.
 
-The attestation Provider SHALL analyze whether revocation is required in
-these circumstances. Also, the Provider SHALL analyze if there are more
+The attestation Provider SHALL analyse whether revocation is required in
+these circumstances. Also, the Provider SHALL analyse if there are more
 situations in which attestation revocation is required. 
 
 A PID Provider or a (Q)EAA Provider MAY outsource the responsibility of
@@ -1596,7 +1596,7 @@ The only party in the EUDI Wallet ecosystem capable of revoking an
 attestation SHALL be the attestation Provider. This is important, because
 in some use cases, there are third parties that have the (legal) right to
 invalidate an attestation. For example, in many jurisdictions the police
-are allowed to confiscate a driving license if the User is caught is a
+are allowed to confiscate a driving licence if the User is caught is a
 serious traffic violation. Another example is an electronic prescription
 for medicines that is valid only once and must not be usable anymore
 after the User has received the medicines[^20] . A third example is when
@@ -1604,8 +1604,8 @@ the attestation Provider and the Authentic Source for that attestation
 are different parties. If so, the Authentic Source contains the
 authoritative information about whether an attribute value must be
 changed, and an attestation revoked or reissued. It must be the
-responsibility of attestation Providers to regularly query the authentic
-source for changes and reissue or revoke the relevant attestations
+responsibility of attestation Providers to regularly query the Authentic
+Source for changes and reissue or revoke the relevant attestations
 accordingly.
 
 However, third parties that want to invalidate an attestation SHALL use
@@ -2071,7 +2071,7 @@ manufacturer, and version)</p>
 <p>Relying Party interface</p>
 </td>
 <td>
-<p>EUDI Wallet interface to (Q)TSP, (Q)EAA providers, Member States
+<p>EUDI Wallet interface to (Q)TSP, (Q)EAA Providers, Member States
 Infrastructures, National e-ID, Relying Parties, and other sources of
 EEAs</p>
 <p>Communication channels (online/offline) between the EUDI Wallet and
@@ -2479,7 +2479,7 @@ decision to release an attribute to the Relying Party requesting it.
 Under no circumstances User approval to releasing data from their EUDI
 Wallet Instance SHOULD be construed as lawful grounds for the processing
 of personal data by the Relying Party or any other party. Relying Party
-or any party requesting or processing personal data from a EUDI Wallet
+or any party requesting or processing personal data from an EUDI Wallet
 Instance SHALL ensure that they have grounds for lawful processing that
 data, according to Article 6 of the GDPR.
 

@@ -599,7 +599,7 @@ boundaries of this document are set to common principles that shall be
 applicable to all national implementations. These shall be considered as
 recommendations to ensure a similar user experience across the different
 national implementations. By taking a collaborative approach and
-continuously improving upon this document, the aim is to create a EUDI
+continuously improving upon this document, the aim is to create an EUDI
 Wallet Design Guide that assists in the national implementations, while
 at the same time meets the user expectations. We encourage stakeholders
 to review this EUDI Wallet Design Guide document thoroughly and kindly
