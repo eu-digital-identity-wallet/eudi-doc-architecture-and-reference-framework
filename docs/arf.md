@@ -1604,8 +1604,8 @@ the attestation Provider and the Authentic Source for that attestation
 are different parties. If so, the Authentic Source contains the
 authoritative information about whether an attribute value must be
 changed, and an attestation revoked or reissued. It must be the
-responsibility of attestation Providers to regularly query the authentic
-source for changes and reissue or revoke the relevant attestations
+responsibility of attestation Providers to regularly query the Authentic
+Source for changes and reissue or revoke the relevant attestations
 accordingly.
 
 However, third parties that want to invalidate an attestation SHALL use
