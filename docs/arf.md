@@ -818,7 +818,7 @@ completely withdrawn.
 #### 4.2.4 EUDI Wallet Instance Lifecycle
 
 An EUDI Wallet Instance lifecycle begins when the User installs the
-mobile app component of the EUDI Wallet solution provided by The EUDI
+mobile app component of the EUDI Wallet Solution provided by The EUDI
 Wallet Provider.  Once an EUDI Wallet Instance is installed and
 activated by the User and the EUDI Wallet Provider, it is in an
 **operational** state. In this state, the User manages the EUDI Wallet
@@ -1110,7 +1110,7 @@ app or application the user is installing) is genuine, authentic and does
 not contain any malware or other threats. 
 2. The User SHALL be able to trust that the PID Provider will issue the
 PID into an instance of an EUDI Wallet Solution. 
-3. The User SHALL trust the EUDI Wallet solution. This means that the User
+3. The User SHALL trust the EUDI Wallet Solution. This means that the User
 trusts the app store and the app publisher.
 
 The next sections discuss these trust relationships.
