@@ -1522,7 +1522,7 @@ Attestation revocation is a process whereby the Provider of an
 attestation declares that Relying Parties SHOULD no longer trust a
 particular attestation, even though the attestation is still valid
 temporally and contains a valid Provider signature. As described in
-section 4.2.4 of \[TrustModel\], during the process of releasing an
+section 6.3.2.3, during the process of releasing an
 attestation, a Relying Party SHOULD verify that the Provider has not
 revoked the attestation. Revocation checking is a process that takes
 place after the Relying Party has validated that the validity period of
@@ -2543,7 +2543,7 @@ apply. If this is not the case, then the person handling the Wallet
 Instance is legally not allowed to approve to release the attributes.
 
 Note that this requirement is slightly different from the requirement of
-User binding discussed in section 6.3.2.5 of \[TrustModel\]. In some use
+User binding discussed in section 6.3.2.5. In some use
 cases, for example in attended proximity use cases, the Relying Party can
 use a portrait of the User to do User binding, if that portrait is issued
 as an attribute in an attestation. Obviously, this is not a possibility
