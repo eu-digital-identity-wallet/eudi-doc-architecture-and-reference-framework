@@ -2014,11 +2014,6 @@ TLS).</p>
 </tr>
 <tr class="even">
 <td>
-<p>User unique identifier(as persistent as possible in time)</p>
-</td>
-</tr>
-<tr class="even">
-<td>
 <p>User attributes</p>
 </td>
 </tr>
