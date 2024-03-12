@@ -255,7 +255,7 @@ specific types of transactions among a community of participants and
 bound by a common set of requirements.</strong></td>
 </tr>
 <tr class="even">
-<td><em>Trust model*</em></td>
+<td><em>Trust Model*</em></td>
 <td><strong>Collection of rules that ensure the legitimacy of the
 components and the entities involved in the EUDI Wallet
 ecosystem.</strong></td>
@@ -1037,7 +1037,7 @@ this version of this document also describes, on a high level, how this
 required trust can be established. This description includes references
 to existing or draft standards that define detailed security measures.
 
-The trust model is valid for both remote and proximity use cases.
+The Trust Model is valid for both remote and proximity use cases.
 However, technical measures taken to ensure that the requirements on
 trust are fulfilled may differ between these two use cases. Moreover, the
 authentication and authorization mechanisms will depend on the
