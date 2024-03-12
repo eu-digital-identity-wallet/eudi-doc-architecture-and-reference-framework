@@ -2008,7 +2008,7 @@ TLS).</p>
 </td>
 </tr>
 <tr class="odd">
-<td rowspan="5">
+<td rowspan="4">
 <p>EUDI Wallet Data Storage Components</p>
 </td>
 </tr>
