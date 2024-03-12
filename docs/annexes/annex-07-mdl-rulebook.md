@@ -12,7 +12,7 @@ final.*
 
 ## Introduction
 
-This document is the mobile driving license (mDL) Rule Book. It contains
+This document is the mobile driving licence (mDL) Rule Book. It contains
 requirements specific to the mDL use case within the EUDI Wallet. These
 requirements hold in addition to the requirements in the Architecture
 Reference Framework (ARF), see \[ARF\]. Requirements in the ARF hold for
@@ -38,7 +38,7 @@ Further topics will be added if and when they are identified.
 
 This document describes the structure, type, data element identifiers,
 and logical organisation of the mandatory and optional attributes of the
-mobile driving license (mDL) attestation within the EUDI Wallet. It also
+mobile driving licence (mDL) attestation within the EUDI Wallet. It also
 describes how Member States can specify any possible national
 attributes.
 
@@ -50,8 +50,8 @@ Disclosure JSON Web Tokens (SD-JWT) must be used, and that consequently,
 data elements must be encoded in JSON. For the former, data elements
 must be encoded in CBOR.
 
-However, mobile driving licenses are legally specified in the proposed
-EC Regulation 2023\_127 (4^th^ Driving License Regulation). This
+However, mobile driving licences are legally specified in the proposed
+EC Regulation 2023\_127 (4^th^ Driving Licence Regulation). This
 Regulation specifies that mDLs shall comply with the ISO/IEC 18013-5
 standard. It does not mention any other standards, in particular not
 \[SD JWT\]. Consequently, mDLs issued to an EUDI Wallet Instance shall

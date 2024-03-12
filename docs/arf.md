@@ -1330,7 +1330,7 @@ current version of this document:
   Relying Party does not verify these technical properties during the
   attestation release process. To elaborate: A Relying Party typically has
   a list of attestations that it accepts for a certain use case. For
-  example, a Relying Party MAY accept a mobile driving license as a proof
+  example, a Relying Party MAY accept a mobile driving licence as a proof
   of identity. If so, that Relying Party SHALL accept any valid and
   authentic mDL, regardless of the mobile device it is installed on. If the
   Relying Party were to make its own independent assessment of the security
@@ -1535,7 +1535,7 @@ checking.
 
 When discussing attestation revocation, it is essential to realize that
 in many cases there is a difference between an attestation and the
-document it represents, for instance a driving license, passport,
+document it represents, for instance a driving licence, passport,
 recurring medicine prescription, health insurance card, vehicle
 registration card, etc. Such a document typically has an administrative
 validity period of multiple years. A diploma typically even has no end of
@@ -1596,7 +1596,7 @@ The only party in the EUDI Wallet ecosystem capable of revoking an
 attestation SHALL be the attestation Provider. This is important, because
 in some use cases, there are third parties that have the (legal) right to
 invalidate an attestation. For example, in many jurisdictions the police
-are allowed to confiscate a driving license if the User is caught is a
+are allowed to confiscate a driving licence if the User is caught is a
 serious traffic violation. Another example is an electronic prescription
 for medicines that is valid only once and must not be usable anymore
 after the User has received the medicines[^20] . A third example is when

@@ -47,7 +47,7 @@ Party, the user does not necessarily have internet connectivity and the
 data presentation occurs using proximity protocols (NFC, Bluetooth,
 QR-Code, etc.). The key differentiator in the two proximity flows, is
 that in the supervised flow, the EUDI Wallet presents data (e.g. a
-mobile driving license) to, or under the supervision of, a human acting
+mobile driving licence) to, or under the supervision of, a human acting
 as a Relying Party (who may operate a device of their own). In the
 unsupervised flow, the EUDI Wallet presents verifiable attributes to a
 machine without human supervision.
@@ -374,7 +374,7 @@ The user gets an error message indicating that they must try again later.
 ### 5.3 The document is considered invalid (expired/revoked)
 
 When the user presents an invalid document through the app, (e.g., a
-driver\'s license to a police officer) the app displays an error message
+driver\'s licence to a police officer) the app displays an error message
 on the user's screen, indicating that the document could not be verified
 because it is expired or revoked.
 
