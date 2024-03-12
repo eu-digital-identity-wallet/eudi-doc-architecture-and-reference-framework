@@ -819,7 +819,7 @@ completely withdrawn.
 
 An EUDI Wallet Instance lifecycle begins when the User installs the
 mobile app component of the EUDI Wallet Solution provided by the EUDI
-Wallet Provider.  Once an EUDI Wallet Instance is installed and
+Wallet Provider. Once an EUDI Wallet Instance is installed and
 activated by the User and the EUDI Wallet Provider, it is in an
 **operational** state. In this state, the User manages the EUDI Wallet
 Instance, which may involve:
