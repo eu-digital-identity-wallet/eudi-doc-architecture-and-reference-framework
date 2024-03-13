@@ -2249,7 +2249,7 @@ users of the EUDI wallets in any transaction they are involved in, from
 any risk of false authentication - without exceptions. 
 
 Note: This recommendation stems from realising that strict requirements
-to use HSMs for all relying parties will not be practical to enforce and
+to use HSMs for all Relying Parties will not be practical to enforce and
 will limit the usage of the wallets in cases where this high-level
 security is not necessary.
 
@@ -2439,7 +2439,7 @@ B.1.2 of \[ISO/IEC18013-5\], with the following exceptions:
 To be done.
 
 ### 7.6 Relying Party authorization
-There is a risk that relying parties may over-ask, i.e., ask a Wallet
+There is a risk that Relying Parties may over-ask, i.e., ask a Wallet
 instance for more attributes than the Relying Party reasonably needs for
 its use case. This is obviously a risk for the privacy of the user, and
 this risk must be mitigated. At least three approaches can in principle
