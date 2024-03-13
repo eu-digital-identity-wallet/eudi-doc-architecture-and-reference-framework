@@ -1571,7 +1571,7 @@ of the following conditions occur:
   the new, correct value for the changed attribute. However, the Provider
   also needs to ensure that Relying Parties can no longer accept the
   existing attestation. For example, 
-  * A PID contains the `age_over_18 attribute`, and the User has their
+  * A PID contains the `age_over_18` attribute, and the User has their
     18th birthday. The value of the attribute needs to change from False
     to True.
   * A User loses an existing driving category. A category needs to be
