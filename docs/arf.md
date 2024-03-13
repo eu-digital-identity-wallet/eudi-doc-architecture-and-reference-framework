@@ -2277,7 +2277,7 @@ In essence, a Relying Party authentication mechanism works as follows:
 5. The Wallet Instance SHALL validate that the CA that issued the
    certificate for the Relying Party Instance, did not revoke since then
    the certificate of the Relying Party Instance, or any other
-   certificate in the trust chain leading up to its trust anchor). 
+   certificate in the trust chain leading up to its trust anchor.
 
 Below is a high-level sequence diagram for Relying Party Authentication,
 independent of the protocol beneath for retrieving the attestations;
