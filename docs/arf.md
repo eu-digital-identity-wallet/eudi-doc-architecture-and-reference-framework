@@ -2248,7 +2248,7 @@ about the need to authenticate the Relying Party in each of the scenarios
 users of the EUDI wallets in any transaction they are involved in, from
 any risk of false authentication - without exceptions. 
 
-Note: This recommendation stems from realizing that strict requirements
+Note: This recommendation stems from realising that strict requirements
 to use HSMs for all relying parties will not be practical to enforce and
 will limit the usage of the wallets in cases where this high-level
 security is not necessary.
