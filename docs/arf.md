@@ -2283,6 +2283,7 @@ Below is a high-level sequence diagram for Relying Party Authentication,
 independent of the protocol beneath for retrieving the attestations;
 
 ![Figure 8. High-level sequence diagram for Relying Party Authentication.](media/image8.png)
+
 *Figure 8. High-level sequence diagram for Relying Party Authentication*
 
 Section 7.5.8 specifies in detail how Relying Party authentication SHALL be implemented by ISO-compliant Wallet Instances and Relying Party Instances. Section 7.5.9 describes the same for SD-JWT-compliant Wallet Instances and Relying Party Instances.
