@@ -2440,7 +2440,7 @@ To be done.
 
 ### 7.6 Relying Party authorization
 There is a risk that Relying Parties may over-ask, i.e., ask a Wallet
-instance for more attributes than the Relying Party reasonably needs for
+Instance for more attributes than the Relying Party reasonably needs for
 its use case. This is obviously a risk for the privacy of the user, and
 this risk must be mitigated. At least three approaches can in principle
 be used to protect the user against over-asking: the user approval
