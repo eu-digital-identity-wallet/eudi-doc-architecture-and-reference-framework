@@ -2450,13 +2450,13 @@ level.
 
 
 #### 7.6.1 User approval as a means for Relying Party authorization
-User Approval protects against over-asking by allowing the User to refuse
+User approval protects against over-asking by allowing the User to refuse
 sharing attributes that they deem unnecessary for the specific use case
 and the specific Relying Party they are dealing with. 
 
 User approval SHALL be implemented in all use cases.
 
-However,  User Approval has some limitations that may make it
+However, User approval has some limitations that may make it
 insufficiently effective in preventing Relying Parties from over-asking,
 as described below: 
 
@@ -2470,7 +2470,7 @@ as described below:
   Party does not actually need. Moreover, Users will be tempted to
   release all requested attributes, just to ensure they can enjoy the
   benefits of the use case.
-* Secondly, although  User Approval may prevent a misbehaving Relying
+* Secondly, although  User approval may prevent a misbehaving Relying
   Party from over-asking in individual cases, it does not provide
   authorities with a means to solve disagreements between User and
   Relying Party as to what attributes can be reasonably requested, and
