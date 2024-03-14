@@ -2532,7 +2532,7 @@ Party, even when knowing that the consequence of that refusal may have
 negative consequences for the User.
 
 Note: Attributes that the Relying Party intends to store is regulated
-GDPR. This feature is seen as preference known in ISO as "intent to
+in the GDPR. This feature is seen as preference known in ISO as "intent to
 retain" and is included in the ARF as "privacy by design" element.
 
 #### 7.7.3 User authentication and User approval
