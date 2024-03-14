@@ -2410,9 +2410,9 @@ B.1.7 of \[ISO/IEC18013-5\], with the following exceptions:
   attestation (see section 7.5.3) SHALL be specified in the applicable
   Rule Book.
 * As discussed in \[PseudonymRulebook\], a Relying Party MAY request a
-  Wallet Instance for an Relying Party-specific pseudonym. To be able to
+  Wallet Instance for a Relying Party-specific pseudonym. To be able to
   do so, the Wallet Instance needs a unique and persistent identifier for
-  the Relying Party. Therefore, if an Relying Party wants to use an
+  the Relying Party. Therefore, if a Relying Party wants to use a
   Relying Party-specific pseudonym, it SHALL ensure that its Relying
   Party Instance certificates contain a relying party unique ID
   extension. 
