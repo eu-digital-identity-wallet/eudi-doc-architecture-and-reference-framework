@@ -2464,7 +2464,7 @@ as described below:
 * Firstly, it makes the User solely responsible for verifying (and
   preventing) that the Relying Party does not misbehave. This puts a
   heavy burden on the User's level of knowledge and awareness. For
-  example, if a Relying Party present the release of all requested
+  example, if a Relying Party presents the release of all requested
   attributes as a precondition for the use case that is going on, a User
   may not have the resources to determine whether this is indeed the
   case, or to judge the impact of sharing attributes that the Relying
