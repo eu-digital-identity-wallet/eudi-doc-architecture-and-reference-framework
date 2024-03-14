@@ -2486,7 +2486,7 @@ Under no circumstances User approval to releasing data from their EUDI
 Wallet Instance SHOULD be construed as lawful grounds for the processing
 of personal data by the Relying Party or any other party. Relying Party
 or any party requesting or processing personal data from a EUDI Wallet
-Instance SHALL ensure that they have grounds for lawful processing that
+Instance SHALL ensure that they have grounds for lawful processing of that
 data, according to Article 6 of the GDPR.
 
 
