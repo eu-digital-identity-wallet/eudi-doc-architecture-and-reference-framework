@@ -2456,7 +2456,7 @@ and the specific Relying Party they are dealing with.
 
 User approval SHALL be implemented in all use cases.
 
-However,  User Approval has some limitations that MAY make it
+However,  User Approval has some limitations that may make it
 insufficiently effective in preventing Relying Parties from over-asking,
 as described below: 
 
