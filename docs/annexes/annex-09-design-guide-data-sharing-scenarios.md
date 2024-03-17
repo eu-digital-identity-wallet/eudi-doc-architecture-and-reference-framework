@@ -32,7 +32,7 @@ In relation to the remote flows, it shall be noted that the data exchange occurs
 
 In contrast, in the 'remote cross-device' flow, the EUDI Wallet user
 consumes information from a Relying Party service on another device than
-the EUDI Wallet device, e.g. user visits the relying party's service on
+the EUDI Wallet device, e.g. user visits the Relying Party's service on
 their web browser on a PC and uses the EUDI Wallet app to scan a QR Code
 on a login page in order to get access to a service provided by the
 Relying Party.
@@ -181,7 +181,7 @@ consent.
 -   **Transparency and Clarity**: Transparency is key in ensuring that
     users are always aware of what information is being presented. The
     EUDI Wallet should include clear and concise explanations about the
-    purpose of each data request, the relying party\'s identity, and how
+    purpose of each data request, the Relying Party\'s identity, and how
     the data will be used, highlighting data storage and 'intent to
     store' aspects to the user. Utilising plain language and avoiding
     technical jargon can enhance understanding and minimise user
