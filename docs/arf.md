@@ -353,7 +353,7 @@ such as asynchronous attribute storage or synchronous retrieval. This
 could affect aspects like providing approval to retrieve and release data.
 
 The eIDAS Expert Group has described service blueprints for the following use cases:
-* Identification and authentication to access online services, see section 3.13.1,
+* Identification and authentication to access online services, see section 3.1,
 * Mobile Driving Licence, see section 3.2,
 * A number of other use cases that will be detailed in subsequent versions of this document, see section 3.3.
 
