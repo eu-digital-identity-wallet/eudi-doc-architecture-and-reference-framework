@@ -1569,7 +1569,7 @@ of the following conditions occur:
   the new, correct value for the changed attribute. However, the Provider
   also needs to ensure that Relying Parties can no longer accept the
   existing attestation. For example, 
-  * A PID contains the `age_over_18 attribute`, and the User has their
+  * A PID contains the `age_over_18` attribute, and the User has their
     18th birthday. The value of the attribute needs to change from False
     to True.
   * A User loses an existing driving category. A category needs to be
@@ -2270,12 +2270,13 @@ In essence, a Relying Party authentication mechanism works as follows:
 5. The Wallet Instance SHALL validate that the CA that issued the
    certificate for the Relying Party Instance, did not revoke since then
    the certificate of the Relying Party Instance, or any other
-   certificate in the trust chain leading up to its trust anchor). 
+   certificate in the trust chain leading up to its trust anchor.
 
 Below is a high-level sequence diagram for Relying Party Authentication,
 independent of the protocol beneath for retrieving the attestations;
 
 ![Figure 8. High-level sequence diagram for Relying Party Authentication.](media/image8.png)
+
 *Figure 8. High-level sequence diagram for Relying Party Authentication*
 
 Section 7.5.8 specifies in detail how Relying Party authentication SHALL be implemented by ISO-compliant Wallet Instances and Relying Party Instances. Section 7.5.9 describes the same for SD-JWT-compliant Wallet Instances and Relying Party Instances.
@@ -2311,7 +2312,7 @@ There are quite a few reasons for which a Relying Party authentication mechanism
 
 | No. | Reason for failure | Associated risk |
 |-----|--------------------|-----------------|
-| 1   | The Relying Party request does not contain a signature created by the Relying Party Instance. | If the request does not contain a Relying Party Instance signature, most probably the Relying Party did not yet register itself and the Relying Party Instance does have a Relying Party Instance key pair and/or an associated Relying Party Instance certificate. This does not imply that the Relying Party is untrustworthy. In fact, it will probably take a long time after the start of the EUDI Wallet ecosystem before most Relying Parties are registered, and we may never reach a point where 100% of all Relying Parties are registered. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party. |
+| 1   | The Relying Party request does not contain a signature created by the Relying Party Instance. | If the request does not contain a Relying Party Instance signature, most probably the Relying Party did not yet register itself and the Relying Party Instance does not have a Relying Party Instance key pair and/or an associated Relying Party Instance certificate. This does not imply that the Relying Party is untrustworthy. In fact, it will probably take a long time after the start of the EUDI Wallet ecosystem before most Relying Parties are registered, and we may never reach a point where 100% of all Relying Parties are registered. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party. |
 | 2   | The Relying Party signature is wrong. | In this case, the Relying Party Instance signed the wrong data, for example data that does not represent the requested attributes. Alternatively, to create the signature, the Relying Party Instance used a private key not corresponding to the public key in the Relying Party Instance certificate. In both cases, there is a real risk that a Man-In-The-Middle attack is going on or that a fake Relying Party Instance attempts to use another Relying Party certificate. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party. |
 | 3   | The signature over the Relying Party Instance certificate (or any of the other CA certificates in the trust chain) is wrong. | If the signature over the Relying Party Instance certificate or any of the other CA certificates in the trust chain is wrong, there is a real risk that the Relying Party attempted to create its own (fake) certificate or other CA. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party. |
 | 4   | The Wallet Instance does not contain the trust anchor indicated in the Relying Party Instance certificate (or in a higher-level CA certificate, if a multiple-level PKI is used). | If the Wallet Instance does not contain the trust anchor indicated in the certificate, several things can have gone wrong. Perhaps the Relying Party authentication CA changed its key pair recently, and the Wallet Instance did not update its trust anchors yet. However, there is also a possibility that the Relying Party attempted to create its own fake CA. Therefore, if this error occurs, the Wallet Instance SHOULD attempt to update its trust anchors. If that is not possible, or the problem persists, the Wallet Instance SHALL NOT release any attributes to the Relying Party. |
@@ -2402,9 +2403,9 @@ B.1.7 of \[ISO/IEC18013-5\], with the following exceptions:
   attestation (see section 7.5.3) SHALL be specified in the applicable
   Rule Book.
 * As discussed in \[PseudonymRulebook\], a Relying Party MAY request a
-  Wallet Instance for an Relying Party-specific pseudonym. To be able to
+  Wallet Instance for a Relying Party-specific pseudonym. To be able to
   do so, the Wallet Instance needs a unique and persistent identifier for
-  the Relying Party. Therefore, if an Relying Party wants to use an
+  the Relying Party. Therefore, if a Relying Party wants to use a
   Relying Party-specific pseudonym, it SHALL ensure that its Relying
   Party Instance certificates contain a relying party unique ID
   extension. 
@@ -2421,7 +2422,7 @@ with the requirements for Issuing Authority CA certificates in Appendix
 B.1.2 of \[ISO/IEC18013-5\], with the following exceptions:
 
 * The validity period of this certificate SHALL be 5 years maximum.
-* For the Provider field, the requirements regarding the issuing_country
+* For the certificates subject field, the requirements regarding the issuing_country
   data element (for countryName) and the issuing_jurisdiction data
   element (for stateOrProvinceName) SHALL be disregarded. Where the
   issuing country is mentioned, this SHALL be taken to refer to the
@@ -2456,7 +2457,7 @@ as described below:
 * Firstly, it makes the User solely responsible for verifying (and
   preventing) that the Relying Party does not misbehave. This puts a
   heavy burden on the User's level of knowledge and awareness. For
-  example, if a Relying Party present the release of all requested
+  example, if a Relying Party presents the release of all requested
   attributes as a precondition for the use case that is going on, a User
   may not have the resources to determine whether this is indeed the
   case, or to judge the impact of sharing attributes that the Relying
@@ -2478,7 +2479,7 @@ Under no circumstances User approval to releasing data from their EUDI
 Wallet Instance SHOULD be construed as lawful grounds for the processing
 of personal data by the Relying Party or any other party. Relying Party
 or any party requesting or processing personal data from a EUDI Wallet
-Instance SHALL ensure that they have grounds for lawful processing that
+Instance SHALL ensure that they have grounds for lawful processing of that
 data, according to Article 6 of the GDPR.
 
 
@@ -2524,7 +2525,7 @@ Party, even when knowing that the consequence of that refusal may have
 negative consequences for the User.
 
 Note: Attributes that the Relying Party intends to store is regulated
-GDPR. This feature is seen as preference known in ISO as "intent to
+in the GDPR. This feature is seen as preference known in ISO as "intent to
 retain" and is included in the ARF as "privacy by design" element.
 
 #### 7.7.3 User authentication and User approval
