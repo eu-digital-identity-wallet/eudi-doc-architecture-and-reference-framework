@@ -4662,7 +4662,7 @@ of the following conditions occur:</p>
   the new, correct value for the changed attribute. However, the Provider
   also needs to ensure that Relying Parties can no longer accept the
   existing attestation. For example, </li>
-<li>A PID contains the <code>age_over_18 attribute</code>, and the User has their
+<li>A PID contains the <code>age_over_18</code> attribute, and the User has their
     18th birthday. The value of the attribute needs to change from False
     to True.</li>
 <li>A User loses an existing driving category. A category needs to be
@@ -5331,12 +5331,12 @@ security is not necessary.</p>
 <li>The Wallet Instance SHALL validate that the CA that issued the
    certificate for the Relying Party Instance, did not revoke since then
    the certificate of the Relying Party Instance, or any other
-   certificate in the trust chain leading up to its trust anchor). </li>
+   certificate in the trust chain leading up to its trust anchor.</li>
 </ol>
 <p>Below is a high-level sequence diagram for Relying Party Authentication,
 independent of the protocol beneath for retrieving the attestations;</p>
-<p><img alt="Figure 8. High-level sequence diagram for Relying Party Authentication." src="../media/image8.png" />
-<em>Figure 8. High-level sequence diagram for Relying Party Authentication</em></p>
+<p><img alt="Figure 8. High-level sequence diagram for Relying Party Authentication." src="../media/image8.png" /></p>
+<p><em>Figure 8. High-level sequence diagram for Relying Party Authentication</em></p>
 <p>Section 7.5.8 specifies in detail how Relying Party authentication SHALL be implemented by ISO-compliant Wallet Instances and Relying Party Instances. Section 7.5.9 describes the same for SD-JWT-compliant Wallet Instances and Relying Party Instances.</p>
 <h4 id="753-relying-party-authentication-mechanisms">7.5.3 Relying Party authentication mechanisms</h4>
 <p>As explained above, for the authentication process, each Relying Party
@@ -5373,7 +5373,7 @@ Policy complying with [EN 319 411].</p>
 <tr>
 <td>1</td>
 <td>The Relying Party request does not contain a signature created by the Relying Party Instance.</td>
-<td>If the request does not contain a Relying Party Instance signature, most probably the Relying Party did not yet register itself and the Relying Party Instance does have a Relying Party Instance key pair and/or an associated Relying Party Instance certificate. This does not imply that the Relying Party is untrustworthy. In fact, it will probably take a long time after the start of the EUDI Wallet ecosystem before most Relying Parties are registered, and we may never reach a point where 100% of all Relying Parties are registered. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party.</td>
+<td>If the request does not contain a Relying Party Instance signature, most probably the Relying Party did not yet register itself and the Relying Party Instance does not have a Relying Party Instance key pair and/or an associated Relying Party Instance certificate. This does not imply that the Relying Party is untrustworthy. In fact, it will probably take a long time after the start of the EUDI Wallet ecosystem before most Relying Parties are registered, and we may never reach a point where 100% of all Relying Parties are registered. If this error occurs, the Wallet Instance SHALL NOT release any attributes to the Relying Party.</td>
 </tr>
 <tr>
 <td>2</td>
@@ -5482,9 +5482,9 @@ B.1.7 of [ISO/IEC18013-5], with the following exceptions:</p>
   attestation (see section 7.5.3) SHALL be specified in the applicable
   Rule Book.</li>
 <li>As discussed in [PseudonymRulebook], a Relying Party MAY request a
-  Wallet Instance for an Relying Party-specific pseudonym. To be able to
+  Wallet Instance for a Relying Party-specific pseudonym. To be able to
   do so, the Wallet Instance needs a unique and persistent identifier for
-  the Relying Party. Therefore, if an Relying Party wants to use an
+  the Relying Party. Therefore, if a Relying Party wants to use a
   Relying Party-specific pseudonym, it SHALL ensure that its Relying
   Party Instance certificates contain a relying party unique ID
   extension. </li>
@@ -5501,7 +5501,7 @@ with the requirements for Issuing Authority CA certificates in Appendix
 B.1.2 of [ISO/IEC18013-5], with the following exceptions:</p>
 <ul>
 <li>The validity period of this certificate SHALL be 5 years maximum.</li>
-<li>For the Provider field, the requirements regarding the issuing_country
+<li>For the certificates subject field, the requirements regarding the issuing_country
   data element (for countryName) and the issuing_jurisdiction data
   element (for stateOrProvinceName) SHALL be disregarded. Where the
   issuing country is mentioned, this SHALL be taken to refer to the
@@ -5531,7 +5531,7 @@ as described below: </p>
 <li>Firstly, it makes the User solely responsible for verifying (and
   preventing) that the Relying Party does not misbehave. This puts a
   heavy burden on the User's level of knowledge and awareness. For
-  example, if a Relying Party present the release of all requested
+  example, if a Relying Party presents the release of all requested
   attributes as a precondition for the use case that is going on, a User
   may not have the resources to determine whether this is indeed the
   case, or to judge the impact of sharing attributes that the Relying
@@ -5552,7 +5552,7 @@ Under no circumstances User approval to releasing data from their EUDI
 Wallet Instance SHOULD be construed as lawful grounds for the processing
 of personal data by the Relying Party or any other party. Relying Party
 or any party requesting or processing personal data from a EUDI Wallet
-Instance SHALL ensure that they have grounds for lawful processing that
+Instance SHALL ensure that they have grounds for lawful processing of that
 data, according to Article 6 of the GDPR.</p>
 <h4 id="771-overview">7.7.1 Overview</h4>
 <p>User approval refers to a decision by a User to release one or more
@@ -5594,7 +5594,7 @@ be able to refuse presenting an attribute that is requested by a Relying
 Party, even when knowing that the consequence of that refusal may have
 negative consequences for the User.</p>
 <p>Note: Attributes that the Relying Party intends to store is regulated
-GDPR. This feature is seen as preference known in ISO as "intent to
+in the GDPR. This feature is seen as preference known in ISO as "intent to
 retain" and is included in the ARF as "privacy by design" element.</p>
 <h4 id="773-user-authentication-and-user-approval">7.7.3 User authentication and User approval</h4>
 <p>A Wallet Instance SHALL authenticate the User before allowing the User to
