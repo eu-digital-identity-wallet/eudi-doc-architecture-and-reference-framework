@@ -2422,7 +2422,7 @@ with the requirements for Issuing Authority CA certificates in Appendix
 B.1.2 of \[ISO/IEC18013-5\], with the following exceptions:
 
 * The validity period of this certificate SHALL be 5 years maximum.
-* For the certificates subject field, the requirements regarding the issuing_country
+* For the certificate's issuer field, the requirements regarding the issuing_country
   data element (for countryName) and the issuing_jurisdiction data
   element (for stateOrProvinceName) SHALL be disregarded. Where the
   issuing country is mentioned, this SHALL be taken to refer to the
