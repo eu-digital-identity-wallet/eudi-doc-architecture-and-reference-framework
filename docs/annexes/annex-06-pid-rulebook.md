@@ -508,9 +508,8 @@ section 2.2.2) MAY be released in either a VP Token or an ID Token.
 
 ### 3.1 Introduction
 
-The Trust Model \[TrustModel\] introduces the concept of a Wallet
-Instance Attestation issued by the Wallet Provider for each Wallet
-Instance.
+\[ARF\] introduces the concept of a Wallet Instance Attestation issued 
+by the Wallet Provider for each Wallet Instance.
 
 ### 3.2 Document type and namespace
 
@@ -616,7 +615,7 @@ Notes:
 
 #### 4.2.2 Trusted Issuer List
 
-Section 4.2.2. of \[TrustModel\] describes the concept of a trusted list
+Section 6.3.2.2 of \[ARF\] describes the concept of a trusted list
 of Issuers. This document specifies that for PID attestations, such a
 trusted list SHALL be used. Relying Parties SHALL only trust PID issuers
 that are included in a trusted list of PID Providers. Additionally,
