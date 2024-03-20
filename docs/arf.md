@@ -920,7 +920,6 @@ attributes for natural persons.
 | family_name                | family_name_birth         |
 | given_name                 | given_name_birth          |
 | birth_date                 | birth_place               | 
-|                            | resident_address          |
 |                            | gender                    |
 |                            | age_over_18               |
 |                            | age_over_NN               |
