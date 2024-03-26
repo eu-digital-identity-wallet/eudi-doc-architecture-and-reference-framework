@@ -139,12 +139,8 @@ central registry for such domestic namespace definitions MAY be
 established in the future.
 
 ### 2.3 SD-JWT VC Type (SD-JWT VC format)
-SD-JWT VC defines the concept of a Verifiable Credential Type (`vct`). A
-type is associated with metadata defining, for example, information
-about the type, a schema defining which claims may or must appear in the
-SD-JWT VC, and how they can be displayed. A type can extend another
-type, which can be leveraged for basing domestic types on an EU-wide
-type. Type information can be discoverable in an automated fashion.
+SD-JWT VC defines the Verifiable Credential Type (`vct`). A
+type comes with associated metadata that, for instance, provides information about the type itself, outlines a schema detailing the claims that are optional or mandatory in the SD-JWT VC, and specifies their display methods. Additionally, a type can inherit from another type, enabling the creation of domestic types based on a broader EU-wide standard. The information regarding a type can be automatically discovered.
 
 The information provided in this document SHALL be specified as a
 Verifiable Credential Type in the format defined by SD-JWT VC, including
