@@ -70,7 +70,7 @@ attestation within the EUDI Wallet, as well as the PID metadata:
     -   Section 2.2.2 describes how Member States can specify national
         attributes by defining a domestic PID namespace.
 
--   Section 2.3 specified the SD-JWT VC Type to be used for PID
+-   Section 2.3 specifies the SD-JWT VC Type to be used for PID
     attestations in SD-JWT VC format.
 
 -   Section 2.4 specifies the set of data elements covering the PID
