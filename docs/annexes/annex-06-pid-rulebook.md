@@ -617,10 +617,10 @@ references to the issuer, validity status information, and more.
 SD-JWT VCs containing data elements in Table 1 and Table 2 SHALL be
 released only in a VP Token, as specified in \[OpenID4VP\]. This means
 that these data elements SHALL be signed by the PID Provider, not by the
+Wallet Instance.
 
 At the discretion of the PID Provider, domestic data elements (see
 section 2.2.2) MAY be released in either a VP Token or an ID Token.
-Wallet Instance.
 
 PID Issuers SHALL make all data elements in Table 1 and Table 2 except
 for `issuance_date`, `expiry_date` and `issuing_country` available for
