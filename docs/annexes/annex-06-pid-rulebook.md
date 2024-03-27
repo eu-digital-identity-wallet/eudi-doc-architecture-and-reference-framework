@@ -26,7 +26,7 @@ This PID Rule Book contains the following topics:
     organization of the mandatory and optional attributes of the PID. It
     also describes how Member States can specify any possible national
     attributes. Two encodings for these attributes are specified, one
-    compliant with \[ISO18013-5\], the other compliant with \[SD-JWT\].
+    compliant with \[ISO18013-5\], the other compliant with \[SD-JWT VC\] based on \[SD-JWT\].
 * Chapter 3 specifies the Wallet Instance attestation schema, which
     describes the same information for the Wallet Instance attestation
     signed by the Wallet Provider for each Wallet Instance. This
@@ -61,7 +61,7 @@ logical organisation of the mandatory and optional attributes of the PID
 attestation within the EUDI Wallet, as well as the PID metadata:
 
 -   Section 2.2 specifies the document type and namespace(s) for a PID
-    attestation:
+    attestation in ISO/IEC 18013-5 format:
 
     -   Section 2.2.1 specifies the PID document type, as well as the
         EU-wide PID namespace within which the PID data elements defined
@@ -70,19 +70,22 @@ attestation within the EUDI Wallet, as well as the PID metadata:
     -   Section 2.2.2 describes how Member States can specify national
         attributes by defining a domestic PID namespace.
 
--   Section 2.3 specifies the set of data elements covering the PID
+-   Section 2.3 specifies the SD-JWT VC Type to be used for PID
+    attestations in SD-JWT VC format.
+
+-   Section 2.4 specifies the set of data elements covering the PID
     attributes specified in \[ARF\].
 
--   Section 2.4 similarly specifies the set of data elements covering
+-   Section 2.5 similarly specifies the set of data elements covering
     the PID metadata.
 
--   Section 2.5 specifies two different encodings for these data
+-   Section 2.6 specifies two different encodings for these data
     elements. The first encoding uses Concise Binary Object
     Representation (CBOR) and complies with ISO/IEC 18013-5:2021
     \[ISO18013-5\]. The second encoding uses JSON and complies with
     \[SD-JWT\] and \[OpenID4VP\].
 
-### 2.2 Document type and namespace
+### 2.2 Document type and namespace (ISO format)
 
 #### 2.2.1 EU-wide document type and namespace for PID attestation
 
@@ -102,15 +105,14 @@ document) and any future version.
 
 Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
 for the namespace of the first version of the PID attributes and PID
-metadata specified in sections 2.3 and 2.4[^1]. This namespace clearly
+metadata specified in sections 2.4 and 2.5[^1]. This namespace clearly
 indicates that any data elements defined within it are Person
 Identification Data specified in the context of the EUDI Wallet. Again,
 the version number "1" allows for future extension(s) or change(s) of
 the PID data elements defined the next section.
 
 PID Providers SHALL use this document type and namespace for the ISO/IEC
-18013-5 compliant data element encoding specified in section 2.5.2 and
-for the SD-JWT-compliant encoding in section 2.5.3.
+18013-5 compliant data element encoding specified in section 2.6.2.
 
 ### 2.2.2 Domestic PID namespaces for national attributes
 
@@ -130,24 +132,50 @@ number in the domestic namespace.
 EXAMPLE: The first domestic PID namespace for Germany could be
 "eu.europa.ec.eudi.pid.de.1".
 
-PID Providers SHALL use the same domestic namespace for both ISO/IEC
-18013-5-compliant PIDs and SD-JWT-compliant PIDs, see section 2.5.
-
 A PID Provider that defines a domestic namespace SHALL publish the
 namespace, including all data element identifiers, their definition,
 presence and encoding format, on a website that is publicly available. A
 central registry for such domestic namespace definitions MAY be
 established in the future.
 
-### 2.3 PID attributes
+### 2.3 SD-JWT VC Type (SD-JWT VC format)
+SD-JWT VC defines the Verifiable Credential Type (`vct`). A
+type comes with associated metadata that, for instance, provides information about the type itself, outlines a schema detailing the claims that are optional or mandatory in the SD-JWT VC, and specifies their display methods. Additionally, a type can inherit from another type, enabling the creation of domestic types based on a broader EU-wide standard. The information regarding a type can be automatically discovered.
 
-#### 2.3.1 Introduction
+The information provided in this document SHALL be specified as a
+Verifiable Credential Type in the format defined by SD-JWT VC, including
+a schema for PIDs, display (rendering) information, and other metadata
+specified by SD-JWT VC. The type SHALL be identified by the URN
+`urn:eu.europa.ec.eudi:pid:1`. The version number "1" in this type MAY
+be used to distinguish between the first version of the PID attribute
+(defined in this document) and any future version.
+
+Domestic PID types for national attributes SHALL be defined using URLs
+and extend the EU-wide PID type. More than one domestic PID type MAY be
+defined per Member State. Domestic PID types SHALL specify in their Type
+Metadata any additional fields/claims and MAY define display
+information.
+
+EXAMPLE: The domestic PID namespace for Germany could be
+`https://example.bmi.bund.de/credential/pid/1.0`, where in the metadata
+of the type, the `extends` field would reference the EU-wide type
+`urn:eu.europa.ec.eudi:pid:1`.
+
+Domestic PID Type Metadata information SHALL be published at their
+respective URLs as defined in the SD-JWT VC specification.
+
+Note: It is to be discussed whether the EU-wide PID type should be
+defined using a URN or a URL.
+
+### 2.4 PID attributes
+
+#### 2.4.1 Introduction
 Data elements corresponding to the PID attributes specified in \[ARF\]
-are defined in Table 1 in section 2.3.2. Data elements corresponding to
+are defined in Table 1 in section 2.4.2. Data elements corresponding to
 the PID metadata specified in \[ARF\] are defined in Table 2 in section
-2.4.1.
+2.5.1.
 
-Note that the metadata data elements defined in section 2.4.1 are
+Note that the metadata data elements defined in section 2.5.1 are
 handled by PID Providers, PID Users and Relying Parties in exactly the
 same way as the data elements corresponding to the PID attributes in
 Table 1. There is no technical difference between these data elements.
@@ -186,7 +214,7 @@ Table 1 and Table 2 contain the following information:
 
 -   The fifth column indicates how the data elements SHALL be encoded,
     using the CDDL representation types defined in \[RFC 8610\]. Section
-    2.5. specifies how these representation types SHALL be serialized
+    2.6. specifies how these representation types SHALL be serialized
     into CBOR and JSON data structures, respectively. Note the
     following:
 
@@ -213,7 +241,7 @@ Table 1 and Table 2 contain the following information:
         -   A local offset from UTC SHALL NOT be used; the time-offset
             defined in \[RFC 3339\] SHALL be to "Z".
 
-#### 2.3.2 Overview
+#### 2.4.2 Overview
 | PID attribute in [ARF]  | Corresponding data element identifier(s) | Definition | Presence | Encoding format |
 |---|---|---|---|---|
 | **Current Family Name** |  |  |  |  |
@@ -221,7 +249,7 @@ Table 1 and Table 2 contain the following information:
 | **Current First Names** |  |  |  |  |
 |  | `given_name` | Current first name(s), including middle name(s), of the PID User.  | M | `tstr` |
 | **Date of Birth** |  |  |  |  |
-| (See section 2.3.3) |  |  |  |  |
+| (See section 2.4.3) |  |  |  |  |
 |  |  |  |  |  |
 |  | `birth_date` | Day, month, and year on which the PID User was born.   | M | `full-date` |
 |  | `age_over_18` | Attesting whether the PID User is currently an adult (true) or a minor (false). | O | `bool` |
@@ -232,17 +260,15 @@ Table 1 and Table 2 contain the following information:
 |  | `family_name_birth` | Last name(s) or surname(s) of the PID User at the time of birth. | O | `tstr` |
 | **First Names at Birth** |  |  |  |  |
 |  | `given_name_birth` | First name(s), including middle name(s), of the PID User at the time of birth. | O | `tstr` |
-| **Current Family Name** |  |  |  |  |
-|  | `family_name` | Current last name(s) or surname(s) of the PID User.  | M | `tstr` |
 | **Place of Birth**  |  |  |  |  |
-| (See section 2.3.4)  |  |  |  |  |
+| (See section 2.4.4)  |  |  |  |  |
 |  |  |  |   |  |
 |  | `birth_place` | The country, state, and city where the PID User was born.  | O | `tstr`  |
 |  | `birth_country` | The country where the PID User was born, as an Alpha-2 country code as specified in ISO 3166-1.  | O | `tstr`  |
 |  | `birth_state` | The state, province, district, or local area where the PID User was born.  | O | `tstr`  |
 |  | `birth_city` | The municipality, city, town, or village where the PID User was born.  | O | `tstr`  |
 | **Current Address**  |  |  |  |  |
-| (See section 2.3.5)  |  |  |  |  |
+| (See section 2.4.5)  |  |  |  |  |
 |  | `resident_address` | The full address of the place where the PID User currently resides and/or can be contacted (street name, house number, city etc.). | O | `tstr`  |
 |  | `resident_country` | The country where the PID User currently resides, as an Alpha-2 country code as specified in ISO 3166-1.  | O | `tstr`  |
 |  | `resident_state` | The state, province, district, or local area where the PID User currently resides.  | O | `tstr`  |
@@ -253,13 +279,13 @@ Table 1 and Table 2 contain the following information:
 | **Gender**  |  |  |  |  |
 |  | `gender` | PID User’s gender, using a value as defined in ISO/IEC 5218. | O | uint  |
 | **Nationality / Citizenship**  |  |  |  |  |
-| (See section 2.3.6)  |  |  |  |  |
-|  | `nationality`  | Alpha-2 country code as specified in ISO 3166-1, representing the nationality of the PID User.  | O  | Nationality, see section 2.3.6     |
+| (See section 2.4.6)  |  |  |  |  |
+|  | `nationality`  | Alpha-2 country code as specified in ISO 3166-1, representing the nationality of the PID User.  | O  | Nationality, see section 2.4.6     |
 
 
 *Table 1 PID attributes and corresponding data elements*
 
-#### 2.3.3 Date of birth-related data elements
+#### 2.4.3 Date of birth-related data elements
 
 \[ARF\] specifies 'Date of Birth' as a mandatory data element in a PID
 attribute. This document defines the following data elements related to
@@ -293,7 +319,7 @@ complicated than it may look at first sight. The examples in ISO/IEC
 18013-5 Annex D.2.2 will help to understand how the age\_over\_NN data
 element is to be used and interpreted.
 
-#### 2.3.4 Place of birth-related data elements
+#### 2.4.4 Place of birth-related data elements
 
 \[ARF\] specifies 'Place of Birth' as an optional data element in a PID
 attribute. This document defines the following data elements related to
@@ -308,7 +334,7 @@ Having multiple data elements instead of a single one allows having
 different levels of granularity for requests and responses, and thus
 allows issuers and Relying Parties to practice data minimization.
 
-#### 2.3.5 Address-related data elements
+#### 2.4.5 Address-related data elements
 
 \[ARF\] specifies 'Current Address' as an optional data element in the
 PID set. This document defines a number of current address-related data
@@ -336,7 +362,7 @@ least the resident city, as there will be many duplicate street names
 and house numbers in a given country. These data elements have been
 added primarily to assist in, for example, automated form filling.
 
-#### 2.3.6 Nationality / Citizenship
+#### 2.4.6 Nationality / Citizenship
 
 The ARF specifies 'Nationality / Citizenship' as a possible additional
 optional data element in the PID set and notes that this is potentially
@@ -349,9 +375,9 @@ nationality of the PID User must be added by the respective Member State
 as a domestic data element, see section 2.2.2. This possibility is also
 recognized in \[ARF\].
 
-### 2.4 PID metadata
+### 2.5 PID metadata
 
-#### 2.4.1 Overview
+#### 2.5.1 Overview
 Section 5.1.1 of \[ARF\] says: "Metadata associated with the PID may
 additionally detail the date of issuance and/or expiration, the issuing
 authority and/or Member State, information necessary to perform holder
@@ -361,7 +387,7 @@ potentially more information."
 
 The first column of Table 2 contains all the PID metadata identified in
 the quote above. The meaning of the remaining columns is explained in
-section 2.3.1.
+section 2.4.1.
 
 | PID metadata in [ARF]  | ISO-compliant data element identifier | Definition | Presence | Encoding format  |
 |---|---|---|---|---|
@@ -380,7 +406,7 @@ section 2.3.1.
 
 *Table 2 PID metadata and corresponding data elements*
 
-#### 2.4.2 Validity status information
+#### 2.5.2 Validity status information
 
 > NOTE: PID revocation will be further detailed in a future version of
 > ARF. Probably validity status information will not be included in the
@@ -388,9 +414,9 @@ section 2.3.1.
 > the MSO for ISO-compliant PIDSs and the SD-JWT for SD-JWT-compliant
 > PIDs.
 
-### 2.5 PID data element encodings
+### 2.6 PID data element encodings
 
-#### 2.5.1 Introduction
+#### 2.6.1 Introduction
 
 Requirement 6 in section 5.1.2 of the ARF specifies that PID attestation
 must be issued in accordance with both the data model specified in
@@ -404,18 +430,18 @@ This section therefore specifies two separate encodings for the PID data
 model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
 SD-JWT-compliant encoding in JSON.
 
-#### 2.5.2 ISO/IEC 18013-5-compliant encoding
+#### 2.6.2 ISO/IEC 18013-5-compliant encoding
 
-##### 2.5.2.1 Encoding rules
+##### 2.6.2.1 Encoding rules
 
 If data elements specified in in Table 1 or Table 2 are encoded with
 CBOR, they SHALL be encoded as specified in \[RFC 8949\].
 
 The CDDL representation types used in Table 1 and Table 2 are specified
-in section 2.3.1. Rules to encode CDDL representation types with CBOR
+in section 2.4.1. Rules to encode CDDL representation types with CBOR
 are specified \[RFC 8610\] and \[RFC 8949\].
 
-##### 2.5.2.2 Further stipulations
+##### 2.6.2.2 Further stipulations
 
 The value of all data elements (both PID attributes and PID metadata)
 SHALL be valid at the value of the timestamp in the validFrom element in
@@ -452,15 +478,15 @@ At the discretion of the PID Provider, domestic data elements (see
 section 2.2.2) MAY be signed either by the PID Provider or by the Wallet
 Instance.
 
-#### 2.5.3 SD-JWT-compliant encoding
+#### 2.6.3 SD-JWT-compliant encoding
 
-##### 2.5.3.1 Encoding rules
+##### 2.6.3.1 Encoding rules
 
 If data elements are encoded with JSON, they SHALL be encoded as
 specified in \[RFC 8259\].
 
 The CDDL representation types used in Table 1 and Table 2 are specified
-in section 2.3.1. Rules to encode CDDL representation types with JSON
+in section 2.4.1. Rules to encode CDDL representation types with JSON
 are specified in \[RFC 8949\] section 6.1 Given the CDDL representation
 types used in the current version of this document, the following rules
 are relevant:
@@ -491,15 +517,115 @@ If other CDDL representation types will be used in future versions of
 this document, the corresponding rules for encoding them with JSON will
 be added here.
 
-##### 2.5.3.2 Further stipulations
+##### 2.6.3.2 Data Element Identifer to Claim Mapping
 
-Data elements in Table 1 and Table 2 SHALL be released only in a VP
-Token, as specified in \[OpenID4VP\]. This means that these data
-elements SHALL be signed by the PID Provider, not by the Wallet
-Instance.
+SD-JWT encoded PID attestations SHALL use claim names registered in the JSON Web Token Claims Registry \[IANA-JWT-Claims\]. Table 3 below maps the data element identifiers from Table 1 and Table 2 above to the corresponding claim names. 
+
+Note that a hierarchical claim name structure can be used in SD-JWT VC encoded PID attestations as SD-JWT allows for individual selective disclosure of objects and their properties. A hierarchical claim name structure is indicated by the notation `parent/child` in Table 3.
+
+Data element identifiers not listed in Table 3 are used as defined above.
+
+| Data Element Identifier | Claim Name | Note |
+|---|---|---|
+| `birth_date` | `birthdate` |  |
+| `age_over_18` | `age_equal_or_over/18` | Note: The `18` property name is a string.|
+| `age_over_NN` | `age_equal_or_over/NN` | Note: The NN property name is a string. |
+| `family_name_birth` | `birth_family_name` | |
+| `given_name_birth` | `birth_given_name` | |
+| `birth_place` | `place_of_birth/locality` | * |
+| `birth_country` | `place_of_birth/country` | |
+| `birth_state` | `place_of_birth/region` | |
+| `birth_city` | `place_of_birth/locality` | |
+| `resident_address` | `address/formatted` | |
+| `resident_country` | `address/country` | |
+| `resident_state` | `address/region` | |
+| `resident_city` | `address/locality` | |
+| `resident_postal_code` | `address/postal_code` | |
+| `resident_street` | `address/street_address` | * |
+| `resident_house_number` | `address/house_number` | * |
+| `gender` | `gender` | Note: Data type mismatch - JWT claims use `male`, `female` and custom text values.* |
+| `nationality` | `nationalities` | Note: Defined as an array, here containing only one entry.|
+| `issuance_date` | `iat` | |
+| `expiry_date` | `exp` | |
+
+*Table 3: Data Element Identifier to Claim Name Mapping*
+
+Fields marked with (*) indicate that there is not a one-to-one mapping
+between the data element and a suitable pre-defined JWT claim.
+This should be resolved in future versions of this document.
+
+EXAMPLE: The following example shows a PID in SD-JWT VC format.
+
+```json
+{
+    "vct": "https://memberstate.example/credential/pid",
+    "vct#integrity": "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+
+    "given_name": "Jean",
+    "family_name": "Dupont",
+    "birthdate": "1980-05-23",
+
+    "age_equal_or_over": {
+        "12": true,
+        "14": true,
+        "16": true,
+        "18": true,
+        "21": true,
+        "65": false
+    },
+    "age_in_years": 44,
+    "age_birth_year": 1980,
+
+    "address": {
+        "street_address": "123 Via Appia",
+        "locality": "Rome",
+        "region": "Lazio",
+        "postal_code": "00100",
+        "country": "IT"
+    },
+
+    "nationalities": ["FR"],
+
+    "gender": "male",
+
+    "place_of_birth": {
+        "locality": "Leipzig",
+        "region": "Saxony",
+        "country": "DD"
+    },
+
+    "cnf": {
+        "jwk": {
+            "kty": "EC",
+            "crv": "P-256",
+            "x": "52aDI_ur05n1f_p3jiYGUU82oKZr3m4LsAErM536crQ",
+            "y": "ckhZ-KQ5aXNL91R8Eufg1aOf8Z5pZJnIvuCzNGfdnzo"
+        }
+    }
+}
+```
+
+Note: The `cnf` claim is used for expressing key binding in SD-JWT VCs.
+The example above shows a public key in JWK format.
+
+Note: Additional technical claims are not shown here, including
+references to the issuer, validity status information, and more.
+
+
+##### 2.6.3.3 Further stipulations
+
+SD-JWT VCs containing data elements in Table 1 and Table 2 SHALL be
+released only in a VP Token, as specified in \[OpenID4VP\]. This means
+that these data elements SHALL be signed by the PID Provider, not by the
+Wallet Instance.
 
 At the discretion of the PID Provider, domestic data elements (see
 section 2.2.2) MAY be released in either a VP Token or an ID Token.
+
+PID Issuers SHALL make all data elements in Table 1 and Table 2 except
+for `issuance_date`, `expiry_date` and `issuing_country` available for
+selective disclosure, including parent and child claims where
+applicable.
 
 ## 3 Wallet Instance attestation attribute schema
 > NOTE: the information in this chapter does not pertain to the PID
@@ -637,9 +763,14 @@ Regarding the format of this trusted list, the format specified ETSI TS
 |---|---|
 | [ARF] | The Common Union Toolbox for a Coordinated Approach Towards a European Digital Identity Framework – The European Digital Identity Wallet Architecture and Reference Framework, November 2023, Version 1.2.0  |
 | [ISO18013-5] | ISO/IEC 18013-5, Personal identification — ISO-compliant driving licence — Part 5: Mobile driving licence (mDL) application, First edition, 2021-09  |
+| [IANA-JWT-Claims] | JSON Web Token Claims Registry, IANA|
+|  | Retrievable from https://www.iana.org/assignments/jwt/jwt.xhtml  |
 | [SD-JWT] | Selective Disclosure for JWTs (SD-JWT)  |
 |  | draft-ietf-oauth-selective-disclosure-jwt-04, 11 April 2023 [1]  |
 |  | Retrievable from https://datatracker.ietf.org/doc/draft-ietf-oauth-selective-disclosure-jwt/   |
+| [SD-JWT VC] | SD-JWT-based Verifiable Credentials |
+|  | draft-ietf-oauth-sd-jwt-vc, 12 March 2024 |
+|  | Retrievable from https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/ |
 | [OpenID4VP] | OpenID for Verifiable Presentations – draft 18, 21 April 2023 [2]  |
 |  | Retrievable from https://openid.net/specs/openid-4-verifiable-presentations-1_0.html  |
 | [2015/1505] | COMMISSION IMPLEMENTING DECISION (EU) 2015/1505  |
@@ -722,3 +853,8 @@ Regarding the format of this trusted list, the format specified ETSI TS
     interoperability between these versions is not known. As
     \[OpenID4VP\] is still under development, presumably later versions
     will become available over time.
+
+[^15]: The type metadata for SD-JWT VC is currently defined in a separate draft,
+    available at
+    https://vcstuff.github.io/sd-jwt-vc-types/draft-fett-oauth-sd-jwt-vc-types.html,
+    that is to be integrated into SD-JWT.
