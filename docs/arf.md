@@ -2742,12 +2742,6 @@ https://www.w3.org/TR/json-ld/
     accreditation and market surveillance relating to the marketing of
     products and repealing Regulation (EEC) No 339/93
 
-[^14]: Commission Implementing Regulation (EU)2015/1501 of 8 September
-    2015 on the interoperability framework pursuant to Article 12(8) of
-    Regulation (EU) No 910/2014 of the European Parliament and of the Council
-    on electronic identification and trust services for electronic
-    transactions in the internal market.
-
 [^15]: Please note that work on further specifying the EUDI Wallet
     Instance Attestation is planned to be carried out. This section may
     need to be revised depending on the results of that work. For
