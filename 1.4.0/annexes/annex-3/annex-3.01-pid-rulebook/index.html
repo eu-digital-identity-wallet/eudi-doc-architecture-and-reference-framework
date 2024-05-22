@@ -1,0 +1,1490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>ANNEX 3.1 - PID Rulebook - EUDI Wallet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#annex-31-pid-rulebook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="EUDI Wallet" class="md-header__button md-logo" aria-label="EUDI Wallet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9h-1.5m0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5v-7.5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EUDI Wallet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ANNEX 3.1 - PID Rulebook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  EUDI Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../arf/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="EUDI Wallet" class="md-nav__button md-logo" aria-label="EUDI Wallet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9h-1.5m0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5v-7.5Z"/></svg>
+
+    </a>
+    EUDI Wallet
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EUDI Wallet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../arf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Key words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Terminology
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pid-attribute-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 PID attribute schema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 PID attribute schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-attestation-type-and-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Attestation type and namespace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Attestation type and namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-eu-wide-attestation-type-and-namespace-for-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 EU-wide attestation type and namespace for PID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-domestic-pid-namespaces-for-national-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 Domestic PID namespaces for national attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-pid-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 PID attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 PID attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-date-of-birth-related-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 Date of birth-related attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-place-of-birth-related-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 Place of birth-related attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#235-address-related-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.5 Address-related attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#236-nationality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.6 Nationality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#237-minimum-number-of-optional-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.7 Minimum number of optional attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-pid-attribute-encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 PID attribute encodings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 PID attribute encodings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-isoiec-18013-5-compliant-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 ISO/IEC 18013-5-compliant encoding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.2 ISO/IEC 18013-5-compliant encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2421-encoding-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2.1 Encoding rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2422-further-stipulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2.2 Further stipulations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-sd-jwt-compliant-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 SD-JWT-compliant encoding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.3 SD-JWT-compliant encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2431-encoding-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3.1 Encoding rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2432-further-stipulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3.2 Further stipulations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-trust-infrastructure-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Trust infrastructure details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Trust infrastructure details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-isoiec-18013-5-compliant-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 ISO/IEC 18013-5-compliant PIDs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 ISO/IEC 18013-5-compliant PIDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-oids-for-use-in-pid-related-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 OIDs for use in PID-related certificates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-pid-provider-trusted-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 PID Provider Trusted List
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-sd-jwt-compliant-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 SD-JWT-compliant PIDs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="annex-31-pid-rulebook">ANNEX 3.1 - PID Rulebook</h1>
+<p><em>This is a working document that holds no legal value</em> <em>and does not
+reflect any common agreement or position of the co-legislators. It
+presents a state-of-play of ongoing work of the eIDAS Expert Group. This
+document is being continuously updated and should not be considered
+final.</em></p>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-scope">1.1 Scope</h3>
+<p>This document is the Person Identification Data (PID) Rulebook. It
+contains requirements specific to the PID use case within the EUDI
+Wallet.</p>
+<p>This PID Rulebook contains the following topics:</p>
+<ul>
+<li>
+<p><a href="#2-pid-attribute-schema">Chapter 2</a> specifies the PID attribute schema. This describes the
+    structure, the type, the entity identifiers, and the logical
+    organization of the mandatory and optional attributes of the PID. It
+    also describes how Member States can specify any possible national
+    attributes. Two encodings for these attributes are specified, one
+    compliant with [ISO18013-5], the other compliant with [SD-JWT].</p>
+</li>
+<li>
+<p><a href="#23-pid-attributes">Chapter 3</a> specifies details about the trust infrastructure necessary
+    for PIDs, for both ISO/IEC 18013-5-compliant and SD-JWT-compliant
+    encodings. This information may be moved to another document in the
+    future.</p>
+</li>
+</ul>
+<p>Further topics will be added if and when they are identified.</p>
+<h3 id="12-key-words">1.2 Key words</h3>
+<p>This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
+as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a>], i.e., to indicate requirements,
+recommendations and options specified in this document.</p>
+<p>In addition, 'must' (non-capitalized) is used to indicate an external
+constraint, i.e., a requirement that is not mandated by this document,
+but, for instance, by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will', and 'is' or 'are' are
+intended as statements of fact.</p>
+<h3 id="13-terminology">1.3 Terminology</h3>
+<p>This document uses the terminology specified in <a href="../../annex-1/annex-1-definitions/">Annex 1</a>.</p>
+<h2 id="2-pid-attribute-schema">2 PID attribute schema</h2>
+<h3 id="21-overview">2.1 Overview</h3>
+<p>This chapter describes the structure, type, attribute identifiers and
+logical organisation of the mandatory and optional attributes of the PID
+within the EUDI Wallet, as well as the PID metadata:</p>
+<ul>
+<li>
+<p><a href="#22-attestation-type-and-namespace">Section 2.2</a> specifies the attestation type and namespace(s) for a
+    PID:</p>
+<ul>
+<li>
+<p><a href="#221-eu-wide-attestation-type-and-namespace-for-pid">Section 2.2.1</a> specifies the PID attestation type and the EU-wide
+    PID namespace within which the PID attributes defined in this
+    document are specified.</p>
+</li>
+<li>
+<p><a href="#222-domestic-pid-namespaces-for-national-attributes">Section 2.2.2</a> describes how Member States can specify national
+    attributes by defining a domestic PID namespace.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#23-pid-attributes">Section 2.3</a> specifies the set of PID attributes.</p>
+</li>
+<li>
+<p><a href="#24-pid-attribute-encodings">Section 2.4</a> specifies two different encodings for these attributes.
+    The first encoding uses Concise Binary Object Representation (CBOR)
+    and complies with ISO/IEC 18013-5:2021 [ISO18013-5]. The second
+    encoding uses JSON and complies with [SD-JWT] and [OpenID4VP].</p>
+</li>
+</ul>
+<h3 id="22-attestation-type-and-namespace">2.2 Attestation type and namespace</h3>
+<h4 id="221-eu-wide-attestation-type-and-namespace-for-pid">2.2.1 EU-wide attestation type and namespace for PID</h4>
+<p>The concepts of attestation type and namespace, and the way in which
+they are used, are specified in [<a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>].</p>
+<p>PID Providers SHALL use the attestation type "eu.europa.ec.eudi.pid.1"
+for PIDs. This value follows the recommendation in ISO/IEC 18013-5 to
+use the general format [Reverse Domain].[Domain Specific Extension].
+Since the European Commission controls the domain ec.europa.eu, this
+attestation type value will not collide with any attestation type
+potentially defined by other organisations. The version number "1" in
+this attestation type MAY be used to distinguish between the first
+version of the ISO-compliant PID attribute (defined in this document)
+and any future version.</p>
+<p>Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
+for the namespace of the first version of the PID attributes specified in section <a href="#23-pid-attributes">2.3</a>. This namespace clearly indicates that any attributes defined
+within it are Person Identification Data specified in the context of the
+EUDI Wallet. Again, the version number "1" allows for future
+extension(s) or change(s) of the PID attributes defined the next
+section.</p>
+<p>Note that the attestation type and namespace have the same value. This
+is allowed according to ISO/IEC 18013-5.</p>
+<p>PID Providers SHALL use this attestation type and namespace for the
+ISO/IEC 18013-5 compliant attribute encoding specified in <a href="#242-isoiec-18013-5-compliant-encoding">section 2.4.2</a>
+and for the SD-JWT-compliant encoding in <a href="#243-sd-jwt-compliant-encoding">section 2.4.3</a>.</p>
+<h4 id="222-domestic-pid-namespaces-for-national-attributes">2.2.2 Domestic PID namespaces for national attributes</h4>
+<p>ISO/IEC 18013-5 specifies a mechanism called domestic namespaces,
+allowing PID Providers to issue such national attributes to an EUDI
+Wallet. To do so, a PID Provider SHALL define a domestic PID namespace.
+Within that namespace, the PID Provider is free to define any attribute
+it needs, for example, a national social security number or taxpayer
+identification number (TIN).</p>
+<p>If a PID Provider chooses to define a domestic namespace, it SHALL
+append the applicable ISO 3166-1 alpha-2 country code or the ISO 3166-2
+region code, separated by a period, to the EU-wide PID namespace,
+excluding the version number. The PID Provider MAY include a version
+number in the domestic namespace.</p>
+<p>EXAMPLE: The first domestic PID namespace for Germany could be
+"eu.europa.ec.eudi.pid.de.1".</p>
+<p>PID Providers SHALL use the same domestic namespace for both ISO/IEC
+18013-5-compliant PIDs and SD-JWT-compliant PIDs, see section 2.4.</p>
+<p>A PID Provider that defines a domestic namespace SHALL publish the
+namespace, including all attribute identifiers, their definition,
+presence and encoding format, in a Rulebook complying with all
+applicable requirements in [<a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>].</p>
+<h3 id="23-pid-attributes">2.3 PID attributes</h3>
+<h4 id="231-introduction">2.3.1 Introduction</h4>
+<p>PID attributes are defined in Table 1 in <a href="#232-overview">section 2.3.2</a>.</p>
+<p>Table 1 contains the following information:</p>
+<ul>
+<li>The first column specifies the identifiers of the PID attributes.
+    The attribute identifiers in this column SHALL be used in requests
+    and responses according to [ISO18013-5] or [OpenID4VP], as
+    applicable. There SHALL be at most one attribute with the same
+    attribute identifier in each PID attribute.</li>
+</ul>
+<blockquote>
+<p>NOTE: Attribute values MAY be multi-value. If so, this is clearly
+indicated.</p>
+</blockquote>
+<ul>
+<li>
+<p>The second column describes the meaning of the attribute.</p>
+</li>
+<li>
+<p>The third column specifies whether the presence of the attribute in
+    a PID is mandatory (M), or optional (O).</p>
+</li>
+</ul>
+<blockquote>
+<p>NOTE: If Table 1 indicates an attribute as mandatory, this solely
+means that the PID Provider SHALL ensure that this element is present
+in the PID. It does not imply that a Relying Party is required to
+request such an attribute when interacting with the Wallet Instance.
+Neither does it imply that the PID User cannot refuse to release a
+mandatory attribute if requested.</p>
+</blockquote>
+<ul>
+<li>
+<p>The fourth column indicates how the attributes SHALL be encoded,
+    using the CDDL representation types defined in [<a href="https://www.rfc-editor.org/rfc/rfc8610.html">RFC 8610</a>]. <a href="#24-pid-attribute-encodings">Section 2.4</a> specifies how these representation types SHALL be serialized
+    into CBOR and JSON data structures, respectively. Note the
+    following:</p>
+<ul>
+<li>
+<p>tstr, uint, bstr, bool and tdate are CDDL representation types
+    defined in [<a href="https://www.rfc-editor.org/rfc/rfc8610.html">RFC 8610</a>].</p>
+</li>
+<li>
+<p>All attributes having encoding format tstr SHALL have a maximum
+    length of 150 characters.</p>
+</li>
+<li>
+<p>This document specifies full-date as full-date = #6.1004(tstr),
+    where tag 1004 is specified in [<a href="https://datatracker.ietf.org/doc/html/rfc8943">RFC 8943</a>].</p>
+</li>
+<li>
+<p>In accordance with [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>], section 3.4.1, a tdate
+    attribute shall contain a date-time string as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>]. In accordance with [<a href="https://datatracker.ietf.org/doc/html/rfc8943">RFC 8943</a>], a full-date attribute
+    shall contain a full-date string as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>].</p>
+</li>
+<li>
+<p>The following requirements SHALL apply to the representation of
+    dates in attributes, unless otherwise indicated:</p>
+<ul>
+<li>
+<p>Fractions of seconds SHALL NOT be used;</p>
+</li>
+<li>
+<p>A local offset from UTC SHALL NOT be used; the time-offset
+    defined in [<a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>] SHALL be to "Z".</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="232-overview">2.3.2 Overview</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Presence</strong></th>
+<th><strong>Encoding format</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>family_name</td>
+<td>Current last name(s) or surname(s) of the PID User.</td>
+<td>M</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>Current first name(s), including middle name(s), of the PID User.</td>
+<td>M</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>Day, month, and year on which the PID User was born.</td>
+<td>M</td>
+<td>full-date</td>
+</tr>
+<tr>
+<td></td>
+<td>Please note that the current specification does not yet foresee a solution for the situation when the date of birth of the User is incomplete or unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>age_over_18</td>
+<td>Attesting whether the PID User is currently an adult (true) or a minor (false).</td>
+<td>M</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>age_over_NN</td>
+<td>Additional current age attestations, NN &lt; 18.</td>
+<td>O</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>age_in_years</td>
+<td>The current age of the PID User in years.</td>
+<td>O</td>
+<td>uint</td>
+</tr>
+<tr>
+<td>age_birth_year</td>
+<td>The year when the PID User was born.</td>
+<td>O</td>
+<td>uint</td>
+</tr>
+<tr>
+<td></td>
+<td>Please note that the current specification does not yet foresee a solution for the situation when the birth year of the User is unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>family_name_birth</td>
+<td>Last name(s) or surname(s) of the PID User at the time of birth.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>given_name_birth</td>
+<td>First name(s), including middle name(s), of the PID User at the time of birth.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>The country, state, and city where the PID User was born.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_country</td>
+<td>The country where the PID User was born, as an Alpha-2 country code as specified in ISO 3166-1.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_state</td>
+<td>The state, province, district, or local area where the PID User was born.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_city</td>
+<td>The municipality, city, town, or village where the PID User was born.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_address</td>
+<td>The full address of the place where the PID User currently resides and/or can be contacted (street name, house number, city etc.).</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_country</td>
+<td>The country where the PID User currently resides, as an Alpha-2 country code as specified in ISO 3166-1.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_state</td>
+<td>The state, province, district, or local area where the PID User currently resides.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_city</td>
+<td>The municipality, city, town, or village where the PID User currently resides.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_postal_code</td>
+<td>Postal code of the place where the PID User currently resides.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_street</td>
+<td>The name of the street where the PID User currently resides.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_house_number</td>
+<td>The house number where the PID User currently resides, including any affix or suffix.</td>
+<td>O*</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>PID User's gender, using a value as defined in ISO/IEC 5218.</td>
+<td>O*</td>
+<td>uint</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>Alpha-2 country code as specified in ISO 3166-1, representing the nationality of the PID User.</td>
+<td>O*</td>
+<td>See section 2.3.6</td>
+</tr>
+<tr>
+<td>issuance_date</td>
+<td>Date (and possibly time) when the PID was issued.</td>
+<td>M</td>
+<td>tdate or full-date</td>
+</tr>
+<tr>
+<td>expiry_date</td>
+<td>Date (and possibly time) when the PID will expire.</td>
+<td>M</td>
+<td>tdate or full-date</td>
+</tr>
+<tr>
+<td>issuing_authority</td>
+<td>Name of the administrative authority that has issued this PID instance, or the ISO 3166 Alpha-2 country code of the respective Member State if there is no separate authority authorized to issue PIDs.</td>
+<td>M</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>document_number</td>
+<td>A number for the PID, assigned by the PID Provider.</td>
+<td>O</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>administrative_number</td>
+<td>A number assigned by the PID Provider for audit control or other purposes.</td>
+<td>O</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>issuing_country</td>
+<td>Alpha-2 country code, as defined in ISO 3166-1, of the PID Provider's country or territory.</td>
+<td>M</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>issuing_jurisdiction</td>
+<td>Country subdivision code of the jurisdiction that issued the PID, as defined in ISO 3166-2:2020, Clause 8. The first part of the code SHALL be the same as the value for issuing_country.</td>
+<td>O</td>
+<td>tstr</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 1 PID attributes</strong></p>
+<p>Note: For the attributes for which the presence is indicated as O*, see
+<a href="#237-minimum-number-of-optional-attributes">section 2.3.7</a>.</p>
+<h4 id="233-date-of-birth-related-attributes">2.3.3 Date of birth-related attributes</h4>
+<p>This document defines the following attributes related to the date of
+birth of the PID User:</p>
+<ul>
+<li>
+<p>birth_date (mandatory)</p>
+</li>
+<li>
+<p>age_birth_year (optional)</p>
+</li>
+<li>
+<p>age_in_years (optional)</p>
+</li>
+<li>
+<p>age_over_18 (mandatory)</p>
+</li>
+<li>
+<p>age_over_NN, NN \&lt;&gt; 18 (optional)</p>
+</li>
+</ul>
+<p>Having multiple attributes instead of only one allows having different
+levels of granularity for requests and responses, and thus allows PID
+Providers and Relying Parties to practice data minimization. For
+example, in some use cases, a Relying Party only needs to establish that
+the PID User is not a minor. In that case, requesting age_over_18
+suffices. Releasing more specific information, such as the PID User's
+age in years or birth year, would then constitute an unnecessary
+infringement of the User's privacy.</p>
+<p>This document specifies age_over_18 as a mandatory attribute and other
+age_over_NN attributes as optional attributes. PID Providers are free to
+add multiple age_over_NN attributes.</p>
+<p>The requirements in clause 7.2.5 of ISO/IEC 18013-5 SHALL be applicable
+for the age_over_18 and age_over_NN attributes in the PID set. This
+document affirms that issuing more (rather than fewer) age_over_NN
+attributes in a PID is beneficial for the PID User's privacy. Note that
+the usage of the age_over_NN attribute is more complicated than it may
+look at first sight. The examples in Annex D.2.2 of ISO/IEC 18013-5 will
+help to understand how the age_over_NN attribute is to be used and
+interpreted.</p>
+<h4 id="234-place-of-birth-related-attributes">2.3.4 Place of birth-related attributes</h4>
+<p>This document defines the following attributes related to the place of
+birth of the PID User:</p>
+<ul>
+<li>
+<p>birth_place (optional)</p>
+</li>
+<li>
+<p>birth_country (optional)</p>
+</li>
+<li>
+<p>birth_state (optional)</p>
+</li>
+<li>
+<p>birth_city (optional)</p>
+</li>
+</ul>
+<p>Having multiple attributes instead of a single one allows having
+different levels of granularity for requests and responses, and thus
+allows PID Providers and Relying Parties to practice data minimization.</p>
+<h4 id="235-address-related-attributes">2.3.5 Address-related attributes</h4>
+<p>This document defines the following attributes related to the current
+address of the PID Users</p>
+<ul>
+<li>
+<p>resident_address (optional)</p>
+</li>
+<li>
+<p>resident_country (optional)</p>
+</li>
+<li>
+<p>resident_state (optional)</p>
+</li>
+<li>
+<p>resident_city (optional)</p>
+</li>
+<li>
+<p>resident_postal_code (optional)</p>
+</li>
+<li>
+<p>resident_street (optional)</p>
+</li>
+<li>
+<p>resident_house_number (optional)</p>
+</li>
+</ul>
+<p>Having multiple attributes instead of only one allows different levels
+of granularity for requests and responses, and thus allows PID Providers
+and Relying Parties to practice data minimisation. For example, in some
+contexts a Relying Party must verify only that the PID User is a
+resident of a certain country. Releasing more specific address
+information such as state, city or postal code would then constitute an
+unnecessary infringement of the User's privacy.</p>
+<p>Note that in most cases requesting a PID User's resident street and
+house number will not make sense without simultaneously requesting at
+least the resident city, as there will be many duplicate street names
+and house numbers in a given country. These attributes have been added
+primarily to assist in, for example, automated form filling.</p>
+<h4 id="236-nationality">2.3.6 Nationality</h4>
+<p>The nationality or citizenship of the PID User is potentially a
+multi-valued attribute, because a citizen can have more than one
+nationality. However, his document defines an attribute nationality
+taking as its value a single Alpha-2 country code. This implies that any
+additional nationality of the PID User must be added by the respective
+Member State as a domestic attribute, see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>.</p>
+<h4 id="237-minimum-number-of-optional-attributes">2.3.7 Minimum number of optional attributes</h4>
+<p>PID Providers SHALL include at least four of the following six
+attributes (whose presence is indicated as O* in Table 1) in each PID,
+for purposes of facilitating identity matching:</p>
+<ul>
+<li>
+<p>family_name_birth</p>
+</li>
+<li>
+<p>given_name_birth</p>
+</li>
+<li>
+<p>gender</p>
+</li>
+<li>
+<p>nationality</p>
+</li>
+<li>
+<p>A \'Place of birth' attribute, see below.</p>
+</li>
+<li>
+<p>An 'Address' attribute, see below.</p>
+</li>
+</ul>
+<p>Regarding the 'Place of birth' attribute: if a PID Provider chooses to
+include this attribute, it SHALL include one or more of the following
+attributes defined in Table 1:</p>
+<ul>
+<li>
+<p>birth_place</p>
+</li>
+<li>
+<p>birth_country</p>
+</li>
+<li>
+<p>birth_state</p>
+</li>
+<li>
+<p>birth_city</p>
+</li>
+</ul>
+<p>Regarding the 'Address' attribute: if a PID Provider chooses to include
+this attribute, it SHALL include one or more of the following attributes
+defined in Table 1:</p>
+<ul>
+<li>
+<p>resident_address</p>
+</li>
+<li>
+<p>resident_country</p>
+</li>
+<li>
+<p>resident_state</p>
+</li>
+<li>
+<p>resident_city</p>
+</li>
+<li>
+<p>resident_postal_code</p>
+</li>
+<li>
+<p>resident_street</p>
+</li>
+<li>
+<p>resident_house_number</p>
+</li>
+</ul>
+<h3 id="24-pid-attribute-encodings">2.4 PID attribute encodings</h3>
+<h4 id="241-introduction">2.4.1 Introduction</h4>
+<p>[<a href="../../annex-2/annex-2-high-level-requirements/#a2310-topic-10---issuing-a-pid-or-attestation-to-the-eudi-wallet">Topic 10</a>/<a href="../../annex-2/annex-2-high-level-requirements/#a2310-topic-10---issuing-a-pid-or-attestation-to-the-eudi-wallet">23</a>] specifies that PID must be issued in both the format
+specified in ISO/IEC 18013-5:2021 [ISO18013-5] and the format
+specified in [SD-JWT VC] must be used. For the latter, attributes must
+be encoded in JSON. For the former, attributes must be encoded in CBOR.</p>
+<p>This section therefore specifies two separate encodings for the PID data
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
+SD-JWT-compliant encoding in JSON.</p>
+<h4 id="242-isoiec-18013-5-compliant-encoding">2.4.2 ISO/IEC 18013-5-compliant encoding</h4>
+<h5 id="2421-encoding-rules">2.4.2.1 Encoding rules</h5>
+<p>If attributes specified in in Table 1 are encoded with CBOR, they SHALL
+be encoded as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
+<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a> Rules to encode CDDL representation types with CBOR are specified
+[RFC 8610] and [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
+<h5 id="2422-further-stipulations">2.4.2.2 Further stipulations</h5>
+<p>The value of all attributes (both PID attributes and PID metadata) SHALL
+be valid at the value of the timestamp in the validFrom element in the
+MSO from ISO/IEC 18013-5 clause 9.1.2.4.</p>
+<p>Notes:</p>
+<ul>
+<li>
+<p>The value of the age_over_18, age_over_NN and age_in_years
+    attributes, if present, changes whenever the PID User has a
+    birthday. The value of many other attributes will also change over
+    time. It is up to the PID Provider to ensure that the above
+    requirement is complied with.</p>
+</li>
+<li>
+<p>Server retrieval, as specified in ISO/IEC 18013-5, SHALL NOT be used
+    for PIDs.</p>
+</li>
+</ul>
+<p>The issue_date attribute SHALL NOT be later than the validFrom element
+in the MSO, as defined in clause 9.1.2.4 of ISO/IEC 18013-5.</p>
+<p>If the Relying Party retrieved the issuing_country attribute, it SHALL
+verify that the value of that element matches the countryName element in
+the Subject field within the Document Signer certificate; see ISO/IEC
+18013-5 Annex B.</p>
+<p>If the Relying Party retrieved the issuing_jurisdiction attribute, it
+SHALL verify that the value of that element matches the
+stateOrProvinceName element, if it is present in the Subject field
+within the Document Signer certificate; see ISO/IEC 18013-5 Annex B.</p>
+<p>Attributes in Table 1 SHALL be released only as Issuer Signed Items, as
+specified in [ISO/IEC 18013-5]. This means that these attributes SHALL
+be signed by the PID Provider, not by the Wallet Instance.</p>
+<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>) MAY be signed either by the PID Provider or by the Wallet
+Instance.</p>
+<p>All attributes in Table 1 SHALL be made selectively disclosable.</p>
+<h4 id="243-sd-jwt-compliant-encoding">2.4.3 SD-JWT-compliant encoding</h4>
+<h5 id="2431-encoding-rules">2.4.3.1 Encoding rules</h5>
+<p>If attributes are encoded with JSON, they SHALL be encoded as specified
+in [RFC 8259].</p>
+<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a>. Rules to encode CDDL representation types with JSON are specified
+in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>] section 6.1 Given the CDDL representation types used in
+the current version of this document, the following rules are relevant:</p>
+<ul>
+<li>
+<p>A CDDL uint (i.e., an unsigned integer) becomes a JSON number.</p>
+</li>
+<li>
+<p>A CDDL bstr (i.e., a byte string) is encoded in base64url without
+    padding and becomes a JSON string.</p>
+</li>
+<li>
+<p>A CDDL tstr (i.e., a UTF-8 text string) becomes a JSON string. Note
+    that JSON requires escaping certain characters: quotation mark
+    (U+0022), reverse solidus (U+005C), and the \"C0 control
+    characters\" (U+0000 through U+001F). All other characters are
+    copied unchanged into the JSON UTF-8 string.</p>
+</li>
+<li>
+<p>A CDDL bool (i.e., a Boolean) becomes a JSON false or a JSON true,
+    as applicable.</p>
+</li>
+<li>
+<p>A CDDL tdate or full-date (which is a tagged item or 'tag') becomes
+    a JSON string representing the content of the tag; the tag number is
+    ignored.</p>
+</li>
+</ul>
+<p>Although not used in the current version of this document, the following
+CDDL representation types are frequently used in general, and hence
+rules to encode them with JSON may become relevant in future versions:</p>
+<ul>
+<li>
+<p>A CDDL array (i.e., a structure enclosed in square brackets [ ])
+    becomes a JSON array.</p>
+</li>
+<li>
+<p>A CDDL nint (i.e., a negative integer) becomes a JSON number.</p>
+</li>
+<li>
+<p>A CDDL map (i.e., a structure enclosed in curly brackets { })
+    becomes a JSON object. Since this is possible directly only if all
+    keys are UTF-8 strings, any CDDL maps defined in future versions of
+    this document SHALL only use keys that are UTF-8 strings.</p>
+</li>
+</ul>
+<p>If other CDDL representation types will be used in future versions of
+this document, the corresponding rules for encoding them with JSON will
+be added here.</p>
+<h5 id="2432-further-stipulations">2.4.3.2 Further stipulations</h5>
+<p>PID attributes in Table 1 SHALL be released only in a VP Token, as
+specified in [OpenID4VP]. This means that these attributes SHALL be
+signed by the PID Provider, not by the Wallet Instance.</p>
+<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>) MAY be released in either a VP Token or an ID Token.</p>
+<p>All attributes in Table 1 SHALL be made selectively disclosable.</p>
+<h2 id="3-trust-infrastructure-details">3 Trust infrastructure details</h2>
+<h3 id="31-introduction">3.1 Introduction</h3>
+<p>To trust a signature or seal over a PID, the Relying Party needs a
+mechanism to validate that the public key it uses to verify that
+signature or seal is trusted. Both ISO/IEC 18013-5 and OpenID4VP provide
+such mechanisms. However, in both cases, additional details need to be
+specified to fully specify these mechanisms for PIDs within the EUDI
+Wallet ecosystem.</p>
+<h3 id="32-isoiec-18013-5-compliant-pids">3.2 ISO/IEC 18013-5-compliant PIDs</h3>
+<h4 id="321-oids-for-use-in-pid-related-certificates">3.2.1 OIDs for use in PID-related certificates</h4>
+<p>ISO/IEC 18013-5 specifies an X.509-based PKI for the purpose of trusting
+public keys. This PKI has multiple roots; there is an independent
+(self-signed) root certificate for every PID Provider. Annex B of the
+standard specifies the formats of the X.509 certificates for all
+participants in the ecosystem.</p>
+<p>These certificate formats are mDL-specific, but only because they use
+the following Object Identifier (OID): <em>id-mdl OBJECT IDENTIFIER ::= {
+iso(1) standard(0) 18013 5 }</em>, as well as a number of child OIDs ('arcs')
+of this OID, see Annex B.1.1 of ISO/IEC 18013-5. All other aspects of
+these certificate profiles can be used for any type of mobile document
+complying with the security mechanisms defined in ISO/IEC 18013-5,
+including a PID within the EUDI Wallet ecosystem.</p>
+<p>Note: the OID notation above is incorrect. The <a href="http://oid-info.com/">http://oid-info.com/</a>
+website officially registers this OID as <em>{iso(1) standard(0)
+driving-licence(18013) part-5(5)}</em>. This does not impact the value of the
+OID.</p>
+<p>To make the certificate profiles applicable for PIDs in ISO/IEC
+18013-5-compliant EUDI Wallets, this document specifies the following
+OIDs (in ASN.1 notation):</p>
+<ul>
+<li>
+<p><em>id-eudi OBJECT IDENTIFIER ::= {european-commission 2} <br> - - arc for EUDI Wallets</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso OBJECT IDENTIFIER ::= {id-eudi 0}
+<br> - - arc for ISO/IEC 18013-5-compliant EUDI Wallets. The presence of
+this arc allows SD-JWT-compliant implementations of the EUDI Wallet to
+have their own arc 'next' to this one, if necessary.</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid OBJECT IDENTIFIER ::= {id-eudi-iso 0} <br> - - arc for PID
+    attributes within ISO-compliant EUDI Wallets.</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid-kp OBJECT IDENTIFIER ::= {id- eudi-iso-pid 1} <br>- - arc for extended key purposes within certificates used for PID
+attributes within ISO-compliant EUDI Wallets</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid-kp-DS OBJECT IDENTIFIER ::= {id-eudi-iso-pid-kp 2} <br>- - arc for document signer certificates, used by PID Providers</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid-kp-ReaderAuth OBJECT IDENTIFIER ::=
+    {id-eudi-iso-pid-kp 6} <br>- - arc for mdoc reader authentication certificates, used by Relying
+Parties requesting PIDs. Note that the use of this PID-specific OID
+implies that an mdoc reader authentication certificate containing this
+OID cannot be used to perform Relying Party authentication for any other
+type of attestation within the EUDI Wallet. This is by design, as it
+seems good for security to separate reader authentication per
+attestation type. However, decisions regarding Relying Party
+authentication will be detailed in the relevant technical specification.</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid-kp-IACALink OBJECT IDENTIFIER ::=
+    {id-eudi-iso-pid-kp 4} <br>- - arc for IACA Link certificates, used by PID Providers</em></p>
+</li>
+<li>
+<p><em>id-eudi-iso-pid-kp-IACA OBJECT IDENTIFIER ::= {id-eudi-iso-pid-kp 7} <br> - - arc for IACA Root certificates, used by PID Providers</em></p>
+</li>
+</ul>
+<p>These OIDs SHALL be used in certificates used for PID attributes within
+the ISO-compliant EUDI Wallet ecosystem, in exactly the same way as the
+corresponding OIDs specified in ISO/IEC 18103-5 are used within the
+mobile driving license ecosystem.</p>
+<p>Notes:</p>
+<ul>
+<li>
+<p>The numbers for the various extended key purposes are taken from
+    ISO/IEC 18013-5.</p>
+</li>
+<li>
+<p>These new OIDs will have to be officially registered.</p>
+</li>
+<li>
+<p>The OID european-commission is already registered:
+    <em>european-commission ::= {iso(1) identified-organization(3)
+    european-commission(130)}</em>. The respective Registration Authority for
+    this OID will have to be consulted to get approval for the proposed
+    addition of an arc for the EUDI Wallet.</p>
+</li>
+</ul>
+<h4 id="322-pid-provider-trusted-list">3.2.2 PID Provider Trusted List</h4>
+<p>For authenticating PIDs, trust anchors will be used that are present in
+a PID Provider Trusted List which complies with [<a href="../../annex-2/annex-2-high-level-requirements/#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>].</p>
+<h3 id="33-sd-jwt-compliant-pids">3.3 SD-JWT-compliant PIDs</h3>
+<p>Details on the trust infrastructure for SD-JWT and OpenID4VP-compliant
+PIDs will be detailed in a future version of this document.</p>
+<h2 id="4-references">4 References</h2>
+<p>See <a href="../../../arf/#9-references">Chapter 9</a> of the main ARF 1.4.0 document.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
