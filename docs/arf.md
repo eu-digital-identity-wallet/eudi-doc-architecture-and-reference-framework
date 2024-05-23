@@ -1364,7 +1364,7 @@ trust in the EUDI Wallet ecosystem:
         or mDL attestation type.
 
     -   Relying Parties may try to request attributes from a Wallet
-        Instance for which they have lawful grounds.
+        Instance for which they have no lawful grounds.
 
 -   Relying Parties may try to violate a User\'s privacy by tracking the
     User by processing their data without lawful grounds. They can do
