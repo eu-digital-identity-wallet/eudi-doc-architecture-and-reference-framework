@@ -806,7 +806,7 @@ presentation interface:
 
 Specific use cases integrate one or more of these flows. For detailed
 user journeys across various use cases, please refer to the blueprints
-in [Annex 4](annexes/annex-4/) of the ARF.
+in [Annex 4](#annex-4) of the ARF.
 
 #### 4.2.3 Mobile Apps and Web Browsers 
 
@@ -1124,7 +1124,7 @@ Attestation Rulebooks are defined by different organisations:
 -   Some rulebooks already have been defined by the European Commission,
     in consultation with the eIDAS Expert Group. This concerns the PID
     Rulebook, the mDL Rulebook and the Pseudonym Rulebook. These can be
-    found in \[[Annex 3](annexes/annex-3/)\].
+    found in [Annex 3](#annex-3).
 
 -   The rulebook for an attestation intended to be used across
     organisations and/or across borders can be defined by an
@@ -3129,7 +3129,7 @@ For undated references, the latest version available applies.
 
 -   [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md) - High Level Requirements
 
--  Annex 3 - Rulebooks
+-  [Annex 3] - Rulebooks <span id="annex-3"><span>
 
     -   [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
@@ -3137,7 +3137,7 @@ For undated references, the latest version available applies.
 
     -   Annex 3.3 - Pseudonym rulebook
 
--   Annex 4 - Service Blueprints
+-   Annex 4 - Service Blueprints <span id="annex-4"><span>
 
     -   [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialization and activation
 
