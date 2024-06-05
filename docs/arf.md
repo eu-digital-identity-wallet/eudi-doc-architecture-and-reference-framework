@@ -1904,7 +1904,7 @@ trust relationships are established during issuance:
 
 1.  The Wallet Instance authenticates the PID Provider or Attestation
     Provider using the certificate referred to in [section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle). This ensures that
-    the User can trust that the PID or PID or attestation they are about
+    the User can trust that the PID or attestation they are about
     to receive, is issued by an authenticated PID Provider or
     Attestation Provider respectively. See [section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider) below
     describing how this will be done.
