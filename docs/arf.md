@@ -1505,7 +1505,7 @@ Subsequently, each Registrar includes the CA in a PID Provider Access CA
 Trusted List or Attestation Provider Access CA Trusted List. This
 Trusted List contains at least the trust anchor(s) of the CA. A Wallet
 Instance can use these trust anchors to verify the authenticity of a PID
-Provider or an Attestation Provider access certificates during the
+Provider or an Attestation Provider access certificate during the
 issuance of a PID or an attestation. For more information, see \[Topic
 31\].
 
