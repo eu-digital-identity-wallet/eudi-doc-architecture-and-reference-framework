@@ -2416,7 +2416,7 @@ User before allowing the User to present the attributes. Note that:
 
 -   This trust is not based on the outcome of any verification by the
     Relying Party but is a-priori trust in (in particular) the certified
-    WSCD used by Wallet Instance.
+    WSCD used by the Wallet Instance.
 
 -   Using this method implies that Relying Parties also trust device
     binding, as described in section [6.5.3](#653-wallet-instance-activation). The Relying Party Instance
