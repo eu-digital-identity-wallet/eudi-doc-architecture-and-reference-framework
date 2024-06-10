@@ -3034,7 +3034,7 @@ contributions are valued and recognised.
 ### 8.3 Document Versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
-version control system and the following semantic versioning scheme
+a version control system and the following semantic versioning scheme
 (https://semver.org) will be used for the ARF.
 
 The ARF document will be published under a standardized release
