@@ -3112,7 +3112,7 @@ For undated references, the latest version available applies.
 | \[Topic 19\]       | Annex 2 - EUDI Wallet User Navigation requirements (Dashboard logs for transparency)                                                     |
 | \[Topic 23\]       | Annex 2 - PID issuance and (Q)EAA issuance                                                                                               |
 | \[Topic 25\]       | Annex 2 - Unified definition and controlled vocabulary for attestation attributes                                                        |
-| \[Topic 26\]       | Annex 2 - Attestations' Catalogue                                                                                                        |
+| \[Topic 26\]       | Annex 2 - Attestations Catalogue                                                                                                        |
 | \[Topic 27\]       | Annex 2 - Relying Party registry                                                                                                         |
 | \[Topic 30\]       | Annex 2 - Interaction between EUDI Wallets                                                                                               |
 | \[Topic 31\]       | Annex 2 - PID, Wallet and Attestation Providers registration                                                                             |
