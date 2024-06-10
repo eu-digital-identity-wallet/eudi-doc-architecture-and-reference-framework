@@ -2852,7 +2852,7 @@ Cryptographic Application (WSCA) and Wallet Secure Cryptographic Device
 Threats can be defined according to different threat models, such as the
 STRIDE approach for security threat risks, and the LINDDUN framework for
 privacy threat modelling. Such models allow to inspire and categorise
-threat such as spoofing, tampering, information disclosure, or linking.
+threats such as spoofing, tampering, information disclosure, or linking.
 While security and privacy are closely related, they do start from a
 different mindset. Both security threat modelling and privacy threat
 modelling aim to create a system model, identify threats systematically
