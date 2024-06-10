@@ -2736,7 +2736,7 @@ external components, such as the Wallet users' devices.
 
 Finally, non-cybersecurity requirements should ensure functional
 interoperability of the EUDI Wallet. To this end, the IA aims to define
-a requirement to CABs for functional testing, for example support by
+a requirement to CABs for functional testing, for example supported by
 test-suites or test cases.
 
 #### 7.2.2 Certification of EUDI Wallet solutions in the long term 
