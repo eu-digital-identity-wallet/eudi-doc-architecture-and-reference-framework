@@ -1475,7 +1475,7 @@ These two aspects are discussed in the next two subsections.
 
 A PID Provider Access Certificate Authority or Attestation Provider
 Access Certificate Authority (CA) issues one or more access certificates
-to the PID Provider or to the Attestation Provide. A PID Provider or an
+to the PID Provider or to the Attestation Provider. A PID Provider or an
 Attestation Provider needs such a certificate to authenticate itself
 towards a Wallet Instance when issuing a PID or an attestation to it, as
 described in [section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate
