@@ -2903,7 +2903,7 @@ through work in the CSG:
     including security and privacy, as well as functional requirements
     in order to ensure European interoperability.
 
--   The final EUDI Wallet certification implies a multiplication of
+-   The final EUDI Wallet certification implies a multitude of
     certificates, however, the aim is to minimise this number to the
     extent possible.
 
