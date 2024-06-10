@@ -1798,7 +1798,7 @@ Provider. The Wallet Provider is responsible at least to:
 
 The User will be able to request the Wallet Provider to suspend or
 revoke the Wallet Instance at least in case of loss or theft of the
-Users device. See \[Topic 38\].
+User's device. See \[Topic 38\].
 
 In case the Wallet Instance contains a PID, the PID Provider may request
 the Wallet Provider to revoke the Wallet Instance in case the natural
