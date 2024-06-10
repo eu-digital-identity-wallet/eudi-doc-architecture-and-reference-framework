@@ -2667,7 +2667,7 @@ national certification schemes (following [Article 5c](https://eur-lex.europa.eu
 which will serve as a harmonised guideline for the development of these
 transitory national certification schemes. It will leverage the use of
 relevant and existing CSA certification schemes by establishing
-specifications, procedures and references technical standards for
+specifications, procedures and reference technical standards for
 certification. This can include procedures and methods on how to derive
 evaluation activities from an architecture analysis, as well as a
 reference certification or a minimum set of risks to be mitigated.
