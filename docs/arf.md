@@ -2896,7 +2896,7 @@ through work in the CSG:
 -   The certification scheme will be a composite scheme. The object
     certification will be the entire system (eID scheme, EUDI Wallet,
     management thereof). It will therefore have to align with and rely
-    on other available international standards, certifications schemes,
+    on other available international standards, certification schemes,
     and conformity assessments.
 
 -   Certification should cover both cross-functional requirements,
