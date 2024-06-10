@@ -917,7 +917,7 @@ If all the legal and technical criteria have been met, including:
 
 -   ex-ante supervisory activities by Member State supervisory bodies,
 
--   both the body providing EUDI Wallets and the ng PID Providers have
+-   both the body providing EUDI Wallets and the PID Providers have
     been published by the Commission (in accordance with Article 5d),
 
 -   the information notified by Member States for publication of lists
