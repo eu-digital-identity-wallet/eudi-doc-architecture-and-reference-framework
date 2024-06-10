@@ -2888,7 +2888,7 @@ through work in the CSG:
     Wallet to reach that level of assurance.
 
 -   The transitory schemes are defined by the Member States which may
-    tailor them to their specific Wallets architectures However, the aim
+    tailor them to their specific Wallet architectures. However, the aim
     is to harmonise the underlying principles through the IA and provide
     guidance or common requirements where relevant as no mutual
     recognition of the national certification schemes is provided.
