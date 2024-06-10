@@ -1206,7 +1206,7 @@ updates and adoption:
     obligation or automatic acceptance by any third party, or
     automatically means cross-border recognition.
 
--   The Attestation Rulebooks catalogue can be the in the same
+-   The Attestation Rulebooks catalogue can be in the same
     environment as the catalogue of attributes.
 
 Implementation of these principals will be discussed further in detail.
