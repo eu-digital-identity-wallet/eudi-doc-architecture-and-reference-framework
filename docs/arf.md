@@ -1509,7 +1509,7 @@ Provider or an Attestation Provider access certificates during the
 issuance of a PID or an attestation. For more information, see \[Topic
 31\].
 
-##### 6.2.2.3 PID Provider or Attestation Provider trust anchors are included in a Trusted List
+##### 6.3.2.3 PID Provider or Attestation Provider trust anchors are included in a Trusted List
 
 For a PID Provider, a QEAA Provider, or a PuB-EAA Provider, successful
 registration and notification also means that the Provider and its trust
