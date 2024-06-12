@@ -25,7 +25,7 @@ This PID Rulebook contains the following topics:
     attributes. Two encodings for these attributes are specified, one
     compliant with \[ISO18013-5\], the other compliant with \[SD-JWT VC\].
 
--   [Chapter 3](#33-trust-infrastructure-details) specifies details about the trust infrastructure necessary
+-   [Chapter 3](#3-trust-infrastructure-details) specifies details about the trust infrastructure necessary
     for PIDs, for both ISO/IEC 18013-5-compliant and SD-JWT-VC-compliant
     encodings. This information may be moved to another document in the
     future.
@@ -74,11 +74,11 @@ within the EUDI Wallet, as well as the PID metadata:
 -   [Section 2.5](#25-pid-attribute-encodings) specifies two different encodings for these attributes.
     The first encoding uses Concise Binary Object Representation (CBOR)
     and complies with ISO/IEC 18013-5:2021 \[ISO18013-5\]. The second
-    encoding uses JSON and complies with \[SD-JWT\] and \[OpenID4VP\].
+    encoding uses JSON and complies with \[SD-JWT VC\].
 
-### 2.3 Attestation type and namespace (ISO format)
+### 2.2 Attestation type and namespace (ISO format)
 
-#### 2.3.1 EU-wide attestation type and namespace for PID
+#### 2.2.1 EU-wide attestation type and namespace for PID
 
 The concepts of attestation type and namespace, and the way in which
 they are used, are specified in \[[Topic 12](../annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks)\].
@@ -94,7 +94,7 @@ version of the ISO-compliant PID attribute (defined in this document)
 and any future version.
 
 Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
-for the namespace of the first version of the PID attributes specified in section [2.3](#25-pid-attributes). This namespace clearly indicates that any attributes defined
+for the namespace of the first version of the PID attributes specified in [section 2.4](#24-pid-attributes). This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
 extension(s) or change(s) of the PID attributes defined the next
@@ -106,7 +106,7 @@ is allowed according to ISO/IEC 18013-5.
 PID Providers SHALL use this attestation type and namespace for the
 ISO/IEC 18013-5 compliant attribute encoding specified in [section 2.5.2](#252-isoiec-18013-5-compliant-encoding) only.
 
-#### 2.3.2 Domestic PID namespaces for national attributes
+#### 2.2.2 Domestic PID namespaces for national attributes
 
 ISO/IEC 18013-5 specifies a mechanism called domestic namespaces,
 allowing PID Providers to issue such national attributes to an EUDI
@@ -134,14 +134,13 @@ applicable requirements in \[[Topic 12](../annex-2/annex-2-high-level-requiremen
 
 ### 2.3 SD-JWT VC Type
 
-SD-JWT VC defines the concept of a Verifiable Credential Type (`vct`). A
-type is associated with metadata defining, for example, information
-about the type, a schema defining which claims may or must appear in the
-SD-JWT VC, and how they can be displayed. A type can extend another
-type, which can be leveraged for basing domestic types on an EU-wide
-type as well as for implementing multiple versions of the type. It is
-important to note that type information can be discoverable in an
-automated fashion.
+SD-JWT VC defines the Verifiable Credential Type (`vct`). A type comes
+with associated metadata that, for instance, provides information about
+the type itself, outlines a schema detailing the claims that are
+optional or mandatory in the SD-JWT VC, and specifies their display
+methods. Additionally, a type can inherit from another type, enabling
+the creation of domestic types based on a broader EU-wide standard. The
+information regarding a type can be automatically discovered.
 
 The information provided in this document SHALL be specified as a
 Verifiable Credential Type in the format defined by SD-JWT VC, including
