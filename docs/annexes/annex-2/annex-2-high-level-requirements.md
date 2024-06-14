@@ -201,7 +201,7 @@ B.  User approval:
 *Short description*
 
 This Topic contains the high-level requirements (HLRs) which relate to
-validity checks and revocation of PIDs, attestations (i.e., QEAAs,
+validity checks and revocation of PIDs, attestations (e.g., QEAAs,
 PuB-EAAs and EEAs).
 
 Note: This Topic does not pertain to access certificates for Relying
