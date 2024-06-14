@@ -441,8 +441,8 @@ If attributes are encoded with JSON, they SHALL be encoded as specified
 in \[RFC 8259\].
 
 The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1). Rules to encode CDDL representation types with JSON are specified
-in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] section 6.1 Given the CDDL representation types used in
-the current version of this document, the following rules are relevant:
+in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] section 6.1.
+Given the CDDL representation types used in the current version of this document, the following rules are relevant:
 
 -   A CDDL uint (i.e., an unsigned integer) becomes a JSON number.
 
