@@ -194,7 +194,7 @@ Table 1 contains the following information:
 | birth_date | Day, month, and year on which the PID User was born. | M | full-date |
 | | Please note that the current specification does not yet foresee a solution for the situation when the date of birth of the User is incomplete or unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
 | age_over_18 | Attesting whether the PID User is currently an adult (true) or a minor (false). | M | bool |
-| age_over_NN | Additional current age attestations, NN < 18. | O | bool |
+| age_over_NN | Additional current age attestations, NN ≠ 18. | O | bool |
 | age_in_years | The current age of the PID User in years. | O | uint |
 | age_birth_year | The year when the PID User was born. | O | uint |
 | | Please note that the current specification does not yet foresee a solution for the situation when the birth year of the User is unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
@@ -239,7 +239,7 @@ birth of the PID User:
 
 -   age_over_18 (mandatory)
 
--   age_over_NN, NN \<\> 18 (optional)
+-   age_over_NN, NN ≠ 18 (optional)
 
 Having multiple attributes instead of only one allows having different
 levels of granularity for requests and responses, and thus allows PID
