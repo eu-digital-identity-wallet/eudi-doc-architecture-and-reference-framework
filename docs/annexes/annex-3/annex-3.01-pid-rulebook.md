@@ -403,7 +403,7 @@ MSO from ISO/IEC 18013-5 clause 9.1.2.4.
 Notes:
 
 -   The value of the age_over_18, age_over_NN and age_in_years
-    attributes, if present, changes whenever the PID User has a
+    attributes, if present, may change whenever the PID User has a
     birthday. The value of many other attributes will also change over
     time. It is up to the PID Provider to ensure that the above
     requirement is complied with.
