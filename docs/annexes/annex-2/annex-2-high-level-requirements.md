@@ -200,7 +200,7 @@ B.  User approval:
 
 *Short description*
 
-This Topic contains the high-level requirements (HLR) which relate to
+This Topic contains the high-level requirements (HLRs) which relate to
 validity checks and revocation of PIDs, attestations (i.e., QEAAs,
 PuB-EAAs and EEAs).
 
