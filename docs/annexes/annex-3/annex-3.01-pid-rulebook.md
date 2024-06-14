@@ -380,17 +380,18 @@ specified in \[SD-JWT VC\] must be used. For the latter, attributes must
 be encoded in JSON. For the former, attributes must be encoded in CBOR.
 
 This section therefore specifies two separate encodings for the PID data
-model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and an
 SD-JWT-compliant encoding in JSON.
 
 #### 2.4.2 ISO/IEC 18013-5-compliant encoding
 
 ##### 2.4.2.1 Encoding rules
 
-If attributes specified in in Table 1 are encoded with CBOR, they SHALL
+If attributes specified in Table 1 are encoded with CBOR, they SHALL
 be encoded as specified in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
-The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1) Rules to encode CDDL representation types with CBOR are specified
+The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1).
+Rules to encode CDDL representation types with CBOR are specified in
 \[RFC 8610\] and \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
 ##### 2.4.2.2 Further stipulations
