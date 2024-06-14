@@ -94,7 +94,7 @@ Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
 for the namespace of the first version of the PID attributes specified in section [2.3](#23-pid-attributes). This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
-extension(s) or change(s) of the PID attributes defined the next
+extension(s) or change(s) of the PID attributes defined in the next
 section.
 
 Note that the attestation type and namespace have the same value. This
