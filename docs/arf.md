@@ -363,7 +363,7 @@ viewpoint, this may also imply guaranteeing a User sole control over
 sensitive cryptographic material (e.g., private keys) related to their
 PID and/or (Q)EAA, including the use cases for electronic identification
 and creating a signature or seal. EUDI Wallet Providers provide Wallet
-Trust Evidence (WTE) and Wallet Instance Attestation (WIA).
+Trust Evidence (WTE), Issuer Trust Evidence (ITE) and Wallet Instance Attestation (WIA).
 
 EUDI Wallet Providers are responsible for ensuring compliance with the
 requirements for EUDI Wallets.
@@ -723,7 +723,7 @@ the EUDI Wallet Solution:
 
 -   **Wallet Provider backend (WP**): The Wallet Provider backend offers
     Users support with their Wallet Instances, performs essential
-    maintenance, and issues Wallet Trust Evidences and Wallet Instance
+    maintenance, and issues Wallet Trust Evidences, Issuer Trust Evidences and Wallet Instance 
     Attestations through the Wallet Provider Interface (WPI).
 
 #### 4.2.1 Interfaces and protocols
@@ -1415,7 +1415,7 @@ If the registration and notification processes are successful, the trust
 anchors of the Wallet Provider are included in a Wallet Provider Trusted
 List. During issuance of a PID or an attestation, the PID Provider or
 the Attestation Provider can use these trust anchors to verify the
-authenticity of a Wallet Trust Evidence signed by the Wallet Provider,
+authenticity of a Issuer Trust Evidence signed by the Wallet Provider,
 so they can be sure they are dealing with an authentic Wallet Instance
 from a trusted Wallet Provider. See [section 6.6.3.2](#6632-wallet-instance-authenticates-the-relying-party-instance) and \[Topic 9\].
 Similarly, when the Wallet Instance presents a PID or an attestation to
@@ -1712,12 +1712,22 @@ purposes:
     two main purposes:
 
     -   It describes the capabilities and properties of the Wallet
+        Instance, the User device and the WSCD(s) and lets the Wallet Provider rerecognize its Wallet Instance.
+
+    -   Moreover, the WTE contains a WTE public key. This key can be used
+        to authenticate the Wallet Instance towards the Wallet Provider.
+
+3.  The EUDI Wallet Provider issues a Issuer Trust Evidence (ITE) to the
+    Wallet Instance and behaves similarly to the WTE. The ITE has
+    two main purposes:
+
+    -   It describes the capabilities and properties of the Wallet
         Instance, the User device and the WSCD(s). This allows a PID
         Provider or an Attestation Provider to verify that the Wallet
         Instance complies with the Provider's requirements and therefore
         is fit to receive a PID or an attestation from the Provider.
 
-    -   Moreover, the WTE contains a WTE public key. During the issuance
+    -   Moreover, the ITE contains an ITE public key. During the issuance
         of a PID or an attestation (see [section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance)), a PID Provider
         or Attestation Provider can use this public key to verify that
         the Wallet Instance is in possession of the corresponding
@@ -1728,18 +1738,18 @@ purposes:
         association, described in \[Topic 9\], the PID Provider or
         Attestation Provider can verify that the private key belonging
         to this public key is protected by the same WSCD as the private
-        key belonging to the WTE public key. Thus, the PID Provider or
-        Attestation Provider can trust this new public key.
+        key belonging to the ITE public key. Thus, the PID Provider or
+        Attestation Provider can trust this new public key. The ITE contains a revocation mechanism that enables the Wallet Provider
+        to communicate a compromise of the WSCD.
 
-3.  The Wallet Provider issues a Wallet Instance Attestation (WIA) to
+4.  The Wallet Provider issues a Wallet Instance Attestation (WIA) to
     the Wallet Instance. The WIA contains information allowing a PID
     Provider, an Attestation Provider, or a Relying Party, to verify
     that the Wallet Provider did not revoke the Wallet Instance
-    Attestation (and hence the Wallet Instance itself). The WIA and the
-    revocation mechanisms for Wallet Instances are described in \[Topic
-    38\].
+    Attestation (and hence the Wallet Instance itself), possibly on
+    behalf of the user. The WIA and the revocation mechanisms for Wallet Instances are described in \[Topic 38\].
 
-4.  The Wallet Instance requests the User to set up a User
+5.  The Wallet Instance requests the User to set up a User
     authentication mechanism. User authentication is necessary when (or
     before) the Wallet Instance asks the User for approval to present
     some attributes to a Relying Party, see [section 6.6.3.4](#6634-wallet-instance-obtains-user-approval-for-presenting-attributes). User
@@ -1748,7 +1758,7 @@ purposes:
     with cryptographic keys belonging to the Wallet Instance or to a PID
     or to an attestation.
 
-5.  The Wallet Provider sets up a user account for the User to ensure
+6.  The Wallet Provider sets up a user account for the User to ensure
     that the User can request the suspension or revocation of their
     Wallet Instance in case of theft or loss. The Wallet Provider
     associates the Wallet Instance with the new user account. The Wallet
@@ -1791,10 +1801,15 @@ Provider. The Wallet Provider is responsible at least to:
 -   perform installation of a new version of the Wallet Solution as
     necessary.
 
--   update the WIAs or the WTEs as necessary; see \[Topic 9\].
+-   update the WIAs or the ITEs as necessary; see \[Topic 9\].
 
 -   suspends or revokes the Wallet Instance in case its security is
     compromised; see \[Topic 38\].
+
+Every PID Provider and Attestation Provider SHOULD receive individual ITEs to ensure a privacy-preserving solution and avoid linkability. Therefore the Wallet Instance should regularly request new ITEs.
+
+Every PID Provider, Attestation Provider and Relying Party SHOULD receive
+individual WIAs to ensure a privacy-preserving solution and avoid linkability. Therefore the Wallet Instance should regularly request new WIAs.
 
 The User will be able to request the Wallet Provider to suspend or
 revoke the Wallet Instance at least in case of loss or theft of the
@@ -1829,7 +1844,7 @@ established:
 
 3.  The EUDI Wallet Instance authenticates the EUDI Wallet Provider,
     meaning that the EUDI Wallet Instance is sure that it is dealing
-    with the genuine EUDI Wallet Provider. This must be ensured by the
+    with the genuine EUDI Wallet Provider using the WTE. This must be ensured by the
     Wallet Provider. The ARF does not specify how this trust
     relationship can be satisfied.
 
@@ -1850,7 +1865,7 @@ Wallet Instance revocation:
 
 6.  To identify the Wallet Instance that is to be revoked, the PID
     Provider uses a Wallet Instance identifier provided by the Wallet
-    Provider in the WTE during PID issuance; see \[Topic 9\].
+    Provider in the ITE during PID issuance; see \[Topic 9\].
 
 #### 6.5.5 Wallet Instance de-installation
 
@@ -2005,22 +2020,21 @@ Note:
     EUDI Wallet ecosystem. Each PID Provider or Attestation Provider
     will choose which Trusted Lists they need to subscribe to.
 
-[Section 6.5.3](#653-wallet-instance-activation) above described that a Wallet Provider, during activation
-of a Wallet Instance, issues a Wallet Trust Evidence (WTE) to the Wallet
+[Section 6.5.3](#653-wallet-instance-activation) above described that a Wallet Provider issues an Issuer Trust Evidence (ITE) to the Wallet
 Instance. When the Wallet Instance sends a request for a PID or an
 attestation to a PID Provider or to an Attestation Provider, it includes
-the WTE in the request. The PID Provider or Attestation Provider
-verifies the signature over the WTE, using the Wallet Provider trust
+the ITE in the request. The PID Provider or Attestation Provider
+verifies the signature over the ITE, using the Wallet Provider trust
 anchor obtained from the Trusted List. Next, the PID Provider or
 Attestation Provider verifies that the Wallet Instance possesses the
-private key belonging to the public key in the WTE. This proves that the
+private key belonging to the public key in the ITE. This proves that the
 Wallet Instance is authentic and is provided by a trusted Wallet
 Provider. For more details see \[Topic 9\].
 
 **Optionally, verifies that the User's Wallet Instance supports all
 required features**
 
-The WTE describes relevant features of the Wallet Instance, as well as
+The ITE describes relevant features of the Wallet Instance, as well as
 the device it is installed on. Depending on their needs, PID Providers
 or Attestation Providers optionally verify that the User's Wallet
 Instance supports all features they require. For example, for some PID
@@ -2030,7 +2044,7 @@ flows using NFC.
 
 **Optionally, validates the properties of the WSCD**
 
-The WTE describes the certifications and the other relevant properties
+The ITE describes the certifications and the other relevant properties
 of the WSCD, i.e., the secure cryptographic device used by the Wallet
 Instance to store and manage cryptographic keys. The security level of
 the WSCD is a key determinant for the overall Level of Assurance (LoA)
@@ -2047,8 +2061,8 @@ Provider or Attestation Provider cannot be sure that the private key for
 the PID or their new attestation is indeed protected by that WSCD.
 \[Topic 9\] describes how the PID Provider or Attestation Provider can
 obtain a so-called proof of association from the WSCD. This proof of
-association proves that the WSCD described in the WTE protects both the
-WTE public key and the public key of the PID or the new attestation.
+association proves that the WSCD described in the ITE protects both the
+ITE public key and the public key of the PID or the new attestation.
 
 ##### 6.6.2.4 PID Provider or Attestation Provider verifies that Wallet Instance is not suspended or revoked
 
