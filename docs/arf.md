@@ -1269,7 +1269,7 @@ Wallet Instance in Figure 1. Like Wallet Providers, PID Providers and
 Attestation Providers are registered by a **PID Provider Registrar or by
 an Attestation Provider Registrar** before they can interact with a
 Wallet Instance, and before a Relying Party can verify the PID(s) or
-attestation those Providers issue. As a functionality of the registration, a PID
+attestation those Providers issue. As a consequence of the registration, a PID
 Provider or an Attestation Provider receives an access certificate from
 a **PID Provider Access Certificate Authority (CA)** or from an
 **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes
