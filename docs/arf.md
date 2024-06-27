@@ -334,9 +334,9 @@ Figure 1: Overview of the EUDI Wallet roles
 
 ### 3.1 Users of EUDI Wallet
 
-Users of EUDI Wallets use the EUDI Wallet instance to receive, store and
+Users of EUDI Wallets use the EUDI Wallet Instance to receive, store and
 present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove
-their identity. EUDI Wallet instance Users can also create Qualified
+their identity. EUDI Wallet Instance Users can also create Qualified
 Electronic Signatures and Seals (QES) and utilize wallet-to-wallet
 interactions.
 
