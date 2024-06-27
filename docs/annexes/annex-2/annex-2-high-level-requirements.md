@@ -1210,7 +1210,7 @@ B.  Restore Requirements 
 
 The most relevant scenario for this functionality is when a user would
 like to migrate from one Wallet solution to a different Wallet solution.
-Another scenario would be when the Wallet solution provider ceases to
+Another scenario would be when the Wallet solution Provider ceases to
 support the Wallet solution, or even ceases to exist as a Legal Person,
 and thus the User is forced to abandon the current Wallet solution and
 migrate to a different Wallet solution.
@@ -1256,7 +1256,7 @@ Issuance user journey. 
 | PID_ISS_05 | An EUDI Wallet Instance SHALL inform the PID Provider of successful issuance only after having confirmed the EUDI Wallet User's authorization to approve the PID issuance. |
 | PID_ISS_06 | An EUDI Wallet Instance SHALL support device binding for PID, enabling the EUDI Wallet User to prove possession of the bound device. |
 | PID_ISS_07 | An EUDI Wallet Instance SHALL support an activation procedure for PID Providers to verify that PID is only delivered to its subject. |
-| PID_ISS_08 | An EUDI Wallet Instance SHALL support technical specifications for securely delivering the PID from the PID provider to the device controlled by the EUDI Wallet User. |
+| PID_ISS_08 | An EUDI Wallet Instance SHALL support technical specifications for securely delivering the PID from the PID Provider to the device controlled by the EUDI Wallet User. |
 | PID_ISS_09 | An EUDI Wallet Instance SHALL support technical specifications to notify the PID Provider of the outcome of the PID issuance process, that is -- whether it was successful or not (e.g., PID issued to the EUDI Wallet Instance or PID not stored in the issued to the EUDI Wallet and user is informed accordingly). |
 
 #### A.2.3.36 Topic 36 - Risk Analysis of the EUDI Wallet Usage 
@@ -1357,7 +1357,7 @@ the public sector.  
 | QTSPAS_04 | Authentic source or designated intermediary SHALL define and implement QTSPAS_001 so that the QTSP will receive the result of the verification of the requested attributes, as described in QTSPAS_002. If the verification is deferred, the response to the QTSP SHALL include the maximum time that it will take to verify the requested attributes, and a unique identifier that the QTSP SHALL use to obtain the result of the verification. |
 | QTSPAS_05 | Member States SHALL define QTSPAS_001 so that the request can be sent by the QTSP directly to the Authentic Source or to a designated intermediary recognized at national level. |
 | QTSPAS_06 | Member States SHALL specify the process and mechanisms to designate the authentic sources or intermediaries recognized at national level in accordance with Union or national law, allowing the QTSPs to request the verification of attributes stored in authentic sources. |
-| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on authentic sources within the public sector, for which Member States should ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the user, their authenticity against the relevant authentic source. <p><br> Note: These standards and procedures should be, whenever possible, aligned and compatible with those used for the platforms implementing the Once Only Principle (OOTS). There is a clear synergy of both data exchange approaches. In fact, the national OOP node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
+| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on authentic sources within the public sector, for which Member States should ensure that measures are taken to allow qualified Providers of electronic attestations of attributes to verify by electronic means, at the request of the user, their authenticity against the relevant authentic source. <p><br> Note: These standards and procedures should be, whenever possible, aligned and compatible with those used for the platforms implementing the Once Only Principle (OOTS). There is a clear synergy of both data exchange approaches. In fact, the national OOP node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
 | QTSPAS_08 | QTSP SHALL obtain consent of the user to verify the authenticity of the attributes, before requesting the verification of those attributes to the authentic source or designated intermediary. |
 
 #### A.2.3.43 Topic 43 - Embedded disclosure policy 

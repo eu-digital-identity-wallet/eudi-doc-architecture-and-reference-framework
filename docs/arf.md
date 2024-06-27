@@ -471,7 +471,7 @@ areas such as educational credentials, digital payments, although they
 may also rely on Qualified Electronic Attestation of Attributes
 Providers. For EAAs to be used, TSPs offer Users a way to request and
 obtain EAA, meaning they need to technically comply with EUDI Wallet
-interfaces specifications. Depending on the domain rules, EAA providers
+interfaces specifications. Depending on the domain rules, EAA Providers
 may provide validity information about EAAs, without having an ability
 to receive any information about the use of the EAA. The terms and
 conditions of issuing EAAs and related services are subject to sectoral
@@ -501,7 +501,7 @@ technical interoperability between them and this will enhance
 competition and create better QTSP services.
 
 Besides Qualified Electronic Signatures and Seals, also Non-Qualified
-Electronic Signatures or Seal providers can exist. However,
+Electronic Signatures or Seal Providers can exist. However,
 Non-Qualified Electronic Signature/ Seal Providers are out of scope of
 the ARF.
 
@@ -1054,7 +1054,7 @@ as follows:
 Please note that the differences between these types of attestation are
 purely legal. For example, a diploma may be a QEAA or a non-qualified
 EAA, depending on whether it is issued by a qualified trust service
-provider (QTSP) or by an unqualified one. Similarly, an mDL may be
+Provider (QTSP) or by an unqualified one. Similarly, an mDL may be
 issued as a PuB-EAA, a QEAA, or a non-qualified EAA, depending on the
 legal status of the party issuing mobile driving licenses in each Member
 State, in addition to being an authorized mDL Provider in accordance
@@ -1135,13 +1135,13 @@ Attestation Rulebooks are defined by different organizations:
     semantics between similar attestations. The decision on which
     organization will be responsible for a given attestation rulebook is
     out of scope for this document. As explained in \[Topic 12\], it is
-    possible that an individual attestation provider needs to include
+    possible that an individual attestation Provider needs to include
     attributes in an attestation that have not been specified in the
     relevant sectoral or EU-wide namespace. An example of this are
     attributes that only have a meaning within the Member State in which
-    the attestation provider resides. To allow such domestic attributes,
-    an attestation provider can define a custom namespace to specify
-    attributes that are specific to this provider and are not included
+    the attestation Provider resides. To allow such domestic attributes,
+    an attestation Provider can define a custom namespace to specify
+    attributes that are specific to this Provider and are not included
     in the EU-wide or sectoral namespace.
 
 -   The rulebook for an attestation intended to be used only within an
@@ -1379,7 +1379,7 @@ trust in the EUDI Wallet ecosystem:
 Besides the trust relationships described in this chapter, other trust
 relations are established as well. For instance, Users, PID Providers
 and Attestation Providers, and Relying Parties trust certification
-bodies and Trusted List providers. This trust is primarily rooted in
+bodies and Trusted List Providers. This trust is primarily rooted in
 authority and in procedural measures, such as public oversight,
 published security and operational policies, and audits, rather than in
 technical measures. To verify that parties are indeed interacting with a
@@ -2591,7 +2591,7 @@ certification) against requirements which will be established by:
     down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
 
 -   [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the
-    provision of the EUDI Wallet and any other data held by the provider
+    provision of the EUDI Wallet and any other data held by the Provider
     of the EUDI Wallet;
 
 -   [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on
@@ -2610,7 +2610,7 @@ In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CE
 personal data processing operations against [Regulation (EU)
 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation
 (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to the EUDI Wallets and
-consequently to their providers.
+consequently to their Providers.
 
 [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission shall, by means of IA,
 establish a list of reference standards and, where necessary, establish
