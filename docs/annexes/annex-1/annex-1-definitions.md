@@ -112,4 +112,4 @@ from the eIDAS Regulation or the amendment proposal:**
 
 
 [^1]: <https://www.privacy-regulation.eu/en/article-32-security-of-processing-GDPR.htm>,
-    Article 32, section 1 (c)
+    Article 32, Section 1 (c)
