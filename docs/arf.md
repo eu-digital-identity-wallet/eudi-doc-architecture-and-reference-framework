@@ -204,7 +204,7 @@ ensuring a streamlined and secure experience.
 Details on PID issuance requirements, the PID attribute schema, and the
 Trust Infrastructure are further elaborated in the respective chapters -
 specifically [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations and 
-[Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex_2-high-level-requirements.md) (High level requirements in \[Topic 2\],
+[Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) (High level requirements in \[Topic 2\],
 \[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex-3/annex-3.01-pid-rulebook.md) - PID Rulebook.
 
 ### 2.2 Qualified electronic signature
