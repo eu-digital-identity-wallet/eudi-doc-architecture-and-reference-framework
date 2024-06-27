@@ -45,7 +45,7 @@ are related to the following topics:
 
 -   Requirements for QEAA ([art.45d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3849-1-1))
 
--   Verification of attributes against authentic sources ([art.45e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3883-1-1))
+-   Verification of attributes against Authentic Sources ([art.45e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3883-1-1))
 
 -   Requirements for EAA issued by/on behalf of a public sector body
     (PSB) ([art.45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1))
@@ -456,7 +456,7 @@ QTSP to determine, beyond what is specified in the eIDAS Regulation.
 ### 3.6 Public Body Authentic Source Electronic Attestation of Attributes (PuB-EAA) Providers
 
 Public Body Authentic Source EAAs (PuB-EAAs) are issued by or on behalf
-of a public body responsible for an authentic source. The requirements
+of a public body responsible for an Authentic Source. The requirements
 from Authentic Sources on the issuance and operation of PuB-EAAs are
 intended to enable to Relying Parties to recognize them as QEAA on the
 legal level.
@@ -1041,12 +1041,12 @@ as follows:
     V of the Regulation.
 
 -   **Electronic attestation of attributes issued by or on behalf of a
-    public sector body responsible for an authentic source (PuB-EAA)**:
+    public sector body responsible for an Authentic Source (PuB-EAA)**:
     An electronic attestation of attributes issued by a public sector
-    body that is responsible for an authentic source or by a public
+    body that is responsible for an Authentic Source or by a public
     sector body that is designated by the Member State to issue such
     attestations of attributes on behalf of the public sector bodies
-    responsible for authentic sources in accordance with Article 45f and
+    responsible for Authentic Sources in accordance with Article 45f and
     with Annex VII of the Regulation.
 
 -   **Non-Qualified EAA:** An EAA which is not QEAA or PuB-EAA.
