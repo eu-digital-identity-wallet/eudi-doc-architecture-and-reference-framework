@@ -218,7 +218,7 @@ part of a local QSCD, or a remote QSCD managed by a QTSP \[Topic16\] and
 ### 2.3 Mobile Driving Licence
 
 A significant use case for the EUDI Wallet involves allowing Users to
-acquire, store, and display a mobile Driving Licence (mDL) as an
+acquire, store, and present a mobile Driving Licence (mDL) as an
 attestation to prove their driving privileges. In this use case, the
 User employs an EUDI Wallet to present a mDL to a Relying Party (e.g.,
 the Traffic Police).
