@@ -17,7 +17,7 @@ This mDL Rulebook contains the following topics:
 
 -   [Chapter 2](#2-mdl-attribute-schema) specifies the mDL attribute schema. This describes the
     structure, the type, the entity identifiers, and the logical
-    organisation of the mandatory and optional attributes of the mDL. It
+    organization of the mandatory and optional attributes of the mDL. It
     also describes how Member States can specify any possible national
     attributes.
 
@@ -32,7 +32,7 @@ Further topics will be added if and when they are identified.
 ## 2.1 Introduction
 
 This document describes the structure, type, data element identifiers,
-and logical organisation of the mandatory and optional attributes of the
+and logical organization of the mandatory and optional attributes of the
 mobile driving license (mDL) attestation within the EUDI Wallet. It also
 describes how Member States can specify any possible national
 attributes.
@@ -41,7 +41,7 @@ Mobile driving licenses are legally specified in the [proposed
 EC Regulation 2023_127](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A52023PC0127) ( 4<sup>th</sup> Driving License Regulation). This
 Regulation specifies that mDLs shall comply with the ISO/IEC 18013-5
 standard. It does not mention any other standards, in particular not
-\[SD JWT\]. Consequently, mDLs issued to a EUDI Wallet instance SHALL
+\[SD JWT\]. Consequently, mDLs issued to an EUDI Wallet Instance SHALL
 NOT be implemented as \[SD JWT\]-compliant document. This document
 therefore specifies only an ISO/IEC 18013-5 compliant encoding.
 
