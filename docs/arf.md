@@ -293,7 +293,7 @@ journey in this dynamic sector.
 This chapter describes the EUDI Wallet ecosystem as it
 is foreseen in the Commission's legislative proposal. The different
 roles in the EUDI Wallet ecosystem are described in figure 1 and
-detailed in the following sections.
+detailed in the following Sections.
 
 ![Figure 1: Overview of the EUDI Wallet roles](media/image1.png)
 <!-- <img src="media/image1.png" style="width="7.2131944444444445in"
@@ -1653,7 +1653,7 @@ relationships are established:
     Wallet Solution, the User would not be able to use the Wallet
     Instance for obtaining those PID(s) or attestation(s).
 
-The next two sections discuss these trust relationships.
+The next two Sections discuss these trust relationships.
 
 ##### 6.5.2.2 User verifies Wallet Solution
 
@@ -2776,10 +2776,10 @@ Regulation, to facilitate certification.
 -   **Functional:** Describes functional requirements (i.e. what the
     EUDI Wallet should be able to do, such as provisioning of
     attributes). Most functional requirements are derived in the other
-    sections of the ARF coming from the Toolbox process.
+    Sections of the ARF coming from the Toolbox process.
 
 To provide recommendations on certification, the document describes 121
-requirements across five sections: legal requirements, scheme
+requirements across five Sections: legal requirements, scheme
 requirements, general scheme content, other scheme content and
 annexes.
 
