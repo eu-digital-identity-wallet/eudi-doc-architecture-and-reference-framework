@@ -458,7 +458,7 @@ QTSP to determine, beyond what is specified in the eIDAS Regulation.
 Public Body Authentic Source EAAs (PuB-EAAs) are issued by or on behalf
 of a public body responsible for an authentic source. The requirements
 from Authentic Sources on the issuance and operation of PuB-EAAs are
-indented to enable to Relying Parties to recognise them as QEAA on the
+intended to enable to Relying Parties to recognise them as QEAA on the
 legal level.
 
 ### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
@@ -570,7 +570,7 @@ the Member States.
 
 In the EUDI Wallet ecosystem, commercial actors such as device
 manufacturers and related subsystems providers fulfil an important role
-to enable the EUDI Wallet Solution to work smooth and securely in the
+to enable the EUDI Wallet Solution to work smoothly and securely in the
 hands of the User.
 
 Hence, device manufacturers, and related subsystem providers need to
@@ -757,17 +757,17 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
     Application (WSCA). This interface is specifically designed for
     managing cryptographic assets and executing cryptographic functions.
 
--   **The PID Issuance Interface (PPI)** is based on the \[OpenID4VCI\]
+- **The PID Issuance Interface (PII)** is based on the \[OpenID4VCI\]
     protocol and is used when the wallet instance communicates with a
     PID Provider to request and receive PIDs to be stored within the
     wallet instance.
 
--   **The Attestation Issuance Interfaces** **(AII)** is based on the
+- **The Attestation Issuance Interfaces** **(AII)** is based on the
     \[OpenID4VCI\] protocol and is used by the wallet instance to
     request various attestations that Users wants to include in their
     Wallet Instance.
 
--   **The Remote Signing Interface (RSI)** facilitates communication
+- **The Remote Signing Interface (RSI)** facilitates communication
     between the Wallet Instance and the Qualified Electronic Signature
     (QES) Remote Service Provider. This interface is specifically used
     to execute a QES remote signature.
@@ -784,23 +784,23 @@ This section defines four distinct communication flows between a Wallet
 Instance and a Relying Party, guiding the implementation of the
 presentation interface:
 
--   **Proximity Supervised Flow**: The EUDI Wallet User is physically
+- **Proximity Supervised Flow**: The EUDI Wallet User is physically
     near the Relying Party. Attestations are exchanged using near
     proximity technology (e.g., NFC, Bluetooth) between the Wallet
     Instance and the Relying Party Instance. Both devices may be with or
     without internet connectivity. A human representative of the Relying
     Party supervises the process.
 
--   **Proximity Unsupervised Flow**: Like the supervised flow, but the
+- **Proximity Unsupervised Flow**: Like the supervised flow, but the
     EUDI Wallet presents verifiable attributes to a machine without
     human supervision.
 
--   **Remote Cross-Device Flow**: The EUDI Wallet User views service
+- **Remote Cross-Device Flow**: The EUDI Wallet User views service
     information on a separate device from their EUDI Wallet, which is
     only used to secure the session (e.g., scanning a QR code on a login
     page with the EUDI Wallet to access online services).
 
--   **Remote Same-Device Flow**: The EUDI Wallet User uses their EUDI
+- **Remote Same-Device Flow**: The EUDI Wallet User uses their EUDI
     Wallet device to both secure the session and consume the digital
     service including information exchange.
 
@@ -808,7 +808,7 @@ Specific use cases integrate one or more of these flows. For detailed
 user journeys across various use cases, please refer to the blueprints
 in [Annex 4](annexes/annex_4_service_blueprints/) of the ARF.
 
-#### 4.2.3 Mobile Apps and Web Browsers 
+#### 4.2.3 Mobile Apps and Web Browsers
 
 This section examines the technical interaction between the Wallet
 Solution, web browsers, and mobile apps, in regards of the flows
@@ -830,10 +830,10 @@ As illustrated in figure 2, secure and streamlined interaction with
 other applications, both on the User\'s device and externally, is
 crucial. Key areas for discussion and improvement include:
 
--   **Secure Cross-Device Flows**: Existing cross-device flows need
+- **Secure Cross-Device Flows**: Existing cross-device flows need
     stronger security measures to combat phishing and relay attacks.
 
--   **Relying Party Authentication**: Before sharing attributes, the
+- **Relying Party Authentication**: Before sharing attributes, the
     Wallet Instance must verify the Relying Party, and conversely, the
     Relying Party might authenticate the Wallet Instance. This can
     involve dynamic or static exchange of keys and metadata. Since the
@@ -841,7 +841,7 @@ crucial. Key areas for discussion and improvement include:
     Party and Wallet Instance in the Remote Same-Device flow, it\'s
     crucial to define how this interaction works.
 
--   **Wallet Selection and Invocation**: In scenarios where users have
+- **Wallet Selection and Invocation**: In scenarios where users have
     multiple Wallet Solutions, the process of selecting and activating
     the appropriate Wallet Instance is critical for a seamless
     experience. Clear application interface between the Wallet Instance
@@ -856,19 +856,19 @@ different types of architecture for the EUDI Wallet solution can be
 identified, each leveraging a different type of Wallet Secure
 Cryptographic Device (WSCD):
 
-1.  ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In
+1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In
     this architecture, the Wallet Secure Cryptographic Device is
     situated remotely, separate from the user\'s device, for example -
     implemented by the Wallet Provider using an HSM.
 
-2.  ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a
+2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a
     secure element, external hardware components like smartcards may be
     necessary to enhance security. This architecture involves an
     external Wallet Secure Cryptographic Device that is connected to, or
     interacts with, the User\'s device, to provide cryptographic
     functions, for example - a hardware token or smart card.
 
-3.  ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This
+3. ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This
     architecture refers to a scenario where the Wallet Secure
     Cryptographic Device is integrated directly within the User\'s
     device. This includes solutions like eSIM/eUICC and eSE. In these
@@ -878,7 +878,7 @@ Cryptographic Device (WSCD):
     to the WSCD is facilitated via the operating system of the User
     device.
 
-4.  ***Hybrid architecture***: This architecture combines two or more of
+4. ***Hybrid architecture***: This architecture combines two or more of
     the previous three approaches.
 
 ### 4.4 State diagrams
@@ -912,12 +912,12 @@ eID scheme.
 
 If all the legal and technical criteria have been met, including:
 
--   the certification of the Wallet Solution by accredited and
+- the certification of the Wallet Solution by accredited and
     designated CAB(s),
 
--   ex-ante supervisory activities by Member State supervisory bodies,
+- ex-ante supervisory activities by Member State supervisory bodies,
 
--   both the body providing EUDI Wallets and the ng PID Providers have
+- both the body providing EUDI Wallets and the PID Providers have
     been published by the Commission (in accordance with Article 5d),
 
 -   the information notified by Member States for publication of lists
@@ -1263,13 +1263,13 @@ such as registration and potential scenarios of withdrawal or
 suspension.
 
 One of the main functions of the Wallet Instance is to handle the User's
-PID(s) and attestations. The PID(s) are issued by a **PID Providers and
+PID(s) and attestations. The PID(s) are issued by **PID Providers and
 the attestations by Attestation Providers**, shown to the left of the
 Wallet Instance in Figure 1. Like Wallet Providers, PID Providers and
 Attestation Providers are registered by a **PID Provider Registrar or by
 an Attestation Provider Registrar** before they can interact with a
 Wallet Instance, and before a Relying Party can verify the PID(s) or
-attestation those Providers issue. As a of the registration, a PID
+attestation those Providers issue. As a functionality of the registration, a PID
 Provider or an Attestation Provider receives an access certificate from
 a **PID Provider Access Certificate Authority (CA)** or from an
 **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes
@@ -1364,7 +1364,7 @@ trust in the EUDI Wallet ecosystem:
         or mDL attestation type.
 
     -   Relying Parties may try to request attributes from a Wallet
-        Instance for which they have lawful grounds.
+        Instance for which they have no lawful grounds.
 
 -   Relying Parties may try to violate a User\'s privacy by tracking the
     User by processing their data without lawful grounds. They can do
@@ -1475,7 +1475,7 @@ These two aspects are discussed in the next two subsections.
 
 A PID Provider Access Certificate Authority or Attestation Provider
 Access Certificate Authority (CA) issues one or more access certificates
-to the PID Provider or to the Attestation Provide. A PID Provider or an
+to the PID Provider or to the Attestation Provider. A PID Provider or an
 Attestation Provider needs such a certificate to authenticate itself
 towards a Wallet Instance when issuing a PID or an attestation to it, as
 described in [section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate
