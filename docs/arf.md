@@ -548,7 +548,7 @@ Conformity Assessment Bodies (CAB) are accredited public or private
 bodies, accredited by a national accreditation body designated by Member
 States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible
 for carrying out assessments on which Member States will have to rely
-before issuing a EUDI Wallet or providing the qualified status to a
+before issuing an EUDI Wallet or providing the qualified status to a
 Trust Service Provider.
 
 The EUDI Wallets will need to be certified by CABs. QTSPs shall be
@@ -905,7 +905,7 @@ the states of the Wallet Solution:
 
 Figure 3: State-chart of Wallet Solution
 
-The **Candidate** state is the first state of a EUDI Wallet Solution.
+The **Candidate** state is the first state of an EUDI Wallet Solution.
 This means it is fully implemented and the EUDI Wallet Provider requests
 the solution to be certified as an EUDI Wallet as part of an EUDI Wallet
 eID scheme.
@@ -2251,7 +2251,7 @@ User's decision to present an attribute to a Relying Party. Under no
 circumstances User approval to present data from their EUDI Wallet
 Instance should be construed as lawful grounds for the processing of
 personal data by the Relying Party or any other party. A Relying Party
-requesting or processing personal data from a EUDI Wallet Instance must
+requesting or processing personal data from an EUDI Wallet Instance must
 ensure that it has grounds for lawful processing of that data, according
 to Article 6 of the GDPR.
 
