@@ -917,7 +917,7 @@ If all the legal and technical criteria have been met, including:
 
 -   ex-ante supervisory activities by Member State supervisory bodies,
 
--   both the body providing EUDI Wallets and the ng PID Providers have
+-   both the body providing EUDI Wallets and the PID Providers have
     been published by the Commission (in accordance with Article 5d),
 
 -   the information notified by Member States for publication of lists
@@ -1206,7 +1206,7 @@ updates and adoption:
     obligation or automatic acceptance by any third party, or
     automatically means cross-border recognition.
 
--   The Attestation Rulebooks catalogue can be the in the same
+-   The Attestation Rulebooks catalogue can be in the same
     environment as the catalogue of attributes.
 
 Implementation of these principals will be discussed further in detail.
@@ -1218,9 +1218,9 @@ that will be implemented in the eco-system.
 
 \[Topic 25\] and \[Topic 26\] (combined into one topic), present the
 current and foreseen status of the catalogues, their creation,
-distribution, discover, management and maintenance, that will allow
-simple updates procedures, not burdening the process on the one hand,
-while ensuring consistent and on-going mechanism to keep the catalogues
+distribution, discovery, management and maintenance, will allow
+simple update procedures, not burdening the process on the one hand,
+while ensuring consistent and on-going mechanisms to keep the catalogues
 updated and accessible to the relevant actors, both those that create
 the content and those that use, consume and process the attributes and
 the attestations, and - last but not least - for the general public.
@@ -1475,7 +1475,7 @@ These two aspects are discussed in the next two subsections.
 
 A PID Provider Access Certificate Authority or Attestation Provider
 Access Certificate Authority (CA) issues one or more access certificates
-to the PID Provider or to the Attestation Provide. A PID Provider or an
+to the PID Provider or to the Attestation Provider. A PID Provider or an
 Attestation Provider needs such a certificate to authenticate itself
 towards a Wallet Instance when issuing a PID or an attestation to it, as
 described in [section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate
@@ -1505,7 +1505,7 @@ Subsequently, each Registrar includes the CA in a PID Provider Access CA
 Trusted List or Attestation Provider Access CA Trusted List. This
 Trusted List contains at least the trust anchor(s) of the CA. A Wallet
 Instance can use these trust anchors to verify the authenticity of a PID
-Provider or an Attestation Provider access certificates during the
+Provider or an Attestation Provider access certificate during the
 issuance of a PID or an attestation. For more information, see \[Topic
 31\].
 
@@ -1798,7 +1798,7 @@ Provider. The Wallet Provider is responsible at least to:
 
 The User will be able to request the Wallet Provider to suspend or
 revoke the Wallet Instance at least in case of loss or theft of the
-Users device. See \[Topic 38\].
+User's device. See \[Topic 38\].
 
 In case the Wallet Instance contains a PID, the PID Provider may request
 the Wallet Provider to revoke the Wallet Instance in case the natural
@@ -2416,7 +2416,7 @@ User before allowing the User to present the attributes. Note that:
 
 -   This trust is not based on the outcome of any verification by the
     Relying Party but is a-priori trust in (in particular) the certified
-    WSCD used by Wallet Instance.
+    WSCD used by the Wallet Instance.
 
 -   Using this method implies that Relying Parties also trust device
     binding, as described in section [6.5.3](#653-wallet-instance-activation). The Relying Party Instance
@@ -2667,7 +2667,7 @@ national certification schemes (following [Article 5c](https://eur-lex.europa.eu
 which will serve as a harmonised guideline for the development of these
 transitory national certification schemes. It will leverage the use of
 relevant and existing CSA certification schemes by establishing
-specifications, procedures and references technical standards for
+specifications, procedures and reference technical standards for
 certification. This can include procedures and methods on how to derive
 evaluation activities from an architecture analysis, as well as a
 reference certification or a minimum set of risks to be mitigated.
@@ -2736,7 +2736,7 @@ external components, such as the Wallet users' devices.
 
 Finally, non-cybersecurity requirements should ensure functional
 interoperability of the EUDI Wallet. To this end, the IA aims to define
-a requirement to CABs for functional testing, for example support by
+a requirement to CABs for functional testing, for example supported by
 test-suites or test cases.
 
 #### 7.2.2 Certification of EUDI Wallet solutions in the long term 
@@ -2852,7 +2852,7 @@ Cryptographic Application (WSCA) and Wallet Secure Cryptographic Device
 Threats can be defined according to different threat models, such as the
 STRIDE approach for security threat risks, and the LINDDUN framework for
 privacy threat modelling. Such models allow to inspire and categorise
-threat such as spoofing, tampering, information disclosure, or linking.
+threats such as spoofing, tampering, information disclosure, or linking.
 While security and privacy are closely related, they do start from a
 different mindset. Both security threat modelling and privacy threat
 modelling aim to create a system model, identify threats systematically
@@ -2888,7 +2888,7 @@ through work in the CSG:
     Wallet to reach that level of assurance.
 
 -   The transitory schemes are defined by the Member States which may
-    tailor them to their specific Wallets architectures However, the aim
+    tailor them to their specific Wallet architectures. However, the aim
     is to harmonise the underlying principles through the IA and provide
     guidance or common requirements where relevant as no mutual
     recognition of the national certification schemes is provided.
@@ -2896,14 +2896,14 @@ through work in the CSG:
 -   The certification scheme will be a composite scheme. The object
     certification will be the entire system (eID scheme, EUDI Wallet,
     management thereof). It will therefore have to align with and rely
-    on other available international standards, certifications schemes,
+    on other available international standards, certification schemes,
     and conformity assessments.
 
 -   Certification should cover both cross-functional requirements,
     including security and privacy, as well as functional requirements
     in order to ensure European interoperability.
 
--   The final EUDI Wallet certification implies a multiplication of
+-   The final EUDI Wallet certification implies a multitude of
     certificates, however, the aim is to minimise this number to the
     extent possible.
 
@@ -3034,7 +3034,7 @@ contributions are valued and recognised.
 ### 8.3 Document Versioning
 
 To avoid interoperability issues and changes to the ARF going unnoticed,
-version control system and the following semantic versioning scheme
+a version control system and the following semantic versioning scheme
 (https://semver.org) will be used for the ARF.
 
 The ARF document will be published under a standardized release
@@ -3112,7 +3112,7 @@ For undated references, the latest version available applies.
 | \[Topic 19\]       | Annex 2 - EUDI Wallet User Navigation requirements (Dashboard logs for transparency)                                                     |
 | \[Topic 23\]       | Annex 2 - PID issuance and (Q)EAA issuance                                                                                               |
 | \[Topic 25\]       | Annex 2 - Unified definition and controlled vocabulary for attestation attributes                                                        |
-| \[Topic 26\]       | Annex 2 - Attestations' Catalogue                                                                                                        |
+| \[Topic 26\]       | Annex 2 - Attestations Catalogue                                                                                                        |
 | \[Topic 27\]       | Annex 2 - Relying Party registry                                                                                                         |
 | \[Topic 30\]       | Annex 2 - Interaction between EUDI Wallets                                                                                               |
 | \[Topic 31\]       | Annex 2 - PID, Wallet and Attestation Providers registration                                                                             |
