@@ -804,7 +804,7 @@ presentation interface:
     Wallet device to both secure the session and consume the digital
     service including information exchange.
 
-Specific use cases integrate one or more of these flows. For detailed
+Specific use cases may integrate one or more of these flows. For detailed
 user journeys across various use cases, please refer to the blueprints
 in [Annex 4](#annex-4) of the ARF.
 
