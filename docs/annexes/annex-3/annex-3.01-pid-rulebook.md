@@ -94,7 +94,7 @@ Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
 for the namespace of the first version of the PID attributes specified in section [2.3](#23-pid-attributes). This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
-extension(s) or change(s) of the PID attributes defined the next
+extension(s) or change(s) of the PID attributes defined in the next
 section.
 
 Note that the attestation type and namespace have the same value. This
@@ -194,7 +194,7 @@ Table 1 contains the following information:
 | birth_date | Day, month, and year on which the PID User was born. | M | full-date |
 | | Please note that the current specification does not yet foresee a solution for the situation when the date of birth of the User is incomplete or unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
 | age_over_18 | Attesting whether the PID User is currently an adult (true) or a minor (false). | M | bool |
-| age_over_NN | Additional current age attestations, NN < 18. | O | bool |
+| age_over_NN | Additional current age attestations, NN ≠ 18. | O | bool |
 | age_in_years | The current age of the PID User in years. | O | uint |
 | age_birth_year | The year when the PID User was born. | O | uint |
 | | Please note that the current specification does not yet foresee a solution for the situation when the birth year of the User is unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
@@ -239,7 +239,7 @@ birth of the PID User:
 
 -   age_over_18 (mandatory)
 
--   age_over_NN, NN \<\> 18 (optional)
+-   age_over_NN, NN ≠ 18 (optional)
 
 Having multiple attributes instead of only one allows having different
 levels of granularity for requests and responses, and thus allows PID
@@ -380,17 +380,18 @@ specified in \[SD-JWT VC\] must be used. For the latter, attributes must
 be encoded in JSON. For the former, attributes must be encoded in CBOR.
 
 This section therefore specifies two separate encodings for the PID data
-model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and an
 SD-JWT-compliant encoding in JSON.
 
 #### 2.4.2 ISO/IEC 18013-5-compliant encoding
 
 ##### 2.4.2.1 Encoding rules
 
-If attributes specified in in Table 1 are encoded with CBOR, they SHALL
+If attributes specified in Table 1 are encoded with CBOR, they SHALL
 be encoded as specified in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
-The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1) Rules to encode CDDL representation types with CBOR are specified
+The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1).
+Rules to encode CDDL representation types with CBOR are specified in
 \[RFC 8610\] and \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
 ##### 2.4.2.2 Further stipulations
@@ -402,7 +403,7 @@ MSO from ISO/IEC 18013-5 clause 9.1.2.4.
 Notes:
 
 -   The value of the age_over_18, age_over_NN and age_in_years
-    attributes, if present, changes whenever the PID User has a
+    attributes, if present, may change whenever the PID User has a
     birthday. The value of many other attributes will also change over
     time. It is up to the PID Provider to ensure that the above
     requirement is complied with.
@@ -440,8 +441,8 @@ If attributes are encoded with JSON, they SHALL be encoded as specified
 in \[RFC 8259\].
 
 The CDDL representation types used in Table 1 are specified in [section 2.3.1](#231-introduction-introduction-1). Rules to encode CDDL representation types with JSON are specified
-in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] section 6.1 Given the CDDL representation types used in
-the current version of this document, the following rules are relevant:
+in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] section 6.1.
+Given the CDDL representation types used in the current version of this document, the following rules are relevant:
 
 -   A CDDL uint (i.e., an unsigned integer) becomes a JSON number.
 
