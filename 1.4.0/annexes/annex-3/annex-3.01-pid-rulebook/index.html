@@ -756,7 +756,7 @@ and any future version.</p>
 for the namespace of the first version of the PID attributes specified in section <a href="#23-pid-attributes">2.3</a>. This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
-extension(s) or change(s) of the PID attributes defined the next
+extension(s) or change(s) of the PID attributes defined in the next
 section.</p>
 <p>Note that the attestation type and namespace have the same value. This
 is allowed according to ISO/IEC 18013-5.</p>
@@ -898,7 +898,7 @@ mandatory attribute if requested.</p>
 </tr>
 <tr>
 <td>age_over_NN</td>
-<td>Additional current age attestations, NN &lt; 18.</td>
+<td>Additional current age attestations, NN ≠ 18.</td>
 <td>O</td>
 <td>bool</td>
 </tr>
@@ -1074,7 +1074,7 @@ birth of the PID User:</p>
 <p>age_over_18 (mandatory)</p>
 </li>
 <li>
-<p>age_over_NN, NN \&lt;&gt; 18 (optional)</p>
+<p>age_over_NN, NN ≠ 18 (optional)</p>
 </li>
 </ul>
 <p>Having multiple attributes instead of only one allows having different
@@ -1235,13 +1235,14 @@ specified in ISO/IEC 18013-5:2021 [ISO18013-5] and the format
 specified in [SD-JWT VC] must be used. For the latter, attributes must
 be encoded in JSON. For the former, attributes must be encoded in CBOR.</p>
 <p>This section therefore specifies two separate encodings for the PID data
-model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and an
 SD-JWT-compliant encoding in JSON.</p>
 <h4 id="242-isoiec-18013-5-compliant-encoding">2.4.2 ISO/IEC 18013-5-compliant encoding</h4>
 <h5 id="2421-encoding-rules">2.4.2.1 Encoding rules</h5>
-<p>If attributes specified in in Table 1 are encoded with CBOR, they SHALL
+<p>If attributes specified in Table 1 are encoded with CBOR, they SHALL
 be encoded as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
-<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a> Rules to encode CDDL representation types with CBOR are specified
+<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a>.
+Rules to encode CDDL representation types with CBOR are specified in
 [RFC 8610] and [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
 <h5 id="2422-further-stipulations">2.4.2.2 Further stipulations</h5>
 <p>The value of all attributes (both PID attributes and PID metadata) SHALL
@@ -1251,7 +1252,7 @@ MSO from ISO/IEC 18013-5 clause 9.1.2.4.</p>
 <ul>
 <li>
 <p>The value of the age_over_18, age_over_NN and age_in_years
-    attributes, if present, changes whenever the PID User has a
+    attributes, if present, may change whenever the PID User has a
     birthday. The value of many other attributes will also change over
     time. It is up to the PID Provider to ensure that the above
     requirement is complied with.</p>
@@ -1282,8 +1283,8 @@ Instance.</p>
 <p>If attributes are encoded with JSON, they SHALL be encoded as specified
 in [RFC 8259].</p>
 <p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a>. Rules to encode CDDL representation types with JSON are specified
-in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>] section 6.1 Given the CDDL representation types used in
-the current version of this document, the following rules are relevant:</p>
+in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>] section 6.1.
+Given the CDDL representation types used in the current version of this document, the following rules are relevant:</p>
 <ul>
 <li>
 <p>A CDDL uint (i.e., an unsigned integer) becomes a JSON number.</p>
