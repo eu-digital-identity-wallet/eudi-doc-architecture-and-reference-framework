@@ -1218,7 +1218,7 @@ that will be implemented in the eco-system.
 
 \[Topic 25\] and \[Topic 26\] (combined into one topic), present the
 current and foreseen status of the catalogues, their creation,
-distribution, discovery, management and maintenance, will allow
+distribution, discovery, management and maintenance, that will allow
 simple update procedures, not burdening the process on the one hand,
 while ensuring consistent and on-going mechanisms to keep the catalogues
 updated and accessible to the relevant actors, both those that create
