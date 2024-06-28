@@ -204,8 +204,8 @@ ensuring a streamlined and secure experience.
 Details on PID issuance requirements, the PID attribute schema, and the
 Trust Infrastructure are further elaborated in the respective chapters -
 specifically [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations and 
-[Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex_2_high_level_requirements/annex_2_high_level_requirements.md) (High level requirements in \[Topic 2\],
-\[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex_3_attestation_rulebooks/annex_3.01_pid_rulebook.md) - PID Rulebook.
+[Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) (High level requirements in \[Topic 2\],
+\[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex-3/annex-3.01-pid-rulebook.md) - PID Rulebook.
 
 ### 2.2 Qualified electronic signature
 
@@ -235,7 +235,7 @@ without human oversight.
 
 (Q)EAA issuance requirements, mDL attribute schema and Trust
 Infrastructure details are further detailed specifically in [Chapter 3](#3-ecosystem) -
-Ecosystem, [Chapter 5](#5-attestations) - Attestations, and in [Annex 2](annexes/annex_2_high_level_requirements/annex_2_high_level_requirements.md) - \[Topic 2\],
+Ecosystem, [Chapter 5](#5-attestations) - Attestations, and in [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) - \[Topic 2\],
 \[Topic 3\], \[Topic 10\] and \[Topic 23\].
 
 ### 2.4 Pseudonyms
@@ -806,7 +806,7 @@ presentation interface:
 
 Specific use cases integrate one or more of these flows. For detailed
 user journeys across various use cases, please refer to the blueprints
-in [Annex 4](annexes/annex_4_service_blueprints/) of the ARF.
+in [Annex 4](#annex-4) of the ARF.
 
 #### 4.2.3 Mobile Apps and Web Browsers 
 
@@ -1124,7 +1124,7 @@ Attestation Rulebooks are defined by different organisations:
 -   Some rulebooks already have been defined by the European Commission,
     in consultation with the eIDAS Expert Group. This concerns the PID
     Rulebook, the mDL Rulebook and the Pseudonym Rulebook. These can be
-    found in \[[Annex 3](annexes/annex_3_attestation_rulebooks/)\].
+    found in [Annex 3](#annex-3).
 
 -   The rulebook for an attestation intended to be used across
     organisations and/or across borders can be defined by an
@@ -2760,7 +2760,7 @@ certification schemes to the dedicated cybersecurity certification
 scheme under the CSA.
 
 A visual description of the overall EUDI Wallet certification process
-can be found in \[[annex 6](./annexes/annex_6_including_hltrs_excel_files/annex_6_certification_requirements.pdf)\].
+can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
 
 ### 7.3 High-Level Requirements (HLR)
 
@@ -2801,7 +2801,7 @@ annexes.
     compliance monitoring.
 
 Detailed information outlining the HLR certification requirements can be
-found in \[[annex 6](./annexes/annex_6_including_hltrs_excel_files/annex_6_certification_requirements.pdf)\].
+found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
 
 ### 7.4 Risk-based approach and risk registry
 
@@ -2913,7 +2913,7 @@ through work in the CSG:
 ### 7.6 Supporting documents
 
 Supporting documents applicable to the certification of the EUDI Wallet
-ecosystem have been assembled in \[[annex 6](./annexes/annex_6_including_hltrs_excel_files/annex_6_certification_requirements.pdf)\].
+ecosystem have been assembled in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
 
 ## 8 Document development
 
@@ -3129,7 +3129,7 @@ For undated references, the latest version available applies.
 
 -   [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md) - High Level Requirements
 
--  Annex 3 - Rulebooks
+-  [Annex 3] - Rulebooks <span id="annex-3"><span>
 
     -   [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
@@ -3137,7 +3137,7 @@ For undated references, the latest version available applies.
 
     -   Annex 3.3 - Pseudonym rulebook
 
--   Annex 4 - Service Blueprints
+-   Annex 4 - Service Blueprints <span id="annex-4"><span>
 
     -   [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialization and activation
 
