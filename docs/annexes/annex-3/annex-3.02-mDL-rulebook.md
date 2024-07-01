@@ -17,7 +17,7 @@ This mDL Rulebook contains the following topics:
 
 -   [Chapter 2](#2-mdl-attribute-schema) specifies the mDL attribute schema. This describes the
     structure, the type, the entity identifiers, and the logical
-    organization of the mandatory and optional attributes of the mDL. It
+    organisation of the mandatory and optional attributes of the mDL. It
     also describes how Member States can specify any possible national
     attributes.
 
@@ -32,7 +32,7 @@ Further topics will be added if and when they are identified.
 ## 2.1 Introduction
 
 This document describes the structure, type, data element identifiers,
-and logical organization of the mandatory and optional attributes of the
+and logical organisation of the mandatory and optional attributes of the
 mobile driving license (mDL) attestation within the EUDI Wallet. It also
 describes how Member States can specify any possible national
 attributes.
