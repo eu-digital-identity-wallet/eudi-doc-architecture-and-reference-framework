@@ -385,8 +385,8 @@ determine.
 
 PID Providers may e.g., be the same organisations that today issue
 official identity documents, electronic identity means, EUDI Wallet
-Providers etc. EUDI Wallet Providers may be the same organizations as
-PID Providers. In case an organization acts as both a PID Provider and a
+Providers etc. EUDI Wallet Providers may be the same organisations as
+PID Providers. In case an organisation acts as both a PID Provider and a
 Wallet Provider, it shall comply with all requirements for both PID
 Providers and Wallet Providers.
 
@@ -458,7 +458,7 @@ QTSP to determine, beyond what is specified in the eIDAS Regulation.
 Public Body Authentic Source EAAs (PuB-EAAs) are issued by or on behalf
 of a public body responsible for an Authentic Source. The requirements
 from Authentic Sources on the issuance and operation of PuB-EAAs are
-intended to enable to Relying Parties to recognize them as QEAA on the
+intended to enable to Relying Parties to recognise them as QEAA on the
 legal level.
 
 ### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
