@@ -53,7 +53,7 @@ This document uses the terminology specified in [Annex 1](../annex-1/annex-1-def
 ### 2.1 Overview
 
 This chapter describes the structure, type, attribute identifiers and
-logical organization of the mandatory and optional attributes of the PID
+logical organisation of the mandatory and optional attributes of the PID
 within the EUDI Wallet, as well as the PID metadata:
 
 -   [Section 2.2](#22-attestation-type-and-namespace) specifies the attestation type and namespace(s) for a
@@ -85,7 +85,7 @@ for PIDs. This value follows the recommendation in ISO/IEC 18013-5 to
 use the general format \[Reverse Domain\].\[Domain Specific Extension\].
 Since the European Commission controls the domain ec.europa.eu, this
 attestation type value will not collide with any attestation type
-potentially defined by other organizations. The version number "1" in
+potentially defined by other organisations. The version number "1" in
 this attestation type MAY be used to distinguish between the first
 version of the ISO-compliant PID attribute (defined in this document)
 and any future version.
@@ -301,7 +301,7 @@ address of the PID Users
 
 Having multiple attributes instead of only one allows different levels
 of granularity for requests and responses, and thus allows PID Providers
-and Relying Parties to practice data minimization. For example, in some
+and Relying Parties to practice data minimisation. For example, in some
 contexts a Relying Party must verify only that the PID User is a
 resident of a certain country. Releasing more specific address
 information such as state, city or postal code would then constitute an
