@@ -83,7 +83,7 @@ annexes with:
     contains specific requirements to the PID, mDL and pseudonyms
     attestation, accordingly.
 
-**The capitalized imperatives in the document are used in accordance
+**The capitalised imperatives in the document are used in accordance
 with [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).**
 
 This document itself holds **no legal value** and **shall not prejudge the final mandatory legal requirements** for European Digital Identity
@@ -169,7 +169,7 @@ following use cases:
 
 -   Qualified Electronic Signature, see [Section 2.2](#22-qualified-electronic-signature) 
 
--   Mobile Driving License, see [Section 2.3](#23-mobile-driving-licence)
+-   Mobile Driving Licence, see [Section 2.3](#23-mobile-driving-licence)
 
 -   Pseudonyms, see [Section 2.4](#24-pseudonyms).
 
@@ -197,7 +197,7 @@ This scenario covers the complete lifecycle of the EUDI Wallet from the
 User\'s perspective. It spans from acquiring a valid Wallet Instance to
 the process of identifying and authenticating themselves for an online
 service. The focus here is on a practical remote same-device flow (as
-detailed in [Section 4.2.2](#422-attestation-presentation-flows) and [4.2.3](#423-mobile-apps-and-web-browsers)). In this context, a User utilizes a
+detailed in [Section 4.2.2](#422-attestation-presentation-flows) and [4.2.3](#423-mobile-apps-and-web-browsers)). In this context, a User utilises a
 single device for both securing their session and accessing the service,
 ensuring a streamlined and secure experience.
 
@@ -215,10 +215,10 @@ authentication and signature / seal capabilities of the EUDI Wallet as a
 part of a local QSCD, or a remote QSCD managed by a QTSP \[Topic16\] and
 \[Topic 37\].
 
-### 2.3 Mobile Driving License
+### 2.3 Mobile Driving Licence
 
 A significant use case for the EUDI Wallet involves allowing Users to
-acquire, store, and present a mobile Driving License (mDL) as an
+acquire, store, and present a mobile Driving Licence (mDL) as an
 attestation to prove their driving privileges. In this use case, the
 User employs an EUDI Wallet to present a mDL to a Relying Party (e.g.,
 the Traffic Police).
@@ -248,7 +248,7 @@ example, a PID Provider or a QTSP.
 The pseudonym in this use case is not designed to fit all possible use
 cases and to comply with all possible requirements. Rather, it is
 intended for basic use case, namely allowing a Relying Party to
-recognize a User as someone about whom the Relying Party already knows
+recognise a User as someone about whom the Relying Party already knows
 something, or with whom the Relying Party has interacted before.
 
 ### 2.5 Other use cases
@@ -337,7 +337,7 @@ Figure 1: Overview of the EUDI Wallet roles
 Users of EUDI Wallets use the EUDI Wallet Instance to receive, store and
 present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove
 their identity. EUDI Wallet Instance Users can also create Qualified
-Electronic Signatures and Seals (QES) and utilize wallet-to-wallet
+Electronic Signatures and Seals (QES) and utilise wallet-to-wallet
 interactions.
 
 Who can be a User of an EUDI Wallet depends on national law. The use of
@@ -348,8 +348,8 @@ the implementing acts referred to in the Regulation.
 
 ### 3.2 EUDI Wallet Providers
 
-EUDI Wallet Providers are Member States or organizations either mandated
-or recognized by Member States making the EUDI Wallet available for end
+EUDI Wallet Providers are Member States or organisations either mandated
+or recognised by Member States making the EUDI Wallet available for end
 Users. The terms and conditions of the mandate or recognition are for
 each Member State to determine.
 
@@ -375,7 +375,7 @@ PID Providers are trusted entities responsible to:
 -   verify the identity of the EUDI Wallet User in compliance with LoA
     high requirements,
 
--   issue PID to the EUDI Wallet in a harmonized common format, and
+-   issue PID to the EUDI Wallet in a harmonised common format, and
 
 -   make available information for Relying Parties to verify the
     validity of the PID.
@@ -383,7 +383,7 @@ PID Providers are trusted entities responsible to:
 The terms and conditions of these services are for each Member State to
 determine.
 
-PID Providers may e.g., be the same organizations that today issue
+PID Providers may e.g., be the same organisations that today issue
 official identity documents, electronic identity means, EUDI Wallet
 Providers etc. EUDI Wallet Providers may be the same organizations as
 PID Providers. In case an organization acts as both a PID Provider and a
@@ -508,15 +508,15 @@ the ARF.
 ### 3.9 Authentic Sources
 
 Authentic Sources are the public or private repositories or systems
-recognized or required by law containing attributes about natural and/
+recognised or required by law containing attributes about natural and/
 or legal persons. The Authentic Sources in scope of Article 45e are sources for, e.g. attributes on address,
 age, gender, civil status, family composition, nationality, education
-and training qualifications titles and licenses, professional
-qualifications titles and licenses, public permits and licenses,
+and training qualifications titles and licences, professional
+qualifications titles and licences, public permits and licences,
 financial and company data. Authentic Sources in scope of Article 45e are
 required to provide interfaces to QEAA Providers to verify the
 authenticity of the above attributes, either directly or via designated
-intermediaries recognized at national level. Authentic Sources may also
+intermediaries recognised at national level. Authentic Sources may also
 issue PuB-EEAs themselves if they meet the requirements of the eIDAS
 Regulation. In figure 1 this is indicated by the arrow 'provides qualified data'.
 
@@ -569,7 +569,7 @@ the Member States.
 ### 3.13 Device Manufacturers and Related Subsystems Providers
 
 In the EUDI Wallet ecosystem, commercial actors such as device
-manufacturers and related subsystems providers fulfill an important role
+manufacturers and related subsystems providers fulfil an important role
 to enable the EUDI Wallet Solution to work smoothly and securely in the
 hands of the User.
 
@@ -588,7 +588,7 @@ secure cryptographic hardware, libraries, and app stores.
 Relying Parties to discover and validate (Q)EAAs. The Commission sets
 out the minimum technical specifications, standards, and procedures for
 this purpose. Common schemas, including by sector- specific
-organizations are critical for wide-spread adoption of (Q)EAAs.
+organisations are critical for wide-spread adoption of (Q)EAAs.
 
 ### 3.15 National Accreditation Bodies 
 
@@ -621,7 +621,7 @@ regulatory alignment and excellence in the EUDI Wallet\'s design.
 
 #### 4.1.1 User-centricity
 
-The EUDI Wallet prioritizes user-centricity as a core design principle.
+The EUDI Wallet prioritises user-centricity as a core design principle.
 This means placing user needs and experience at the forefront of every
 design decision. The wallet should be intuitive and easy to use, with
 seamless integration into existing use cases. Users should have clear
@@ -635,12 +635,12 @@ digital identity management.
 
 #### 4.1.2 Interoperability
 
-The EUDI Wallet prioritizes interoperability as a core design principle.
+The EUDI Wallet prioritises interoperability as a core design principle.
 This ensures the wallet functions seamlessly across borders within the
-EU. Users can travel freely and confidently utilize their digital
+EU. Users can travel freely and confidently utilise their digital
 identity wallets for various services, from e-government platforms to
 private online interactions. Interoperability fosters secure data
-exchange through standardized protocols, allowing trusted entities to
+exchange through standardised protocols, allowing trusted entities to
 verify credentials effortlessly. This not only simplifies the user
 experience but also strengthens overall security within the system.
 Moreover, interoperability prevents market fragmentation by creating a
@@ -654,7 +654,7 @@ universally accepted digital identity ecosystem across the EU.
 
 The EUDI wallet architecture embodies the principle of privacy by
 design. This means that the protection of user data is a fundamental
-pillar of the wallet\'s design. The principle of data minimization
+pillar of the wallet\'s design. The principle of data minimisation
 guides the collection of personal information, ensuring only what is
 necessary is gathered. The wallet empowers users with granular control
 over what data is shared and with whom. Transparency is built into the
@@ -668,7 +668,7 @@ The EUDI wallet architecture embraces the principle of security by
 design. This means security considerations are woven into the very
 fabric of the wallet\'s design. Throughout the design process, potential
 vulnerabilities are identified and mitigated. Secure coding practices
-are mandated, and the architecture itself minimizes attack surfaces by
+are mandated, and the architecture itself minimises attack surfaces by
 compartmentalizing sensitive data and access controls. By prioritizing
 security from the outset, the EUDI wallet aims to be inherently
 resistant to cyberattacks and data breaches, fostering trust and user
@@ -1064,7 +1064,7 @@ with the rules applicable for mDL Providers.
 
 All attestations can be described to have the following elements:
 
--   **Attribute schema** defines the structure, logical organization,
+-   **Attribute schema** defines the structure, logical organisation,
     type and namespace(s) of the attested attributes as well as
     additional information such as information about the attestation,
     its issuer, the verification mechanisms, the underlying identity
@@ -1072,13 +1072,13 @@ All attestations can be described to have the following elements:
     and the proof of possession by the legitimate User.
 
 -   **Data formats** define the way data in an attestation is formatted,
-    e.g. its character sets, encoding and serialization.
+    e.g. its character sets, encoding and serialisation.
 
 -   **Proof mechanisms** define the methods used to secure the
     attestations for integrity and authenticity, including for selective
     disclosure.
 
-There are only a few suitable standardized formats for releasing
+There are only a few suitable standardised formats for releasing
 electronic attestations of attributes currently available. These are:
 
 1.  ISO/IEC 18013-5 defines an attribute schema, data format and proof
@@ -1109,7 +1109,7 @@ Rulebook has been introduced. For each type of attestation, such as PID,
 a pseudonym, an mDL, a diploma, an e-prescription, and so on, an
 Attestation Rulebook specifies the attribute schema, data format and
 proof mechanisms of that attestation, and, when required, the trust
-mechanisms for authentication and authorization. Each attestation has an
+mechanisms for authentication and authorisation. Each attestation has an
 attestation type and namespace(s) it uses. The namespace(s) used by an
 attestation define the identifier, syntax, and semantics of all
 attributes that can be part of that attestation.
@@ -1119,7 +1119,7 @@ protocol(s) for presentation that must be supported by the relevant
 attestations. \[Topic 12\] contains the requirements for Attestation
 Rulebooks.
 
-Attestation Rulebooks are defined by different organizations:
+Attestation Rulebooks are defined by different organisations:
 
 -   Some rulebooks already have been defined by the European Commission,
     in consultation with the eIDAS Expert Group. This concerns the PID
@@ -1127,13 +1127,13 @@ Attestation Rulebooks are defined by different organizations:
     found in \[[Annex 3](annexes/annex_3_attestation_rulebooks/)\].
 
 -   The rulebook for an attestation intended to be used across
-    organizations and/or across borders can be defined by an
-    organization in which, insofar possible, all stakeholders are
+    organisations and/or across borders can be defined by an
+    organisation in which, insofar possible, all stakeholders are
     represented. This will prevent multiple attestation rulebooks being
     defined for the same type of attestation, for example, diplomas. It
     will also prevent unnecessary differences in the syntax and
     semantics between similar attestations. The decision on which
-    organization will be responsible for a given attestation rulebook is
+    organisation will be responsible for a given attestation rulebook is
     out of scope for this document. As explained in \[Topic 12\], it is
     possible that an individual attestation Provider needs to include
     attributes in an attestation that have not been specified in the
@@ -1145,7 +1145,7 @@ Attestation Rulebooks are defined by different organizations:
     in the EU-wide or sectoral namespace.
 
 -   The rulebook for an attestation intended to be used only within an
-    organization, will be defined by that organization.
+    organisation, will be defined by that organisation.
 
 ### 5.4 Catalogues
 
@@ -1179,7 +1179,7 @@ implementation.
 
 Building on the requirements of \[Topic 12\], having in mind both the
 need for interoperability on the one hand and the varied nature of
-attestations and organizations specifying those attestations on the
+attestations and organisations specifying those attestations on the
 other hand, the following principals were defined:
 
 -   Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI
@@ -1197,7 +1197,7 @@ other hand, the following principals were defined:
     the attestation, that they may issue, request and receive from a
     Wallet Instance, according to their role in the ecosystem.
 
-Also, the following points were emphasized, to facilitate creation,
+Also, the following points were emphasised, to facilitate creation,
 updates and adoption:
 
 -   Registration in the attestation catalogue is not mandatory.
@@ -1211,8 +1211,8 @@ updates and adoption:
 
 Implementation of these principals will be discussed further in detail.
 The ambition is to use existing efforts and tools created by the Member
-States, the Commission and cross-border organizations, to connect and
-interact with the stakeholders, to utilize existing data assets for
+States, the Commission and cross-border organisations, to connect and
+interact with the stakeholders, to utilise existing data assets for
 updating them when needed and add new data sets to support new use cases
 that will be implemented in the eco-system.
 
@@ -1301,7 +1301,7 @@ Notes:
     and/or Certificate Authorities into a single entity, again provided
     that that entity maintains clear separations between its different
     roles and responsibilities. In some case, existing entities can
-    probably be used to fulfill these roles.
+    probably be used to fulfil these roles.
 
 -   This trust model does not presume a specific implementation. In
     particular, the use of term 'certificate' does not imply a specific
@@ -1315,14 +1315,14 @@ Notes:
 -   This trust model is valid for both remote and proximity use cases.
     However, technical measures taken to ensure that the requirements on
     trust are fulfilled may differ between these two use cases.
-    Moreover, the authentication and authorization mechanisms will
+    Moreover, the authentication and authorisation mechanisms will
     depend on the characteristics of the interacting parties.
 
 -   In this version of the ARF, the trust model does not yet include
     interactions needed to enable Users to create qualified electronic
     signatures or seals. Please refer to \[Topic 16\] and \[Topic 37\].
 
-#### 6.1.2 Authentication and authorization
+#### 6.1.2 Authentication and authorisation
 
 Within the EUDI Wallet ecosystem, many interactions take place between
 parties in which one party requests another party to perform a task. For
@@ -1338,7 +1338,7 @@ following two conditions:
     This is referred to as (single-side or mutual) *authentication*.
 
 2.  The requestee is sure that the requester has the right to request
-    the data or task requested. This is referred to as *authorization*.
+    the data or task requested. This is referred to as *authorisation*.
 
 #### 6.1.3 Assumptions on trust
 
@@ -1496,7 +1496,7 @@ Authorization is dealt with in the following manner:
     QEAAs, PuB-EAAs or EAAs that it is not legally allowed to issue. To
     prevent this, the applicable Rulebook (see \[Topic 12\]) may define
     mechanisms allowing a Wallet Instance, during issuance of an EAA, to
-    verify that the EAA Provider is authorized or registered to issue
+    verify that the EAA Provider is authorised or registered to issue
     the type of EAA the Wallet Instance is requesting. The same
     mechanism may also be used by Relying Parties during presentation of
     an EAA.
@@ -1963,7 +1963,7 @@ Notes:
 To start the process of requesting a PID or an attestation, the User
 directs the Wallet Instance to contact the PID Provider or Attestation
 Provider. The User may for example use the Wallet Instance to scan a QR
-code or tap an NFC tag to do so. Note that no centralized service
+code or tap an NFC tag to do so. Note that no centralised service
 discovery mechanism for PID or attestation issuance is foreseen.
 
 Before requesting the issuance of a PID or an attestation, the Wallet
@@ -2567,7 +2567,7 @@ requirements, to achieve a high level of interoperability, security and
 trustworthiness. The use of relevant and available cybersecurity
 certification schemes under the Cybersecurity Act (CSA)[^1] referenced
 in the Regulation implementing act (IA) should avoid divergent
-approaches and harmonize the implementation of the cybersecurity
+approaches and harmonise the implementation of the cybersecurity
 requirements laid down by the Regulation.
 
 Member States, according to Article 5c(3) of the Regulation, shall
@@ -2624,7 +2624,7 @@ thereof, with the applicable cybersecurity requirements.
 For requirements that are not relevant for cybersecurity, and to the
 extent that cybersecurity certification schemes do not, or only
 partially, cover those cybersecurity requirements, Member States shall
-establish national certification schemes following the harmonized
+establish national certification schemes following the harmonised
 requirements set out in the IA. Member States shall transmit their draft
 national certification schemes to the European Digital Identity
 Cooperation Group established pursuant to [Article 46e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1)(1) (the
@@ -2664,7 +2664,7 @@ Until a dedicated EUDI Wallets cybersecurity certification scheme under
 the CSA is available, the Regulation allows Member States to establish
 national certification schemes (following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(3)). Following
 [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) of the Amending Regulation, an IA should be established
-which will serve as a harmonized guideline for the development of these
+which will serve as a harmonised guideline for the development of these
 transitory national certification schemes. It will leverage the use of
 relevant and existing CSA certification schemes by establishing
 specifications, procedures and references technical standards for
@@ -2688,7 +2688,7 @@ for products[^3] is available. For those cybersecurity requirements not
 covered by the EUCC, its supporting documents or an extended version of
 the EUCC, and for the non-cybersecurity requirements, the use of the
 ISO/IEC 17065[^4] framework under Regulation (EC) 765/2008[^5] is
-foreseen as the harmonized standard for certification. This may be
+foreseen as the harmonised standard for certification. This may be
 complemented by ISO/IEC 17067[^6] on the definition of schemes, which is
 like ENISA's previous work in the definition of other candidate EU
 certification schemes.
@@ -2786,7 +2786,7 @@ annexes.
 -   **Legal requirements:** Describes the certification requirements,
     certification scope stemming from the Regulation.
 
--   **Scheme requirements:** Describes the EUDI Wallets, how to organize
+-   **Scheme requirements:** Describes the EUDI Wallets, how to organise
     certification, and the content of a scheme and the accompanying IA.
 
 -   **General scheme content:** Describes HLR related to content of the
@@ -2807,7 +2807,7 @@ found in \[[annex 6](./annexes/annex_6_including_hltrs_excel_files/annex_6_certi
 
 #### 7.4.1 Introduction
 
-This chapter details the approach to develop harmonized guidelines for
+This chapter details the approach to develop harmonised guidelines for
 the development of the transitory national certification schemes. In
 addition to the process-based requirements in the HLR, security and
 privacy risks associated with the EUDI Wallets should be identified.
@@ -2828,7 +2828,7 @@ demonstrates taking into account the risks identified in the common risk
 register.
 
 This chapter will define, through iterative publications of the ARF, the
-rationale and approach to derive and categorize these identified risks
+rationale and approach to derive and categorise these identified risks
 and provide the iterative output of this exercise as a starting point of
 relevant privacy and security risks.
 
@@ -2851,11 +2851,11 @@ Cryptographic Application (WSCA) and Wallet Secure Cryptographic Device
 
 Threats can be defined according to different threat models, such as the
 STRIDE approach for security threat risks, and the LINDDUN framework for
-privacy threat modeling. Such models allow to inspire and categorize
+privacy threat modelling. Such models allow to inspire and categorise
 threat such as spoofing, tampering, information disclosure, or linking.
 While security and privacy are closely related, they do start from a
-different mindset. Both security threat modeling and privacy threat
-modeling aim to create a system model, identify threats systematically
+different mindset. Both security threat modelling and privacy threat
+modelling aim to create a system model, identify threats systematically
 for each system component and rely on threat categories to drive the
 analysis. This helps to eventually mitigate threats, for example through
 certification requirements. However, the security mindset is to protect
@@ -2867,7 +2867,7 @@ user.
 
 Figure 8: Relation between threats, risks, vulnerabilities, and assets
 
-A threat modeling approach will support deriving privacy and security
+A threat modelling approach will support deriving privacy and security
 risks and gain insights into potential risks within the system. The
 outcome of the threat model exercise will be a list of security and
 privacy risks, which in turn allows to identify the appropriate
@@ -2889,7 +2889,7 @@ through work in the CSG:
 
 -   The transitory schemes are defined by the Member States which may
     tailor them to their specific Wallets architectures However, the aim
-    is to harmonize the underlying principles through the IA and provide
+    is to harmonise the underlying principles through the IA and provide
     guidance or common requirements where relevant as no mutual
     recognition of the national certification schemes is provided.
 
@@ -2904,7 +2904,7 @@ through work in the CSG:
     in order to ensure European interoperability.
 
 -   The final EUDI Wallet certification implies a multiplication of
-    certificates, however, the aim is to minimize this number to the
+    certificates, however, the aim is to minimise this number to the
     extent possible.
 
 -   The certification scheme should support a variety of different known
@@ -3013,7 +3013,7 @@ feedback is addressed promptly and effectively. Here\'s how we manage
 issues and pull requests to set the right expectations:
 
 -   Issue Management: When an issue is submitted, our team will review
-    and prioritize it based on its relevance and impact. We\'ll keep you
+    and prioritise it based on its relevance and impact. We\'ll keep you
     informed of the status of your issue and provide updates as it
     progresses. Once resolved, we\'ll close the issue and incorporate
     any necessary changes into the document.
@@ -3029,7 +3029,7 @@ issues and pull requests to set the right expectations:
 Your feedback and contributions are essential in helping us maintain the
 quality and relevance of this document. We value your participation and
 strive to create a collaborative environment where everyone\'s
-contributions are valued and recognized.
+contributions are valued and recognised.
 
 ### 8.3 Document Versioning
 
@@ -3150,9 +3150,9 @@ For undated references, the latest version available applies.
     -   [Annex 4.5](./annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf) - Blueprint Presenting mDL (proximity-unsupervised)
 
     -   [Annex 4.6](./annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf) - Blueprint Remote QES -- Creating a signature for
-        authentication / authorization
+        authentication / authorisation
 
-    -   [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrollment
+    -   [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
 
     -   [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature
         channelled by EUDI Wallet
@@ -3162,7 +3162,7 @@ For undated references, the latest version available applies.
 
     -   [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
 
-    -   [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrollment
+    -   [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
 
     -   [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
 
