@@ -52,6 +52,15 @@ and private sector parties.
 This repository contains the "[Architecture and Reference Framework](docs/arf.md)"
 (hereinafter the [ARF](docs/arf.md)).
 
+The identifiable objectives of the Reference Framework in the context of the EU Digital Identity Wallet initiative and the eIDAS regulation include:
+
+1. **Interoperability**: Ensuring compatibility among EU member states for digital identities.
+2. **Security**: Ensuring a high level of security for digital transactions and identity data.
+3. **Privacy Protection**: Protecting the privacy and personal data of users when using digital services.
+4. **Data Sovereignty**: The eIDAS Trust Services enable all users to manage their identity data and access to it.
+5. **Universal Accessibility and User-Friendliness**: Ensuring easy and trustworthy access to public and private services via digital identities for all EU citizens and businesses.
+
+
 The current **authoritative version** is tagged as [realease/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
