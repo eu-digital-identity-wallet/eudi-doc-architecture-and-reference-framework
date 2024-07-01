@@ -112,7 +112,7 @@ the reference implementation.
 The LSPs are expected to provide feedback on the ARF as they develop and
 interact with Relying Party services, Qualified or non-qualified
 Electronic Attestations of Attributes (Q)EAA Providers, Person
-Identification Data (PID) Providers, Qualified and non-qualified Trust
+Identification Data (PID) Providers, Qualified and non-Qualified Trust
 Service Providers and Users in meaningful interactions under the
 proposed use cases.
 
@@ -293,7 +293,7 @@ journey in this dynamic sector.
 This chapter describes the EUDI Wallet ecosystem as it
 is foreseen in the Commission's legislative proposal. The different
 roles in the EUDI Wallet ecosystem are described in figure 1 and
-detailed in the following Sections.
+detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet roles](media/image1.png)
 <!-- <img src="media/image1.png" style="width="7.2131944444444445in"
@@ -554,7 +554,7 @@ Trust Service Provider.
 The EUDI Wallets will need to be certified by CABs. QTSPs shall be
 audited regularly by CABs.
 
-The standards and schemes used by CABs to fulfill their tasks to certify
+The standards and schemes used by CABs to fulfil their tasks to certify
 EUDI Wallets are specified further, specifically in [Chapter 7](#7-security-and-data-protection) -
 Certification.
 
@@ -745,7 +745,7 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
     securely request and receive the PID and various attestations (such
     as QEAAs, PuB-EAAs and EAAs) from EUDI Wallets, accommodating both
     remote and proximity interactions. For remote presentation flows, as
-    detailed in the following Section, the Wallet Instance implements
+    detailed in the following section, the Wallet Instance implements
     the OpenID for Verifiable Presentation protocol \[OpenId4VP\]. In
     contrast, for the proximity presentation flow, it adheres to the
     \[ISO/IEC 18013-5\] standard. In a remote flow, when a Relying Party
@@ -780,7 +780,7 @@ required to be implemented in the solution.
 
 #### 4.2.2 Attestation presentation flows
 
-This Section defines four distinct communication flows between a Wallet
+This section defines four distinct communication flows between a Wallet
 Instance and a Relying Party, guiding the implementation of the
 presentation interface:
 
@@ -810,9 +810,9 @@ in [Annex 4](annexes/annex_4_service_blueprints/) of the ARF.
 
 #### 4.2.3 Mobile Apps and Web Browsers
 
-This Section examines the technical interaction between the Wallet
+This section examines the technical interaction between the Wallet
 Solution, web browsers, and mobile apps, in regards of the flows
-described in the previous Section. This is necessary to implement the
+described in the previous section. This is necessary to implement the
 attestation presentation interface effectively, with a focus on both
 user experience and security.
 
@@ -1053,14 +1053,14 @@ as follows:
 
 Please note that the differences between these types of attestation are
 purely legal. For example, a diploma may be a QEAA or a non-qualified
-EAA, depending on whether it is issued by a qualified trust service
+EAA, depending on whether it is issued by a Qualified Trust Service
 Provider (QTSP) or by an unqualified one. Similarly, an mDL may be
 issued as a PuB-EAA, a QEAA, or a non-qualified EAA, depending on the
 legal status of the party issuing mobile driving licenses in each Member
-State, in addition to being an authorized mDL Provider in accordance
+State, in addition to being an authorised mDL Provider in accordance
 with the rules applicable for mDL Providers.
 
-### 5.2 Available standardized formats
+### 5.2 Available standardised formats
 
 All attestations can be described to have the following elements:
 
@@ -1653,7 +1653,7 @@ relationships are established:
     Wallet Solution, the User would not be able to use the Wallet
     Instance for obtaining those PID(s) or attestation(s).
 
-The next two Sections discuss these trust relationships.
+The next two sections discuss these trust relationships.
 
 ##### 6.5.2.2 User verifies Wallet Solution
 
@@ -2591,7 +2591,7 @@ certification) against requirements which will be established by:
     down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
 
 -   [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the
-    provision of the EUDI Wallet and any other data held by the Provider
+    provision of the EUDI Wallet and any other data held by the provider
     of the EUDI Wallet;
 
 -   [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on
@@ -2610,7 +2610,7 @@ In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CE
 personal data processing operations against [Regulation (EU)
 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation
 (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to the EUDI Wallets and
-consequently to their Providers.
+consequently to their providers.
 
 [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission shall, by means of IA,
 establish a list of reference standards and, where necessary, establish
@@ -2745,7 +2745,7 @@ In parallel to the work described above, ENISA is requested to draft a
 dedicated European cybersecurity certification scheme for the EUDI
 Wallets under the CSA. Once available, this CSA scheme should replace
 the national transitory schemes mentioned above for the cybersecurity
-requirement it will cover. This scheme should be based on harmonized
+requirement it will cover. This scheme should be based on harmonised
 requirements, and identify any additional requirements relevant for
 cybersecurity. The scheme should further detail the cybersecurity
 requirements, identify and set normative standards and define the target
@@ -2776,10 +2776,10 @@ Regulation, to facilitate certification.
 -   **Functional:** Describes functional requirements (i.e. what the
     EUDI Wallet should be able to do, such as provisioning of
     attributes). Most functional requirements are derived in the other
-    Sections of the ARF coming from the Toolbox process.
+    sections of the ARF coming from the Toolbox process.
 
 To provide recommendations on certification, the document describes 121
-requirements across five Sections: legal requirements, scheme
+requirements across five sections: legal requirements, scheme
 requirements, general scheme content, other scheme content and
 annexes.
 
@@ -2933,7 +2933,7 @@ suggestions, or concerns you may have regarding this document.
 To provide feedback on this document, please visit our GitHub
 repository. You can do so by navigating to the \"Issues\" tab and
 submitting a new issue or commenting on existing ones. Whether you\'ve
-spotted a typo, have a suggestion for clarifying a Section, or want to
+spotted a typo, have a suggestion for clarifying a section, or want to
 propose a new topic for inclusion, we welcome your feedback.
 
 ##### 8.2.1.1 Guidelines for adding issues to the Github repository
