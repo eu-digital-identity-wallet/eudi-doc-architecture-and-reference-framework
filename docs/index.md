@@ -8,7 +8,7 @@
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS)
 Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation),
-EU Member States may, on a voluntary basis, notify and recognize, national
+EU Member States may, on a voluntary basis, notify and recognise, national
 electronic identification schemes in their Member States. The recognition of
 notified electronic identification became mandatory in 2018.
 Yet, there is no requirement for Member States to develop a national electronic
