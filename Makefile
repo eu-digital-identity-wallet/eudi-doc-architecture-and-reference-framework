@@ -17,6 +17,8 @@
 
 SOURCE_DOCS := $(wildcard docs/*.md)
 BUILD_DIR :=./build
+EPUB_OUTPUT := $(BUILD_DIR)/epub/arf+annexes.epub
+MD_FILES := docs/arf.md $(sort $(wildcard docs/annexes/*/*.md))
 SITE_DIR :=./site
 EXPORTED_DOCS=\
  $(SOURCE_DOCS:.md=.pdf) \
@@ -31,6 +33,13 @@ PANDOC_OPTIONS=--toc --metadata title="The European Digital Identity Wallet Arch
 PANDOC_PDF_OPTIONS= --pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_EPUB_OPTIONS=--to epub3
+
+# Check if the pandoc is installed
+check-pandoc:
+	@which pandoc > /dev/null || (echo "Pandoc not found, installing..." && make install-pandoc)
+
+install-pandoc:
+	sudo apt-get update && sudo apt-get install -y pandoc
 
 # Pattern-matching Rules
 
@@ -49,9 +58,14 @@ PANDOC_EPUB_OPTIONS=--to epub3
 
 # Targets and dependencies
 
-.PHONY: all clean
+.PHONY: all clean combined.epub
 
 all : $(EXPORTED_DOCS) mkdocs
+
+# Target to create an EPUB from arf.md and all the annexes.
+epub: check-pandoc 
+	mkdir -p $(BUILD_DIR)/epub
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(EPUB_OUTPUT) $(MD_FILES)
 
 mkdocs:
 	$(MKDOCS) build
