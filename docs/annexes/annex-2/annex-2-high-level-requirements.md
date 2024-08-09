@@ -1450,7 +1450,7 @@ relies mostly on the approval of the User. It may happen that a User
 will not be able to correctly understand the request, that the Relying
 Party was confused with another one due to a similar name or a phishing
 attempt, and so forth. The User may realize only after presenting the
-attributes that it was taken from him unlawfully by over-asking, or even
+attributes that it was taken from them unlawfully by over-asking, or even
 by fraud.
 
 This topic explores high-level requirements related to the function of
