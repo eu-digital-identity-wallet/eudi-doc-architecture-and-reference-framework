@@ -1,7 +1,7 @@
 # The European Digital Identity Wallet
 
 
-![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner.png)
+![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner-arf.png)
 
 
 ## The Digital Identity Regulation
