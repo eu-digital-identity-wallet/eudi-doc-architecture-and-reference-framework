@@ -471,7 +471,7 @@ areas such as educational credentials, digital payments, although they
 may also rely on Qualified Electronic Attestation of Attributes
 Providers. For EAAs to be used, TSPs offer Users a way to request and
 obtain EAA, meaning they need to technically comply with EUDI Wallet
-interfaces specifications. Depending on the domain rules, EAA providers
+interfaces specifications. Depending on the domain rules, EAA Providers
 may provide validity information about EAAs, without having an ability
 to receive any information about the use of the EAA. The terms and
 conditions of issuing EAAs and related services are subject to sectoral
@@ -548,7 +548,7 @@ Conformity Assessment Bodies (CAB) are accredited public or private
 bodies, accredited by a national accreditation body designated by Member
 States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible
 for carrying out assessments on which Member States will have to rely
-before issuing a EUDI Wallet or providing the qualified status to a
+before issuing an EUDI Wallet or providing the qualified status to a
 Trust Service Provider.
 
 The EUDI Wallets will need to be certified by CABs. QTSPs shall be
@@ -851,7 +851,7 @@ crucial. Key areas for discussion and improvement include:
 ### 4.3 Architecture types
 
 Building upon the high-level design described in figure 2, at least four
-different types of architecture for the EUDI Wallet solution can be
+different types of architecture for the EUDI Wallet Solution can be
 identified, each leveraging a different type of Wallet Secure
 Cryptographic Device (WSCD):
 
@@ -904,7 +904,7 @@ the states of the Wallet Solution:
 
 Figure 3: State-chart of Wallet Solution
 
-The **Candidate** state is the first state of a EUDI Wallet Solution.
+The **Candidate** state is the first state of an EUDI Wallet Solution.
 This means it is fully implemented and the EUDI Wallet Provider requests
 the solution to be certified as an EUDI Wallet as part of an EUDI Wallet
 eID scheme.
@@ -1055,7 +1055,7 @@ purely legal. For example, a diploma may be a QEAA or a non-qualified
 EAA, depending on whether it is issued by a qualified trust service
 provider (QTSP) or by an unqualified one. Similarly, an mDL may be
 issued as a PuB-EAA, a QEAA, or a non-qualified EAA, depending on the
-legal status of the party issuing mobile driving licenses in each Member
+legal status of the party issuing mobile driving licences in each Member
 State, in addition to being an authorised mDL Provider in accordance
 with the rules applicable for mDL Providers.
 
@@ -2250,7 +2250,7 @@ User's decision to present an attribute to a Relying Party. Under no
 circumstances User approval to present data from their EUDI Wallet
 Instance should be construed as lawful grounds for the processing of
 personal data by the Relying Party or any other party. A Relying Party
-requesting or processing personal data from a EUDI Wallet Instance must
+requesting or processing personal data from an EUDI Wallet Instance must
 ensure that it has grounds for lawful processing of that data, according
 to Article 6 of the GDPR.
 
@@ -2315,7 +2315,7 @@ Notes:
      
 -   A Relying Party typically has a list of attestations that it accepts for
 a certain use case. For example, a Relying Party could accept a mobile
-Driving License (mDL) issued by a national driving license Provider, as
+Driving Licence (mDL) issued by a national driving licence Provider, as
 proof of identity. If a Relying Party decides to accept a specific type
 of attestation issued by a specific Attestation Provider, the Relying
 Party must accept any valid and authentic attestation issued by that
@@ -2634,7 +2634,7 @@ vulnerability assessment is carried out every two years. Where a
 vulnerability is identified and not remedied in a timely manner,
 certification shall be cancelled.
 
-### 7.2 Overall approach to Certification of EUDI Wallet solutions
+### 7.2 Overall approach to Certification of EUDI Wallet Solutions
 
 The certification of EUDI Wallets is of the utmost importance in
 ensuring their interoperability, security, trustworthiness, and
@@ -2657,7 +2657,7 @@ building upon the foundation of the IA and transitory schemes, a
 dedicated CSA certification scheme for the EUDI Wallets will be
 established by ENISA.
 
-#### 7.2.1 Certification of EUDI Wallet solutions in the short term 
+#### 7.2.1 Certification of EUDI Wallet Solutions in the short term 
 
 Until a dedicated EUDI Wallets cybersecurity certification scheme under
 the CSA is available, the Regulation allows Member States to establish
@@ -2738,7 +2738,7 @@ interoperability of the EUDI Wallet. To this end, the IA aims to define
 a requirement to CABs for functional testing, for example supported by
 test-suites or test cases.
 
-#### 7.2.2 Certification of EUDI Wallet solutions in the long term 
+#### 7.2.2 Certification of EUDI Wallet Solutions in the long term 
 
 In parallel to the work described above, ENISA is requested to draft a
 dedicated European cybersecurity certification scheme for the EUDI
@@ -2961,7 +2961,7 @@ guidelines:
 | Enhancement Requests  | Request new features, sections, or content to be added to the document to improve its usefulness or relevance. |
 | Formatting and Styling | Feedback regarding the visual appearance, organization, and consistency of formatting within the document. |
 | Documentation Standards | Discussions around adhering to documentation standards, conventions, or guidelines. |
-| License and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and users. |
+| Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and users. |
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
 
 -   **Attach** relevant files, screenshots, or links to additional

@@ -561,7 +561,7 @@ authentication will be detailed in the relevant technical specification.*
 These OIDs SHALL be used in certificates used for PID attributes within
 the ISO-compliant EUDI Wallet ecosystem, in exactly the same way as the
 corresponding OIDs specified in ISO/IEC 18103-5 are used within the
-mobile driving license ecosystem.
+mobile driving licence ecosystem.
 
 Notes:
 
