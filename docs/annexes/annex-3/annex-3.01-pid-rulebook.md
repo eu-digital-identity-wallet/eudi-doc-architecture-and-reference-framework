@@ -317,7 +317,7 @@ primarily to assist in, for example, automated form filling.
 
 The nationality or citizenship of the PID User is potentially a
 multi-valued attribute, because a citizen can have more than one
-nationality. However, his document defines an attribute nationality
+nationality. However, their document defines an attribute nationality
 taking as its value a single Alpha-2 country code. This implies that any
 additional nationality of the PID User must be added by the respective
 Member State as a domestic attribute, see [section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes).
@@ -561,7 +561,7 @@ authentication will be detailed in the relevant technical specification.*
 These OIDs SHALL be used in certificates used for PID attributes within
 the ISO-compliant EUDI Wallet ecosystem, in exactly the same way as the
 corresponding OIDs specified in ISO/IEC 18103-5 are used within the
-mobile driving license ecosystem.
+mobile driving licence ecosystem.
 
 Notes:
 
