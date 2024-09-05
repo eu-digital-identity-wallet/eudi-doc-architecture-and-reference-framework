@@ -69,11 +69,11 @@ see the [tags on this repository](https://github.com/eu-digital-identity-wallet/
 
 See the list of [contributors](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/graphs/contributors) who participated in this project.
 
-## License
+## Licence
 
 This project is licensed under the [Attribution 4.0
 International](http://creativecommons.org/licenses/by/4.0/) - see the
-[LICENSE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENSE) file for details.
+[LICENCE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENCE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 
