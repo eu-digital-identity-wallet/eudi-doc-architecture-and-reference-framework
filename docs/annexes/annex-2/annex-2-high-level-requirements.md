@@ -86,18 +86,18 @@ identification and authentication of users utilizing their EUDI Wallets.
 | OIA_14 | For both proximity and remote presentation flows, a Relying Party SHALL validate the qualified signature or seal of a PuB-EAA in accordance with [Art.32](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2594-73-1) of the eIDAS Regulation. For that verification, the Relying Party SHALL use the public key provided in the qualified certificate of the QTSP supporting the qualified signature or seal. The Relying Party SHALL also validate the qualified certificate of the QTSP using a trust anchor provided in a Trusted List made available in accordance with [Art. 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1) of the eIDAS Regulation. The Relying Party SHALL also verify the certified attributes of the qualified certificate, as specified in [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1). |
 | OIA_15 | For both proximity and remote presentation flows, Relying Parties SHALL validate the signature or seal of a (non-qualified) EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see \[[Topic 12](#a2312-topic-12---attestation-rulebooks)\]. |
 
-#### A.2.3.2 Topic 2 - Mobile Driving License with EUDI Wallet 
+#### A.2.3.2 Topic 2 - Mobile Driving Licence with EUDI Wallet 
 
 *Short description*
 
-A User can obtain from a mobile Driver's License (mDL) Provider and
+A User can obtain from a mobile Driver's Licence (mDL) Provider and
 store in an EUDI Wallet Instance, their mDL. A User can then present the
 mDL to a Relying Party upon request to prove their driving rights
 conveniently, securely, and in compliance with the regulations of all
 Member States.
 
 This Topic contains high-level requirements related to a User presenting
-a mobile Driver's License (mDL) to a Relying Party officer in a
+a mobile Driver's Licence (mDL) to a Relying Party officer in a
 supervised scenario, and also in an unsupervised scenario, in proximity
 offline mode.
 
@@ -138,11 +138,11 @@ For more information, see Annex 3 - \[PID Rulebook\].
 
 *Short description*
 
-The mobile driving license (mDL) Rulebook contains requirements specific
+The mobile driving licence (mDL) Rulebook contains requirements specific
 to the mDL use case within the EUDI Wallet ecosystem.
 
-Mobile driving licenses are legally specified in the proposed EC
-Regulation 2023_127 (4th Driving License Regulation). This Regulation
+Mobile driving licences are legally specified in the proposed EC
+Regulation 2023_127 (4th Driving Licence Regulation). This Regulation
 specifies that mDLs shall comply with the ISO/IEC 18013-5 standard. It
 does not mention any other standards, in particular not \[SD-JWT\].
 Consequently, mDLs issued to a Wallet instance will not be implemented
@@ -643,8 +643,6 @@ C.  Miscellaneous
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| ACP_07 | During issuance of a (Q)EAA, an Attestation Provider SHALL be able to request the association of the new (Q)EAA to a PID or another (Q)EAA already existing on the Wallet Instance, provided that the Attestation Provider has verified during the issuance process that the new (Q)EAA indeed belongs to the User of that existing PID or (Q)EAA. <p><br>Note: Also see requirement WTE_13 in \[Epic 09\] |
-| ACP_08 | When receiving a combined presentation of attributes, a Relying Party SHOULD NOT refuse any attestation solely because a proof of association between these attestations is absent. |
 | ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols SHALL enable a Wallet Instance to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
 
 #### A.2.3.19 Topic 19 - EUDI Wallet User navigation requirements (Dashboard logs for transparency) 
