@@ -2047,7 +2047,7 @@ the PID or their new attestation is indeed protected by that WSCD.
 \[Topic 9\] describes how the PID Provider or Attestation Provider can
 obtain a so-called proof of association from the WSCD. This proof of
 association proves that the WSCD described in the WTE protects both the
-WTE public key and the public key of the PID or the new attestation.
+WTE private key and the private key of the PID or the new attestation.
 
 ##### 6.6.2.4 PID Provider or Attestation Provider verifies that Wallet Instance is not suspended or revoked
 
