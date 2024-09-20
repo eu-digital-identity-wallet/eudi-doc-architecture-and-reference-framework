@@ -744,8 +744,11 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
     as QEAAs, PuB-EAAs and EAAs) from EUDI Wallets, accommodating both
     remote and proximity interactions. For remote presentation flows, as
     detailed in the following section, the Wallet Instance implements
-    the OpenID for Verifiable Presentation protocol \[OpenId4VP\]. In
-    contrast, for the proximity presentation flow, it adheres to the
+    the OpenID for Verifiable Presentation protocol \[OpenId4VP\].
+    Where supported, Relying Parties should use the [OpenID4VP profile for the
+    W3C Digital Credentials API] to request the PID for additional privacy, user
+    experience, and security benefits.
+    In contrast, for the proximity presentation flow, it adheres to the
     \[ISO/IEC 18013-5\] standard. In a remote flow, when a Relying Party
     requires user authentication and data access to provide a service,
     the process initiates through either a web browser or a mobile app.
@@ -817,12 +820,12 @@ user experience and security.
 When a Relying Party requires User authentication and some data to
 provide a service, the process begins within either a web browser or a
 mobile app. In the Remote Same-Device flow in particular, the User\'s
-browser or app will redirect the request to their EUDI Wallet whenever a
-service provider needs authentication or data. In contrast, a Remote
-Cross-Device flow and both the proximity flows (supervised or
-unsupervised), might start by activating the Wallet Instance through an
-NFC tap or the scanning of a QR code, that will not require the
-interaction with the web browser.
+browser or app should invoke to their EUDI Wallet through the mobile
+operating system where supported whenever a service provider needs
+authentication or data. In contrast, a Remote Cross-Device flow and both
+the proximity flows (supervised or unsupervised), should invoke the
+Wallet Instance through the mobile operating system via an NFC tap or
+the scanning of a QR code.
 
 As illustrated in figure 2, secure and streamlined interaction with
 other applications, both on the User\'s device and externally, is
@@ -846,6 +849,28 @@ crucial. Key areas for discussion and improvement include:
     and the browser/app are also essential. Current approaches relying
     on custom URIs can introduce user experience friction and scaling
     issues.
+
+To mitigate these challenges, Relying Parties and Wallet Instances
+should use the [OpenID4VP profile for the W3C Digital Credentials API]
+as opposed to custom URL schemes on web browsers and app platforms that
+support it. This profile utilizes the [W3C Digital Credentials API], a
+browser API which allows websites to request the presentation of digital
+credentials via the mobile operating system. The API provides several
+advantages to Relying Parties, Wallet Instances, and Users:
+
+- **User Experience**: For Remote Same-Device flow, the presentation
+    interface will continue in the initial context of the web browser or
+    mobile app.
+- **Secure Cross-Device Flows**: Cross-device presentations can leverage
+    proximity checks handled by the mobile operating system which provides
+    added phishing resistance.  
+- **Multiple Wallet Selection**: Users are afforded a clear interface
+    provided by the mobile operating system that disambiguates between
+    multiple Wallet Solutions for wallet selection.
+- **Clear Origin Information**: The origin information of the Relying
+    Party (such as the website domain or the app package name) is supplied
+    by the system and is provided in the presentation request for Users and
+    the Wallet Solutions to guard against replay attacks.
 
 ### 4.3 Architecture types
 
@@ -3093,8 +3118,10 @@ For undated references, the latest version available applies.
 | \[RFC 9396\]      | [RFC 9396](https://www.rfc-editor.org/rfc/rfc9396) - OAuth 2.0 Rich Authorization Requests, T. Lodderstedt, yes.com; J. Richer, Bespoke Engineering; B. Campbell, Ping Identity. May 2023. |
 | \[W3C VCDM v1.1\] | Sporny, M., Longley, D. and D. Chadwick, "[Verifiable Credentials Data Model 1.1](https://www.w3.org/TR/vc-data-model/)", W3C Recommendation, 03 March 2022 |
 | \[W3C VCDM v2.0\] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
+| \[W3C Digital Credentials API\] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)", TBD |
 | \[OpenID4VCI\]    | Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> |
 | \[OpenID4VP\]     | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
+| \[OpenID4VP profile for the W3C Digital Credentials API\]     | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
 | \[HAIP\]           | OpenID4VC High Assurance Interoperability Profile with SD-JWT VC -- draft 00, 9 January 2024 [\[6\]](https://euc-word-edit.officeapps.live.com/we/wordeditorframe.aspx?ui=en-US&rs=en-IE&wopisrc=https%3A%2F%2Feceuropaeu.sharepoint.com%2Fteams%2FGRP-EUDIWNiScyEC%2F_vti_bin%2Fwopi.ashx%2Ffiles%2F9b2f2a413ba44d48b4c21b53ab801512&wdenableroaming=1&mscc=1&hid=08F81DA1-40DA-8000-88CB-E94F73AE166A.0&uih=sharepointcom&wdlcid=en-US&jsapi=1&jsapiver=v2&corrid=348f8e4a-ff74-0acc-be61-003e51e771f6&usid=348f8e4a-ff74-0acc-be61-003e51e771f6&newsession=1&sftc=1&uihit=docaspx&muv=1&cac=1&sams=1&mtf=1&sfp=1&sdp=1&hch=1&hwfh=1&dchat=1&sc=%7B%22pmo%22%3A%22https%3A%2F%2Feceuropaeu.sharepoint.com%22%2C%22pmshare%22%3Atrue%7D&ctp=LeastProtected&rct=Normal&wdorigin=ItemsView&wdhostclicktime=1712841798715&instantedit=1&wopicomplete=1&wdredirectionreason=Unified_SingleFlush#_ftn6) |
 | \[RPS\]            | Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions on a Retail Payments Strategy for the EU ([COM/2020/592](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0592) final) |
 | \[X.509\]          | [ITU-T X.509](https://www.itu.int/rec/T-REC-X.509-202310-I!Cor2) (2019) Cor. 2 (10/2023)                                                                                                      |
