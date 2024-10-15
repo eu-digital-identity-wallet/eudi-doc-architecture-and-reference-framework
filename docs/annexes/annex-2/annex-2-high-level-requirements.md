@@ -70,8 +70,8 @@ identification and authentication of users utilizing their EUDI Wallets.
 
 | **Index** | **High Level Requirement** |
 | -- | -- |
-| OIA_01 | An EUDI Wallet Instance SHALL support technical specifications to respond to person identification data (PID) and attestation presentation requests by Relying Parties. |
-| OIA_02 | An EUDI Wallet Instance SHALL support proving binding between a WSCA used by the EUDI Wallet Instance and the PID or attestation in accordance with technical specifications. |
+| OIA_01 | A Wallet Instance SHALL support technical specifications to respond to person identification data (PID) and attestation presentation requests by Relying Parties. |
+| OIA_02 | A Wallet Instance SHALL support proving binding between a WSCA used by the Wallet Instance and the PID or attestation in accordance with technical specifications. |
 | OIA_03 | The Commission SHALL adopt the technical specifications for PID or attestation presentation request-response protocol and device binding, according to the protocols and interfaces specified in \[OpenID4VP\] for remote flows. |
 | OIA_04 | A Wallet Instance SHALL verify and process PID or attestation presentation requests from Relying Parties in accordance with the protocols and interfaces specified in \[OpenID4VP\] for remote flows. |
 | OIA_05 | After verifying and processing a PID or attestation request, the Wallet Instance SHALL inform the User about the identity of the requesting Relying Party and the requested attributes. |
