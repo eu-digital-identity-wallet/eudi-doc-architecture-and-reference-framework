@@ -840,7 +840,7 @@ A.  *General requirements for Member State registration processes*
 | Reg_03 | Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the revised eIDAS Regulation Article 5b 5, for the purpose of transparency to Users and other stakeholders. |
 | Reg_04 | Member States SHALL make the registry available online, in a common human-readable format. |
 | Reg_05 | The Commission SHALL establish a technical specification for the common formats mentioned in Reg_03 and Reg_04. |
-| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_04, defining the minimum requirements for interoperability. |
+| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_04, defining the minimum requirements for interoperability.<br><br>Note: Requirements for accessing this API are defined in REG_08 and REG_09 |
 | Reg_07 | The Commission SHALL provide specifications for a common User interface for accessing the Member State registries per Reg_05. |
 | Reg_08 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL make use of a secure channel protecting the authenticity and integrity of the information in the registry during transport. |
 | Reg_09 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL NOT require authentication or prior registration and authorization of any entity wishing to retrieve the information in the registry. |
