@@ -816,7 +816,7 @@ See [topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabulary-fo
 | CAT_06 | The body responsible for the Attestation rulebook SHALL include a unique reference to this body and the way to contact it, or how to find information for doing so. <p><br>Note: There is an option also for Member States own extensions for rulebooks, in a hierarchical way, derived and elaborated from a Union rulebook. <p><br> Note: Rulebooks MAY be shared between interested parties in an out-of-band manner. |
 | CAT_07 | When determining the attributes to be included in a new attestation type, the party specifying the applicable Attestation Rulebook SHOULD consider using attributes that have been defined already in a namespace included in the Attestation Rulebooks catalogue mentioned in CAT_01, rather than unnecessarily re-defining all attributes within a new namespace. |
 
-#### A.2.3.27 Topic 27 - Relying Party registration 
+#### A.2.3.27 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties
 
 *Short description*
 
