@@ -192,9 +192,9 @@ B.  User approval:
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| RBA_09 | A Wallet Instance SHALL ensure the User approved the release of any attribute(s) in the Wallet Instance to a Relying Party, prior to releasing the attribute. A Wallet Instance SHALL always allow the User to refuse releasing an attribute requested by the Relying Party. |
-| RBA_10 | A Wallet Instance SHALL ensure that the WSCA has authenticated the User, before allowing the User to give or refuse approval for releasing any attributes. <p><br>Note: See \[[Topic 09](#a239-topic-9---wallet-trust-evidence)\] for information about the WSCA. |
-| RBA_11 | A Relying Party SHOULD group the attributes they request based on the use case, service, or purpose for which it requests these attributes. A Wallet Instance SHOULD ensure that for each group the User gives approval either to release all requested attributes, or none of them. |
+| RPA_07 | A Wallet Instance SHALL ensure the User approved the release of any attribute(s) in the Wallet Instance to a Relying Party, prior to releasing the attribute. A Wallet Instance SHALL always allow the User to refuse releasing an attribute requested by the Relying Party. |
+| RPA_09 | A Wallet Instance SHALL ensure that the WSCA has authenticated the User, before allowing the User to give or refuse approval for releasing any attributes. <p><br>Note: See \[[Topic 09](#a239-topic-9---wallet-trust-evidence)\] for information about the WSCA. |
+| RPA_10 | A Relying Party SHOULD group the attributes they request based on the use case, service, or purpose for which it requests these attributes. A Wallet Instance SHOULD ensure that for each group the User gives approval either to release all requested attributes, or none of them. |
 
 #### A.2.3.7 Topic 7 - Attestation validity checks and revocation 
 
