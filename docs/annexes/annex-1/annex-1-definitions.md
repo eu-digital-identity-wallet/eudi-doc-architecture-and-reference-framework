@@ -56,6 +56,7 @@ standard or a formal publication, that source will be mentioned.
 | **Qualified electronic signature** | *An advanced electronic signature that is created by a qualified electronic signature creation device, and which is based on a qualified certificate for electronic signatures.* |
 | **Qualified Electronic Signature Creation Device (QSCD)** | *Configured software or hardware used to create an electronic signature that meets the requirements laid down in [Annex II](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e38-51-1) of the eIDAS Regulation amendment proposal.* |
 | **Qualified Trust Service Provider (QTSP)** | *Qualified Trust Service Provider means a trust service provider who provides one or more qualified trust services and is granted the qualified status by the supervisory body.*
+| **Public Sector Body** | *A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate.*
 
 ### A.1.2 Table 2 -- Additional definitions used in this ARF 
 
