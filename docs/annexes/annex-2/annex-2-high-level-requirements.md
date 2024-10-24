@@ -814,7 +814,7 @@ See [topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabulary-fo
 | CAT_06 | The body responsible for the Attestation rulebook SHALL include a unique reference to this body and the way to contact it, or how to find information for doing so. <p><br>Note: There is an option also for Member States own extensions for rulebooks, in a hierarchical way, derived and elaborated from a Union rulebook. <p><br> Note: Rulebooks MAY be shared between interested parties in an out-of-band manner. |
 | CAT_07 | When determining the attributes to be included in a new attestation type, the party specifying the applicable Attestation Rulebook SHOULD consider using attributes that have been defined already in a namespace included in the Attestation Rulebooks catalogue mentioned in CAT_01, rather than unnecessarily re-defining all attributes within a new namespace. |
 
-#### A.2.3.27 Topic 27 - Relying Party registration 
+#### A.2.3.27 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties
 
 *Short description*
 
@@ -837,9 +837,9 @@ A.  *General requirements for Member State registration processes*
 | Reg_02 | Member States SHALL make publicly available all necessary details and documentation about the registration processes for their registry. |
 | Reg_03 | Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the revised eIDAS Regulation Article 5b 5, for the purpose of transparency to Users and other stakeholders. |
 | Reg_04 | Member States SHALL make the registry available online, in a common human-readable format. |
-| Reg_05 | The Commission SHALL establish a technical specification for the common formats mentioned in Reg_04 and Reg_05. |
-| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_04, defining the minimum requirements for interoperability. |
-| Reg_07 | The Commission SHALL provide specifications for a common User interface for accessing the Member State registries per Reg_05. |
+| Reg_05 | The Commission SHALL establish a technical specification for the common formats mentioned in Reg_03 and Reg_04. |
+| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_04, defining the minimum requirements for interoperability.<br><br>Note: Requirements for this API are defined in Reg_08 and Reg_09. |
+| Reg_07 | The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_05.<br><br>Note: Requirements for this user interface are defined in Reg_08 and Reg_09.  |
 | Reg_08 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL make use of a secure channel protecting the authenticity and integrity of the information in the registry during transport. |
 | Reg_09 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL NOT require authentication or prior registration and authorization of any entity wishing to retrieve the information in the registry. |
 
@@ -851,7 +851,7 @@ B.  *General requirements for the issuance of access certificates*
 | Reg_10 | A Member State SHALL ensure that an Access CA notified according to \[[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)\] issues an access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers and Relying Parties registered in one of the Member State's registries. |
 | Reg_11 | A Member State SHALL ensure that the issuance process of access certificates by their notified Access CA(s) complies with a common Certificate Policy for Access CAs. |
 | Reg_12 | The Commission SHALL provide technical specifications establishing the common Access CA Certificate Policy mentioned in Reg_11. |
-| Reg_13 | The common Certificate Policy mentioned in Reg_12 SHALL require that an Access Certificate Authority logs all issued certificates for Certificate Transparency (CT). |
+| Reg_13 | The common Certificate Policy mentioned in Reg_12 SHALL require that an Access Certificate Authority logs all issued certificates for Certificate Transparency (CT).<br><br>Note added to ARF 1.5.0: This requirement is still under discussion and might be changed or removed in a future version of this ARF. |
 | Reg_14 | The common Certificate Policy mentioned in Reg_12 SHALL require that an Access Certificate Authority provides one or more method(s) to revoke the access certificates it issued. |
 | Reg_15 | The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: <ul><li>the certificate subject is withdrawn or suspended from the respective Registry,</li><li>on request of the certificate subject, or</li><li>on request of a competent national authority.</li></ul> |
 | Reg_16 | The common Certificate Policy mentioned in Reg_12 SHALL specify the profile of access certificates in detail. |
@@ -864,14 +864,14 @@ C.  *Requirements for the registration of PID Providers*
 | **Index** | **Requirement specification** |
 |-----------|---------------------|
 | Reg_19 | A Member State SHALL approve a PID Provider according to a well-defined policy before including it in its PID Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of PID Providers in its Registry. |
-| Reg_20 | A Member State SHALL identify PID Providers remotely, at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
+| Reg_20 | A Member State SHALL identify PID Providers at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 
 D.  *Requirements for the registration of Attestation Providers*
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
 | Reg_21 | A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers. |
-| Reg_22 | A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) remotely, at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
+| Reg_22 | A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 
 E.  *Requirements for the registration of Relying Parties*
 
