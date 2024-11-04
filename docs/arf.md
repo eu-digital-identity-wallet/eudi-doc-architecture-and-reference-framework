@@ -454,11 +454,13 @@ QTSP to determine, beyond what is specified in the eIDAS Regulation.
 
 ### 3.6 Public Body Authentic Source Electronic Attestation of Attributes (PuB-EAA) Providers
 
-Public Body Authentic Source EAAs (PuB-EAAs) are issued by or on behalf
-of a public body responsible for an authentic source. The requirements
-from Authentic Sources on the issuance and operation of PuB-EAAs are
-intended to enable to Relying Parties to recognise them as QEAA on the
-legal level.
+As specified in the Regulation, an attestation may be issued by or on behalf of a public sector body responsible for an authentic source. This ARF calls such an attestation a PuB-EAA. An authentic source is a repository or system that contains and provides attributes about a natural or legal person or object. An authentic source moreover is legally considered to be a primary source of those attributes. A public sector body primarily is a state, regional or local authority, or a body governed by public law.
+
+A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a QTSP. However, it has a qualified certificate, issued by a QTSP, that allows it to sign PuB-EAAs. A Relying Party verifies a PuB-EAA by first verifying the signature over the PuB-EAA, and subsequently verifying the signature of the PuB-EAA Provider certificate. For more details, refer to section 6.6.3.5.
+
+The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect as lawfully issued attestations in paper form.
+
+For the precise and legally binding definitions and obligations regarding the issuance of PuB-EAAs, please refer to the Regulation.
 
 ### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
 
