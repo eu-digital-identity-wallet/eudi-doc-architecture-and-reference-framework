@@ -14,8 +14,7 @@ responsible actor that should implement each requirement. There are no
 requirements imposed on the Users.
 
 All requirements in this Annex only apply in the context of the EUDI
-Wallet ecosystem. Attestations that are not bound to or used by Wallet
-Instances are not included in the scope of this Annex.
+Wallet ecosystem. Attestations that are not bound to or used by Wallet Units are not included in the scope of this Annex.
 
 #### A.2.1.2 Key words 
 
@@ -44,27 +43,27 @@ content of the subject matter. 
 
 ### A.2.3 High-Level Requirements  
 
-#### A.2.3.1 Topic 1 - Accessing Public and Private Online Services with EUDI Wallet 
+#### A.2.3.1 Topic 1 - Accessing Public and Private Online Services with a Wallet Unit
 
 *Short description*
 
-The primary purpose of the EUDI Wallet is to offer secure identification
-and authentication of users at a high Level of Assurance (LoA) for both
+The primary purpose of the EUDI Wallet ecosystem is to offer secure identification
+and authentication of Users at a high Level of Assurance (LoA) for both
 public and private online services. This essential functionality ensures
 that Relying Parties can confidently verify that they are interacting
-with the correct users.
+with the correct User.
 
-In this use case, users are utilizing the EUDI Wallet to confirm their
-identity. The users frequently access online services that demand
+In this use case, a User is utilizing their Wallet Unit to confirm their
+identity. The User frequently access online services that demand
 authentication and currently employ multiple methods for identity
-verification while accessing these services. The users are also
+verification while accessing these services. The User is also
 concerned about sharing Person Identification Data (PID) during online
 interactions. Their objectives include identifying themselves with
 services requiring User identification and maintaining control over
 personal data sharing.
 
 This Topic contains high-level requirements related to online
-identification and authentication of users utilizing their EUDI Wallets.
+identification and authentication of a User utilizing their Wallet Unit.
 
 *High level requirements*
 
@@ -86,11 +85,11 @@ identification and authentication of users utilizing their EUDI Wallets.
 | OIA_14 | For both proximity and remote presentation flows, a Relying Party SHALL validate the qualified signature or seal of a PuB-EAA in accordance with [Art.32](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2594-73-1) of the eIDAS Regulation. For that verification, the Relying Party SHALL use the public key provided in the qualified certificate of the QTSP supporting the qualified signature or seal. The Relying Party SHALL also validate the qualified certificate of the QTSP using a trust anchor provided in a Trusted List made available in accordance with [Art. 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1) of the eIDAS Regulation. The Relying Party SHALL also verify the certified attributes of the qualified certificate, as specified in [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1). |
 | OIA_15 | For both proximity and remote presentation flows, a Relying Party SHALL validate the signature or seal of a (non-qualified) EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see \[[Topic 12](#a2312-topic-12---attestation-rulebooks)\]. |
 
-#### A.2.3.2 Topic 2 - Mobile Driving Licence with EUDI Wallet 
+#### A.2.3.2 Topic 2 - Mobile Driving Licence within the EUDI Wallet ecoystem 
 
 *Short description*
 
-A User can obtain their nDL from a mobile Driver's Licence (mDL) Provider and
+A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and
 store it in an Wallet Unit. The User can then present the
 mDL to a Relying Party upon request to prove their driving rights
 conveniently, securely, and in compliance with the regulations of all
@@ -156,7 +155,7 @@ For more information, see Annex 3 - \[mDL Rulebook\].
 |-----------|--------------|
 | mDL_01 | mDLs and mDL Providers SHALL comply with all requirements in \[mDL Rulebook\]. |
 
-#### A.2.3.5 Topic 5 - EUDI Wallet Design Guide 
+#### A.2.3.5 Topic 5 - Wallet Unit Design Guide 
 There are no HLRs for this Topic.
 
 #### A.2.3.6 Topic 6 - Relying Party authentication and User Approval  
@@ -194,7 +193,7 @@ B.  User approval:
 | RPA_07 | A Wallet Unit SHALL ensure the User approved the release of any attribute(s) in the Wallet Unit to a Relying Party, prior to releasing the attribute. A Wallet Unit SHALL always allow the User to refuse releasing an attribute requested by the Relying Party. |
 | RPA_08 | A Wallet Unit SHALL ensure that (one of) its WSCA(s) has authenticated the User before allowing the User to give or refuse approval for releasing any attributes. <p><br>Note: See \[[Topic 09](#a239-topic-9---wallet-trust-evidence)\] for information about the WSCA. |
 | RPA_09 | A Relying Party SHOULD communicate in the request which attributes are needed for which use case, service, or purpose, if this is supported by the protocol used for communication with the Wallet Unit. <br><br>Notes: <ul><li>This could be done, for instance, by grouping the attributes and describing the use case, service, or purpose of each group.</li><li>The purpose of this recommendation is that a Relying Party (RP) makes clear to the User what the intended use, the service being accessed, or the specific purpose is of each requested attribute. For example, a service may legally require attributes for age verification (e.g., birthdate), but the Relying Party may also want a User address (e.g., street, location, PObox, country) in order to offer added-value services. Age verification attributes and address attributes should be grouped separately, and the purposes should be clearly distinguished. This allows the User to be better informed about the request, and also allows them to approve one purpose but deny the other; see RPA_10. |
-| RPA_10 | If a Wallet Unit receives a request indicating one or more use cases, services, or purposes for requesting attributes, the Wallet Instance SHOULD show these to the User when asking for User approval. Moreover, the Wallet Unit SHOULD ensure that for each use case, service, or purpose, the User gives approval either to release all attributes requested for that purpose, or none of them. <br><br>Note: This means that a user should either approve the release of all attributes in a given group or to deny the entire group. The Wallet Unit should not allow partial approval within a group. Partial approval would mean that the Relying Party cannot deliver the service, but nevertheless receives some User attributes. This would be a violation of the User's privacy.  |
+| RPA_10 | If a Wallet Unit receives a request indicating one or more use cases, services, or purposes for requesting attributes, the Wallet Instance SHOULD show these to the User when asking for User approval. Moreover, the Wallet Unit SHOULD ensure that for each use case, service, or purpose, the User gives approval either to release all attributes requested for that purpose, or none of them. <br><br>Note: This means that a User should either approve the release of all attributes in a given group or to deny the entire group. The Wallet Unit should not allow partial approval within a group. Partial approval would mean that the Relying Party cannot deliver the service, but nevertheless receives some User attributes. This would be a violation of the User's privacy.  |
 
 #### A.2.3.7 Topic 7 - Attestation revocation and revocation checking
 
@@ -326,7 +325,7 @@ C.  Miscellaneous 
 | **Index** | **Requirement** |
 |-----------|--------------|
 | WUA_23 | The common OpenID4VCI protocol defined in requirement ISSU_01 SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider. |
-| WUA_24 | A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. <br><br>Note: The reason for this requirement is that the Relying Party does not need to know anything about the user's device. This is explained in the last bullet point in section 6.6.3.5 of the main ARF document. Therefore, such data must not be released to Relying Parties, as doing so might violate user privacy|
+| WUA_24 | A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. <br><br>Note: The reason for this requirement is that the Relying Party does not need to know anything about the User's device. This is explained in the last bullet point in section 6.6.3.5 of the main ARF document. Therefore, such data must not be released to Relying Parties, as doing so might violate User privacy|
 | WUA_25 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <p><br>Note: These three proofs MAY be implemented as a single cryptographic proof. |
 | WUA_26 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation. |
 | WUA_27 | The common OpenID4VCI protocol SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: <ul><li>the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA</li><li>or, alternatively, the existing PID or attestation public key with which the new credential key must be associated.</li></ul> |
@@ -348,7 +347,7 @@ WSCA.
 | WUA_35 | A WSCA SHALL consider two keys to be associated if they are associated to a common WUA key. |
 | WUA_36 | A WSCA SHOULD be able to generate a proof of association for two or more public keys. The WSCA SHALL generate such a proof if and only if the corresponding private keys are protected by that WSCA, and the WSCA has internally registered an association between these private keys. |
 
-#### A.2.3.10 Topic 10 - Issuing a PID or Attestation to the EUDI Wallet 
+#### A.2.3.10 Topic 10 - Issuing a PID or Attestation to a Wallet Unit 
 
 **Also containing Topic 23 - PID issuance and Attestation issuance**
 
@@ -384,9 +383,9 @@ B - HLRs for PID issuance
 | ISSU_13 | A Wallet Provider SHALL ensure that at least one PID Provider is willing to issue a PID complying with [PID Rulebook] to Users of the Wallet Units it provides. |
 | ISSU_14 | A PID Provider SHALL ensure that all PIDs it issues to Wallet Units comply with the requirements specified in [PID Rulebook]. |
 | ISSU_15 | A PID Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing PIDs. |
-| ISSU_16 | A PID Provider SHALL NOT provide the same set of values for mandatory PID attributes for more than one EUDI Wallet User. <p><br>Note: With the contents of the PID as currently described in [PID Rulebook], complying with this requirement may not be possible. If this turns out to be so, [PID Rulebook] will be changed. |
+| ISSU_16 | A PID Provider SHALL NOT provide the same set of values for mandatory PID attributes for more than one User. <p><br>Note: With the contents of the PID as currently described in [PID Rulebook], complying with this requirement may not be possible. If this turns out to be so, [PID Rulebook] will be changed. |
 | ISSU_17 | A PID Provider SHALL implement device binding for all PIDs it issues, meaning it SHALL ensure that a PID is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 10](#a2310-topic-10---issuing-a-pid-or-attestation-to-the-eudi-wallet)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
-| ISSU_18 | A PID Provider SHALL verify the identity of the EUDI Wallet User in compliance with Level of Assurance (LoA) High requirements. |
+| ISSU_18 | A PID Provider SHALL verify the identity of the User in compliance with Level of Assurance (LoA) High requirements. |
 | ISSU_19 | For the verification of a WUA, a PID Provider SHALL accept the trust anchors in the Wallet Provider Trusted List(s) it needs. <br>Notes: <ul><li>Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].</li><li>It is not mandatory for a PID Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which Trusted Lists they need to subscribe to.</li></ul> |
 | ISSU_20 | A PID Provider SHALL publish a list of Wallet Solutions that they support for issuing their PID(s) in such a way that Users can easily find it, for example on the PID Provider's website. |
 | ISSU_21 | Before issuing a PID, a PID Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Units's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-trust-evidence)] and [[Topic 38](#a2338-topic-38---wallet-instance-revocation)]. |
@@ -398,7 +397,7 @@ C - HLRs for Attestation Issuance
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| ISSU_25 | An Attestation Provider SHALL ensure all attestations issued to EUDI Wallets comply with the requirements specified in the applicable Rulebook, as described in [[Topic 12](#a2312-topic-12---attestation-rulebooks)]. |
+| ISSU_25 | An Attestation Provider SHALL ensure all attestations issued to Wallet Units comply with the requirements specified in the applicable Rulebook, as described in [[Topic 12](#a2312-topic-12---attestation-rulebooks)]. |
 | ISSU_26 | An Attestation Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing attestations. |
 | ISSU_27 | An Attestation Provider SHALL implement device binding for all attestations it issues, meaning it SHALL ensure that an attestation is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 9](#a239-topic-9---wallet-trust-evidence)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
 | ISSU_28 | For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider Trusted List(s) it needs. <br>Notes: <ul><li>Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].</li><li>It is not mandatory for an Attestation Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for an Attestation Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each Attestation Provider will choose which Trusted Lists they need to subscribe to.</li></ul> |
@@ -474,7 +473,7 @@ C.  Requirements regarding attestation namespaces
 | ARB_07 | When determining the attributes to be included in a new attestation type, the party responsible for the applicable Attestation Rulebook SHOULD consider referring to attributes that are already included in the catalogue as specified in [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabulary-for-attestation-attributes) + [26](#a2326-topic-26---attestations-catalogue), rather than unnecessarily re-defining all attributes within a new namespace.|
 | ARB_08 | The body responsible for an Attestation Rulebook SHOULD, when specifying a new attribute, take into consideration existing conventions for attribute identifier values and attribute syntaxes. These conventions MAY depend on the format of the attestation, i.e., CBOR for ISO/IEC 18013-5 compliant attestations or JSON for [SD-JWT VC]-compliant attestations.|
 | ARB_09 | Empty |
-| ARB_10 | The body responsible for an Attestation Rulebook for an ISO/IEC 18013-5 compliant attestation MAY define a domestic namespace to specify attributes that are specific to that Rulebook and are not included in the applicable EU-wide or sectoral namespace. All requirements for namespaces in this document also apply for domestic namespaces |
+| ARB_10 | The body responsible for an Attestation Rulebook for an ISO/IEC 18013-5 compliant attestation MAY define a domestic namespace to specify attributes that are specific to that Rulebook and are not included in the applicable EU-wide or sectoral namespace. All requirements for namespaces in this Topic also apply for domestic namespaces |
 | ARB_11 | The body responsible for an Attestation Rulebook describing a type of attestation that is a QEAA or a PuB-EAA SHALL include in the Rulebook an attribute as meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point a) and [Annex VII](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1) point a) of the Regulation. This  attribute SHALL reference the technical specification meant in ARB_25. |
 | ARB_12 | The body responsible for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include an attribute in the Rulebook indicating that the attestation in an EAA. This attribute SHALL reference the technical specification meant in ARB_25. |
 | ARB_13 | The body responsible for an Attestation Rulebook describing a type of attestation that is a QEAA SHALL include in the Rulebook one or more attributes or metadata representing the set of data meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point b) of the Regulation. |
@@ -498,29 +497,29 @@ D.  Miscellaneous requirements
 | ARB_26 | The body responsible for an Attestation Rulebook describing a type of attestation that is an EAA SHOULD define in the Rulebook:  <ul><li>mechanisms allowing a Wallet Unit to verify that the EAA Provider is authorized or registered to issue this type of EAA.</li><li>mechanisms allowing a Relying Party to obtain, in a trustworthy manner, the trust anchor(s) of EAA Providers issuing this type of EAA.</li></ul> |
 
 
-#### A.2.3.13 Topic 13 - Developing an EUDI Wallet Architecture Based on Secure Element 
+#### A.2.3.13 Topic 13 - Developing a Wallet Unit architecture based on Secure Element
 
 There are no HLRs for this Topic.
 
-#### A.2.3.14 Topic 14 - Developing an EUDI Wallet Architecture Based on External Token 
+#### A.2.3.14 Topic 14 - Developing a Wallet Unit architecture based on External Token
 
 There are no HLRs for this Topic.
 
-#### A.2.3.15 Topic 15 - Developing an EUDI Wallet Architecture Based on Remote HSM 
+#### A.2.3.15 Topic 15 - Developing a Wallet Unit architecture based on Remote HSM
 
 There are no HLRs for this Topic.
 
-#### A.2.3.16 Topic 16 - Signing documents with EUDI Wallet 
+#### A.2.3.16 Topic 16 - Signing documents with a Wallet Unit
 
 *Short description*
 
 A Wallet Unit SHALL enable its User to create qualified electronic
 signatures or seals. This goal can be reached by using signature or seal
 creation capabilities of the Wallet Unit as a part of a local QSCD,
-or by using a remote QSCD managed by a QTSP. 
+or by using a remote QSCD managed by a QTSP.
 
 This Topic contains high-level requirements related to the creation of
-Qualified Electronic Signatures using an EUDI Wallet Unit. 
+Qualified Electronic Signatures using a Wallet Unit.
 
 *High level requirements*
 
@@ -529,7 +528,7 @@ A.  Requirement for Wallet Providers
 | **Index** | **Requirement specification** |
 |-----------|------------|
 | QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a Qualified Certificate for Qualified Electronic Signature bound to a QSCD. |
-| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: <ul><li>The Signature Creation Application SHALL as a minimum be capable of signing User-provided data.</li><li>The Signature Creation Application SHALL be implemented as part of an EUDI Wallet Solution or external to it.</li><li>The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12.</li></ul>  Notes: <ul><li>Signature Creation Application (SCA): see definition in ETSI TS 119 432 standard.</li><li>if the SCA is external to the Wallet Solution, it may be for example a separate mobile application, be hosted remotely, for instance by the QTSP or by a Relying Party.</li></ul>|
+| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: <ul><li>The Signature Creation Application SHALL as a minimum be capable of signing User-provided data.</li><li>The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it.</li><li>The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12.</li></ul>  Notes: <ul><li>Signature Creation Application (SCA): see definition in ETSI TS 119 432 standard.</li><li>if the SCA is external to the Wallet Solution, it may be for example a separate mobile application, be hosted remotely, for instance by the QTSP or by a Relying Party.</li></ul>|
 | QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL implement secure authentication and signature/seal invocation capabilities in the Wallet Solution, either as a part of a local QSCD external to the Wallet Solution, or as part of a remote QSCD managed by a QTSP. |
 | QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure authentication and signature or seal functionality. |
 | QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a Remote QES Provider (i.e., a QTSP offering remote QES). |
@@ -544,7 +543,7 @@ A.  Requirement for Wallet Providers
 | QES_14 | Wallet Providers SHALL ensure that Users will be able to give or refuse consent to the creation of a qualified electronic signature through their Wallet Instance. |
 | QES_15 | Wallet Providers SHALL ensure that a Wallet Unit can verify the registration of Qualified Trust Service Providers providing signatures services (in remote signature creation scenarios). |
 | QES_16 | Wallet Providers SHOULD ensure that a Wallet Unit supports multiple-signing scenarios where multiple signatories are required to sign the same document or data. |
-| QES_17 | Wallet Providers SHALL ensure that EUDI Wallets provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the EUDI Wallet user about the outcome of the signature creation process. |
+| QES_17 | Wallet Providers SHALL ensure that Wallet Units provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. |
 | QES_18 | Wallet Providers SHALL provide at least one default qualified signing service to Users, supported by a Qualified Trust Service Provider (QTSP) offering qualified signature service. |
 >  
 
@@ -552,26 +551,26 @@ B.  Requirements for QTSPs
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of the EUDI Wallet Solution supports:   <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2 .</li></ul> |
+| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of their Wallet Solution supports:   <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2 .</li></ul> |
 | QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports CEN EN 419 241-1 -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements |
 
 C.  Requirements for the Commission
 
 | **Index** | **Requirement specification** |
 |-----------|------------|
-| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of the EUDI Wallet Solution supports:  <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2.</li></ul> |
+| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of their Wallet Solution supports:  <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2.</li></ul> |
 | QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports CEN EN 419 241-1 -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements |
 | QES_25 | The Commission SHALL ensure that the Cloud Signature Consortium [CSC] specification is formally endorsed as a European standard.|
-| QES_26 | The Commission SHALL ensure that ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation (and other related specifications), is updated and completed according to the technical requirement of the EUDI Wallet. |
+| QES_26 | The Commission SHALL ensure that ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation (and other related specifications), is updated and completed according to the technical requirements of the EUDI Wallet ecosystem. |
 
 
 #### A.2.3.17 Topic 17 - Identity matching 
 
 *Short description*
 
-Users would like to use their PID to access their existing online
-accounts using their EUDI Wallet, even if the identity data is not
-exactly the same as in their other accepted eIDs. Users typically have
+Users would like to use their PID in their Wallet Unit to access their existing online
+accounts, even if their PID attribute values are not
+exactly the same as in their other eIDs. Users typically have
 one or more bank accounts, regularly need to log in the public sector
 services, or use online services provided by large platforms. This
 enables them to use their preferred eID means for their online
@@ -581,11 +580,11 @@ interactions.
 
 | **Index** | **Requirement specification** |
 |-----------|---------------|
-| IM_01 | Relying Parties in a Member State, providing cross-border services, SHALL ensure identity matching for natural persons when accessing existing accounts belonging to the same person, employing a risk-based approach.  <br>For purposes of ensuring identity matching, Relying Parties SHALL offer to natural person Users *at least* to:  <ul><li>request the identified EUDI Wallet User to identify with another eID means which is accepted by the Relying Party so to link the data received from the EUDI Wallet with the account to which the User proved to have access to.</li></ul>  In addition, Relying Parties MAY offer natural person Users to:   <ul><li>request for their PID to compare the PID attributes against attributes of existing accounts to verify whether their PID belongs to a current account owner.</li></ul> For purposes of facilitating identity matching by other Member States, Member States SHALL provide to natural person PID-s *at least* four optional attributes of their choice. |
+| IM_01 | Relying Parties in a Member State, providing cross-border services, SHALL ensure identity matching for natural persons when accessing existing accounts belonging to the same person, employing a risk-based approach.  <br>For purposes of ensuring identity matching, Relying Parties SHALL offer to natural person Users at least to:  <ul><li>request the identified User to identify with another eID means which is accepted by the Relying Party so to link the data received from the Wallet Unit with the account to which the User proved to have access to.</li></ul>  In addition, Relying Parties MAY offer natural person Users to:   <ul><li>request for their PID to compare the PID attributes against attributes of existing accounts to verify whether their PID belongs to a current account owner.</li></ul> For purposes of facilitating identity matching by other Member States, Member States SHALL provide to natural person PID-s *at least* four optional attributes of their choice. |
 | IM_02 | Identity matching MAY be provided by a Relying Party, by allowing additional linked notified electronic identification means or certified European Digital Identity Wallets, issued by another Member State to be used. |
-| IM_03 | When requirements exist for Relying Parties cross-border services to allow persons access based on person identification data provided by other Member States, a Member State SHALL ensure risk-based identity matching and if necessary, at national level MAY require specific complementary unique identification procedures.<p><br> Where the natural person EUDI Wallet User in question cannot prove their identity with another eID means accepted by the Relying Party, the Member State MAY require complementary procedures for the User to prove their identity, such as to allow trained officials to verify the User's identity in a controlled environment. </p> |
+| IM_03 | When requirements exist for Relying Parties cross-border services to allow persons access based on person identification data provided by other Member States, a Member State SHALL ensure risk-based identity matching and if necessary, at national level MAY require specific complementary unique identification procedures.<p><br> Where the natural person User in question cannot prove their identity with another eID means accepted by the Relying Party, the Member State MAY require complementary procedures for the User to prove their identity, such as to allow trained officials to verify the User's identity in a controlled environment. </p> |
 
-#### A.2.3.18 Topic 18 - Relying Party handling EUDI Wallet attribute combined presentation 
+#### A.2.3.18 Topic 18 - Combined presentations of attributes
 
 *Short description*
 
@@ -646,7 +645,7 @@ C.  Miscellaneous
 |-----------|-----------------|
 | ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
 
-#### A.2.3.19 Topic 19 - EUDI Wallet User navigation requirements (Dashboard logs for transparency) 
+#### A.2.3.19 Topic 19 - User navigation requirements (Dashboard logs for transparency) 
 
 *Short description*
 
@@ -668,9 +667,9 @@ of such a common dashboard.  
 | DASH_02 | A dashboard SHALL include a functionality to allow the User to have an overview of all transactions executed through the Wallet Unit. |
 | DASH_03 | For each presentation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least the time and date of the transaction, the corresponding Relying Party and the attributes requested and/or presented. |
 | DASH_04 | For signature creation transactions executed through the Wallet Unit, the dashboard SHALL display to the User at least the following information specific to each signature creation: - the date and time of signature creation, - the document or data signed (where possible), - the hash of the document or data signed, - the signature value. |
-| DASH_05 | The dashboard SHALL include details about all presentation and signature creation transactions executed through the EUDI Wallet, also including any transactions which were not completed successfully. |
-| DASH_06 | An EUDI Wallet Provider SHALL ensure that all records included in the log cannot be altered or deleted, thus assuring the User that the displayed records in the dashboard were not altered, and thus confirming the authenticity and integrity of the information included in the dashboard. |
-| DASH_07 | The dashboard SHALL include a log file functionality, allowing the EUDI Wallet User to view or export details of executed transactions. |
+| DASH_05 | The dashboard SHALL include details about all presentation and signature creation transactions executed through the Wallet Unit, also including any transactions which were not completed successfully. |
+| DASH_06 | A Wallet Provider SHALL ensure that no records included in the log can be altered or deleted, thus assuring the User that the displayed records in the dashboard were not altered, and thus confirming the authenticity and integrity of the information included in the dashboard. |
+| DASH_07 | The dashboard SHALL include a log file functionality, allowing the User to view or export details of executed transactions. |
 | DASH_08 | For a natural-person User, a Wallet Instance SHALL provide a User interface. |
 | DASH_09 | The User Interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. |
 | DASH_10 | The Commission SHALL develop technical specifications for an EUDI Trust Mark referred to in DASH_09. |
@@ -681,11 +680,10 @@ of such a common dashboard.  
 *Short description*
 
 This topic deals with the requirement for Strong User (Customer)
-Authentication (SCA) in the context of authenticating an EUDI Wallet
-user as part of electronic payments.  
+Authentication (SCA) in the context of authenticating a User as part of electronic payments.  
 
 Users would like to be able to authenticate themselves during online
-payments securely and conveniently using their EUDI Wallets, so that
+payments securely and conveniently using their Wallet Units, so that
 they can enjoy a seamless and protected shopping/ payment experience.  
 
 The goal is to implement Strong Customer Authentication (SCA) for
@@ -699,18 +697,18 @@ electronic payments, or carrying out any action through a remote channel
 which may imply a risk of payment fraud or other abuses. The use of the
 wallet for SCA will be in full compliance with those requirements.  
 
-In the future, the EUDI wallets could also be used for payments with
+In the future, a Wallet Unit could also be used for payments with
 Central Bank Digital Currencies.  
 
 *HLRs*
 
 There are no HLRs for this Topic.
 
-#### A.2.3.21 Topic 21 - [Diplomas](https://ec.europa.eu/digital-building-blocks/wikis/display/EDIWCS/EPIC-21-Diplomas+with+EUDI+Wallet) with EUDI Wallet 
+#### A.2.3.21 Topic 21 - [Diplomas](https://ec.europa.eu/digital-building-blocks/wikis/display/EDIWCS/EPIC-21-Diplomas+with+EUDI+Wallet) with the EUDI Wallet ecosystem
 
 There are no HLRs for this Topic.
 
-#### A.2.3.22 Topic 22 - Digital Travel Credentials with EUDI Wallet 
+#### A.2.3.22 Topic 22 - Digital Travel Credentials with the EUDI Wallet ecosystem
 
 There are no HLRs for this Topic.
 
@@ -731,7 +729,7 @@ See [Topic 10](#a2310-topic-10---issuing-a-pid-or-attestation-to-the-eudi-wallet
 In this use case, the User is utilizing the Wallet Unit for
 identification purposes in proximity scenarios. The User is concerned
 about sharing personal data in proximity, while the User's objectives
-include identifying themselves to services requiring user identification
+include identifying themselves to services requiring User identification
 and maintaining control over their personal data sharing. 
 
 This topic explores high-level requirements related to User
@@ -741,12 +739,12 @@ identification in proximity use cases where Users utilize their Wallet Units. 
 
 | **Index** | **Requirement specification** |
 |-----------|----------------|
-| ProxId_01 | For proximity identification purposes, an EUDI Wallet Unit SHALL be able to establish a connection with Relying Party Instances and process their presentation requests in accordance with the technical specification mentioned in ProxId_02. |
+| ProxId_01 | For proximity identification purposes, a Wallet Unit SHALL be able to establish a connection with Relying Party Instances and process their presentation requests in accordance with the technical specification mentioned in ProxId_02. |
 | ProxId_02 | The Commission SHALL develop technical specifications for proximity connection establishment and presentation request processing, in accordance with the protocols and interfaces specified in ISO/IEC 18013-5. |
-| ProxId_03 | An EUDI Wallet Unit SHALL present the corresponding presentation request and the identity of the Relying Party to the EUDI Wallet User after processing the proximity identification request. |
-| ProxId_044 | An EUDI Wallet Unit SHALL request its User to approve the disclosure of attributes from their Wallet Unit for proximity identification before disclosing any data. |
-| ProxId_05 | An EUDI Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with technical specifications, according to the agreed common protocols and interfaces, as specified in ISO/IEC 18013-5 for proximity flow. |
-| ProxId_06 | For proximity identification scenarios, the EUDI Wallet Unit SHALL verify the authenticity and validity of the Relying Party Instance and of the corresponding attribute request. |
+| ProxId_03 | A Wallet Unit SHALL present the corresponding presentation request and the identity of the Relying Party to the User after processing the proximity identification request. |
+| ProxId_044 | A Wallet Unit SHALL request its User to approve the disclosure of attributes from their Wallet Unit for proximity identification before disclosing any data. |
+| ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with technical specifications, according to the agreed common protocols and interfaces, as specified in ISO/IEC 18013-5 for proximity flow. |
+| ProxId_06 | For proximity identification scenarios, the Wallet Unit SHALL verify the authenticity and validity of the Relying Party Instance and of the corresponding attribute request. |
 
 #### A.2.3.25 Topic 25 - Unified definition and controlled vocabulary for attestation attributes 
 
@@ -895,16 +893,15 @@ F.  *Requirements for the issuance of Relying Party access certificates*
 | Reg_31 | The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains a name for the Relying Party, in a format suitable for presenting to a User. <p><br>Note: A Wallet Unit needs such a name when requesting User approval according to \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\]. |
 | Reg_32 | The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains an EU-wide unique identifier for the Relying Party. <p><br>Note: The Wallet Unit needs such an identifier at least to determine which value to present for a User pseudonym; see \[[Topic 11](#a2311-topic-11---pseudonym-attestation)\]. |
 
-#### A.2.3.28 Topic 28 - EUDI Wallet for legal person 
+#### A.2.3.28 Topic 28 - Wallet Unit for legal persons
 
 *Short description*
 
 This topic is focused on identifying high-level requirements for a
-legal-person EUDI Wallet. All the core capabilities of the EUDI Wallet
+legal-person Wallet Unit. All core capabilities of a Wallet Unit
 for a natural person are available for a legal person. There are some
 differences between a natural and legal person that accordingly leads to
-different requirements for issuing legal-person PIDs and the EUDI Wallet
-Instances containing legal-person PIDs. 
+different requirements for issuing legal-person PIDs and the Wallet Units containing legal-person PIDs. 
 
 -   A legal-person PID is issued under an eID scheme.
 
@@ -914,18 +911,18 @@ Instances containing legal-person PIDs. 
     a natural-person PID, and also contains different attributes. For
     example, date of birth or age are not relevant information for legal
     persons. Specifying a different Rulebook for legal-person PIDs
-    allows Relying Parties and other EUDI Wallet Units to request
+    allows Relying Parties and other Wallet Units to request
     these attributes.  
 
--   A legal-person EUDI Wallet Solution may be implemented in the same
+-   A legal-person Wallet Solution may be implemented in the same
     manner as a natural-person Wallet Solution, meaning chiefly that it
     is implemented on a mobile device operated by a single User, who is
-    a natural person. However, a legal-person EUDI Wallet Solution may
+    a natural person. However, a legal-person Wallet Solution may
     also be implemented as a server-based (web-based) application. In
     the latter case, a Wallet Unit can be used either by one or more
     natural persons appointed by the legal person, or by information
-    systems of the legal persons that give an EUDI Wallet Unit
-    commands in accordance with rules defined by the legal person. 
+    systems of the legal persons that give an Wallet Unit
+    commands in accordance with rules defined by the legal person.
 
 *HLRs*
 
@@ -990,31 +987,31 @@ scope of eIDAS. Various scenarios can be considered:
 
 There are no specific requirements in this Topic. 
 
-#### A.2.3.30 Topic 30 - Interaction between EUDI Wallets 
+#### A.2.3.30 Topic 30 - Interaction between Wallet Units
 
 *Short description*
 
-An EUDI Wallet User can request another EUDI Wallet User to release
-an attestation of attributes, using their EUDI Wallet Units. This can be done when
+A User can request another User to release
+an attestation of attributes, where both Users use their Wallet Unit. This can be done when
 their devices are close together (that is, in physical
 proximity) with internet connectivity for both devices (online), or
 without internet connectivity for either or both devices (offline). 
 
-This document explores the high-level requirements related to the
-interaction between two EUDI Wallet Units in proximity offline mode
+This Topic explores the high-level requirements related to the
+interaction between two Wallet Units in proximity offline mode
 and in proximity online mode.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| W2W_01 | An EUDI Wallet Unit SHALL support an interface and protocol for: <ul><li>Establishing a connection with another EUDI Wallet Unit</li><li>Receiving PID and (Q)EAA requests from another EUDI Wallet</li><li>Validating such requests</li><li>Responding to such requests in accordance with the technical specifications as defined by \[OpenID4VP\] and \[ISO/IEC 18013-5\]</li></ul> |
-| W2W_02 | The Commission SHALL develop technical specifications for exchanging PIDs and attestations between two EUDI Wallet Units in accordance with the technical specifications as defined by \[OpenID4VP\] and \[ISO/IEC 18013-5\]. |
-| W2W_03 | The Requestor Wallet Unit SHALL authenticate its User prior to requesting attestations presentation from another EUDI Wallet Unit. |
-| W2W_04 | The Requestee Wallet Unit SHALL request User approval, as specified in \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\], before presenting requested attestations or attributes to another EUDI Wallet Unit. The Wallet Unit SHALL inform the User about the attributes that are being requested, and of the outcome of authentication and validation checks of the request and the requestor. |
-| W2W_05 | The Requestor Wallet Unit SHOULD have pre-defined a list of attributes of PID or attestations that can be requested from the Requestee EUDI Wallet Unit. |
-| W2W_06 | The Requestee Wallet Unit SHALL authenticate and validate the Requestor, ensuring the validity of the Requestor Wallet Unit and the attribute request. |
-| W2W_07 | A Requestor EUDI Wallet Unit SHALL display to the Requestor User the received attributes. |
+| W2W_01 | A Wallet Unit SHALL support an interface and protocol for: <ul><li>Establishing a connection with another Wallet Unit</li><li>Receiving PID and (Q)EAA requests from another Wallet Unit</li><li>Validating such requests</li><li>Responding to such requests in accordance with the technical specifications as defined by \[OpenID4VP\] and \[ISO/IEC 18013-5\]</li></ul> |
+| W2W_02 | The Commission SHALL develop technical specifications for exchanging PIDs and attestations between two Wallet Units in accordance with the technical specifications as defined by \[OpenID4VP\] and \[ISO/IEC 18013-5\]. |
+| W2W_03 | The Requestor Wallet Unit SHALL authenticate its User prior to requesting attestations presentation from another Wallet Unit. |
+| W2W_04 | The Requestee Wallet Unit SHALL request User approval, as specified in \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\], before presenting requested attestations or attributes to another Wallet Unit. The Wallet Unit SHALL inform the User about the attributes that are being requested, and of the outcome of authentication and validation checks of the request and the requestor. |
+| W2W_05 | The Requestor Wallet Unit SHOULD have pre-defined a list of attributes of PID or attestations that can be requested from the Requestee Wallet Unit. |
+| W2W_06 | The Requestee Wallet Unit SHALL authenticate and validate the Requestor Wallet Unit, ensuring the validity of the Requestor Wallet Unit and the attribute request. |
+| W2W_07 | The Requestor Wallet Unit SHALL display the received attributes to its User. |
 
 #### A.2.3.31 Topic 31 - PID Provider, Wallet Provider, Attestation Provider and Access Certificate Authority notification and publication 
 
@@ -1140,20 +1137,20 @@ H.  Requirements for the publication of Trusted Lists compiled by the
 
 See [topic 12](#a2312-topic-12---attestation-rulebooks).
 
-#### A.2.3.33 Topic 33 - EUDI Wallet backup and restore 
+#### A.2.3.33 Topic 33 - Wallet Unit backup and restore 
 
 *Short description*
 
 The relevant scenario for the backup and restore functionality, is when
 the User can no longer access the data, the electronic attestations of
 attributes and the configurations, that were stored on the mobile device
-on which the EUDI Wallet was installed, including its accessories. The
+on which the Wallet Unit was installed, including its accessories. The
 situations may include the mobile device has either been lost, stolen,
 broken or hacked (e.g., a result of unauthorized access to the device)
 or it malfunctions. 
 
 The topic deals with situations when a User replaces an existing
-installation of an EUDI Wallet Solution with a new installation of the
+installation of an Wallet Solution with a new installation of the
 same Wallet Solution, when setting up a new mobile device, or after a
 factory reset of the same device.  
 
@@ -1185,85 +1182,85 @@ A.  Back-up requirements
 | BR_01 | A Wallet Unit SHALL include a Backup and Restore Object. |
 | BR_02 | The Commission SHALL define a technical specification of the Backup and Restore Object. |
 | BR_03 | The Wallet Unit SHALL log all attestations that are issued to it, by adding an entry to the Backup and Restore Object. |
-| BR_04 | An EUDI Wallet Unit SHALL enable the User to export the Backup and Restore Object to external storage. |
-| BR_05 | An EUDI Wallet Solution Provider SHALL store and transfer the Backup and Restore Object in a way that it is protected against use of it by others than the User. |
+| BR_04 | A Wallet Unit SHALL enable the User to export the Backup and Restore Object to external storage. |
+| BR_05 | A Wallet Solution Provider SHALL store and transfer the Backup and Restore Object in a way that it is protected against use of it by others than the User. |
 
 B.  Restore Requirements 
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| BR_06 | An EUDI Wallet solution SHALL support a procedure that will perform the following restore steps from BR_07 up to BR_16. |
-| BR_07 | An EUDI Wallet Unit SHALL enable the User to request from the PID Provider to re-issue the PID in the Backup and Restore Object. The PID SHALL be the first Attestation to be restored from the Backup and Restore Object. |
+| BR_06 | A Wallet Unit SHALL support a procedure that will perform the following restore steps from BR_07 up to BR_16. |
+| BR_07 | A Wallet Unit SHALL enable the User to request from the PID Provider to re-issue the PID in the Backup and Restore Object. The PID SHALL be the first Attestation to be restored from the Backup and Restore Object. |
 | BR_08 | A Wallet solution SHALL enable the User to initiate the Restoration function, following a successful re-issuance of the PID. |
 | BR_09 | The Wallet Unit SHALL present an error message to the User, if an error is detected in the Backup and Restore Object intended to be restored. |
 | BR_10 | The Wallet Unit SHALL retrieve the Backup and Restore Object, if the activities in BR_09 were successful. |
-| BR_11 | Attestation Providers SHALL enable the initiation by an EUDI Wallet Unit of a secured session for re-issuance of attestations issued by them. |
+| BR_11 | Attestation Providers SHALL enable the initiation by a Wallet Unit of a secured session for re-issuance of attestations issued by them. |
 | BR_12 | The Wallet Unit SHALL initiate a secured session with the relevant Attestation Provider for each attestation recorded in the Backup and Restore Object. |
 | BR_13 | The Wallet Unit SHALL initiate an issuance request for any attestation recorded in the Backup and Restore Object, that is selected by the User. |
 | BR_14 | The Wallet Unit SHALL continue the procedure described in BR_12 to BR_13 for all attestations recorded in the Backup and Restore Object. |
 | BR_15 | The Wallet Unit SHALL present to the User the results of the restoration process for every attestation, indicating whether it was successful or not. |
 | BR_16 | The new Wallet Unit SHALL log all the restored attestation in its Backup and Restore Object (as described in BR_01). |
 
-#### A.2.3.34 Topic 34 - Migrate to a different wallet solution 
+#### A.2.3.34 Topic 34 - Migrate to a different Wallet Solution 
 
 *Short description*
 
-The most relevant scenario for this functionality is when a user would
-like to migrate from one Wallet solution to a different Wallet solution.
-Another scenario would be when the Wallet solution provider ceases to
-support the Wallet solution, or even ceases to exist as a Legal Person,
-and thus the User is forced to abandon the current Wallet solution and
-migrate to a different Wallet solution.
+The most relevant scenario for this functionality is when a User would
+like to migrate from one Wallet Solution to a different Wallet Solution.
+Another scenario would be when the Wallet Provider ceases to
+support the Wallet Solution, or even ceases to exist as a legal person,
+and thus the User is forced to abandon the current Wallet Solution and
+migrate to a different Wallet Solution.
 
-To migrate to a different Wallet solution, there is a need to transfer
+To migrate to a different Wallet Solution, there is a need to transfer
 the data, the electronic attestations of attributes and the
 configurations, that were stored on the mobile device on which the
-original EUDI Wallet was installed, including its accessories, to the
+original Wallet Unit was installed, including its accessories, to the
 different Wallet solution.  
 
-This topic is similar in some **characteristics to [Topic 33](#a2333-topic-33---eudi-wallet-backup-and-restore) that** deals
+This topic is similar in some characteristics to [Topic 33](#a2333-topic-33---eudi-wallet-backup-and-restore) that deals
 with backup and restore to the **same** Wallet solution, but in [Topic 34](#a2334-topic-34---migrate-to-a-different-wallet-solution)
 the migration is to a **different** Wallet solution. A main difference
 is that the current mobile device that the User would like to migrate
 from is still under the control of the User and in the User\'s
 possession, and the relevant data that exists on the current Wallet
-solution is not lost and is accessible. 
+solution is not lost and is accessible.
 
 *HLRs*
 
-There are no specific requirements in this Topic. 
+There are no specific requirements in this Topic.
 
-#### A.2.3.35 Topic 35 - PID Issuance service blueprint 
+#### A.2.3.35 Topic 35 - PID Issuance service blueprint
 
 *Short description*
 
-The PID Issuance Service Blueprints analyses the meaningful user
-journeys for PID issuance to EUDI Wallets. The corresponding analysis
+The PID Issuance Service Blueprints analyses the meaningful User
+journeys for PID issuance to a Wallet Unit. The corresponding analysis
 focuses on natural persons only and explores different scenarios
-covering both remote and proximity use cases. 
+covering both remote and proximity use cases.
 
-This document explores high-level requirements related to the PID
-Issuance user journey. 
+This Topic explores high-level requirements related to the PID
+issuance user journey.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| PID_ISS_01 | An EUDI Wallet Unit SHALL support at least the protocol defined in the technical specifications for PID issuance. An EUDI Wallet MAY support additional protocols for PID issuance. The following requirements apply only to the protocol defined in the technical specifications. |
-| PID_ISS_02 | An EUDI Wallet Unit SHALL authenticate and validate the identity of the PID Provider it is communicating with. |
-| PID_ISS_03 | A PID Provider SHALL verify the authenticity of EUDI Wallet Trust Evidence. |
-| PID_ISS_04 | An EUDI Wallet Unit SHALL present the corresponding data request to the EUDI Wallet User, informing the user about the attributes to be issued by the PID Provider. |
-| PID_ISS_05 | An EUDI Wallet Unit SHALL inform the PID Provider of successful issuance only after having confirmed the EUDI Wallet User's authorization to approve the PID issuance. |
-| PID_ISS_06 | An EUDI Wallet Unit SHALL support device binding for PID, enabling the EUDI Wallet User to prove possession of the bound device. |
-| PID_ISS_07 | An EUDI Wallet Unit SHALL support an activation procedure for PID Providers to verify that PID is only delivered to its subject. |
-| PID_ISS_08 | An EUDI Wallet Unit SHALL support technical specifications for securely delivering the PID from the PID provider to the device controlled by the EUDI Wallet User. |
-| PID_ISS_09 | An EUDI Wallet Unit SHALL support technical specifications to notify the PID Provider of the outcome of the PID issuance process, that is -- whether it was successful or not (e.g., PID issued to the EUDI Wallet Unit or PID not stored in the issued to the EUDI Wallet and user is informed accordingly). |
+| PID_ISS_01 | A Wallet Unit SHALL support at least the protocol defined in the technical specifications for PID issuance. A Wallet Unit MAY support additional protocols for PID issuance. The following requirements apply only to the protocol defined in the technical specifications. |
+| PID_ISS_02 | A  Wallet Unit SHALL authenticate and validate the identity of the PID Provider it is communicating with. |
+| PID_ISS_03 | A PID Provider SHALL verify the authenticity of Wallet Unit's WUA. |
+| PID_ISS_04 | A Wallet Unit SHALL present the corresponding data request to the User, informing the User about the attributes to be issued by the PID Provider. |
+| PID_ISS_05 | A Wallet Unit SHALL inform the PID Provider of successful issuance only after having confirmed the User's authorization to approve the PID issuance. |
+| PID_ISS_06 | A Wallet Unit SHALL support device binding for PID, enabling the User to prove possession of the bound device. |
+| PID_ISS_07 | A Unit SHALL support an activation procedure for PID Providers to verify that PID is only delivered to its subject. |
+| PID_ISS_08 | A Wallet Unit SHALL support technical specifications for securely delivering the PID from the PID provider to the device controlled by the User. |
+| PID_ISS_09 | A Wallet Unit SHALL support technical specifications to notify the PID Provider of the outcome of the PID issuance process, that is -- whether it was successful or not (e.g., PID issued to the Wallet Unit or PID not issued to the Wallet Unit and User is informed accordingly). |
 
-#### A.2.3.36 Topic 36 - Risk Analysis of the EUDI Wallet Usage 
+#### A.2.3.36 Topic 36 - Risk Analysis of the Wallet usage
 
 There are no HLRs for this Topic.
 
-#### A.2.3.37 Topic 37 - QES -- Remote Signing - Technical Requirements 
+#### A.2.3.37 Topic 37 - QES -- Remote Signing - Technical Requirements
 
 See [Topic 16](#a2316-topic-16---signing-documents-with-eudi-wallet).
 
@@ -1271,7 +1268,7 @@ See [Topic 16](#a2316-topic-16---signing-documents-with-eudi-wallet).
 
 *Short description*
 
-This document discusses Wallet Unit revocation. In particular, it
+This Topic discusses Wallet Unit revocation. In particular, it
 answers the following questions: 
 
 -   How can a Wallet Provider revoke a Wallet Unit? 
@@ -1344,7 +1341,7 @@ See [topic 12](#a2312-topic-12---attestation-rulebooks).
 
 This topic discusses the ability of QTSPs of electronic attestations of
 attributes to verify those attributes by electronic means at the request
-of the user, wherever those attributes rely on Authentic Sources within
+of the User, wherever those attributes rely on Authentic Sources within
 the public sector.  
 
 *HLRs*
@@ -1352,21 +1349,19 @@ the public sector.  
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | QTSPAS_01 | Member States SHALL define:  <ul><li>discovery mechanisms that enable QTSPs to request information about the Authentic Sources or designated intermediaries recognized at national level (including the attributes about a natural or legal person that the Authentic source or designated intermediary is considered to be a primary source or recognised as authentic in accordance with Union law or national law, including administrative practice);</li><li>procedures for QTSPs to request the verification of attributes from Authentic Sources,</li><li>in accordance with technical specifications referred to in QTSPAS_07, and that comply with QTSPAS_02.</li></ul> |
-| QTSPAS_02 | Authentic Sources or designated intermediaries SHALL make available an interface that:  <ul><li>determines whether a verification request for attributes comes from a QTSP of electronic attestation of attributes (so a lookup in the QTSP Trusted List);</li><li>determine whether the QTSP issues the requested attributes, and those attributes rely on an Authentic Source within the public sector;</li><li>if both requirements are met: determine the identity of the user (presumably via a Wallet or any other eIDAS identity scheme to determine the request);</li><li>determine whether the User has given consent;</li><li>after authentication of the user: verify whether the claimed attributes match the info in the authentic source; and finally</li><li>respond with a 'match' or 'no match' for each attribute.</li></ul>   <p>The Commission SHALL take measures to ensure that this interface is specified.<p>  Note: Every QTSP will be able to verify against every authentic source. |
+| QTSPAS_02 | Authentic Sources or designated intermediaries SHALL make available an interface that:  <ul><li>determines whether a verification request for attributes comes from a QTSP of electronic attestation of attributes (so a lookup in the QTSP Trusted List);</li><li>determine whether the QTSP issues the requested attributes, and those attributes rely on an Authentic Source within the public sector;</li><li>if both requirements are met: determine the identity of the User (presumably via a Wallet Unit or any other eIDAS identity scheme to determine the request);</li><li>determine whether the User has given consent;</li><li>after authentication of the User: verify whether the claimed attributes match the info in the authentic source; and finally</li><li>respond with a 'match' or 'no match' for each attribute.</li></ul>   <p>The Commission SHALL take measures to ensure that this interface is specified.<p>  Note: Every QTSP will be able to verify against every authentic source. |
 | QTSPAS_03 | Authentic source or designated intermediary SHALL define and implement QTSPAS_001 in a secure and privacy-preserving channel in accordance with technical specifications referred to in QTSPAS_007. |
 | QTSPAS_04 | Authentic source or designated intermediary SHALL define and implement QTSPAS_001 so that the QTSP will receive the result of the verification of the requested attributes, as described in QTSPAS_002. If the verification is deferred, the response to the QTSP SHALL include the maximum time that it will take to verify the requested attributes, and a unique identifier that the QTSP SHALL use to obtain the result of the verification. |
 | QTSPAS_05 | Member States SHALL define QTSPAS_001 so that the request can be sent by the QTSP directly to the Authentic Source or to a designated intermediary recognized at national level. |
 | QTSPAS_06 | Member States SHALL specify the process and mechanisms to designate the authentic sources or intermediaries recognized at national level in accordance with Union or national law, allowing the QTSPs to request the verification of attributes stored in authentic sources. |
-| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on authentic sources within the public sector, for which Member States should ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the user, their authenticity against the relevant authentic source. <p><br> Note: These standards and procedures should be, whenever possible, aligned and compatible with those used for the platforms implementing the Once Only Principle (OOTS). There is a clear synergy of both data exchange approaches. In fact, the national OOP node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
-| QTSPAS_08 | QTSP SHALL obtain consent of the user to verify the authenticity of the attributes, before requesting the verification of those attributes to the authentic source or designated intermediary. |
+| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on authentic sources within the public sector, for which Member States should ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the User, their authenticity against the relevant authentic source. <p><br> Note: These standards and procedures should be, whenever possible, aligned and compatible with those used for the platforms implementing the Once Only Principle (OOTS). There is a clear synergy of both data exchange approaches. In fact, the national OOP node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
+| QTSPAS_08 | QTSP SHALL obtain consent of the User to verify the authenticity of the attributes, before requesting the verification of those attributes to the authentic source or designated intermediary. |
 
 #### A.2.3.43 Topic 43 - Embedded disclosure policy 
 
 *Short description*
 
-This topic is focused on embedded disclosure policy and this document is
-focused on identifying high-level requirements of embedded disclosure
-policy.
+This topic is focused on identifying high-level requirements for disclosure policies which may be embedded in attestations. 
 
 *HLRs*
 
@@ -1379,7 +1374,7 @@ policy.
 | EDP_05 | The Wallet Unit SHALL provide to the User information on an embedded disclosure policy and any information provided by the Relying Party or by the requesting User, in order for the User to decide regarding the disclosure of the attributes requested by the Relying Party. |
 | EDP_06 | The Wallet Unit SHALL be capable of evaluating an embedded disclosure policy in conjunction with the information received from the requesting Relying Party or the requesting User, in order to determine if the Relying Party or the requesting User has permission from the Attestation Provider to access the requested attributes. |
 | EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting User. |
-| EDP_08 | The Commission SHALL establish non-mandatory rulebooks, in agreement with the EDICG for electronic attestation of attributes for a common and interoperable set of rules for including an embedded disclosure policy in an attestation, protocols between an EUDI Wallet Unit and a Relying Party and the presentation of the response from a Relying Party or the requesting user of the EUDI Wallet by a Wallet Unit to a Wallet User. |
+| EDP_08 | The Commission SHALL establish non-mandatory rulebooks, in agreement with the EDICG for electronic attestation of attributes for a common and interoperable set of rules for including an embedded disclosure policy in an attestation, protocols between a Wallet Unit and a Relying Party and the presentation of the response from a Relying Party (or the requesting Wallet Unit) by a Wallet Unit to a Wallet User. |
 
 #### A.2.3.44 Topic 44 - QEAA evaluation requirements 
 
@@ -1409,19 +1404,19 @@ the function of requesting data deletion ensures a higher degree of
 transparency, privacy and control of the Users over their personal
 data. 
 
-This document explores high-level requirements related to the function
+This Topic explores high-level requirements related to the function
 of Users requesting the deletion of their personal data from Relying
-Parties through the EUDI Wallet.
+Parties through their Wallet Unit.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| DATA_DLT_01 | An EUDI Wallet solution Provider SHALL provide a User interface where Users can request from Relying Parties the deletion of attributes, in accordance with technical specification. |
-| DATA_DLT_02 | The Commission SHALL develop in cooperation with the Member States technical specifications for Relying Parties interface to allow reception and processing of attribute deletion requests. |
-| DATA_DLT_03 | The EUDI Wallet interface SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request shall be submitted. |
-| DATA_DLT_04 | An EUDI Wallet interface SHALL display the previously submitted attribute deletion requests through the EUDI Wallet Unit. |
-| DATA_DLT_05 | An EUDI Wallet Unit SHALL keep attribute deletion requests in a log file so it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---eudi-wallet-user-navigation-requirements-dashboard-logs-for-transparency)). |
+| DATA_DLT_01 | A Wallet Instance SHALL provide a User interface where Users can request from Relying Parties the deletion of attributes, in accordance with technical specification. |
+| DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop  technical specifications for Relying Parties interface to allow reception and processing of attribute deletion requests. |
+| DATA_DLT_03 | A Wallet Instance interface SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request shall be submitted. |
+| DATA_DLT_04 | A Wallet Instance interface SHALL display the attribute deletion requests previously submitted through the Wallet Unit. |
+| DATA_DLT_05 | A Wallet Unit SHALL keep attribute deletion requests in a log file so it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---eudi-wallet-user-navigation-requirements-dashboard-logs-for-transparency)). |
 | DATA_DLT_06 | The log file SHALL include as a minimum:   <ul><li>Date of attribute deletion request</li><li>Relying Party to which the request was made</li><li>Attributes requested to be removed.</li></ul> |
 
 
@@ -1440,7 +1435,7 @@ Instance. Users are concerned about having control over their personal
 data, and specifically about a Relying Party over-asking for personal
 information, thus the function of reporting suspicious or inappropriate
 requests ensures a higher degree of transparency, privacy and control of
-the users over their personal data.
+the Users over their personal data.
 
 This is important specifically since there are no automatic processes
 that are able to check if the request is consistent with the information
@@ -1461,8 +1456,8 @@ Relying Parties.
 
 | **Index** | **Requirement specification** |
 |-----------|--------------------|
-| RPT_DPA_01 | A Wallet Unit SHALL provide an interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided their EUDI Wallet. |
-| RPT_DPA_02 | The interface to lodge a complaint SHALL be available in the Wallet Unit's user interface. |
+| RPT_DPA_01 | A Wallet Unit SHALL provide an interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit. |
+| RPT_DPA_02 | The interface to lodge a complaint SHALL be accessible via the Wallet Instance. |
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
 | RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---eudi-wallet-user-navigation-requirements-dashboard-logs-for-transparency)). |
