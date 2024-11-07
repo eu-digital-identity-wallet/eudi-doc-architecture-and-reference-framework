@@ -410,30 +410,19 @@ C - HLRs for Attestation Issuance
 
 >  
 
-#### A.2.3.11 Topic 11 - Pseudonym attestation  
+#### A.2.3.11 Topic 11 - Pseudonyms  
 
 *Short description*
 
-The Pseudonym Rulebook contains requirements specific to the pseudonym
-use case within the EUDI Wallet ecosystem. It specifies a single type of
-pseudonym, which will be issued by a Pseudonym Provider to a User having
-a Wallet Unit. The pseudonym specified in the Rulebook is not
-designed to fit all possible use cases for pseudonyms and to comply with
-all possible requirements. Rather, it is intended for basic use case,
-namely allowing a Relying Party to recognize a User as someone about
-whom the Relying Party already knows something, or with whom the Relying
-Party has interacted before. Member States (or other Pseudonym
-Providers) MAY specify and implement additional pseudonyms with
-different characteristics and add these to their domestic pseudonym
-namespace.
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. 
 
-For more information, see [Annex 3](../annex-3/annex-3.03_pseudonyms-rulebook.md) - \[Pseudonym Rulebook\].
+Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.0. These discussions will include the use cases for which Wallet Units must support pseudonyms and the way in which this support will be technically implemented. This Topic will be updated in ARF 2.0.</b>
 
 *High level requirements*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| PA_01 | Pseudonym Providers, Pseudonym attestations, and Wallet Units SHALL comply with all applicable requirements in [Pseudonym Rulebook]. |
+| PA_01 | A Wallet Unit SHALL be able to generate pseudonyms for its User, in compliance with the W3C WebAuthn API specification [W3C WebAuthn]. |
 
 #### A.2.3.12 Topic 12 - Attestation Rulebooks  
 
