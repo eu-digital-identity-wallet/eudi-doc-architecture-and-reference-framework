@@ -324,11 +324,11 @@ C.  Miscellaneous 
 
 | **Index** | **Requirement** |
 |-----------|--------------|
-| WUA_23 | The common OpenID4VCI protocol defined in requirement ISSU_01 SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider. |
+| WUA_23 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider. |
 | WUA_24 | A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. <br><br>Note: The reason for this requirement is that the Relying Party does not need to know anything about the User's device. This is explained in the last bullet point in section 6.6.3.5 of the main ARF document. Therefore, such data must not be released to Relying Parties, as doing so might violate User privacy|
-| WUA_25 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <p><br>Note: These three proofs MAY be implemented as a single cryptographic proof. |
-| WUA_26 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation. |
-| WUA_27 | The common OpenID4VCI protocol SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: <ul><li>the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA</li><li>or, alternatively, the existing PID or attestation public key with which the new credential key must be associated.</li></ul> |
+| WUA_25 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <p><br>Note: These three proofs MAY be implemented as a single cryptographic proof. |
+| WUA_26 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation. |
+| WUA_27 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: <ul><li>the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA</li><li>or, alternatively, the existing PID or attestation public key with which the new credential key must be associated.</li></ul> |
 
 D.  Overview: Requirements for a WSCA
 
@@ -366,7 +366,7 @@ A - Generic HLRs
 | ISSU_01 | Wallet Providers SHALL ensure that their Wallet Solution supports the OpenID4VCI protocol specified in [OpenID4VCI], with additions and changes as documented in this Annex (see e.g. this Topic and [[Topic 9](#a239-topic-9---wallet-trust-evidence)]) and in future technical specifications created by or on behalf of the Commission. |
 | ISSU_02 | Wallet Providers SHALL ensure that their Wallet Solution supports the attestation formats specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>"SD-JWT-based Verifiable Credentials (SD-JWT VC)", see [SD-JWT-VC].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
 | ISSU_03 | Wallet Providers SHALL ensure that their Wallet Solution supports the presentation protocols specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>OpenID for Verifiable Presentations, see [OpenID4VP].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
-| ISSU_04 | The OpenID4VCI protocol specified in [OpenID4VCI] SHALL enable PID Providers and Attestation Provider to issue to a Wallet Unit a batch of multiple PIDs or attestations that are simultaneously valid and contain the same attributes. |
+| ISSU_04 | The OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable PID Providers and Attestation Provider to issue to a Wallet Unit a batch of multiple PIDs or attestations that are simultaneously valid and contain the same attributes. |
 | ISSU_05 | A Wallet Unit SHALL support a process to activate a newly issued PID or attestation, in accordance with [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502) Section 2.2.2. The goal of the activation process is to verify that the PID or attestation was delivered into the Wallet Unit and WSCA of the User to whom it belongs. The Wallet Unit SHALL NOT allow a User to use a non-activated PID or attestation. |
 | ISSU_06 | After a Wallet Unit receives a PID or an attestation from a PID Provider or Attestation Provider, it SHALL verify that the PID or attestation it received matches the request. |
 | ISSU_07 | After a Wallet Unit receives a PID from a PID Provider, it SHALL validate the signature or seal of the PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. |
@@ -382,14 +382,14 @@ B - HLRs for PID issuance
 |-----------|--------------|
 | ISSU_13 | A Wallet Provider SHALL ensure that at least one PID Provider is willing to issue a PID complying with [PID Rulebook] to Users of the Wallet Units it provides. |
 | ISSU_14 | A PID Provider SHALL ensure that all PIDs it issues to Wallet Units comply with the requirements specified in [PID Rulebook]. |
-| ISSU_15 | A PID Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing PIDs. |
+| ISSU_15 | A PID Provider SHALL support the OpenID4VCI protocol referenced in ISSU_01 for issuing PIDs. |
 | ISSU_16 | A PID Provider SHALL NOT provide the same set of values for mandatory PID attributes for more than one User. <p><br>Note: With the contents of the PID as currently described in [PID Rulebook], complying with this requirement may not be possible. If this turns out to be so, [PID Rulebook] will be changed. |
 | ISSU_17 | A PID Provider SHALL implement device binding for all PIDs it issues, meaning it SHALL ensure that a PID is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 10](#a2310-topic-10---issuing-a-pid-or-attestation-to-the-eudi-wallet)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
 | ISSU_18 | A PID Provider SHALL verify the identity of the User in compliance with Level of Assurance (LoA) High requirements. |
 | ISSU_19 | For the verification of a WUA, a PID Provider SHALL accept the trust anchors in the Wallet Provider Trusted List(s) it needs. <br>Notes: <ul><li>Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].</li><li>It is not mandatory for a PID Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which Trusted Lists they need to subscribe to.</li></ul> |
 | ISSU_20 | A PID Provider SHALL publish a list of Wallet Solutions that they support for issuing their PID(s) in such a way that Users can easily find it, for example on the PID Provider's website. |
 | ISSU_21 | Before issuing a PID, a PID Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Units's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-trust-evidence)] and [[Topic 38](#a2338-topic-38---wallet-instance-revocation)]. |
-| ISSU_22 | A PID Provider SHALL include its PID Provider access certificate in its Client metadata used in the common OpenID4VCI protocol defined in ISSU_01. |
+| ISSU_22 | A PID Provider SHALL include its PID Provider access certificate in its Client metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_23 | For the verification of PID Provider access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of PID Provider Access CAs it needs. <br>Notes: <ul><li>PID Provider Access CA Trusted Lists are explained in [[Topic 27](#a2327-topic-27---relying-party-registration)].</li><li>It is not mandatory for a Wallet Unit to accept all PID Provider Access CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.</li></ul> |
 | ISSU_24 | A Wallet Unit SHALL authenticate and validate the PID Provider access certificate before requesting the issuance of a PID. The Wallet Unit SHALL verify at least that: <ul><li>The access certificate indicates that its subject is a PID Provider,</li><li>The access certificate is authentic and is valid at the time of validation, and</li><li>The Issuer of the access certificate is a CA that is in a PID Provider Access CA Trusted List.</li></ul> <br>Note: The PID Provider Access CA Trusted List is not the same as the PID Provider Trusted List mentioned in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. |
 
@@ -398,42 +398,31 @@ C - HLRs for Attestation Issuance
 | **Index** | **Requirement specification** |
 |-----------|--------------|
 | ISSU_25 | An Attestation Provider SHALL ensure all attestations issued to Wallet Units comply with the requirements specified in the applicable Rulebook, as described in [[Topic 12](#a2312-topic-12---attestation-rulebooks)]. |
-| ISSU_26 | An Attestation Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing attestations. |
+| ISSU_26 | An Attestation Provider SHALL support the OpenID4VCI protocol referenced in ISSU_01 for issuing attestations. |
 | ISSU_27 | An Attestation Provider SHALL implement device binding for all attestations it issues, meaning it SHALL ensure that an attestation is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 9](#a239-topic-9---wallet-trust-evidence)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
 | ISSU_28 | For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider Trusted List(s) it needs. <br>Notes: <ul><li>Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].</li><li>It is not mandatory for an Attestation Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for an Attestation Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each Attestation Provider will choose which Trusted Lists they need to subscribe to.</li></ul> |
 | ISSU_29 | An Attestation Provider SHALL publish a list of Wallet Solutions that they support for issuing their attestation(s) in such a way that Users can easily find it, for example on the Attestation Provider's website. |
 | ISSU_30 | Before issuing an attestation, a QEAA Provider or Pub-EAA Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-trust-evidence)] and [[Topic 38](#a2338-topic-38---wallet-instance-revocation)]. |
 | ISSU_31 | Before issuing an attestation, an EAA Provider SHOULD: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> |
-| ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Client metadata used in the common OpenID4VCI protocol defined in ISSU_01. |
+| ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Client metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_33 | For the verification of Attestation Provider access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of Attestation Provider Access CAs it needs. <br>Notes: <ul><li>Attestation Provider Access CA Trusted Lists are explained in [[Topic 27](#a2327-topic-27---relying-party-registration)]. There may be separate Access CA Trusted Lists for QEAA Providers, PuB-EAA Providers, and EAA Providers.</li><li>It is not mandatory for a Wallet Unit to accept all Attestation Provider Access CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.</li></ul> |
 | ISSU_34 | A Wallet Unit SHALL authenticate and validate the Attestation Provider access certificate before requesting the issuance of an attestation. The Wallet Unit SHALL verify at least that: <ul><li>The access certificate indicates that its subject is a QEAA Provider, Pub-EAA Provider, or EAA Provider.</li><li>The access certificate is authentic and is valid at the time of validation.</li><li>The Issuer of the access certificate is a CA that is in the Attestation Provider CA Trusted List, as documented in [[Topic 27](#a2327-topic-27---relying-party-registration)].</li></ul> <br>Notes: <ul><li>The Attestation Provider CA Trusted List is not the same as the Attestation Provider Trusted List mentioned in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].</li><li>PID Providers, QEAA Providers, and PuB-EAA Providers are supposed to be trustworthy by default. For EAA Providers, the applicable Rulebook (see [[Topic 12](#a2312-topic-12---attestation-rulebooks)]) may define additional mechanisms allowing the Wallet Unit to verify that the EAA Provider is authorized or registered to issue the type of EAA the Wallet Unit is requesting.</li></ul> |
 
 >  
 
-#### A.2.3.11 Topic 11 - Pseudonym attestation  
+#### A.2.3.11 Topic 11 - Pseudonyms  
 
 *Short description*
 
-The Pseudonym Rulebook contains requirements specific to the pseudonym
-use case within the EUDI Wallet ecosystem. It specifies a single type of
-pseudonym, which will be issued by a Pseudonym Provider to a User having
-a Wallet Unit. The pseudonym specified in the Rulebook is not
-designed to fit all possible use cases for pseudonyms and to comply with
-all possible requirements. Rather, it is intended for basic use case,
-namely allowing a Relying Party to recognize a User as someone about
-whom the Relying Party already knows something, or with whom the Relying
-Party has interacted before. Member States (or other Pseudonym
-Providers) MAY specify and implement additional pseudonyms with
-different characteristics and add these to their domestic pseudonym
-namespace.
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. 
 
-For more information, see [Annex 3](../annex-3/annex-3.03_pseudonyms-rulebook.md) - \[Pseudonym Rulebook\].
+Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.0. These discussions will include the use cases for which Wallet Units must support pseudonyms and the way in which this support will be technically implemented. This Topic will be updated in ARF 2.0.</b>
 
 *High level requirements*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| PA_01 | Pseudonym Providers, Pseudonym attestations, and Wallet Units SHALL comply with all applicable requirements in [Pseudonym Rulebook]. |
+| PA_01 | A Wallet Unit SHALL be able to generate pseudonyms for its User, in compliance with the W3C WebAuthn API specification [W3C WebAuthn]. |
 
 #### A.2.3.12 Topic 12 - Attestation Rulebooks  
 
@@ -634,7 +623,7 @@ C.  Miscellaneous
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
+| ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
 
 #### A.2.3.19 Topic 19 - User navigation requirements (Dashboard logs for transparency) 
 
