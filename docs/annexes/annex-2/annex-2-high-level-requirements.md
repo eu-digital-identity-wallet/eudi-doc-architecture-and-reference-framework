@@ -324,11 +324,11 @@ C.  Miscellaneous 
 
 | **Index** | **Requirement** |
 |-----------|--------------|
-| WUA_23 | The common OpenID4VCI protocol defined in requirement ISSU_01 SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider. |
+| WUA_23 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider. |
 | WUA_24 | A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. <br><br>Note: The reason for this requirement is that the Relying Party does not need to know anything about the User's device. This is explained in the last bullet point in section 6.6.3.5 of the main ARF document. Therefore, such data must not be released to Relying Parties, as doing so might violate User privacy|
-| WUA_25 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <p><br>Note: These three proofs MAY be implemented as a single cryptographic proof. |
-| WUA_26 | The common OpenID4VCI protocol SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation. |
-| WUA_27 | The common OpenID4VCI protocol SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: <ul><li>the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA</li><li>or, alternatively, the existing PID or attestation public key with which the new credential key must be associated.</li></ul> |
+| WUA_25 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <p><br>Note: These three proofs MAY be implemented as a single cryptographic proof. |
+| WUA_26 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation. |
+| WUA_27 | The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: <ul><li>the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA</li><li>or, alternatively, the existing PID or attestation public key with which the new credential key must be associated.</li></ul> |
 
 D.  Overview: Requirements for a WSCA
 
@@ -366,7 +366,7 @@ A - Generic HLRs
 | ISSU_01 | Wallet Providers SHALL ensure that their Wallet Solution supports the OpenID4VCI protocol specified in [OpenID4VCI], with additions and changes as documented in this Annex (see e.g. this Topic and [[Topic 9](#a239-topic-9---wallet-trust-evidence)]) and in future technical specifications created by or on behalf of the Commission. |
 | ISSU_02 | Wallet Providers SHALL ensure that their Wallet Solution supports the attestation formats specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>"SD-JWT-based Verifiable Credentials (SD-JWT VC)", see [SD-JWT-VC].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
 | ISSU_03 | Wallet Providers SHALL ensure that their Wallet Solution supports the presentation protocols specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>OpenID for Verifiable Presentations, see [OpenID4VP].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
-| ISSU_04 | The OpenID4VCI protocol specified in [OpenID4VCI] SHALL enable PID Providers and Attestation Provider to issue to a Wallet Unit a batch of multiple PIDs or attestations that are simultaneously valid and contain the same attributes. |
+| ISSU_04 | The OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable PID Providers and Attestation Provider to issue to a Wallet Unit a batch of multiple PIDs or attestations that are simultaneously valid and contain the same attributes. |
 | ISSU_05 | A Wallet Unit SHALL support a process to activate a newly issued PID, in accordance with [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502) Section 2.2.2. The goal of the activation process is to verify that the PID was delivered into the Wallet Unit and WSCA of the User to whom it belongs. The Wallet Unit SHALL NOT allow a User to use a non-activated PID. <br><br>Note: This requirement is not applicable for QEAAs, PuB-EAAs or non-qualified EAAs, since these are not identity means in the sense of Commission Implementing Regulation (EU) 2015/1502.|
 | ISSU_06 | After a Wallet Unit receives a PID or an attestation from a PID Provider or Attestation Provider, it SHALL verify that the PID or attestation it received matches the request. |
 | ISSU_07 | After a Wallet Unit receives a PID from a PID Provider, it SHALL validate the signature or seal of the PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. <br><br>Note: This signature validation may not be useful in architectures where the Wallet Provider is also the PID Provider and the validation of the PID signature would be done by the same component (namely, a remote HSM) that created the signature. However, in such a situation, additional measures SHALL be taken to ensure that any errors in the PID issuance process will be detected.|
@@ -383,7 +383,7 @@ B - HLRs for PID issuance
 |-----------|--------------|
 | ISSU_13 | A Wallet Provider SHALL ensure that at least one PID Provider is willing to issue a PID complying with [PID Rulebook] to Users of the Wallet Units it provides. |
 | ISSU_14 | A PID Provider SHALL ensure that all PIDs it issues to Wallet Units comply with the requirements specified in [PID Rulebook]. |
-| ISSU_15 | A PID Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing PIDs. |
+| ISSU_15 | A PID Provider SHALL support the OpenID4VCI protocol referenced in ISSU_01 for issuing PIDs. |
 | ISSU_16 | A PID Provider SHALL NOT provide the same set of values for mandatory PID attributes for more than one User. <p><br>Note: With the contents of the PID as currently described in [PID Rulebook], complying with this requirement may not be possible. If this turns out to be so, [PID Rulebook] will be changed. |
 | ISSU_17 | A PID Provider SHALL implement device binding for all PIDs it issues, meaning it SHALL ensure that a PID is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 09](#a239-topic-9---wallet-trust-evidence)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
 | ISSU_18 | A PID Provider SHALL verify the identity of the User in compliance with Level of Assurance (LoA) High requirements. |
@@ -391,7 +391,7 @@ B - HLRs for PID issuance
 | ISSU_19b | A PID Provider SHALL support at least one Wallet Solution, meaning that it is willing and able to issue a PID to a Wallet Unit on request of the User. 
 | ISSU_20 | To inform its potential PID Users about the Wallet Solution(s) they can use for requesting a PID, a PID Provider SHALL publish a list of supported Wallet Solutions in such a way that Users can easily find it, for example on the PID Provider's website. |
 | ISSU_21 | Before issuing a PID, a PID Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Units's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-trust-evidence)] and [[Topic 38](#a2338-topic-38---wallet-instance-revocation)]. |
-| ISSU_22 | A PID Provider SHALL include its PID Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol defined in ISSU_01. |
+| ISSU_22 | A PID Provider SHALL include its PID Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_23 | For the verification of PID Provider access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of PID Provider Access CAs it needs. <br>Notes: <ul><li>PID Provider Access CA Trusted Lists are explained in [[Topic 27](#a2327-topic-27---relying-party-registration)].</li><li>It is not mandatory for a Wallet Unit to accept all PID Provider Access CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.</li></ul> |
 | ISSU_23b | A Wallet Provider SHALL support at least one PID Provider, meaning that its Wallet Units SHALL be capable of requesting the issuance of a PID from these PID Provider(s), and that the Wallet Provider has agreed with the PID Provider(s) that the PID Provider(s) will process such a request according to the agreed rules and procedures. |
 | ISSU_23c | Prior to or during installation of a Wallet Unit, the Wallet Provider SHALL notify the User about the PID Provider(s) that are supported by the Wallet Unit. |
@@ -402,43 +402,32 @@ C - HLRs for Attestation Issuance
 | **Index** | **Requirement specification** |
 |-----------|--------------|
 | ISSU_25 | An Attestation Provider SHALL ensure all attestations issued to Wallet Units comply with the requirements specified in the applicable Rulebook, as described in [[Topic 12](#a2312-topic-12---attestation-rulebooks)]. |
-| ISSU_26 | An Attestation Provider SHALL support the OpenID4VCI protocol mentioned in ISSU_01 for issuing attestations. |
+| ISSU_26 | An Attestation Provider SHALL support the OpenID4VCI protocol referenced in ISSU_01 for issuing attestations. |
 | ISSU_27 | An Attestation Provider SHALL implement device binding for all attestations it issues, meaning it SHALL ensure that an attestation is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_13 in [[Topic 9](#a239-topic-9---wallet-trust-evidence)]. <p><br>Note that device binding is called mdoc authentication in [ISO/IEC 18013-5] and key binding in [SD-JWT-VC]. |
 | ISSU_28 | For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in all Wallet Provider Trusted Lists.<br><br>Note: Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. |
 | ISSU_29 | A QEAA Provider or Pub-EAA Provider SHALL support all Wallet Solutions, meaning that they SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation. |
 | ISSU_30 | Before issuing an attestation, a QEAA Provider or Pub-EAA Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-trust-evidence)] and [[Topic 38](#a2338-topic-38---wallet-instance-revocation)]. |
 | ISSU_31 | Before issuing an attestation, an EAA Provider SHOULD: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> |
-| ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol defined in ISSU_01. |
+| ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_33 | For the verification of Attestation Provider access certificates, a Wallet Unit SHALL accept the trust anchors in all Attestation Provider Access CA Trusted List(s). <br><br>Note: Attestation Provider Access CA Trusted Lists are explained in [[Topic 27](#a2327-topic-27---relying-party-registration)]. There may be separate Access CA Trusted Lists for QEAA Providers, PuB-EAA Providers, and EAA Providers. |
 | ISSU_33b | A Wallet Provider SHALL support all QEAA Providers and Pub-EAA Providers, meaning that its Wallet Units SHALL be capable of requesting the issuance of a QEAA or PuB-EAA from these Providers at the User's request. | 
 | ISSU_34 | A Wallet Unit SHALL authenticate and validate the Attestation Provider access certificate before requesting the issuance of an attestation. The Wallet Unit SHALL verify at least that: <ul><li>The access certificate indicates that its subject is a QEAA Provider, Pub-EAA Provider, or EAA Provider.</li><li>The access certificate is authentic and is valid at the time of validation.</li><li>The Issuer of the access certificate is a CA that is in the Attestation Provider CA Trusted List, as documented in [[Topic 27](#a2327-topic-27---relying-party-registration)].</li></ul> <br>Note: PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting an EAA from a non-qualified EAA Provider, a Wallet Unit may need to verify that that EAA Provider is authorized or registered to issue the type of EAA the Wallet Unit is requesting. Such verification requirements, as well as the mechanisms allowing to do this, may be defined in the applicable Rulebook. |
 
 >  
 
-#### A.2.3.11 Topic 11 - Pseudonym attestation  
+#### A.2.3.11 Topic 11 - Pseudonyms  
 
 *Short description*
 
-The Pseudonym Rulebook contains requirements specific to the pseudonym
-use case within the EUDI Wallet ecosystem. It specifies a single type of
-pseudonym, which will be issued by a Pseudonym Provider to a User having
-a Wallet Unit. The pseudonym specified in the Rulebook is not
-designed to fit all possible use cases for pseudonyms and to comply with
-all possible requirements. Rather, it is intended for basic use case,
-namely allowing a Relying Party to recognize a User as someone about
-whom the Relying Party already knows something, or with whom the Relying
-Party has interacted before. Member States (or other Pseudonym
-Providers) MAY specify and implement additional pseudonyms with
-different characteristics and add these to their domestic pseudonym
-namespace.
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. 
 
-For more information, see [Annex 3](../annex-3/annex-3.03_pseudonyms-rulebook.md) - \[Pseudonym Rulebook\].
+Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.0. These discussions will include the use cases for which Wallet Units must support pseudonyms and the way in which this support will be technically implemented. This Topic will be updated in ARF 2.0.</b>
 
 *High level requirements*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| PA_01 | Pseudonym Providers, Pseudonym attestations, and Wallet Units SHALL comply with all applicable requirements in [Pseudonym Rulebook]. |
+| PA_01 | A Wallet Unit SHALL be able to generate pseudonyms for its User, in compliance with the W3C WebAuthn API specification [W3C WebAuthn]. |
 
 #### A.2.3.12 Topic 12 - Attestation Rulebooks  
 
@@ -533,12 +522,12 @@ A.  Requirement for Wallet Providers
 | **Index** | **Requirement specification** |
 |-----------|------------|
 | QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a Qualified Certificate for Qualified Electronic Signature bound to a QSCD. |
-| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: <ul><li>The Signature Creation Application SHALL as a minimum be capable of signing User-provided data.</li><li>The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it.</li><li>The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12.</li></ul>  Notes: <ul><li>Signature Creation Application (SCA): see definition in ETSI TS 119 432 standard.</li><li>if the SCA is external to the Wallet Solution, it may be for example a separate mobile application, be hosted remotely, for instance by the QTSP or by a Relying Party.</li></ul>|
+| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: <ul><li>The Signature Creation Application SHALL as a minimum be capable of signing User-provided data.</li><li>The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it.</li><li>The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12.</li></ul>  Notes: <ul><li>Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard.</li><li>if the SCA is external to the Wallet Solution, it may be for example a separate mobile application, be hosted remotely, for instance by the QTSP or by a Relying Party.</li></ul>|
 | QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL implement secure authentication and signature/seal invocation capabilities in the Wallet Solution, either as a part of a local QSCD external to the Wallet Solution, or as part of a remote QSCD managed by a QTSP. |
 | QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure authentication and signature or seal functionality. |
 | QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a Remote QES Provider (i.e., a QTSP offering remote QES). |
 | QES_06 | Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: <ul><li>remote QES creation through secure authentication to a QTSP signature web portal.</li><li>remote QES creation channelled by the Walle Instance.</li><li>remote QES creation channelled by a Relying Party.</li></ul> |
-| QES_07 | Wallet Providers SHALL ensure that a Signature Creation Application embedded in their Wallet Solution supports the Cloud Signature Consortium specification, \[CSC\].|
+| QES_07 | Wallet Providers SHALL ensure that a Signature Creation Application embedded in their Wallet Solution supports the Cloud Signature Consortium API Specification v.2.|
 | QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to sign documents based on the following signature formats, either using an internal or an external Signature Creation Application component (SCA):  <ul><li>PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1,</li><li>XAdES (XML Advanced Electronic Signature) as specified in ETSI EN 319 132-1,</li><li>JAdES (JSON Advanced Electronic Signature) as specified in ETSI TS 119 182-1,</li><li>CAdES (CMS Advanced Electronic Signature) as specified in ETSI EN 319 122-1,</li><li>ASiC (Associated Signature Container) as specified in ETSI EN 319 162-1.</li></ul> |
 | QES_09 | Wallet Providers SHALL ensure that if a Wallet Unit acts as the signature creation application, it supports at least one of the signature formats mentioned in QES_08. |
 | QES_10 | Wallet Providers SHOULD ensure that a Wallet Unit presents the document or data to be signed to the User.|
@@ -556,38 +545,29 @@ B.  Requirements for QTSPs
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of their Wallet Solution supports:   <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2 .</li></ul> |
-| QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports CEN EN 419 241-1 -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements |
+| QES_23 | QTSPs providing the remote QES part of a Wallet Solution SHALL support:   <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2 .</li></ul> |
+| QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports SCAL2 as defined in CEN EN 419 241-1 (Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements), and communicates with the remote signing QTSP as defined in Cloud Signature Consortium API Specification v.2. |
 
 C.  Requirements for the Commission
 
 | **Index** | **Requirement specification** |
 |-----------|------------|
-| QES_23 | Wallet Providers SHALL ensure that the QTSP providing the remote QES part of their Wallet Solution supports:  <ul><li>ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</li><li>ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.</li><li>ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2.</li></ul> |
-| QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports CEN EN 419 241-1 -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements |
-| QES_25 | The Commission SHALL ensure that the Cloud Signature Consortium [CSC] specification is formally endorsed as a European standard.|
-| QES_26 | The Commission SHALL ensure that ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation (and other related specifications), is updated and completed according to the technical requirements of the EUDI Wallet ecosystem. |
+| QES_25 | Empty |
+| QES_26 | Empty |
 
 
-#### A.2.3.17 Topic 17 - Identity matching 
+#### A.2.3.17 Topic 17 - Identity matching
 
 *Short description*
 
 Users would like to use their PID in their Wallet Unit to access their existing online
-accounts, even if their PID attribute values are not
-exactly the same as in their other eIDs. Users typically have
-one or more bank accounts, regularly need to log in the public sector
-services, or use online services provided by large platforms. This
-enables them to use their preferred eID means for their online
-interactions.
+account(s), even if their PID attribute values are not
+exactly the same as those in their account(s). Users regularly need to log in to cross-border services offered by public sector bodies. Identity matching
+enables them to use their Wallet Unit to do so.
 
 *High level requirements*
 
-| **Index** | **Requirement specification** |
-|-----------|---------------|
-| IM_01 | Relying Parties in a Member State, providing cross-border services, SHALL ensure identity matching for natural persons when accessing existing accounts belonging to the same person, employing a risk-based approach.  <br>For purposes of ensuring identity matching, Relying Parties SHALL offer to natural person Users at least to:  <ul><li>request the identified User to identify with another eID means which is accepted by the Relying Party so to link the data received from the Wallet Unit with the account to which the User proved to have access to.</li></ul>  In addition, Relying Parties MAY offer natural person Users to:   <ul><li>request for their PID to compare the PID attributes against attributes of existing accounts to verify whether their PID belongs to a current account owner.</li></ul> For purposes of facilitating identity matching by other Member States, Member States SHALL provide to natural person PID-s *at least* four optional attributes of their choice. |
-| IM_02 | Identity matching MAY be provided by a Relying Party, by allowing additional linked notified electronic identification means or certified European Digital Identity Wallets, issued by another Member State to be used. |
-| IM_03 | When requirements exist for Relying Parties cross-border services to allow persons access based on person identification data provided by other Member States, a Member State SHALL ensure risk-based identity matching and if necessary, at national level MAY require specific complementary unique identification procedures.<p><br> Where the natural person User in question cannot prove their identity with another eID means accepted by the Relying Party, the Member State MAY require complementary procedures for the User to prove their identity, such as to allow trained officials to verify the User's identity in a controlled environment. </p> |
+There are no HLRs for this Topic.
 
 #### A.2.3.18 Topic 18 - Combined presentations of attributes
 
@@ -648,7 +628,7 @@ C.  Miscellaneous
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
+| ACP_09 | The common \[ISO18013-5\] and \[OpenID4VP\] protocols, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
 
 #### A.2.3.19 Topic 19 - User navigation requirements (Dashboard logs for transparency) 
 
