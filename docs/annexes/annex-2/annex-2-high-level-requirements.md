@@ -564,25 +564,18 @@ C.  Requirements for the Commission
 | QES_26 | The Commission SHALL ensure that ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation (and other related specifications), is updated and completed according to the technical requirements of the EUDI Wallet ecosystem. |
 
 
-#### A.2.3.17 Topic 17 - Identity matching 
+#### A.2.3.17 Topic 17 - Identity matching
 
 *Short description*
 
 Users would like to use their PID in their Wallet Unit to access their existing online
-accounts, even if their PID attribute values are not
-exactly the same as in their other eIDs. Users typically have
-one or more bank accounts, regularly need to log in the public sector
-services, or use online services provided by large platforms. This
-enables them to use their preferred eID means for their online
-interactions.
+account(s), even if their PID attribute values are not
+exactly the same as those in their account(s). Users regularly need to log in to cross-border services offered by public sector bodies. Identity matching
+enables them to use their Wallet Unit to do so.
 
 *High level requirements*
 
-| **Index** | **Requirement specification** |
-|-----------|---------------|
-| IM_01 | Relying Parties in a Member State, providing cross-border services, SHALL ensure identity matching for natural persons when accessing existing accounts belonging to the same person, employing a risk-based approach.  <br>For purposes of ensuring identity matching, Relying Parties SHALL offer to natural person Users at least to:  <ul><li>request the identified User to identify with another eID means which is accepted by the Relying Party so to link the data received from the Wallet Unit with the account to which the User proved to have access to.</li></ul>  In addition, Relying Parties MAY offer natural person Users to:   <ul><li>request for their PID to compare the PID attributes against attributes of existing accounts to verify whether their PID belongs to a current account owner.</li></ul> For purposes of facilitating identity matching by other Member States, Member States SHALL provide to natural person PID-s *at least* four optional attributes of their choice. |
-| IM_02 | Identity matching MAY be provided by a Relying Party, by allowing additional linked notified electronic identification means or certified European Digital Identity Wallets, issued by another Member State to be used. |
-| IM_03 | When requirements exist for Relying Parties cross-border services to allow persons access based on person identification data provided by other Member States, a Member State SHALL ensure risk-based identity matching and if necessary, at national level MAY require specific complementary unique identification procedures.<p><br> Where the natural person User in question cannot prove their identity with another eID means accepted by the Relying Party, the Member State MAY require complementary procedures for the User to prove their identity, such as to allow trained officials to verify the User's identity in a controlled environment. </p> |
+There are no HLRs for this Topic.
 
 #### A.2.3.18 Topic 18 - Combined presentations of attributes
 
