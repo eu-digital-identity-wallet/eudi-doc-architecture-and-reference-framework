@@ -3085,7 +3085,7 @@ For undated references, the latest version available applies.
 | \[W3C VCDM v2.0\] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
 | \[W3C WebAuthn\] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408), An API for accessing Public Key Credentials Level 2, W3C Recommendation, 8 April 2021
 | \[OpenID4VCI\]    | Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> |
-| \[OpenID4VP\]     | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
+| \[OpenID4VP\]     | Terbu, O. et.al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
 | \[Topic 6\]        | Annex 2 - Relying Party authentication and User Approval                                                                                 |
 | \[Topic 7\]        | Annex 2 - Attestation validity checks and revocation                                                                                     |
 | \[Topic 9\]        | Annex 2 - Wallet Trust Evidence                                                                                                          |
