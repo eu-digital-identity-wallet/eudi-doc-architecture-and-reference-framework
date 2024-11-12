@@ -1320,8 +1320,9 @@ There are no HLRs for this Topic.
 *HLRs*
 
 | **Index** | **Requirement specification** |
-|
-
+|-----------|------------------|
+| WUI_01 | To ensure that the User can trust the Wallet Solution, a Wallet Provider SHOULD make its certified Wallet Solution available for installation only via the official app store of the relevant operating system (e.g., Android, iOS). <br><br>Note: This allows the operating system of the device to perform relevant checks regarding the authenticity of the Wallet Unit. |
+| WUI_02 | If a Wallet Provider makes its certified Wallet Solution available for installation through other means than the official OS app store, it SHALL implement a mechanism allowing the User to verify the authenticity of the Wallet Unit. Moreover, it SHALL provide clear instructions to the User on how to install the Wallet Unit, including at least:<ul><li>instructions on the verification of the authenticity of the Wallet Instance to be installed,</li><li>instructions on bypassing of any operating system limitations on side-loading of apps, if applicable, and ensuring that these limitations are restored after the Wallet Instance has been installed.</li></ul> <br> Note: This requirement also applies for the installation of a Wallet Unit on a user device that is not a mobile device, and for which no official operating system app store may exist. | 
 
 
 #### A.2.3.41 Topic 41 - Minimum requirements on PuB-EAAs rulebooks 
