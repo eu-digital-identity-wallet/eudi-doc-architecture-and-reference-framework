@@ -788,7 +788,7 @@ The following points are emphasized: 
 
 *Short description*
 
-See [topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabulary-for-attestation-attributes).
+See [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabulary-for-attestation-attributes).
 
 *HLRs*
 
