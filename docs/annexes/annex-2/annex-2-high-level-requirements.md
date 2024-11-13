@@ -1152,7 +1152,7 @@ A.  Back-up requirements
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| Mig_01 | A Wallet Unit SHALL include a Migration Object. |
+| Mig_01 | A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information:<ul><li> The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02.</li><li>A list of PIDs and attestations present in the Wallet Unit, according to the requirements in this Topic.</li> |
 | Mig_02 | The Commission SHALL define a technical specification of the Migration Object. |
 | Mig_03 | For each PID or attestation that is issued to it, a Wallet Unit SHALL add all data that is necessary to request re-issuance of that PID or attestation to the Migration Object. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation. |
 | Mig_03b | If the User deletes a PID or attestation from their Wallet Unit, the Wallet Unit SHALL delete the corresponding entry from the Migration Object. |
@@ -1165,9 +1165,10 @@ B.  Restore Requirements
 |-----------|-----------------|
 | Mig_06 | Directly after installation of a new Wallet Unit, the Wallet Unit SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User. |
 | Mig_07 | For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored. |
+| Mig_07b | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in Topic 19. |
 | Mig_08 | Empty |
 | Mig_09 | Empty |
-| Mig_10 | Empty|
+| Mig_10 | Empty |
 | Mig_11 | The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in [Topic 10]. |
 | Mig_12 | Empty |
 | Mig_13 | Empty |
