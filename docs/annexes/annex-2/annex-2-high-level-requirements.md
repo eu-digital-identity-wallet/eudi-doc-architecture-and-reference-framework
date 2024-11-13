@@ -1346,20 +1346,22 @@ the public sector.  
 
 *Short description*
 
-This topic is focused on identifying high-level requirements for disclosure policies which may be embedded in attestations. 
+This topic is focused on identifying high-level requirements for disclosure policies which may be embedded in an attestation. Such a policy may be created by the Attestation Provider, and allows the Wallet Unit, using data obtained from the Relying Party, to determine whether the Attestation Provider agrees with releasing specific attributes from the attestation to the Relying Party.
+
+Where requirements in this Topic refer to a 'requesting Wallet Unit', what is meant is a Wallet Unit that is used to request attributes from another Wallet Unit, as described in [Topic 30].
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| EDP_01 | A PID Provider or Attestation Provider SHALL be able to include an embedded disclosure policy in a PID or attestation, as defined in the applicable rulebook. |
-| EDP_02 | The Provider of a PID or attestation that includes an embedded disclosure policy as in EDP_01 SHALL comply with the applicable rulebook when including an embedded disclosure policy in the PID or attestation. |
-| EDP_03 | A Wallet Unit holding a PID or attestation with an embedded disclosure policy SHALL request required information from the Relying Party or from the requesting User, in order to receive information relevant to the disclosure policy. |
-| EDP_04 | The Relying Party or the requesting User SHALL provide information required by a disclosure policy to the Wallet Unit in the Relying Party access certificate. |
-| EDP_05 | The Wallet Unit SHALL provide to the User information on an embedded disclosure policy and any information provided by the Relying Party or by the requesting User, in order for the User to decide regarding the disclosure of the attributes requested by the Relying Party. |
-| EDP_06 | The Wallet Unit SHALL be capable of evaluating an embedded disclosure policy in conjunction with the information received from the requesting Relying Party or the requesting User, in order to determine if the Relying Party or the requesting User has permission from the Attestation Provider to access the requested attributes. |
-| EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting User. |
-| EDP_08 | The Commission SHALL establish non-mandatory rulebooks, in agreement with the EDICG for electronic attestation of attributes for a common and interoperable set of rules for including an embedded disclosure policy in an attestation, protocols between a Wallet Unit and a Relying Party and the presentation of the response from a Relying Party (or the requesting Wallet Unit) by a Wallet Unit to a Wallet User. |
+| EDP_01 | A Wallet Unit SHALL enable an Attestation Provider to optionally include an embedded disclosure policy in a QEAA, PuB-EAA, or non-qualified EAA, as defined in the applicable Rulebook. <br><br>Note: The Regulation does not contain a requirement for PIDs to be able to contain an embedded disclosure policy. |
+| EDP_02 | The Provider of an attestation that includes an embedded disclosure policy as meant in EDP_01 SHALL comply with the applicable Rulebook when including an embedded disclosure policy in the attestation. |
+| EDP_03 | An embedded disclosure policy created by an Attestation Provider SHALL only refer to information provided in an authenticated manner to the Wallet Unit by the Relying Party or the requesting Wallet Unit. <br><br>Note: A future version of this ARF will specify a method for the Attestation Provider to ensure that the Relying Party (or requesting Wallet Unit) can provide such authenticated information to the Wallet Instance. A possibility is to use Attribute Certificates as specified in RFC 5755, referencing the Relying Party access certificate. This will be discussed with Member States for ARF 2.0.|
+| EDP_04 | Empty |
+| EDP_05 | The Wallet Unit SHALL provide to the User information on an embedded disclosure policy and any information provided by the Relying Party or by the requesting Wallet Unit, in order for the User to decide regarding the disclosure of the attributes requested by the Relying Party. |
+| EDP_06 | The Wallet Unit SHALL be capable of evaluating an embedded disclosure policy in conjunction with the information received from the requesting Relying Party or the requesting Wallet Unit, in order to determine if the Relying Party or the requesting Wallet Unit has permission from the Attestation Provider to access the requested attributes. |
+| EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting Wallet Unit. |
+| EDP_08 | The Commission SHALL take measures to create a technical specification establishing common mechanisms for the specification of embedded disclosure policies by PID Providers and Attestation Providers, and for the evaluation of such policies by Wallet Instances. |
 
 #### A.2.3.44 Topic 44 - QEAA evaluation requirements 
 
