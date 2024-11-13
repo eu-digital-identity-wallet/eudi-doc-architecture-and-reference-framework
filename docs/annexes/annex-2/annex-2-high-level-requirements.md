@@ -218,7 +218,7 @@ framework.
 | VCR_02 | For non-qualified EAAs, the relevant Rulebook SHALL determine whether that type of EAA must be revocable. If a non-qualified EAA type must be revocable, the relevant Rulebook SHALL determine which of the methods mentioned in VCR_01 must be implemented by the relevant EAA Providers for the revocation of such an EAA. |
 | VCR_03 | If a PID or attestation is revocable, the PID Provider of a given PID, or the Attestation Provider of a given attestation, SHALL be the only party in the EUDI Wallet ecosystem capable of executing the revocation of that PID or attestation. Similarly, if a WUA is revocable, the Wallet Provider of a given WUA SHALL be the only party in the EUDI Wallet ecosystem capable of executing the revocation of that WUA. <p><br>Note: A PID Provider, Attestation Provider or Wallet Provider MAY outsource the operation of the revocation process to a third party. |
 | VCR_04 | A PID Provider, Attestation Provider or Wallet Provider that revoked a PID or attestation SHALL NOT reverse the revocation. |
-| VCR_05 | If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider, or Wallet Provider SHALL have a policy specifying under which conditions a PID, attestation, or WUA it issued will be revoked or suspended. |
+| VCR_05 | If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider, or Wallet Provider SHALL have a policy specifying under which conditions a PID, attestation, or WUA it issued will be revoked. |
 | VCR_06 | If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider, or Wallet Provider SHALL revoke a PID, attestation, or WUA when its security has been compromised. |
 | VCR_07 | If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider, or Wallet Provider SHOULD revoke a PID, attestation, or WUA upon the explicit request of the User. |
 | VCR_08 | If a PID is revocable, the PID Provider SHALL revoke a PID upon the death of the User or cease of activity of the legal person who is the subject of the PID. |
@@ -1253,62 +1253,53 @@ See [Topic 16](#a2316-topic-16---signing-documents-with-eudi-wallet).
 
 *Short description*
 
-This Topic discusses Wallet Unit revocation. In particular, it
-answers the following questions: 
+This Topic discusses Wallet Unit revocation. In particular, it answers the following questions:<ul><li>How can a Wallet Provider revoke a Wallet Unit?</li><li>During issuance of an attestation, how can an Attestation Provider verify whether a Wallet Unit has been revoked?</li><li>When requesting attributes from an attestation, how can a Relying Party verify whether a Wallet Unit has been revoked?</li></ul>
 
--   How can a Wallet Provider revoke a Wallet Unit? 
-
--   During issuance of an attestation, how can an Attestation Provider
-    verify whether a Wallet Unit has been revoked? 
-
--   When requesting attributes from an attestation, how can a Relying
-    Party verify whether a Wallet Unit has been revoked? 
-
-For more information, see the White Paper on Wallet Unit Revocation
-that will be published in the same repository as the ARF.
+In case of a security issue, Article 5e of the Regulation requires Wallet Providers to first suspend a Wallet Unit and to revoke it only if the issue cannot be solved within three months. However, the suspension of a Wallet Unit is an administrative process, which does not imply that the WUAs of that Wallet Unit need to be suspended, as opposed to being revoked. Instead, if the Wallet Provider administratively suspends a Wallet Instance, it will immediate revoke all corresponding WUAs. If (within three months) the situation is remedied and the Wallet Unit is re-instated, the Wallet Provider will issue one or more new WUAs to the Wallet Unit.
 
 HLRs
 
-A.  Issuing a Wallet Unit Attestation 
+A.  Issuing a Wallet Unit Attestation
 
 | **Index** | **Requirement specification** |
 |------------|-------------------|
-| WIRevocation_01 | To enable a Relying Party or an Attestation Provider to verify the authenticity and (if necessary, see requirement VCR_01) the revocation status of a Wallet Unit it is interacting with, a Wallet Provider SHALL issue one or more WUAs to the Wallet Unit during the activation phase of a Wallet Unit, according to requirement WUA_07. |
-| WIRevocation_02 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL ensure that the Wallet Unit at all times contains at least one valid WUA. |
-| WIRevocation_03 | Empty |
-| WIRevocation_04 | The Wallet Provider SHALL manage the issuance processes for WUAs in such a way that the WUAs cannot be misused by colluding Relying Parties (and Attestation Providers) to track a User. |
-| WIRevocation_05 | During the activation process of a Wallet Unit, the Wallet Provider SHALL do the following to ensure that a User can request revocation of their Wallet Unit as mentioned in WIRevocation_10: <ul><li>Register the relationship between this Wallet Unit and its User in a User account;</li><li>Enable secure authentication of the User towards the Wallet Provider is possible, by providing one or more suitable authentication mechanisms. These authentication mechanisms SHALL NOT depend on the mobile device containing the Wallet Unit.</li></ul><p>  Note: <ul><li>The Wallet Provider does not need to know the true identity of the User. Instead, an alias such as an e-mail address can be used.</li><li>The reason for requiring authentication mechanisms that are independent of the Wallet Unit is that the User must be able to authenticate to the Wallet Provider even in case the mobile device containing the Wallet Unit is lost or stolen.</li></ul> |
+| WURevocation_01 | To enable a Relying Party or an Attestation Provider to verify the authenticity and (if necessary, see requirement VCR_01) the revocation status of a Wallet Unit it is interacting with, a Wallet Provider SHALL issue one or more WUAs to the Wallet Unit during the activation phase of a Wallet Unit, according to requirement WUA_07. |
+| WURevocation_02 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL ensure that the Wallet Unit at all times contains at least one valid WUA. |
+| WURevocation_03 | Empty |
+| WURevocation_04 | The Wallet Provider SHALL manage the issuance processes for WUAs in such a way that the WUAs cannot be misused by colluding Relying Parties (and Attestation Providers) to track a User. |
+| WURevocation_05 | During the activation process of a Wallet Unit, the Wallet Provider SHALL do the following to ensure that a User can request revocation of their Wallet Unit as mentioned in WURevocation_10: <ul><li>Register the relationship between this Wallet Unit and its User in a User account;</li><li>Enable secure authentication of the User towards the Wallet Provider is possible, by providing one or more suitable authentication mechanisms. These authentication mechanisms SHALL NOT depend on the mobile device containing the Wallet Unit.</li></ul><p>  Note: <ul><li>The Wallet Provider does not need to know the true identity of the User. Instead, an alias such as an e-mail address can be used.</li><li>The reason for requiring authentication mechanisms that are independent of the Wallet Unit is that the User must be able to authenticate to the Wallet Provider even in case the mobile device containing the Wallet Unit is lost or stolen.</li></ul> |
 
-A.  Revoking a Wallet Unit 
+A.  Revoking a Wallet Unit
 
 | **Index** | **Requirement specification** |
 |------------|------------------|
-| WIRevocation_06 | A Wallet Provider SHALL be able to suspend a Wallet Unit, by suspending its WUA(s) as specified in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. |
-| WIRevocation_07 | A Wallet Provider SHALL be able to revoke a Wallet Unit, by revoking its WUA(s) as specified in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. |
-| WIRevocation_08 | A Wallet Provider SHALL be able to unsuspend a Wallet Unit, by unsuspending its WUA(s). |
-| WIRevocation_09 | During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL suspend the corresponding WUA(s) if they have a validity period of 24 hours or more. The Wallet Provider SHALL do so at least in the following circumstances: <ul><li>If the security of the Wallet Unit, or the security of the mobile device and OS on which it is installed, or the security of a WSCA it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability.</li><li>If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units.</li><li>If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability.</li><li>If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability.</li></ul>|
-| WIRevocation_10 | A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of the User registered during the Wallet Unit activation process, see WIRevocation_05. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit, if they have a remaining validity period of 24 hours or longer. The Wallet Provider SHALL authenticate the User before revoking the Wallet Unit. |
-| WIRevocation_11 | A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of a PID Provider, in case the natural person using the Wallet Unit has died or the legal person using the Wallet Unit has ceased operations. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit, if they have a remaining validity period of 24 hours or longer. To identify the Wallet Unit that is to be revoked, the PID Provider SHALL use the Wallet Unit identifier provided by the Wallet Provider in the WUA during PID issuance. |
-| WIRevocation_12 | Before revoking a Wallet Unit per WIRevocation_11, the Wallet Provider SHALL verify that the party requesting revocation is indeed a valid PID Provider listed in the Trusted List of PID Providers. |
-| WIRevocation_13 | Before requesting a Wallet Provider to revoke a Wallet Unit per WIRevocation_11, the PID Provider SHALL ensure that the revocation does not harm the interests of any of the stakeholders. The PID Provider SHALL have (and follow) a documented policy to ensure that this is the case. |
+| WURevocation_06 | Empty |
+| WURevocation_07 | A Wallet Provider SHALL be able to revoke a Wallet Unit, by revoking its WUA(s) as specified in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. |
+| WURevocation_08 | Empty |
+| WURevocation_09 | During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL revoke or administratively suspend the Wallet Unit and SHALL immediately revoke the corresponding WUA(s) if they have a remaining validity period of 24 hours or longer. The Wallet Provider SHALL do so at least in the following circumstances: <ul><li>If the security of the Wallet Unit, or the security of the mobile device and OS on which it is installed, or the security of a WSCA it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability.</li><li>If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units.</li><li>If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability.</li><li>If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability.</li></ul> |
+| WURevocation_9b | If within three months from an administrative suspension of a Wallet Unit the security breach or compromise is remedied, the Wallet Provider SHALL issue one or more WUAs to the Wallet Unit, such that the User can again use it.
+| WURevocation_10 | A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of the User registered during the Wallet Unit activation process, see WURevocation_05. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit, if they have a remaining validity period of 24 hours or longer. The Wallet Provider SHALL authenticate the User before revoking the Wallet Unit. |
+| WURevocation_11 | A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of a PID Provider, in case the natural person using the Wallet Unit has died or the legal person using the Wallet Unit has ceased operations. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit, if they have a remaining validity period of 24 hours or longer. To identify the Wallet Unit that is to be revoked, the PID Provider SHALL use the Wallet Unit identifier provided by the Wallet Provider in the WUA during PID issuance. |
+| WURevocation_12 | Before revoking a Wallet Unit per WURevocation_11, the Wallet Provider SHALL verify that the party requesting revocation is indeed a valid PID Provider listed in the Trusted List of PID Providers. |
+| WURevocation_13 | Before requesting a Wallet Provider to revoke a Wallet Unit per WURevocation_11, the PID Provider SHALL ensure that the revocation does not harm the interests of any of the stakeholders. The PID Provider SHALL have (and follow) a documented policy to ensure that this is the case. |
 
 A.  Informing the User
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
-| WIRevocation_14 | A Wallet Provider SHALL inform a User without delay in case the Wallet Provider decided to suspend or revoke the User's Wallet Unit. The Wallet Provider SHALL also inform the User about the reason(s) for the suspension or revocation. This information SHALL be understandable for the general public. It SHALL include (a reference to) technical details about any security breach if applicable. |
-| WIRevocation_15 | A Wallet Provider SHALL inform a User without delay in case the Wallet Provider decided to unsuspend the User's Wallet Unit. |
-| WIRevocation_16 | To inform a User about the (un)suspension or revocation of their Wallet Unit, the Wallet Provider SHALL use a communication channel that is independent of the Wallet Unit. In addition, the Wallet Provider MAY use the Wallet Unit itself to inform the User. |
+| WURevocation_14 | A Wallet Provider SHALL inform a User without delay in case the Wallet Provider decided to revoke the User's Wallet Unit. The Wallet Provider SHALL also inform the User about the reason(s) for the revocation. This information SHALL be understandable for the general public. It SHALL include (a reference to) technical details about any security breach if applicable. |
+| WURevocation_15 | Empty |
+| WURevocation_16 | To inform a User about the revocation of their Wallet Unit, the Wallet Provider SHALL use a communication channel that is independent of the Wallet Unit. In addition, the Wallet Provider MAY use the Wallet Unit itself to inform the User. |
 
-B.  Verifying the revocation status of a Wallet Unit 
+B.  Verifying the revocation status of a Wallet Unit
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| WIRevocation_17 | Empty |
-| WIRevocation_18 | A PID Provider or Attestation Provider SHOULD, for each of its valid PIDs or attestations, regularly verify whether the Wallet Provider suspended or revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is suspended or revoked, the PID Provider or Attestation Provider SHOULD immediately revoke the respective PID or attestation in accordance with all requirements in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. |
-| WIRevocation_19 | A Relying Party SHOULD verify the revocation status of the Wallet Unit by requesting and verifying a WUA and subsequently verifying the revocation status of the WUA following the steps specified per VCR_11. |
-| WIRevocation_20 | For the verification of WUAs, a Relying Party SHALL accept the trust anchors in the Wallet Provider Trusted List(s) of all Member States. <p><br>Note: Wallet Provider Trusted Lists are explained in \[[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)\]. |
-| WIRevocation_21 | When no reliable information regarding the revocation status of a WUA is available, a Relying Party SHOULD perform a risk analysis considering all relevant factors for the use case, before taking a decision to accept or refuse the Wallet Unit. |
+| WURevocation_17 | Empty |
+| WURevocation_18 | A PID Provider or Attestation Provider SHOULD, for each of its valid PIDs or attestations, regularly verify whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider SHOULD immediately revoke the respective PID or attestation in accordance with all requirements in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. <br><br>Note: How the PID Provider or Attestation Provider can do this verification depends on the details of the WUA and WUA management. This is a topic that will be discussed for ARF 2.0. |
+| WURevocation_19 | A Relying Party SHOULD verify the revocation status of the Wallet Unit by requesting and verifying a WUA and subsequently verifying the revocation status of the WUA following the steps specified per VCR_11. |
+| WURevocation_20 | For the verification of WUAs, a Relying Party SHALL accept the trust anchors in the Wallet Provider Trusted List(s) of all Member States. <p><br>Note: Wallet Provider Trusted Lists are explained in \[[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)\]. |
+| WURevocation_21 | When no reliable information regarding the revocation status of a WUA is available, a Relying Party SHOULD perform a risk analysis considering all relevant factors for the use case, before taking a decision to accept or refuse the Wallet Unit. |
 
 #### A.2.3.39 Topic 39 - Wallet to wallet technical Topic 
 
