@@ -1166,25 +1166,25 @@ A.  Back-up requirements
 |-----------|------------------|
 | BR_01 | A Wallet Unit SHALL include a Backup and Restore Object. |
 | BR_02 | The Commission SHALL define a technical specification of the Backup and Restore Object. |
-| BR_03 | The Wallet Unit SHALL log all attestations that are issued to it, by adding an entry to the Backup and Restore Object. |
+| BR_03 | A Wallet Unit SHALL add an entry to the Backup and Restore Object for each PID and attestation that is issued to it. |
 | BR_04 | A Wallet Unit SHALL enable the User to export the Backup and Restore Object to external storage. |
-| BR_05 | A Wallet Solution Provider SHALL store and transfer the Backup and Restore Object in a way that it is protected against use of it by others than the User. |
+| BR_05 | A Wallet Provider SHALL store and transfer the Backup and Restore Object in a way that it is protected against use of it by others than the User. |
 
 B.  Restore Requirements 
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
 | BR_06 | A Wallet Unit SHALL support a procedure that will perform the following restore steps from BR_07 up to BR_16. |
-| BR_07 | For each PID and attestation listed in the B&R object, the Wallet Unit SHALL enable the User to request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the B&R object lists a PID, the PID SHALL be the first to be restored. |
+| BR_07 | For each PID and attestation listed in the B&R object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the B&R object lists a PID, the PID SHALL be the first to be restored. |
 | BR_08 | Empty |
-| BR_09 | The Wallet Unit SHALL present an error message to the User, if an error is detected in the Backup and Restore Object intended to be restored. |
-| BR_10 | The Wallet Unit SHALL retrieve the Backup and Restore Object, if the activities in BR_09 were successful. |
-| BR_11 | Attestation Providers SHALL enable the initiation by a Wallet Unit of a secured session for re-issuance of attestations issued by them. |
-| BR_12 | The Wallet Unit SHALL initiate a secured session with the relevant Attestation Provider for each attestation recorded in the Backup and Restore Object. |
-| BR_13 | The Wallet Unit SHALL initiate an issuance request for any attestation recorded in the Backup and Restore Object, that is selected by the User. |
-| BR_14 | The Wallet Unit SHALL continue the procedure described in BR_12 to BR_13 for all attestations recorded in the Backup and Restore Object. |
-| BR_15 | The Wallet Unit SHALL present to the User the results of the restoration process for every attestation, indicating whether it was successful or not. |
-| BR_16 | The new Wallet Unit SHALL log all the restored attestation in its Backup and Restore Object (as described in BR_01). |
+| BR_09 | Empty |
+| BR_10 | Empty|
+| BR_11 | The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for issuance, as specified in [Topic 10]. |
+| BR_12 | Empty |
+| BR_13 | Empty |
+| BR_14 | Empty |
+| BR_15 | Empty |
+| BR_16 | Empty |
 
 #### A.2.3.34 Topic 34 - Migrate to a different Wallet Solution 
 
