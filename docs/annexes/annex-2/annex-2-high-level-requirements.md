@@ -1126,37 +1126,25 @@ See [topic 12](#a2312-topic-12---attestation-rulebooks).
 
 *Short description*
 
-The relevant scenario for the backup and restore functionality, is when
-the User can no longer access the data, the electronic attestations of
-attributes and the configurations, that were stored on the mobile device
-on which the Wallet Unit was installed, including its accessories. The
-situations may include the mobile device has either been lost, stolen,
-broken or hacked (e.g., a result of unauthorized access to the device)
-or it malfunctions. 
+Backup and restore functionality is needed in case the User has lost access to their current Wallet Unit, for example in case of lost, theft, or breakdown. It is also needed if the User wants to start using another Wallet Unit, for example because they have bought a new device, need to factory-reset their existing device, or want to migrate to another Wallet Solution. In all of these cases, the User wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible.
 
-The topic deals with situations when a User replaces an existing
-installation of an Wallet Solution with a new installation of the
-same Wallet Solution, when setting up a new mobile device, or after a
-factory reset of the same device.  
+The Regulation does not contain a requirement mandating backup and restore functionality in the Wallet. However, Wallet Providers should implement backup and restore functionality nevertheless, because it will be expected by Users. In fact, the requirements in [Topic 34] also ensure the possibility of backup and restore.
 
-The requirements are divided between two situations: 
+*HLRs*
 
-A - Functional requirements for Backup and Restore where a private key
-cannot be exported. 
+There are no specific requirements in this Topic.
 
-B - Functional requirements for Backup and Restore where private key can
-be exported or there is no device binding. 
+#### A.2.3.34 Topic 34 - Migrate to a different Wallet Solution
 
-> *[<u>Privacy note</u>]: The Backup and Restore Object is
-> considered sensitive as the mere existence of certain attributes can
-> be sensitive, e.g., a prescription from a fertility Clinique. Also,
-> very sensitive attribute information may even not be stored in the
-> rich environment of the mobile device but secured through e.g., a
-> hardware chip, such that it will never leave that chip in an
-> unencrypted way. In that case the Backup and Restore object should
-> have similar precautions in that the encryption mechanism must be
-> fully performed securely on the secure component of the original
-> Wallet solution and the target Wallet solution.*
+*Short description*
+
+Article 5a 4 (g) of the Regulation ensures the User’s rights to data portability. Data portability means a User wants to migrate to a different Wallet Solution. If so, the User installs an instance of the new Wallet Solution, and then wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible, and independent of whether the User still has access to their existing Wallet Unit.
+
+The solution proposed in this Topic is to introduce a Migration Object in each Wallet Unit. This object is a list of PIDs and attestations contained in the Wallet Unit, together with the information needed to request (re-)issuance of that PID or attestation. Note that the Migration Object does not contain any private keys associated with the PID(s) or attestation(s). In most security architectures for a Wallet Solution, this is impossible, since the WSCA/WSCD that contains these private keys does not allow their extraction under any circumstances. An exception may be architectures in which attestation private keys are managed in a remote HSM and the migration is to a new Wallet Unit of the same Walet Provider. However, in such cases, restoring functionality of the PIDs and attestations in a new Wallet Unit does not necessitate that private keys must be exported to another HSM. Rather, it implies the User may be able to authenticate towards the existing HSM from the new Wallet Unit.
+
+The fact that the Migration Object does not contain private keys means that PIDs and attestations cannot be backed up and restored from the object in such a way that they are usable in a new Wallet Unit without involvement of the PID Provider or Attestation Provider. Instead, the User must ask the respective PID Provider(s) or Attestation Provider(s) to re-issue the PID(s) or attestation(s) to the new Wallet Unit. The only function of the Migration Object is to simplify this process by listing the PIDs and attestations present in the existing Wallet Unit, together with the information needed by the new Wallet Unit to start the re-issuance process.
+
+The Migration Object does not contain attribute values or attribute identifiers, as that data is considered sensitive and is not useful anyway because of the limitations explained above. Instead, the object only contains a list of attestation types and the related Attestation Providers. However, even this limited information may be considered sensitive in some cases, for example a prescription from a fertility clinic. Therefore, the Migration Object is stored in such a way that its confidentiality is ensured and that it can be used only by the User.
 
 *HLRs*
 
@@ -1164,56 +1152,29 @@ A.  Back-up requirements
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| BR_01 | A Wallet Unit SHALL include a Backup and Restore Object. |
-| BR_02 | The Commission SHALL define a technical specification of the Backup and Restore Object. |
-| BR_03 | The Wallet Unit SHALL log all attestations that are issued to it, by adding an entry to the Backup and Restore Object. |
-| BR_04 | A Wallet Unit SHALL enable the User to export the Backup and Restore Object to external storage. |
-| BR_05 | A Wallet Solution Provider SHALL store and transfer the Backup and Restore Object in a way that it is protected against use of it by others than the User. |
+| Mig_01 | A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information:<ul><li> The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02.</li><li>A list of PIDs and attestations present in the Wallet Unit, according to the requirements in this Topic.</li> |
+| Mig_02 | The Commission SHALL define a technical specification of the Migration Object. |
+| Mig_03 | For each PID or attestation that is issued to it, a Wallet Unit SHALL add all data that is necessary to request re-issuance of that PID or attestation to the Migration Object. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation. |
+| Mig_03b | If the User deletes a PID or attestation from their Wallet Unit, the Wallet Unit SHALL delete the corresponding entry from the Migration Object. |
+| Mig_04 | The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable.<br><br>Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.|
+| Mig_05 | The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality is protected and that it is protected against use by others than the User.<br><br>Note: This could be done, for example, by using password-based cryptography to encrypt the object. |
 
-B.  Restore Requirements 
+B.  Restore Requirements
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
-| BR_06 | A Wallet Unit SHALL support a procedure that will perform the following restore steps from BR_07 up to BR_16. |
-| BR_07 | A Wallet Unit SHALL enable the User to request from the PID Provider to re-issue the PID in the Backup and Restore Object. The PID SHALL be the first Attestation to be restored from the Backup and Restore Object. |
-| BR_08 | A Wallet solution SHALL enable the User to initiate the Restoration function, following a successful re-issuance of the PID. |
-| BR_09 | The Wallet Unit SHALL present an error message to the User, if an error is detected in the Backup and Restore Object intended to be restored. |
-| BR_10 | The Wallet Unit SHALL retrieve the Backup and Restore Object, if the activities in BR_09 were successful. |
-| BR_11 | Attestation Providers SHALL enable the initiation by a Wallet Unit of a secured session for re-issuance of attestations issued by them. |
-| BR_12 | The Wallet Unit SHALL initiate a secured session with the relevant Attestation Provider for each attestation recorded in the Backup and Restore Object. |
-| BR_13 | The Wallet Unit SHALL initiate an issuance request for any attestation recorded in the Backup and Restore Object, that is selected by the User. |
-| BR_14 | The Wallet Unit SHALL continue the procedure described in BR_12 to BR_13 for all attestations recorded in the Backup and Restore Object. |
-| BR_15 | The Wallet Unit SHALL present to the User the results of the restoration process for every attestation, indicating whether it was successful or not. |
-| BR_16 | The new Wallet Unit SHALL log all the restored attestation in its Backup and Restore Object (as described in BR_01). |
-
-#### A.2.3.34 Topic 34 - Migrate to a different Wallet Solution 
-
-*Short description*
-
-The most relevant scenario for this functionality is when a User would
-like to migrate from one Wallet Solution to a different Wallet Solution.
-Another scenario would be when the Wallet Provider ceases to
-support the Wallet Solution, or even ceases to exist as a legal person,
-and thus the User is forced to abandon the current Wallet Solution and
-migrate to a different Wallet Solution.
-
-To migrate to a different Wallet Solution, there is a need to transfer
-the data, the electronic attestations of attributes and the
-configurations, that were stored on the mobile device on which the
-original Wallet Unit was installed, including its accessories, to the
-different Wallet solution.  
-
-This topic is similar in some characteristics to [Topic 33](#a2333-topic-33---eudi-wallet-backup-and-restore) that deals
-with backup and restore to the **same** Wallet solution, but in [Topic 34](#a2334-topic-34---migrate-to-a-different-wallet-solution)
-the migration is to a **different** Wallet solution. A main difference
-is that the current mobile device that the User would like to migrate
-from is still under the control of the User and in the User\'s
-possession, and the relevant data that exists on the current Wallet
-solution is not lost and is accessible.
-
-*HLRs*
-
-There are no specific requirements in this Topic.
+| Mig_06 | Directly after installation of a new Wallet Unit, the Wallet Unit SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User. |
+| Mig_07 | For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored. |
+| Mig_07b | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in Topic 19. |
+| Mig_08 | Empty |
+| Mig_09 | Empty |
+| Mig_10 | Empty |
+| Mig_11 | The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in [Topic 10]. |
+| Mig_12 | Empty |
+| Mig_13 | Empty |
+| Mig_14 | Empty |
+| Mig_15 | Empty |
+| Mig_16 | Empty |
 
 #### A.2.3.35 Topic 35 - PID Issuance service blueprint
 
