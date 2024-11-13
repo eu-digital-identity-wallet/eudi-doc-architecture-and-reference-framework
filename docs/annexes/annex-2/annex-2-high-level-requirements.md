@@ -1175,8 +1175,8 @@ B.  Restore Requirements 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
 | BR_06 | A Wallet Unit SHALL support a procedure that will perform the following restore steps from BR_07 up to BR_16. |
-| BR_07 | A Wallet Unit SHALL enable the User to request from the PID Provider to re-issue the PID in the Backup and Restore Object. The PID SHALL be the first Attestation to be restored from the Backup and Restore Object. |
-| BR_08 | A Wallet solution SHALL enable the User to initiate the Restoration function, following a successful re-issuance of the PID. |
+| BR_07 | For each PID and attestation listed in the B&R object, the Wallet Unit SHALL enable the User to request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the B&R object lists a PID, the PID SHALL be the first to be restored. |
+| BR_08 | Empty |
 | BR_09 | The Wallet Unit SHALL present an error message to the User, if an error is detected in the Backup and Restore Object intended to be restored. |
 | BR_10 | The Wallet Unit SHALL retrieve the Backup and Restore Object, if the activities in BR_09 were successful. |
 | BR_11 | Attestation Providers SHALL enable the initiation by a Wallet Unit of a secured session for re-issuance of attestations issued by them. |
