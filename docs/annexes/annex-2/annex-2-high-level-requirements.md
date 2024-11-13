@@ -880,6 +880,8 @@ F.  *Requirements for the issuance of Relying Party access certificates*
 
 #### A.2.3.28 Topic 28 - Wallet Unit for legal persons
 
+<b>Note to this Topic in version 1.5.0: Legal-person PIDs and Wallet Units for legal persons were added to the list of topics to be discussed with Member States in the future. In ARF 1.5.0., no changes were made to this Topic.</b>
+
 *Short description*
 
 This topic is focused on identifying high-level requirements for a
