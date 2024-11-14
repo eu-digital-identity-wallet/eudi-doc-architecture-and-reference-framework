@@ -235,7 +235,7 @@ There are no HLRs for this Topic.
 
 #### A.2.3.9 Topic 9 - Wallet Unit Attestation
 
-<b>Note to this Topic in version 1.5.0: The Commission received many comments on the ideas described in this topic, particularly relating to key association. In reponse, the Commission decided to add the Wallet Unit Attestation to the list of open topics that need further discussion before publication of ARF 2.0. In these discussions, also the topic of key association will be discussed. In anticipation of the outcome of these discussions, nothing was changed in this Topic apart from some clarifications. In addition, changes were made to align the text with the Implemented Acts. In particular, the terms 'WTE' and 'WIA' were replaced by 'WUA'. Some further changes were needed to avoid creating contradictions, for instance, in places where 'WTE' and 'WIA' were both mentioned in a single sentence. Also, some changes were made to explain that the WUA fulfills two separate roles, namely the old WTE role and the old WIA role.</b>
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the ideas described in this Topic, particularly relating to key association. In reponse, the Commission decided to add the Wallet Unit Attestation to the list of open topics that need further discussion before publication of ARF 2.0. In these discussions, also the topic of key association will be discussed. In anticipation of the outcome of these discussions, nothing was changed in this Topic apart from some clarifications. In addition, changes were made to align the text with the Implemented Acts. In particular, the terms 'WTE' and 'WIA' were replaced by 'WUA'. Some further changes were needed to avoid creating contradictions, for instance, in places where 'WTE' and 'WIA' were both mentioned in a single sentence. Also, some changes were made to explain that the WUA fulfills two separate roles, namely the old WTE role and the old WIA role.</b>
 
 *Short description*
 
@@ -1130,7 +1130,7 @@ H.  Requirements for the publication of Trusted Lists compiled by the
 
 #### A.2.3.32 Topic 32 - PID interoperability 
 
-See [topic 12](#a2312-topic-12---attestation-rulebooks).
+See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
 #### A.2.3.33 Topic 33 - Wallet Unit backup and restore 
 
@@ -1269,7 +1269,7 @@ B.  Verifying the revocation status of a Wallet Unit
 
 #### A.2.3.39 Topic 39 - Wallet to wallet technical Topic 
 
-There are no HLRs for this Topic.
+See [Topic 30].
 
 #### A.2.3.40 Topic 40 - Wallet Unit installation
  *Short description*
@@ -1286,13 +1286,13 @@ There are no HLRs for this Topic.
 
 #### A.2.3.41 Topic 41 - Minimum requirements on PuB-EAAs rulebooks 
 
-See [topic 12](#a2312-topic-12---attestation-rulebooks).
+See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
 #### A.2.3.42 Topic 42 - Requirements for QTSPs to access authentic sources 
 
 *Short description*
 
-This topic discusses the ability of QTSPs of electronic attestations of
+This Topic discusses the ability of QTSPs of electronic attestations of
 attributes to verify those attributes by electronic means at the request
 of the User, wherever those attributes rely on Authentic Sources within
 the public sector.  
