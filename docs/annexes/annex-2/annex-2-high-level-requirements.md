@@ -1047,7 +1047,7 @@ B.  Requirements for the notification of PID Providers
 | PPNot_04 | PID Providers SHALL ensure that their PID Provider access certificates can be authenticated using the PID Provider Access CA trust anchors notified to the Commission. <p><br>Note: \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\] describes how access certificates will be used. |
 | PPNot_05 | PID Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Trusted List which is sealed by the Commission. |
 | PPNot_06 | PID Provider Access CA trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Access CA Trusted List which is signed or sealed by the Commission. |
-| PPNot_07 | The format of the PID Provider Trusted List SHALL be aligned with ETSI TS 119 612 v2.1.1 or comply with a suitable profile similarly derived from ETSI TS 102 231. |
+| PPNot_07 | The format of the PID Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 
 
 C.  Requirements for the notification of Wallet Providers
@@ -1058,7 +1058,7 @@ C.  Requirements for the notification of Wallet Providers
 | WPNot_02 | The common set of information to be notified about a Wallet Provider SHALL include: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li>Where applicable:<ol><li>Business registration number from an official record, and</li><li>Identification data from the official record.</li></ol></li></ol></li><li> Wallet Provider trust anchors, i.e., public keys and name as per point 1) b. above, supporting the authentication of Wallet Unit Attestations issued by the Wallet Provider.</li></ol><p>Notes:<ul><li>See \[[Topic 9](#a239-topic-9---wallet-trust-evidence)\] and \[[Topic 38](#a2338-topic-38---wallet-instance-revocation)\] for the definition of the WUA.</li><li>A Wallet Provider does not need an access certificate to interact with Wallet Units.</li></ul> |
 | WPNot_03 | Wallet Providers SHALL ensure that all WUAs they issue can be authenticated using the trust anchors notified to the Commission. |
 | WPNot_04 | Wallet Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Wallet Provider Trusted List which is sealed by the Commission. |
-| WPNot_05 | The format of the Wallet Provider Trusted List SHALL be aligned with ETSI TS 119 612 v2.1.1 or comply with a suitable profile similarly derived from ETSI TS 102 231. |
+| WPNot_05 | The format of the Wallet Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 
 D.  Requirements for the notification of QEAA Providers
 
@@ -1084,7 +1084,7 @@ qualified certificate to any entity claiming to be [Art.3](https://eur-lex.europ
 |------------|-----------------|
 | PuBPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PuB-EAA Providers. |
 | PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ol><li>Registration number as in official record, and </li><li>Official record identification data</li></ol></li><li>Identification data of the Union or national law under which <ol><li>Either the PuB-EAA Provider is established as the responsible body for the authentic source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ol></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ol></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ol> |
-| PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL be aligned with ETSI TS 119 612 v2.1.1 or comply with a suitable profile similarly derived from ETSI TS 102 231. |
+| PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 
 F.  Requirements for the notification of (non-qualified) EAA Providers
 
@@ -1112,7 +1112,7 @@ For more information about Relying Party Access CAs, see \[[Topic 27](#a2327-top
 | RPACANot_02 | The common set of information to be notified about an Access Certificate Authority SHALL include: <ol><li>Identification data:<ol><li>MS/Country of establishment,</li><li>Name as registered in an official record,</li><li> Where applicable:<ol><li>A business registration number from an official record,</li><li>Identification data from that official record.</li></ol></li></ol></li><li>Access CA trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units.</li></ol> |
 | RPACANot_03 | Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers SHALL ensure that their access certificates can be authenticated using the Access CA trust anchors notified to the Commission. |
 | RPACANot_04 | Access CA trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission--compiled Access CA Trusted List which is signed or sealed by the Commission. |
-| RPACANot_05 | The format of an Access CA Trusted List SHALL be aligned with ETSI TS 119 612 v2.1.1 or comply with a suitable profile similarly derived from ETSI TS 102 231. |
+| RPACANot_05 | The format of an Access CA Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 
 H.  Requirements for the publication of Trusted Lists compiled by the
     Commission
