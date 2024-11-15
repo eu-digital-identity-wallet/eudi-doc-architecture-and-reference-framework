@@ -19,7 +19,7 @@ in eIDAS by improving the effectiveness of the framework and extending its
 benefits to the private sector.
 Member States will offer citizens and businesses digital wallets that will be
 able to link various aspects of their national digital identities. These may be
-provided by public authorities or the private sector, if they are recognized by
+provided by public authorities or the private sector, if they are recognised by
 the Member States.
 
 The EU Digital Identity Wallet will be:
@@ -52,7 +52,7 @@ and private sector parties.
 This repository contains the "[Architecture and Reference Framework](./arf.md)"
 (hereinafter the [ARF](./arf.md)).
 
-The current **authoritative version** is tagged as [realease/tag in this
+The current **authoritative version** is tagged as [release/tag in this
 repository](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/releases).
 
 ## Contributing
@@ -69,11 +69,11 @@ see the [tags on this repository](https://github.com/eu-digital-identity-wallet/
 
 See the list of [contributors](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/graphs/contributors) who participated in this project.
 
-## License
+## Licence
 
 This project is licensed under the [Attribution 4.0
 International](http://creativecommons.org/licenses/by/4.0/) - see the
-[LICENSE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENSE) file for details.
+[LICENCE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENCE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 

@@ -94,17 +94,17 @@ version of the ISO-compliant PID attribute (defined in this document)
 and any future version.
 
 Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
-for the namespace of the first version of the PID attributes specified in [section 2.4](#24-pid-attributes). This namespace clearly indicates that any attributes defined
+for the namespace of the first version of the PID attributes specified in Section [2.3](#23-pid-attributes). This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
-extension(s) or change(s) of the PID attributes defined the next
+extension(s) or change(s) of the PID attributes defined in the next
 section.
 
 Note that the attestation type and namespace have the same value. This
 is allowed according to ISO/IEC 18013-5.
 
 PID Providers SHALL use this attestation type and namespace for the
-ISO/IEC 18013-5 compliant attribute encoding specified in [section 2.5.2](#252-isoiec-18013-5-compliant-encoding) only.
+ISO/IEC 18013-5 compliant attribute encoding specified in [Section 2.4.2](#242-isoiec-18013-5-compliant-encoding) only.
 
 #### 2.2.2 Domestic PID namespaces for national attributes
 
@@ -216,7 +216,7 @@ Table 1 contains the following information:
     -   This document specifies full-date as full-date = #6.1004(tstr),
         where tag 1004 is specified in \[[RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943)\].
 
-    -   In accordance with \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\], section 3.4.1, a tdate
+    -   In accordance with \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\], Section 3.4.1, a tdate
         attribute shall contain a date-time string as specified in \[[RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339)\]. In accordance with \[[RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943)\], a full-date attribute
         shall contain a full-date string as specified in \[[RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339)\].
 
@@ -237,7 +237,7 @@ Table 1 contains the following information:
 | birth_date | Day, month, and year on which the PID User was born. | M | full-date |
 | | Please note that the current specification does not yet foresee a solution for the situation when the date of birth of the User is incomplete or unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
 | age_over_18 | Attesting whether the PID User is currently an adult (true) or a minor (false). | M | bool |
-| age_over_NN | Additional current age attestations, NN < 18. | O | bool |
+| age_over_NN | Additional current age attestations, NN ≠ 18. | O | bool |
 | age_in_years | The current age of the PID User in years. | O | uint |
 | age_birth_year | The year when the PID User was born. | O | uint |
 | | Please note that the current specification does not yet foresee a solution for the situation when the birth year of the User is unknown. Work is ongoing to find a solution to this scenario, in alignment with current implementation of eIDAS nodes. | | |
@@ -282,11 +282,11 @@ birth of the PID User:
 
 -   age_over_18 (mandatory)
 
--   age_over_NN, NN \<\> 18 (optional)
+-   age_over_NN, NN ≠ 18 (optional)
 
 Having multiple attributes instead of only one allows having different
 levels of granularity for requests and responses, and thus allows PID
-Providers and Relying Parties to practice data minimization. For
+Providers and Relying Parties to practice data minimisation. For
 example, in some use cases, a Relying Party only needs to establish that
 the PID User is not a minor. In that case, requesting age_over_18
 suffices. Releasing more specific information, such as the PID User's
@@ -360,10 +360,10 @@ primarily to assist in, for example, automated form filling.
 
 The nationality or citizenship of the PID User is potentially a
 multi-valued attribute, because a citizen can have more than one
-nationality. However, his document defines an attribute nationality
+nationality. However, their document defines an attribute nationality
 taking as its value a single Alpha-2 country code. This implies that any
 additional nationality of the PID User must be added by the respective
-Member State as a domestic attribute, see [section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes).
+Member State as a domestic attribute, see [Section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes).
 
 #### 2.4.7 Minimum number of optional attributes
 
@@ -423,17 +423,17 @@ specified in \[SD-JWT VC\] must be used. For the latter, attributes must
 be encoded in JSON. For the former, attributes must be encoded in CBOR.
 
 This section therefore specifies two separate encodings for the PID data
-model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and an
 SD-JWT-VC-compliant encoding in JSON.
 
 #### 2.5.2 ISO/IEC 18013-5-compliant encoding
 
 ##### 2.5.2.1 Encoding rules
 
-If attributes specified in in Table 1 are encoded with CBOR, they SHALL
+If attributes specified in Table 1 are encoded with CBOR, they SHALL
 be encoded as specified in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
-The CDDL representation types used in Table 1 are specified in [section 2.4.1](#241-introduction-introduction-1) Rules to encode CDDL representation types with CBOR are specified
+The CDDL representation types used in Table 1 are specified in [section 2.4.1](#241-introduction-introduction-1). Rules to encode CDDL representation types with CBOR are specified
 \[RFC 8610\] and \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\].
 
 ##### 2.5.2.2 Further stipulations
@@ -445,7 +445,7 @@ MSO from ISO/IEC 18013-5 clause 9.1.2.4.
 Notes:
 
 -   The value of the age_over_18, age_over_NN and age_in_years
-    attributes, if present, changes whenever the PID User has a
+    attributes, if present, may change whenever the PID User has a
     birthday. The value of many other attributes will also change over
     time. It is up to the PID Provider to ensure that the above
     requirement is complied with.
@@ -470,7 +470,7 @@ Attributes in Table 1 SHALL be released only as Issuer Signed Items, as
 specified in \[ISO/IEC 18013-5\]. This means that these attributes SHALL
 be signed by the PID Provider, not by the Wallet Instance.
 
-At the discretion of the PID Provider, domestic attributes (see [section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes)) MAY be signed either by the PID Provider or by the Wallet
+At the discretion of the PID Provider, domestic attributes (see [Section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes)) MAY be signed either by the PID Provider or by the Wallet
 Instance.
 
 All attributes in Table 1 SHALL be made selectively disclosable.
@@ -482,9 +482,9 @@ All attributes in Table 1 SHALL be made selectively disclosable.
 If attributes are encoded with JSON, they SHALL be encoded as specified
 in \[RFC 8259\].
 
-The CDDL representation types used in Table 1 are specified in [section 2.4.1](#241-introduction-introduction-1). Rules to encode CDDL representation types with JSON are specified
-in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] section 6.1 Given the CDDL representation types used in
-the current version of this document, the following rules are relevant:
+The CDDL representation types used in Table 1 are specified in [Section 2.4.1](#241-introduction-introduction-1). Rules to encode CDDL representation types with JSON are specified
+in \[[RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949)\] Section 6.1.
+Given the CDDL representation types used in the current version of this document, the following rules are relevant:
 
 -   A CDDL uint (i.e., an unsigned integer) becomes a JSON number.
 
@@ -632,7 +632,7 @@ PID attributes in Table 1 SHALL be released only in a VP Token, as
 specified in \[OpenID4VP\]. This means that these attributes SHALL be
 signed by the PID Provider, not by the Wallet Instance.
 
-At the discretion of the PID Provider, domestic attributes (see [section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes)) MAY be released in either a VP Token or an ID Token.
+At the discretion of the PID Provider, domestic attributes (see [Section 2.2.2](#222-domestic-pid-namespaces-for-national-attributes)) MAY be released in either a VP Token or an ID Token.
 
 All attributes in Table 1 SHALL be made selectively disclosable.
 
@@ -684,7 +684,7 @@ have their own arc 'next' to this one, if necessary.*
 -  *id-eudi-iso-pid OBJECT IDENTIFIER ::= {id-eudi-iso 0} <br> - - arc for PID
     attributes within ISO-compliant EUDI Wallets.*
 
--   *id-eudi-iso-pid-kp OBJECT IDENTIFIER ::= {id- eudi-iso-pid 1} <br>- - arc for extended key purposes within certificates used for PID
+-   *id-eudi-iso-pid-kp OBJECT IDENTIFIER ::= {id-eudi-iso-pid 1} <br>- - arc for extended key purposes within certificates used for PID
 attributes within ISO-compliant EUDI Wallets*
 
 -   *id-eudi-iso-pid-kp-DS OBJECT IDENTIFIER ::= {id-eudi-iso-pid-kp 2} <br>- - arc for document signer certificates, used by PID Providers*
@@ -707,7 +707,7 @@ authentication will be detailed in the relevant technical specification.*
 These OIDs SHALL be used in certificates used for PID attributes within
 the ISO-compliant EUDI Wallet ecosystem, in exactly the same way as the
 corresponding OIDs specified in ISO/IEC 18103-5 are used within the
-mobile driving license ecosystem.
+mobile driving licence ecosystem.
 
 Notes:
 

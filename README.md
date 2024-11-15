@@ -1,10 +1,10 @@
 # The European Digital Identity Wallet
 
 
-![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner.png)
+![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner-arf.png)
 
 
-## The proposed Digital Identity Regulation
+## The Digital Identity Regulation
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS)
 Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation),
@@ -14,7 +14,7 @@ notified electronic identification became mandatory in 2018.
 Yet, there is no requirement for Member States to develop a national electronic
 identification and to make it interoperable with those in other Member States.
 This has led to discrepancies between countries.
-The new proposal for a Regulation on digital identity will address shortcomings
+The new Regulation on digital identity addresses shortcomings
 in eIDAS by improving the effectiveness of the framework and extending its
 benefits to the private sector.
 Member States will offer citizens and businesses digital wallets that will be
@@ -39,7 +39,7 @@ a set of common standards and technical specifications and a
 set of common guidelines and best practices.
 
 The Recommendation specifies that these outcomes will serve as a basis
-for the implementation of the proposal for a European Digital Identity
+for the implementation of the European Digital Identity
 Framework, without the process of developing the Toolbox interfering
 with, or prejudging the legislative process.
 
