@@ -727,8 +727,8 @@ identification in proximity use cases where Users utilize their Wallet Units. 
 | ProxId_01 | For proximity identification purposes, a Wallet Unit SHALL be able to establish a connection with Relying Party Instances and process their presentation requests in accordance with ISO/IEC 18013-5. |
 | ProxId_02 | Empty |
 | ProxId_03 | A Wallet Unit SHALL present the corresponding presentation request and the identity of the Relying Party to the User after processing the proximity identification request. |
-| ProxId_04 | A Wallet Unit SHALL request its User to approve the disclosure of attributes from their Wallet Unit for proximity identification before disclosing any data. |
-| ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with technical specifications, according to the agreed common protocols and interfaces, as specified in ISO/IEC 18013-5 for proximity flow. |
+| ProxId_04 | A Wallet Unit SHALL request its User to approve the presentation of attributes from their Wallet Unit for proximity identification before presenting them to the Relying Party. |
+| ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with technical specifications, according to the agreed common protocols and interfaces, as specified in ISO/IEC 18013-5 for proximity flows. |
 | ProxId_06 | Empty |
 
 #### A.2.3.25 Topic 25 - Unified definition and controlled vocabularies for attestation attributes 
@@ -828,8 +828,8 @@ A.  *General requirements for Member State registration processes*
 | Reg_03 | Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the revised eIDAS Regulation Article 5b 5, for the purpose of transparency to Users and other stakeholders. |
 | Reg_04 | Member States SHALL make the registry available online, in a common human-readable format. |
 | Reg_05 | The Commission SHALL establish a technical specification for the common formats mentioned in Reg_03 and Reg_04. |
-| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_04, defining the minimum requirements for interoperability.<br><br>Note: Requirements for this API are defined in Reg_08 and Reg_09. |
-| Reg_07 | The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_05.<br><br>Note: Requirements for this user interface are defined in Reg_08 and Reg_09.  |
+| Reg_06 | The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_03, defining the minimum requirements for interoperability.<br><br>Note: Requirements for this API are defined in Reg_08 and Reg_09. |
+| Reg_07 | The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_04.<br><br>Note: Requirements for this user interface are defined in Reg_08 and Reg_09.  |
 | Reg_08 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL make use of a secure channel protecting the authenticity and integrity of the information in the registry during transport. |
 | Reg_09 | The API mentioned in Reg_06 and the User interface mentioned in Reg_07 SHALL NOT require authentication or prior registration and authorization of any entity wishing to retrieve the information in the registry. |
 
