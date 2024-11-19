@@ -141,7 +141,7 @@ to the mDL use case within the EUDI Wallet ecosystem.
 
 Mobile driving licences are legally specified in the proposed EC
 Regulation 2023_127 (4th Driving Licence Regulation). This Regulation
-specifies that mDLs shall comply with the ISO/IEC 18013-5 standard. It
+specifies that mDLs must comply with the ISO/IEC 18013-5 standard. It
 does not mention any other standards, in particular not \[SD-JWT\].
 Consequently, mDLs issued to a Wallet Unit will not be implemented
 as \[SD JWT\]- compliant documents. The mDL Rulebook therefore specifies
@@ -1072,10 +1072,10 @@ purpose of this notification is mainly to the attention of QTSPs issuing
 qualified certificates for electronic signatures/seals to those public
 sector bodies referred to in [Article 3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1), point (46), and identified as
 the issuer in the PuB-EAA (cf. point (b), of Annex VII - INEXISTENT ANNEX -). The (trusted)
-list compiled by the Commission shall be deemed to be a constitutive
+list compiled by the Commission is deemed to be a constitutive
 list of such [Art.3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1)(46) bodies recognized for issuing PUB-EAAs.
 Consequently, QTSPs are expected to verify such lists prior to issuing a
-qualified certificate to any entity claiming to be [Art.3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1)(46) body.
+qualified certificate to any entity claiming to be a [Art.3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1)(46) body.
 
 | **Index** | **Requirement specification** |
 |------------|-----------------|
@@ -1196,7 +1196,7 @@ issuance user journey, covering both remote and proximity use cases.
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | PID_ISS_01 | A Wallet Unit SHALL support at least the protocol defined in the technical specifications for PID issuance. A Wallet Unit MAY support additional protocols for PID issuance. The following requirements apply only to the protocol defined in the technical specifications. |
-| PID_ISS_02 | A  Wallet Unit SHALL authenticate and validate the identity of the PID Provider it is communicating with. |
+| PID_ISS_02 | A Wallet Unit SHALL authenticate and validate the identity of the PID Provider it is communicating with. |
 | PID_ISS_03 | A PID Provider SHALL verify the authenticity of Wallet Unit's WUA. |
 | PID_ISS_04 | A Wallet Unit SHALL present the corresponding data request to the User, informing the User about the attributes to be issued by the PID Provider. |
 | PID_ISS_05 | A Wallet Unit SHALL inform the PID Provider of successful issuance only after having confirmed the User's authorization to approve the PID issuance. |
@@ -1300,13 +1300,14 @@ the public sector.  
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | QTSPAS_01 | In accordance with technical specifications referred to in QTSPAS_07, Member States SHALL define:  <ul><li>discovery mechanisms that enable QTSPs to request information about Authentic Sources or designated intermediaries recognized at the national level. This includes information regarding the attributes of a natural or legal person for which the Authentic Source or designated intermediary is considered a primary source, or for which it is recognized as authentic in accordance with Union law or national law, including administrative practices.</li><li>procedures for QTSPs to request the verification of attributes from Authentic Sources,</li></ul> |
-| QTSPAS_02 | An Authentic Source in the public sector, or its designated intermediary, SHALL implement an interface complying with the technical specification meant in QTSPAS_07 for receiving verification requests and sending responses. For each received request, the Authentic Source shall<ul><li>identify and authenticate the requestor in such a way that it can subsequently determine whether the requestor is a QTSP issuing qualified electronic attestation of attributes, for example by means of a lookup in the QTSP Trusted List.</li><li>authenticate the user and obtain user consent, if it is legally obliged to do so, in addition to the user authentication and user consent already performed by the QTSP according to QTSPAS_08.</li><li>verify whether the attribute values claimed by the QTSP match the values held by the Authentic Source; </li><li>and, finally, respond with one of the following for each attribute:<ul><li>'match', if the attribute value held for this user by the Authentic Source is identical to the value claimed by the QTSP.</li><li>'no match', if the attribute value held for this user by the Authentic Source is not identical to the value claimed by the QTSP, including if the Authentic Source is the authentic source for this attribute but does not hold a value for this user.</li><li>'unknown', if the Authentic Source is not the authentic source for this attribute. |
+| QTSPAS_02 | An Authentic Source in the public sector, or its designated intermediary, SHALL implement an interface complying with the technical specification meant in QTSPAS_07 for receiving verification requests and sending responses. For each received request, the Authentic Source SHALL<ul><li>identify and authenticate the requestor in such a way that it can subsequently determine whether the requestor is a QTSP issuing qualified electronic attestation of attributes, for example by means of a lookup in the QTSP Trusted List.</li><li>authenticate the user and obtain user consent, if it is legally obliged to do so, in addition to the user authentication and user consent already performed by the QTSP according to QTSPAS_08.</li><li>verify whether the attribute values claimed by the QTSP match the values held by the Authentic Source; </li><li>and, finally, respond with one of the following for each attribute:<ul><li>'match', if the attribute value held for this user by the Authentic Source is identical to the value claimed by the QTSP.</li><li>'no match', if the attribute value held for this user by the Authentic Source is not identical to the value claimed by the QTSP, including if the Authentic Source is the authentic source for this attribute but does not hold a value for this user.</li><li>'unknown', if the Authentic Source is not the authentic source for this attribute. |
 | QTSPAS_02b |An Authentic Source or designated intermediary SHALL respond to a verification request for attributes by any QTSP issuing qualified electronic attestation of attributes.| 
 | QTSPAS_03 | An Authentic Source or designated intermediary SHALL implement QTSPAS_01 in a secure and privacy-preserving channel in accordance with the technical specifications referred to in QTSPAS_07. |
 | QTSPAS_04 | An Authentic Source or designated intermediary SHALL implement the technical specifications mentioned in QTSPAS_01, so that the QTSP will receive the result of the verification of the requested attributes as described in QTSPAS_02. If the verification is deferred, the response to the QTSP SHALL include the maximum time that it will take to verify the requested attributes, and a unique identifier that the QTSP SHALL use to obtain the result of the verification. |
 | QTSPAS_05 | A QTSP SHALL send an attribute verification request directly to the Authentic Source or designated intermediary recognized at national level, after discovering it using the mechanisms mentioned in QTSPAS_01. |
 | QTSPAS_06 | Member States SHALL specify the processes and mechanisms to designate the Authentic Sources or intermediaries recognized at national level in accordance with Union or national law, allowing these Authentic Sources or intermediaries to verify the attributes presented to them by QTSPs. |
-| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on Authentic Sources within the public sector, for which Member States should ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the User, their authenticity against the relevant authentic source. <p><br> Note: These standards and procedures should be, whenever possible, aligned and compatible with those used for the platforms implementing the Once Only Principle (OOTS). There is a clear synergy of both data exchange approaches. In fact, the national OOP node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
+| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on Authentic Sources within the public sector, for which Member States must ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the User, their authenticity against the relevant authentic source. |
+|QTSPAS_07a | The standards and procedures mentioned in QTSPAS_07 SHOULD, whenever possible, be aligned and compatible with those used for the platforms implementing the Once Only Technical System (OOTS). <br><br>Note: There is a clear synergy of both of these data exchange approaches. In fact, the national OOTS node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources. |
 | QTSPAS_08 | A QTSP SHALL obtain consent of the User to verify the authenticity of the attributes, before requesting the verification of those attributes by the relevant Authentic Source or designated intermediary. |
 
 #### A.2.3.43 Topic 43 - Embedded disclosure policy 
@@ -1366,9 +1367,9 @@ Parties through their Wallet Unit.
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| DATA_DLT_01 | A Wallet Instance SHALL provide a User interface where Users can request from Relying Parties the deletion of attributes, in accordance with technical specification. |
-| DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop  technical specifications for Relying Parties interface to allow reception and processing of attribute deletion requests. |
-| DATA_DLT_03 | A Wallet Instance interface SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request shall be submitted. |
+| DATA_DLT_01 | A Wallet Instance SHALL provide a User interface where Users can request from Relying Parties the deletion of attributes, in accordance with the technical specifications mentioned in DATA_DLT_02 and with Regulation (EU) 2016/679 (GDPR). |
+| DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop  technical specifications for a Relying Party interface allowing reception and processing of attribute deletion requests. |
+| DATA_DLT_03 | A Wallet Instance interface SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted. |
 | DATA_DLT_04 | A Wallet Instance interface SHALL display the attribute deletion requests previously submitted through the Wallet Unit. |
 | DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---eudi-wallet-user-navigation-requirements-dashboard-logs-for-transparency)). |
 | DATA_DLT_06 | The log SHALL include as a minimum: <ul><li>Date of attribute deletion request</li><li>Relying Party to which the request was made</li><li>Attributes requested to be removed.</li></ul> |
