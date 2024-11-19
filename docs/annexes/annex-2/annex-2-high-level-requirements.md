@@ -730,7 +730,7 @@ identification in proximity use cases where Users utilize their Wallet Units. 
 | ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with technical specifications, according to the agreed common protocols and interfaces, as specified in ISO/IEC 18013-5 for proximity flow. |
 | ProxId_06 | Empty |
 
-#### A.2.3.25 Topic 25 - Unified definition and controlled vocabulary for attestation attributes 
+#### A.2.3.25 Topic 25 - Unified definition and controlled vocabularies for attestation attributes 
 
 *Short description*
 
