@@ -611,7 +611,7 @@ A.  Functional requirements for ecosystem components
 |-----------|-----------------|
 |  ACP_01 | Wallet Units SHALL support the features in \[ISO18013-5\] and/or \[OpenID4VP\] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response. |
 | ACP_02 | Relying Parties SHOULD support the features in \[ISO18013-5\] and/or \[OpenID4VP\] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response. |
-| ACP_03 | If a Wallet Unit receives a message requesting a combined presentation of attributes, it SHALL process each request in that message separately, according to all relevant specifications, except for possible optimizations. |
+| ACP_03 | Empty |
 | ACP_04 | If (as a result of ACP_03) a Wallet Unit determines it must release multiple attestations to a Relying Party in a combined presentation of attributes, it SHALL request a proof of association between the public keys of these attestations from the WSCA. |
 | ACP_05 | If (as a result of ACP_04), the Wallet Unit receives a proof of association from the WSCA, it SHALL include this proof in the response message containing the combined presentation of attributes and send it to the Relying Party. |
 | ACP_06 | If a Relying Party receives a combined presentation of attributes including a proof of association, it SHOULD verify this proof to validate that the attestations in this presentation belong to the same User. |
