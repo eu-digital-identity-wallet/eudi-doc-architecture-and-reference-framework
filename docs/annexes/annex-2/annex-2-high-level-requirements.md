@@ -882,7 +882,7 @@ F.  *Requirements for the issuance of Relying Party access certificates*
 | **Index** | **Requirement specification** |
 |-----------|---------------------|
 | Reg_31 | The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains a name for the Relying Party, in a format suitable for presenting to a User. <p><br>Note: A Wallet Unit needs such a name when requesting User approval according to \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\]. |
-| Reg_32 | The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains an EU-wide unique identifier for the Relying Party. <p><br>Note: The Wallet Unit needs such an identifier at least to determine which value to present for a User pseudonym; see \[[Topic 11](#a2311-topic-11---pseudonym-attestation)\]. |
+| Reg_32 | The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains an EU-wide unique identifier for the Relying Party and SHALL specify a method for deriving such identifiers. <br><br>Notes:<ul><li>The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to [Topic 50].</li><li>The EU-wide unique identifier could, for example, be a composition of a unique identifier of the registrar, defined in the policy, and a unique identifier for the Relying Party allocated by this registrar.</li><li>This Relying Party identifier is identical in all Relying Party Instance access certificates issued to a given Relying Party.</li></ul> |
 
 #### A.2.3.28 Topic 28 - Wallet Unit for legal persons
 
