@@ -402,6 +402,8 @@ ecosystem, Trusted Lists exist for the following entities:
 - QEAA Providers,
 
 - PuB-EAA Providers,
+  
+- non-qualified EAA Providers (not mandatory),
 
 - Access Certificate Authorities for
 
@@ -414,12 +416,9 @@ ecosystem, Trusted Lists exist for the following entities:
   - PuB-EAA Providers.
 
 These Trusted Lists are described in more detail in [Section 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
-and [6.4.2](#642-relying-party-registration), as well as in \[Topic 31\]. Trusted Lists primarily contain
-the trust anchors of the relevant entities. A trust anchor is a
+and [6.4.2](#642-relying-party-registration), as well as in \[Topic 31\]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a
 combination of a public key and the identifier of the associated entity
 and may be used to verify signatures or seals created by that entity.
-For PuB-EAA Providers, the Trusted List will contain the trust anchor of
-the QTSPs that sign the PuB-EAA Provider certificates.
 
 Member States will provide Trusted Lists for PID Providers, QEAA
 Providers and PuB-EAA Providers, in compliance with [Article 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1). These
@@ -431,7 +430,7 @@ determined by other legal frameworks than eIDAS and published
 accordingly.
 
 An entity's status as a trusted entity can be verified by checking
-whether they are present on a Trusted List. Trusted List Providers need
+whether they are present on a Trusted List. Trusted List Registrars need
 to provide a registration service for the relevant entities. The terms
 and conditions for entities to become registered are for each registrar
 to determine unless specified elsewhere e.g., in sectoral rules.
@@ -1404,7 +1403,7 @@ trust in the EUDI Wallet ecosystem:
 Besides the trust relationships described in this chapter, other trust
 relations are established as well. For instance, Users, PID Providers
 and Attestation Providers, and Relying Parties trust certification
-bodies and Trusted List providers. This trust is primarily rooted in
+bodies and Trusted List Registrars. This trust is primarily rooted in
 authority and in procedural measures, such as public oversight,
 published security and operational policies, and audits, rather than in
 technical measures. To verify that parties are indeed interacting with a
