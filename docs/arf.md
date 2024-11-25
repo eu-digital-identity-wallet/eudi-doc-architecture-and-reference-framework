@@ -75,7 +75,7 @@ annexes with:
 
 - **The high-level requirements**: This annex specifies the
     requirements for PID Providers, (Q)EAA Providers, PuB-EAA Providers,
-    EUDI Wallet Providers, Relying Parties and other actors in the EUDI
+    Wallet Providers, Relying Parties and other actors in the EUDI
     Wallet ecosystem.
 
 - **The attestation Rulebooks:** There are 3 Rulebooks, each one
@@ -99,7 +99,7 @@ under the Digital Europe Programme to pilot use cases for the EUDI
 Wallet at a large-scale.
 
 The objective of the Large-Scale Pilots (LSP) call is to support the
-piloting of the EUDI Wallet around a range of use-cases involving both
+piloting of the EUDI Wallet ecosystem around a range of use-cases involving both
 public and private sector stakeholders. The LSPs will test the EUDI
 Wallet in both national and cross-borders contexts and integrate with
 the iterative development of the reference application.
@@ -140,7 +140,7 @@ This document only applies to the EUDI Wallet ecosystem. Attestations that are n
 
 ## 2 Use Cases
 
-The development of the Architecture Reference Framework (ARF) is strategically guided by use cases that showcase the user experience, value proposition, and business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS Expert Group initially creates service blueprints for each use case. These blueprints meticulously detail the service delivery\'s touchpoints, components, and processes. Their role is twofold: they are instrumental in the service design and function as a tool to improve user experience and service efficiency, while simultaneously highlighting potential areas for enhancement. Serving as a foundational element, these blueprints inform the creation of use case rulebooks and the development of common specifications. Detailed in the annexes, these blueprints offer comprehensive solutions with the flexibility to incorporate alternative approaches and optional steps, such as the discretionary display of pre-approved user data. It's important to note that user journeys may differ depending on the chosen implementation approach, affecting processes like data retrieval and user consent.
+The development of the Architecture Reference Framework (ARF) is strategically guided by use cases that showcase the User experience, value proposition, and business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS Expert Group initially creates service blueprints for each use case. These blueprints meticulously detail the service delivery\'s touchpoints, components, and processes. Their role is twofold: they are instrumental in the service design and function as a tool to improve User experience and service efficiency, while simultaneously highlighting potential areas for enhancement. Serving as a foundational element, these blueprints inform the creation of use case rulebooks and the development of common specifications. Detailed in the annexes, these blueprints offer comprehensive solutions with the flexibility to incorporate alternative approaches and optional steps, such as the discretionary display of pre-approved User data. It's important to note that User journeys may differ depending on the chosen implementation approach, affecting processes like data retrieval and User consent.
 
 The eIDAS Expert Group has described service blueprints for the
 following use cases:
@@ -158,27 +158,27 @@ following use cases:
 
 ### 2.1 Identification and authentication to access online services
 
-The EUDI Wallet is primarily designed to facilitate secure user identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
+The EUDI Wallet ecosystem is primarily designed to facilitate secure User identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
 
-In this specific use case, a User employs the EUDI Wallet to authenticate with their identity accessing online services by using high-security authentication. This process involves the use of multiple identity verification methods. The User is particularly mindful of the privacy and security concerns associated with sharing person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand user identification while maintaining control over the sharing of their personal data.
+In this specific use case, a User employs their Wallet Unit to authenticate with their identity accessing online services by using high-security authentication. This process involves the use of multiple identity verification methods. The User is particularly mindful of the privacy and security concerns associated with sharing person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the sharing of their personal data.
 
-This scenario covers the complete lifecycle of the EUDI Wallet from the User\'s perspective. It spans from acquiring a valid Wallet Unit to the process of identifying and authenticating themselves for an online service. The focus here is on a practical remote same-device flow (as detailed in [Section 4.2.2](#422-attestation-presentation-flows) and [4.2.3](#423-mobile-apps-and-web-browsers)). In this context, a User utilises a single device for both securing their session and accessing the service, ensuring a streamlined and secure experience.
+This scenario covers the complete lifecycle of the Wallet Unit from the User\'s perspective. It spans from acquiring a valid Wallet Unit to the process of identifying and authenticating themselves for an online service. The focus here is on a practical remote same-device flow (as detailed in [Section 4.2.2](#422-attestation-presentation-flows) and [4.2.3](#423-mobile-apps-and-web-browsers)). In this context, a User utilises a single device for both securing their session and accessing the service, ensuring a streamlined and secure experience.
 
 Details on PID issuance requirements, the PID attribute schema, and the Trust Infrastructure are further elaborated in the respective chapters - specifically [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations and [Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) (High level requirements in \[Topic 2\], \[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex-3/annex-3.01-pid-rulebook.md) - PID Rulebook.
 
 ### 2.2 Qualified electronic signature
 
-The EUDI Wallet shall enable users to create qualified electronic
+The Wallet Unit shall enable Users to create qualified electronic
 signatures or seals. This goal can be reached by using the
-authentication and signature / seal capabilities of the EUDI Wallet as a
+authentication and signature / seal capabilities of the Wallet Unit as a
 part of a local QSCD, or a remote QSCD managed by a QTSP \[Topic16\] and
 \[Topic 37\].
 
 ### 2.3 Mobile Driving Licence
 
-A significant use case for the EUDI Wallet involves allowing Users to acquire, store, and present a mobile Driving Licence (mDL) as an attestation to prove their driving privileges. In this use case, the User employs an EUDI Wallet to present a mDL to a Relying Party (e.g., the Traffic Police).
+A significant use case for the Wallet Unit involves allowing Users to acquire, store, and present a mobile Driving Licence (mDL) as an attestation to prove their driving privileges. In this use case, the User employs a Wallet Unit to present a mDL to a Relying Party (e.g., the Traffic Police).
 
-The use case description concentrates on proximity supervised and unsupervised flows, which involve scenarios where the User is physically near a Relying Party, and the mDL attribute exchange and disclosure occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the EUDI Wallet presents mDL attributes to a human Relying Party or under their supervision (who may also use a device); whereas in the unsupervised flow, the EUDI Wallet presents mDL attributes to a machine without human oversight.
+The use case description concentrates on proximity supervised and unsupervised flows, which involve scenarios where the User is physically near a Relying Party, and the mDL attribute exchange and disclosure occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying Party or under their supervision (who may also use a device); whereas in the unsupervised flow, the Wallet Unit presents mDL attributes to a machine without human oversight.
 
 (Q)EAA issuance requirements, mDL attribute schema and Trust Infrastructure details are further detailed specifically in [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations, and in [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) - \[Topic 2\], \[Topic 3\], \[Topic 10\] and \[Topic 23\].
 
@@ -194,7 +194,7 @@ something, or with whom the Relying Party has interacted before.
 #### 2.5.1 Health
 
 Easy access to health data is crucial in both national and cross-border
-contexts. An EUDI Wallet Unit MAY enable access to patient summary,
+contexts. An Wallet Unit MAY enable access to patient summary,
 ePrescriptions, etc.
 
 #### 2.5.2 Educational credentials and professional qualifications
@@ -205,14 +205,14 @@ and employers, and Attestation Providers such as education and training
 providers or other academic institutions. For example, digital diploma
 attestations could be presented cross-border in a verifiable, trusted,
 and consumable format to another education or training institution or a
-prospective employer. An EUDI Wallet Unit may be a repository for
+prospective employer. An Wallet Unit may be a repository for
 educational digital credentials as Electronic Attestations of Attributes
 and a means for exchanging them by a learner to relevant relying
 parties.
 
 #### 2.5.3 Digital Finance
 
-The EUDI Wallet Solutions can facilitate complying with strong customer
+The Wallet Solutions can facilitate complying with strong customer
 authentication requirements, using the strong User Authentication
 capabilities described in [Section 2.1](#21-identification-and-authentication-to-access-online-services). In line with the Commission's
 Retail Payments Strategy \[RPS\], the use case would be developed in
@@ -229,19 +229,19 @@ journey in this dynamic sector.
 ## 3. Ecosystem
 
 This chapter describes the EUDI Wallet ecosystem as it
-is foreseen in the Commission's legislative proposal. The different
+is foreseen in the Regulation. The different
 roles in the EUDI Wallet ecosystem are described in figure 1 and
 detailed in the following sections.
 
-![Figure 1: Overview of the EUDI Wallet roles](media/image1.png)
+![Figure 1: Overview of the EUDI Wallet ecosystem roles](media/image1.png)
 <!-- <img src="media/image1.png" style="width="7.2131944444444445in"
 height="3.375in" /> -->
 
-Figure 1: Overview of the EUDI Wallet roles
+Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 1. Users of EUDI Wallets
 
-2. EUDI Wallet Providers
+2. Wallet Providers
 
 3. Person Identification Data (PID) Providers
 
@@ -272,27 +272,24 @@ Figure 1: Overview of the EUDI Wallet roles
 
 ### 3.1 Users of EUDI Wallet
 
-Users of EUDI Wallets use the EUDI Wallet Unit to receive, store and
+Users of EUDI Wallets use the Wallet Unit to receive, store and
 present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove
-their identity. EUDI Wallet Unit Users can also create Qualified
+their identity. Wallet Unit Users can also create Qualified
 Electronic Signatures and Seals (QES) and utilise wallet-to-wallet
 interactions.
 
-Who can be a User of an EUDI Wallet depends on national law. The use of
-an EUDI Wallet by citizens is not mandatory under the legislative
+Who can be a User of a Wallet Unit depends on national law. The use of
+a Wallet Unit by citizens is not mandatory under the legislative
 proposal. However, each Member State shall provide at least one European
 Digital Identity Wallet within 24 months after the entry into force of
 the implementing acts referred to in the Regulation.
 
-### 3.2 EUDI Wallet Providers
+### 3.2 Wallet Providers
 
-EUDI Wallet Providers are Member States or organisations either mandated
-or recognised by Member States making the EUDI Wallet available for end
-Users. The terms and conditions of the mandate or recognition are for
-each Member State to determine.
+Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. The terms and conditions of the mandate or recognition are for each Member State to determine.
 
-The EUDI Wallet Providers make available to a User, through an instance
-of their EUDI Wallet Solution, a combination of several products and
+The Wallet Providers make available to a User, through an instance
+of their Wallet Solution, a combination of several products and
 Trust Services foreseen in the legal proposal, which give the User full
 control over the use of their Person Identification Data (PID) and
 Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any
@@ -300,18 +297,18 @@ other personal data within their EUDI Wallet. From a technical
 viewpoint, this may also imply guaranteeing a User sole control over
 sensitive cryptographic material (e.g., private keys) related to their
 PID and/or (Q)EAA, including the use cases for electronic identification
-and creating a signature or seal. EUDI Wallet Providers provide Wallet Unit Attestation (WUA).
+and creating a signature or seal. Wallet Providers provide Wallet Unit Attestation (WUA).
 
-EUDI Wallet Providers are responsible for ensuring compliance with the
+Wallet Providers are responsible for ensuring compliance with the
 requirements for EUDI Wallets.
 
 ### 3.3 Person Identification Data (PID) Providers
 
 PID Providers are trusted entities responsible to:
 
-- verify the identity of the EUDI Wallet User in compliance with LoA high requirements,
+- verify the identity of the User in compliance with LoA high requirements,
 
-- issue PID to the EUDI Wallet in a harmonised common format, and
+- issue PID to the Wallet Unit in a common format, and
 
 - make available information for Relying Parties to verify the validity of the PID.
 
@@ -320,7 +317,7 @@ determine.
 
 PID Providers may e.g., be the same organisations that today issue
 official identity documents, electronic identity means, EUDI Wallet
-Providers etc. EUDI Wallet Providers may be the same organisations as
+Providers etc. Wallet Providers may be the same organisations as
 PID Providers. In case an organisation acts as both a PID Provider and a
 Wallet Provider, it shall comply with all requirements for both PID
 Providers and Wallet Providers.
@@ -416,15 +413,15 @@ rules.
 
 ### 3.8 QES Remote Creation Service Providers
 
-The EUDI Wallet will allow the User to create free-of-charge Qualified
+The Wallet Unit will allow the User to create free-of-charge Qualified
 Electronic Signatures over any data. This will also enhance the use of
-the EUDI Wallet for signing, in a natural and convenient way. The
+the Wallet Unit for signing, in a natural and convenient way. The
 creation of Qualified Electronic Signature or Seal by means of the EUDI
 Wallet can be reached by several ways:
 
-- the EUDI Wallet itself is certified as a qualified signature/seal creation device (QSCD), or
+- the Wallet Unit itself is certified as a qualified signature/seal creation device (QSCD), or
 
-- the EUDI Wallet implements secure authentication and electronic signature or an electronic seal invocation capability as a part of a local QSCD or a remote QSCD managed by a QTSP.
+- the Wallet Unit implements secure authentication and electronic signature or an electronic seal invocation capability as a part of a local QSCD or a remote QSCD managed by a QTSP.
 
 In figure 1 the QESRC Service Provider can be the remote QSCD. As part of the ecosystem, the use of common interfaces and protocols for provisioning Qualified Electronic Signatures and Seals will create a unified European market for QTSP offering remote signature services. European citizens will be able to choose any QTSP without worrying about technical interoperability between them and this will enhance competition and create better QTSP services.
 
@@ -450,12 +447,11 @@ attributes.
 ### 3.10 Relying Parties
 
 Relying Parties are natural or legal persons that rely upon an
-electronic identification or a Trust Service. In the context of EUDI
-Wallets, they request the necessary attributes contained within the PID
-dataset, QEAA, Pub-EAA and EAA from EUDI Wallet Users to rely on the
+electronic identification or a Trust Service. In the context of Wallet Units, they request the necessary attributes contained within the PID
+dataset, QEAA, Pub-EAA and EAA from Users to rely on the
 EUDI Wallet, subject to the acceptance by the owner of the Wallet (User)
 and within the limits of applicable legislation and rules. The reason
-for reliance on the EUDI Wallet may be a legal requirement, a
+for reliance on the Wallet Unit may be a legal requirement, a
 contractual agreement, or their own decision. To rely on the EUDI Wallet
 for the purpose of providing a service, Relying Parties need to inform
 the Member State where they are established and their intention for
@@ -472,11 +468,11 @@ for carrying out assessments on which Member States will have to rely
 before issuing an EUDI Wallet or providing the qualified status to a
 Trust Service Provider.
 
-The EUDI Wallets will need to be certified by CABs. QTSPs shall be
+The  Wallets will need to be certified by CABs. QTSPs shall be
 audited regularly by CABs.
 
 The standards and schemes used by CABs to fulfil their tasks to certify
-EUDI Wallets are specified further, specifically in [Chapter 7](#7-security-and-data-protection) -
+ Wallets are specified further, specifically in [Chapter 7](#7-security-and-data-protection) -
 Certification.
 
 ### 3.12 Supervisory Bodies
@@ -489,13 +485,13 @@ the Member States.
 
 ### 3.13 Device Manufacturers and Related Subsystems Providers
 
-In the EUDI Wallet ecosystem, commercial actors such as device
+In the  Wallet ecosystem, commercial actors such as device
 manufacturers and related subsystems providers fulfil an important role
-to enable the EUDI Wallet Solution to work smoothly and securely in the
+to enable the Wallet Solution to work smoothly and securely in the
 hands of the User.
 
 Hence, device manufacturers, and related subsystem providers need to
-provide a platform on which where the EUDI Wallet Solution can be built.
+provide a platform on which where the Wallet Solution can be built.
 Usability, security, stability and connectivity are key factors.
 
 The components provided by device manufacturers and providers of related
@@ -532,37 +528,36 @@ level architecture, and how they communicate via the primary interfaces.
 ### 4.1 Design principles
 
 To effectively translate the European Digital Identity Regulation into a
-user-friendly, privacy-focused, and secure technical architecture,
+User-friendly, privacy-focused, and secure technical architecture,
 establishing design principles is crucial. These principles, rooted in
 the regulatory framework and enriched by industry best practices, will
 serve as fundamental guidelines. This approach ensures compliance with
-requirements emphasizing user-centricity, privacy, security, and
+requirements emphasizing User-centricity, privacy, security, and
 cross-border interoperability. It demonstrates a commitment to both
-regulatory alignment and excellence in the EUDI Wallet\'s design.
+regulatory alignment and excellence in the Wallet\'s design.
 
 #### 4.1.1 User-centricity
 
-The EUDI Wallet prioritises user-centricity as a core design principle.
-This means placing user needs and experience at the forefront of every
-design decision. The wallet should be intuitive and easy to use, with
+The EUDI Wallet ecosystem prioritises User-centricity as a core design principle.
+This means placing User needs and experience at the forefront of every
+design decision. The Wallet Unit should be intuitive and easy to use, with
 seamless integration into existing use cases. Users should have clear
 control over their data and privacy, with transparent information about
-what data is being shared and with whom. Additionally, the wallet should
-be accessible and inclusive, catering to users with varying technical
-backgrounds and abilities. By prioritizing user-centricity, the EUDI
-Wallet fosters trust and encourages widespread adoption, ultimately
-achieving its goal of empowering users with secure and convenient
+what data is being shared and with whom. Additionally, the Wallet Unit should
+be accessible and inclusive, catering to Users with varying technical
+backgrounds and abilities. By prioritizing User-centricity, the EUDI Wallet ecosystem fosters trust and encourages widespread adoption, ultimately
+achieving its goal of empowering Users with secure and convenient
 digital identity management.
 
 #### 4.1.2 Interoperability
 
-The EUDI Wallet prioritises interoperability as a core design principle.
-This ensures the wallet functions seamlessly across borders within the
+The EUDI Wallet ecosystem prioritises interoperability as a core design principle.
+This ensures a Wallet Unit functions seamlessly across borders within the
 EU. Users can travel freely and confidently utilise their digital
 identity wallets for various services, from e-government platforms to
 private online interactions. Interoperability fosters secure data
 exchange through standardised protocols, allowing trusted entities to
-verify credentials effortlessly. This not only simplifies the user
+verify credentials effortlessly. This not only simplifies the User
 experience but also strengthens overall security within the system.
 Moreover, interoperability prevents market fragmentation by creating a
 level playing field for different digital identity solutions. It fosters
@@ -573,26 +568,26 @@ universally accepted digital identity ecosystem across the EU.
 
 #### 4.1.3 Privacy by Design
 
-The EUDI wallet architecture embodies the principle of privacy by
-design. This means that the protection of user data is a fundamental
+The EUDI Wallet architecture embodies the principle of privacy by
+design. This means that the protection of User data is a fundamental
 pillar of the wallet\'s design. The principle of data minimisation
 guides the collection of personal information, ensuring only what is
-necessary is gathered. The wallet empowers users with granular control
+necessary is gathered. The Wallet Unit empowers Users with granular control
 over what data is shared and with whom. Transparency is built into the
 system, with clear explanations of how data is used and protected. By
-making privacy a cornerstone from the beginning, the EUDI wallet aims to
-foster trust and protect the fundamental rights of its users.
+making privacy a cornerstone from the beginning, the EUDI Wallet ecosystem aims to
+foster trust and protect the fundamental rights of its Users.
 
 #### 4.1.4 Security by Design
 
-The EUDI wallet architecture embraces the principle of security by
+The EUDI Wallet architecture embraces the principle of security by
 design. This means security considerations are woven into the very
-fabric of the wallet\'s design. Throughout the design process, potential
+fabric of the Wallet architecture's design. Throughout the design process, potential
 vulnerabilities are identified and mitigated. Secure coding practices
 are mandated, and the architecture itself minimises attack surfaces by
 compartmentalizing sensitive data and access controls. By prioritizing
-security from the outset, the EUDI wallet aims to be inherently
-resistant to cyberattacks and data breaches, fostering trust and user
+security from the outset, the EUDI Wallet architecture aims to be inherently
+resistant to cyberattacks and data breaches, fostering trust and User
 confidence in this digital identity system.
 
 ### 4.2 Reference Architecture
@@ -600,14 +595,14 @@ confidence in this digital identity system.
 Figure 2 below gives an overview of the architecture of the EUDI Wallet
 ecosystem and its components.
 
-![Figure 2: EUDI Wallet Solution reference architecture](media/image2.png)
+![Figure 2: Wallet Solution reference architecture](media/image2.png)
 <!-- <img src="media/image2.png" style="width="6.195290901137358in"
 height="6.5597200349956255in" /> -->
 
-Figure 2: EUDI Wallet Solution reference architecture
+Figure 2: Wallet Solution reference architecture
 
 The following components have been identified as the core components of
-the EUDI Wallet Solution:
+the Wallet Solution:
 
 - **User device (UD)**: A User device serves as the host for the
     Wallet Unit. For Wallet Units used by a natural person, the
@@ -616,8 +611,8 @@ the EUDI Wallet Solution:
     server. The minimum hardware and software requirements for the User
     device will be determined by the Wallet Solution.
 
-- **Wallet Unit (WU)**: The app or application installed on a User
-    device, which is part of an EUDI Wallet Solution and belongs to and
+- **Wallet Instance (WI)**: The app or application installed on a User
+    device, which is part of an Wallet Solution and belongs to and
     is controlled by a User. This component implements
     the core business logic and interfaces as depicted in figure 2. It
     directly interacts with the WSCA/WSCD to securely manage
@@ -651,7 +646,7 @@ The interfaces and their respective protocols, as discussed in this
 section and illustrated in Figure 2, comply with the specifications
 established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1), paragraph 5, of the regulation.
 
-- **The Wallet Provider Interface (WPI)** is used by the Wallet Unit to communicate with the Wallet Provider to issue the Wallet Unit Attestation, as well as provide support to the user and collect metrics for accounting
+- **The Wallet Provider Interface (WPI)** is used by the Wallet Unit to communicate with the Wallet Provider to issue the Wallet Unit Attestation, as well as provide support to the User and collect metrics for accounting
     purposes.
 
 - **The User Interface (UI)** is the point of interaction and
@@ -664,11 +659,11 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
     detailed in the following section, the Wallet Unit implements
     the OpenID for Verifiable Presentation protocol \[OpenId4VP\].
     Where supported, Relying Parties use the [OpenID4VP profile for the
-    W3C Digital Credentials API] (if available) to request the PID for additional privacy, user
+    W3C Digital Credentials API] (if available) to request the PID for additional privacy, User
     experience, and security benefits.
     In contrast, for the proximity presentation flow, it adheres to the
     \[ISO/IEC 18013-5\] standard. In a remote flow, when a Relying Party
-    requires user authentication and data access to provide a service,
+    requires User authentication and data access to provide a service,
     the process initiates through either a web browser or a mobile app.
 
 - **The Secure Cryptographic Interface (SCI)** enables the Wallet Unit to communicate with the Wallet Secure Cryptographic
@@ -700,23 +695,23 @@ required to be implemented in the solution.
 
 This section defines four distinct communication flows between a Wallet Unit and a Relying Party, guiding the implementation of the presentation interface:
 
-- **Proximity Supervised Flow**: The EUDI Wallet User is physically near the Relying Party. Attestations are exchanged using near proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
+- **Proximity Supervised Flow**: The User is physically near the Relying Party. Attestations are exchanged using near proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
 
 - **Proximity Unsupervised Flow**: Like the supervised flow, but the
-    EUDI Wallet presents verifiable attributes to a machine without
+    Wallet Unit presents verifiable attributes to a machine without
     human supervision.
 
-- **Remote Cross-Device Flow**: The EUDI Wallet User views service
-    information on a separate device from their EUDI Wallet, which is
+- **Remote Cross-Device Flow**: The User views service
+    information on a separate device from their Wallet Unit, which is
     only used to secure the session (e.g., scanning a QR code on a login
-    page with the EUDI Wallet to access online services).
+    page with the Wallet Unit to access online services).
 
-- **Remote Same-Device Flow**: The EUDI Wallet User uses their EUDI
+- **Remote Same-Device Flow**: The User uses their EUDI
     Wallet device to both secure the session and consume the digital
     service including information exchange.
 
 Specific use cases integrate one or more of these flows. For detailed
-user journeys across various use cases, please refer to the blueprints
+User journeys across various use cases, please refer to the blueprints
 in [Annex 4](#annex-4) of the ARF.
 
 #### 4.2.3 Mobile Apps and Web Browsers
@@ -725,12 +720,12 @@ This section examines the technical interaction between the Wallet
 Solution, web browsers, and mobile apps, in regards of the flows
 described in the previous section. This is necessary to implement the
 attestation presentation interface effectively, with a focus on both
-user experience and security.
+User experience and security.
 
 When a Relying Party requires User authentication and some data to
 provide a service, the process begins within either a web browser or a
-mobile app. In the Remote Same-Device flow in particular, the User\'s
-browser or app should invoke to their EUDI Wallet through the mobile
+mobile app. In the Remote Same-Device flow in particular, the User's
+browser or app should invoke their Wallet Unit through the mobile
 operating system where supported whenever a service provider needs
 authentication or data. In contrast, a Remote Cross-Device flow and both
 the proximity flows (supervised or unsupervised), should invoke the
@@ -752,12 +747,12 @@ crucial. Key areas for discussion and improvement include:
     Party and Wallet Unit in the Remote Same-Device flow, it's
     crucial to define how this interaction works.
 
-- **Wallet Selection and Invocation**: In scenarios where users have
+- **Wallet Selection and Invocation**: In scenarios where Users have
     multiple Wallet Solutions, the process of selecting and activating
     the appropriate Wallet Unit is critical for a seamless
     experience. Clear application interface between the Wallet Unit
     and the browser/app are also essential. Current approaches relying
-    on custom URIs can introduce user experience friction and scaling
+    on custom URIs can introduce User experience friction and scaling
     issues.
 
 To mitigate these challenges, Relying Parties and Wallet Units
@@ -774,9 +769,9 @@ advantages to Relying Parties, Wallet Units, and Users:
 - **Secure Cross-Device Flows**: Cross-device presentations can leverage
     proximity checks handled by the mobile operating system which provides
     added phishing resistance.  
-- **Multiple Wallet Selection**: Users are afforded a clear interface
+- **Multiple Wallet Unit Selection**: Users are afforded a clear interface
     provided by the mobile operating system that disambiguates between
-    multiple Wallet Solutions for wallet selection.
+    multiple Wallet Units for selection.
 - **Clear Origin Information**: The origin information of the Relying
     Party (such as the website domain or the app package name) is supplied
     by the system and is provided in the presentation request for Users and
@@ -785,13 +780,13 @@ advantages to Relying Parties, Wallet Units, and Users:
 ### 4.3 Architecture types
 
 Building upon the high-level design described in figure 2, at least four
-different types of architecture for the EUDI Wallet Solution can be
+different types of architecture for the Wallet Solution can be
 identified, each leveraging a different type of Wallet Secure
 Cryptographic Device (WSCD):
 
 1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In
     this architecture, the Wallet Secure Cryptographic Device is
-    situated remotely, separate from the user\'s device, for example -
+    situated remotely, separate from the User\'s device, for example -
     implemented by the Wallet Provider using an HSM.
 
 2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a
@@ -822,15 +817,15 @@ In this chapter, state diagrams are presented to explain the relations
 between the Wallet Solution the Wallet and the PID.
 
 The following descriptions are not prescriptive of form factor, hence
-depending on the implementation an EUDI Wallet Solution may consist of a
+depending on the implementation an Wallet Solution may consist of a
 single mobile app, or a set of local and remote components available to
 a specific User.
 
 #### 4.4.2 Wallet Solution
 
-An EUDI Wallet Solution has a state of its own, as defined by Article 5d
+An Wallet Solution has a state of its own, as defined by Article 5d
 of the Regulation. The state of the Solution affects the state of all
-EUDI Wallet Units of that EUDI Wallet Solution. Figure 3 below shows
+Wallet Units of that Wallet Solution. Figure 3 below shows
 the states of the Wallet Solution:
 
 ![Figure 3: State-chart of Wallet Solution](media/image3.png)
@@ -838,9 +833,9 @@ the states of the Wallet Solution:
 
 Figure 3: State-chart of Wallet Solution
 
-The **Candidate** state is the first state of an EUDI Wallet Solution.
-This means it is fully implemented and the EUDI Wallet Provider requests
-the solution to be certified as an EUDI Wallet as part of an EUDI Wallet
+The **Candidate** state is the first state of an Wallet Solution.
+This means it is fully implemented and the Wallet Provider requests
+the solution to be certified as an EUDI Wallet Solution as part of an EUDI Wallet
 eID scheme.
 
 If all the legal and technical criteria have been met, including:
@@ -861,16 +856,16 @@ Solution to Users. The state of the Solution becomes **valid**.
 
 According to Article 5d, Member States inform the Commission of each
 change in the certification status of their EUDI Wallet eID schemes and
-the EUDI Wallet Solutions provided under that scheme. This means the
-EUDI Wallet Solution can be officially launched, and can be provided to Users.
+the Wallet Solutions provided under that scheme. This means the
+Wallet Solution can be officially launched, and can be provided to Users.
 
 Under the legal conditions in [Article 5e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e2020-1-1), paragraph 1, the issuing
-Member State can temporarily suspend an EUDI Wallet Solution. This would
+Member State can temporarily suspend an Wallet Solution. This would
 for example be the result of a critical security issue on that EUDI
 Wallet Solution. This leads to the **suspended** state. Under [Article
 5d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1938-1-1), paragraph 2, the issuing Member State can unsuspend the Wallet
 Solution and continue issuance, bringing the Solution back to the
-**valid** state. Under paragraph 1, the EUDI Wallet Solution can be
+**valid** state. Under paragraph 1, the Wallet Solution can be
 completely withdrawn.
 
 #### 4.4.3 Wallet Unit
@@ -882,33 +877,33 @@ Figure 4 below shows the states of the Wallet Unit.
 
 Figure 4: State-chart of Wallet Unit
 
-An EUDI Wallet Unit lifecycle begins when the User installs a
-component part of a valid EUDI Wallet Solution to their User device (see
+An Wallet Unit lifecycle begins when the User installs a
+component part of a valid Wallet Solution to their User device (see
 [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once an EUDI
 Wallet Unit establishes communication with other components that are
 part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an EUDI Wallet
 Provider, it is in an **operational** state. In this state, the User
-manages the EUDI Wallet Unit, which may involve:
+manages the Wallet Unit, which may involve:
 
-- The EUDI Wallet Provider updating the EUDI Wallet Unit,
+- The Wallet Provider updating the Wallet Unit,
 
-- The EUDI Wallet Provider revoking the EUDI Wallet Unit,
+- The Wallet Provider revoking the Wallet Unit,
     including at the User\'s request. Revocation of the Wallet Unit
     is accomplished by revoking the Wallet Unit Attestation (see
     \[Topic 9\] and \[Topic 38\]).
 
-- The User uninstalling the EUDI Wallet Instance.
+- The User uninstalling the Wallet Instance.
 
-In the **operational** state of the EUDI Wallet Unit:
+In the **operational** state of the Wallet Unit:
 
 - The User can request issuance of a PID and optionally a QEAA, a
     PuB-EAA or an EAA.
 
-- Once an EUDI Wallet Unit holds a valid PID, it is considered
+- Once an Wallet Unit holds a valid PID, it is considered
     **valid**. Note that this state cannot be verified or looked upon
     unless PID is requested. In this state, the User can use their EUDI
     Wallet Unit to present PID attributes. If the PID expires or is
-    revoked, the EUDI Wallet is not automatically unusable, but rather
+    revoked, the Wallet Unit is not automatically unusable, but rather
     its state is merely downgraded back to **operational**. This may
     affect the validity or usability of a QEAA, a PuB-EAA, an EAA or a
     QES certificate.
@@ -917,7 +912,7 @@ Notes:
 
 - the above possibilities are independent from the possibility of a
     PID, QEAA, PuB-EAA, or EAA Provider, to revoke the attestations that
-    they have issued to an EUDI Wallet Unit.
+    they have issued to an Wallet Unit.
 
 - The security provided by the Wallet Unit is relying on the
     Wallet Secure Cryptographic Device and its Wallet Secure
@@ -1172,7 +1167,7 @@ Figure 6: EUDI Wallet trust architecture
 Figure 6 above shows the parties and components that are involved in the
 trust architecture for the EUDI Wallet ecosystem.
 
-In the center of this ecosystem is the **EUDI Wallet Unit**, shown
+In the center of this ecosystem is the **Wallet Unit**, shown
 in the middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes the interactions between
 the Wallet Unit and other roles in the ecosystem in the lifecycle of
 a Wallet Unit, namely installation, activation, management, and
@@ -1377,7 +1372,7 @@ with any Wallet Unit provided by that Wallet Provider.
 ##### 6.3.2.1 Introduction
 
 Figure 6 depicts the PID Providers and Attestation Providers to the left
-of the EUDI Wallet Unit. To the left and below of this, the figure
+of the Wallet Unit. To the left and below of this, the figure
 also shows that each PID Provider and Attestation Provider will register
 itself with a PID Provider Registrar or an Attestation Provider
 Registrar in its Member State. Subsequently, the Member State notifies
@@ -1546,13 +1541,13 @@ Section 4.4.3 above presented the lifecycle of a Wallet Unit:
 
 ##### 6.5.2.1 Required trust relationships
 
-The lifecycle of a Wallet Unit starts when a User decides to install an EUDI Wallet Instance application on their device. This application in an instance of a Wallet Solution, which is provided to the User by a Wallet Provider.
+The lifecycle of a Wallet Unit starts when a User decides to install an Wallet Instance application on their device. This application in an instance of a Wallet Solution, which is provided to the User by a Wallet Provider.
 
 When downloading and installing the Wallet Instance, the following trust relationships are established:
 
 1. The User verifies that the Wallet Instance (i.e., the application the User is installing) is genuine and authentic and does not contain any malware or other threats.
 
-2. The User verifies that they can obtain the PID(s) they need in an instance of this EUDI Wallet Solution. If the relevant PID Provider does not support the Wallet Solution, the User would not be able to use the Wallet Unit for obtaining those PID(s).
+2. The User verifies that they can obtain the PID(s) they need in an instance of this Wallet Solution. If the relevant PID Provider does not support the Wallet Solution, the User would not be able to use the Wallet Unit for obtaining those PID(s).
 
 The next two sections discuss these trust relationships.
 
@@ -1592,11 +1587,11 @@ attestation(s) they wish to use.
 
 #### 6.5.3 Wallet Unit activation
 
-After installation of the Wallet Instane, the new EUDI Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
+After installation of the Wallet Instane, the new Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
 
-1. The EUDI Wallet Provider requests data about the User's device from the EUDI Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
+1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
 
-2. The EUDI Wallet Provider issues a Wallet Unit Attestation (WUA) to the
+2. The Wallet Provider issues a Wallet Unit Attestation (WUA) to the
     Wallet Unit. The WUA is described in \[Topic 9\]. The WUA has
     three main purposes:
 
@@ -1607,12 +1602,12 @@ After installation of the Wallet Instane, the new EUDI Wallet Unit (which includ
     -  The WUA contains information allowing a PID Provider, an Attestation Provider, or a Relying Party, to verify that the Wallet Provider did not revoke the Wallet Unit
     Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in \[Topic 38\].
 
-3. The Wallet Unit requests the User to set up a User authentication mechanism. User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.4](#6634-wallet-instance-obtains-user-approval-for-presenting-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
+3. The Wallet Unit requests the User to set up a User authentication mechanism. User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.4](#6634-wallet-instance-obtains-User-approval-for-presenting-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
 
-4. The Wallet Provider sets up a user account for the User to ensure
+4. The Wallet Provider sets up a User account for the User to ensure
     that the User can request the revocation of their
     Wallet Unit in case of theft or loss. The Wallet Provider
-    associates the Wallet Unit with the new user account. The Wallet
+    associates the Wallet Unit with the new User account. The Wallet
     Provider registers one or more backend-based User authentication
     methods that the Wallet Provider will use to authenticate the User.
     Note that:
@@ -1626,11 +1621,11 @@ After installation of the Wallet Instane, the new EUDI Wallet Unit (which includ
 
     - In any case, User details registered by the Wallet Provider will not be included in the WUA. They are strictly for use by the Wallet Provider only.
 
-For successful EUDI Wallet Unit activation, the following trust relations are established:
+For successful Wallet Unit activation, the following trust relations are established:
 
-1. The EUDI Wallet Instance authenticates the EUDI Wallet Provider, meaning that the Wallet Instance is sure that it is dealing with the genuine Wallet Provider who provided it to the User.
+1. The Wallet Instance authenticates the Wallet Provider, meaning that the Wallet Instance is sure that it is dealing with the genuine Wallet Provider who provided it to the User.
 
-2. The EUDI Wallet Provider authenticates the EUDI Wallet Instance. This means that the EUDI Wallet Provider is sure that the Wallet Instance is indeed a true instance of their EUDI Wallet Solution, and not a fake app.
+2. The Wallet Provider authenticates the Wallet Instance. This means that the Wallet Provider is sure that the Wallet Instance is indeed a true instance of their Wallet Solution, and not a fake app.
 
 Both trust relationships are the responsibility of the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
 
@@ -1662,7 +1657,7 @@ established:
 
 1. When contacting the Wallet Provider, the User authenticates the
     Wallet Provider. This means the User is sure that they are visiting
-    the website or the user portal of the genuine Wallet Provider who is
+    the website or the User portal of the genuine Wallet Provider who is
     responsible for the User's Wallet Unit, and not a spoofed
     website or portal. This can be done, for instance, by using standard
     mechanisms such as TLS server authentication.
@@ -1674,14 +1669,14 @@ established:
     methods established in the User's account during activation, see
     [Section 6.5.3](#653-wallet-instance-activation).
 
-3. The EUDI Wallet Unit authenticates the EUDI Wallet Provider,
-    meaning that the EUDI Wallet Unit is sure that it is dealing
-    with the genuine EUDI Wallet Provider. This must be ensured by the
+3. The Wallet Unit authenticates the Wallet Provider,
+    meaning that the Wallet Unit is sure that it is dealing
+    with the genuine Wallet Provider. This must be ensured by the
     Wallet Provider. The ARF does not specify how this trust
     relationship can be satisfied.
 
-4. The EUDI Wallet Provider authenticates the EUDI Wallet Unit.
-    This means that the EUDI Wallet Provider is sure that the EUDI
+4. The Wallet Provider authenticates the Wallet Unit.
+    This means that the Wallet Provider is sure that the EUDI
     Wallet Instance is indeed a true instance of their EUDI Wallet
     Solution, and not a fake app. This must be ensured by the Wallet
     Provider. The ARF does not specify how this trust relationship can
@@ -1703,7 +1698,7 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 
 #### 6.6.1 PID or attestation lifecycle
 
-[Section 4.4.4](#444-person-identification-data-pid) above presented the lifecycle of a PID within an EUDI Wallet Unit:
+[Section 4.4.4](#444-person-identification-data-pid) above presented the lifecycle of a PID within an Wallet Unit:
 
 1. Using their Wallet Unit, the User requests the issuance of a PID
     or an attestation from a PID Provider or an Attestation Provider.
@@ -1767,7 +1762,7 @@ trust relationships are established during issuance:
     Provider did not revoke the Wallet Unit. This is
     described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-instance-is-not-suspended-or-revoked).
 
-5. Finally, after the PID or attestation is issued to the Wallet Unit, the User may have to activate it before they can use it; see [Section 6.6.2.5](#6625-user-activates-the-pid-or-attestation).
+5. Finally, after the PID or attestation is issued to the Wallet Unit, the User may have to activate it before they can use it; see [Section 6.6.2.5](#6625-User-activates-the-pid-or-attestation).
 
 More detailed requirements for the issuance process of PIDs and
 attestations, for instance regarding the issuance protocol, are included
@@ -1823,7 +1818,7 @@ informs the User about the identity of the PID Provider or Attestation
 Provider, using the subject information from the PID Provider or
 Attestation Provider certificate.
 
-##### 6.6.2.3 PID Provider or Attestation Provider validates the EUDI Wallet Unit
+##### 6.6.2.3 PID Provider or Attestation Provider validates the Wallet Unit
 
 **Verifies the authenticity of the Wallet Unit**
 
@@ -1895,7 +1890,7 @@ established:
 3. The User approves or rejects the presentation of the requested
     attributes, or some of them, for selective disclosure, possibly
     based on the outcome of the evaluation of the embedded disclosure
-    policy. User approval is described in [Section 6.6.3.4](#6634-wallet-instance-obtains-user-approval-for-presenting-attributes).
+    policy. User approval is described in [Section 6.6.3.4](#6634-wallet-instance-obtains-User-approval-for-presenting-attributes).
 
 Subsequently, after the Wallet Unit presents the selected attributes
 from the PID or attestation to the Relying Party Instance by sending a
@@ -1922,7 +1917,7 @@ following trust relationships are established:
     presenting the attestation is the User, meaning the subject of the
     PID or attestation. This is called User binding. In other use
     cases, the Relying Party trusts that Wallet Unit and the WSCD
-    have done this. User binding is discussed in [Section 6.6.3.8](#6638-relying-party-verifies-or-trusts-user-binding).
+    have done this. User binding is discussed in [Section 6.6.3.8](#6638-relying-party-verifies-or-trusts-User-binding).
 
 8. The Relying Party can request attributes from two or more
     attestations in the same interaction. This is called a **combined
@@ -1943,7 +1938,7 @@ Finally, after the interaction is over,
 
 11. The Wallet Unit enables the User to report unlawful or
     suspicious requests for personal data by a Relying Party, based on
-    information logged by the Wallet Unit. Similarly, the Wallet Unit enables the User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the Wallet Unit. This is discussed in [Section 6.6.3.12](#66312-wallet-instance-enables-the-user-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data).
+    information logged by the Wallet Unit. Similarly, the Wallet Unit enables the User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the Wallet Unit. This is discussed in [Section 6.6.3.12](#66312-wallet-instance-enables-the-User-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data).
 
 ##### 6.6.3.2 Wallet Unit authenticates the Relying Party Instance
 
@@ -2041,7 +2036,7 @@ For more details on the embedded disclosure policy, see \[Topic 43\].
 
 ##### 6.6.3.4 Wallet Unit obtains User approval for presenting attributes
 
-**Note: In this document the term 'User approval' exclusively refers to a User's decision to present an attribute to a Relying Party. Under no circumstances User approval to present data from their Wallet Unit should be construed as lawful grounds for the processing of personal data by the Relying Party or any other party. A Relying Party requesting or processing personal data from an EUDI Wallet Unit must ensure that it has grounds for lawful processing of that data, according
+**Note: In this document the term 'User approval' exclusively refers to a User's decision to present an attribute to a Relying Party. Under no circumstances User approval to present data from their Wallet Unit should be construed as lawful grounds for the processing of personal data by the Relying Party or any other party. A Relying Party requesting or processing personal data from an Wallet Unit must ensure that it has grounds for lawful processing of that data, according
 to Article 6 of the GDPR.**
 
 Before presenting any attribute to a Relying Party, the Wallet Unit
@@ -2274,7 +2269,7 @@ Before deleting the PID or attestation and the cryptographic keys, the
 
 ### 7.1 Introduction
 
-This chapter is dedicated to the certification of EUDI Wallet Solutions,
+This chapter is dedicated to the certification of Wallet Solutions,
 covering the legal foundation outlined in the amending Regulation (the
 Regulation), the overall certification approach, and its accompanying
 design principles. In addition, the main two supporting documents, the
@@ -2302,12 +2297,12 @@ States shall communicate to the European Commission the names and
 addresses of these public or private bodies under [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(7) of the
 Regulation.
 
-EUDI Wallet Providers shall request (select, contract) one or more
+Wallet Providers shall request (select, contract) one or more
 designated CABs to assess and certify the conformity of their EUDI
 Wallet Solution against the requirements of the Regulation.
 
-EUDI Wallet certification is then conducted by the CAB to evaluate and
-certify the conformity of the EUDI Wallet Solution (target of the
+EUDI Wallet Solution certification is then conducted by the CAB to evaluate and
+certify the conformity of the Wallet Solution (target of the
 certification) against requirements which will be established by:
 
 - [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(23) - Implementing act(s) on technical and operational
@@ -2315,18 +2310,18 @@ certification) against requirements which will be established by:
     down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
 
 - [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the
-    provision of the EUDI Wallet and any other data held by the provider
-    of the EUDI Wallet;
+    provision of the Wallet Unit and any other data held by the provider
+    of the EUDI Wallet Unit;
 
 - [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on
     specifications, procedures and reference standards, in order to
-    facilitate the onboarding of users to the EUDI Wallet either by
+    facilitate the onboarding of Users to the Wallet Unit either by
     electronic identification means conforming to level of assurance
     (LoA) 'high' or by electronic identification means conforming to LoA
     'substantial' in conjunction with additional remote onboarding
     procedures that together meet the requirements of LoA 'high'.
 
-The EUDI Wallet shall be certified to ensure conformity assessments but
+The Wallet Solution shall be certified to ensure conformity assessments but
 also security robustness assessment of conformance to a high level of
 security.
 
@@ -2340,7 +2335,7 @@ consequently to their providers.
 establish a list of reference standards and, where necessary, establish
 specifications and procedures for the certification of EUDI Wallets.
 
-The certification process of EUDI Wallet Providers should leverage, rely
+The certification process of Wallet Providers should leverage, rely
 on, and mandate the use of relevant and existing CSA certification
 schemes, or parts thereof, to certify the compliance of wallets or parts
 thereof, with the applicable cybersecurity requirements.
@@ -2359,7 +2354,7 @@ vulnerability assessment is carried out every two years. Where a
 vulnerability is identified and not remedied in a timely manner,
 certification shall be cancelled.
 
-### 7.2 Overall approach to Certification of EUDI Wallet Solutions
+### 7.2 Overall approach to Certification of Wallet Solutions
 
 The certification of EUDI Wallets is of the utmost importance in
 ensuring their interoperability, security, trustworthiness, and
@@ -2382,7 +2377,7 @@ building upon the foundation of the IA and transitory schemes, a
 dedicated CSA certification scheme for the EUDI Wallets will be
 established by ENISA.
 
-#### 7.2.1 Certification of EUDI Wallet Solutions in the short term
+#### 7.2.1 Certification of Wallet Solutions in the short term
 
 Until a dedicated EUDI Wallets cybersecurity certification scheme under
 the CSA is available, the Regulation allows Member States to establish
@@ -2424,7 +2419,7 @@ prepared; a Risk and Cybersecurity Assessment, a HLR, and a mapping of
 relevant existing certification schemes (the latter two documents
 prepared by ENISA). In addition, an architecture survey has been
 conducted in the Toolbox Expert Group to gain insights into potential
-EUDI Wallet implementations and architectural possibilities.
+Wallet Solution implementations and architectural possibilities.
 
 First, the RA aims to identify initial security and privacy threats
 (potential attacks carried out by different actors) and provide a list
@@ -2437,7 +2432,7 @@ requirements to mitigate identified threats, at the relevant Level of
 Assurance.
 
 Second, the HLR document provides recommendations for the certification
-of EUDI Wallet implementations in the short term. It outlines the
+of Wallet Solutions in the short term. It outlines the
 high-level process requirements for certification, in addition to
 high-level statements on the functional components of the EUDI Wallet.
 In essence, it defines 'what' will need to be certified and what the
@@ -2456,14 +2451,14 @@ for the development of certification schemes for EUDI Wallets, both at
 the national and European levels. The schemes will rely on the
 identified certification schemes to provide assurance, either in a
 composite approach, or through the establishment of assumptions on
-external components, such as the Wallet users' devices.
+external components, such as the Wallet Users' devices.
 
 Finally, non-cybersecurity requirements should ensure functional
 interoperability of the EUDI Wallet. To this end, the IA aims to define
 a requirement to CABs for functional testing, for example supported by
 test-suites or test cases.
 
-#### 7.2.2 Certification of EUDI Wallet Solutions in the long term
+#### 7.2.2 Certification of Wallet Solutions in the long term
 
 In parallel to the work described above, ENISA is requested to draft a
 dedicated European cybersecurity certification scheme for the EUDI
@@ -2473,7 +2468,7 @@ requirement it will cover. This scheme should be based on harmonised
 requirements, and identify any additional requirements relevant for
 cybersecurity. The scheme should further detail the cybersecurity
 requirements, identify and set normative standards and define the target
-level of assurance or security for the relevant EUDI Wallet components.
+level of assurance or security for the relevant Wallet Solution components.
 
 The scheme should also take into account the inputs of the ARF as part
 of the Toolbox process, and the input from the Certification subgroup
@@ -2483,7 +2478,7 @@ Finally, ENISA is asked to also facilitate the transition from national
 certification schemes to the dedicated cybersecurity certification
 scheme under the CSA.
 
-A visual description of the overall EUDI Wallet certification process
+A visual description of the overall Wallet Solution certification process
 can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
 
 ### 7.3 High-Level Requirements (HLR)
@@ -2498,7 +2493,7 @@ Regulation, to facilitate certification.
     certification, such as process to define or obtain a certification.
 
 - **Functional:** Describes functional requirements (i.e. what the
-    EUDI Wallet should be able to do, such as provisioning of
+    Wallet Solution should be able to do, such as provisioning of
     attributes). Most functional requirements are derived in the other
     sections of the ARF coming from the Toolbox process.
 
@@ -2584,7 +2579,7 @@ for each system component and rely on threat categories to drive the
 analysis. This helps to eventually mitigate threats, for example through
 certification requirements. However, the security mindset is to protect
 assets, whereas the privacy mindset is to protect personal data of the
-user.
+User.
 
 ![Figure 8: Relation between threats, risks, vulnerabilities, and assets](media/image8.png)
 <!-- <img src="media/image8.png" style="width:3.920138888888889in;height:1.7666666666666666in" /> -->
@@ -2602,12 +2597,12 @@ transitory certification schemes.
 
 ### 7.5 Design principles and assumptions
 
-In the approach to EUDI Wallet certification described above, a few
+In the approach to Wallet Solution certification described above, a few
 design principles can be identified and will be further expanded upon
 through work in the CSG:
 
 - The amending Regulation requires the EUDI Wallets to be certified at
-    LoA 'high'. However, not all EUDI Wallet components may need to
+    LoA 'high'. However, not all Wallet Solution components may need to
     individually meet LoA 'high' or be certified, for the overall EUDI
     Wallet to reach that level of assurance.
 
@@ -2627,7 +2622,7 @@ through work in the CSG:
     including security and privacy, as well as functional requirements
     in order to ensure European interoperability.
 
-- The final EUDI Wallet certification implies a multitude of
+- The final Wallet Solution certification implies a multitude of
     certificates, however, the aim is to minimise this number to the
     extent possible.
 
@@ -2686,7 +2681,7 @@ guidelines:
 | Enhancement Requests  | Request new features, sections, or content to be added to the document to improve its usefulness or relevance. |
 | Formatting and Styling | Feedback regarding the visual appearance, organization, and consistency of formatting within the document. |
 | Documentation Standards | Discussions around adhering to documentation standards, conventions, or guidelines. |
-| Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and users. |
+| Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and Users. |
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
 
 - **Attach** relevant files, screenshots, or links to additional
@@ -2816,19 +2811,19 @@ For undated references, the latest version available applies.
 | \[Topic 6\]        | Annex 2 - Relying Party authentication and User Approval                                                                                 |
 | \[Topic 7\]        | Annex 2 - Attestation validity checks and revocation                                                                                     |
 | \[Topic 9\]        | Annex 2 - Wallet Unit Attestation                                                                                                         |
-| \[Topic 10\]       | Annex 2 - Issuing a (Q)EAA to the EUDI Wallet                                                                                            |
+| \[Topic 10\]       | Annex 2 - Issuing a (Q)EAA to the Wallet Unit                                                                                           |
 | \[Topic 11\]       | Annex 2 - Pseudonym attestation                                                                                                          |
 | \[Topic 12\]       | Annex 2 - (Q)EAA Rule Book                                                                                                               |
-| \[Topic 16\]       | Annex 2 - Signing documents with EUDI Wallet                                                                                             |
-| \[Topic 18\]       | Annex 2 - Relying Party handling EUDI Wallet attribute combined presentation                                                             |
-| \[Topic 19\]       | Annex 2 - EUDI Wallet User Navigation requirements (Dashboard logs for transparency)                                                     |
+| \[Topic 16\]       | Annex 2 - Signing documents with Wallet Unit                                                                                            |
+| \[Topic 18\]       | Annex 2 - Relying Party handling Wallet Unit attribute combined presentation                                                             |
+| \[Topic 19\]       | Annex 2 - User Navigation requirements (Dashboard logs for transparency)                                                     |
 | \[Topic 23\]       | Annex 2 - PID issuance and (Q)EAA issuance                                                                                               |
 | \[Topic 25\]       | Annex 2 - Unified definition and controlled vocabulary for attestation attributes                                                        |
 | \[Topic 26\]       | Annex 2 - Attestations Catalogue                                                                                                        |
 | \[Topic 27\]       | Annex 2 - Relying Party registry                                                                                                         |
 | \[Topic 30\]       | Annex 2 - Interaction between EUDI Wallets                                                                                               |
 | \[Topic 31\]       | Annex 2 - PID, Wallet and Attestation Providers registration                                                                             |
-| \[Topic 34\]       | Annex 2 - Migrate to a different wallet solution                                                                                         |
+| \[Topic 34\]       | Annex 2 - Migrate to a different Wallet solution                                                                                         |
 | \[Topic 37\]       | Annex 2 - QES -- Remote Signing - Technical Requirements                                                                                 |
 | \[Topic 38\]       | Annex 2 - Wallet Unit Revocation                                                                                                     |
 | \[Topic 43\]       | Annex 2 - Embedded disclosure policy                                                                                                     |
@@ -2879,9 +2874,9 @@ For undated references, the latest version available applies.
 
 - Annex 5 - Design guides
 
-  - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - EUDI Wallet design guide
+  - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
 
-  - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - EUDI Wallet design guide -- data sharing scenarios
+  - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
 
 - [Annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf) - Certification high level requirements
 
