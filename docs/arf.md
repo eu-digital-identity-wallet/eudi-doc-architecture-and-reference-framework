@@ -75,6 +75,8 @@ This document only applies to the EUDI Wallet ecosystem. Attestations that are n
 
 ## 2 Use Cases
 
+### 2.1 Introduction
+
 The development of the Architecture Reference Framework (ARF) is strategically guided by use cases that showcase the User experience, value proposition, and business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS Expert Group initially creates service blueprints for each use case. These blueprints meticulously detail the service delivery\'s touchpoints, components, and processes. Their role is twofold: they are instrumental in the service design and function as a tool to improve User experience and service efficiency, while simultaneously highlighting potential areas for enhancement. Serving as a foundational element, these blueprints inform the creation of use case rulebooks and the development of common specifications. Detailed in the annexes, these blueprints offer comprehensive solutions with the flexibility to incorporate alternative approaches and optional steps, such as the discretionary display of pre-approved User data. It's important to note that User journeys may differ depending on the chosen implementation approach, affecting processes like data retrieval and User consent.
 
 The eIDAS Expert Group has described service blueprints for the following use cases:
@@ -89,7 +91,7 @@ The eIDAS Expert Group has described service blueprints for the following use ca
 
 - Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.5](#25-other-use-cases).
 
-### 2.1 Identification and authentication to access online services
+### 2.2 Identification and authentication to access online services
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
 
@@ -99,11 +101,11 @@ This scenario covers the complete lifecycle of the Wallet Unit from the User\'s 
 
 Details on PID issuance requirements, the PID attribute schema, and the Trust Infrastructure are further elaborated in the respective chapters - specifically [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations and [Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) (High level requirements in \[Topic 2\], \[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex-3/annex-3.01-pid-rulebook.md) - PID Rulebook.
 
-### 2.2 Qualified electronic signature
+### 2.3 Qualified electronic signature
 
 The Wallet Unit enables Users to create qualified electronic signatures or seals. This goal can be reached by using the authentication and signature / seal capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD managed by a QTSP \[Topic16\] and \[Topic 37\].
 
-### 2.3 Mobile Driving Licence
+### 2.4 Mobile Driving Licence
 
 A significant use case for the Wallet Unit involves allowing Users to acquire, store, and present a mobile Driving Licence (mDL) as an attestation to prove their driving privileges. In this use case, the User employs a Wallet Unit to present a mDL to a Relying Party (e.g., the Traffic Police).
 
@@ -111,27 +113,27 @@ The use case description concentrates on proximity supervised and unsupervised f
 
 (Q)EAA issuance requirements, mDL attribute schema and Trust Infrastructure details are further detailed specifically in [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations, and in [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) - \[Topic 2\], \[Topic 3\], \[Topic 10\] and \[Topic 23\].
 
-### 2.4 Pseudonyms
+### 2.5 Pseudonyms
 
 The present use case specifies a single type of pseudonym, issued by a Pseudonym Provider, to a User having a Wallet Unit. There are several types of entities that may provide a pseudonym to a User; for example, a PID Provider or a QTSP.
 
 The pseudonym in this use case is not designed to fit all possible use cases and to comply with all possible requirements. Rather, it is intended for basic use case, namely allowing a Relying Party to recognise a User as someone about whom the Relying Party already knows something, or with whom the Relying Party has interacted before.
 
-### 2.5 Other use cases
+### 2.6 Other use cases
 
-#### 2.5.1 Health
+#### 2.6.1 Health
 
 Easy access to health data is crucial in both national and cross-border contexts. An Wallet Unit MAY enable access to patient summary, ePrescriptions, etc.
 
-#### 2.5.2 Educational credentials and professional qualifications
+#### 2.6.2 Educational credentials and professional qualifications
 
 Providing documents for qualification recognition procedures can be costly and time-consuming for Users, Relying Parties such as companies and employers, and Attestation Providers such as education and training providers or other academic institutions. For example, digital diploma attestations could be presented cross-border in a verifiable, trusted, and consumable format to another education or training institution or a prospective employer. An Wallet Unit may be a repository for educational digital credentials as Electronic Attestations of Attributes and a means for exchanging them by a learner to relevant relying parties.
 
-#### 2.5.3 Digital Finance
+#### 2.6.3 Digital Finance
 
 The Wallet Solutions can facilitate complying with strong customer authentication requirements, using the strong User Authentication capabilities described in [Section 2.1](#21-identification-and-authentication-to-access-online-services). In line with the Commission's Retail Payments Strategy \[RPS\], the use case would be developed in close coordination with Member States' advisory groups on retail payments and the finance industry.
 
-#### 2.5.4 Digital Travel Credential
+#### 2.6.4 Digital Travel Credential
 
 Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a supported format enabling Relying Parties to identify Users and their travel, thus facilitating the travel experience and the User journey in this dynamic sector.
 
