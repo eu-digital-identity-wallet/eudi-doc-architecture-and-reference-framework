@@ -437,6 +437,12 @@ frequently.
 On the plus side, the number of attestations to be issued is constant
 over time and does not depend on usage.
 
+#### 3.1.4 Questions for discussion
+
+1. Can you think of other approaches to mitigate the threat of tracking (within the context of the currently specified attestation formats)?
+2. Which of the above mentioned methods should Wallet Solutions support?
+3. Should Attestation Providers be able to indicate, during issuance, how the Wallet Unit should handle their attestations? For example, should they be able to choose one of these methods? And when choosing a specific method, should they be able to set a value for the parameters involved, for example the lower limit for requesting new attestations in method or the batch size in method C? 
+
 
 
 ### 3.2. When checking the revocation status of attestations
