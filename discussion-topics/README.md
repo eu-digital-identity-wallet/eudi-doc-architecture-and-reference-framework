@@ -9,7 +9,7 @@ The purpose of the ARF is to establish high level requirements for the EUDI Wall
 ## Process
 The process of establishing high level requirements has 5 steps:
 1. The discussion paper on the topic is published on GitHub.
-2. The discussion paper on the topic contains a number of questions: each question will have a separate response thread in the discussion area of GitHub.
+2. The discussion paper on the topic contains a number of questions: each question will have a separate response thread in the [discussion area of GitHub](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/discussions).
 3. After three weeks the discussion on the topic will be closed. The Commission will not publish any answers to responses on GitHub, but your input will be considered.
 4. The Commission will publish a new ARF version on GitHub about seven weeks after publication of the discussion paper, containing an update on the topic.  
 5. The published ARF version can be commented on GitHub. 
