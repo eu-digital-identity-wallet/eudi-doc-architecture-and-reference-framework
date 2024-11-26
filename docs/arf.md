@@ -550,7 +550,7 @@ Moreover, interoperability prevents market fragmentation by creating a
 level playing field for different digital identity solutions. It fosters
 competition and collaboration, ultimately driving innovation in the
 European digital identity landscape. By prioritizing interoperability,
-the EUDI Wallet architecture lays the foundation for a trusted and
+the architecture of the EUDI Wallet ecosystem lays the foundation for a trusted and
 universally accepted digital identity ecosystem across the EU.
 
 #### 4.1.3 Privacy by Design
