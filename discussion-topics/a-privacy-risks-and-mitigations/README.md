@@ -19,6 +19,10 @@
     - [2.3. Attestation Provider linkability](#23-attestation-provider-linkability)
   - [3. Possible mitigation measures for Relying Party linkability within the current ARF](#3-possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
     - [3.1 When issuing and presenting attestations](#31-when-issuing-and-presenting-attestations)
+      - [3.1.1 Method A: Once-only attestations](#311-method-a-once-only-attestations)
+      - [3.1.2 Method B: Limited-time attestations](#312-method-b-limited-time-attestations)
+      - [3.1.3 Method C: Rotating-batch attestations](#313-method-c-rotating-batch-attestations)
+      - [3.1.4 Questions for discussion with the Coordination Group:](#314-questions-for-discussion-with-the-coordination-group)
     - [3.2. When checking the revocation status of attestations](#32-when-checking-the-revocation-status-of-attestations)
       - [3.2.1 Introduction](#321-introduction)
       - [3.2.2 General requirements](#322-general-requirements)
@@ -343,7 +347,7 @@ Regarding the second point above: An Attestation Provider can employ at
 least three different methods to achieve this: once-only attestations,
 limited-time attestations, and rotating batches of attestations
 
-*Method A: Once-only attestations*
+#### 3.1.1 Method A: Once-only attestations
 
 In this approach, the Attestation Provider requires the Wallet Unit to
 present each attestation only once. This is the most privacy-friendly
@@ -407,7 +411,7 @@ and batch issuance of PIDs and Attestations) and Topic C (Wallet Unit
 Attestation (WUA) and key attestation), respectively. They will
 therefore not be further discussed here.
 
-*Method B: Limited-time attestations*
+#### 3.1.2 Method B: Limited-time attestations
 
 In another approach, a Wallet Unit may present each attestation multiple
 times, but only as long as it is valid. Moreover, the Wallet Provider
@@ -430,7 +434,7 @@ A drawback is that it may be hard to estimate how often the User will
 present their attestation, or what an acceptable level of risk to User
 privacy is.
 
-*Method C: Rotating-batch attestations*
+#### 3.1.3 Method C: Rotating-batch attestations
 
 A third approach, finally, is where the Attestation Provider issues
 attestations in batches. A Wallet Units receives such a batch and uses
@@ -467,7 +471,7 @@ frequently.
 On the plus side, the number of attestations to be issued is constant
 over time and does not depend on usage.
 
-Questions for discussion with the Coordination Group:
+#### 3.1.4 Questions for discussion with the Coordination Group:
 
 1.  Can you think of other approaches to mitigate the threat of tracking
     (within the context of the currently specified attestation formats)?
