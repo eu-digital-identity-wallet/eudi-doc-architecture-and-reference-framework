@@ -1,155 +1,31 @@
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 72%" />
-</colgroup>
-<thead>
-<tr>
-<th>Author</th>
-<th>NI-Scy</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Version</td>
-<td></td>
-</tr>
-<tr>
-<td>Date</td>
-<td></td>
-</tr>
-<tr>
-<td>Status</td>
-<td></td>
-</tr>
-<tr>
-<td>Classification</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
-**Topic A: Privacy risks and mitigations**
+
+# Topic A: Privacy risks and mitigations**
 
 *eIDAS Cooperation Group Discussion Paper*
 
-**Version history**
+## Table of Contents
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 39%" />
-</colgroup>
-<thead>
-<tr>
-<th>Version</th>
-<th>Date</th>
-<th>Status</th>
-<th>Author</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.1</td>
-<td>2024-11-18</td>
-<td>Draft</td>
-<td>NI-Scy</td>
-</tr>
-<tr>
-<td>0.2</td>
-<td>2024-11-19</td>
-<td>Draft</td>
-<td>NI-Scy</td>
-</tr>
-</tbody>
-</table>
+- [Topic A: Privacy risks and mitigations\*\*](#topic-a-privacy-risks-and-mitigations)
+  - [Table of Contents](#table-of-contents)
+  - [Discussion Paper topic description](#discussion-paper-topic-description)
+  - [Related risks in the Risk Register](#related-risks-in-the-risk-register)
+  - [Key words](#key-words)
+  - [Document structure](#document-structure)
+- [Risks for User privacy due to collusion](#risks-for-user-privacy-due-to-collusion)
+  - [Linkability](#linkability)
+  - [Relying Party linkability](#relying-party-linkability)
+  - [Attestation Provider linkability](#attestation-provider-linkability)
+- [Possible mitigation measures for Relying Party linkability within the current ARF](#possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
+  - [When issuing and presenting attestations](#when-issuing-and-presenting-attestations)
+  - [When checking the revocation status of attestations](#when-checking-the-revocation-status-of-attestations)
+    - [Introduction](#introduction)
+    - [General requirements](#general-requirements)
+    - [Requirements specific for Attestation Status Lists](#requirements-specific-for-attestation-status-lists)
+- [Mitigating linkability by using Zero-Knowledge Proofs](#mitigating-linkability-by-using-zero-knowledge-proofs)
+- [Proposed ARF requirements](#proposed-arf-requirements)
+- [References](#references)
 
-**Change history**
-
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 59%" />
-</colgroup>
-<thead>
-<tr>
-<th>Version</th>
-<th>Date</th>
-<th>Changes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.1</td>
-<td>2024-11-18</td>
-<td>First version for NI-Scy internal review</td>
-</tr>
-<tr>
-<td>0.2</td>
-<td>2024-11-19</td>
-<td>First complete version for review by Commission</td>
-</tr>
-</tbody>
-</table>
-
-**Table of Contents**
-
-[1 Introduction [4](#introduction)](#introduction)
-
-[1.1 Discussion Paper topic description
-[4](#discussion-paper-topic-description)](#discussion-paper-topic-description)
-
-[1.2 Privacy in the EUDI Wallet ecosystem
-[4](#_Toc182910806)](#_Toc182910806)
-
-[1.3 Related risks in the Risk Register
-[5](#related-risks-in-the-risk-register)](#related-risks-in-the-risk-register)
-
-[1.4 Key words [6](#key-words)](#key-words)
-
-[1.5 Document structure [6](#document-structure)](#document-structure)
-
-[2 Risks for User privacy due to collusion
-[7](#risks-for-user-privacy-due-to-collusion)](#risks-for-user-privacy-due-to-collusion)
-
-[2.1 Linkability [7](#linkability)](#linkability)
-
-[2.2 Relying Party linkability
-[7](#relying-party-linkability)](#relying-party-linkability)
-
-[2.3 Attestation Provider linkability
-[8](#attestation-provider-linkability)](#attestation-provider-linkability)
-
-[3 Possible mitigation measures for Relying Party linkability within the
-current ARF
-[9](#possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)](#possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
-
-[3.1 When issuing and presenting attestations
-[9](#when-issuing-and-presenting-attestations)](#when-issuing-and-presenting-attestations)
-
-[3.2 When checking the revocation status of attestations
-[11](#when-checking-the-revocation-status-of-attestations)](#when-checking-the-revocation-status-of-attestations)
-
-[3.2.1 Introduction [11](#introduction-1)](#introduction-1)
-
-[3.2.2 General requirements
-[11](#general-requirements)](#general-requirements)
-
-[3.2.3 Requirements specific for Attestation Status Lists
-[12](#requirements-specific-for-attestation-status-lists)](#requirements-specific-for-attestation-status-lists)
-
-[4 Mitigating linkability by using Zero-Knowledge Proofs
-[13](#mitigating-linkability-by-using-zero-knowledge-proofs)](#mitigating-linkability-by-using-zero-knowledge-proofs)
-
-[5 Proposed ARF requirements
-[14](#proposed-arf-requirements)](#proposed-arf-requirements)
-
-[6 References [15](#references)](#references)
-
-# Introduction 
 
 ## Discussion Paper topic description 
 
