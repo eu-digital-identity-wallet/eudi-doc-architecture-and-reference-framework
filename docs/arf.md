@@ -865,8 +865,10 @@ The lifecycle of a PID or an attestation starts when a User, using their Wallet 
 3. The PID Provider or Attestation Provider authenticates and validates the Wallet Unit, see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance) below.
 
 4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-instance-is-not-suspended-or-revoked).
+   
+5. After the PID or attestation is issued to the Wallet Unit, the Wallet Unit verifies the authenticity of the PID or attestation; see [Section 6.6.2.6](#6625-Wallet-Unit-verifies-PID-or-attestation).
 
-5. Finally, after the PID or attestation is issued to the Wallet Unit, the User may have to activate it before they can use it; see [Section 6.6.2.5](#6625-User-activates-the-pid-or-attestation).
+6. Finally, the User may have to activate a PID before they can use it; see [Section 6.6.2.6](#6626-User-activates-the-pid-or-attestation).
 
 More detailed requirements for the issuance process of PIDs and attestations, for instance regarding the issuance protocol, are included in \[Topic 10\] and \[Topic 23\].
 
@@ -874,11 +876,7 @@ More detailed requirements for the issuance process of PIDs and attestations, fo
 
 As shown in figure 6, a Wallet Unit downloads the PID Provider Access CA Trusted List(s) and Attestation Provider Access CA Trusted List(s) it needs from the relevant Registrar(s), possibly after having located them via the Commission common trust infrastructure. See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for more information on these Trusted Lists.
 
-Notes:
-
-- The Wallet Unit downloads the PID Provider or Attestation Provider **Access CA** Trusted Lists, not the PID Provider or Attestation Provider Trusted Lists. See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for the difference between these lists. The Wallet Unit needs the Access CA Trusted Lists to authenticate the PID Provider or Attestation Provider. The Wallet Unit does not need to verify the authenticity of the PID(s) or attestations issued by the PID Provider or Attestation Provider respectively.
-
-- It is not mandatory for each Wallet Unit to possess all PID Provider and Attestation Provider CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.
+Note: It is not mandatory for each Wallet Unit to possess all PID Provider and Attestation Provider CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.
 
 To start the process of requesting a PID or an attestation, the User directs the Wallet Unit to contact the PID Provider or Attestation Provider. The User may for example use the Wallet Unit to scan a QR code or tap an NFC tag to do so. Note that no centralised service discovery mechanism for PID or attestation issuance is foreseen.
 
@@ -916,7 +914,17 @@ Knowing the properties of the WSCD is not very useful if the PID Provider or Att
 
 [Section 6.5.3](#653-wallet-instance-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked. \[Topic 38\] describes how this is done.
 
-##### 6.6.2.5 User activates the PID or attestation
+Once it has done all verifications, the PID Provider or Attestation Provider will issue the PID or attestation to the Wallet Unit.
+
+##### 6.6.2.5 Wallet Unit verifies PID or attestation
+After the Wallet Unit receives the PID or attestation, it will
++ verify that the PID or attestation it received matches the request.
++ verify the signature of the PID or attestation, using the appropriate trust anchor, in the same way as described for a Relying Party Instance in [Section 6.6.3.5](#6635-Relying-Party-Instance-verifies-the-authenticity-of-the-PID-or-attestation).
++ show the contents (i.e., attribute values) of the new PID or attestation to the User and request the User's approval for storing the new PID or attestation.
+
+If one these verifications fail, the Wallet Unit will delete the PID or attestation, and will inform the User that issuance was not successful.
+
+##### 6.6.2.6 User activates the PID or attestation
 
 As documented in \[Topic 9\], to achieve Level of Assurance (LoA) "high", [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1502) requires that an activation process must be implemented to verify that the PID or attestation was delivered only into the possession of the person to whom it belongs. This can be done, for example, by entering a PIN code that was sent by the PID Provider or Attestation Provider to the User 'out of band', for example by means of a letter sent to their official postal address.
 
