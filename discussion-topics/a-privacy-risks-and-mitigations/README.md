@@ -2,7 +2,6 @@
 
 # Topic A: Privacy risks and mitigations
 
-*eIDAS Cooperation Group Discussion Paper*
 
 ## Table of Contents
 
@@ -22,7 +21,6 @@
       - [3.1.1 Method A: Once-only attestations](#311-method-a-once-only-attestations)
       - [3.1.2 Method B: Limited-time attestations](#312-method-b-limited-time-attestations)
       - [3.1.3 Method C: Rotating-batch attestations](#313-method-c-rotating-batch-attestations)
-      - [3.1.4 Questions for discussion with the Coordination Group:](#314-questions-for-discussion-with-the-coordination-group)
     - [3.2. When checking the revocation status of attestations](#32-when-checking-the-revocation-status-of-attestations)
       - [3.2.1 Introduction](#321-introduction)
       - [3.2.2 General requirements](#322-general-requirements)
@@ -33,10 +31,7 @@
 
 ## 1. Introduction
 
-### 1.1. Discussion Paper topic description 
-
-This document is the Discussion Paper for eIDAS Coordination Group
-regarding Topic A: Privacy risks and mitigation.
+### 1.1. Discussion Paper topic description
 
 The ARF Development Plan \[ARF\_DevPlan\] describes this Topic as
 follows:
@@ -471,19 +466,7 @@ frequently.
 On the plus side, the number of attestations to be issued is constant
 over time and does not depend on usage.
 
-#### 3.1.4 Questions for discussion with the Coordination Group:
 
-1.  Can you think of other approaches to mitigate the threat of tracking
-    (within the context of the currently specified attestation formats)?
-
-2.  Which of the abovementioned methods should Wallet Solutions support?
-
-3.  Should Attestation Providers be able to indicate, during issuance,
-    how the Wallet Unit should handle their attestations? For example,
-    should they be able to choose one of these methods? And when
-    choosing a specific method, should they be able to set a value for
-    the parameters involved, for example the lower limit for requesting
-    new attestations in method or the batch size in method C?
 
 ### 3.2. When checking the revocation status of attestations
 
