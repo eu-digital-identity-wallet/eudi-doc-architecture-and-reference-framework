@@ -1,33 +1,35 @@
 
 
-# Topic A: Privacy risks and mitigations**
+# Topic A: Privacy risks and mitigations
 
-*eIDAS Cooperation Group Discussion Paper*
+*eIDAS Cooperation Group Discussion Paper
 
 ## Table of Contents
 
-- [Topic A: Privacy risks and mitigations\*\*](#topic-a-privacy-risks-and-mitigations)
+- [Topic A: Privacy risks and mitigations](#topic-a-privacy-risks-and-mitigations)
   - [Table of Contents](#table-of-contents)
-  - [Discussion Paper topic description](#discussion-paper-topic-description)
-  - [Related risks in the Risk Register](#related-risks-in-the-risk-register)
-  - [Key words](#key-words)
-  - [Document structure](#document-structure)
-- [Risks for User privacy due to collusion](#risks-for-user-privacy-due-to-collusion)
-  - [Linkability](#linkability)
-  - [Relying Party linkability](#relying-party-linkability)
-  - [Attestation Provider linkability](#attestation-provider-linkability)
-- [Possible mitigation measures for Relying Party linkability within the current ARF](#possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
-  - [When issuing and presenting attestations](#when-issuing-and-presenting-attestations)
-  - [When checking the revocation status of attestations](#when-checking-the-revocation-status-of-attestations)
-    - [Introduction](#introduction)
-    - [General requirements](#general-requirements)
-    - [Requirements specific for Attestation Status Lists](#requirements-specific-for-attestation-status-lists)
-- [Mitigating linkability by using Zero-Knowledge Proofs](#mitigating-linkability-by-using-zero-knowledge-proofs)
-- [Proposed ARF requirements](#proposed-arf-requirements)
-- [References](#references)
+  - [1. Introduction](#1-introduction)
+    - [1.1. Discussion Paper topic description](#11-discussion-paper-topic-description)
+    - [1.2. Related risks in the Risk Register](#12-related-risks-in-the-risk-register)
+    - [1.3. Key words](#13-key-words)
+    - [1.4. Document structure](#14-document-structure)
+  - [2. Risks for User privacy due to collusion](#2-risks-for-user-privacy-due-to-collusion)
+    - [2.1. Linkability](#21-linkability)
+    - [2.2. Relying Party linkability](#22-relying-party-linkability)
+    - [2.3. Attestation Provider linkability](#23-attestation-provider-linkability)
+  - [3. Possible mitigation measures for Relying Party linkability within the current ARF](#3-possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
+    - [3.1 When issuing and presenting attestations](#31-when-issuing-and-presenting-attestations)
+    - [3.2. When checking the revocation status of attestations](#32-when-checking-the-revocation-status-of-attestations)
+      - [3.2.1 Introduction](#321-introduction)
+      - [3.2.2 General requirements](#322-general-requirements)
+      - [3.2.3 Requirements specific for Attestation Status Lists](#323-requirements-specific-for-attestation-status-lists)
+  - [4. Mitigating linkability by using Zero-Knowledge Proofs](#4-mitigating-linkability-by-using-zero-knowledge-proofs)
+  - [5. Proposed ARF requirements](#5-proposed-arf-requirements)
 
 
-## Discussion Paper topic description 
+## 1. Introduction
+
+### 1.1. Discussion Paper topic description 
 
 This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic A: Privacy risks and mitigation.
@@ -55,7 +57,7 @@ such as Zero-Knowledge Proofs (ZKP).*
 4.  *the ways in which these risks may be fully mitigated in the future,
     e.g. by means of ZKP-based proof mechanisms for attestations.*
 
-## Related risks in the Risk Register
+### 1.2. Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains the following risks regarding User tracking as a result of
@@ -180,7 +182,7 @@ required.</td>
 </tbody>
 </table>
 
-## Key words
+### 1.3. Key words
 
 This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
 as specified in RFC 2119, i.e., to indicate requirements,
@@ -192,7 +194,7 @@ but, for instance, by an external document such as \[ARF\]. The word
 ‘can’ indicates a capability, whereas other words, such as ‘will’, and
 ‘is’ or ‘are’ are intended as statements of fact.
 
-## Document structure 
+### 1.4. Document structure 
 
 This document is structured as follows:
 
@@ -209,9 +211,9 @@ This document is structured as follows:
 -   Chapter 5 proposes a few High-Level Requirements to be added to the
     ARF. These are for discussion.
 
-# Risks for User privacy due to collusion
+## 2. Risks for User privacy due to collusion
 
-## Linkability
+### 2.1. Linkability
 
 This chapter describes in detail how the attestation formats currently
 specified for use in the EUDI Wallet ecosystem could be misused for
@@ -260,7 +262,7 @@ Linkability comes in two varieties, Relying Party linkability and
 Attestation Provider linkability. These are discussed in the next
 sections.
 
-## Relying Party linkability
+### 2.2. Relying Party linkability
 
 Relying Party linkability means that one or more malicious Relying Party
 are able to link multiple presentations of the same attestation. For
@@ -296,7 +298,7 @@ particular, Relying Parties found offending can have their access
 certificate revoked, after which they will not be able to interact with
 Wallet Units anymore.
 
-## Attestation Provider linkability
+### 2.3. Attestation Provider linkability
 
 Attestation Provider linkability means that one or more Relying Parties
 collude with the provider of an attestation to track the User when using
@@ -320,9 +322,9 @@ discourage Attestation Providers from colluding and tracking Users. In
 addition, many Attestation Providers are subject to regular audits,
 which means that collusion and tracking can more easily be detected.
 
-# Possible mitigation measures for Relying Party linkability within the current ARF
+## 3. Possible mitigation measures for Relying Party linkability within the current ARF
 
-## When issuing and presenting attestations
+### 3.1 When issuing and presenting attestations
 
 An (honest) Attestation Provider can mitigate Relying Party linkability
 mitigated partly or fully by the following two measures:
@@ -479,9 +481,9 @@ Questions for discussion with the Coordination Group:
     the parameters involved, for example the lower limit for requesting
     new attestations in method or the batch size in method C?
 
-## When checking the revocation status of attestations
+### 3.2. When checking the revocation status of attestations
 
-### Introduction
+#### 3.2.1 Introduction
 
 For the revocation of PIDs and attestations (including WUAs), the ARF
 specifies three methods:
@@ -499,7 +501,7 @@ be able to verify that the Attestation Provider has not revoked the
 attestation. When discussing the risk of tracking Users, particular
 attention should be given to this process.
 
-### General requirements
+#### 3.2.2 General requirements
 
 To the maximum extent feasible given operational constraints, the
 Attestation Provider should not be able to learn anything about the
@@ -520,7 +522,7 @@ Downloading an Attestation Status List or Attestation Revocation List
 SHALL NOT require the Relying Party or Relying Party Instance to
 authenticate itself in any way.
 
-### Requirements specific for Attestation Status Lists
+#### 3.2.3 Requirements specific for Attestation Status Lists
 
 To ensure User privacy specifically when the Attestation Provider uses
 Attestation Status Lists to enable revocation checking, this document
@@ -543,7 +545,7 @@ recommends the following:
     not able to deduce which attestation (likely) was presented to that
     Relying Party.
 
-# Mitigating linkability by using Zero-Knowledge Proofs
+## 4. Mitigating linkability by using Zero-Knowledge Proofs
 
 Zero-Knowledge Proofs (ZKP) offer strong potential as a
 privacy-enhancing technique. This topic will be revisited in Topic G to
@@ -557,7 +559,7 @@ Digital Identity’s ARF’
 and the Commission's response to it
 [here.](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/211#discussioncomment-9882388)
 
-# Proposed ARF requirements
+## 5. Proposed ARF requirements
 
 The High-Level Requirements below are proposals and are mainly meant to
 stimulate discussion.
@@ -606,7 +608,7 @@ stimulate discussion.
     downloading an Attestation Status List or Attestation Revocation
     List.
 
-# References
+#$ 6. References
 
 <table>
 <colgroup>
