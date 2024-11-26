@@ -303,7 +303,7 @@ National Accreditation Bodies (NAB) under [Regulation (EC) No 765/2008](https://
 
 ## 4 High level architecture
 
-This chapter provides a broad overview of a system\'s core components, their interfaces, and the overall design principles. Figure 2 visually clarifies these core components, the key entities within the Wallet high level architecture, and how they communicate via the primary interfaces.
+This chapter provides a broad overview of the EUDI Wallet ecosystem's core components, their interfaces, and the overall design principles. Figure 2 visually clarifies these core components, the key entities within the EUDI Wallet architecture, and how they communicate via the primary interfaces.
 
 ### 4.1 Design principles
 
@@ -1146,11 +1146,13 @@ Certification will be valid for up to five years, provided that a vulnerability 
 
 ### 7.2 Overall approach to Certification of Wallet Solutions
 
+#### 7.2.1 Introduction
+
 The certification of Wallet Solutions is of the utmost importance in ensuring their interoperability, security, trustworthiness, and robustness. Therefore, the overarching goal is the development of a dedicated CSA cybersecurity certification scheme. The scope of the scheme should cover both the Wallet Solutions and the underlying eID scheme. The Regulation allows the use of national certification schemes only for those parts that cannot be covered by European cybersecurity certification schemes and only until such appropriate European cybersecurity certification schemes are available.
 
 As defining and adopting a dedicated European CSA certification scheme for Wallet Solutions depends on the complex certification of different components and requires the full technical specification of the Wallet Solutions, the certification approach is structured in two phases: a short-term approach and a long-term approach. In the short-term, the IA of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) will be established, laying the groundwork for the creation of transitory national certification schemes. Consequently, building upon the foundation of the IA and transitory schemes, a dedicated CSA certification scheme for the Wallet Solutions will be established by ENISA.
 
-#### 7.2.1 Certification of Wallet Solutions in the short term
+#### 7.2.2 Certification of Wallet Solutions in the short term
 
 Until a dedicated Wallet Solution cybersecurity certification scheme under the CSA is available, the Regulation allows Member States to establish national certification schemes (following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(3)). Following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) of the Amending Regulation, an IA should be established which will serve as a harmonised guideline for the development of these transitory national certification schemes. It will leverage the use of relevant and existing CSA certification schemes by establishing specifications, procedures and reference technical standards for certification. This can include procedures and methods on how to derive evaluation activities from an architecture analysis, as well as a reference certification or a minimum set of risks to be mitigated.
 
@@ -1170,7 +1172,7 @@ Fourth, once the mapping has been performed, it will be used as a basis for the 
 
 Finally, non-cybersecurity requirements should ensure functional interoperability of the Wallet Solution. To this end, the IA aims to define a requirement to CABs for functional testing, for example supported by test-suites or test cases.
 
-#### 7.2.2 Certification of Wallet Solutions in the long term
+#### 7.2.3 Certification of Wallet Solutions in the long term
 
 In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the Wallet Solution under the CSA. Once available, this CSA scheme should replace the national transitory schemes mentioned above for the cybersecurity requirement it will cover. This scheme should be based on harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme should further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant Wallet Solution components.
 
