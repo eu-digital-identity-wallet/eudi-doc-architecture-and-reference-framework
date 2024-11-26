@@ -35,12 +35,11 @@ The purpose of this version of the document is to establish high level
 requirements as reference to create uniform conditions for the
 implementation of the legislative act and to define the technical
 specifications, standards and procedures that the Commission shall
-develop for the purpose of implementing the [eIDAS Regulation](https://eur-lex.europa.eu/eli/reg/2024/1183/oj), and which
-are related to the following topics:
+develop for the purpose of implementing the [eIDAS Regulation](https://eur-lex.europa.eu/eli/reg/2024/1183/oj), and which are related to the following topics:
 
-- EUDIW core functionalities ([art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1))
+- Wallet Unit core functionalities ([art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1))
 
-- EUDIW relying parties ([art. 5b](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1776-1-1))
+- Relying parties ([art. 5b](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1776-1-1))
 
 - Requirements for QEAA ([art.45d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3849-1-1))
 
@@ -51,17 +50,16 @@ are related to the following topics:
 
 - Cross border identity matching ([art.11a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e2220-1-1))
 
-- Certification of the EUDIW ([art. 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1))
+- Certification of the Wallet Solution ([art. 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1))
 
-- Publication of a list of certified EUDIW ([art. 5d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1938-1-1))
+- Publication of a list of certified Wallet Solutions ([art. 5d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1938-1-1))
 
-- Security breach of the EUDIW ([art. 5e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e2020-1-1))
+- Security breaches of Wallet Solutions or Wallet Units ([art. 5e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e2020-1-1))
 
 - Requirements for EAA issued by/on behalf of a PSB - notification
     ([art.45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1))
 
-The Commission intends to use this ARF to develop the EUDI Wallet
-Solution reference implementation.
+The Commission intends to use this ARF to develop the Wallet Solution reference implementation.
 
 The document presents a state-of-play of ongoing work of the eIDAS
 Expert Group and does not imply any formal agreement regarding its
@@ -75,8 +73,7 @@ annexes with:
 
 - **The high-level requirements**: This annex specifies the
     requirements for PID Providers, (Q)EAA Providers, PuB-EAA Providers,
-    Wallet Providers, Relying Parties and other actors in the EUDI
-    Wallet ecosystem.
+    Wallet Providers, Relying Parties and other actors in the EUDI Wallet ecosystem.
 
 - **The attestation Rulebooks:** There are 3 Rulebooks, each one
     contains specific requirements to the PID, mDL and pseudonyms
@@ -92,16 +89,13 @@ legal basis, will be mandatory.
 
 ### 1.3 Guidance for the Large-Scale Pilots (LSP)
 
-To support the development of a reference implementation of EUDI Wallet
-Solutions and to pilot its usage across different priority use cases,
+To support the development of a reference implementation of a Wallet Solution and to pilot its usage across different priority use cases,
 the Commission launched a call for proposals on 22<sup>nd</sup> February 2022
-under the Digital Europe Programme to pilot use cases for the EUDI
-Wallet at a large-scale.
+under the Digital Europe Programme to pilot use cases for the EUDI Wallet ecosystem at a large-scale.
 
 The objective of the Large-Scale Pilots (LSP) call is to support the
 piloting of the EUDI Wallet ecosystem around a range of use-cases involving both
-public and private sector stakeholders. The LSPs will test the EUDI
-Wallet in both national and cross-borders contexts and integrate with
+public and private sector stakeholders. The LSPs will test the EUDI Wallet ecosystem in both national and cross-borders contexts and integrate with
 the iterative development of the reference application.
 
 The works of the LSPs will be aligned by the ARF, which will guide pilot
@@ -228,10 +222,7 @@ journey in this dynamic sector.
 
 ## 3. Ecosystem
 
-This chapter describes the EUDI Wallet ecosystem as it
-is foreseen in the Regulation. The different
-roles in the EUDI Wallet ecosystem are described in figure 1 and
-detailed in the following sections.
+This chapter describes the EUDI Wallet ecosystem as it is foreseen in the Regulation. The different roles in the EUDI Wallet ecosystem are described in figure 1 and detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet ecosystem roles](media/image1.png)
 <!-- <img src="media/image1.png" style="width="7.2131944444444445in"
@@ -239,7 +230,7 @@ height="3.375in" /> -->
 
 Figure 1: Overview of the EUDI Wallet ecosystem roles
 
-1. Users of EUDI Wallets
+1. Users of Wallet Units
 
 2. Wallet Providers
 
@@ -270,9 +261,9 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 15. National Accreditation Bodies
 
-### 3.1 Users of EUDI Wallet
+### 3.1 Users of Wallet Units
 
-Users of EUDI Wallets use the Wallet Unit to receive, store and
+Users of Wallet Units use the Wallet Unit to receive, store and
 present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove
 their identity. Wallet Unit Users can also create Qualified
 Electronic Signatures and Seals (QES) and utilise wallet-to-wallet
@@ -293,14 +284,13 @@ of their Wallet Solution, a combination of several products and
 Trust Services foreseen in the legal proposal, which give the User full
 control over the use of their Person Identification Data (PID) and
 Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any
-other personal data within their EUDI Wallet. From a technical
+other personal data within their Wallet Unit. From a technical
 viewpoint, this may also imply guaranteeing a User sole control over
 sensitive cryptographic material (e.g., private keys) related to their
 PID and/or (Q)EAA, including the use cases for electronic identification
 and creating a signature or seal. Wallet Providers provide Wallet Unit Attestation (WUA).
 
-Wallet Providers are responsible for ensuring compliance with the
-requirements for EUDI Wallets.
+Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions.
 
 ### 3.3 Person Identification Data (PID) Providers
 
@@ -316,7 +306,7 @@ The terms and conditions of these services are for each Member State to
 determine.
 
 PID Providers may e.g., be the same organisations that today issue
-official identity documents, electronic identity means, EUDI Wallet
+official identity documents, electronic identity means, Wallet
 Providers etc. Wallet Providers may be the same organisations as
 PID Providers. In case an organisation acts as both a PID Provider and a
 Wallet Provider, it shall comply with all requirements for both PID
@@ -377,7 +367,7 @@ Qualified EAAs are provided by Qualified Trust Service Providers
 (QTSPs). The general Trust Framework for QTSPs apply also to QEAA, but
 specific rules for this Trust Service need to be defined as well. QEAA
 Providers maintain an interface for requesting and providing QEAAs,
-including a mutual authentication interface with EUDI Wallets and
+including a mutual authentication interface with Wallet Units and
 potentially an interface towards Authentic Sources to verify attributes.
 QEAA Providers provide information on the location of the services that
 can be used to enquire about the validity status of the QEAAs, without
@@ -404,8 +394,8 @@ use and recognition of EAAs. Those other frameworks may cover policy
 areas such as educational credentials, digital payments, although they
 may also rely on Qualified Electronic Attestation of Attributes
 Providers. For EAAs to be used, TSPs offer Users a way to request and
-obtain EAA, meaning they need to technically comply with EUDI Wallet
-interfaces specifications. Depending on the domain rules, EAA Providers
+obtain EAA, meaning they need to technically comply with the Wallet Unit
+interface specifications. Depending on the domain rules, EAA Providers
 may provide validity information about EAAs, without having an ability
 to receive any information about the use of the EAA. The terms and
 conditions of issuing EAAs and related services are subject to sectoral
@@ -416,8 +406,7 @@ rules.
 The Wallet Unit will allow the User to create free-of-charge Qualified
 Electronic Signatures over any data. This will also enhance the use of
 the Wallet Unit for signing, in a natural and convenient way. The
-creation of Qualified Electronic Signature or Seal by means of the EUDI
-Wallet can be reached by several ways:
+creation of Qualified Electronic Signature or Seal by means of the Wallet Unit can be reached by several ways:
 
 - the Wallet Unit itself is certified as a qualified signature/seal creation device (QSCD), or
 
@@ -447,16 +436,14 @@ attributes.
 ### 3.10 Relying Parties
 
 Relying Parties are natural or legal persons that rely upon an
-electronic identification or a Trust Service. In the context of Wallet Units, they request the necessary attributes contained within the PID
-dataset, QEAA, Pub-EAA and EAA from Users to rely on the
-EUDI Wallet, subject to the acceptance by the owner of the Wallet (User)
+electronic identification or a Trust Service. They request the necessary attributes contained within the PID, QEAA, Pub-EAA and EAA from Users to rely on the
+Wallet Unit, subject to the acceptance by the User
 and within the limits of applicable legislation and rules. The reason
 for reliance on the Wallet Unit may be a legal requirement, a
-contractual agreement, or their own decision. To rely on the EUDI Wallet
+contractual agreement, or their own decision. To rely on Wallet Units
 for the purpose of providing a service, Relying Parties need to inform
 the Member State where they are established and their intention for
-doing so. Relying Parties need to maintain an interface with the EUDI
-Wallet to request attestations with mutual authentication. Relying
+doing so. Relying Parties need to maintain an interface with the Wallet Unit to request attestations with mutual authentication. Relying
 Parties are responsible for authenticating PIDs and (Q)EAAs.
 
 ### 3.11 Conformity Assessment Bodies (CAB)
@@ -465,7 +452,7 @@ Conformity Assessment Bodies (CAB) are accredited public or private
 bodies, accredited by a national accreditation body designated by Member
 States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible
 for carrying out assessments on which Member States will have to rely
-before issuing an EUDI Wallet or providing the qualified status to a
+before issuing a Wallet Unit or providing the qualified status to a
 Trust Service Provider.
 
 The  Wallets will need to be certified by CABs. QTSPs shall be
@@ -654,7 +641,7 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
 
 - **The Presentation Interface (PI)** empowers Relying Parties to
     securely request and receive the PID and various attestations (such
-    as QEAAs, PuB-EAAs and EAAs) from EUDI Wallets, accommodating both
+    as QEAAs, PuB-EAAs and EAAs) from Wallet Units, accommodating both
     remote and proximity interactions. For remote presentation flows, as
     detailed in the following section, the Wallet Unit implements
     the OpenID for Verifiable Presentation protocol \[OpenId4VP\].
@@ -835,7 +822,7 @@ Figure 3: State-chart of Wallet Solution
 
 The **Candidate** state is the first state of an Wallet Solution.
 This means it is fully implemented and the Wallet Provider requests
-the solution to be certified as an EUDI Wallet Solution as part of an EUDI Wallet
+the solution to be certified as a Wallet Solution as part of an EUDI Wallet
 eID scheme.
 
 If all the legal and technical criteria have been met, including:
@@ -845,7 +832,7 @@ If all the legal and technical criteria have been met, including:
 
 - ex-ante supervisory activities by Member State supervisory bodies,
 
-- both the body providing EUDI Wallets and the PID Providers have
+- both the Wallet Provider and the PID Providers have
   been published by the Commission (in accordance with Article 5d),
 
 - the information notified by Member States for publication of lists  
@@ -879,11 +866,8 @@ Figure 4: State-chart of Wallet Unit
 
 An Wallet Unit lifecycle begins when the User installs a
 component part of a valid Wallet Solution to their User device (see
-[Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once an EUDI
-Wallet Unit establishes communication with other components that are
-part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an EUDI Wallet
-Provider, it is in an **operational** state. In this state, the User
-manages the Wallet Unit, which may involve:
+[Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once a Wallet Unit establishes communication with other components that are
+part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an Wallet Provider, it is in an **operational** state. In this state, the User manages the Wallet Unit, which may involve:
 
 - The Wallet Provider updating the Wallet Unit,
 
@@ -1174,7 +1158,7 @@ a Wallet Unit, namely installation, activation, management, and
 de-installation.
 
 A Wallet Unit is the application of a Wallet Solution installed in
-the device of the User, which is provided by an **EUDI Wallet
+the device of the User, which is provided by a **Wallet
 Provider**. Within this Trust Model, the operational lifespans of both
 the Wallet Solution and its corresponding Wallet Provider are the same.
 As illustrated in Figure 6, the diagram positions the Wallet Provider
@@ -1677,7 +1661,7 @@ established:
 
 4. The Wallet Provider authenticates the Wallet Unit.
     This means that the Wallet Provider is sure that the EUDI
-    Wallet Instance is indeed a true instance of their EUDI Wallet
+    Wallet Instance is indeed a true instance of their allet
     Solution, and not a fake app. This must be ensured by the Wallet
     Provider. The ARF does not specify how this trust relationship can
     be satisfied.
@@ -2228,7 +2212,7 @@ Authority (DPA). To allow this, a Wallet Unit, perhaps in
 combination with the Wallet Provider backend, provides a dashboard
 allowing the User to lodge a complaint about a suspicious Relying Party
 presentation request to the DPA of the Member State that provided their
-EUDI Wallet. For more information and requirements, see \[Topic 50\].
+Wallet Unit. For more information and requirements, see \[Topic 50\].
 
 The dashboard also enables the User to request a Relying Party to
 immediately erase personal data. For more information and requirements,
@@ -2275,12 +2259,12 @@ Regulation), the overall certification approach, and its accompanying
 design principles. In addition, the main two supporting documents, the
 High-Level requirements (HLR) and the Risk assessment (RA) are
 described. Furthermore, supporting documents regarding certification of
-EUDI Wallets are provided in appendix 6 and will be expanded upon in
+Wallet Solutions are provided in appendix 6 and will be expanded upon in
 following releases of the ARF.
 
 #### 7.1.1 Legal basis and requirements
 
-The Regulation requires certification of EUDI Wallets to ensure
+The Regulation requires certification of Wallet Solutions to ensure
 conformity of the wallets with functional, security, and privacy related
 requirements, to achieve a high level of interoperability, security and
 trustworthiness. The use of relevant and available cybersecurity
@@ -2291,17 +2275,15 @@ requirements laid down by the Regulation.
 
 Member States, according to Article 5c(3) of the Regulation, shall
 designate accredited conformity assessment bodies (CABs) which will
-carry out conformity assessment of EUDI Wallets solutions against the
+carry out conformity assessment of Wallet Solutions against the
 Regulation requirements. Once this designation has been made, Member
 States shall communicate to the European Commission the names and
 addresses of these public or private bodies under [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(7) of the
 Regulation.
 
-Wallet Providers shall request (select, contract) one or more
-designated CABs to assess and certify the conformity of their EUDI
-Wallet Solution against the requirements of the Regulation.
+Wallet Providers shall request (select, contract) one or more designated CABs to assess and certify the conformity of their Wallet Solution against the requirements of the Regulation.
 
-EUDI Wallet Solution certification is then conducted by the CAB to evaluate and
+Wallet Solution certification is then conducted by the CAB to evaluate and
 certify the conformity of the Wallet Solution (target of the
 certification) against requirements which will be established by:
 
@@ -2309,9 +2291,7 @@ certification) against requirements which will be established by:
     specifications and reference standards, for the requirements laid
     down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the
-    provision of the Wallet Unit and any other data held by the provider
-    of the EUDI Wallet Unit;
+- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the provision of the Wallet Unit and any other data held by the Wallet Provider;
 
 - [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on
     specifications, procedures and reference standards, in order to
@@ -2326,14 +2306,11 @@ also security robustness assessment of conformance to a high level of
 security.
 
 In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(5) provides for an optional certification of the
-personal data processing operations against [Regulation (EU)
-2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation
-(EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to the EUDI Wallets and
-consequently to their providers.
+personal data processing operations against [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to Wallet Solutions and consequently to their providers.
 
-[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission shall, by means of IA,
+[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission shall, by means of Implementing Acts,
 establish a list of reference standards and, where necessary, establish
-specifications and procedures for the certification of EUDI Wallets.
+specifications and procedures for the certification of Wallet Solutions.
 
 The certification process of Wallet Providers should leverage, rely
 on, and mandate the use of relevant and existing CSA certification
@@ -2356,30 +2333,27 @@ certification shall be cancelled.
 
 ### 7.2 Overall approach to Certification of Wallet Solutions
 
-The certification of EUDI Wallets is of the utmost importance in
+The certification of Wallet Solutions is of the utmost importance in
 ensuring their interoperability, security, trustworthiness, and
 robustness. Therefore, the overarching goal is the development of a
 dedicated CSA cybersecurity certification scheme. The scope of the
-scheme should cover both the EUDI Wallets and the underlying eID scheme.
+scheme should cover both the Wallet Solutions and the underlying eID scheme.
 The Regulation allows the use of national certification schemes only for
 those parts that cannot be covered by European cybersecurity
 certification schemes and only until such appropriate European
 cybersecurity certification schemes are available.
 
 As defining and adopting a dedicated European CSA certification scheme
-for EUDI Wallets depends on the complex certification of different
-components and requires the full technical specification of the EUDI
-Wallets, the certification approach is structured in two phases: a
-short-term approach and a long-term approach. In the short-term, the IA
-of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) will be established, laying the groundwork for the
+for Wallet Solutions depends on the complex certification of different
+components and requires the full technical specification of the Wallet Solutions, the certification approach is structured in two phases: a short-term approach and a long-term approach. In the short-term, the IA of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) will be established, laying the groundwork for the
 creation of transitory national certification schemes. Consequently,
 building upon the foundation of the IA and transitory schemes, a
-dedicated CSA certification scheme for the EUDI Wallets will be
+dedicated CSA certification scheme for the Wallet Solutions will be
 established by ENISA.
 
 #### 7.2.1 Certification of Wallet Solutions in the short term
 
-Until a dedicated EUDI Wallets cybersecurity certification scheme under
+Until a dedicated Wallet Solution cybersecurity certification scheme under
 the CSA is available, the Regulation allows Member States to establish
 national certification schemes (following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(3)). Following
 [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) of the Amending Regulation, an IA should be established
@@ -2392,7 +2366,7 @@ evaluation activities from an architecture analysis, as well as a
 reference certification or a minimum set of risks to be mitigated.
 
 The guiding principles will take into consideration the composite nature
-of the EUDI Wallets, as well as the potential different architectures
+of the Wallet Solution, as well as the potential different architectures
 considering that the amending Regulation is technology and architecture
 neutral. Guidance on certification will allow for various proposed
 architecture models (including components, security functions, threats,
@@ -2434,7 +2408,7 @@ Assurance.
 Second, the HLR document provides recommendations for the certification
 of Wallet Solutions in the short term. It outlines the
 high-level process requirements for certification, in addition to
-high-level statements on the functional components of the EUDI Wallet.
+high-level statements on the functional components of the Wallet Solution.
 In essence, it defines 'what' will need to be certified and what the
 process steps will be. The identified requirements in this document form
 the skeleton of the IA \[appendix 6\]).
@@ -2447,22 +2421,21 @@ schemes, in relation to the defined certification requirements (i.e.,
 functional, process, privacy and security certification requirements).
 
 Fourth, once the mapping has been performed, it will be used as a basis
-for the development of certification schemes for EUDI Wallets, both at
+for the development of certification schemes for Wallet Solutions, both at
 the national and European levels. The schemes will rely on the
 identified certification schemes to provide assurance, either in a
 composite approach, or through the establishment of assumptions on
 external components, such as the Wallet Users' devices.
 
 Finally, non-cybersecurity requirements should ensure functional
-interoperability of the EUDI Wallet. To this end, the IA aims to define
+interoperability of the Wallet Solution. To this end, the IA aims to define
 a requirement to CABs for functional testing, for example supported by
 test-suites or test cases.
 
 #### 7.2.2 Certification of Wallet Solutions in the long term
 
 In parallel to the work described above, ENISA is requested to draft a
-dedicated European cybersecurity certification scheme for the EUDI
-Wallets under the CSA. Once available, this CSA scheme should replace
+dedicated European cybersecurity certification scheme for the Wallet Solution under the CSA. Once available, this CSA scheme should replace
 the national transitory schemes mentioned above for the cybersecurity
 requirement it will cover. This scheme should be based on harmonised
 requirements, and identify any additional requirements relevant for
@@ -2484,7 +2457,7 @@ can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements
 ### 7.3 High-Level Requirements (HLR)
 
 The main goal of the HLR document is to provide recommendations for the
-certification of EUDI Wallets implementations in the short term. It
+certification of Wallet Solutions in the short term. It
 outlines the high-level process requirements for certification. It also
 provides functional and process-related requirements derived from the
 Regulation, to facilitate certification.
@@ -2505,7 +2478,7 @@ annexes.
 - **Legal requirements:** Describes the certification requirements,
     certification scope stemming from the Regulation.
 
-- **Scheme requirements:** Describes the EUDI Wallets, how to organise
+- **Scheme requirements:** Describes the Wallet Solutions, how to organise
     certification, and the content of a scheme and the accompanying IA.
 
 - **General scheme content:** Describes HLR related to content of the
@@ -2529,7 +2502,7 @@ found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\]
 This chapter details the approach to develop harmonised guidelines for
 the development of the transitory national certification schemes. In
 addition to the process-based requirements in the HLR, security and
-privacy risks associated with the EUDI Wallets should be identified.
+privacy risks associated with the Wallet Solutions should be identified.
 Here, a risk-based approach is envisioned as the basis for certification
 by Member States. This is inspired by known processes such as for the
 General Data Protection Regulation (GDPR) and related Data Protection
@@ -2553,11 +2526,10 @@ relevant privacy and security risks.
 
 #### 7.4.2 Rationale and approach
 
-Threats and risks play pivotal roles in the EUDI Wallets certification
+Threats and risks play pivotal roles in the Wallet Solution certification
 process as they are fundamental in achieving the security objectives
 described in the Regulation, such as privacy, confidentiality,
-integrity, availability, authenticity and non-repudiation of the EUDI
-Wallet and the data contained in it. Importantly, understanding the
+integrity, availability, authenticity and non-repudiation of a Wallet Unit and the data contained in it. Importantly, understanding the
 threats and risks in relation to the separate assets involved allows to
 determine the mitigation (and related certification requirements or
 standards).
@@ -2601,10 +2573,9 @@ In the approach to Wallet Solution certification described above, a few
 design principles can be identified and will be further expanded upon
 through work in the CSG:
 
-- The amending Regulation requires the EUDI Wallets to be certified at
+- The amending Regulation requires the Wallet Solutions to be certified at
     LoA 'high'. However, not all Wallet Solution components may need to
-    individually meet LoA 'high' or be certified, for the overall EUDI
-    Wallet to reach that level of assurance.
+    individually meet LoA 'high' or be certified, for the overall Wallet Solution to reach that level of assurance.
 
 - The transitory schemes are defined by the Member States which may
     tailor them to their specific Wallet architectures. However, the aim
@@ -2613,7 +2584,7 @@ through work in the CSG:
     recognition of the national certification schemes is provided.
 
 - The certification scheme will be a composite scheme. The object
-    certification will be the entire system (eID scheme, EUDI Wallet,
+    certification will be the entire system (eID scheme, Wallet Solution,
     management thereof). It will therefore have to align with and rely
     on other available international standards, certification schemes,
     and conformity assessments.
@@ -2631,8 +2602,7 @@ through work in the CSG:
 
 ### 7.6 Supporting documents
 
-Supporting documents applicable to the certification of the EUDI Wallet
-ecosystem have been assembled in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
+Supporting documents applicable to the certification of the Wallet Solution have been assembled in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
 
 ## 8 Document development
 
@@ -2821,7 +2791,7 @@ For undated references, the latest version available applies.
 | \[Topic 25\]       | Annex 2 - Unified definition and controlled vocabulary for attestation attributes                                                        |
 | \[Topic 26\]       | Annex 2 - Attestations Catalogue                                                                                                        |
 | \[Topic 27\]       | Annex 2 - Relying Party registry                                                                                                         |
-| \[Topic 30\]       | Annex 2 - Interaction between EUDI Wallets                                                                                               |
+| \[Topic 30\]       | Annex 2 - Interaction between Wallet Units                                                                                               |
 | \[Topic 31\]       | Annex 2 - PID, Wallet and Attestation Providers registration                                                                             |
 | \[Topic 34\]       | Annex 2 - Migrate to a different Wallet solution                                                                                         |
 | \[Topic 37\]       | Annex 2 - QES -- Remote Signing - Technical Requirements                                                                                 |
@@ -2860,8 +2830,7 @@ For undated references, the latest version available applies.
 
   - [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
 
-  - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature
-        channelled by EUDI Wallet
+  - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature channelled by a Wallet Unit
 
   - [Annex 4.9](./annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf) - Blueprint Remote QES - Creating a signature
         channelled by Relying Party
