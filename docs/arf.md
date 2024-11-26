@@ -6,8 +6,7 @@
 ### 1.1 Context
 
 On 3 June 2021, the European Commission adopted a Recommendation
-([COMMISSION RECOMMENDATION (EU) 2021/946 of 3 June 2021 on a common Union Toolbox for a coordinated approach towards a European Digital Identity Framework](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2021.210.01.0051.01.ENG), [OJ L 210/51, 14.6.2021](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AL%3A2021%3A210%3AFULL)) calling on Member
-States to work towards the development of a Toolbox including a
+([COMMISSION RECOMMENDATION (EU) 2021/946 of 3 June 2021 on a common Union Toolbox for a coordinated approach towards a European Digital Identity Framework](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2021.210.01.0051.01.ENG), [OJ L 210/51, 14.6.2021](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AL%3A2021%3A210%3AFULL)) calling on Member States to work towards the development of a Toolbox including a
 technical Architecture and Reference Framework (hereinafter the ARF), a
 set of common standards and technical specifications and a set of common
 guidelines and best practices.
@@ -34,7 +33,7 @@ co-legislators.
 The purpose of this version of the document is to establish high level
 requirements as reference to create uniform conditions for the
 implementation of the legislative act and to define the technical
-specifications, standards and procedures that the Commission shall
+specifications, standards and procedures that the Commission will
 develop for the purpose of implementing the [eIDAS Regulation](https://eur-lex.europa.eu/eli/reg/2024/1183/oj), and which are related to the following topics:
 
 - Wallet Unit core functionalities ([art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1))
@@ -82,9 +81,7 @@ annexes with:
 **The capitalised imperatives in the document are used in accordance
 with [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).**
 
-This document itself holds **no legal value** and **shall not prejudge the final mandatory legal requirements** for European Digital Identity
-Wallets as only the finally adopted European Digital Identity Framework
-Regulation, and the implementing and delegated acts adopted under that
+This document holds no legal value and does not prejudge the final mandatory legal requirements for Wallet Solutions, as only the finally adopted European Digital Identity Framework Regulation, and the implementing and delegated acts adopted under that
 legal basis, will be mandatory.
 
 ### 1.3 Guidance for the Large-Scale Pilots (LSP)
@@ -162,7 +159,7 @@ Details on PID issuance requirements, the PID attribute schema, and the Trust In
 
 ### 2.2 Qualified electronic signature
 
-The Wallet Unit shall enable Users to create qualified electronic
+The Wallet Unit enables Users to create qualified electronic
 signatures or seals. This goal can be reached by using the
 authentication and signature / seal capabilities of the Wallet Unit as a
 part of a local QSCD, or a remote QSCD managed by a QTSP \[Topic16\] and
@@ -215,7 +212,7 @@ payments and the finance industry.
 
 #### 2.5.4 Digital Travel Credential
 
-Digital Travel Credential (DTC) Providers may issue DTCs to EUDI Wallets
+Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units
 in a supported format enabling Relying Parties to identify Users and
 their travel, thus facilitating the travel experience and the User
 journey in this dynamic sector.
@@ -266,12 +263,12 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 Users of Wallet Units use the Wallet Unit to receive, store and
 present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove
 their identity. Wallet Unit Users can also create Qualified
-Electronic Signatures and Seals (QES) and utilise wallet-to-wallet
+Electronic Signatures and Seals (QES) and utilise Wallet Unit-to-Wallet Unit
 interactions.
 
 Who can be a User of a Wallet Unit depends on national law. The use of
 a Wallet Unit by citizens is not mandatory under the legislative
-proposal. However, each Member State shall provide at least one European
+proposal. However, each Member State will provide at least one European
 Digital Identity Wallet within 24 months after the entry into force of
 the implementing acts referred to in the Regulation.
 
@@ -305,11 +302,8 @@ PID Providers are trusted entities responsible to:
 The terms and conditions of these services are for each Member State to
 determine.
 
-PID Providers may e.g., be the same organisations that today issue
-official identity documents, electronic identity means, Wallet
-Providers etc. Wallet Providers may be the same organisations as
-PID Providers. In case an organisation acts as both a PID Provider and a
-Wallet Provider, it shall comply with all requirements for both PID
+PID Providers may be the same organisations that today issue official identity documents, electronic identity means, etc. Wallet Providers may be the same organisations as PID Providers. In case an organisation acts as both a PID Provider and a
+Wallet Provider, it complies with all requirements for both PID
 Providers and Wallet Providers.
 
 ### 3.4 Trusted Lists Registrar
@@ -455,19 +449,17 @@ for carrying out assessments on which Member States will have to rely
 before issuing a Wallet Unit or providing the qualified status to a
 Trust Service Provider.
 
-The  Wallets will need to be certified by CABs. QTSPs shall be
-audited regularly by CABs.
+The  Wallet Solutions will need to be certified by CABs. QTSPs will be audited regularly by CABs.
 
-The standards and schemes used by CABs to fulfil their tasks to certify
- Wallets are specified further, specifically in [Chapter 7](#7-security-and-data-protection) -
+The standards and schemes used by CABs to fulfil their tasks to certify Wallet Solutions are specified further, specifically in [Chapter 7](#7-security-and-data-protection) -
 Certification.
 
 ### 3.12 Supervisory Bodies
 
 For the Regulation, the supervisory bodies are important to review and
 ensure proper functioning of the Wallet Providers and other relevant
-actors. Supervisory Bodies should be created and appointed in the Member
-States. The Supervisory Bodies are to be notified to the Commission by
+actors. Supervisory Bodies will be created and appointed in the Member
+States. The Supervisory Bodies will be notified to the Commission by
 the Member States.
 
 ### 3.13 Device Manufacturers and Related Subsystems Providers
@@ -547,17 +539,17 @@ exchange through standardised protocols, allowing trusted entities to
 verify credentials effortlessly. This not only simplifies the User
 experience but also strengthens overall security within the system.
 Moreover, interoperability prevents market fragmentation by creating a
-level playing field for different digital identity solutions. It fosters
+level playing field for different Wallet Solutions. It fosters
 competition and collaboration, ultimately driving innovation in the
-European digital identity landscape. By prioritizing interoperability,
-the architecture of the EUDI Wallet ecosystem lays the foundation for a trusted and
-universally accepted digital identity ecosystem across the EU.
+EUDI Wallet ecosystem. By prioritizing interoperability,
+the EUDI Wallet architecture lays the foundation for a trusted and
+universally accepted EUDI Wallet ecosystem across the EU.
 
 #### 4.1.3 Privacy by Design
 
 The EUDI Wallet architecture embodies the principle of privacy by
 design. This means that the protection of User data is a fundamental
-pillar of the wallet\'s design. The principle of data minimisation
+pillar of the architecture's design. The principle of data minimisation
 guides the collection of personal information, ensuring only what is
 necessary is gathered. The Wallet Unit empowers Users with granular control
 over what data is shared and with whom. Transparency is built into the
@@ -569,13 +561,13 @@ foster trust and protect the fundamental rights of its Users.
 
 The EUDI Wallet architecture embraces the principle of security by
 design. This means security considerations are woven into the very
-fabric of the Wallet architecture's design. Throughout the design process, potential
+fabric of the architecture's design. Throughout the design process, potential
 vulnerabilities are identified and mitigated. Secure coding practices
 are mandated, and the architecture itself minimises attack surfaces by
 compartmentalizing sensitive data and access controls. By prioritizing
 security from the outset, the EUDI Wallet architecture aims to be inherently
 resistant to cyberattacks and data breaches, fostering trust and User
-confidence in this digital identity system.
+confidence in this EUDI Wallet ecosystem.
 
 ### 4.2 Reference Architecture
 
@@ -734,8 +726,8 @@ crucial. Key areas for discussion and improvement include:
     Party and Wallet Unit in the Remote Same-Device flow, it's
     crucial to define how this interaction works.
 
-- **Wallet Selection and Invocation**: In scenarios where Users have
-    multiple Wallet Solutions, the process of selecting and activating
+- **Wallet Unit Selection and Invocation**: In scenarios where Users have
+    multiple Wallet Units, the process of selecting and activating
     the appropriate Wallet Unit is critical for a seamless
     experience. Clear application interface between the Wallet Unit
     and the browser/app are also essential. Current approaches relying
@@ -801,7 +793,7 @@ Cryptographic Device (WSCD):
 #### 4.4.1 Introduction
 
 In this chapter, state diagrams are presented to explain the relations
-between the Wallet Solution the Wallet and the PID.
+between the Wallet Solution, the Wallet Unit, and the PID.
 
 The following descriptions are not prescriptive of form factor, hence
 depending on the implementation an Wallet Solution may consist of a
@@ -836,7 +828,7 @@ If all the legal and technical criteria have been met, including:
   been published by the Commission (in accordance with Article 5d),
 
 - the information notified by Member States for publication of lists  
-  of Wallets have been published in the Official Journal of the EU,
+  of Wallet Solutions have been published in the Official Journal of the EU,
 
 then a Member State may decide to start providing the
 Solution to Users. The state of the Solution becomes **valid**.
@@ -908,7 +900,7 @@ Notes:
 
 #### 4.4.4 Person Identification Data (PID)
 
-In the context of the EUDI Wallet, a PID begins its lifecycle when being
+In the context of the EUDI Wallet ecosystem, a PID begins its lifecycle when being
 issued to a Wallet Unit. Please note that this means that the
 management of attributes in the Authentic Source (adhering to national
 structures and attribute definitions) is outside of the scope of the
@@ -1063,7 +1055,7 @@ schemes for the attestation of attributes and verification procedures
 for qualified electronic attestations of attributes\".
 
 One of the main rationales for the ARF is to reach a high level of
-interoperability. This interoperability should be achieved on different
+interoperability. This interoperability can be achieved on different
 layers. On the technical level, interoperability can be achieved by
 using common standards, protocols and technical specifications, ensuring
 common language for attestation Providers, Wallet Providers and Relying
@@ -2273,15 +2265,14 @@ in the Regulation implementing act (IA) should avoid divergent
 approaches and harmonise the implementation of the cybersecurity
 requirements laid down by the Regulation.
 
-Member States, according to Article 5c(3) of the Regulation, shall
-designate accredited conformity assessment bodies (CABs) which will
+Member States, according to Article 5c(3) of the Regulation, designate accredited conformity assessment bodies (CABs) which will
 carry out conformity assessment of Wallet Solutions against the
 Regulation requirements. Once this designation has been made, Member
-States shall communicate to the European Commission the names and
+States communicate to the European Commission the names and
 addresses of these public or private bodies under [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(7) of the
 Regulation.
 
-Wallet Providers shall request (select, contract) one or more designated CABs to assess and certify the conformity of their Wallet Solution against the requirements of the Regulation.
+Wallet Providers request (select, contract) one or more designated CABs to assess and certify the conformity of their Wallet Solution against the requirements of the Regulation.
 
 Wallet Solution certification is then conducted by the CAB to evaluate and
 certify the conformity of the Wallet Solution (target of the
@@ -2301,35 +2292,35 @@ certification) against requirements which will be established by:
     'substantial' in conjunction with additional remote onboarding
     procedures that together meet the requirements of LoA 'high'.
 
-The Wallet Solution shall be certified to ensure conformity assessments but
+The Wallet Solution is certified to ensure conformity assessments but
 also security robustness assessment of conformance to a high level of
 security.
 
 In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(5) provides for an optional certification of the
 personal data processing operations against [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to Wallet Solutions and consequently to their providers.
 
-[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission shall, by means of Implementing Acts,
+[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission will, by means of Implementing Acts,
 establish a list of reference standards and, where necessary, establish
 specifications and procedures for the certification of Wallet Solutions.
 
-The certification process of Wallet Providers should leverage, rely
+The certification process of Wallet Solutions should leverage, rely
 on, and mandate the use of relevant and existing CSA certification
 schemes, or parts thereof, to certify the compliance of wallets or parts
 thereof, with the applicable cybersecurity requirements.
 
 For requirements that are not relevant for cybersecurity, and to the
 extent that cybersecurity certification schemes do not, or only
-partially, cover those cybersecurity requirements, Member States shall
+partially, cover those cybersecurity requirements, Member States will
 establish national certification schemes following the harmonised
-requirements set out in the IA. Member States shall transmit their draft
+requirements set out in the IA. Member States will transmit their draft
 national certification schemes to the European Digital Identity
 Cooperation Group established pursuant to [Article 46e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1)(1) (the
 'Cooperation Group') which may issue opinions and recommendations.
 
-Certification shall be valid for up to five years, provided that a
+Certification will be valid for up to five years, provided that a
 vulnerability assessment is carried out every two years. Where a
 vulnerability is identified and not remedied in a timely manner,
-certification shall be cancelled.
+certification will be cancelled.
 
 ### 7.2 Overall approach to Certification of Wallet Solutions
 
