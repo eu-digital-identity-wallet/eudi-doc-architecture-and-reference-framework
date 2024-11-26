@@ -2,7 +2,7 @@
 
 # Topic A: Privacy risks and mitigations
 
-*eIDAS Cooperation Group Discussion Paper
+*eIDAS Cooperation Group Discussion Paper*
 
 ## Table of Contents
 
