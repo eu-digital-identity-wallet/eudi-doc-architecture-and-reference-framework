@@ -2,39 +2,10 @@
 
 # Topic A: Privacy risks and mitigations
 
-
-## Table of Contents
-
-- [Topic A: Privacy risks and mitigations](#topic-a-privacy-risks-and-mitigations)
-  - [Table of Contents](#table-of-contents)
-  - [1. Introduction](#1-introduction)
-    - [1.1. Discussion Paper topic description](#11-discussion-paper-topic-description)
-    - [1.2. Related risks in the Risk Register](#12-related-risks-in-the-risk-register)
-    - [1.3. Key words](#13-key-words)
-    - [1.4. Document structure](#14-document-structure)
-  - [2. Risks for User privacy due to collusion](#2-risks-for-user-privacy-due-to-collusion)
-    - [2.1. Linkability](#21-linkability)
-    - [2.2. Relying Party linkability](#22-relying-party-linkability)
-    - [2.3. Attestation Provider linkability](#23-attestation-provider-linkability)
-  - [3. Possible mitigation measures for Relying Party linkability within the current ARF](#3-possible-mitigation-measures-for-relying-party-linkability-within-the-current-arf)
-    - [3.1 When issuing and presenting attestations](#31-when-issuing-and-presenting-attestations)
-      - [3.1.1 Method A: Once-only attestations](#311-method-a-once-only-attestations)
-      - [3.1.2 Method B: Limited-time attestations](#312-method-b-limited-time-attestations)
-      - [3.1.3 Method C: Rotating-batch attestations](#313-method-c-rotating-batch-attestations)
-    - [3.2. When checking the revocation status of attestations](#32-when-checking-the-revocation-status-of-attestations)
-      - [3.2.1 Introduction](#321-introduction)
-      - [3.2.2 General requirements](#322-general-requirements)
-      - [3.2.3 Requirements specific for Attestation Status Lists](#323-requirements-specific-for-attestation-status-lists)
-  - [4. Mitigating linkability by using Zero-Knowledge Proofs](#4-mitigating-linkability-by-using-zero-knowledge-proofs)
-  - [5. Proposed ARF requirements](#5-proposed-arf-requirements)
-
-
 ## 1. Introduction
 
 ### 1.1. Discussion Paper topic description
 
-The ARF Development Plan \[ARF\_DevPlan\] describes this Topic as
-follows:
 
 *Starting from the risk registry, review and enhance the privacy
 requirements related to tracking and tracing. This includes evaluating
@@ -595,7 +566,7 @@ stimulate discussion.
     downloading an Attestation Status List or Attestation Revocation
     List.
 
-#$ 6. References
+## 6. References
 
 <table>
 <colgroup>
@@ -604,15 +575,19 @@ stimulate discussion.
 </colgroup>
 <thead>
 <tr>
-<th>[RiskRegister]</th>
-<th>Annex 1 to the Commission Implementing Regulation laying down rules
-for the application of Regulation (EU) No 910/2014 of the European
-Parliament and of the Council as regards the certification of the
-European Digital Identity Wallets, European Commission, October 2024,
-draft</th>
+<th>Reference</th>
+<th>Document</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules
+for the application of Regulation (EU) No 910/2014 of the European
+Parliament and of the Council as regards the certification of the
+European Digital Identity Wallets, European Commission, October 2024,
+draft</td>
+</tr>
 <tr>
 <td>[ARF_DevPlan]</td>
 <td>Architecture and Reference Framework Development plan 2025, European
