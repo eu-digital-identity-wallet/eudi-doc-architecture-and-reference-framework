@@ -3,7 +3,7 @@
 ## Introduction
 The Architecture and Reference Framework (ARF) is in development. To complete the ARF, the commission concluded 21 open items – called topics – need to be addressed and discussed up to end of 2025. This ARF roadmap project provides and overview on these topics, including a planning when they are addressed.
 
-## Focus of the ARF is to establishing high level requirements**
+## Focus of the ARF is to establishing high level requirements
 The purpose of the ARF is to establish high level requirements for the EUDI Wallet ecosystem, to create uniform conditions for the implementation of the legislative act. The ARF also defines the technical specifications, standards and procedures that the Commission shall reference or develop for the purpose of implementing the eIDAS Regulation. 
 
 ## Process
