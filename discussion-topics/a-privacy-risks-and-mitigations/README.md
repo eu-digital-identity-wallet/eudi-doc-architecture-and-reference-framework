@@ -588,12 +588,6 @@ Parliament and of the Council as regards the certification of the
 European Digital Identity Wallets, European Commission, October 2024,
 draft</td>
 </tr>
-<tr>
-<td>[ARF_DevPlan]</td>
-<td>Architecture and Reference Framework Development plan 2025, European
-Commission, v0.91, final draft</td>
-</tr>
-<tr>
 <td>[ISO18013-5]</td>
 <td>ISO/IEC 18013-5, Personal identification — ISO-compliant driving
 licence — Part 5: Mobile driving licence (mDL) application, First
