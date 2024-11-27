@@ -59,7 +59,7 @@ Attestation Provider:
 <table>
 <thead>
 <tr>
-<th><strong><u>R14. Surveillance</u></strong></th>
+<th><strong>R14. Surveillance</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +76,7 @@ data.</td>
 <table>
 <thead>
 <tr>
-<th><strong><u>SR1. Wholesale surveillance</u> </strong></th>
+<th><strong>SR1. Wholesale surveillance </strong></th>
 </tr>
 </thead>
 <tbody>
