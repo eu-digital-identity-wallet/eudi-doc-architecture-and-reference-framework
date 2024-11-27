@@ -35,11 +35,6 @@ collusion between Relying Parties or between a Relying Party and an
 Attestation Provider:
 
 <table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 14%" />
-<col style="width: 53%" />
-</colgroup>
 <thead>
 <tr>
 <th><strong>Risk type </strong></th>
@@ -62,9 +57,6 @@ Attestation Provider:
 </table>
 
 <table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
 <thead>
 <tr>
 <th><strong><u>R14. Surveillance</u></strong></th>
@@ -82,9 +74,6 @@ data.</td>
 </table>
 
 <table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
 <thead>
 <tr>
 <th><strong><u>SR1. Wholesale surveillance</u> </strong></th>
@@ -106,11 +95,6 @@ More specifically, \[RiskRegister\] describes the following threats to a
 Wallet:
 
 <table style="width:100%;">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 51%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
 <tr>
 <th><strong>ID<br />
@@ -574,10 +558,6 @@ stimulate discussion.
 ## 6. References
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 80%" />
-</colgroup>
 <thead>
 <tr>
 <th>Reference</th>
