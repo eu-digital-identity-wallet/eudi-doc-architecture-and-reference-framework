@@ -7,6 +7,10 @@
 # Prerequisites
 # Install pandoc, latex and mkdocs in your environment 
 #  - Ubuntu: `sudo apt-get install pandoc`
+#            `sudo apt install python3 python3-pip -y`
+#            `pip3 install mkdocs`
+#            `pip install mkdocs-material mike`
+#            `mkdocs --version`
 #
 # Parameters and Variables
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables
