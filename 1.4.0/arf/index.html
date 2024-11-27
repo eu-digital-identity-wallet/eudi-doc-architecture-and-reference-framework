@@ -4406,7 +4406,7 @@ notifies the Wallet Provider to the European Commission.</p>
 <p>The Wallet Solution provided by the Wallet Provider is certified by a
 Notified Body. The certification process is described in <a href="#7-security-and-data-protection">chapter 7</a>.</p>
 <p>If the registration and notification processes are successful, the trust
-anchors of the Wallet Provider are included in a Wallet Provider Trusted
+anchors of the Wallet Provider are included in a Wallet Providers Trusted
 List. During issuance of a PID or an attestation, the PID Provider or
 the Attestation Provider can use these trust anchors to verify the
 authenticity of a Wallet Trust Evidence signed by the Wallet Provider,
@@ -4421,7 +4421,7 @@ signed by the Wallet Provider; see <a href="#66310-relying-party-authenticates-t
 <h4 id="623-wallet-provider-suspension-or-withdrawal">6.2.3 Wallet Provider suspension or withdrawal</h4>
 <p>Under specific conditions, a Registrar may decide to suspend or withdraw
 a Wallet Provider. This means the Wallet Provider is taken off from the
-Wallet Provider Trusted List. The conditions for this will be specified
+Wallet Providers Trusted List. The conditions for this will be specified
 by each Registrar. As a result of de-registration, PID Providers,
 Attestation Providers and Relying Parties will no longer trust the trust
 anchors of the Wallet Provider and will therefore refuse to interact
@@ -4986,13 +4986,13 @@ Attestation Provider certificate.</p>
 <h5 id="6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance">6.6.2.3 PID Provider or Attestation Provider validates the EUDI Wallet Instance</h5>
 <p><strong>Verifies the authenticity of the Wallet Instance</strong></p>
 <p>As shown in figure 6, a PID Provider or an Attestation Provider
-downloads the Wallet Provider Trusted List(s) it needs from the relevant
+downloads the Wallet Providers Trusted List(s) it needs from the relevant
 Registrar(s), possibly after having located them via the Commission
 common trust infrastructure.</p>
 <p>Note:</p>
 <ul>
 <li>It is not mandatory for PID Providers or Attestation Providers to
-    possess all Wallet Provider Trusted Lists, if there are multiple.
+    possess all Wallet Providers Trusted Lists, if there are multiple.
     This is because it is not mandatory for a PID Provider or an
     Attestation Provider to accept all certified Wallet Solutions in the
     EUDI Wallet ecosystem. Each PID Provider or Attestation Provider
@@ -5463,7 +5463,7 @@ Relying Party Instance:</p>
 </li>
 <li>
 <p>verifies the signature over the WIA using the Wallet Provider trust
-    anchor obtained from the Wallet Provider Trusted List.</p>
+    anchor obtained from the Wallet Providers Trusted List.</p>
 </li>
 <li>
 <p>verifies that the Wallet Instance is in possession of the private
