@@ -728,7 +728,7 @@ More details on the Relying Party registration process can be found in \[Topic 2
 
 Under specific conditions, a Registrar may decide to de-register a registered Relying Party. The conditions for this will be specified by each Registrar.
 
-De-registration involves revocation of all valid Relying Party Instance certificates, such that the Relying Party is no longer able to interact with Wallet Units.
+De-registration involves revocation of all valid Relying Party Instance access certificates, such that the Relying Party is no longer able to interact with Wallet Units.
 
 ### 6.5 Trust throughout a Wallet Unit lifecycle
 
@@ -858,7 +858,7 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 
 The lifecycle of a PID or an attestation starts when a User, using their Wallet Unit, requests a PID Provider or an Attestation Provider to issue the PID or an attestation to their Wallet Unit. The following trust relationships are established during issuance:
 
-1. The Wallet Unit authenticates the PID Provider or Attestation Provider using the certificate referred to in [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle). This ensures that the User can trust that the PID or attestation they are about to receive, is issued by an authenticated PID Provider or Attestation Provider respectively. See [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider) below describing how this will be done.
+1. The Wallet Unit authenticates the PID Provider or Attestation Provider using the access certificate referred to in [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle). This ensures that the User can trust that the PID or attestation they are about to receive, is issued by an authenticated PID Provider or Attestation Provider respectively. See [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider) below describing how this will be done.
 
 2. The PID Provider or Attestation Provider authenticates the User, meaning that the Provider is sure about the identity of the User. This is necessary to enable determination of the values of the attributes that the Provider will attest to. For instance, a PID Provider needs to authenticate the User to ensure it provides a PID containing the correct family name and date of birth. The method by which the PID Provider or Attestation Provider performs User identification and authentication is out of scope of the ARF, as these processes are specific to each PID Provider or Attestation Provider.
 
@@ -880,11 +880,11 @@ Note: It is not mandatory for each Wallet Unit to possess all PID Provider and A
 
 To start the process of requesting a PID or an attestation, the User directs the Wallet Unit to contact the PID Provider or Attestation Provider. The User may for example use the Wallet Unit to scan a QR code or tap an NFC tag to do so. Note that no centralised service discovery mechanism for PID or attestation issuance is foreseen.
 
-Before requesting the issuance of a PID or an attestation, the Wallet Unit authenticates the PID Provider or the Attestation Provider. To do so, the Wallet Unit verifies the certificate presented to it by the PID Provider or Attestation Provider. The Wallet Unit checks that the certificate indicates that its subject is indeed a PID Provider or an Attestation Provider. The Wallet Unit also verifies that the certificate is authentic, that it is valid at the time of validation, and that the issuer of the certificate is a CA that is in the Attestation Provider CA Trusted List.
+Before requesting the issuance of a PID or an attestation, the Wallet Unit authenticates the PID Provider or the Attestation Provider. To do so, the Wallet Unit verifies the access certificate presented to it by the PID Provider or Attestation Provider. The Wallet Unit checks that the access certificate indicates that its subject is a PID Provider or an Attestation Provider. The Wallet Unit also verifies that the access certificate is authentic, that it is valid at the time of validation, and that the issuer of the certificate is a CA that is in the PID Provider or Attestation Provider Access CA Trusted List.
 
 After the Wallet Unit receives the PID or attestation from the Provider, it verifies that the type of attestation it received matches the request.
 
-The Wallet Unit requests the User's approval before storing a PID or an attestation. When requesting approval, the Wallet Unit shows the contents of the PID or attestation to the User. The Wallet Unit also informs the User about the identity of the PID Provider or Attestation Provider, using the subject information from the PID Provider or Attestation Provider certificate.
+The Wallet Unit requests the User's approval before storing a PID or an attestation. When requesting approval, the Wallet Unit shows the contents of the PID or attestation to the User. The Wallet Unit also informs the User about the identity of the PID Provider or Attestation Provider, using the subject information from the PID Provider or Attestation Provider access certificate.
 
 ##### 6.6.2.3 PID Provider or Attestation Provider validates the Wallet Unit
 
@@ -984,17 +984,17 @@ B) The Wallet Unit obtained the trust anchor of the Relying Party Access Certifi
 
 Subsequently, during each presentation of attributes:
 
-1. The Relying Party Instance prepares a request for some attributes to the Wallet Unit and includes its Relying Party Instance certificate in the request, plus all intermediate certificates up to (but excluding) the trust anchor.
+1. The Relying Party Instance prepares a request for some attributes to the Wallet Unit and includes its Relying Party Instance access certificate in the request, plus all intermediate certificates up to (but excluding) the trust anchor.
 
 2. The Relying Party Instance signs some data in the attribute request using its private key.
 
 3. The Relying Party Instance sends the request to the Wallet Unit.
 
-4. The Wallet Unit checks the authenticity of the request by verifying the signature over the request using the public key in the Relying Party Instance certificate.
+4. The Wallet Unit checks the authenticity of the request by verifying the signature over the request using the public key in the Relying Party Instance access certificate.
 
-5. The Wallet Unit checks the authenticity of the Relying Party by validating the Relying Party Instance certificate and all intermediate certificates included in the request. For validating the last intermediate certificate, the Wallet Unit uses the trust anchor it obtained from the Trusted List.
+5. The Wallet Unit checks the authenticity of the Relying Party by validating the Relying Party Instance access certificate and all intermediate certificates included in the request. For validating the last intermediate certificate, the Wallet Unit uses the trust anchor it obtained from the Trusted List.
 
-6. The Wallet Unit validates that none of the certificates in the trust chain have been revoked. This includes the Relying Party Instance certificate as well as all other certificates in the trust chain, including the trust anchor itself if applicable.
+6. The Wallet Unit validates that none of the certificates in the trust chain have been revoked. This includes the Relying Party Instance access certificate as well as all other certificates in the trust chain, including the trust anchor itself if applicable.
 
 7. The Wallet Unit continues by requesting the User for approval.
 
@@ -1006,7 +1006,7 @@ Subsequently, during each presentation of attributes:
 
 The PID Provider or Attestation Provider optionally embeds a disclosure policy in the PID or attestation. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the PID Provider or Attestation Provider to receive which attributes from the PID or attestation.
 
-If a policy is present in the PID or attestation, the Wallet Unit evaluates the policy, together with data obtained from the Relying Party or the User, to determine whether the PID Provider or Attestation Provider allows this Relying Party to receive the requested attributes. Data obtained from the Relying Party is typically included in the Relying Party Instance certificate. In any case, the Wallet Unit authenticates any data obtained from the Relying Party before using it.
+If a policy is present in the PID or attestation, the Wallet Unit evaluates the policy, together with data obtained from the Relying Party or the User, to determine whether the PID Provider or Attestation Provider allows this Relying Party to receive the requested attributes. Data obtained from the Relying Party is typically included in the Relying Party Instance access certificate. In any case, the Wallet Unit authenticates any data obtained from the Relying Party before using it.
 
 The Wallet Unit presents the outcome of the disclosure policy evaluation to the User in the form of advice, when requesting User approval. For example, "The issuer of your PID does not want you to present \<attribute names\> to \<Relying Party name\>. Do you want to continue?" Note that the User can overrule the disclosure policy evaluation outcome.
 
