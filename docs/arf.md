@@ -516,11 +516,9 @@ There are only a few suitable standardised formats for releasing electronic atte
 
 1. ISO/IEC 18013-5 defines an attribute schema, data format and proof mechanisms for mDL-s, which can be used also with other attribute schemas, see \[ISO/IEC 18013-5\].
 
-2. Selective Disclosure for JWTs (SD-JWT) defines a proof mechanism similar to \[ISO/IEC 18013-5\], but for a different data format, see \[SD-JWT\].
+2. SD-JWT-based Verifiable Credentials (SD-JWT VC) defines a proof mechanism similar to \[ISO/IEC 18013-5\], but for a different data format, see \[SD-JWT VC\].
 
 3. W3C Verifiable Credentials Data Model v1.1 \[W3C VC DM v1.1\] defines a generic attribute schema agnostic to data formats and proof mechanisms, while v 2.0 introduces requirements on format and recommendations on proof mechanisms, see \[W3C VC DM v2.0\].
-
-4. SD-JWT-based Verifiable Credentials (SD-JWT VC) define a generic attribute schema and establish requirements on data format and proof mechanisms, see \[SD-JWT-VC\].
 
 \[Topic 12\] presents the current and foreseen status of these technical specifications and states the requirements regarding support for these specifications by attestations.
 
@@ -764,15 +762,19 @@ To ensure that the User can trust the Wallet Solution, Wallet Providers preferab
 
 Note: The Regulation does not exclude the possibility that a Wallet Instance may be installed on a non-mobile device, for example a server. In general, verifying the authenticity of Wallet Solutions not intended to be installed on a mobile device is the responsibility of the User. This can be done, for example, by comparing the hash value of the application downloaded by the User with the hash value published by the Wallet Provider.
 
-##### 6.5.2.3 User validates that Wallet Solution is usable with relevant attestations
+##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PIDs
 
-A User installs a Wallet Instance because they want to obtain and use one or more PIDs and/or attestations. However, there is no requirement for a PID Provider or an Attestation Provider to support all certified Wallet Solutions in the EUDI Wallet ecosystem. This means that the PID Provider or an Attestation Provider are not obliged to issue a PID or an attestation respectively to any certified Wallet Unit upon the request of the User. Instead, they may decide to support only a single Wallet Solution, or a limited number of Wallet Solutions.
+A User installs a Wallet Unit because they want to obtain and use one or more PIDs. However, PID Providers are not required to support all Wallet Solutions in the EUDI Wallet ecosystem. 'Support' here means that the PID Provider is willing to issue a PID to an instance of a given Wallet Solution on request of the User. Instead, a PID Provider may choose to support only a single Wallet Solution or a limited number of Wallet Solutions. Therefore, each PID Provider will publish a list of Wallet Solutions that they support, such that a User that wants or needs to request a PID from that PID Provider know which Wallet Unit they should install. This list could be published, for example, on the PID Provider's website.
 
-Therefore, each PID Provider and Attestation Provider will publish a list of Wallet Solutions that they support. This list could be published, for example, on their respective website. A Wallet Provider can also publish a list of PID Providers and Attestation Providers supporting their Wallet Solution. This allows Users to know whether the Wallet Instance they are about to install will support the PID and the attestation(s) they wish to use.
+Conversely, a Wallet Solution is not required to support all PID Providers, where 'support' means that it is able to request the issuance of a PID from a PID Provider. Each Wallet Provider will, prior to or during installation of a Wallet Unit, let the User know which PID Providers are supported by this Wallet Unit.
+
+For QEAAs and Pub-EAAs, the situation is different. Providers of such attestations will support all Wallet Solutions and are not allowed to discriminate between them when processing a request for the issuance of an attestation. Conversely, a Wallet Solution supports all Providers of QEAAs and Pub-EAAs, and cannot discriminate between different QEAA or PuB-EAA Providers when requesting the issuance of an attestations at the User's request.
+
+Regarding non-qualified EAAs, Providers of such attestations do not necessarily support all Wallet Solutions, nor vice versa.
 
 #### 6.5.3 Wallet Unit activation
 
-After installation of the Wallet Instane, the new Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
+After installation of the Wallet Instance, the new Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
 
 1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
 
@@ -1364,7 +1366,6 @@ For undated references, the latest version available applies.
  \[ETSI EN 319 162-1\]| [ETSI EN 319 162-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31916201/01.01.01_60/en_31916201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers | 
  | \[ETSI EN 319 142\] | [ETSI EN 319 142](https://www.etsi.org/deliver/etsi_en/319100_319199/31914202/01.01.01_60/en_31914202v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures |
 | \[CEN EN 419 241-1\]| [CEN EN 419 241-1](https://www.en-standard.eu/csn-en-419241-1-trustworthy-systems-supporting-server-signing-part-1-general-system-security-requirements/) -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements | 
- | \[SD-JWT\]| Selective Disclosure for JWTs (SD-JWT). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-selective-disclosure-jwt/> | 
  | \[SD-JWT VC\] | SD-JWT-based Verifiable Credentials (SD-JWT VC). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/> | 
  | \[RFC 2119\] | [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) - Key words for use in RFCs to Indicate Requirement Levels. S. Bradner, March 1997. | 
  | \[RFC 3339\] | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) - Date and Time on the Internet: Timestamps, G. Klyne et al., July 2002 | 
