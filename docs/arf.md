@@ -151,7 +151,7 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 3. Person Identification Data (PID) Providers
 
-4. Trusted Lists Registrar
+4. Trusted List Providers
 
 5. Qualified Electronic Attestation of Attributes (QEAA) Providers
 
@@ -203,33 +203,26 @@ The terms and conditions of these services are for each Member State to determin
 
 PID Providers may be the same organisations that today issue official identity documents, electronic identity means, etc. Wallet Providers may be the same organisations as PID Providers. In case an organisation acts as both a PID Provider and a Wallet Provider, it complies with all requirements for both PID Providers and Wallet Providers.
 
-### 3.4 Trusted Lists Registrar
+### 3.4 Trusted List Provider
 
-A Trusted List Registrar is a party responsible for maintaining, managing, and publishing a Trusted List. Within the EUDI Wallet ecosystem, Trusted Lists exist for the following entities:
+A Trusted List Provider is a body responsible for maintaining, managing, and publishing a Trusted List. A Trusted List Provider is appointed by a Member State and notified to the Commission. Within the EUDI Wallet ecosystem, Trusted Lists exist for the following entities:
 
 - Wallet Providers,
-
 - PID Providers,
-
 - QEAA Providers,
-
-- PuB-EAA Providers,- non-qualified EAA Providers (not mandatory),
-
+- PuB-EAA Providers,
+- non-qualified EAA Providers (not mandatory),
 - Access Certificate Authorities for
-
   - Relying Parties,
-
   - PID Providers,
-
   - QEAA Providers,
-
   - PuB-EAA Providers.
 
 These Trusted Lists are described in more detail in [Section 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and [6.4.2](#642-relying-party-registration), as well as in \[Topic 31\]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a combination of a public key and the identifier of the associated entity and may be used to verify signatures or seals created by that entity.
 
 Member States will provide Trusted Lists for PID Providers, QEAA Providers and PuB-EAA Providers, in compliance with [Article 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1). These Trusted Lists may also include non-qualified EAA Providers, but this is not mandatory. Alternatively, domain-specific trusted lists or alternative solutions for managing the trust anchors may be provided for EAA Providers. For instance, trustworthy mDL or DTC Providers are determined by other legal frameworks than eIDAS and published accordingly.
 
-An entity's status as a trusted entity can be verified by checking whether they are present on a Trusted List. Trusted List Registrars need to provide a registration service for the relevant entities. The terms and conditions for entities to become registered are for each registrar to determine unless specified elsewhere e.g., in sectoral rules.
+An entity's status as a trusted entity can be verified by checking whether they are present on a Trusted List. Trusted List Providers provide a registration service for the relevant entities. The terms and conditions for entities to become registered are for each registrar to determine unless specified elsewhere e.g., in sectoral rules.
 
 For more information, please refer to \[Topic 27\] and to \[Topic 31\].
 
@@ -582,9 +575,9 @@ Figure 6 above shows the parties and components that are involved in the trust a
 
 In the center of this ecosystem is the **Wallet Unit**, shown in the middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes the interactions between the Wallet Unit and other roles in the ecosystem in the lifecycle of a Wallet Unit, namely installation, activation, management, and de-installation.
 
-A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Registrar located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
+A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Trusted List Provider located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
 
-One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations. The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 1. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Registrar** or by an **Attestation Provider Registrar** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
+One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations. The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 1. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Trusted List Provider** or by an **Attestation Provider Trusted List Provider** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
 
 After receiving one or more PIDs or attestations, a Wallet Unit can present User attributes from these attestations to **Relying Parties**. On the right-hand side of the Wallet Unit, figure 6 shows the Relying Parties. Relying Parties are registered by a **Relying Party Registrar** in their Member State. As a result of the registration, a Relying Party receives an access certificate from a **Relying Party Access CA**. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in the lifecycle of a Relying Party, namely registration, and possibly de-registration.
 
@@ -592,7 +585,7 @@ Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) d
 
 Notes:
 
-- This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Registrars and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
+- This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Trusted List Providers and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
 
 - This trust model does not presume a specific implementation. In particular, the use of term 'certificate' does not imply a specific format. Depending on implementation, it may be an X.509 certificate or another format specified in the context of any other trust framework. Similarly, a 'Certificate Authority' may be implemented as a 'classical' X509-based CA according to \[[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)\] and \[[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)\], or as a trusted third party binding public keys to entities in any other trust framework.
 
@@ -624,7 +617,7 @@ This document makes the following assumptions regarding the need for trust in th
 
 #### 6.1.4 Other trust relations
 
-Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers and Attestation Providers, and Relying Parties trust certification bodies and Trusted List Registrars. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will need to be used.
+Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers and Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will need to be used.
 
 ### 6.2 Trust throughout a Wallet Solution lifecycle
 
@@ -632,13 +625,13 @@ Besides the trust relationships described in this chapter, other trust relations
 
 [Section 4.4.2](#442-wallet-solution) presented the lifecycle of a Wallet Solution:
 
-1. The Wallet Provider responsible for the Wallet Solution is registered by a Registrar. As a result, the Wallet Solution enters the Valid state. This is discussed in [Section 6.2.2](#622-wallet-provider-registration-and-notification).
+1. The Wallet Provider responsible for the Wallet Solution is registered by a Trusted List Provider. As a result, the Wallet Solution enters the Valid state. This is discussed in [Section 6.2.2](#622-wallet-provider-registration-and-notification).
 
-2. Under specific conditions, a Registrar may decide to suspend or withdraw a registered Wallet Provider. This implies that the Wallet Provider is de-registered. This is discussed in [Section 6.2.3](#623-wallet-provider-suspension-or-withdrawal).
+2. Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a registered Wallet Provider. This is discussed in [Section 6.2.3](#623-wallet-provider-suspension-or-withdrawal).
 
 #### 6.2.2 Wallet Provider registration and notification
 
-Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Registrar in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
+Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
 The Wallet Solution provided by the Wallet Provider is certified by a Notified Body. The certification process is described in [chapter 7](#7-security-and-data-protection).
 
@@ -650,7 +643,7 @@ More details on the Wallet Provider notification process can be found in \[Topic
 
 #### 6.2.3 Wallet Provider suspension or withdrawal
 
-Under specific conditions, a Registrar may decide to suspend or withdraw a Wallet Provider. This implies that the Wallet Provider's status in the respective Trusted List will be changed to Invalid. The conditions for this will be specified by each Registrar. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
+Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a Wallet Provider. This implies that the Wallet Provider's status in the respective Trusted List will be changed to Invalid. The conditions for this will be specified by each Trusted List Provider. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
 
 If an entity has registered multiple Wallet Providers, each offering a different Wallet Solution, and one of these Wallet Providers is suspended or withdraw, only the applicable Wallet Solution will be impacted. It may happen that the reason for suspension or withdrawal is applicable to all Wallet Solutions offered, in which case all of the Wallet Providers registered by that entity will be withdrawn or suspended separately.
 
@@ -660,15 +653,15 @@ If an entity has registered multiple Wallet Providers, each offering a different
 
 [Section 4.4.4](#444-person-identification-data-pid) presented the lifecycle of a PID Provider:
 
-1. A PID Provider or an Attestation Provider is registered by a Registrar. This is discussed in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
+1. A PID Provider or an Attestation Provider is registered by a Trusted List Provider. This is discussed in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
-2. Under specific conditions, a Registrar may decide to suspend or withdraw a registered PID Provider or Attestation Provider. This is discussed in [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
+2. Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a registered PID Provider or Attestation Provider. This is discussed in [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
 
 #### 6.3.2 PID Provider or Attestation Provider registration and notification
 
 ##### 6.3.2.1 Introduction
 
-Figure 6 depicts the PID Providers and Attestation Providers to the left of the Wallet Unit. To the left and below of this, the figure also shows that each PID Provider and Attestation Provider will register itself with a PID Provider Registrar or an Attestation Provider Registrar in its Member State. Subsequently, the Member State notifies the PID Provider or Attestation Provider to the European Commission.
+Figure 6 depicts the PID Providers and Attestation Providers to the left of the Wallet Unit. To the left and below of this, the figure also shows that each PID Provider and Attestation Provider will register itself with a PID Provider Trusted List Provider or an Attestation Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the PID Provider or Attestation Provider to the European Commission.
 
 If the registration and notification processes are successful, mainly two things happen:
 
@@ -682,13 +675,13 @@ These two aspects are discussed in the next two subsections.
 
 A PID Provider Access Certificate Authority or Attestation Provider Access Certificate Authority (CA) issues one or more access certificates to the PID Provider or to the Attestation Provider. A PID Provider or an Attestation Provider needs such a certificate to authenticate itself towards a Wallet Unit when issuing a PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEEA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
 
+Subsequently, the Access Certificate Authority is included in a PID Provider Access CA Trusted List or Attestation Provider Access CA Trusted List. This Trusted List contains at least the trust anchor(s) of the CA. A Wallet Unit can use these trust anchors to verify the authenticity of a PID Provider or an Attestation Provider access certificate during the issuance of a PID or an attestation. For more information, see \[Topic 31\].
+
 Note that, in case the subject is an Attestation Provider, the access certificate does not contain information about its authorization or registration to issue attestations of a specific type, for instance an mDL or diploma. Authorization is dealt with in the following manner:
 
 - For QEAA Providers, and Pub-EAA Providers, no authorization is necessary, since these kinds of Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of Providers operate within a regulated framework and are regularly audited.
 
 - For non-qualified EAA Providers, this is different, since they are unregulated and may not be completely trustworthy. Without additional measures, a fraudulent EAA Provider may be technically able to issue types of QEAAs, PuB-EAAs or EAAs that it is not legally allowed to issue. To prevent this, the applicable Rulebook (see \[Topic 12\]) may define mechanisms allowing a Wallet Unit, during issuance of an EAA, to verify that the EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. The same mechanism may also be used by Relying Parties during presentation of an EAA.
-
-Subsequently, each Registrar includes the CA in a PID Provider Access CA Trusted List or Attestation Provider Access CA Trusted List. This Trusted List contains at least the trust anchor(s) of the CA. A Wallet Unit can use these trust anchors to verify the authenticity of a PID Provider or an Attestation Provider access certificate during the issuance of a PID or an attestation. For more information, see \[Topic 31\].
 
 ##### 6.3.2.3 PID Provider or Attestation Provider trust anchors are included in a Trusted List
 
@@ -700,7 +693,7 @@ More details on the PID Provider or Attestation Provider notification process, a
 
 #### 6.3.3 PID Provider or Attestation Provider suspension or withdrawal
 
-Under specific conditions, a Registrar may decide to suspend or withdraw a registered PID Provider or Attestation Provider. The conditions for this will be specified by each Registrar.
+Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a registered PID Provider or Attestation Provider. The conditions for this will be specified by each Trusted List Provider.
 
 Suspension or withdrawal implies that the PID Provider or Attestation Provider access certificates are revoked. As a result, the PID Provider or Attestation Provider will no longer be able to issue PIDs or attestations to Wallet Units.
 
@@ -722,7 +715,7 @@ Figure 6 depicts the Relying Party to the right of the Wallet Unit. To the right
 
 As a result of successful registration, a Relying Party Access Certificate Authority (CA) issues one or more access certificates to the Relying Party. A Relying Party Instance needs such a certificate to authenticate itself towards Wallet Units when requesting the presentation of attributes, as described in [Section 6.6.3.2](#6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance).
 
-Subsequently, each Registrar creates a Relying Party Access CA Trusted List containing the trust anchor(s) of all associated Relying Party CA(s). A Wallet Unit can use these trust anchors to verify the authenticity of Relying Party Instance access certificates. The Registrar signs and publishes the Relying Party Access CA Trusted List and makes the URL of the Trusted List available to a common trust infrastructure maintained by the Commission, the so-called List of Trusted Lists. Using the common infrastructure, any party in the EUDI Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
+Subsequently, a Trusted List Provider in each Member State creates a Relying Party Access CA Trusted List containing the trust anchor(s) of all associated Relying Party CA(s). A Wallet Unit can use these trust anchors to verify the authenticity of Relying Party Instance access certificates. The Trusted List Provider signs and publishes the Relying Party Access CA Trusted List and makes the URL of the Trusted List available to a common trust infrastructure maintained by the Commission, the so-called List of Trusted Lists. Using the common infrastructure, any party in the EUDI Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
 
 More details on the Relying Party registration process can be found in \[Topic 27\].
 
@@ -730,7 +723,7 @@ More details on the Relying Party registration process can be found in \[Topic 2
 
 Under specific conditions, a Registrar may decide to de-register a registered Relying Party. The conditions for this will be specified by each Registrar.
 
-De-registration involves revocation of all valid Relying Party Instance access certificates, such that the Relying Party is no longer able to interact with Wallet Units.
+De-registration involves revocation of all valid Relying Party Instance access certificates by the relevant Access CA, such that the Relying Party is no longer able to interact with Wallet Units.
 
 ### 6.5 Trust throughout a Wallet Unit lifecycle
 
@@ -887,7 +880,7 @@ More detailed requirements for the issuance process of PIDs and attestations, fo
 
 ##### 6.6.2.2 Wallet Unit authenticates the PID Provider or Attestation Provider
 
-As shown in figure 6, a Wallet Unit downloads the PID Provider Access CA Trusted List(s) and Attestation Provider Access CA Trusted List(s) it needs from the relevant Registrar(s), possibly after having located them via the Commission common trust infrastructure. See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for more information on these Trusted Lists.
+As shown in figure 6, a Wallet Unit downloads the PID Provider Access CA Trusted List(s) and Attestation Provider Access CA Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure. See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for more information on these Trusted Lists.
 
 Note: It is not mandatory for each Wallet Unit to possess all PID Provider and Attestation Provider CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in.
 
@@ -903,7 +896,7 @@ The Wallet Unit requests the User's approval before storing a PID or an attestat
 
 **Verifies the authenticity of the Wallet Unit**
 
-As shown in figure 6, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Registrar(s), possibly after having located them via the Commission common trust infrastructure.
+As shown in figure 6, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure.
 
 Note:
 
