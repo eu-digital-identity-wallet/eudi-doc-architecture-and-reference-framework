@@ -1332,8 +1332,8 @@ Instance. To be able to comply with such requests, these parties need to
 trust each other. This trust generally requires the existence of the
 following two conditions:
 
-1.  The requestee is sure about the requester\'s identity, and
-    optionally the requester is sure about the requestee\'s identity.
+1.  The requestee is sure about the requester's identity, and
+    optionally the requester is sure about the requestee's identity.
     This is referred to as (single-side or mutual) *authentication*.
 
 2.  The requestee is sure that the requester has the right to request
