@@ -650,7 +650,7 @@ More details on the Wallet Provider notification process can be found in \[Topic
 
 #### 6.2.3 Wallet Provider suspension or withdrawal
 
-Under specific conditions, a Registrar may decide to suspend or withdraw a Wallet Provider. This means the Wallet Provider is taken off from the Wallet Provider Trusted List. The conditions for this will be specified by each Registrar. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
+Under specific conditions, a Registrar may decide to suspend or withdraw a Wallet Provider. This implies that the Wallet Provider's status in the respective Trusted List will be changed to Invalid. The conditions for this will be specified by each Registrar. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
 
 If an entity has registered multiple Wallet Providers, each offering a different Wallet Solution, and one of these Wallet Providers is suspended or withdraw, only the applicable Wallet Solution will be impacted. It may happen that the reason for suspension or withdrawal is applicable to all Wallet Solutions offered, in which case all of the Wallet Providers registered by that entity will be withdrawn or suspended separately.
 
@@ -704,7 +704,7 @@ Under specific conditions, a Registrar may decide to suspend or withdraw a regis
 
 Suspension or withdrawal implies that the PID Provider or Attestation Provider access certificates are revoked. As a result, the PID Provider or Attestation Provider will no longer be able to issue PIDs or attestations to Wallet Units.
 
-For PID Providers, QEAA Providers and PuB-EAA Providers, suspension or withdrawal also implies that their trust anchors are taken off the Trusted List. As a result, Relying Parties will no longer trust PIDs or attestations issued by the suspended or withdrawn Provider. The applicable Rulebook (see \[Topic 12\]) may define additional mechanisms ensuring that Relying Parties will no longer trust the trust anchors of EAA Providers that have been suspended or withdrawn.
+For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or withdrawal also implies that its status in the respective Trusted List will be changed to Invalid. As a result, Relying Parties will no longer trust PIDs or attestations issued by the suspended or withdrawn Provider. The applicable Rulebook (see \[Topic 12\]) may define additional mechanisms ensuring that Relying Parties will no longer trust the trust anchors of EAA Providers that have been suspended or withdrawn.
 
 ### 6.4 Trust throughout a Relying Party lifecycle
 
@@ -754,17 +754,22 @@ The lifecycle of a Wallet Unit starts when a User decides to install an Wallet I
 
 When downloading and installing the Wallet Instance, the following trust relationships are established:
 
-1. The User verifies that the Wallet Instance (i.e., the application the User is installing) is genuine and authentic and does not contain any malware or other threats.
+1. On behalf of the User, the OS of the User's device and the relevant app store verify that the Wallet Instance (i.e., the application the User is installing) is genuine and authentic and does not contain any malware or other threats.
 
 2. The User verifies that they can obtain the PID(s) they need in an instance of this Wallet Solution. If the relevant PID Provider does not support the Wallet Solution, the User would not be able to use the Wallet Unit for obtaining those PID(s).
 
 The next two sections discuss these trust relationships.
 
-##### 6.5.2.2 User verifies Wallet Solution
+##### 6.5.2.2 Wallet Solution authenticity is verified
 
-To ensure that the User can trust the Wallet Solution, Wallet Providers preferably make their certified Wallet Solutions available for installation only via the official app store of the relevant operating system (e.g., Android, iOS). This allows the operating system of the device to perform relevant checks regarding the authenticity of the app. It also allows Users to use the same well-known channel for obtaining a Wallet Instance as they use for obtaining other apps. Finally, it prevents the User must allow side-loading of apps, which can increase the risk of installing malicious apps.
+To ensure that the User can trust the Wallet Solution, Wallet Providers preferably make their certified Wallet Solutions available for installation via the official app store of the relevant operating system (e.g., Android, iOS). This allows the operating system of the device to perform relevant checks regarding the authenticity of the app. It also allows Users to use the same well-known channel for obtaining a Wallet Instance as they use for obtaining other apps. Finally, it prevents the User must allow side-loading of apps, which can increase the risk of installing malicious apps.
 
-Note: The Regulation does not exclude the possibility that a Wallet Instance may be installed on a non-mobile device, for example a server. In general, verifying the authenticity of Wallet Solutions not intended to be installed on a mobile device is the responsibility of the User. This can be done, for example, by comparing the hash value of the application downloaded by the User with the hash value published by the Wallet Provider.
+If a Wallet Provider makes its Wallet Solution available for installation through other means than the official OS app store, it implements a mechanism allowing the User to verify the authenticity of the Wallet Unit. Moreover, the Wallet Provider provides clear instructions to the User on how to install the Wallet Unit, including:
+
+- instructions on how to verify the authenticity of the Wallet Instance to be installed. This can be done, for example, by comparing the hash value of the application downloaded by the User with a hash value published by the Wallet Provider.
+- instructions on bypassing of any operating system limitations on side-loading of apps, if applicable, and ensuring that these limitations are restored after the Wallet Instance has been installed.
+
+Note: The Regulation does not exclude the possibility that a Wallet Instance may be installed on a non-mobile device, for example a server. The requirements above also apply for the installation of a Wallet Unit on a user device that is not a mobile device, and for which no official operating system app store may exist.
 
 ##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PIDs
 
