@@ -876,7 +876,7 @@ The lifecycle of a PID or an attestation starts when a User, using their Wallet 
    
 5. After the PID or attestation is issued to the Wallet Unit, the Wallet Unit verifies the authenticity of the PID or attestation; see [Section 6.6.2.6](#6625-Wallet-Unit-verifies-PID-or-attestation).
 
-6. Finally, the User may have to activate a PID before they can use it; see [Section 6.6.2.6](#6626-User-activates-the-pid-or-attestation).
+6. Finally, the User will activate a PID before they can use it; see [Section 6.6.2.6](#6626-User-activates-the-pid-or-attestation).
 
 More detailed requirements for the issuance process of PIDs and attestations, for instance regarding the issuance protocol, are included in \[Topic 10\] and \[Topic 23\].
 
@@ -925,6 +925,7 @@ Knowing the properties of the WSCD is not very useful if the PID Provider or Att
 Once it has done all verifications, the PID Provider or Attestation Provider will issue the PID or attestation to the Wallet Unit.
 
 ##### 6.6.2.5 Wallet Unit verifies PID or attestation
+
 After the Wallet Unit receives the PID or attestation, it will
 + verify that the PID or attestation it received matches the request.
 + verify the signature of the PID or attestation, using the appropriate trust anchor, in the same way as described for a Relying Party Instance in [Section 6.6.3.5](#6635-Relying-Party-Instance-verifies-the-authenticity-of-the-PID-or-attestation).
@@ -932,9 +933,11 @@ After the Wallet Unit receives the PID or attestation, it will
 
 If one these verifications fail, the Wallet Unit will delete the PID or attestation, and will inform the User that issuance was not successful.
 
-##### 6.6.2.6 User activates the PID or attestation
+##### 6.6.2.6 User activates the PID
 
-As documented in \[Topic 9\], to achieve Level of Assurance (LoA) "high", [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1502) requires that an activation process must be implemented to verify that the PID or attestation was delivered only into the possession of the person to whom it belongs. This can be done, for example, by entering a PIN code that was sent by the PID Provider or Attestation Provider to the User 'out of band', for example by means of a letter sent to their official postal address.
+As documented in \[Topic 9\], to achieve Level of Assurance (LoA) "high", [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1502) requires that an activation process will be implemented to verify that a PID was in fact delivered into the possession of the person to whom it belongs. The User can activate a PID, for example, by entering a PIN code that was sent by the PID Provider to the User 'out of band', for example by means of a letter sent to their official postal address.
+
+Activation is required only for PIDs, since the eIDASv2 Regulation only requires PIDs to be issued at LoA "high". A similar activation process may be used for QEAAs, PuB-EAAs or non-qualified EAAs, up to the decision of the Attestation Provider.
 
 #### 6.6.3 PID or attestation presentation to Relying Party
 
