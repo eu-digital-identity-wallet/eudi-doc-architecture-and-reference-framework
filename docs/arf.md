@@ -275,7 +275,7 @@ Relying Parties are natural or legal persons that rely upon an electronic identi
 
 ### 3.11 Conformity Assessment Bodies (CAB)
 
-Conformity Assessment Bodies (CAB) are accredited public or private bodies, accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible for carrying out assessments on which Member States will have to rely before issuing a Wallet Unit or providing the qualified status to a Trust Service Provider.
+Conformity Assessment Bodies (CAB) are accredited public or private bodies, accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible for carrying out assessments on which Member States will rely before issuing a Wallet Unit or providing the qualified status to a Trust Service Provider.
 
 The Wallet Solutions will need to be certified by CABs. QTSPs will be audited regularly by CABs.
 
@@ -389,7 +389,7 @@ As illustrated in figure 2, secure and streamlined interaction with other applic
 
 - **Secure Cross-Device Flows**: Existing cross-device flows need stronger security measures to combat phishing and relay attacks.
 
-- **Relying Party Authentication**: Before sharing attributes, the Wallet Unit must authenticate the Relying Party, and conversely, the Relying Party might authenticate the Wallet Unit. This can involve dynamic or static exchange of keys and metadata. Since the web browser or mobile app mediates communication between the Relying Party and Wallet Unit in the Remote Same-Device flow, it's crucial to define how this interaction works.
+- **Relying Party Authentication**: Before sharing attributes, the Wallet Unit will authenticate the Relying Party, and conversely, the Relying Party might authenticate the Wallet Unit. This can involve dynamic or static exchange of keys and metadata. Since the web browser or mobile app mediates communication between the Relying Party and Wallet Unit in the Remote Same-Device flow, it's crucial to define how this interaction works.
 
 - **Wallet Unit Selection and Invocation**: In scenarios where Users have multiple Wallet Units, the process of selecting and activating the appropriate Wallet Unit is critical for a seamless experience. Clear application interface between the Wallet Unit and the browser/app are also essential. Current approaches relying on custom URIs can introduce User experience friction and scaling issues.
 
@@ -782,7 +782,7 @@ After installation of the Wallet Instance, the new Wallet Unit (which includes t
 
 1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available in for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
 
-Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider may subsequently have to deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
+Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider will subsequently deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
 
 2. The Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA is described in \[Topic 9\]. The WUA has three main purposes:
 
@@ -1093,7 +1093,7 @@ The mechanism(s) available for User binding depend on the presentation flow type
 
 ##### 6.6.3.9 Relying Party verifies combined presentation of attributes
 
-According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party has to verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users. \[Topic 18\] describes how the Relying Party Instance can verify this by checking that the public keys in the attestations are associated. Key association is described in \[Topic 9\].
+According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party will verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users. \[Topic 18\] describes how the Relying Party Instance can verify this by checking that the public keys in the attestations are associated. Key association is described in \[Topic 9\].
 
 ##### 6.6.3.10 Relying Party authenticates the Wallet Unit and the Wallet Provider
 
@@ -1131,7 +1131,7 @@ For PID and attestation revocation, see \[Topic 7\]. The User can request the PI
 
 #### 6.6.6 PID or attestation deletion
 
-In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the (WSCD included in the) Wallet Unit must authenticate the User.
+In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the (WSCD included in the) Wallet Unit will authenticate the User.
 
 ## 7 Security and Data Protection
 
@@ -1181,11 +1181,11 @@ Until a dedicated Wallet Solution cybersecurity certification scheme under the C
 
 The guiding principles will take into consideration the composite nature of the Wallet Solution, as well as the potential different architectures considering that the amending Regulation is technology and architecture neutral. Guidance on certification will allow for various proposed architecture models (including components, security functions, threats, mitigations), evaluation of their individual components (design, implementation, and effectiveness), and related risks as reflected through a common risk registry defined by the RA (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)).
 
-The IA will refer to standards, and where available, relevant European CSA schemes must be used. Currently, only the EUCC scheme for the cybersecurity certification of the ICT products, parts, or components for products[^3] is available. For those cybersecurity requirements not covered by the EUCC, its supporting documents or an extended version of the EUCC, and for the non-cybersecurity requirements, the use of the ISO/IEC 17065[^4] framework under Regulation (EC) 765/2008[^5] is foreseen as the harmonised standard for certification. This may be complemented by ISO/IEC 17067[^6] on the definition of schemes, which is like ENISA's previous work in the definition of other candidate EU certification schemes.
+The IA will refer to standards, and where available, relevant European CSA schemes will be used. Currently, only the EUCC scheme for the cybersecurity certification of the ICT products, parts, or components for products[^3] is available. For those cybersecurity requirements not covered by the EUCC, its supporting documents or an extended version of the EUCC, and for the non-cybersecurity requirements, the use of the ISO/IEC 17065[^4] framework under Regulation (EC) 765/2008[^5] is foreseen as the harmonised standard for certification. This may be complemented by ISO/IEC 17067[^6] on the definition of schemes, which is like ENISA's previous work in the definition of other candidate EU certification schemes.
 
 In order to prepare the content on the IA, the transitory national certification schemes, and eventually a dedicated cybersecurity certification scheme under the CSA, the following key documents are prepared; a Risk and Cybersecurity Assessment, a HLR, and a mapping of relevant existing certification schemes (the latter two documents prepared by ENISA). In addition, an architecture survey has been conducted in the Toolbox Expert Group to gain insights into potential Wallet Solution implementations and architectural possibilities.
 
-First, the RA aims to identify initial security and privacy threats (potential attacks carried out by different actors) and provide a list of assets which must be protected against the identified threats (critical, non-critical). The risks will provide input to a common risk registry, listing the minimum set of risks that should be addressed by Member States' implementations (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)). This common risk registry will serve as input to the IA, and later on to the detailed definition of privacy and security requirements to mitigate identified threats, at the relevant Level of Assurance.
+First, the RA aims to identify initial security and privacy threats (potential attacks carried out by different actors) and provide a list of assets which will be protected against the identified threats (critical, non-critical). The risks will provide input to a common risk registry, listing the minimum set of risks that should be addressed by Member States' implementations (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)). This common risk registry will serve as input to the IA, and later on to the detailed definition of privacy and security requirements to mitigate identified threats, at the relevant Level of Assurance.
 
 Second, the HLR document provides recommendations for the certification of Wallet Solutions in the short term. It outlines the high-level process requirements for certification, in addition to high-level statements on the functional components of the Wallet Solution. In essence, it defines 'what' will need to be certified and what the process steps will be. The identified requirements in this document form the skeleton of the IA \[appendix 6\]).
 
