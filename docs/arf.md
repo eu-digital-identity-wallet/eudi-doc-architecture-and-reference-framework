@@ -440,7 +440,7 @@ If all the legal and technical criteria have been met, including:
 
 - the information notified by Member States for publication of lists of Wallet Solutions have been published in the Official Journal of the EU,
 
-then a Member State may decide to start providing the Solution to Users. The state of the Solution becomes **valid**.
+then a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **valid**.
 
 According to Article 5d, Member States inform the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme. This means the Wallet Solution can be officially launched, and can be provided to Users.
 
@@ -454,7 +454,7 @@ Figure 4 below shows the states of the Wallet Unit.
 
 Figure 4: State-chart of Wallet Unit
 
-An Wallet Unit lifecycle begins when the User installs a component part of a valid Wallet Solution to their User device (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once a Wallet Unit establishes communication with other components that are part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an Wallet Provider, it is in an **operational** state. In this state, the User manages the Wallet Unit, which may involve:
+An Wallet Unit lifecycle begins when the User installs a Wallet Instance on their User device (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once a Wallet Unit establishes communication with other components that are part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an Wallet Provider, it is in an **operational** state. In this state, the User manages the Wallet Unit, which may involve:
 
 - The Wallet Provider updating the Wallet Unit,
 
@@ -582,7 +582,7 @@ Figure 6 above shows the parties and components that are involved in the trust a
 
 In the center of this ecosystem is the **Wallet Unit**, shown in the middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes the interactions between the Wallet Unit and other roles in the ecosystem in the lifecycle of a Wallet Unit, namely installation, activation, management, and de-installation.
 
-A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Within this Trust Model, the operational lifespans of both the Wallet Solution and its corresponding Wallet Provider are the same. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Registrar located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
+A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Registrar located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
 
 One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations. The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 1. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Registrar** or by an **Attestation Provider Registrar** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
 
@@ -644,11 +644,15 @@ The Wallet Solution provided by the Wallet Provider is certified by a Notified B
 
 If the registration and notification processes are successful, the trust anchors of the Wallet Provider are included in a Wallet Provider Trusted List. During issuance of a PID or an attestation, the PID Provider or the Attestation Provider can use these trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider, so they can be sure they are dealing with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-instance-authenticates-the-relying-party-instance) and \[Topic 9\]. Similarly, when the Wallet Unit presents a PID or an attestation to a Relying Party, the Relying Party can use the Wallet Provider trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider; see [Section 6.6.3.10](#66310-relying-party-authenticates-the-wallet-instance-and-the-wallet-provider) and \[Topic 38\].
 
+If a certain entity offers multiple Wallet Solutions, they will register as a separate Wallet Provider for each of these Wallet Solutions. This implies that such an entity will register different trust anchors for each of their Wallet Solutions.
+
 More details on the Wallet Provider notification process can be found in \[Topic 31\].
 
 #### 6.2.3 Wallet Provider suspension or withdrawal
 
 Under specific conditions, a Registrar may decide to suspend or withdraw a Wallet Provider. This means the Wallet Provider is taken off from the Wallet Provider Trusted List. The conditions for this will be specified by each Registrar. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
+
+If an entity has registered multiple Wallet Providers, each offering a different Wallet Solution, and one of these Wallet Providers is suspended or withdraw, only the applicable Wallet Solution will be impacted. It may happen that the reason for suspension or withdrawal is applicable to all Wallet Solutions offered, in which case all of the Wallet Providers registered by that entity will be withdrawn or suspended separately.
 
 ### 6.3 Trust throughout a PID Provider or an Attestation Provider lifecycle
 
