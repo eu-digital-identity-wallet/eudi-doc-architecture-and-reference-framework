@@ -4,3 +4,7 @@ node_modules
 dist
 build
 site
+docs/arf.html
+docs/arf.jpeg
+docs/arf.pdf
+docs/arf.png
