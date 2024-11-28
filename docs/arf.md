@@ -329,11 +329,11 @@ The EUDI Wallet architecture embraces the principle of security by design. This 
 
 Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components.
 
-![Figure 2: Wallet Solution reference architecture](media/image2.png) <!-- <img src="media/image2.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 2: EUDI Wallet ecosystem reference architecture](media/image2.png) <!-- <img src="media/image2.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
-Figure 2: Wallet Solution reference architecture
+Figure 2: EUDI Wallet ecosystem reference architecture
 
-The following components have been identified as the core components of the Wallet Solution:
+The following components have been identified as the core components of a Wallet Unit:
 
 - **User device (UD)**: A User device serves as the host for the Wallet Unit. For Wallet Units used by a natural person, the User Device will typically be a mobile device. For Wallet Units used by a legal person, the User device may for example be a cloud server. The minimum hardware and software requirements for the User device will be determined by the Wallet Solution.
 
@@ -582,7 +582,7 @@ Figure 6 above shows the parties and components that are involved in the trust a
 
 In the center of this ecosystem is the **Wallet Unit**, shown in the middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes the interactions between the Wallet Unit and other roles in the ecosystem in the lifecycle of a Wallet Unit, namely installation, activation, management, and de-installation.
 
-A Wallet Unit is the application of a Wallet Solution installed in the device of the User, which is provided by a **Wallet Provider**. Within this Trust Model, the operational lifespans of both the Wallet Solution and its corresponding Wallet Provider are the same. As illustrated in Figure 6, the diagram positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Registrar located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
+A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Within this Trust Model, the operational lifespans of both the Wallet Solution and its corresponding Wallet Provider are the same. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Registrar located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential scenarios of withdrawal or suspension.
 
 One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations. The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 1. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Registrar** or by an **Attestation Provider Registrar** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
 
@@ -776,13 +776,15 @@ Regarding non-qualified EAAs, Providers of such attestations do not necessarily 
 
 After installation of the Wallet Instance, the new Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
 
-1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
+1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available in for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
+
+Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider may subsequently have to deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
 
 2. The Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA is described in \[Topic 9\]. The WUA has three main purposes:
 
    - It describes the capabilities and properties of the Wallet Unit, including the Wallet Instance, the User device and the WSCD(s). This allows a PID Provider or an Attestation Provider to verify that the Wallet Unit complies with the Provider's requirements and therefore is fit to receive a PID or an attestation from the Provider.
 
-   - Moreover, the WUA contains a WUA public key. During the issuance of a PID or an attestation (see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance)), a PID Provider or Attestation Provider can use this public key to verify that the Wallet Unit is in possession of the corresponding private key. Moreover, at that time, the Wallet Unit will send another public key to the PID Provider or Attestation Provider. The Provider will include this public key in the issued PID or attestation. By using a concept called public key association, described in \[Topic 9\], the PID Provider or Attestation Provider can verify that the private key belonging to this public key is protected by the same WSCD as the private key belonging to the WUA public key. Thus, the PID Provider or Attestation Provider can trust this new public key.
+   - Moreover, the WUA contains a WUA public key. During the issuance of a PID or an attestation (see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-eudi-wallet-instance), a PID Provider or Attestation Provider can use this public key to verify that the Wallet Unit is in possession of the corresponding private key. Moreover, at that time, the Wallet Unit will send another public key to the PID Provider or Attestation Provider. The Provider will include this public key in the issued PID or attestation. By using a concept called public key association, described in \[Topic 9\], the PID Provider or Attestation Provider can verify that the private key belonging to this public key is protected by the same WSCD as the private key belonging to the WUA public key. Thus, the PID Provider or Attestation Provider can trust this new public key.
 
    - The WUA contains information allowing a PID Provider, an Attestation Provider, or a Relying Party, to verify that the Wallet Provider did not revoke the Wallet Unit Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in \[Topic 38\].
 
