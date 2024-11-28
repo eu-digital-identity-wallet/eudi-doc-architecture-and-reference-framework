@@ -680,13 +680,13 @@ These two aspects are discussed in the next two subsections.
 
 ##### 6.3.2.2 PID Provider or Attestation Provider receives an access certificate
 
-A PID Provider Access Certificate Authority or Attestation Provider Access Certificate Authority (CA) issues one or more access certificates to the PID Provider or to the Attestation Provider. A PID Provider or an Attestation Provider needs such a certificate to authenticate itself towards a Wallet Unit when issuing a PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEEA Provider, a PuB-EAA Provider or a (non-qualified) EAA Provider.
+A PID Provider Access Certificate Authority or Attestation Provider Access Certificate Authority (CA) issues one or more access certificates to the PID Provider or to the Attestation Provider. A PID Provider or an Attestation Provider needs such a certificate to authenticate itself towards a Wallet Unit when issuing a PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider). A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEEA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
 
-Note that the access certificate does not contain information about the authorization of the Provider to issue attestations of a specific type. Authorization is dealt with in the following manner:
+Note that, in case the subject is an Attestation Provider, the access certificate does not contain information about its authorization or registration to issue attestations of a specific type, for instance an mDL or diploma. Authorization is dealt with in the following manner:
 
-- For PID Providers, QEAA Providers, and Pub-EAA Providers, no authorization is necessary, since these kinds of Providers are legally trusted by default.
+- For QEAA Providers, and Pub-EAA Providers, no authorization is necessary, since these kinds of Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of Providers operate within a regulated framework and are regularly audited.
 
-- For EAA Providers, this is different. Without additional measures, a fraudulent EAA Provider may be technically able to issue types of QEAAs, PuB-EAAs or EAAs that it is not legally allowed to issue. To prevent this, the applicable Rulebook (see \[Topic 12\]) may define mechanisms allowing a Wallet Unit, during issuance of an EAA, to verify that the EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. The same mechanism may also be used by Relying Parties during presentation of an EAA.
+- For non-qualified EAA Providers, this is different, since they are unregulated and may not be completely trustworthy. Without additional measures, a fraudulent EAA Provider may be technically able to issue types of QEAAs, PuB-EAAs or EAAs that it is not legally allowed to issue. To prevent this, the applicable Rulebook (see \[Topic 12\]) may define mechanisms allowing a Wallet Unit, during issuance of an EAA, to verify that the EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. The same mechanism may also be used by Relying Parties during presentation of an EAA.
 
 Subsequently, each Registrar includes the CA in a PID Provider Access CA Trusted List or Attestation Provider Access CA Trusted List. This Trusted List contains at least the trust anchor(s) of the CA. A Wallet Unit can use these trust anchors to verify the authenticity of a PID Provider or an Attestation Provider access certificate during the issuance of a PID or an attestation. For more information, see \[Topic 31\].
 
@@ -1052,9 +1052,11 @@ For PuB-EAAs, the Relying Party Instance verifies a PuB-EAA by first verifying t
 
 Finally, for non-qualified EAAs, the applicable Rulebook may describe how the Relying Party Instance should obtain the relevant trust anchor.
 
+The above implies that a Relying Party Instance is aware whether the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. Also, the Relying Party Instance stores trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs.
+
 The technical implementation of the signature verification process depends on which of the standards mentioned in \[Topic 12\] is supported by the Wallet Unit. Each of these standards specifies in detail how to carry out electronic signature or seal verification.
 
-In addition, the Relying Party may want to verify that the Attestation Provider can issue the type of attestation in question. This is only needed for non-qualified EAA Providers, as the Relying Party trusts a PID Provider, QEAA Provider or PuB-EAA Provider by default. For EAA Providers, the applicable Rulebook may define methods that the Relying Party can use to verify that the EAA Provider is allowed to issue this type of attestation.
+In addition, the Relying Party may want to verify that the Attestation Provider can issue the type of attestation in question. As described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance), this is only needed for non-qualified EAA Providers, as the Relying Party trusts a PID Provider, QEAA Provider or PuB-EAA Provider by default. For EAA Providers, the applicable Rulebook may define methods that the Relying Party can use to verify that the EAA Provider is allowed to issue this type of attestation. 
 
 Notes:
 
