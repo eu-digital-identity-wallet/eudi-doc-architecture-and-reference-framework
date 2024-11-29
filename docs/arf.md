@@ -654,7 +654,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
-The Wallet Solution provided by the Wallet Provider is certified by a Notified Body. The certification process is described in [chapter 7](#7-security-and-data-protection).
+The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-security-and-data-protection).
 
 If the registration and notification processes are successful, the trust anchors of the Wallet Provider are included in a Wallet Provider Trusted List. During issuance of a PID or an attestation, the PID Provider or the Attestation Provider can use these trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider, so they can be sure they are dealing with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-instance-authenticates-the-relying-party-instance) and \[Topic 9\]. Similarly, when the Wallet Unit presents a PID or an attestation to a Relying Party, the Relying Party can use the Wallet Provider trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-authenticates-the-wallet-instance-and-the-wallet-provider) and \[Topic 38\].
 
