@@ -69,7 +69,7 @@ This document only applies to the EUDI Wallet ecosystem. Attestations that are n
 
 ### 2.1 Introduction
 
-The development of the Architecture Reference Framework (ARF) is strategically guided by use cases that showcase the User experience, value proposition, and business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS Expert Group initially creates service blueprints for each use case. These blueprints meticulously detail the service delivery\'s touchpoints, components, and processes. Their role is twofold: they are instrumental in the service design and function as a tool to improve User experience and service efficiency, while simultaneously highlighting potential areas for enhancement. Serving as a foundational element, these blueprints inform the creation of use case rulebooks and the development of common specifications. Detailed in the annexes, these blueprints offer comprehensive solutions with the flexibility to incorporate alternative approaches and optional steps, such as the discretionary display of pre-approved User data. It's important to note that User journeys may differ depending on the chosen implementation approach, affecting processes like data retrieval and User consent.
+The development of the Architecture Reference Framework (ARF) is strategically guided by use cases that showcase the User experience, value proposition, and business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS Expert Group initially created service blueprints for each use case. These blueprints meticulously detail the service delivery\'s touchpoints, components, and processes. Their role is twofold: they are instrumental in the service design and function as a tool to improve User experience and service efficiency, while simultaneously highlighting potential areas for enhancement. Serving as a foundational element, these blueprints inform the creation of use case rulebooks and the development of common specifications. Detailed in the annexes, these blueprints offer comprehensive solutions with the flexibility to incorporate alternative approaches and optional steps, such as the discretionary display of pre-approved User data. It's important to note that User journeys may differ depending on the chosen implementation approach, affecting processes like data retrieval and User consent.
 
 The eIDAS Expert Group has described service blueprints for the following use cases:
 
@@ -87,11 +87,9 @@ The eIDAS Expert Group has described service blueprints for the following use ca
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
 
-In this specific use case, a User employs their Wallet Unit to authenticate with their identity accessing online services by using high-security authentication. This process involves the use of multiple identity verification methods. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
+In this specific use case, a User employs their Wallet Unit to authenticate, in order to accessing online services. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
 
-This scenario covers the complete lifecycle of the Wallet Unit from the User\'s perspective. It spans from acquiring a valid Wallet Unit to the process of identifying and authenticating themselves for an online service. The focus here is on a practical remote same-device flow (as detailed in [Section 4.2.2](#422-attestation-presentation-flows) and [4.2.3](#423-mobile-apps-and-web-browsers)). In this context, a User utilises a single device for both securing their session and accessing the service, ensuring a streamlined and secure experience.
-
-Details on PID issuance requirements, the PID attribute schema, and the Trust Infrastructure are further elaborated in the respective chapters - specifically [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations and [Chapter 6](#6-trust-model) - Trust Model, [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) (High level requirements in \[Topic 2\], \[Topic 10\] and \[Topic 23\], and [Annex 3.1](annexes/annex-3/annex-3.01-pid-rulebook.md) - PID Rulebook.
+Instead of using their PID to authenticate to online services, a User can also use a pseudonym provided by their Wallet Unit. See [Section 2.5](#25-pseudonyms).
 
 ### 2.3 Qualified electronic signature
 
@@ -103,8 +101,6 @@ A significant use case for the Wallet Unit involves allowing Users to acquire, s
 
 The use case description concentrates on proximity supervised and unsupervised flows, which involve scenarios where the User is physically near a Relying Party, and the mDL attribute exchange and disclosure occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying Party or under their supervision (who may also use a device); whereas in the unsupervised flow, the Wallet Unit presents mDL attributes to a machine without human oversight.
 
-(Q)EAA issuance requirements, mDL attribute schema and Trust Infrastructure details are further detailed specifically in [Chapter 3](#3-ecosystem) - Ecosystem, [Chapter 5](#5-attestations) - Attestations, and in [Annex 2](annexes/annex-2/annex-2-high-level-requirements.md) - \[Topic 2\], \[Topic 3\], \[Topic 10\] and \[Topic 23\].
-
 ### 2.5 Pseudonyms
 
 A User can potentially use a pseudonym in multiple different use cases. Wallet Units support the generation of pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn].
@@ -115,7 +111,7 @@ Note: Pseudonyms were added to the list of Topics to be discussed for ARF 2.0. T
 
 #### 2.6.1 Health
 
-Easy access to health data is crucial in both national and cross-border contexts. An Wallet Unit MAY enable access to patient summary, ePrescriptions, etc.
+Easy access to health data is crucial in both national and cross-border contexts. A Wallet Unit may enable access to patient summary, ePrescriptions, etc.
 
 #### 2.6.2 Educational credentials and professional qualifications
 
@@ -123,7 +119,7 @@ Providing documents for qualification recognition procedures can be costly and t
 
 #### 2.6.3 Digital Finance
 
-The Wallet Solutions can facilitate complying with strong customer authentication requirements, using the strong User Authentication capabilities described in [Section 2.1](#21-identification-and-authentication-to-access-online-services). In line with the Commission's Retail Payments Strategy \[RPS\], the use case would be developed in close coordination with Member States' advisory groups on retail payments and the finance industry.
+A Wallet Unit can facilitate complying with strong customer authentication requirements, using the strong User Authentication capabilities described in [Section 2.1](#21-identification-and-authentication-to-access-online-services). In line with the Commission's Retail Payments Strategy \[RPS\], this use case would be developed in close coordination with Member States' advisory groups on retail payments and the finance industry.
 
 #### 2.6.4 Digital Travel Credential
 
