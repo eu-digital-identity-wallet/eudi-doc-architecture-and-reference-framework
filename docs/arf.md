@@ -964,9 +964,11 @@ If one these verifications fail, the Wallet Unit will delete the PID or attestat
 
 ##### 6.6.2.6 User activates the PID
 
-As documented in \[Topic 9\], to achieve Level of Assurance (LoA) "high", [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1502) requires that an activation process will be implemented to verify that a PID was in fact delivered into the possession of the person to whom it belongs. The User can activate a PID, for example, by entering a PIN code that was sent by the PID Provider to the User 'out of band', for example by means of a letter sent to their official postal address.
+As documented in \[Topic 9\], to achieve Level of Assurance (LoA) "high", [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1502) requires that an activation process will be implemented to verify that a PID was in fact delivered into the possession of the person to whom it belongs.
 
-Activation is required only for PIDs, since the eIDASv2 Regulation only requires PIDs to be issued at LoA "high". A similar activation process may be used for QEAAs, PuB-EAAs or non-qualified EAAs, up to the decision of the Attestation Provider.
+However, in fact no additional step is needed in the issuance process to ensure this. This is because the User always starts the issuance process from the Wallet Unit into which they want the PID Provider to issue the new PID. The PID Provider sets up a secure communication channel towards this Wallet Unit, using the flow specified in [OpenID4VCI]. Additionally, the User uses an eID means on LoA High to authenticate towards the PID Provider. This process ensures that the new PID can only end up on the mobile device of the User, i.e., the subject of the PID.
+
+Note that activation is formally required only for PIDs, since the eIDASv2 Regulation only requires PIDs to be issued at LoA "high". However, the above applies for QEAAs, PuB-EAAs, and non-qualified EAAs as well.
 
 #### 6.6.3 PID or attestation presentation to Relying Party
 
