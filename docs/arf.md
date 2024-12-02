@@ -1170,139 +1170,115 @@ In case the User no longer wants to retain a specific PID or attestation in thei
 
 ### 7.1 Introduction
 
-This chapter is dedicated to the certification of Wallet Solutions, covering the legal foundation outlined in the amending Regulation (the Regulation), the overall certification approach, and its accompanying design principles. In addition, the main two supporting documents, the High-Level requirements (HLR) and the Risk assessment (RA) are described. Furthermore, supporting documents regarding certification of Wallet Solutions are provided in appendix 6 and will be expanded upon in following releases of the ARF.
+This chapter is dedicated to the certification of EUDI Wallet solutions, covering the legal foundation outlined in the amending Regulation (the Regulation), the overall certification approach, and its accompanying design principles. Furthermore, a supporting document regarding the risk-based approach of the EUDI Wallet is provided in appendix 6. 
 
 #### 7.1.1 Legal basis and requirements
 
-The Regulation requires certification of Wallet Solutions to ensure conformity of the wallets with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. The use of relevant and available cybersecurity certification schemes under the Cybersecurity Act (CSA)[^1] referenced in the Regulation implementing act (IA) should avoid divergent approaches and harmonise the implementation of the cybersecurity requirements laid down by the Regulation.
+The Regulation requires certification of EUDI Wallets to ensure conformity of the wallets with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. The use of relevant and available cybersecurity certification schemes under the Cybersecurity Act (CSA)1 referenced in the Regulation implementing act (IA) should avoid divergent approaches and harmonise the implementation of the cybersecurity requirements laid down by the Regulation. 
+Member States, according to Article 5c(3) of the Regulation, shall designate accredited conformity assessment bodies (CABs) which will carry out conformity assessment of EUDI Wallets solutions against the Regulation requirements. Once this designation has been made, Member States shall communicate to the European Commission the names and addresses of these public or private bodies under Article 5c(7) of the Regulation.
+EUDI Wallet Providers shall request (select, contract) one or more designated CABs to assess and certify the conformity of their EUDI Wallet Solution against the requirements of the Regulation.
+EUDI Wallet certification is then conducted by the CAB to evaluate and certify the conformity of the EUDI Wallet Solution (target of the certification) against requirements which will be established by: 
+•	Art. 5a(23) - Implementing act(s) on technical and operational specifications and reference standards, for the requirements laid down in Article 5a(4), (5), (8);
+•	Art. 5a(14) - Logical separation between data relating to the provision of the EUDI Wallet and any other data held by the provider of the EUDI Wallet;
+•	Art. 5a(24) – Where applicable, implementing act(s) on specifications, procedures and reference standards, in order to facilitate the onboarding of users to the EUDI Wallet either by electronic identification means conforming to level of assurance (LoA) ‘high’ or by electronic identification means conforming to LoA ‘substantial’ in conjunction with additional remote onboarding procedures that together meet the requirements of LoA ‘high’.
+The EUDI Wallet shall be certified to ensure conformity assessments but also security robustness assessment of conformance to a high level of security. 
+In addition, Article 5c(5) provides for an optional certification of the personal data processing operations against Regulation (EU) 2016/6792. While this certification is not mandatory, the Regulation (EU) 2016/679 requirements fully apply to the EUDI Wallets and consequently to their providers. 
+Article 5c(6) specifies that the Commission shall, by means of IA, establish a list of reference standards and, where necessary, establish specifications and procedures for the certification of EUDI Wallets. 
+The certification process of EUDI Wallet Providers should leverage, rely on, and mandate the use of relevant and existing CSA certification schemes, or parts thereof, to certify the compliance of wallets or parts thereof, with the applicable cybersecurity requirements. 
+For requirements that are not relevant for cybersecurity, and to the extent that cybersecurity certification schemes do not, or only partially, cover those cybersecurity requirements, Member States shall establish national certification schemes following the harmonised requirements set out in the IA. Member States shall transmit their draft national certification schemes to the European Digital Identity Cooperation Group established pursuant to Article 46e(1) (the ‘Cooperation Group’) which may issue opinions and recommendations. 
+Certification shall be valid for up to five years, provided that a vulnerability assessment is carried out every two years. Where a vulnerability is identified and not remedied in a timely manner, certification shall be cancelled.  
 
-Member States, according to Article 5c(3) of the Regulation, designate accredited conformity assessment bodies (CABs) which will carry out conformity assessment of Wallet Solutions against the Regulation requirements. Once this designation has been made, Member States communicate to the European Commission the names and addresses of these public or private bodies under [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(7) of the Regulation.
+### 7.2 Overall approach to Certification of EUDI Wallet solutions
 
-Wallet Providers request (select, contract) one or more designated CABs to assess and certify the conformity of their Wallet Solution against the requirements of the Regulation.
+The certification of EUDI Wallets is of the utmost importance in ensuring their interoperability, security, trustworthiness, and robustness. Therefore, the overarching goal is the development of a dedicated CSA cybersecurity certification scheme. The scope of the scheme should cover both the EUDI Wallets and the underlying eID scheme. The Regulation allows the use of national certification schemes only for those parts that cannot be covered by European cybersecurity certification schemes and only until such appropriate European cybersecurity certification schemes are available.
+As defining and adopting a dedicated European CSA certification scheme for EUDI Wallets depends on the complex certification of different components and requires the full technical specification of the EUDI Wallets, the certification approach is structured in two phases: a short-term approach and a long-term approach. In the short-term, the IA of Article 5c(6) will be established, laying the groundwork for the creation of transitory national certification schemes. Consequently, building upon the foundation of the IA and transitory schemes, a dedicated CSA certification scheme for the EUDI Wallets will be established by ENISA. 
 
-Wallet Solution certification is then conducted by the CAB to evaluate and certify the conformity of the Wallet Solution (target of the certification) against requirements which will be established by:
+#### 7.2.1 Certification of EUDI Wallet solutions in the short term
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(23) - Implementing act(s) on technical and operational specifications and reference standards, for the requirements laid down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
+Until a dedicated EUDI Wallets cybersecurity certification scheme under the CSA is available, the Regulation allows Member States to establish national certification schemes (following Article 5c(3)). Following Article 5c(6) of the Amending Regulation, an IA should be established which will serve as a harmonised guideline for the development of these transitory national certification schemes. It will leverage the use of relevant and existing CSA certification schemes by establishing specifications, procedures and references technical standards for certification. This can include procedures and methods on how to derive evaluation activities from an architecture analysis, as well as a reference certification or a minimum set of risks and threats to be mitigated.
+The guiding principles will take into consideration the composite nature of the EUDI Wallets, as well as the potential different architectures considering that the amending Regulation is technology and architecture neutral. Guidance on certification will allow for various proposed architecture models (including components, security functions, threats, mitigations), evaluation of their individual components (design, implementation, and effectiveness), and related risks and threats as reflected through a common risk registry, that shall be supplemented by architecture specific risks and threats (see also section ‘7.8. Risk-based approach and risk registry’). 
+The IA will refer to standards, and where available, relevant European CSA schemes must be used. Currently, only the EUCC scheme for the cybersecurity certification of the ICT products, parts, or components for products3 is available. For those cybersecurity requirements not covered by the EUCC, its supporting documents or an extended version of the EUCC, and for the non-cybersecurity requirements, the use of the ISO/IEC 170654 framework under Regulation (EC) 765/20085 is foreseen as the harmonised standard for certification. This may be complemented by ISO/IEC 170676 on the definition of schemes, which is like ENISA’s previous work in the definition of other candidate EU certification schemes. 
+In order to prepare the content on the IA, the transitory national certification schemes, and eventually a dedicated cybersecurity certification scheme under the CSA, the following key documents are prepared; a Risk and Cybersecurity Assessment, a HLR, and a mapping of relevant existing certification schemes (the latter two documents prepared by ENISA). In addition, an architecture survey has been conducted in the Toolbox Expert Group to gain insights into potential EUDI Wallet implementations and architectural possibilities.  
+Finally, non-cybersecurity requirements should ensure functional interoperability of the EUDI Wallet. To this end, the IA aims to define a requirement to CABs for functional testing, for example support by test-suites or test cases.
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the provision of the Wallet Unit and any other data held by the Wallet Provider;
+#### 7.2.2 Certification of EUDI Wallet solutions in the long term
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on specifications, procedures and reference standards, in order to facilitate the onboarding of Users to the Wallet Unit either by electronic identification means conforming to level of assurance (LoA) 'high' or by electronic identification means conforming to LoA 'substantial' in conjunction with additional remote onboarding procedures that together meet the requirements of LoA 'high'.
-
-The Wallet Solution is certified to ensure conformity assessments but also security robustness assessment of conformance to a high level of security.
-
-In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(5) provides for an optional certification of the personal data processing operations against [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to Wallet Solutions and consequently to their providers.
-
-[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission will, by means of Implementing Acts, establish a list of reference standards and, where necessary, establish specifications and procedures for the certification of Wallet Solutions.
-
-The certification process of Wallet Solutions should leverage, rely on, and mandate the use of relevant and existing CSA certification schemes, or parts thereof, to certify the compliance of wallets or parts thereof, with the applicable cybersecurity requirements.
-
-For requirements that are not relevant for cybersecurity, and to the extent that cybersecurity certification schemes do not, or only partially, cover those cybersecurity requirements, Member States will establish national certification schemes following the harmonised requirements set out in the IA. Member States will transmit their draft national certification schemes to the European Digital Identity Cooperation Group established pursuant to [Article 46e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1)(1) (the 'Cooperation Group') which may issue opinions and recommendations.
-
-Certification will be valid for up to five years, provided that a vulnerability assessment is carried out every two years. Where a vulnerability is identified and not remedied in a timely manner, certification will be cancelled.
-
-### 7.2 Overall approach to Certification of Wallet Solutions
-
-#### 7.2.1 Introduction
-
-The certification of Wallet Solutions is of the utmost importance in ensuring their interoperability, security, trustworthiness, and robustness. Therefore, the overarching goal is the development of a dedicated CSA cybersecurity certification scheme. The scope of the scheme should cover both the Wallet Solutions and the underlying eID scheme. The Regulation allows the use of national certification schemes only for those parts that cannot be covered by European cybersecurity certification schemes and only until such appropriate European cybersecurity certification schemes are available.
-
-As defining and adopting a dedicated European CSA certification scheme for Wallet Solutions depends on the complex certification of different components and requires the full technical specification of the Wallet Solutions, the certification approach is structured in two phases: a short-term approach and a long-term approach. In the short-term, the IA of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) will be established, laying the groundwork for the creation of transitory national certification schemes. Consequently, building upon the foundation of the IA and transitory schemes, a dedicated CSA certification scheme for the Wallet Solutions will be established by ENISA.
-
-#### 7.2.2 Certification of Wallet Solutions in the short term
-
-Until a dedicated Wallet Solution cybersecurity certification scheme under the CSA is available, the Regulation allows Member States to establish national certification schemes (following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(3)). Following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) of the Amending Regulation, an IA should be established which will serve as a harmonised guideline for the development of these transitory national certification schemes. It will leverage the use of relevant and existing CSA certification schemes by establishing specifications, procedures and reference technical standards for certification. This can include procedures and methods on how to derive evaluation activities from an architecture analysis, as well as a reference certification or a minimum set of risks to be mitigated.
-
-The guiding principles will take into consideration the composite nature of the Wallet Solution, as well as the potential different architectures considering that the amending Regulation is technology and architecture neutral. Guidance on certification will allow for various proposed architecture models (including components, security functions, threats, mitigations), evaluation of their individual components (design, implementation, and effectiveness), and related risks as reflected through a common risk registry defined by the RA (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)).
-
-The IA will refer to standards, and where available, relevant European CSA schemes will be used. Currently, only the EUCC scheme for the cybersecurity certification of the ICT products, parts, or components for products[^3] is available. For those cybersecurity requirements not covered by the EUCC, its supporting documents or an extended version of the EUCC, and for the non-cybersecurity requirements, the use of the ISO/IEC 17065[^4] framework under Regulation (EC) 765/2008[^5] is foreseen as the harmonised standard for certification. This may be complemented by ISO/IEC 17067[^6] on the definition of schemes, which is like ENISA's previous work in the definition of other candidate EU certification schemes.
-
-In order to prepare the content on the IA, the transitory national certification schemes, and eventually a dedicated cybersecurity certification scheme under the CSA, the following key documents are prepared; a Risk and Cybersecurity Assessment, a HLR, and a mapping of relevant existing certification schemes (the latter two documents prepared by ENISA). In addition, an architecture survey has been conducted in the Toolbox Expert Group to gain insights into potential Wallet Solution implementations and architectural possibilities.
-
-First, the RA aims to identify initial security and privacy threats (potential attacks carried out by different actors) and provide a list of assets which will be protected against the identified threats (critical, non-critical). The risks will provide input to a common risk registry, listing the minimum set of risks that should be addressed by Member States' implementations (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)). This common risk registry will serve as input to the IA, and later on to the detailed definition of privacy and security requirements to mitigate identified threats, at the relevant Level of Assurance.
-
-Second, the HLR document provides recommendations for the certification of Wallet Solutions in the short term. It outlines the high-level process requirements for certification, in addition to high-level statements on the functional components of the Wallet Solution. In essence, it defines 'what' will need to be certified and what the process steps will be. The identified requirements in this document form the skeleton of the IA \[appendix 6\]).
-
-Third, a mapping of existing certification schemes is performed to support the requirements of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(2) of the Regulation, mandating the use of relevant and existing European cybersecurity certification schemes. This mapping can include European, national, and other global schemes, in relation to the defined certification requirements (i.e., functional, process, privacy and security certification requirements).
-
-Fourth, once the mapping has been performed, it will be used as a basis for the development of certification schemes for Wallet Solutions, both at the national and European levels. The schemes will rely on the identified certification schemes to provide assurance, either in a composite approach, or through the establishment of assumptions on external components, such as the Wallet Users' devices.
-
-Finally, non-cybersecurity requirements should ensure functional interoperability of the Wallet Solution. To this end, the IA aims to define a requirement to CABs for functional testing, for example supported by test-suites or test cases.
-
-#### 7.2.3 Certification of Wallet Solutions in the long term
-
-In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the Wallet Solution under the CSA. Once available, this CSA scheme should replace the national transitory schemes mentioned above for the cybersecurity requirement it will cover. This scheme should be based on harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme should further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant Wallet Solution components.
-
-The scheme should also take into account the inputs of the ARF as part of the Toolbox process, and the input from the Certification subgroup (CSG), including deliverables mentioned above.
-
+In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the EUDI Wallets under the CSA. During the development of the scheme, various inputs will need to be taken into account as part of the Toolbox process, from the Cooperation group, and from organised ad hoc working groups on the CSA certification scheme. Contributions from these diverse stakeholders are essential in shaping the final scheme, with the ultimate goal of achieving harmonisation on the EU-wide CSA certification scheme. 
+In addition to these discussion and research, the CSA certification scheme should, as much as possible, identify and leverage synergies with the national transitory certification schemes to build upon the work completed in the first phase.  
+Once available, this CSA certification scheme should replace the national transitory schemes mentioned above for the cybersecurity requirement it will cover. This scheme should be based on harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme should further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant EUDI Wallet components. The draft candidate scheme will eventually be shared for public consultation and submitted for feedback from the European Cybersecurity Certification Group (ECCG). The ECCG’s opinion serves as advisory input to ensure the candidate scheme aligns to EU cybersecurity objectives, standards and regulatory requirements. Although the ECCG’s opinion is not binding, it will hold significant influence, as it reflects the collective expertise of national cybersecurity authorities, aiming to harmonise cybersecurity certification practices across Member States. Based on this input, the candidate scheme might be updated further.
 Finally, ENISA is asked to also facilitate the transition from national certification schemes to the dedicated cybersecurity certification scheme under the CSA.
+A visual description of the overall EUDI Wallet certification process can be found in appendix 6.
 
-A visual description of the overall Wallet Solution certification process can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
+### 7.3 Risk-based approach and risk register
 
-### 7.3 High-Level Requirements (HLR)
+#### 7.3.1 Introduction
 
-The main goal of the HLR document is to provide recommendations for the certification of Wallet Solutions in the short term. It outlines the high-level process requirements for certification. It also provides functional and process-related requirements derived from the Regulation, to facilitate certification.
+This chapter details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the IA, cybersecurity risks and threats associated with the EUDI Wallets should be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the EUDI Wallet upholds confidentiality, availability and strong safeguards for user privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation (GDPR) and related Data Protection Impact Assessments (DPIA). 
+The risk-based approach sets out a common risk register that contains a comprehensive but non-exhaustive list of risks and threats related to the EUDI Wallet solution. These risks and threats are architecture-agnostic and provide a benchmark overview of the most critical risks and threats to EUDI Wallet solutions. Each architecture-specific scheme or sub-scheme should demonstrate that an EUDI Wallet solution architecture appropriately meets the applicable security requirements. Under the national certification schemes, wallet providers should be required to demonstrate how the design of the EUDI Wallet solution that they provide corresponds to the reference architecture and details the security functions and validation plans for the specific EUDI Wallet solution. By adopting this common set of risks and threats, national transitory certification schemes will achieve a baseline level of harmonisation. It is possible for the national certification schemes to rely on external sources of assurance (e.g. other applicable national certification schemes).
+In order to remain responsive to technological advancements and emerging insights, the risk register should be updated regularly, in collaboration with the EDICG (Cooperation Group), where additional guidance documents could be established. This additional guidance allows for further alignment and standardisation in the comprehension of risks and threats, thereby helping Member States to learn from each other’s experiences. 
+In addition, Member States should perform a risk assessment that further complements the risk register with risks and threats specific to the envisioned architecture of the EUDI Wallet solution. For the complete set of risks and threats, appropriate treatment measures should be presented to the certification body for evaluation. 
 
-- **Process-related:** Related to the 'how' rather than the 'what' of certification, such as process to define or obtain a certification.
+#### 7.3.2 Rationale and approach
 
-- **Functional:** Describes functional requirements (i.e. what the Wallet Solution should be able to do, such as provisioning of attributes). Most functional requirements are derived in the other sections of the ARF coming from the Toolbox process.
+Risks and threats play pivotal roles in the EUDI Wallet certification process as they are fundamental in achieving the security objectives as described in the Regulation, such as privacy, confidentiality, integrity, availability, authenticity and non-repudiation of the EUDI Wallet and the data contained in it. Importantly, defining a common set of risks and threats across all national transitory certification schemes allows for a greater level of harmonisation achieved through the risk register. 
+The risk register describes the main security and privacy risks and threats that apply to EUDI Wallets, and which shall be properly addressed in every architecture and implementation of EUDI Wallets. The high-level risks (see Annex X ‘Section I’) are related to the use of EUDI Wallets by users and relying parties, and they are associated to direct threats targeting the assets of EUDI Wallets. In addition, a few system-level risks (see Annex X ‘Section II’) to wallets are identified, which would typically result from a combination of threats applying to the entire wallet system.
+Risk type 	Risk ID 	Related risk titles 
+High-level risks to the EUDI Wallets	R1 	Creation or use of an existing electronic identity 
+	R2 	Creation or use of a fake electronic identity 
+	R3 	Creation or use of fake attributes 
+	R4 	Identify theft 
+	R5 	Data theft 
+	R6 	Data disclosure 
+	R7 	Data manipulation 
+	R8 	Data loss 
+	R9 	Unauthorised transaction 
+	R10 	Transaction manipulation 
+	R11 	Repudiation 
+	R12 	Transaction data disclosure 
+	R13 	Service disruption
+	R14	Surveillance
+System-related risks	SR1 	Wholesale surveillance 
+	SR2 	Reputational damage 
+	SR3 	Legal non-compliance 
 
-To provide recommendations on certification, the document describes 121 requirements across five sections: legal requirements, scheme requirements, general scheme content, other scheme content and annexes.
+The risk register also identifies technical threats (see Annex X ‘Section III’) targeting the implementation of the wallet solution. These threats are orthogonal to the high-level risks in the sense that each one of them could be used to materialise many high-level risks.
+Finally, accompanying annex X lists the risk register that links direct threats to the EUDI Wallets, and each one is associated to a (non-exhaustive) selection of risks (see Annex X ‘Section IV’).
 
-- **Legal requirements:** Describes the certification requirements, certification scope stemming from the Regulation.
+Threat type 	Threat ID 	Related threat titles 	Subcategories of threats 
+Technical threat 	TT1 	Physical attacks 	1.1	Theft 
+			1.2	Information leakage 
+			1.3 Tampering 
+	TT2 	Errors and misconfigurations 	2.1	Errors made when managing an IT system 
+			2.2	Application-level errors or usage errors 
+			2.3	Development-time errors and system misconfigurations 
+	TT3 	Use of unreliable sources 	3.1	Erroneous use or configuration of wallet components 
+	TT4 	Failure and outages 	4.1	Failure or dysfunction of equipment, devices or systems 
+			4.2	Loss of resources 
+			4.3 Loss of support services 
+	TT5 	Malicious actions 	5.1 Interception of information 
+			5.2 Phishing and spoofing 
+			5.3 Replay of messages 
+			5.4 Brute-force attack 
+			5.5 Software vulnerabilities 
+			5.6 Supply chain attacks 
+			5.7 Malware 
+			5.8 Random number prediction 
 
-- **Scheme requirements:** Describes the Wallet Solutions, how to organise certification, and the content of a scheme and the accompanying IA.
+ 
+### 7.4 Design principles and assumptions
 
-- **General scheme content:** Describes HLR related to content of the scheme, such as accreditation, non-conformities, vulnerability management, and peer assessment.
+In the approach to EUDI Wallet certification described above, a few design principles can be identified and will be further expanded upon through work in the CSG:  
 
-- **Other scheme content:** Describes supporting requirements, such as licensing, surveillance, marketing, review and Wallet versioning.
+•	The amending Regulation requires the EUDI Wallets to be certified at LoA ‘high’. However, not all EUDI Wallet components may need to individually meet LoA ‘high’ or be certified, for the overall EUDI Wallet to reach that level of assurance. 
+•	The transitory schemes are defined by the Member States which may tailor them to their specific Wallets architectures However, the aim is to harmonise the underlying principles through the IA and provide guidance or common requirements where relevant as no mutual recognition of the national certification schemes is provided.
+•	The certification scheme will be a composite scheme. The object certification will be the entire system (eID scheme, EUDI Wallet, management thereof). It will therefore have to align with and rely on other available international standards, certifications schemes, and conformity assessments.  
+•	Certification will cover both cross-functional requirements, including security and privacy, as well as functional requirements in order to ensure European interoperability.
+•	The final EUDI Wallet certification implies a multiplication of certificates, however, the aim is to minimise this number to the extent possible.  
+•	The certification scheme will support a variety of different known and unknown architectures. 
 
-- **Annexes:** Describes methods and procedures, dependency analysis, acceptance criteria for assurance information and surveillance and compliance monitoring.
+### 7.5 Supporting documents
 
-Detailed information outlining the HLR certification requirements can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
-
-### 7.4 Risk-based approach and risk registry
-
-#### 7.4.1 Introduction
-
-This chapter details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the process-based requirements in the HLR, security and privacy risks associated with the Wallet Solutions should be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States. This is inspired by known processes such as for the General Data Protection Regulation (GDPR) and related Data Protection Impact Assessments (DPIA).
-
-The risk-based approach proposes that a common risk register will be developed that contains a comprehensive but non-exhaustive list of security and privacy risks. These risks are architecture-agnostic and provide a benchmark overview of the most critical risks. As a minimum, Member States schemes should require Wallet Providers to evaluate these risks and propose appropriate mitigations in a dedicated risk assessment that will be evaluated by CABs. The methodology to perform the individual RA will be up to the Member States, as long as it demonstrates taking into account the risks identified in the common risk register.
-
-This chapter will define, through iterative publications of the ARF, the rationale and approach to derive and categorise these identified risks and provide the iterative output of this exercise as a starting point of relevant privacy and security risks.
-
-#### 7.4.2 Rationale and approach
-
-Threats and risks play pivotal roles in the Wallet Solution certification process as they are fundamental in achieving the security objectives described in the Regulation, such as privacy, confidentiality, integrity, availability, authenticity and non-repudiation of a Wallet Unit and the data contained in it. Importantly, understanding the threats and risks in relation to the separate assets involved allows to determine the mitigation (and related certification requirements or standards).
-
-A simplified overview of this approach is shown below. In short, threats may cause risks to assets. These assets are the components and elements listed in the reference architecture, including the Wallet Secure Cryptographic Application (WSCA) and Wallet Secure Cryptographic Device (WSCD).
-
-Threats can be defined according to different threat models, such as the STRIDE approach for security threat risks, and the LINDDUN framework for privacy threat modelling. Such models allow to inspire and categorise threats such as spoofing, tampering, information disclosure, or linking. While security and privacy are closely related, they do start from a different mindset. Both security threat modelling and privacy threat modelling aim to create a system model, identify threats systematically for each system component and rely on threat categories to drive the analysis. This helps to eventually mitigate threats, for example through certification requirements. However, the security mindset is to protect assets, whereas the privacy mindset is to protect personal data of the User.
-
-![Figure 8: Relation between threats, risks, vulnerabilities, and assets](media/image8.png) <!-- <img src="media/image8.png" style="width:3.920138888888889in;height:1.7666666666666666in" /> -->
-
-Figure 8: Relation between threats, risks, vulnerabilities, and assets
-
-A threat modelling approach will support deriving privacy and security risks and gain insights into potential risks within the system. The outcome of the threat model exercise will be a list of security and privacy risks, which in turn allows to identify the appropriate treatment, such as mitigation or acceptance. A common, minimum set of risks will form the foundation for the risk registry, which will be used by Member States as a benchmark to assess the security of their national transitory certification schemes.
-
-### 7.5 Design principles and assumptions
-
-In the approach to Wallet Solution certification described above, a few design principles can be identified and will be further expanded upon through work in the CSG:
-
-- The amending Regulation requires the Wallet Solutions to be certified at LoA 'high'. However, not all Wallet Solution components may need to individually meet LoA 'high' or be certified, for the overall Wallet Solution to reach that level of assurance.
-
-- The transitory schemes are defined by the Member States which may tailor them to their specific Wallet architectures. However, the aim is to harmonise the underlying principles through the IA and provide guidance or common requirements where relevant as no mutual recognition of the national certification schemes is provided.
-
-- The certification scheme will be a composite scheme. The object certification will be the entire system (eID scheme, Wallet Solution, management thereof). It will therefore have to align with and rely on other available international standards, certification schemes, and conformity assessments.
-
-- Certification should cover both cross-functional requirements, including security and privacy, as well as functional requirements in order to ensure European interoperability.
-
-- The final Wallet Solution certification implies a multitude of certificates, however, the aim is to minimise this number to the extent possible.
-
-- The certification scheme should support a variety of different known and unknown architectures.
-
-### 7.6 Supporting documents
-
-Supporting documents applicable to the certification of the Wallet Solution have been assembled in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
+Supporting documents applicable to the certification of the EUDI Wallet ecosystem have been assembled in appendix 6.
 
 ## 8 Document development
 
