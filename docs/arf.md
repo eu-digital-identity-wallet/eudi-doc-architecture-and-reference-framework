@@ -798,13 +798,13 @@ Regarding non-qualified EAAs, Providers of such attestations do not necessarily 
 
 #### 6.5.3 Wallet Unit activation
 
-After installation of the Wallet Instance, the new Wallet Unit (which includes that Wallet Instance) will need to be activated by the Wallet Provider. Activation has at least the following purposes:
+After installation of the Wallet Instance, the new Wallet Unit (which includes that Wallet Instance) will be activated by the Wallet Provider. Activation has at least the following purposes:
 
-1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available in for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
+1. The Wallet Provider requests data about the User's device from the Wallet Instance. This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available to the device for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
 
 Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider will subsequently deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
 
-2. The Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA is described in \[Topic 9\]. The WUA has three main purposes:
+1. The Wallet Provider issues one or more Wallet Unit Attestations (WUAs) to the Wallet Unit. The WUA is described in \[Topic 9\]. A WUA has three main purposes:
 
    - It describes the capabilities and properties of the Wallet Unit, including the Wallet Instance, the User device and the WSCD(s). This allows a PID Provider or an Attestation Provider to verify that the Wallet Unit complies with the Provider's requirements and therefore is fit to receive a PID or an attestation from the Provider.
 
@@ -812,9 +812,11 @@ Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integ
 
    - The WUA contains information allowing a PID Provider, an Attestation Provider, or a Relying Party, to verify that the Wallet Provider did not revoke the Wallet Unit Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in \[Topic 38\].
 
-3. The Wallet Unit requests the User to set up a User authentication mechanism. User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
+  Deta
 
-4. The Wallet Provider sets up a User account for the User to ensure that the User can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the new User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
+2. The Wallet Unit requests the User to set up a User authentication mechanism. User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
+
+3. The Wallet Provider sets up a User account for the User to ensure that the User can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the new User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
 
    - The Wallet Provider does not need to know any real-world attributes of the User. The User can use a pseudonym to register, for example - an e-mail address. If the Wallet Provider wants to request additional User attributes, for example - to be able to provide additional services, they are free to do so if the User consents.
 
