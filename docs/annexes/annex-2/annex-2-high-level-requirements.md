@@ -298,7 +298,7 @@ will be published in the same repository as the ARF
 | WUA_04 | For a Wallet Unit containing a natural-person PID, the User mentioned in WUA_02 and WUA_03 SHALL be the natural person who is the subject of that PID. |
 | WUA_05 | For a Wallet Unit containing a legal-person PID, the User mentioned in WUA_02 and WUA_03 SHALL be a natural person appointed by the legal person who is the subject of that PID. <br><br>Note: This requirement does not imply that the actions of a legal-person Wallet Unit cannot be automated, or that the person(s) controlling the Wallet Unit must authenticate every time the Wallet Unit presents an attestation or creates a seal. The intent is that every operation performed by the legal-person Wallet Unit is performed under the responsibility of a natural person. |
 | WUA_06 | A Wallet Provider SHALL only activate a new Wallet Unit if it has verified that: <ul><li>The Wallet Unit includes at least one WSCA that is certified to be compliant with applicable requirements in this Topic, for level of assurance "high". In addition, the Wallet Unit MAY include one or more other WSCAs.</li><li>The private key corresponding to the public key in the WUA (see WUA_07) is protected by the respective WSCA.</li></ul> |
-| WUA_07 | During the activation of a new Wallet Unit, a Wallet Provider SHALL sign at least one Wallet Unit Attestation and issue it to the Wallet Unit. |
+| WUA_07 | During the activation of a new Wallet Unit, a Wallet Provider SHALL create and sign at least one Wallet Unit Attestation and issue it to the Wallet Unit. |
 | WUA_08 | The Commission SHALL take measures to ensure that the contents, format and encoding of the Wallet Unit Attestation is specified in a technical specification. This technical specification SHALL be a Rulebook complying with all requirements in [Topic 12](#a2312-topic-12---attestation-rulebooks). Each WUA SHALL describe the Wallet Unit and a certified WSCA included in that Wallet Unit, in such a way that a PID Provider or Attestation Provider processing the WUA is able to take a well-grounded decision on whether to issue an attestation to that Wallet Unit. <br><br>Note: In general, a PID Provider or Attestation Provider will also need information about the User. Such information is not contained in the WUA. |
 | WUA_09 | A Wallet Provider SHALL consider all relevant factors, including the risk of a WUA public key becoming a vector to track the User, when deciding on the validity period of a WUA. A Wallet Provider MAY use short-lived WUAs to mitigate such risks. |
 | WUA_10 | A WSCA SHALL generate a new key pair for a new WUA on request of the Wallet Provider via the Wallet Instance. The WSCA SHALL register the new key as a WUA key in an internal registry. The WSCA SHALL register the WUA key as an independent (i.e., non-associated) key in an internal registry. <p><br>Note: A WUA key can be associated later with a PID or attestation key when that PID or attestation key is created, see WUA_13. |
@@ -1231,7 +1231,7 @@ A.  Issuing a Wallet Unit Attestation
 
 | **Index** | **Requirement specification** |
 |------------|-------------------|
-| WURevocation_01 | To enable a Relying Party or an Attestation Provider to verify the authenticity and (if necessary, see requirement VCR_01) the revocation status of a Wallet Unit it is interacting with, a Wallet Provider SHALL issue one or more Wallet Unit Attestations to the Wallet Unit. <br><br>Note: The first of these WUAs will be issued during the activation phase of a Wallet Unit. |
+| WURevocation_01 | To enable a Relying Party or an Attestation Provider to verify the authenticity and (if necessary, see requirement VCR_01) the revocation status of a Wallet Unit it is interacting with, a Wallet Provider SHALL issue one or more Wallet Unit Attestations to the Wallet Unit, as specified in Topic 9. <br><br>Note: The first of these WUAs will be issued during the activation phase of a Wallet Unit. |
 | WURevocation_02 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL ensure that the Wallet Unit at all times contains at least one valid WUA. <br><br>To comply with WURevocation_04, the validity period of a WUA probably cannot be very long. This implies that the Wallet Provider must regularly issue new WUAs to a Wallet Unit.|
 | WURevocation_03 | Empty |
 | WURevocation_04 | The Wallet Provider SHALL manage the issuance processes for WUAs in such a way that the WUAs cannot be misused by colluding Relying Parties (and Attestation Providers) to track a User. <br><br>Notes:<ul><li>See also WUA_09.</li><li>The requirements for WUA management in this regard are comparable to those for management of a PID or attestation.</li></ul> |
@@ -1251,7 +1251,7 @@ A.  Revoking a Wallet Unit
 | WURevocation_12 | Before revoking a Wallet Unit per WURevocation_11, the Wallet Provider SHALL verify that the party requesting revocation is indeed a valid PID Provider listed in the Trusted List of PID Providers. |
 | WURevocation_13 | Before requesting a Wallet Provider to revoke a Wallet Unit per WURevocation_11, the PID Provider SHALL ensure that the revocation does not harm the interests of any of the stakeholders. The PID Provider SHALL have (and follow) a documented policy to ensure that this is the case. |
 
-A.  Informing the User
+B.  Informing the User
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
@@ -1259,13 +1259,15 @@ A.  Informing the User
 | WURevocation_15 | Empty |
 | WURevocation_16 | To inform a User about the revocation of their Wallet Unit, the Wallet Provider SHALL use a communication channel that is independent of the Wallet Unit. In addition, the Wallet Provider MAY use the Wallet Unit itself to inform the User. |
 
-B.  Verifying the revocation status of a Wallet Unit
+C.  Verifying the revocation status of a Wallet Unit
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | WURevocation_17 | Empty |
 | WURevocation_18 | A PID Provider or Attestation Provider SHOULD, for each of its valid PIDs or attestations, regularly verify whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider SHOULD immediately revoke the respective PID or attestation in accordance with all requirements in \[[Topic 7](#a237-topic-7---attestation-validity-checks-and-revocation)\]. <br><br>Notes:<ul><li>How the PID Provider or Attestation Provider can do this verification depends on the details of the WUA and WUA management. This is a topic that will be discussed for ARF 2.0.</li><li>Note that the reverse is not true: When a PID is revoked, this does not imply that the Wallet Unit on which it is residing should also be revoked. Instead, the Wallet Unit moves to the Operational state. See ARF section 4.4.3.</li></ul>  |
 | WURevocation_19 | A Relying Party SHOULD verify the revocation status of the Wallet Unit by requesting and verifying a WUA and subsequently verifying the revocation status of the WUA following the steps specified per VCR_11. |
+| WURevocation_19a | To safeguard User privacy, a Relying Party Instance SHOULD request only those data from the WUA that are necessary for carrying out a revocation check for the Wallet Unit. <br><br>Note: The format of the WUA will be discussed with Member States and will be specified in ARF 2.0. However, the WUA contains information about the Wallet Instance and the related WSCD(s) that are only relevant for PID Providers and Attestation Providers, and that a Relying Party should not know. 
+| WURevocation_19b | To safeguard User privacy, a Wallet Unit SHALL present to a Relying Party only those data in the WUA that are necessary for carrying out a revocation check for the Wallet Unit. <br><br>Note: See note to requirement WURevocation_19a. In addition, this requirement implies that the format of the WUA must enable the selective disclosure of attributes. 
 | WURevocation_20 | For the verification of WUAs, a Relying Party SHALL accept the trust anchors in the Wallet Provider Trusted List(s) of all Member States. <p><br>Note: Wallet Provider Trusted Lists are explained in \[[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)\]. |
 | WURevocation_21 | When no reliable information regarding the revocation status of a WUA is available, a Relying Party SHOULD perform a risk analysis considering all relevant factors for the use case, before taking a decision to accept or refuse the Wallet Unit. |
 
