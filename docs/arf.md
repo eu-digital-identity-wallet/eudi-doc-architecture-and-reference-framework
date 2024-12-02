@@ -41,15 +41,7 @@ The Commission intends to use this ARF to develop the Wallet Solution reference 
 
 The document presents a state-of-play of ongoing work of the eIDAS Expert Group and does not imply any formal agreement regarding its content. This document will be complemented and updated over time through the process of establishing the toolbox, as described in [Chapter 8](#8-document-development).
 
-While the main document is descriptive, two of the six annexes are intended as reference for the technical specification and standards. The latter are the annexes with:
-
-- **The high-level requirements**: This annex specifies the requirements for PID Providers, (Q)EAA Providers, PuB-EAA Providers, Wallet Providers, Relying Parties and other actors in the EUDI Wallet ecosystem.
-
-- **The attestation Rulebooks:** There are 3 Rulebooks, each one contains specific requirements to the PID, mDL and pseudonyms attestation, accordingly.
-
-**The capitalised imperatives in the document are used in accordance with [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).**
-
-This document holds no legal value and does not prejudge the final mandatory legal requirements for Wallet Solutions, as only the finally adopted European Digital Identity Framework Regulation, and the implementing and delegated acts adopted under that legal basis, will be mandatory.
+This document holds no legal value and does not prejudge the final mandatory legal requirements for the EUDI Wallet ecosystem. Only the final adopted European Digital Identity Framework Regulation, and the implementing and delegated acts adopted under that Regulation, will be mandatory.
 
 ### 1.3 Guidance for the Large-Scale Pilots (LSP)
 
@@ -57,7 +49,7 @@ To support the development of a reference implementation of a Wallet Solution an
 
 The objective of the Large-Scale Pilots (LSP) call is to support the piloting of the EUDI Wallet ecosystem around a range of use-cases involving both public and private sector stakeholders. The LSPs will test the EUDI Wallet ecosystem in both national and cross-borders contexts and integrate with the iterative development of the reference application.
 
-The works of the LSPs will be aligned by the ARF, which will guide pilot system design and architecture development together with the release of the reference implementation.
+The works of the LSPs will be aligned with the ARF, which will guide pilot system design and architecture development together with the release of the reference implementation.
 
 The LSPs are expected to provide feedback on the ARF as they develop and interact with Relying Party services, Qualified or non-qualified Electronic Attestations of Attributes (Q)EAA Providers, Person Identification Data (PID) Providers, Qualified and non-Qualified Trust Service Providers and Users in meaningful interactions under the proposed use cases.
 
@@ -81,15 +73,15 @@ The development of the Architecture Reference Framework (ARF) is strategically g
 
 The eIDAS Expert Group has described service blueprints for the following use cases:
 
-- Identification and authentication to access online services, see [Section 2.1](#21-identification-and-authentication-to-access-online-services)
+- Identification and authentication to access online services, see [Section 2.2](#22-identification-and-authentication-to-access-online-services)
 
-- Qualified Electronic Signature, see [Section 2.2](#22-qualified-electronic-signature)
+- Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature)
 
-- Mobile Driving Licence, see [Section 2.3](#23-mobile-driving-licence)
+- Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence)
 
-- Pseudonyms, see [Section 2.4](#24-pseudonyms).
+- Pseudonyms, see [Section 2.5](#25-pseudonyms).
 
-- Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.5](#25-other-use-cases).
+- Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.6](#26-other-use-cases).
 
 ### 2.2 Identification and authentication to access online services
 
@@ -115,9 +107,9 @@ The use case description concentrates on proximity supervised and unsupervised f
 
 ### 2.5 Pseudonyms
 
-The present use case specifies a single type of pseudonym, issued by a Pseudonym Provider, to a User having a Wallet Unit. There are several types of entities that may provide a pseudonym to a User; for example, a PID Provider or a QTSP.
+A User can potentially use a pseudonym in multiple different use cases. Wallet Units support the generation of pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn].
 
-The pseudonym in this use case is not designed to fit all possible use cases and to comply with all possible requirements. Rather, it is intended for basic use case, namely allowing a Relying Party to recognise a User as someone about whom the Relying Party already knows something, or with whom the Relying Party has interacted before.
+Note: Pseudonyms were added to the list of Topics to be discussed for ARF 2.0. These discussions will include which potential use cases for using a pseudonym must be supported by Wallet Units and the way in which this support will be technically implemented. This section will be updated in ARF 2.0.
 
 ### 2.6 Other use cases
 
@@ -518,13 +510,13 @@ There are only a few suitable standardised formats for releasing electronic atte
 
 ### 5.3 Attestation Rulebooks
 
-Since version 1.2.0 of this ARF document, the concept of an Attestation Rulebook has been introduced. For each type of attestation, such as PID, a pseudonym, an mDL, a diploma, an e-prescription, and so on, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type and namespace(s) it uses. The namespace(s) used by an attestation define the identifier, syntax, and semantics of all attributes that can be part of that attestation.
+Since version 1.2.0 of this ARF document, the concept of an Attestation Rulebook has been introduced. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type and namespace(s) it uses. The namespace(s) used by an attestation define the identifier, syntax, and semantics of all attributes that can be part of that attestation.
 
 An Attestation Rulebook also makes some choices regarding the protocol(s) for presentation that must be supported by the relevant attestations. \[Topic 12\] contains the requirements for Attestation Rulebooks.
 
 Attestation Rulebooks are defined by different organisations:
 
-- Some rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook, the mDL Rulebook and the Pseudonym Rulebook. These can be found in [Annex 3](#annex-3).
+- Some rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3).
 
 - The rulebook for an attestation intended to be used across organisations and/or across borders can be defined by an organisation in which, insofar possible, all stakeholders are represented. This will prevent multiple attestation rulebooks being defined for the same type of attestation, for example, diplomas. It will also prevent unnecessary differences in the syntax and semantics between similar attestations. The decision on which organisation will be responsible for a given attestation rulebook is out of scope for this document. As explained in \[Topic 12\], it is possible that an individual attestation provider needs to include attributes in an attestation that have not been specified in the relevant sectoral or EU-wide namespace. An example of this are attributes that only have a meaning within the Member State in which the attestation provider resides. To allow such domestic attributes, an attestation provider can define a custom namespace to specify attributes that are specific to this provider and are not included in the EU-wide or sectoral namespace.
 
@@ -840,7 +832,7 @@ User authentication is necessary when (or before) the Wallet Unit asks the User 
 **4. Wallet Provider sets up a User account for User**
 The User needs a User account at the Wallet Provider to ensure that they can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the new User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
 
-- The Wallet Provider does not need to know any real-world attributes of the User. The User can use a pseudonym to register, for example - an e-mail address. If the Wallet Provider wants to request additional User attributes, for example - to be able to provide additional services, they are free to do so if the User consents.
+- The Wallet Provider does not need to know any real-world attributes of the User. The User can use a pseudonym to register for example an e-mail address. If the Wallet Provider wants to request additional User attributes, for instance to be able to provide additional services, they are free to do so if the User consents.
 - In any case, User details registered by the Wallet Provider will not be included in the WUA. They are strictly for use by the Wallet Provider only.
 
 #### 6.5.4 Wallet Unit management
@@ -1445,8 +1437,8 @@ For undated references, the latest version available applies.
 | \[Topic 7\] | Annex 2 - Attestation validity checks and revocation |
 | \[Topic 9\] | Annex 2 - Wallet Unit Attestation |
 | \[Topic 10\] | Annex 2 - Issuing a (Q)EAA to the Wallet Unit |
-| \[Topic 11\] | Annex 2 - Pseudonym attestation |
-| \[Topic 12\] | Annex 2 - (Q)EAA Rule Book |
+| \[Topic 11\] | Annex 2 - Pseudonyms |
+| \[Topic 12\] | Annex 2 - (Q)EAA Rulebook |
 | \[Topic 16\] | Annex 2 - Signing documents with Wallet Unit|
 | \[Topic 18\] | Annex 2 - Relying Party handling Wallet Unit attribute combined presentation |
 | \[Topic 19\] | Annex 2 - User Navigation requirements (Dashboard logs for transparency) |
@@ -1473,8 +1465,6 @@ For undated references, the latest version available applies.
   - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
   - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
-
-  - Annex 3.3 - Pseudonym rulebook
 
 - Annex 4 - Service Blueprints <span id="annex-4"><span>
 
