@@ -861,19 +861,17 @@ Lastly, the Wallet Unit supports procedures for backing up and restoring the att
 
 To allow Wallet Unit management, the following trust relations are established:
 
-1. When contacting the Wallet Provider, the User authenticates the Wallet Provider. This means the User is sure that they are visiting the website or the User portal of the genuine Wallet Provider who is responsible for the User's Wallet Unit, and not a spoofed website or portal. This can be done, for instance, by using standard mechanisms such as TLS server authentication.
+1. When contacting the Wallet Provider, for instance to request the revocation of the Wallet Unit, the User authenticates the Wallet Provider. This means the User is sure that they are visiting the website or the User portal of the genuine Wallet Provider who is responsible for the User's Wallet Unit, and not a spoofed website or portal. This risk can be partly mitigated by using standard mechanisms such as TLS server authentication. However, in addition the User will need to be vigilant as well, just as with any website on the internet.
 
 2. When contacted by a User, the Wallet Provider authenticates the User. This means that the Wallet Provider is sure that the User is indeed the User that was associated with the Wallet Unit during activation. For this, the Wallet Provider uses the authentication methods established in the User's account during activation, see [Section 6.5.3](#653-wallet-instance-activation).
 
-3. The Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. This must be ensured by the Wallet Provider. The ARF does not specify how this trust relationship can be satisfied.
-
-4. The Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This must be ensured by the Wallet Provider. The ARF does not specify how this trust relationship can be satisfied.
+3. When the Wallet Unit and the Wallet Provider set up a communication channel, the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. Similarly, the Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This must be ensured by the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
 
 Specifically for the functionality allowing a PID Provider to request Wallet Unit revocation:
 
-5. When contacted by a PID Provider, the Wallet Provider authenticates the PID Provider. [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider) below describes how a Wallet Unit can do this during PID issuance; a Wallet Provider can use the same mechanism.
+4. When contacted by a PID Provider, the Wallet Provider authenticates the PID Provider. [Section 6.6.2.2](#6622-wallet-instance-authenticates-the-pid-provider-or-attestation-provider) below describes how a Wallet Unit can do this during PID issuance; a Wallet Provider can use the same mechanism.
 
-6. To identify the Wallet Unit that is to be revoked, the PID Provider uses a Wallet Unit identifier provided by the Wallet Provider in the WUA during PID issuance; see \[Topic 9\].
+5. To identify the Wallet Unit that is to be revoked, the PID Provider uses a Wallet Unit identifier provided by the Wallet Provider in the WUA during PID issuance; see \[Topic 9\].
 
 #### 6.5.5 Wallet Instance de-installation
 
