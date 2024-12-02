@@ -594,8 +594,9 @@ Notes:
 
 - In this version of the ARF, the trust model does not yet include interactions needed to enable Users to create qualified electronic signatures or seals. Please refer to \[Topic 16\] and \[Topic 37\].
 
-#### 6.1.2	Risks and mitigation measures
-##### 6.1.2.1	Introduction
+#### 6.1.2 Risks and mitigation measures
+
+##### 6.1.2.1 Introduction
 
 This section briefly discusses some of the risks that were considered when this trust model was created, together with the mitigations for these risks and the residual risks that remain after these mitigations. This section is not intended to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole; for that register, see Annex I of the 'Commission Implementing Regulation on the certification of the EUDI Wallets'. This section is limited to the scope of the ARF, namely, the Wallet Unit and its interactions with other parties in the ecosystem, as depicted in Figure 6.
 
@@ -624,7 +625,7 @@ A second case of a valid party in the EUDI Wallet ecosystem that tries to do thi
 
 - First of all, the attestation formats and protocols specified in [ISO/IEC 18013-5] and [SD-JWT] + [OpenID4VP] allow selective disclosure of attributes. This means that a Relying Party can specify which of the attributes in an attestation it wishes to receive, and which ones not. This feature is sometimes called collection limitation. Next, selective disclosure also allows the User to approve or deny the presentation of each requested attribute separately. More information on selective disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-attributes).
 - Secondly, the Regulation requires each Relying Party to register the attributes it intends to request from Users. The 'Commission Implementing Regulation on protocols and interface to be supported by the EUDI Framework' requires that these registered attributes are included in a so-called Relying Party registration certificate, and that a Wallet Unit must be able to display information from this registration certificate to the User. This allows the User to make a considered decision to approve or deny the presentation of the requested attributes. For more information, see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
-- Lastly, the Regulation requires that Attestation Provider are able to embed a disclosure policy into their attestations. This policy may contain rules determining whether the Attestation Provider approves of the release of one or more of the requested attributes to the authenticated Relying Party. The Wallet Unit evaluates the policy (if present in the attestation) and informs the User about the outcome of the evaluation. Again, this allows the User to make a considered decision to approve or deny the presentation of the requested attributes. More information can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
+- Lastly, the Regulation requires that an Attestation Provider is able to embed a disclosure policy into their attestations. This policy may contain rules determining whether the Attestation Provider approves of the release of one or more of the requested attributes to the authenticated Relying Party. The Wallet Unit evaluates the policy (if present in the attestation) in combination with authenticated data provided by the Relying Party, and informs the User about the outcome of the evaluation. Again, this allows the User to make a considered decision to approve or deny the presentation of the requested attributes. More information can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
 ##### 6.1.2.5 Risks related to User tracking
 
@@ -966,7 +967,7 @@ When processing the request, the following trust relationships are established:
 
 2. The Wallet Unit enables the User to verify that the Relying Party does not request more attributes than it registered. See [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered) for more information.
 
-3. The PID Provider or Attestation Provider, during issuance, may optionally have embedded a disclosure policy in the PID or attestation. If such a policy is present for the requested PID or attestation, the Wallet Unit evaluates the disclosure policy and informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-instance-evaluates-disclosure-policy-embedded-in-attestation-if-present).
+3. The Attestation Provider, during issuance, may optionally have embedded a disclosure policy in the attestation. If such a policy is present for the requested attestation, the Wallet Unit evaluates the disclosure policy and informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-instance-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
 4. The User approves or rejects the presentation of the requested attributes, or some of them. User approval and selective disclosure are described in [Section 6.6.3.5](#6635-wallet-instance-obtains-user-approval-for-presenting-attributes).
 
@@ -1036,11 +1037,11 @@ During registration, the Relying Party registered which attributes it intends to
 
 ##### 6.6.3.4 Wallet Unit evaluates disclosure policy embedded in attestation, if present
 
-The PID Provider or Attestation Provider optionally embeds a disclosure policy in the PID or attestation. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the PID Provider or Attestation Provider to receive which attributes from the PID or attestation.
+During attestation issuance, an Attestation Provider optionally has embedded a disclosure policy in the attestation. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the Attestation Provider to receive which attributes from the attestation. Note that the Regulation does not contain a requirement for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs and PuB-EAAs.
 
-If a policy is present in the PID or attestation, the Wallet Unit evaluates the policy, together with data obtained from the Relying Party or the User, to determine whether the PID Provider or Attestation Provider allows this Relying Party to receive the requested attributes. Data obtained from the Relying Party is typically included in the Relying Party Instance access certificate. In any case, the Wallet Unit authenticates any data obtained from the Relying Party before using it.
+If a policy is present in the attestation, the Wallet Unit evaluates the policy, together with data obtained from the Relying Party, to determine whether the Attestation Provider allows this Relying Party to receive the requested attributes. Data obtained from the Relying Party may be included in an attribute certificate comparable to the registration certificate discussed in the previous section. Such an attribute certificate may have been issued to the Relying Party by the Attestation Provider itself. In any case, the Wallet Unit authenticates any data obtained from the Relying Party before using it.
 
-The Wallet Unit presents the outcome of the disclosure policy evaluation to the User in the form of advice, when requesting User approval. For example, "The issuer of your PID does not want you to present \<attribute names\> to \<Relying Party name\>. Do you want to continue?" Note that the User can overrule the disclosure policy evaluation outcome.
+The Wallet Unit presents the outcome of the disclosure policy evaluation to the User in the form of advice, when requesting User approval. For example, "The issuer of your medical data does not want you to present \<attribute names\> to \<Relying Party name\>. Do you want to continue?" Note that the User can overrule the disclosure policy evaluation outcome.
 
 For more details on the embedded disclosure policy, see \[Topic 43\].
 
