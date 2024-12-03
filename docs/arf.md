@@ -1168,7 +1168,9 @@ However, the Regulation requires that a Wallet Unit is also able to receive such
 
 Starting from the issuance of a PID or attestation, the PID or attestation is managed by the User and the Wallet Provider. Management is performed until the PID, or attestation, is deleted or the Wallet Instance is de-installed by the User.
 
-For PID and attestation revocation, see \[Topic 7\]. The User can request the PID Provider or Attestation Provider to revoke the PID or attestation at least in case of loss or theft.
+For PID and attestation revocation, see \[Topic 7\]. The User can request the PID Provider or Attestation Provider to revoke the PID or attestation at least in case of loss or theft. 
+
+In addition, a PID Provider or Attestation Provider could regularly verify, for each of its valid PIDs or attestations, whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider could revoke the respective PID or attestation. Note to ARF 1.5.0: Currently, no mechanism has been specified yet to enable a PID Provider or Attestation Provider to verify whether a Wallet Unit is revoked. This will be discussed for ARF 2.0.
 
 #### 6.6.6 PID or attestation deletion
 
