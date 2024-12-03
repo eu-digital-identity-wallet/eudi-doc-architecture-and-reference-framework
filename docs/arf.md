@@ -880,7 +880,7 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 
 3. Instead of presenting attributes to a Relying Party, a User can also present them to another User, meaning the Wallet Unit is interacting with another Wallet Unit. This is briefly discussed in [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
 
-4. The PID Provider or the Attestation Provider respectively, remains responsible for managing the attestation over its lifetime. Management may include refreshing or changing the PID or the attestation. The Provider can also remove or revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
+4. The PID Provider or the Attestation Provider respectively, remains responsible for managing the attestation over its lifetime. Management may include re-issuing the PID or attestation with the same or with different attribute values. The Provider can also revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
 
 5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses the scenario that a User decides to delete the PID or an attestation from their Wallet Unit.
 
