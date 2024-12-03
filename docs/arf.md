@@ -11,7 +11,7 @@ The Recommendation specifies that these outcomes will serve as a basis for the i
 
 The Recommendation sets up a structured process of cooperation between Member States, the Commission and, where relevant, private sector operators, to develop the Toolbox. The eIDAS Expert Group is tasked as main interlocutor for the purposes of implementing this Recommendation. The Expert Group\'s page can be found [at the official page](https://ec.europa.eu/transparency/expert-groups-register/screen/expert%20groups/consult?do=groupDetail.groupDetail&groupID=3032).
 
-The eIDAS Expert Group has since further developed the concepts and specifications for the European Digital Identity Framework. The current ARF version 1.4.0 is based on the legal text adopted by the co-legislators.
+The eIDAS Expert Group has since further developed the concepts and specifications for the European Digital Identity Framework. The current ARF version 1.5.0 is based on the legal text adopted by the co-legislators, including the adopted Implementing Acts.
 
 ### 1.2 Purpose of this document
 
@@ -1170,7 +1170,9 @@ Starting from the issuance of a PID or attestation, the PID or attestation is ma
 
 For PID and attestation revocation, see \[Topic 7\]. The User can request the PID Provider or Attestation Provider to revoke the PID or attestation at least in case of loss or theft. 
 
-In addition, a PID Provider or Attestation Provider could regularly verify, for each of its valid PIDs or attestations, whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider could revoke the respective PID or attestation. Note to ARF 1.5.0: Currently, no mechanism has been specified yet to enable a PID Provider or Attestation Provider to verify whether a Wallet Unit is revoked. This will be discussed for ARF 2.0.
+In addition, a PID Provider or Attestation Provider could regularly verify, for each of its valid PIDs or attestations, whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider could revoke the respective PID or attestation. 
+
+**Note to ARF 1.5.0:** Currently, no mechanism has been specified yet to enable a PID Provider or Attestation Provider to verify whether a Wallet Unit is revoked. This will be discussed for ARF 2.0.
 
 #### 6.6.6 PID or attestation deletion
 
