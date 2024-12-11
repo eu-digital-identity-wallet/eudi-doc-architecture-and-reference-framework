@@ -322,7 +322,7 @@ The following components have been identified as the core components of a Wallet
 
 - **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes the keystore but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of an HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as operating system and cryptographic libraries provided by the WSCD vendor.
 
-- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. One WSCA is associated with at most one Wallet Unit, and manages assets, such as keys, for this specific Wallet Unit.
+- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptograhic keys, and interfaces directly with the Wallet Instance. In some architectures, the WSCA will be provided by the WSCD vendor. In other architectures, the Wallet Provider will provide the WSCA.
 
 - **Wallet Provider backend (WP**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
@@ -385,11 +385,11 @@ To mitigate these challenges, Relying Parties and Wallet Units should use the [O
 
 Building upon the high-level design described in figure 2, at least four different types of architecture for the Wallet Solution can be identified, each leveraging a different type of Wallet Secure Cryptographic Device (WSCD):
 
-1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In this architecture, the Wallet Secure Cryptographic Device is situated remotely, separate from the User's device, for example - implemented by the Wallet Provider using an HSM.
+1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In this architecture, the Wallet Secure Cryptographic Device is situated remotely, separate from the User device. Typically, it will be implemented by the Wallet Provider using an HSM. The Wallet Provider will then also provide the WSCA with which the Wallet Unit interacts.
 
-2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a secure element, external hardware components like smartcards may be necessary to enhance security. This architecture involves an external Wallet Secure Cryptographic Device that is connected to, or interacts with, the User's device, to provide cryptographic functions, for example - a hardware token or smart card.
+2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a secure element, external hardware components like smartcards may be necessary to enhance security. This architecture involves an external Wallet Secure Cryptographic Device that is connected to the User device, or interacts with it, and provides the cryptographic functions needed by the Wallet Unit. In this case, the WSCD typically is a smart card or a secure token, and the WSCA is an applet running on the smart card.
 
-3. ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This architecture refers to a scenario where the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like eSIM/eUICC and eSE. In these scenarios, the WSCA (e.g., a Java Card applet) might be deployed by the Wallet Provider. Other examples are based on native solutions, such as StrongBox (Google) and SecureEnclave (Apple), in which access to the WSCD is facilitated via the operating system of the User device.
+3. ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This architecture refers to a scenario where the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like eSIM/eUICC and eSE. In these scenarios, the WSCA (e.g., a Java Card applet) might be deployed by the Wallet Provider. Other examples native solutions, such as StrongBox (Android) and SecureEnclave (iOS). For such solutions, the API to access the WSCA is part of the operating system of the User device.
 
 4. ***Hybrid architecture***: This architecture combines two or more of the previous three approaches.
 
@@ -799,7 +799,7 @@ During the activation process, at least the following steps happen:
 
 1. The Wallet Provider requests data about the User's device from the Wallet Instance.
 2. The Wallet Provider issues one or more Wallet Unit Attestations to the Wallet Unit.
-3. The Wallet Provider requests the User to set up a User authentication mechanism.
+3. The Wallet Provider requests the User to set up at least one User authentication mechanism.
 4. The Wallet Provider sets up a User account for the User.
 
 These steps are described below.
@@ -824,9 +824,15 @@ The detailed format of the WUA will be discussed with Member States for ARF 2.0.
 
 The responsibilities of the Wallet Provider regarding issuance of a WUA are similar to those of a PID Provider or Attestation Provider regarding the issuance of a PID or attestation. This means that after the initial issuance of a WUA during activation, the Wallet Provider will manage the WUA and will issue new WUAs to the Wallet Unit as needed, during the lifetime of the Wallet Unit. In particular, the Wallet Provider must ensure that the risk of malicious Relying Parties using the WUA to track the User is minimised. For example, the Wallet Provider may set up the Wallet Unit in such a way that each Wallet Unit Attestation is presented to at most one PID Provider, Attestation Provider or Relying Party.
 
-**3. Wallet Provider requests User to set up a User authentication mechanism.**
+**3. Wallet Provider requests User to set up at least one User authentication mechanism.**
 
-User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
+User authentication will take place at several moments when a User uses their Wallet Unit:<ol><li>When the User opens the Wallet Instance. This is necessary to prevent anyone except the User from accessing the Wallet Unit and inspecting the User's attestations and attribute values. This data is personal and might be sensitive.</li><li>When (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).</li></ol>
+
+User authentication for point 1 above can be done either by the Wallet Instance or by a WSCD. In the latter case, it is the same mechanism employed for point 2, see below. In the former case, the mechanism is Wallet Unit-specific, meaning it is independent from any general User authentication mechanism used by the User device, such as a lock screen.
+
+User authentication for point 2 effectively means that the User gives the WSCA permission to use the cryptographic keys belonging to the Wallet Unit and to the PID or attestation for performing the cryptographic operations necessary for releasing that PID or attestation. For that reason, it is always the WSCD that performs User authentication in this case.
+
+Depending on the choice made by the Wallet Provider to combinet the two User authentication mechanisms or not, the Wallet Provider will ask the User to set up one or two authentication mechanisms.
 
 **4. Wallet Provider sets up a User account for User**
 The User needs a User account at the Wallet Provider to ensure that they can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
@@ -1173,7 +1179,7 @@ In addition, a PID Provider or Attestation Provider could regularly verify, for 
 
 #### 6.6.6 PID or attestation deletion
 
-In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the (WSCD included in the) Wallet Unit will authenticate the User.
+In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the WSCA included in the Wallet Unit will authenticate the User.
 
 ## 7 Security and Data Protection
 
