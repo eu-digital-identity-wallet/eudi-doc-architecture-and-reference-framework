@@ -16,6 +16,6 @@ The process of establishing high level requirements has 5 steps:
 
 ## Topics
 
-  + A - [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md)
+  + A - [Privacy risks and mitigation](topicAv0.5.md)
 
 
