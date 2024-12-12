@@ -1,0 +1,1052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Introduction - EUDI Wallet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EUDI Wallet" class="md-header__button md-logo" aria-label="EUDI Wallet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9zm0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EUDI Wallet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  EUDI Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../arf/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EUDI Wallet" class="md-nav__button md-logo" aria-label="EUDI Wallet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9zm0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5z"/></svg>
+
+    </a>
+    EUDI Wallet
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EUDI Wallet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-paper-topic-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Paper topic description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-risks-in-the-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related risks in the Risk Register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key words
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="introduction">Introduction</h1>
+<h2 id="discussion-paper-topic-description">Discussion Paper topic description</h2>
+<p>This document is the Discussion Paper for eIDAS Coordination Group
+regarding Topic B: Re-issuance and batch issuance of PIDs and
+Attestations.</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as
+follows:</p>
+<p><em>High-level requirements on re-issuance and batch issuance need to be
+discussed, as this topic is currently not addressed in the ARF. For
+example, requirements around authentication of the User and re-use of
+existing private keys may be different for first-time issuance and
+re-issuance, batch issuance or synchronous issuance of an attestation</em></p>
+<h2 id="related-risks-in-the-risk-register">Related risks in the Risk Register</h2>
+<p>The risk register for European Digital Identity Wallets [RiskRegister]
+contains no risks regarding re-issuance. This is because the risk
+register focuses on risks related to security and privacy, not on
+operational issues such as the difference between first-time issuance
+and re-issuance of attestations.</p>
+<h2 id="key-words">Key words</h2>
+<p>This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
+as specified in RFC 2119, i.e., to indicate requirements,
+recommendations and options specified in this document.</p>
+<p>In addition, ‘must’ (non-capitalized) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that
+is mandated by an external document. The word ‘can’ indicates a
+capability, whereas other words, such as ‘will’, ‘is’ or ‘are’ are
+intended as statements of fact.</p>
+<h2 id="document-structure">Document structure</h2>
+<p>This document is structured as follows:</p>
+<ul>
+<li>
+<p>Chapter 2 discusses batch issuance and re-issuance of PIDs and
+    attestations, as well as how these processes are supported by the
+    [OpenID4VCI] specification.</p>
+</li>
+<li>
+<p>Chapter 3 discusses some of the reasons for re-issuance.</p>
+</li>
+<li>
+<p>Chapter 4 discusses some of the differences between first-time
+    issuance and re-issuance, especially regarding User authentication
+    towards PID Provider and Attestation Provider, regarding User
+    authentication and key management by WSCAs, and regarding triggers
+    for the re-issuance process.</p>
+</li>
+<li>
+<p>Chapter 5 lists the additions and changes that will be made to the
+    ARF as a result of discussing this topic with Member States.</p>
+</li>
+</ul>
+<h1 id="re-issuance-and-batch-issuance-of-pids-and-attestations">Re-issuance and batch issuance of PIDs and attestations</h1>
+<h2 id="description">Description</h2>
+<p>Version 1.5 of the ARF contains a large number of requirements regarding
+the issuance of PIDs and attestations, primarily in Topic 10/23 and also
+in Topic 9. These requirements do not distinguish between the first time
+a PID or attestation is issued and re-issuance of a PID or attestation
+that is already present in a Wallet Unit. Neither do these requirements
+explicitly address the topic of batch issuance.</p>
+<p>Re-issuance means the replacement of a PID or attestation that already
+exists in a Wallet Unit by a PID or attestation having the same document
+type. Re-issuance is always performed by the same PID Provider or
+Attestation Provider that issued the existing PID or attestation. The
+value of the attributes in the new attestation will typically be the
+same as in the original attestation. However, this is not required, the
+PID Provider or Attestation Provider may change one or more attribute
+values.</p>
+<p>Batch issuance means that instead of issuing a single PID or attestation
+to a Wallet Unit, a PID Provider or attestation issues a batch of them.
+All PIDs or attestations in a batch have the same document type,
+attribute values and validity period. In general, if the original PID or
+attestation was issued in a batch, then the PID Provider or Attestation
+Provider will re-issue that PID or attestation in a batch as well.</p>
+<h2 id="support-by-openid4vci">Support by OpenID4VCI</h2>
+<p>The ARF requires that Wallet Units, PID Providers, and Attestation
+Providers use the [OpenID4VCI] specification for issuance of PIDs and
+attestations. [OpenID4VCI] supports re-issuance of attestations
+through so-called Refresh Tokens. These are tokens that are optionally
+issued during the first-time issuance of a PID or attestation, next to
+the Access Tokens used in OpenID4VCI to protect access to the PID
+Provider or Attestation Provider. When the Wallet Unit needs to request
+re-issuance of a PID or attestation, it must start the process by
+exchanging the Refresh Token for a new Access Token.</p>
+<p>Given the reasons for re-issuance discussed in the next chapter, it
+seems reasonable to assume that re-issuance must be possible or any PID
+or attestation issued to a Wallet Unit. Therefore, the ARF will require
+that during first-time issuance, each Access Token is accompanied by a
+corresponding Refresh Token, and that during each re-issuance, a new
+Refresh Token is also issued to the Wallet Unit.</p>
+<p>The [OpenID4VCI] specification also supports batch issuance of
+attestations, by optionally including multiple public keys and proofs of
+possession in the proofs parameter in the Credential Request.</p>
+<p>Given the discussions in [Topic A], it seems reasonable to assume that
+many PID Providers or Attestations Provider will want to issue PIDs or
+attestations in batches, and therefore to require that all Wallet
+Solutions, PID Providers and Attestation Providers must support this
+OpenID4CI feature.</p>
+<p>Questions</p>
+<ol>
+<li>
+<p>Would you agree that re-issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?</p>
+</li>
+<li>
+<p>Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?</p>
+</li>
+</ol>
+<h1 id="reasons-for-re-issuance">Reasons for re-issuance</h1>
+<h2 id="overview">Overview</h2>
+<p>There may be different reasons for re-issuing a PID or attestation, for
+example:</p>
+<ul>
+<li>
+<p>The current PID(s) or attestation(s) are near the end of their
+    validity period, or the Wallet Unit is running out of once-only
+    attestations. See section 3.2.</p>
+</li>
+<li>
+<p>The value of one or more of the attributes in the PID or attestation
+    has changed. See section 3.3.</p>
+</li>
+<li>
+<p>The security architecture of the Wallet Solution may use PIDs and/or
+    attestations that are issued just-in-time, at the moment that PID or
+    attestation is being requested by a Relying Party. This is sometimes
+    called synchronous issuing. See section 3.4.</p>
+</li>
+</ul>
+<p>The main reason for batch issuance of PIDs or attestations within the
+EUDI Wallet ecosystem is to (partly) mitigate Relying Party linkability.
+For this, see [Topic A].</p>
+<h2 id="pid-or-attestation-nearing-its-end-of-validity-or-wallet-unit-running-out-of-pids-or-attestations">PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations</h2>
+<p>As specified in [ISO/IEC 18013-5] or [SD-JWT VC], each PID or
+attestation contains metadata indicating its validity period.
+Determining the length of the validity period is the responsibility of
+the PID Provider or the Attestation Provider; neither these standards,
+nor the ARF, nor the PID Rulebook specify anything about this. The
+validity period chosen by the PID Provider or Attestation Provider will
+depend on several factors, primarily the security architecture of the
+Wallet Solution and the strategy chosen to mitigate Relying Party
+linkability, as discussed in [Topic A].</p>
+<p>Given the above factors, it can generally be assumed that the validity
+period of a PID or attestations will be much shorter than its lifetime,
+meaning the period of time that a User wants to keep that PID or
+attestation in their Wallet Unit. That implies that new PIDs and
+attestations will need to be issued periodically, to replace the ones
+that are reaching their end of validity.</p>
+<p>A similar reason for re-issuing PIDs and attestations occurs when the
+PID Provider or Attestation Provider uses once-only attestations (as
+defined in [Topic A], which can be presented only once to a Relying
+Party. In that case, the Wallet Unit will regularly need new PIDs or
+attestations, to avoid running out.</p>
+<p>Re-issuance of PIDs or attestations for these reasons is a purely
+technical matter. To the maximum extent possible, the User should not
+notice that a PID or attestation has been re-issued, nor should they
+have to take any action to ensure that re-issuance happens in time.
+These conditions are very different from a first-time issuance of a PID
+or attestation, where the User must take the initiative to request the
+PID or attestation, and is potentially involved in the process in other
+ways as well. These aspects are discussed in chapter 4.</p>
+<h2 id="a-change-in-attribute-values">A change in attribute values</h2>
+<p>During the lifetime of a PID or attestation, the value of some of the
+attributes may change. For example, at the date of birth of the User, an
+age attestation attribute (i.e., an attribute indicating whether the
+User has reached a certain age) may have to be changed from value False
+to value True. In another example, the User of a mobile driving licence
+may have passed the examination for a different vehicle category, or,
+conversely, have lost the right to drive because of medical reasons or
+severe traffic violations.</p>
+<p>Re-issuance of a PID or attestation for this reason will have an impact
+on the User, because they will notice that their attribute values have
+been changed. For transparency reasons, it seems necessary to require
+that the Wallet Unit notifies the User about such a change.</p>
+<h2 id="synchronous-issuing">Synchronous issuing</h2>
+<p>A third reason for re-issuing a PID or attestation is where the PID
+Provider or Attestation Provider uses synchronous issuing. In such an
+architecture, the Wallet Unit requests the issuance of a new PID or
+attestation after it has received a request for that PID or attestation
+from a Relying Party. In such an architecture, the PID or attestation is
+very short-lived and is used only once.</p>
+<p>Within the scope of this document, this reason for re-issuance is very
+similar to the reasons discussed in section 3.2. Users should not notice
+that a PID or attestation is being re-issued, nor should they have to
+take any action to ensure that re-issuance happens.</p>
+<h1 id="differences-between-first-time-issuance-and-re-issuance-or-batch-issuance">Differences between first-time issuance and re-issuance or batch issuance</h1>
+<h2 id="user-authentication-by-pid-provider-or-attestation-provider">User authentication by PID Provider or Attestation Provider</h2>
+<p>In [Topic A] a high-level requirement was established that, to the
+maximum extent possible, Users will not be involved in managing the
+re-issuance of new attestations. This is an important principle.
+Requiring that the User is involved in re-issuance processes would mean
+that a User is requested to perform actions that they did not initiate,
+and for which they probably don’t understand the reason. This would lead
+at least to a bad user experience, and most likely also to operational
+problems, such as Users not cooperating. Users may start to distrust
+their Wallet Unit if it unexpectedly keeps asking the User to
+authenticate, or if they are not able to present their PIDs or
+attestations because they (perhaps unknowingly) blocked a request for
+re-issuance.</p>
+<p>The requirement of non-involvement of Users in re-issuance processes has
+implications for PID Providers and Attestation Providers. One of these
+implications is that the requirements regarding User authentication will
+be different for first-time issuance and re-issuance. At least for PID
+Providers, and for many Attestation Providers as well, it is required to
+identify and authenticate the User during a first-time issuance process.
+For PID Providers, it is even required to authenticate the User on Level
+of Assurance High. However, for re-issuance process, performing User
+authentication is not possible if the User must not be involved.</p>
+<p>If the User is not authenticated during re-issuance process, there is a
+risk that the PID Provider or Attestation Provider issue the new PID or
+attestation to the wrong person. To prevent this, they will have to
+implement alternative security mechanisms. One option for this is to
+require that the Refresh Tokens used by [OpenID4VCI] are bound to the
+same WSCA to which the existing PID or attestation is bound. This can be
+done by requiring that OAuth 2.0 Demonstrating Proof of Possession
+(DPoP) [RFC 9449] is used for these tokens, and that the public key in
+the DPoP proof matches the public key in (one of) the PID(s) or
+attestation(s) issued to the Wallet Unit previously.</p>
+<p>Such a mechanism is common in managing certificate signing requests in
+Public Key Infrastructures. It means that PID Providers or Attestation
+Providers can be sure that the new PID or attestation will be bound to
+the same WSCA, and thus to the same User, as the existing one.</p>
+<p>For first-time batch issuance of PIDs or attestations, it seems
+reasonable to require that the User needs to authenticate towards the
+PID Provider or attestation provider only once, regardless of the size
+of the batch, i.e., the number of PIDs or attestations issued
+simultaneously to the Wallet Unit.</p>
+<p>Questions</p>
+<ol>
+<li>
+<p>What do you think about the requirement that Users must not be involved in re-issuance
+    processes for PIDs and attestations?</p>
+</li>
+<li>
+<p>What solutions do you see for ensuring that a re-issued PID or attestations is bound to same WSCD as the PID or attestation it is replacing? Do you agree with requiring that a Refresh Token used by the Wallet
+    Unit to start the re-issuance process of a PID or attestation must
+    be bound with the private key belonging to a PID or attestation
+    currently present in the WSCA, by using the DPoP mechanism in RFC
+    9449?</p>
+</li>
+</ol>
+<h2 id="user-authentication-and-key-management-by-the-wsca">User authentication and key management by the WSCA</h2>
+<p>The ARF v1.4 (and v1.5 as well) contains a requirement (WTE_02 /
+WUA_02) stating that “a WSCA SHALL authenticate the User before
+performing any cryptographic operation involving a private or secret key
+of (…) a PID or an attestation in a Wallet Unit.”</p>
+<p>If Users must not be aware of re-issuance processes for their existing
+PIDs and attestations, this requirement may be problematic. This is
+because the ARF assumes that each PID or attestation is bound to a key
+pair that is generated by the WSCA. Therefore, for every new PID or
+attestation, the WSCA must generate a new key pair. And key pair
+generation is a cryptographic operation that, per the requirement above,
+requires User authentication.</p>
+<p>A solution for this challenge could be sought in several directions:</p>
+<ol>
+<li>
+<p>By changing requirement WUA_02, such that it does not apply to key
+    generation operations.</p>
+</li>
+<li>
+<p>By allowing re-use of existing key pairs, meaning that the PID
+    Provider or Attestation uses the same public key in multiple PIDs or
+    attestations.</p>
+</li>
+<li>
+<p>By relying on a Hierarchical Deterministic Key (HDK) function as
+    described in clause 4.4.4.2 of [ETSI 119476]. Using a HDK
+    function, the PID Provider or Attestation Provider only needs to
+    obtain a single public key from the WSCA. This happens during
+    first-time issuance of a PID or attestation, where the User is
+    involved in the process anyway and a request to authenticate will
+    not come unexpectedly. During re-issuance, the PID Provider or
+    Attestation Provider then uses this public key to derive unique
+    per-attestation public keys from the received public key, without
+    involvement of the Wallet Unit or the WSCA. These newly derived
+    public keys are then sent to the Wallet Unit, and the WSCA can
+    derive the corresponding private keys from the existing private key
+    (i.e. the one generated during first-time issuance). The WSCA then
+    uses these private keys as normal during a presentation of
+    attributes.</p>
+</li>
+</ol>
+<p>Option 1 may not count as a good solution. Cryptographic key generation
+by the WSCA is a sensitive operation, and it seems unwise to allow this
+to happen without User authentication, if we can avoid that. Also, it is
+not clear whether all types of WSCA (such a remote HSMs but also
+embedded secure element) can be made to operate in such a way that they
+require User authentication before signing and key agreement operations,
+but not before key generation operations.</p>
+<p>Option 2 might be usable in some situations, for example for synchronous
+issuing as discussed in section 3.4 above. However, it needs to be
+remembered that presenting the same public key multiple times will
+enable Relying Parties to track Users, as discussed in [Topic A]. If
+PID Provider or Attestation Providers follow this approach, they must
+make sure that this does not make their PIDs and attestations vulnerable
+to Relying Party linkability.</p>
+<p>Option 3 seems promising, but Hierarchical Deterministic Keys have not
+been part of the ARF before. If we want to require support from Wallet
+Units and Attestation Providers for this technology, it needs to be
+further investigated.</p>
+<p>Questions</p>
+<ol>
+<li>
+<p>Do you see other options for dealing with User authentication in re-issuance scenarios?</p>
+</li>
+<li>
+<p>What do you think about option 1?</p>
+</li>
+<li>
+<p>What do you think about option 2? Should we allow the re-use of
+    public keys in the ARF? If so, under what conditions?</p>
+</li>
+<li>
+<p>What do you think about option 3? Should we add the use of HDK in
+    the ARF? If so, how exactly? Mandatory, optional? Do you know of any
+    relevant limitations to HDK?</p>
+</li>
+</ol>
+<p>Requirement WUA_02 may also be problematic for batch issuance, if it
+means that User authentication is required before generation of an
+individual key pair. That would mean that for a batch of 20 PIDs or
+attestations, the User would be required to authenticate 20 times. This
+is clearly not acceptable from a user experience point of view,
+especially not since the User is not even aware of the concept of batch
+issuance, nor of the reasons for it.</p>
+<p>However, ARF 1.5.0 already contains the following note to requirement
+WUA_02: “Many actions of the Wallet Instance, such as processing a
+Relying Party request and presenting an attestation, require multiple
+cryptographic operations, for example ephemeral key generation followed
+by key agreement and message encryption. This requirement does not imply
+that separate User authentication is necessary before each of these
+operations. Rather, a successful User authentication will be valid for
+all cryptographic operations necessary for a Wallet Unit action. It is
+up to the Wallet Provider to determine what constitutes a 'Wallet Unit
+action', finding a balance between security (more User authentications)
+and User convenience (fewer User authentications). During certification
+of the Wallet Solution, it will be verified that the solution provides
+an adequate level of security.”</p>
+<p>We could add a requirement to the ARF that a request for (first-time)
+batch issuance must be possible with at most one User authentication.</p>
+<p>Questions</p>
+<ol>
+<li>What do you think about User authentication in batch-issuance scenarios?</li>
+</ol>
+<h2 id="triggers-for-the-issuance-process">Triggers for the issuance process</h2>
+<p>The process of first-time issuance of a PID or attestation is triggered
+by the User, who wants to obtain a PID or attestation and triggers the
+Wallet Unit to start the process specified in [OpenID4VCI]. If we take
+the requirement that Users are not involved in re-issuance processes
+absolutely, trusting on the User to trigger re-issuance is not an
+option. That leaves two parties that could potentially do this: the PID
+Provider or Attestation Provider, or the Wallet Unit.</p>
+<p>However, it is not clear how the PID Provider or Attestation Provider
+can trigger the Wallet Unit to start the re-issuance processes. A Wallet
+Provider will typically be able to send a push message to a Wallet Unit,
+which will cause the Wallet Unit to contact the Wallet Provider’s
+backend to look for any updates or other actions. But PID Providers and
+Attestation Providers are different from Wallet Providers, generally
+speaking, and will typically not have this option.</p>
+<p>Therefore, it seems better to require that the Wallet Unit triggers the
+process of re-issuing a PID or attestation, for example when the
+existing PID or attestation is near the end of its validity period, or
+when the Wallet Unit is running out of once-only PIDs or attestations.
+[Topic A] already contains the appropriate requirements.</p>
+<p>Note that these requirements do not apply when synchronous issuance is
+used. In that case, the Wallet Unit triggers the re-issuance of a PID or
+attestation when attributes from that PID or attestation are requested
+by a Relying Party.</p>
+<p>Finally, the situation where re-issuance is necessary because of a
+change in the value of one or more of the attributes. This is more
+complicated, because the Wallet Unit does not have a way to know when
+this happens. There basically seem to be three options:</p>
+<ol>
+<li>
+<p>The Wallet Unit sends at regular intervals a request to the PID
+    Provider or Attestation Provider, to see if an updated version of
+    the PID or attestation is available.</p>
+</li>
+<li>
+<p>The PID Provider or Attestation Provider contacts the Wallet
+    Provider to trigger the Wallet Unit to request re-issuance of the
+    PID or attestation.</p>
+</li>
+<li>
+<p>The PID Provider or Attestation Provider contacts the User via an
+    out-of-band communication channel to inform them that they need to
+    request an update of their PID or attestation.</p>
+</li>
+</ol>
+<p>Option 1 has obvious drawbacks, in particular:</p>
+<ul>
+<li>
+<p>(Potentially) millions of Wallet Units sending such information
+    requests, in most cases probably for nothing.</p>
+</li>
+<li>
+<p>Moreover, the PID Provider or Attestation would have to determine
+    the frequency of such requests, which is not trivial. Too low a
+    frequency may mean that the User does not receive the updated
+    version of their PID or attestation in time i.e., before the new
+    values become valid. Too high a frequency increases the load on the
+    systems of the PID Provider or Attestation Provider unnecessarily.</p>
+</li>
+<li>
+<p>Finally, such a request, and also the PID Provider or Attestation
+    Provider endpoint to which it can be addressed, have not been
+    specified yet.</p>
+</li>
+</ul>
+<p>Option 2 requires direct communication between the Wallet Provider and
+the PID Provider or Attestation Provider. The ARF v1.5 does not foresee
+such communication, primarily since it means that the Wallet Provider
+gets information about the PIDs and attestations present on each of
+their Wallet Units. From an architecture point of view, this would
+therefore be a major change. However, the Commission has received
+feedback several times stating that in the long run, when the EUDI
+Wallet ecosystem is successful and a PID Provider or Attestation
+Provider will have millions of subscribers, the current issuance model
+will be unsustainable anyway. This is because remotely issuing and
+managing millions of attestations, residing on mobile devices that are
+controlled by their User, requires specialized knowledge and a dedicated
+infrastructure that will not be easy to deploy for many PID Providers or
+Attestation Providers. If true, this would mean that these Providers
+will outsource this task to the Wallet Providers. They will send the
+PIDs or attestations containing the new attribute values to the Wallet
+Provider, and the Wallet Provider would be responsible for delivering
+these PIDs or attestations to the respective Wallet Unit in time.
+Obviously, the attribute values would be encrypted, such that the Wallet
+Provider cannot read them.</p>
+<p>Option 3 violates the principle that the User is not involved in the
+re-issuance of PIDs or attestations. In this case, however, that is
+defensible, since the User will (have to) note the changed attribute
+value anyway. This approach nevertheless has some drawbacks as well:</p>
+<ul>
+<li>
+<p>It is only usable if during the first-time issuance of the PID or
+    attestation, the PID Provider or Attestation Provider captured
+    contact information of the User, such as a telephone number or
+    e-mail address. This may not be the case for all attestations.</p>
+</li>
+<li>
+<p>The User may have objections to the update of their PID or
+    attestations. Section 3.3 already gave the example of a User having
+    lost the right to drive because of medical reasons or severe traffic
+    violations. Such a User may refuse to trigger the re-issuance
+    process because they want to continue using their existing PID or
+    attestation with the ‘old’ values. Obviously, the PID Provider or
+    Attestation Provider can (and should) revoke the existing PID or
+    attestation. But this implies that they should have a policy
+    determining how they will deal with situations like this.</p>
+</li>
+</ul>
+<p>Questions</p>
+<ol>
+<li>
+<p>Do you agree that the Wallet Unit should trigger the re-issuance
+    process for the cases where the existing PIDs or attestations are
+    about to expire, or where the Wallet Unit is running low on
+    once-only PIDs or attestations? If not, what other solution do you
+    see?</p>
+</li>
+<li>
+<p>What do you think about the first option for the situation where
+    re-issuance is necessary because of a change in the value of one or
+    more of the attributes?</p>
+</li>
+<li>
+<p>What do you think about the second option? Would the issuance model
+    sketched above, where the Wallet Provider is involved in the
+    logistics of the issuance process, be acceptable to you?</p>
+</li>
+<li>
+<p>What do you think about the third option?</p>
+</li>
+<li>
+<p>Can you think of any other option?</p>
+</li>
+</ol>
+<h1 id="additions-and-changes-to-the-arf">Additions and changes to the ARF</h1>
+<h2 id="high-level-requirements-to-be-added-to-annex-2">High-Level Requirements to be added to Annex 2</h2>
+<p>The following High-Level Requirements will be added to Annex 2 of the
+ARF v1.8:</p>
+<p>&lt;To be added after discussion of this Discussion Paper with Member
+States.&gt;</p>
+<h2 id="high-level-requirements-to-be-changed">High-Level Requirements to be changed</h2>
+<p>&lt;A future version of this document will analyse the requirements on
+issuance in v1.5 of the ARF and determine whether they need to be
+changed (and if so, how) in the light of the conclusions reached for
+this Discussion Paper.&gt;</p>
+<h3 id="topic-1023">Topic 10/23</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 38%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Valid for re-issuance of PID or attestation?</th>
+<th>Valid for a PID or attestation issued as part of a batch?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="topic-9">Topic 9</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 38%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Valid for re-issuance of PID or attestation?</th>
+<th>Valid for a PID or attestation issued as part of a batch?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="descriptions-to-be-added-to-the-arf-main-document">Descriptions to be added to the ARF main document</h2>
+<p>A summary of the descriptions in chapters 2, 3, and 4 will be added to
+the ARF main document, version 1.8.</p>
+<h1 id="references">References</h1>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr>
+<th>[RiskRegister]</th>
+<th>Annex 1 to the Commission Implementing Regulation laying down rules
+for the application of Regulation (EU) No 910/2014 of the European
+Parliament and of the Council as regards the certification of the
+European Digital Identity Wallets, European Commission, October 2024,
+draft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European
+Commission, v0.91, final draft</td>
+</tr>
+<tr>
+<td>[ISO18013-5]</td>
+<td>ISO/IEC 18013-5, Personal identification — ISO-compliant driving
+licence — Part 5: Mobile driving licence (mDL) application, First
+edition, 2021-09</td>
+</tr>
+<tr>
+<td>[SD-JWT VC]</td>
+<td><p>SD-JWT-based Verifiable Credentials (SD-JWT VC)</p>
+<p>draft-terbu-sd-jwt-vc-06, O. Terbu <em>et al.,</em> 13 November 2024,
+draft</p></td>
+</tr>
+<tr>
+<td>[OpenID4VCI]</td>
+<td> Lodderstedt, T. <em>et al.</em>, "OpenID for Verifiable Credential
+Issuance", OpenID Foundation. Available:
+&lt;<u>https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html</u>&gt;</td>
+</tr>
+<tr>
+<td>[RFC 9449]</td>
+<td>OAuth 2.0 Demonstrating Proof of Possession (DPoP), D. Fett <em>et
+al</em>., September 2023</td>
+</tr>
+<tr>
+<td>[Topic A]</td>
+<td>Topic A: Privacy risks and mitigations - eIDAS Cooperation Group
+Discussion Paper</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
