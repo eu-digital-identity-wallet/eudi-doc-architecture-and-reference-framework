@@ -1141,7 +1141,11 @@ The mechanism(s) available for User binding depend on the presentation flow type
 
 ##### 6.6.3.10 Relying Party Instance verifies combined presentation of attributes
 
-According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party will verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users. [Topic 18] describes how the Relying Party Instance can verify this by checking that the public keys in the attestations are associated. Key association is described in [Topic 9].
+According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party will verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users.
+
+A Relying Party can verify this by comparing attributes from the different attestations. For example, the Relying Party may request the first and last name of the User in all of the attestations, and compare the names. If they match, the Relying Party concludes that the attestations belong to the same User. However, this method implies that the Relying Party must request identifying information from the User. In some use cases, requiring that information may not be strictly necessary, and so this method may be seen as a threat to User privacy. Moreover, this method may not be conclusive, for instance if multiple people share the same name.
+
+To solve these drawbacks, [Topic 18] describes how the Relying Party Instance can verify this cryptographically by checking that the public keys in the attestations are associated. Key association is described in [Topic 9].
 
 ##### 6.6.3.11 Relying Party Instance authenticates the Wallet Unit and the Wallet Provider
 
