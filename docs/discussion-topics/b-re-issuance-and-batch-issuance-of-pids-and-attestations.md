@@ -112,9 +112,9 @@ OpenID4CI feature.
 
 Questions
 
-1.  Would you agree that re-issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do have see other solutions?
+1.  Would you agree that re-issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
-2.  Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do have see other solutions?
+2.  Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
 # Reasons for re-issuance
 
@@ -618,7 +618,7 @@ al</em>., September 2023</td>
 <tr>
 <td>[Topic A]</td>
 <td>Topic A: Privacy risks and mitigations - eIDAS Cooperation Group
-Discussion Paper, NI-Scy, v0.4, 2024-12-06</td>
+Discussion Paper</td>
 </tr>
 </tbody>
 </table>
