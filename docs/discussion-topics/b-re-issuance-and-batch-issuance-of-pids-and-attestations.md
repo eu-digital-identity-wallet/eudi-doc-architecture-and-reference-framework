@@ -112,14 +112,9 @@ OpenID4CI feature.
 
 Questions
 
-1.  Do you agree that during first-time issuance, each Access Token must
-    be accompanied by a corresponding Refresh Token, and that during
-    each re-issuance, a new Refresh Token is also issued to the Wallet
-    Unit?
+1.  Would you agree that re-issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do have see other solutions?
 
-2.  Do you agree that all Wallet Units, PID Providers and Attestation
-    Providers must support the proofs parameter in the Credential
-    Request, as specified in \[OpenID4CI\]?
+2.  Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do have see other solutions?
 
 # Reasons for re-issuance
 
@@ -259,18 +254,14 @@ simultaneously to the Wallet Unit.
 
 Questions
 
-1.  Do you agree that Users must not be involved in re-issuance
+3.  What do you think about the requirement that Users must not be involved in re-issuance
     processes for PIDs and attestations?
 
-2.  Do you agree with requiring that a Refresh Token used by the Wallet
+4.  What solutions do you see for ensuring that a re-issued PID or attestations is bound to same WSCD as the PID or attestation it is replacing? Do you agree with requiring that a Refresh Token used by the Wallet
     Unit to start the re-issuance process of a PID or attestation must
     be bound with the private key belonging to a PID or attestation
-    currently present in (the WSCA, by using the DPoP mechanism in RFC
+    currently present in the WSCA, by using the DPoP mechanism in RFC
     9449?
-
-3.  Do you agree that for first-time batch issuance of PIDs or
-    attestations, the User must be required to authenticate towards the
-    PID Provider or Attestation Provider only once?
 
 ## User authentication and key management by the WSCA
 
@@ -335,12 +326,14 @@ further investigated.
 
 Questions
 
-1.  What do you think about option 1? Should we change this in the ARF?
+5. Do you see other options for dealing with User authentication in re-issuance scenarios?
 
-2.  What do you think about option 2? Should we allow the re-use of
+6.  What do you think about option 1?
+
+7.  What do you think about option 2? Should we allow the re-use of
     public keys in the ARF? If so, under what conditions?
 
-3.  What do you think about option 3? Should we add the use of HDK in
+8.  What do you think about option 3? Should we add the use of HDK in
     the ARF? If so, how exactly? Mandatory, optional? Do you know of any
     relevant limitations to HDK?
 
@@ -371,7 +364,7 @@ batch issuance must be possible with at most one User authentication.
 
 Questions
 
-1.  Do you agree with adding such a requirement?
+9.  What do you think about User authentication in batch-issuance scenarios?
 
 ## Triggers for the issuance process
 
@@ -478,23 +471,23 @@ value anyway. This approach nevertheless has some drawbacks as well:
 
 Questions
 
-1.  Do you agree that the Wallet Unit should trigger the re-issuance
+10.  Do you agree that the Wallet Unit should trigger the re-issuance
     process for the cases where the existing PIDs or attestations are
     about to expire, or where the Wallet Unit is running low on
     once-only PIDs or attestations? If not, what other solution do you
     see?
 
-2.  What do you think about the first option for the situation where
+11.  What do you think about the first option for the situation where
     re-issuance is necessary because of a change in the value of one or
     more of the attributes?
 
-3.  What do you think about the second option? Would the issuance model
+12.  What do you think about the second option? Would the issuance model
     sketched above, where the Wallet Provider is involved in the
     logistics of the issuance process, be acceptable to you?
 
-4.  What do you think about the third option?
+13.  What do you think about the third option?
 
-5.  Can you think of any other option?
+14.  Can you think of any other option?
 
 # Additions and changes to the ARF 
 
