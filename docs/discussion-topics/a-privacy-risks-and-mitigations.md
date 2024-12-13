@@ -586,9 +586,28 @@ Unit, and it may complicate attestation inventory management.
 
 ### General note: Diminishing the costs of issuing multiple attestations
 
-Another drawback of this method is that the Attestation Provider is
-dependent on the correct implementation by the Wallet Unit to ensure
-that it is used correctly.
+The operational costs of issuing an attestation are determined to some
+extent by the requirement that, for security reasons, the Wallet Unit
+must generate a new cryptographic key pair for each attestation. It
+stores the private key in its WSCA/WSCD and sends the public key to the
+Attestation Provider for inclusion in the attestation. The operational
+costs of issuing many attestation may therefore be lessened in two ways:
+
+-   By allowing re-use of existing key pairs (under specific
+    conditions).
+
+-   By relying on a Hierarchical Deterministic Key (HDK) function as
+    described in clause 4.4.4.2 of \[ETSI 119476\]. Using a HDK
+    function, the Attestation Provider only needs to keep track of a
+    single public key and use it to derive unique per-attestation public
+    keys. Each public key is then sent to the Wallet Unit, and the
+    Wallet Unit can derive the corresponding private key in the
+    WSCA/WSCD.
+
+These two possibilities will be discussed in Topic B (Re-issuance and
+batch issuance of PIDs and Attestations) and Topic C (Wallet Unit
+Attestation (WUA) and key attestation), respectively. They will
+therefore not be further discussed here.
 
 ## Ensuring User privacy when checking the revocation status of attestations
 
