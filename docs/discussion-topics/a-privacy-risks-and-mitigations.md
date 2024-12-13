@@ -1,8 +1,9 @@
 Version 0.5, updated 11 December 2024
 
-# Introduction 
+# A - Privacy risks and mitigation
+## Introduction 
 
-## Discussion Paper topic description 
+### Discussion Paper topic description 
 
 This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic A: Privacy risks and mitigation.
@@ -33,7 +34,7 @@ such as Zero-Knowledge Proofs (ZKP).*
 **In this version of this document, the feedback of Member States during
 the first meeting of December 4<sup>th</sup>, 2024, was processed.**
 
-## Related risks in the Risk Register
+### Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains the following risks regarding User tracking as a result of
@@ -158,19 +159,19 @@ required.</td>
 </tbody>
 </table>
 
-## Key words
+### Key words
 
 This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
 as specified in RFC 2119, i.e., to indicate requirements,
 recommendations and options specified in this document.
 
-In addition, ‘must’ (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that
-is mandated by an external document. The word ‘can’ indicates a
-capability, whereas other words, such as ‘will’ and ‘is’ or ‘are’ are
+is mandated by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will' and 'is' or 'are' are
 intended as statements of fact.
 
-## Document structure
+### Document structure
 
 This document is structured as follows:
 
@@ -190,9 +191,9 @@ This document is structured as follows:
 -   Chapter 6 proposes a few High-Level Requirements to be added to the
     ARF. These are for discussion.
 
-# Risks for User privacy due to collusion
+## Risks for User privacy due to collusion
 
-## Linkability
+### Linkability
 
 This chapter describes in detail how the attestation formats currently
 specified for use in the EUDI Wallet ecosystem could be misused for
@@ -229,7 +230,7 @@ unique value. These elements include:
 -   The value of the Attestation Provider signature.
 
 In addition, also timestamps, such as the signing or issuing time of the
-attestation and the ‘valid from’ and ‘valid until’ timestamps may be
+attestation and the 'valid from' and 'valid until' timestamps may be
 unique, if they are precise enough. For example, if the timestamps
 include milliseconds, this will almost always be the case.
 
@@ -246,7 +247,7 @@ Linkability comes in two varieties, Relying Party linkability and
 Attestation Provider linkability. These are discussed in the next
 sections.
 
-## Relying Party linkability
+### Relying Party linkability
 
 Relying Party linkability means that one or more malicious Relying Party
 are able to link multiple presentations of the same attestation. For
@@ -270,7 +271,7 @@ used at multiple Relying Parties. By combining the attribute values that
 were presented during each of these interactions, they will be able to
 build a profile of the User.
 
-Also note that linkability of attestations can be a danger to the User’s
+Also note that linkability of attestations can be a danger to the User's
 privacy even if Relying Parties are not actively trying to track Users.
 If a Relying Party (or multiple Relying Parties) is the victim of a data
 breach by an attacker, and the data breach includes unique attestation
@@ -288,7 +289,7 @@ particular, Relying Parties found offending can have their access
 certificate revoked, after which they will not be able to interact with
 Wallet Units anymore.
 
-## Attestation Provider linkability
+### Attestation Provider linkability
 
 Attestation Provider linkability means that one or more Relying Parties
 collude with the provider of an attestation to track the User when using
@@ -312,7 +313,7 @@ discourage Attestation Providers from colluding and tracking Users. In
 addition, many Attestation Providers are subject to regular audits,
 which means that collusion and tracking can more easily be detected.
 
-## WUAs and Wallet Providers
+### WUAs and Wallet Providers
 
 The Wallet Unit Attestation (WUA) is an attestation issued to the Wallet
 Unit by the Wallet Provider. In the context of this discussion paper,
@@ -322,13 +323,13 @@ and the mitigation measures for Relying Party linkability described in
 the next chapter can also be used by Wallet Provider to mitigate the
 Relying Party linkability risks associated with presenting WUAs.
 
-Therefore, in this discussion paper the term ‘Attestation Provider’
+Therefore, in this discussion paper the term 'Attestation Provider'
 includes Wallet Providers, in their specific responsibilities as issuers
 of WUAs.
 
-# Possible mitigation measures for Relying Party linkability within the current ARF
+## Possible mitigation measures for Relying Party linkability within the current ARF
 
-## Introduction
+### Introduction
 
 An (honest) Attestation Provider can mitigate Relying Party linkability
 mitigated partly or fully by the following two measures:
@@ -356,20 +357,20 @@ These methods are discussed in the next sections of this chapter. Based
 on these discussions and an inventory of the opinion of Member States,
 Chapter 6 contains a number of changes that will be made to the ARF.
 
-## Method A: Once-only attestations
+### Method A: Once-only attestations
 
-### Description
+#### Description
 
 In this approach, the Attestation Provider requires the Wallet Unit to
 present each attestation only once.
 
-### Advantages
+#### Advantages
 
 If this approach is used, none of the unique values in the attestation
 will be issued twice or more times to a Relying Party. Therefore, this
 method fully mitigates Relying Party linkability.
 
-### Technical impacts on Wallet Unit
+#### Technical impacts on Wallet Unit
 
 If an attestation may be presented only once, in theory the Wallet Unit
 could request a new attestation as soon as possible after an attestation
@@ -384,7 +385,7 @@ To prevent the Wallet Unit from running out of unused attestations, it
 must have a lower limit for the number of unused attestations it holds
 and request a new batch from the Attestation Provider when the number of
 unused attestations goes below this limit, as soon as it is able to.
-This is called the ‘saw-tooth model’ in inventory management.
+This is called the 'saw-tooth model' in inventory management.
 
 If this approach is used and the Wallet Unit is offline for a prolonged
 period of time, the Wallet Unit may run out of unused attestations. To
@@ -402,7 +403,7 @@ the Wallet Unit has run out of unused attestations and is not able to
 request new ones, it will start re-using either a single attestation or
 a batch of attestations, as described for these methods.
 
-### Drawbacks
+#### Drawbacks
 
 A drawback of this method is that the number of attestations to be
 issued depends on the frequency of use. This has two effects:
@@ -426,9 +427,9 @@ Another drawback of this method is that the Attestation Provider is
 dependent on the correct implementation by the Wallet Unit to ensure
 that it is used correctly.
 
-## Method B: Limited-time attestations
+### Method B: Limited-time attestations
 
-### Description
+#### Description
 
 In another approach, a Wallet Unit may present each attestation multiple
 times, but only as long as it is valid. Moreover, the Wallet Provider
@@ -437,7 +438,7 @@ is statistically unlikely that any of the unique values in the
 attestation can be effectively used by colluding Relying Parties to
 correlate and track the User.
 
-### Advantages
+#### Advantages
 
 The biggest advantages of this method are:
 
@@ -456,11 +457,11 @@ The biggest advantages of this method are:
     the Attestation Provider does not get any information about the
     frequency of use of their attestations.
 
-### Technical impacts on Wallet Unit
+#### Technical impacts on Wallet Unit
 
 None, as described above.
 
-### Drawbacks
+#### Drawbacks
 
 The main drawbacks of this method are
 
@@ -480,9 +481,9 @@ The main drawbacks of this method are
     be Users will an above-average attestation usage. These Users will
     therefore be subject to a higher level of risk of tracking.
 
-## Method C: Rotating-batch attestations
+### Method C: Rotating-batch attestations
 
-### Description
+#### Description
 
 Using this method, the Attestation Provider issues attestations in
 batches to the Wall Unit, like when using once-only attestations (method
@@ -512,7 +513,7 @@ Transport Systems (C-ITS).
 The OpenID4VCI specification used for attestation issuance in the EUDI
 Wallet ecosystem supports batch issuance.
 
-### Advantages
+#### Advantages
 
 If this approach is used, the number of attestations to be issued is
 constant over time and does not depend on usage. Therefore, like method
@@ -526,13 +527,13 @@ to put the same thing in a different way, if a batch of attestations is
 used in a rotating fashion, the validity period of an attestation can be
 longer without impacting the User’s privacy.
 
-### Technical impacts on Wallet Unit
+#### Technical impacts on Wallet Unit
 
 The Wallet Unit must implement dedicated functionality to support this
 method, for example to keep track of which attestations are used and
 unused, and when a batch is fully used and must be reset.
 
-### Drawbacks
+#### Drawbacks
 
 This method has the following drawbacks:
 
@@ -557,7 +558,7 @@ This method has the following drawbacks:
     actually been used or not. Therefore, this approach seems suitable
     only if the User presents attributes to Relying Parties frequently.
 
-## Method D: Per-Relying Party attestations
+### Method D: Per-Relying Party attestations
 
 When this method is used, the Wallet Unit will present different
 attestations to different Relying Parties. However, in case a Relying
@@ -583,7 +584,7 @@ authenticate themselves to Wallet Units contain a unique identifier of
 the Relying Party. However, it represents an extra effort for the Wallet
 Unit, and it may complicate attestation inventory management.
 
-## General note: Diminishing the costs of issuing multiple attestations
+### General note: Diminishing the costs of issuing multiple attestations
 
 The operational costs of issuing an attestation are determined to some
 extent by the requirement that, for security reasons, the Wallet Unit
@@ -608,9 +609,9 @@ batch issuance of PIDs and Attestations) and Topic C (Wallet Unit
 Attestation (WUA) and key attestation), respectively. They will
 therefore not be further discussed here.
 
-# Ensuring User privacy when checking the revocation status of attestations
+## Ensuring User privacy when checking the revocation status of attestations
 
-## Introduction
+### Introduction
 
 For the revocation of PIDs and attestations (including WUAs), the ARF
 specifies three methods:
@@ -628,7 +629,7 @@ be able to verify that the Attestation Provider has not revoked the
 attestation. When discussing the risk of tracking Users, particular
 attention should be given to this process.
 
-## General requirements
+### General requirements
 
 To the maximum extent feasible given operational constraints, the
 Attestation Provider should not be able to learn anything about the
@@ -649,7 +650,7 @@ Downloading an Attestation Status List or Attestation Revocation List
 SHALL NOT require the Relying Party or Relying Party Instance to
 authenticate itself in any way.
 
-## Requirements specific for Attestation Status Lists
+### Requirements specific for Attestation Status Lists
 
 To ensure User privacy specifically when the Attestation Provider uses
 Attestation Status Lists to enable revocation checking, this document
@@ -672,7 +673,7 @@ recommends the following:
     not able to deduce which attestation (likely) was presented to that
     Relying Party.
 
-# Mitigating linkability by using Zero-Knowledge Proofs
+## Mitigating linkability by using Zero-Knowledge Proofs
 
 Zero-Knowledge Proofs (ZKP) offer strong potential as a
 privacy-enhancing technique. This topic will be revisited in Topic G to
@@ -686,14 +687,14 @@ Digital Identity’s ARF’
 and the Commission's response to it
 [here.](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/211#discussioncomment-9882388)
 
-# Additions to the ARF 
+## Additions to the ARF 
 
-## High-Level Requirements to be added to Annex 2
+### High-Level Requirements to be added to Annex 2
 
 The High-Level Requirements in this section will be added to Annex 2 of
 the ARF v1.7.
 
-### Requirements to be added (likely) to Topic 10/23
+#### Requirements to be added (likely) to Topic 10/23
 
 1.  A PID Provider, Attestation Provider, or Wallet Provider SHALL
     ensure that all PID, attestation or WUA unique elements, including
@@ -886,7 +887,7 @@ attestation separately.
 > Note: For example, the parameters to be set for method A include the
 > lower limit for unused attestations and the batch size.
 
-### Requirements to be added (likely) to Topic 1
+#### Requirements to be added (likely) to Topic 1
 
 1.  When receiving a PID, attestation, or WUA a Relying Party Instance
     SHALL discard the values of all unique elements, including at least
@@ -895,7 +896,7 @@ attestation separately.
     these values to the Relying Party or to any other party in the EUDI
     Wallet ecosystem.
 
-### Requirements to be added (likely) to Topic 7
+#### Requirements to be added (likely) to Topic 7
 
 1.  A Relying Party Instance SHOULD NOT request the relevant Attestation
     Status List or Attestation Revocation List each time an attestation
@@ -932,7 +933,7 @@ requests a particular ASL, the Attestation List Provider is not able to
 deduce which PID or attestation (likely) was presented to that Relying
 Party.
 
-## High-Level Requirements to be deleted
+### High-Level Requirements to be deleted
 
 WUA\_09: A Wallet Provider SHALL consider all relevant factors,
 including the risk of a WUA public key becoming a vector to track the
@@ -947,14 +948,14 @@ These two requirements can be deleted if the ones proposed in section
 6.1 are added, because the proposed requirements include the Wallet
 Provider and are much more detailed than the above two requirements.
 
-## Descriptions to be added to the ARF main document
+### Descriptions to be added to the ARF main document
 
 A summary of the descriptions in chapter 2 will be added to section
 6.1.3 of the ARF main document, version 1.7. A summary of the
 descriptions in chapter 3 will be added to section 6.6.5 of the ARF main
 document, version 1.7.
 
-# References
+## References
 
 <table>
 <colgroup>
