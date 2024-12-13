@@ -16,7 +16,7 @@
     
     
       
-        <title>Introduction - EUDI Wallet</title>
+        <title>B - Re-issuance and batch issuance of PIDs and Attestations - EUDI Wallet</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#b-re-issuance-and-batch-issuance-of-pids-and-attestations" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              B - Re-issuance and batch issuance of PIDs and Attestations
             
           </span>
         </div>
@@ -346,6 +346,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#discussion-paper-topic-description" class="md-nav__link">
     <span class="md-ellipsis">
       Discussion Paper topic description
@@ -353,8 +363,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#related-risks-in-the-risk-register" class="md-nav__link">
     <span class="md-ellipsis">
       Related risks in the Risk Register
@@ -362,8 +372,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#key-words" class="md-nav__link">
     <span class="md-ellipsis">
       Key words
@@ -371,13 +381,51 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#document-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Document structure
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-issuance-and-batch-issuance-of-pids-and-attestations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-issuance and batch issuance of PIDs and attestations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Re-issuance and batch issuance of PIDs and attestations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-by-openid4vci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support by OpenID4VCI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -399,8 +447,9 @@
   
 
 
-<h1 id="introduction">Introduction</h1>
-<h2 id="discussion-paper-topic-description">Discussion Paper topic description</h2>
+<h1 id="b-re-issuance-and-batch-issuance-of-pids-and-attestations">B - Re-issuance and batch issuance of PIDs and Attestations</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="discussion-paper-topic-description">Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic B: Re-issuance and batch issuance of PIDs and
 Attestations.</p>
@@ -411,22 +460,22 @@ discussed, as this topic is currently not addressed in the ARF. For
 example, requirements around authentication of the User and re-use of
 existing private keys may be different for first-time issuance and
 re-issuance, batch issuance or synchronous issuance of an attestation</em></p>
-<h2 id="related-risks-in-the-risk-register">Related risks in the Risk Register</h2>
+<h3 id="related-risks-in-the-risk-register">Related risks in the Risk Register</h3>
 <p>The risk register for European Digital Identity Wallets [RiskRegister]
 contains no risks regarding re-issuance. This is because the risk
 register focuses on risks related to security and privacy, not on
 operational issues such as the difference between first-time issuance
 and re-issuance of attestations.</p>
-<h2 id="key-words">Key words</h2>
-<p>This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
+<h3 id="key-words">Key words</h3>
+<p>This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in RFC 2119, i.e., to indicate requirements,
 recommendations and options specified in this document.</p>
-<p>In addition, ‘must’ (non-capitalized) is used to indicate an external
+<p>In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that
-is mandated by an external document. The word ‘can’ indicates a
-capability, whereas other words, such as ‘will’, ‘is’ or ‘are’ are
+is mandated by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will', 'is' or 'are' are
 intended as statements of fact.</p>
-<h2 id="document-structure">Document structure</h2>
+<h3 id="document-structure">Document structure</h3>
 <p>This document is structured as follows:</p>
 <ul>
 <li>
@@ -449,8 +498,8 @@ intended as statements of fact.</p>
     ARF as a result of discussing this topic with Member States.</p>
 </li>
 </ul>
-<h1 id="re-issuance-and-batch-issuance-of-pids-and-attestations">Re-issuance and batch issuance of PIDs and attestations</h1>
-<h2 id="description">Description</h2>
+<h2 id="re-issuance-and-batch-issuance-of-pids-and-attestations">Re-issuance and batch issuance of PIDs and attestations</h2>
+<h3 id="description">Description</h3>
 <p>Version 1.5 of the ARF contains a large number of requirements regarding
 the issuance of PIDs and attestations, primarily in Topic 10/23 and also
 in Topic 9. These requirements do not distinguish between the first time
@@ -471,7 +520,7 @@ All PIDs or attestations in a batch have the same document type,
 attribute values and validity period. In general, if the original PID or
 attestation was issued in a batch, then the PID Provider or Attestation
 Provider will re-issue that PID or attestation in a batch as well.</p>
-<h2 id="support-by-openid4vci">Support by OpenID4VCI</h2>
+<h3 id="support-by-openid4vci">Support by OpenID4VCI</h3>
 <p>The ARF requires that Wallet Units, PID Providers, and Attestation
 Providers use the [OpenID4VCI] specification for issuance of PIDs and
 attestations. [OpenID4VCI] supports re-issuance of attestations
@@ -505,7 +554,7 @@ OpenID4CI feature.</p>
 </li>
 </ol>
 <h1 id="reasons-for-re-issuance">Reasons for re-issuance</h1>
-<h2 id="overview">Overview</h2>
+<h3 id="overview">Overview</h3>
 <p>There may be different reasons for re-issuing a PID or attestation, for
 example:</p>
 <ul>
@@ -528,7 +577,7 @@ example:</p>
 <p>The main reason for batch issuance of PIDs or attestations within the
 EUDI Wallet ecosystem is to (partly) mitigate Relying Party linkability.
 For this, see [Topic A].</p>
-<h2 id="pid-or-attestation-nearing-its-end-of-validity-or-wallet-unit-running-out-of-pids-or-attestations">PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations</h2>
+<h3 id="pid-or-attestation-nearing-its-end-of-validity-or-wallet-unit-running-out-of-pids-or-attestations">PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations</h3>
 <p>As specified in [ISO/IEC 18013-5] or [SD-JWT VC], each PID or
 attestation contains metadata indicating its validity period.
 Determining the length of the validity period is the responsibility of
@@ -557,7 +606,7 @@ These conditions are very different from a first-time issuance of a PID
 or attestation, where the User must take the initiative to request the
 PID or attestation, and is potentially involved in the process in other
 ways as well. These aspects are discussed in chapter 4.</p>
-<h2 id="a-change-in-attribute-values">A change in attribute values</h2>
+<h3 id="a-change-in-attribute-values">A change in attribute values</h3>
 <p>During the lifetime of a PID or attestation, the value of some of the
 attributes may change. For example, at the date of birth of the User, an
 age attestation attribute (i.e., an attribute indicating whether the
@@ -570,7 +619,7 @@ severe traffic violations.</p>
 on the User, because they will notice that their attribute values have
 been changed. For transparency reasons, it seems necessary to require
 that the Wallet Unit notifies the User about such a change.</p>
-<h2 id="synchronous-issuing">Synchronous issuing</h2>
+<h3 id="synchronous-issuing">Synchronous issuing</h3>
 <p>A third reason for re-issuing a PID or attestation is where the PID
 Provider or Attestation Provider uses synchronous issuing. In such an
 architecture, the Wallet Unit requests the issuance of a new PID or
@@ -581,14 +630,14 @@ very short-lived and is used only once.</p>
 similar to the reasons discussed in section 3.2. Users should not notice
 that a PID or attestation is being re-issued, nor should they have to
 take any action to ensure that re-issuance happens.</p>
-<h1 id="differences-between-first-time-issuance-and-re-issuance-or-batch-issuance">Differences between first-time issuance and re-issuance or batch issuance</h1>
-<h2 id="user-authentication-by-pid-provider-or-attestation-provider">User authentication by PID Provider or Attestation Provider</h2>
+<h2 id="differences-between-first-time-issuance-and-re-issuance-or-batch-issuance">Differences between first-time issuance and re-issuance or batch issuance</h2>
+<h3 id="user-authentication-by-pid-provider-or-attestation-provider">User authentication by PID Provider or Attestation Provider</h3>
 <p>In [Topic A] a high-level requirement was established that, to the
 maximum extent possible, Users will not be involved in managing the
 re-issuance of new attestations. This is an important principle.
 Requiring that the User is involved in re-issuance processes would mean
 that a User is requested to perform actions that they did not initiate,
-and for which they probably don’t understand the reason. This would lead
+and for which they probably don't understand the reason. This would lead
 at least to a bad user experience, and most likely also to operational
 problems, such as Users not cooperating. Users may start to distrust
 their Wallet Unit if it unexpectedly keeps asking the User to
@@ -637,9 +686,9 @@ simultaneously to the Wallet Unit.</p>
     9449?</p>
 </li>
 </ol>
-<h2 id="user-authentication-and-key-management-by-the-wsca">User authentication and key management by the WSCA</h2>
+<h3 id="user-authentication-and-key-management-by-the-wsca">User authentication and key management by the WSCA</h3>
 <p>The ARF v1.4 (and v1.5 as well) contains a requirement (WTE_02 /
-WUA_02) stating that “a WSCA SHALL authenticate the User before
+WUA_02) stating that "a WSCA SHALL authenticate the User before
 performing any cryptographic operation involving a private or secret key
 of (…) a PID or an attestation in a Wallet Unit.”</p>
 <p>If Users must not be aware of re-issuance processes for their existing
@@ -722,7 +771,7 @@ is clearly not acceptable from a user experience point of view,
 especially not since the User is not even aware of the concept of batch
 issuance, nor of the reasons for it.</p>
 <p>However, ARF 1.5.0 already contains the following note to requirement
-WUA_02: “Many actions of the Wallet Instance, such as processing a
+WUA_02: "Many actions of the Wallet Instance, such as processing a
 Relying Party request and presenting an attestation, require multiple
 cryptographic operations, for example ephemeral key generation followed
 by key agreement and message encryption. This requirement does not imply
@@ -740,7 +789,7 @@ batch issuance must be possible with at most one User authentication.</p>
 <ol>
 <li>What do you think about User authentication in batch-issuance scenarios?</li>
 </ol>
-<h2 id="triggers-for-the-issuance-process">Triggers for the issuance process</h2>
+<h3 id="triggers-for-the-issuance-process">Triggers for the issuance process</h3>
 <p>The process of first-time issuance of a PID or attestation is triggered
 by the User, who wants to obtain a PID or attestation and triggers the
 Wallet Unit to start the process specified in [OpenID4VCI]. If we take
@@ -751,7 +800,7 @@ Provider or Attestation Provider, or the Wallet Unit.</p>
 <p>However, it is not clear how the PID Provider or Attestation Provider
 can trigger the Wallet Unit to start the re-issuance processes. A Wallet
 Provider will typically be able to send a push message to a Wallet Unit,
-which will cause the Wallet Unit to contact the Wallet Provider’s
+which will cause the Wallet Unit to contact the Wallet Provider's
 backend to look for any updates or other actions. But PID Providers and
 Attestation Providers are different from Wallet Providers, generally
 speaking, and will typically not have this option.</p>
@@ -842,7 +891,7 @@ value anyway. This approach nevertheless has some drawbacks as well:</p>
     lost the right to drive because of medical reasons or severe traffic
     violations. Such a User may refuse to trigger the re-issuance
     process because they want to continue using their existing PID or
-    attestation with the ‘old’ values. Obviously, the PID Provider or
+    attestation with the 'old' values. Obviously, the PID Provider or
     Attestation Provider can (and should) revoke the existing PID or
     attestation. But this implies that they should have a policy
     determining how they will deal with situations like this.</p>
@@ -874,18 +923,18 @@ value anyway. This approach nevertheless has some drawbacks as well:</p>
 <p>Can you think of any other option?</p>
 </li>
 </ol>
-<h1 id="additions-and-changes-to-the-arf">Additions and changes to the ARF</h1>
-<h2 id="high-level-requirements-to-be-added-to-annex-2">High-Level Requirements to be added to Annex 2</h2>
+<h2 id="additions-and-changes-to-the-arf">Additions and changes to the ARF</h2>
+<h3 id="high-level-requirements-to-be-added-to-annex-2">High-Level Requirements to be added to Annex 2</h3>
 <p>The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:</p>
 <p>&lt;To be added after discussion of this Discussion Paper with Member
 States.&gt;</p>
-<h2 id="high-level-requirements-to-be-changed">High-Level Requirements to be changed</h2>
+<h3 id="high-level-requirements-to-be-changed">High-Level Requirements to be changed</h3>
 <p>&lt;A future version of this document will analyse the requirements on
 issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
 this Discussion Paper.&gt;</p>
-<h3 id="topic-1023">Topic 10/23</h3>
+<h4 id="topic-1023">Topic 10/23</h4>
 <table>
 <colgroup>
 <col style="width: 18%" />
@@ -913,7 +962,7 @@ this Discussion Paper.&gt;</p>
 </tbody>
 </table>
 
-<h3 id="topic-9">Topic 9</h3>
+<h4 id="topic-9">Topic 9</h4>
 <table>
 <colgroup>
 <col style="width: 18%" />
@@ -941,10 +990,10 @@ this Discussion Paper.&gt;</p>
 </tbody>
 </table>
 
-<h2 id="descriptions-to-be-added-to-the-arf-main-document">Descriptions to be added to the ARF main document</h2>
+<h3 id="descriptions-to-be-added-to-the-arf-main-document">Descriptions to be added to the ARF main document</h3>
 <p>A summary of the descriptions in chapters 2, 3, and 4 will be added to
 the ARF main document, version 1.8.</p>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <table>
 <colgroup>
 <col style="width: 19%" />
