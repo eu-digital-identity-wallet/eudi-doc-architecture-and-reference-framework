@@ -1,6 +1,8 @@
-# Introduction 
+# B - Re-issuance and batch issuance of PIDs and Attestations
 
-## Discussion Paper topic description
+## Introduction 
+
+### Discussion Paper topic description
 
 This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic B: Re-issuance and batch issuance of PIDs and
@@ -15,7 +17,7 @@ example, requirements around authentication of the User and re-use of
 existing private keys may be different for first-time issuance and
 re-issuance, batch issuance or synchronous issuance of an attestation*
 
-## Related risks in the Risk Register
+### Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains no risks regarding re-issuance. This is because the risk
@@ -23,7 +25,7 @@ register focuses on risks related to security and privacy, not on
 operational issues such as the difference between first-time issuance
 and re-issuance of attestations.
 
-## Key words
+### Key words
 
 This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
 as specified in RFC 2119, i.e., to indicate requirements,
@@ -35,7 +37,7 @@ is mandated by an external document. The word ‘can’ indicates a
 capability, whereas other words, such as ‘will’, ‘is’ or ‘are’ are
 intended as statements of fact.
 
-## Document structure
+### Document structure
 
 This document is structured as follows:
 
@@ -54,9 +56,9 @@ This document is structured as follows:
 -   Chapter 5 lists the additions and changes that will be made to the
     ARF as a result of discussing this topic with Member States.
 
-# Re-issuance and batch issuance of PIDs and attestations
+## Re-issuance and batch issuance of PIDs and attestations
 
-## Description
+### Description
 
 Version 1.5 of the ARF contains a large number of requirements regarding
 the issuance of PIDs and attestations, primarily in Topic 10/23 and also
@@ -81,7 +83,7 @@ attribute values and validity period. In general, if the original PID or
 attestation was issued in a batch, then the PID Provider or Attestation
 Provider will re-issue that PID or attestation in a batch as well.
 
-## Support by OpenID4VCI
+### Support by OpenID4VCI
 
 The ARF requires that Wallet Units, PID Providers, and Attestation
 Providers use the \[OpenID4VCI\] specification for issuance of PIDs and
@@ -118,7 +120,7 @@ Questions
 
 # Reasons for re-issuance
 
-## Overview
+### Overview
 
 There may be different reasons for re-issuing a PID or attestation, for
 example:
@@ -139,7 +141,7 @@ The main reason for batch issuance of PIDs or attestations within the
 EUDI Wallet ecosystem is to (partly) mitigate Relying Party linkability.
 For this, see \[Topic A\].
 
-## PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations
+### PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations
 
 As specified in \[ISO/IEC 18013-5\] or \[SD-JWT VC\], each PID or
 attestation contains metadata indicating its validity period.
@@ -173,7 +175,7 @@ or attestation, where the User must take the initiative to request the
 PID or attestation, and is potentially involved in the process in other
 ways as well. These aspects are discussed in chapter 4.
 
-## A change in attribute values
+### A change in attribute values
 
 During the lifetime of a PID or attestation, the value of some of the
 attributes may change. For example, at the date of birth of the User, an
@@ -189,7 +191,7 @@ on the User, because they will notice that their attribute values have
 been changed. For transparency reasons, it seems necessary to require
 that the Wallet Unit notifies the User about such a change.
 
-## Synchronous issuing
+### Synchronous issuing
 
 A third reason for re-issuing a PID or attestation is where the PID
 Provider or Attestation Provider uses synchronous issuing. In such an
@@ -203,9 +205,9 @@ similar to the reasons discussed in section 3.2. Users should not notice
 that a PID or attestation is being re-issued, nor should they have to
 take any action to ensure that re-issuance happens.
 
-# Differences between first-time issuance and re-issuance or batch issuance
+## Differences between first-time issuance and re-issuance or batch issuance
 
-## User authentication by PID Provider or Attestation Provider
+### User authentication by PID Provider or Attestation Provider
 
 In \[Topic A\] a high-level requirement was established that, to the
 maximum extent possible, Users will not be involved in managing the
@@ -263,7 +265,7 @@ Questions
     currently present in the WSCA, by using the DPoP mechanism in RFC
     9449?
 
-## User authentication and key management by the WSCA
+### User authentication and key management by the WSCA
 
 The ARF v1.4 (and v1.5 as well) contains a requirement (WTE\_02 /
 WUA\_02) stating that “a WSCA SHALL authenticate the User before
@@ -366,7 +368,7 @@ Questions
 
 9.  What do you think about User authentication in batch-issuance scenarios?
 
-## Triggers for the issuance process
+### Triggers for the issuance process
 
 The process of first-time issuance of a PID or attestation is triggered
 by the User, who wants to obtain a PID or attestation and triggers the
@@ -489,9 +491,9 @@ Questions
 
 14.  Can you think of any other option?
 
-# Additions and changes to the ARF 
+## Additions and changes to the ARF 
 
-## High-Level Requirements to be added to Annex 2
+### High-Level Requirements to be added to Annex 2
 
 The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:
@@ -499,14 +501,14 @@ ARF v1.8:
 &lt;To be added after discussion of this Discussion Paper with Member
 States.&gt;
 
-## High-Level Requirements to be changed
+### High-Level Requirements to be changed
 
 &lt;A future version of this document will analyse the requirements on
 issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
 this Discussion Paper.&gt;
 
-### Topic 10/23
+#### Topic 10/23
 
 <table>
 <colgroup>
@@ -535,7 +537,7 @@ this Discussion Paper.&gt;
 </tbody>
 </table>
 
-### Topic 9
+#### Topic 9
 
 <table>
 <colgroup>
@@ -564,12 +566,12 @@ this Discussion Paper.&gt;
 </tbody>
 </table>
 
-## Descriptions to be added to the ARF main document
+### Descriptions to be added to the ARF main document
 
 A summary of the descriptions in chapters 2, 3, and 4 will be added to
 the ARF main document, version 1.8.
 
-# References
+## References
 
 <table>
 <colgroup>
