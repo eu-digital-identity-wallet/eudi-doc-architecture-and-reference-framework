@@ -1411,7 +1411,7 @@ The Wallet Solution provided by the Wallet Provider is certified by a
 Notified Body. The certification process is described in [chapter 7](#7-security-and-data-protection).
 
 If the registration and notification processes are successful, the trust
-anchors of the Wallet Provider are included in a Wallet Providers Trusted
+anchors of the Wallet Provider are included in a Wallet Provider Trusted
 List. During issuance of a PID or an attestation, the PID Provider or
 the Attestation Provider can use these trust anchors to verify the
 authenticity of a Wallet Trust Evidence signed by the Wallet Provider,
@@ -1429,7 +1429,7 @@ More details on the Wallet Provider notification process can be found in
 
 Under specific conditions, a Registrar may decide to suspend or withdraw
 a Wallet Provider. This means the Wallet Provider is taken off from the
-Wallet Providers Trusted List. The conditions for this will be specified
+Wallet Provider Trusted List. The conditions for this will be specified
 by each Registrar. As a result of de-registration, PID Providers,
 Attestation Providers and Relying Parties will no longer trust the trust
 anchors of the Wallet Provider and will therefore refuse to interact
@@ -1991,14 +1991,14 @@ Attestation Provider certificate.
 **Verifies the authenticity of the Wallet Instance**
 
 As shown in figure 6, a PID Provider or an Attestation Provider
-downloads the Wallet Providers Trusted List(s) it needs from the relevant
+downloads the Wallet Provider Trusted List(s) it needs from the relevant
 Registrar(s), possibly after having located them via the Commission
 common trust infrastructure.
 
 Note:
 
 -   It is not mandatory for PID Providers or Attestation Providers to
-    possess all Wallet Providers Trusted Lists, if there are multiple.
+    possess all Wallet Provider Trusted Lists, if there are multiple.
     This is because it is not mandatory for a PID Provider or an
     Attestation Provider to accept all certified Wallet Solutions in the
     EUDI Wallet ecosystem. Each PID Provider or Attestation Provider
@@ -2477,7 +2477,7 @@ Relying Party Instance:
     way this will be done is yet to be determined, see [Section 6.5.3](#653-wallet-instance-activation).
 
 -   verifies the signature over the WIA using the Wallet Provider trust
-    anchor obtained from the Wallet Providers Trusted List.
+    anchor obtained from the Wallet Provider Trusted List.
 
 -   verifies that the Wallet Instance is in possession of the private
     key belonging to the public key in the WIA. This proves that the
