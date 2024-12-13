@@ -80,7 +80,7 @@ Attestation Provider:
 <tbody>
 <tr>
 <td>Surveillance, or monitoring, is defined as the unauthorised tracking
-or observation of a wallet user's activities, communication, or data.
+or observation of a wallet user’s activities, communication, or data.
 Surveillance is often related to inference, which is defined as the
 deduction of sensitive or personal information from seemingly innocuous
 data.</td>
@@ -100,7 +100,7 @@ data.</td>
 <tbody>
 <tr>
 <td>Wholesale surveillance is defined as the tracking or observation of
-the activities of many users through their wallet's communication or
+the activities of many users through their wallet’s communication or
 data. Wholesale surveillance is often associated with surveillance (R14)
 and inference at a global scale, where information about many users is
 combined to deduce sensitive or personal data about users or to identify
@@ -161,7 +161,7 @@ required.</td>
 
 ### Key words
 
-This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
+This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
 as specified in RFC 2119, i.e., to indicate requirements,
 recommendations and options specified in this document.
 
@@ -197,11 +197,11 @@ This document is structured as follows:
 
 This chapter describes in detail how the attestation formats currently
 specified for use in the EUDI Wallet ecosystem could be misused for
-tracking the User's behaviour.
+tracking the User’s behaviour.
 
 The attestation formats required to be supported in the ARF are
-specified in ISO/IEC 18013-5 \[ISO18013-5\] and "SD-JWT-based Verifiable
-Credentials (SD-JWT VC)" \[SD-JWT VC\]. Both of these formats enable
+specified in ISO/IEC 18013-5 \[ISO18013-5\] and “SD-JWT-based Verifiable
+Credentials (SD-JWT VC)” \[SD-JWT VC\]. Both of these formats enable
 selective disclosure of attributes by making use of so-called
 salted-attribute hashes. For more information on this technique, see
 \[ETSI 119476\]. In a nutshell, the idea is that an Attestation Provider
@@ -415,13 +415,339 @@ issued depends on the frequency of use. This has two effects:
     the use of the attestation to the Attestation Provider.
 
 2.  This method may mean imply unpredictability regarding the load on
-    the Attestation Provider's systems. If a User uses their attestation
+    the Attestation Provider’s systems. If a User uses their attestation
     frequently, the Attestation Provider will have to issue many
     attestations. On the flipside, if an attestation is seldomly used,
     the Attestation Provider will have to issue very few attestations
     per year. This is because the validity period of the attestation can
     be chosen very long if an attestation is presented at most once
-    anyway, without negative effects to the User's privacy.
+    anyway, without negative effects to the User’s privacy.
+
+Another drawback of this method is that the Attestation Provider is
+dependent on the correct implementation by the Wallet Unit to ensure
+that it is used correctly.
+
+### Method B: Limited-time attestations
+
+#### Description
+
+In another approach, a Wallet Unit may present each attestation multiple
+times, but only as long as it is valid. Moreover, the Wallet Provider
+limits the length of the attestation validity to such an extent that it
+is statistically unlikely that any of the unique values in the
+attestation can be effectively used by colluding Relying Parties to
+correlate and track the User.
+
+#### Advantages
+
+The biggest advantages of this method are:
+
+-   The Wallet Unit does not need to support any dedicated
+    functionality, like it must for once-only attestations,
+    rotating-batch attestations, or per-RP attestations. This also
+    implies that, to implement this method, the Attestation Provider is
+    not dependent in any way on the Wallet Unit, which may also be seen
+    as an advantage.
+
+-   This method will result in the issuance of a fixed number of
+    attestations per year, regardless of usage. This means a predictable
+    load for the Attestation Provider,
+
+-   Finally, the fixed number of attestations per year also implies that
+    the Attestation Provider does not get any information about the
+    frequency of use of their attestations.
+
+#### Technical impacts on Wallet Unit
+
+None, as described above.
+
+#### Drawbacks
+
+The main drawbacks of this method are
+
+-   The risk of Relying Party linkability is not zero, however short the
+    attestation validity period is chosen. This may a both a real
+    (technical) risk and a reputational risk, in the sense that it may
+    be hard to counter accusations of a lack of privacy.
+
+-   It may be hard to estimate how often the User will present their
+    attestation, or to determine what an acceptable level of risk to
+    User privacy is. This is essentially a risk analysis to be done by
+    the Attestation Provider, considering the average usage of their
+    attestations.
+
+-   Since the Attestation Provider will not have usage information per
+    User, it can only use estimated averages. However, there always will
+    be Users will an above-average attestation usage. These Users will
+    therefore be subject to a higher level of risk of tracking.
+
+### Method C: Rotating-batch attestations
+
+#### Description
+
+Using this method, the Attestation Provider issues attestations in
+batches to the Wall Unit, like when using once-only attestations (method
+A). However, in method C a Wallet Unit uses the attestations in a batch
+a random order, until it has used all attestations in the batch once.
+Then it ‘resets’ the batch and starts using them again, again in a
+random order.
+
+A batch may consist, for instance, of 20 attestations. If so, any
+attestation given will be presented unpredictably in 5% of all
+transactions between a User and a Relying Party. This makes tracking
+difficult as long as only a minority of Relying Parties is colluding.
+The level of privacy can be increased by issuing larger batches, at the
+expense of having to generate more attestations.
+
+In addition, the attestations in the batch have a validity period, and
+cannot be used after the validity period is over. This means that the
+Attestation Provider will need to replace the entire batch some time
+before the validity period ends. By decreasing the length of the
+validity period, the Attestation Providers increases the level of
+protection against Relying Party linkability.in a manner that is
+independent of the batch size.
+
+This approach has been used, for example, in Cooperative Intelligent
+Transport Systems (C-ITS).
+
+The OpenID4VCI specification used for attestation issuance in the EUDI
+Wallet ecosystem supports batch issuance.
+
+#### Advantages
+
+If this approach is used, the number of attestations to be issued is
+constant over time and does not depend on usage. Therefore, like method
+B, this method does not leak information to the Attestation Provider and
+ensures a constant and predictable load for the Attestation Provider’s
+systems.
+
+Moreover, compared to method B this method increases the level of
+privacy, especially for attestations that are used quite frequently. Or,
+to put the same thing in a different way, if a batch of attestations is
+used in a rotating fashion, the validity period of an attestation can be
+longer without impacting the User’s privacy.
+
+#### Technical impacts on Wallet Unit
+
+The Wallet Unit must implement dedicated functionality to support this
+method, for example to keep track of which attestations are used and
+unused, and when a batch is fully used and must be reset.
+
+#### Drawbacks
+
+This method has the following drawbacks:
+
+-   The risk of Relying Party linkability is not zero, however big the
+    batch size and however short the attestation validity period is
+    chosen. This may a both a real (technical) risk and a reputational
+    risk, in the sense that it may be hard to counter accusations of a
+    lack of privacy.
+
+-   The Attestation Provider is dependent on the correct implementation
+    by the Wallet Unit to ensure that this method is used correctly.
+
+-   Also, the Attestation Provider must take a decision regarding batch
+    size and validity period, balancing User privacy against load on
+    their systems. Like for method B, this may be a difficult exercise,
+    and the chosen sizes and validity periods will not fully guarantee
+    the privacy of all Users.
+
+-   Moreover, every time the attestations expire, the Provider will need
+    to issue a full batch of attestations, instead of just a single one.
+    This is regardless of whether all attestations in the batch have
+    actually been used or not. Therefore, this approach seems suitable
+    only if the User presents attributes to Relying Parties frequently.
+
+### Method D: Per-Relying Party attestations
+
+When this method is used, the Wallet Unit will present different
+attestations to different Relying Parties. However, in case a Relying
+Party requests attributes from this attestation multiple times, the
+Wallet Unit SHALL present the same attestation to this Relying Party
+each time.
+
+In fact, this method can be seen as a mixture of methods A and B
+described above: it uses method A for different Relying Parties, and
+method B for recurring Relying Parties. This implies that all of the
+respective advantages and disadvantages of these methods apply also for
+this method. The ‘weight’ of these advantages and disadvantages will
+depend on whether the User interacts a few times with a large number of
+different Relying Parties, or, on the contrary, tends to interact a
+larger number of times with only a small number of Relying Parties.
+
+Regarding the technical impacts on the Wallet Unit, there is one
+additional requirement compared to the ones listed above for method A.
+This is that the Wallet Unit must keep track of which attestation it has
+presented to which Relying Party. It is possible to do so, since
+according to the ARF, the access certificates used by Relying Party to
+authenticate themselves to Wallet Units contain a unique identifier of
+the Relying Party. However, it represents an extra effort for the Wallet
+Unit, and it may complicate attestation inventory management.
+
+### General note: Diminishing the costs of issuing multiple attestations
+
+Another drawback of this method is that the Attestation Provider is
+dependent on the correct implementation by the Wallet Unit to ensure
+that it is used correctly.
+
+### Method B: Limited-time attestations
+
+#### Description
+
+In another approach, a Wallet Unit may present each attestation multiple
+times, but only as long as it is valid. Moreover, the Wallet Provider
+limits the length of the attestation validity to such an extent that it
+is statistically unlikely that any of the unique values in the
+attestation can be effectively used by colluding Relying Parties to
+correlate and track the User.
+
+#### Advantages
+
+The biggest advantages of this method are:
+
+-   The Wallet Unit does not need to support any dedicated
+    functionality, like it must for once-only attestations,
+    rotating-batch attestations, or per-RP attestations. This also
+    implies that, to implement this method, the Attestation Provider is
+    not dependent in any way on the Wallet Unit, which may also be seen
+    as an advantage.
+
+-   This method will result in the issuance of a fixed number of
+    attestations per year, regardless of usage. This means a predictable
+    load for the Attestation Provider,
+
+-   Finally, the fixed number of attestations per year also implies that
+    the Attestation Provider does not get any information about the
+    frequency of use of their attestations.
+
+#### Technical impacts on Wallet Unit
+
+None, as described above.
+
+#### Drawbacks
+
+The main drawbacks of this method are
+
+-   The risk of Relying Party linkability is not zero, however short the
+    attestation validity period is chosen. This may a both a real
+    (technical) risk and a reputational risk, in the sense that it may
+    be hard to counter accusations of a lack of privacy.
+
+-   It may be hard to estimate how often the User will present their
+    attestation, or to determine what an acceptable level of risk to
+    User privacy is. This is essentially a risk analysis to be done by
+    the Attestation Provider, considering the average usage of their
+    attestations.
+
+-   Since the Attestation Provider will not have usage information per
+    User, it can only use estimated averages. However, there always will
+    be Users will an above-average attestation usage. These Users will
+    therefore be subject to a higher level of risk of tracking.
+
+### Method C: Rotating-batch attestations
+
+#### Description
+
+Using this method, the Attestation Provider issues attestations in
+batches to the Wall Unit, like when using once-only attestations (method
+A). However, in method C a Wallet Unit uses the attestations in a batch
+a random order, until it has used all attestations in the batch once.
+Then it 'resets' the batch and starts using them again, again in a
+random order.
+
+A batch may consist, for instance, of 20 attestations. If so, any
+attestation given will be presented unpredictably in 5% of all
+transactions between a User and a Relying Party. This makes tracking
+difficult as long as only a minority of Relying Parties is colluding.
+The level of privacy can be increased by issuing larger batches, at the
+expense of having to generate more attestations.
+
+In addition, the attestations in the batch have a validity period, and
+cannot be used after the validity period is over. This means that the
+Attestation Provider will need to replace the entire batch some time
+before the validity period ends. By decreasing the length of the
+validity period, the Attestation Providers increases the level of
+protection against Relying Party linkability.in a manner that is
+independent of the batch size.
+
+This approach has been used, for example, in Cooperative Intelligent
+Transport Systems (C-ITS).
+
+The OpenID4VCI specification used for attestation issuance in the EUDI
+Wallet ecosystem supports batch issuance.
+
+#### Advantages
+
+If this approach is used, the number of attestations to be issued is
+constant over time and does not depend on usage. Therefore, like method
+B, this method does not leak information to the Attestation Provider and
+ensures a constant and predictable load for the Attestation Provider's
+systems.
+
+Moreover, compared to method B this method increases the level of
+privacy, especially for attestations that are used quite frequently. Or,
+to put the same thing in a different way, if a batch of attestations is
+used in a rotating fashion, the validity period of an attestation can be
+longer without impacting the User's privacy.
+
+#### Technical impacts on Wallet Unit
+
+The Wallet Unit must implement dedicated functionality to support this
+method, for example to keep track of which attestations are used and
+unused, and when a batch is fully used and must be reset.
+
+#### Drawbacks
+
+This method has the following drawbacks:
+
+-   The risk of Relying Party linkability is not zero, however big the
+    batch size and however short the attestation validity period is
+    chosen. This may a both a real (technical) risk and a reputational
+    risk, in the sense that it may be hard to counter accusations of a
+    lack of privacy.
+
+-   The Attestation Provider is dependent on the correct implementation
+    by the Wallet Unit to ensure that this method is used correctly.
+
+-   Also, the Attestation Provider must take a decision regarding batch
+    size and validity period, balancing User privacy against load on
+    their systems. Like for method B, this may be a difficult exercise,
+    and the chosen sizes and validity periods will not fully guarantee
+    the privacy of all Users.
+
+-   Moreover, every time the attestations expire, the Provider will need
+    to issue a full batch of attestations, instead of just a single one.
+    This is regardless of whether all attestations in the batch have
+    actually been used or not. Therefore, this approach seems suitable
+    only if the User presents attributes to Relying Parties frequently.
+
+### Method D: Per-Relying Party attestations
+
+When this method is used, the Wallet Unit will present different
+attestations to different Relying Parties. However, in case a Relying
+Party requests attributes from this attestation multiple times, the
+Wallet Unit SHALL present the same attestation to this Relying Party
+each time.
+
+In fact, this method can be seen as a mixture of methods A and B
+described above: it uses method A for different Relying Parties, and
+method B for recurring Relying Parties. This implies that all of the
+respective advantages and disadvantages of these methods apply also for
+this method. The 'weight' of these advantages and disadvantages will
+depend on whether the User interacts a few times with a large number of
+different Relying Parties, or, on the contrary, tends to interact a
+larger number of times with only a small number of Relying Parties.
+
+Regarding the technical impacts on the Wallet Unit, there is one
+additional requirement compared to the ones listed above for method A.
+This is that the Wallet Unit must keep track of which attestation it has
+presented to which Relying Party. It is possible to do so, since
+according to the ARF, the access certificates used by Relying Party to
+authenticate themselves to Wallet Units contain a unique identifier of
+the Relying Party. However, it represents an extra effort for the Wallet
+Unit, and it may complicate attestation inventory management.
+
+### General note: Diminishing the costs of issuing multiple attestations
 
 Another drawback of this method is that the Attestation Provider is
 dependent on the correct implementation by the Wallet Unit to ensure
@@ -633,7 +959,7 @@ attention should be given to this process.
 
 To the maximum extent feasible given operational constraints, the
 Attestation Provider should not be able to learn anything about the
-User's use of an attestation based upon interactions between Relying
+User’s use of an attestation based upon interactions between Relying
 Parties and the Attestation Provider related to attestation revocation
 checking.
 
@@ -682,7 +1008,7 @@ integration, particularly focusing on defining specific requirements for
 implementing ZKPs by using any type of WSCD/WSCA.
 
 For further details, please see the 'Cryptographers' Feedback on the EU
-Digital Identity's ARF'
+Digital Identity’s ARF’
 [(here)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/200),
 and the Commission's response to it
 [here.](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/211#discussioncomment-9882388)
