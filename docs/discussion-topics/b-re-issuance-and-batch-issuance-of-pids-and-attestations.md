@@ -27,14 +27,14 @@ and re-issuance of attestations.
 
 ### Key words
 
-This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in RFC 2119, i.e., to indicate requirements,
 recommendations and options specified in this document.
 
-In addition, ‘must’ (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that
-is mandated by an external document. The word ‘can’ indicates a
-capability, whereas other words, such as ‘will’, ‘is’ or ‘are’ are
+is mandated by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will', 'is' or 'are' are
 intended as statements of fact.
 
 ### Document structure
@@ -214,7 +214,7 @@ maximum extent possible, Users will not be involved in managing the
 re-issuance of new attestations. This is an important principle.
 Requiring that the User is involved in re-issuance processes would mean
 that a User is requested to perform actions that they did not initiate,
-and for which they probably don’t understand the reason. This would lead
+and for which they probably don't understand the reason. This would lead
 at least to a bad user experience, and most likely also to operational
 problems, such as Users not cooperating. Users may start to distrust
 their Wallet Unit if it unexpectedly keeps asking the User to
@@ -268,7 +268,7 @@ Questions
 ### User authentication and key management by the WSCA
 
 The ARF v1.4 (and v1.5 as well) contains a requirement (WTE\_02 /
-WUA\_02) stating that “a WSCA SHALL authenticate the User before
+WUA\_02) stating that "a WSCA SHALL authenticate the User before
 performing any cryptographic operation involving a private or secret key
 of (…) a PID or an attestation in a Wallet Unit.”
 
@@ -348,7 +348,7 @@ especially not since the User is not even aware of the concept of batch
 issuance, nor of the reasons for it.
 
 However, ARF 1.5.0 already contains the following note to requirement
-WUA\_02: “Many actions of the Wallet Instance, such as processing a
+WUA\_02: "Many actions of the Wallet Instance, such as processing a
 Relying Party request and presenting an attestation, require multiple
 cryptographic operations, for example ephemeral key generation followed
 by key agreement and message encryption. This requirement does not imply
@@ -381,7 +381,7 @@ Provider or Attestation Provider, or the Wallet Unit.
 However, it is not clear how the PID Provider or Attestation Provider
 can trigger the Wallet Unit to start the re-issuance processes. A Wallet
 Provider will typically be able to send a push message to a Wallet Unit,
-which will cause the Wallet Unit to contact the Wallet Provider’s
+which will cause the Wallet Unit to contact the Wallet Provider's
 backend to look for any updates or other actions. But PID Providers and
 Attestation Providers are different from Wallet Providers, generally
 speaking, and will typically not have this option.
@@ -466,7 +466,7 @@ value anyway. This approach nevertheless has some drawbacks as well:
     lost the right to drive because of medical reasons or severe traffic
     violations. Such a User may refuse to trigger the re-issuance
     process because they want to continue using their existing PID or
-    attestation with the ‘old’ values. Obviously, the PID Provider or
+    attestation with the 'old' values. Obviously, the PID Provider or
     Attestation Provider can (and should) revoke the existing PID or
     attestation. But this implies that they should have a policy
     determining how they will deal with situations like this.

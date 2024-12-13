@@ -80,7 +80,7 @@ Attestation Provider:
 <tbody>
 <tr>
 <td>Surveillance, or monitoring, is defined as the unauthorised tracking
-or observation of a wallet user’s activities, communication, or data.
+or observation of a wallet user's activities, communication, or data.
 Surveillance is often related to inference, which is defined as the
 deduction of sensitive or personal information from seemingly innocuous
 data.</td>
@@ -100,7 +100,7 @@ data.</td>
 <tbody>
 <tr>
 <td>Wholesale surveillance is defined as the tracking or observation of
-the activities of many users through their wallet’s communication or
+the activities of many users through their wallet's communication or
 data. Wholesale surveillance is often associated with surveillance (R14)
 and inference at a global scale, where information about many users is
 combined to deduce sensitive or personal data about users or to identify
@@ -161,14 +161,14 @@ required.</td>
 
 ### Key words
 
-This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in RFC 2119, i.e., to indicate requirements,
 recommendations and options specified in this document.
 
-In addition, ‘must’ (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that
-is mandated by an external document. The word ‘can’ indicates a
-capability, whereas other words, such as ‘will’ and ‘is’ or ‘are’ are
+is mandated by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will' and 'is' or 'are' are
 intended as statements of fact.
 
 ### Document structure
@@ -197,11 +197,11 @@ This document is structured as follows:
 
 This chapter describes in detail how the attestation formats currently
 specified for use in the EUDI Wallet ecosystem could be misused for
-tracking the User’s behaviour.
+tracking the User's behaviour.
 
 The attestation formats required to be supported in the ARF are
-specified in ISO/IEC 18013-5 \[ISO18013-5\] and “SD-JWT-based Verifiable
-Credentials (SD-JWT VC)” \[SD-JWT VC\]. Both of these formats enable
+specified in ISO/IEC 18013-5 \[ISO18013-5\] and "SD-JWT-based Verifiable
+Credentials (SD-JWT VC)" \[SD-JWT VC\]. Both of these formats enable
 selective disclosure of attributes by making use of so-called
 salted-attribute hashes. For more information on this technique, see
 \[ETSI 119476\]. In a nutshell, the idea is that an Attestation Provider
@@ -230,7 +230,7 @@ unique value. These elements include:
 -   The value of the Attestation Provider signature.
 
 In addition, also timestamps, such as the signing or issuing time of the
-attestation and the ‘valid from’ and ‘valid until’ timestamps may be
+attestation and the 'valid from' and 'valid until' timestamps may be
 unique, if they are precise enough. For example, if the timestamps
 include milliseconds, this will almost always be the case.
 
@@ -271,7 +271,7 @@ used at multiple Relying Parties. By combining the attribute values that
 were presented during each of these interactions, they will be able to
 build a profile of the User.
 
-Also note that linkability of attestations can be a danger to the User’s
+Also note that linkability of attestations can be a danger to the User's
 privacy even if Relying Parties are not actively trying to track Users.
 If a Relying Party (or multiple Relying Parties) is the victim of a data
 breach by an attacker, and the data breach includes unique attestation
@@ -323,7 +323,7 @@ and the mitigation measures for Relying Party linkability described in
 the next chapter can also be used by Wallet Provider to mitigate the
 Relying Party linkability risks associated with presenting WUAs.
 
-Therefore, in this discussion paper the term ‘Attestation Provider’
+Therefore, in this discussion paper the term 'Attestation Provider'
 includes Wallet Providers, in their specific responsibilities as issuers
 of WUAs.
 
@@ -385,7 +385,7 @@ To prevent the Wallet Unit from running out of unused attestations, it
 must have a lower limit for the number of unused attestations it holds
 and request a new batch from the Attestation Provider when the number of
 unused attestations goes below this limit, as soon as it is able to.
-This is called the ‘saw-tooth model’ in inventory management.
+This is called the 'saw-tooth model' in inventory management.
 
 If this approach is used and the Wallet Unit is offline for a prolonged
 period of time, the Wallet Unit may run out of unused attestations. To
@@ -415,13 +415,13 @@ issued depends on the frequency of use. This has two effects:
     the use of the attestation to the Attestation Provider.
 
 2.  This method may mean imply unpredictability regarding the load on
-    the Attestation Provider’s systems. If a User uses their attestation
+    the Attestation Provider's systems. If a User uses their attestation
     frequently, the Attestation Provider will have to issue many
     attestations. On the flipside, if an attestation is seldomly used,
     the Attestation Provider will have to issue very few attestations
     per year. This is because the validity period of the attestation can
     be chosen very long if an attestation is presented at most once
-    anyway, without negative effects to the User’s privacy.
+    anyway, without negative effects to the User's privacy.
 
 Another drawback of this method is that the Attestation Provider is
 dependent on the correct implementation by the Wallet Unit to ensure
@@ -489,7 +489,7 @@ Using this method, the Attestation Provider issues attestations in
 batches to the Wall Unit, like when using once-only attestations (method
 A). However, in method C a Wallet Unit uses the attestations in a batch
 a random order, until it has used all attestations in the batch once.
-Then it ‘resets’ the batch and starts using them again, again in a
+Then it 'resets' the batch and starts using them again, again in a
 random order.
 
 A batch may consist, for instance, of 20 attestations. If so, any
@@ -518,14 +518,14 @@ Wallet ecosystem supports batch issuance.
 If this approach is used, the number of attestations to be issued is
 constant over time and does not depend on usage. Therefore, like method
 B, this method does not leak information to the Attestation Provider and
-ensures a constant and predictable load for the Attestation Provider’s
+ensures a constant and predictable load for the Attestation Provider's
 systems.
 
 Moreover, compared to method B this method increases the level of
 privacy, especially for attestations that are used quite frequently. Or,
 to put the same thing in a different way, if a batch of attestations is
 used in a rotating fashion, the validity period of an attestation can be
-longer without impacting the User’s privacy.
+longer without impacting the User's privacy.
 
 #### Technical impacts on Wallet Unit
 
@@ -570,7 +570,7 @@ In fact, this method can be seen as a mixture of methods A and B
 described above: it uses method A for different Relying Parties, and
 method B for recurring Relying Parties. This implies that all of the
 respective advantages and disadvantages of these methods apply also for
-this method. The ‘weight’ of these advantages and disadvantages will
+this method. The 'weight' of these advantages and disadvantages will
 depend on whether the User interacts a few times with a large number of
 different Relying Parties, or, on the contrary, tends to interact a
 larger number of times with only a small number of Relying Parties.
@@ -633,7 +633,7 @@ attention should be given to this process.
 
 To the maximum extent feasible given operational constraints, the
 Attestation Provider should not be able to learn anything about the
-User’s use of an attestation based upon interactions between Relying
+User's use of an attestation based upon interactions between Relying
 Parties and the Attestation Provider related to attestation revocation
 checking.
 
@@ -682,7 +682,7 @@ integration, particularly focusing on defining specific requirements for
 implementing ZKPs by using any type of WSCD/WSCA.
 
 For further details, please see the 'Cryptographers' Feedback on the EU
-Digital Identity’s ARF’
+Digital Identity's ARF'
 [(here)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/200),
 and the Commission's response to it
 [here.](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/211#discussioncomment-9882388)
