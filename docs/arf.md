@@ -322,7 +322,7 @@ The following components have been identified as the core components of a Wallet
 
 - **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes the keystore but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of an HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as operating system and cryptographic libraries provided by the WSCD vendor.
 
-- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. One WSCA is associated with at most one Wallet Unit, and manages assets, such as keys, for this specific Wallet Unit.
+- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptograhic keys, and interfaces directly with the Wallet Instance. In some architectures, the WSCA will be provided by the WSCD vendor. In other architectures, the Wallet Provider will provide the WSCA.
 
 - **Wallet Provider backend (WP**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
@@ -334,7 +334,7 @@ The interfaces and their respective protocols, as discussed in this section and 
 
 - **The User Interface (UI)** is the point of interaction and communication between the User and the Wallet Unit.
 
-- **The Presentation Interface (PI)** empowers Relying Parties to securely request and receive the PID and various attestations (such as QEAAs, PuB-EAAs and EAAs) from Wallet Units, accommodating both remote and proximity interactions. For remote presentation flows, as detailed in the following section, the Wallet Unit implements the OpenID for Verifiable Presentation protocol [OpenID4VP]. Where supported, Relying Parties use the [OpenID4VP profile for the W3C Digital Credentials API] (if available) to request the PID for additional privacy, User experience, and security benefits. In contrast, for the proximity presentation flow, it adheres to the [ISO/IEC 18013-5] standard. In a remote flow, when a Relying Party requires User authentication and data access to provide a service, the process initiates through either a web browser or a mobile app.
+- **The Presentation Interface (PI)** empowers Relying Parties to securely request and receive the PID and various attestations (such as QEAAs, PuB-EAAs and EAAs) from Wallet Units, accommodating both remote and proximity interactions. For remote presentation flows, as detailed in the following section, the Wallet Unit implements the OpenID for Verifiable Presentation protocol [OpenID4VP]. Where supported, Relying Parties use the [OpenID4VP profile for the W3C Digital Credentials API] (if available) to request the PID for additional privacy, User experience, and security benefits. In contrast, for the proximity presentation flow, it adheres to the [ISO/IEC 18013-5] standard. In a remote flow, when a Relying Party requests User attributes to provide a service, the process initiates through either a web browser or a mobile app.
 
 - **The Secure Cryptographic Interface (SCI)** enables the Wallet Unit to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions.
 
@@ -364,7 +364,7 @@ Specific use cases integrate one or more of these flows. For detailed User journ
 
 This section examines the technical interaction between the Wallet Solution, web browsers, and mobile apps, in regards of the flows described in the previous section. This is necessary to implement the attestation presentation interface effectively, with a focus on both User experience and security.
 
-When a Relying Party requires User authentication and some data to provide a service, the process begins within either a web browser or a mobile app. In the Remote Same-Device flow in particular, the User's browser or app should invoke their Wallet Unit through the mobile operating system where supported, whenever a Relying Party requests attributes. In contrast, a Remote Cross-Device flow and both the proximity flows (supervised or unsupervised), should invoke the Wallet Unit through the mobile operating system via an NFC tap or the scanning of a QR code.
+When a Relying Party requests User attributes to provide a service, the process begins within either a web browser or a mobile app. In the Remote Same-Device flow in particular, the User's browser or app should invoke their Wallet Unit through the mobile operating system where supported, whenever a Relying Party requests attributes. In contrast, a Remote Cross-Device flow and both the proximity flows (supervised or unsupervised), should invoke the Wallet Unit through the mobile operating system via an NFC tap or the scanning of a QR code.
 
 As illustrated in figure 2, secure and streamlined interaction with other applications, both on the User's device and externally, is crucial. Key areas for discussion and improvement include:
 
@@ -385,11 +385,11 @@ To mitigate these challenges, Relying Parties and Wallet Units should use the [O
 
 Building upon the high-level design described in figure 2, at least four different types of architecture for the Wallet Solution can be identified, each leveraging a different type of Wallet Secure Cryptographic Device (WSCD):
 
-1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In this architecture, the Wallet Secure Cryptographic Device is situated remotely, separate from the User's device, for example - implemented by the Wallet Provider using an HSM.
+1. ***Remote Wallet Secure Cryptographic Device (Remote WSCD)***: In this architecture, the Wallet Secure Cryptographic Device is situated remotely, separate from the User device. Typically, it will be implemented by the Wallet Provider using an HSM. The Wallet Provider will then also provide the WSCA with which the Wallet Unit interacts.
 
-2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a secure element, external hardware components like smartcards may be necessary to enhance security. This architecture involves an external Wallet Secure Cryptographic Device that is connected to, or interacts with, the User's device, to provide cryptographic functions, for example - a hardware token or smart card.
+2. ***Local External Wallet Secure Cryptographic Device (Local External WSCD)***: If a device lacks sufficiently secure hardware, such as a secure element, external hardware components like smartcards may be necessary to enhance security. This architecture involves an external Wallet Secure Cryptographic Device that is connected to the User device, or interacts with it, and provides the cryptographic functions needed by the Wallet Unit. In this case, the WSCD typically is a smart card or a secure token, and the WSCA is an applet running on the smart card.
 
-3. ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This architecture refers to a scenario where the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like eSIM/eUICC and eSE. In these scenarios, the WSCA (e.g., a Java Card applet) might be deployed by the Wallet Provider. Other examples are based on native solutions, such as StrongBox (Google) and SecureEnclave (Apple), in which access to the WSCD is facilitated via the operating system of the User device.
+3. ***Local Wallet Secure Cryptographic Device (Local WSCD)***: This architecture refers to a scenario where the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like eSIM/eUICC and eSE. In these scenarios, the WSCA (e.g., a Java Card applet) might be deployed by the Wallet Provider. Other examples native solutions, such as StrongBox (Android) and SecureEnclave (iOS). For such solutions, the API to access the WSCA is part of the operating system of the User device.
 
 4. ***Hybrid architecture***: This architecture combines two or more of the previous three approaches.
 
@@ -495,7 +495,7 @@ All attestations can be described to have the following elements:
 
 There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
 
-1. ISO/IEC 18013-5 defines an attribute schema, data format and proof mechanisms for mDL-s, which can be used also with other attribute schemas, see [ISO/IEC 18013-5].
+1. The ISO/IEC 18013-5 standard defines an attribute schema, data format and proof mechanisms for mDL-s, which can be used also with other attribute schemas, see [ISO/IEC 18013-5].
 
 2. SD-JWT-based Verifiable Credentials (SD-JWT VC) defines a proof mechanism similar to [ISO/IEC 18013-5], but for a different data format, see [SD-JWT VC].
 
@@ -575,7 +575,7 @@ Notes:
 
 - This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Trusted List Providers and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
 
-- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X509 certificates and ‘classical‘ X509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with ISO/IEC 18013-5. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
+- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X509 certificates and ‘classical‘ X509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
 
 - This trust model is valid for both remote and proximity use cases. However, technical measures taken to ensure that the requirements on trust are fulfilled may differ between these two use cases. Moreover, the authentication and authorisation mechanisms will depend on the characteristics of the interacting parties.
 
@@ -745,7 +745,7 @@ Section 4.4.3 above presented the lifecycle of a Wallet Unit:
 
 1. The Wallet Instance that is part of the Wallet Unit is installed on a device by a User. The required trust relationships for installation are discussed in [Section 6.5.2](#652-wallet-instance-installation) below.
 
-2. Next, the Wallet Unit is activated by the Wallet Provider and becomes operational. The goals and required trust relationships for activation are discussed in [Section 6.5.3](#653-wallet-unit-activation.
+2. Next, the Wallet Unit is activated by the Wallet Provider and becomes operational. The goals and required trust relationships for activation are discussed in [Section 6.5.3](#653-wallet-unit-activation).
 
 3. Once in the **Operational** or **Valid** state, the Wallet Unit is managed by the User and the Wallet Provider. This management includes at least revoking the Wallet Unit when necessary. This is discussed in [Section 6.5.4](#654-wallet-unit-management). Management will also include regular updates of the Wallet Instance application to ensure its continued security and functionality. However, this is not further defined in this chapter.
 
@@ -790,16 +790,16 @@ Regarding non-qualified EAAs, Providers of such attestations do not necessarily 
 
 After installation of the Wallet Instance, the new Wallet Unit (which includes that Wallet Instance) will contact the Wallet Provider to start the activation process. For successful EUDI Wallet Instance activation, the following trust relations are established:
 
-1.	The EUDI Wallet Instance authenticates the EUDI Wallet Provider, meaning that the instance is sure that it is dealing with the genuine Wallet Provider who provided it to the User.
-2.	The EUDI Wallet Provider authenticates the EUDI Wallet Instance. This means that the EUDI Wallet Provider is sure that the instance is indeed a true instance of their EUDI Wallet Solution, and not a fake app.
+1. The EUDI Wallet Instance authenticates the EUDI Wallet Provider, meaning that the instance is sure that it is dealing with the genuine Wallet Provider who provided it to the User.
+2. The EUDI Wallet Provider authenticates the EUDI Wallet Instance. This means that the EUDI Wallet Provider is sure that the instance is indeed a true instance of their EUDI Wallet Solution, and not a fake app.
 
 Both of these trust relationships are the responsibility of the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
 
 During the activation process, at least the following steps happen:
 
 1. The Wallet Provider requests data about the User's device from the Wallet Instance.
-2. The Wallet Provider issues one or more Wallet Unit Attestations to the Wallet Unit.
-3. The Wallet Provider requests the User to set up a User authentication mechanism.
+2. The Wallet Provider requests the User to set up at least one User authentication mechanism.
+3. The Wallet Provider issues one or more Wallet Unit Attestations to the Wallet Unit.
 4. The Wallet Provider sets up a User account for the User.
 
 These steps are described below.
@@ -810,23 +810,34 @@ The Wallet Unit connects to the Wallet Provider to be activated.
 
 This data may include the communication technologies supported by the device and the characteristics of the WSCD(s) available to the device for securely storing cryptographic keys and data associated with the Wallet Unit itself and with the attestations in that Wallet Unit.
 
-Note: As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider will subsequently deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
+Notes:
 
-**2. Wallet Provider issues one or more Wallet Unit Attestations to the Wallet Unit**
+- As discussed in [Section 4.3](#43-architecture-types), a WSCD may be integrated directly within the User's device. Examples of this include an eSIM/eUICC, an embedded Secure Element, or native secure hardware accessible via the device's OS. If so, the Wallet Instance will discover the presence of such a WSCD during activation and will communicate the characteristics of the WSCD to the Wallet Provider. In some cases, the Wallet Provider will subsequently deploy a WSCA to the WSCD to facilitate communication between the Wallet Instance and the WSCD.
+- Sometimes, the User's device does not contain a WSCD, or the WSCD does not have the security posture necessary to enable the Wallet Unit to be an identity means at LoA "high". In such a case, the Wallet Provider ensures the Wallet Unit gets access to a remote HSM operated by the Wallet Provider.
+
+**2. Wallet Provider requests User to set up at least one User authentication mechanism.**
+
+User authentication will take place at several moments when a User uses their Wallet Unit:<ol><li>When the User opens the Wallet Instance. This is necessary to prevent anyone except the User from accessing the Wallet Unit and inspecting the User's attestations and attribute values. This data is personal and might be sensitive.</li><li>When (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).</li></ol>
+
+User authentication for point 1 above can be done either by the Wallet Instance or by a WSCD. In the latter case, it is the same mechanism employed for point 2, see below. In the former case, the mechanism is Wallet Unit-specific, meaning it is independent from any general User authentication mechanism used by the User device, such as a lock screen.
+
+User authentication for point 2 effectively means that the User gives the WSCA permission to use the cryptographic keys belonging to the Wallet Unit and to the PID or attestation for performing the cryptographic operations necessary for releasing that PID or attestation. For that reason, it is always the WSCD that performs User authentication in this case.
+
+Depending on the choice made by the Wallet Provider to combine the two User authentication mechanisms or not, the Wallet Provider will ask the User to set up one or two authentication mechanisms.
+
+Note that, as discussed in the first bullet in [Section 6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding), the user authentication mechanisms implemented in the WSCD may also play a role in ensuring User binding. User binding allow a Relying Party to trust that the person presenting a PID or attestation is in fact the rightful User.
+
+**3. Wallet Provider issues one or more Wallet Unit Attestations to the Wallet Unit**
 
 The Wallet Unit Attestation (WUA) is described in [Topic 9]. A WUA has three main purposes:
 
 - It describes the capabilities and properties of the Wallet Unit, including the Wallet Instance, the User device and the WSCD(s). This allows a PID Provider or an Attestation Provider to verify that the Wallet Unit complies with the Provider's requirements and therefore is fit to receive a PID or an attestation from the Provider.
 - Moreover, the WUA contains a WUA public key. During the issuance of a PID or an attestation (see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit), a PID Provider or Attestation Provider can use this public key to verify that the Wallet Unit is in possession of the corresponding private key. Moreover, at that time, the Wallet Unit will send another public key to the PID Provider or Attestation Provider. The Provider will include this public key in the issued PID or attestation. By using a concept called public key association, described in [Topic 9], the PID Provider or Attestation Provider can verify that the private key belonging to this public key is protected by the same WSCD as the private key belonging to the WUA public key. Thus, the PID Provider or Attestation Provider can trust this new public key.
-- The WUA contains information allowing a PID Provider, an Attestation Provider, or a Relying Party, to verify that the Wallet Provider did not revoke the Wallet Unit Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in [Topic 38].
+- Lastly, if a WUA is valid for 24 hours or longer, it contains information allowing a PID Provider, an Attestation Provider, or a Relying Party to verify that the Wallet Provider did not revoke the Wallet Unit Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in [Topic 38].
 
-The detailed format of the WUA will be discussed with Member States for ARF 2.0. However, it will be an attestation allowing selective disclosure of attributes. This is necessary because Relying Parties do not need to know the properties of the Wallet Unit described in the first bullet above. Consequently, the Wallet Unit must be able to release a WUA without releasing these attributes.
+The detailed format of the WUA will be discussed with Member States for ARF 2.0. However, it will be an attestation complyin either with [SD-JWT VC] or [ISO/IEC 18013-5], allowing selective disclosure of attributes. This is necessary because Relying Parties do not need to know the properties of the Wallet Unit described in the first bullet above. Consequently, the Wallet Unit must be able to present a WUA without disclosing these attributes.
 
-The responsibilities of the Wallet Provider regarding issuance of a WUA are similar to those of a PID Provider or Attestation Provider regarding the issuance of a PID or attestation. This means that after the initial issuance of a WUA during activation, the Wallet Provider will manage the WUA and will issue new WUAs to the Wallet Unit as needed, during the lifetime of the Wallet Unit. In particular, the Wallet Provider must ensure that the risk of malicious Relying Parties using the WUA to track the User is minimised. For example, the Wallet Provider may set up the Wallet Unit in such a way that each Wallet Unit Attestation is presented to at most one PID Provider, Attestation Provider or Relying Party.
-
-**3. Wallet Provider requests User to set up a User authentication mechanism.**
-
-User authentication is necessary when (or before) the Wallet Unit asks the User for approval to present some attributes to a Relying Party, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes). User authentication can be done by the Wallet Instance (i.e., the application) or by a WSCD. The latter is required before the WSCD performs any operations with cryptographic keys belonging to the Wallet Unit or to a PID or to an attestation.
+The responsibilities of the Wallet Provider regarding issuance of a WUA are similar to those of a PID Provider or Attestation Provider regarding the issuance of a PID or attestation. This means that after the initial issuance of a WUA during activation, the Wallet Provider will manage the WUA and will issue new WUAs to the Wallet Unit as needed, during the lifetime of the Wallet Unit. In particular, the Wallet Provider ensures that the risk of malicious Relying Parties linking multiple presentations of the same WUA, in order to track the User, is minimised. For example, the Wallet Provider may set up the Wallet Unit in such a way that each Wallet Unit Attestation is presented to at most one PID Provider, Attestation Provider or Relying Party. This topic will be discussed with Member States for ARF 2.0.
 
 **4. Wallet Provider sets up a User account for User**
 The User needs a User account at the Wallet Provider to ensure that they can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
@@ -892,7 +903,7 @@ The lifecycle of a PID or an attestation starts when a User, using their Wallet 
 
 1. The Wallet Unit authenticates the PID Provider or Attestation Provider using the access certificate referred to in [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle). This ensures that the User can trust that the PID or attestation they are about to receive, is issued by an authenticated PID Provider or Attestation Provider respectively. See [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider) below describing how this will be done.
 
-2. The PID Provider or Attestation Provider authenticates the User, meaning that the Provider is sure about the identity of the User. This is necessary to enable determination of the values of the attributes that the Provider will attest to. For instance, a PID Provider needs to authenticate the User to ensure it provides a PID containing the correct family name and date of birth. The method by which the PID Provider or Attestation Provider performs User identification and authentication is out of scope of the ARF, as these processes are specific to each PID Provider or Attestation Provider.
+2. The PID Provider or Attestation Provider authenticates the User, meaning that the Provider is sure about the identity of the User. This is necessary to enable determination of the values of the attributes that the Provider will attest to. For instance, a PID Provider needs to authenticate the User to ensure it provides a PID containing the correct family name and date of birth. The method by which the PID Provider or Attestation Provider performs User identification and authentication is out of scope of the ARF, as these processes are specific to each PID Provider or Attestation Provider. However, they will satisfy the requirements for the Level of Assurance required for the PID or attestation issued.
 
 3. The PID Provider or Attestation Provider authenticates and validates the Wallet Unit, see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit) below.
 
@@ -940,7 +951,9 @@ Knowing the properties of the WSCD is not very useful if the PID Provider or Att
 
 ##### 6.6.2.4 PID Provider or Attestation Provider verifies that Wallet Unit is not suspended or revoked
 
-[Section 6.5.3](#653-wallet-unit-activation above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked. [Topic 38] describes how this is done.
+[Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. If the WUA is valid for longer than 24 hours, it contains revocation information. During the lifetime of the Wallet Unit, the Wallet Provider regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Unit is no longer secure, the Wallet Provider revokes any WUA that has a remaining validity period of 24 hours or longer. If the Wallet Provider uses WUAs with a validity period of less than 24 hours, it stops issuing new WUAs to a Wallet Unit that is no longer secure. The WUA thus allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked.
+
+[Topic 38] describes Wallet Unit revocation in more detail.
 
 Once it has done all verifications, the PID Provider or Attestation Provider will issue the PID or attestation to the Wallet Unit.
 
@@ -1049,7 +1062,7 @@ If a policy is present in the attestation, the Wallet Unit evaluates the policy,
 
 The Wallet Unit presents the outcome of the disclosure policy evaluation to the User in the form of advice, when requesting User approval. For example, "The issuer of your medical data does not want you to present \<attribute names\> to \<Relying Party name\>. Do you want to continue?" Note that the User can overrule the disclosure policy evaluation outcome.
 
-For more details on the embedded disclosure policy, see [Topic 43].
+For more details on the embedded disclosure policy, see [Topic 43]. This topic will be further discussed with Member States for ARF 2.0.
 
 ##### 6.6.3.5 Wallet Unit obtains User approval for presenting selected attributes
 
@@ -1129,17 +1142,23 @@ The technical implementation of this verification depends on which of the standa
 
 User binding (sometimes also called 'holder binding') is the property that the subject of the PID or attestation, meaning the natural or legal person described in the PID or attestation, is in fact the person that presents the PID or attestation to the Relying Party. User binding prevents an attacker from successfully presenting a PID or an attestation that they are not legally allowed to use.
 
-The mechanism(s) available for User binding depend on the presentation flow type (proximity or remote, supervised or unsupervised, see also [Section 4.2.3](#423-mobile-apps-and-web-browsers)), and on the attributes issued to the User by the PID Provider or Attestation Provider: <ol><li>In the first place, the Relying Party can always decide to trust the User authentication mechanisms implemented by the WSCD (see [Topic 9]). This means that the Relying Party trusts that the the WSCD has properly authenticated the User before allowing the User to present the attributes. Note that:<ul><li>This trust is not based on the outcome of any verification by the Relying Party but is a-priori trust in (in particular) the certified WSCD that is part of the Wallet Unit.</li><li>Using this method implies that Relying Parties also trust device binding, as described in Section [6.5.3](#653-wallet-unit-activation. The Relying Party Instance in fact first verifies that the PID or attestation is bound to a WSCD trusted by the PID Provider or Attestation Provider, and then trusts that the WSCD has properly authenticated the User.</li><li>As a matter of fact, this User authentication method will always be carried out, since the WSCD must authenticate its User when asking for User approval for presenting any attributes, and since device binding is also mandatory.</li></ul></li> <li>In addition, in some cases, if a Relying Party does not want to only trust the above mechanism, it may be able to use User attributes to carry out User authentication. For example, if the PID or attestation contains a User portrait, the Relying Party may be able to visually or biometrically compare that portrait to the face of the person presenting the attestation or by a photo taken of it (by an automated machine or by a "selfie"). This will generally be possible in supervised proximity presentations by human inspection, or in an unsupervised proximity flow if equipped with the appropriate equipment. It may also be possible to do this in unsupervised remote presentations by using face recognition technology, possibly even remotely. However, to generate trustworthy outcomes in such situations, special conditions and dedicated security measures are required, such as good lighting, clear instructions for the User for positioning their face and an approved liveness detection mechanism supporting Presentation Attacks Detection (PAD), as well as mechanisms for injection attack detection, in particular deepfake detection.</li> <li>Lastly, if the person presenting the PID or attestation is able to present an identity document, the Relying Party may be able to verify User binding by comparing attributes from the PID or attestation, such as first and last name, to those in the identity document. However, this requires that the Relying Party can verify that the identity document is authentic and really belongs to the person presenting it. In practice this will often mean that the identity document is a photo ID, and the presentation must consequently be done in proximity and be supervised, or done remotely and supported by PAD.</li></ol>
+The mechanism(s) available for User binding depend on the presentation flow type (proximity or remote, supervised or unsupervised, see also [Section 4.2.3](#423-mobile-apps-and-web-browsers)), and on the attributes issued to the User by the PID Provider or Attestation Provider: <ol><li>In the first place, the Relying Party can always decide to trust the User authentication mechanisms implemented by the WSCD (see [Topic 9]). This means that the Relying Party trusts that the the WSCD has properly authenticated the User before allowing the User to present the attributes. Note that:<ul><li>This trust is not based on the outcome of any verification by the Relying Party but is a-priori trust in (in particular) the certified WSCD that is part of the Wallet Unit.</li><li>Using this method implies that Relying Parties also trust device binding, as described in [Section 6.5.3](#653-wallet-unit-activation). The Relying Party Instance in fact first verifies that the PID or attestation is bound to a WSCD trusted by the PID Provider or Attestation Provider, and then trusts that the WSCD has properly authenticated the User.</li><li>As a matter of fact, this User binding method will always be carried out, since the WSCD must authenticate its User when asking for User approval for presenting any attributes, and since device binding is also mandatory.</li></ul></li> <li>In addition, in some cases, if a Relying Party does not want to only trust the above mechanism, it may be able to use User attributes to carry out User binding. For example, if the PID or attestation contains a User portrait, the Relying Party may be able to visually or biometrically compare that portrait to the face of the person presenting the attestation or by a photo taken of it (by an automated machine or by a "selfie"). This will generally be possible in supervised proximity presentations by human inspection, or in an unsupervised proximity flow if equipped with the appropriate equipment. It may also be possible to do this in unsupervised remote presentations by using face recognition technology, possibly even remotely. However, to generate trustworthy outcomes in such situations, special conditions and dedicated security measures are required, such as good lighting, clear instructions for the User for positioning their face and an approved liveness detection mechanism supporting Presentation Attacks Detection (PAD), as well as mechanisms for injection attack detection, in particular deepfake detection.</li> <li>Lastly, if the person presenting the PID or attestation is able to present an identity document, the Relying Party may be able to verify User binding by comparing attributes from the PID or attestation, such as first and last name, to those in the identity document. However, this requires that the Relying Party can verify that the identity document is authentic and really belongs to the person presenting it. In practice this will often mean that the identity document is a photo ID, and the presentation must consequently be done in proximity and be supervised, or done remotely and supported by PAD.</li></ol>
+
+Finally, note that in a combined presentation of attributes according to the next section, if User binding is proven for one of the presented attestations, it is proven for all of them.
 
 ##### 6.6.3.10 Relying Party Instance verifies combined presentation of attributes
 
-According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party will verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users. [Topic 18] describes how the Relying Party Instance can verify this by checking that the public keys in the attestations are associated. Key association is described in [Topic 9].
+According to the Regulation, a combined presentation of attributes is a request for attributes from two or more attestations in the same action. In this case, the Relying Party will verify that these attestations belong to the same User, to prevent a hacked or fraudulent Wallet Unit from presenting attributes from different Users.
+
+A Relying Party can verify this by comparing attributes from the different attestations. For example, the Relying Party may request the first and last name of the User in all of the attestations, and compare the names. If they match, the Relying Party concludes that the attestations belong to the same User. However, this method implies that the Relying Party must request identifying information from the User. In some use cases, requiring that information may not be strictly necessary, and so this method may be seen as a threat to User privacy. Moreover, this method may not be conclusive, for instance if multiple people share the same name.
+
+To solve these drawbacks, [Topic 18] describes how the Relying Party Instance can verify this cryptographically by checking that the public keys in the attestations are associated. Key association is described in [Topic 9].
 
 ##### 6.6.3.11 Relying Party Instance authenticates the Wallet Unit and the Wallet Provider
 
-[Section 6.5.3](#653-wallet-unit-activation) above describes that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. Either before or after receiving attributes from a Wallet Unit, a Relying Party Instance:
+[Section 6.5.3](#653-wallet-unit-activation) above describes that a Wallet Provider, during the lifetime of a Wallet Unit, ensures that the Wallet Unit is always in possession of one or more valid Wallet Unit Attestations (WUAs). Either before or after requesting one or more PIDs or attestaions from a Wallet Unit, a Relying Party Instance:
 
-- ensures it obtains the WUA from the Wallet Unit. The technical way this will be done is yet to be determined, see [Section 6.5.3](#653-wallet-unit-activation).
+- requests a WUA from the Wallet Unit.
 
 - verifies the signature over the WUA using the Wallet Provider trust anchor obtained from the Wallet Provider Trusted List.
 
@@ -1173,7 +1192,7 @@ In addition, a PID Provider or Attestation Provider could regularly verify, for 
 
 #### 6.6.6 PID or attestation deletion
 
-In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the (WSCD included in the) Wallet Unit will authenticate the User.
+In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the WSCA included in the Wallet Unit will authenticate the User.
 
 ## 7 Security and Data Protection
 
