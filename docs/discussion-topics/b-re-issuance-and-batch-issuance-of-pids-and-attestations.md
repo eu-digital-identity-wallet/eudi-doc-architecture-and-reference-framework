@@ -1,8 +1,10 @@
+Version 17 december 2024
+
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
-## Introduction 
+## 1 Introduction 
 
-### Discussion Paper topic description
+### 1.1 Discussion Paper topic description
 
 This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic B: Re-issuance and batch issuance of PIDs and
@@ -17,7 +19,7 @@ example, requirements around authentication of the User and re-use of
 existing private keys may be different for first-time issuance and
 re-issuance, batch issuance or synchronous issuance of an attestation*
 
-### Related risks in the Risk Register
+### 1.2 Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains no risks regarding re-issuance. This is because the risk
@@ -25,7 +27,7 @@ register focuses on risks related to security and privacy, not on
 operational issues such as the difference between first-time issuance
 and re-issuance of attestations.
 
-### Key words
+### 1.3 Key words
 
 This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in RFC 2119, i.e., to indicate requirements,
@@ -37,7 +39,7 @@ is mandated by an external document. The word 'can' indicates a
 capability, whereas other words, such as 'will', 'is' or 'are' are
 intended as statements of fact.
 
-### Document structure
+### 1.4 Document structure
 
 This document is structured as follows:
 
@@ -56,9 +58,9 @@ This document is structured as follows:
 -   Chapter 5 lists the additions and changes that will be made to the
     ARF as a result of discussing this topic with Member States.
 
-## Re-issuance and batch issuance of PIDs and attestations
+## 2 Re-issuance and batch issuance of PIDs and attestations
 
-### Description
+### 2.1 Description
 
 Version 1.5 of the ARF contains a large number of requirements regarding
 the issuance of PIDs and attestations, primarily in Topic 10/23 and also
@@ -83,7 +85,7 @@ attribute values and validity period. In general, if the original PID or
 attestation was issued in a batch, then the PID Provider or Attestation
 Provider will re-issue that PID or attestation in a batch as well.
 
-### Support by OpenID4VCI
+### 2.2 Support by OpenID4VCI
 
 The ARF requires that Wallet Units, PID Providers, and Attestation
 Providers use the \[OpenID4VCI\] specification for issuance of PIDs and
@@ -118,9 +120,9 @@ Questions
 
 2.  Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
-# Reasons for re-issuance
+## 3 Reasons for re-issuance
 
-### Overview
+### 3.1 Overview
 
 There may be different reasons for re-issuing a PID or attestation, for
 example:
@@ -141,7 +143,7 @@ The main reason for batch issuance of PIDs or attestations within the
 EUDI Wallet ecosystem is to (partly) mitigate Relying Party linkability.
 For this, see \[Topic A\].
 
-### PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations
+### 3.2 PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations
 
 As specified in \[ISO/IEC 18013-5\] or \[SD-JWT VC\], each PID or
 attestation contains metadata indicating its validity period.
@@ -175,7 +177,7 @@ or attestation, where the User must take the initiative to request the
 PID or attestation, and is potentially involved in the process in other
 ways as well. These aspects are discussed in chapter 4.
 
-### A change in attribute values
+### 3.3 A change in attribute values
 
 During the lifetime of a PID or attestation, the value of some of the
 attributes may change. For example, at the date of birth of the User, an
@@ -191,7 +193,7 @@ on the User, because they will notice that their attribute values have
 been changed. For transparency reasons, it seems necessary to require
 that the Wallet Unit notifies the User about such a change.
 
-### Synchronous issuing
+### 3.4 Synchronous issuing
 
 A third reason for re-issuing a PID or attestation is where the PID
 Provider or Attestation Provider uses synchronous issuing. In such an
@@ -205,9 +207,9 @@ similar to the reasons discussed in section 3.2. Users should not notice
 that a PID or attestation is being re-issued, nor should they have to
 take any action to ensure that re-issuance happens.
 
-## Differences between first-time issuance and re-issuance or batch issuance
+## 4 Differences between first-time issuance and re-issuance or batch issuance
 
-### User authentication by PID Provider or Attestation Provider
+### 4.1 User authentication by PID Provider or Attestation Provider
 
 In \[Topic A\] a high-level requirement was established that, to the
 maximum extent possible, Users will not be involved in managing the
@@ -260,12 +262,12 @@ Questions
     processes for PIDs and attestations?
 
 4.  What solutions do you see for ensuring that a re-issued PID or attestations is bound to same WSCD as the PID or attestation it is replacing? Do you agree with requiring that a Refresh Token used by the Wallet
-    Unit to start the re-issuance process of a PID or attestation must
-    be bound with the private key belonging to a PID or attestation
-    currently present in the WSCA, by using the DPoP mechanism in RFC
-    9449?
+Unit to start the re-issuance process of a PID or attestation must
+be bound with the private key belonging to a PID or attestation
+currently present in the WSCA, by using the DPoP mechanism in RFC
+9449?
 
-### User authentication and key management by the WSCA
+### 4.2 User authentication and key management by the WSCA
 
 The ARF v1.4 (and v1.5 as well) contains a requirement (WTE\_02 /
 WUA\_02) stating that "a WSCA SHALL authenticate the User before
@@ -368,7 +370,7 @@ Questions
 
 9.  What do you think about User authentication in batch-issuance scenarios?
 
-### Triggers for the issuance process
+### 4.3 Triggers for the issuance process
 
 The process of first-time issuance of a PID or attestation is triggered
 by the User, who wants to obtain a PID or attestation and triggers the
@@ -491,9 +493,14 @@ Questions
 
 14.  Can you think of any other option?
 
-## Additions and changes to the ARF 
+### 4.4	Handling existing PIDs or attestations after re-issuance of new ones
+In general, re-issuance of a PID or attestation will take place when the existing PID or attestation is still valid. If that were not the case, there would be a time window where User does not have any valid PIDs or attestations that they can present to Relying Parties.
 
-### High-Level Requirements to be added to Annex 2
+After successful re-issuance of a PID or attestation, the Wallet Unit must delete the existing PID or attestation, meaning the one that the re-issued PID or attestation intends to replace. This is for a simple reason: the value of some of the attributes in the new PID or attestation may be different from the value in the existing one. And obviously, the Wallet Unit must not present attestations containing attribute values that the Wallet Provider no longer wants to attest to.
+
+## 5 Additions and changes to the ARF
+
+### 5.1 High-Level Requirements to be added to Annex 2
 
 The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:
@@ -501,14 +508,14 @@ ARF v1.8:
 &lt;To be added after discussion of this Discussion Paper with Member
 States.&gt;
 
-### High-Level Requirements to be changed
+### 5.2 High-Level Requirements to be changed
 
 &lt;A future version of this document will analyse the requirements on
 issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
 this Discussion Paper.&gt;
 
-#### Topic 10/23
+#### 5.2.1 Topic 10/23
 
 <table>
 <colgroup>
@@ -525,19 +532,24 @@ this Discussion Paper.&gt;
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
 </tr>
 </tbody>
 </table>
 
-#### Topic 9
+#### 5.2.2 Topic 9
 
 <table>
 <colgroup>
@@ -554,24 +566,29 @@ this Discussion Paper.&gt;
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
+</tr>
+<tr>
+<td>&nbsp</td>
+<td>&nbsp</td>
+<td>&nbsp</td>
 </tr>
 </tbody>
 </table>
 
-### Descriptions to be added to the ARF main document
+### 5.3 Descriptions to be added to the ARF main document
 
 A summary of the descriptions in chapters 2, 3, and 4 will be added to
 the ARF main document, version 1.8.
 
-## References
+## 6 References
 
 <table>
 <colgroup>
@@ -580,15 +597,19 @@ the ARF main document, version 1.8.
 </colgroup>
 <thead>
 <tr>
-<th>[RiskRegister]</th>
-<th>Annex 1 to the Commission Implementing Regulation laying down rules
-for the application of Regulation (EU) No 910/2014 of the European
-Parliament and of the Council as regards the certification of the
-European Digital Identity Wallets, European Commission, October 2024,
-draft</th>
+<th>Reference</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules
+for the application of Regulation (EU) No 910/2014 of the European
+Parliament and of the Council as regards the certification of the
+European Digital Identity Wallets, European Commission, October 2024,
+draft</td>
+</tr>
 <tr>
 <td>[ARF_DevPlan]</td>
 <td>Architecture and Reference Framework Development plan 2025, European
@@ -602,9 +623,9 @@ edition, 2021-09</td>
 </tr>
 <tr>
 <td>[SD-JWT VC]</td>
-<td><p>SD-JWT-based Verifiable Credentials (SD-JWT VC)</p>
-<p>draft-terbu-sd-jwt-vc-06, O. Terbu <em>et al.,</em> 13 November 2024,
-draft</p></td>
+<td>SD-JWT-based Verifiable Credentials (SD-JWT VC)
+draft-terbu-sd-jwt-vc-06, O. Terbu <em>et al.,</em> 13 November 2024,
+draft</td>
 </tr>
 <tr>
 <td>[OpenID4VCI]</td>

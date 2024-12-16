@@ -1,9 +1,9 @@
 Version 0.5, updated 11 December 2024
 
 # A - Privacy risks and mitigation
-## Introduction 
+## 1 Introduction 
 
-### Discussion Paper topic description 
+### 1.1 Discussion Paper topic description 
 
 This document is the Discussion Paper for eIDAS Coordination Group
 regarding Topic A: Privacy risks and mitigation.
@@ -34,7 +34,7 @@ such as Zero-Knowledge Proofs (ZKP).*
 **In this version of this document, the feedback of Member States during
 the first meeting of December 4<sup>th</sup>, 2024, was processed.**
 
-### Related risks in the Risk Register
+### 1.2 Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains the following risks regarding User tracking as a result of
@@ -159,7 +159,7 @@ required.</td>
 </tbody>
 </table>
 
-### Key words
+### 1.3 Key words
 
 This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in RFC 2119, i.e., to indicate requirements,
@@ -171,7 +171,7 @@ is mandated by an external document. The word 'can' indicates a
 capability, whereas other words, such as 'will' and 'is' or 'are' are
 intended as statements of fact.
 
-### Document structure
+### 1.4 Document structure
 
 This document is structured as follows:
 
@@ -191,9 +191,9 @@ This document is structured as follows:
 -   Chapter 6 proposes a few High-Level Requirements to be added to the
     ARF. These are for discussion.
 
-## Risks for User privacy due to collusion
+## 2 Risks for User privacy due to collusion
 
-### Linkability
+### 2.1 Linkability
 
 This chapter describes in detail how the attestation formats currently
 specified for use in the EUDI Wallet ecosystem could be misused for
@@ -247,7 +247,7 @@ Linkability comes in two varieties, Relying Party linkability and
 Attestation Provider linkability. These are discussed in the next
 sections.
 
-### Relying Party linkability
+### 2.2 Relying Party linkability
 
 Relying Party linkability means that one or more malicious Relying Party
 are able to link multiple presentations of the same attestation. For
@@ -289,7 +289,7 @@ particular, Relying Parties found offending can have their access
 certificate revoked, after which they will not be able to interact with
 Wallet Units anymore.
 
-### Attestation Provider linkability
+### 2.3 Attestation Provider linkability
 
 Attestation Provider linkability means that one or more Relying Parties
 collude with the provider of an attestation to track the User when using
@@ -313,7 +313,7 @@ discourage Attestation Providers from colluding and tracking Users. In
 addition, many Attestation Providers are subject to regular audits,
 which means that collusion and tracking can more easily be detected.
 
-### WUAs and Wallet Providers
+### 2.4 WUAs and Wallet Providers
 
 The Wallet Unit Attestation (WUA) is an attestation issued to the Wallet
 Unit by the Wallet Provider. In the context of this discussion paper,
@@ -327,9 +327,9 @@ Therefore, in this discussion paper the term 'Attestation Provider'
 includes Wallet Providers, in their specific responsibilities as issuers
 of WUAs.
 
-## Possible mitigation measures for Relying Party linkability within the current ARF
+## 3 Possible mitigation measures for Relying Party linkability within the current ARF
 
-### Introduction
+### 3.1 Introduction
 
 An (honest) Attestation Provider can mitigate Relying Party linkability
 mitigated partly or fully by the following two measures:
@@ -357,20 +357,20 @@ These methods are discussed in the next sections of this chapter. Based
 on these discussions and an inventory of the opinion of Member States,
 Chapter 6 contains a number of changes that will be made to the ARF.
 
-### Method A: Once-only attestations
+### 3.2 Method A: Once-only attestations
 
-#### Description
+#### 3.2.1 Description
 
 In this approach, the Attestation Provider requires the Wallet Unit to
 present each attestation only once.
 
-#### Advantages
+#### 3.2.2 Advantages
 
 If this approach is used, none of the unique values in the attestation
 will be issued twice or more times to a Relying Party. Therefore, this
 method fully mitigates Relying Party linkability.
 
-#### Technical impacts on Wallet Unit
+#### 3.2.3 Technical impacts on Wallet Unit
 
 If an attestation may be presented only once, in theory the Wallet Unit
 could request a new attestation as soon as possible after an attestation
@@ -403,7 +403,7 @@ the Wallet Unit has run out of unused attestations and is not able to
 request new ones, it will start re-using either a single attestation or
 a batch of attestations, as described for these methods.
 
-#### Drawbacks
+#### 3.2.4 Drawbacks
 
 A drawback of this method is that the number of attestations to be
 issued depends on the frequency of use. This has two effects:
@@ -427,9 +427,9 @@ Another drawback of this method is that the Attestation Provider is
 dependent on the correct implementation by the Wallet Unit to ensure
 that it is used correctly.
 
-### Method B: Limited-time attestations
+### 3.3 Method B: Limited-time attestations
 
-#### Description
+#### 3.3.1 Description
 
 In another approach, a Wallet Unit may present each attestation multiple
 times, but only as long as it is valid. Moreover, the Wallet Provider
@@ -438,7 +438,7 @@ is statistically unlikely that any of the unique values in the
 attestation can be effectively used by colluding Relying Parties to
 correlate and track the User.
 
-#### Advantages
+#### 3.3.2 Advantages
 
 The biggest advantages of this method are:
 
@@ -457,11 +457,11 @@ The biggest advantages of this method are:
     the Attestation Provider does not get any information about the
     frequency of use of their attestations.
 
-#### Technical impacts on Wallet Unit
+#### 3.3.3 Technical impacts on Wallet Unit
 
 None, as described above.
 
-#### Drawbacks
+#### 3.3.4 Drawbacks
 
 The main drawbacks of this method are
 
@@ -481,9 +481,9 @@ The main drawbacks of this method are
     be Users will an above-average attestation usage. These Users will
     therefore be subject to a higher level of risk of tracking.
 
-### Method C: Rotating-batch attestations
+### 3.4 Method C: Rotating-batch attestations
 
-#### Description
+#### 3.4.1 Description
 
 Using this method, the Attestation Provider issues attestations in
 batches to the Wall Unit, like when using once-only attestations (method
@@ -513,7 +513,7 @@ Transport Systems (C-ITS).
 The OpenID4VCI specification used for attestation issuance in the EUDI
 Wallet ecosystem supports batch issuance.
 
-#### Advantages
+#### 3.4.2 Advantages
 
 If this approach is used, the number of attestations to be issued is
 constant over time and does not depend on usage. Therefore, like method
@@ -527,13 +527,13 @@ to put the same thing in a different way, if a batch of attestations is
 used in a rotating fashion, the validity period of an attestation can be
 longer without impacting the User's privacy.
 
-#### Technical impacts on Wallet Unit
+#### 3.4.3 Technical impacts on Wallet Unit
 
 The Wallet Unit must implement dedicated functionality to support this
 method, for example to keep track of which attestations are used and
 unused, and when a batch is fully used and must be reset.
 
-#### Drawbacks
+#### 3.4.4 Drawbacks
 
 This method has the following drawbacks:
 
@@ -558,7 +558,7 @@ This method has the following drawbacks:
     actually been used or not. Therefore, this approach seems suitable
     only if the User presents attributes to Relying Parties frequently.
 
-### Method D: Per-Relying Party attestations
+### 3.5 Method D: Per-Relying Party attestations
 
 When this method is used, the Wallet Unit will present different
 attestations to different Relying Parties. However, in case a Relying
@@ -584,7 +584,7 @@ authenticate themselves to Wallet Units contain a unique identifier of
 the Relying Party. However, it represents an extra effort for the Wallet
 Unit, and it may complicate attestation inventory management.
 
-### General note: Diminishing the costs of issuing multiple attestations
+### 3.6 General note: Diminishing the costs of issuing multiple attestations
 
 The operational costs of issuing an attestation are determined to some
 extent by the requirement that, for security reasons, the Wallet Unit
@@ -609,9 +609,9 @@ batch issuance of PIDs and Attestations) and Topic C (Wallet Unit
 Attestation (WUA) and key attestation), respectively. They will
 therefore not be further discussed here.
 
-## Ensuring User privacy when checking the revocation status of attestations
+## 4 Ensuring User privacy when checking the revocation status of attestations
 
-### Introduction
+### 4.1 Introduction
 
 For the revocation of PIDs and attestations (including WUAs), the ARF
 specifies three methods:
@@ -629,7 +629,7 @@ be able to verify that the Attestation Provider has not revoked the
 attestation. When discussing the risk of tracking Users, particular
 attention should be given to this process.
 
-### General requirements
+### 4.2 General requirements
 
 To the maximum extent feasible given operational constraints, the
 Attestation Provider should not be able to learn anything about the
@@ -644,13 +644,19 @@ Party operating the Relying Party Instance should download each new
 version of the list once, at a time and from a location unrelated to the
 presentation of an attestation by a User. The Relying Party should then
 distribute it to all of its Relying Party Instances using an Relying
-Party-internal distribution mechanism[1].
+Party-internal distribution mechanism (1).
+
+>(1) Note that strict compliance to this recommendation would imply that
+Relying Party Instances must always have locally available the latest
+version of the complete ASL. This may not always be technically
+feasible. Relying Parties must find a balance between User privacy and
+optimization of resource usage.
 
 Downloading an Attestation Status List or Attestation Revocation List
 SHALL NOT require the Relying Party or Relying Party Instance to
 authenticate itself in any way.
 
-### Requirements specific for Attestation Status Lists
+### 4.3 Requirements specific for Attestation Status Lists
 
 To ensure User privacy specifically when the Attestation Provider uses
 Attestation Status Lists to enable revocation checking, this document
@@ -664,8 +670,6 @@ recommends the following:
     Revocation List. This is because duplicate indices and unnecessarily
     long bitstrings or byte arrays should be prevented.
 
-<!-- -->
-
 -   An Attestation List Provider should represent a sufficiently large
     number of attestations on each Attestation Status List to ensure
     herd privacy. In this context, herd privacy means that if a Relying
@@ -673,7 +677,7 @@ recommends the following:
     not able to deduce which attestation (likely) was presented to that
     Relying Party.
 
-## Mitigating linkability by using Zero-Knowledge Proofs
+## 5 Mitigating linkability by using Zero-Knowledge Proofs
 
 Zero-Knowledge Proofs (ZKP) offer strong potential as a
 privacy-enhancing technique. This topic will be revisited in Topic G to
@@ -687,57 +691,61 @@ Digital Identity's ARF'
 and the Commission's response to it
 [here.](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/211#discussioncomment-9882388)
 
-## Additions to the ARF 
+## 6 Additions to the ARF 
 
-### High-Level Requirements to be added to Annex 2
+### 6.1 High-Level Requirements to be added to Annex 2
 
 The High-Level Requirements in this section will be added to Annex 2 of
 the ARF v1.7.
 
-#### Requirements to be added (likely) to Topic 10/23
+#### 6.1.1 Requirements to be added (likely) to Topic 10/23
 
-1.  A PID Provider, Attestation Provider, or Wallet Provider SHALL
-    ensure that all PID, attestation or WUA unique elements, including
-    at least
+##### REQUEREMENT 1
+A PID Provider, Attestation Provider, or Wallet Provider SHALL
+ensure that all PID, attestation or WUA unique elements, including
+at least
 
-    -   the salt used for hashing every attribute,
+-   the salt used for hashing every attribute,
 
-    -   the hash values of all attributes,
+-   the hash values of all attributes,
 
-    -   the attestation identifier or index used for revocation purposes
+-   the attestation identifier or index used for revocation purposes
         (if applicable),
 
-    -   the attestation public key used for device binding and User
+-   the attestation public key used for device binding and User
         binding,
 
-    -   the value of the Attestation Provider signature,
+-   the value of the Attestation Provider signature,
 
-> have values that are unique across all PIDs, attestations, or WUAs
-> issued by that Provider.
+have values that are unique across all PIDs, attestations, or WUAs
+issued by that Provider.
 >
 > Note: This can be achieved, for example, by ensuring that salt values
 > and attestation identifiers are pseudo-random numbers generated by a
 > cryptographically secure pseudo-random number generator (CSPRNG).
+>
 
-1.  When issuing PIDs, attestations, or WUAs in a batch to a Wallet
-    Unit, a PID Provider, Attestation Provider or Wallet Provider SHALL
-    ensure that the timestamps in these PIDs, attestations, or WUAs do
-    not enable Relying Parties to conclude that they are part of the
-    same batch (and therefore belong to the same User).
+##### REQUIREMENT 2
+When issuing PIDs, attestations, or WUAs in a batch to a Wallet
+Unit, a PID Provider, Attestation Provider or Wallet Provider SHALL
+ensure that the timestamps in these PIDs, attestations, or WUAs do
+not enable Relying Parties to conclude that they are part of the
+same batch (and therefore belong to the same User).
 
 > Note: This can be done, for example, by ensuring that a sufficiently
 > high number of batches, each issued to a different Wallet Unit, share
 > the same timestamp values (herd privacy).
 
-1.  A Wallet Provider SHALL ensure that its Wallet Solution supports the
-    following methods for limiting the number of times a User can
-    present the same attestation to Relying Parties:
+##### REQUIREMENT 3
+A Wallet Provider SHALL ensure that its Wallet Solution supports the
+following methods for limiting the number of times a User can
+present the same attestation to Relying Parties:
 
-    -   Method A: Once-only attestations, as specified in requirement 5
-        below.
+-   Method A: Once-only attestations, as specified in requirement 5
+    below.
 
-    -   Method B: Limited-time attestations, as specified in requirement
-        6 below.
+-   Method B: Limited-time attestations, as specified in requirement
+    6 below.
 
 > In addition, a Wallet Provider MAY ensure that its Wallet Solution
 > supports the following methods:
@@ -748,61 +756,64 @@ the ARF v1.7.
 -   Method D: Per-Relying Party attestations, as specified in
     requirement 8 below.
 
-1.  To the maximum extent possible, Wallet Providers, PID Providers, and
-    Attestation Providers SHALL ensure that Users do not notice which of
-    the methods referenced in requirement 3 is used for their PIDs,
-    attestations, or WUAs, and that Users will not be involved in
-    managing the re-issuance of new attestations.
+##### REQUIREMENT 4
+To the maximum extent possible, Wallet Providers, PID Providers, and
+Attestation Providers SHALL ensure that Users do not notice which of
+the methods referenced in requirement 3 is used for their PIDs,
+attestations, or WUAs, and that Users will not be involved in
+managing the re-issuance of new attestations.
 
 > Note: The topic of re-issuance will be further discussed with Member
 > States.
 
-1.  When using Method A for a given type of PID, attestation, or WUA,
+##### REQUIREMENT 5
+When using Method A for a given type of PID, attestation, or WUA,
 
-    1.  the Wallet Unit SHALL present each PID, attestation, or WUA only
-        once to a Relying Party, except when it has fallen back to
-        Method B as specified below.
+a. the Wallet Unit SHALL present each PID, attestation, or WUA only
+once to a Relying Party, except when it has fallen back to
+Method B as specified below.
 
-    2.  the Wallet Unit SHALL have a lower limit for the number of
-        unused PIDs, attestations, or WUAs it holds, and SHALL request
-        the issuance of a new batch when this limit is reached. During
-        the first issuance of a new PID, attestation, or WUA, see
-        requirement <span class="mark"></span>10, the PID Provider,
-        Attestation Provider or Wallet Provider SHALL inform the Wallet
-        Unit about the value of the lower limit and the size of the
-        batch to be requested.
+b.  the Wallet Unit SHALL have a lower limit for the number of
+unused PIDs, attestations, or WUAs it holds, and SHALL request
+the issuance of a new batch when this limit is reached. During
+the first issuance of a new PID, attestation, or WUA, see
+requirement 10, the PID Provider,
+Attestation Provider or Wallet Provider SHALL inform the Wallet
+Unit about the value of the lower limit and the size of the
+batch to be requested.
 
-    3.  if the Wallet Unit must request a new batch of PIDs,
-        attestations, or WUAs, but is not able to do so because it is
-        offline, the Wallet Unit SHALL warn the User that they are about
-        to lose the possibility to present this PID or attestation to a
-        Relying Party (or any PID or attestation, in case of the WUA)
-        and request them to connect their device to the internet.
+c. if the Wallet Unit must request a new batch of PIDs,
+attestations, or WUAs, but is not able to do so because it is
+offline, the Wallet Unit SHALL warn the User that they are about
+to lose the possibility to present this PID or attestation to a
+Relying Party (or any PID or attestation, in case of the WUA)
+and request them to connect their device to the internet.
 
-    4.  if the Wallet Unit has run out of unused PIDs, attestations, or
-        WUAs, but is not able to request a new batch because it is
-        offline, it SHALL fall back to method B specified in
-        requirement 6. This means that, when requested by a Relying
-        Party, it SHALL present one of the used PIDs, attestations of
-        WUAs. The Wallet Unit SHALL return to using method A as soon as
-        it is able to go online and request a new batch of PIDs,
-        attestations or WUAs.
+d. if the Wallet Unit has run out of unused PIDs, attestations, or
+WUAs, but is not able to request a new batch because it is
+offline, it SHALL fall back to method B specified in
+requirement 6. This means that, when requested by a Relying
+Party, it SHALL present one of the used PIDs, attestations of
+WUAs. The Wallet Unit SHALL return to using method A as soon as
+it is able to go online and request a new batch of PIDs,
+attestations or WUAs.
 
-2.  When using Method B for a given type of PID, attestation, or WUA,
+##### REQUIREMENT 6
+When using Method B for a given type of PID, attestation, or WUA,
 
-    1.  When requested to do so, the Wallet Unit SHALL present that PID,
-        attestation or WUA multiple times to the same Relying Party, or
-        to different Relying Parties.
+a. When requested to do so, the Wallet Unit SHALL present that PID,
+attestation or WUA multiple times to the same Relying Party, or
+to different Relying Parties.
 
-    2.  The Wallet Unit SHALL request the PID Provider or Attestation
-        Provider to issue a new PID, attestation , or WUA some time
-        before the one existing in the Wallet Unit expires. During the
-        first issuance of a PID, attestation, or WUA, see requirement
-        <span class="mark"></span>10, the PID Provider, Attestation
-        Provider, or Wallet Provider SHALL inform the Wallet Unit about
-        the moment at which the Wallet Unit must request the issuance of
-        a new PID, attestation, or WUA, relative to the expiration date
-        of the existing one.
+b. The Wallet Unit SHALL request the PID Provider or Attestation
+Provider to issue a new PID, attestation , or WUA some time
+before the one existing in the Wallet Unit expires. During the
+first issuance of a PID, attestation, or WUA, see requirement
+10, the PID Provider, Attestation
+Provider, or Wallet Provider SHALL inform the Wallet Unit about
+the moment at which the Wallet Unit must request the issuance of
+a new PID, attestation, or WUA, relative to the expiration date
+of the existing one.
 
 Notes:
 
@@ -814,126 +825,141 @@ Notes:
     requirement that a Wallet Unit must not present a PID, attestation,
     or WUA if it is no longer valid.
 
-1.  When using Method C for a given type of PID, attestation, or WUA,
+##### REQUIREMENT 7
+When using Method C for a given type of PID, attestation, or WUA,
 
-    1.  The Wallet Unit SHALL request the PID Provider, Attestation
-        Provider, or Wallet Provider to issue PIDs, attestations, or
-        WUAs in batches to the Wall Unit.
+a. The Wallet Unit SHALL request the PID Provider, Attestation
+Provider, or Wallet Provider to issue PIDs, attestations, or
+WUAs in batches to the Wall Unit.
 
-    2.  When a presentation of attributes is requested by Relying
-        Parties, the Wallet Unit SHALL present each PID, attestation, or
-        WUA in a batch once, in a random order.
+b. When a presentation of attributes is requested by Relying
+Parties, the Wallet Unit SHALL present each PID, attestation, or
+WUA in a batch once, in a random order.
 
-    3.  When all PIDs, attestations, or WUAs in a batch are presented
-        once, the Wallet Unit SHALL reset the batch, and start
-        presenting each PID, attestation, or WUA in the batch once more,
-        again in a random order.
+c. When all PIDs, attestations, or WUAs in a batch are presented
+once, the Wallet Unit SHALL reset the batch, and start
+presenting each PID, attestation, or WUA in the batch once more,
+again in a random order.
 
-    4.  The Wallet Unit SHALL request the PID Provider, Attestation
-        Provider or Wallet Provider to issue a new batch of PIDs,
-        attestations, or WUAs, some time before the batch in Wallet Unit
-        expires. During the first issuance of a batch, see requirement
-        <span class="mark"></span>10, the PID Provider, Attestation
-        Provider or Wallet Provider SHALL inform the Wallet Unit about
-        the size of the batch and about the moment at which the Wallet
-        Unit must request the issuance of a new batch, relative to the
-        expiration date of the existing one.
+d. The Wallet Unit SHALL request the PID Provider, Attestation
+Provider or Wallet Provider to issue a new batch of PIDs,
+attestations, or WUAs, some time before the batch in Wallet Unit
+expires. During the first issuance of a batch, see requirement
+10, the PID Provider, Attestation
+Provider or Wallet Provider SHALL inform the Wallet Unit about
+the size of the batch and about the moment at which the Wallet
+Unit must request the issuance of a new batch, relative to the
+expiration date of the existing one.
 
-2.  When using Method D for a given type of PID, attestation, or WUA,
+##### REQUIREMENT 8
+When using Method D for a given type of PID, attestation, or WUA,
 
-    1.  The Wallet Unit SHALL present different PIDs, attestations, or
-        WUAs to different Relying Parties upon their request. This means
-        that it SHALL comply with requirement 5 (method A) for such
-        Relying Parties.
+a. The Wallet Unit SHALL present different PIDs, attestations, or
+WUAs to different Relying Parties upon their request. This means
+that it SHALL comply with requirement 5 (method A) for such
+Relying Parties.
 
-    2.  In case a given Relying Party requests attributes from a given
-        type of PID, attestation, or WUA multiple times, the Wallet Unit
-        SHALL present the same PID, attestation or WUA to this Relying
-        Party. This means that it SHALL comply with requirement 6
-        (method B) for such a Relying Party.
+b. In case a given Relying Party requests attributes from a given
+type of PID, attestation, or WUA multiple times, the Wallet Unit
+SHALL present the same PID, attestation or WUA to this Relying
+Party. This means that it SHALL comply with requirement 6
+(method B) for such a Relying Party.
 
-    3.  The Wallet Unit SHALL keep track of which PID, attestation, or
-        WUA it has presented to which Relying Party, using the unique
-        Relying Party identifier from the Relying Pary access
-        certificate.
+c. The Wallet Unit SHALL keep track of which PID, attestation, or
+WUA it has presented to which Relying Party, using the unique
+Relying Party identifier from the Relying Pary access
+certificate.
 
-3.  A PID Provider, Attestation Provider or Wallet Provider SHALL have a
-    policy describing which of the methods specified in requirement 3 it
-    will use to limit the number of times a Wallet Unit may present a
-    single PID, attestation, or WUA. For each supported method, the
-    policy SHALL also specify how the values for respective parameters
-    for that method, such as validity period and batch size, will be
-    chosen. The goal of the policy SHALL be to ensure that the risk of
-    Relying Party linkability is mitigated to an acceptable level, given
-    the (expected) usage of the PID, attestation, or WUA by the User. To
-    determine what an acceptable level of risk is, the PID Provider,
-    Attestation Provider, or Wallet Provider SHALL carry out a risk
-    analysis regarding Relying Party linkability.
+##### REQUIREMENT 9
+A PID Provider, Attestation Provider or Wallet Provider SHALL have a
+policy describing which of the methods specified in requirement 3 it
+will use to limit the number of times a Wallet Unit may present a
+single PID, attestation, or WUA. For each supported method, the
+policy SHALL also specify how the values for respective parameters
+for that method, such as validity period and batch size, will be
+chosen. The goal of the policy SHALL be to ensure that the risk of
+Relying Party linkability is mitigated to an acceptable level, given
+the (expected) usage of the PID, attestation, or WUA by the User. To
+determine what an acceptable level of risk is, the PID Provider,
+Attestation Provider, or Wallet Provider SHALL carry out a risk
+analysis regarding Relying Party linkability.
 
-Note: If a PID Provider, Attestation Provider or Wallet Provider issues
-multiple attestation types, these requirements apply for each type of
-attestation separately.
+>Note: If a PID Provider, Attestation Provider or Wallet Provider issues
+>multiple attestation types, these requirements apply for each type of
+>attestation separately.
 
-1.  The Commission SHALL create or reference a profile or extension of
-    the OpenID4VCI specification enabling a PID Provider, Attestation
-    Provider, or Wallet Provider, during issuance of a new PID,
-    attestation, or WUA, to indicate which one of the methods listed in
-    requirement 3 the Wallet Unit must use for the PID, attestation, or
-    WUA issued. This profile or extension SHALL also enable the PID
-    Provider, Attestation Provider, or Wallet Provider to set the value
-    of parameters to be used by the Wallet Unit for each method (if
-    applicable).
+##### REQUIREMENT 10
+
+The Commission SHALL create or reference a profile or extension of
+the OpenID4VCI specification enabling a PID Provider, Attestation
+Provider, or Wallet Provider, during issuance of a new PID,
+attestation, or WUA, to indicate which one of the methods listed in
+requirement 3 the Wallet Unit must use for the PID, attestation, or
+WUA issued. This profile or extension SHALL also enable the PID
+Provider, Attestation Provider, or Wallet Provider to set the value
+of parameters to be used by the Wallet Unit for each method (if
+applicable).
 
 > Note: For example, the parameters to be set for method A include the
 > lower limit for unused attestations and the batch size.
 
-#### Requirements to be added (likely) to Topic 1
+#### 6.1.2 Requirements to be added (likely) to Topic 1
 
-1.  When receiving a PID, attestation, or WUA a Relying Party Instance
-    SHALL discard the values of all unique elements, including at least
-    the ones mentioned in requirement 1 above, as soon as they are no
-    longer needed. The Relying Party Instance SHALL NOT communicate
-    these values to the Relying Party or to any other party in the EUDI
-    Wallet ecosystem.
+##### REQUIREMENT 11
 
-#### Requirements to be added (likely) to Topic 7
+When receiving a PID, attestation, or WUA a Relying Party Instance
+SHALL discard the values of all unique elements, including at least
+the ones mentioned in requirement 1 above, as soon as they are no
+longer needed. The Relying Party Instance SHALL NOT communicate
+these values to the Relying Party or to any other party in the EUDI
+Wallet ecosystem.
 
-1.  A Relying Party Instance SHOULD NOT request the relevant Attestation
-    Status List or Attestation Revocation List each time an attestation
-    is presented to it by a Wallet Unit. Rather, the Relying Party
-    operating the Relying Party Instance SHOULD download each new
-    version of the list once, at a time and from a location unrelated to
-    the presentation of a PID or attestation by a User. The Relying
-    Party SHOULD then distribute the list to all of its Relying Party
-    Instances, using an Relying Party-internal distribution mechanism
+#### 6.1.3 Requirements to be added (likely) to Topic 7
 
-2.  A PID Provider or Attestation Provider SHALL NOT require the Relying
-    Party or Relying Party Instance to authenticate itself before
-    downloading an Attestation Status List or Attestation Revocation
-    List.
+##### REQUIREMENT 12
 
-3.  When using an Attestation Status List for revocation, the
-    Attestation List Provider SHALL randomly assign the index for each
-    PID or attestation, to prevent this index from becoming a
-    correlator.
+A Relying Party Instance SHOULD NOT request the relevant Attestation
+Status List or Attestation Revocation List each time an attestation
+is presented to it by a Wallet Unit. Rather, the Relying Party
+operating the Relying Party Instance SHOULD download each new
+version of the list once, at a time and from a location unrelated to
+the presentation of a PID or attestation by a User. The Relying
+Party SHOULD then distribute the list to all of its Relying Party
+Instances, using an Relying Party-internal distribution mechanism
 
-Note: Randomly assigning indices within a bitstring or byte array is
+##### REQUIREMENT 13
+
+A PID Provider or Attestation Provider SHALL NOT require the Relying
+Party or Relying Party Instance to authenticate itself before
+downloading an Attestation Status List or Attestation Revocation
+List.
+
+##### REQUIREMENT 14
+
+When using an Attestation Status List for revocation, the
+Attestation List Provider SHALL randomly assign the index for each
+PID or attestation, to prevent this index from becoming a
+correlator.
+
+>Note: Randomly assigning indices within a bitstring or byte array is
 more complicated than creating random identifiers (e.g. serial numbers)
 for attestations, as is needed to implement an Attestation Revocation
 List. This is because duplicate indices and unnecessarily long
 bitstrings or byte arrays must be prevented.
 
-1.  When using an Attestation Status List for revocation, the
-    Attestation List Provider SHALL represent a sufficiently large
-    number of PIDs or attestations on each Attestation Status List, to
-    ensure herd privacy. I
+##### REQUIREMENT 15
 
-Note: In this context, herd privacy means that if a Relying Party
+When using an Attestation Status List for revocation, the
+Attestation List Provider SHALL represent a sufficiently large
+number of PIDs or attestations on each Attestation Status List, to
+ensure herd privacy.
+
+>Note: In this context, herd privacy means that if a Relying Party
 requests a particular ASL, the Attestation List Provider is not able to
 deduce which PID or attestation (likely) was presented to that Relying
 Party.
 
-### High-Level Requirements to be deleted
+### 6.2 High-Level Requirements to be deleted
 
 WUA\_09: A Wallet Provider SHALL consider all relevant factors,
 including the risk of a WUA public key becoming a vector to track the
@@ -948,14 +974,14 @@ These two requirements can be deleted if the ones proposed in section
 6.1 are added, because the proposed requirements include the Wallet
 Provider and are much more detailed than the above two requirements.
 
-### Descriptions to be added to the ARF main document
+### 6.3 Descriptions to be added to the ARF main document
 
 A summary of the descriptions in chapter 2 will be added to section
 6.1.3 of the ARF main document, version 1.7. A summary of the
 descriptions in chapter 3 will be added to section 6.6.5 of the ARF main
 document, version 1.7.
 
-## References
+## 7 References
 
 <table>
 <colgroup>
@@ -964,15 +990,19 @@ document, version 1.7.
 </colgroup>
 <thead>
 <tr>
-<th>[RiskRegister]</th>
-<th>Annex 1 to the Commission Implementing Regulation laying down rules
-for the application of Regulation (EU) No 910/2014 of the European
-Parliament and of the Council as regards the certification of the
-European Digital Identity Wallets, European Commission, October 2024,
-draft</th>
+<th>Reference</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules
+for the application of Regulation (EU) No 910/2014 of the European
+Parliament and of the Council as regards the certification of the
+European Digital Identity Wallets, European Commission, October 2024,
+draft</td>
+</tr>
 <tr>
 <td>[ARF_DevPlan]</td>
 <td>Architecture and Reference Framework Development plan 2025, European
@@ -999,8 +1029,3 @@ proofs applied to Electronic Attestation of Attributes, v1.2.1,
 </tbody>
 </table>
 
-[1] Note that strict compliance to this recommendation would imply that
-Relying Party Instances must always have locally available the latest
-version of the complete ASL. This may not always be technically
-feasible. Relying Parties must find a balance between User privacy and
-optimization of resource usage.
