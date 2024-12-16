@@ -31,8 +31,8 @@ such as Zero-Knowledge Proofs (ZKP).*
 4.  *the ways in which these risks may be fully mitigated in the future,
     e.g. by means of ZKP-based proof mechanisms for attestations.*
 
-**In this version of this document, the feedback of Member States during
-the first meeting of December 4<sup>th</sup>, 2024, was processed.**
+In this version of this document, the feedback of Member States during
+the meetings on 4 and 11 December 2024, was processed.
 
 ### 1.2 Related risks in the Risk Register
 
