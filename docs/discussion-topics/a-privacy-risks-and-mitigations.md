@@ -1,4 +1,4 @@
-Version 0.5, updated 11 December 2024
+Version 0.6, updated 16 December 2024
 
 # A - Privacy risks and mitigation
 ## 1 Introduction 

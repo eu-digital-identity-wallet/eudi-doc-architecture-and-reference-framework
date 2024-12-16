@@ -1,4 +1,4 @@
-Version 13 december 2024
+Version 0.4, updated 16 December 2024
 
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
