@@ -1,4 +1,4 @@
-Version 17 december 2024
+Version 13 december 2024
 
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
@@ -26,6 +26,8 @@ contains no risks regarding re-issuance. This is because the risk
 register focuses on risks related to security and privacy, not on
 operational issues such as the difference between first-time issuance
 and re-issuance of attestations.
+
+However, the risks mentioned in [Topic A] are related to the topic of this document as well. This is because regular re-issuance of PIDs and attestations is the main mitigation for the Relying Party linkability risks discussed in [Topic A].
 
 ### 1.3 Key words
 
@@ -258,14 +260,9 @@ simultaneously to the Wallet Unit.
 
 Questions
 
-3.  What do you think about the requirement that Users must not be involved in re-issuance
-    processes for PIDs and attestations?
+3.  What do you think about the requirement that Users must not be involved in re-issuance processes for PIDs and attestations?
 
-4.  What solutions do you see for ensuring that a re-issued PID or attestations is bound to same WSCD as the PID or attestation it is replacing? Do you agree with requiring that a Refresh Token used by the Wallet
-Unit to start the re-issuance process of a PID or attestation must
-be bound with the private key belonging to a PID or attestation
-currently present in the WSCA, by using the DPoP mechanism in RFC
-9449?
+4.  What do you think about the requirement that a re-issued PID or attestations must be bound to same WSCD as the PID or attestation it is replacing? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
 ### 4.2 User authentication and key management by the WSCA
 
@@ -330,12 +327,12 @@ further investigated.
 
 Questions
 
-5. Do you see other options for dealing with User authentication in re-issuance scenarios?
+5. Apart from the ones outlined above, do you see other options for dealing with User authentication in re-issuance scenarios?
 
 6.  What do you think about option 1?
 
-7.  What do you think about option 2? Should we allow the re-use of
-    public keys in the ARF? If so, under what conditions?
+7.  What do you think about option 2? Should we allow the re-use of attestation
+    public keys? If so, under what conditions?
 
 8.  What do you think about option 3? Should we add the use of HDK in
     the ARF? If so, how exactly? Mandatory, optional? Do you know of any
@@ -476,8 +473,8 @@ value anyway. This approach nevertheless has some drawbacks as well:
 Questions
 
 10.  Do you agree that the Wallet Unit should trigger the re-issuance
-    process for the cases where the existing PIDs or attestations are
-    about to expire, or where the Wallet Unit is running low on
+    process when the existing PIDs or attestations are
+    about to expire, or when the Wallet Unit is running low on
     once-only PIDs or attestations? If not, what other solution do you
     see?
 
