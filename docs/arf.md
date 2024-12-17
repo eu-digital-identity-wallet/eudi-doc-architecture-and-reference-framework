@@ -86,7 +86,7 @@ The eIDAS Expert Group has described service blueprints for the following use ca
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
 
-In this specific use case, a User employs their Wallet Unit to authenticate, in order to accessing online services. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
+In this use case, a User employs their Wallet Unit to present some User attributes to a Relying Party, in order to access online services. Before presenting the attributes, the Wallet Unit authenticates the User. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
 
 Instead of using their PID to authenticate to online services, a User can also use a pseudonym provided by their Wallet Unit. See [Section 2.5](#25-pseudonyms).
 
@@ -170,9 +170,9 @@ Who can be a User of a Wallet Unit depends on national law. The use of a Wallet 
 
 ### 3.2 Wallet Providers
 
-Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. The terms and conditions of the mandate or recognition are for each Member State to determine.
+Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. All Wallet Solutions must be certified as described in [Chapter 7](#7-security-and-data-protection).
 
-The Wallet Providers make available to a User, through an instance of their Wallet Solution, a combination of several products and Trust Services foreseen in the legal proposal, which give the User full control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. From a technical viewpoint, this may also imply guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers also provide Wallet Unit Attestations (WUA) to the Wallet Unit.
+The Wallet Providers make available to a User, through an instance of their Wallet Solution, a combination of several products and Trust Services foreseen in the legal proposal, which give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. From a technical viewpoint, this may also imply guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers also provide Wallet Unit Attestations (WUA) to the Wallet Unit.
 
 Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions.
 
@@ -216,7 +216,7 @@ For more information, please refer to [Topic 27] and to [Topic 31].
 
 ### 3.5 Qualified Electronic Attestation of Attributes (QEAA) Providers
 
-Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs apply also to QEAA, but specific rules for this Trust Service need to be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
+Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs applies also to QEAA Providers, but specific rules for this Trust Service may be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
 ### 3.6 Public Body Authentic Source Electronic Attestation of Attributes (PuB-EAA) Providers
 
@@ -230,7 +230,7 @@ For the precise and legally binding definitions and obligations regarding the is
 
 ### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
 
-Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider. While they are supervised under [eIDAS 2.0], it can be assumed that other legal or contractual frameworks mostly govern the rules for provision, use and recognition of EAAs. Those other frameworks may cover policy areas such as educational credentials, digital payments, although they may also rely on Qualified Electronic Attestation of Attributes Providers. For non-qualified EAAs to be used, TSPs offer Users a way to request and obtain these EAA. This implies these non-qualified EAA Providers need to comply with the Wallet Unit interface specifications. Depending on the domain rules, non-qualified EAA Providers may provide validity information about EAAs, without having an ability to receive any information about the use of the EAA. The terms and conditions of issuing EAAs and related services are subject to sectoral rules.
+Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider. While they are supervised under [eIDAS 2.0], it can be assumed that other legal or contractual frameworks mostly govern the rules for provision, use and recognition of EAAs. Those other frameworks may cover policy areas such as educational credentials, digital payments, although they may also rely on Qualified Electronic Attestation of Attributes Providers. For non-qualified EAAs to be used, TSPs offer Users a way to request and obtain these EAA. This implies these non-qualified EAA Providers comply with the Wallet Unit interface specifications. Depending on the domain rules, non-qualified EAA Providers may provide validity information about EAAs, without having an ability to receive any information about the use of the EAA. The terms and conditions of issuing EAAs and related services are subject to sectoral rules.
 
 ### 3.8 QES Remote Creation Service Providers
 
@@ -252,13 +252,19 @@ It is up to the Member States to define terms and conditions for the provisionin
 
 ### 3.10 Relying Parties
 
-Relying Parties are natural or legal persons that rely upon an electronic identification or a Trust Service. They request the necessary attributes contained within the PID, QEAA, Pub-EAA and EAA from Users to rely on the Wallet Unit, subject to the acceptance by the User and within the limits of applicable legislation and rules. The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. To rely on Wallet Units for the purpose of providing a service, Relying Parties need to inform the Member State where they are established and their intention for doing so. Relying Parties need to maintain an interface with the Wallet Unit to request attestations with mutual authentication. Relying Parties are responsible for authenticating PIDs and (Q)EAAs.
+Relying Parties are natural or legal persons that rely upon an electronic identification or on a Trust Service. They request attributes contained within a PID, QEAA, Pub-EAA or EAA from the Wallet Unit, subject to the approval of the User and within the limits of applicable legislation and rules. 
+
+The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. In particular, the Regulation requires that providers of very large online platforms must accept the EUDI Wallet for their user authentication processes.
+
+To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and to register the attributes that they intend to request.
+
+Relying Parties maintain an interface with Wallet Units to request attestations, using mutual authentication.
 
 ### 3.11 Conformity Assessment Bodies (CAB)
 
 Conformity Assessment Bodies (CAB) are accredited public or private bodies, accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible for carrying out assessments on which Member States will rely before issuing a Wallet Unit or providing the qualified status to a Trust Service Provider.
 
-The Wallet Solutions will need to be certified by CABs. QTSPs will be audited regularly by CABs.
+The Wallet Solutions will be certified by CABs. QTSPs will be audited regularly by CABs.
 
 The standards and schemes used by CABs to fulfil their tasks to certify Wallet Solutions are specified further, specifically in [Chapter 7](#7-security-and-data-protection) - Certification.
 
@@ -268,9 +274,7 @@ For the Regulation, the supervisory bodies are important to review and ensure pr
 
 ### 3.13 Device Manufacturers and Related Subsystems Providers
 
-In the Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable the Wallet Solution to work smoothly and securely in the hands of the User.
-
-Hence, device manufacturers, and related subsystem providers need to provide a platform on which where the Wallet Solution can be built. Usability, security, stability and connectivity are key factors.
+In the Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable a Wallet Unit to work smoothly and securely.Device manufacturers and related subsystem providers provide a platform on which a Wallet Unit can be built. Wallet Providers ensure that their Wallet Units use that platform to ensure usability, security, stability and connectivity.
 
 The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
 
@@ -344,7 +348,7 @@ The interfaces and their respective protocols, as discussed in this section and 
 
 - **The Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and the Qualified Electronic Signature (QES) Remote Service Provider. This interface is specifically used to execute a QES remote signature.
 
-Note the "Deletion Request Interface" and the "Reporting Interface" as mentioned in the Regulation are not depicted as *interface* in this diagram. To be able to request as a User to delete personal data and to request reporting, are seen as features of the Wallet Solution which are required to be implemented in the solution.
+Note the "Attribute Deletion Request Interface" and the "Reporting to DPA Interface" as mentioned in the Regulation are not depicted as *interface* in this diagram. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
 
 #### 4.2.2 Attestation presentation flows
 
@@ -575,7 +579,7 @@ Notes:
 
 - This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Trusted List Providers and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
 
-- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X509 certificates and ‘classical‘ X509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
+- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X.509 certificates and X.509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
 
 - This trust model is valid for both remote and proximity use cases. However, technical measures taken to ensure that the requirements on trust are fulfilled may differ between these two use cases. Moreover, the authentication and authorisation mechanisms will depend on the characteristics of the interacting parties.
 
@@ -629,7 +633,7 @@ Additional risks of User tracking may arise from the communication protocols use
 
 #### 6.1.4 Other trust relations
 
-Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers and Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will need to be used.
+Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers, Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will be used.
 
 ### 6.2 Trust throughout a Wallet Solution lifecycle
 
@@ -645,7 +649,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
-The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-security-and-data-protection).
+The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-certification-and-risk-management).
 
 If the registration and notification processes are successful, the trust anchors of the Wallet Provider are included in a Wallet Provider Trusted List. During issuance of a PID or an attestation, the PID Provider or the Attestation Provider can use these trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider, so they can be sure they are dealing with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance) and [Topic 9]. Similarly, when the Wallet Unit presents a PID or an attestation to a Relying Party, the Relying Party can use the Wallet Provider trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider) and [Topic 38].
 
@@ -778,7 +782,7 @@ Note: The Regulation does not exclude the possibility that a Wallet Instance may
 
 ##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PIDs
 
-A User installs a Wallet Unit because they want to obtain and use one or more PIDs. However, PID Providers are not required to support all Wallet Solutions in the EUDI Wallet ecosystem. 'Support' here means that the PID Provider is willing to issue a PID to an instance of a given Wallet Solution on request of the User. Instead, a PID Provider may choose to support only a single Wallet Solution or a limited number of Wallet Solutions. Therefore, each PID Provider will publish a list of Wallet Solutions that they support, such that a User that wants or needs to request a PID from that PID Provider know which Wallet Unit they should install. This list could be published, for example, on the PID Provider's website.
+A User installs a Wallet Unit because they want to obtain and use one or more PIDs. However, PID Providers are not required to support all Wallet Solutions in the EUDI Wallet ecosystem. 'Support' here means that the PID Provider is willing to issue a PID to an instance of a given Wallet Solution on request of the User. Instead, a PID Provider may choose to support only a single Wallet Solution or a limited number of Wallet Solutions. Therefore, each PID Provider will publish a list of Wallet Solutions that they support, such that a User that wants to request a PID from that PID Provider knows which Wallet Unit they should install. This list could be published, for example, on the PID Provider's website.
 
 Conversely, a Wallet Solution is not required to support all PID Providers, where 'support' means that it is able to request the issuance of a PID from a PID Provider. Each Wallet Provider will, prior to or during installation of a Wallet Unit, let the User know which PID Providers are supported by this Wallet Unit.
 
@@ -853,7 +857,7 @@ Starting from Wallet Unit activation and until the Wallet Instance is de-install
 
 - update the WUAs as necessary; see [Topic 9].
 
-- suspend or revoke the Wallet Unit in case its security is compromised; see [Topic 38].
+- revoke the Wallet Unit in case its security is compromised; see [Topic 38].
 
 The User will be able to request the Wallet Provider to revoke the Wallet Unit at least in case of loss or theft of the User's device. See [Topic 38].
 
@@ -867,7 +871,7 @@ To allow Wallet Unit management, the following trust relations are established:
 
 2. When contacted by a User, the Wallet Provider authenticates the User. This means that the Wallet Provider is sure that the User is indeed the User that was associated with the Wallet Unit during activation. For this, the Wallet Provider uses the authentication methods established in the User's account during activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
-3. When the Wallet Unit and the Wallet Provider set up a communication channel, the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. Similarly, the Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This must be ensured by the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
+3. When the Wallet Unit and the Wallet Provider set up a communication channel, the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. Similarly, the Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This will be ensured by the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
 
 Specifically for the functionality allowing a PID Provider to request Wallet Unit revocation:
 
@@ -907,7 +911,7 @@ The lifecycle of a PID or an attestation starts when a User, using their Wallet 
 
 3. The PID Provider or Attestation Provider authenticates and validates the Wallet Unit, see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit) below.
 
-4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-unit-is-not-suspended-or-revoked).
+4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked).
    
 5. After the PID or attestation is issued to the Wallet Unit, the Wallet Unit verifies the authenticity of the PID or attestation; see [Section 6.6.2.6](#6625-wallet-unit-verifies-pid-or-attestation).
 
@@ -931,9 +935,7 @@ Before requesting the issuance of a PID or an attestation, the Wallet Unit authe
 
 As shown in figure 6, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure.
 
-Note:
-
-- It is not mandatory for PID Providers or Attestation Providers to possess all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider or an Attestation Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider or Attestation Provider will choose which Trusted Lists they need to subscribe to.
+Note that for PID Providers it is not mandatory to possess all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider  will choose which Trusted Lists they need to subscribe to. This is different for Attestation Providers: they must accept all Wallet Solutions and hence must possess all Wallet Provider Trusted Lists.
 
 [Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. When the Wallet Unit sends a request for a PID or an attestation to a PID Provider or to an Attestation Provider, it includes the WUA in the request. The PID Provider or Attestation Provider verifies the signature over the WUA, using the Wallet Provider trust anchor obtained from the Trusted List. Next, the PID Provider or Attestation Provider verifies that the Wallet Unit possesses the private key belonging to the public key in the WUA. This proves that the Wallet Unit is authentic and is provided by a trusted Wallet Provider. For more details see [Topic 9].
 
@@ -947,11 +949,11 @@ The WUA describes the certifications and the other relevant properties of the WS
 
 **Verifies that the PID key or the attestation key is protected by the WSCD**
 
-Knowing the properties of the WSCD is not very useful if the PID Provider or Attestation Provider cannot be sure that the private key for the PID or their new attestation is indeed protected by that WSCD. [Topic 9] describes how the PID Provider or Attestation Provider can obtain a so-called proof of association from the WSCD. This proof of association proves that the WSCD described in the WUA protects both the WUA public key and the public key of the PID or the new attestation.
+Knowing the properties of the WSCD is not very useful if the PID Provider or Attestation Provider cannot be sure that the private key for the PID or their new attestation is indeed protected by that WSCD. [Topic 9] describes how the PID Provider or Attestation Provider can obtain a so-called proof of association from the WSCD. This proof of association proves that the WSCD described in the WUA protects both the WUA private key and the private key of the PID or the new attestation.
 
-##### 6.6.2.4 PID Provider or Attestation Provider verifies that Wallet Unit is not suspended or revoked
+##### 6.6.2.4 PID Provider or Attestation Provider verifies that WUA is not revoked
 
-[Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. If the WUA is valid for longer than 24 hours, it contains revocation information. During the lifetime of the Wallet Unit, the Wallet Provider regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Unit is no longer secure, the Wallet Provider revokes any WUA that has a remaining validity period of 24 hours or longer. If the Wallet Provider uses WUAs with a validity period of less than 24 hours, it stops issuing new WUAs to a Wallet Unit that is no longer secure. The WUA thus allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked.
+[Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. If the WUA is valid for longer than 24 hours, it contains revocation information. During the lifetime of the Wallet Unit, the Wallet Provider regularly verifies that the security of the Wallet Unit is not breached or compromised. If the Wallet Unit is no longer secure, the Wallet Provider revokes any of its WUAs that has a remaining validity period of 24 hours or longer. If the Wallet Provider uses WUAs with a validity period of less than 24 hours, it stops issuing new WUAs to a Wallet Unit that is no longer secure. The WUA thus allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked.
 
 [Topic 38] describes Wallet Unit revocation in more detail.
 
@@ -994,7 +996,7 @@ Subsequently, after the Wallet Unit presents the selected attributes from the PI
 
 5. The Relying Party Instance verifies the electronic signature or seal of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed. This is described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 
-6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke or suspend the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
+6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 
 7. The Relying Party verifies that the PID Provider or Attestation Provider issued this attestation to the same Wallet Unit that provided it to the Relying Party. In other words, it checks that the attestation was not copied or replayed. This is generally called device binding, and it is discussed in [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding)
 
@@ -1006,7 +1008,7 @@ Either before or after validating the PID or attestation per steps 5 - 9,
 
 10. The Relying Party Instance authenticates the Wallet Unit and the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider).
 
-11. The Relying Party Instance verifies that the Wallet Provider did not suspend or revoke the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wallet-unit-is-not-suspended-or-revoked).
+11. The Relying Party Instance verifies that the Wallet Provider did not revoke the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked)
 
 Finally, after the interaction with the Relying Party Instance is over,
 
@@ -1024,7 +1026,7 @@ Figure 7 High-level overview of Relying Party authentication process
 
 The figure shows the following:
 
-First, there are two preconditions that need to be fulfilled before the Relying Party authentication process can begin. Note that these actions are not carried out for every presentation, but only once (excluding possible updates).
+First, there are two preconditions that need to be fulfilled before the Relying Party authentication process can begin. Note that these actions are not carried out for every presentation, but only once (excluding possible updates):
 
 A) The Relying Party registered itself as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and obtained a Relying Party Instance access certificate.
 
@@ -1110,17 +1112,19 @@ Notes:
 
 - The signature or seal over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
    - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-   - the solution can be certified for security at LoA "high" according to [chapter 7](#7-security-and-data-protection)
+   - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
 
 - A Relying Party typically has a list of attestations that it accepts for a certain use case. For example, a Relying Party could accept a mobile Driving Licence (mDL) issued by a national driving licence Provider as proof of identity. If a Relying Party decides to accept a specific type of attestation issued by a specific Attestation Provider, the Relying Party must accept any valid and authentic attestation issued by that Attestation Provider, regardless of the User device it is installed on. In other words, the Relying Party trusts the PID Provider or Attestation Provider to have verified, during PID or attestation issuance, that the User device is fit to receive a PID or attestation, as described in [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit). The Relying Party therefore does not assess the technical properties of the User device and WSCD during the attestation presentation process. If the Relying Party were to make its own independent assessment of the security of the User device, there is a possibility that it would not accept a User's attestation even though it is perfectly valid. That would be confusing to Users and might diminish their trust in their attestations and in the EUDI Wallet ecosystem as a whole.
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
 
-To allow revocation checking of a PID or attestation, the PID Provider or Attestation Provider must include revocation information in the PID or attestation, respectively. This revocation information must include a URL indicating the location where a Relying Party can obtain a status list or revocation list, and an identifier or index for this specific certificate or attestation within that list.
+To allow revocation checking of a PID or attestation, the PID Provider or Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours. This revocation information includes a URL indicating the location where a Relying Party can obtain a status list or revocation list, and an identifier or index for this specific certificate or attestation within that list.
 
 Notes:
 
-- A status list is a bit string or byte string in which each bit or group of bits denotes the current revocation status (valid, suspended, or revoked) of one attestation. To get the status of the attestation it has received from the Wallet Unit, the Relying Party obtains the status list from the URL specified in the attestation and verifies the value encoded at the bit position given by the index value in the attestation.
+- For attestations with a validity period of less than 24 hours, including revocation information is not necessary.
+  
+- A status list is a bit string or byte string in which each bit or group of bits denotes the current revocation status (valid or revoked) of one attestation. To get the status of the attestation it has received from the Wallet Unit, the Relying Party obtains the status list from the URL specified in the attestation and verifies the value encoded at the bit position given by the index value in the attestation.
 
 - A revocation list is a list of PID identifiers or attestations identifiers revoked by the PID Provider or Attestation Provider. To get the status of the PID or attestation it has received from the Wallet Unit, the Relying Party obtains the revocation list from the URL specified in the attestation and verifies whether the identifier included in the attestation is on the list or not.
 
@@ -1164,9 +1168,9 @@ To solve these drawbacks, [Topic 18] describes how the Relying Party Instance ca
 
 - verifies that the Wallet Unit is in possession of the private key belonging to the public key in the WUA. This proves that the Wallet Unit is authentic and is provided by the trusted Wallet Provider.
 
-##### 6.6.3.12 Relying Party verifies that Wallet Unit is not suspended or revoked
+##### 6.6.3.12 Relying Party verifies that WUA is not revoked
 
-[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-unit-is-not-suspended-or-revoked) explained how a PID Provider, or an Attestation Provider, can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
+[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked explained how a PID Provider or an Attestation Provider can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
 
 ##### 6.6.3.13 Wallet Unit enables the User to report suspicious requests by a Relying Party and to request a Relying Party to erase personal data
 
@@ -1174,7 +1178,7 @@ A Wallet Unit enables the User to report unlawful or suspicious requests for per
 
 The dashboard also enables the User to request a Relying Party to immediately erase personal data. For more information and requirements, see [Topic 48].
 
-To be able to substantiate a complaint, or to list data that must be erased, the User needs to be informed about which attributes were requested by which Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes that were requested and presented. The abovementioned dashboard also enables the User to view the log and lodge a complaint for any attribute in the log. More details about the logging functionality can be found in [Topic 19].
+To be able to substantiate a complaint, or to list data that must be deleted, the User needs to be informed about which attributes were requested by which Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes that were requested and presented. The abovementioned dashboard also enables the User to view the log and lodge a complaint for any attribute in the log. More details about the logging functionality can be found in [Topic 19].
 
 #### 6.6.4 PID or attestation presentation to another Wallet Unit
 
@@ -1194,7 +1198,7 @@ In addition, a PID Provider or Attestation Provider could regularly verify, for 
 
 In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the WSCA included in the Wallet Unit will authenticate the User.
 
-## 7 Security and Data Protection
+## 7 Certification and Risk Management
 
 ### 7.1 Introduction
 
