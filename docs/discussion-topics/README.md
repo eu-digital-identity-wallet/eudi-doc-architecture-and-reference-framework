@@ -18,6 +18,7 @@ The process of establishing high level requirements has 5 steps:
 
   + A - [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md)
   + B - [Re-issuance and batch issuance of PIDs and Attestations](b-re-issuance-and-batch-issuance-of-pids-and-attestations.md)
+  + F - [Digital Credential API (former known as browser API)](f-digital-credential-api.md)
 
 
 
