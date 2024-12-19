@@ -1200,20 +1200,16 @@ Finally, ENISA is asked to also facilitate the transition from national certific
 
 ### 7.4 Risk-based approach and risk register
 
-#### 7.4.1 Introduction
+This section details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the Art. 5c(6) IA, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation [GDPR] and related Data Protection Impact Assessments [DPIA]. 
 
-This chapter details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the Art. 5c(6) IA, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation [GDPR] and related Data Protection Impact Assessments [DPIA]. 
 The risk-based approach sets out a common risk register that contains a comprehensive but non-exhaustive list of risks and threats related to the Wallet Solution. These risks and threats are architecture-agnostic and provide a benchmark overview of the most critical risks and threats to Wallet Solutions. Each architecture-specific scheme or sub-scheme will demonstrate that a Wallet Solution architecture appropriately meets the applicable security requirements. Under the national certification schemes, wallet providers will be required to demonstrate how the design of the Wallet Solution that they provide corresponds to the reference architecture and details the security functions and validation plans for the specific Wallet Solution. By adopting this common set of risks and threats, national transitory certification schemes will achieve a baseline level of harmonisation. It is possible for the national certification schemes to rely on external sources of assurance (e.g. other applicable national certification schemes).
-In order to remain responsive to technological advancements and emerging insights, the risk register will be updated regularly, in collaboration with the EDICG [Cooperation Group], where additional guidance documents could be established. This additional guidance allows for further alignment and standardisation in the comprehension of risks and threats, thereby helping Member States to learn from each other’s experiences. 
-In addition, Member States will perform a risk assessment that further complements the risk register with risks and threats specific to the envisioned architecture of the Wallet Solution. For the complete set of risks and threats, appropriate treatment measures will be presented to the certification body for evaluation. 
 
-Risks and threats play pivotal roles in the Wallet Solution certification process as they are fundamental in achieving the security objectives as described in the Regulation, such as privacy, confidentiality, integrity, availability, authenticity of the Wallet Solution and the data contained in it. Importantly, defining a common set of risks and threats across all national transitory certification schemes allows for a greater level of harmonisation achieved through the risk register. 
-The risk register describes the main security and privacy risks and threats that apply to Wallet Solutions, and which needs to be properly addressed in every architecture and implementation of Wallet Solutions. The high-level risks (see [Annex 6] ‘Section I’) are related to the use of Wallet Solutions by Users and Relying Parties, and they are associated to direct threats targeting the assets of Wallet Solutions. In addition, a few system-level risks (see [Annex 6] ‘Section II’) to wallets are identified, which would typically result from a combination of threats applying to the entire wallet system.
+#### 7.4.1 High-level risks and threats
 
-#### 7.3.2 Rationale and approach
+The following is an excerpt from [Annex 6] to the ARF, which is Annex I of the [CIR]. To keep in line with the continuously evolving threat landscape, the risk register will be maintained and regularly updated in collaboration with the Cooperation Group.
 
-Risk type 	Risk ID 	Related risk titles 
-High-level risks to the Wallets Solutions
+*High-level risks and threats*
+
 	R1 	Creation or use of an existing electronic identity 
 	R2 	Creation or use of a fake electronic identity 
 	R3 	Creation or use of fake attributes 
@@ -1223,40 +1219,52 @@ High-level risks to the Wallets Solutions
 	R7 	Data manipulation 
 	R8 	Data loss 
 	R9 	Unauthorised transaction 
-	R10 	Transaction manipulation 
-	R11 	Repudiation 
-	R12 	Transaction data disclosure 
-	R13 	Service disruption
+	R10 Transaction manipulation 
+	R11 Repudiation 
+	R12 Transaction data disclosure 
+	R13 Service disruption
 	R14	Surveillance
 
-System-related risks	
-    SR1 	Wholesale surveillance 
-	SR2 	Reputational damage 
-	SR3 	Legal non-compliance 
+*System-related risks*
 
-The risk register also identifies technical threats (see [Annex 6] ‘Section III’) targeting the implementation of the wallet solution. These threats are orthogonal to the high-level risks in the sense that each one of them could be used to materialise many high-level risks.
+    SR1 Wholesale surveillance 
+	SR2 Reputational damage 
+	SR3 Legal non-compliance 
 
-Finally, accompanying [Annex 6] lists the risk register that links direct threats to the Wallet Solutions, and each one is associated to a (non-exhaustive) selection of risks (see [Annex 6] ‘Section IV’).
+*Technical threats*
+    
+    TT1 Physical attacks 	
+    
+    1.1	Theft 
+	1.2	Information leakage 
+	1.3 Tampering 
+	
+    TT2 Errors and misconfigurations 	
+    
+    2.1	Errors made when managing an IT system 
+	2.2	Application-level errors or usage errors 
+	2.3	Development-time errors and system misconfigurations 
+	
+    TT3 Use of unreliable sources 
+    
+    3.1	Erroneous use or configuration of wallet components 
+	
+    TT4 Failure and outages 	
+    
+    4.1	Failure or dysfunction of equipment, devices or systems 
+	4.2	Loss of resources 
+	4.3 Loss of support services 
+	
+    TT5 Malicious actions 	
 
-Threat type 	Threat ID 	Related threat titles 	Subcategories of threats 
-Technical threat 	TT1 	Physical attacks 	1.1	Theft 
-			1.2	Information leakage 
-			1.3 Tampering 
-	TT2 	Errors and misconfigurations 	2.1	Errors made when managing an IT system 
-			2.2	Application-level errors or usage errors 
-			2.3	Development-time errors and system misconfigurations 
-	TT3 	Use of unreliable sources 	3.1	Erroneous use or configuration of wallet components 
-	TT4 	Failure and outages 	4.1	Failure or dysfunction of equipment, devices or systems 
-			4.2	Loss of resources 
-			4.3 Loss of support services 
-	TT5 	Malicious actions 	5.1 Interception of information 
-			5.2 Phishing and spoofing 
-			5.3 Replay of messages 
-			5.4 Brute-force attack 
-			5.5 Software vulnerabilities 
-			5.6 Supply chain attacks 
-			5.7 Malware 
-			5.8 Random number prediction 
+    5.1 Interception of information 
+	5.2 Phishing and spoofing 
+	5.3 Replay of messages 
+	5.4 Brute-force attack 
+	5.5 Software vulnerabilities 
+	5.6 Supply chain attacks 
+	5.7 Malware 
+	5.8 Random number prediction 
 
  
 ## 8 Document development
