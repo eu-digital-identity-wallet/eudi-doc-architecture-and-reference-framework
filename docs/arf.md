@@ -1170,7 +1170,7 @@ In case the User no longer wants to retain a specific PID or attestation in thei
 
 ### 7.1 Introduction
 
-This chapter is dedicated to the certification of EUDI Wallet solutions, covering the legal foundation outlined in the [eIDAS 2.0] Regulation (the Regulation), the overall certification approach, and its accompanying design principles. Furthermore, a supporting document regarding the risk-based approach of the EUDI Wallet is provided in appendix 6. 
+This chapter is dedicated to the certification of Wallet Solutions, covering the legal foundation outlined in the [eIDAS 2.0] Regulation (the Regulation), the overall certification approach, and its accompanying design principles. Furthermore, a supporting document regarding the risk-based approach of the EUDI Wallet is provided in appendix 6. 
 
 #### 7.1.1 Legal basis and requirements
 
