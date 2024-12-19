@@ -1190,7 +1190,7 @@ The Wallet Solutions need to be certified to ensure conformity and security, to 
 In addition, Article 5c(5) provides for an optional certification of the personal data processing operations against the [GDPR] Regulation. While this certification is not mandatory, the [GDPR] Regulation requirements fully apply to the Wallet Solutions and consequently to their Providers. 
 Article 5c(6) specifies that the Commission establishes, by means of Art. 5c(6) a list of reference standards and, where necessary, establish specifications and procedures for the certification of Wallet Solutions. 
 
-The certification process of Wallet Providers will leverage, rely on, and mandate the use of relevant and existing CSA certification schemes, or parts thereof, to certify the compliance of Wallet Solutions or parts thereof, with the applicable cybersecurity requirements. 
+The certification process of Wallet Solutions will leverage, rely on, and mandate the use of relevant and existing CSA certification schemes, or parts thereof, to certify the compliance of Wallet Solutions or components, with the applicable cybersecurity requirements. 
 
 For requirements that are not relevant for cybersecurity, and to the extent that cybersecurity certification schemes do not, or only partially, cover those cybersecurity requirements, Member States establish national certification schemes following the harmonised requirements set out in the Art. 5c(6) IA. Member States transmit their draft national certification schemes to the European Digital Identity Cooperation Group established pursuant to Article 46e(1) (the ‘Cooperation Group’) which may issue opinions and recommendations. 
 
