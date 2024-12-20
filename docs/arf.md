@@ -783,7 +783,7 @@ If a Wallet Provider makes its Wallet Solution available for installation throug
 - instructions on how to verify the authenticity of the Wallet Instance to be installed. This can be done, for example, by comparing the hash value of the application downloaded by the User with a hash value published by the Wallet Provider.
 - instructions on bypassing of any operating system limitations on side-loading of apps, if applicable, and ensuring that these limitations are restored after the Wallet Instance has been installed.
 
-Note: The Regulation does not exclude the possibility that a Wallet Instance may be installed on a non-mobile device, for example a server. The requirements above also apply for the installation of a Wallet Unit on a User device that is not a mobile device, and for which no official operating system app store may exist.
+Note: The Regulation does not exclude the possibility that a Wallet Instance may be installed on a non-mobile device, for example a server. The requirements above also apply for the installation of a Wallet Unit on a user device that is not a mobile device, and for which no official operating system app store may exist.
 
 ##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PIDs
 
