@@ -270,7 +270,7 @@ For the Regulation, the supervisory bodies are important to review and ensure pr
 
 In the Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable the Wallet Solution to work smoothly and securely in the hands of the User.
 
-Hence, device manufacturers, and related subsystem providers need to provide a platform on which where the Wallet Solution can be built. Usability, security, stability and connectivity are key factors.
+Hence, device manufacturers, and related subsystem providers need to provide a platform on which the Wallet Solution can be built. Usability, security, stability and connectivity are key factors.
 
 The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
 
