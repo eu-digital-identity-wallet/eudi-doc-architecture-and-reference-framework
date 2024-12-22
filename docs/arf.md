@@ -240,7 +240,7 @@ The Wallet Unit will allow the User to create free-of-charge Qualified Electroni
 
 - the Wallet Unit implements secure authentication and electronic signature or an electronic seal invocation capability as a part of a local QSCD or a remote QSCD managed by a QTSP.
 
-In figure 1 the QESRC Service Provider can be the remote QSCD. As part of the ecosystem, the use of common interfaces and protocols for provisioning Qualified Electronic Signatures and Seals will create a unified European market for QTSP offering remote signature services. European citizens will be able to choose any QTSP without worrying about technical interoperability between them and this will enhance competition and create better QTSP services.
+In figure 1 the QESRC Service Provider can be the remote QSCD. As part of the ecosystem, the use of common interfaces and protocols for provisioning Qualified Electronic Signatures and Seals will create a unified European market for QTSP offering remote signature services. European citizens will be able to choose any QTSP without worrying about technical interoperability between them and this will enhance competition.
 
 Besides Qualified Electronic Signatures and Seals, also Non-Qualified Electronic Signatures or Seal Providers can exist. However, Non-Qualified Electronic Signature/ Seal Providers are out of scope of the ARF.
 
