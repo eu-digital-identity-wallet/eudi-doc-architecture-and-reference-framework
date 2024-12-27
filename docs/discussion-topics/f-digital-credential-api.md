@@ -229,6 +229,52 @@ The cross-device flow is implemented using the following steps:
 
 ## 3. High level requirements for Digital Credentials API
 
+### 3.1 General requirements
+
+#### API Scope
+
+1. **Wallet Selection and Invocation**:
+   - Functional APIs must enable browsers to search and present responsive credentials.
+   - Address user experience and scaling concerns caused by current Custom URI approaches.
+
+2. **Secure Cross-Device Flows**:
+   - APIs and protocols (e.g., CTAP2) must ensure secure cross-device engagement.
+   - Mitigate vulnerabilities such as phishing and relay attacks.
+
+3. **Interaction with OID4VP**:
+   - APIs must support OID4VP as a presentation protocol for credentials.
+
+4. **Credential Format Support**:
+   - APIs must be credential format agnostic, supporting extensions for different credential types.
+   - The first instance of APIs must support both mdoc (for US mDL implementations) and VC credential formats (as specified in the EUDI Wallet ARF).
+
+#### Out of Scope
+
+1. **Allow Lists/Block Lists**:
+   - These discussions extend beyond standard API purview and require governance at the national level (e.g., certification programs).
+
+#### Responsibilities
+
+1. **Consent**:
+   - Wallets and verifiers must handle user consent for attribute requests and releases.
+   - Browsers should not add an additional consent layer to the workflow.
+
+2. **Data Request & Release**:
+   - Wallets must support and enforce selective disclosure of data.
+   - Browsers may present wallets that meet selective disclosure requirements but do not directly enforce it.
+
+3. **Verifier Authentication**:
+   - Wallets are responsible for authenticating verifiers before delivering attribute payloads.
+   - Issuers must authenticate wallets during the issuance process.
+   - Verifiers may authenticate wallets dynamically or via third-party trust providers or certification schemes.
+   - Browsers must provide sufficient information to verifiers to aid in authentication (e.g., request origin).
+
+4. **Protection from Malicious Verifiers**:
+   - Browsers must evaluate, block, or warn users about potentially untrusted verifiers requesting wallet information.
+   - Browsers must not decide which verifiers are authorized to request attributes; this responsibility lies with national issuers and regulators.
+
+
+
 ### Technological Neutrality and Cross-Platform Interoperability
 
 The Digital Credentials API SHALL preserve technological neutrality and avoid any reliance on vendor-specific extensions.
