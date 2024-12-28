@@ -273,8 +273,6 @@ The cross-device flow is implemented using the following steps:
    - Browsers must evaluate, block, or warn users about potentially untrusted verifiers requesting wallet information.
    - Browsers must not decide which verifiers are authorized to request attributes; this responsibility lies with national issuers and regulators.
 
-
-
 ### Technological Neutrality and Cross-Platform Interoperability
 
 The Digital Credentials API SHALL preserve technological neutrality and avoid any reliance on vendor-specific extensions.
