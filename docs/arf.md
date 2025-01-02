@@ -489,11 +489,13 @@ Please note that the differences between these types of attestation are purely l
 
 All attestations can be described to have the following elements:
 
-- **Attribute schema** defines the structure, logical organisation, type and namespace(s) of the attested attributes as well as additional information such as information about the attestation, its issuer, the verification mechanisms, the underlying identity assurance, the Trust Framework to which the properties are related, and the proof of possession by the legitimate User.
+- An **attribute schema** defines the structure, logical organisation, type and unique identifier of all attributes in the attestation, as well as additional information such as information about the attestation, its issuer, the verification mechanisms, the underlying identity assurance, the Trust Framework to which the properties are related, and the proof of possession by the legitimate User.
 
-- **Data formats** define the way data in an attestation is formatted, e.g. its character sets, encoding and serialisation.
+- The **attribute format** defines the way an attributes in an attestation is formatted, e.g. its character set, encoding, allowed values, and serialisation.
 
-- **Proof mechanisms** define the methods used to secure the attestations for integrity, authenticity, and support of selective disclosure. There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
+- **Proof mechanisms** define the methods used to secure the attestations for integrity, authenticity, and support of selective disclosure. 
+
+There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
 
 1. The ISO/IEC 18013-5 standard defines an attribute schema, data format and proof mechanisms for mDL-s, which can be used also with other attribute schemas, see [ISO/IEC 18013-5].
 
@@ -505,7 +507,7 @@ All attestations can be described to have the following elements:
 
 ### 5.3 Attestation Rulebooks
 
-This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type and namespace(s) it uses. The namespace(s) used by an attestation define the identifier, syntax, and semantics of all attributes that can be part of that attestation.
+This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
 
 An Attestation Rulebook also makes some choices regarding the protocol(s) for presentation that must be supported by the relevant attestations. [Topic 12] contains the requirements for Attestation Rulebooks.
 
@@ -513,9 +515,9 @@ Attestation Rulebooks are defined by different organisations:
 
 - Some Rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3).
 
-- The Rulebook for an attestation intended to be used across organisations and/or across borders can be defined by an organisation in which, insofar possible, all stakeholders are represented. This will prevent multiple attestation rulebooks being defined for the same type of attestation, for example, diplomas. It will also prevent unnecessary differences in the syntax and semantics between similar attestations. The decision on which organisation will be responsible for a given attestation rulebook is out of scope for this document. As explained in [Topic 12], it is possible that an individual Attestation Provider needs to include attributes in an attestation that have not been specified in the relevant sectoral or EU-wide namespace. An example of this are attributes that only have a meaning within the Member State in which the Attestation Provider resides. To allow such domestic attributes, an Attestation Provider can define a custom namespace to specify attributes that are specific to this Provider and are not included in the EU-wide or sectoral namespace.
+- The Rulebook for an attestation intended to be used across organisations and/or across borders can be defined by an organisation in which, insofar possible, all stakeholders are represented. This will prevent multiple Attestation Rulebooks being defined for the same type of attestation, for example, diplomas. It will also prevent unnecessary differences in the syntax and semantics between similar attestations. The decision on which organisation will be responsible for a given Attestation Rulebook is out of scope for this document. As explained in [Topic 12], it is possible that an individual Attestation Provider needs to include attributes in an attestation that have not been specified in the relevant sectoral or EU-wide Rulebook. An example of this are attributes that only have a meaning within the Member State in which the Attestation Provider resides. To allow such domestic attributes, an Attestation Provider can define a custom Rulebook to specify attributes that are specific to this Provider and are not included in the EU-wide or sectoral Rulebook.
 
-- The Rulebook for an attestation intended to be used only within an organisation, will be defined by that organisation.
+- The Rulebook for an attestation intended to be used only within an organisation will be defined by that organisation.
 
 ### 5.4 Catalogues
 
