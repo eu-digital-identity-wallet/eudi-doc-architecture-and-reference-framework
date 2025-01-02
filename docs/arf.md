@@ -11,7 +11,7 @@ The Recommendation specifies that these outcomes will serve as a basis for the i
 
 The Recommendation sets up a structured process of cooperation between Member States, the Commission and, where relevant, private sector operators, to develop the Toolbox. The eIDAS Expert Group is tasked as main interlocutor for the purposes of implementing this Recommendation. The Expert Group's page can be found [at the official page](https://ec.europa.eu/transparency/expert-groups-register/screen/expert%20groups/consult?do=groupDetail.groupDetail&groupID=3032).
 
-The eIDAS Expert Group has since further developed the concepts and specifications for the European Digital Identity Framework. The current ARF version 1.5.0 is based on the legal text adopted by the co-legislators, including the adopted Implementing Acts.
+The eIDAS Expert Group has since further developed the concepts and specifications for the European Digital Identity Framework. The current ARF version 1.5.0 is based on the legal text adopted by the co-legislators, including the adopted Commission Implementing Regulations.
 
 ### 1.2 Purpose of this document
 
@@ -86,7 +86,7 @@ The eIDAS Expert Group has described service blueprints for the following use ca
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User identification and authentication at a high Level of Assurance (LoA) for various online services, both public and private. This capability is crucial, as it allows Relying Parties to confidently verify the identity of Users they interact with.
 
-In this specific use case, a User employs their Wallet Unit to authenticate, in order to accessing online services. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
+In this use case, a User employs their Wallet Unit to present some User attributes to a Relying Party, in order to access online services. Before presenting the attributes, the Wallet Unit authenticates the User. The User is particularly mindful of the privacy and security concerns associated with presenting person identification data (PID) online. Their primary goals include reliably identifying themselves to services that demand User identification while maintaining control over the presentation of their personal data.
 
 Instead of using their PID to authenticate to online services, a User can also use a pseudonym provided by their Wallet Unit. See [Section 2.5](#25-pseudonyms).
 
@@ -166,13 +166,13 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 Users of Wallet Units use the Wallet Unit to receive, store and present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove their identity. Wallet Unit Users can also create Qualified Electronic Signatures and Seals (QES) and utilise Wallet Unit-to-Wallet Unit interactions.
 
-Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the legislative proposal. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the Regulation.
+Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the legislative proposal. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the [eIDAS 2.0] Regulation.
 
 ### 3.2 Wallet Providers
 
-Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. The terms and conditions of the mandate or recognition are for each Member State to determine.
+Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. All Wallet Solutions must be certified as described in [Chapter 7](#7-security-and-data-protection).
 
-The Wallet Providers make available to a User, through an instance of their Wallet Solution, a combination of several products and Trust Services foreseen in the legal proposal, which give the User full control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. From a technical viewpoint, this may also imply guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers also provide Wallet Unit Attestations (WUA) to the Wallet Unit.
+The Wallet Providers make available to a User, through an instance of their Wallet Solution, a combination of several products and Trust Services foreseen in the legal proposal, which give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. From a technical viewpoint, this may also imply guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers also provide Wallet Unit Attestations (WUA) to the Wallet Unit.
 
 Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions.
 
@@ -216,7 +216,7 @@ For more information, please refer to [Topic 27] and to [Topic 31].
 
 ### 3.5 Qualified Electronic Attestation of Attributes (QEAA) Providers
 
-Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs apply also to QEAA, but specific rules for this Trust Service need to be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
+Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs applies also to QEAA Providers, but specific rules for this Trust Service may be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
 ### 3.6 Public Body Authentic Source Electronic Attestation of Attributes (PuB-EAA) Providers
 
@@ -230,7 +230,7 @@ For the precise and legally binding definitions and obligations regarding the is
 
 ### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
 
-Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider. While they are supervised under [eIDAS 2.0], it can be assumed that other legal or contractual frameworks mostly govern the rules for provision, use and recognition of EAAs. Those other frameworks may cover policy areas such as educational credentials, digital payments, although they may also rely on Qualified Electronic Attestation of Attributes Providers. For non-qualified EAAs to be used, TSPs offer Users a way to request and obtain these EAA. This implies these non-qualified EAA Providers need to comply with the Wallet Unit interface specifications. Depending on the domain rules, non-qualified EAA Providers may provide validity information about EAAs, without having an ability to receive any information about the use of the EAA. The terms and conditions of issuing EAAs and related services are subject to sectoral rules.
+Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider. While they are supervised under [eIDAS 2.0], it can be assumed that other legal or contractual frameworks mostly govern the rules for provision, use and recognition of EAAs. Those other frameworks may cover policy areas such as educational credentials, digital payments, although they may also rely on Qualified Electronic Attestation of Attributes Providers. For non-qualified EAAs to be used, TSPs offer Users a way to request and obtain these EAA. This implies these non-qualified EAA Providers comply with the Wallet Unit interface specifications. Depending on the domain rules, non-qualified EAA Providers may provide validity information about EAAs, without having an ability to receive any information about the use of the EAA. The terms and conditions of issuing EAAs and related services are subject to sectoral rules.
 
 ### 3.8 QES Remote Creation Service Providers
 
@@ -246,19 +246,25 @@ Besides Qualified Electronic Signatures and Seals, also Non-Qualified Electronic
 
 ### 3.9 Authentic Sources
 
-Authentic Sources are the public or private repositories or systems recognised or required by law containing attributes about natural and/ or legal persons. The Authentic Sources in scope of Article 45e are sources for, e.g. attributes on address, age, gender, civil status, family composition, nationality, education and training qualifications titles and licences, professional qualifications titles and licences, public permits and licences, financial and company data. Authentic Sources in scope of Article 45e are required to provide interfaces to QEAA Providers to verify the authenticity of the above attributes, either directly or via designated intermediaries recognised at national level. Authentic Sources may also issue PuB-EEAs themselves if they meet the requirements of the [eIDAS 2.0] Regulation. In figure 1 this is indicated by the arrow 'provides qualified data'.
+Authentic Sources are the public or private repositories or systems recognised or required by law containing attributes about natural and/ or legal persons. Authentic Sources are sources for, e.g. attributes on address, age, gender, civil status, family composition, nationality, education and training qualifications titles and licences, professional qualifications titles and licences, public permits and licences, financial and company data. Authentic Sources are required to provide interfaces to QEAA Providers to verify the authenticity of the above attributes, either directly or via designated intermediaries recognised at national level. Authentic Sources may also issue PuB-EEAs themselves if they meet the requirements of the [eIDAS 2.0] Regulation. In figure 1 this is indicated by the arrow 'provides qualified data'.
 
 It is up to the Member States to define terms and conditions for the provisioning of these Pub-EAAs, but according to the minimum technical specifications, standards, and procedures applicable to the verification procedures for qualified electronic attestations of attributes.
 
 ### 3.10 Relying Parties
 
-Relying Parties are natural or legal persons that rely upon an electronic identification or a Trust Service. They request the necessary attributes contained within the PID, QEAA, Pub-EAA and EAA from Users to rely on the Wallet Unit, subject to the acceptance by the User and within the limits of applicable legislation and rules. The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. To rely on Wallet Units for the purpose of providing a service, Relying Parties need to inform the Member State where they are established and their intention for doing so. Relying Parties need to maintain an interface with the Wallet Unit to request attestations with mutual authentication. Relying Parties are responsible for authenticating PIDs and (Q)EAAs.
+Relying Parties are natural or legal persons that rely upon an electronic identification or on a Trust Service. They request attributes contained within a PID, QEAA, Pub-EAA or EAA from the Wallet Unit, subject to the approval of the User and within the limits of applicable legislation and rules. 
+
+The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. In particular, the Regulation requires that providers of very large online platforms must accept the EUDI Wallet for their user authentication processes.
+
+To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and to register the attributes that they intend to request.
+
+Relying Parties maintain an interface with Wallet Units to request attestations, using mutual authentication.
 
 ### 3.11 Conformity Assessment Bodies (CAB)
 
 Conformity Assessment Bodies (CAB) are accredited public or private bodies, accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3), as responsible for carrying out assessments on which Member States will rely before issuing a Wallet Unit or providing the qualified status to a Trust Service Provider.
 
-The Wallet Solutions will need to be certified by CABs. QTSPs will be audited regularly by CABs.
+The Wallet Solutions will be certified by CABs. QTSPs will be audited regularly by CABs.
 
 The standards and schemes used by CABs to fulfil their tasks to certify Wallet Solutions are specified further, specifically in [Chapter 7](#7-security-and-data-protection) - Certification.
 
@@ -268,11 +274,7 @@ For the Regulation, the supervisory bodies are important to review and ensure pr
 
 ### 3.13 Device Manufacturers and Related Subsystems Providers
 
-In the Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable the Wallet Solution to work smoothly and securely in the hands of the User.
-
-Hence, device manufacturers, and related subsystem providers need to provide a platform on which the Wallet Solution can be built. Usability, security, stability and connectivity are key factors.
-
-The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
+In the EUDI Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable a Wallet Unit to work smoothly and securely. Device manufacturers and related subsystem providers provide a platform on which a Wallet Unit can be built. Wallet Providers ensure that their Wallet Units use that platform to ensure usability, security, stability and connectivity. The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
 
 ### 3.14 Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
 
@@ -344,7 +346,7 @@ The interfaces and their respective protocols, as discussed in this section and 
 
 - **The Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and the Qualified Electronic Signature (QES) Remote Service Provider. This interface is specifically used to execute a QES remote signature.
 
-Note the "Deletion Request Interface" and the "Reporting Interface" as mentioned in the Regulation are not depicted as *interface* in this diagram. To be able to request as a User to delete personal data and to request reporting, are seen as features of the Wallet Solution which are required to be implemented in the solution.
+Note the "Attribute Deletion Request Interface" and the "Reporting to DPA Interface" as mentioned in the Regulation are not depicted as *interface* in this diagram. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
 
 #### 4.2.2 Attestation presentation flows
 
@@ -567,7 +569,7 @@ A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet
 
 One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations (QEAAs, PuB-EAAs and non-qualified EAAs). The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 6. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Trusted List Provider** (TLP) or by an **Attestation Provider Trusted List Provider** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
 
-After receiving one or more PIDs or attestations, a Wallet Unit can present User attributes from these attestations to **Relying Party Instances**. These are shown on the right-hand side of the Wallet Unit in Figure 6. A Relying Party Instance is a combination of hardware and software used by a **Relying Party** to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity. Relying Parties are registered by a **Relying Party Registrar** in their Member State. As a result of the registration, a Relying Party receives an Access certificate from a **Relying Party Access CA**. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in the lifecycle of a Relying Party, namely registration, and possibly de-registration.
+After receiving one or more PIDs or attestations, a Wallet Unit can present User attributes from these attestations to **Relying Party Instances**. These are shown on the right-hand side of the Wallet Unit in Figure 6. A Relying Party Instance is a combination of hardware and software used by a **Relying Party** to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity. Relying Parties are registered by a **Relying Party Registrar** in their Member State. As a result of the registration, a Relying Party receives an Access certificate for each of its Relying Party Instances from a **Relying Party Instance Access CA**. In addition, the Relying Party also receives a **Relying Party registration certificate** from the Registrar. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in the lifecycle of a Relying Party, namely registration, and possibly de-registration.
 
 Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) describes interactions in the lifecycle of a PID or an attestation, namely issuance, presentation to a Relying Party or to another Wallet Unit, management, and deletion.
 
@@ -575,7 +577,7 @@ Notes:
 
 - This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Trusted List Providers and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
 
-- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X509 certificates and ‘classical‘ X509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
+- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.1.2](#412-interoperability)) and therefore, this trust model will be implemented using X.509 certificates and X.509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used, such as [OpenID Federation].
 
 - This trust model is valid for both remote and proximity use cases. However, technical measures taken to ensure that the requirements on trust are fulfilled may differ between these two use cases. Moreover, the authentication and authorisation mechanisms will depend on the characteristics of the interacting parties.
 
@@ -611,7 +613,7 @@ In some cases, there is a risk that a valid party in the EUDI Wallet ecosystem t
 A second case of a valid party in the EUDI Wallet ecosystem that may try to do things that it is not allowed to do, is a Relying Party trying to request attributes from a Wallet Unit for which they have no lawful grounds. This risk is mitigated mainly by three measures:
 
 - First of all, the attestation formats and protocols specified in [ISO/IEC 18013-5] and [SD-JWT] + [OpenID4VP] allow selective disclosure of attributes. This means that a Relying Party can specify which of the attributes in an attestation it wishes to receive, and which ones not. This feature is sometimes called collection limitation. Next, selective disclosure also allows the User to approve or deny the presentation of each requested attribute separately. More information on selective disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
-- Secondly, the Regulation requires each Relying Party to register the attributes it intends to request from Users. The 'Commission Implementing Regulation on protocols and interface to be supported by the EUDI Framework' requires that these registered attributes are included in a so-called Relying Party registration certificate, and that a Wallet Unit must be able to display information from this registration certificate to the User. This allows the User to make a considered decision to approve or deny the presentation of the requested attributes. For more information, see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
+- Secondly, the Regulation requires each Relying Party to register the attributes it intends to request from Users. Commission Implementing Regulation 2024/2982 [2024/2982] requires that these registered attributes are included in a so-called Relying Party registration certificate, and that a Wallet Unit must be able to display information from this registration certificate to the User. This allows the User to make a considered decision to approve or deny the presentation of the requested attributes. For more information, see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
 - Lastly, the Regulation requires that an Attestation Provider is able to embed a disclosure policy into their attestations. This policy may contain rules determining whether the Attestation Provider approves of the release of one or more of the requested attributes to the authenticated Relying Party. The Wallet Unit evaluates the policy (if present in the attestation) in combination with authenticated data provided by the Relying Party, and informs the User about the outcome of the evaluation. Again, this allows the User to make a considered decision to approve or deny the presentation of the requested attributes. More information can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
 ##### 6.1.2.5 Risks related to User tracking
@@ -629,7 +631,7 @@ Additional risks of User tracking may arise from the communication protocols use
 
 #### 6.1.4 Other trust relations
 
-Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers and Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will need to be used.
+Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers, Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will be used.
 
 ### 6.2 Trust throughout a Wallet Solution lifecycle
 
@@ -645,7 +647,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
-The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-security-and-data-protection).
+The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-certification-and-risk-management).
 
 If the registration and notification processes are successful, the trust anchors of the Wallet Provider are included in a Wallet Provider Trusted List. During issuance of a PID or an attestation, the PID Provider or the Attestation Provider can use these trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider, so they can be sure they are dealing with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance) and [Topic 9]. Similarly, when the Wallet Unit presents a PID or an attestation to a Relying Party, the Relying Party can use the Wallet Provider trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider) and [Topic 38].
 
@@ -717,17 +719,22 @@ For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or withdrawal 
 
 The lifecycle of a Relying Party is described in this paragraph:
 
-1. A Relying Party is registered by a Registrar in the Member State where it resides. Relying Party registration and the Relying Party Access CA Trusted List are discussed in [Section 6.4.2](#642-relying-party-registration).
+1. A Relying Party is registered by a Registrar in the Member State where it resides. Relying Party registration is discussed in [Section 6.4.2](#642-relying-party-registration).
 
 2. Under specific conditions, a Registrar may decide to de-register a registered Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-de-registration).
 
 #### 6.4.2 Relying Party registration
 
-Figure 6 depicts the Relying Party to the right of the Wallet Unit. To the right and below of this, the figure also shows that each Relying Party will register itself with a Relying Party Registrar in its Member State. If the registration process is successful, the Registrar includes the Relying Party in its public registry.
+Figure 6 depicts the Relying Party Instance to the right of the Wallet Unit. A Relying Party Instance is a combination of hardware and software used by a Relying Party to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity, for instance, a border control agency at an aiport employing multiple lines where arriving passengers can present their PID.
 
-As a result of successful registration, a Relying Party Access Certificate Authority (CA) issues one or more access certificates to the Relying Party. A Relying Party Instance needs such a certificate to authenticate itself towards Wallet Units when requesting the presentation of attributes, as described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance).
+ Figure 6 also shows the Relying Party. Below that, it also shows that each Relying Party will register itself with a Relying Party Registrar in its Member State. If the registration process is successful, the Registrar includes the Relying Party in its public registry.
 
-Subsequently, a Trusted List Provider in each Member State creates a Relying Party Instance Access CA Trusted List containing the trust anchor(s) of all associated Relying Party Instance Access CA(s). A Wallet Unit can use these trust anchors to verify the authenticity of Relying Party Instance access certificates. The Trusted List Provider signs and publishes the Relying Party Access CA Trusted List and makes the URL of the Trusted List available to a common trust infrastructure maintained by the Commission, the so-called List of Trusted Lists. Using the common infrastructure, any party in the EUDI Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
+As a result of successful registration,
+
+- the Registrar issues a registration certificate to the Relying Party. The purpose of the registration certificate is described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
+- a Relying Party Instance Access Certificate Authority (CA) associated with the Registar issues an access certificate to each Relying Party Instance of the Relying Party. A Relying Party Instance needs such a certificate to authenticate itself towards Wallet Units when requesting the presentation of attributes, as described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance).
+
+Subsequently, a Trusted List Provider in each Member State creates a Relying Party Instance Access CA Trusted List containing the trust anchor(s) of all associated Relying Party Instance Access CA(s). A Wallet Unit can use these trust anchors to verify the authenticity of Relying Party Instance access certificates. The Trusted List Provider signs and publishes the Relying Party Instance Access CA Trusted List and makes the URL of the Trusted List available to a common trust infrastructure maintained by the Commission, the so-called List of Trusted Lists. Using the common infrastructure, any party in the EUDI Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
 
 More details on the Relying Party registration process can be found in [Topic 27].
 
@@ -778,7 +785,7 @@ Note: The Regulation does not exclude the possibility that a Wallet Instance may
 
 ##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PIDs
 
-A User installs a Wallet Unit because they want to obtain and use one or more PIDs. However, PID Providers are not required to support all Wallet Solutions in the EUDI Wallet ecosystem. 'Support' here means that the PID Provider is willing to issue a PID to an instance of a given Wallet Solution on request of the User. Instead, a PID Provider may choose to support only a single Wallet Solution or a limited number of Wallet Solutions. Therefore, each PID Provider will publish a list of Wallet Solutions that they support, such that a User that wants or needs to request a PID from that PID Provider know which Wallet Unit they should install. This list could be published, for example, on the PID Provider's website.
+A User installs a Wallet Unit because they want to obtain and use one or more PIDs. However, PID Providers are not required to support all Wallet Solutions in the EUDI Wallet ecosystem. 'Support' here means that the PID Provider is willing to issue a PID to an instance of a given Wallet Solution on request of the User. Instead, a PID Provider may choose to support only a single Wallet Solution or a limited number of Wallet Solutions. Therefore, each PID Provider will publish a list of Wallet Solutions that they support, such that a User that wants to request a PID from that PID Provider knows which Wallet Unit they should install. This list could be published, for example, on the PID Provider's website.
 
 Conversely, a Wallet Solution is not required to support all PID Providers, where 'support' means that it is able to request the issuance of a PID from a PID Provider. Each Wallet Provider will, prior to or during installation of a Wallet Unit, let the User know which PID Providers are supported by this Wallet Unit.
 
@@ -853,7 +860,7 @@ Starting from Wallet Unit activation and until the Wallet Instance is de-install
 
 - update the WUAs as necessary; see [Topic 9].
 
-- suspend or revoke the Wallet Unit in case its security is compromised; see [Topic 38].
+- revoke the Wallet Unit in case its security is compromised; see [Topic 38].
 
 The User will be able to request the Wallet Provider to revoke the Wallet Unit at least in case of loss or theft of the User's device. See [Topic 38].
 
@@ -867,7 +874,7 @@ To allow Wallet Unit management, the following trust relations are established:
 
 2. When contacted by a User, the Wallet Provider authenticates the User. This means that the Wallet Provider is sure that the User is indeed the User that was associated with the Wallet Unit during activation. For this, the Wallet Provider uses the authentication methods established in the User's account during activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
-3. When the Wallet Unit and the Wallet Provider set up a communication channel, the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. Similarly, the Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This must be ensured by the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
+3. When the Wallet Unit and the Wallet Provider set up a communication channel, the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit is sure that it is dealing with the genuine Wallet Provider. Similarly, the Wallet Provider authenticates the Wallet Unit. This means that the Wallet Provider is sure that the EUDI Wallet Instance is indeed a true instance of their allet Solution, and not a fake app. This will be ensured by the Wallet Provider. The ARF does not specify how these trust relationships can be satisfied.
 
 Specifically for the functionality allowing a PID Provider to request Wallet Unit revocation:
 
@@ -907,7 +914,7 @@ The lifecycle of a PID or an attestation starts when a User, using their Wallet 
 
 3. The PID Provider or Attestation Provider authenticates and validates the Wallet Unit, see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit) below.
 
-4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-unit-is-not-suspended-or-revoked).
+4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked).
    
 5. After the PID or attestation is issued to the Wallet Unit, the Wallet Unit verifies the authenticity of the PID or attestation; see [Section 6.6.2.6](#6625-wallet-unit-verifies-pid-or-attestation).
 
@@ -931,9 +938,7 @@ Before requesting the issuance of a PID or an attestation, the Wallet Unit authe
 
 As shown in figure 6, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure.
 
-Note:
-
-- It is not mandatory for PID Providers or Attestation Providers to possess all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider or an Attestation Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider or Attestation Provider will choose which Trusted Lists they need to subscribe to.
+Note that for PID Providers it is not mandatory to possess all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider  will choose which Trusted Lists they need to subscribe to. This is different for Attestation Providers: they must accept all Wallet Solutions and hence must possess all Wallet Provider Trusted Lists.
 
 [Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. When the Wallet Unit sends a request for a PID or an attestation to a PID Provider or to an Attestation Provider, it includes the WUA in the request. The PID Provider or Attestation Provider verifies the signature over the WUA, using the Wallet Provider trust anchor obtained from the Trusted List. Next, the PID Provider or Attestation Provider verifies that the Wallet Unit possesses the private key belonging to the public key in the WUA. This proves that the Wallet Unit is authentic and is provided by a trusted Wallet Provider. For more details see [Topic 9].
 
@@ -947,11 +952,11 @@ The WUA describes the certifications and the other relevant properties of the WS
 
 **Verifies that the PID key or the attestation key is protected by the WSCD**
 
-Knowing the properties of the WSCD is not very useful if the PID Provider or Attestation Provider cannot be sure that the private key for the PID or their new attestation is indeed protected by that WSCD. [Topic 9] describes how the PID Provider or Attestation Provider can obtain a so-called proof of association from the WSCD. This proof of association proves that the WSCD described in the WUA protects both the WUA public key and the public key of the PID or the new attestation.
+Knowing the properties of the WSCD is not very useful if the PID Provider or Attestation Provider cannot be sure that the private key for the PID or their new attestation is indeed protected by that WSCD. [Topic 9] describes how the PID Provider or Attestation Provider can obtain a so-called proof of association from the WSCD. This proof of association proves that the WSCD described in the WUA protects both the WUA private key and the private key of the PID or the new attestation.
 
-##### 6.6.2.4 PID Provider or Attestation Provider verifies that Wallet Unit is not suspended or revoked
+##### 6.6.2.4 PID Provider or Attestation Provider verifies that WUA is not revoked
 
-[Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. If the WUA is valid for longer than 24 hours, it contains revocation information. During the lifetime of the Wallet Unit, the Wallet Provider regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Unit is no longer secure, the Wallet Provider revokes any WUA that has a remaining validity period of 24 hours or longer. If the Wallet Provider uses WUAs with a validity period of less than 24 hours, it stops issuing new WUAs to a Wallet Unit that is no longer secure. The WUA thus allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked.
+[Section 6.5.3](#653-wallet-unit-activation) above described that a Wallet Provider, during activation of a Wallet Unit, issues a Wallet Unit Attestation (WUA) to the Wallet Unit. If the WUA is valid for longer than 24 hours, it contains revocation information. During the lifetime of the Wallet Unit, the Wallet Provider regularly verifies that the security of the Wallet Unit is not breached or compromised. If the Wallet Unit is no longer secure, the Wallet Provider revokes any of its WUAs that has a remaining validity period of 24 hours or longer. If the Wallet Provider uses WUAs with a validity period of less than 24 hours, it stops issuing new WUAs to a Wallet Unit that is no longer secure. The WUA thus allows PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit is not suspended or revoked.
 
 [Topic 38] describes Wallet Unit revocation in more detail.
 
@@ -994,7 +999,7 @@ Subsequently, after the Wallet Unit presents the selected attributes from the PI
 
 5. The Relying Party Instance verifies the electronic signature or seal of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed. This is described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 
-6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke or suspend the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
+6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 
 7. The Relying Party verifies that the PID Provider or Attestation Provider issued this attestation to the same Wallet Unit that provided it to the Relying Party. In other words, it checks that the attestation was not copied or replayed. This is generally called device binding, and it is discussed in [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding)
 
@@ -1006,7 +1011,7 @@ Either before or after validating the PID or attestation per steps 5 - 9,
 
 10. The Relying Party Instance authenticates the Wallet Unit and the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider).
 
-11. The Relying Party Instance verifies that the Wallet Provider did not suspend or revoke the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wallet-unit-is-not-suspended-or-revoked).
+11. The Relying Party Instance verifies that the Wallet Provider did not revoke the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked)
 
 Finally, after the interaction with the Relying Party Instance is over,
 
@@ -1024,11 +1029,11 @@ Figure 7 High-level overview of Relying Party authentication process
 
 The figure shows the following:
 
-First, there are two preconditions that need to be fulfilled before the Relying Party authentication process can begin. Note that these actions are not carried out for every presentation, but only once (excluding possible updates).
+First, there are two preconditions that need to be fulfilled before the Relying Party authentication process can begin. Note that these actions are not carried out for every presentation, but only once (excluding possible updates):
 
 A) The Relying Party registered itself as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and obtained a Relying Party Instance access certificate.
 
-B) The Wallet Unit obtained the trust anchor of the Relying Party Access Certificate Authority.
+B) The Wallet Unit obtained the trust anchor of the Relying Party Instance Access Certificate Authority.
 
 Subsequently, during each presentation of attributes:
 
@@ -1046,13 +1051,17 @@ Subsequently, during each presentation of attributes:
 
 7. The Wallet Unit continues by requesting the User for approval.
 
-8. The User selects the attributes that will be presented.
+8. The User approves the attributes that will be presented.
 
 9. The Wallet Unit sends a response containing only the approved attributes to the Relying Party Instance.
 
 ##### 6.6.3.3 Wallet Unit allows User to verify that Relying Party does not request more attributes than it registered
 
-During registration, the Relying Party registered which attributes it intends to request from Wallet Units. The Registrar listed these attributes in a Relying Party registration certificate. The Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User, at least in case the requested attribute do not conform to the list of attributes in the presentation certificate.
+During registration, the Relying Party registered which attributes it intends to request from Wallet Units. The Registrar listed these attributes in a Relying Party registration certificate and sends it to the Relying Party, which distributes it to all of its Relying Party Instances.
+
+A Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User, at least in case one or more of the requested attributes in not included in the list of attributes in the registration certificate.
+
+The format of the registration certificate, as well as the way in which the Wallet Unit can verify that the registration certificate belongs to the authenticated Relying Party, will be specified in a technical specification. For more information, see [Topic 44].
 
 ##### 6.6.3.4 Wallet Unit evaluates disclosure policy embedded in attestation, if present
 
@@ -1110,17 +1119,19 @@ Notes:
 
 - The signature or seal over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
    - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-   - the solution can be certified for security at LoA "high" according to [chapter 7](#7-security-and-data-protection)
+   - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
 
 - A Relying Party typically has a list of attestations that it accepts for a certain use case. For example, a Relying Party could accept a mobile Driving Licence (mDL) issued by a national driving licence Provider as proof of identity. If a Relying Party decides to accept a specific type of attestation issued by a specific Attestation Provider, the Relying Party must accept any valid and authentic attestation issued by that Attestation Provider, regardless of the User device it is installed on. In other words, the Relying Party trusts the PID Provider or Attestation Provider to have verified, during PID or attestation issuance, that the User device is fit to receive a PID or attestation, as described in [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit). The Relying Party therefore does not assess the technical properties of the User device and WSCD during the attestation presentation process. If the Relying Party were to make its own independent assessment of the security of the User device, there is a possibility that it would not accept a User's attestation even though it is perfectly valid. That would be confusing to Users and might diminish their trust in their attestations and in the EUDI Wallet ecosystem as a whole.
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
 
-To allow revocation checking of a PID or attestation, the PID Provider or Attestation Provider must include revocation information in the PID or attestation, respectively. This revocation information must include a URL indicating the location where a Relying Party can obtain a status list or revocation list, and an identifier or index for this specific certificate or attestation within that list.
+To allow revocation checking of a PID or attestation, the PID Provider or Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours. This revocation information includes a URL indicating the location where a Relying Party can obtain a status list or revocation list, and an identifier or index for this specific certificate or attestation within that list.
 
 Notes:
 
-- A status list is a bit string or byte string in which each bit or group of bits denotes the current revocation status (valid, suspended, or revoked) of one attestation. To get the status of the attestation it has received from the Wallet Unit, the Relying Party obtains the status list from the URL specified in the attestation and verifies the value encoded at the bit position given by the index value in the attestation.
+- For attestations with a validity period of less than 24 hours, including revocation information is not necessary.
+  
+- A status list is a bit string or byte string in which each bit or group of bits denotes the current revocation status (valid or revoked) of one attestation. To get the status of the attestation it has received from the Wallet Unit, the Relying Party obtains the status list from the URL specified in the attestation and verifies the value encoded at the bit position given by the index value in the attestation.
 
 - A revocation list is a list of PID identifiers or attestations identifiers revoked by the PID Provider or Attestation Provider. To get the status of the PID or attestation it has received from the Wallet Unit, the Relying Party obtains the revocation list from the URL specified in the attestation and verifies whether the identifier included in the attestation is on the list or not.
 
@@ -1164,9 +1175,9 @@ To solve these drawbacks, [Topic 18] describes how the Relying Party Instance ca
 
 - verifies that the Wallet Unit is in possession of the private key belonging to the public key in the WUA. This proves that the Wallet Unit is authentic and is provided by the trusted Wallet Provider.
 
-##### 6.6.3.12 Relying Party verifies that Wallet Unit is not suspended or revoked
+##### 6.6.3.12 Relying Party verifies that WUA is not revoked
 
-[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wallet-unit-is-not-suspended-or-revoked) explained how a PID Provider, or an Attestation Provider, can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
+[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked explained how a PID Provider or an Attestation Provider can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
 
 ##### 6.6.3.13 Wallet Unit enables the User to report suspicious requests by a Relying Party and to request a Relying Party to erase personal data
 
@@ -1174,7 +1185,7 @@ A Wallet Unit enables the User to report unlawful or suspicious requests for per
 
 The dashboard also enables the User to request a Relying Party to immediately erase personal data. For more information and requirements, see [Topic 48].
 
-To be able to substantiate a complaint, or to list data that must be erased, the User needs to be informed about which attributes were requested by which Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes that were requested and presented. The abovementioned dashboard also enables the User to view the log and lodge a complaint for any attribute in the log. More details about the logging functionality can be found in [Topic 19].
+To be able to substantiate a complaint, or to list data that must be deleted, the User needs to be informed about which attributes were requested by which Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes that were requested and presented. The abovementioned dashboard also enables the User to view the log and lodge a complaint for any attribute in the log. More details about the logging functionality can be found in [Topic 19].
 
 #### 6.6.4 PID or attestation presentation to another Wallet Unit
 
@@ -1194,143 +1205,109 @@ In addition, a PID Provider or Attestation Provider could regularly verify, for 
 
 In case the User no longer wants to retain a specific PID or attestation in their Wallet Unit, the User can delete it. If the PID Provider or Attestation Provider issued multiple attestations that have the same content and are valid, the Wallet Unit deletes them all. Deleting a PID or an attestation also means that the WSCD destroys the cryptographic key material associated with that PID or attestation. Before deleting the PID or attestation and the cryptographic keys, the WSCA included in the Wallet Unit will authenticate the User.
 
-## 7 Security and Data Protection
+## 7 Certification and Risk Management
 
 ### 7.1 Introduction
 
-This chapter is dedicated to the certification of Wallet Solutions, covering the legal foundation outlined in the amending Regulation (the Regulation), the overall certification approach, and its accompanying design principles. In addition, the main two supporting documents, the High-Level requirements (HLR) and the Risk assessment (RA) are described. Furthermore, supporting documents regarding certification of Wallet Solutions are provided in appendix 6 and will be expanded upon in following releases of the ARF.
+This chapter briefly describes the certification of Wallet Solutions and the eID schemes under which they are provided, covering the overall certification approach, design principles, and key requirements outlined in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) and Commission Implementing Regulation (CIR) laying down rules for on the certification of Wallet Solution (2024/2981), or simply the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981). Furthermore, references are made to the Annex I of the CIR, the [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,), supporting the risk-based approach of the Wallet Solutions. For more detailed requirements, please refer to the [CIR ](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) itself.
 
-#### 7.1.1 Legal basis and requirements
+The [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) requires certification of Wallet Solutions to ensure conformity of the Wallet Solutions with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. Certification applies to the Wallet Solutions and the eID schemes under which they are provided; for ease of reading this chapter only refers to Wallet Solutions. Furthermore, the object of certification includes software components, hardware components (in cases where they are provided directly or indirectly by the Wallet Provider) and the processes that support the provision and operation of a Wallet Solution, such as Wallet Unit activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
-The Regulation requires certification of Wallet Solutions to ensure conformity of the wallets with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. The use of relevant and available cybersecurity certification schemes under the Cybersecurity Act (CSA)[^1] referenced in the Regulation implementing act (IA) should avoid divergent approaches and harmonise the implementation of the cybersecurity requirements laid down by the Regulation.
+The aim is to harmonise the implementation of the requirements laid down by the Regulation and avoid divergent approaches to the maximum extent possible. For this reason, the Commission requested ENISA to prepare a candidate European certification scheme under the Cybersecurity Act, the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). As defining and adopting a dedicated, harmonised certification scheme for Wallet Solutions depends on agreements between Member States on detailed security requirements, on the availability of underlying certification schemes, and on established good practices in the Member States themselves, a transitory approach is foreseen by means of national certification schemes.
 
-Member States, according to Article 5c(3) of the Regulation, designate accredited conformity assessment bodies (CABs) which will carry out conformity assessment of Wallet Solutions against the Regulation requirements. Once this designation has been made, Member States communicate to the European Commission the names and addresses of these public or private bodies under [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(7) of the Regulation.
+In other words, the certification approach for Wallet Solutions follows two phases. In the short-term, Member States provide national (transitory) certification schemes. In the medium term, a harmonised CSA scheme will be established. When the CSA-based scheme becomes available, it replaces the national schemes as for cybersecurity requirements. The schemes may continue to exist for functional requirements.
 
-Wallet Providers request (select, contract) one or more designated CABs to assess and certify the conformity of their Wallet Solution against the requirements of the Regulation.
+#### 7.2. Certification of Wallet Solutions against national certification schemes
 
-Wallet Solution certification is then conducted by the CAB to evaluate and certify the conformity of the Wallet Solution (target of the certification) against requirements which will be established by:
+Until a dedicated Wallet Solution cybersecurity certification scheme under the CSA is available, the Regulation requires Member States to establish national certification schemes. This will be done in time to make available the Wallet Solutions before the end of 2026. The Commission has adopted the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) to provide the main requirements on Member States for creation of national certification schemes. The [CIR on certification] and resulting national certification schemes are defined around a number of guiding principles:
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(23) - Implementing act(s) on technical and operational specifications and reference standards, for the requirements laid down in [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(4), (5), (8);
+First, the goal is to harmonise requirements to the extent possible. Member States are also encouraged to work together in the design and implementation of national schemes. Additionally, national schemes will leverage the use of relevant and existing certification schemes and standards for Wallet Solution certifcation and evaluation. Where available, relevant European CSA schemes must be used. Currently, only the Common Criteria based European candidate cybersecurity certification [EUCC](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en) scheme is available for the cybersecurity certification of ICT products, parts, or components for products. Upcoming CSA-based schemes include [EUCS](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en) & [EU5G](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en). Additionally, other existing or upcoming schemes​ include schemes based on FITCEM (EN 17640)​, national schemes such as on remote identity verification, or other private schemes (e.g. for mobile devices and apps)​. For harmonisation of functional requirements, the Commission Implementing Regulations (CIRs) adopted under [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5(a) are referenced. For harmonisation of certification requirements, the ISO/IEC 17065 framework under Regulation [765/2008] is used, complemented by ISO/IEC 17067 on the definition of schemes.
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(14) - Logical separation between data relating to the provision of the Wallet Unit and any other data held by the Wallet Provider;
+Next, the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) refers to the composite nature of the Wallet Solutions as well as the potential different architectures in Member States, considering that the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) is technology (and architecture) neutral. This means that a final ('top-level') certification of the Wallet Solution will yield a composite certificate, built on certification of separate components, such as EUCC certification. Wallet Solutions are always to be certified against assurance level "high", as set out in [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) as well as [CIR (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2015_235_R_0002). That assurance level has to be reached by the overall Wallet Solution. Under this Regulation, some components of the Wallet Solution may be certified at a lower assurance level, provided this is duly justified and without prejudice to the assurance level "high" reached by the overall Wallet Solution. For the use of assurance information from other certification schemes or sources, a dependency analysis will be performed.
 
-- [Art. 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1)(24) -- Where applicable, implementing act(s) on specifications, procedures and reference standards, in order to facilitate the onboarding of Users to the Wallet Unit either by electronic identification means conforming to level of assurance (LoA) 'high' or by electronic identification means conforming to LoA 'substantial' in conjunction with additional remote onboarding procedures that together meet the requirements of LoA 'high'.
+Finally, in order to ensure a harmonised approach to cybersecurity and the assessment of the most critical risks that might affect the provision and operation of Wallet Units, a register of risks and threats is defined [#7.4-Risk-based-approach-and-risk-register]. The [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) contains high level risks and threats in relation to Wallet Solutions and the ecosystem, as well as detailed threat scenarios that will be taken into consideration when designing Wallet Solutions, independent of their specific architecture.
 
-The Wallet Solution is certified to ensure conformity assessments but also security robustness assessment of conformance to a high level of security.
+As a first step towards certification of Wallet Solutions under national schemes, Member States will assign a scheme owner, and design and roll out the scheme. As part of this process, Certification Bodies (CBs) will be accredited to carry out conformity assessments of Wallet Solutions against the requirements of the [CIR on Certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) and the national scheme. Wallet Providers then request one or more designated CABs to assess and certify the conformity of their Wallet Solution. The CAB evaluates and certifies the conformity of the Wallet Solution if they meet the requirements.
 
-In addition, [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(5) provides for an optional certification of the personal data processing operations against [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj)[^2]. While this certification is not mandatory, the [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requirements fully apply to Wallet Solutions and consequently to their providers.
+The European Commission and ENISA support Member States in designing and implementing national certification schemes in the Cooperation Group.
 
-[Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) specifies that the Commission will, by means of Implementing Acts, establish a list of reference standards and, where necessary, establish specifications and procedures for the certification of Wallet Solutions.
+#### 7.3 Certification of Wallet Solutions against a dedicated CSA-based scheme
 
-The certification process of Wallet Solutions should leverage, rely on, and mandate the use of relevant and existing CSA certification schemes, or parts thereof, to certify the compliance of wallets or parts thereof, with the applicable cybersecurity requirements.
+In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the Wallet Solutions under the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). Once available, this CSA-based scheme will replace the national transitory schemes mentioned above for the cybersecurity requirement it covers. This scheme will be based on available national schemes, harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme will further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant Wallet Solution components.
 
-For requirements that are not relevant for cybersecurity, and to the extent that cybersecurity certification schemes do not, or only partially, cover those cybersecurity requirements, Member States will establish national certification schemes following the harmonised requirements set out in the IA. Member States will transmit their draft national certification schemes to the European Digital Identity Cooperation Group established pursuant to [Article 46e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1)(1) (the 'Cooperation Group') which may issue opinions and recommendations.
+The work to develop the CSA-based scheme follows the milestones set out by the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj) and is supported by the Ad Hoc Working Group or '[AHWG](https://www.enisa.europa.eu/news/call-for-experts-join-the-enisa-ad-hoc-working-group-on-eu-digital-identity-wallets-cybersecurity-certification)'. This group is composed of selected experts from private organisations and industry, with extensive knowledge and experience in the areas of cybersecurity certification, digital wallets, electronic identification and trust services. The first step is to have a candidate scheme ready for public consultation and submitted for feedback of the European Cybersecurity Certification Group or [ECCG](https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-certification-group). The ECCG’s opinion serves as advisory input to ensure the candidate scheme aligns to EU cybersecurity objectives, standards and regulatory requirements. Although the ECCG’s opinion is not binding, it will hold significant influence, as it reflects the collective expertise of national cybersecurity authorities, aiming to harmonise cybersecurity certification practices across Member States. Based on this input, the candidate scheme might be updated further. After finalisation of the ECCG opinion, the scheme will be transformed into a new Implementing Regulation and adopted by comitology procedure.
 
-Certification will be valid for up to five years, provided that a vulnerability assessment is carried out every two years. Where a vulnerability is identified and not remedied in a timely manner, certification will be cancelled.
+Finally, ENISA is also asked to facilitate the transition from national certification schemes to the dedicated cybersecurity certification scheme under the CSA.
 
-### 7.2 Overall approach to Certification of Wallet Solutions
+### 7.4 Risk-based approach and risk register
 
-#### 7.2.1 Introduction
+This section details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5c, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation ([GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)) and related Data Protection Impact Assessments (DPIA). 
 
-The certification of Wallet Solutions is of the utmost importance in ensuring their interoperability, security, trustworthiness, and robustness. Therefore, the overarching goal is the development of a dedicated CSA cybersecurity certification scheme. The scope of the scheme should cover both the Wallet Solutions and the underlying eID scheme. The Regulation allows the use of national certification schemes only for those parts that cannot be covered by European cybersecurity certification schemes and only until such appropriate European cybersecurity certification schemes are available.
+The risk-based approach sets out a common [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) that contains a comprehensive but non-exhaustive list of risks and threats related to the Wallet Solution. These risks and threats are architecture-agnostic and provide a benchmark overview of the most critical risks and threats to Wallet Solutions. By adopting this common set of risks and threats, national transitory certification schemes will achieve a baseline level of harmonisation.
 
-As defining and adopting a dedicated European CSA certification scheme for Wallet Solutions depends on the complex certification of different components and requires the full technical specification of the Wallet Solutions, the certification approach is structured in two phases: a short-term approach and a long-term approach. In the short-term, the IA of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) will be established, laying the groundwork for the creation of transitory national certification schemes. Consequently, building upon the foundation of the IA and transitory schemes, a dedicated CSA certification scheme for the Wallet Solutions will be established by ENISA.
+The risk register will be applied by scheme owners, Wallet Providers, and Certification Bodies (CBs). When establishing their certification schemes, scheme owners will perform a risk assessment to refine and complement the risks and threats listed in the register with those specific to their architecture, and consider how the applicable risks and threats can be appropriately treated. Wallet Providers will complement the scheme’s risk assessment to identify any risks and threats specific to their implementation and propose appropriate mitigation measures for evaluation by the certification body.
 
-#### 7.2.2 Certification of Wallet Solutions in the short term
+#### 7.4.1 High-level risks and threats
 
-Until a dedicated Wallet Solution cybersecurity certification scheme under the CSA is available, the Regulation allows Member States to establish national certification schemes (following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(3)). Following [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(6) of the Amending Regulation, an IA should be established which will serve as a harmonised guideline for the development of these transitory national certification schemes. It will leverage the use of relevant and existing CSA certification schemes by establishing specifications, procedures and reference technical standards for certification. This can include procedures and methods on how to derive evaluation activities from an architecture analysis, as well as a reference certification or a minimum set of risks to be mitigated.
+The following is an excerpt from Annex I of the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981). To keep in line with the continuously evolving threat landscape, the risk register will be maintained and regularly updated in collaboration with the Cooperation Group.
 
-The guiding principles will take into consideration the composite nature of the Wallet Solution, as well as the potential different architectures considering that the amending Regulation is technology and architecture neutral. Guidance on certification will allow for various proposed architecture models (including components, security functions, threats, mitigations), evaluation of their individual components (design, implementation, and effectiveness), and related risks as reflected through a common risk registry defined by the RA (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)).
+*High-level risks and threats*
 
-The IA will refer to standards, and where available, relevant European CSA schemes will be used. Currently, only the EUCC scheme for the cybersecurity certification of the ICT products, parts, or components for products[^3] is available. For those cybersecurity requirements not covered by the EUCC, its supporting documents or an extended version of the EUCC, and for the non-cybersecurity requirements, the use of the ISO/IEC 17065[^4] framework under Regulation (EC) 765/2008[^5] is foreseen as the harmonised standard for certification. This may be complemented by ISO/IEC 17067[^6] on the definition of schemes, which is like ENISA's previous work in the definition of other candidate EU certification schemes.
+	R1 	Creation or use of an existing electronic identity 
+	R2 	Creation or use of a fake electronic identity 
+	R3 	Creation or use of fake attributes 
+	R4 	Identify theft 
+	R5 	Data theft 
+	R6 	Data disclosure 
+	R7 	Data manipulation 
+	R8 	Data loss 
+	R9 	Unauthorised transaction 
+	R10 Transaction manipulation 
+	R11 Repudiation 
+	R12 Transaction data disclosure 
+	R13 Service disruption
+	R14	Surveillance
 
-In order to prepare the content on the IA, the transitory national certification schemes, and eventually a dedicated cybersecurity certification scheme under the CSA, the following key documents are prepared; a Risk and Cybersecurity Assessment, a HLR, and a mapping of relevant existing certification schemes (the latter two documents prepared by ENISA). In addition, an architecture survey has been conducted in the Toolbox Expert Group to gain insights into potential Wallet Solution implementations and architectural possibilities.
+*System-related risks*
 
-First, the RA aims to identify initial security and privacy threats (potential attacks carried out by different actors) and provide a list of assets which will be protected against the identified threats (critical, non-critical). The risks will provide input to a common risk registry, listing the minimum set of risks that should be addressed by Member States' implementations (see also [Section 7.4](#74-risk-based-approach-and-risk-registry)). This common risk registry will serve as input to the IA, and later on to the detailed definition of privacy and security requirements to mitigate identified threats, at the relevant Level of Assurance.
+    SR1 Wholesale surveillance 
+	SR2 Reputational damage 
+	SR3 Legal non-compliance 
 
-Second, the HLR document provides recommendations for the certification of Wallet Solutions in the short term. It outlines the high-level process requirements for certification, in addition to high-level statements on the functional components of the Wallet Solution. In essence, it defines 'what' will need to be certified and what the process steps will be. The identified requirements in this document form the skeleton of the IA \[appendix 6\]).
+*Technical threats*
+    
+    TT1 Physical attacks 	
+    
+    1.1	Theft 
+	1.2	Information leakage 
+	1.3 Tampering 
+	
+    TT2 Errors and misconfigurations 	
+    
+    2.1	Errors made when managing an IT system 
+	2.2	Application-level errors or usage errors 
+	2.3	Development-time errors and system misconfigurations 
+	
+    TT3 Use of unreliable sources 
+    
+    3.1	Erroneous use or configuration of wallet components 
+	
+    TT4 Failure and outages 	
+    
+    4.1	Failure or dysfunction of equipment, devices or systems 
+	4.2	Loss of resources 
+	4.3 Loss of support services 
+	
+    TT5 Malicious actions 	
 
-Third, a mapping of existing certification schemes is performed to support the requirements of [Article 5c](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1875-1-1)(2) of the Regulation, mandating the use of relevant and existing European cybersecurity certification schemes. This mapping can include European, national, and other global schemes, in relation to the defined certification requirements (i.e., functional, process, privacy and security certification requirements).
-
-Fourth, once the mapping has been performed, it will be used as a basis for the development of certification schemes for Wallet Solutions, both at the national and European levels. The schemes will rely on the identified certification schemes to provide assurance, either in a composite approach, or through the establishment of assumptions on external components, such as the Wallet Users' devices.
-
-Finally, non-cybersecurity requirements should ensure functional interoperability of the Wallet Solution. To this end, the IA aims to define a requirement to CABs for functional testing, for example supported by test-suites or test cases.
-
-#### 7.2.3 Certification of Wallet Solutions in the long term
-
-In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the Wallet Solution under the CSA. Once available, this CSA scheme should replace the national transitory schemes mentioned above for the cybersecurity requirement it will cover. This scheme should be based on harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme should further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant Wallet Solution components.
-
-The scheme should also take into account the inputs of the ARF as part of the Toolbox process, and the input from the Certification subgroup (CSG), including deliverables mentioned above.
-
-Finally, ENISA is asked to also facilitate the transition from national certification schemes to the dedicated cybersecurity certification scheme under the CSA.
-
-A visual description of the overall Wallet Solution certification process can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
-
-### 7.3 High-Level Requirements (HLR)
-
-The main goal of the HLR document is to provide recommendations for the certification of Wallet Solutions in the short term. It outlines the high-level process requirements for certification. It also provides functional and process-related requirements derived from the Regulation, to facilitate certification.
-
-- **Process-related:** Related to the 'how' rather than the 'what' of certification, such as process to define or obtain a certification.
-
-- **Functional:** Describes functional requirements (i.e. what the Wallet Solution should be able to do, such as provisioning of attributes). Most functional requirements are derived in the other sections of the ARF coming from the Toolbox process.
-
-To provide recommendations on certification, the document describes 121 requirements across five sections: legal requirements, scheme requirements, general scheme content, other scheme content and annexes.
-
-- **Legal requirements:** Describes the certification requirements, certification scope stemming from the Regulation.
-
-- **Scheme requirements:** Describes the Wallet Solutions, how to organise certification, and the content of a scheme and the accompanying IA.
-
-- **General scheme content:** Describes HLR related to content of the scheme, such as accreditation, non-conformities, vulnerability management, and peer assessment.
-
-- **Other scheme content:** Describes supporting requirements, such as licensing, surveillance, marketing, review and Wallet versioning.
-
-- **Annexes:** Describes methods and procedures, dependency analysis, acceptance criteria for assurance information and surveillance and compliance monitoring.
-
-Detailed information outlining the HLR certification requirements can be found in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
-
-### 7.4 Risk-based approach and risk registry
-
-#### 7.4.1 Introduction
-
-This chapter details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the process-based requirements in the HLR, security and privacy risks associated with the Wallet Solutions should be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States. This is inspired by known processes such as for the General Data Protection Regulation (GDPR) and related Data Protection Impact Assessments (DPIA).
-
-The risk-based approach proposes that a common risk register will be developed that contains a comprehensive but non-exhaustive list of security and privacy risks. These risks are architecture-agnostic and provide a benchmark overview of the most critical risks. As a minimum, Member States schemes should require Wallet Providers to evaluate these risks and propose appropriate mitigations in a dedicated risk assessment that will be evaluated by CABs. The methodology to perform the individual RA will be up to the Member States, as long as it demonstrates taking into account the risks identified in the common risk register.
-
-This chapter will define, through iterative publications of the ARF, the rationale and approach to derive and categorise these identified risks and provide the iterative output of this exercise as a starting point of relevant privacy and security risks.
-
-#### 7.4.2 Rationale and approach
-
-Threats and risks play pivotal roles in the Wallet Solution certification process as they are fundamental in achieving the security objectives described in the Regulation, such as privacy, confidentiality, integrity, availability, authenticity and non-repudiation of a Wallet Unit and the data contained in it. Importantly, understanding the threats and risks in relation to the separate assets involved allows to determine the mitigation (and related certification requirements or standards).
-
-A simplified overview of this approach is shown below. In short, threats may cause risks to assets. These assets are the components and elements listed in the reference architecture, including the Wallet Secure Cryptographic Application (WSCA) and Wallet Secure Cryptographic Device (WSCD).
-
-Threats can be defined according to different threat models, such as the STRIDE approach for security threat risks, and the LINDDUN framework for privacy threat modelling. Such models allow to inspire and categorise threats such as spoofing, tampering, information disclosure, or linking. While security and privacy are closely related, they do start from a different mindset. Both security threat modelling and privacy threat modelling aim to create a system model, identify threats systematically for each system component and rely on threat categories to drive the analysis. This helps to eventually mitigate threats, for example through certification requirements. However, the security mindset is to protect assets, whereas the privacy mindset is to protect personal data of the User.
-
-![Figure 8: Relation between threats, risks, vulnerabilities, and assets](media/image8.png) <!-- <img src="media/image8.png" style="width:3.920138888888889in;height:1.7666666666666666in" /> -->
-
-Figure 8: Relation between threats, risks, vulnerabilities, and assets
-
-A threat modelling approach will support deriving privacy and security risks and gain insights into potential risks within the system. The outcome of the threat model exercise will be a list of security and privacy risks, which in turn allows to identify the appropriate treatment, such as mitigation or acceptance. A common, minimum set of risks will form the foundation for the risk registry, which will be used by Member States as a benchmark to assess the security of their national transitory certification schemes.
-
-### 7.5 Design principles and assumptions
-
-In the approach to Wallet Solution certification described above, a few design principles can be identified and will be further expanded upon through work in the CSG:
-
-- The amending Regulation requires the Wallet Solutions to be certified at LoA 'high'. However, not all Wallet Solution components may need to individually meet LoA 'high' or be certified, for the overall Wallet Solution to reach that level of assurance.
-
-- The transitory schemes are defined by the Member States which may tailor them to their specific Wallet architectures. However, the aim is to harmonise the underlying principles through the IA and provide guidance or common requirements where relevant as no mutual recognition of the national certification schemes is provided.
-
-- The certification scheme will be a composite scheme. The object certification will be the entire system (eID scheme, Wallet Solution, management thereof). It will therefore have to align with and rely on other available international standards, certification schemes, and conformity assessments.
-
-- Certification should cover both cross-functional requirements, including security and privacy, as well as functional requirements in order to ensure European interoperability.
-
-- The final Wallet Solution certification implies a multitude of certificates, however, the aim is to minimise this number to the extent possible.
-
-- The certification scheme should support a variety of different known and unknown architectures.
-
-### 7.6 Supporting documents
-
-Supporting documents applicable to the certification of the Wallet Solution have been assembled in \[[annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf)\].
+    5.1 Interception of information 
+	5.2 Phishing and spoofing 
+	5.3 Replay of messages 
+	5.4 Brute-force attack 
+	5.5 Software vulnerabilities 
+	5.6 Supply chain attacks 
+	5.7 Malware 
+	5.8 Random number prediction 
 
 ## 8 Document development
 
@@ -1422,6 +1399,8 @@ For undated references, the latest version available applies.
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------| 
 | [2015/1505] | [COMMISSION IMPLEMENTING DECISION (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. | 
 | [eIDAS 2.0] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework | 
+| [CIR on certification] | [Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
+| [Risk Register] | [Regulation (EU) 2024/2981, Annex I](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [ISO/IEC 18013-5]| [ISO/IEC 18013-5](https://www.iso.org/standard/69084.html), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application, First edition, 2021-09. | 
 | [ISO 3166-1] | [ISO 3166-1](https://www.iso.org/standard/72482.html): Codes for the representation of names of countries and their subdivisions -- Part 1: Country codes: alpha-2 country | 
 | [ISO 3166-2] | [ISO 3166-2:2020](https://www.iso.org/standard/72483.html): Codes for the representation of names of countries and their subdivisions --- Part 2: Country subdivision code | 
@@ -1432,28 +1411,27 @@ For undated references, the latest version available applies.
 | [ETSI EN 319 132-1]| [ETSI EN 319 132-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31913201/01.03.00_20/en_31913201v010300a.pdf) - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES) | 
 | [ETSI TS 119 182-1]| [ETSI TS 119 182-1](https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures | 
 | [ETSI EN 319 122-1]| [ETSI EN 319 122-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31912201/01.03.01_60/en_31912201v010301p.pdf) - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures |
-|
- [ETSI EN 319 162-1]| [ETSI EN 319 162-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31916201/01.01.01_60/en_31916201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers | 
- | [ETSI EN 319 142] | [ETSI EN 319 142](https://www.etsi.org/deliver/etsi_en/319100_319199/31914202/01.01.01_60/en_31914202v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures |
+| [ETSI EN 319 162-1]| [ETSI EN 319 162-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31916201/01.01.01_60/en_31916201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers | 
+| [ETSI EN 319 142] | [ETSI EN 319 142](https://www.etsi.org/deliver/etsi_en/319100_319199/31914202/01.01.01_60/en_31914202v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures |
 | [CEN EN 419 241-1]| [CEN EN 419 241-1](https://www.en-standard.eu/csn-en-419241-1-trustworthy-systems-supporting-server-signing-part-1-general-system-security-requirements/) -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements | 
- | [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/> | 
- | [RFC 2119] | [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) - Key words for use in RFCs to Indicate Requirement Levels. S. Bradner, March 1997. | 
- | [RFC 3339] | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) - Date and Time on the Internet: Timestamps, G. Klyne et al., July 2002 | 
- | [RFC 4122] | [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) - A Universally Unique Identifier (UUID) URN Namespace, P. Leach et al., July 2005 | 
- | [RFC 5280] | [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile, D. Kooper et al., May 2008 | 
- | [RFC 3647] | [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647) - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework, S. Chokhani et al., November 2003 | 
- | [RFC 8259] | [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) - The JavaScript Object Notation (JSON) Data Interchange Format, T. Bray, Ed., December 2017 | 
- | [RFC 8610] | [RFC 8610](https://datatracker.ietf.org/doc/html/rfc8610) - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures, H. Birkholz et al., June 2019 | 
- | [RFC 8943] | [RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943) - Concise Binary Object Representation (CBOR) Tags for Date, M. Jones et al., November 2020 | 
- | [RFC 8949] | [RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949) - Concise Binary Object Representation (CBOR), C. Bormann et al., December 2020 | 
- | [W3C VCDM v1.1] | Sporny, M., Longley, D. and D. Chadwick, "[Verifiable Credentials Data Model 1.1](https://www.w3.org/TR/vc-data-model/)", W3C Recommendation, 03 March 2022 | 
- | [W3C VCDM v2.0] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
- | [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)", TBD | 
- | [W3C WebAuthn] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/)", An API for accessing Public Key Credentials Level 2, W3C Recommendation, 8 April 2021 | 
- | [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> | 
- | [OpenID4VP] | Terbu O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> 
- |[OpenID4VP profile for the W3C Digital Credentials API] | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
- | [Topic 6]| Annex 2 - Relying Party authentication and User Approval |
+| [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/> | 
+| [RFC 2119] | [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) - Key words for use in RFCs to Indicate Requirement Levels. S. Bradner, March 1997. | 
+| [RFC 3339] | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) - Date and Time on the Internet: Timestamps, G. Klyne et al., July 2002 | 
+| [RFC 4122] | [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) - A Universally Unique Identifier (UUID) URN Namespace, P. Leach et al., July 2005 | 
+| [RFC 5280] | [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile, D. Kooper et al., May 2008 | 
+| [RFC 3647] | [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647) - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework, S. Chokhani et al., November 2003 | 
+| [RFC 8259] | [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) - The JavaScript Object Notation (JSON) Data Interchange Format, T. Bray, Ed., December 2017 | 
+| [RFC 8610] | [RFC 8610](https://datatracker.ietf.org/doc/html/rfc8610) - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures, H. Birkholz et al., June 2019 | 
+| [RFC 8943] | [RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943) - Concise Binary Object Representation (CBOR) Tags for Date, M. Jones et al., November 2020 | 
+| [RFC 8949] | [RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949) - Concise Binary Object Representation (CBOR), C. Bormann et al., December 2020 | 
+| [W3C VCDM v1.1] | Sporny, M., Longley, D. and D. Chadwick, "[Verifiable Credentials Data Model 1.1](https://www.w3.org/TR/vc-data-model/)", W3C Recommendation, 03 March 2022 | 
+| [W3C VCDM v2.0] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
+| [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)", TBD | 
+| [W3C WebAuthn] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/)", An API for accessing Public Key Credentials Level 2, W3C Recommendation, 8 April 2021 | 
+| [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> | 
+| [OpenID4VP] | Terbu O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> 
+| [OpenID4VP profile for the W3C Digital Credentials API] | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
+| [Topic 6]| Annex 2 - Relying Party authentication and User Approval |
 | [Topic 7] | Annex 2 - Attestation validity checks and revocation |
 | [Topic 9] | Annex 2 - Wallet Unit Attestation |
 | [Topic 10] | Annex 2 - Issuing a (Q)EAA to the Wallet Unit |
@@ -1472,7 +1450,7 @@ For undated references, the latest version available applies.
 | [Topic 37] | Annex 2 - QES -- Remote Signing - Technical Requirements |
 | [Topic 38] | Annex 2 - Wallet Unit Revocation |
 | [Topic 43] | Annex 2 - Embedded disclosure policy |
-| [Topic 50] | Annex 2 - Blueprint to report unlawful or suspicious request of data
+| [Topic 50] | Annex 2 - Blueprint to report unlawful or suspicious request of data |
 
 ## 10 Annexes
 
@@ -1517,17 +1495,3 @@ For undated references, the latest version available applies.
   - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
 
   - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
-
-- [Annex 6](./annexes/annex-6/annex-6-certification-requirements.pdf) - Certification high level requirements
-
-[^1]: Regulation (EU) 2019/881 on ENISA (the European Union Agency for Cybersecurity) and on information and communications technology cybersecurity certification (Cybersecurity Act). Available online at: [Regulation - 2019/881 - EN - EUR-Lex (europa.eu)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019R0881)
-
-[^2]: **Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons regarding the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)**
-
-[^3]: Commission Implementing Regulation (EU) 2024/482 of 31 January 2024 laying down rules for the application of Regulation (EU) 2019/881 of the European Parliament and of the Council as regards the adoption of the European Common Criteria-based cybersecurity certification scheme (EUCC). Available online at: [Implementing regulation - EU - 2024/482 - EN - EUR-Lex (europa.eu)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R0482)
-
-[^4]: ISO/IEC 17065:2012, 'Conformity assessment -- Requirements for bodies certifying products, processes and services'.
-
-[^5]: Regulation (EC) No 765/2008 of the European Parliament and of the Council of 9 July 2008 setting out the requirements for accreditation and market surveillance relating to the marketing of products and repealing Regulation (EEC) No 339/93. Available online at: [Regulation - 765/2008 - EN - EUR-Lex (europa.eu)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008R0765).
-
-[^6]: ISO/IEC 17067:2013, 'Conformity assessment -- Fundamentals of product certification and guidelines for product certification schemes'. 
