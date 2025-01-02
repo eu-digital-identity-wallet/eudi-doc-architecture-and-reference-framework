@@ -525,7 +525,7 @@ One of the main rationales for the ARF is to reach a high level of interoperabil
 
 The other layer is the semantic one and relates to semantic schemes of attributes. The risk is that an uncontrolled manner of implementation and usage, will create barriers to straight-forward approach and will complicate the implementation thus making the ecosystem much more costly to create and maintain, complex, and error-sensitive, affecting the quality of the overall system.
 
-To re-use the building blocks of attributes and attestations, the concept of using catalogues was introduced. Creating and maintaining controlled vocabulary, catalogue of attributes and attestation rulebooks, is essential for the development and success of the EUDI Wallet ecosystem, enabling shorter "time-to-market\" and efficient implementation.
+For the development and success of the EUDI Wallet ecosystem, re-using the building blocks of attributes and attestations is essential. Creating and maintaining controlled vocabularies, a catalogue of attributes, and attestation rulebooks enables shorter 'time-to-market' and efficient implementation.
 
 Building on the requirements of [Topic 12], having in mind both the need for interoperability on the one hand and the varied nature of attestations and organisations specifying those attestations on the other hand, the following principals were defined:
 
