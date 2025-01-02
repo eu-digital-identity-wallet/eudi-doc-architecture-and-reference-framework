@@ -493,9 +493,7 @@ All attestations can be described to have the following elements:
 
 - **Data formats** define the way data in an attestation is formatted, e.g. its character sets, encoding and serialisation.
 
-- **Proof mechanisms** define the methods used to secure the attestations for integrity and authenticity, while enabling selective disclosure.
-
-There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
+- **Proof mechanisms** define the methods used to secure the attestations for integrity, authenticity, and support of selective disclosure. There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
 
 1. The ISO/IEC 18013-5 standard defines an attribute schema, data format and proof mechanisms for mDL-s, which can be used also with other attribute schemas, see [ISO/IEC 18013-5].
 
