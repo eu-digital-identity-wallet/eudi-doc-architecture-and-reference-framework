@@ -158,7 +158,7 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 13. Device Manufacturers and Related Subsystems Providers
 
-14. (Q)EAA Schema Providers
+14. Attribute Schema Providers
 
 15. National Accreditation Bodies
 
@@ -276,9 +276,11 @@ For the Regulation, the supervisory bodies are important to review and ensure pr
 
 In the EUDI Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable a Wallet Unit to work smoothly and securely. Device manufacturers and related subsystem providers provide a platform on which a Wallet Unit can be built. Wallet Providers ensure that their Wallet Units use that platform to ensure usability, security, stability and connectivity. The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
 
-### 3.14 Qualified and Non-Qualified Electronic Attestation of Attributes Schema Providers
+### 3.14 Attribute Schema Providers for QEAA, PuB-EAA and EAA
 
-(Q)EAA Schema Providers publish schemas and vocabularies describing (Q)EAA structure and semantics. It may enable other entities such as Relying Parties to discover and validate (Q)EAAs. The Commission sets out the minimum technical specifications, standards, and procedures for this purpose. Common schemas, including by sector- specific organisations are critical for wide-spread adoption of (Q)EAAs.
+ Attribute Schema Providers publish attribute schemas describing the structure of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding of all attributes. These attribute schemas are published in Attestation Rulebooks, see [Section 5.4](#54-attestation-rulebooks). For PIDs and mDLs, the applicable Rulebooks are published by the Commission.
+
+ A catalogue of published Attestation Rulebooks will enable other entities such as Relying Parties to discover which attestations exist within the EUDI Wallet ecosystem, and how attributes from these attestations can be requested and validated. The Commission sets out the technical specifications, standards, and procedures for this purpose. Common schemas, including by sector-specific organisations, are critical for widespread adoption of attestations.
 
 ### 3.15 National Accreditation Bodies
 
@@ -481,7 +483,7 @@ Within the EUDI Wallet ecosystem, all attestations consist of the following elem
 
 - A **proof**, which ensures the integrity, authenticity, and support of selective disclosure of the attestation. The format of the proof complies with the proof mechanism specified for this type of attestation, see below. The proof includes information that enables a Relying Party to verify the proof, for example a Attestation Provider certificate and a reference to a trust anchor that can be used to verify that certificate.
 
-An **attribute schema** defines the logical organisation of all mandatory and optional attributes within an attestation, as well as the format of each attribute, meaning its unique identifier, encoding, allowed values, and serialisation. In addition, an attribute schema specifies some of the attestation metadata, such as its attestation type and information about its Attestation Provider, validity period, etc. Within the EUDI Wallet ecosystem, the attribute schema for each attestation type is specified in an Attestation Rulebook according to [Section 5.4](#54-attestation-rulebooks).
+An **attribute schema** defines the logical organisation of all mandatory and optional attributes within an attestation, as well as the format of each attribute, meaning its unique identifier, encoding, allowed values, and serialisation. In addition, an attribute schema specifies some of the attestation metadata, such as its attestation type and information about its Attestation Provider, validity period, etc. Within the EUDI Wallet ecosystem, the attribute schema for each attestation type is specified by an Attribute Schema Provider in an Attestation Rulebook according to [Section 5.4](#54-attestation-rulebooks).
 
 A **proof mechanism** defines the method used to create the attestation proof. For example, a 'standard' digital signature is a proof ensuring integrity and authenticity, but not allowing selective disclosure. Proof mechanisms are specified in standards or technical specifications. The attestation formats listed in [Section 5.2](#53-standardised-attestation-formats) either specify a proof mechanism that allows for selective disclosure, or leave it to other technical specifications to do so.
 
@@ -513,13 +515,13 @@ There are only a few suitable standardised formats for releasing electronic atte
 
 ### 5.4 Attestation Rulebooks
 
-This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
+This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
 
 An Attestation Rulebook also makes some choices regarding the protocol(s) for presentation that must be supported by the relevant attestations. [Topic 12] contains the requirements for Attestation Rulebooks.
 
-Attestation Rulebooks are defined by different organisations:
+Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.14](#314-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa). This role can be assumed by different types of organisation:
 
-- Some Rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3).
+- Some Rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3) of this ARF.
 
 - The Rulebook for an attestation intended to be used across organisations and/or across borders can be defined by an organisation in which, insofar possible, all stakeholders are represented. This will prevent multiple Attestation Rulebooks being defined for the same type of attestation, for example, diplomas. It will also prevent unnecessary differences in the syntax and semantics between similar attestations. The decision on which organisation will be responsible for a given Attestation Rulebook is out of scope for this document. As explained in [Topic 12], it is possible that an individual Attestation Provider needs to include attributes in an attestation that have not been specified in the relevant sectoral or EU-wide Rulebook. An example of this are attributes that only have a meaning within the Member State in which the Attestation Provider resides. To allow such domestic attributes, an Attestation Provider can define a custom Rulebook to specify attributes that are specific to this Provider and are not included in the EU-wide or sectoral Rulebook.
 
@@ -535,23 +537,23 @@ The other layer is the semantic one and relates to semantic schemes of attribute
 
 For the development and success of the EUDI Wallet ecosystem, re-using the building blocks of attributes and attestations is therefore essential. Creating and maintaining controlled vocabularies, a catalogue of attributes, and attestation rulebooks enables shorter 'time-to-market' and efficient implementation.
 
-Building on the requirements of [Topic 12], having in mind both the need for interoperability on the one hand and the varied nature of attestations and organisations specifying those attestations on the other hand, the following principals were defined:
+Building on the requirements of [Topic 12], having in mind both the need for interoperability on the one hand and the varied nature of attestations and organisations specifying those attestations on the other hand, the following principles were defined:
 
-- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem may be registered and published in a publicly accessible catalogue. The Attestation Rulebook catalogue MAY also include Attestation Rulebooks for non-qualified EAAs.
+- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem may be registered and published in a publicly accessible catalogue. The Attestation Rulebook catalogue may also include Attestation Rulebooks for non-qualified EAAs.
 
 - The Commission will take measures to establish and maintain the Attestation Rulebooks catalogue.
 
-- The Attestation Rulebooks catalogue will enable attestation Providers, Relying Parties and other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what are the identifiers, syntax and semantics of all attributes that are part of the attestation, that they may issue, request and receive from a Wallet Unit, according to their role in the ecosystem.
+- The Attestation Rulebooks catalogue will enable Attestation Providers, Relying Parties and other actors in the EUDI Wallet ecosystem to know which attestation types exist, and what are the identifiers, syntax, and semantics of all attributes that are part of the attestation.
 
-Also, the following points were emphasised, to facilitate creation, updates and adoption:
+Also, the following points are emphasised, to facilitate creation and adoption:
 
-- Registration in the attestation catalogue is not mandatory.
+- Registration of an Attestation Rulebook in the Attestation Rulebook catalogue is not mandatory.
 
-- Registration in the attestation catalogue does not create any obligation or automatic acceptance by any third party, or automatically means cross-border recognition.
+- Registration does not create any obligation or automatic acceptance by any third party, or automatically implies cross-border recognition of the type of attestation described in the Rulebook.
 
 - The Attestation Rulebooks catalogue can be in the same environment as the catalogue of attributes.
 
-Implementation of these principals will be discussed further in detail. The ambition is to use existing efforts and tools created by the Member States, the Commission and cross-border organisations, to connect and interact with the stakeholders, to utilise existing data assets for updating them when needed and add new data sets to support new use cases that will be implemented in the eco-system.
+Implementation of these principles will be discussed further in detail. The ambition is to use existing efforts and tools created by the Member States, the Commission and cross-border organisations, to connect and interact with the stakeholders, to utilise existing data assets for updating them when needed and add new data sets to support new use cases that will be implemented in the EUDI Wallet ecosystem.
 
 [Topic 25] and [Topic 26] (combined into one topic), present the current and foreseen status of the catalogues, their creation, distribution, discovery, management and maintenance, that will allow simple update procedures, not burdening the process on the one hand, while ensuring consistent and on-going mechanisms to keep the catalogues updated and accessible to the relevant actors, both those that create the content and those that use, consume and process the attributes and the attestations, and - last but not least - for the general public.
 
