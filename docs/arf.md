@@ -493,7 +493,7 @@ All attestations can be described to have the following elements:
 
 - The **attribute format** defines the way an attributes in an attestation is formatted, e.g. its character set, encoding, allowed values, and serialisation.
 
-- **Proof mechanisms** define the methods used to secure the attestations for integrity, authenticity, and support of selective disclosure. 
+- **Proof mechanisms** define the methods used to secure the integrity, authenticity, validity and support of selective disclosure of the attestation.
 
 There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
 
@@ -555,7 +555,7 @@ Implementation of these principals will be discussed further in detail. The ambi
 
 #### 6.1.1 Scope
 
-The Trust Model presented in this chapter describes, for all interactions between components of the EUDI Wallet ecosystem, which trust relationships are established between the interacting parties to enable these interactions.
+The trust model presented in this chapter describes, for all interactions between components of the EUDI Wallet ecosystem, which trust relationships are established between the interacting parties to enable these interactions.
 
 ![Figure 6 EUDI Wallet trust architecture](media/image6.png) <!-- <img src="media/image6.png" style="width:7.16666447944007in;height:5.281294838145232in" /> -->
 
@@ -589,7 +589,7 @@ Notes:
 
 This section briefly discusses some of the risks that were considered when this trust model was created, together with the mitigations for these risks and the residual risks that remain after these mitigations. This section is not intended to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole; for that register, see Annex I of the 'Commission Implementing Regulation on the certification of the EUDI Wallets'. This section is limited to the scope of the ARF, namely, the Wallet Unit and its interactions with other parties in the ecosystem, as depicted in Figure 6.
 
-##### 6.1.2.2 Risks related to confidentiality, integrity, and authentication
+##### 6.1.2.2 Risks related to confidentiality, integrity, and authenticity
 
 Within the EUDI Wallet ecosystem, many interactions take place between parties in which one party requests another party to perform a task. For example, a User may ask a PID Provider or an Attestation Provider to provide a PID or an attestation to a Wallet Instance, or a Relying Party may ask a User to present attributes from an attestation from its Wallet Instance.
 For any of these interactions, the following risks apply:
