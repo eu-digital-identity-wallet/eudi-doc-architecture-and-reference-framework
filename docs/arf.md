@@ -614,10 +614,10 @@ To effectively translate the European Digital Identity Regulation into a
 user-friendly, privacy-focused, and secure technical architecture,
 establishing design principles is crucial. These principles, rooted in
 the regulatory framework and enriched by industry best practices, will
-serve as fundamental guidelines. This approach ensures compliance with
+serve as fundamental guidelines, thus ensuring compliance with
 requirements emphasizing user-centricity, privacy, security, and
-cross-border interoperability. It demonstrates a commitment to both
-regulatory alignment and excellence in the EUDI Wallet\'s design.
+cross-border interoperability. This approach demonstrates a commitment to
+both regulatory alignment and excellence in the EUDI Wallet\'s design.
 
 #### 4.1.1 User-centricity
 
@@ -652,25 +652,25 @@ universally accepted digital identity ecosystem across the EU.
 
 #### 4.1.3 Privacy by Design
 
-The EUDI wallet architecture embodies the principle of privacy by
+The EUDI Wallet architecture embodies the principle of privacy by
 design. This means that the protection of user data is a fundamental
 pillar of the wallet\'s design. The principle of data minimisation
 guides the collection of personal information, ensuring only what is
 necessary is gathered. The wallet empowers users with granular control
 over what data is shared and with whom. Transparency is built into the
 system, with clear explanations of how data is used and protected. By
-making privacy a cornerstone from the beginning, the EUDI wallet aims to
+making privacy a cornerstone from the beginning, the EUDI Wallet aims to
 foster trust and protect the fundamental rights of its users.
 
 #### 4.1.4 Security by Design
 
-The EUDI wallet architecture embraces the principle of security by
+The EUDI Wallet architecture embraces the principle of security by
 design. This means security considerations are woven into the very
 fabric of the wallet\'s design. Throughout the design process, potential
 vulnerabilities are identified and mitigated. Secure coding practices
 are mandated, and the architecture itself minimises attack surfaces by
 compartmentalizing sensitive data and access controls. By prioritizing
-security from the outset, the EUDI wallet aims to be inherently
+security from the outset, the EUDI Wallet aims to be inherently
 resistant to cyberattacks and data breaches, fostering trust and user
 confidence in this digital identity system.
 
@@ -756,15 +756,15 @@ established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=
     Application (WSCA). This interface is specifically designed for
     managing cryptographic assets and executing cryptographic functions.
 
-- **The PID Issuance Interface (PII)** is based on the \[OpenID4VCI\]
-    protocol and is used when the wallet instance communicates with a
-    PID Provider to request and receive PIDs to be stored within the
-    wallet instance.
+- **The PID Issuance Interface (PII)** is based on the OpenID for
+    Verifiable Credential Issuance protocol \[OpenID4VCI\] and is used
+    when the wallet instance communicates with a PID Provider to request
+    and receive PIDs to be stored within the wallet instance.
 
 - **The Attestation Issuance Interfaces** **(AII)** is based on the
-    \[OpenID4VCI\] protocol and is used by the wallet instance to
-    request various attestations that Users wants to include in their
-    Wallet Instance.
+    OpenID for Verifiable Credential Issuance protocol \[OpenID4VCI\]
+    and is used by the wallet instance to request various attestations
+    that Users wants to include in their Wallet Instance.
 
 - **The Remote Signing Interface (RSI)** facilitates communication
     between the Wallet Instance and the Qualified Electronic Signature
@@ -810,7 +810,7 @@ in [Annex 4](#annex-4) of the ARF.
 #### 4.2.3 Mobile Apps and Web Browsers
 
 This section examines the technical interaction between the Wallet
-Solution, web browsers, and mobile apps, in regards of the flows
+Solution, web browsers, and mobile apps in regard to the flows
 described in the previous section. This is necessary to implement the
 attestation presentation interface effectively, with a focus on both
 user experience and security.
@@ -885,7 +885,7 @@ Cryptographic Device (WSCD):
 #### 4.4.1 Introduction
 
 In this chapter, state diagrams are presented to explain the relations
-between the Wallet Solution the Wallet and the PID.
+between the Wallet Solution, the Wallet and the PID.
 
 The following descriptions are not prescriptive of form factor, hence
 depending on the implementation an EUDI Wallet Solution may consist of a
@@ -911,7 +911,7 @@ eID scheme.
 
 If all the legal and technical criteria have been met, including:
 
-- the certification of the Wallet Solution by accredited and  
+- the certification of the Wallet Solution by accredited and 
   designated CAB(s),
 
 - ex-ante supervisory activities by Member State supervisory bodies,
@@ -919,7 +919,7 @@ If all the legal and technical criteria have been met, including:
 - both the body providing EUDI Wallets and the PID Providers have
   been published by the Commission (in accordance with Article 5d),
 
-- the information notified by Member States for publication of lists  
+- the information notified by Member States for publication of lists 
   of Wallets have been published in the Official Journal of the EU,
 
 then a Member State may decide to start providing Instances of the
@@ -951,12 +951,13 @@ Figure 4: State-chart of Wallet Instance
 
 An EUDI Wallet Instance lifecycle begins when the User installs a
 component part of a valid EUDI Wallet Solution to their User device (see
-[Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Instance status is **installed**. Once an EUDI
-Wallet Instance establishes communication with other components that are
-part of the Wallet Solution, is activated, and is issued a Wallet Trust
-Evidence (WTE) and a Wallet Instance Attestation (WIA) by an EUDI Wallet
-Provider, it is in an **operational** state. In this state, the User
-manages the EUDI Wallet Instance, which may involve:
+[Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet
+Instance status is **installed**. Once an EUDI Wallet Instance establishes
+communication with other components that are part of the Wallet Solution,
+is activated, and is issued a Wallet Trust Evidence (WTE) and a Wallet
+Instance Attestation (WIA) by an EUDI Wallet Provider, it is in an
+**operational** state. In this state, the User manages the EUDI Wallet
+Instance, which may involve:
 
 -   The EUDI Wallet Provider updating the EUDI Wallet Instance,
 
@@ -990,10 +991,10 @@ Notes on Wallet Instance:
 -   The security provided by the Wallet Instance is relying on the
     Wallet Secure Cryptographic Device and its Wallet Secure
     Cryptographic Application. In the architecture overview ([Section
-    6.1](#61-overview), figure 6) it is explained that multiple solutions are available
-    for implementation, such as Remote Wallet Secure Cryptographic
-    Device, Local External Wallet Secure Cryptographic Device, Local
-    Wallet Secure Cryptographic Device and / or a Hybrid architecture.
+    6.1](#61-overview), figure 6) it is explained that multiple solutions
+    are available for implementation, such as Remote Wallet Secure
+    Cryptographic Device, Local External Wallet Secure Cryptographic Device,
+    Local Wallet Secure Cryptographic Device and / or a Hybrid architecture.
 
 #### 4.4.4 Person Identification Data (PID)
 
@@ -1120,15 +1121,15 @@ Rulebooks.
 
 Attestation Rulebooks are defined by different organisations:
 
--   Some rulebooks already have been defined by the European Commission,
-    in consultation with the eIDAS Expert Group. This concerns the PID
-    Rulebook, the mDL Rulebook and the Pseudonym Rulebook. These can be
-    found in [Annex 3](#annex-3).
+-   Some rulebooks have already been defined by the European Commission,
+    in consultation with the eIDAS Expert Group, namely the PID Rulebook,
+    the mDL Rulebook and the Pseudonym Rulebook. These can be found in
+    [Annex 3](#annex-3).
 
 -   The rulebook for an attestation intended to be used across
     organisations and/or across borders can be defined by an
     organisation in which, insofar possible, all stakeholders are
-    represented. This will prevent multiple attestation rulebooks being
+    represented. This will prevent multiple attestation rulebooks from being
     defined for the same type of attestation, for example, diplomas. It
     will also prevent unnecessary differences in the syntax and
     semantics between similar attestations. The decision on which
@@ -1191,38 +1192,39 @@ other hand, the following principals were defined:
 
 -   The Attestation Rulebooks catalogue will enable attestation
     Providers, Relying Parties and other actors in the EUDI Wallet
-    ecosystem, to know which attestation types exist, and what are the
+    ecosystem to know which attestation types exist, and what are the
     identifiers, syntax and semantics of all attributes that are part of
-    the attestation, that they may issue, request and receive from a
-    Wallet Instance, according to their role in the ecosystem.
+    the attestation. Additionally they will know what they may issue,
+    request and receive from a Wallet Instance, all according to their
+    role in the ecosystem.
 
-Also, the following points were emphasised, to facilitate creation,
+The following points were emphasised to facilitate creation,
 updates and adoption:
 
 -   Registration in the attestation catalogue is not mandatory.
 
 -   Registration in the attestation catalogue does not create any
-    obligation or automatic acceptance by any third party, or
+    obligation or automatic acceptance by any third party or
     automatically means cross-border recognition.
 
--   The Attestation Rulebooks catalogue can be in the same
-    environment as the catalogue of attributes.
+-   The Attestation Rulebooks catalogue can be in the same environment
+    as the catalogue of attributes.
 
 Implementation of these principals will be discussed further in detail.
 The ambition is to use existing efforts and tools created by the Member
-States, the Commission and cross-border organisations, to connect and
+States, the Commission and cross-border organisations to connect and
 interact with the stakeholders, to utilise existing data assets for
 updating them when needed and add new data sets to support new use cases
 that will be implemented in the eco-system.
 
-\[Topic 25\] and \[Topic 26\] (combined into one topic), present the
+\[Topic 25\] and \[Topic 26\] (combined into one topic) present the
 current and foreseen status of the catalogues, their creation,
-distribution, discovery, management and maintenance, that will allow
-simple update procedures, not burdening the process on the one hand,
-while ensuring consistent and on-going mechanisms to keep the catalogues
-updated and accessible to the relevant actors, both those that create
-the content and those that use, consume and process the attributes and
-the attestations, and - last but not least - for the general public.
+distribution, discovery, management and maintenance that will allow
+simple update procedures. Additionally not burdening the process on the
+one hand while ensuring consistent and on-going mechanisms to keep the
+catalogues updated and accessible to the relevant actors. This applies
+to both those that create the content, those that use, consume and
+process the attributes and the attestations, and to the general public.
 
 ## 6 Trust model
 
@@ -1243,16 +1245,17 @@ Figure 6: EUDI Wallet trust architecture
 Figure 6 above shows the parties and components that are involved in the
 trust architecture for the EUDI Wallet ecosystem.
 
-In the center of this ecosystem is the **EUDI Wallet Instance**, shown
-in the middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes the interactions between
-the Wallet Instance and other roles in the ecosystem in the lifecycle of
-a Wallet Instance, namely installation, activation, management, and
-de-installation.
+In the center of this ecosystem is the **EUDI Wallet Instance**, shown in
+the middle in blue.
+[Section 6.5](#65-trust-throughout-a-wallet-instance-lifecycle) describes
+the interactions between the Wallet Instance and other roles in the ecosystem
+in the lifecycle of a Wallet Instance, namely installation, activation,
+management, and de-installation.
 
 A Wallet Instance is the application of a Wallet Solution installed in
-the device of the User, which is provided by an **EUDI Wallet
-Provider**. Within this Trust Model, the operational lifespans of both
-the Wallet Solution and its corresponding Wallet Provider are the same.
+the device of the User, which is provided by an **EUDI Wallet Provider**.
+Within this Trust Model, the operational lifespans of both the Wallet
+Solution and its corresponding Wallet Provider are the same.
 As illustrated in Figure 6, the diagram positions the Wallet Provider
 above the Wallet Instance and depicts the Wallet Provider Registrar
 located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle)
@@ -1282,13 +1285,14 @@ On the right-hand side of the Wallet Instance, figure 6 shows the
 Relying Parties. Relying Parties are registered by a **Relying Party
 Registrar** in their Member State. As a result of the registration, a
 Relying Party receives an access certificate from a **Relying Party
-Access CA**. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in
-the lifecycle of a Relying Party, namely registration, and possibly
-de-registration.
+Access CA**. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle)
+describes interactions between these roles in the lifecycle of a Relying
+Party, namely registration, and possibly de-registration.
 
-Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) describes interactions in the lifecycle of a PID or
-an attestation, namely issuance, presentation to a Relying Party or to
-another Wallet Instance, management, and deletion.
+Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle)
+describes interactions in the lifecycle of a PID or an attestation, namely
+issuance, presentation to a Relying Party or to another Wallet Instance,
+management, and deletion.
 
 Notes:
 
@@ -1299,7 +1303,7 @@ Notes:
     Similarly, a Member State may decide to combine multiple Registrars
     and/or Certificate Authorities into a single entity, again provided
     that that entity maintains clear separations between its different
-    roles and responsibilities. In some case, existing entities can
+    roles and responsibilities. In some cases existing entities can
     probably be used to fulfil these roles.
 
 -   This trust model does not presume a specific implementation. In
@@ -1307,9 +1311,11 @@ Notes:
     format. Depending on implementation, it may be an X.509 certificate
     or another format specified in the context of any other trust
     framework. Similarly, a 'Certificate Authority' may be implemented
-    as a 'classical' X509-based CA according to \[[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)\] and
-    \[[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)\], or as a trusted third party binding public keys to
-    entities in any other trust framework.
+    as a 'classical' X509-based CA according to
+    \[[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)\] and
+    \[[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)\],
+    or as a trusted third party binding public keys to entities in any
+    other trust framework.
 
 -   This trust model is valid for both remote and proximity use cases.
     However, technical measures taken to ensure that the requirements on
@@ -1376,14 +1382,13 @@ trust in the EUDI Wallet ecosystem:
 #### 6.1.4 Other trust relations
 
 Besides the trust relationships described in this chapter, other trust
-relations are established as well. For instance, Users, PID Providers
-and Attestation Providers, and Relying Parties trust certification
-bodies and Trusted List providers. This trust is primarily rooted in
-authority and in procedural measures, such as public oversight,
-published security and operational policies, and audits, rather than in
-technical measures. To verify that parties are indeed interacting with a
-trusted authority, standard technical measures suitable for the context
-will need to be used.
+relations are established as well. For instance, Users, PID Providers,
+Attestation Providers and Relying Parties trust certification bodies
+and Trusted List providers. This trust is primarily rooted in authority
+and in procedural measures, such as public oversight, published security
+and operational policies, and audits, rather than in technical measures.
+To verify that parties are indeed interacting with a trusted authority,
+standard technical measures suitable for the context will need to be used.
 
 ### 6.2 Trust throughout a Wallet Solution lifecycle
 
