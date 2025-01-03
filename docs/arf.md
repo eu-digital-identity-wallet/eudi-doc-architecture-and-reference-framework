@@ -222,7 +222,7 @@ Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The ge
 
 As specified in the Regulation, an attestation may be issued by or on behalf of a public sector body responsible for an authentic source. This ARF calls such an attestation a PuB-EAA. An authentic source is a repository or system that contains and provides attributes about a natural or legal person or object. An authentic source moreover is legally considered to be a primary source of those attributes. A public sector body primarily is a state, regional or local authority, or a body governed by public law.
 
-A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a QTSP. However, it has a qualified certificate, issued by a QTSP, that allows it to sign PuB-EAAs. A Relying Party verifies a PuB-EAA by first verifying the signature over the PuB-EAA, and subsequently verifying the signature of the PuB-EAA Provider certificate. For more details, refer to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
+A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a QTSP. However, a PuB-EAA Provider has a qualified certificate, issued by a QTSP, that allows it to sign PuB-EAAs. A Relying Party verifies a PuB-EAA by first verifying the signature over the PuB-EAA, and subsequently verifying the signature of the PuB-EAA Provider certificate. For more details, refer to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 
 The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect as lawfully issued attestations in paper form.
 
@@ -473,6 +473,20 @@ There are two possible transitions from a valid PID: it automatically expires, b
 
 ### 5.1 Introduction
 
+Within the EUDI Wallet ecosystem, all attestations consist of the following elements:
+
+- A set of **attributes**, which provide information about the subject of the attestation. The subject of the attestation may be a natural person or a legal person. A Relying Party will request one or more of these attributes to get the reliable information they need to provide some service to the User. The set of attributes that an attestation may contain is defined in an attribute schema, see below.
+  
+- A set of **metadata**, meaning information about the attestation itself, such as its attestation type (PID, mDL, diploma, etc.), its Attestation Provider, and its administrative validity period, if applicable. This kind of metadata is also defined in an attribute schema. In addition, metadata also includes information that is necessary to ensure the security of the attestation. This includes at least its technical validity period. It also includes a public key of the attestation, which a Relying Party will use to verify that the attestation was not copied, see [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding). It may also include information allowing the Relying Party to verify that the attestation was not revoked, see [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
+
+- A **proof**, which ensures the integrity, authenticity, and support of selective disclosure of the attestation. The format of the proof complies with the proof mechanism specified for this type of attestation, see below. The proof includes information that enables a Relying Party to verify the proof, for example a Attestation Provider certificate and a reference to a trust anchor that can be used to verify that certificate.
+
+An **attribute schema** defines the logical organisation of all mandatory and optional attributes within an attestation, as well as the format of each attribute, meaning its unique identifier, encoding, allowed values, and serialisation. In addition, an attribute schema specifies some of the attestation metadata, such as its attestation type and information about its Attestation Provider, validity period, etc. Within the EUDI Wallet ecosystem, the attribute schema for each attestation type is specified in an Attestation Rulebook according to [Section 5.4](#54-attestation-rulebooks).
+
+A **proof mechanism** defines the method used to create the attestation proof. For example, a 'standard' digital signature is a proof ensuring integrity and authenticity, but not allowing selective disclosure. Proof mechanisms are specified in standards or technical specifications. The attestation formats listed in [Section 5.2](#53-standardised-attestation-formats) either specify a proof mechanism that allows for selective disclosure, or leave it to other technical specifications to do so.
+
+### 5.2 Attestation categories
+
 Within the European Digital Identity Wallet ecosystem, the Regulation distinguishes four legal categories of attestations, which are defined as follows:
 
 - **Person Identification Data (PID)**: A set of data that is issued in accordance with Union or national law and that enables the establishment of the identity of a natural or legal person, or of a natural person representing another natural person or a legal person.
@@ -483,17 +497,9 @@ Within the European Digital Identity Wallet ecosystem, the Regulation distinguis
 
 - **Non-Qualified EAA:** An EAA which is not QEAA or PuB-EAA.
 
-Please note that the differences between these types of attestation are purely legal. For example, a diploma may be a QEAA or a non-qualified EAA, depending on whether it is issued by a qualified trust service provider (QTSP) or by an unqualified one. Similarly, an mDL may be issued as a PuB-EAA, a QEAA, or a non-qualified EAA, depending on the legal status of the party issuing mobile driving licences in each Member State, in addition to being an authorised mDL Provider in accordance with the rules applicable for mDL Providers.
+Please note that the differences between these attestation categories are purely legal. For example, a diploma may be a QEAA or a non-qualified EAA, depending on whether it is issued by a qualified trust service provider (QTSP) or by an unqualified one. Similarly, an mDL may be issued as a PuB-EAA, a QEAA, or a non-qualified EAA, depending on the legal status of the party issuing mobile driving licences in each Member State. From a technical point of view, all PIDs, QEAAs, PuB-EAAs, and EAAs comply with one of the attestation formats listed in [Section 5.3](#53-standardised-attestation-formats).
 
-### 5.2 Available standardised formats
-
-All attestations can be described to have the following elements:
-
-- An **attribute schema** defines the structure, logical organisation, type and unique identifier of all attributes in the attestation, as well as additional information such as information about the attestation, its issuer, the verification mechanisms, the underlying identity assurance, the Trust Framework to which the properties are related, and the proof of possession by the legitimate User.
-
-- The **attribute format** defines the way an attributes in an attestation is formatted, e.g. its character set, encoding, allowed values, and serialisation.
-
-- **Proof mechanisms** define the methods used to secure the integrity, authenticity, validity and support of selective disclosure of the attestation.
+### 5.3 Standardised attestation formats
 
 There are only a few suitable standardised formats for releasing electronic attestations of attributes currently available. These are:
 
@@ -501,11 +507,11 @@ There are only a few suitable standardised formats for releasing electronic atte
 
 2. SD-JWT-based Verifiable Credentials (SD-JWT VC) defines a proof mechanism similar to [ISO/IEC 18013-5], but for a different data format, see [SD-JWT VC].
 
-3. W3C Verifiable Credentials Data Model v1.1 [W3C VC DM v1.1] defines a generic attribute schema agnostic to data formats and proof mechanisms, while v 2.0 introduces requirements on format and recommendations on proof mechanisms, see [W3C VC DM v2.0].
+3. W3C Verifiable Credentials Data Model v1.1 [W3C VC DM v1.1] defines a generic attribute schema agnostic to data formats and proof mechanisms, while v2.0 introduces requirements on format and recommendations on proof mechanisms, see [W3C VC DM v2.0].
 
 [Topic 12] presents the current and foreseen status of these technical specifications and states the requirements regarding support for these specifications by attestations.
 
-### 5.3 Attestation Rulebooks
+### 5.4 Attestation Rulebooks
 
 This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema, data format and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
 
@@ -519,15 +525,15 @@ Attestation Rulebooks are defined by different organisations:
 
 - The Rulebook for an attestation intended to be used only within an organisation will be defined by that organisation.
 
-### 5.4 Catalogues
+### 5.5 Catalogues
 
-Section 2 in [Article 45e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3883-1-1) of the regulation, sets up the direct legal basis for the Commission to \"**where necessary, establish specifications and procedures** for the catalogue of attributes and schemes for the attestation of attributes and verification procedures for qualified electronic attestations of attributes\".
+Section 2 in [Article 45e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3883-1-1) of the regulation, sets up the direct legal basis for the Commission to "where necessary, establish specifications and procedures for the catalogue of attributes and schemes for the attestation of attributes and verification procedures for qualified electronic attestations of attributes".
 
-One of the main rationales for the ARF is to reach a high level of interoperability. This interoperability can be achieved on different layers. On the technical level, interoperability can be achieved by using common standards, protocols and technical specifications, ensuring common language for attestation Providers, Wallet Providers and Relying Parties, enabling issuance, presentation and processing of the data involved, based on agreed common protocols interfaces and syntax.
+One of the main rationales for the ARF is to reach a high level of interoperability. This interoperability can be achieved on different layers. On the technical level, interoperability can be achieved by using common standards, protocols and technical specifications, ensuring common language for Attestation Providers, Wallet Providers and Relying Parties, enabling issuance, presentation and processing of attestations, based on agreed common protocols interfaces and syntax.
 
-The other layer is the semantic one and relates to semantic schemes of attributes. The risk is that an uncontrolled manner of implementation and usage, will create barriers to straight-forward approach and will complicate the implementation thus making the ecosystem much more costly to create and maintain, complex, and error-sensitive, affecting the quality of the overall system.
+The other layer is the semantic one and relates to semantic schemes of attributes. The risk is that an uncontrolled manner of implementation and usage will create barriers and complicate the implementation, thus making the ecosystem much more costly to create and maintain, complex, and error-sensitive, affecting the quality of the overall system.
 
-For the development and success of the EUDI Wallet ecosystem, re-using the building blocks of attributes and attestations is essential. Creating and maintaining controlled vocabularies, a catalogue of attributes, and attestation rulebooks enables shorter 'time-to-market' and efficient implementation.
+For the development and success of the EUDI Wallet ecosystem, re-using the building blocks of attributes and attestations is therefore essential. Creating and maintaining controlled vocabularies, a catalogue of attributes, and attestation rulebooks enables shorter 'time-to-market' and efficient implementation.
 
 Building on the requirements of [Topic 12], having in mind both the need for interoperability on the one hand and the varied nature of attestations and organisations specifying those attestations on the other hand, the following principals were defined:
 
