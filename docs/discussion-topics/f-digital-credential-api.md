@@ -1,6 +1,6 @@
 # F - Digital Credentials API (former known as browser API)
 
-Version 0.2, updated 18 December 2024
+Version 0.3, updated 5 January 2025
 
 ## 1. Introduction
 
@@ -105,37 +105,35 @@ This document is structured as follows:
 
 ### Problem Statement  
 
-The seamless integration of Wallet Solutions with web browsers and mobile apps
+The seamless integration of Wallet Units with web browsers and mobile apps
 is crucial for implementing secure and efficient attestation presentation
-interfaces. Achieving a balance between user experience and security presents
-significant challenges that impede the optimal functioning of these
-interactions. The key challenges and solutions are outlined below:  
+interfaces. Without such integration, it will be difficult to ensure the security of remote transaction flows, in which the Relying Party accesses the Wallet Unit over the internet. In addition, involving the browser in such transactions also will improve user experience, in particular in cases where multiple Wallet Instances are present on the User's device. The key challenges and solutions are outlined below:  
 
 - **1. Secure Cross-Device Flows**: Cross-device flows are vulnerable to
 phishing and relay attacks, necessitating enhanced security measures.
 Implementing proximity checks managed by the mobile operating system can address
 these vulnerabilities, leveraging built-in security features to ensure
 interactions are both secure and reliable.  
-- **2. Relying Party Authentication**: There is a need for a clear and secure
-method to authenticate both the Wallet Unit and the Relying Party. Developing a
-robust protocol for mutual authentication, including secure key exchanges and
-metadata validation, ensures trust in communication, particularly for Remote
-Same-Device flows mediated by browsers or apps.  
-- **3. Wallet Unit Selection and Invocation**: Users face challenges in
+- **2. Wallet Unit Selection and Invocation**: Users face challenges in
 selecting and activating the appropriate Wallet Unit, especially when multiple
 options are available. A unified interface provided by the mobile operating
 system simplifies this process, ensuring a seamless and intuitive user
 experience across devices.  
-- **4. Fragmented Interaction Mechanisms**: Reliance on custom URL schemes in
+- **3. Fragmented Interaction Mechanisms**: An alternative to the direct involvement
+of the browser in the interaction between the Wallet Unit and the Relying Party,
+is the use of custom URI schemes. Such a URI may, for example, start with "mdoc://" 
+or "openid4vp://". If such a scheme is used, the mobile operating system would invoke
+the Wallet Unit if the Relying Party asks it to connect to a custom URI. However,
+reliance on custom URL schemes in
 browsers and apps leads to inconsistent user experiences and operational
 inefficiencies. Standardizing interaction mechanisms across platforms improves
 usability and scalability, delivering a more uniform and reliable user
 experience.  
-- **5. Clear Origin Verification**: Protecting against replay attacks requires
+- **4. Clear Origin Verification**: Protecting against replay attacks requires
 precise identification of the Relying Party's origin. Including the origin
 information, such as the website domain or app package name, within the
 presentation request ensures authenticity and enhances trust for both Wallet
-Solutions and users.  
+Units and users.  
 
 ### Proposed solution
 
@@ -173,26 +171,26 @@ protocol. The Digital Credentials API specifications will include a registry of
 supported protocols.
 
 As a next step, the browser sends the request to the operating system which
-searches matching attestations in installed Wallet Units. The cross-device flow
-can be used for searching in a remote device. If any attestation is found, the
-user is prompted to select one and the request data is sent to the corresponding
+searches matching attestations in installed Wallet Units. The cross-device 
+flow can be used to search for matching attestations in Wallet Units installed 
+in a different device, located in close proximity to the browser. If more than 
+one matching attestation is found, the browser prompts the User to select one. 
+As a next step, request data is sent to the corresponding
 Wallet Unit. Then, the Wallet Unit asks user concent and generates a
 presentation based on the selected exchange protocol. The presentation is
 relayed back to the Relying Party's website.
 
 Currently, Digital Credentials API support is provided only by the Chrome
 browser and the Android mobile operating system. In this implementation there
-exists a method for Wallet Units to indicate to a "matcher", which is a module
-provided by the Wallet Provider, the availability of attestations and,
-optionally, attributes included in the attestation. For instance, [this is how
-this can be done in Android](
-https://digitalcredentials.dev/docs/wallets/android/#the-provider-api).
-According to the provided documentation:
+exists a method for Wallet Units to indicate to a component, which is part of
+the Wallet Solution and it is referred to as the "matcher" in the current Android-specific
+implementation, the availability of attestations and,
+optionally, attributes included in the attestation. An example [can be found here.](
+https://digitalcredentials.dev/docs/wallets/android/#the-provider-api). This
+Android-specific documentation mentions that the information provided by the Wallet Unit is used
+by the Android operating system to render a selector, allowing Users to make an
+informed choice about which attestation to proceed with. 
 
-> All Android requires is that the wallet (via the matcher) provides enough
-information about the credential and the requested attributes that we can render
-a selector. This information allows the user to make an informed choice about
-which document to proceed with.
 
 #### 2.2.1 Same-device flow
 
@@ -234,7 +232,7 @@ The cross-device flow is implemented using the following steps:
 #### API Scope
 
 1. **Wallet Selection and Invocation**:
-   - Functional APIs must enable browsers to search and present responsive credentials.
+   - The DC API shall enable a browser or OS to search for Wallet Units containing attestations that potentially match the request of the Relying Party.
    - Address user experience and scaling concerns caused by current Custom URI approaches.
 
 2. **Secure Cross-Device Flows**:
@@ -245,8 +243,8 @@ The cross-device flow is implemented using the following steps:
    - APIs must support OID4VP as a presentation protocol for credentials.
 
 4. **Credential Format Support**:
-   - APIs must be credential format agnostic, supporting extensions for different credential types.
-   - The first instance of APIs must support both mdoc (for US mDL implementations) and VC credential formats (as specified in the EUDI Wallet ARF).
+   - The DC API SHALL be neutral and open with respect to the format of attestations to be used. For example, if a "Registry of Protocols for Requesting Digital Credentials" is utilized, adding or removing protocols to the registry SHALL follow established criteria involving multiple stakeholders and SHALL not be determined by a single entity.
+   - The first instance of APIs SHALL support both mdoc and VC credential formats (as specified in the EUDI Wallet ARF).
 
 #### Out of Scope
 
@@ -256,22 +254,21 @@ The cross-device flow is implemented using the following steps:
 #### Responsibilities
 
 1. **Consent**:
-   - Wallets and verifiers must handle user consent for attribute requests and releases.
-   - Browsers should not add an additional consent layer to the workflow.
+   - Wallets and verifiers SHALL handle user consent for attribute requests and releases.
+   - Browsers SHALL not add an additional consent layer to the workflow.
 
-2. **Data Request & Release**:
-   - Wallets must support and enforce selective disclosure of data.
+2. **Data Request and Release**:
    - Browsers may present wallets that meet selective disclosure requirements but do not directly enforce it.
 
 3. **Verifier Authentication**:
    - Wallets are responsible for authenticating verifiers before delivering attribute payloads.
-   - Issuers must authenticate wallets during the issuance process.
+   - The DC API SHALL allow all parties to authenticate following the ARF requirements.
    - Verifiers may authenticate wallets dynamically or via third-party trust providers or certification schemes.
-   - Browsers must provide sufficient information to verifiers to aid in authentication (e.g., request origin).
+   - Browsers SHALL provide sufficient information to Wallet Instances to aid in authentication (e.g., request origin).
 
 4. **Protection from Malicious Verifiers**:
-   - Browsers must evaluate, block, or warn users about potentially untrusted verifiers requesting wallet information.
-   - Browsers must not decide which verifiers are authorized to request attributes; this responsibility lies with national issuers and regulators.
+   - Browsers SHALL evaluate, block, or warn users about potentially untrusted verifiers requesting wallet information.
+   - Browsers SHALL not decide which verifiers are authorized to request attributes; this responsibility lies with national issuers and regulators.
 
 ### Technological Neutrality and Cross-Platform Interoperability
 
