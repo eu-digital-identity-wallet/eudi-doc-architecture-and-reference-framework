@@ -107,7 +107,7 @@ This document is structured as follows:
 
 The seamless integration of Wallet Units with web browsers and mobile apps
 is crucial for implementing secure and efficient attestation presentation
-interfaces. Without such integration, it will be difficult to ensure the security of remote transaction flows, in which the Relying Party accesses the Wallet Unit over the internet. In addition, involving the browser in such transactions also will improve user experience, in particular in cases where multiple Wallet Instances are present on the User's device. The key challenges and solutions are outlined below:  
+interfaces. Without such integration, it will be difficult to ensure the security of remote transaction flows, in which the Relying Party accesses the Wallet Instance over the internet. In addition, involving the browser in such transactions also will improve user experience, in particular in cases where multiple Wallet Instances are present on the User's device. The key challenges and solutions are outlined below:  
 
 - **1. Secure Cross-Device Flows**: Cross-device flows are vulnerable to
 phishing and relay attacks, necessitating enhanced security measures.
@@ -290,7 +290,7 @@ The use of the Digital Credentials API SHALL not compromise the security of User
 
 The use of the Digital Credentials API SHALL not compromise User privacy. To achieve this:
 
-- Wallet Units SHALL “register” the available attestations and attributes to the operating system to facilitate their discovery and use. However, this process SHALL be designed and implemented in a way that it does not introduce privacy threats, such as exposing metadata about the User’s attestations to uto any other party, including the OS/browser vendor, other applications on the same device, other users of the same device, or Relying Parties.
+- Wallet Units may have to "indicate" to the operating system the availability of attestations and attributes to facilitate their discovery and use. However, this process SHALL be designed and implemented in a way that it does not introduce privacy threats, such as exposing attribute values to any other party, including the OS/browser vendor, other applications on the same device, other users of the same device, or Relying Parties.
 - Similarly, the use of a browser as an intermediary in the attestation exchange process SHALL not create privacy risks, such as those arising from malicious add-ons or unauthorized tracking mechanisms. Browsers SHALL maintain strict privacy controls to ensure that attestation-related data is neither exposed nor accessible to unauthorized third parties. This principle also extends to any tunneling services used to facilitate cross-device flow.
 - Browsers and operating systems providing support for the Digital Credentials API SHALL minimize the threat of data theft and disclosure through eavesdropping the communication between the Wallet Unit and the RP’s website
 
