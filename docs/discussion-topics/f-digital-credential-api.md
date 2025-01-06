@@ -198,11 +198,12 @@ The same-device flow is currently implemented using the following steps:
 
 1. The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit
 1. The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
-![Website authorization](img/same-auth.png)
-1. The Relying Party website indicates to the browser which attributes they want to request by creating a `presentation request`.
+<img src="img/same-auth.png" alt="Website authorization" width="400">
+1. The Relying Party  indicates to the browser which attributes they want to request by creating a `presentation request`.
 1. The operating system searches for attestations that satisfy the requested attributes.
 1. The browser presents to the User a selector that includes a list of potentially suitable attestations.
-![Website authorization](img/same-select.png)
+<img src="img/same-select.png" alt="Attestation selection" width="400">
+
 1. The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data
 1. The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents
 
@@ -212,16 +213,19 @@ The cross-device flow is implemented using the following steps:
 
 1. The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit
 1. The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
-![Website authorization](img/cross-auth.png)
-1. The Relying Party website indicates to the browser which attributes they want to request by creating a `presentation request`.
+<img src="img/cross-auth.png" alt="Website authorization" width="400">
+1. The Relying Party  indicates to the browser which attributes they want to request by creating a `presentation request`.
 1. The browser uses CTAP 2.2 hybrid flow (section 11.5 of \[Ctap\]) to establish a tunnel between the browser and the device where the Wallet Unit is installed (this is the same flow used by Passkey). From a high level this is implemented as follows:
     - The browser presents a QR code which includes information about the tunnel endpoint and keys that can be used for establishing a secure session
     - The device where the Wallet Unit is installed emits a BLE advertisement which is received by the browser. The advertisement includes in an encrypted form information required for establishing the secure tunnel. This advertisement is used as a proximity check.
     - The user scans the QR code using the device camera and a tunnel is established
-![QR-code](img/cross-qr.png)
+
+<img src="img/cross-qr.png" alt="QR Code display" width="400">
+
 1. The presentation request is transferred through the tunnel to the device operating system
 1. The device operating system presents to the User a selector that includes a list of potentially suitable Wallet Units.
-![Attestation selection](img/cross-select.png)
+<img src="img/cross-select.png" alt="Attestation selection" width="400">
+
 1. The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data
 1. The Wallet Unit sends through the tunnel to the browser a suitable presentation
 
