@@ -55,7 +55,7 @@ Credentials API:
 
 |R14 Surveillance|
 |---|
-|Surveillance, or monitoring, is defined as the unauthorised tracking or observation of a wallet user’s activities, communication, or data. Surveillance is often related to inference, which is defined as the deduction of sensitive or personal information from seemingly innocuous data. |
+|Surveillance, or monitoring, is defined as the unauthorised tracking or observation of a wallet user's activities, communication, or data. Surveillance is often related to inference, which is defined as the deduction of sensitive or personal information from seemingly innocuous data. |
 
 |SR3 Legal non-compliance|
 |---|
@@ -74,21 +74,21 @@ More specifically, \[RiskRegister\]  describes the following threats to a Wallet
 |TR50| An attacker can convince a user to share personal data (i.e. PID, EAA-s, pseudonyms, electronic signatures, logs and other data) with the attacker or with a third party that the user did not intend to do so.| Data theft (R5) / Data disclosure (R6)|
 |TR76| A relying party can send multiple invalid requests. | Service disruption (R13)|
 |TR80| An attacker can block transactions by relying parties, users and/or PID provider. | Service disruption (R13)|
-|TR88| Attackers can make changes to a request’s metadata (service name, usages, etc.).|  Transaction manipulation (R10)|
+|TR88| Attackers can make changes to a request's metadata (service name, usages, etc.).|  Transaction manipulation (R10)|
 |TR93|An attacker can replace or modify the PID during its transfer from the wallet unit to the online relying party. | Transaction manipulation (R10)|
-|TR103|The user behind the relying party – browser connection can be different from the user behind the relying party – wallet connection. | Unauthorised transaction (R9) / Data disclosure (R6) / Identity theft (R4)|
+|TR103|The user behind the relying party - browser connection can be different from the user behind the relying party - wallet connection. | Unauthorised transaction (R9) / Data disclosure (R6) / Identity theft (R4)|
 |TR105| An attacker can perform man-in-the-middle attacks | Unauthorised transaction (R9) / Data disclosure (R6) / Surveillance (R14)|
 
 ## 1.3 Key words
 
-This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’ as
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in RFC 2119, i.e., to indicate requirements, recommendations and
 options specified in this document.
 
-In addition, ‘must’ (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that is
-mandated by an external document. The word ‘can’ indicates a capability, whereas
-other words, such as ‘will’ and ‘is’ or ‘are’ are intended as statements of
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
 fact.
 
 ## 1.4 Document structure
@@ -145,7 +145,7 @@ and presentation of, attestations. Currently, attestation issuance is not in the
 scope of this API, but future versions [may consider it](
 https://github.com/WICG/digital-credentials/issues/167). The Digital Credentials
 API can be used, for example, by a Relying Party website to request a PID or
-(Q)EEA stored in a Wallet Unit through the User’s browser. The browser and the
+(Q)EEA stored in a Wallet Unit through the User's browser. The browser and the
 Wallet Unit may be in the same device (same-device flow) or in separate devices
 but in proximity (cross-device flow).
 
@@ -274,7 +274,7 @@ The cross-device flow is implemented using the following steps:
 
 The Digital Credentials API SHALL preserve technological neutrality and avoid any reliance on vendor-specific extensions.
 
-- Furthermore, the use of the Digital Credentials API SHALL provide  cross-platform interoperability, ensuring users are not locked into a specific vendor’s browser or operating system.
+- Furthermore, the use of the Digital Credentials API SHALL provide  cross-platform interoperability, ensuring users are not locked into a specific vendor's browser or operating system.
 - Similarly, the use of the API SHALL only be considered if it can be used by any approved EUDI wallets (e.g., without requiring additional vendor vetting process or imposing constraints on Wallet Providers other than those required by the EU).
 
 ### Security preservation
@@ -282,8 +282,8 @@ The Digital Credentials API SHALL preserve technological neutrality and avoid an
 The use of the Digital Credentials API SHALL not compromise the security of User. To achieve this:
 
 - The API inherently requires an active role from both the browser and the operating system to facilitate interactions with Wallet Units. This SHALL not result in decreased security.
-- Similarly, the use of the Digital Credentials API SHALL not interfere with or undermine the wallet’s ability to properly authenticate Relying Parties.
-- Furthermore, when leveraging the Digital Credentials API, the operating system SHALL not override or remove control from the Wallet Unit. The User’s Wallet Unit SHALL retain full authority over attestation management, including issuance, storage, and presentation. This ensures that the wallet remains the trusted component for safeguarding user data and interactions. The operating system and browser SHALL not disrupt the wallet’s security functions.
+- Similarly, the use of the Digital Credentials API SHALL not interfere with or undermine the wallet's ability to properly authenticate Relying Parties.
+- Furthermore, when leveraging the Digital Credentials API, the operating system SHALL not override or remove control from the Wallet Unit. The User's Wallet Unit SHALL retain full authority over attestation management, including issuance, storage, and presentation. This ensures that the wallet remains the trusted component for safeguarding user data and interactions. The operating system and browser SHALL not disrupt the wallet's security functions.
 - The use of the Digital Credentials API SHALL not facilitate phishing attacks
 
 ### Privacy preservation
@@ -292,13 +292,13 @@ The use of the Digital Credentials API SHALL not compromise User privacy. To ach
 
 - Wallet Units may have to "indicate" to the operating system the availability of attestations and attributes to facilitate their discovery and use. However, this process SHALL be designed and implemented in a way that it does not introduce privacy threats, such as exposing attribute values to any other party, including the OS/browser vendor, other applications on the same device, other users of the same device, or Relying Parties.
 - Similarly, the use of a browser as an intermediary in the attestation exchange process SHALL not create privacy risks, such as those arising from malicious add-ons or unauthorized tracking mechanisms. Browsers SHALL maintain strict privacy controls to ensure that attestation-related data is neither exposed nor accessible to unauthorized third parties. This principle also extends to any tunneling services used to facilitate cross-device flow.
-- Browsers and operating systems providing support for the Digital Credentials API SHALL minimize the threat of data theft and disclosure through eavesdropping the communication between the Wallet Unit and the RP’s website
+- Browsers and operating systems providing support for the Digital Credentials API SHALL minimize the threat of data theft and disclosure through eavesdropping the communication between the Wallet Unit and the RP's website
 
 ### Availability preservation
 
 The use of the Digital Credentials API SHALL account for failures in the process of relaying request presentations and responses, and  SHALL not enable Denial-of-Service attacks against Wallet Units. Particularly:
 
-- Within the API’s architecture, the Wallet Unit and the Relying Party do not communicate directly; instead, attestation exchanges are relayed through intermediaries, such as the browser, operating system, or tunneling services. This indirect communication model introduces potential points of failure, and solutions SHALL account for these risks to ensure uninterrupted availability. To address such risks, fallback mechanisms SHALL be provided to maintain service continuity
+- Within the API's architecture, the Wallet Unit and the Relying Party do not communicate directly; instead, attestation exchanges are relayed through intermediaries, such as the browser, operating system, or tunneling services. This indirect communication model introduces potential points of failure, and solutions SHALL account for these risks to ensure uninterrupted availability. To address such risks, fallback mechanisms SHALL be provided to maintain service continuity
 - The use of the Digital Credentials API SHALL not facilitate Relying Parties to perform Denial of Service attacks against Wallet Units, e.g., by enabling a Relying Party to send multiple invalid requests
 - The use of the Digital Credentials API SHALL not enable attackers to block transactions by Relying Parties and Wallet Units
 
