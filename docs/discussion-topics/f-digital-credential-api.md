@@ -76,7 +76,7 @@ More specifically, \[RiskRegister\]  describes the following threats to a Wallet
 |TR80| An attacker can block transactions by relying parties, users and/or PID provider. | Service disruption (R13)|
 |TR88| Attackers can make changes to a request's metadata (service name, usages, etc.).|  Transaction manipulation (R10)|
 |TR93|An attacker can replace or modify the PID during its transfer from the wallet unit to the online relying party. | Transaction manipulation (R10)|
-|TR103|The user behind the relying party - browser connection can be different from the user behind the relying party – wallet connection. | Unauthorised transaction (R9) / Data disclosure (R6) / Identity theft (R4)|
+|TR103|The user behind the relying party - browser connection can be different from the user behind the relying party - wallet connection. | Unauthorised transaction (R9) / Data disclosure (R6) / Identity theft (R4)|
 |TR105| An attacker can perform man-in-the-middle attacks | Unauthorised transaction (R9) / Data disclosure (R6) / Surveillance (R14)|
 
 ## 1.3 Key words
