@@ -324,7 +324,7 @@ The EUDI Wallet architecture embraces the principle of security by design. This 
 
 ### 4.3.1 Overview
 
-Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components. In comparison to Figure 1, this figure presents more detail on the composition of a Wallet Unit and its interfaces to other entities, in particular Relying Party Instances. For a high-level description of these other entities, please refer to [Chapter 3](#3-eudi-wallet-ecosystem)
+Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components. In comparison to Figure 1, this figure presents more detail on the composition of a Wallet Unit and its interfaces to other entities, in particular Relying Party Instances. The shown components of a Wallet Unit are described in [Section 4.3.2](#432-components-of-a-wallet-unit). For a description of the other entities, please refer to [Chapter 3](#3-eudi-wallet-ecosystem).
 
 ![Figure 2: EUDI Wallet ecosystem reference architecture](media/Figure_2_High-Level_Architecture.jpeg) <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
@@ -332,73 +332,98 @@ Figure 2: EUDI Wallet ecosystem reference architecture
 
 ### 4.3.2 Components of a Wallet Unit
 
-The following components have been identified as the core components of a Wallet Unit:
+The following have been identified as the core components of a Wallet Unit:
 
-- **User device (UD)**: A User device serves as the host for the Wallet Unit. For Wallet Units used by a natural person, the User Device will typically be a mobile device. For Wallet Units used by a legal person, the User device may for example be a cloud server. The minimum hardware and software requirements for the User device will be determined by the Wallet Solution.
+- **Wallet Instance (WI)**: The app or application installed on a User device, which is an instance of a Wallet Solution and belongs to and is controlled by a User. This component implements the core business logic and interfaces as depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely manage cryptographic assets and execute cryptographic functions, ensuring a high level of assurance for authentication.
 
-- **Wallet Instance (WI)**: The app or application installed on a User device, which is part of an Wallet Solution and belongs to and is controlled by a User. This component implements the core business logic and interfaces as depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely manage cryptographic assets and execute cryptographic functions, ensuring a high level of assurance for authentication.
+- **User device (UD)**: A User device serves as the host for the Wallet Instance. For Wallet Instances used by a natural person, the User Device will typically be a mobile device. For Wallet Instances used by a legal person, the User device may also be a mobile device, but could also be a cloud server, for example. The minimum hardware and software requirements for the User device will be determined by the Wallet Provider.
 
-- **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes the keystore but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of an HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as operating system and cryptographic libraries provided by the WSCD vendor.
+- **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes a keystore, but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as an operating system and cryptographic libraries provided by the WSCD vendor.
 
-- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptograhic keys, and interfaces directly with the Wallet Instance. In some architectures, the WSCA will be provided by the WSCD vendor. In other architectures, the Wallet Provider will provide the WSCA.
+- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptograhic keys, and interfaces directly with the Wallet Instance. Regarding the party responsible for delivering the WSCA, there are two options, depending on the security architecture of the Wallet Unit, see [Section 4.5](#45-wscd-architecture-types). For remote WSCDs (HSMs), local external WSCDs (dedicated smart cards), and non-native local WSCDs (UICC, eSIM, SAM), the WSCA will be delivered by the Wallet Provider. For native local WSCDs, the WSCA will be delivered by the provider of the WSCD.
 
 - **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
 #### 4.3.2 Wallet Unit interfaces and protocols
 
-The interfaces of a Wallet Unit and their respective protocols, as discussed in this section and illustrated in Figure 2, comply with the specifications established by [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1), paragraph 5, of the Regulation.
+Figure 2 shows the following interfaces between components of a Wallet Unit, or between the Wallet Unit and other entities in the EUDI Wallet ecosystem:
 
-- The **Wallet Provider Interface (WPI)** is used by the Wallet Unit to communicate with the Wallet Provider to issue the Wallet Unit Attestation, as well as to provide support to the User and collect aggregated and user-consented information in a privacy-preserving manner to provision the Wallet Unit, in compliance with applicable legislation.
+- The **Wallet Provider Interface (WPI)** is used by the Wallet Instance to communicate with the Wallet Provider to request and issue the Wallet Unit Attestation, as well as to provide support to the User and collect aggregated and user-consented information in a privacy-preserving manner to provision the Wallet Unit, in compliance with applicable legislation. Because the Wallet Provider is responsible for both sides of this interface, it will not be standardized in the scope of the EUDI Wallet ecosystem.
 
-- The **User Interface (UI)** is the point of interaction and communication between the User and the Wallet Unit.
+- The **User Interface (UI)** is the point of interaction and communication between the User and the Wallet Instance. This interface will not be standardized in the scope of the EUDI Wallet ecosystem.
 
-- The **Presentation Interface (PI)** empowers Relying Parties to securely request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This interface accommodates [THIS NEEDS WORK] both remote and proximity interactions. For remote presentation flows, as detailed in the following section, the Wallet Unit implements the OpenID for Verifiable Presentation protocol [OpenID4VP]. Where supported, Relying Parties use the [OpenID4VP profile for the W3C Digital Credentials API] (if available) to request the PID for additional privacy, User experience, and security benefits. In contrast, for the proximity presentation flow, it adheres to the [ISO/IEC 18013-5] standard. In a remote flow, when a Relying Party requests User attributes to provide a service, the process initiates through either a web browser or a mobile app.
+- The **Presentation Interface (PI)** enables Relying Parties to securely request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This interface accommodates both remote and proximity interactions. For remote presentation flows, as detailed in [Section 4.4.3](#443-enabling-and-securing-remote-presentation-flows), the Wallet Instance implements the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [W3C Digital Credentials API]. In contrast, for the proximity presentation flow, this interface adheres to the [ISO/IEC 18013-5] standard, see [Section 4.4.2](#442-proximity-presentation-flows).
 
-- The **Secure Cryptographic Interface (SCI)** enables the Wallet Unit to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions.
+- The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions. In case the WSCA is delivered by the Wallet Provider, the Wallet Provider is responsible for both sides of this interface, and hence standardisation is not needed within the scope of the EUDI Wallet ecosystem. In case the WSCA is delivered by the provider of the WSCD, this interface will comply with an existing specification that is not specifically designed for the EUDI Wallet ecosystem. Rather, each type of WSCA/WSCD will expose a provider-defined interface to the Wallet Instance. To be able to support different types of WSCA/WSCD, Wallet Instances may therefore need to be able to handle multiple flavours of this interface.
 
-- The **PID Issuance Interface (PII)** is based on the [OpenID4VCI] protocol and is used when the Wallet Unit communicates with a PID Provider to request and receive PIDs to be stored within the Wallet Unit.
+- The **PID Issuance Interface (PII)** complies with the [OpenID4VCI] standard and is used when the Wallet Unit communicates with a PID Provider to request and receive PIDs to be stored within the Wallet Unit.
 
-- The **Attestation Issuance Interface** **(AII)** is based on the [OpenID4VCI] protocol and is used by the Wallet Unit to request various attestations that Users wants to include in their Wallet Unit.
+- The **Attestation Issuance Interface** **(AII)** complies with the [OpenID4VCI] standard and is used by the Wallet Unit to request various attestations that Users wants to include in their Wallet Unit.
 
-- The **Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and the Qualified Electronic Signature (QES) Remote Service Provider. This interface is specifically used to execute a QES remote signature.
+- The **Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC) Provider. This interface is  used  by the Wallet Unit to generate a qualified signature or seal.
 
 Note that the "Attribute Deletion Request Interface" and the "Reporting to DPA Interface", which are mentioned in the Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
 
 ### 4.4 Attestation presentation flows
 
 #### 4.4.1 Overview
-This section defines four distinct communication flows between a Wallet Unit and a Relying Party, guiding the implementation of the presentation interface:
+This section defines five distinct communication flows between a Wallet Unit and a Relying Party, guiding the implementation of the presentation interface:
 
-- **Proximity Supervised Flow**: The User is physically near the Relying Party. Attestations are exchanged using near proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
+- **Proximity Supervised Flow**: In this flow, the User and their Wallet Instance are physically near the Relying Part Instance. Attestations are exchanged using near proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
 
-- **Proximity Unsupervised Flow**: Like the supervised flow, but the Wallet Unit presents verifiable attributes to a machine without human supervision.
+- **Proximity Unsupervised Flow**: This flow is like the supervised flow, but the Wallet Unit presents attestations to a machine, without human supervision. The interfaces and protocols used in this flow are the same as for the proximity supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
 
-- **Remote Cross-Device Flow**: The User views service information on a separate device from their Wallet Unit, which is only used to secure the session (e.g., scanning a QR code on a login page with the Wallet Unit to access online services).
+- **Remote Same-Device Flow**: In this flow, the User uses a browser on their User device, i.e., the device containing their Wallet Instance, to visit the website of a Relying Party and to consume a service. If for consuming that service the Relying Party needs to request some attributes from the User's Wallet Unit, the Relying Party sends a presentation request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows), sending this request is mediated by the browser on the User's device, using the [W3C Digital Credentials API] and an inter-app API offered by the device's operating system.
 
-- **Remote Same-Device Flow**: The User uses their Wallet Unit to both secure the session and consume the digital service including information exchange.
+- **Remote Cross-Device Flow**: In this flow, the User uses a browser on a device other than their Wallet Instance, for instance a desktop or laptop, to visit the Relying Party's website and consume a service. If the Relying Party needs to send an attribute presentation request to the User's Wallet Unit, it presents this request to the browser on the other device. Again using the [W3C Digital Credentials API], this browser sets up a secure communication channel between the other device and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows) explains this in more detail.
+  
+- **interapp Flow**: In this flow, the Relying Party Instance is a mobile app on the User device. Attestations are exchanged using the same inter-app API also used by the browser in a remote same-device flow. For that reason, this flow is also described in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows).
 
 Specific use cases integrate one or more of these flows.
 
-#### 4.4.2 Enabling and securing remote presentation flows
+#### 4.4.2 Proximity presentation flows
 
-This section examines the technical interaction between the Wallet Solution, web browsers, and mobile apps, in regards of the flows described in the previous section. This is necessary to implement the attestation presentation interface effectively, with a focus on both User experience and security.
+Figure 3 shows how attestation presentation works when the User and their Wallet Instance are physically near the Relying Part Instance. In this case, the [ISO/IEC 18013-5] standard specifies how a communication channel is set up and how a presentation request and the corresponding response are exchanged.
 
-When a Relying Party requests User attributes to provide a service, the process begins within either a web browser or a mobile app. In the Remote Same-Device flow in particular, the User's browser or app should invoke their Wallet Unit through the mobile operating system where supported, whenever a Relying Party requests attributes. In contrast, a Remote Cross-Device flow and both the proximity flows (supervised or unsupervised), should invoke the Wallet Unit through the mobile operating system via an NFC tap or the scanning of a QR code.
+![Figure 3: Proximity presentations](media/Figure_3_Proximity_Flow.png) <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
-As illustrated in Figure 2, secure and streamlined interaction with other applications, both on the User's device and externally, is crucial. Key areas for discussion and improvement include:
+The attribute presentation flow begins when the User opens the Wallet Instance and instructs it to  display a QR code or present an NFC tag. This QR code or NFC tag contains the information necessary to establish a NFC, BLE, or WiFi-Aware connection. The Relying Party Instance scans the QR code or the NFC tag and set ups the connection. The QR code or NFC tag also contains the information necessary to create an authenticated and encrypted secure channel between both parties.
 
-- **Secure Cross-Device Flows**: Existing cross-device flows need stronger security measures to combat phishing and relay attacks.
+#### 4.4.3 Enabling and securing remote presentation flows
 
-- **Relying Party Authentication**: Before presenting attributes, the Wallet Unit will authenticate the Relying Party, and conversely, the Relying Party might authenticate the Wallet Unit. This can involve dynamic or static exchange of keys and metadata. Since the web browser or mobile app mediates communication between the Relying Party and Wallet Unit in the Remote Same-Device flow, it's crucial to define how this interaction works.
+#### 4.4.3.1 Introduction
+Remote transaction flows are use cases in which the Relying Party Instance is remote from the User and the User device. The Relying Party Instance accesses the Wallet Instance over the internet, using a browser. These use cases can be further distinguished in same-device flows, in which the browser is running on the same device as the Wallet Unit, and cross-device flows, where the browser is on a different device.
 
-- **Wallet Unit Selection and Invocation**: In scenarios where Users have multiple Wallet Units, the process of selecting and activating the appropriate Wallet Unit is critical for a seamless experience. Clear application interface between the Wallet Unit and the browser/app are also essential. Current approaches relying on custom URIs can introduce User experience friction and scaling issues.
+Remote presentation flows come with a number of challenges that are not present for proximity flows:
 
-To mitigate these challenges, Relying Parties and Wallet Units should use the [OpenID4VP profile for the W3C Digital Credentials API] as opposed to custom URL schemes on web browsers and app platforms that support it. This profile utilises the [W3C Digital Credentials API], a browser API which allows websites to request the presentation of digital credentials via the mobile operating system. The API provides several advantages to Relying Parties, Wallet Units, and Users:
+1. Secure Cross-Device Flows: Cross-device flows are vulnerable to phishing and relay attacks, necessitating enhanced security measures. Implementing proximity checks managed by the mobile operating system can address these vulnerabilities, leveraging built-in security features to ensure interactions are both secure and reliable.
+2. Wallet Unit Selection and Invocation: Users face challenges in selecting and activating the appropriate Wallet Unit, especially when multiple Wallet Units are available on the User's device. A unified interface provided by the mobile operating system simplifies this process, ensuring a seamless and intuitive user experience.
+3. Fragmented Interaction Mechanisms: The challenge here is how to invoke the Wallet Unit ub order to set up a communication channel with the Relying Party Instance. One option that has been considered is the use of custom URI schemes. Such a URI may, for example, start with "mdoc://" or "openid4vp://". If such a scheme is used, the mobile operating system would invoke the Wallet Unit if the Relying Party asks it to connect to a custom URI. However, reliance on custom URL schemes in browsers and apps leads to inconsistent user experiences and operational inefficiencies, as well as security risks. Therefore, a browser API has been proposed to standardize the interaction mechanisms across platforms, which improves usability and scalability, delivering a more uniform and reliable user experience.
+4. Clear Origin Verification: Protecting against relay attacks requires precise identification of the Relying Party Instance's origin. Including the origin information, such as the website domain or app package name, within the presentation request ensures the authenticity of the request and enhances trust for both Wallet Units and Users.
 
-- **User Experience**: For Remote Same-Device flow, the presentation interface will continue in the initial context of the web browser or mobile app. 
-- **Secure Cross-Device Flows**: Cross-device presentations can leverage proximity checks handled by the mobile operating system which provides added phishing resistance.
-- **Multiple Wallet Unit Selection**: Users are afforded a clear interface provided by the mobile operating system that disambiguates between multiple Wallet Units for selection. -
-- **Clear Origin Information**: The origin information of the Relying Party (such as the website domain or the app package name) is supplied by the system and is provided in the presentation request for Users and the Wallet Solutions to guard against replay attacks.
+The next sections describe how these challenges are solved for both same-device and cross-device remote presentation flows.
+
+#### 4.4.3.2 Same-device remote presentation flows and inter-app presentation flows
+
+Figure 4 shows attribute presentation in a remote same-device flow.
+
+![Figure 4: Same-device remote presentations](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+
+Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows the browser  on the User device and the relevant interfaces of this browser:
+
++ The **Remote same-device presentation** interface in the interface between the browser and a remote Relying Party Instance, which may be running on a webserver operated by the Relying Party. This interface complies with the Digital Credentials API, which is a browser API that is currently being standardized within W3C. An OpenID4VP-based protocol (i.e., messages and message contents) to be used over the Digital Credentials API is currently being standardized within the OpenIDFoundation.
++ The **WI-platform API** interface is an inter-app API offered by the OS to give browsers and other apps on the User device access to the Wallet Unit. On the protocol level, this interface uses the same OpenIDVP-based messages and messages contents as the 'Remote same-device presentation' interface described above. There are however no current plans to standardize this interface on the level of the API calls. These calls will be specified in the developer documentation for the respective OS. One of the key elements of this API is that Wallet Unit receives reliable information regarding the origin of the presentation request.
++ Obviously, the browser also has a User interface allowing the User to interact with it. This interface will not be standardised in the context of the EUDI Wallet ecosystem.
+  
+A remote same-device attribute presentation flow begins when the User uses the browser on their User device to visit the website of the Relying Party. The website may offer the User the possibility to present attributes from their Wallet Unit, for example by clicking a button. If the User does so, the browser will ask the User for permission to connect to the Wallet Unit. If the User allows this, the Relying Party Instance sends a presentation request to the browser over the Digital Credentials API. The browser, in collaboration with the device OS, forwards this request to the Wallet Unit, using the WI-platform API described above. If there are multiple Wallet Units present on the User device, the browser and the device OS will determine to which of these the request will be forwarded, possibly after consulting the User. The Wallet Instance will process the presentation request and, after requesting approval from the User, will return the requested attributes in encrypted format to the browser. The browser will forward the response to the remote Relying Party Instance.
+
+Figure 4 also shows an inter-app attribute presentation flow. In such a flow, a mobile app on the User device, for example a banking app or shopping app, acts as the Relying Party Instance. The mobile app may use the User attributes received from the Wallet Unit for instance to authenticate the User or to fill out User data, such as name and address, automatically. 
+
+In such a use case, the attribute presentation flow begins when the User opens the mobile app and instructs it to request attributes from the Wallet Unit over the WI-platform API. Note that this is the same API that is also used by a browser in remote same-device presentation flows. The only difference is that the mobile app consumes the requested data itself, and does not forward the response to a remote Relying Party Instance.
+
+#### 4.4.3.3 Cross-device remote presentation flows
+
+
 
 ### 4.5 WSCD architecture types
 
