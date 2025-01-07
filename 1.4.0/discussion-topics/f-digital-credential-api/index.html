@@ -924,12 +924,16 @@ informed choice about which attestation to proceed with. </p>
 <ol>
 <li>The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit</li>
 <li>The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
-<img alt="Website authorization" src="../img/same-auth.png" /></li>
-<li>The Relying Party website indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
+<img src="img/same-auth.png" alt="Website authorization" width="400"></li>
+<li>The Relying Party  indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
 <li>The operating system searches for attestations that satisfy the requested attributes.</li>
-<li>The browser presents to the User a selector that includes a list of potentially suitable attestations.
-<img alt="Website authorization" src="../img/same-select.png" /></li>
-<li>The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data</li>
+<li>
+<p>The browser presents to the User a selector that includes a list of potentially suitable attestations.
+<img src="img/same-select.png" alt="Attestation selection" width="400"></p>
+</li>
+<li>
+<p>The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data</p>
+</li>
 <li>The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents</li>
 </ol>
 <h4 id="222-cross-device-flow">2.2.2 Cross-device flow</h4>
@@ -937,19 +941,25 @@ informed choice about which attestation to proceed with. </p>
 <ol>
 <li>The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit</li>
 <li>The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
-<img alt="Website authorization" src="../img/cross-auth.png" /></li>
-<li>The Relying Party website indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
+<img src="img/cross-auth.png" alt="Website authorization" width="400"></li>
+<li>The Relying Party  indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
 <li>The browser uses CTAP 2.2 hybrid flow (section 11.5 of [Ctap]) to establish a tunnel between the browser and the device where the Wallet Unit is installed (this is the same flow used by Passkey). From a high level this is implemented as follows:<ul>
 <li>The browser presents a QR code which includes information about the tunnel endpoint and keys that can be used for establishing a secure session</li>
 <li>The device where the Wallet Unit is installed emits a BLE advertisement which is received by the browser. The advertisement includes in an encrypted form information required for establishing the secure tunnel. This advertisement is used as a proximity check.</li>
-<li>The user scans the QR code using the device camera and a tunnel is established
-<img alt="QR-code" src="../img/cross-qr.png" /></li>
+<li>The user scans the QR code using the device camera and a tunnel is established</li>
 </ul>
 </li>
+</ol>
+<p><img src="img/cross-qr.png" alt="QR Code display" width="400"></p>
+<ol>
 <li>The presentation request is transferred through the tunnel to the device operating system</li>
-<li>The device operating system presents to the User a selector that includes a list of potentially suitable Wallet Units.
-<img alt="Attestation selection" src="../img/cross-select.png" /></li>
-<li>The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data</li>
+<li>
+<p>The device operating system presents to the User a selector that includes a list of potentially suitable Wallet Units.
+<img src="img/cross-select.png" alt="Attestation selection" width="400"></p>
+</li>
+<li>
+<p>The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data</p>
+</li>
 <li>The Wallet Unit sends through the tunnel to the browser a suitable presentation</li>
 </ol>
 <h2 id="3-high-level-requirements-for-digital-credentials-api">3. High level requirements for Digital Credentials API</h2>
