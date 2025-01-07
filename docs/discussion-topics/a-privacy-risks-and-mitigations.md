@@ -486,7 +486,7 @@ The main drawbacks of this method are
 #### 3.4.1 Description
 
 Using this method, the Attestation Provider issues attestations in
-batches to the Wall Unit, like when using once-only attestations (method
+batches to the Wallet Unit, like when using once-only attestations (method
 A). However, in method C a Wallet Unit uses the attestations in a batch
 a random order, until it has used all attestations in the batch once.
 Then it 'resets' the batch and starts using them again, again in a
@@ -830,7 +830,7 @@ When using Method C for a given type of PID, attestation, or WUA,
 
 a. The Wallet Unit SHALL request the PID Provider, Attestation
 Provider, or Wallet Provider to issue PIDs, attestations, or
-WUAs in batches to the Wall Unit.
+WUAs in batches to the Wallet Unit.
 
 b. When a presentation of attributes is requested by Relying
 Parties, the Wallet Unit SHALL present each PID, attestation, or
