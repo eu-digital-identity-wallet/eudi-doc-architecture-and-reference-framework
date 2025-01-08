@@ -466,53 +466,49 @@ In this section, state diagrams are presented to explain the relations between t
 
 #### 4.6.2 Wallet Solution
 
-An Wallet Solution has a state chart of its own. The state of a Wallet Solution affects the state of all Wallet Units of that Wallet Solution. Figure 6 below shows the states of the Wallet Solution:
+A Wallet Solution has a state diagram of its own. The state of a Wallet Solution affects the state of all Wallet Units of that Wallet Solution. Figure 6 below shows the states of the Wallet Solution:
 
-![Figure 6: State chart of Wallet Solution](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_Statechart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
+![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_Statechart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
 
-Figure 6: State chart of Wallet Solution
+Figure 6: State diagram of Wallet Solution
 
 The **Candidate** state is the first state of an Wallet Solution. This means it is fully implemented and the Wallet Provider requests the solution to be certified as a Wallet Solution as part of an EUDI Wallet eID scheme.
 
-If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **valid**.
+If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **Valid**. This means the Wallet Solution can be officially launched, and can be provided to Users. The issuing Member State informs the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme.
 
-According to Article 5d, Member States inform the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme. This means the Wallet Solution can be officially launched, and can be provided to Users.
-
-The issuing Member State can temporarily suspend an Wallet Solution. This would for example be the result of a critical security issue on that EUDI Wallet Solution. This leads to the **suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution.
+The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn* state.
 
 #### 4.6.3 Wallet Unit
 
-Figure 4 below shows the states of the Wallet Unit.
+Figure 7 below shows the states of a Wallet Unit.
 
-![Figure 4: State-chart of Wallet Unit](media/image4.png) <!-- <img src="media/image4.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
+![Figure 7](media/Figure_7_Statechart_Wallet_Unit.png) <!-- <img src="media/Figure_7_Statechart_Wallet_Unit.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
 
-Figure 4: State-chart of Wallet Unit
+Figure 7: State diagram of Wallet Unit
 
-An Wallet Unit lifecycle begins when the User installs a Wallet Instance on their User device (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle); the Wallet Unit status is **installed**. Once a Wallet Unit establishes communication with other components that are part of the Wallet Solution, is activated, and is issued a Wallet Unit Attestation (WUA) by an Wallet Provider, it is in an **operational** state. In this state, the User manages the Wallet Unit, which may involve:
+A Wallet Unit lifecycle begins when the User installs a Wallet Instance on their User device (see [Section 6.5.2](#652-wallet-instance-installation). The Wallet Unit's state is then **Installed**. In this state, the User and the Wallet Provider can perform only one action, namely activating the Wallet Unit, as described in [Section 6.5.3](#653). As part of the activation process, the Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit.
 
-- The Wallet Provider updating the Wallet Unit,
+Once a Wallet Unit is activated, it is in the **Operational** state. In this state, the User and the Wallet Provider manage the Wallet Unit and can perform the same actions as in the **Valid** state, see below. However, obviously, the User cannot present a PID to a Relying Party, because by definition no valid PID is present in this state.
 
-- The Wallet Provider revoking the Wallet Unit, including at the User's request. Revocation of the Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see [Topic 9] and [Topic 38]).
+If, in the **Operational** state, a PID Provider issues a PID to a Wallet Unit, it transitions to the **Valid** state. If, in either of these two states, the Wallet Provider revokes the WUA or the WUA expires, the Wallet Unit moves back to **Installed**.
 
-- The User uninstalling the Wallet Instance.
+The following actions can be performed in the **Valid** state:
 
-In the **operational** state of the Wallet Unit:
+- The Wallet Provider updates the Wallet Unit to a new version,
+- The Wallet Provider revokes the Wallet Unit, for instance at the User's request of if the security of the Wallet Instance is broken. Revocation of the Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see [Topic 9] and [Topic 38]).
+- The User requests issuance of a PID, a QEAA, a PuB-EAA, or an EAA.
+- The User presents attributes from a PID, a QEAA, a PuB-EAA, or an EAA to a Relying Party.
+- The User deletes a PID, a QEAA, a PuB-EAA, or an EAA.
+- A PID, a QEAA, a PuB-EAA, or an EAA is revoked by its Provider (if it is valid for more than 24 hours).
+- The User uninstalls the Wallet Instance.
 
-- The User can request issuance of a PID and optionally a QEAA, a PuB-EAA or an EAA.
-
-- Once an Wallet Unit holds a valid PID, it is considered **valid**. Note that this state cannot be verified or looked upon unless PID is requested. In this state, the User can use their EUDI Wallet Unit to present PID attributes. If the PID expires or is revoked, the Wallet Unit is not automatically unusable, but rather its state is merely downgraded back to **operational**. This may affect the validity or usability of a QEAA, a PuB-EAA, an EAA or a QES certificate.
-
-Notes:
-
-- the above possibilities are independent from the possibility of a PID, QEAA, PuB-EAA, or EAA Provider, to revoke the attestations that they have issued to an Wallet Unit.
-
-- The security provided by the Wallet Unit is relying on the Wallet Secure Cryptographic Device and its Wallet Secure Cryptographic Application. In the architecture overview ([Section 6.1](#61-overview), Figure 6) it is explained that multiple solutions are available for implementation, such as Remote Wallet Secure Cryptographic Device, Local External Wallet Secure Cryptographic Device, Local Wallet Secure Cryptographic Device and / or a Hybrid architecture.
+If the last or only PID in the Wallet Unit expires, is revoked, or is deleted, the Wallet Unit's state is moved back to **Operational**. Note that if there are multiple PIDs in the Wallet Unit, it does not move to the **Operational** state as long as at least one of them is valid.
 
 #### 4.6.4 Person Identification Data (PID)
 
 In the context of the EUDI Wallet ecosystem, a PID begins its lifecycle when being issued to a Wallet Unit. Please note that this means that the management of attributes in the Authentic Source (adhering to national structures and attribute definitions) is outside of the scope of the ARF.
 
-For certain use cases, the PID may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is Issued, and it will transition to Valid when it reaches the beginning of its validity period. However, if the PID is issued on or after the validity start date, its state directly changes to Valid.
+For certain use cases, the PID may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is **Issued**, and it will transition to **Valid** when it reaches the beginning of its validity period. However, if the PID is issued on or after the validity start date, its state directly changes to **Valid**.
 
 ![Figure 5: State-chart of PID](media/image5.png) <!-- <img src="media/image5.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
 
