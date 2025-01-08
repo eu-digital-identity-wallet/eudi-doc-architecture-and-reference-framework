@@ -207,8 +207,7 @@ severe traffic violations.
 
 Re-issuance of a PID or attestation for this reason will have an impact
 on the User, because they will notice that their attribute values have
-been changed. For transparency reasons, it seems necessary to require
-that the Wallet Unit notifies the User about such a change.
+been changed. In this case Users should consent.
 
 ### 3.4 Synchronous issuing
 
@@ -222,7 +221,9 @@ very short-lived and is used only once.
 Within the scope of this document, this reason for re-issuance is very
 similar to the reasons discussed in section 3.2. Users should not notice
 that a PID or attestation is being re-issued, nor should they have to
-take any action to ensure that re-issuance happens.
+take any action to ensure that re-issuance happens. However, they should
+be offered the option to receive notifications, as well as to disable this
+processes. Similarly, re-issuance events should be logged. 
 
 ## 4 Differences between first-time issuance and re-issuance or batch issuance
 
@@ -284,7 +285,7 @@ Questions
 The ARF v1.4 (and v1.5 as well) contains a requirement (WTE\_02 /
 WUA\_02) stating that "a WSCA SHALL authenticate the User before
 performing any cryptographic operation involving a private or secret key
-of (…) a PID or an attestation in a Wallet Unit.”
+of (…) a PID or an attestation in a Wallet Unit."
 
 If Users must not be aware of re-issuance processes for their existing
 PIDs and attestations, this requirement may be problematic. This is
@@ -517,38 +518,46 @@ After successful re-issuance of a PID or attestation, the Wallet Unit must delet
 The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:
 
-#### Requirement XX
-An Attestation Rulebook SHALL indicate if
+#### Requirement 1
+The Schema Provider for a PID or Attestation Rulebook SHALL indicate if
 re-issuance SHALL be supported for a specific PID or attestation.
 
-#### Requirement XX
-An Attestation Rulebook SHALL indicate if
+#### Requirement 2
+The Schema Provider for a PID or Attestation Rulebook SHALL indicate if
 batch issuance SHALL be supported for a specific PID or attestation. It SHALL
 also define if batch issuance SHALL or MAY be used. 
 
-#### Requirement XX
-Wallet Solutions SHALL provide support for PID and attestation batch issuance
+#### Requirement 3
+A Wallet Provider SHALL ensure that its Wallet Solution  provides support for PID and attestation batch issuance (probably not required due to ISSU_01, ISSUE_04)
 
-#### Requirement XX
-Wallet Solutions SHALL provide support for PID and attestation re-issuance
+#### Requirement 4
+A Wallet Provider SHALL ensure that its Wallet Solution  provides support for PID and attestation re-issuance (probably not required due to ISSU_01)
 
-#### Requirement XX
+#### Requirement 5
 During first-time issuance of a PID or attestation that supports
-re-issuance, each Access Token SHALL be accompanied with a corresponding 
-Refresh Token that SHALL be used by the Wallet Unit
+re-issuance, PID Provider or Attestation Provider SHALL ensure that 
+each Access Token is accompanied with a corresponding 
+Refresh Token 
+
+#### Requirement 6
+A Wallet Provider SHALL ensure that its Wallet Solution uses Refresh Tokens
 for requesting the re-issuance of the PID or attestation. 
 
-#### Requirement XX
-Wallet Solutions SHALL log re-issuance events providing a clear indication of the
-process outcome.
+#### Requirement 7
+A Wallet Provider SHALL ensure that its Wallet Solution logs re-issuance events providing a clear indication of the process outcome.
 
-#### Requirement XX
-Wallet Solutions SHALL offer Users the option to disable re-issuance providing a clear
+#### Requirement 8
+A Wallet Provider SHALL ensure that its Wallet Solution offers Users the option to disable re-issuance providing a clear
 warning about the implications of this action.
 
-#### Requirement XX
-Wallet Solutions SHALL offer Users the option to receive notifications about events
+#### Requirement 9
+A Wallet Provider SHALL ensure that its Wallet Solution  offers Users the option to receive notifications about events
 related the re-issuance of an attestation.
+
+#### Requirement 10
+A Wallet Provider SHALL ensure that its Wallet Solution receives
+User consent to complete a re-issuance process
+that results in a change in the attribute value of the re-issued PID or attestation.
 
 ### 5.2 High-Level Requirements to be changed
 
