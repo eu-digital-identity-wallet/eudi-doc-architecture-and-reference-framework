@@ -1,4 +1,4 @@
-Version 0.4, updated 16 December 2024
+Version 0.5, updated 8 January 2025
 
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
@@ -27,7 +27,9 @@ register focuses on risks related to security and privacy, not on
 operational issues such as the difference between first-time issuance
 and re-issuance of attestations.
 
-However, the risks mentioned in [Topic A] are related to the topic of this document as well. This is because regular re-issuance of PIDs and attestations is the main mitigation for the Relying Party linkability risks discussed in [Topic A].
+However, the risks mentioned in [Topic A] are related to the topic of this 
+document as well. This is because regular re-issuance of PIDs and attestations 
+is the main mitigation for the Relying Party linkability risks discussed in [Topic A].
 
 ### 1.3 Key words
 
@@ -78,10 +80,17 @@ Attestation Provider that issued the existing PID or attestation. The
 value of the attributes in the new attestation will typically be the
 same as in the original attestation. However, this is not required, the
 PID Provider or Attestation Provider may change one or more attribute
-values.
+values. Re-issuance is distinct from renewal. In the former case, the 
+corresponding PID or attestation has not reached its end-of-life, whereas 
+in the latter case, end-of-life has been reached. For example, a mobile 
+Driving Licence (mDL) may include a signature by the Attestation Provider 
+whose validity period is shorter than the lifetime of the actual driving licence. 
+Re-issuance is used for obtaining a "fresh" attestation, whereas renewal 
+is the administrative process for obtaining a new attestation DL that corresponds 
+to a new driving licence. 
 
 Batch issuance means that instead of issuing a single PID or attestation
-to a Wallet Unit, a PID Provider or attestation issues a batch of them.
+to a Wallet Unit, a PID Provider or Attestation Provider issues a batch of them.
 All PIDs or attestations in a batch have the same document type,
 attribute values and validity period. In general, if the original PID or
 attestation was issued in a batch, then the PID Provider or Attestation
@@ -100,27 +109,19 @@ re-issuance of a PID or attestation, it must start the process by
 exchanging the Refresh Token for a new Access Token.
 
 Given the reasons for re-issuance discussed in the next chapter, it
-seems reasonable to assume that re-issuance must be possible or any PID
-or attestation issued to a Wallet Unit. Therefore, the ARF will require
-that during first-time issuance, each Access Token is accompanied by a
-corresponding Refresh Token, and that during each re-issuance, a new
-Refresh Token is also issued to the Wallet Unit.
+seems reasonable to assume that re-issuance should be possible for any PID
+or attestation issued to a Wallet Unit. An Attestation Rulebook shall indicate if
+re-issuance shall be supported for a specific PID or attestation.
+To this end, the ARF will recommend that during first-time issuance, each Access Token is
+accompanied by a corresponding Refresh Token.
 
 The \[OpenID4VCI\] specification also supports batch issuance of
 attestations, by optionally including multiple public keys and proofs of
 possession in the proofs parameter in the Credential Request.
 
 Given the discussions in \[Topic A\], it seems reasonable to assume that
-many PID Providers or Attestations Provider will want to issue PIDs or
-attestations in batches, and therefore to require that all Wallet
-Solutions, PID Providers and Attestation Providers must support this
-OpenID4CI feature.
+batch issuance is in many cases desirable and this OpenID4VCI feature shall be supported by Wallet Solutions, PID Providers and Attestation Providers. An Attestation Rulebook shall indicate if batch issuance shall be used for a specific PID or attestation.
 
-Questions
-
-1.  Would you agree that re-issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?
-
-2.  Would you agree that batch issuance of PIDs and attestation must always be possible? If not, what would be your proposal? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
 ## 3 Reasons for re-issuance
 
@@ -502,8 +503,25 @@ After successful re-issuance of a PID or attestation, the Wallet Unit must delet
 The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:
 
-&lt;To be added after discussion of this Discussion Paper with Member
-States.&gt;
+#### Requirement XX
+An Attestation Rulebook SHALL indicate if
+re-issuance SHALL be supported for a specific PID or attestation.
+
+#### Requirement XX
+An Attestation Rulebook SHALL indicate if
+batch issuance SHALL be supported for a specific PID or attestation. It SHALL
+also define if batch issuance SHALL or MAY be used. 
+
+#### Requirement XX
+Wallet Solutions SHALL provide support for PID or attestation batch issuance
+
+#### Requirement XX
+Wallet Solutions SHALL provide support for PID or attestation re-issuance
+
+#### Requirement XX
+During first-time issuance of a PID or attestation, each Access Token SHOULD be 
+accompanied with a corresponding Refresh Token that SHALL be used by the Wallet Unit
+for requesting the re-issuance of the PID or attestation. 
 
 ### 5.2 High-Level Requirements to be changed
 
@@ -584,6 +602,8 @@ this Discussion Paper.&gt;
 
 A summary of the descriptions in chapters 2, 3, and 4 will be added to
 the ARF main document, version 1.8.
+
+Rulebooks will be modified to include indications of support for re-issuance and batch issuance. 
 
 ## 6 References
 
