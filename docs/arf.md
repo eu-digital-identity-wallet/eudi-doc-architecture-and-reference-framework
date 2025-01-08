@@ -326,7 +326,7 @@ The EUDI Wallet architecture embraces the principle of security by design. This 
 
 Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components. In comparison to Figure 1, this figure presents more detail on the composition of a Wallet Unit and its interfaces to other entities, in particular Relying Party Instances. The shown components of a Wallet Unit are described in [Section 4.3.2](#432-components-of-a-wallet-unit). For a description of the other entities, please refer to [Chapter 3](#3-eudi-wallet-ecosystem).
 
-![Figure 2: EUDI Wallet ecosystem reference architecture](media/Figure_2_High-Level_Architecture.jpeg) <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 2](media/Figure_2_High-Level_Architecture.jpeg) <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
 Figure 2: EUDI Wallet ecosystem reference architecture
 
@@ -387,7 +387,9 @@ Specific use cases integrate one or more of these flows.
 
 Figure 3 shows how attestation presentation works when the User and their Wallet Instance are physically near the Relying Part Instance. In this case, the [ISO/IEC 18013-5] standard specifies how a communication channel is set up and how a presentation request and the corresponding response are exchanged.
 
-![Figure 3: Proximity presentations](media/Figure_3_Proximity_Flow.png) <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 3](media/Figure_3_Proximity_Flow.png) <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+
+Figure 3: Proximity presentations
 
 The attribute presentation flow begins when the User opens the Wallet Instance and instructs it to  display a QR code or present an NFC tag. This QR code or NFC tag contains the information necessary to establish a NFC, BLE, or WiFi-Aware connection. The Relying Party Instance scans the QR code or the NFC tag and set ups the connection. The QR code or NFC tag also contains the information necessary to create an authenticated and encrypted secure channel between both parties.
 
@@ -409,7 +411,9 @@ The next sections describe how these challenges are solved for both same-device 
 
 Figure 4 shows attribute presentation in a remote same-device flow.
 
-![Figure 4: Same-device remote presentations](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 4](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+
+Figure 4: Remote same-device presentations
 
 Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows the browser  on the User device and the relevant interfaces of this browser:
 
@@ -427,7 +431,9 @@ In such a use case, the attribute presentation flow begins when the User opens t
 
 Figure 5 shows attribute presentation in a remote cross-device flow.
 
-![Figure 5: Cross-device remote presentations](media/Figure_5_Remote_Cross-Device_Flow.jpeg) <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 5](media/Figure_5_Remote_Cross-Device_Flow.jpeg) <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+
+Figure 5: Remote cross-device presentations
 
 A remote cross-device attribute presentation flow begins when the User uses a browser on a device different from their User device to visit the website of the Relying Party. The website may offer the User the possibility to present attributes from their Wallet Unit, for example by clicking a button. If the User does so, the browser will ask the User for permission to connect to the Wallet Unit. If the User allows this, the Relying Party Instance sends a presentation request to the browser over the Digital Credentials API. The browser then establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO Passkeys. This is done as follows:
 
@@ -460,29 +466,19 @@ In this section, state diagrams are presented to explain the relations between t
 
 #### 4.6.2 Wallet Solution
 
-An Wallet Solution has a state of its own, as defined by Article 5d of the Regulation. The state of the Solution affects the state of all Wallet Units of that Wallet Solution. Figure 3 below shows the states of the Wallet Solution:
+An Wallet Solution has a state chart of its own. The state of a Wallet Solution affects the state of all Wallet Units of that Wallet Solution. Figure 6 below shows the states of the Wallet Solution:
 
-![Figure 3: State-chart of Wallet Solution](media/image3.png) <!-- <img src="media/image3.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
+![Figure 6: State chart of Wallet Solution](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_Statechart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
 
-Figure 3: State-chart of Wallet Solution
+Figure 6: State chart of Wallet Solution
 
 The **Candidate** state is the first state of an Wallet Solution. This means it is fully implemented and the Wallet Provider requests the solution to be certified as a Wallet Solution as part of an EUDI Wallet eID scheme.
 
-If all the legal and technical criteria have been met, including:
-
-- the certification of the Wallet Solution by accredited and designated CAB(s),
-
-- ex-ante supervisory activities by Member State supervisory bodies,
-
-- both the Wallet Provider and the PID Providers have been published by the Commission (in accordance with Article 5d),
-
-- the information notified by Member States for publication of lists of Wallet Solutions have been published in the Official Journal of the EU,
-
-then a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **valid**.
+If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **valid**.
 
 According to Article 5d, Member States inform the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme. This means the Wallet Solution can be officially launched, and can be provided to Users.
 
-Under the legal conditions in [Article 5e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e2020-1-1), paragraph 1, the issuing Member State can temporarily suspend an Wallet Solution. This would for example be the result of a critical security issue on that EUDI Wallet Solution. This leads to the **suspended** state. Under [Article 5d](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1938-1-1), paragraph 2, the issuing Member State can unsuspend the Wallet Solution and continue issuance, bringing the Solution back to the **valid** state. Under paragraph 1, the Wallet Solution can be completely withdrawn.
+The issuing Member State can temporarily suspend an Wallet Solution. This would for example be the result of a critical security issue on that EUDI Wallet Solution. This leads to the **suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution.
 
 #### 4.6.3 Wallet Unit
 
