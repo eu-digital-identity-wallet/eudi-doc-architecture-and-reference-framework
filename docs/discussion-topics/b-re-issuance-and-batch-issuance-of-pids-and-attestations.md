@@ -274,11 +274,6 @@ PID Provider or attestation provider only once, regardless of the size
 of the batch, i.e., the number of PIDs or attestations issued
 simultaneously to the Wallet Unit.
 
-Questions
-
-3.  What do you think about the requirement that Users must not be involved in re-issuance processes for PIDs and attestations?
-
-4.  What do you think about the requirement that a re-issued PID or attestations must be bound to same WSCD as the PID or attestation it is replacing? Do you have any issues with the technical solution outlined above? Do you see other solutions?
 
 ### 4.2 User authentication and key management by the WSCA
 
@@ -305,18 +300,20 @@ A solution for this challenge could be sought in several directions:
     attestations.
 
 3.  By relying on a Hierarchical Deterministic Key (HDK) function as
-    described in clause 4.4.4.2 of \[ETSI 119476\]. Using a HDK
-    function, the PID Provider or Attestation Provider only needs to
-    obtain a single public key from the WSCA. This happens during
-    first-time issuance of a PID or attestation, where the User is
-    involved in the process anyway and a request to authenticate will
-    not come unexpectedly. During re-issuance, the PID Provider or
-    Attestation Provider then uses this public key to derive unique
-    per-attestation public keys from the received public key, without
-    involvement of the Wallet Unit or the WSCA. These newly derived
-    public keys are then sent to the Wallet Unit, and the WSCA can
-    derive the corresponding private keys from the existing private key
-    (i.e. the one generated during first-time issuance). The WSCA then
+    described in clause 4.4.4.2 of \[ETSI 119476\]. 
+    Using a HDK function, the PID Provider or Attestation Provider only 
+    needs to obtain a single public key from the WSCA, along with 
+    non-sensitive metadata required to apply HDK. This happens during 
+    first-time issuance of a first PID or attestation, where the User is involved in 
+    the process anyway and a request to authenticate will not come unexpectedly. 
+    During re-issuance or (batch) issuance of associated PID or attestations, 
+    the PID Provider or Attestation Provider then uses this public 
+    key to derive unique per-attestation public keys from the received public key,
+    without involvement of the Wallet Unit or the WSCA. These newly derived 
+    public keys are then sent to the Wallet Unit, along with non-sensitive 
+    metadata required to apply HDK, and the WSCA can effectively derive 
+    the corresponding private keys from the existing private 
+    key (i.e. the one generated during first-time issuance). The WSCA then
     uses these private keys as normal during a presentation of
     attributes.
 
@@ -328,31 +325,12 @@ embedded secure element) can be made to operate in such a way that they
 require User authentication before signing and key agreement operations,
 but not before key generation operations.
 
-Option 2 might be usable in some situations, for example for synchronous
-issuing as discussed in section 3.4 above. However, it needs to be
-remembered that presenting the same public key multiple times will
-enable Relying Parties to track Users, as discussed in \[Topic A\]. If
-PID Provider or Attestation Providers follow this approach, they must
-make sure that this does not make their PIDs and attestations vulnerable
-to Relying Party linkability.
+Option 2 entails multiple risks and should be avoided.
 
 Option 3 seems promising, but Hierarchical Deterministic Keys have not
 been part of the ARF before. If we want to require support from Wallet
 Units and Attestation Providers for this technology, it needs to be
-further investigated.
-
-Questions
-
-5. Apart from the ones outlined above, do you see other options for dealing with User authentication in re-issuance scenarios?
-
-6.  What do you think about option 1?
-
-7.  What do you think about option 2? Should we allow the re-use of attestation
-    public keys? If so, under what conditions?
-
-8.  What do you think about option 3? Should we add the use of HDK in
-    the ARF? If so, how exactly? Mandatory, optional? Do you know of any
-    relevant limitations to HDK?
+further investigated. Option 3 also requires relaxing WTE\_02.
 
 Requirement WUA\_02 may also be problematic for batch issuance, if it
 means that User authentication is required before generation of an
@@ -374,14 +352,11 @@ up to the Wallet Provider to determine what constitutes a 'Wallet Unit
 action', finding a balance between security (more User authentications)
 and User convenience (fewer User authentications). During certification
 of the Wallet Solution, it will be verified that the solution provides
-an adequate level of security.”
+an adequate level of security."
 
 We could add a requirement to the ARF that a request for (first-time)
 batch issuance must be possible with at most one User authentication.
 
-Questions
-
-9.  What do you think about User authentication in batch-issuance scenarios?
 
 ### 4.3 Triggers for the issuance process
 
@@ -429,6 +404,11 @@ this happens. There basically seem to be three options:
     out-of-band communication channel to inform them that they need to
     request an update of their PID or attestation.
 
+4. The attestation provider revokes the attestation, if attribute values 
+    are out-of-date. Thus the wallet unit can monitor the revocation status 
+    of the attestation and trigger a re-issuance when it detects that the 
+    attestation is revoked
+
 Option 1 has obvious drawbacks, in particular:
 
 -   (Potentially) millions of Wallet Units sending such information
@@ -450,7 +430,8 @@ the PID Provider or Attestation Provider. The ARF v1.5 does not foresee
 such communication, primarily since it means that the Wallet Provider
 gets information about the PIDs and attestations present on each of
 their Wallet Units. From an architecture point of view, this would
-therefore be a major change. However, the Commission has received
+therefore be a major change. Furthermore, this option introduces
+privacy risks. On the other hand, the Commission has received
 feedback several times stating that in the long run, when the EUDI
 Wallet ecosystem is successful and a PID Provider or Attestation
 Provider will have millions of subscribers, the current issuance model
@@ -464,7 +445,8 @@ PIDs or attestations containing the new attribute values to the Wallet
 Provider, and the Wallet Provider would be responsible for delivering
 these PIDs or attestations to the respective Wallet Unit in time.
 Obviously, the attribute values would be encrypted, such that the Wallet
-Provider cannot read them.
+Provider cannot read them. In conclusion this option should not yet be
+considered. It should be re-examined if such an interface is defined.
 
 Option 3 violates the principle that the User is not involved in the
 re-issuance of PIDs or attestations. In this case, however, that is
@@ -486,25 +468,8 @@ value anyway. This approach nevertheless has some drawbacks as well:
     attestation. But this implies that they should have a policy
     determining how they will deal with situations like this.
 
-Questions
-
-10.  Do you agree that the Wallet Unit should trigger the re-issuance
-    process when the existing PIDs or attestations are
-    about to expire, or when the Wallet Unit is running low on
-    once-only PIDs or attestations? If not, what other solution do you
-    see?
-
-11.  What do you think about the first option for the situation where
-    re-issuance is necessary because of a change in the value of one or
-    more of the attributes?
-
-12.  What do you think about the second option? Would the issuance model
-    sketched above, where the Wallet Provider is involved in the
-    logistics of the issuance process, be acceptable to you?
-
-13.  What do you think about the third option?
-
-14.  Can you think of any other option?
+The use of this option , as long as it does not involve the Wallet Unit for
+delivering such a notification is left as an implementation choice. 
 
 ### 4.4	Handling existing PIDs or attestations after re-issuance of new ones
 In general, re-issuance of a PID or attestation will take place when the existing PID or attestation is still valid. If that were not the case, there would be a time window where User does not have any valid PIDs or attestations that they can present to Relying Parties.
@@ -558,6 +523,11 @@ related the re-issuance of an attestation.
 A Wallet Provider SHALL ensure that its Wallet Solution receives
 User consent to complete a re-issuance process
 that results in a change in the attribute value of the re-issued PID or attestation.
+
+#### Requirement 11
+A Wallet Provider SHALL ensure that its Wallet Solution
+supports first time PID or attestation batch issuance with
+at most one User authentication.
 
 ### 5.2 High-Level Requirements to be changed
 
