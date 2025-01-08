@@ -43,7 +43,16 @@ is mandated by an external document. The word 'can' indicates a
 capability, whereas other words, such as 'will', 'is' or 'are' are
 intended as statements of fact.
 
-### 1.4 Document structure
+### 1.4 Definitions
+For the purpose of this document, the following definitions apply:
+
+- *Administrative validity of a document*: the date up to which the attributes of the document are valid, which is represented as one of the attributes in the document. 
+> Note: some documents do not have an administrative validity date (e.g., a diploma). 
+
+- *Technical validity of attestation*: the date upon which the attestation is valid.
+ >Note: attestations have a technical validity which is chosen based on risk analyses.
+
+### 1.5 Document structure
 
 This document is structured as follows:
 
@@ -80,14 +89,13 @@ Attestation Provider that issued the existing PID or attestation. The
 value of the attributes in the new attestation will typically be the
 same as in the original attestation. However, this is not required, the
 PID Provider or Attestation Provider may change one or more attribute
-values. Re-issuance is distinct from renewal. In the former case, the 
-corresponding PID or attestation has not reached its end-of-life, whereas 
-in the latter case, end-of-life has been reached. For example, a mobile 
-Driving Licence (mDL) may include a signature by the Attestation Provider 
-whose validity period is shorter than the lifetime of the actual driving licence. 
-Re-issuance is used for obtaining a "fresh" attestation, whereas renewal 
-is the administrative process for obtaining a new attestation DL that corresponds 
-to a new driving licence. 
+values. Re-issuance, as described in this document, is only applied within 
+the administrative validity of a document. For example, a mobile 
+Driving Licence (mDL) may have a  technical  validity  shorter than
+administrative validity of the actual document (i.e., the driving licence): 
+re-issuance is used for obtaining a "fresh" attestation, whereas the administrative
+process for obtaining a new attestation that corresponds 
+to a new driving licence is out of scope of this document. 
 
 Batch issuance means that instead of issuing a single PID or attestation
 to a Wallet Unit, a PID Provider or Attestation Provider issues a batch of them.
@@ -112,7 +120,8 @@ Given the reasons for re-issuance discussed in the next chapter, it
 seems reasonable to assume that re-issuance should be possible for any PID
 or attestation issued to a Wallet Unit. An Attestation Rulebook shall indicate if
 re-issuance shall be supported for a specific PID or attestation.
-To this end, the ARF will recommend that during first-time issuance, each Access Token is
+To this end, the ARF will recommend that during first-time issuance of a PID or 
+attestation that supports re-issuance, each Access Token shall be
 accompanied by a corresponding Refresh Token.
 
 The \[OpenID4VCI\] specification also supports batch issuance of
@@ -131,7 +140,7 @@ There may be different reasons for re-issuing a PID or attestation, for
 example:
 
 -   The current PID(s) or attestation(s) are near the end of their
-    validity period, or the Wallet Unit is running out of once-only
+    technical validity period, or the Wallet Unit is running out of once-only
     attestations. See section 3.2.
 
 -   The value of one or more of the attributes in the PID or attestation
@@ -146,24 +155,25 @@ The main reason for batch issuance of PIDs or attestations within the
 EUDI Wallet ecosystem is to (partly) mitigate Relying Party linkability.
 For this, see \[Topic A\].
 
-### 3.2 PID or attestation nearing its end of validity or Wallet Unit running out of PIDs or attestations
+### 3.2 PID or attestation nearing its end of technical validity or Wallet Unit running out of PIDs or attestations
 
 As specified in \[ISO/IEC 18013-5\] or \[SD-JWT VC\], each PID or
-attestation contains metadata indicating its validity period.
+attestation contains metadata indicating its technical validity period.
 Determining the length of the validity period is the responsibility of
 the PID Provider or the Attestation Provider; neither these standards,
 nor the ARF, nor the PID Rulebook specify anything about this. The
-validity period chosen by the PID Provider or Attestation Provider will
+technical validity period chosen by the PID Provider or Attestation Provider will
 depend on several factors, primarily the security architecture of the
 Wallet Solution and the strategy chosen to mitigate Relying Party
 linkability, as discussed in \[Topic A\].
 
-Given the above factors, it can generally be assumed that the validity
-period of a PID or attestations will be much shorter than its lifetime,
+Given the above factors, it can generally be assumed that the technical validity
+period of a PID or attestations will be much shorter than the administrative 
+validity of the corresponding document,
 meaning the period of time that a User wants to keep that PID or
 attestation in their Wallet Unit. That implies that new PIDs and
 attestations will need to be issued periodically, to replace the ones
-that are reaching their end of validity.
+that are reaching their end of technical validity.
 
 A similar reason for re-issuing PIDs and attestations occurs when the
 PID Provider or Attestation Provider uses once-only attestations (as
@@ -175,6 +185,10 @@ Re-issuance of PIDs or attestations for these reasons is a purely
 technical matter. To the maximum extent possible, the User should not
 notice that a PID or attestation has been re-issued, nor should they
 have to take any action to ensure that re-issuance happens in time.
+However, a User shall be offered the option to be notified by the Wallet Unit
+every-time a re-issuance takes place, or every-time a re-issuance fails. Similarly,
+the User should be offered the the option to disable re-issuance.
+Finally, re-issuance events should be logged. 
 These conditions are very different from a first-time issuance of a PID
 or attestation, where the User must take the initiative to request the
 PID or attestation, and is potentially involved in the process in other
@@ -513,15 +527,28 @@ batch issuance SHALL be supported for a specific PID or attestation. It SHALL
 also define if batch issuance SHALL or MAY be used. 
 
 #### Requirement XX
-Wallet Solutions SHALL provide support for PID or attestation batch issuance
+Wallet Solutions SHALL provide support for PID and attestation batch issuance
 
 #### Requirement XX
-Wallet Solutions SHALL provide support for PID or attestation re-issuance
+Wallet Solutions SHALL provide support for PID and attestation re-issuance
 
 #### Requirement XX
-During first-time issuance of a PID or attestation, each Access Token SHOULD be 
-accompanied with a corresponding Refresh Token that SHALL be used by the Wallet Unit
+During first-time issuance of a PID or attestation that supports
+re-issuance, each Access Token SHALL be accompanied with a corresponding 
+Refresh Token that SHALL be used by the Wallet Unit
 for requesting the re-issuance of the PID or attestation. 
+
+#### Requirement XX
+Wallet Solutions SHALL log re-issuance events providing a clear indication of the
+process outcome.
+
+#### Requirement XX
+Wallet Solutions SHALL offer Users the option to disable re-issuance providing a clear
+warning about the implications of this action.
+
+#### Requirement XX
+Wallet Solutions SHALL offer Users the option to receive notifications about events
+related the re-issuance of an attestation.
 
 ### 5.2 High-Level Requirements to be changed
 
