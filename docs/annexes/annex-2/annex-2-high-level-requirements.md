@@ -200,13 +200,7 @@ B.  User approval:
 
 This Topic contains the high-level requirements (HLRs) relating to the (possible) revocation of PIDs, QEAAs, PuB-EAAs, non-qualified EEAs and WUAs by their providers. It also contains HLRs relating to the (possible) checking of the revocations status of a PID or attestation by a Relying Party.
 
-Note: This Topic does not pertain to access certificates for Relying
-Parties, PID Providers or Attestation Providers as discussed in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. Neither does it apply to any intermediate certificates establishing
-trust between these certificates and the respective trust anchors. These
-certificates are part of a Public Key Infrastructure (or an OpenID
-Federation, or a similar trust framework), and rules for revoking these
-certificates will be established within the respective PKI or trust
-framework.
+Note: This Topic does not pertain to access certificates for Relying Parties, PID Providers or Attestation Providers as discussed in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. Neither does it apply to any intermediate certificates establishing trust between these certificates and the respective trust anchors. These certificates are part of a Public Key Infrastructure (or an OpenID Federation, or a similar trust framework), and rules for revoking these certificates will be established within the respective PKI or trust framework.
 
 *HLRs*
 
@@ -793,14 +787,9 @@ See [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabularies-
 
 *Short description*
 
-PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA
-Providers and Relying Parties SHALL register with a Registrar in their
-Member State. The main goal of the registration process is for the
-entity to receive an access certificate that Wallet Units can use to
-authenticate them.
+PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers and Relying Parties SHALL register with a Registrar in their Member State. The main goal of the registration process is for the entity to receive an access certificate that Wallet Units can use to authenticate them.
 
-This Topic specifies high-level requirements related to the registration
-of the above mentioned entities. 
+This Topic specifies high-level requirements related to the registration of the abovementioned entities.
 
 *HLRs*
 
@@ -832,13 +821,15 @@ B.  *General requirements for the issuance of access certificates*
 | Reg_17 | The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance. |
 | Reg_18 | The common Certificate Policy mentioned in Reg_12 SHALL define the minimum change history information to be stored for resolving possible disputes regarding registration. |
 
-
 C.  *Requirements for the registration of PID Providers*
 
 | **Index** | **Requirement specification** |
 |-----------|---------------------|
 | Reg_19 | A Member State SHALL approve a PID Provider according to a well-defined policy before including it in its PID Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of PID Providers in its Registry. |
 | Reg_20 | A Member State SHALL identify PID Providers at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
+|Reg_20a | A Registrar SHALL provide a method to suspend or withdraw a registered PID Provider. |
+| Reg_20b | A Registrar SHALL have a policy for suspension or withdrawal of registered PID Providers, which SHALL specify that a PID Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
+| Reg_20c | If a Registrar suspends or withdraws a registered PID Provider, that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7].
 
 D.  *Requirements for the registration of Attestation Providers*
 
@@ -846,6 +837,9 @@ D.  *Requirements for the registration of Attestation Providers*
 |-----------|-------------------|
 | Reg_21 | A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers. |
 | Reg_22 | A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
+|Reg_22a | A Registrar SHALL provide a method to suspend or withdraw a registered Attestation Provider. |
+| Reg_22b | A Registrar SHALL have a policy for suspension or withdrawal of registered Attestation Providers, which SHALL specify that an Attestation Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
+| Reg_22c | If a Registrar suspends or withdraws a registered Attestation Provider, that PID Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7].
 
 E.  *Requirements for the registration of Relying Parties*
 
@@ -933,30 +927,21 @@ scope of eIDAS. Various scenarios can be considered:
 1.  Natural person to natural person, based on the will of the
     represented person: One individual authorizes another individual to
     represent them: 
-
     1.  Picking up a prescription from the pharmacy or a package from
         the post office for a family member. 
-
     2.  Empowering a person to vote on your behalf. 
-
     3.  Empowering a notary to sell your house on your behalf to a
         certain party for a certain amount. 
-
     4.  Empowering your employer to apply for a residence permit on your
         behalf. 
-
 2.  Natural person to natural person, based on some decision by an
     authority, or also as a consequence of national, EU or international
     law: 
-
 3.  Legal guardian being able to take decisions on behalf of child,
     disabled person, or elderly person. 
-
 4.  Natural person to legal person: An individual authorizing a legal
     entity to represent them. 
-
     1.  A person empowering a law firm to be the executor of the trust upon their death. 
-
     2.  A person empowering a bank to invest on their behalf. 
 
 *HLRs*
@@ -993,17 +978,9 @@ and in proximity online mode.
 
 *Short description*
 
-PID Providers, PuB-EAA Providers, Wallet Providers and Access Certificate Authorities must be notified by a Member State to the
-Commission. As part of the notification process, the trust anchors of
-these parties must be included in a Trusted List. A trust anchor is the
-combination of a public key and an identifier for the associated entity.
-Trust anchors are required for the verification of the signatures of
-PIDs, attestations, WUAs, and access certificates that are
-issued by these parties.
+PID Providers, PuB-EAA Providers, Wallet Providers and Access Certificate Authorities must be notified by a Member State to the Commission. As part of the notification process, the trust anchors of these parties must be included in a Trusted List. A trust anchor is the combination of a public key and an identifier for the associated entity. Trust anchors are required for the verification of the signatures of PIDs, attestations, WUAs, and access certificates that are issued by these parties.
 
-This Topic contains High-Level Requirements for the notification of
-these parties by Member States, and for the publication of the notified
-information by the Commission.
+This Topic contains High-Level Requirements for the notification of these parties by Member States, and for the publication of the notified information by the Commission.
 
 *HLRs*
 
@@ -1013,16 +990,16 @@ A.  Generic requirements for notification
 |-----------|-----------------|
 | GenNot_01 | The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, and Access Certificate Authorities by Member States to the Commission. <p><br> Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively. |
 | GenNot_02 | As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the notification of a PID Provider, PuB-EAA Provider, Wallet Provider or Access Certificate Authorities to the Commission. <p><br> Note: The outcome of the notification procedure is the publication of the information notified by the Member State according to [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1) (18) in a machine and human readable manner using the common system mentioned in Section H, TLPub_01. |
-| GenNot_03 | The common system mentioned in GenNot_01 SHALL enable: <ul><li>A secure notification channel between Member States and the Commission for all notifications.</li><li>A notification, verification, and publication process and associated validation steps (with follow-up and monitoring) at the Commission side.</li><li>Collected data to be processed, consolidated, signed/sealed and published in both a machine-processable Trusted List and in a human-readable format, manually and/or automatically using e.g. a web service and/or API.</li></ul> |
-| GenNot_04 | As regard to GenNot_03, point b), the Commission SHALL verify whether the notified data is complete and meets the technical specifications, while the Member States SHALL be responsible for the correctness of the notified information. |
-| GenNot_05 | As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the withdrawal of a PID Provider, PuB-EAA Provider, Wallet Provider, or Relying Party Access Certificate Authority. These operating procedures SHALL include unambiguous conditions for withdrawal. As an outcome of the withdrawal procedure, the status of the withdrawn PID Provider, PuB-EAA Provider, Wallet Provider, or Relying Party Access Certificate Authority in the Trusted List SHALL be changed to Invalid. |
+| GenNot_03 | The common system mentioned in GenNot_01 SHALL enable: <ol><li>A secure notification channel between Member States and the Commission for all notifications.</li><li>A notification, verification, and publication process and associated validation steps (with follow-up and monitoring) at the Commission side.</li><li>Collected data to be processed, consolidated, signed/sealed and published in both a machine-processable Trusted List and in a human-readable format, manually and/or automatically using e.g. a web service and/or API.</li></ol> |
+| GenNot_04 | As regard to GenNot_03, point 2), the Commission SHALL verify whether the notified data is complete and meets the technical specifications, while the Member States SHALL be responsible for the correctness of the notified information. |
+| GenNot_05 | As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the suspension or withdrawal of a PID Provider, PuB-EAA Provider, Wallet Provider, or Relying Party Access Certificate Authority. These operating procedures SHALL include unambiguous conditions for suspension or withdrawal. As an outcome of the suspension or withdrawal procedure, the status of the suspended or withdrawn PID Provider, PuB-EAA Provider, Wallet Provider, or Relying Party Access Certificate Authority in the Trusted List SHALL be changed to Invalid. |
 
 B.  Requirements for the notification of PID Providers
 
 | **Index** | **Requirement specification** |
 |-----------|-----------------|
 | PPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PID Providers. |
-| PPNot_02 | The common set of information to be notified about a PID Provider SHALL include: <ul><li>Identification data:<ul><li>MS/Country of establishment,</li><li>Name as registered in an official record,</li><li>Where applicable:<ul><li>A business registration number from an official record,</li><li>Identification data from that official record.</li></ul></li></ul></li><li>PID Provider trust anchors, i.e., public keys and name as per point 1) ii) above, supporting the authentication of PIDs issued by the PID Provider,</li><li>PID Provider Access CA trust anchors, i.e., public keys and CA name, supporting the authentication of the PID Provider by Wallet Units at the service supply point(s) listed per point 4) below.</li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PID.</li></ul><p>Notes: <ul><li>Relating to point 3) above: PID Provider Access CA trust anchors are notified separately from the Relying Party Access CA (see Section G below), since PID Providers are -legally speaking- not Relying Parties.</li><li>For the concept of an Access CA, see also \[[Topic 27](#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)\] and Section 6.3.2 of \[ARF\]. </li></ul> |
+| PPNot_02 | The common set of information to be notified about a PID Provider SHALL include: <ol><li>Identification data:<ol><li>MS/Country of establishment,</li><li>Name as registered in an official record,</li><li>Where applicable:<ol><li>A business registration number from an official record,</li><li>Identification data from that official record.</li></ol></li></ol></li><li>PID Provider trust anchors, i.e., public keys and name as per point 1) ii) above, supporting the authentication of PIDs issued by the PID Provider,</li><li>PID Provider Access CA trust anchors, i.e., public keys and CA name, supporting the authentication of the PID Provider by Wallet Units at the service supply point(s) listed per point 4) below.</li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PID.</li></ul></br></br>Notes: <ul><li>Relating to point 3) above: PID Provider Access CA trust anchors are notified separately from the Relying Party Access CA (see Section G below), since PID Providers are -legally speaking- not Relying Parties.</li><li>For the concept of an Access CA, see also \[[Topic 27](#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)\] and Section 6.3.2 of \[ARF\]. </li></ul> |
 | PPNot_03 | PID Providers SHALL ensure that all PIDs they issue can be authenticated using the PID Provider trust anchors notified to the Commission. |
 | PPNot_04 | PID Providers SHALL ensure that their PID Provider access certificates can be authenticated using the PID Provider Access CA trust anchors notified to the Commission. <p><br>Note: \[[Topic 6](#a236-topic-6---relying-party-authentication-and-user-approval)\] describes how access certificates will be used. |
 | PPNot_05 | PID Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Trusted List which is sealed by the Commission. |
@@ -1051,7 +1028,7 @@ This notification is pursuant to [Art.45f](https://eur-lex.europa.eu/legal-conte
 | **Index** | **Requirement specification** |
 |------------|-----------------|
 | PuBPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PuB-EAA Providers. |
-| PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ul><li>Identification data:<ul><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ul><li>Registration number as in official record, and </li><li>Official record identification data</li></ul></li><li>Identification data of the Union or national law under which <ul><li>Either the PuB-EAA Provider is established as the responsible body for the authentic source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ul></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ul></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ul> |
+| PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ol><li>Registration number as in official record, and </li><li>Official record identification data</li></ol></li><li>Identification data of the Union or national law under which <ol><li>Either the PuB-EAA Provider is established as the responsible body for the authentic source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ol></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ol></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ol> |
 | PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 
 F.  Requirements for the notification of (non-qualified) EAA Providers

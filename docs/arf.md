@@ -379,7 +379,7 @@ This section defines five distinct communication flows between a Wallet Unit and
 
 - **Remote Cross-Device Flow**: In this flow, the User uses a browser on a device other than their Wallet Instance, for instance a desktop or laptop, to visit the Relying Party's website and consume a service. If the Relying Party needs to send an attribute presentation request to the User's Wallet Unit, it presents this request to the browser on the other device. Again using the [W3C Digital Credentials API], this browser sets up a secure communication channel between the other device and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows) explains this in more detail.
   
-- **interapp Flow**: In this flow, the Relying Party Instance is a mobile app on the User device. Attestations are exchanged using the same inter-app API also used by the browser in a remote same-device flow. For that reason, this flow is also described in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows).
+- **Inter-app Flow**: In this flow, the Relying Party Instance is a mobile app on the User device. Attestations are exchanged using the same inter-app API also used by the browser in a remote same-device flow. For that reason, this flow is also described in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows).
 
 Specific use cases integrate one or more of these flows.
 
@@ -401,8 +401,8 @@ Remote transaction flows are use cases in which the Relying Party Instance is re
 Remote presentation flows come with a number of challenges that are not present for proximity flows:
 
 1. Secure Cross-Device Flows: Cross-device flows are vulnerable to phishing and relay attacks, necessitating enhanced security measures. Implementing proximity checks managed by the mobile operating system can address these vulnerabilities, leveraging built-in security features to ensure interactions are both secure and reliable.
-2. Wallet Unit Selection and Invocation: Because remote flows do not start from the Wallet Unit, Users face challenges in selecting and activating the appropriate Wallet Unit to satisfy a particular presentation request, especially when multiple Wallet Units are available on the User's device. A unified interface provided by the mobile operating system simplifies this process, ensuring a seamless and intuitive user experience.
-3. Fragmented Interaction Mechanisms: The challenge here is how to invoke the Wallet Unit ub order to set up a communication channel with the remote Relying Party Instance. One option that has been considered is the use of custom URI schemes. Such a URI may, for example, start with "mdoc://" or "openid4vp://". If such a scheme is used, the mobile operating system would invoke the Wallet Unit if the Relying Party Instance asks it to connect to a custom URI. However, reliance on custom URL schemes leads to inconsistent user experiences, depending on the browser or OS used. It also leads to operational inefficiencies and security risks. Therefore, a browser API has been proposed to standardize the interaction mechanisms across platforms. This improves usability and scalability and ensures a more uniform and reliable user experience.
+2. Wallet Unit Selection and Invocation: Because remote flows do not start from the Wallet Unit, Users face potential challenges in selecting and invoking the appropriate Wallet Unit to satisfy a particular presentation request, especially when multiple Wallet Units are available on the User's device. A unified interface provided by the mobile operating system simplifies this process, ensuring a seamless and intuitive user experience.
+3. Fragmented Interaction Mechanisms: The challenge here is how to invoke the Wallet Unit in order to set up a communication channel with the remote Relying Party Instance. One option that has been considered by the respective standardisation bodies is the use of custom URI schemes. Such a URI may, for example, start with "mdoc://" or "openid4vp://". If such a scheme is used, the mobile operating system would invoke the Wallet Unit if the Relying Party Instance asks it to connect to a custom URI. However, reliance on custom URL schemes leads to inconsistent user experiences, depending on the browser or OS used. It also leads to operational inefficiencies and security risks. Therefore, within the respective standardisation bodies, a browser API has been proposed to standardize the interaction mechanisms across platforms. This improves usability and scalability and ensures a more uniform and reliable user experience.
 4. Clear Origin Verification: Protecting against relay attacks requires precise identification of the Relying Party Instance's origin. Including the origin information, such as the website domain or app package name, within the presentation request ensures the authenticity of the request and enhances trust for both Wallet Units and Users.
 
 The next sections describe how these challenges are solved for both same-device and cross-device remote presentation flows.
@@ -437,7 +437,7 @@ Figure 5: Remote cross-device presentations
 
 A remote cross-device attribute presentation flow begins when the User uses a browser on a device different from their User device to visit the website of the Relying Party. The website may offer the User the possibility to present attributes from their Wallet Unit, for example by clicking a button. If the User does so, the browser will ask the User for permission to connect to the Wallet Unit. If the User allows this, the Relying Party Instance sends a presentation request to the browser over the Digital Credentials API. The browser then establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO Passkeys. This is done as follows:
 
- 1. The browser presents a QR code which includes information about the tunnel endpoint and keys that will be used for establishing a secure session.
+ 1. The browser presents a QR code that includes information about the tunnel endpoint and keys that will be used for establishing a secure channel over this tunnel.
  2. The user scans the QR code using the camera on the User device.
  3. The User device emits a BLE advertisement, which is received by the browser. The advertisement includes, in an encrypted form, information required for establishing the secure tunnel. This advertisement is used as a proximity check: the tunnel cannot be established if the User device and the device on which the browser runs are not close to each other. 
  4. A tunnel is established between the two devices.
@@ -476,7 +476,7 @@ The **Candidate** state is the first state of an Wallet Solution. This means it 
 
 If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **Valid**. This means the Wallet Solution can be officially launched, and can be provided to Users. The issuing Member State informs the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme.
 
-The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn* state.
+The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn** state.
 
 #### 4.6.3 Wallet Unit
 
@@ -504,19 +504,33 @@ The following actions can be performed in the **Valid** state:
 
 If the last or only PID in the Wallet Unit expires, is revoked, or is deleted, the Wallet Unit's state is moved back to **Operational**. Note that if there are multiple PIDs in the Wallet Unit, it does not move to the **Operational** state as long as at least one of them is valid.
 
-#### 4.6.4 Person Identification Data (PID)
+#### 4.6.4 PID Provider or Attestation Provider
 
-In the context of the EUDI Wallet ecosystem, a PID begins its lifecycle when being issued to a Wallet Unit. Please note that this means that the management of attributes in the Authentic Source (adhering to national structures and attribute definitions) is outside of the scope of the ARF.
+Figure 8 shows the possible states of a PID Provider or Attestation Provider.
 
-For certain use cases, the PID may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is **Issued**, and it will transition to **Valid** when it reaches the beginning of its validity period. However, if the PID is issued on or after the validity start date, its state directly changes to **Valid**.
+![Figure 8](media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png) <!-- <img src="media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
 
-![Figure 5: State-chart of PID](media/image5.png) <!-- <img src="media/image5.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+Figure 8: State diagram of PID Provider or Attestation Provider
 
-Figure 5: State-chart of PID
+The **Valid** state is the first state of a PID Provider or Attestation Provider. This means it is registered by the corresponding Trusted List Provider and notified to the Commission, as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
-There are two possible transitions from a valid PID: it automatically expires, by passage to the validity end date, or it is actively revoked by its PID Provider. Expiration and revocation are essentially independent transitions. Once a PID is expired or revoked, it cannot transition back to **valid**.
+The Trusted List Provider can temporarily suspend a PID Provider or Attestation Provider.  This leads to the **Suspended** state. The Trusted List Provider can unsuspend the PID Provider or Attestation Provider, bringing it back to the **Valid** state. The Trusted List Provider can also decide to completely withdraw the PID Provider or Attestation Provider, which brings the it in the **Withdrawn** state. For more information about suspension or withdrawal, please refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
 
-## 5 PIDs and Attestations
+#### 4.6.5 PID or attestation
+
+In the context of the EUDI Wallet ecosystem, a PID or attestation begins its lifecycle when being issued to a Wallet Unit. Please note that this means that the management of attributes in the Authentic Source (adhering to national structures and attribute definitions) is outside of the scope of the ARF.
+
+For certain use cases, a PID or attestation may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is **Issued**, and it will transition to **Valid** when it reaches the beginning of its validity period. However, if a PID or attestation is issued on or after the validity start date, its state directly changes to **Valid**.
+
+![Figure 9](media/image5.png) <!-- <img src="media/image5.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+
+TBD: Update the diagram so it mentions attestations as well.
+
+Figure 9: State diagram of PID or attestation
+
+There are two possible transitions for a valid PID or attestation: it expires by passing through the validity end date and transitions to the **Expired** state, or it is revoked by its PID Provider or Attestation Provider, ending up in the **Revoked** state. Expiration and revocation are independent transitions. Once a PID or attestation is expired or revoked, it cannot transition back to **Valid**.
+
+## 5 PIDs and attestations
 
 ### 5.1 Introduction
 
@@ -690,7 +704,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 #### 6.2.1 Wallet Solution lifecycle
 
-[Section 4.6.3](#463-wallet-unit) presented the lifecycle of a Wallet Solution:
+[Section 4.6.2](#462-wallet-solution) presented the lifecycle of a Wallet Solution:
 
 1. The Wallet Provider responsible for the Wallet Solution is registered by a Trusted List Provider. As a result, the Wallet Solution enters the Valid state. This is discussed in [Section 6.2.2](#622-wallet-provider-registration-and-notification).
 
@@ -718,7 +732,7 @@ If an entity has registered multiple Wallet Providers, each offering a different
 
 #### 6.3.1 PID Provider or Attestation Provider lifecycle
 
-[Section 4.6.4](#464-person-identification-data-pid) presented the lifecycle of a PID Provider or Attestation Provider:
+[Section 4.6.4](#464-pid-provider-or-attestation-provider) presented the lifecycle of a PID Provider or Attestation Provider:
 
 1. A PID Provider or an Attestation Provider is registered by a Trusted List Provider. This is discussed in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
@@ -733,10 +747,9 @@ Figure 6 depicts the PID Providers and Attestation Providers to the left of the 
 If the registration and notification processes are successful, mainly two things happen:
 
 - The PID Provider or Attestation Provider receives an access certificate.
-
 - The trust anchors of the PID Provider or Attestation Provider are included in a Trusted List.
 
-These two aspects are discussed in the next two subsections.
+These two processes are discussed in the next two subsections.
 
 ##### 6.3.2.2 PID Provider or Attestation Provider receives an access certificate
 
@@ -752,7 +765,7 @@ Note that, in case the subject is an Attestation Provider, the access certificat
 
 ##### 6.3.2.3 PID Provider or Attestation Provider trust anchors are included in a Trusted List
 
-For a PID Provider, a QEAA Provider, or a PuB-EAA Provider, successful registration and notification also means that the Provider and its trust anchors are included in a Trusted List. This Trusted List contains at least the trust anchor(s) of the PID Provider, QEAA Provider or PuB-EAA Provider. Relying Parties can use these trust anchors to verify the authenticity of PIDs, QEAAs, and PuB-EAAs they obtain from Wallet Units.
+For a PID Provider, a QEAA Provider, or a PuB-EAA Provider, successful registration and notification also means that the Provider is notified to the European Commission and that its trust anchors are included in a Trusted List. Relying Parties can use these trust anchors to verify the authenticity of PIDs, QEAAs, and PuB-EAAs they obtain from Wallet Units.
 
 Non-qualified EAA Providers are not included in a Trusted List by a Member State. However, if a Relying Party requests a non-qualified EAA from a Wallet Instance, it must know how to obtain the domain-specific trust anchor it needs to verify the signature over that EAA. To help with this, [Topic 12] recommends that the applicable Rulebook specifies the mechanisms enabling this. This mechanism may be similar to the one for QEAAs, namely that the relevant non-qualified EAA Providers and their trust anchors are included in a trusted list. However, other methods may be used as well, and even if such a trusted list exists, it does not have to comply with the requirements in [Topic 31].
 
@@ -764,7 +777,9 @@ Under specific conditions, a Trusted List Provider may decide to suspend or with
 
 Suspension or withdrawal implies that the PID Provider or Attestation Provider access certificates are revoked. As a result, the PID Provider or Attestation Provider will no longer be able to issue PIDs or attestations to Wallet Units.
 
-For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or withdrawal also implies that its status in the respective Trusted List will be changed to Invalid. As a result, Relying Parties will no longer trust PIDs or attestations issued by the suspended or withdrawn Provider. The applicable Rulebook (see [Topic 12]) may define additional mechanisms ensuring that Relying Parties will no longer trust the trust anchors of EAA Providers that have been suspended or withdrawn.
+For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or withdrawal also implies that its status in the respective Trusted List will be changed to Invalid. As a result, Relying Parties will no longer trust PIDs or attestations issued by the suspended or withdrawn Provider. For non-qualified EAA Providers, the applicable Rulebook (see [Topic 12]) may define additional mechanisms ensuring that Relying Parties will no longer trust the trust anchors of EAA Providers that have been suspended or withdrawn.
+
+When a Trusted List Provider suspends or withdraws a PID Provider or Attestation Provider, the PID Provider or Attestation revokes all of their PIDs and attestations as described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 
 ### 6.4 Trust throughout a Relying Party lifecycle
 
@@ -943,7 +958,7 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 
 #### 6.6.1 PID or attestation lifecycle
 
-[Section 4.6.4](#464-person-identification-data-pid) above presented the lifecycle of a PID within an Wallet Unit:
+[Section 4.6.5](#465-pid-or-attestation) above presented the lifecycle of a PID or attestation within an Wallet Unit:
 
 1. Using their Wallet Unit, the User requests the issuance of a PID or an attestation from a PID Provider or an Attestation Provider. The required trust relationships for issuance are discussed in [Section 6.6.2](#662-pid-or-attestation-issuance) below.
 
@@ -1188,7 +1203,7 @@ Notes:
 
 - A revocation list is a list of PID identifiers or attestations identifiers revoked by the PID Provider or Attestation Provider. To get the status of the PID or attestation it has received from the Wallet Unit, the Relying Party obtains the revocation list from the URL specified in the attestation and verifies whether the identifier included in the attestation is on the list or not.
 
-For more details and requirements, see [Topic 7].
+For more details and requirements on revocation, see [Topic 7].
 
 ##### 6.6.3.8 Relying Party Instance verifies device binding
 
