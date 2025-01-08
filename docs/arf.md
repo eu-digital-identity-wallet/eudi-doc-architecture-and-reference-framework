@@ -112,9 +112,9 @@ Note: Pseudonyms were added to the list of Topics to be discussed for ARF 2.0. T
 
 Easy access to health data is crucial in both national and cross-border contexts. A Wallet Unit may enable access to patient summary, ePrescriptions, etc.
 
-#### 2.6.2 Educational credentials and professional qualifications
+#### 2.6.2 Educational attestations and professional qualifications
 
-Providing documents for qualification recognition procedures can be costly and time-consuming for Users, Relying Parties such as companies and employers, and Attestation Providers such as education and training providers or other academic institutions. For example, digital diploma attestations could be presented cross-border in a verifiable, trusted, and consumable format to another education or training institution or a prospective employer. An Wallet Unit may be a repository for educational digital credentials as Electronic Attestations of Attributes and a means for exchanging them by a learner to relevant relying parties.
+Providing credentials for qualification recognition procedures can be costly and time-consuming for Users, Relying Parties such as companies and employers, and Attestation Providers such as education and training providers or academic institutions. A Wallet Unit may be a repository for educational credentials and a means for exchanging them by the User to relevant Relying Parties.
 
 #### 2.6.3 Digital Finance
 
@@ -356,7 +356,7 @@ Figure 2 shows the following interfaces between components of a Wallet Unit, or 
 
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions. In case the WSCA is delivered by the Wallet Provider, the Wallet Provider is responsible for both sides of this interface, and hence standardisation is not needed within the scope of the EUDI Wallet ecosystem. In case the WSCA is delivered by the provider of the WSCD, this interface will comply with an existing specification that is not specifically designed for the EUDI Wallet ecosystem. Rather, each type of WSCA/WSCD will expose a provider-defined interface to the Wallet Instance. For example, in case the WSCD is a secure element, the [Implementing Act on Integrity and Core Functionality](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979#anx_I) requires support for the GlobalPlatform [OMAPI] interface specification (or an equivalent one).
   
- To be able to support different types of WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of this interface.
+To be able to support different types of WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of this interface.
 
 - The **PID Issuance Interface (PII)** complies with the [OpenID4VCI] standard and is used when the Wallet Unit communicates with a PID Provider to request and receive PIDs to be stored within the Wallet Unit.
 
@@ -902,7 +902,7 @@ The responsibilities of the Wallet Provider regarding issuance of a WUA are simi
 **4. Wallet Provider sets up a User account for User**
 The User needs a User account at the Wallet Provider to ensure that they can request the revocation of their Wallet Unit in case of theft or loss. The Wallet Provider associates the Wallet Unit with the User account. The Wallet Provider registers one or more backend-based User authentication methods that the Wallet Provider will use to authenticate the User. Note that:
 
-- The Wallet Provider does not need to know any real-world attributes of the User. The User can use a pseudonym to register for example an e-mail address. If the Wallet Provider wants to request additional User attributes, for instance to be able to provide additional services, they are free to do so if the User consents.
+- The Wallet Provider does not need to know any real-world attributes of the User. The User can use a pseudonym to register, for example an e-mail address. If the Wallet Provider wants to request additional User attributes, for instance to be able to provide additional services, they are free to do so if the User consents.
 - In any case, User details registered by the Wallet Provider will not be included in the WUA. They are strictly for use by the Wallet Provider only.
 
 #### 6.5.4 Wallet Unit management
@@ -1234,7 +1234,7 @@ To solve these drawbacks, [Topic 18] describes how the Relying Party Instance ca
 
 ##### 6.6.3.13 Wallet Unit enables the User to report suspicious requests by a Relying Party and to request a Relying Party to erase personal data
 
-A Wallet Unit enables the User to report unlawful or suspicious requests for personal data by a Relying Party to a Data Protection Authority (DPA). To allow this, a Wallet Unit provides a dashboard allowing the User to lodge a complaint about a suspicious Relying Party presentation request to the DPA of the Member State that provided their Wallet Unit. For more information and requirements, see [Topic 50]. The User can make such a report regardless of whether any attributes were actually presented to the Relying Party. Even if the Wallet Instance prevented the presentation of any attributes because relying party authentication failed, or if the User did not approve the presentation of any attributes, the User can still lodge a complaint about the request with the relevant Data Protection Authority.
+A Wallet Unit enables the User to report unlawful or suspicious requests for personal data by a Relying Party to a Data Protection Authority (DPA). To allow this, a Wallet Unit provides a dashboard allowing the User to lodge a complaint about a suspicious Relying Party presentation request to the DPA of the Member State that provided their Wallet Unit. For more information and requirements, see [Topic 50]. The User can make such a report regardless of whether any attributes were actually presented to the Relying Party. Even if the Wallet Instance prevented the presentation of any attributes because Relying Party authentication failed, or if the User did not approve the presentation of any attributes, the User can still lodge a complaint about the request with the relevant Data Protection Authority.
 
 The dashboard also enables the User to request a Relying Party to immediately erase personal data. For more information and requirements, see [Topic 48].
 
