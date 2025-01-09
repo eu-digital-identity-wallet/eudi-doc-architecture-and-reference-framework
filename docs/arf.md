@@ -325,7 +325,7 @@ The following have been identified as the core components of a Wallet Unit:
 
 - **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes a keystore, but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as an operating system and cryptographic libraries provided by the WSCD vendor. Figure 2 shows four different possible security architectures for the WSCD (for more details see [Section 4.5](#45-wscd-architecture-types)): <ul><li>a remote WSCD, which is typically a HSM operated by the Wallet Provider,</li><li>a local external WSCD, which is typically a smart card issued to the User specifically for this purpose,</li><li>a local internal WSCD, which may be, for instance, a UICC, an e-SIM, a SAM, or an embedded Secure Element,</li><li>a local native WSCD, which is also embedded in the User device but which is accessed via an API exposed by the OS.</li></ul> 
   
-- **Wallet Secure Cryptographic Application (WSCA):** This is the secure application running on and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptograhic keys, and interfaces directly with the Wallet Instance. Regarding the party responsible for delivering the WSCA, there are two options, depending on the security architecture of the WSCD. For remote WSCDs (HSMs), local external WSCDs (dedicated smart cards), and local internal WSCDs (UICC, eSIM, SAM), the WSCA will be delivered by the Wallet Provider. For native local WSCDs, the WSCA is part of the OS.
+- **Wallet Secure Cryptographic Application (WSCA):** This is a secure application running on (or linked to) and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptographic keys, and interfaces directly with the Wallet Instance. Regarding the party responsible for delivering the WSCA, there are two options, depending on the security architecture of the WSCD. For remote WSCDs (HSMs), local external WSCDs (dedicated smart cards or tokens), and local internal WSCDs (UICC, eSIM/SAM, embedded SE), the WSCA will be delivered by the Wallet Provider. For native local WSCDs, the WSCA is part of the OS.
 
 - **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
@@ -948,13 +948,9 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 [Section 4.6.5](#465-pid-or-attestation) above presented the lifecycle of a PID or attestation within an Wallet Unit:
 
 1. Using their Wallet Unit, the User requests the issuance of a PID or an attestation from a PID Provider or an Attestation Provider. The required trust relationships for issuance are discussed in [Section 6.6.2](#662-pid-or-attestation-issuance) below.
-
-2. Once the attestation is issued into the Wallet Unit, the User can then present attributes from this attestation to a Relying Party Instance, according to the User's decision and depending on successful authentication of the Relying Party. The required trust relationships for presenting PIDs and attestations, including User approval and Relying Party authentication, are discussed in [Section 6.6.3](#663-pid-or-attestation-presentation-to-relying-party).
-
+2. Once the PID or attestation is issued into the Wallet Unit, the User can present attributes from it to a Relying Party Instance, according to the User's decision and depending on successful authentication of the Relying Party. The required trust relationships for presenting PIDs and attestations, including User approval and Relying Party authentication, are discussed in [Section 6.6.3](#663-pid-or-attestation-presentation-to-relying-party).
 3. Instead of presenting attributes to a Relying Party, a User can also present them to another User, meaning the Wallet Unit is interacting with another Wallet Unit. This is briefly discussed in [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
-
 4. The PID Provider or the Attestation Provider remains responsible for managing the PID or attestation over its lifetime. Management may include re-issuing the PID or attestation with the same or with different attribute values. The Provider can also revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
-
 5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses the scenario that a User decides to delete the PID or an attestation from their Wallet Unit.
 
 #### 6.6.2 PID or attestation issuance
@@ -964,15 +960,10 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 The lifecycle of a PID or an attestation starts when a User, using their Wallet Unit, requests a PID Provider or an Attestation Provider to issue the PID or an attestation to their Wallet Unit. The following trust relationships are established during issuance:
 
 1. The Wallet Unit authenticates the PID Provider or Attestation Provider using the access certificate referred to in [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle). This ensures that the User can trust that the PID or attestation they are about to receive, is issued by an authenticated PID Provider or Attestation Provider respectively. See [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider) below describing how this will be done.
-
 2. The PID Provider or Attestation Provider authenticates the User, meaning that the Provider is sure about the identity of the User. This is necessary to enable determination of the values of the attributes that the Provider will attest to. For instance, a PID Provider needs to authenticate the User to ensure it provides a PID containing the correct family name and date of birth. The method by which the PID Provider or Attestation Provider performs User identification and authentication is out of scope of the ARF, as these processes are specific to each PID Provider or Attestation Provider. However, they will satisfy the requirements for the Level of Assurance required for the PID or attestation issued.
-
 3. The PID Provider or Attestation Provider authenticates and validates the Wallet Unit, see [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit) below.
-
 4. The PID Provider or Attestation Provider verifies that the Wallet Provider did not revoke the Wallet Unit. This is described in [Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked).
-   
 5. After the PID or attestation is issued to the Wallet Unit, the Wallet Unit verifies the authenticity of the PID or attestation; see [Section 6.6.2.6](#6625-wallet-unit-verifies-pid-or-attestation).
-
 6. Finally, the User will activate a PID before they can use it; see [Section 6.6.2.6](#6626-user-activates-the-pid).
 
 More detailed requirements for the issuance process of PIDs and attestations, for instance regarding the issuance protocol, are included in [Topic 10] and [Topic 23].
