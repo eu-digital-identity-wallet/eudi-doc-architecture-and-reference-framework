@@ -126,49 +126,38 @@ Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a su
 
 ## 3. EUDI Wallet ecosystem
 
+### 3.1 Introduction
+
 This chapter describes the EUDI Wallet ecosystem as it is foreseen in the Regulation. The different roles in the EUDI Wallet ecosystem are described in Figure 1 and detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet ecosystem roles](media/Figure_1_Overview_of_EUDI_Wallet_roles.jpeg) <!-- <img src="Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" style="width="7.2131944444444445in" height="3.375in" /> -->
 
 Figure 1: Overview of the EUDI Wallet ecosystem roles
 
-1. Users of Wallet Units
+1. Users of Wallet Units, see [Section 3.2](#32-users-of-wallet-units),
+2. Wallet Providers, see [Section 3.3](#33-wallet-providers),
+3. Person Identification Data (PID) Providers, see [Section 3.4](#34-person-identification-data-pid-providers),
+4. Trusted List Providers, see [Section 3.5](#35-trusted-list-provider),
+5. Qualified Electronic Attestation of Attributes (QEAA) Providers, see [Section 3.6](#36-qualified-electronic-attestation-of-attributes-qeaa-providers),
+6. Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers, see [Section 3.7](#37-electronic-attestation-of-attributes-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers),
+7. Electronic Attestation of Attributes (EAA) Providers, see [Section 3.8](#38-non-qualified-electronic-attestation-of-attributes-eaa-providers),
+8. Qualified Electronic Signature Remote Creation Providers, see [Section 3.9](#39-qualified-electronic-signature-remote-creation-qesrc-providers),
+9. Authentic Sources, see [Section 3.10](#310-authentic-sources),
+10. Relying Parties, see [Section 3.11](#311-relying-parties),
+11. Conformity Assessment Bodies (CAB), see [Section 3.12](#312-conformity-assessment-bodies-cab),
+12. Supervisory Bodies, see [Section 3.13](#313-supervisory-bodies),
+13. Device Manufacturers and Related Subsystems Providers, see [Section 3.14](#314-device-manufacturers-and-related-subsystems-providers),
+14. Attribute Schema Providers, see [Section 3.15](#315-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa),
+15. National Accreditation Bodies, see [Section 3.16](#316-national-accreditation-bodies),
+16. Access Certificate Authorities, see [Section 3.17](#317-access-certificate-authorities).
 
-2. Wallet Providers
-
-3. Person Identification Data (PID) Providers
-
-4. Trusted List Providers
-
-5. Qualified Electronic Attestation of Attributes (QEAA) Providers
-
-6. Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
-
-7. Electronic Attestation of Attributes (EAA) Providers
-
-8. Qualified Electronic Signature Remote Creation Providers
-
-9. Authentic Sources
-
-10. Relying Parties
-
-11. Conformity Assessment Bodies (CAB)
-
-12. Supervisory Bodies
-
-13. Device Manufacturers and Related Subsystems Providers
-
-14. Attribute Schema Providers
-
-15. National Accreditation Bodies
-
-### 3.1 Users of Wallet Units
+### 3.2 Users of Wallet Units
 
 Users of Wallet Units use the Wallet Unit to receive, store and present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove their identity. Wallet Unit Users can also create Qualified Electronic Signatures and Seals (QES) and utilise Wallet Unit-to-Wallet Unit interactions.
 
 Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the legislative proposal. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the [eIDAS 2.0] Regulation.
 
-### 3.2 Wallet Providers
+### 3.3 Wallet Providers
 
 Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. All Wallet Solutions must be certified as described in [Chapter 7](#7-security-and-data-protection).
 
@@ -176,49 +165,42 @@ The Wallet Providers make available to a User, through an instance of their Wall
 
 Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions.
 
-### 3.3 Person Identification Data (PID) Providers
+### 3.4 Person Identification Data (PID) Providers
 
 PID Providers are trusted entities responsible to:
 
 - verify the identity of the User in compliance with LoA high requirements,
-
-- issue PID to the Wallet Unit in a common format, and
-
+- issue a PID to the Wallet Unit, and
 - make available information for Relying Parties to verify the validity of the PID.
 
 The terms and conditions of these services are for each Member State to determine.
 
-PID Providers may be the same organisations that today issue official identity documents, electronic identity means, etc. Wallet Providers may be the same organisations as PID Providers. In case an organisation acts as both a PID Provider and a Wallet Provider, it complies with all requirements for both PID Providers and Wallet Providers.
+PID Providers may be the same organisations that today issue official identity documents, electronic identity means, etc. PID Providers may be the same organisations as Wallet Providers. In case an organisation acts as both a PID Provider and a Wallet Provider, it complies with all requirements for both PID Providers and Wallet Providers.
 
-### 3.4 Trusted List Provider
+### 3.5 Trusted List Provider
 
-A Trusted List Provider (TLP) is a body responsible for maintaining, managing, and publishing a Trusted List. A Trusted List Provider is appointed by a Member State and notified to the Commission. Within the EUDI Wallet ecosystem, Trusted Lists exist for the following entities:
+A Trusted List Provider (TLP) is a body responsible for maintaining, managing, and publishing a Trusted List. In compliance with [Article 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1), a Trusted List Provider is appointed by a Member State and notified to the Commission. Within the EUDI Wallet ecosystem, Trusted Lists exist for the following entities:
 
 - Wallet Providers,
 - PID Providers,
 - QEAA Providers,
 - PuB-EAA Providers,
-- non-qualified EAA Providers (not mandatory),
-- Access Certificate Authorities for
-  - Relying Parties,
-  - PID Providers,
-  - QEAA Providers,
-  - PuB-EAA Providers.
+- Access Certificate Authorities
+- Qualified Electronic Signature Remote Creation (QESRC) Providers
 
+Note: Trusted Lists and Trusted List Providers may also exist for non-qualified EAA Providers, but this is out of scope of the ARF.
 
-These Trusted Lists are described in more detail in [Section 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and [6.4.2](#642-relying-party-registration), as well as in [Topic 31]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a combination of a public key and the identifier of the associated entity and may be used to verify signatures or seals created by that entity.
+These Trusted Lists are described in more detail in [Sections 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and [6.4.2](#642-relying-party-registration), as well as in [Topic 31]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a combination of a public key and the identifier of the associated entity and may be used to verify signatures or seals created by that entity.
 
-Member States will provide Trusted Lists for PID Providers, QEAA Providers and PuB-EAA Providers, in compliance with [Article 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1). These Trusted Lists may also include non-qualified EAA Providers, but this is not mandatory. Alternatively, domain-specific trusted lists or alternative solutions for managing the trust anchors may be provided for EAA Providers. For instance, trustworthy mDL or DTC Providers are determined by other legal frameworks than [eIDAS 2.0] and published accordingly.
-
-An entity's status as a trusted entity can be verified by checking whether they are present on a Trusted List. Trusted List Providers provide a registration service for the relevant entities. The terms and conditions for entities to become registered are for each Trusted List Provider to determine unless specified elsewhere e.g., in sectoral rules.
+An entity's status as a trusted entity can be verified by checking whether they are present on the relevant Trusted List. Trusted List Providers provide a registration service for the relevant entities. The terms and conditions for entities to become registered are for each Trusted List Provider to determine unless specified elsewhere e.g., in sectoral rules.
 
 For more information, please refer to [Topic 27] and to [Topic 31].
 
-### 3.5 Qualified Electronic Attestation of Attributes (QEAA) Providers
+### 3.6 Qualified Electronic Attestation of Attributes (QEAA) Providers
 
 Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs applies also to QEAA Providers, but specific rules for this Trust Service may be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
-### 3.6 Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
+### 3.7 Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
 
 As specified in the Regulation, an attestation may be issued by or on behalf of a public sector body responsible for an authentic source. This ARF calls such an attestation a PuB-EAA. An authentic source is a repository or system that contains and provides attributes about a natural or legal person or object. An authentic source moreover is legally considered to be a primary source of those attributes. A public sector body primarily is a state, regional or local authority, or a body governed by public law.
 
@@ -228,29 +210,28 @@ The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect 
 
 For the precise and legally binding definitions and obligations regarding the issuance of PuB-EAAs, please refer to the Regulation.
 
-### 3.7 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
+### 3.8 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
 
 Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider. While they will be supervised under [eIDAS 2.0], it can be assumed that other legal or contractual frameworks will mostly govern the rules for provision, use and recognition of EAAs. Those other frameworks may cover policy areas such as educational credentials, digital payments, although they may also rely on Qualified Electronic Attestation of Attributes Providers. For non-qualified EAAs to be used, EAA Providers offer Users a way to request and obtain these EAA. This implies that these non-qualified EAA Providers comply with the Wallet Unit interface specifications. The terms and conditions of issuing EAAs and related services are subject to sectoral rules.
 
-### 3.8 QES Remote Creation (QESRC) Providers
+### 3.9 Qualified Electronic Signature Remote Creation (QESRC) Providers
 
 The Wallet Unit will allow the User to create free-of-charge qualified electronic signatures over any data. This will also enhance the use of the Wallet Unit for signing, in a natural and convenient way. The creation of a qualified electronic signature or seal by means of the Wallet Unit can be achieved in several ways:
 
 - the Wallet Unit itself could be certified as a qualified signature/seal creation device (QSCD), or
-
 - the Wallet Unit could implement secure authentication into an electronic signature or electronic seal invocation capability as a part of a local QSCD or a remote QSCD managed by a QTSP.
 
- As part of the ecosystem, the use of common interfaces and protocols for provisioning qualified electronic signatures and seals will create a unified European market for QTSPs offering remote signature services. European citizens will be able to choose any QTSP, without worrying about technical interoperability, and this will enhance competition.
+As part of the ecosystem, the use of common interfaces and protocols for provisioning qualified electronic signatures and seals will create a unified European market for QTSPs offering remote signature services. European citizens will be able to choose any QTSP, without worrying about technical interoperability, and this will enhance competition.
 
 Besides providers of qualified electronic signatures and seals, also providers of non-qualified electronic signatures or seals may exist. However, such providers are out of scope of this ARF.
 
-### 3.9 Authentic Sources
+### 3.10 Authentic Sources
 
 Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons. Authentic Sources are sources for attributes on, for instance, address, age, gender, civil status, family composition, nationality, education and training qualifications titles and licences, professional qualifications titles and licences, public permits and licences, or financial and company data. Authentic Sources are required to provide an interface to QEAA Providers to verify the authenticity of the above attributes, either directly or via designated intermediaries recognised at national level. Authentic Sources may also issue PuB-EEAs themselves if they meet the requirements of the [eIDAS 2.0] Regulation. In Figure 1 this is indicated by the arrow 'provides qualified data'.
 
 It is up to the Member States to define terms and conditions for the provisioning of these Pub-EAAs, but PuB-EAA Providers will comply with the technical specifications, standards, and procedures applicable to QEAA Providers.
 
-### 3.10 Relying Parties
+### 3.11 Relying Parties
 
 Relying Parties are natural or legal persons that rely upon an electronic identification scheme or on a Trust Service. They request attributes contained within a PID, QEAA, Pub-EAA or EAA from the Wallet Unit, subject to the approval of the User and within the limits of applicable legislation and rules.
 
@@ -260,7 +241,7 @@ To rely on Wallet Units for the purpose of providing a service, Relying Parties 
 
 Relying Parties maintain an interface with Wallet Units to request attestations, using mutual authentication.
 
-### 3.11 Conformity Assessment Bodies (CAB)
+### 3.12 Conformity Assessment Bodies (CAB)
 
 Conformity Assessment Bodies (CAB) are public or private bodies accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3). They are responsible for carrying out assessments on which Member States will rely before issuing a Wallet Unit or providing the qualified status to a Trust Service Provider.
 
@@ -268,23 +249,29 @@ The Wallet Solutions will be certified by CABs. QTSPs will be audited regularly 
 
 The standards and schemes used by CABs to fulfil their tasks to certify Wallet Solutions are discussed in [Chapter 7](#7-certification-and-risk-management).
 
-### 3.12 Supervisory Bodies
+### 3.13 Supervisory Bodies
 
-For the Regulation, the supervisory bodies are important to review and ensure proper functioning of the Wallet Providers and other relevant actors. Supervisory Bodies will be created and appointed in the Member States. The Supervisory Bodies will be notified to the Commission by the Member States.
+For the Regulation, the Supervisory Bodies are important to review and ensure proper functioning of the Wallet Providers and other relevant actors. Supervisory Bodies will be created and appointed in the Member States. The Supervisory Bodies will be notified to the Commission by the Member States.
 
-### 3.13 Device Manufacturers and Related Subsystems Providers
+### 3.14 Device Manufacturers and Related Subsystems Providers
 
 In the EUDI Wallet ecosystem, commercial actors such as device manufacturers and related subsystems providers fulfil an important role to enable a Wallet Unit to work smoothly and securely. Device manufacturers and related subsystem providers provide a platform on which a Wallet Unit can be built. Wallet Providers ensure that their Wallet Units use that platform to ensure usability, security, stability and connectivity. The components provided by device manufacturers and providers of related subsystems may include, among others, hardware, operating systems, secure cryptographic hardware, libraries, and app stores.
 
-### 3.14 Attribute Schema Providers for QEAA, PuB-EAA and EAA
+### 3.15 Attribute Schema Providers for QEAA, PuB-EAA and EAA
 
  Attribute Schema Providers publish attribute schemas describing the structure of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding of all attributes. These attribute schemas are published in Attestation Rulebooks, see [Section 5.4](#54-attestation-rulebooks). For PIDs and mDLs, the applicable Rulebooks are published by the Commission.
 
  A catalogue of published Attestation Rulebooks will enable other entities such as Relying Parties to discover which attestations exist within the EUDI Wallet ecosystem, and how attributes from these attestations can be requested and validated. The Commission sets out the technical specifications, standards, and procedures for this purpose. Common schemas, including by sector-specific organisations, are critical for widespread adoption of attestations.
 
-### 3.15 National Accreditation Bodies
+### 3.16 National Accreditation Bodies
 
 National Accreditation Bodies (NAB) under [Regulation (EC) No 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) are the bodies in Member States that perform accreditation with authority derived from the Member State. NABs accredit CABs as competent, independent, and supervised professional certification bodies in charge of certifying products/services/processes against normative document(s) establishing the requirements (e.g., legislations, specifications, protection profiles). NABs monitor the CABs to which they have issued an accreditation certificate.
+
+### 3.17 Access Certificate Authorities
+
+Access Certificate Authoritie issue access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers and Relying Parties in the EUDI Wallet ecosystem. When these entities interact with a Wallet Unit to issue or request a PID or attetation, they will present an access certificate to prove their authenticity and validity.
+
+Access Certificate Authorities must be notified by a Member State to the Commission. As part of the notification process, the trust anchors of the Access CA must be included in a Trusted List. A trust anchor is the combination of a public key and an identifier for the associated entity. Wallet Units need these trust anchors to verify of the signatures over the access certificates presented to them when a new PID or attestation is issued or when they receive an attribute presentation request from a Relying Party.
 
 ## 4 High level architecture
 
@@ -439,7 +426,7 @@ A remote cross-device attribute presentation flow begins when the User uses a br
 
  1. The browser presents a QR code that includes information about the tunnel endpoint and keys that will be used for establishing a secure channel over this tunnel.
  2. The user scans the QR code using the camera on the User device.
- 3. The User device emits a BLE advertisement, which is received by the browser. The advertisement includes, in an encrypted form, information required for establishing the secure tunnel. This advertisement is used as a proximity check: the tunnel cannot be established if the User device and the device on which the browser runs are not close to each other. 
+ 3. The User device emits a BLE advertisement, which is received by the browser. The advertisement includes, in an encrypted form, information required for establishing the secure tunnel. This advertisement is used as a proximity check: the tunnel cannot be established if the User device and the device on which the browser runs are not close to each other.
  4. A tunnel is established between the two devices.
   
 The browser then sends the OpenID4VP-compliant presentation request to the User device. If there are multiple Wallet Units present on the User device, the device OS will determine to which of these the request will be forwarded, possibly after consulting the User. The Wallet Instance will process the presentation request and, after requesting approval from the User, will return the requested attributes in encrypted format to the browser. The browser will forward the response to the remote Relying Party Instance.
@@ -522,9 +509,7 @@ In the context of the EUDI Wallet ecosystem, a PID or attestation begins its lif
 
 For certain use cases, a PID or attestation may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is **Issued**, and it will transition to **Valid** when it reaches the beginning of its validity period. However, if a PID or attestation is issued on or after the validity start date, its state directly changes to **Valid**.
 
-![Figure 9](media/image5.png) <!-- <img src="media/image5.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
-
-TBD: Update the diagram so it mentions attestations as well.
+![Figure 9](media/Figure_9_Statechart_PID.png) <!-- <img src="media/Figure_9_Statechart_PID.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
 
 Figure 9: State diagram of PID or attestation
 
@@ -578,7 +563,7 @@ This document specifies the concept of an Attestation Rulebook. For each type of
 
 An Attestation Rulebook also makes some choices regarding the protocol(s) for presentation that must be supported by the relevant attestations. [Topic 12] contains the requirements for Attestation Rulebooks.
 
-Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.14](#314-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa). This role can be assumed by different types of organisation:
+Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.15](#315-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa). This role can be assumed by different types of organisation:
 
 - Some Rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3) of this ARF.
 
@@ -966,7 +951,7 @@ No trust relationships are required for Wallet Instance de-installation; anybody
 
 3. Instead of presenting attributes to a Relying Party, a User can also present them to another User, meaning the Wallet Unit is interacting with another Wallet Unit. This is briefly discussed in [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
 
-4. The PID Provider or the Attestation Provider respectively, remains responsible for managing the attestation over its lifetime. Management may include re-issuing the PID or attestation with the same or with different attribute values. The Provider can also revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
+4. The PID Provider or the Attestation Provider remains responsible for managing the PID or attestation over its lifetime. Management may include re-issuing the PID or attestation with the same or with different attribute values. The Provider can also revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
 
 5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses the scenario that a User decides to delete the PID or an attestation from their Wallet Unit.
 
