@@ -1,4 +1,4 @@
-Version 1.0, updated 9 January 2025
+Version 0.9, updated 9 January 2025
 
 # A - Privacy risks and mitigation
 ## 1 Introduction 
@@ -17,29 +17,29 @@ current mitigations for privacy risks, identifying additional measures
 to further minimize these risks, and exploring alternative solutions,
 such as Zero-Knowledge Proofs (ZKP).*
 
-*A section will be added to the ARF to discuss:*
+A section will be added to the ARF to discuss:
 
-1.  *the risks for User privacy, especially regarding tracking as a
-    result of collusion between Relying Parties or between a Relying
-    Party and an Attestation Provider*
+1.  the risks for User privacy due to possible collusion and/or data breaches involving Relying Parties and/or Attestation Providers
 
-2.  *the countermeasures taken in the current version of the ARF*
+2.  the countermeasures taken in the current version of the ARF
 
-3.  *the ways in which Attestation Providers can further reduce these
-    risks, for example by issuing short-lived attestations.*
+3.  the ways in which Attestation Providers can further reduce these
+    risks, for example by issuing short-lived attestations.
 
-4.  *the ways in which these risks may be fully mitigated in the future,
-    e.g. by means of ZKP-based proof mechanisms for attestations.*
+4.  the ways in which these risks may be fully mitigated in the future,
+    e.g. by means of ZKP-based proof mechanisms for attestations.
+
+5.  the risks for User privacy related to revocation checking.
 
 In this version of the document, the feedback of Member States during
-the meetings on 4 and 11 December 2024 was processed.
+the meetings on 4 and 11 December 2024 was processed, including the comments up until 8 January 2025.
 
 ### 1.2 Related risks in the Risk Register
 
 The risk register for European Digital Identity Wallets \[RiskRegister\]
 contains the following risks regarding User tracking as a result of
 collusion between Relying Parties or between a Relying Party and an
-Attestation Provider:
+Attestation Provider or of a data breach of the parties:
 
 <table>
 <colgroup>
@@ -57,13 +57,45 @@ Attestation Provider:
 <tbody>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
-<td>R14</td>
-<td>Surveillance</td>
+<td>R6</td>
+<td>Data disclosure</td>
 </tr>
 <tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R12</td>
+<td>Transaction data disclosure</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R14</td>
+<td>Surveillance</td>
+</tr><tr>
 <td><strong>System-related risks</strong></td>
 <td>SR1 </td>
 <td>Wholesale surveillance </td>
+</tr>
+</tbody>
+</table>
+
+Most of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in
+its section III) are also relevant threats to consider in the context of preventing
+tracking and tracing. These threats may belong to attack chains leading to the risks
+expressed in the table above.
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R6. Data Disclosure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal
+data including special categories of personal data. The privacy breach risk
+is very similar when considered from a privacy rather than security viewpoint.</td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +106,24 @@ Attestation Provider:
 </colgroup>
 <thead>
 <tr>
-<th><strong><u>R14. Surveillance</u></strong></th>
+<th><strong>R12. Transaction data disclosure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction data disclosure is defined as the disclosure of information
+related to information on a transaction between stakeholders.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R14. Surveillance</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -94,7 +143,7 @@ data.</td>
 </colgroup>
 <thead>
 <tr>
-<th><strong><u>SR1. Wholesale surveillance</u> </strong></th>
+<th><strong>SR1. Wholesale surveillance</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -175,8 +224,8 @@ intended as statements of fact.
 
 This document is structured as follows:
 
--   Chapter 2 explains in detail the risks for User privacy due to
-    collusion between Relying Parties and/or Attestation Providers
+-   Chapter 2 explains in detail the risks for User privacy due to collusion
+    and/or data breaches involving Relying Parties and/or Attestation Providers.
 
 -   Chapter 3 discusses possible mitigation measures for Relying Party
     linkability.
@@ -195,8 +244,8 @@ This document is structured as follows:
 
 ### 2.1 Linkability
 
-This chapter describes in detail how the attestation formats currently
-specified for use in the EUDI Wallet ecosystem could be misused for
+This chapter describes in detail how the attestation formats relying on salted
+hashed attributes for use in the EUDI Wallet ecosystem could be misused for
 tracking the User's behaviour.
 
 The attestation formats required to be supported in the ARF are
@@ -236,12 +285,14 @@ include milliseconds, this will almost always be the case.
 
 Apart from being unique in the whole EUDI Wallet ecosystem, the values
 of these elements also are fixed, meaning that when the same attestation
-is presented again, the Relying Party will receive the same values. This
-fact enables malicious Relying Parties and Attestation Providers to link
-attribute values that were presented to different Relying Parties in
-different transactions. If this happens, the reasonable expectation of
-Users that their separate activities involving the EUDI Wallet will not
-be combined into a single profile of their behaviour, is violated.
+is presented again, the Relying Party will receive the same values. This fact
+enables malicious Relying Parties and Attestation Providers, or,
+in case of a data breach, any malicious party (including third-parties)
+with access to the corresponding data, to link attribute values that
+were presented to different Relying Parties in different transactions.
+If this happens, the reasonable expectation of Users that their separate
+activities involving the EUDI Wallet will not be combined into a single
+profile of their behaviour, is violated.
 
 Linkability comes in two varieties, Relying Party linkability and
 Attestation Provider linkability. These are discussed in the next
