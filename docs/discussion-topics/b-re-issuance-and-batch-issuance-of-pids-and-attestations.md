@@ -90,8 +90,8 @@ value of the attributes in the new attestation will typically be the
 same as in the original attestation. However, this is not required, the
 PID Provider or Attestation Provider may change one or more attribute
 values. Re-issuance, as described in this document, is only applied within 
-the administrative validity of a document. For example, a mobile 
-Driving Licence (mDL) may have a  technical  validity  shorter than
+the administrative validity of a document. As example, a mobile Driving Licence (mDL) 
+has attestations which have a technical  validity  shorter than
 administrative validity of the actual document (i.e., the driving licence): 
 re-issuance is used for obtaining a "fresh" attestation, whereas the administrative
 process for obtaining a new attestation that corresponds 
@@ -108,7 +108,7 @@ Provider will re-issue that PID or attestation in a batch as well.
 
 The ARF requires that Wallet Units, PID Providers, and Attestation
 Providers use the \[OpenID4VCI\] specification for issuance of PIDs and
-attestations. \[OpenID4VCI\] supports re-issuance of attestations
+attestations (ISSU\_01). \[OpenID4VCI\] supports re-issuance of attestations
 through so-called Refresh Tokens. These are tokens that are optionally
 issued during the first-time issuance of a PID or attestation, next to
 the Access Tokens used in OpenID4VCI to protect access to the PID
@@ -126,10 +126,13 @@ accompanied by a corresponding Refresh Token.
 
 The \[OpenID4VCI\] specification also supports batch issuance of
 attestations, by optionally including multiple public keys and proofs of
-possession in the proofs parameter in the Credential Request.
+possession in the proofs parameter in the Credential Request. ARF explicitly
+requires support for this functionality (ISSU\_04)
 
 Given the discussions in \[Topic A\], it seems reasonable to assume that
-batch issuance is in many cases desirable and this OpenID4VCI feature shall be supported by Wallet Solutions, PID Providers and Attestation Providers. An Attestation Rulebook shall indicate if batch issuance shall be used for a specific PID or attestation.
+batch issuance is in many cases desirable. 
+An Attestation Rulebook shall indicate if batch issuance shall be used for a 
+specific PID or attestation.
 
 
 ## 3 Reasons for re-issuance
@@ -159,7 +162,7 @@ For this, see \[Topic A\].
 
 As specified in \[ISO/IEC 18013-5\] or \[SD-JWT VC\], each PID or
 attestation contains metadata indicating its technical validity period.
-Determining the length of the validity period is the responsibility of
+Determining the length of the technical validity period is the responsibility of
 the PID Provider or the Attestation Provider; neither these standards,
 nor the ARF, nor the PID Rulebook specify anything about this. The
 technical validity period chosen by the PID Provider or Attestation Provider will
@@ -177,7 +180,7 @@ that are reaching their end of technical validity.
 
 A similar reason for re-issuing PIDs and attestations occurs when the
 PID Provider or Attestation Provider uses once-only attestations (as
-defined in \[Topic A\], which can be presented only once to a Relying
+defined in \[Topic A\]), which can be presented only once to a Relying
 Party. In that case, the Wallet Unit will regularly need new PIDs or
 attestations, to avoid running out.
 
@@ -185,10 +188,8 @@ Re-issuance of PIDs or attestations for these reasons is a purely
 technical matter. To the maximum extent possible, the User should not
 notice that a PID or attestation has been re-issued, nor should they
 have to take any action to ensure that re-issuance happens in time.
-However, a User shall be offered the option to be notified by the Wallet Unit
-every-time a re-issuance takes place, or every-time a re-issuance fails. Similarly,
-the User should be offered the the option to disable re-issuance.
-Finally, re-issuance events should be logged. 
+Nevertheless, re-issuance events should be logged as stated in DASH\_02, and 
+a User should be able to access the this log (DASH\_02b). 
 These conditions are very different from a first-time issuance of a PID
 or attestation, where the User must take the initiative to request the
 PID or attestation, and is potentially involved in the process in other
@@ -208,6 +209,10 @@ severe traffic violations.
 Re-issuance of a PID or attestation for this reason will have an impact
 on the User, because they will notice that their attribute values have
 been changed. In this case Users should consent.
+
+Question
+
+1. What should happen if User does not consent?
 
 ### 3.4 Synchronous issuing
 
@@ -280,7 +285,7 @@ simultaneously to the Wallet Unit.
 The ARF v1.4 (and v1.5 as well) contains a requirement (WTE\_02 /
 WUA\_02) stating that "a WSCA SHALL authenticate the User before
 performing any cryptographic operation involving a private or secret key
-of (…) a PID or an attestation in a Wallet Unit."
+of (...) a PID or an attestation in a Wallet Unit."
 
 If Users must not be aware of re-issuance processes for their existing
 PIDs and attestations, this requirement may be problematic. This is
@@ -317,6 +322,13 @@ A solution for this challenge could be sought in several directions:
     uses these private keys as normal during a presentation of
     attributes.
 
+4. By using WSCA to authenticate Users before using the Wallet Unit. 
+Requirement WUA\_03 states that "A Wallet Unit SHALL authenticate the User 
+before performing any operation excluding cryptographic operations. The Wallet 
+Unit MAY rely on a WSCA to do so (...)". Therefore, the WSCA may perform
+the necessary cryptographic operations immediately after authenticating the
+user on the Wallet Unit behalf. 
+
 Option 1 may not count as a good solution. Cryptographic key generation
 by the WSCA is a sensitive operation, and it seems unwise to allow this
 to happen without User authentication, if we can avoid that. Also, it is
@@ -330,7 +342,12 @@ Option 2 entails multiple risks and should be avoided.
 Option 3 seems promising, but Hierarchical Deterministic Keys have not
 been part of the ARF before. If we want to require support from Wallet
 Units and Attestation Providers for this technology, it needs to be
-further investigated. Option 3 also requires relaxing WTE\_02.
+further investigated. High Level Requirements for this option will be
+provided in a future specification.
+
+Option 4 is currently the recommended approach. For this reason
+WUA\_02 and WUA\_03 will be merged, and Wallet Units will be required to authenticate
+Users using WSCA. 
 
 Requirement WUA\_02 may also be problematic for batch issuance, if it
 means that User authentication is required before generation of an
@@ -354,8 +371,7 @@ and User convenience (fewer User authentications). During certification
 of the Wallet Solution, it will be verified that the solution provides
 an adequate level of security."
 
-We could add a requirement to the ARF that a request for (first-time)
-batch issuance must be possible with at most one User authentication.
+A new requirement has been added related to that (Requirement 6).
 
 
 ### 4.3 Triggers for the issuance process
@@ -423,7 +439,7 @@ Option 1 has obvious drawbacks, in particular:
 
 -   Finally, such a request, and also the PID Provider or Attestation
     Provider endpoint to which it can be addressed, have not been
-    specified yet.
+    specified yet. Option 4 is probably a solution to that. 
 
 Option 2 requires direct communication between the Wallet Provider and
 the PID Provider or Attestation Provider. The ARF v1.5 does not foresee
@@ -468,13 +484,26 @@ value anyway. This approach nevertheless has some drawbacks as well:
     attestation. But this implies that they should have a policy
     determining how they will deal with situations like this.
 
-The use of this option , as long as it does not involve the Wallet Unit for
+The use of this option, as long as it does not involve the Wallet Unit for
 delivering such a notification is left as an implementation choice. 
 
-### 4.4	Handling existing PIDs or attestations after re-issuance of new ones
-In general, re-issuance of a PID or attestation will take place when the existing PID or attestation is still valid. If that were not the case, there would be a time window where User does not have any valid PIDs or attestations that they can present to Relying Parties.
+Option 4 should be the recommended approach. Option 4 is similar to Option 1
+but it does not suffer by the lack of a PID Provider or Attestation
+Provider endpoint. However, depending on the revocation reason, re-issuance
+of an attestation may not succeed: Wallet Solutions should be able to handle this
+condition. 
 
-After successful re-issuance of a PID or attestation, the Wallet Unit must delete the existing PID or attestation, meaning the one that the re-issued PID or attestation intends to replace. This is for a simple reason: the value of some of the attributes in the new PID or attestation may be different from the value in the existing one. And obviously, the Wallet Unit must not present attestations containing attribute values that the Wallet Provider no longer wants to attest to.
+### 4.4	Handling existing PIDs or attestations after re-issuance of new ones
+In general, re-issuance of a PID or attestation will take place when the existing PID or 
+attestation is still valid. If that were not the case, there would be a time window where 
+User does not have any valid PIDs or attestations that they can present to Relying Parties.
+
+After successful re-issuance of a PID or attestation, the Wallet Unit must delete the 
+existing PID or attestation, meaning the one that the re-issued PID or attestation 
+intends to replace. This is for a simple reason: the value of some of the attributes 
+in the new PID or attestation may be different from the value in the existing one. 
+And obviously, the Wallet Unit must not present attestations containing attribute 
+values that the Wallet Provider no longer wants to attest to.
 
 ## 5 Additions and changes to the ARF
 
@@ -484,50 +513,38 @@ The following High-Level Requirements will be added to Annex 2 of the
 ARF v1.8:
 
 #### Requirement 1
-The Schema Provider for a PID or Attestation Rulebook SHALL indicate if
-re-issuance SHALL be supported for a specific PID or attestation.
+The Schema Provider for a PID or Attestation Rulebook SHALL indicate if the Attestation Provider SHALL
+support re-issuance  for a specific PID or attestation.
 
 #### Requirement 2
-The Schema Provider for a PID or Attestation Rulebook SHALL indicate if
-batch issuance SHALL be supported for a specific PID or attestation. It SHALL
-also define if batch issuance SHALL or MAY be used. 
+The Schema Provider for a PID or Attestation Rulebook SHALL indicate if the Attestation Provider SHALL
+support batch issuance for a specific PID or attestation. 
 
 #### Requirement 3
-A Wallet Provider SHALL ensure that its Wallet Solution  provides support for PID and attestation batch issuance (probably not required due to ISSU_01, ISSUE_04)
-
-#### Requirement 4
-A Wallet Provider SHALL ensure that its Wallet Solution  provides support for PID and attestation re-issuance (probably not required due to ISSU_01)
-
-#### Requirement 5
 During first-time issuance of a PID or attestation that supports
 re-issuance, PID Provider or Attestation Provider SHALL ensure that 
 each Access Token is accompanied with a corresponding 
 Refresh Token 
 
-#### Requirement 6
+#### Requirement 4
 A Wallet Provider SHALL ensure that its Wallet Solution uses Refresh Tokens
 for requesting the re-issuance of the PID or attestation. 
 
-#### Requirement 7
-A Wallet Provider SHALL ensure that its Wallet Solution logs re-issuance events providing a clear indication of the process outcome.
-
-#### Requirement 8
-A Wallet Provider SHALL ensure that its Wallet Solution offers Users the option to disable re-issuance providing a clear
-warning about the implications of this action.
-
-#### Requirement 9
-A Wallet Provider SHALL ensure that its Wallet Solution  offers Users the option to receive notifications about events
-related the re-issuance of an attestation.
-
-#### Requirement 10
+#### Requirement 5
 A Wallet Provider SHALL ensure that its Wallet Solution receives
 User consent to complete a re-issuance process
 that results in a change in the attribute value of the re-issued PID or attestation.
 
-#### Requirement 11
+#### Requirement 6
 A Wallet Provider SHALL ensure that its Wallet Solution
 supports first time PID or attestation batch issuance with
 at most one User authentication.
+
+#### Requirement 7
+A Wallet Provider SHALL ensure that its Wallet Solution
+after successful re-issuance of a PID or attestation, deletes the 
+existing PID or attestation, meaning the one that the re-issued PID or attestation 
+intends to replace
 
 ### 5.2 High-Level Requirements to be changed
 
@@ -535,6 +552,16 @@ at most one User authentication.
 issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
 this Discussion Paper.&gt;
+
+Merge WUA\_02 and WUA\_03 and require from Wallet Units to authenticate Users using WSCA
+
+>**Requirement WUA\_02**:
+A Wallet Unit SHALL authenticate the User before performing any operation using WSCA. For cryptographic operations
+involving a PID key (which is part of the EUDI Wallet eID means), the WSCA SHALL be certified to 
+be compliant with applicable requirements for level of assurance "high" in Commission Implementing 
+Regulation (EU) 2015/1502 section 2.2.1.
+
+Extend DASH\_02 to include re-issuance transactions
 
 #### 5.2.1 Topic 10/23
 
