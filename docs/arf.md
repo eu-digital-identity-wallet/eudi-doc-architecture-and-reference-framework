@@ -277,9 +277,7 @@ Access Certificate Authorities must be notified by a Member State to the Commiss
 
 ### 4.1 Introduction
 
-This chapter provides a broad overview of the EUDI Wallet ecosystem's core components, their interfaces, and the overall design principles. Figure 2 visually clarifies these core components, the key entities within the EUDI Wallet architecture, and how they communicate via the primary interfaces.
-
-This chapter is structured as follows:
+This chapter provides a broad overview of the EUDI Wallet ecosystem's core components, their interfaces, and the overall design principles. This chapter is structured as follows:
 
 - [Section 4.2](#42-design-principles) discusses the design principles that guided the design of the EUDI Wallet ecosystem, as described in this ARF.
 - [Section 4.3](#43-reference-architecture) presents an overview of the ecosystem's architecture, focussing on the components that make upa Wallet Unit and on the interfaces between a Wallet Unit and other entities, as well as the protocols used on these interfaces.
@@ -311,7 +309,7 @@ The EUDI Wallet architecture embraces the principle of security by design. This 
 
 ### 4.3.1 Overview
 
-Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components. In comparison to Figure 1, this figure presents more detail on the composition of a Wallet Unit and its interfaces to other entities, in particular Relying Party Instances. The shown components of a Wallet Unit are described in [Section 4.3.2](#432-components-of-a-wallet-unit). For a description of the other entities, please refer to [Chapter 3](#3-eudi-wallet-ecosystem).
+Figure 2 below gives an overview of the architecture of the EUDI Wallet ecosystem and its components. In comparison to Figure 1, this figure presents more detail on the composition of a Wallet Unit and its interfaces to other entities. The depicted components of a Wallet Unit are described in [Section 4.3.2](#432-components-of-a-wallet-unit), while the interfaces are described in [Section 4.3.3](#433-wallet-unit-interfaces-and-protocols). The other entities shown in the figure were already described in [Chapter 3](#3-eudi-wallet-ecosystem).
 
 ![Figure 2](media/Figure_2_High-Level_Architecture.jpeg) <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
@@ -331,7 +329,7 @@ The following have been identified as the core components of a Wallet Unit:
 
 - **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
-#### 4.3.2 Wallet Unit interfaces and protocols
+#### 4.3.3 Wallet Unit interfaces and protocols
 
 Figure 2 shows the following interfaces between components of a Wallet Unit, or between the Wallet Unit and other entities in the EUDI Wallet ecosystem:
 
@@ -505,6 +503,8 @@ The Trusted List Provider can temporarily suspend a PID Provider or Attestation 
 
 #### 4.6.5 PID or attestation
 
+Figure 9 shows the possible states of a PID or attestation.
+
 In the context of the EUDI Wallet ecosystem, a PID or attestation begins its lifecycle when being issued to a Wallet Unit. Please note that this means that the management of attributes in the Authentic Source (adhering to national structures and attribute definitions) is outside of the scope of the ARF.
 
 For certain use cases, a PID or attestation may be pre-provisioned, meaning it is not yet valid when issued. In that case, its state is **Issued**, and it will transition to **Valid** when it reaches the beginning of its validity period. However, if a PID or attestation is issued on or after the validity start date, its state directly changes to **Valid**.
@@ -514,6 +514,18 @@ For certain use cases, a PID or attestation may be pre-provisioned, meaning it i
 Figure 9: State diagram of PID or attestation
 
 There are two possible transitions for a valid PID or attestation: it expires by passing through the validity end date and transitions to the **Expired** state, or it is revoked by its PID Provider or Attestation Provider, ending up in the **Revoked** state. Expiration and revocation are independent transitions. Once a PID or attestation is expired or revoked, it cannot transition back to **Valid**.
+
+#### 4.6.6 Relying Party
+
+Figure 10 shows the possible states of a Relying Party.
+
+![Figure 10](media/Figure_10_Statechart_Relying_Party.png) <!-- <img src="media/Figure_10_Statechart_Relying_Party.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+
+Figure 9: State diagram of Relying Party
+
+The **Valid** state is the first state of a Relying Party. This means it has been registered by a Relying Party Registrar, as described in [Section 6.4.2](#642-relying-party-registration).
+
+The Registrar can de-register a Relying Party.  This leads to the **Invald** state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration).
 
 ## 5 PIDs and attestations
 
@@ -550,9 +562,7 @@ Please note that the differences between these attestation categories are purely
 Within the EUDI Wallet ecosystem, the following suitable standardised formats for electronic attestations of attributes are (potentially) used:
 
 1. The ISO/IEC 18013-5 standard defines an attribute schema, data format and proof mechanisms for mobile driving licences, which can be used also for other types of attestations, see [ISO/IEC 18013-5].
-
 2. SD-JWT-based Verifiable Credentials (SD-JWT VC) defines a proof mechanism similar to [ISO/IEC 18013-5], but for a different data format, see [SD-JWT VC].
-
 3. W3C Verifiable Credentials Data Model v1.1 [W3C VC DM v1.1] defines a generic attribute schema agnostic to data formats and proof mechanisms, while v2.0 introduces requirements on format and recommendations on proof mechanisms, see [W3C VC DM v2.0].
 
 [Topic 12] states the requirements regarding support for these specifications.
@@ -566,9 +576,7 @@ An Attestation Rulebook also makes some choices regarding the protocol(s) for pr
 Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.15](#315-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa). This role can be assumed by different types of organisation:
 
 - Some Rulebooks already have been defined by the European Commission, in consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the mDL Rulebook. These can be found in [Annex 3](#annex-3) of this ARF.
-
 - The Rulebook for an attestation intended to be used across organisations and/or across borders can be defined by an organisation in which, insofar possible, all stakeholders are represented. This will prevent multiple Attestation Rulebooks being defined for the same type of attestation, for example, diplomas. It will also prevent unnecessary differences in the syntax and semantics between similar attestations. The decision on which organisation will be responsible for a given Attestation Rulebook is out of scope for this document. As explained in [Topic 12], it is possible that an individual Attestation Provider needs to include attributes in an attestation that have not been specified in the relevant sectoral or EU-wide Rulebook. An example of this are attributes that only have a meaning within the Member State in which the Attestation Provider resides. To allow such domestic attributes, an Attestation Provider can define a custom Rulebook to specify attributes that are specific to this Provider and are not included in the EU-wide or sectoral Rulebook.
-
 - The Rulebook for an attestation intended to be used only within an organisation will be defined by that organisation.
 
 ### 5.5 Catalogues
@@ -584,17 +592,13 @@ For the development and success of the EUDI Wallet ecosystem, re-using the build
 Building on the requirements of [Topic 12], having in mind both the need for interoperability on the one hand and the varied nature of attestations and organisations specifying those attestations on the other hand, the following principles were defined:
 
 - Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem may be registered and published in a publicly accessible catalogue. The Attestation Rulebook catalogue may also include Attestation Rulebooks for non-qualified EAAs.
-
 - The Commission will take measures to establish and maintain the Attestation Rulebooks catalogue.
-
 - The Attestation Rulebooks catalogue will enable Attestation Providers, Relying Parties and other actors in the EUDI Wallet ecosystem to know which attestation types exist, and what are the identifiers, syntax, and semantics of all attributes that are part of the attestation.
 
 Also, the following points are emphasised, to facilitate creation and adoption:
 
 - Registration of an Attestation Rulebook in the Attestation Rulebook catalogue is not mandatory.
-
 - Registration does not create any obligation or automatic acceptance by any third party, or automatically implies cross-border recognition of the type of attestation described in the Rulebook.
-
 - The Attestation Rulebooks catalogue can be in the same environment as the catalogue of attributes.
 
 Implementation of these principles will be discussed further in detail. The ambition is to use existing efforts and tools created by the Member States, the Commission and cross-border organisations, to connect and interact with the stakeholders, to utilise existing data assets for updating them when needed and add new data sets to support new use cases that will be implemented in the EUDI Wallet ecosystem.
@@ -609,19 +613,19 @@ Implementation of these principles will be discussed further in detail. The ambi
 
 The trust model presented in this chapter describes, for all interactions between components of the EUDI Wallet ecosystem, which trust relationships are established between the interacting parties to enable these interactions.
 
-![Figure 6 EUDI Wallet trust architecture](media/image6.png) <!-- <img src="media/image6.png" style="width:7.16666447944007in;height:5.281294838145232in" /> -->
+![Figure 11](media/Figure_11_Trust_Model.jpeg) <!-- <img src="Figure_11_Trust_Model.jpeg" style="width:7.16666447944007in;height:5.281294838145232in" /> -->
 
-Figure 6: EUDI Wallet trust architecture
+Figure 11: EUDI Wallet trust architecture
 
-Figure 6 above shows the parties and components that are involved in the trust architecture for the EUDI Wallet ecosystem.
+Figure 11 above shows the parties and components that are involved in the trust architecture for the EUDI Wallet ecosystem.
 
 In the center of this ecosystem is the **Wallet Unit**, shown in the top middle in blue. [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle) describes the interactions between the Wallet Unit and other roles in the ecosystem in the lifecycle of a Wallet Unit, namely installation, activation, management, and de-installation.
 
-A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure 6 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Trusted List Provider (TLP) located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential withdrawal or suspension. The Wallet Provider manages the latter by issuing a **Wallet Unit Attestation (WUA)** to a Wallet Unit and, when necessary, revoking it.
+A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure 11 positions the Wallet Provider above the Wallet Unit and depicts the Wallet Provider Trusted List Provider (TLP) located in the lower right corner for each Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle) elaborates on the interactions among these entities throughout the lifecycle of a Wallet Solution and Wallet Provider, including processes such as registration and potential withdrawal or suspension. The Wallet Provider manages the latter by issuing a **Wallet Unit Attestation (WUA)** to a Wallet Unit and, when necessary, revoking it.
 
-One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations (QEAAs, PuB-EAAs and non-qualified EAAs). The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 6. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Trusted List Provider** (TLP) or by an **Attestation Provider Trusted List Provider** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
+One of the main functions of the Wallet Unit is to handle the User's PID(s) and attestations (QEAAs, PuB-EAAs and non-qualified EAAs). The PID(s) are issued by **PID Providers** and the attestations by **Attestation Providers**, shown to the left of the Wallet Unit in Figure 11. Like Wallet Providers, PID Providers and Attestation Providers are registered by a **PID Provider Trusted List Provider** (TLP) or by an **Attestation Provider Trusted List Provider** before they can interact with a Wallet Unit, and before a Relying Party can verify the PID(s) or attestation those Providers issue. As a result of the registration, a PID Provider or an Attestation Provider receives an access certificate from a **PID Provider Access Certificate Authority (CA)** or from an **Attestation Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle) describes interactions between these roles in the lifecycle of a PID Provider or an Attestation Provider, namely registration, and possibly withdrawal and suspension.
 
-After receiving one or more PIDs or attestations, a Wallet Unit can present User attributes from these attestations to **Relying Party Instances**. These are shown on the right-hand side of the Wallet Unit in Figure 6. A Relying Party Instance is a combination of hardware and software used by a **Relying Party** to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity. Relying Parties are registered by a **Relying Party Registrar** in their Member State. As a result of the registration, a Relying Party receives an Access certificate for each of its Relying Party Instances from a **Relying Party Instance Access CA**. In addition, the Relying Party also receives a **Relying Party registration certificate** from the Registrar. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in the lifecycle of a Relying Party, namely registration, and possibly de-registration.
+After receiving one or more PIDs or attestations, a Wallet Unit can present User attributes from these attestations to **Relying Party Instances**. These are shown on the right-hand side of the Wallet Unit in Figure 11. A Relying Party Instance is a combination of hardware and software used by a **Relying Party** to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity. Relying Parties are registered by a **Relying Party Registrar** in their Member State. As a result of the registration, a Relying Party receives an Access certificate for each of its Relying Party Instances from a **Relying Party Instance Access CA**. In addition, the Relying Party also receives a **Relying Party registration certificate** from the Registrar. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions between these roles in the lifecycle of a Relying Party, namely registration, and possibly de-registration.
 
 Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) describes interactions in the lifecycle of a PID or an attestation, namely issuance, presentation to a Relying Party or to another Wallet Unit, management, and deletion.
 
@@ -639,7 +643,7 @@ Notes:
 
 ##### 6.1.2.1 Introduction
 
-This section briefly discusses some of the risks that were considered when this trust model was created, together with the mitigations for these risks and the residual risks that remain after these mitigations. This section is not intended to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole; for that register, see Annex I of the 'Commission Implementing Regulation on the certification of the EUDI Wallets'. This section is limited to the scope of the ARF, namely, the Wallet Unit and its interactions with other parties in the ecosystem, as depicted in Figure 6.
+This section briefly discusses some of the risks that were considered when this trust model was created, together with the mitigations for these risks and the residual risks that remain after these mitigations. This section is not intended to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole; for that register, see Annex I of the 'Commission Implementing Regulation on the certification of the EUDI Wallets'. This section is limited to the scope of the ARF, namely, the Wallet Unit and its interactions with other parties in the ecosystem, as depicted in Figure 11.
 
 ##### 6.1.2.2 Risks related to confidentiality, integrity, and authenticity
 
@@ -697,7 +701,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 #### 6.2.2 Wallet Provider registration and notification
 
-Figure 6 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
+Figure 11 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
 The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-certification-and-risk-management).
 
@@ -727,7 +731,7 @@ If an entity has registered multiple Wallet Providers, each offering a different
 
 ##### 6.3.2.1 Introduction
 
-Figure 6 depicts the PID Providers and Attestation Providers to the left of the Wallet Unit. To the left and below of this, the figure also shows that each PID Provider and Attestation Provider will register itself with a PID Provider Trusted List Provider or an Attestation Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the PID Provider or Attestation Provider to the European Commission.
+Figure 11 depicts the PID Providers and Attestation Providers to the left of the Wallet Unit. To the left and below of this, the figure also shows that each PID Provider and Attestation Provider will register itself with a PID Provider Trusted List Provider or an Attestation Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the PID Provider or Attestation Provider to the European Commission.
 
 If the registration and notification processes are successful, mainly two things happen:
 
@@ -778,9 +782,9 @@ When a Trusted List Provider suspends or withdraws a PID Provider or Attestation
 
 #### 6.4.2 Relying Party registration
 
-Figure 6 depicts the Relying Party Instance to the right of the Wallet Unit. A Relying Party Instance is a combination of hardware and software used by a Relying Party to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity, for instance, a border control agency at an aiport employing multiple lines where arriving passengers can present their PID.
+Figure 11 depicts the Relying Party Instance to the right of the Wallet Unit. A Relying Party Instance is a combination of hardware and software used by a Relying Party to interact with a Wallet Unit. A Relying Party can use multiple Relying Party Instances, especially in case the interactions with the Wallet Unit take place in proximity, for instance, a border control agency at an aiport employing multiple lines where arriving passengers can present their PID.
 
- Figure 6 also shows the Relying Party. Below that, it shows that each Relying Party will register itself with a Relying Party Registrar in its Member State. If the registration process is successful, the Registrar includes the Relying Party in its public registry.
+Figure 11 also shows the Relying Party. Below that, it shows that each Relying Party will register itself with a Relying Party Registrar in its Member State. If the registration process is successful, the Registrar includes the Relying Party in its public registry.
 
 As a result of successful registration,
 
@@ -977,7 +981,7 @@ More detailed requirements for the issuance process of PIDs and attestations, fo
 
 ##### 6.6.2.2 Wallet Unit authenticates the PID Provider or Attestation Provider
 
-As shown in Figure 6, a Wallet Unit downloads the PID Provider Access CA Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure. It also downloads all Attestation Provider Access CA Trusted List(s)See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for more information on these Trusted Lists.
+As shown in Figure 11, a Wallet Unit downloads the PID Provider Access CA Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure. It also downloads all Attestation Provider Access CA Trusted List(s)See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) for more information on these Trusted Lists.
 
 Note: It is not mandatory for each Wallet Unit to possess all PID Provider CA Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted Lists they need to subscribe to, for example depending on the Member State(s) they are operating in. It is however mandatory to possess all Attestation Provider CA Trusted Lists, as Wallet Units must support all QEAA Providers and PuB-EAA Providers in the EUDI Wallet ecosystem.
 
@@ -989,7 +993,7 @@ Before requesting the issuance of a PID or an attestation, the Wallet Unit authe
 
 **Verifies the authenticity of the Wallet Unit**
 
-As shown in Figure 6, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure.
+As shown in Figure 11, a PID Provider or an Attestation Provider downloads the Wallet Provider Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly after having located them via the Commission common trust infrastructure.
 
 Note that for PID Providers it is not mandatory to possess all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider  will choose which Trusted Lists they need to subscribe to. This is different for Attestation Providers: they must accept all Wallet Solutions and hence must possess all Wallet Provider Trusted Lists.
 
@@ -1036,34 +1040,25 @@ Note that activation is formally required only for PIDs, since the [eIDAS 2.0] R
 
 ##### 6.6.3.1 Required trust relationships
 
-A Relying Party can request a User to present some attributes from a PID or from an attestation in their Wallet Unit. Figure 6 shows that a Relying Party uses a Relying Party Instance to interact with the Wallet Unit of the User. The relationship between the Relying Party and their Relying Party Instance is equivalent to the relationship between the User and their Wallet Unit.
+A Relying Party can request a User to present some attributes from a PID or from an attestation in their Wallet Unit. Figure 11 shows that a Relying Party uses a Relying Party Instance to interact with the Wallet Unit of the User. The relationship between the Relying Party and their Relying Party Instance is equivalent to the relationship between the User and their Wallet Unit.
 
 When processing the request, the following trust relationships are established:
 
 1. The Wallet Unit authenticates the Relying Party Instance, ensuring the User about the Relying Party's identity. [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance) explains how this will be done.
-
 2. The Wallet Unit enables the User to verify that the Relying Party does not request more attributes than it registered. See [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered) for more information.
-
 3. The Attestation Provider, during issuance, may optionally have embedded a disclosure policy in the attestation. If such a policy is present for the requested attestation, the Wallet Unit evaluates the disclosure policy and informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
-
 4. The User approves or rejects the presentation of the requested attributes, or some of them. User approval and selective disclosure are described in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
 
 Subsequently, after the Wallet Unit presents the selected attributes from the PID or attestation to the Relying Party Instance by sending a response to the request, the Relying Party validates the response. The following trust relationships are established:
-
 5. The Relying Party Instance verifies the electronic signature or seal of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed. This is described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
-
 6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
-
 7. The Relying Party verifies that the PID Provider or Attestation Provider issued this attestation to the same Wallet Unit that provided it to the Relying Party. In other words, it checks that the attestation was not copied or replayed. This is generally called device binding, and it is discussed in [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding)
-
 8. In some use cases, the Relying Party verifies that the person presenting the attestation is the User, meaning the subject of the PID or attestation. This is called User binding. In other use cases, the Relying Party trusts that Wallet Unit and the WSCD have done this. User binding is discussed in [Section 6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding).
-
 9. The Relying Party can request attributes from two or more attestations in the same interaction. This is called a **combined presentation of attributes**. If so, the Relying Party verifies that these attestations belong to the same User. This is discussed in [Section 6.6.3.10](#66310-relying-party-instance-verifies-combined-presentation-of-attributes).
 
 Either before or after validating the PID or attestation per steps 5 - 9,
 
 10. The Relying Party Instance authenticates the Wallet Unit and the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider).
-
 11. The Relying Party Instance verifies that the Wallet Provider did not revoke the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked)
 
 Finally, after the interaction with the Relying Party Instance is over,
@@ -1074,11 +1069,11 @@ Finally, after the interaction with the Relying Party Instance is over,
 
 Relying Party authentication is a process whereby a Relying Party proves its identity to a Wallet Unit, in the context of an interaction in which the Relying Party requests the Wallet Unit to present some attributes. Relying Party authentication is discussed in [Topic 6].
 
-Relying Party authentication is included in the protocol used by a Wallet Unit and a Relying Party Instance to communicate. As documented in [Topic 12], at least two different protocols can be used within the EUDI Wallet ecosystem, namely the ones specified in [ISO/IEC 18013-5] and [OpenID4VP]. Both protocols include functionality allowing the Wallet Unit to authenticate the Relying Party Instance. Although these protocols differ in the details, on a high level, they both implement Relying Party authentication as shown in Figure 7 below.
+Relying Party authentication is included in the protocol used by a Wallet Unit and a Relying Party Instance to communicate. As documented in [Topic 12], at least two different protocols can be used within the EUDI Wallet ecosystem, namely the ones specified in [ISO/IEC 18013-5] and [OpenID4VP]. Both protocols include functionality allowing the Wallet Unit to authenticate the Relying Party Instance. Although these protocols differ in the details, on a high level, they both implement Relying Party authentication as shown in Figure 12 below.
 
-![Figure 7 High-level sequence diagram for Relying Party Authentication](media/image7.png) <!-- <img src="media/image7.png" style="width:4.987771216097988inin;height:4.385083114610674in" /> -->
+![Figure 12](media/Figure_12_Relying_Party_Authentication.png) <!-- <img src="media/Figure_12_Relying_Party_Authentication.png" style="width:4.987771216097988inin;height:4.385083114610674in" /> -->
 
-Figure 7 High-level overview of Relying Party authentication process
+Figure 12 High-level overview of Relying Party authentication process
 
 The figure shows the following:
 
