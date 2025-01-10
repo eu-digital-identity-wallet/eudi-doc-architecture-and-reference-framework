@@ -1275,9 +1275,33 @@ Where requirements in this Topic refer to a 'requesting Wallet Unit', what is me
 | EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting Wallet Unit. |
 | EDP_08 | The Commission SHALL take measures to create a technical specification establishing common mechanisms for the specification of embedded disclosure policies by PID Providers and Attestation Providers, and for the evaluation of such policies by Wallet Instances. |
 
-#### A.2.3.44 Topic 44 - QEAA evaluation requirements 
+#### A.2.3.44 Topic 44 - Relying Party Registration Certificates
 
-Deleted
+*Short description*
+This topic identifies high-level requirements for Relying Party registration certificates, which were introduced in Commission Implementing Regulation 2024/2982 [2024/2982]. A registration certificate is issued by a Relying Party registrar to a Relying Party during the registration process described in [Topic 27]. It contains mainly the list of attributes registered by the Relying Party according to Article 5b 2 (c) of the [eIDAS 2.0] Regulation. A registration certificate is signed by the Registrar.
+
+Commission Implementing Regulation 2024/2982 requires a Wallet Unit to authenticate and validate the registration certificate, and to display the information in the certificate to the User, where applicable. This enables Users to verify that the attributes being
+requested by the Relying Party are within the scope of their registered attributes, providing assurance that the request is legitimate and trustworthy.
+
+*HLRs*
+
+A. Issuance of Relying Party registration certificates
+
+| **Index** | **Requirement specification** |
+|-----------|-----------------|
+| RPRC_01 | During the registration process for Relying Parties, as specified in [Topic 27], the Member State Registrar SHALL create and sign a registration certificate and issue it to the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. |
+| RPRC_02 | The Commission SHALL ensure that a technical specification is created, describing at least <ul><li>the contents and format of registration certificates,</li><li>the signing method(s) used to ensure the authenticity of the registration certificates.</li><li>the trust infrastructure necessary for signing registration certificates and for verifying these signatures, including, if necessary, the use of Trusted Lists to establish trust in Member States Registrars and to distribute their trust anchors to Wallet Units.</li><li>the method used for binding each registration certificate to the Relying Party Instance access certificates of the same Relying Party. This binding method SHALL enable a Wallet Unit to verify that the registration certificate was in fact issued to the Relying Party that authenticated itself using the access certificate. The binding method SHALL consider situations in which the Relying Party uses the services of a Relying Party intermediary to connect to the Wallet Unit.</li><li> whether or not a registration certificate must have a validity period.</li><li>whether or not a registration certificate must be revocable, and if so, the method to be used for revocation. Moreover, if a registration certificate must be revocable, the technical specification SHALL describe the impact of revocation, especially compared to the impact of revocation of the Relying Party Instance access certificates.</li></ul> |
+| RPRC_03 | The contents of a registration certificate SHALL include at least<ul><li>the list of attributes registered by the Relying Party, where each attribute is identified by the identifier specified for it in the applicable Attestation Rulebook, as specified in ARB_06a or ARB_06b.</li><li>the name of the Relying Party, which SHALL be identical to the name meant in Reg_31.</li><li>the EU-wide unique identifier of the Relying Party, as meant in Reg_32. | 
+
+B. Presentation and verification of Relying Party registration certificates
+
+| **Index** | **Requirement specification** |
+|-----------|-----------------|
+| RPRC_04 | In both proximity and remote presentation flows, the Relying Party Instance SHALL transfer a Relying Party registration certificate to the Wallet Unit in the presentation request, according to the applicable standard's sextension mentioned in RPRC_05. | 
+| RPRC_05 | The Commission SHALL ensure that extensions are specified for [ISO/IEC 18013-5] and for [OpenID4VP], allowing a Relying Party to transfer a Relying Party registration certificate to a Wallet Unit. These extensions SHALL comply with applicable requirements in these standards. |
+| RPRC_06 | The Wallet Unit SHALL verify the authenticity and validity of the registration certificate according to the technical specification meant in RPRC_02. If the outcome of the verification is negative, the Wallet Unit SHALL, when asking for User approval according to RPA_07 and subject to the User preference set according to RPRC_08, notify the User that it could not verify whether the Relying Party registered the requested attributes with the competent authorities. | 
+| RPRC_07 | The Wallet Unit SHALL verify that all attributes requested in the presentation request are included in the list of attributes in the registration certificate. If the outcome of the verification is negative, the Wallet Unit SHALL, when asking for User approval according to RPA_07 and subject to the User preference set according to RPRC_08, notify the User about the requested attributes that the Relying Party did not register. | 
+| RPRC_08 | A Wallet Unit SHOULD enable its User to set their preference for showing or hiding the notifications meant in RPRC_06 and RPRC_07. By default, the Wallet Unit SHALL show the notifications. | 
 
 #### A.2.3.45 Topic 45 - QEAA Rulebook 
 
@@ -1349,3 +1373,18 @@ Relying Parties.
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
 | RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
+
+#### A.2.3.51 Topic 51 - PID or attestation deletion 
+
+*Short description*
+
+This topic lists high-level requirements related to a User deleting a PID or attestation from their Wallet Unit.
+
+*HLRs*
+
+| **Index** | **Requirement specification** |
+|-----------|--------------------|
+| PAD_01 | A Wallet Unit SHALL at any time enable the User to delete any PID or attestation from their Wallet Unit. |
+| PAD_02 | If the User indicates that a PID or attestation must be deleted, and the Wallet Unit contains multiple PIDs or attestation having the corresponding document type and Provider, a Wallet Unit SHALL delete all of these PIDs and attestations simultaneously. <br><br>Note: This situation may occur if the PID Provider or Attestation Provider issued a batch of attestations to the Wallet Unit, rather than a single one. |
+| PAD_03 | If the Wallet Unit deletes a PID or attestation on the User's request, the Wallet Unit SHALL NOT notify the respective PID Provider or Attestation Provider. <br><br>Note: This is a matter of User privacy. |
+| PAD_04 | If the Wallet Unit deletes a PID or attestation on the User's request, the Wallet Unit SHALL ensure that all cryptographic key material in the WSCA related to this PID or attestation is securely destroyed. <br><br>Note: Key deletion is a cryptographic key operation and requires User authentication, as specified in requirement WUA_02. | 
