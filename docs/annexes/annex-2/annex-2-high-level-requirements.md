@@ -829,7 +829,7 @@ C.  *Requirements for the registration of PID Providers*
 | Reg_20 | A Member State SHALL identify PID Providers at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 |Reg_20a | A Registrar SHALL provide a method to suspend or withdraw a registered PID Provider. |
 | Reg_20b | A Registrar SHALL have a policy for suspension or withdrawal of registered PID Providers, which SHALL specify that a PID Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
-| Reg_20c | If a Registrar suspends or withdraws a registered PID Provider, that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7].
+| Reg_20c | If a Registrar suspends or withdraws a registered PID Provider, that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7]. |
 
 D.  *Requirements for the registration of Attestation Providers*
 
@@ -839,7 +839,7 @@ D.  *Requirements for the registration of Attestation Providers*
 | Reg_22 | A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 |Reg_22a | A Registrar SHALL provide a method to suspend or withdraw a registered Attestation Provider. |
 | Reg_22b | A Registrar SHALL have a policy for suspension or withdrawal of registered Attestation Providers, which SHALL specify that an Attestation Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
-| Reg_22c | If a Registrar suspends or withdraws a registered Attestation Provider, that Attestation Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7].
+| Reg_22c | If a Registrar suspends or withdraws a registered Attestation Provider, that Attestation Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7]. |
 
 E.  *Requirements for the registration of Relying Parties*
 
@@ -1005,6 +1005,7 @@ B.  Requirements for the notification of PID Providers
 | PPNot_05 | PID Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Trusted List which is sealed by the Commission. |
 | PPNot_06 | PID Provider Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | PPNot_07 | The format of the PID Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
+| PPNot_08 | If a PID Provider is suspended or withdrawn (see requirement GenNot_05 above), that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7]. |
 
 
 C.  Requirements for the notification of Wallet Providers
@@ -1016,6 +1017,7 @@ C.  Requirements for the notification of Wallet Providers
 | WPNot_03 | Wallet Providers SHALL ensure that all WUAs they issue can be authenticated using the trust anchors notified to the Commission. |
 | WPNot_04 | Wallet Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Wallet Provider Trusted List which is sealed by the Commission. |
 | WPNot_05 | The format of the Wallet Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
+| WPNot_06 | If a Wallet Provider is suspended or withdrawn (see requirement GenNot_05 above), that Wallet Provider SHALL immediately revoke all of its valid WUAs, in accordance with the requirements in [Topic 38]. |
 
 D.  Requirements for the notification of QEAA Providers
 
@@ -1030,6 +1032,7 @@ This notification is pursuant to [Art.45f](https://eur-lex.europa.eu/legal-conte
 | PuBPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PuB-EAA Providers. |
 | PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ol><li>Registration number as in official record, and </li><li>Official record identification data</li></ol></li><li>Identification data of the Union or national law under which <ol><li>Either the PuB-EAA Provider is established as the responsible body for the authentic source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ol></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ol></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ol> |
 | PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
+| PuBPNot_04 | If a PuB-EAA Provider is suspended or withdrawn (see requirement GenNot_05 above), that PuB-EAA Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7]. |
 
 F.  Requirements for the notification of (non-qualified) EAA Providers
 
@@ -1038,17 +1041,18 @@ There is no notification of (non-qualified) EAA Providers foreseen byuthe Regula
 G.  Requirements for the notification of Access
     Certificate Authorities
 
-Relying Party Access Certificate Authorities (CA) are TSPs responsibleufor signing access certificates they issue to Relying Parties. Legally speaking, Relying Parties in this context also include QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers, but for clarity these roles are mentioned separately in the requirements below. Where these requirements use the term 'Access Certificate Authorities' without further qualifications, this includes Access Certificate Authorities for QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and Relying Parties.
+Relying Party Access Certificate Authorities (CA) are TSPs responsible for signing access certificates they issue to Relying Parties. Legally speaking, Relying Parties in this context also include QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers, but for clarity these roles are mentioned separately in the requirements below. Where these requirements use the term 'Access Certificate Authorities' without further qualifications, this includes Access Certificate Authorities for QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and Relying Parties.
 
 For more information about Relying Party Access Certificate Authoritys, see \[[Topic 27](#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)\].
 
 | **Index** | **Requirement specification** |
 |------------|------------------|
 | RPACANot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about: <ul><li>Relying Party Access Certificate Authorities,</li><li>QEAA Provider Access Certificate Authorities,</li><li>PuB-EAA Provider Access Certificate Authorities,</li><li>(non-qualified) EAA Provider Access Certificate Authorities.</li></ul> |
-| RPACANot_02 | The common set of information to be notified about an Access Certificate Authority SHALL include: <ul><li>Identification data:<ul><li>MS/Country of establishment,</li><li>Name as registered in an official record,</li><li> Where applicable:<ul><li>A business registration number from an official record,</li><li>Identification data from that official record.</li></ul></li></ul></li><li>Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units.</li></ul> |
+| RPACANot_02 | The common set of information to be notified about an Access Certificate Authority SHALL include: <ol><li>Identification data:<ol><li>MS/Country of establishment,</li><li>Name as registered in an official record,</li><li> Where applicable:<ol><li>A business registration number from an official record,</li><li>Identification data from that official record.</li></ol></li></ol></li><li>Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units.</li></ol> |
 | RPACANot_03 | Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers SHALL ensure that their access certificates can be authenticated using the Access Certificate Authority trust anchors notified to the Commission. |
 | RPACANot_04 | Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission--compiled Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | RPACANot_05 | The format of an Access Certificate Authority Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
+| RPACA_06 | If an Access Certificate Authority is suspended or withdrawn (see requirement GenNot_05 above), that Access Certificate Authority SHALL immediately revoke all of its valid access certificates. |
 
 H.  Requirements for the publication of Trusted Lists compiled by the
     Commission

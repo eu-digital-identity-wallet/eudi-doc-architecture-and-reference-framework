@@ -713,6 +713,8 @@ More details on the Wallet Provider notification process can be found in [Topic 
 
 Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a Wallet Provider. This implies that the Wallet Provider's status in the respective Trusted List will be changed to Invalid. The conditions for this will be specified by each Trusted List Provider. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
 
+When a Trusted List Provider suspends or withdraws a Wallet Provider, the Wallet Provider revokes all of their WUAs as described in [Section 6.6.3.7](#66312-relying-party-verifies-that-wua-is-not-revoked).
+
 If an entity has registered multiple Wallet Providers, each offering a different Wallet Solution, and one of these Wallet Providers is suspended or withdraw, only the applicable Wallet Solution will be impacted. It may happen that the reason for suspension or withdrawal is applicable to all Wallet Solutions offered, in which case all of the Wallet Providers registered by that entity will be withdrawn or suspended separately.
 
 ### 6.3 Trust throughout a PID Provider or an Attestation Provider lifecycle
@@ -912,9 +914,7 @@ The User needs a User account at the Wallet Provider to ensure that they can req
 Starting from Wallet Unit activation and until the Wallet Instance is de-installed by the User, a Wallet Unit is managed by the User and the Wallet Provider. The Wallet Provider is responsible at least to:
 
 - perform installation of a new version of the Wallet Solution as necessary.
-
 - update the WUAs as necessary; see [Topic 9].
-
 - revoke the Wallet Unit in case its security is compromised; see [Topic 38].
 
 The User will be able to request the Wallet Provider to revoke the Wallet Unit at least in case of loss or theft of the User's device. See [Topic 38].
@@ -1214,7 +1214,7 @@ To solve these drawbacks, [Topic 18] describes how the Relying Party Instance ca
 
 ##### 6.6.3.12 Relying Party verifies that WUA is not revoked
 
-[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked explained how a PID Provider or an Attestation Provider can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
+[Section 6.6.2.4](#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked) explained how a PID Provider or an Attestation Provider can verify that a Wallet Unit is not suspended or revoked. The same mechanism is used by Relying Party Instances as well.
 
 ##### 6.6.3.13 Wallet Unit enables the User to report suspicious requests by a Relying Party and to request a Relying Party to erase personal data
 
