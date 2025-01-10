@@ -929,7 +929,9 @@ Specifically for the functionality allowing a PID Provider to request Wallet Uni
 
 #### 6.5.5 Wallet Instance de-installation
 
-No trust relationships are required for Wallet Instance de-installation; anybody able to access the device of the User will be able to do this.
+No trust relationships are required for Wallet Instance de-installation; anybody able to access the device of the User will be able to do this. 
+
+If the User uninstalls the Wallet Instance, the Wallet Instance ensures that the associated WSCA(s) delete all sensitive data and cryptographic keys related to the Wallet Unit and to all PIDs and attestations on the Wallet Unit.
 
 ### 6.6 Trust throughout a PID or an attestation lifecycle
 
