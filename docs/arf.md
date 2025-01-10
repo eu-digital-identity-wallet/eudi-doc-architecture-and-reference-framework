@@ -342,24 +342,20 @@ To be able to support different types of WSCA/WSCD, Wallet Instances may need to
 
 - The **Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC) Provider. This interface is  used  by the Wallet Unit to generate a qualified signature or seal.
 
-Note that the "Attribute Deletion Request Interface" and the "Reporting to DPA Interface", which are mentioned in the Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
+Note that the "Attribute Deletion Request to Relying Party Interface" and the "Reporting Relying Party to DPA Interface", which are mentioned in the Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
 
-### 4.4 Attestation presentation flows
+### 4.4 PID and attestation presentation flows
 
 #### 4.4.1 Overview
-This section defines five distinct communication flows between a Wallet Unit and a Relying Party, guiding the implementation of the presentation interface:
+This section defines five distinct communication flows that can be used when a Wallet Unit presents a PID or attestation to a Relying Party Instance:
 
-- **Proximity Supervised Flow**: In this flow, the User and their Wallet Instance are physically near the Relying Part Instance. Attestations are exchanged using near proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
-
+- **Proximity Supervised Flow**: In this flow, the User and their Wallet Instance are physically near the Relying Part Instance. PIDs and attestations are exchanged using proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
 - **Proximity Unsupervised Flow**: This flow is like the supervised flow, but the Wallet Unit presents attestations to a machine, without human supervision. The interfaces and protocols used in this flow are the same as for the proximity supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
-
 - **Remote Same-Device Flow**: In this flow, the User uses a browser on their User device, i.e., the device containing their Wallet Instance, to visit the website of a Relying Party and to consume a service. If for consuming that service the Relying Party needs to request some attributes from the User's Wallet Unit, the Relying Party sends a presentation request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows), sending this request is mediated by the browser on the User's device, using the [W3C Digital Credentials API] and an inter-app API offered by the device's operating system.
-
 - **Remote Cross-Device Flow**: In this flow, the User uses a browser on a device other than their Wallet Instance, for instance a desktop or laptop, to visit the Relying Party's website and consume a service. If the Relying Party needs to send an attribute presentation request to the User's Wallet Unit, it presents this request to the browser on the other device. Again using the [W3C Digital Credentials API], this browser sets up a secure communication channel between the other device and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows) explains this in more detail.
-  
 - **Inter-app Flow**: In this flow, the Relying Party Instance is a mobile app on the User device. Attestations are exchanged using the same inter-app API also used by the browser in a remote same-device flow. For that reason, this flow is also described in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows).
 
-Specific use cases integrate one or more of these flows.
+Specific use cases integrate one or more of these flows. Each of these flows is described in more detail in one of the next sections.
 
 #### 4.4.2 Proximity presentation flows
 
@@ -485,7 +481,9 @@ The **Candidate** state is the first state of an Wallet Solution. This means it 
 
 If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **Valid**. This means the Wallet Solution can be officially launched, and can be provided to Users. The issuing Member State informs the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme.
 
-The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn** state.
+The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn** state. 
+
+A Wallet Unit that is part of a suspended or withdrawn Wallet Solution Provider cannot request the issuance of a PID or attestation. Nor will a PID or attestation presented by such a Wallet Unit be accepted by a Relying Party.
 
 #### 4.6.3 Wallet Unit
 
@@ -523,7 +521,7 @@ Figure 8: State diagram of PID Provider or Attestation Provider
 
 The **Valid** state is the first state of a PID Provider or Attestation Provider. This means it is registered by the corresponding Trusted List Provider and notified to the Commission, as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
-The Trusted List Provider can temporarily suspend a PID Provider or Attestation Provider.  This leads to the **Suspended** state. The Trusted List Provider can unsuspend the PID Provider or Attestation Provider, bringing it back to the **Valid** state. The Trusted List Provider can also decide to completely withdraw the PID Provider or Attestation Provider, which brings the it in the **Withdrawn** state. For more information about suspension or withdrawal, please refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
+The Trusted List Provider can temporarily suspend a PID Provider or Attestation Provider.  This leads to the **Suspended** state. The Trusted List Provider can unsuspend the PID Provider or Attestation Provider, bringing it back to the **Valid** state. The Trusted List Provider can also decide to completely withdraw the PID Provider or Attestation Provider, which brings the it in the **Withdrawn** state. For more information about suspension or withdrawal, please refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal). A suspended or withdrawn PID Provider or Attestation Provider cannot issue PIDs or attestations to Wallet Units, nor will a PID or attestation issued by such a PID Provider or Attestation Provider be accepted by Relying Parties.
 
 #### 4.6.5 PID or attestation
 
@@ -549,7 +547,7 @@ Figure 9: State diagram of Relying Party
 
 The **Valid** state is the first state of a Relying Party. This means it has been registered by a Relying Party Registrar, as described in [Section 6.4.2](#642-relying-party-registration).
 
-The Registrar can de-register a Relying Party.  This leads to the **Invald** state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration).
+The Registrar can de-register a Relying Party.  This leads to the **Invalid** state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration). A Wallet Unit will not present a PID or attestation to a Relying Party that is in this state.
 
 ## 5 PIDs and attestations
 
