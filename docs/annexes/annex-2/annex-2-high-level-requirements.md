@@ -85,52 +85,37 @@ identification and authentication of a User utilizing their Wallet Unit.
 | OIA_14 | For both proximity and remote presentation flows, a Relying Party SHALL validate the qualified signature or seal of a PuB-EAA in accordance with [Art.32](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2594-73-1) of the eIDAS Regulation. For that verification, the Relying Party SHALL use the public key provided in the qualified certificate of the QTSP supporting the qualified signature or seal. The Relying Party SHALL also validate the qualified certificate of the QTSP using a trust anchor provided in a Trusted List made available in accordance with [Art. 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG#d1e2162-73-1) of the eIDAS Regulation. The Relying Party SHALL also verify the certified attributes of the qualified certificate, as specified in [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1). |
 | OIA_15 | For both proximity and remote presentation flows, a Relying Party SHALL validate the signature or seal of a (non-qualified) EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see \[[Topic 12](#a2312-topic-12---attestation-rulebooks)\].<br><br>Notes:<ul><li>OIA_12 – OIA_15 imply that a Relying Party Instance must know if the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. These requirements also imply that the Relying Party Instance must store trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs.</li><li>PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, when it receives an non-qualified attestation, a Relying Party Instance may have to verify that the non-qualified EAA Provider is authorized or registered to issue this type of attestation, in addition to verifying the signature over the attestation using the EAA Provider's trust anchor. Mechanisms allowing to do this should be defined in the applicable Rulebook, see ARB_26.</li> |
 
-#### A.2.3.2 Topic 2 - Mobile Driving Licence within the EUDI Wallet ecoystem 
+#### A.2.3.2 Topic 2 - Mobile Driving Licence within the EUDI Wallet ecoystem
 
 *Short description*
 
-A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and
-store it in an Wallet Unit. The User can then present the
-mDL to a Relying Party upon request to prove their driving rights
-conveniently, securely, and in compliance with the regulations of all
+A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the regulations of all
 Member States.
 
-This Topic contains high-level requirements related to a User presenting
-a mobile Driver's Licence (mDL) to a Relying Party in a
-supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.
+This Topic contains high-level requirements related to a User presenting a mobile Driver's Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.
 
 *HLRs*
 
-No high-level requirements are identified for this Topic, as the mDL is
-an attestation that must comply with all relevant requirements in other
-Topics.
+No high-level requirements are identified for this Topic, as the mDL is an attestation that must comply with all relevant requirements in other Topics.
 
 #### A.2.3.3 Topic 3 - PID Rulebook
 
 *Short description*
 
-The Person Identification Data (PID) Rulebook contains requirements
-specific to the PID use case within the EUDI Wallet ecosystem.
+The Person Identification Data (PID) Rulebook contains requirements specific to the PID within the EUDI Wallet ecosystem.
 
 The PID Rule Book contains the following main topics:
 
-1.  The PID attribute schema: This describes the structure, the type,
-    the entity identifiers, and the logical organization of the
-    mandatory and optional attributes of the PID. It also describes how
-    Member States can specify any possible national attributes. Two
-    encodings for these attributes are specified, one compliant with
-    \[ISO18013-5\], the other compliant with \[SD-JWT VC\].
+1.  The PID attribute schema: This describes the structure, the type, the entity identifiers, and the logical organization of the mandatory and optional attributes of the PID. It also describes how Member States can specify any possible national attributes. Two encodings for these attributes are specified, one compliant with \[ISO18013-5\], the other compliant with \[SD-JWT VC\].
+2.  The trust infrastructure necessary for PIDs, for both ISO/IEC 18013-5-compliant and SD-JWT VC-compliant encodings.
 
-2.  The trust infrastructure necessary for PIDs, for both ISO/IEC
-    18013-5-compliant and SD-JWT VC-compliant encodings.
-
-For more information, see Annex 3 - \[PID Rulebook\].
+For more information, see Annex 3 - [PID Rulebook].
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| PID_01 | PIDs and PID Providers SHALL comply with all requirements in \[PID Rulebook\]. |
+| PID_01 | PIDs and PID Providers SHALL comply with all requirements in [PID Rulebook]. |
 
 #### A.2.3.4 Topic 4 - mDL Rulebook 
 
@@ -400,19 +385,19 @@ requirements related to PID and attestation issuance.
 | ISSU_27a | An Attestation Provider SHALL verify the identity of the attestation subject, if any, in compliance with applicable requirements. |
 | ISSU_27b | An Attestation Provider SHALL ensure that the attributes attested in the attestation issued are valid for the identified attestation subject, if any. |
 | ISSU_28 | For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in all Wallet Provider Trusted Lists.<br><br>Note: Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. |
-| ISSU_29 | A QEAA Provider or Pub-EAA Provider SHALL support all Wallet Solutions, meaning that they SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation. |
-| ISSU_30 | Before issuing an attestation, a QEAA Provider or Pub-EAA Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-unit-attestation)] and [[Topic 38](#a2338-topic-38---wallet-unit-revocation)]. |
-| ISSU_31 | Before issuing an attestation, an EAA Provider SHOULD: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> |
+| ISSU_29 | An Attestation Provider SHALL support all Wallet Solutions, meaning that they SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation. |
+| ISSU_30 | Before issuing an attestation, an Attestation Provider SHALL: <ul><li>verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.</li><li>authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.</li><li>Verify that the Wallet Unit's WUA is not revoked.</li></ul> <br>Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-unit-attestation)] and [[Topic 38](#a2338-topic-38---wallet-unit-revocation)]. |
+| ISSU_31 | Empty |
 | ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_33 | For the verification of Attestation Provider access certificates, a Wallet Unit SHALL accept the trust anchors in all Attestation Provider Access Certificate Authority Trusted List(s). <br><br>Note: Attestation Provider Access Certificate Authority Trusted Lists are explained in [[Topic 27](#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)]. There may be separate Access Certificate Authority Trusted Lists for QEAA Providers, PuB-EAA Providers, and EAA Providers. |
-| ISSU_33b | A Wallet Provider SHALL support all QEAA Providers and Pub-EAA Providers, meaning that its Wallet Units SHALL be capable of requesting the issuance of a QEAA or PuB-EAA from these Providers at the User's request. | 
+| ISSU_33a | A Wallet Provider SHALL support all Attestation Providers, meaning that its Wallet Units SHALL be capable of requesting the issuance of a QEAA, PuB-EAA, or non-qualified EAA from these Providers at the User's request. |
 | ISSU_34 | A Wallet Unit SHALL authenticate and validate the Attestation Provider access certificate before requesting the issuance of an attestation. The Wallet Unit SHALL verify at least that: <ul><li>The access certificate indicates that its subject is a QEAA Provider, Pub-EAA Provider, or EAA Provider.</li><li>The access certificate is authentic and is valid at the time of validation.</li><li>The Issuer of the access certificate is a CA that is in the Attestation Provider Access Certificate Authority Trusted List, as documented in [[Topic 27](#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)].</li></ul> <br>Note: PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting an EAA from a non-qualified EAA Provider, a Wallet Unit may need to verify that that EAA Provider is authorized or registered to issue the type of EAA the Wallet Unit is requesting. Such verification requirements, as well as the mechanisms allowing to do this, may be defined in the applicable Rulebook. |
 
 #### A.2.3.11 Topic 11 - Pseudonyms  
 
 *Short description*
 
-<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. 
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn].
 
 Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.0. These discussions will include the use cases for which Wallet Units must support pseudonyms and the way in which this support will be technically implemented. This Topic will be updated in ARF 2.0.</b>
 
