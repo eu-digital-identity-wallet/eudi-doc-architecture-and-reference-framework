@@ -426,16 +426,46 @@ Note that the Wallet Instance does not see any difference between the cross-devi
 
 ### 4.5 WSCD architecture types
 
-Figure 2 showed four different types of architecture for the WSCD. The EUDI Wallet ecosystem allows Wallet Providers to use any of these architectures:
+#### 4.5.1 Introduction
 
-1. **Remote WSCD**: In this architecture, the Wallet Secure Cryptographic Device is situated remotely from the User device. Typically, it will be implemented by the Wallet Provider using an HSM, an runs on a secure server or cloud infrastructure. The Wallet Provider will also provide the WSCA with which the Wallet Unit interacts. This architecture is typically used if the User device lacks sufficiently secure hardware, or if the Wallet Provider does not want to have a dependency on such hardware.
-2. **Local External WSCD**: If the User device lacks sufficiently secure hardware, another option is to use a local external hardware component, for instance a smart card, as the WSCD. This local external WSCD is connected to the User device via NFC or another short-range connection, and provides the cryptographic functions needed by the Wallet Unit. A local external WSCD typically is a smart card or a secure token, and the WSCA is typically a Java Card applet. The WSCA is installed prior to issuance of the smart card or secure token to the User. The issuer of the external WSCD is the Wallet Provider, or another entity acting on behalf of or in cooperation with the Wallet Provider.
-3. **Local Internal WSCD**: In this architecture, the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like a UICC, an e-SIM/SAM, or an embedded Secure Element. Such solutions typically are compliant with the GlobalPlatform Card Specifications [GP CS] or with the GSMA Secured Applications for Mobile [GSMA SAM] specification. The WSCA will typically be a Java Card applet remotely issued to the WSCD by the Wallet Provider.
-4. **Local native WSCD**: A local native WSCD is integrated into the User device. However, the API to access the WSCD is included in the operating system of the User device. Therefore, no separate WSCA is necessary. Alternatively, it may also be said that the WSCA is part of the OS.
+Figure 2 showed four different types of architecture for the WSCD.
 
-Note that there is a fifth option:
+- Remote WSCD
+- Local external WSCD
+- Local internal WSCD
+- Local native WSCD
 
-5. **Hybrid architecture**: In this architecture, two or more of the different types of WSCD described above are combined. For example, a remote HSM may manage the cryptographic keys of the Wallet Unit and of PIDs and attestations present in the Wallet Unit, while an embedded Secure Element is used to manage the access to the remote HSM.
+In addition, this section also describes a hybrid architecture. Within the EUDI Wallet ecosystem, a Wallet Provider is allowed to use any of these architectures.
+
+#### 4.5.2 Remote WSCD
+
+In this architecture, the Wallet Secure Cryptographic Device is situated remotely from the User device. Typically, it will be implemented by the Wallet Provider using an HSM running on a secure server. The Wallet Provider will also provide the WSCA with which the Wallet Unit interacts. 
+
+This architecture is typically used if the User device lacks sufficiently secure hardware, or if the Wallet Provider does not want to have a dependency on such hardware.
+
+#### 4.5.3 Local external WSCD
+
+If the User device lacks sufficiently secure hardware, another option is to use a local external hardware component as the WSCD. This local external WSCD is typically a smart card or a secure token. It is connected to the User device via NFC or another short-range connection, and is able to perform all of the cryptographic operations required from a WSCD / WSCA in the ARF. Note that many existing smart cards, such as identity cards, will not be able to do this.
+
+The WSCA typically takes the form of a Java Card applet. The WSCA is installed prior to issuance of the smart card or secure token to the User. The issuer of the WSCD and of the WSCA is the Wallet Provider or another entity acting on behalf of or in cooperation with the Wallet Provider.
+
+#### 4.5.4 Local internal WSCD
+
+In this architecture, the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like UICCs, e-SIM/SAMs, or embedded Secure Elements. Such solutions typically are compliant with the GlobalPlatform Card Specifications [GP CS] or with the GSMA Secured Applications for Mobile [GSMA SAM] specification. 
+
+The WSCA will typically be a Java Card applet, and it is remotely issued to the WSCD by the Wallet Provider, at the moment the Wallet Unit is activated; see [Section 6.5.3](#653-wallet-unit-activation). In order to do this, the Wallet Provider may need to connect to and colloborate with other entities, such as a Trusted Service Manager employed by the owner of the WSCD. The owner of the WSCD may be a Mobile Network Operator (in case of a UICC), the User (in case of an e-SIM/SAM), or an OEM (in case of an embedded SE). 
+
+The Wallet Provider is responsible for verifying that the local internal WSCD is compliant with all requirements in the ARF, prior to activating a Wallet Unit using such a WSCD.
+
+#### 4.5.5 Local native WSCD
+
+A local native WSCD is integrated into the User device. However, the API to access the WSCD is included in the operating system of the User device. Therefore, no separate WSCA is necessary. Alternatively, the API offered by the OS may be viewed as the WSCA.
+
+The Wallet Provider is responsible for verifying that the local native WSCD is compliant with all requirements in the ARF, prior to activating a Wallet Unit using such a WSCD.
+
+#### 4.5.6 Hybrid architecture
+
+In this architecture, two or more of the different types of WSCD described above are combined. For example, a remote HSM may manage the cryptographic keys of the Wallet Unit and of PIDs and attestations present in the Wallet Unit, while an embedded Secure Element is used to manage the access to the remote HSM.
 
 ### 4.6 State diagrams
 
