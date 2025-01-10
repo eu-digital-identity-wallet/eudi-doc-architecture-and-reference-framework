@@ -1,4 +1,4 @@
-Version 0.9, updated 9 January 2025
+Version 0.9, updated 10 January 2025
 
 # A - Privacy risks and mitigation
 ## 1 Introduction 
@@ -190,7 +190,7 @@ transactions to the relevant person.</td>
 <td>TR39</td>
 <td>An attacker can unlawfully trace wallet users using unique/traceable
 identifiers.</td>
-<td>Data disclosure (R6) / Surveillance (R14)</td>
+<td>Data disclosure (R6) and Surveillance (R14)</td>
 </tr>
 <tr>
 <td>TR84</td>
@@ -207,6 +207,16 @@ required.</td>
 </tr>
 </tbody>
 </table>
+
+Threads related to data breaches including those involving attackers,
+are also be taken into account. See [Risk Register] on threads TR27, TR28,
+TR29, TR30, TR31, TR33, TR34, TR35, TR37, TR40, TR50 to TR52, TR54,
+TR61, TR83, TR102, TR103, TR105, TR107, TR110, TR130.
+
+>Note that other threats, such as TR25, TR26, TR32, TR53, TR111 to TR117,
+TR119, TR121, TR127, and TR133 from the [Risk Register] are also relevant
+for scenarios where the wallet itself is compromised.
+
 
 ### 1.3 Key words
 
@@ -846,9 +856,7 @@ To the maximum extent possible, Wallet Providers, PID Providers, and
 Attestation Providers SHALL:
 -   ensure that Users do not notice which of the methods referenced in requirement 3
     is used for their PIDs, attestations, or WUAs,
-    
--   ensure that no User action may be (depending on the User's preferences)
-    needed for the re-issuance of new attestations.
+-   ensure that no User action is needed for the re-issuance of new attestations.
 
 >Note: The topic of re-issuance will be further discussed with Member
 States in Topic B.
@@ -1070,6 +1078,17 @@ of PIDs, attestations, or WUAs to be represented on the list is small.
 In such a case, as suggested in [RFC_ASL], decoy entries can be added
 to the list to obfuscate the real number of referenced PIDs, attestations,
 or WUAs.
+
+#### 6.1.4 Requirements to be added (likely) to Topic 10
+
+##### REQUIREMENT 17
+
+After issuing a PID, attestation, or WUA a PID provider, Attestation Provider
+or Wallet Provider SHALL discard the values of all unique elements, including
+at least the ones mentioned in requirement 1 above, as well as any timestamps,
+as soon as they are no longer needed. The Provider SHALL NOT communicate
+these values to any other party inside or outside the EUDI Wallet ecosystem.
+
 
 ### 6.2 High-Level Requirements to be deleted
 
