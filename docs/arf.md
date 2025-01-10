@@ -320,13 +320,9 @@ Figure 2: EUDI Wallet ecosystem reference architecture
 The following have been identified as the core components of a Wallet Unit:
 
 - **Wallet Instance (WI)**: The app or application installed on a User device, which is an instance of a Wallet Solution and belongs to and is controlled by a User. This component implements the core business logic and interfaces as depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely manage cryptographic assets and execute cryptographic functions, ensuring a high level of assurance for authentication.
-
 - **User device (UD)**: A User device serves as the host for the Wallet Instance. For Wallet Instances used by a natural person, the User Device will typically be a mobile device. For Wallet Instances used by a legal person, the User device may also be a mobile device, but could also be a cloud server, for example. The minimum hardware and software requirements for the User device will be determined by the Wallet Provider.
-
 - **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes a keystore, but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as an operating system and cryptographic libraries provided by the WSCD vendor. Figure 2 shows four different possible security architectures for the WSCD (for more details see [Section 4.5](#45-wscd-architecture-types)): <ul><li>a remote WSCD, which is typically a HSM operated by the Wallet Provider,</li><li>a local external WSCD, which is typically a smart card issued to the User specifically for this purpose,</li><li>a local internal WSCD, which may be, for instance, a UICC, an e-SIM, a SAM, or an embedded Secure Element,</li><li>a local native WSCD, which is also embedded in the User device but which is accessed via an API exposed by the OS.</li></ul> 
-  
 - **Wallet Secure Cryptographic Application (WSCA):** This is a secure application running on (or linked to) and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptographic keys, and interfaces directly with the Wallet Instance. Regarding the party responsible for delivering the WSCA, there are two options, depending on the security architecture of the WSCD. For remote WSCDs (HSMs), local external WSCDs (dedicated smart cards or tokens), and local internal WSCDs (UICC, eSIM/SAM, embedded SE), the WSCA will be delivered by the Wallet Provider. For native local WSCDs, the WSCA is part of the OS.
-
 - **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
 #### 4.3.3 Wallet Unit interfaces and protocols
@@ -335,7 +331,7 @@ Figure 2 shows the following interfaces between components of a Wallet Unit, or 
 
 - The **Wallet Provider Interface (WPI)** is used by the Wallet Instance to communicate with the Wallet Provider to request and issue the Wallet Unit Attestation, as well as to provide support to the User and collect aggregated and user-consented information in a privacy-preserving manner to provision the Wallet Unit, in compliance with applicable legislation. Because the Wallet Provider is responsible for both sides of this interface, it will not be standardized in the scope of the EUDI Wallet ecosystem.
 - The **User Interface (UI)** is the point of interaction and communication between the User and the Wallet Instance. This interface will not be standardized in the scope of the EUDI Wallet ecosystem.
-- The **Presentation Interface (PI)** enables Relying Parties to securely request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This interface accommodates both remote and proximity interactions. For remote presentation flows, as detailed in [Section 4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [W3C Digital Credentials API]. In contrast, for the proximity presentation flow, this interface adheres to the [ISO/IEC 18013-5] standard, see [Section 4.4.2](#442-proximity-presentation-flows).
+- The **Presentation Interface (PI)** enables Relying Parties to securely request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This interface accommodates both remote and proximity interactions. For remote presentation flows, as detailed in [Section 4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [W3C Digital Credentials API]. In contrast, for the proximity presentation flow, this interface adheres to the [ISO/IEC 18013-5] standard, see [Section 4.4.2](#442-proximity-presentation-flows). The same interface can also be used by another Wallet Unit, see [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions. In case the WSCA is delivered by the Wallet Provider, the Wallet Provider is responsible for both sides of this interface, and hence standardisation is not needed within the scope of the EUDI Wallet ecosystem. In case the WSCA is delivered by the provider of the WSCD, this interface will comply with an existing specification that is not specifically designed for the EUDI Wallet ecosystem. Rather, each type of WSCA/WSCD will expose a provider-defined interface to the Wallet Instance. For example, in case the WSCD is a secure element, the [Implementing Act on Integrity and Core Functionality](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979#anx_I) requires support for the GlobalPlatform [GP OMAPI] interface specification (or an equivalent one).
   
 To be able to support different types of WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of this interface.
@@ -806,11 +802,8 @@ De-registration involves revocation of all valid Relying Party Instance access c
 [Section 4.6.3](#463-wallet-unit) above presented the lifecycle of a Wallet Unit:
 
 1. The Wallet Instance that is part of the Wallet Unit is installed on a device by a User. The required trust relationships for installation are discussed in [Section 6.5.2](#652-wallet-instance-installation) below.
-
 2. Next, the Wallet Unit is activated by the Wallet Provider and becomes operational. The goals and required trust relationships for activation are discussed in [Section 6.5.3](#653-wallet-unit-activation).
-
 3. Once in the **Operational** or **Valid** state, the Wallet Unit is managed by the User and the Wallet Provider. This management includes at least revoking the Wallet Unit when necessary. This is discussed in [Section 6.5.4](#654-wallet-unit-management). Management will also include regular updates of the Wallet Instance application to ensure its continued security and functionality. However, this is not further defined in this chapter.
-
 4. The User may de-install the Wallet Instance; see [Section 6.5.5](#655-wallet-instance-de-installation).
 
 #### 6.5.2 Wallet Instance installation
@@ -822,7 +815,6 @@ The lifecycle of a Wallet Unit starts when a User decides to install an Wallet I
 When downloading and installing the Wallet Instance, the following trust relationships are established:
 
 1. On behalf of the User, the OS of the User's device and the relevant app store verify that the Wallet Instance (i.e., the application the User is installing) is genuine and authentic and does not contain any malware or other threats.
-
 2. The User verifies that they can obtain the PID(s) they need in an instance of this Wallet Solution. If the relevant PID Provider does not support the Wallet Solution, the User would not be able to use the Wallet Unit for obtaining those PID(s).
 
 The next two sections discuss these trust relationships.
