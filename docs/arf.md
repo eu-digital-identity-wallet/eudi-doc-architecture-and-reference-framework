@@ -57,7 +57,7 @@ The LSPs are expected to provide feedback on the ARF as they develop and interac
 
 The definitions used in this document are added in Annex 1 of this document. In Annex 1 there are two tables:
 
-- **Table 1** includes definitions cited from the [eIDAS 2.0] Regulation, 
+- **Table 1** includes definitions cited from the [eIDAS 2.0] Regulation,
 - **Table 2** includes technical definitions that are used in the ARF. in some cases, these definitions originated in the context of specific topics. In these cases, the topic number appears in brackets following the definition, e.g., [Topic 11], to give it the relevant context. If the definition is related to two topics, both topic numbers will appear in the brackets, e.g., [Topic 33, Topic 34]. If the technical definition is generic, that is to the ARF as a whole or to more than 2 topics, no brackets will be added. If a definition relies on an external source such as a standard or a formal publication, the source is mentioned.
 
 ### 1.5 Scope
@@ -319,67 +319,204 @@ Figure 2: EUDI Wallet ecosystem reference architecture
 
 The following have been identified as the core components of a Wallet Unit:
 
-- **Wallet Instance (WI)**: The app or application installed on a User device, which is an instance of a Wallet Solution and belongs to and is controlled by a User. This component implements the core business logic and interfaces as depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely manage cryptographic assets and execute cryptographic functions, ensuring a high level of assurance for authentication.
-- **User device (UD)**: A User device serves as the host for the Wallet Instance. For Wallet Instances used by a natural person, the User Device will typically be a mobile device. For Wallet Instances used by a legal person, the User device may also be a mobile device, but could also be a cloud server, for example. The minimum hardware and software requirements for the User device will be determined by the Wallet Provider.
-- **Wallet Secure Cryptographic Device (WSCD):** This is trusted hardware providing a secure environment and storage for cryptographic assets (such as keys) and for running the WSCA. This includes a keystore, but also the environment where the security-critical functions are executed. The WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD firmware covers security-related software, such as an operating system and cryptographic libraries provided by the WSCD vendor. Figure 2 shows four different possible security architectures for the WSCD (for more details see [Section 4.5](#45-wscd-architecture-types)): <ul><li>a remote WSCD, which is typically a HSM operated by the Wallet Provider,</li><li>a local external WSCD, which is typically a smart card issued to the User specifically for this purpose,</li><li>a local internal WSCD, which may be, for instance, a UICC, an e-SIM, a SAM, or an embedded Secure Element,</li><li>a local native WSCD, which is also embedded in the User device but which is accessed via an API exposed by the OS.</li></ul> 
-- **Wallet Secure Cryptographic Application (WSCA):** This is a secure application running on (or linked to) and utilizing the WSCD. A WSCA manages sensitive assets, primarily cryptographic keys, and interfaces directly with the Wallet Instance. Regarding the party responsible for delivering the WSCA, there are two options, depending on the security architecture of the WSCD. For remote WSCDs (HSMs), local external WSCDs (dedicated smart cards or tokens), and local internal WSCDs (UICC, eSIM/SAM, embedded SE), the WSCA will be delivered by the Wallet Provider. For native local WSCDs, the WSCA is part of the OS.
-- **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users support with their Wallet Units, performs essential maintenance, and issues Wallet Unit Attestations through the Wallet Provider Interface (WPI).
+- **Wallet Instance (WI)**: The app or application installed on a User device,
+which is an instance of a Wallet Solution and belongs to and is controlled by a
+User. This component implements the core business logic and interfaces as
+depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely
+manage cryptographic assets and execute cryptographic functions, ensuring a high
+level of assurance for authentication.
+- **User device (UD)**: A User Device comprises the hardware, operating system,
+and software environment required to host and execute the Wallet Instance. The
+minimum hardware and software requirements for the User device will be
+determined by the Wallet Provider.
+- **Wallet Secure Cryptographic Device (WSCD):** tamper-resistant device that
+provides an environment that is linked to and used by the wallet secure
+cryptographic application to protect critical assets and provide cryptographic
+functions for the secure execution of critical. This includes a keystore, but
+also the environment where the security-critical functions are executed. The
+WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple
+Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the
+WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD
+firmware covers security-related software, such as an operating system and
+cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
+different possible security architectures for the WSCD (for more details see
+[Section 4.5](#45-wscd-architecture-types)):
+    - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
+    accessed over a network.
+    - a local external WSCD, an external device, such as a smart card issued
+    specifically to the User for this purpose,
+    - a local internal WSCD, an integrated component within the User device,
+    such as a SIM, e-SIM, or embedded Secure Element,
+    - a local native WSCD, a component embedded in the User device, accessed via
+    an API provided by the operating system.
+- **Wallet Secure Cryptographic Application (WSCA):** an application that
+manages critical assets by being linked to and using the cryptographic and
+non-cryptographic functions provided by the wallet secure cryptographic device.
+The WSCA interfaces directly with the Wallet Instance and may be provided either
+by the Wallet Provider, as in the case of a remote WSCD, or by the User Device
+manufacturer, in the case of a local native WSCD.
+- **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users
+support with their Wallet Units, performs essential maintenance, and issues
+Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
 #### 4.3.3 Wallet Unit interfaces and protocols
 
-Figure 2 shows the following interfaces between components of a Wallet Unit, or between the Wallet Unit and other entities in the EUDI Wallet ecosystem:
+Figure 2 shows the following interfaces between components of a Wallet Unit, or
+between the Wallet Unit and other entities in the EUDI Wallet ecosystem:
 
-- The **Wallet Provider Interface (WPI)** is used by the Wallet Instance to communicate with the Wallet Provider to request and issue the Wallet Unit Attestation, as well as to provide support to the User and collect aggregated and user-consented information in a privacy-preserving manner to provision the Wallet Unit, in compliance with applicable legislation. Because the Wallet Provider is responsible for both sides of this interface, it will not be standardized in the scope of the EUDI Wallet ecosystem.
-- The **User Interface (UI)** is the point of interaction and communication between the User and the Wallet Instance. This interface will not be standardized in the scope of the EUDI Wallet ecosystem.
-- The **Presentation Interface (PI)** enables Relying Parties to securely request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This interface accommodates both remote and proximity interactions. For remote presentation flows, as detailed in [Section 4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [W3C Digital Credentials API]. In contrast, for the proximity presentation flow, this interface adheres to the [ISO/IEC 18013-5] standard, see [Section 4.4.2](#442-proximity-presentation-flows). The same interface can also be used by another Wallet Unit, see [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
-- The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to communicate with the Wallet Secure Cryptographic Application (WSCA). This interface is specifically designed for managing cryptographic assets and executing cryptographic functions. In case the WSCA is delivered by the Wallet Provider, the Wallet Provider is responsible for both sides of this interface, and hence standardisation is not needed within the scope of the EUDI Wallet ecosystem. In case the WSCA is delivered by the provider of the WSCD, this interface will comply with an existing specification that is not specifically designed for the EUDI Wallet ecosystem. Rather, each type of WSCA/WSCD will expose a provider-defined interface to the Wallet Instance. For example, in case the WSCD is a secure element, the [Implementing Act on Integrity and Core Functionality](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979#anx_I) requires support for the GlobalPlatform [GP OMAPI] interface specification (or an equivalent one).
-  
-To be able to support different types of WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of this interface.
+- The **Wallet Provider Interface (WPI)** is used by the Wallet Instance to
+communicate with the Wallet Provider to request and issue the Wallet Unit
+Attestation, as well as to provide support to the User and collect aggregated
+and user-consented information in a privacy-preserving manner to provision the
+Wallet Unit, in compliance with applicable legislation. Because the Wallet
+Provider is responsible for both sides of this interface, it will not be
+standardized in the scope of the EUDI Wallet ecosystem.
+- The **User Interface (UI)** is the point of interaction and communication
+between the User and the Wallet Instance. This interface will not be
+standardized in the scope of the EUDI Wallet ecosystem.
+- The **Presentation Interface (PI)** enables Relying Parties to securely
+request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This
+interface accommodates both remote and proximity interactions. For remote
+presentation flows, as detailed in [Section
+4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the
+OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the
+[W3C Digital Credentials API]. In contrast, for the proximity presentation flow,
+this interface adheres to the [ISO/IEC 18013-5] standard, see [Section
+4.4.2](#442-proximity-presentation-flows). The same interface can also be used
+by another Wallet Unit, see [Section
+6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
+- The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to
+communicate with the Wallet Secure Cryptographic Application (WSCA). This
+interface is specifically designed for managing crirical assets and
+executing cryptographic functions.To be able to support different types of
+WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of
+this interface.
 
-- The **PID Issuance Interface (PII)** complies with the [OpenID4VCI] standard and is used when the Wallet Unit communicates with a PID Provider to request and receive PIDs to be stored within the Wallet Unit.
+- The **PID Issuance Interface (PII)** complies with the [OpenID4VCI] standard
+and is used when the Wallet Unit communicates with a PID Provider to request and
+receive PIDs to be stored within the Wallet Unit.
 
-- The **Attestation Issuance Interface** **(AII)** complies with the [OpenID4VCI] standard and is used by the Wallet Unit to request various attestations that Users wants to include in their Wallet Unit.
+- The **Attestation Issuance Interface** **(AII)** complies with the
+[OpenID4VCI] standard and is used by the Wallet Unit to request various
+attestations that Users wants to include in their Wallet Unit.
 
-- The **Remote Signing Interface (RSI)** facilitates communication between the Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC) Provider. This interface is  used  by the Wallet Unit to generate a qualified signature or seal.
+- The **Remote Signing Interface (RSI)** facilitates communication between the
+Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC)
+Provider. This interface is  used  by the Wallet Unit to generate a qualified
+signature or seal.
 
-Note that the "Attribute Deletion Request to Relying Party Interface" and the "Reporting Relying Party to DPA Interface", which are mentioned in the Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling a User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the User's Wallet Unit is seen as features of the Wallet Solution which are required to be implemented in the solution. The same applies to functionalities enabling the User to report a Relying Party to a Data Protection Authority.
+Note that the "Attribute Deletion Request to Relying Party Interface" and the
+"Reporting Relying Party to DPA Interface", which are mentioned in the
+Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling
+a User to request a Relying Party to delete personal data (i.e., User
+attributes) obtained from the User's Wallet Unit is seen as features of the
+Wallet Solution which are required to be implemented in the solution. The same
+applies to functionalities enabling the User to report a Relying Party to a Data
+Protection Authority.
 
 ### 4.4 PID and attestation presentation flows
 
 #### 4.4.1 Overview
-This section defines five distinct communication flows that can be used when a Wallet Unit presents a PID or attestation to a Relying Party Instance:
 
-- **Proximity Supervised Flow**: In this flow, the User and their Wallet Instance are physically near the Relying Part Instance. PIDs and attestations are exchanged using proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Both devices may be with or without internet connectivity. A human representative of the Relying Party supervises the process.
-- **Proximity Unsupervised Flow**: This flow is like the supervised flow, but the Wallet Unit presents attestations to a machine, without human supervision. The interfaces and protocols used in this flow are the same as for the proximity supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
-- **Remote Same-Device Flow**: In this flow, the User uses a browser on their User device, i.e., the device containing their Wallet Instance, to visit the website of a Relying Party and to consume a service. If for consuming that service the Relying Party needs to request some attributes from the User's Wallet Unit, the Relying Party sends a presentation request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows), sending this request is mediated by the browser on the User's device, using the [W3C Digital Credentials API] and an inter-app API offered by the device's operating system.
-- **Remote Cross-Device Flow**: In this flow, the User uses a browser on a device other than their Wallet Instance, for instance a desktop or laptop, to visit the Relying Party's website and consume a service. If the Relying Party needs to send an attribute presentation request to the User's Wallet Unit, it presents this request to the browser on the other device. Again using the [W3C Digital Credentials API], this browser sets up a secure communication channel between the other device and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows) explains this in more detail.
-- **Inter-app Flow**: In this flow, the Relying Party Instance is a mobile app on the User device. Attestations are exchanged using the same inter-app API also used by the browser in a remote same-device flow. For that reason, this flow is also described in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows).
+This section defines five distinct communication flows that can be used when a
+Wallet Unit presents a PID or attestation to a Relying Party Instance:
 
-Specific use cases integrate one or more of these flows. Each of these flows is described in more detail in one of the next sections.
+- **Proximity Supervised Flow**: In this flow, the User and their Wallet
+Instance are physically near the Relying Part Instance. PIDs and attestations
+are exchanged using proximity technology (e.g., NFC, Bluetooth) between the
+Wallet Unit and the Relying Party Instance. Both devices may be with or without
+internet connectivity. A human representative of the Relying Party supervises
+the process.
+- **Proximity Unsupervised Flow**: This flow is like the supervised flow, but
+the Wallet Unit presents attestations to a machine, without human supervision.
+The interfaces and protocols used in this flow are the same as for the proximity
+supervised flow, and are described in [Section
+4.4.2](#442-proximity-presentation-flows).
+- **Remote Same-Device Flow**:In this flow, the User utilizes a web browser or
+another application on their User Device to access a Relying Party's a service.
+If consuming the service requires the Relying Party to obtain specific
+attributes from the User's Wallet Unit, the Relying Party sends a presentation
+request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows),
+this request is managed by the web browser on the User's device, utilizing the
+[W3C Digital Credentials API] and, behind the scenes, an inter-app API
+provided by the device's operating system.
+- **Remote Cross-Device Flow**: In this flow, the User uses a web browser on a
+device other than their Wallet Instance, for instance a desktop or laptop, to
+access the Relying Party's service. If the Relying Party needs to send a
+presentation request to the User's Wallet Unit, it presents this request to the
+web browser on the other device. Again using the [W3C Digital Credentials API],
+this web browser sets up a secure communication channel between the other device
+and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows)
+explains this in more detail.
+
+Specific use cases integrate one or more of these flows. Each of these flows is
+described in more detail in one of the next sections.
 
 #### 4.4.2 Proximity presentation flows
 
-Figure 3 shows how attestation presentation works when the User and their Wallet Instance are physically near the Relying Part Instance. In this case, the [ISO/IEC 18013-5] standard specifies how a communication channel is set up and how a presentation request and the corresponding response are exchanged.
+Figure 3 shows how attestation presentation works when the User and their Wallet
+Instance are physically near the Relying Part Instance. In this case, the
+[ISO/IEC 18013-5] standard specifies how a communication channel is set up and
+how a presentation request and the corresponding response are exchanged.
 
 ![Figure 3](media/Figure_3_Proximity_Flow.png) <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 
 Figure 3: Proximity presentations
 
-The attribute presentation flow begins when the User opens the Wallet Instance and instructs it to  display a QR code or present an NFC tag. This QR code or NFC tag contains the information necessary to establish a NFC, BLE, or WiFi-Aware connection. The Relying Party Instance scans the QR code or the NFC tag and set ups the connection. The QR code or NFC tag also contains the information necessary to create an authenticated and encrypted secure channel between both parties.
+The attribute presentation flow begins when the User opens the Wallet Instance
+and instructs it to  display a QR code or present an NFC tag. This QR code or
+NFC tag contains the information necessary to establish a NFC, BLE, or
+WiFi-Aware connection. The Relying Party Instance scans the QR code or the NFC
+tag and set ups the connection. The QR code or NFC tag also contains the
+information necessary to create an authenticated and encrypted secure channel
+between both parties.
 
 #### 4.4.3 Remote presentation flows
 
 #### 4.4.3.1 Introduction
-Remote transaction flows are use cases in which the Relying Party Instance is remote from the User and the User device. The Relying Party Instance accesses the Wallet Instance over the internet, using a browser. These use cases can be further distinguished in same-device flows, in which the browser is running on the same device as the Wallet Unit, and cross-device flows, where the browser is on a different device.
 
-Remote presentation flows come with a number of challenges that are not present for proximity flows:
+Remote transaction flows are use cases in which the Relying Party Instance is
+remote from the User and the User device. The Relying Party Instance accesses
+the Wallet Instance over the internet, using a browser. These use cases can be
+further distinguished in same-device flows, in which the browser is running on
+the same device as the Wallet Unit, and cross-device flows, where the browser is
+on a different device.
 
-1. Secure Cross-Device Flows: Cross-device flows are vulnerable to phishing and relay attacks, necessitating enhanced security measures. Implementing proximity checks managed by the mobile operating system can address these vulnerabilities, leveraging built-in security features to ensure interactions are both secure and reliable.
-2. Wallet Unit Selection and Invocation: Because remote flows do not start from the Wallet Unit, Users face potential challenges in selecting and invoking the appropriate Wallet Unit to satisfy a particular presentation request, especially when multiple Wallet Units are available on the User's device. A unified interface provided by the mobile operating system simplifies this process, ensuring a seamless and intuitive user experience.
-3. Fragmented Interaction Mechanisms: The challenge here is how to invoke the Wallet Unit in order to set up a communication channel with the remote Relying Party Instance. One option that has been considered by the respective standardisation bodies is the use of custom URI schemes. Such a URI may, for example, start with "mdoc://" or "openid4vp://". If such a scheme is used, the mobile operating system would invoke the Wallet Unit if the Relying Party Instance asks it to connect to a custom URI. However, reliance on custom URL schemes leads to inconsistent user experiences, depending on the browser or OS used. It also leads to operational inefficiencies and security risks. Therefore, within the respective standardisation bodies, a browser API has been proposed to standardize the interaction mechanisms across platforms. This improves usability and scalability and ensures a more uniform and reliable user experience.
-4. Clear Origin Verification: Protecting against relay attacks requires precise identification of the Relying Party Instance's origin. Including the origin information, such as the website domain or app package name, within the presentation request ensures the authenticity of the request and enhances trust for both Wallet Units and Users.
+Remote presentation flows come with a number of challenges that are not present
+for proximity flows:
 
-The next sections describe how these challenges are solved for both same-device and cross-device remote presentation flows.
+1. **Secure Cross-Device Flows**: Cross-device flows are vulnerable to phishing and
+relay attacks, necessitating enhanced security measures.  Proximity checks,
+managed by the mobile operating system, can mitigate these the risks derived  by
+these vulnerabilities by leveraging built-in security features to verify the
+authenticity of interactions, ensuring they are both secure and reliable.
+2. **Wallet Unit Selection**: In remote flows, where interactions
+do not originate from the Wallet Unit, Users may encounter difficulties in
+selecting and invoking the appropriate Wallet Instance to fulfill a specific
+presentation request, particularly when multiple Wallet Units are present on the
+device. A unified interface provided by the web browser and the mobile operating
+system can streamline this process, offering a seamless and intuitive user
+experience.
+3. **Invocation Mechanism**: Establishing a communication channel
+between the Wallet Unit and the remote Relying Party Instance presents
+challenges due to inconsistent invocation methods. One approach considered by
+standardization bodies involves using custom URI schemes, such as "mdoc://" or
+"openid4vp://". In this approach, the mobile operating system would trigger the
+Wallet Unit when the Relying Party Instance requests a connection via a custom
+URI. However, relying on custom URI schemes introduces variability in user
+experiences across different browsers and operating systems, resulting in
+operational inefficiencies and potential security risks. To address these
+issues, W3C has proposed the [Digital Credentials API] to unify interaction
+mechanisms across platforms. This solution enhances usability, scalability, and
+security while providing a consistent and reliable user experience.
+4. **Clear Origin Verification**: Protecting against relay attacks requires precise
+identification of the Relying Party Instance's origin. Including the origin
+information, such as the website domain or app package name, within the
+presentation request ensures the authenticity of the request and enhances trust
+for both Wallet Units and Users.
+
+The next sections describe how these challenges can be solved for both same-device
+and cross-device remote presentation flows.
 
 #### 4.4.3.2 Same-device remote presentation flows and inter-app presentation flows
 
@@ -389,17 +526,55 @@ Figure 4 shows attribute presentation in a remote same-device flow.
 
 Figure 4: Remote same-device presentations
 
-Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows the browser  on the User device and the relevant interfaces of this browser:
+Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows
+the browser on the User device and the relevant interfaces of this browser:
 
-+ The **Remote same-device presentation** interface in the interface between the browser and a remote Relying Party Instance, which may be running on a webserver operated by the Relying Party. This interface complies with the Digital Credentials API, which is a browser API that is currently being standardized within W3C. An OpenID4VP-based protocol (i.e., messages and message contents) to be used over the Digital Credentials API is currently being standardized within the OpenIDFoundation.
-+ The **WI-platform API** interface is an inter-app API offered by the OS to give browsers and other apps on the User device access to the Wallet Unit. On the protocol level, this interface uses the same OpenIDVP-compliant messages as the 'Remote same-device presentation' interface described above. There are however no current plans to standardize this interface on the level of the API calls. These calls will be specified in the developer documentation for the respective OS. One of the key elements of this API is that Wallet Unit receives reliable information regarding the origin of the presentation request.
-+ Obviously, the browser also has a User interface allowing the User to interact with it. This interface will not be standardised in the context of the EUDI Wallet ecosystem.
+- The **Remote same-device presentation** interface establishes communication
+between the web browser and a remote Relying Party Instance, which may operate
+on a server managed by the Relying Party.  This interface complies with the
+[Digital Credentials API], which is a browser API that is currently being
+standardized within W3C. Additionally OpenID Foundation is standardazing an
+[OpenID4VP profile for the W3C Digityal Credentials API], that defines how
+OpenID4VP shall be used over the Digital Credentials API.
+- The **WI-platform API** interface is an inter-app API that implements the
+Digital Credentials API mechanism at OS level There are however no current plans
+to standardize this interface on the level of the API calls. These calls will be
+specified in the developer documentation for the respective OS. One of the key
+elements of this API is that Wallet Unit receives reliable information regarding
+the origin of the presentation request.
+- Obviously, the browser also has a User interface allowing the User to interact
+with it. This interface will not be standardised in the context of the EUDI
+Wallet ecosystem.
   
-A remote same-device attribute presentation flow begins when the User uses the browser on their User device to visit the website of the Relying Party. The website may offer the User the possibility to present attributes from their Wallet Unit, for example by clicking a button. If the User does so, the browser will ask the User for permission to connect to the Wallet Unit. If the User allows this, the Relying Party Instance sends an OpenID4VP-compliant presentation request to the browser over the Digital Credentials API. The browser, in collaboration with the device OS, forwards this request to the Wallet Unit, using the WI-platform API described above. If there are multiple Wallet Units present on the User device, the browser and the device OS will determine to which of these the request will be forwarded, possibly after consulting the User. The Wallet Instance will process the presentation request and, after requesting approval from the User, will return the requested attributes in encrypted format to the browser. The browser will forward the response to the remote Relying Party Instance.
+A remote same-device attribute presentation flow begins when the User uses the
+browser on their User device to visit the website of the Relying Party. The
+website may offer the User the possibility to present attributes from their
+Wallet Unit, for example by clicking a button. If the User does so, the browser
+will ask the User for permission to connect to the Wallet Unit. If the User
+allows this, the Relying Party Instance sends an OpenID4VP-compliant
+presentation request to the browser over the Digital Credentials API. The
+web browser, in collaboration with the device OS, forwards this request to the
+Wallet Unit, using the WI-platform API described above. If there are multiple
+Wallet Units present on the User device, the browser and the device OS will
+determine to which of these the request will be forwarded, possibly after
+consulting the User. The Wallet Instance will process the presentation request
+and, after requesting approval from the User, will return the requested
+attributes in encrypted format to the browser. The browser will forward the
+response to the remote Relying Party Instance.
 
-Figure 4 also shows an inter-app attribute presentation flow. In such a flow, a mobile app on the User device, for example a banking app or shopping app, acts as the Relying Party Instance. The mobile app may use the User attributes received from the Wallet Unit for instance to authenticate the User or to fill out User data, such as name and address, automatically.
+Figure 4 also shows an inter-app attribute presentation flow. In such a flow, a
+mobile app on the User device, for example a banking app or shopping app, acts
+as the Relying Party Instance. The mobile app may use the User attributes
+received from the Wallet Unit for instance to authenticate the User or to fill
+out User data, such as name and address, automatically.
 
-In such a use case, the attribute presentation flow begins when the User opens the mobile app and instructs it to request attributes from the Wallet Unit over the WI-platform API. Note that this is the same API that is also used by a browser in remote same-device presentation flows. The only difference may be that the origin information in the presentation request, if present, is different. The mobile app consumes the attributes it receives itself, and does not forward the presentation response to a remote Relying Party Instance.
+In such a use case, the attribute presentation flow begins when the User opens
+the mobile app and instructs it to request attributes from the Wallet Unit over
+the WI-platform API. Note that this is the same API that is also used by a
+browser in remote same-device presentation flows. The only difference may be
+that the origin information in the presentation request, if present, is
+different. The mobile app consumes the attributes it receives itself, and does
+not forward the presentation response to a remote Relying Party Instance.
 
 #### 4.4.3.3 Cross-device remote presentation flows
 
@@ -409,16 +584,40 @@ Figure 5 shows attribute presentation in a remote cross-device flow.
 
 Figure 5: Remote cross-device presentations
 
-A remote cross-device attribute presentation flow begins when the User uses a browser on a device different from their User device to visit the website of the Relying Party. The website may offer the User the possibility to present attributes from their Wallet Unit, for example by clicking a button. If the User does so, the browser will ask the User for permission to connect to the Wallet Unit. If the User allows this, the Relying Party Instance sends a presentation request to the browser over the Digital Credentials API. The browser then establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO Passkeys. This is done as follows:
+A remote cross-device attribute presentation flow begins when the User uses a
+browser on a device different from their User device to visit the website of the
+Relying Party. The website may offer the User the possibility to present
+attributes from their Wallet Unit, for example by clicking a button. If the User
+does so, the browser will ask the User for permission to connect to the Wallet
+Unit. If the User allows this, the Relying Party Instance sends a presentation
+request to the browser over the Digital Credentials API. The browser then
+establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid
+flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO
+Passkeys. This is done as follows:
 
- 1. The browser presents a QR code that includes information about the tunnel endpoint and keys that will be used for establishing a secure channel over this tunnel.
+ 1. The browser presents a QR code that includes information about the tunnel
+ endpoint and keys that will be used for establishing a secure channel over this
+ tunnel.
  2. The user scans the QR code using the camera on the User device.
- 3. The User device emits a BLE advertisement, which is received by the browser. The advertisement includes, in an encrypted form, information required for establishing the secure tunnel. This advertisement is used as a proximity check: the tunnel cannot be established if the User device and the device on which the browser runs are not close to each other.
+ 3. The User device emits a BLE advertisement, which is received by the browser.
+ The advertisement includes, in an encrypted form, information required for
+ establishing the secure tunnel. This advertisement is used as a proximity
+ check: the tunnel cannot be established if the User device and the device on
+ which the browser runs are not close to each other.
  4. A tunnel is established between the two devices.
   
-The browser then sends the OpenID4VP-compliant presentation request to the User device. If there are multiple Wallet Units present on the User device, the device OS will determine to which of these the request will be forwarded, possibly after consulting the User. The Wallet Instance will process the presentation request and, after requesting approval from the User, will return the requested attributes in encrypted format to the browser. The browser will forward the response to the remote Relying Party Instance.
+The browser then sends the OpenID4VP-compliant presentation request to the User
+device. If there are multiple Wallet Units present on the User device, the
+device OS will determine to which of these the request will be forwarded,
+possibly after consulting the User. The Wallet Instance will process the
+presentation request and, after requesting approval from the User, will return
+the requested attributes in encrypted format to the browser. The browser will
+forward the response to the remote Relying Party Instance.
 
-Note that the Wallet Instance does not see any difference between the cross-device flow and same-device flow. In both cases, it receives an OpenID4VP-compliant presentation request over the WI-platform API described in the previous section.
+Note that the Wallet Instance does not see any difference between the
+cross-device flow and same-device flow. In both cases, it receives an
+OpenID4VP-compliant presentation request over the WI-platform API described in
+the previous section.
 
 ### 4.5 WSCD architecture types
 
@@ -431,59 +630,111 @@ Figure 2 showed four different types of architecture for the WSCD.
 - Local internal WSCD
 - Local native WSCD
 
-In addition, this section also describes a hybrid architecture. Within the EUDI Wallet ecosystem, a Wallet Provider is allowed to use any of these architectures.
+In addition, this section also describes a hybrid architecture. Within the EUDI
+Wallet ecosystem, a Wallet Provider is allowed to use any of these
+architectures.
 
 #### 4.5.2 Remote WSCD
 
-In this architecture, the Wallet Secure Cryptographic Device is situated remotely from the User device. Typically, it will be implemented by the Wallet Provider using an HSM running on a secure server. The Wallet Provider will also provide the WSCA with which the Wallet Unit interacts. 
+In this architecture, the Wallet Secure Cryptographic Device is situated
+remotely from the User device. Typically, it will be implemented by the Wallet
+Provider using an HSM running on a secure server. The Wallet Provider will also
+provide the WSCA with which the Wallet Unit interacts.
 
-This architecture is typically used if the User device lacks sufficiently secure hardware, or if the Wallet Provider does not want to have a dependency on such hardware.
+This architecture is typically used if the User device lacks sufficiently secure
+hardware, or if the Wallet Provider does not want to have a dependency on such
+hardware.
 
 #### 4.5.3 Local external WSCD
 
-If the User device lacks sufficiently secure hardware, another option is to use a local external hardware component as the WSCD. This local external WSCD is typically a smart card or a secure token. It is connected to the User device via NFC or another short-range connection, and is able to perform all of the cryptographic operations required from a WSCD / WSCA in the ARF. Note that many existing smart cards, such as identity cards, will not be able to do this.
+If the User device lacks sufficiently secure hardware, another option is to use
+a local external hardware component as the WSCD. This local external WSCD is
+typically a smart card or a secure token. It is connected to the User device via
+NFC or another short-range connection, and is able to perform all of the
+cryptographic operations required from a WSCD / WSCA in the ARF. Note that many
+existing smart cards, such as identity cards, will not be able to do this.
 
-The WSCA typically takes the form of a Java Card applet. The WSCA is installed prior to issuance of the smart card or secure token to the User. The issuer of the WSCD and of the WSCA is the Wallet Provider or another entity acting on behalf of or in cooperation with the Wallet Provider.
+The WSCA typically takes the form of a Java Card applet. The WSCA is installed
+prior to issuance of the smart card or secure token to the User. The issuer of
+the WSCD and of the WSCA is the Wallet Provider or another entity acting on
+behalf of or in cooperation with the Wallet Provider.
 
 #### 4.5.4 Local internal WSCD
 
-In this architecture, the Wallet Secure Cryptographic Device is integrated directly within the User's device. This includes solutions like UICCs, e-SIM/SAMs, or embedded Secure Elements. Such solutions typically are compliant with the GlobalPlatform Card Specifications [GP CS] or with the GSMA Secured Applications for Mobile [GSMA SAM] specification. 
+In this architecture, the Wallet Secure Cryptographic Device is integrated
+directly within the User's device. This includes solutions like UICCs,
+e-SIM/SAMs, or embedded Secure Elements. Such solutions typically are compliant
+with the GlobalPlatform Card Specifications [GP CS] or with the GSMA Secured
+Applications for Mobile [GSMA SAM] specification.
 
-The WSCA will typically be a Java Card applet, and it is remotely issued to the WSCD by the Wallet Provider, at the moment the Wallet Unit is activated; see [Section 6.5.3](#653-wallet-unit-activation). In order to do this, the Wallet Provider may need to connect to and colloborate with other entities, such as a Trusted Service Manager employed by the owner of the WSCD. The owner of the WSCD may be a Mobile Network Operator (in case of a UICC), the User (in case of an e-SIM/SAM), or an OEM (in case of an embedded SE). 
+The WSCA will typically be a Java Card applet, and it is remotely issued to the
+WSCD by the Wallet Provider, at the moment the Wallet Unit is activated; see
+[Section 6.5.3](#653-wallet-unit-activation). In order to do this, the Wallet
+Provider may need to connect to and colloborate with other entities, such as a
+Trusted Service Manager employed by the owner of the WSCD. The owner of the WSCD
+may be a Mobile Network Operator (in case of a UICC), the User (in case of an
+e-SIM/SAM), or an OEM (in case of an embedded SE).
 
-The Wallet Provider is responsible for verifying that the local internal WSCD is compliant with all requirements in the ARF, prior to activating a Wallet Unit using such a WSCD.
+The Wallet Provider is responsible for verifying that the local internal WSCD is
+compliant with all requirements in the ARF, prior to activating a Wallet Unit
+using such a WSCD.
 
 #### 4.5.5 Local native WSCD
 
-A local native WSCD is integrated into the User device. However, the API to access the WSCD is included in the operating system of the User device. Therefore, no separate WSCA is necessary. Alternatively, the API offered by the OS may be viewed as the WSCA.
+A local native WSCD is integrated into the User device. However, the API to
+access the WSCD is included in the operating system of the User device.
+Therefore, no separate WSCA is necessary. Alternatively, the API offered by the
+OS may be viewed as the WSCA.
 
-The Wallet Provider is responsible for verifying that the local native WSCD is compliant with all requirements in the ARF, prior to activating a Wallet Unit using such a WSCD.
+The Wallet Provider is responsible for verifying that the local native WSCD is
+compliant with all requirements in the ARF, prior to activating a Wallet Unit
+using such a WSCD.
 
 #### 4.5.6 Hybrid architecture
 
-In this architecture, two or more of the different types of WSCD described above are combined. For example, a remote HSM may manage the cryptographic keys of the Wallet Unit and of PIDs and attestations present in the Wallet Unit, while an embedded Secure Element is used to manage the access to the remote HSM.
+In this architecture, two or more of the different types of WSCD described above
+are combined. For example, a remote HSM may manage the cryptographic keys of the
+Wallet Unit and of PIDs and attestations present in the Wallet Unit, while an
+embedded Secure Element is used to manage the access to the remote HSM.
 
 ### 4.6 State diagrams
 
 #### 4.6.1 Introduction
 
-In this section, state diagrams are presented to explain the relations between the Wallet Solution, the Wallet Unit, and the PID.
+In this section, state diagrams are presented to explain the relations between
+the Wallet Solution, the Wallet Unit, and the PID.
 
 #### 4.6.2 Wallet Solution
 
-A Wallet Solution has a state diagram of its own. The state of a Wallet Solution affects the state of all Wallet Units of that Wallet Solution. Figure 6 below shows the states of the Wallet Solution:
+A Wallet Solution has a state diagram of its own. The state of a Wallet Solution
+affects the state of all Wallet Units of that Wallet Solution. Figure 6 below
+shows the states of the Wallet Solution:
 
 ![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_Statechart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
 
 Figure 6: State diagram of Wallet Solution
 
-The **Candidate** state is the first state of an Wallet Solution. This means it is fully implemented and the Wallet Provider requests the solution to be certified as a Wallet Solution as part of an EUDI Wallet eID scheme.
+The **Candidate** state is the first state of an Wallet Solution. This means it
+is fully implemented and the Wallet Provider requests the solution to be
+certified as a Wallet Solution as part of an EUDI Wallet eID scheme.
 
-If all the legal and technical criteria have been met, a Member State may decide to allow a Wallet Provider to start providing the Wallet Solution to Users. The state of the Wallet Solution becomes **Valid**. This means the Wallet Solution can be officially launched, and can be provided to Users. The issuing Member State informs the Commission of each change in the certification status of their EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme.
+If all the legal and technical criteria have been met, a Member State may decide
+to allow a Wallet Provider to start providing the Wallet Solution to Users. The
+state of the Wallet Solution becomes **Valid**. This means the Wallet Solution
+can be officially launched, and can be provided to Users. The issuing Member
+State informs the Commission of each change in the certification status of their
+EUDI Wallet eID schemes and the Wallet Solutions provided under that scheme.
 
-The issuing Member State can temporarily suspend a Wallet Solution. This would for example be the result of a critical security issue. This leads to the **Suspended** state. The issuing Member State can unsuspend the Wallet Solution, bringing the Solution back to the **Valid** state. The issuing Member State can also decide to completely withdraw the Wallet Solution, which brings the Wallet Solution in the **Withdrawn** state. 
+The issuing Member State can temporarily suspend a Wallet Solution. This would
+for example be the result of a critical security issue. This leads to the
+**Suspended** state. The issuing Member State can unsuspend the Wallet Solution,
+bringing the Solution back to the **Valid** state. The issuing Member State can
+also decide to completely withdraw the Wallet Solution, which brings the Wallet
+Solution in the **Withdrawn** state.
 
-A Wallet Unit that is part of a suspended or withdrawn Wallet Solution Provider cannot request the issuance of a PID or attestation. Nor will a PID or attestation presented by such a Wallet Unit be accepted by a Relying Party.
+A Wallet Unit that is part of a suspended or withdrawn Wallet Solution Provider
+cannot request the issuance of a PID or attestation. Nor will a PID or
+attestation presented by such a Wallet Unit be accepted by a Relying Party.
 
 #### 4.6.3 Wallet Unit
 
@@ -493,23 +744,43 @@ Figure 7 below shows the states of a Wallet Unit.
 
 Figure 7: State diagram of Wallet Unit
 
-A Wallet Unit lifecycle begins when the User installs a Wallet Instance on their User device (see [Section 6.5.2](#652-wallet-instance-installation). The Wallet Unit's state is then **Installed**. In this state, the User and the Wallet Provider can perform only one action, namely activating the Wallet Unit, as described in [Section 6.5.3](#653). As part of the activation process, the Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit.
+A Wallet Unit lifecycle begins when the User installs a Wallet Instance on their
+User device (see [Section 6.5.2](#652-wallet-instance-installation). The Wallet
+Unit's state is then **Installed**. In this state, the User and the Wallet
+Provider can perform only one action, namely activating the Wallet Unit, as
+described in [Section 6.5.3](#653). As part of the activation process, the
+Wallet Provider issues a Wallet Unit Attestation (WUA) to the Wallet Unit.
 
-Once a Wallet Unit is activated, it is in the **Operational** state. In this state, the User and the Wallet Provider manage the Wallet Unit and can perform the same actions as in the **Valid** state, see below. However, obviously, the User cannot present a PID to a Relying Party, nor can any other action with a PID be performed, because by definition no valid PID is present in this state.
+Once a Wallet Unit is activated, it is in the **Operational** state. In this
+state, the User and the Wallet Provider manage the Wallet Unit and can perform
+the same actions as in the **Valid** state, see below. However, obviously, the
+User cannot present a PID to a Relying Party, nor can any other action with a
+PID be performed, because by definition no valid PID is present in this state.
 
-If, in the **Operational** state, a PID Provider issues a PID to a Wallet Unit, it transitions to the **Valid** state. If, in either of these two states, the Wallet Provider revokes the WUA or the WUA expires, the Wallet Unit moves back to **Installed**.
+If, in the **Operational** state, a PID Provider issues a PID to a Wallet Unit,
+it transitions to the **Valid** state. If, in either of these two states, the
+Wallet Provider revokes the WUA or the WUA expires, the Wallet Unit moves back
+to **Installed**.
 
 The following actions can be performed in the **Valid** state:
 
 - The Wallet Provider updates the Wallet Unit to a new version,
-- The Wallet Provider revokes the Wallet Unit, for instance at the User's request of if the security of the Wallet Instance is broken. Revocation of the Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see [Topic 9] and [Topic 38]).
+- The Wallet Provider revokes the Wallet Unit, for instance at the User's
+request of if the security of the Wallet Instance is broken. Revocation of the
+Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see [Topic
+9] and [Topic 38]).
 - The User requests issuance of a PID, a QEAA, a PuB-EAA, or an EAA.
-- The User presents attributes from a PID, a QEAA, a PuB-EAA, or an EAA to a Relying Party.
+- The User presents attributes from a PID, a QEAA, a PuB-EAA, or an EAA to a
+Relying Party.
 - The User deletes a PID, a QEAA, a PuB-EAA, or an EAA.
-- A PID, a QEAA, a PuB-EAA, or an EAA is revoked by its Provider (if it is valid for more than 24 hours).
+- A PID, a QEAA, a PuB-EAA, or an EAA is revoked by its Provider (if it is valid
+for more than 24 hours).
 - The User uninstalls the Wallet Instance.
 
-If the last or only PID in the Wallet Unit expires, is revoked, or is deleted, the Wallet Unit's state is moved back to **Operational**. Note that if there are multiple PIDs in the Wallet Unit, it does not move to the **Operational** state as long as at least one of them is valid.
+If the last or only PID in the Wallet Unit expires, is revoked, or is deleted,
+the Wallet Unit's state is moved back to **Operational**. Note that if there are
+multiple PIDs in the Wallet Unit, it does not move to the **Operational** state
+as long as at least one of them is valid.
 
 #### 4.6.4 PID Provider or Attestation Provider
 
@@ -955,7 +1226,7 @@ Specifically for the functionality allowing a PID Provider to request Wallet Uni
 
 #### 6.5.5 Wallet Instance de-installation
 
-No trust relationships are required for Wallet Instance de-installation; anybody able to access the device of the User will be able to do this. 
+No trust relationships are required for Wallet Instance de-installation; anybody able to access the device of the User will be able to do this.
 
 If the User uninstalls the Wallet Instance, the Wallet Instance ensures that the associated WSCA(s) delete all sensitive data and cryptographic keys related to the Wallet Unit and to all PIDs and attestations on the Wallet Unit.
 
@@ -1029,9 +1300,9 @@ Once it has done all verifications, the PID Provider or Attestation Provider wil
 ##### 6.6.2.5 Wallet Unit verifies PID or attestation
 
 After the Wallet Unit receives the PID or attestation, it will
-+ verify that the PID or attestation it received matches the request.
-+ verify the signature of the PID or attestation, using the appropriate trust anchor, in the same way as described for a Relying Party Instance in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
-+ show the contents (i.e., attribute values) of the new PID or attestation to the User and request the User's approval for storing the new PID or attestation. When requesting approval, the Wallet Unit shows the contents of the PID or attestation to the User. The Wallet Unit also informs the User about the identity of the PID Provider or Attestation Provider, using the subject information from the PID Provider or Attestation Provider access certificate.
+- verify that the PID or attestation it received matches the request.
+- verify the signature of the PID or attestation, using the appropriate trust anchor, in the same way as described for a Relying Party Instance in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
+- show the contents (i.e., attribute values) of the new PID or attestation to the User and request the User's approval for storing the new PID or attestation. When requesting approval, the Wallet Unit shows the contents of the PID or attestation to the User. The Wallet Unit also informs the User about the identity of the PID Provider or Attestation Provider, using the subject information from the PID Provider or Attestation Provider access certificate.
 
 If one these verifications fail, the Wallet Unit will delete the PID or attestation, and will inform the User that issuance was not successful.
 
@@ -1070,7 +1341,7 @@ Either before or after validating the PID or attestation per steps 5 - 9,
 
 Finally, after the interaction with the Relying Party Instance is over,
 
-12.  The Wallet Unit enables the User to report unlawful or suspicious requests for personal data by a Relying Party, based on information logged by the Wallet Unit. Similarly, the Wallet Unit enables the User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the Wallet Unit. This is discussed in [Section 6.6.3.13](#66313-wallet-unit-enables-the-user-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data).
+12. The Wallet Unit enables the User to report unlawful or suspicious requests for personal data by a Relying Party, based on information logged by the Wallet Unit. Similarly, the Wallet Unit enables the User to request a Relying Party to delete personal data (i.e., User attributes) obtained from the Wallet Unit. This is discussed in [Section 6.6.3.13](#66313-wallet-unit-enables-the-user-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data).
 
 ##### 6.6.3.2 Wallet Unit authenticates the Relying Party Instance
 
@@ -1165,8 +1436,8 @@ Notes:
 - All PIDs and attestations in the EUDI Wallet ecosystem are digitally signed or sealed by the respective PID Provider or Attestation Provider, or by a WSCD that is part of the Wallet Unit. If an attestation is digitally signed or sealed by a WSCD, it is called a device-signed or self-issued attestation. Device-signed or self-issued attestations are allowed only if it can be shown that the WSCD signs or seals them at Level of Assurance (LoA) “high”, meaning that the level of security offered by the WSCD is at least equivalent to the security level of the secure infrastructure used by the PID Provider or Attestation Provider for signing or sealing PIDs or attestations.
 
 - The signature or seal over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
-   - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-   - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
+    - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
+    - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
 
 - A Relying Party typically has a list of attestations that it accepts for a certain use case. For example, a Relying Party could accept a mobile Driving Licence (mDL) issued by a national driving licence Provider as proof of identity. If a Relying Party decides to accept a specific type of attestation issued by a specific Attestation Provider, the Relying Party must accept any valid and authentic attestation issued by that Attestation Provider, regardless of the User device it is installed on. In other words, the Relying Party trusts the PID Provider or Attestation Provider to have verified, during PID or attestation issuance, that the User device is fit to receive a PID or attestation, as described in [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit). The Relying Party therefore does not assess the technical properties of the User device and WSCD during the attestation presentation process. If the Relying Party were to make its own independent assessment of the security of the User device, there is a possibility that it would not accept a User's attestation even though it is perfectly valid. That would be confusing to Users and might diminish their trust in their attestations and in the EUDI Wallet ecosystem as a whole.
 
@@ -1244,7 +1515,7 @@ However, the Regulation requires that a Wallet Unit is also able to receive such
 
 Starting from the issuance of a PID or attestation, the PID or attestation is managed by the User and the Wallet Provider. Management is performed until the PID, or attestation, is deleted or the Wallet Instance is de-installed by the User.
 
-For PID and attestation revocation, see [Topic 7]. The User can request the PID Provider or Attestation Provider to revoke the PID or attestation at least in case of loss or theft. 
+For PID and attestation revocation, see [Topic 7]. The User can request the PID Provider or Attestation Provider to revoke the PID or attestation at least in case of loss or theft.
 
 In addition, a PID Provider or Attestation Provider could regularly verify, for each of its valid PIDs or attestations, whether the Wallet Provider revoked the Wallet Unit on which that PID or attestation is residing. If it turns out that the Wallet Unit is revoked, the PID Provider or Attestation Provider could revoke the respective PID or attestation. Currently, no mechanism has been specified yet to enable a PID Provider or Attestation Provider to verify whether a Wallet Unit is revoked. This will be discussed for ARF 2.0.
 
@@ -1256,7 +1527,7 @@ In case the User no longer wants to retain a specific PID or attestation in thei
 
 ### 7.1 Introduction
 
-This chapter briefly describes the certification of Wallet Solutions and the eID schemes under which they are provided, covering the overall certification approach, design principles, and key requirements outlined in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) and Commission Implementing Regulation (CIR) laying down rules for on the certification of Wallet Solution (2024/2981), or simply the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981). Furthermore, references are made to the Annex I of the CIR, the [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,), supporting the risk-based approach of the Wallet Solutions. For more detailed requirements, please refer to the [CIR ](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) itself.
+This chapter briefly describes the certification of Wallet Solutions and the eID schemes under which they are provided, covering the overall certification approach, design principles, and key requirements outlined in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) and Commission Implementing Regulation (CIR) laying down rules for on the certification of Wallet Solution (2024/2981), or simply the [CIR on certification](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981). Furthermore, references are made to the Annex I of the CIR, the [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,), supporting the risk-based approach of the Wallet Solutions. For more detailed requirements, please refer to the [CIR](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) itself.
 
 The [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) requires certification of Wallet Solutions to ensure conformity of the Wallet Solutions with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. Certification applies to the Wallet Solutions and the eID schemes under which they are provided; for ease of reading this chapter only refers to Wallet Solutions. Furthermore, the object of certification includes software components, hardware components (in cases where they are provided directly or indirectly by the Wallet Provider) and the processes that support the provision and operation of a Wallet Solution, such as Wallet Unit activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
@@ -1288,7 +1559,7 @@ Finally, ENISA is also asked to facilitate the transition from national certific
 
 ### 7.4 Risk-based approach and risk register
 
-This section details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5c, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation ([GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)) and related Data Protection Impact Assessments (DPIA). 
+This section details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5c, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation ([GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)) and related Data Protection Impact Assessments (DPIA).
 
 The risk-based approach sets out a common [risk register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) that contains a comprehensive but non-exhaustive list of risks and threats related to the Wallet Solution. These risks and threats are architecture-agnostic and provide a benchmark overview of the most critical risks and threats to Wallet Solutions. By adopting this common set of risks and threats, national transitory certification schemes will achieve a baseline level of harmonisation.
 
@@ -1322,7 +1593,7 @@ The following is an excerpt from Annex I of the [CIR on certification](https://e
 	SR3 Legal non-compliance 
 
 *Technical threats*
-    
+
     TT1 Physical attacks 	
     
     1.1	Theft 
@@ -1381,15 +1652,15 @@ When adding issues to the Github repository, please follow these general guideli
 - Use one or more of the following **labels** to categorise issues. Labels help organise and prioritise issues, making it easier to manage the repository.
 
 | **Label** | **Description** |
-|-----------------------|---------------------------------------------------------------------------------| 
+|-----------------------|---------------------------------------------------------------------------------|
 | Content Clarifications| Raise issues seeking clarification on specific content within the document. This could include explanations of concepts, definitions of terms, or examples to illustrate certain points. |
 | Suggestions for Improvements | Propose suggestions to enhance the clarity, completeness, or accuracy of the document. This could involve restructuring sections, adding examples, or providing additional information. |
 | Errors and Corrections | Identify errors such as typos, grammatical mistakes, or factual inaccuracies within the document and suggest corrections. |
-| Compatibility and Integration | Issues related to how the document integrates with other systems or technologies, ensuring compatibility with different platforms or frameworks. | 
+| Compatibility and Integration | Issues related to how the document integrates with other systems or technologies, ensuring compatibility with different platforms or frameworks. |
 | Enhancement Requests | Request new features, sections, or content to be added to the document to improve its usefulness or relevance. |
 | Formatting and Styling | Feedback regarding the visual appearance, organization, and consistency of formatting within the document. |
 | Documentation Standards | Discussions around adhering to documentation standards, conventions, or guidelines. |
-| Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and Users. | 
+| Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and Users. |
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
 
 - **Attach** relevant files, screenshots, or links to additional resources that provide context or assist in resolving the issue. This can include **references** to related documentation or discussions.
@@ -1442,45 +1713,45 @@ The ARF document will be published under a standardised release versioning forma
 
 For undated references, the latest version available applies.
 
-| **Item Reference** | **Standard name/details**| 
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------| 
-| [2015/1505] | [COMMISSION IMPLEMENTING DECISION (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. | 
-| [eIDAS 2.0] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework | 
+| **Item Reference** | **Standard name/details**|
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| [2015/1505] | [COMMISSION IMPLEMENTING DECISION (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. |
+| [eIDAS 2.0] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [CIR on certification] | [Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [Risk Register] | [Regulation (EU) 2024/2981, Annex I](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
-| [ISO/IEC 18013-5]| [ISO/IEC 18013-5](https://www.iso.org/standard/69084.html), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application, First edition, 2021-09. | 
-| [ISO 3166-1] | [ISO 3166-1](https://www.iso.org/standard/72482.html): Codes for the representation of names of countries and their subdivisions -- Part 1: Country codes: alpha-2 country | 
-| [ISO 3166-2] | [ISO 3166-2:2020](https://www.iso.org/standard/72483.html): Codes for the representation of names of countries and their subdivisions --- Part 2: Country subdivision code | 
-| [ETSI TS 119 612]| Electronic Signatures and Infrastructures (ESI); Trusted Lists | 
-| [ETSI TS 119 431-1]| [ETSI TS 119 431-1](https://www.etsi.org/deliver/etsi_ts/119400_119499/11943101/01.02.01_60/ts_11943101v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev. | 
-| [ETSI TS 119 431-2]| [ETSI TS 119 431-2](https://www.etsi.org/deliver/etsi_ts/119400_119499/11943102/01.02.01_60/ts_11943102v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation | 
-| [ETSI TS 119 432]| [ETSI TS 119 432](https://www.etsi.org/deliver/etsi_ts/119400_119499/119432/01.02.01_60/ts_119432v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation | 
-| [ETSI EN 319 132-1]| [ETSI EN 319 132-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31913201/01.03.00_20/en_31913201v010300a.pdf) - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES) | 
-| [ETSI TS 119 182-1]| [ETSI TS 119 182-1](https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures | 
+| [ISO/IEC 18013-5]| [ISO/IEC 18013-5](https://www.iso.org/standard/69084.html), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application, First edition, 2021-09. |
+| [ISO 3166-1] | [ISO 3166-1](https://www.iso.org/standard/72482.html): Codes for the representation of names of countries and their subdivisions -- Part 1: Country codes: alpha-2 country |
+| [ISO 3166-2] | [ISO 3166-2:2020](https://www.iso.org/standard/72483.html): Codes for the representation of names of countries and their subdivisions --- Part 2: Country subdivision code |
+| [ETSI TS 119 612]| Electronic Signatures and Infrastructures (ESI); Trusted Lists |
+| [ETSI TS 119 431-1]| [ETSI TS 119 431-1](https://www.etsi.org/deliver/etsi_ts/119400_119499/11943101/01.02.01_60/ts_11943101v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev. |
+| [ETSI TS 119 431-2]| [ETSI TS 119 431-2](https://www.etsi.org/deliver/etsi_ts/119400_119499/11943102/01.02.01_60/ts_11943102v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation |
+| [ETSI TS 119 432]| [ETSI TS 119 432](https://www.etsi.org/deliver/etsi_ts/119400_119499/119432/01.02.01_60/ts_119432v010201p.pdf) - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation |
+| [ETSI EN 319 132-1]| [ETSI EN 319 132-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31913201/01.03.00_20/en_31913201v010300a.pdf) - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES) |
+| [ETSI TS 119 182-1]| [ETSI TS 119 182-1](https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures |
 | [ETSI EN 319 122-1]| [ETSI EN 319 122-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31912201/01.03.01_60/en_31912201v010301p.pdf) - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures |
-| [ETSI EN 319 162-1]| [ETSI EN 319 162-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31916201/01.01.01_60/en_31916201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers | 
+| [ETSI EN 319 162-1]| [ETSI EN 319 162-1](https://www.etsi.org/deliver/etsi_en/319100_319199/31916201/01.01.01_60/en_31916201v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers |
 | [ETSI EN 319 142] | [ETSI EN 319 142](https://www.etsi.org/deliver/etsi_en/319100_319199/31914202/01.01.01_60/en_31914202v010101p.pdf) - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures |
-| [CEN EN 419 241-1]| [CEN EN 419 241-1](https://www.en-standard.eu/csn-en-419241-1-trustworthy-systems-supporting-server-signing-part-1-general-system-security-requirements/) -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements | 
-| [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/> | 
-| [RFC 2119] | [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) - Key words for use in RFCs to Indicate Requirement Levels. S. Bradner, March 1997. | 
-| [RFC 3339] | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) - Date and Time on the Internet: Timestamps, G. Klyne et al., July 2002 | 
-| [RFC 4122] | [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) - A Universally Unique Identifier (UUID) URN Namespace, P. Leach et al., July 2005 | 
-| [RFC 5280] | [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile, D. Kooper et al., May 2008 | 
-| [RFC 3647] | [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647) - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework, S. Chokhani et al., November 2003 | 
-| [RFC 8259] | [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) - The JavaScript Object Notation (JSON) Data Interchange Format, T. Bray, Ed., December 2017 | 
-| [RFC 8610] | [RFC 8610](https://datatracker.ietf.org/doc/html/rfc8610) - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures, H. Birkholz et al., June 2019 | 
-| [RFC 8943] | [RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943) - Concise Binary Object Representation (CBOR) Tags for Date, M. Jones et al., November 2020 | 
-| [RFC 8949] | [RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949) - Concise Binary Object Representation (CBOR), C. Bormann et al., December 2020 | 
+| [CEN EN 419 241-1]| [CEN EN 419 241-1](https://www.en-standard.eu/csn-en-419241-1-trustworthy-systems-supporting-server-signing-part-1-general-system-security-requirements/) -- Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements |
+| [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC). Retrievable from: <https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/> |
+| [RFC 2119] | [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) - Key words for use in RFCs to Indicate Requirement Levels. S. Bradner, March 1997. |
+| [RFC 3339] | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) - Date and Time on the Internet: Timestamps, G. Klyne et al., July 2002 |
+| [RFC 4122] | [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) - A Universally Unique Identifier (UUID) URN Namespace, P. Leach et al., July 2005 |
+| [RFC 5280] | [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile, D. Kooper et al., May 2008 |
+| [RFC 3647] | [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647) - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework, S. Chokhani et al., November 2003 |
+| [RFC 8259] | [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) - The JavaScript Object Notation (JSON) Data Interchange Format, T. Bray, Ed., December 2017 |
+| [RFC 8610] | [RFC 8610](https://datatracker.ietf.org/doc/html/rfc8610) - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures, H. Birkholz et al., June 2019 |
+| [RFC 8943] | [RFC 8943](https://datatracker.ietf.org/doc/html/rfc8943) - Concise Binary Object Representation (CBOR) Tags for Date, M. Jones et al., November 2020 |
+| [RFC 8949] | [RFC 8949](https://datatracker.ietf.org/doc/html/rfc8949) - Concise Binary Object Representation (CBOR), C. Bormann et al., December 2020 |
 | [GP OMAPI] | GPD_SPE_075 [Open Mobile API Specification](https://globalplatform.org/specs-library/open-mobile-api-specification-v3-3/#collapse-), v3.3, July 2018, GlobalPlatform |
 | [GP CS] | GPC_SPE_034 [Card Specification](https://globalplatform.org/specs-library/card-specification-v2-3-1/#collapse-), v2.3.1, March 2018, GlobalPlatform |
 | [GSMA SAM] | [GSMA Secured Applications for Mobile](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.gsma.com/get-involved/working-groups/wp-content/uploads/2023/11/SAM.01-v1.1-1.pdf&ved=2ahUKEwjFtvKyhOmKAxWuzAIHHWpeLxsQFnoECBgQAQ&usg=AOvVaw3SqJxlMQfs4pzK4cjWqj22), v1.1, 03 November 2023, GSM Association |
-| [W3C VCDM v1.1] | Sporny, M., Longley, D. and D. Chadwick, "[Verifiable Credentials Data Model 1.1](https://www.w3.org/TR/vc-data-model/)", W3C Recommendation, 03 March 2022 | 
+| [W3C VCDM v1.1] | Sporny, M., Longley, D. and D. Chadwick, "[Verifiable Credentials Data Model 1.1](https://www.w3.org/TR/vc-data-model/)", W3C Recommendation, 03 March 2022 |
 | [W3C VCDM v2.0] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
-| [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)" | 
+| [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)" |
 | [W3C WebAuthn] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/), An API for accessing Public Key Credentials Level 2, W3C Recommendation, 8 April 2021 |
 | [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available:  <https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html> |
-| [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> | 
-| [OpenID4VP] | Terbu O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> 
+| [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> |
+| [OpenID4VP] | Terbu O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html>
 | [Topic 6]| Annex 2 - Relying Party authentication and User Approval |
 | [Topic 7] | Annex 2 - Attestation validity checks and revocation |
 | [Topic 9] | Annex 2 - Wallet Unit Attestation |
@@ -1510,38 +1781,38 @@ For undated references, the latest version available applies.
 
 - [Annex 3] - Rulebooks <span id="annex-3"><span>
 
-  - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
+    - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
-  - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
+    - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
 
 - Annex 4 - Service Blueprints <span id="annex-4"><span>
 
-  - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialization and activation
+    - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialization and activation
 
-  - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf) - Blueprint Online identification and authentication
+    - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf) - Blueprint Online identification and authentication
 
-  - [Annex 4.3](./annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf) - Blueprint Issuing mDL
+    - [Annex 4.3](./annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf) - Blueprint Issuing mDL
 
-  - [Annex 4.4](./annexes/annex-4/annex-4.04-eudi-wallet-presenting-mdl-proximity-supervised.pdf) - Blueprint Presenting mDL (proximity-supervised)
+    - [Annex 4.4](./annexes/annex-4/annex-4.04-eudi-wallet-presenting-mdl-proximity-supervised.pdf) - Blueprint Presenting mDL (proximity-supervised)
 
-  - [Annex 4.5](./annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf) - Blueprint Presenting mDL (proximity-unsupervised)
+    - [Annex 4.5](./annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf) - Blueprint Presenting mDL (proximity-unsupervised)
 
-  - [Annex 4.6](./annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf) - Blueprint Remote QES -- Creating a signature for authentication / authorisation
+    - [Annex 4.6](./annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf) - Blueprint Remote QES -- Creating a signature for authentication / authorisation
 
-  - [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
+    - [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
 
-  - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature channelled by a Wallet Unit
+    - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature channelled by a Wallet Unit
 
-  - [Annex 4.9](./annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf) - Blueprint Remote QES - Creating a signature channelled by Relying Party
+    - [Annex 4.9](./annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf) - Blueprint Remote QES - Creating a signature channelled by Relying Party
 
-  - [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
+    - [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
 
-  - [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
+    - [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
 
-  - [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
+    - [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
 
 - Annex 5 - Design guides
 
-  - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
+    - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
 
-  - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
+    - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
