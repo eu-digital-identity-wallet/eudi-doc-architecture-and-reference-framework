@@ -414,7 +414,7 @@ Wallet Solution which are required to be implemented in the solution. The same
 applies to functionalities enabling the User to report a Relying Party to a Data
 Protection Authority.
 
-### 4.4 PID and attestation presentation flows
+### 4.4 Data presentation flows
 
 #### 4.4.1 Overview
 
@@ -818,11 +818,11 @@ The **Valid** state is the first state of a Relying Party. This means it has bee
 
 The Registrar can de-register a Relying Party.  This leads to the **Invalid** state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration). A Wallet Unit will not present a PID or attestation to a Relying Party that is in this state.
 
-## 5 PIDs and attestations
+## 5 Data model
 
 ### 5.1 Introduction
 
-Within the EUDI Wallet ecosystem, all attestations consist of the following elements:
+Within the EUDI Wallet ecosystem, data is exchanged in the form of Electronic Attestations of Attributes (EAA), hereafter referred to as "attestations." This includes Person Identification Data, a special category explicitly defined by the regulation as data that establishes identity. Such data can only be issued by a PID provider operating under the supervision of the Member State. Each attestation consists of the following key elements:
 
 - A set of **attributes**, which provide information about the subject of the attestation. The subject of the attestation may be a natural person or a legal person. A Relying Party will request one or more of these attributes to get the reliable information they need to provide some service to the User. The set of attributes that an attestation may contain is defined in an attribute schema, see below.
   
@@ -860,7 +860,7 @@ Within the EUDI Wallet ecosystem, the following suitable standardised formats fo
 
 ### 5.4 Attestation Rulebooks
 
-This document specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
+This section specifies the concept of an Attestation Rulebook. For each type of attestation, such as a PID, an mDL, a diploma, or an e-prescription, an Attestation Rulebook specifies the attribute schema and proof mechanisms of that attestation, and, when required, the trust mechanisms for authentication and authorisation. Each attestation has an attestation type. The attribute schema specified in the Attestation Rulebook defines the unique identifier, syntax, and semantics of all attributes that can be part of that attestation.
 
 An Attestation Rulebook also makes some choices regarding the protocol(s) for presentation that must be supported by the relevant attestations. [Topic 12] contains the requirements for Attestation Rulebooks.
 
