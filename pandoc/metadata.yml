@@ -1,0 +1,14 @@
+---
+title: "European Digital Identity Wallet"
+subtitle: "Architecture and Reference Framework"
+date: "2025-01-13"
+keywords: [Digital Identity, eIDAS, EUDI, Wallet]
+titlepage: True
+lang: en-IE
+documentclass: "scrartcl"
+fontsize: "14pt"
+titlepage-rule-color: "1F3695"
+titlepage-rule-height: "5"
+titlepage-logo: "media/eu-logo.jpg"
+...
+
