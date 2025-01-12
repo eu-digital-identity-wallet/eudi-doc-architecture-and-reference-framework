@@ -22,6 +22,8 @@ SOURCE_DOCS=\
 			$(ANNEXES_DOCS)
 BUILD_DIR :=./build
 
+VERSION := 1.5.0
+BUILD := $(shell date +%Y%m%d.%H%M%S)
 PANDOC_DATA_DIR := ./pandoc
 PDF_TEMPLATE := eisvogel
 SITE_DIR :=./site
@@ -34,7 +36,7 @@ RM=/bin/rm
 PANDOC=pandoc
 MKDOCS=mkdocs
 
-PANDOC_OPTIONS=--toc --data-dir $(PANDOC_DATA_DIR)
+PANDOC_OPTIONS=--toc --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
 PANDOC_PDF_OPTIONS= --pdf-engine=xelatex --template=$(PDF_TEMPLATE) --listings $(PANDOC_DATA_DIR)/metadata.yml
 PANDOC_DOCX_OPTIONS=
 PANDOC_EPUB_OPTIONS=--to epub3
