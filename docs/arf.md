@@ -239,7 +239,7 @@ The reason for reliance on the Wallet Unit may be a legal requirement, a contrac
 
 To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642) for more information on Relying Party registration.
 
-Relying Parties maintain an interface with Wallet Units to request PIDs and attestations, using mutual authentication.
+Relying Parties maintain an interface with Wallet Units to request PIDs and attestations, using Relying Party authentication, as described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance). If a Wallet Unit presents attributes from a PID or attestation to a Relying Party, the Relying Party can verify the authenticity of these attributes.
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -265,11 +265,11 @@ In the EUDI Wallet ecosystem, commercial actors such as device manufacturers and
 
 ### 3.16 National Accreditation Bodies
 
-National Accreditation Bodies (NAB) under [Regulation (EC) No 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) are the bodies in Member States that perform accreditation with authority derived from the Member State. NABs accredit CABs as competent, independent, and supervised professional certification bodies in charge of certifying products/services/processes against normative document(s) establishing the requirements (e.g., legislations, specifications, protection profiles). NABs monitor the CABs to which they have issued an accreditation certificate.
+National Accreditation Bodies (NAB), under [Regulation (EC) No 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765), are the bodies in Member States that perform accreditation with authority derived from the Member State. NABs accredit CABs ([Section 3.12](#312-conformity-assessment-bodies-cab)) as competent, independent, and supervised professional certification bodies in charge of certifying Wallet Solutions against normative document(s) establishing the relevant requirements. NABs monitor the CABs to which they have issued an accreditation certificate.
 
 ### 3.17 Access Certificate Authorities
 
-Access Certificate Authoritie issue access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers and Relying Parties in the EUDI Wallet ecosystem. When these entities interact with a Wallet Unit to issue or request a PID or attetation, they will present an access certificate to prove their authenticity and validity.
+Access Certificate Authorities issue access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers and Relying Parties in the EUDI Wallet ecosystem. When these entities interact with a Wallet Unit to issue or request a PID or attestation, they will present an access certificate to prove their authenticity and validity.
 
 Access Certificate Authorities must be notified by a Member State to the Commission. As part of the notification process, the trust anchors of the Access CA must be included in a Trusted List. A trust anchor is the combination of a public key and an identifier for the associated entity. Wallet Units need these trust anchors to verify of the signatures over the access certificates presented to them when a new PID or attestation is issued or when they receive an attribute presentation request from a Relying Party.
 
@@ -383,7 +383,7 @@ OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the
 [W3C Digital Credentials API]. In contrast, for the proximity presentation flow,
 this interface adheres to the [ISO/IEC 18013-5] standard, see [Section
 4.4.2](#442-proximity-presentation-flows). The same interface can also be used
-by another Wallet Unit, see [Section
+by another Wallet Unit to request User attributes, see [Section
 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to
 communicate with the Wallet Secure Cryptographic Application (WSCA). This
