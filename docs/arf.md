@@ -237,9 +237,9 @@ Relying Parties are natural or legal persons that rely upon an electronic identi
 
 The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. In particular, the Regulation requires that providers of very large online platforms must accept the EUDI Wallet for their user authentication processes.
 
-To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request.
+To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642) for more information on Relying Party registration.
 
-Relying Parties maintain an interface with Wallet Units to request attestations, using mutual authentication.
+Relying Parties maintain an interface with Wallet Units to request PIDs and attestations, using mutual authentication.
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
