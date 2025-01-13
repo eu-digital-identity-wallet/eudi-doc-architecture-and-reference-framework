@@ -1016,7 +1016,7 @@ This notification is pursuant to [Art.45f](https://eur-lex.europa.eu/legal-conte
 | **Index** | **Requirement specification** |
 |------------|-----------------|
 | PuBPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PuB-EAA Providers. |
-| PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ol><li>Registration number as in official record, and </li><li>Official record identification data</li></ol></li><li>Identification data of the Union or national law under which <ol><li>Either the PuB-EAA Provider is established as the responsible body for the authentic source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ol></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ol></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ol> |
+| PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: <ol><li>Identification data:<ol><li>MS/Country of establishment</li><li>Name as registered in an official record</li><li> Where applicable: <ol><li>Registration number as in official record, and </li><li>Official record identification data</li></ol></li><li>Identification data of the Union or national law under which <ol><li>Either the PuB-EAA Provider is established as the responsible body for the Authentic Source based on which the electronic attestation of attributes is issued, or </li><li>The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1) iv) a).</li></ol></li><li>The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met.</li></ol></li><li>Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider.</li></ol> |
 | PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 | PuBPNot_04 | If a PuB-EAA Provider is suspended or withdrawn (see requirement GenNot_05 above), that PuB-EAA Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7]. |
 
@@ -1233,7 +1233,7 @@ Wallet Unit management
 
 See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
-#### A.2.3.42 Topic 42 - Requirements for QTSPs to access authentic sources 
+#### A.2.3.42 Topic 42 - Requirements for QTSPs to access Authentic Sources 
 
 *Short description*
 

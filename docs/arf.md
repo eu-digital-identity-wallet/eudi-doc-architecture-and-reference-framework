@@ -55,10 +55,7 @@ The LSPs are expected to provide feedback on the ARF as they develop and interac
 
 ### 1.4 Definitions
 
-The definitions used in this document are added in Annex 1 of this document. In Annex 1 there are two tables:
-
-- **Table 1** includes definitions cited from the [eIDAS 2.0] Regulation,
-- **Table 2** includes technical definitions that are used in the ARF. in some cases, these definitions originated in the context of specific topics. In these cases, the topic number appears in brackets following the definition, e.g., [Topic 11], to give it the relevant context. If the definition is related to two topics, both topic numbers will appear in the brackets, e.g., [Topic 33, Topic 34]. If the technical definition is generic, that is to the ARF as a whole or to more than 2 topics, no brackets will be added. If a definition relies on an external source such as a standard or a formal publication, the source is mentioned.
+The definitions used in this document can be found in Annex 1 of this document.
 
 ### 1.5 Scope
 
@@ -155,15 +152,17 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 Users of Wallet Units use the Wallet Unit to receive, store and present PID, QEAA, PuB-EAA, or EAA about themselves, including to prove their identity. Wallet Unit Users can also create Qualified Electronic Signatures and Seals (QES) and utilise Wallet Unit-to-Wallet Unit interactions.
 
-Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the legislative proposal. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the [eIDAS 2.0] Regulation.
+Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the [eIDAS 2.0] Regulation. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the Regulation.
 
 ### 3.3 Wallet Providers
 
 Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. All Wallet Solutions must be certified as described in [Chapter 7](#7-security-and-data-protection).
 
-The Wallet Providers make available to a User, through an instance of their Wallet Solution, a combination of several products and Trust Services foreseen in the legal proposal, which give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. From a technical viewpoint, this also implies guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers also provide Wallet Unit Attestations (WUA) to the Wallet Unit.
+A Wallet Provider make available to a User a combination of several products and Trust Services that give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. This also implies guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. 
 
-Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions.
+Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions. 
+
+From the viewpoint of the other actors in the EUDI Wallet ecosystem, the Wallet Provider is responsible for all components of the Wallet Unit. These components are described in [Section 4.3.2](#432-components-of-a-wallet-unit). In particular, the Wallet Provider is responsible for ensuring that the Wallet Instance can access a Wallet Secure Cryptographic Device (WSCD) that has a level of security sufficient to ensure that the Wallet Unit can achieve Level of Assurance "high", as required in the Regulation. This is true  even if the WSCD is not delivered by the Wallet Provider but is integrated into the User device. For more information, see [Section](#45-wscd-architecture-types). Other actors in the ecosystem do not need to interact with or explicitly trust a WSCD supplier. As explained in [Section 6.5.3](#653-wallet-unit-activation), Wallet Providers provide a Wallet Unit Attestation (WUA) to the Wallet Unit. The WUA attests that the Wallet Unit and all of its components, including the WSCD, comply with the relevant requirements.
 
 ### 3.4 Person Identification Data (PID) Providers
 
@@ -198,7 +197,11 @@ For more information, please refer to [Topic 27] and to [Topic 31].
 
 ### 3.6 Qualified Electronic Attestation of Attributes (QEAA) Providers
 
-Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general Trust Framework for QTSPs applies also to QEAA Providers, but specific rules for this Trust Service may be defined as well. QEAA Providers maintain an interface for requesting and providing QEAAs, including a mutual authentication interface with Wallet Units and potentially an interface towards Authentic Sources to verify attributes. QEAA Providers provide information on the location of the services that can be used to enquire about the validity status of the QEAAs, without having an ability to receive any information about the use of the attestations. The terms and conditions of these services are for each QTSP to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
+Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general trust framework for QTSPs (see Chapter III, Section 3 of the [eIDAS 2.0] Regulation) applies also to QEAA Providers, but specific rules for the Trust Service of issuing QEAAs may be defined as well. 
+
+QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon request, including mutual authentication. Potentially, they also maintain an interface towards Authentic Sources to verify attributes, as specified in Annex 2 [Topic 42]. 
+
+The terms and conditions of these services are for each QEEA Provider to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
 ### 3.7 Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
 
@@ -322,7 +325,7 @@ The following have been identified as the core components of a Wallet Unit:
 - **Wallet Instance (WI)**: The app or application installed on a User device,
 which is an instance of a Wallet Solution and belongs to and is controlled by a
 User. This component implements the core business logic and interfaces as
-depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely
+depicted in Figure 2. It directly interacts with the WSCA/WSCD (see bullets hereafter) to securely
 manage cryptographic assets and execute cryptographic functions, ensuring a high
 level of assurance for authentication.
 - **User device (UD)**: A User Device comprises the hardware, operating system,
@@ -633,6 +636,8 @@ Figure 2 showed four different types of architecture for the WSCD.
 In addition, this section also describes a hybrid architecture. Within the EUDI
 Wallet ecosystem, a Wallet Provider is allowed to use any of these
 architectures.
+
+Note that, regardless of the architecture used, and as already stated in [Section](#33), the Wallet Provider is responsible for ensuring that the Wallet Instance can access a WSCD that has a level of security sufficient to ensure that the Wallet Unit can achieve Level of Assurance "high", as required in the Regulation. The Wallet Provider remains responsible for managing cyrptographic keys on the WSCD (through the WSCA) throughout the lifetime of the Wallet Unit. The Wallet Provider is also responsible for attesting the properties of the WSCD (including relevant certifications) in the Wallet Unit Attestation, see [Section](#653-wallet-unit-activation).
 
 #### 4.5.2 Remote WSCD
 
