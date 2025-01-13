@@ -418,7 +418,7 @@ Protection Authority.
 
 #### 4.4.1 Overview
 
-This section defines five distinct communication flows that can be used when a
+This section defines four distinct communication flows that can be used when a
 Wallet Unit presents a PID or attestation to a Relying Party Instance:
 
 - **Proximity Supervised Flow**: In this flow, the User and their Wallet
@@ -822,7 +822,7 @@ The Registrar can de-register a Relying Party.  This leads to the **Invalid** st
 
 ### 5.1 Introduction
 
-Within the EUDI Wallet ecosystem, data is exchanged in the form of Electronic Attestations of Attributes (EAA), hereafter referred to as "attestations." This includes Person Identification Data, a special category explicitly defined by the regulation as data that establishes identity. Such data can only be issued by a PID provider operating under the supervision of the Member State. Each attestation consists of the following key elements:
+Within the EUDI Wallet ecosystem, data is exchanged in the form of Electronic Attestations of Attributes (EAA), hereafter referred to as "attestations." Apart from EAA, the Regulation explicitly defines another category of data, called Person Identification Data (PID), which establishes the identity of a natural person or a legal person. PID can only be issued by a PID provider operating under the supervision of the Member State. Each PID and attestation consists of the following key elements:
 
 - A set of **attributes**, which provide information about the subject of the attestation. The subject of the attestation may be a natural person or a legal person. A Relying Party will request one or more of these attributes to get the reliable information they need to provide some service to the User. The set of attributes that an attestation may contain is defined in an attribute schema, see below.
   
