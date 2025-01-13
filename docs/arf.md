@@ -202,11 +202,11 @@ Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The ge
 
 ### 3.7 Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
 
-As specified in the Regulation, an attestation may be issued by or on behalf of a public sector body responsible for an authentic source. This ARF calls such an attestation a PuB-EAA. An authentic source is a repository or system that contains and provides attributes about a natural or legal person or object. An authentic source moreover is legally considered to be a primary source of those attributes. A public sector body primarily is a state, regional or local authority, or a body governed by public law.
+As specified in the Regulation, an attestation may be issued by or on behalf of a public sector body responsible for an Authentic Source. This ARF calls such an attestation a PuB-EAA. For a description of Authentic Sources, see [Section 3.10](#310-authentic-sources). A public sector body primarily is a state, regional or local authority, or a body governed by public law.
 
-A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a QTSP. However, a PuB-EAA Provider has a qualified certificate, issued by a QTSP, that allows it to sign PuB-EAAs. A Relying Party verifies a PuB-EAA by first verifying the signature over the PuB-EAA, and subsequently verifying the signature of the PuB-EAA Provider certificate. For more details, refer to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
+A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a QTSP. However, a PuB-EAA Provider has a qualified certificate, issued by a QTSP, that allows it to sign PuB-EAAs. A Relying Party verifies a PuB-EAA by first verifying the signature over the PuB-EAA, and subsequently verifying the signature of the qualified PuB-EAA Provider certificate. For more details, refer to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 
-The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect as attestations in paper form.
+The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect as attestations in paper form. It is up to the Member States to define terms and conditions for the provisioning of Pub-EAAs, but PuB-EAA Providers will comply with the same technical specifications and standards as Providers of PIDs and other attestations.
 
 For the precise and legally binding definitions and obligations regarding the issuance of PuB-EAAs, please refer to the Regulation.
 
@@ -227,9 +227,9 @@ Besides providers of qualified electronic signatures and seals, also providers o
 
 ### 3.10 Authentic Sources
 
-Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons. Authentic Sources are sources for attributes on, for instance, address, age, gender, civil status, family composition, nationality, education and training qualifications titles and licences, professional qualifications titles and licences, public permits and licences, or financial and company data. Authentic Sources are required to provide an interface to QEAA Providers to verify the authenticity of the above attributes, either directly or via designated intermediaries recognised at national level. Authentic Sources may also issue PuB-EEAs themselves if they meet the requirements of the [eIDAS 2.0] Regulation. In Figure 1 this is indicated by the arrow 'provides qualified data'.
+Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons. Authentic Sources are sources for attributes on, for instance, address, age, gender, civil status, family composition, nationality, education and training qualifications titles and licences, professional qualifications titles and licences, public permits and licences, or financial and company data. 
 
-It is up to the Member States to define terms and conditions for the provisioning of these Pub-EAAs, but PuB-EAA Providers will comply with the technical specifications, standards, and procedures applicable to QEAA Providers.
+Authentic Sources are required to provide an interface to QEAA Providers to verify the authenticity of the above attributes, either directly or via designated intermediaries recognised at national level. Authentic Sources may act as PuB-EAA Providers if they meet the requirements of the [eIDAS 2.0] Regulation, see [Section 3.7](#37-electronic-attestation-of-attributes-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers). In Figure 1 this is indicated by the arrow 'provides qualified data'.
 
 ### 3.11 Relying Parties
 
@@ -243,15 +243,15 @@ Relying Parties maintain an interface with Wallet Units to request attestations,
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
-Conformity Assessment Bodies (CAB) are accredited public or private bodies, accredited by a national accreditation body designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3). Particularly, CABs are accredited to carry out assessments on which Member States will rely before issuing a Wallet Solution or providing the qualified status to a Trust Service Provider.
+Conformity Assessment Bodies (CAB) are public or private bodies that are accredited by a national accreditation body, which itself is designated by Member States according to [Regulation 765/2008](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765) Article 6c (3). In particular, CABs are accredited to carry out assessments on which Member States will rely before issuing a Wallet Solution or providing the 'qualified' status to a Trust Service Provider.
 
-The Wallet Solutions will be certified by CABs. QTSPs will be audited regularly by CABs.
+Wallet Solutions will be certified by CABs. QTSPs will be audited regularly by CABs.
 
 The standards and schemes used by CABs to fulfil their tasks to certify Wallet Solutions are discussed in [Chapter 7](#7-certification-and-risk-management).
 
 ### 3.13 Supervisory Bodies
 
-For the Regulation, the Supervisory Bodies are important to review and ensure proper functioning of the Wallet Providers and other relevant actors. Supervisory Bodies will be created and appointed in the Member States. The Supervisory Bodies will be notified to the Commission by the Member States.
+Supervisory Bodies review the proper functioning of Wallet Providers and other actors in the EUDI Wallet ecosystem. Supervisory Bodies will be created and appointed by the Member States. The Supervisory Bodies will be notified to the Commission by the Member States.
 
 ### 3.14 Device Manufacturers and Related Subsystems Providers
 
@@ -533,8 +533,8 @@ the browser on the User device and the relevant interfaces of this browser:
 between the web browser and a remote Relying Party Instance, which may operate
 on a server managed by the Relying Party.  This interface complies with the
 [Digital Credentials API], which is a browser API that is currently being
-standardized within W3C. Additionally OpenID Foundation is standardazing an
-[OpenID4VP profile for the W3C Digityal Credentials API], that defines how
+standardized within the W3C. Additionally OpenID Foundation is standardazing an
+OpenID4VP profile for the W3C Digityal Credentials API, that defines how
 OpenID4VP shall be used over the Digital Credentials API.
 - The **WI-platform API** interface is an inter-app API that implements the
 Digital Credentials API mechanism at OS level There are however no current plans
