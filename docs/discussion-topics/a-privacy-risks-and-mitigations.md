@@ -1,4 +1,4 @@
-Version 0.9.1 updated 11 January 2025
+Version 1.0, updated 13 January 2025
 
 # A - Privacy risks and mitigation
 ## 1 Introduction 
@@ -359,9 +359,9 @@ presentations without the User, by combining the data stored by the Attestation
 Provider, data collected by Relying Parties or other third-parties
 accessing to data (including in case of a data breach or eavesdropping
 from one of the legitimate parties). In this scenario, the Attestation
-Provider stores all of the unique element values in all attestations
-(i.e., salts, hashes, public key, signature value) it issues, together with the
-user to which each of these values was issued.
+Provider stores all of the unique element values (i.e., salts, hashes,
+public key, signature value) in all attestations it issues, together with
+the user to which each of these values was issued.
 
 Then, after it has received an attestation, a Relying Party notifies the
 Attestation Provider about the value of any of the unique elements in
@@ -891,8 +891,7 @@ and request them to connect their device to the internet.
 e. if the Wallet Unit has run out of unused PIDs, attestations, or
 WUAs, but is not able to request a new batch because it is
 offline, it SHALL fall back to method B (see requirement 6), or another available
-method. The User should choose which fallback mechanism to use,
-if applicable. This means that, when requested by a Relying Party,
+method. This means that, when requested by a Relying Party,
 the Wallet Unit SHALL again present one of the already used
 PIDs, attestations of WUAs. The Wallet Unit SHALL return
 to using method A as soon as it is able to go online and request a new
