@@ -61,6 +61,32 @@ The definitions used in this document can be found in Annex 1 of this document.
 
 This document only applies to the EUDI Wallet ecosystem. Attestations that are not bound to Wallet Units are not included in the scope of this document.
 
+### 1.6 Future work
+
+The Commission recognised the following topics that need further discussion. These topics will be discussed with Member States and the results of these discussions will be reflected in future versions of this ARF:
+
+- Topic A: Privacy risks and mitigations,
+- Topic B: Re-issuance and batch issuance of PIDs and Attestations,
+- Topic C: Wallet Unit Attestation (WUA),
+- Topic D: Embedded Disclosure Policies,
+- Topic E: Pseudonyms,
+- Topic F: Digital Credential API,
+- Topic G: Zero Knowledge Proofs (ZKP),
+- Topic H: Transaction logs kept by the Wallet Unit, 
+- Topic I: Natural person representing another natural person,
+- Topic J: Wallet to Wallet interaction,
+- Topic K: Combined presentation of attestations,
+- Topic L: User requesting data deletion to Relying Parties, 
+- Topic M: User reporting unlawful or suspicious requests of data to DPAs,
+- Topic N: Data portability,
+- Topic O: Catalogues for Attestations,
+- Topic P: Secure Cryptographic Interface between Wallet Instance and WSCA, 
+- Topic Q: Interface between the User and the Wallet Instance,
+- Topic R: Authentication of the User to the device,
+- Topic S: Certificate transparency,
+- Topic T: Support and maintenance by the Wallet Provider,
+- Topic U: EUDI Wallet Trust Mark.
+
 ## 2 Use Cases
 
 ### 2.1 Introduction
