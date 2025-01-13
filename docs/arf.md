@@ -199,7 +199,9 @@ For more information, please refer to [Topic 27] and to [Topic 31].
 
 Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The general trust framework for QTSPs (see Chapter III, Section 3 of the [eIDAS 2.0] Regulation) applies also to QEAA Providers, but specific rules for the Trust Service of issuing QEAAs may be defined as well. 
 
-QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon request, including mutual authentication. Potentially, they also maintain an interface towards Authentic Sources to verify attributes, as specified in Annex 2 [Topic 42]. 
+QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon request, including mutual authentication. Potentially, they also maintain an interface towards Authentic Sources to verify attributes, as specified in Annex 2 [Topic 42].
+
+It is likely that for most QEAAs, a QEAA Provider will need to verify the identity of a User when issuing a QEAA. It is up to each QEAA Provider to implement the necessary User authentication processes, in compliance with all applicable national and Union legislation. Note that, when User identity verification is necessary, it is likely that the User requesting a QEAA already possesses a PID. This would enable the QEAA Provider to carry out User identification and authentication at LoA "high", by requesting and verifying User attributes from the PID in the Wallet Unit.
 
 The terms and conditions of these services are for each QEEA Provider to determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
