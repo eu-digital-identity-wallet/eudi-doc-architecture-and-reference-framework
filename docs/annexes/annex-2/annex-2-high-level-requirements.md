@@ -8,8 +8,8 @@
 
 #### A.2.1.1 Overview 
 
-This annex to the [ARF 1.4.0](../../arf.md) includes high-level requirements (HLRs)
-related to the EUDI Wallet ecosystem. The requirements define the
+This annex to the [ARF 1.5.0](../../arf.md) includes high-level requirements
+(HLRs) related to the EUDI Wallet ecosystem. The requirements define the
 responsible actor that should implement each requirement. There are no
 requirements imposed on the Users.
 
