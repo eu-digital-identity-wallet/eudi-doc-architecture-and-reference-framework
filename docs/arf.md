@@ -70,13 +70,9 @@ The development of the Architecture Reference Framework (ARF) is strategically g
 The eIDAS Expert Group has described service blueprints for the following use cases:
 
 - Identification and authentication to access online services, see [Section 2.2](#22-identification-and-authentication-to-access-online-services)
-
 - Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature)
-
 - Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence)
-
 - Pseudonyms, see [Section 2.5](#25-pseudonyms).
-
 - Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.6](#26-other-use-cases).
 
 ### 2.2 Identification and authentication to access online services
@@ -115,11 +111,17 @@ Providing credentials for qualification recognition procedures can be costly and
 
 #### 2.6.3 Digital Finance
 
-A Wallet Unit can facilitate complying with strong customer authentication requirements, using the strong User Authentication capabilities described in [Section 2.1](#21-identification-and-authentication-to-access-online-services). In line with the Commission's Retail Payments Strategy, this use case would be developed in close coordination with Member States' advisory groups on retail payments and the finance industry.
+A Wallet Unit may facilitate complying with strong customer authentication requirements, using the user authentication capabilities described in [Section 2.2](#22-identification-and-authentication-to-access-online-services). In line with the Commission's Retail Payments Strategy, this use case would be developed in close coordination with Member States' advisory groups on retail payments and the finance industry.
 
 #### 2.6.4 Digital Travel Credential
 
 Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a supported format enabling Relying Parties to identify Users and their travel, thus facilitating the travel experience and the User journey in this dynamic sector.
+
+#### 2.6.5 Social Security
+Documents related to social security are important for many EU citizens to prove their rights and obligations under social security legislation in the EU. Examples include:
+
+- Portable Document (“PDA1”) – This is a statement of applicable legislation which is useful to prove that a person pays social contributions in another EU country, for example if they are a posted worker or work in several countries at the same time. 
+- Electronic Health Insurance Card (“EHIC”) – This is a free card that provides every citizen with access to medically necessary government-provided healthcare during a temporary stay in one of the 27 EU countries, Iceland, Liechtenstein, Norway, and Switzerland, under the same conditions and at the same cost (free in some countries) as persons insured in that country. This includes, for example, services related to chronic or existing illnesses, as well as in connection with pregnancy and childbirth.
 
 ## 3. EUDI Wallet ecosystem
 
