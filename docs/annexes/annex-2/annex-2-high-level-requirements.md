@@ -397,7 +397,10 @@ requirements related to PID and attestation issuance.
 
 *Short description*
 
-<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. Instead, Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn].
+Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. On a high level, this means that the WSCD in the Wallet Unit will be able to create key pairs. The public keys of these pairs function as pseudonyms for the User. Only the User can use these pseudonyms, since the WSCD authenticates the User before allowing a pseudonym to be used, see requirement WUA_02. The Wallet Unit will keep an internal structure to associate each pseudonym (public key) with a specific Relying Party, based on the Relying Party unique identifier in the Relying Party access certificate mentioned in requirement Reg_32.
+
+
+<b>Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it. 
 
 Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.0. These discussions will include the use cases for which Wallet Units must support pseudonyms and the way in which this support will be technically implemented. This Topic will be updated in ARF 2.0.</b>
 

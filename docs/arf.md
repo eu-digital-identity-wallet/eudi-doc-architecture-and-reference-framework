@@ -63,7 +63,7 @@ This document only applies to the EUDI Wallet ecosystem. Attestations that are n
 
 ### 1.6 Future work
 
-The Commission recognised the following topics that need further discussion. These topics will be discussed with Member States and the results of these discussions will be reflected in future versions of this ARF:
+The Commission recognised that the following topics need further discussion. These topics will be discussed with Member States and the results of these discussions will be reflected in future versions of this ARF:
 
 - Topic A: Privacy risks and mitigations,
 - Topic B: Re-issuance and batch issuance of PIDs and Attestations,
@@ -85,7 +85,8 @@ The Commission recognised the following topics that need further discussion. The
 - Topic R: Authentication of the User to the device,
 - Topic S: Certificate transparency,
 - Topic T: Support and maintenance by the Wallet Provider,
-- Topic U: EUDI Wallet Trust Mark.
+- Topic U: EUDI Wallet Trust Mark,
+- Topic V: PID Rulebook.
 
 ## 2 Use Cases
 
