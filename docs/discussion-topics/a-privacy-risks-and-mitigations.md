@@ -1,4 +1,4 @@
-Version 1.0, updated 13 January 2025
+Version 1.0, updated 14 January 2025
 
 # A - Privacy risks and mitigation
 ## 1 Introduction 
@@ -259,11 +259,12 @@ hashed attributes for use in the EUDI Wallet ecosystem could be misused for
 tracking the User's behaviour.
 
 The attestation formats required to be supported in the ARF are
-specified in ISO/IEC 18013-5 \[ISO18013-5\] and "SD-JWT-based Verifiable
-Credentials (SD-JWT VC)" \[SD-JWT VC\]. Both of these formats enable
-selective disclosure of attributes by making use of so-called
+specified in ISO/IEC 18013-5 [ISO18013-5], "SD-JWT-based Verifiable
+Credentials (SD-JWT VC)" [SD-JWT VC] and “W3C Verifiable Credentials
+Data Model 1.1 (W3C VCDM 1.1)” [W3C VCDM 1.1]. Selective disclosure
+of attributes is achievable, in particular by making use of so-called
 salted-attribute hashes. For more information on this technique, see
-\[ETSI 119476\]. In a nutshell, the idea is that an Attestation Provider
+[ETSI 119476]. In a nutshell, the idea is that an Attestation Provider
 does not sign the attribute values directly, but instead signs a
 collection of hash values, where each hash is calculated over the
 concatenation of an attribute value and a unique salt. This allows the
@@ -1154,6 +1155,11 @@ draft</td>
 <td>[ETSI 119476]</td>
 <td>ETSI TR 119 476, Analysis of selective disclosure and zero-knowledge
 proofs applied to Electronic Attestation of Attributes, v1.2.1,
+2024-07</td>
+</tr>
+<tr>
+<td>[W3C VCDM 1.1]</td>
+<td>W3C Verifiable Credentials Data Model 1.1,
 2024-07</td>
 </tr>
 <tr>
