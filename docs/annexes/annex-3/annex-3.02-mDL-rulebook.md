@@ -1,5 +1,8 @@
-# ANNEX 3.2 - mDL Rulebook 
+---
+subtitle: "Architecture and Reference Framework Annex 3.2 - mDL Rulebook"
+...
 
+# ANNEX 3.2 - mDL Rulebook 
 
 
 *This is a working document that holds no legal value* *and does not
