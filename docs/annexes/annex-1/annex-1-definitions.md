@@ -4,19 +4,16 @@ subtitle: "Architecture and Reference Framework Annex 1 - Definitions"
 
 # ANNEX 1 - Definitions
 
-
 ## A.1 Introduction
 
-
-
-**Table 1 -- eIDAS regulation definitions**
+### Table 1 -- eIDAS regulation definitions
 
 In this \[ARF\] definitions are used. Several definitions are already
 defined in the legal text, these definitions are cited from the eIDAS
 Regulation or from the eIDAS Regulation amendment proposal. For
 convenience they are listed in [table 1](#a11-table-1---eidas-regulation-definitions).
 
-**Table 2 -- Additional definitions used in this ARF**
+### Table 2 -- Additional definitions used in this ARF
 
 In writing this \[ARF\], additional technical terms and definitions are
 used. These are listed in [table 2](#a12-table-2----additional-definitions-used-in-this-arf). Note the technical terms and
@@ -34,7 +31,7 @@ the \[ARF\] as a whole or to more than 2 topics, no brackets will be
 added. If the definition relies on an external source, such as a
 standard or a formal publication, that source will be mentioned.
 
-### A.1.1 Table 1 - eIDAS regulation definitions 
+### A.1.1 Table 1 - eIDAS regulation definitions
 
 | **Term** | **Definition [eIDAS Regulation]** |
 |-----------|-----------|
@@ -52,7 +49,7 @@ standard or a formal publication, that source will be mentioned.
 | **Electronic signature** | *Data in electronic form which is attached to or logically associated with other data in electronic form and which is used by the signatory to sign.* |
 | **Electronic signature creation data** | *Unique data which is used by the signatory to create an electronic signature.* |
 | **EUDI Wallet User** | *A natural or legal person, or a natural person representing another natural person or a legal person, that uses trust services or electronic identification means provided in accordance with this Regulation.* |
-| **Identity matching** | *Is defined in[ Article 3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1) (54) 'identity matching': A process where person identification data, or person identification means are matched with or linked to an existing account belonging to the same person.* |
+| **Identity matching** | *Is defined in[Article 3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1) (54) 'identity matching': A process where person identification data, or person identification means are matched with or linked to an existing account belonging to the same person.* |
 | **Person Identification Data (PID)** | *A set of data that is issued in accordance with Union or national law and that enables the identity of a natural or legal person, or of a natural person representing another natural person or a legal person, to be established [[Article 3](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e739-1-1), (3a)].* |
 | **Qualified certificate for electronic signature** | *A certificate for electronic signatures, that is issued by a qualified trust service provider and meets the requirements laid down in [Annex I](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e38-50-1).* |
 | **Qualified Electronic Attestation of Attributes (QEAA)** | *An electronic attestation of attributes which is issued by a qualified trust service provider and meets the requirements laid down in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e46-54-1).* |
@@ -61,7 +58,7 @@ standard or a formal publication, that source will be mentioned.
 | **Qualified Trust Service Provider (QTSP)** | *Qualified Trust Service Provider means a trust service provider who provides one or more qualified trust services and is granted the qualified status by the supervisory body.*
 | **Public Sector Body** | *A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate.*
 
-### A.1.2 Table 2 -- Additional definitions used in this ARF 
+### A.1.2 Table 2 -- Additional definitions used in this ARF
 
 **Table 2 - Technical definitions originating in the ARF - not cited
 from the eIDAS Regulation or the amendment proposal:**
@@ -113,7 +110,6 @@ from the eIDAS Regulation or the amendment proposal:**
 | Wallet Secure Cryptographic Application (WSCA) | A secure application running on and utilizing a WSCD. One WSCA is associated with at most one wallet instance, and manages assets, such as keys, for this specific wallet instance. |
 | Wallet Secure Cryptographic Device (WSCD) | The WSCD is a hardware anchor providing a secure environment and storage for cryptographic assets and software. This includes the keystore but also the environment where the security critical functionality is executed. The WSCD is tamper and duplication proof. \[[Topics 33](../annex-2/annex-2-high-level-requirements.md#a2333-topic-33---eudi-wallet-backup-and-restore), [34](../annex-2/annex-2-high-level-requirements.md#a2334-topic-34---migrate-to-a-different-wallet-solution)\] |
 | Wallet Trust Evidence (WTE) | A signed data structure provided by the Wallet Provider to a Wallet Instance during the Wallet Instance activation process, allowing the Wallet Instance to inform Attestation Providers about the properties of the Wallet Instance and (one of) its WSCD(s) and to prove various associations. |
-
 
 [^1]: <https://www.privacy-regulation.eu/en/article-32-security-of-processing-GDPR.htm>,
     Article 32, Section 1 (c)
