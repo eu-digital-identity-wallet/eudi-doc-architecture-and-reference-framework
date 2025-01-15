@@ -13,6 +13,8 @@ technical Architecture and Reference Framework (hereinafter the ARF), a
 set of common standards and technical specifications and a set of common
 guidelines and best practices.
 
+This is a sample addition demonstrating how to propose changes with RPs.
+
 The Recommendation specifies that these outcomes will serve as a basis
 for the implementation of the proposal for a European Digital Identity
 Framework, without the process of developing the Toolbox interfering
