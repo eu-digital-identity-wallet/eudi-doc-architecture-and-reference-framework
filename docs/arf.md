@@ -108,7 +108,7 @@ Instead of using their PID to authenticate to online services, a User can also u
 
 ### 2.3 Qualified electronic signature
 
-The Wallet Unit enables Users to create qualified electronic signatures or seals. This goal can be reached by using the authentication and signature / seal capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD managed by a QTSP [Topic16] and [Topic 37].
+The Wallet Unit enables Users to create qualified electronic signatures or seals. This goal can be reached by using the authentication and signing capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD managed by a QTSP [Topic16] and [Topic 37].
 
 ### 2.4 Mobile Driving Licence
 
@@ -175,11 +175,9 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 
 ### 3.2 Users of Wallet Units
 
-Users of Wallet Units use the Wallet Unit to receive, store and present PID, QEAA, PuB-EAA, or EAA, including to prove their identity. Users can also create Qualified Electronic Signatures and Seals (QES).
+Users of Wallet Units use the Wallet Unit to receive, store, and present PID, QEAA, PuB-EAA, or non-qualified EAA to Relying Parties. Users can also create qualified electronic signatures and seals (QES) and create and present pseudonyms.
 
-[CIR 2024/2982] (among others) defines the 'wallet user' as 'a user who is in control of the wallet unit'. Being in control of the Wallet Unit implies being able to present a PID or attestation to a Relying Party. 
-
-In most cases, the User (the person presenting a PID or attestation) is the subject of that PID or attestation. However, this may not always be the case. In particular, it has not yet been ruled out that a Wallet Unit may contain the PIDs of different persons or legal entities. An example is the case of a parent having their children's PIDs in their Wallet Unit. Another example is a natural person representing a legal person, who may hold a legal-person PID in their Wallet Unit next to their own natural-person PID. These topics will be further discussed with Member States in the future.
+[CIR 2024/2982] (among others) defines 'wallet user' as 'a user who is in control of the wallet unit'. Being in control of the Wallet Unit implies being able to present a PID or attestation to a Relying Party. In most cases, the User (the person presenting a PID or attestation) is the subject of that PID or attestation. However, this may not always be the case, as a Wallet Unit may possibly contain the PIDs of different persons or legal entities. An example is the case of a parent having their children's PIDs in their Wallet Unit. Another example is a natural person representing a legal person, who may hold a legal-person PID in their Wallet Unit next to their own natural-person PID. However, the topics of representation and delegation will be further discussed with Member States in the future and no decisions have been made yet.
 
 Who can be a User of a Wallet Unit depends on national law. The use of a Wallet Unit by citizens is not mandatory under the [eIDAS 2.0] Regulation. However, each Member State will provide at least one European Digital Identity Wallet within 24 months after the entry into force of the implementing acts referred to in the Regulation.
 
@@ -187,7 +185,7 @@ Who can be a User of a Wallet Unit depends on national law. The use of a Wallet 
 
 Wallet Providers are Member States or organisations either mandated or recognised by Member States making a Wallet Solution available to Users. All Wallet Solutions must be certified as described in [Chapter 7](#7-security-and-data-protection).
 
-A Wallet Provider makes a combination of several products and Trust Services available to a User, which give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. This also implies guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their PID and/or (Q)EAA, including the use cases for electronic identification and creating a signature or seal. 
+A Wallet Provider makes a combination of several products and Trust Services available to a User, which give the User sole control over the use of their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA), and any other personal data within their Wallet Unit. This also implies guaranteeing a User sole control over sensitive cryptographic material (e.g., private keys) related to their Wallet Unit. 
 
 Wallet Providers are responsible for ensuring compliance with the requirements for Wallet Solutions. 
 
@@ -218,7 +216,7 @@ A Trusted List Provider (TLP) is a body responsible for maintaining, managing, a
 
 Note: Trusted Lists and Trusted List Providers may also exist for non-qualified EAA Providers, but this is out of scope of the ARF.
 
-These Trusted Lists are described in more detail in [Sections 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and [6.4.2](#642-relying-party-registration), as well as in [Topic 31]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a combination of a public key and the identifier of the associated entity and may be used to verify signatures or seals created by that entity.
+These Trusted Lists are described in more detail in [Sections 6.2.2](#622-wallet-provider-registration-and-notification), [6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification) and [6.4.2](#642-relying-party-registration), as well as in [Topic 31]. Some Trusted Lists contain the trust anchors of the relevant entities. A trust anchor is a combination of a public key and the identifier of the associated entity and may be used to verify signatures created by that entity.
 
 An entity's status as a trusted entity can be verified by checking whether they are present on the relevant Trusted List. Trusted List Providers provide a registration service for the relevant entities. The terms and conditions for entities to become registered are for each Trusted List Provider to determine unless specified elsewhere e.g., in sectoral rules.
 
@@ -250,10 +248,10 @@ Non-qualified EAAs can be provided by any (non-qualified) Trust Service Provider
 
 ### 3.9 Qualified Electronic Signature Remote Creation (QESRC) Providers
 
-The Wallet Unit will allow the User to create free-of-charge qualified electronic signatures over any data. This will also enhance the use of the Wallet Unit for signing, in a natural and convenient way. The creation of a qualified electronic signature or seal by means of the Wallet Unit can be achieved in several ways:
+The Wallet Unit will allow the User to create free-of-charge qualified electronic signatures or seals over any data. This will also enhance the use of the Wallet Unit for signing, in a natural and convenient way. The creation of a qualified electronic signature or seal by means of the Wallet Unit can be achieved in several ways:
 
-- the Wallet Unit itself could be certified as a qualified signature/seal creation device (QSCD), or
-- the Wallet Unit could implement secure authentication into an electronic signature or electronic seal invocation capability as a part of a local QSCD or a remote QSCD managed by a QTSP.
+- the Wallet Unit itself could be certified as a qualified signature or seal creation device (QSCD), or
+- the Wallet Unit could implement secure authentication into an electronic signature or electronic seal invocation capability, as part of a local QSCD or a remote QSCD managed by a QTSP.
 
 As part of the ecosystem, the use of common interfaces and protocols for provisioning qualified electronic signatures and seals will create a unified European market for QTSPs offering remote signature services. European citizens will be able to choose any QTSP, without worrying about technical interoperability, and this will enhance competition.
 
@@ -435,7 +433,7 @@ attestations that the User wants to include in their Wallet Unit.
 
 - The **Remote Signing Interface (RSI)** facilitates communication between the
 Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC)
-Provider. This interface is  used  by the Wallet Unit to generate a qualified
+Provider. This interface is  used  by the Wallet Unit to generate a qualified electronic 
 signature or seal.
 
 Note that the "Attribute Deletion Request to Relying Party Interface" and the
@@ -1361,7 +1359,7 @@ When processing the request, the following trust relationships are established:
 4. The User approves or rejects the presentation of the requested attributes. User approval and selective disclosure are described in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
 
 Subsequently, after the Wallet Unit presents the selected attributes from the PID or attestation to the Relying Party Instance by sending a response to the request, the Relying Party validates the response. The following trust relationships are established:
-5. The Relying Party Instance verifies the electronic signature or seal of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed. This is described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
+5. The Relying Party Instance verifies the signature of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed. This is described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 6. The Relying Party verifies that the PID Provider or Attestation Provider did not revoke the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 7. The Relying Party verifies that the PID Provider or Attestation Provider issued this PID or attestation to the same Wallet Unit that provided it to the Relying Party. In other words, it checks that the PID or attestation was not copied or replayed. This is generally called device binding, and it is discussed in [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding)
 8. In some use cases, the Relying Party verifies that the person presenting the PID or attestation is the subject of the PID or attestation. This is called User binding. In other use cases, the Relying Party trusts that Wallet Unit and the WSCD have done this. User binding is discussed in [Section 6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding).
@@ -1450,7 +1448,7 @@ After the User gives their approval, the Wallet Unit will present the approved U
 
 ##### 6.6.3.6 Relying Party Instance verifies the authenticity of the PID or attestation
 
-The Relying Party Instance receives a PID or attestation, including some attributes, from the Wallet Unit. Subsequently, it verifies the electronic signature or seal over the PID or attestation. To do this for PIDs and QEAAs, the Relying Party Instance uses a trust anchor of the Provider obtained from a Trusted List. Note that the PID Provider or QEAA Provider may use an intermediate signing certificate to sign the PID or attestation, and use the trust anchor to sign the signing certificate, instead of signing the PID or attestation directly with the trust anchor.
+The Relying Party Instance receives a PID or attestation, including some attributes, from the Wallet Unit. Subsequently, it verifies the signature over the PID or attestation. To do this for PIDs and QEAAs, the Relying Party Instance uses a trust anchor of the Provider obtained from a Trusted List. Note that the PID Provider or QEAA Provider may use an intermediate signing certificate to sign the PID or attestation, and use the trust anchor to sign the signing certificate, instead of signing the PID or attestation directly with the trust anchor.
 
 For PuB-EAAs, the Relying Party Instance verifies a PuB-EAA by first verifying the signature of the PuB-EAA Provider over the PuB-EAA, using the PuB-EAA Provider certificate issued by a QTSP. Subsequently, the Relying Party Instance verifies the signature over this certificate, using the corresponding trust anchor from the QTSP Trusted List. Note that both the PuB-EAA Provider and the QTSP may use an intermediate signing certificate. All other things being equal, the verification of a PuB-EAA will therefore involve one or more extra certificates, compared to the verification of a PID or QEAA.
 
@@ -1458,15 +1456,15 @@ Finally, for non-qualified EAAs, the applicable Rulebook may describe how the Re
 
 The above implies that a Relying Party Instance is aware whether the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. Also, the Relying Party Instance stores trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs.
 
-The technical implementation of the signature verification process depends on which of the standards mentioned in [Topic 12] is supported by the Wallet Unit. Each of these standards specifies in detail how to carry out electronic signature or seal verification.
+The technical implementation of the signature verification process depends on which of the standards mentioned in [Topic 12] is supported by the Wallet Unit. Each of these standards specifies in detail how to carry out signature verification.
 
 In addition, the Relying Party may want to verify that the Attestation Provider can legally issue the type of attestation in question. As described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered), this is only needed for non-qualified EAA Providers, as the Relying Party trusts a PID Provider, QEAA Provider or PuB-EAA Provider. For EAA Providers, the applicable Rulebook may define methods that the Relying Party can use to verify that the EAA Provider is allowed to issue this type of attestation.
 
 Notes:
 
-- All PIDs and attestations in the EUDI Wallet ecosystem are digitally signed or sealed by the respective PID Provider or Attestation Provider, or by a WSCD that is part of the Wallet Unit. If an attestation is digitally signed or sealed by a WSCD, it is called a device-signed or self-issued attestation. Device-signed or self-issued attestations are allowed only if it can be shown that the WSCD signs or seals them at Level of Assurance (LoA) “high”, meaning that the level of security offered by the WSCD is at least equivalent to the security level of the secure infrastructure used by the PID Provider or Attestation Provider for signing or sealing PIDs or attestations.
+- All PIDs and attestations in the EUDI Wallet ecosystem are digitally signed by the respective PID Provider or Attestation Provider, or by a WSCD that is part of the Wallet Unit. If an attestation is digitally signed by a WSCD, it is called a device-signed or self-issued attestation. Device-signed or self-issued PIDs or attestations are allowed only if it can be shown that the WSCD signs them at the required Level of Assurance (LoA). This implies that the level of security offered by the WSCD is at least equivalent to the security level of the secure infrastructure used by the PID Provider or Attestation Provider for signing PIDs or attestations.
 
-- The signature or seal over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
+- The signature over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
     - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
     - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
 
