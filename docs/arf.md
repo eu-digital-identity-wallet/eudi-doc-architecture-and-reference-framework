@@ -271,7 +271,7 @@ Relying Parties are natural or legal persons that rely upon an electronic identi
 
 The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. In particular, the Regulation requires that providers of very large online platforms must accept the EUDI Wallet for their user authentication processes.
 
-To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642) for more information on Relying Party registration.
+To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642-relying-party-registration) for more information on Relying Party registration.
 
 Relying Parties maintain an interface with Wallet Units to request PIDs and attestations, using Relying Party authentication, as described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance). If a Wallet Unit presents attributes from a PID or attestation to a Relying Party, the Relying Party can verify the authenticity of these attributes.
 
@@ -665,7 +665,7 @@ In addition, this section also describes a hybrid architecture. Within the EUDI
 Wallet ecosystem, a Wallet Provider is allowed to use any of these
 architectures.
 
-Note that, regardless of the architecture used, and as already stated in [Section](#33), the Wallet Provider is responsible for ensuring that the Wallet Instance can access a WSCD that has a level of security sufficient to ensure that the Wallet Unit can achieve Level of Assurance "high", as required in the Regulation. The Wallet Provider remains responsible for managing cyrptographic keys on the WSCD (through the WSCA) throughout the lifetime of the Wallet Unit. The Wallet Provider is also responsible for attesting the properties of the WSCD (including relevant certifications) in the Wallet Unit Attestation, see [Section](#653-wallet-unit-activation).
+Note that, regardless of the architecture used, the Wallet Provider is responsible for ensuring that the Wallet Instance can access a WSCD that has a level of security sufficient to ensure that the Wallet Unit can achieve Level of Assurance "high", as required in the Regulation. The Wallet Provider remains responsible for managing cyrptographic keys on the WSCD (through the WSCA) throughout the lifetime of the Wallet Unit. The Wallet Provider is also responsible for attesting the properties of the WSCD (including relevant certifications) in the Wallet Unit Attestation, see [Section 6.5.3](#653-wallet-unit-activation).
 
 #### 4.5.2 Remote WSCD
 
@@ -964,7 +964,6 @@ Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) d
 Notes:
 
 - This trust model is conceptual and may be implemented by Member States in different ways. For example, the different Trusted Lists may be implemented as a single list, provided that this list clearly indicates which trust anchors can be used for which purposes. Similarly, a Member State may decide to combine multiple Trusted List Providers and/or Certificate Authorities into a single entity, again provided that that entity maintains clear separations between its different roles and responsibilities. In some case, existing entities can probably be used to fulfil these roles.
-
 - For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see [Section 4.2.2](#422-interoperability)) and therefore, this trust model will be implemented using X.509 certificates and X.509-based Certificate Authorities according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and [[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust frameworks may be used.
 - This trust model is valid for both remote and proximity use cases. However, technical measures taken to ensure that the requirements on trust are fulfilled may differ between these two use cases. Moreover, the authentication and authorisation mechanisms will depend on the characteristics of the interacting parties.
 - In this version of the ARF, the trust model does not yet include interactions needed to enable Users to create qualified electronic signatures or seals. Please refer to [Topic 16] and [Topic 37].
@@ -1032,7 +1031,7 @@ Besides the trust relationships described in this chapter, other trust relations
 
 Figure 11 depicts the Wallet Provider to the top of the Wallet Unit. To the left and below of this, the figure also shows that a Wallet Provider registers itself and its Wallet Solution with a Wallet Provider Trusted List Provider in its Member State. Subsequently, the Member State notifies the Wallet Provider to the European Commission.
 
-The Wallet Solution provided by the Wallet Provider is certified as described in chapter [chapter 7](#7-certification-and-risk-management).
+The Wallet Solution provided by the Wallet Provider is certified as described in [Chapter 7](#7-certification-and-risk-management).
 
 If the registration and notification processes are successful, the trust anchors of the Wallet Provider are included in a Wallet Provider Trusted List. During issuance of a PID or an attestation, the PID Provider or the Attestation Provider can use these trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider, so they can be sure they are dealing with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance) and [Topic 9]. Similarly, when the Wallet Unit presents a PID or an attestation to a Relying Party, the Relying Party can use the Wallet Provider trust anchors to verify the authenticity of a Wallet Unit Attestation signed by the Wallet Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider) and [Topic 38].
 
@@ -1044,7 +1043,7 @@ More details on the Wallet Provider notification process can be found in [Topic 
 
 Under specific conditions, a Trusted List Provider may decide to suspend or withdraw a Wallet Provider. This implies that the Wallet Provider's status in the respective Trusted List will be changed to Invalid. The conditions for this will be specified by each Trusted List Provider. As a result of de-registration, PID Providers, Attestation Providers and Relying Parties will no longer trust the trust anchors of the Wallet Provider and will therefore refuse to interact with any Wallet Unit provided by that Wallet Provider.
 
-When a Trusted List Provider suspends or withdraws a Wallet Provider, the Wallet Provider revokes all of their WUAs as described in [Section 6.6.3.7](#66312-relying-party-verifies-that-wua-is-not-revoked).
+When a Trusted List Provider suspends or withdraws a Wallet Provider, the Wallet Provider revokes all of their WUAs as described in [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked).
 
 If an entity has registered multiple Wallet Providers, each offering a different Wallet Solution, and one of these Wallet Providers is suspended or withdrawn, only the applicable Wallet Solution will be impacted. It may happen that the reason for suspension or withdrawal is applicable to all Wallet Solutions offered, in which case all of the Wallet Providers registered by that entity will be withdrawn or suspended separately.
 
