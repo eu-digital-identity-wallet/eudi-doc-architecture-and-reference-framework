@@ -11,5 +11,6 @@ titlepage-rule-height: "3"
 titlepage-logo: "media/eu-logo.jpg"
 logo-width: 50pt
 block-headings: true
+listings-no-page-break: true
 ...
 
