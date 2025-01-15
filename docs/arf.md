@@ -601,8 +601,6 @@ breaches, fostering trust and User confidence in this EUDI Wallet ecosystem.
 
 ### 4.3 Reference Architecture
 
-### 4.3.1 Overview
-
 Figure 2 below gives an overview of the architecture of the EUDI Wallet
 ecosystem and its components. In comparison to Figure 1, this figure presents
 more detail on the composition of a Wallet Unit and its interfaces to other
@@ -616,9 +614,14 @@ shown in the figure were already described in [Chapter
 
 Figure 2: EUDI Wallet ecosystem reference architecture
 
-### 4.3.2 Components of a Wallet Unit
+### 4.3.1 Architecture components
 
 The following have been identified as the core components of a Wallet Unit:
+
+- **User device (UD)**: A User Device comprises the hardware, operating system,
+and software environment required to host and execute the Wallet Instance. The
+minimum hardware and software requirements for the User device will be
+determined by the Wallet Provider.
 
 - **Wallet Instance (WI)**: The app or application installed on a User device,
 which is an instance of a Wallet Solution and belongs to and is controlled by a
@@ -626,10 +629,7 @@ User. This component implements the core business logic and interfaces as
 depicted in Figure 2. It directly interacts with the WSCA/WSCD to securely
 manage cryptographic assets and execute cryptographic functions, ensuring a high
 level of assurance for authentication.
-- **User device (UD)**: A User Device comprises the hardware, operating system,
-and software environment required to host and execute the Wallet Instance. The
-minimum hardware and software requirements for the User device will be
-determined by the Wallet Provider.
+
 - **Wallet Secure Cryptographic Device (WSCD):** tamper-resistant device that
 provides an environment that is linked to and used by the wallet secure
 cryptographic application to protect critical assets and provide cryptographic
@@ -642,25 +642,27 @@ firmware covers security-related software, such as an operating system and
 cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
 different possible security architectures for the WSCD (for more details see
 [Section 4.5](#45-wscd-architecture-types)):
-    - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
+    - **a remote WSCD**, a remote device, such as a Hardware Security Module (HSM),
     accessed over a network.
-    - a local external WSCD, an external device, such as a smart card issued
+    - **a local external WSCD**, an external device, such as a smart card issued
     specifically to the User for this purpose,
-    - a local internal WSCD, an integrated component within the User device,
+    - **a local internal WSCD**, an integrated component within the User device,
     such as a SIM, e-SIM, or embedded Secure Element,
-    - a local native WSCD, a component embedded in the User device, accessed via
+    - **a local native WSCD**, a component embedded in the User device, accessed via
     an API provided by the operating system.
+
 - **Wallet Secure Cryptographic Application (WSCA):** an application that
 manages critical assets by being linked to and using the cryptographic and
 non-cryptographic functions provided by the wallet secure cryptographic device.
 The WSCA interfaces directly with the Wallet Instance and may be provided either
 by the Wallet Provider, as in the case of a remote WSCD, or by the User Device
 manufacturer, in the case of a local native WSCD.
-- **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users
+
+- **Wallet Provider backend instance (WPB**): The Wallet Provider backend offers Users
 support with their Wallet Units, performs essential maintenance, and issues
 Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
-#### 4.3.3 Wallet Unit interfaces and protocols
+#### 4.3.2 Wallet Unit interfaces and protocols
 
 Figure 2 shows the following interfaces between components of a Wallet Unit, or
 between the Wallet Unit and other entities in the EUDI Wallet ecosystem:
@@ -672,20 +674,21 @@ and user-consented information in a privacy-preserving manner to provision the
 Wallet Unit, in compliance with applicable legislation. Because the Wallet
 Provider is responsible for both sides of this interface, it will not be
 standardized in the scope of the EUDI Wallet ecosystem.
+
 - The **User Interface (UI)** is the point of interaction and communication
 between the User and the Wallet Instance. This interface will not be
 standardized in the scope of the EUDI Wallet ecosystem.
+
 - The **Presentation Interface (PI)** enables Relying Parties to securely
 request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This
 interface accommodates both remote and proximity interactions. For remote
-presentation flows, as detailed in [Section
-4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the
-OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the
-[W3C Digital Credentials API]. In contrast, for the proximity presentation flow,
-this interface adheres to the [ISO/IEC 18013-5] standard, see [Section
-4.4.2](#442-proximity-presentation-flows). The same interface can also be used
-by another Wallet Unit, see [Section
-6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
+presentation flows, as detailed in [Section 4.4.3](#443-remote-presentation-flows),
+the Wallet Instance implements the OpenID for Verifiable Presentation protocol
+[OpenID4VP] in combination with the [W3C Digital Credentials API]. In contrast,
+for the proximity presentation flow, this interface adheres to the [ISO/IEC 18013-5] standard, see
+[Section 4.4.2](#442-proximity-presentation-flows). The same interface can also be used
+by another Wallet Unit, see [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
+
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to
 communicate with the Wallet Secure Cryptographic Application (WSCA). This
 interface is specifically designed for managing crirical assets and
@@ -706,14 +709,14 @@ Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC)
 Provider. This interface is  used  by the Wallet Unit to generate a qualified
 signature or seal.
 
-Note that the "Attribute Deletion Request to Relying Party Interface" and the
+*Note: that the "Attribute Deletion Request to Relying Party Interface" and the
 "Reporting Relying Party to DPA Interface", which are mentioned in the
 Regulation, are not depicted as interfaces in Figure 2. Functionalities enabling
 a User to request a Relying Party to delete personal data (i.e., User
 attributes) obtained from the User's Wallet Unit is seen as features of the
 Wallet Solution which are required to be implemented in the solution. The same
 applies to functionalities enabling the User to report a Relying Party to a Data
-Protection Authority.
+Protection Authority.*
 
 ### 4.4 Data presentation flows
 
@@ -819,14 +822,12 @@ for both Wallet Units and Users.
 The next sections describe how these challenges can be solved for both same-device
 and cross-device remote presentation flows.
 
-#### 4.4.3.2 Same-device remote presentation flows and inter-app presentation flows
-
-Figure 4 shows attribute presentation in a remote same-device flow.
+#### 4.4.3.2 Same-device remote presentation flows 
 
 ![Figure 4](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
-
 Figure 4: Remote same-device presentations
 
+Figure 4 shows attribute presentation in a remote same-device flow.
 Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows
 the browser on the User device and the relevant interfaces of this browser:
 
@@ -843,82 +844,89 @@ to standardize this interface on the level of the API calls. These calls will be
 specified in the developer documentation for the respective OS. One of the key
 elements of this API is that Wallet Unit receives reliable information regarding
 the origin of the presentation request.
-- Obviously, the browser also has a User interface allowing the User to interact
+
+Obviously, the browser also has a User interface allowing the User to interact
 with it. This interface will not be standardised in the context of the EUDI
 Wallet ecosystem.
-  
-A remote same-device attribute presentation flow begins when the User uses the
-browser on their User device to visit the website of the Relying Party. The
-website may offer the User the possibility to present attributes from their
-Wallet Unit, for example by clicking a button. If the User does so, the browser
-will ask the User for permission to connect to the Wallet Unit. If the User
-allows this, the Relying Party Instance sends an OpenID4VP-compliant
-presentation request to the browser over the Digital Credentials API. The
-web browser, in collaboration with the device OS, forwards this request to the
-Wallet Unit, using the WI-platform API described above. If there are multiple
-Wallet Units present on the User device, the browser and the device OS will
-determine to which of these the request will be forwarded, possibly after
-consulting the User. The Wallet Instance will process the presentation request
-and, after requesting approval from the User, will return the requested
-attributes in encrypted format to the browser. The browser will forward the
-response to the remote Relying Party Instance.
 
-Figure 4 also shows an inter-app attribute presentation flow. In such a flow, a
-mobile app on the User device, for example a banking app or shopping app, acts
-as the Relying Party Instance. The mobile app may use the User attributes
-received from the Wallet Unit for instance to authenticate the User or to fill
-out User data, such as name and address, automatically.
 
-In such a use case, the attribute presentation flow begins when the User opens
-the mobile app and instructs it to request attributes from the Wallet Unit over
-the WI-platform API. Note that this is the same API that is also used by a
-browser in remote same-device presentation flows. The only difference may be
-that the origin information in the presentation request, if present, is
-different. The mobile app consumes the attributes it receives itself, and does
-not forward the presentation response to a remote Relying Party Instance.
+A remote same-device attribute presentation flow begins when the User accesses
+the Relying Party's website using a browser on their device. The website may
+provide an option for the User to present attributes from their Wallet Unit,
+typically via a button or similar interface.
+
+When the User selects this option, the browser prompts the User for permission
+to connect to the Wallet Unit. Upon granting permission, the Relying Party
+Instance sends a presentation request compliant with OpenID4VP specifications to
+the browser via the Digital Credentials API.
+
+The browser, working in tandem with the device's operating system (OS), forwards
+the request to the Wallet Unit using the WI-platform API. If the device hosts
+multiple Wallet Units, the browser and OS will determine which Wallet Unit
+should handle the request. This decision may involve consulting the User.
+
+The selected Wallet Instance processes the presentation request and seeks the
+User’s approval before returning the requested attributes in an encrypted format
+to the browser. The browser then forwards this encrypted response to the remote
+Relying Party Instance.
+
+Figure 4 also illustrates an inter-app attribute presentation flow. In this
+scenario, a mobile application, such as a banking or shopping app, on the User's
+device, rather than a web browser, acts as the Relying Party Instance. The app
+can leverage the User attributes retrieved from the Wallet Unit for various
+purposes, including User authentication or automatically filling in data fields
+like name and address.
+
+In this use case, the attribute presentation flow begins when the User opens the
+mobile app and initiates a request for attributes from the Wallet Unit via the
+WI-platform API. Notably, this is the same API used in remote same-device
+presentation flows involving a browser. The primary difference lies in the
+origin information included in the presentation request, which may vary.
 
 #### 4.4.3.3 Cross-device remote presentation flows
 
-Figure 5 shows attribute presentation in a remote cross-device flow.
-
 ![Figure 5](media/Figure_5_Remote_Cross-Device_Flow.jpeg) <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
-
 Figure 5: Remote cross-device presentations
 
-A remote cross-device attribute presentation flow begins when the User uses a
-browser on a device different from their User device to visit the website of the
-Relying Party. The website may offer the User the possibility to present
-attributes from their Wallet Unit, for example by clicking a button. If the User
-does so, the browser will ask the User for permission to connect to the Wallet
-Unit. If the User allows this, the Relying Party Instance sends a presentation
-request to the browser over the Digital Credentials API. The browser then
-establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid
-flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO
-Passkeys. This is done as follows:
+Figure 5 shows attribute presentation in a remote cross-device flow.
 
- 1. The browser presents a QR code that includes information about the tunnel
- endpoint and keys that will be used for establishing a secure channel over this
- tunnel.
- 2. The user scans the QR code using the camera on the User device.
- 3. The User device emits a BLE advertisement, which is received by the browser.
- The advertisement includes, in an encrypted form, information required for
- establishing the secure tunnel. This advertisement is used as a proximity
- check: the tunnel cannot be established if the User device and the device on
- which the browser runs are not close to each other.
- 4. A tunnel is established between the two devices.
-  
-The browser then sends the OpenID4VP-compliant presentation request to the User
-device. If there are multiple Wallet Units present on the User device, the
-device OS will determine to which of these the request will be forwarded,
-possibly after consulting the User. The Wallet Instance will process the
-presentation request and, after requesting approval from the User, will return
-the requested attributes in encrypted format to the browser. The browser will
-forward the response to the remote Relying Party Instance.
+A remote cross-device attribute presentation flow begins when the User accesses
+the Relying Party's website via a browser on a device different from their User
+device. The website may provide an option for the User to present attributes
+from their Wallet Unit, such as by clicking a button.  
 
-Note that the Wallet Instance does not see any difference between the
-cross-device flow and same-device flow. In both cases, it receives an
-OpenID4VP-compliant presentation request over the WI-platform API described in
-the previous section.
+If the User selects this option, the browser prompts the User for permission to
+connect to the Wallet Unit. Upon approval, the Relying Party Instance sends a
+presentation request to the browser via the Digital Credentials API. The browser
+then establishes a secure communication tunnel with the User device using the
+FIDO CTAP 2.2 hybrid flow (see section 11.5 of [CTAP], also used for FIDO
+Passkeys). This process unfolds as follows:  
+
+1. **QR Code Generation**: The browser displays a QR code containing information
+about the tunnel endpoint and cryptographic keys necessary for establishing a
+secure channel.  
+2. **QR Code Scanning**: The User scans the QR code with the User device's
+camera.  
+3. **BLE Advertisement**: The User device emits a BLE advertisement, encrypted
+and containing the data required to establish the tunnel. This advertisement
+acts as a proximity check, ensuring that the two devices are close to each
+other.  
+4. **Tunnel Establishment**: A secure tunnel is successfully established between
+the two devices.  
+
+Once the tunnel is established, the browser sends the OpenID4VP-compliant
+presentation request to the User device. If multiple Wallet Units are present on
+the User device, the device OS determines which Wallet Unit will handle the
+request, potentially consulting the User.  
+
+The selected Wallet Instance processes the presentation request and, after
+obtaining the User's approval, returns the requested attributes in encrypted
+format to the browser. The browser then forwards the response to the remote
+Relying Party Instance.  
+
+It is important to note that the Wallet Instance treats cross-device and
+same-device flows identically. In both cases, it receives an OpenID4VP-compliant
+presentation request via the WI-platform API described in the previous section.
 
 ### 4.5 WSCD architecture types
 
