@@ -339,9 +339,9 @@ attackers to block transactions by Relying Parties and Wallet Units
 The following High-Level Requirements will be added to Annex 2 of the ARF v1.9:
 
 #### REQUIREMENT 1
-A Wallet Unit and a Relying Party receiving a presentation from the Wallet Unit
+A Wallet Unit and a Relying Party receiving an attestation from the Wallet Unit
 SHOULD ensure that the attributes included in a presented attestation 
-are accessible only by the Relaying Party. For example, a presentation can 
+are accessible only by the Relaying Party. For example, the presentation can 
 be encrypted in such a way that only the Relaying Party is able to decrypt it.
 
 #### REQUIREMENT 2
