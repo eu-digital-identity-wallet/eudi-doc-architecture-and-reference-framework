@@ -37,7 +37,7 @@ PANDOC=pandoc
 MKDOCS=mkdocs
 
 PANDOC_OPTIONS=--toc --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
-PANDOC_PDF_OPTIONS= --pdf-engine=xelatex --template=$(PDF_TEMPLATE) --listings $(PANDOC_DATA_DIR)/metadata.yml
+PANDOC_PDF_OPTIONS= --pdf-engine=xelatex  --template=$(PDF_TEMPLATE) --listings $(PANDOC_DATA_DIR)/metadata.yml
 PANDOC_DOCX_OPTIONS=
 PANDOC_EPUB_OPTIONS=--to epub3
 

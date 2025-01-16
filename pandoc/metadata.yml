@@ -7,7 +7,10 @@ lang: en-IE
 documentclass: "scrartcl"
 fontsize: "14pt"
 titlepage-rule-color: "1F3695"
-titlepage-rule-height: "5"
+titlepage-rule-height: "3"
 titlepage-logo: "media/eu-logo.jpg"
+logo-width: 50pt
+block-headings: true
+listings-no-page-break: true
 ...
 
