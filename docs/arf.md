@@ -269,9 +269,11 @@ Relying Parties are natural or legal persons that rely upon an electronic identi
 
 The reason for reliance on the Wallet Unit may be a legal requirement, a contractual agreement, or their own decision. In particular, the Regulation requires that providers of very large online platforms must accept the EUDI Wallet for their user authentication processes.
 
-To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642-relying-party-registration) for more information on Relying Party registration.
-
 Relying Parties maintain an interface with Wallet Units to request PIDs and attestations, using Relying Party authentication, as described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance). If a Wallet Unit presents attributes from a PID or attestation to a Relying Party, the Relying Party can verify the authenticity of these attributes.
+
+To rely on Wallet Units for the purpose of providing a service, Relying Parties inform the Member State where they are established about their intention for doing so, and register the attributes that they intend to request. See [Section 6.4.2](#642-relying-party-registration) for more information on Relying Party registration. During a transaction, a Wallet Unit will verify that the Relying Party only requests attributes that it registered. It will warn the User if this is not the case. This is explained in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered). 
+
+In addition, an Attestation Provider may embed a disclosure policy in an attestation. Such a policy indicates to which Relying Parties a Wallet Unit should (or should not) present specific attributes from that attestation. During a transaction, the Wallet Unit evaluates the policy based on data provided by the Relying Party, and warns the User if the outcome of that evaluation is negative. Please refer to [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present) for more information.
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -1096,7 +1098,7 @@ When a Trusted List Provider suspends or withdraws a PID Provider or Attestation
 
 #### 6.4.1 Relying Party lifecycle
 
-[Section X](#464-Relying-Party) presented the lifecycle of a Relying Party:
+[Section 4.6.4](#464-Relying-Party) presented the lifecycle of a Relying Party:
 
 1. A Relying Party is registered by a Registrar in the Member State where it resides. Relying Party registration is discussed in [Section 6.4.2](#642-relying-party-registration).
 2. Under specific conditions, a Registrar may decide to de-register a registered Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-de-registration).
@@ -1401,15 +1403,15 @@ Subsequently, during each presentation of attributes:
 
 ##### 6.6.3.3 Wallet Unit allows User to verify that Relying Party does not request more attributes than it registered
 
-During registration, the Relying Party registered which attributes it intends to request from Wallet Units. The Registrar listed these attributes in a Relying Party registration certificate and sends it to the Relying Party, which distributes it to all of its Relying Party Instances.
+During registration, the Relying Party registered which attributes it intends to request from Wallet Units. The Registrar listed these attributes in a Relying Party registration certificate and sent it to the Relying Party, which distributes it to all of its Relying Party Instances.
 
-A Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User, at least in case one or more of the requested attributes in not included in the list of attributes in the registration certificate.
+During a transaction, a Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User, at least in case one or more of the requested attributes is not included in the list of attributes in the registration certificate.
 
 The format of the registration certificate, as well as the way in which the Wallet Unit can verify that the registration certificate belongs to the authenticated Relying Party, will be specified in a technical specification. For more information, see [Topic 44].
 
 ##### 6.6.3.4 Wallet Unit evaluates disclosure policy embedded in attestation, if present
 
-During attestation issuance, an Attestation Provider optionally has embedded a disclosure policy in the attestation. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the Attestation Provider to receive which attributes from the attestation. Note that the Regulation does not contain a requirement for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs and PuB-EAAs.
+During attestation issuance, an Attestation Provider optionally has embedded a disclosure policy in the attestation. Such an embedded disclosure policy contains rules determining which types of Relying Party are allowed by the Attestation Provider to receive specific attributes from the attestation. Note that the Regulation does not contain a requirement for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs and PuB-EAAs.
 
 If a policy is present in the attestation, the Wallet Unit evaluates the policy, together with data obtained from the Relying Party, to determine whether the Attestation Provider allows this Relying Party to receive the requested attributes. Data obtained from the Relying Party may be included in an attribute certificate comparable to the registration certificate discussed in the previous section. Such an attribute certificate may have been issued to the Relying Party by the Attestation Provider itself. In any case, the Wallet Unit authenticates any data obtained from the Relying Party before using it.
 
