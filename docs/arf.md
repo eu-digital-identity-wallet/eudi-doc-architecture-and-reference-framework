@@ -556,9 +556,7 @@ the browser on the User device and the relevant interfaces of this browser:
 between the web browser and a remote Relying Party Instance, which may operate
 on a server managed by the Relying Party. This interface complies with the
 [Digital Credentials API], which is a browser API that is currently being
-standardised within the W3C. Additionally, OpenID Foundation is standardazing an
-OpenID4VP profile for the W3C Digityal Credentials API, that defines how
-OpenID4VP will be used over the Digital Credentials API.
+standardised within the W3C.
 - The **WI-platform API** interface is an inter-app API that implements the
 Digital Credentials API mechanism at OS level. There are however no current plans
 to standardise this interface on the level of the API calls. These calls will be
@@ -637,9 +635,19 @@ presentation request and, after requesting approval from the User, will return
 the requested attributes in encrypted format to the browser, using the established tunnel. The browser will forward the response to the remote Relying Party Instance.
 
 Note that the Wallet Instance does not see any difference between the
-cross-device flow and same-device flow. In both cases, it receives an
+cross-device flow and the same-device flow. In both cases, it receives an
 OpenID4VP-compliant presentation request over the WI-platform API described in
 the previous section.
+
+#### 4.4.3.4 Profiling the use of [OpenID4P] in remote presentation flows
+
+As mentioned above, for both same-device and cross-device remote presentation flows, the messages used to request and present attestations comply with [OpenID4VP]. The OpenID Foundation is standardizing a profile for the W3C Digital Credentials API, that will define how
+OpenID4VP will be used over this API.
+
+In addition, there are two other profiles that will be used by Wallet Units and remote Relying Parties:
+
+- [ISO/IEC 18013-7] Annex B contains a profile for OpenID4VP. Relying Parties and Wallet Unit will comply with the requirements in this profile when the format of the attestation complies with [ISO/IEC 18013-5].
+- Otherwise, i.e. when the format of the attestation complies with [SD-JWT VC], Relying Parties and Wallet Unit will comply with the requirements in the profile specified in [HAIP].
 
 ### 4.5 WSCD architecture types
 
@@ -1689,7 +1697,6 @@ When adding issues to the Github repository, please follow these general guideli
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
 
 - **Attach** relevant files, screenshots, or links to additional resources that provide context or assist in resolving the issue. This can include **references** to related documentation or discussions.
-
 - **Follow issue etiquette** by conducting a search to see if the issue has already been reported before creating a new one. This helps avoid duplicate issues.
 
 ##### 8.2.1.2 Guidelines for discussing existing issues in the GitHub repository
@@ -1697,19 +1704,12 @@ When adding issues to the Github repository, please follow these general guideli
 When discussing existing issues in the Github repository, please follow these general guidelines:
 
 - **Communicate with respect and courtesy** towards other contributors, maintain a professional tone, and avoid using language that could be interpreted as confrontational or inflammatory.
-
 - Provide **context and background information** to help others understand your perspective. Explain the reasoning behind your comments.
-
 - Communicate your intentions and motivations behind your comments or suggestions to **avoid misunderstandings**.
-
 - Keep **discussions focused on the technical aspects of the issue** at hand.
-
 - Provide **constructive feedback and suggestions** in a helpful and supportive manner. Instead of simply pointing out problems, offer solutions or alternative approaches to address the issue positively.
-
 - Approach discussions with a **mindset of collaboration and problem-solving**.
-
 - Be **open to different perspectives**, as contributors may have different viewpoints, experiences, and expertise levels.
-
 - Contribute to a **positive and welcoming community atmosphere**.
 
 #### 8.2.2 Managing Issues and Pull Requests
@@ -1717,7 +1717,6 @@ When discussing existing issues in the Github repository, please follow these ge
 Our team is committed to managing issues and pull requests related to this document in a transparent and efficient manner to ensure that all feedback is addressed promptly and effectively. Here's how we manage issues and pull requests to set the right expectations:
 
 - Issue Management: When an issue is submitted, our team will review and prioritise it based on its relevance and impact. We'll keep you informed of the status of your issue and provide updates as it progresses. Once resolved, we'll close the issue and incorporate any necessary changes into the document.
-
 - Pull Request Management: If you submit a pull request with proposed changes or improvements to the document, our team will review it carefully and provide feedback and suggestions for refinement. We'll work collaboratively with you to ensure that your contribution aligns with our document's objectives and maintains consistency and quality. Once approved, we'll merge your changes into the document and acknowledge your contribution.
 
 Your feedback and contributions are essential in helping us maintain the quality and relevance of this document. We value your participation and strive to create a collaborative environment where everyone's contributions are valued and recognised.
@@ -1748,7 +1747,8 @@ For undated references, the latest version available applies.
 | [CIR 2024/2980] | [Commission Implementing Regulation 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notifications to the Commission concerning the European Digital Identity Wallet ecosystem |
 | [CIR 2024/2981] | [Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [CIR 2024/2982] | [Commission Implementing Regulation 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402982) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework |
-| [ISO/IEC 18013-5]| [ISO/IEC 18013-5](https://www.iso.org/standard/69084.html), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application, First edition, 2021-09. |
+| [ISO/IEC 18013-5]| [ISO/IEC 18013-5](https://www.iso.org/standard/69084.html), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application |
+| [ISO/IEC 18013-7]| [ISO/IEC 18013-7](https://www.iso.org/standard/82772.html), Personal identification --- ISO-compliant driving licence - Part 7: Mobile driving licence (mDL) add-on functions |
 | [ISO 3166-1] | [ISO 3166-1](https://www.iso.org/standard/72482.html): Codes for the representation of names of countries and their subdivisions -- Part 1: Country codes: alpha-2 country |
 | [ISO 3166-2] | [ISO 3166-2:2020](https://www.iso.org/standard/72483.html): Codes for the representation of names of countries and their subdivisions --- Part 2: Country subdivision code |
 | [ETSI TS 119 612]| Electronic Signatures and Infrastructures (ESI); Trusted Lists |
@@ -1780,8 +1780,8 @@ For undated references, the latest version available applies.
 | [W3C WebAuthn] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/), An API for accessing Public Key Credentials Level 2, W3C Recommendation |
 | [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available:  <https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html> |
 | [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> |
-| [OpenID4VP profile for the W3C Digital Credentials API]     | TBD, "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
-| [OpenID4VP] | Terbu O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
+| [OpenID4VP] | Terbu, O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
+| [HAIP] | Yasuda, K. et al, "OpenID4VC High Assurance Interoperability Profile", OpenId Foundation. Available: <https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0.html> |
 | [Topic 6]| Annex 2 - Relying Party authentication and User approval |
 | [Topic 7] | Annex 2 - Attestation validity checks and revocation |
 | [Topic 9] | Annex 2 - Wallet Unit Attestation |

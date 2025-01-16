@@ -66,6 +66,9 @@ identification and authentication of a User utilising their Wallet Unit.
 | OIA_01 | A Wallet Unit SHALL support technical specifications to respond to person identification data (PID) and attestation presentation requests by Relying Parties. |
 | OIA_02 | A Wallet Unit SHALL support proving cryptographic binding between a WSCA included in the Wallet Unit and a PID or attestation, in accordance with technical specifications. </br></br>Such a mechanism is also called device binding or key binding. |
 | OIA_03 | The Commission SHALL adopt the technical specifications for the PID or attestation presentation request-response protocol and for the device binding mechanism, according to the protocols and interfaces specified in [OpenID4VP] and [SD-JWT VC] for remote flows, and [ISO 18013-5] for proximity flows. |
+| OIA_03a | Wallet Providers SHALL ensure that their Wallet Solution supports the protocol specified in 'OpenID for Verifiable Presentations', see [OpenID4VP], with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
+| OIA_03b | For remote presentation flows, when the format of the requested attestation complies with [ISO/IEC 18013-5], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified [ISO/IEC 18013-7] Annex B. |
+| OIA_03c | For remote presentation flows, when the format of the requested attestation complies with [SD-JWT VC], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified [HAIP]. |
 | OIA_04 | A Wallet Unit SHALL verify and process PID or attestation presentation requests from Relying Parties in accordance with the protocols and interfaces specified in [OpenID4VP] for remote flows. |
 | OIA_05 | After verifying and processing a PID or attestation request, the Wallet Unit SHALL inform the User about the identity of the requesting Relying Party and the requested attributes. |
 | OIA_06 | A Wallet Unit SHALL transmit the requested attributes only after having received the User's authorisation. See also OIA_07. |
@@ -334,8 +337,7 @@ requirements related to PID and attestation issuance.
 |-----------|--------------|
 | ISSU_01 | Wallet Providers SHALL ensure that their Wallet Solution supports the OpenID4VCI protocol specified in [OpenID4VCI], with additions and changes as documented in this Annex (see e.g. this Topic and [[Topic 9](#a239-topic-9---wallet-unit-attestation)]) and in future technical specifications created by or on behalf of the Commission. |
 | ISSU_02 | Wallet Providers SHALL ensure that their Wallet Solution supports the attestation formats specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>"SD-JWT-based Verifiable Credentials (SD-JWT VC)", see [SD-JWT-VC].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
-| ISSU_03 | Wallet Providers SHALL ensure that their Wallet Solution supports the presentation protocols specified in: <ul><li>ISO/IEC 18013-5, see [ISO18013-5].</li><li>OpenID for Verifiable Presentations, see [OpenID4VP].</li></ul> with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
-| ISSU_03a | Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. <br><br>Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit. |
+| ISSU_03 | Empty |
 | ISSU_04 | The OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable PID Providers and Attestation Provider to issue to a Wallet Unit a batch of multiple PIDs or attestations that are simultaneously valid and contain the same attributes. |
 | ISSU_05 | A Wallet Unit SHALL support a process to activate a newly issued PID, in accordance with [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502) Section 2.2.2. The goal of the activation process is to verify that the PID was delivered into the Wallet Unit and WSCA of the User who is the subject of the PID. The Wallet Unit SHALL NOT allow a User to use a non-activated PID. <br><br>Note: This requirement is not applicable for QEAAs, PuB-EAAs or non-qualified EAAs, since these are not identity means in the sense of Commission Implementing Regulation (EU) 2015/1502.|
 | ISSU_06 | After a Wallet Unit receives a PID or an attestation from a PID Provider or Attestation Provider, it SHALL verify that the PID or attestation it received matches the request. |
@@ -699,7 +701,7 @@ identification in proximity use cases where Users utilise their Wallet Units. 
 | **Index** | **Requirement specification** |
 |-----------|----------------|
 | ProxId_01 | For proximity identification purposes, a Wallet Unit SHALL be able to establish a connection with Relying Party Instances and process their presentation requests in accordance with ISO/IEC 18013-5. |
-| ProxId_02 | Empty |
+| ProxId_02 | Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. <br><br>Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit.|
 | ProxId_03 | A Wallet Unit SHALL present the presentation request and the identity of the Relying Party to the User when processing the request. |
 | ProxId_04 | A Wallet Unit SHALL request its User to approve the presentation of attributes from their Wallet Unit for proximity identification before presenting them to the Relying Party. |
 | ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with ISO/IEC 18013-5 for proximity flows. |
@@ -942,8 +944,7 @@ proximity) with internet connectivity for both devices (online), or
 without internet connectivity for either or both devices (offline). 
 
 This Topic lists the high-level requirements related to the
-interaction between two Wallet Units in proximity offline mode
-and in proximity online mode.
+interaction between two Wallet Units. This topic will be further discussed with Member States.
 
 *HLRs*
 
