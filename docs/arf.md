@@ -321,23 +321,27 @@ This chapter provides a broad overview of the EUDI Wallet ecosystem's core compo
 
 ### 4.2 Design principles
 
-To effectively translate the European Digital Identity Regulation into a User-friendly, privacy-focused, and secure technical architecture, establishing design principles is crucial. These principles, rooted in the regulatory framework and enriched by industry best practices, will serve as fundamental guidelines. This approach ensures compliance with requirements emphasizing User-centricity, privacy, security, and cross-border interoperability. It demonstrates a commitment to both regulatory alignment and excellence in the EUDI Wallet architecture's design.
+To effectively translate the European Digital Identity Regulation into a User-friendly, privacy-focused, and secure technical architecture, establishing design principles is crucial. These principles, rooted in the regulatory framework and enriched by industry best practices, will serve as fundamental guidelines. This approach ensures compliance with requirements emphasising User-centricity, privacy, security, and cross-border interoperability. It demonstrates a commitment to both regulatory alignment and excellence in the EUDI Wallet architecture's design.
 
 #### 4.2.1 User-centricity
 
-The EUDI Wallet ecosystem prioritises User-centricity as a core design principle. This means placing User needs and experience at the forefront of every design decision. The Wallet Unit should be intuitive and easy to use, with seamless integration into existing use cases. Users should have full control over their attributes and privacy, with transparent information about what are attributes are being presented and to whom. Additionally, the Wallet Unit should be accessible and inclusive, catering to Users with varying technical backgrounds and abilities. By prioritizing User-centricity, the EUDI Wallet ecosystem fosters trust and encourages widespread adoption, ultimately achieving its goal of empowering Users with secure and convenient digital identity management.
+The EUDI Wallet ecosystem prioritises User-centricity as a core design principle. This means placing User needs and experience at the forefront of every design decision. The Wallet Unit should be intuitive and easy to use, with seamless integration into existing use cases. Users should have full control over their attributes and privacy, with transparent information about what are attributes are being presented and to whom. Additionally, the Wallet Unit should be accessible and inclusive, catering to Users with varying technical backgrounds and abilities. By prioritising User-centricity, the EUDI Wallet ecosystem fosters trust and encourages widespread adoption, ultimately achieving its goal of empowering Users with secure and convenient digital identity management.
 
 #### 4.2.2 Interoperability
 
-The EUDI Wallet ecosystem prioritises interoperability as a core design principle. This ensures a Wallet Unit functions seamlessly across borders within the EU. Users can travel freely and confidently utilise their digital identity wallets for various services, from e-government platforms to private online interactions. Interoperability fosters secure data exchange through standardised protocols, allowing trusted entities to verify credentials effortlessly. This not only simplifies the User experience but also strengthens overall security within the system. Moreover, interoperability prevents market fragmentation by creating a level playing field for different Wallet Solutions. It fosters competition and collaboration, ultimately driving innovation in the EUDI Wallet ecosystem. By prioritizing interoperability, the EUDI Wallet architecture lays the foundation for a trusted and universally accepted EUDI Wallet ecosystem across the EU.
+The EUDI Wallet ecosystem prioritises interoperability as a core design principle. This ensures a Wallet Unit functions seamlessly across borders within the EU. Users can travel freely and confidently utilise their digital identity wallets for various services, from e-government platforms to private online interactions. Interoperability fosters secure data exchange through standardised protocols, allowing trusted entities to verify credentials effortlessly. This not only simplifies the User experience but also strengthens overall security within the system. Moreover, interoperability prevents market fragmentation by creating a level playing field for different Wallet Solutions. It fosters competition and collaboration, ultimately driving innovation in the EUDI Wallet ecosystem. By prioritising interoperability, the EUDI Wallet architecture lays the foundation for a trusted and universally accepted EUDI Wallet ecosystem across the EU.
 
 #### 4.2.3 Privacy by design
 
-The EUDI Wallet architecture embodies the principle of privacy by design. This means that the protection of User data is a fundamental pillar of the architecture's design. The principle of data minimisation guides the collection of personal information, ensuring only what is necessary is gathered. The Wallet Unit empowers Users with granular control over what data is presented and to whom. Transparency is built into the system, with clear explanations of how data is used and protected. By making privacy a cornerstone from the beginning, the EUDI Wallet ecosystem aims to foster trust and protect the fundamental rights of its Users.
+The EUDI Wallet architecture embodies the principle of privacy by design. This means that the protection of User data is a fundamental pillar of the architecture's design. The principle of data minimisation guides the collection of personal information, ensuring that Relying Parties gather only the attributes they need and have registered for. By enabling selective disclosure of attributes, the Wallet Unit empowers Users with granular control over what data is presented and to whom. Transparency is built into the system, with clear explanations of how data is used and protected. By making privacy a cornerstone from the beginning, the EUDI Wallet ecosystem aims to foster trust and protect the fundamental rights of its Users. Finally, measures are taken to prevent Users from being tracked by Relying Parties, PID Providers, or Attestation Providers. 
+
+For more information, please refer to [Sections 6.1.2.4](#6124-risks-and-mitigation-measures-related-to-authorisation) and [6.1.2.5](#6125-risks-and-mitigation-measures-related-to-user-tracking). 
 
 #### 4.2.4 Security by design
 
-The EUDI Wallet architecture embraces the principle of security by design. This means security considerations are woven into the very fabric of the architecture's design. Throughout the design process, potential vulnerabilities are identified and mitigated. Secure coding practices are mandated, and the architecture itself minimises attack surfaces by compartmentalizing sensitive data and access controls. By prioritizing security from the outset, the EUDI Wallet architecture aims to be inherently resistant to cyberattacks and data breaches, fostering trust and User confidence in this EUDI Wallet ecosystem.
+The EUDI Wallet architecture embraces the principle of security by design. This means security considerations are woven into the very fabric of the architecture's design. Throughout the design process, potential vulnerabilities are identified and mitigated. Secure coding practices are mandated, and the architecture itself minimises attack surfaces by compartmentalising sensitive data and access controls. By prioritising security from the outset, the EUDI Wallet architecture aims to be inherently resistant to cyberattacks and data breaches, fostering trust and User confidence in this EUDI Wallet ecosystem.
+
+For more information, please refer to [Sections 6.1.2.2](#6122-risks-and-mitigation-measures-related-to-confidentiality-integrity-and-authenticity) and [6.1.2.3](#6123-risks-and-mitigation-measures-related-to-tampering-of-cryptographic-keys-and-sensitive-data). 
 
 ### 4.3 Reference architecture
 
@@ -403,10 +407,10 @@ Attestation, as well as to provide support to the User and collect aggregated
 and user-consented information in a privacy-preserving manner to provision the
 Wallet Unit, in compliance with applicable legislation. Because the Wallet
 Provider is responsible for both sides of this interface, it will not be
-standardized in the scope of the EUDI Wallet ecosystem.
+standardised in the scope of the EUDI Wallet ecosystem.
 - The **User Interface (UI)** is the point of interaction and communication
 between the User and the Wallet Instance. This interface will not be
-standardized in the scope of the EUDI Wallet ecosystem.
+standardised in the scope of the EUDI Wallet ecosystem.
 - The **Presentation Interface (PI)** enables Relying Parties to securely
 request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This
 interface accommodates both remote and proximity interactions. For remote
@@ -463,12 +467,12 @@ the Wallet Unit presents attestations to a machine, without human supervision.
 The interfaces and protocols used in this flow are the same as for the proximity
 supervised flow, and are described in [Section
 4.4.2](#442-proximity-presentation-flows).
-- **Remote Same-Device Flow**:In this flow, the User utilizes a web browser or
+- **Remote Same-Device Flow**:In this flow, the User utilises a web browser or
 another application on their User Device to access a Relying Party's a service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
 request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows-and-inter-app-presentation-flows),
-this request is managed by the web browser on the User's device, utilizing the
+this request is managed by the web browser on the User's device, utilising the
 [W3C Digital Credentials API] and, behind the scenes, an inter-app API
 provided by the device's operating system.
 - **Remote Cross-Device Flow**: In this flow, the User uses a web browser on a
@@ -531,7 +535,7 @@ experience.
 3. **Invocation Mechanism**: Establishing a communication channel
 between the Wallet Unit and the remote Relying Party Instance presents
 challenges due to inconsistent invocation methods. One approach considered by
-standardization bodies involves using custom URI schemes, such as "mdoc://" or
+standardisation bodies involves using custom URI schemes, such as "mdoc://" or
 "openid4vp://". In this approach, the mobile operating system would trigger the
 Wallet Unit when the Relying Party Instance requests a connection via a custom
 URI. Another approach is the use of domain-bound universal links (a.k.a. app links). However, relying on custom URI schemes or universal links introduces variability in User
@@ -561,12 +565,12 @@ the browser on the User device and the relevant interfaces of this browser:
 between the web browser and a remote Relying Party Instance, which may operate
 on a server managed by the Relying Party. This interface complies with the
 [Digital Credentials API], which is a browser API that is currently being
-standardized within the W3C. Additionally, OpenID Foundation is standardazing an
+standardised within the W3C. Additionally, OpenID Foundation is standardazing an
 OpenID4VP profile for the W3C Digityal Credentials API, that defines how
 OpenID4VP will be used over the Digital Credentials API.
 - The **WI-platform API** interface is an inter-app API that implements the
 Digital Credentials API mechanism at OS level. There are however no current plans
-to standardize this interface on the level of the API calls. These calls will be
+to standardise this interface on the level of the API calls. These calls will be
 specified in the developer documentation for the respective OS. One of the key
 elements of this API is that Wallet Unit receives reliable information regarding
 the origin of the presentation request.
@@ -969,7 +973,7 @@ Notes:
 
 This section briefly discusses some of the risks that were considered when this trust model was created, together with the mitigations for these risks and the residual risks that remain after these mitigations. This section is not intended to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole; for that register, see [Risk Register]. This section is limited to the scope of the ARF, namely, the Wallet Unit and its interactions with other parties in the ecosystem, as depicted in Figure 11.
 
-##### 6.1.2.2 Risks related to confidentiality, integrity, and authenticity
+##### 6.1.2.2 Risks and mitigation measures related to confidentiality, integrity, and authenticity
 
 Within the EUDI Wallet ecosystem, many interactions take place between parties in which one party requests another party to perform a task. For example, a User may ask a PID Provider or an Attestation Provider to provide a PID or an attestation to a Wallet Unit, or a Relying Party may ask a User to present attributes from an attestation in their Wallet Unit.
 For any of these interactions, the following risks apply:
@@ -978,7 +982,7 @@ For any of these interactions, the following risks apply:
 - Messages between parties could be intercepted, meaning that they could be read by an attacker. To mitigate this risk, messages must be encrypted to ensure confidentiality.
 - Intercepted messages could be changed by an attacker. To mitigate this risk, messages must be authenticated, so that the receiver can verify that originate from the authenticated sender and were not changed.
 
-##### 6.1.2.3 Risks related to tampering of cryptographic keys and sensitive data
+##### 6.1.2.3 Risks and mitigation measures related to tampering of cryptographic keys and sensitive data
 
 The mechanisms for authentication and confidentiality described in the previous section rely on the security of cryptographic keys, especially private and secret keys. If an attacker can obtain, use, or tamper with these keys, these security mechanisms would break down. Therefore, all cryptographic keys are managed by dedicated secure applications (WSCAs), running on secure hardware (WSCDs), as described in [Section 4.3](#43-reference-architecture). The security of WSCDs and WSCAs is ensured by means of an appropriate certification process.
 
@@ -986,7 +990,7 @@ These mitigation measures apply for all entities in the EUDI Wallet ecosystem th
 
 WSCDs and WSCAs in a Wallet Unit may also be used to store other sensitive data except cryptographic keys. In particular, they could be used to store User attributes, in such a way that attackers, including malicious applications residing on the same User device as the Wallet Instance, cannot retrieve these attributes. This is beneficial for User privacy.
 
-##### 6.1.2.4 Risks related to authorization
+##### 6.1.2.4 Risks and mitigation measures related to authorisation
 
 In some cases, there is a risk that a valid party in the EUDI Wallet ecosystem tries to perform actions that it is not allowed to do. This risk occurs for mainly two types of parties. In the first place, a non-qualified EAA Provider may try to issue attestations it is not entitled to issue. For example, an Attestation Provider that is not officially entitled by a Member State (or by some other relevant authority) to issue diplomas may nevertheless attempt to issue an attestation having the diploma attestation type. Within the EUDI Wallet ecosystem this risk only applies to non-qualified EAA Providers. PID Providers, QEAA Providers and PuB-EAA Providers are assumed to be trustworthy in this regard. For more information, see [Section 6.3.2.2](#6322-pid-provider-or-attestation-provider-receives-an-access-certificate). That section also explains how this risk is mitigated.
 
@@ -996,7 +1000,7 @@ A second case of a valid party in the EUDI Wallet ecosystem that may try to do t
 - Secondly, the Regulation requires each Relying Party to register the attributes it intends to request from Users. [CIR 2024/2982] requires that these registered attributes are included in a so-called Relying Party registration certificate, and that a Wallet Unit must be able to display information from this registration certificate to the User. This allows the User to make a considered decision to approve or deny the presentation of the requested attributes. For more information, see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
 - Lastly, the Regulation requires that an Attestation Provider is able to embed a disclosure policy into their attestations. This policy may contain rules determining whether the Attestation Provider approves of the release of one or more of the requested attributes to the authenticated Relying Party. The Wallet Unit evaluates the policy (if present in the attestation) in combination with authenticated data provided by the Relying Party, and informs the User about the outcome of the evaluation. Again, this allows the User to make a considered decision to approve or deny the presentation of the requested attributes. More information can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
-##### 6.1.2.5 Risks related to User tracking
+##### 6.1.2.5 Risks and mitigation measures related to User tracking
 
 The privacy of Users is a major concern in the design and implementation of the EUDI Wallet ecosystem. Attributes are presented in the form of electronic attestations of attributes complying with the format specified in either [ISO/IEC 18013-5] or [SD-JWT VC]. A property of such attestation is that they contain a number of elements with a unique and fixed value, such as salts, hashes, public keys, and signature values. By storing and comparing these values across many transactions, malicious Relying Parties would be able to find matching values. They would then conclude that the same User was involved in these transactions. This could be done within one Relying Party, but also between multiple colluding Relying Parties. This form of tracking is called Relying Party linkability.
 
@@ -1009,7 +1013,7 @@ Regarding the mitigation of these risks:
 
 Additional risks of User tracking may arise from the communication protocols used between Wallet Units and Relying Party Instances, such as HTTP, TLS, NFC, or BLE. If not properly used, these protocols could use fixed identifiers and other values, which would allow Relying Parties to track Users. Typically, these communication protocols are handled by the OS of the User device. These risks are therefore out of scope of this ARF and will be dealt with in the Wallet Solution certification process.
 
-#### 6.1.4 Other trust relations
+#### 6.1.3 Other trust relations
 
 Besides the trust relationships described in this chapter, other trust relations are established as well. For instance, Users, PID Providers, Attestation Providers, and Relying Parties trust certification bodies and Trusted List Providers. This trust is primarily rooted in authority and in procedural measures, such as public oversight, published security and operational policies, and audits, rather than in technical measures. To verify that parties are indeed interacting with a trusted authority, standard technical measures suitable for the context will be used.
 
@@ -1070,9 +1074,9 @@ When a PID Provider or Attestation Provider is registered by a Member State, a P
 
 Subsequently, the Access Certificate Authority is included in a PID Provider Access CA Trusted List or Attestation Provider Access CA Trusted List. This Trusted List contains at least the trust anchor(s) of the CA. A Wallet Unit can use these trust anchors to verify the authenticity of a PID Provider or an Attestation Provider access certificate during the issuance of a PID or an attestation. For more information, see [Topic 31].
 
-Note that, in case the subject is an Attestation Provider, the access certificate does not contain further information about its authorization or registration to issue attestations of a specific type, for instance an mDL or diploma. Authorization is dealt with in the following manner:
+Note that, in case the subject is an Attestation Provider, the access certificate does not contain further information about its authorisation or registration to issue attestations of a specific type, for instance an mDL or diploma. Authorisation is dealt with in the following manner:
 
-- For QEAA Providers and Pub-EAA Providers, no authorization is necessary, since these kinds of Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations that they are not legally allowed to issue. This trust is warranted since these kinds of Providers operate within a regulated framework and are regularly audited.
+- For QEAA Providers and Pub-EAA Providers, no authorisation is necessary, since these kinds of Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations that they are not legally allowed to issue. This trust is warranted since these kinds of Providers operate within a regulated framework and are regularly audited.
 
 - For non-qualified EAA Providers, this is different, since they are unregulated and may not be completely trustworthy. Without additional measures, a fraudulent EAA Provider may be technically able to issue types of QEAAs, PuB-EAAs or EAAs that it is not legally allowed to issue. To prevent this, the applicable Rulebook (see [Topic 12]) may define mechanisms allowing a Wallet Unit, during issuance of an EAA, to verify that the EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. The same mechanism may also be used by Relying Parties during presentation of an EAA.
 
@@ -1682,7 +1686,7 @@ When adding issues to the Github repository, please follow these general guideli
 | Errors and Corrections | Identify errors such as typos, grammatical mistakes, or factual inaccuracies within the document and suggest corrections. |
 | Compatibility and Integration | Issues related to how the document integrates with other systems or technologies, ensuring compatibility with different platforms or frameworks. |
 | Enhancement Requests | Request new features, sections, or content to be added to the document to improve its usefulness or relevance. |
-| Formatting and Styling | Feedback regarding the visual appearance, organization, and consistency of formatting within the document. |
+| Formatting and Styling | Feedback regarding the visual appearance, organisation, and consistency of formatting within the document. |
 | Documentation Standards | Discussions around adhering to documentation standards, conventions, or guidelines. |
 | Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and Users. |
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
@@ -1816,7 +1820,7 @@ For undated references, the latest version available applies.
 
 - Annex 4 - Service Blueprints <span id="annex-4"><span>
 
-    - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialization and activation
+    - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialisation and activation
 
     - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf) - Blueprint Online identification and authentication
 
