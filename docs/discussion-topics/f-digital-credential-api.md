@@ -95,9 +95,11 @@ fact.
 
 This document is structured as follows:
 
-- Chapter 2 introduces Digital Credentials API
-- Chapter 3 proposes High Level Requirements
-- Chapter 4 discusses potential changes to the ARF
+- Chapter 2 introduces the Digital Credentials API
+- Chapter 3 presents the functionality expected by the Digital Credentials API and discusses existing ARF
+requirements in the context of the  Digital Credentials API. 
+- Chapter 4 lists the additions and changes that will be made to the ARF 
+as a result of discussing this topic with Member States.
 
 ## 2. Digital Credentials API
 
