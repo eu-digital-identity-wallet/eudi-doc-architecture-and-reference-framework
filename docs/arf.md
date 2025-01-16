@@ -532,20 +532,17 @@ challenges due to inconsistent invocation methods. One approach considered by
 standardization bodies involves using custom URI schemes, such as "mdoc://" or
 "openid4vp://". In this approach, the mobile operating system would trigger the
 Wallet Unit when the Relying Party Instance requests a connection via a custom
-URI. However, relying on custom URI schemes introduces variability in User
+URI. Another approach is the use of domain-bound universal links (a.k.a. app links). However, relying on custom URI schemes or universal links introduces variability in User
 experiences across different browsers and operating systems, resulting in
-operational inefficiencies and potential security risks. To address these
-issues, W3C has proposed the [Digital Credentials API] to unify interaction
-mechanisms across platforms. This solution enhances usability, scalability, and
-security while providing a consistent and reliable User experience.
-4. **Clear Origin Verification**: Protecting against relay attacks requires precise
+operational inefficiencies and potential security risks.
+1. **Clear Origin Verification**: Protecting against relay attacks requires precise
 identification of the Relying Party Instance's origin. Including the origin
 information, such as the website domain or app package name, within the
 presentation request ensures the authenticity of the request and enhances trust
 for both Wallet Units and Users.
 
 The next sections describe how these challenges can be solved for both same-device
-and cross-device remote presentation flows.
+and cross-device remote presentation flows, by using the W3C Digital Credentials API. Note that requirements for Wallet Units and Relying Party Instances to use this browser API for remote presentation flows will be further discussed with Member States for ARF 2.0.
 
 #### 4.4.3.2 Same-device remote presentation flows and inter-app presentation flows
 
@@ -560,13 +557,13 @@ the browser on the User device and the relevant interfaces of this browser:
 
 - The **Remote same-device presentation** interface establishes communication
 between the web browser and a remote Relying Party Instance, which may operate
-on a server managed by the Relying Party.  This interface complies with the
+on a server managed by the Relying Party. This interface complies with the
 [Digital Credentials API], which is a browser API that is currently being
-standardized within the W3C. Additionally OpenID Foundation is standardazing an
+standardized within the W3C. Additionally, OpenID Foundation is standardazing an
 OpenID4VP profile for the W3C Digityal Credentials API, that defines how
-OpenID4VP shall be used over the Digital Credentials API.
+OpenID4VP will be used over the Digital Credentials API.
 - The **WI-platform API** interface is an inter-app API that implements the
-Digital Credentials API mechanism at OS level There are however no current plans
+Digital Credentials API mechanism at OS level. There are however no current plans
 to standardize this interface on the level of the API calls. These calls will be
 specified in the developer documentation for the respective OS. One of the key
 elements of this API is that Wallet Unit receives reliable information regarding
@@ -574,7 +571,7 @@ the origin of the presentation request.
 - Obviously, the browser also has a User interface allowing the User to interact
 with it. This interface will not be standardised in the context of the EUDI
 Wallet ecosystem.
-  
+
 A remote same-device attribute presentation flow begins when the User uses the
 browser on their User device to visit the website of the Relying Party. The
 website may offer the User the possibility to present attributes from their
@@ -582,11 +579,11 @@ Wallet Unit, for example by clicking a button. If the User does so, the browser
 will ask the User for permission to connect to the Wallet Unit. If the User
 allows this, the Relying Party Instance sends an OpenID4VP-compliant
 presentation request to the browser over the Digital Credentials API. The
-web browser, in collaboration with the device OS, forwards this request to the
-Wallet Unit, using the WI-platform API described above. If there are multiple
-Wallet Units present on the User device, the browser and the device OS will
+browser, in collaboration with the device OS, forwards this request to the
+Wallet Instance, using the WI-platform API described above. If there are multiple
+Wallet Instances present on the User device, the browser and the device OS will
 determine to which of these the request will be forwarded, possibly after
-consulting the User. The Wallet Instance will process the presentation request
+consulting the User. The selected Wallet Unit will process the presentation request
 and, after requesting approval from the User, will return the requested
 attributes in encrypted format to the browser. The browser will forward the
 response to the remote Relying Party Instance.
@@ -595,7 +592,7 @@ Figure 4 also shows an inter-app attribute presentation flow. In such a flow, a
 mobile app on the User device, for example a banking app or shopping app, acts
 as the Relying Party Instance. The mobile app may use the User attributes
 received from the Wallet Unit for instance to authenticate the User or to fill
-out User data, such as name and address, automatically.
+out User data, such as name and address, automatically. 
 
 In such a use case, the attribute presentation flow begins when the User opens
 the mobile app and instructs it to request attributes from the Wallet Unit over
@@ -625,9 +622,9 @@ flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO
 Passkeys. This is done as follows:
 
  1. The browser presents a QR code that includes information about the tunnel
- endpoint and keys that will be used for establishing a secure channel over this
+ endpoint, as well as keys that will be used for establishing a secure channel over this
  tunnel.
- 2. The user scans the QR code using the camera on the User device.
+ 2. The User scans the QR code using the camera on the User device.
  3. The User device emits a BLE advertisement, which is received by the browser.
  The advertisement includes, in an encrypted form, information required for
  establishing the secure tunnel. This advertisement is used as a proximity
@@ -636,12 +633,11 @@ Passkeys. This is done as follows:
  4. A tunnel is established between the two devices.
   
 The browser then sends the OpenID4VP-compliant presentation request to the User
-device. If there are multiple Wallet Units present on the User device, the
+device. If there are multiple Wallet Instances present on the User device, the
 device OS will determine to which of these the request will be forwarded,
-possibly after consulting the User. The Wallet Instance will process the
+possibly after consulting the User. The selected Wallet Unit will process the
 presentation request and, after requesting approval from the User, will return
-the requested attributes in encrypted format to the browser. The browser will
-forward the response to the remote Relying Party Instance.
+the requested attributes in encrypted format to the browser, using the established tunnel. The browser will forward the response to the remote Relying Party Instance.
 
 Note that the Wallet Instance does not see any difference between the
 cross-device flow and same-device flow. In both cases, it receives an
@@ -652,7 +648,7 @@ the previous section.
 
 #### 4.5.1 Introduction
 
-Figure 2 showed four different types of architecture for the WSCD.
+Figure 2 showed four different types of architecture for the WSCD, which are:
 
 - Remote WSCD
 - Local external WSCD
@@ -660,8 +656,7 @@ Figure 2 showed four different types of architecture for the WSCD.
 - Local native WSCD
 
 In addition, this section also describes a hybrid architecture. Within the EUDI
-Wallet ecosystem, a Wallet Provider is allowed to use any of these
-architectures.
+Wallet ecosystem, a Wallet Provider is allowed to use any of these architectures.
 
 Note that, regardless of the architecture used, the Wallet Provider is responsible for ensuring that the Wallet Instance can access a WSCD that has a level of security sufficient to ensure that the Wallet Unit can achieve Level of Assurance "high", as required in the Regulation. The Wallet Provider remains responsible for managing cyrptographic keys on the WSCD (through the WSCA) throughout the lifetime of the Wallet Unit. The Wallet Provider is also responsible for attesting the properties of the WSCD (including relevant certifications) in the Wallet Unit Attestation, see [Section 6.5.3](#653-wallet-unit-activation).
 
@@ -705,7 +700,7 @@ Provider may need to connect to and colloborate with other entities, such as a
 Trusted Service Manager employed by the owner of the WSCD.
 
 The Wallet Provider is responsible for verifying that the local internal WSCD is
-compliant with all requirements in the ARF, prior to activating a Wallet Unit
+compliant with all applicable requirements, prior to activating a Wallet Unit
 using such a WSCD.
 
 #### 4.5.5 Local native WSCD
@@ -716,7 +711,7 @@ Therefore, no separate WSCA is necessary. Alternatively, the API offered by the
 OS may be viewed as the WSCA.
 
 The Wallet Provider is responsible for verifying that the local native WSCD is
-compliant with all requirements in the ARF, prior to activating a Wallet Unit
+compliant with all applicable requirements, prior to activating a Wallet Unit
 using such a WSCD.
 
 #### 4.5.6 Hybrid architecture
@@ -743,7 +738,7 @@ shows the states of the Wallet Solution:
 
 Figure 6: State diagram of Wallet Solution
 
-The **Candidate** state is the first state of an Wallet Solution. This means it
+The **Candidate** state is the first state of a Wallet Solution. This means it
 is fully implemented and the Wallet Provider requests the solution to be
 certified as a Wallet Solution as part of an EUDI Wallet eID scheme.
 
@@ -1142,7 +1137,7 @@ De-registration involves revocation of all valid Relying Party Instance access c
 
 ##### 6.5.2.1 Required trust relationships
 
-The lifecycle of a Wallet Unit starts when a User decides to install an Wallet Instance application on their device. This application in an instance of a Wallet Solution, which is provided to the User by a Wallet Provider.
+The lifecycle of a Wallet Unit starts when a User decides to install a Wallet Instance application on their device. This application in an instance of a Wallet Solution, which is provided to the User by a Wallet Provider.
 
 When downloading and installing the Wallet Instance, the following trust relationships are established:
 
@@ -1264,7 +1259,7 @@ If the User uninstalls the Wallet Instance, the Wallet Instance ensures that the
 
 #### 6.6.1 PID or attestation lifecycle
 
-[Section 4.6.5](#465-pid-or-attestation) above presented the lifecycle of a PID or attestation within an Wallet Unit:
+[Section 4.6.5](#465-pid-or-attestation) above presented the lifecycle of a PID or attestation within a Wallet Unit:
 
 1. Using their Wallet Unit, the User requests the issuance of a PID or an attestation from a PID Provider or an Attestation Provider. The required trust relationships for issuance are discussed in [Section 6.6.2](#662-pid-or-attestation-issuance) below.
 2. Once the PID or attestation is issued into the Wallet Unit, the User can present attributes from it to a Relying Party Instance, according to the User's decision and depending on successful authentication of the Relying Party. The required trust relationships for presenting PIDs and attestations, including User approval and Relying Party authentication, are discussed in [Section 6.6.3](#663-pid-or-attestation-presentation-to-relying-party).
@@ -1313,7 +1308,7 @@ The WUA describes relevant features of the Wallet Unit, as well as the device it
 
 **Optionally, validates the properties of the WSCD**
 
-The WUA describes the certifications and the other relevant properties of the WSCD, i.e., the secure cryptographic device included in the Wallet Unit to store and manage cryptographic keys. The security level of the WSCD is a key determinant for the overall Level of Assurance (LoA) of the Wallet Unit. For obtaining a PID, the Wallet Unit and the WSCD will need to comply with the requirements for LoA High. For other attestations, LoA High or Substantial will be needed, depending on the requirements of the Attestation Provider.
+The WUA describes the certifications and the other relevant properties of the WSCD, i.e., the secure cryptographic device included in the Wallet Unit to store and manage cryptographic keys. The security level of the WSCD is a key determinant for the overall Level of Assurance (LoA) of the Wallet Unit. For obtaining a PID, the Wallet Unit and the WSCD will comply with the requirements for LoA High. For other attestations, LoA High or Substantial will be needed, depending on the requirements of the Attestation Provider.
 
 **Verifies that the PID key or the attestation key is protected by the WSCD**
 
@@ -1424,7 +1419,7 @@ For more details on the embedded disclosure policy, see [Topic 43]. This topic w
 
 ##### 6.6.3.5 Wallet Unit obtains User approval for presenting selected attributes
 
-**Note: In this document the term 'User approval' exclusively refers to a User's decision to present an attribute to a Relying Party. Under no circumstances User approval to present data from their Wallet Unit should be construed as lawful grounds for the processing of personal data by the Relying Party or any other party. A Relying Party requesting or processing personal data from an Wallet Unit must ensure that it has grounds for lawful processing of that data, according to Article 6 of the GDPR.**
+**Note: In this document the term 'User approval' exclusively refers to a User's decision to present an attribute to a Relying Party. Under no circumstances User approval to present data from their Wallet Unit should be construed as lawful grounds for the processing of personal data by the Relying Party or any other party. A Relying Party requesting or processing personal data from a Wallet Unit must ensure that it has grounds for lawful processing of that data, according to Article 6 of the GDPR.**
 
 Before presenting any attribute to a Relying Party, the Wallet Unit requests the User for their approval. This is critical for ensuring that the User remains in control of their attributes.
 
@@ -1452,7 +1447,7 @@ The Relying Party Instance receives a PID or attestation, including some attribu
 
 For PuB-EAAs, the Relying Party Instance verifies a PuB-EAA by first verifying the signature of the PuB-EAA Provider over the PuB-EAA, using the PuB-EAA Provider certificate issued by a QTSP. Subsequently, the Relying Party Instance verifies the signature over this certificate, using the corresponding trust anchor from the QTSP Trusted List. Note that both the PuB-EAA Provider and the QTSP may use an intermediate signing certificate. All other things being equal, the verification of a PuB-EAA will therefore involve one or more extra certificates, compared to the verification of a PID or QEAA.
 
-Finally, for non-qualified EAAs, the applicable Rulebook may describe how the Relying Party Instance should obtain the relevant trust anchor.
+Finally, for non-qualified EAAs, the applicable Rulebook may describe how the Relying Party Instance obtains the relevant trust anchor.
 
 The above implies that a Relying Party Instance is aware whether the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. Also, the Relying Party Instance stores trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs.
 
