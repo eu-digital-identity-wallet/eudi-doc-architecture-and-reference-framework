@@ -346,10 +346,11 @@ be encrypted in such a way that only the Relaying Party is able to decrypt it.
 
 #### REQUIREMENT 2
 A Wallet Unit SHALL not disclose the values of the attributes of stored attestations 
-to third parties, including the operating system. This restriction applies even if 
-such disclosure enhances the usability of services provided by the operating 
-system or browsers (for example, attestation selection in the context of the Credential 
-API). 
+to third parties, including the operating system, by any means other than the 
+presentation protocols specified in the Implementing Acts. This restriction 
+applies even if such disclosure enhances the usability of services provided 
+by the operating system or browsers (for example, attestation selection in 
+the context of the Credential API) 
 
 ### 4.2 High-Level Requirements to be changed
 #### RP_01
