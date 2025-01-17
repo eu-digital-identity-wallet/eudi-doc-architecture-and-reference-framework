@@ -6,7 +6,7 @@
 ### 1.1 Context
 
 On 3 June 2021, the European Commission adopted a Recommendation ([COMMISSION
-RECOMMENDATION (EU) 2021/946 of 3 June 2021 on a common Union Toolbox for a
+RECOMMENDATION (EU) 2021/946 of 3 June 2021 on a [common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox) for a
 coordinated approach towards a European Digital Identity
 Framework](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2021.210.01.0051.01.ENG),
 [OJ L 210/51, 14.6.2021](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AL%3A2021%3A210%3AFULL))
@@ -22,11 +22,19 @@ the legislative process.
 
 The Recommendation sets up a structured process of cooperation between Member
 States, the Commission and, where relevant, private sector operators, to develop
-the Toolbox. The eIDAS Expert Group is tasked as main interlocutor for the
-purposes of implementing this Recommendation. The Expert Group's page can be
-found [at the official page](https://ec.europa.eu/transparency/expert-groups-register/screen/expert%20groups/consult?do=groupDetail.groupDetail&groupID=3032).
+the Toolbox. The European Digital Identity Cooperation Group to:
 
-The eIDAS Expert Group has since further developed the concepts and
+- exchanging best practices and cooperating with the Commission on emerging
+policy initiatives in the field of digital identity wallets, electronic
+identification means and trust services;
+- advising the Commission in the preparation of draft implementing and delegated acts;
+- supporting supervisory bodies in the implementation of the EUDI Regulation;
+- organising peer reviews of electronic identification schemes;
+- engaging with the Commission and other relevant stakeholders to develop a [common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox);
+
+The European Digital Identity Cooperation Group's page can be found [at the official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
+
+The European Digital Identity Cooperation Group has since further developed the concepts and
 specifications for the European Digital Identity Framework. The current ARF
 version 1.5.0 is based on the legal text adopted by the co-legislators,
 including the adopted Commission Implementing Regulations.
@@ -89,7 +97,9 @@ meaningful interactions under the proposed use cases.
 
 ### 1.4 Definitions
 
-The definitions used in this document are added in Annex 1 of this document. In Annex 1 there are two tables:
+The definitions used in this document are reported in **Annex 1** of this document.
+
+In Annex 1 there are two tables:
 
 - **Table 1** includes definitions cited from the [eIDAS 2.0] Regulation,
 - **Table 2** includes technical definitions that are used in the ARF. in some
@@ -130,13 +140,9 @@ and User consent.
 The eIDAS Expert Group has described service blueprints for the following use cases:
 
 - Identification and authentication to access online services, see [Section 2.2](#22-identification-and-authentication-to-access-online-services)
-
 - Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature)
-
 - Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence)
-
 - Pseudonyms, see [Section 2.5](#25-pseudonyms).
-
 - Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.6](#26-other-use-cases).
 
 ### 2.2 Identification and authentication to access online services
@@ -822,7 +828,7 @@ for both Wallet Units and Users.
 The next sections describe how these challenges can be solved for both same-device
 and cross-device remote presentation flows.
 
-#### 4.4.3.2 Same-device remote presentation flows 
+#### 4.4.3.2 Same-device remote presentation flows
 
 ![Figure 4](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 Figure 4: Remote same-device presentations
@@ -848,7 +854,6 @@ the origin of the presentation request.
 Obviously, the browser also has a User interface allowing the User to interact
 with it. This interface will not be standardised in the context of the EUDI
 Wallet ecosystem.
-
 
 A remote same-device attribute presentation flow begins when the User accesses
 the Relying Party's website using a browser on their device. The website may
