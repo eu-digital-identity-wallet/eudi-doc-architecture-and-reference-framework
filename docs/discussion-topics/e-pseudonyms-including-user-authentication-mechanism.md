@@ -9,9 +9,11 @@ The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 *High-level requirements for pseudonyms in the ARF need to be further detailed, including
 specifying the use cases where pseudonyms should be applied.*
 
-### 1.3 Key Words
+### 1.2 Key Words
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as specified in [RFC 2119], i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalized) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.
 
-### 1.4 Document Structure
+### 1.3 Document Structure
 
 ## 2 Legal Requirements for Pseudonyms
 
