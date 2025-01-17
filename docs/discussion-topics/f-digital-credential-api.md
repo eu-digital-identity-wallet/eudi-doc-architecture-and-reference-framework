@@ -128,7 +128,9 @@ or "openid4vp://". In this approach, the mobile operating system would trigger t
 when the Relying Party Instance requests a connection via a custom URI. However, relying on custom 
 URI schemes introduces variability in user experiences across different browsers and operating systems, 
 resulting in operational inefficiencies and potential security risks. 
-- **4. Session binding**: When presenting a PID or attestation to a remote Relaying Party,
+- **4. Clear Origin Verification**: Protecting against relay attacks requires precise 
+identification of the Relying Party Instance's origin.
+- **5. Session binding**: When presenting a PID or attestation to a remote Relaying Party,
 users have to switch contexts. Existing protocols may enable attacks where the contexts are not
 "bound" to each other resulting in session "hijacking".
 
@@ -159,8 +161,11 @@ proximity checks for cross-device requests
 provided by the web browser and the mobile operating system, which can streamline this 
 process, offering a seamless and intuitive user experience.
 - **3. Invocation Mechanism**: The Digital Credentials API removes the need for custom URL schemes 
-for invoking a Wallet Unit
-- **4. Session binding**: The Digital Credentials API allows information about a session
+for invoking a Wallet Unit.
+- **4. Clear Origin Verification**: The Digital Credential API enables including the origin 
+information, such as the website domain or app package name, within the presentation request 
+ensuring the authenticity of the request and enhancing trust for both Wallet Units and Users.
+- **5. Session binding**: The Digital Credentials API allows information about a session
 to be embedded in a presentation request. At the same time the browser and the operating
 system handle context switching preventing session hijacking. 
 
