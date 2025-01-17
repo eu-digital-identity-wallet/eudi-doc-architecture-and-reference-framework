@@ -214,7 +214,8 @@ implemented using the following steps:
 - The browser presents to the User a selector that includes a list of potentially suitable attestations.
 ![Attestation selection](img/same-select.png)
 - The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data
-- The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents
+- The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested 
+attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents
 
 #### 2.2.2 Cross-device flow
 
@@ -225,7 +226,8 @@ The cross-device flow is implemented using the following steps:
 ![Website authorization in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by 
 creating a `presentation request`.
-- The browser uses CTAP 2.2 hybrid flow (section 11.5 of \[Ctap\]) to establish a tunnel between the browser and the device where the Wallet Unit is installed (this is the same flow used by Passkey). 
+- The browser uses CTAP 2.2 hybrid flow (section 11.5 of \[Ctap\]) to establish a tunnel between the 
+browser and the device where the Wallet Unit is installed (this is the same flow used by Passkey). 
 From a high level this is implemented as follows: (i) The browser presents a QR code which 
 includes information about the tunnel endpoint and keys that can be used for establishing 
 a secure session, (ii) the user scans the QR code using the device camera, (iii) the device 
@@ -271,10 +273,10 @@ workflow for presenting attributes stored in a Wallet Unit.
 2. **Relying Party Authentication**: Wallets are responsible for authenticating verifiers before delivering 
 attribute payloads. The Digital Credentials API should provide sufficient information to Wallet Units about the
 presentation request origin and other necessary context information, allowing Wallet Units to 
-identity and authenticate Relaying Parties, as well as to verify that the request from the Relying Party 
+identify and authenticate Relaying Parties, as well as to verify that the request from the Relying Party 
 was not copied and replayed.
 
-3. **Relaying Party Authorization**: Although browsers and operating system implementing
+3. **Relaying Party Authorization**: Although browsers and operating systems implementing
 the Digital Credentials API should verify the web origin of Relying Parties, as well as that
 the presentation requests are transferred over TLS from the Relaying Party to the browser,
 they should not decide which verifiers are authorized to request attributes as this responsibility
@@ -297,7 +299,8 @@ to the format of attestations to be used. For example, if a "Registry of Protoco
 Requesting Digital Credentials" is utilized, adding or removing protocols to the registry should
 follow established criteria involving multiple stakeholders and should not be determined by a single entity.
 
-2. **Cross-platform interoperability**. The use of the Digital Credentials API should provide  cross-platform interoperability, ensuring users are not locked into a specific vendor's browser or operating system.
+2. **Cross-platform interoperability**. The use of the Digital Credentials API should provide  cross-platform 
+interoperability, ensuring users are not locked into a specific vendor's browser or operating system.
 
 3. **Wallet Solution neutrality**.  Any approved EUDI Wallet Solutions should be able to use Digital Credentials API
 (e.g., without requiring additional vendor vetting process or imposing constraints on 
@@ -360,12 +363,14 @@ by the operating system or browsers (for example, attestation selection in
 the context of the Credential API) 
 
 ### 4.2 High-Level Requirements to be changed
-#### RP_01
-The following text will be appended to RPA\_01 "The Wallet Unit SHALL not delegate 
-this process to any third party, including the browser and the operating system."
-#### RP_07
-The following text will be appended to RPA\_07 "The Wallet Unit SHALL not delegate 
-this process to any third party, including the browser and the operating system."
+#### RPA_01
+The following text will be appended to RPA\_01 "The Wallet Unit SHALL retain full authority over 
+this process, for example, this process SHALL NOT be handled by a third party, including the 
+browser and the operating system."
+#### RPA_07
+The following text will be appended to RPA\_07 "The Wallet Unit SHALL retain full authority over 
+this process, for example, this process SHALL NOT be handled by a third party, including the 
+browser and the operating system."
 
 
 
