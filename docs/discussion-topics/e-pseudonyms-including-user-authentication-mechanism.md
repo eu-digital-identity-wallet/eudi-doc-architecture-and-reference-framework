@@ -45,8 +45,7 @@ Below are the actual excerpts from the law including the recitals that establish
 
 *... 4.  European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to:\
 ...\
-(b)\
-generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet;\
+(b) generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet;\
 ...*
 
 **Article 5b European Digital Identity Wallet-Relying Parties**
@@ -64,8 +63,7 @@ managed pseudonyms, to authenticate when accessing online services. The implemen
 **Article 14**
 
 *1. Wallet units shall support the generation of pseudonyms for wallet users in compliance with the technical specifications set out in Annex V.\
-2. Wallet units shall support the generation, upon the request of a wallet-relying party, of a pseudonym which is specific and unique to that wallet-relying party and provide this pseudonym to the wallet-relying party, either standalone or in combination with any person identification data or electronic attribute attestation requested by that wallet-relying party.\
-*
+2. Wallet units shall support the generation, upon the request of a wallet-relying party, of a pseudonym which is specific and unique to that wallet-relying party and provide this pseudonym to the wallet-relying party, either standalone or in combination with any person identification data or electronic attribute attestation requested by that wallet-relying party.*
 
 **Annex V:**
 *TECHNICAL SPECIFICATIONS FOR PSEUDONYM GENERATION REFERRED TO IN ARTICLE 14\
