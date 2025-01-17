@@ -128,6 +128,10 @@ or "openid4vp://". In this approach, the mobile operating system would trigger t
 when the Relying Party Instance requests a connection via a custom URI. However, relying on custom 
 URI schemes introduces variability in user experiences across different browsers and operating systems, 
 resulting in operational inefficiencies and potential security risks. 
+- **4. Session binding**: When presenting a PID or attestation to a remote Relaying Party,
+users have to switch contexts. Existing protocols may enable attacks where the contexts are not
+"bound" to each other resulting in session "hijacking".
+
 
 ### Proposed solution
 Digital Credentials API \[Cred_API\] is a possible solution to the identified 
@@ -149,19 +153,22 @@ but in proximity (cross-device flow).
 The Digital Credentials API can address the challenges related to remote presentation
 flows as follows:
 
-- **1. Secure Cross-Device Flows**: Credential API enables  a secure transport with 
+- **1. Secure Cross-Device Flows**: The Digital Credentials API enables  a secure transport with 
 proximity checks for cross-device requests
-- **2. Wallet Unit Selection and Invocation**: Credential API enables a unified interface 
+- **2. Wallet Unit Selection and Invocation**: The Digital Credentials API enables a unified interface 
 provided by the web browser and the mobile operating system, which can streamline this 
 process, offering a seamless and intuitive user experience.
-- **3. Invocation Mechanism**: Credential API removes the need for custom URL schemes 
+- **3. Invocation Mechanism**: The Digital Credentials API removes the need for custom URL schemes 
 for invoking a Wallet Unit
+- **4. Session binding**: The Digital Credentials API allows information about a session
+to be embedded in a presentation request. At the same time the browser and the operating
+system handle context switching preventing session hijacking. 
 
 
 
 ### 2.2 Relying Party - Wallet Unit interaction
 
-Using the Digital Credential API, a Relying Party can interact with a Wallet
+Using the Digital Credentials API, a Relying Party can interact with a Wallet
 Unit using a website and through a browser.
 
 The current version of Digital Credentials API extends Credential Management
