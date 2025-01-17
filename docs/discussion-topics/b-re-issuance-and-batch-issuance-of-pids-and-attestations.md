@@ -46,7 +46,8 @@ intended as statements of fact.
 ### 1.4 Definitions
 For the purpose of this document, the following definitions apply:
 
-- *Administrative validity of a document*: the date up to which the attributes of the document are valid, which is represented as one of the attributes in the document. 
+- *Administrative validity of a document*: the date up to which the attributes of 
+the document are valid, which is represented as one of the attributes in the document. 
 > Note: some documents do not have an administrative validity date (e.g., a diploma). 
 
 - *Technical validity of attestation*: the date upon which the attestation is valid.
@@ -563,135 +564,22 @@ Regulation (EU) 2015/1502 section 2.2.1.
 
 Extend DASH\_02 to include re-issuance transactions
 
-#### 5.2.1 Topic 10/23
 
-<table>
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 38%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th>Requirement</th>
-<th>Valid for re-issuance of PID or attestation?</th>
-<th>Valid for a PID or attestation issued as part of a batch?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-</tbody>
-</table>
-
-#### 5.2.2 Topic 9
-
-<table>
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 38%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th>Requirement</th>
-<th>Valid for re-issuance of PID or attestation?</th>
-<th>Valid for a PID or attestation issued as part of a batch?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-</tbody>
-</table>
 
 ### 5.3 Descriptions to be added to the ARF main document
 
 A summary of the descriptions in chapters 2, 3, and 4 will be added to
 the ARF main document, version 1.8.
 
-Rulebooks will be modified to include indications of support for re-issuance and batch issuance. 
 
 ## 6 References
+| Reference | Description |
+| --- | --- |
+| [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
+| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft |
+| [ISO18013] | ISO/IEC 18013-5, Personal identification — ISO-compliant driving licence — Part 5: Mobile driving licence (mDL) application, First edition, 2021-09 |
+| [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC) draft-terbu-sd-jwt-vc-06, O. Terbu *et al.*, 13 November 2024, draft |
+| [OpenID4VCI] | Lodderstedt, T. *et al.*, "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available at : https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html|
+| [RFC 9449] | OAuth 2.0 Demonstrating Proof of Possession (DPoP), D. Fett *et al*., September 2023 |
+| [Topic A] | Topic A: Privacy risks and mitigations - eIDAS Cooperation Group Discussion Paper |
 
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr>
-<th>Reference</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[RiskRegister]</td>
-<td>Annex 1 to the Commission Implementing Regulation laying down rules
-for the application of Regulation (EU) No 910/2014 of the European
-Parliament and of the Council as regards the certification of the
-European Digital Identity Wallets, European Commission, October 2024,
-draft</td>
-</tr>
-<tr>
-<td>[ARF_DevPlan]</td>
-<td>Architecture and Reference Framework Development plan 2025, European
-Commission, v0.91, final draft</td>
-</tr>
-<tr>
-<td>[ISO18013-5]</td>
-<td>ISO/IEC 18013-5, Personal identification — ISO-compliant driving
-licence — Part 5: Mobile driving licence (mDL) application, First
-edition, 2021-09</td>
-</tr>
-<tr>
-<td>[SD-JWT VC]</td>
-<td>SD-JWT-based Verifiable Credentials (SD-JWT VC)
-draft-terbu-sd-jwt-vc-06, O. Terbu <em>et al.,</em> 13 November 2024,
-draft</td>
-</tr>
-<tr>
-<td>[OpenID4VCI]</td>
-<td> Lodderstedt, T. <em>et al.</em>, "OpenID for Verifiable Credential
-Issuance", OpenID Foundation. Available:
-&lt;<u>https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html</u>&gt;</td>
-</tr>
-<tr>
-<td>[RFC 9449]</td>
-<td>OAuth 2.0 Demonstrating Proof of Possession (DPoP), D. Fett <em>et
-al</em>., September 2023</td>
-</tr>
-<tr>
-<td>[Topic A]</td>
-<td>Topic A: Privacy risks and mitigations - eIDAS Cooperation Group
-Discussion Paper</td>
-</tr>
-</tbody>
-</table>
