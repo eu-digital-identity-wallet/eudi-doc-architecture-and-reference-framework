@@ -3,6 +3,12 @@
 ## 1 Introduction 
 
 ### 1.1 Discussion Paper Topic Description 
+This document is the Discussion Paper for eIDAS Coordination Group regarding Topic E: Pseudonyms, including User authentication mechanism.
+The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
+
+*High-level requirements for pseudonyms in the ARF need to be further detailed, including
+specifying the use cases where pseudonyms should be applied.*
+
 
 ### 1.2 Legal Requirements for Pseudonyms
 
