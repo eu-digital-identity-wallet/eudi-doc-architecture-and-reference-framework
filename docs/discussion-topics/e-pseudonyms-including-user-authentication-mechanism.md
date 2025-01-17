@@ -45,17 +45,13 @@ Below are the actual excerpts from the law including the recitals that establish
 
 *... 4.  European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to:\
 ...\
-(b)\ 
+(b)\
 generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet;\
-...\
-*
+...*
 
 **Article 5b European Digital Identity Wallet-Relying Parties**
 
-*9. ... \
-\
-Relying parties shall not refuse the use of pseudonyms, where the identification of the user is not required by Union or national law.\
-...*
+*9. ... Relying parties shall not refuse the use of pseudonyms, where the identification of the user is not required by Union or national law. ...*
 
 
 #### 1.2.2 [CIR.2024.2979] about Pseudonyms 
