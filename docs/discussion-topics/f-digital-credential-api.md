@@ -367,7 +367,10 @@ applies even if such disclosure enhances the usability of services provided
 by the operating system or browsers (for example, attestation selection in 
 the context of the Credential API) 
 
-#### REQUIREMENT 3
+#### REQUIREMENT 3 (Conditional)
+Providing that the expectations set in chapter 3 are met, the following
+High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+
 Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
 presentation flows. 
 
