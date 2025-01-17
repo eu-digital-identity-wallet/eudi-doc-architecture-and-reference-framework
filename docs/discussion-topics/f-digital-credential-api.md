@@ -351,8 +351,8 @@ The following High-Level Requirements will be added to Annex 2 of the ARF v1.9:
 #### REQUIREMENT 1
 A Wallet Unit and a Relying Party receiving an attestation from the Wallet Unit
 SHOULD ensure that the attributes included in the presented attestation 
-are accessible only to the Relaying Party. For example, the presentation can 
-be encrypted in such a way that only the Relaying Party is able to decrypt it.
+are accessible only to the Relying Party. For example, the presentation can 
+be encrypted in such a way that only the Relying Party is able to decrypt it.
 
 #### REQUIREMENT 2
 A Wallet Unit SHALL not disclose the values of the attributes of stored attestations 
@@ -361,6 +361,10 @@ presentation protocols specified in the Implementing Acts. This restriction
 applies even if such disclosure enhances the usability of services provided 
 by the operating system or browsers (for example, attestation selection in 
 the context of the Credential API) 
+
+#### REQUIREMENT 3
+Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
+presentation flows. 
 
 ### 4.2 High-Level Requirements to be changed
 #### RPA_01
@@ -372,10 +376,6 @@ The following text will be appended to RPA\_07 "The Wallet Unit SHALL retain ful
 this process, for example, this process SHALL NOT be handled by a third party, including the 
 browser and the operating system."
 
-
-
-### 4.3 Descriptions to be added to the ARF main document
-A summary of the descriptions in chapters 2, and 3 will be added to the ARF main document, version 1.9
 
 ## 6 References
 
