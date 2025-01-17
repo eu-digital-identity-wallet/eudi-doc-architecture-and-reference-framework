@@ -70,8 +70,7 @@ managed pseudonyms, to authenticate when accessing online services. The implemen
 \
 Technical specifications:\
 \
-— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/.
-*
+— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/.*
 ### 1.3 Key Words
 
 ### 1.4 Document Structure
