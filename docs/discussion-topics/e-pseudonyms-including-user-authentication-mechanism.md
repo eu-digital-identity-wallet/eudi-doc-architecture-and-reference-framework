@@ -207,7 +207,15 @@ This is used to sign all attestations and a certificate on the public key is inc
 In Chapter 5.1, we discuss how this relates to previously identified privacy risks about linkability (see also Topic A).
 
 #### 4.2.2 Authentication
+The flow for authenticating using a passkey following [WebAuthN] is:
 
+1. The Relying Party Server creates a challenge and sends this along with information about the Relying Party to the Relying Party Client.
+2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
+3. The Client forwards the information to the Authenticator along with other contextual data.
+4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
+   It then prompts the user to select one of the passkeys scoped to this relying party. Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data.
+5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
+6. The Relying Party Server verifies the signature with its stored public key and depending on the outcome of this verification considers the user authenticated.
 
 
 ### 4.3 Challenges
