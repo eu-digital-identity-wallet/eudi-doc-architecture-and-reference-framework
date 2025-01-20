@@ -143,7 +143,7 @@ The technology underlying [WebAuthN] are commonly refereed to as passkeys.
 
 ### 4.1 Introduction to Passkeys
 Passkeys are to be seen as an alternative to passwords.
-The idea is that a user, when registering a user account at a service generates a public-private keypair, registers the public key at the service, and can then subsequently use the private key to authenticate towards the service at later points in time.
+The idea is that a user, when registering a user account at a service generates a public-private key pair, registers the public key at the service, and can then subsequently use the private key to authenticate towards the service at later points in time.
 In a bit more detail, the flow for using such passkeys follows the following blueprint.
 
 **Registration:**
@@ -176,18 +176,35 @@ Below we elaborate on how these different logical components works together to a
 #### 4.2.1 Registration
 The flow for registering a passkey in [WebAuthN] is the following:
 
-1. The Relying Party Server creates a challenge and sends this along with information about the user and the Relying Party to the Relying Party Client Client.
+1. The Relying Party Server creates a challenge and sends this along with information about the user and the Relying Party to the Relying Party Client.
 2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
 3. The Client forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair scoped to this specific Relying Party and an "attestation" (explained below). Finally, the public key of the key pair is sent to the Client
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the information and registers the received public key.
 
-Note that the term attestation is here used differently than elsewhere in the ARF.
-In this context the attestation is to ensure the Relying Party that they can trust talking with a proper Authenticator.
+Note that Authenticator stores the public key pair in a way such that it is scoped uniquely to a specific Relying Party aligning with the requirements of [CIR.2024.2979], Article 14 2, which states that the pseudonyms must be unique to each Relying Party.
+
+The term attestation is here used differently than elsewhere in the ARF.
+In this context the attestation is not about attributes of the user, but rather about attributes of the Authenticator and is to ensure the Relying Party that they are talking with an Authenticator with certain attributes.
+The attestation often takes the form of a signature on the challenge as well as some other contextual data.
+
 In [WebAuthN], four different types of attestations are mentioned:
 
-The Authenticator must store the public key pair in a way such that it is scoped uniquely to a specific Relying Party aligning with the requirements of [CIR.2024.2979] Article 14 2.
+- **Basic Attestation:** The Authenticator has single master public/private key stored.
+This is used to sign all attestations and a certificate on the public key is included in the attestation data to allow the Relying Party to verify the signature.
+
+- **Attestation CA:** Similar to the above in the sense that the Authenticator has a single master public/private key stored. However, instead of using this to attest pass keys, they use this to authenticate towards a Certificate Authority (CA), which is then configured to issue certificates to the Authenticator on multiple attestation key pairs.
+
+- **Anonymization CA:** Similar to the above except that it is explicit that the Authenticator requests a certificate for a new attestation key pair per generated passkey.
+
+- **Self Attestation:** The attestation is signed with the private key of the newly generated key pair.
+  Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
+
+- **No attestation statement:** No attestation is given.
+  Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
+
+In Chapter 5.1, we discuss how this relates to previously identified privacy risks about linkability (see also Topic A).
 
 #### 4.2.2 Authentication
 
@@ -196,7 +213,7 @@ The Authenticator must store the public key pair in a way such that it is scoped
 ### 4.3 Challenges
 
 - [WebAuthN] does not define an interface between the Authenticator and the Browser.
--
+- Attestations may be linkable (see also Topic A).
 
 ## 5 Relation to Other Topics
 
