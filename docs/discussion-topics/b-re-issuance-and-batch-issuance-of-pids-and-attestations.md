@@ -1,4 +1,4 @@
-Version 0.5, updated 8 January 2025
+Version 0.8, updated 20 January 2025
 
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
@@ -46,7 +46,8 @@ intended as statements of fact.
 ### 1.4 Definitions
 For the purpose of this document, the following definitions apply:
 
-- *Administrative validity of a document*: the date up to which the attributes of the document are valid, which is represented as one of the attributes in the document. 
+- *Administrative validity of a document*: the date up to which the attributes of 
+the document are valid, which is represented as one of the attributes in the document. 
 > Note: some documents do not have an administrative validity date (e.g., a diploma). 
 
 - *Technical validity of attestation*: the date upon which the attestation is valid.
@@ -210,9 +211,6 @@ Re-issuance of a PID or attestation for this reason will have an impact
 on the User, because they will notice that their attribute values have
 been changed. In this case Users should consent.
 
-Question
-
-1. What should happen if User does not consent?
 
 ### 3.4 Synchronous issuing
 
@@ -510,188 +508,54 @@ values that the Wallet Provider no longer wants to attest to.
 ### 5.1 High-Level Requirements to be added to Annex 2
 
 The following High-Level Requirements will be added to Annex 2 of the
-ARF v1.8:
+ARF v1.8.
 
-#### Requirement 1
-The Schema Provider for a PID or Attestation Rulebook SHALL indicate if the Attestation Provider SHALL
-support re-issuance  for a specific PID or attestation.
+#### 5.1.1 Requirements to be added (likely) to Topic 10/23
 
-#### Requirement 2
-The Schema Provider for a PID or Attestation Rulebook SHALL indicate if the Attestation Provider SHALL
-support batch issuance for a specific PID or attestation. 
+##### Requirement 1
+In case a PID Provider or Attestation Provider must change an attribute in an issued PID or 
+attestation, it SHALL revoke the PID or attestation and notify the User about this. The Wallet 
+Unit SHALL enable the User to request re-issuance of that PID or attestation.
 
-#### Requirement 3
-During first-time issuance of a PID or attestation that supports
-re-issuance, PID Provider or Attestation Provider SHALL ensure that 
-each Access Token is accompanied with a corresponding 
-Refresh Token 
+##### Requirement 2
+A Wallet Provider SHALL ensure that its Wallet Solution supports PID or attestation 
+first-time batch issuance with at most one User authentication.
 
-#### Requirement 4
-A Wallet Provider SHALL ensure that its Wallet Solution uses Refresh Tokens
-for requesting the re-issuance of the PID or attestation. 
-
-#### Requirement 5
-A Wallet Provider SHALL ensure that its Wallet Solution receives
-User consent to complete a re-issuance process
-that results in a change in the attribute value of the re-issued PID or attestation.
-
-#### Requirement 6
-A Wallet Provider SHALL ensure that its Wallet Solution
-supports first time PID or attestation batch issuance with
-at most one User authentication.
-
-#### Requirement 7
-A Wallet Provider SHALL ensure that its Wallet Solution
-after successful re-issuance of a PID or attestation, deletes the 
-existing PID or attestation, meaning the one that the re-issued PID or attestation 
-intends to replace
+##### Requirement 3
+A Wallet Provider SHALL ensure that a Wallet Unit, after successful re-issuance of a PID 
+or attestation, deletes the pre-existing PIDor attestation, meaning the one that 
+the re-issued PID or attestation intends to replace.
 
 ### 5.2 High-Level Requirements to be changed
 
-&lt;A future version of this document will analyse the requirements on
+A future version of this document will analyse the requirements on
 issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
-this Discussion Paper.&gt;
+this Discussion Paper;
 
-Merge WUA\_02 and WUA\_03 and require from Wallet Units to authenticate Users using WSCA
-
->**Requirement WUA\_02**:
-A Wallet Unit SHALL authenticate the User before performing any operation using WSCA. For cryptographic operations
-involving a PID key (which is part of the EUDI Wallet eID means), the WSCA SHALL be certified to 
-be compliant with applicable requirements for level of assurance "high" in Commission Implementing 
-Regulation (EU) 2015/1502 section 2.2.1.
-
-Extend DASH\_02 to include re-issuance transactions
-
-#### 5.2.1 Topic 10/23
-
-<table>
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 38%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th>Requirement</th>
-<th>Valid for re-issuance of PID or attestation?</th>
-<th>Valid for a PID or attestation issued as part of a batch?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-</tbody>
-</table>
-
-#### 5.2.2 Topic 9
-
-<table>
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 38%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th>Requirement</th>
-<th>Valid for re-issuance of PID or attestation?</th>
-<th>Valid for a PID or attestation issued as part of a batch?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-<tr>
-<td>&nbsp</td>
-<td>&nbsp</td>
-<td>&nbsp</td>
-</tr>
-</tbody>
-</table>
+Requirement DASH\_02 will be extended to include to re-issuance transactions.
 
 ### 5.3 Descriptions to be added to the ARF main document
 
-A summary of the descriptions in chapters 2, 3, and 4 will be added to
-the ARF main document, version 1.8.
+A summary of the descriptions in chapter 2 will be added to section
+6.6.2 of the ARF main document, version 1.8. A summary of the descriptions 
+in chapter 3 will be added in the description of possible states of a PID or 
+attestation included in section 4.6.5 of the ARF main document, version 1.8.
+A summary of the descriptions  in chapter 4 related to batch issuance will be 
+added in section 6.6.2 of the ARF main document, version 1.8. 
+A summary of the descriptions  in chapter 4 related to re-issuance will 
+be included in a new section that be will be 
+added after 6.6.2 of the ARF main document, version 1.8. 
 
-Rulebooks will be modified to include indications of support for re-issuance and batch issuance. 
 
 ## 6 References
+| Reference | Description |
+| --- | --- |
+| [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
+| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft |
+| [ISO18013] | ISO/IEC 18013-5, Personal identification — ISO-compliant driving licence — Part 5: Mobile driving licence (mDL) application, First edition, 2021-09 |
+| [SD-JWT VC] | SD-JWT-based Verifiable Credentials (SD-JWT VC) draft-terbu-sd-jwt-vc-06, O. Terbu *et al.*, 13 November 2024, draft |
+| [OpenID4VCI] | Lodderstedt, T. *et al.*, "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available at : https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html|
+| [RFC 9449] | OAuth 2.0 Demonstrating Proof of Possession (DPoP), D. Fett *et al*., September 2023 |
+| [Topic A] | Topic A: Privacy risks and mitigations - eIDAS Cooperation Group Discussion Paper |
 
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr>
-<th>Reference</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[RiskRegister]</td>
-<td>Annex 1 to the Commission Implementing Regulation laying down rules
-for the application of Regulation (EU) No 910/2014 of the European
-Parliament and of the Council as regards the certification of the
-European Digital Identity Wallets, European Commission, October 2024,
-draft</td>
-</tr>
-<tr>
-<td>[ARF_DevPlan]</td>
-<td>Architecture and Reference Framework Development plan 2025, European
-Commission, v0.91, final draft</td>
-</tr>
-<tr>
-<td>[ISO18013-5]</td>
-<td>ISO/IEC 18013-5, Personal identification — ISO-compliant driving
-licence — Part 5: Mobile driving licence (mDL) application, First
-edition, 2021-09</td>
-</tr>
-<tr>
-<td>[SD-JWT VC]</td>
-<td>SD-JWT-based Verifiable Credentials (SD-JWT VC)
-draft-terbu-sd-jwt-vc-06, O. Terbu <em>et al.,</em> 13 November 2024,
-draft</td>
-</tr>
-<tr>
-<td>[OpenID4VCI]</td>
-<td> Lodderstedt, T. <em>et al.</em>, "OpenID for Verifiable Credential
-Issuance", OpenID Foundation. Available:
-&lt;<u>https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html</u>&gt;</td>
-</tr>
-<tr>
-<td>[RFC 9449]</td>
-<td>OAuth 2.0 Demonstrating Proof of Possession (DPoP), D. Fett <em>et
-al</em>., September 2023</td>
-</tr>
-<tr>
-<td>[Topic A]</td>
-<td>Topic A: Privacy risks and mitigations - eIDAS Cooperation Group
-Discussion Paper</td>
-</tr>
-</tbody>
-</table>
