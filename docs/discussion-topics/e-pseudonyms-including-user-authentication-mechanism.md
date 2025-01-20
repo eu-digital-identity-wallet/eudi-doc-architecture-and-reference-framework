@@ -15,17 +15,17 @@ In addition, 'must' (non-capitalized) is used to indicate an external constraint
 
 ### 1.3 Document Structure
 
-The document is structured as follows
+The document is structured as follows:
 
-	- Chapter 2 presents the legal requirements for functionality related to pseudonyms.
+- Chapter 2 presents the legal requirements for functionality related to pseudonyms.
 
-	- Chapter 3 elaborates on two identified use cases for pseudonyms as well as lists open questions related to these use cases.
+- Chapter 3 elaborates on two identified use cases for pseudonyms as well as lists open questions related to these use cases.
 
-	- Chapter 4 presents the technical approach to pseudonyms.
+- Chapter 4 presents the technical approach to pseudonyms.
 
-	- Chapter 5 relates the topic to other broader topics being discussed and previous identified risks.
+- Chapter 5 relates the topic to other broader topics being discussed and previous identified risks.
 
-	- Chapter 6 the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
+- Chapter 6 the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 
 ## 2 Legal Requirements for Pseudonyms
