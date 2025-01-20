@@ -130,7 +130,7 @@ URI schemes introduces variability in user experiences across different browsers
 resulting in operational inefficiencies and potential security risks. 
 - **4. Clear Origin Verification**: Protecting against relay attacks requires precise 
 identification of the Relying Party Instance's origin.
-- **5. Session binding**: When presenting a PID or attestation to a remote Relaying Party,
+- **5. Session binding**: When presenting a PID or attestation to a remote Relying Party,
 users have to switch contexts. Existing protocols may enable attacks where the contexts are not
 "bound" to each other resulting in session "hijacking".
 
