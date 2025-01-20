@@ -218,15 +218,13 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the signature with its stored public key and depending on the outcome of this verification considers the user authenticated.
 
-
 ### 4.3 Challenges
 Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms. 
 
-- [WebAuthN] does not define an interface between the Authenticator and the Client.
+- [WebAuthN] does not define an interface between the Authenticator and the Client. 
 - Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A).
-- The information about the Relying Party is verified only at the client and not at the Authenticator itself. This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] *European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... 
-for authenticating and identifying relying parties by implementing authentication mechanisms in accordance with Article 5b ...*. 
-
+- The information about the Relying Party is verified only at the Client and not by the Authenticator itself. 
+This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] it is stated that "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for authenticating and identifying relying parties by implementing authentication mechanisms in accordance with Article 5b ...*". 
 
 ## 5 Relation to Other Topics
 
