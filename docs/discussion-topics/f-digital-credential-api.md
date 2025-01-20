@@ -190,7 +190,7 @@ flow can be used to search for matching attestations in Wallet Units installed
 in a different device, located in close proximity to the browser. If more than 
 one matching attestation is found, the browser prompts the User to select one. 
 As a next step, request data is sent to the corresponding
-Wallet Unit. Then, the Wallet Unit asks user concent and generates a
+Wallet Unit. Then, the Wallet Unit asks user consent and generates a
 presentation based on the selected exchange protocol. The presentation is
 relayed back to the Relying Party's website.
 
