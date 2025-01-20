@@ -268,7 +268,7 @@ specified in the Implementing Acts as remote presentation protocols for attestat
 ### 3.2 Responsibilities
 The Digital Credentials API should operate as a secure transport layer, allowing all parties
 to fulfill their requirements as specified in Annex 2  of ARF. Browsers and operating systems
-facilitating remote transaction flows should not act on behalf of Relaying Parties or Wallet 
+facilitating remote transaction flows should not act on behalf of Relying Parties or Wallet 
 Units. Particularly:
 
 1. **Consent**:  Wallet Units and Relying Parties should handle user consent for attribute requests
