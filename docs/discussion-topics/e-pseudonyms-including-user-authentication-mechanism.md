@@ -23,9 +23,9 @@ The document is structured as follows:
 
 - Chapter 4 presents the technical approach to pseudonyms.
 
-- Chapter 5 relates the topic to other broader topics being discussed and previous identified risks.
+- Chapter 5 relates the topic to other topics being discussed and previous identified risks.
 
-- Chapter 6 the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
+- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 
 ## 2 Legal Requirements for Pseudonyms
