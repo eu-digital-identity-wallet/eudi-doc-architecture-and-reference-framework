@@ -151,10 +151,9 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 2. The user registers the public key at the desired service.
 
 **Authentication:**
-When a user wishes to authenticate towards a service, the service will send them a challenge consisting of a random number.
-The challenge is often referred to as a *nonce*: a number only used once.
-The user uses the private key stored on their secure device to sign the nonce and sends this back to the service.
-The service verifies that the signature on the nonce verifies using the preregistered public key. If the signature verifies as expected, the user is considered authenticated and thereby granted access to the service.
+1. When a user wishes to authenticate towards a service, the service will send them a challenge consisting of a random number.
+2. The user uses the private key stored on their secure device to sign the challenge and sends this back to the service.
+3. The service verifies that the signature on the challenge verifies using the preregistered public key. If the signature verifies as expected, the user is considered authenticated and thereby granted access to the service.
 
 ### 4.2 Overview of [WebAuthN]
 [WebAuthN] defines an API for creation and use of passkeys. Conceptually, in addition to the user, there are four different logical components in this specification:
