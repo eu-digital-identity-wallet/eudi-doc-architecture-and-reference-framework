@@ -137,7 +137,7 @@ users have to switch contexts. Existing protocols may enable attacks where the c
 
 ### Proposed solution
 Digital Credentials API \[Cred_API\] is a possible solution to the identified 
-challenges. Digital Credentials API has the potential to enhances usability, scalability, 
+challenges. Digital Credentials API has the potential to enhance usability, scalability, 
 and security while providing a consistent and reliable user experience. 
 
 Digital Credentials API is a Draft Community Group report of the
