@@ -126,6 +126,22 @@ I.e., registration and authentication with pseudonyms be possible both when do u
 
 ## 4 High Level Approach to Pseudonyms
 As specified in [CIR.2024.2979], [WebAuthN] defines the technical specification for pseudonyms.
+The technology underlying [WebAuthN] are commonly refereed to as passkeys.
+
+### 4.1 Introduction to Passkeys
+Passkeys are to be seen as an alternative to passwords.
+The idea is that a user, when registering a user account at a service generates a public-private keypair, registers the public key at the service, and can then subsequently use the private key to authenticate towards the service at later points in time.
+In a bit more detail, the flow for using such passkeys follows the following blueprint.
+
+**Registration:**
+1. The user generates a public-private keypair and stores both public and private key at their secure device (referred to as an authenticator).
+2. The user registers the public key at the desired service.
+
+**Authentication:**
+When a user wishes to authenticate towards a service, the service will send them a challenge consisting of a random number.
+The challenge is often referred to as a *nonce*: a number only used once.
+The user uses the private key stored on their secure device to sign the nonce and sends this back to the service.
+The service verifies that the signature on the nonce verifies using the preregistered public key. If the signature verifies as expected, the user is considered authenticated and thereby granted access to the service.
 
 ## 5 Relation to Other Topics
 
