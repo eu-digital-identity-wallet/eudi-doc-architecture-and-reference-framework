@@ -222,7 +222,7 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms. 
 
 - [WebAuthN] does not define an interface between the Authenticator and the Client. 
-- Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A).
+- Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A) depending on the chosen type of attestation.
 - The information about the Relying Party is verified only at the Client and not by the Authenticator itself. 
 This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] it is stated that "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for authenticating and identifying relying parties by implementing authentication mechanisms in accordance with Article 5b ...*". 
 
