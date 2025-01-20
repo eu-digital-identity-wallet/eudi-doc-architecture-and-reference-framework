@@ -145,15 +145,15 @@ The service verifies that the signature on the nonce verifies using the preregis
 
 ## 5 Relation to Other Topics
 
-### 6.1 Privacy Risks and Mitigations
+### 5.1 Privacy Risks and Mitigations
 
-### 6.2 Wallet Unit Attestations
+### 5.2 Wallet Unit Attestations
 
-### 6.3 Relation to Risk Register
+### 5.3 Relation to Risk Register
 
-## 7 Additions and Changes to the ARF
+## 6 Additions and Changes to the ARF
 
-## 8 References
+## 7 References
 
 | Reference       | Description                                                                                                                                                                                                                                                                          |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
