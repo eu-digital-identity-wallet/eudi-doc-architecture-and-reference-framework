@@ -133,7 +133,7 @@ Below, we list open questions that must still be clarified related to the above 
 **Question 1:** Should any other use-cases be supported?
 
 **Question 2:** For both use cases: Should both cross-device and same-device flows be supported?
-I.e., registration and authentication with pseudonyms be possible both when do user initiates the interactions with the relying party with a device different from the one hosting the EUDIW.
+I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the relying party from the same device and with a device different from the one hosting the EUDIW.
 
 **Question 3:** For Use Case B: What assurances must be given to the relying party?
 
