@@ -177,8 +177,8 @@ Below we elaborate on how these different logical components works together to a
 The flow for registering a passkey in [WebAuthN] is the following:
 
 1. The Relying Party Server creates a challenge and sends this along with information about the user and the Relying Party to the Relying Party Client.
-2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
-3. The Client forwards the information to the Authenticator along with other contextual data.
+2. The Relying Party Client forwards the information to the Client using the WebAuthnAPI.
+3. The Client checks that the information about the Relying Party is consistent with the callers origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair scoped to this specific Relying Party and an "attestation" (explained below). Finally, the public key of the key pair is sent to the Client
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the information and registers the received public key.
@@ -211,9 +211,10 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 
 1. The Relying Party Server creates a challenge and sends this along with information about the Relying Party to the Relying Party Client.
 2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
-3. The Client forwards the information to the Authenticator along with other contextual data.
+3. The Client checks that the information about the Relying Party is consistent with the callers origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
-   It then prompts the user to select one of the passkeys scoped to this relying party. Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data.
+   It then prompts the user to select one of the passkeys scoped to this relying party. 
+   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data.
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the signature with its stored public key and depending on the outcome of this verification considers the user authenticated.
 
@@ -222,6 +223,8 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 
 - [WebAuthN] does not define an interface between the Authenticator and the Browser.
 - Attestations may be linkable (see also Topic A).
+- The information about the Relying Party is verified only at the client and not at the Authenticator itself. This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] *European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... 
+for authenticating and identifying relying parties by implementing authentication mechanisms in accordance with Article 5b ...*. 
 
 ## 5 Relation to Other Topics
 
