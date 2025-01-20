@@ -1,4 +1,4 @@
-Version 0.5, updated 8 January 2025
+Version 0.8, updated 20 January 2025
 
 # B - Re-issuance and batch issuance of PIDs and Attestations
 
@@ -508,22 +508,23 @@ values that the Wallet Provider no longer wants to attest to.
 ### 5.1 High-Level Requirements to be added to Annex 2
 
 The following High-Level Requirements will be added to Annex 2 of the
-ARF v1.8:
+ARF v1.8.
 
+#### 5.1.1 Requirements to be added (likely) to Topic 10/23
 
-#### Requirement 1
+##### Requirement 1
 In case a PID Provider or Attestation Provider must change an attribute in an issued PID or 
 attestation, it SHALL revoke the PID or attestation and notify the User about this. The Wallet 
-Unit SHALL enable the User to request re-issuance of that PID or attestation
+Unit SHALL enable the User to request re-issuance of that PID or attestation.
 
-#### Requirement 2
+##### Requirement 2
 A Wallet Provider SHALL ensure that its Wallet Solution supports PID or attestation 
-first-time batch issuance with at most one User authentication
+first-time batch issuance with at most one User authentication.
 
-#### Requirement 3
-A Wallet Provider SHALL ensure that aWallet Unit, after successful re-issuance of a PID 
+##### Requirement 3
+A Wallet Provider SHALL ensure that a Wallet Unit, after successful re-issuance of a PID 
 or attestation, deletes the pre-existing PIDor attestation, meaning the one that 
-the re-issued PID or attestation intends to replace
+the re-issued PID or attestation intends to replace.
 
 ### 5.2 High-Level Requirements to be changed
 
@@ -532,12 +533,19 @@ issuance in v1.5 of the ARF and determine whether they need to be
 changed (and if so, how) in the light of the conclusions reached for
 this Discussion Paper;
 
-Extend DASH\_02 to include re-issuance transactions
+Requirement DASH\_02 will be extended to include to re-issuance transactions.
 
 ### 5.3 Descriptions to be added to the ARF main document
 
-A summary of the descriptions in chapters 2, 3, and 4 will be added to
-the ARF main document, version 1.8.
+A summary of the descriptions in chapter 2 will be added to section
+6.6.2 of the ARF main document, version 1.8. A summary of the descriptions 
+in chapter 3 will be added in the description of possible states of a PID or 
+attestation included in section 4.6.5 of the ARF main document, version 1.8.
+A summary of the descriptions  in chapter 4 related to batch issuance will be 
+added in section 6.6.2 of the ARF main document, version 1.8. 
+A summary of the descriptions  in chapter 4 related to re-issuance will 
+be included in a new section that be will be 
+added after 6.6.2 of the ARF main document, version 1.8. 
 
 
 ## 6 References
