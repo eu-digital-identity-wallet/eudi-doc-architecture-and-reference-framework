@@ -243,7 +243,7 @@ establishing the secure tunnel. This advertisement is used as a proximity check,
 
 ![QR Code display](img/cross-qr.png)
 - The presentation request is transferred through the tunnel to the device operating system
-- The device operating system presents to the User a selector that includes a list of potentially suitable Wallet Units.
+- The device operating system presents to the User a selector that includes a list of potentially suitable attestations.
 
 ![Attestation selection](img/cross-select.png)
 
