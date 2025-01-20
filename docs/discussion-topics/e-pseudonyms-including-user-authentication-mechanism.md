@@ -156,6 +156,48 @@ The challenge is often referred to as a *nonce*: a number only used once.
 The user uses the private key stored on their secure device to sign the nonce and sends this back to the service.
 The service verifies that the signature on the nonce verifies using the preregistered public key. If the signature verifies as expected, the user is considered authenticated and thereby granted access to the service.
 
+### 4.2 Overview of [WebAuthN]
+[WebAuthN] defines an API for creation and use of passkeys. Conceptually, in addition to the user, there are four different logical components in this specification:
+
+- **Relying Party Server:** The Relying Party that wishes to offer a service based upon these passkeys.
+- **Relying Party Client:** The program provided by the Relying Party that runs in the client of the user and communicates with the Relying Party Server.
+- **Client:** The client that the user interacts with the Relying Party's server with.
+- **Authenticator:** The device controlled by the user to create, store and use the passkeys.
+
+[WebAuthN] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with passkeys.
+The interface is referred to the *WebAuthnAPI*.
+
+The Wallet Unit will act as an Authenticator in this setting.
+
+Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
+
+Below we elaborate on how these different logical components works together to allow the registration and subsequent authentication using passkeys.
+
+#### 4.2.1 Registration
+The flow for registering a passkey in [WebAuthN] is the following:
+
+1. The Relying Party Server creates a challenge and sends this along with information about the user and the Relying Party to the Relying Party Client Client.
+2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
+3. The Client forwards the information to the Authenticator along with other contextual data.
+4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair scoped to this specific Relying Party and an "attestation" (explained below). Finally, the public key of the key pair is sent to the Client
+5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
+6. The Relying Party Server verifies the information and registers the received public key.
+
+Note that the term attestation is here used differently than elsewhere in the ARF.
+In this context the attestation is to ensure the Relying Party that they can trust talking with a proper Authenticator.
+In [WebAuthN], four different types of attestations are mentioned:
+
+The Authenticator must store the public key pair in a way such that it is scoped uniquely to a specific Relying Party aligning with the requirements of [CIR.2024.2979] Article 14 2.
+
+#### 4.2.2 Authentication
+
+
+
+### 4.3 Challenges
+
+- [WebAuthN] does not define an interface between the Authenticator and the Browser.
+-
+
 ## 5 Relation to Other Topics
 
 ### 5.1 Privacy Risks and Mitigations
@@ -165,6 +207,8 @@ The service verifies that the signature on the nonce verifies using the preregis
 ### 5.3 Relation to Risk Register
 
 ## 6 Additions and Changes to the ARF
+
+### 6.1 Considerations to be Made
 
 ## 7 References
 
