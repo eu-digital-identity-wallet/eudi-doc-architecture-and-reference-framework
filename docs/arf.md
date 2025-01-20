@@ -101,7 +101,8 @@ The Commission recognised that the following topics need further discussion. The
 - Topic S: Certificate transparency,
 - Topic T: Support and maintenance by the Wallet Provider,
 - Topic U: EUDI Wallet Trust Mark,
-- Topic V: PID Rulebook.
+- Topic V: PID Rulebook,
+- Topic W: Transactional data needed by Wallet Units in Payments and other use cases.
 
 ## 2 Use Cases
 
