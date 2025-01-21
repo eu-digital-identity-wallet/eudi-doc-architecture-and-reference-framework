@@ -148,7 +148,7 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 3. The Relying Party is assured that the private key corresponding to the pseudonym being stored/authenticated *is* stored in a non-revoked Wallet Unit.
 4. For use case B: The Relying Party is assured that the private key corresponding to the pseudonym used to authenticate is stored on the same Wallet Unit as originally presented PID/(Q)EA.
 
-Note that, because the technical implementation of pseudonyms must rely on [WebAuthN], the possibility for achieving such assurances is by  using attestations (for an explanation of this see Chapter 4).
+Note that, because the technical implementation of pseudonyms must rely on [WebAuthN], the possibility for achieving such assurances is to  use attestations (for an explanation of this see Chapter 4).
 Therefore, higher assurances comes with a trade-off in terms of surveillance risks.
 For a further discussion of these risks see Chapter 5.1.
 
