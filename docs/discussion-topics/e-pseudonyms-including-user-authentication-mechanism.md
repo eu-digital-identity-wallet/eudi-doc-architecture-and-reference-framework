@@ -287,13 +287,10 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 ### 5.2 Wallet Unit Attestations
 
 ### 5.3 Relation to Risk Register
-%copy from 
-As pseudonyms may be used to provide authentication, a large portion of risks listed
+
+As pseudonyms may be used to provide authentication, a large number of the risks listed
 in the risk register for European Digital Identity Wallets \[RiskRegister\] are (atleast indirectly)
 related to the use of pseudonyms: 
-%contains the following risks regarding User tracking as a result of
-%collusion between Relying Parties or between a Relying Party and an
-%Attestation Provider or of a data breach of the parties:
 
 <table>
 <colgroup>
