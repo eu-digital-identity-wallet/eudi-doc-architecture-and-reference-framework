@@ -262,7 +262,7 @@ The mitigation is similar to the proposals of Method B and Method C (Limited-tim
 If an *Anonymization CA* is used to issue certificates on single use only attestation keys, Relying Parties are not able to correlate information about multiple presentations.
 We refer to this as being *relying party unlinkable*.
 
-Both *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms. That is they are Relying Party unlinakble.
+Both *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms. That is they are Relying Party unlinkable.
 
 #### 5.1.2 CA Linkability
 
