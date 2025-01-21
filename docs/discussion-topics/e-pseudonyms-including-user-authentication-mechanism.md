@@ -249,6 +249,301 @@ In Chapter 5.3 we discuss how this relates to the risks and threads identified i
 ### 5.2 Wallet Unit Attestations
 
 ### 5.3 Relation to Risk Register
+%copy from 
+As pseudonyms may be used to provide authentication, a large portion of risks listed
+in the risk register for European Digital Identity Wallets \[RiskRegister\] are (atleast indirectly)
+related to the use of pseudonyms: 
+%contains the following risks regarding User tracking as a result of
+%collusion between Relying Parties or between a Relying Party and an
+%Attestation Provider or of a data breach of the parties:
+
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 14%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Risk type </strong></th>
+<th><strong>Risk ID </strong></th>
+<th><strong>Related risk titles </strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R2</td>
+<td>Creation or use of a fake electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R4</td>
+<td>Identify theft</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R5</td>
+<td>Data theft</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R10</td>
+<td>Transaction manipulation</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R14</td>
+<td>Surveillance</td>
+</tr>
+</tbody>
+</table>
+
+Some of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in
+its section III) are also relevant threats to consider in the context of pseudonyms. This is primarily
+TT5. Malicious actions, in which threats, such as TT5.1 Interception of information or TT5.3 Replay of messages, may lead to the risks
+expressed in the table above.
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R2. Creation or use of a fake electronic identity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of a fake electronic identity is defined as the creation of an electronic identity in a wallet that does not exist
+in the real world.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R4. Idnetity theft</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity theft is defined as the unauthorised acquisition of the wallet unit or loss of authentication factors enabling to
+impersonate a person.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R5. Data theft</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception
+(unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to
+lead in some cases to Data disclosure (R6).</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R6. Data Disclosure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal
+data including special categories of personal data. The privacy breach risk
+is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R9. Unauthorised transaction</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the
+wallet user. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also
+related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R10. Transaction manipulation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction manipulation is defined as the unauthorised alteration of operations in the wallet. Transaction manipulation is
+an attack on integrity, and it is related to a data integrity breach.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R14. Surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surveillance, or monitoring, is defined as the unauthorised tracking
+or observation of a wallet user's activities, communication, or data.
+Surveillance is often related to inference, which is defined as the
+deduction of sensitive or personal information from seemingly innocuous
+data.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>SR1. Wholesale surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wholesale surveillance is defined as the tracking or observation of
+the activities of many users through their wallet's communication or
+data. Wholesale surveillance is often associated with surveillance (R14)
+and inference at a global scale, where information about many users is
+combined to deduce sensitive or personal data about users or to identify
+statistical trends that can be used to design further attacks.</td>
+</tr>
+</tbody>
+</table>
+
+More specifically, \[RiskRegister\] describes the following threats in relation to pseudonyms:
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 51%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>ID<br />
+</strong><em>Identifier</em></th>
+<th><strong>Threat description<br />
+</strong><em>Description of the identified threat</em> (*)</th>
+<th><strong>Risk title<br />
+</strong><em>Related risks</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR1</td>
+<td>An attacker can revoke pseudonyms without justified reason.</td>
+<td>Creation or use of a fake electronic identity (R2)
+</td>
+</tr>
+<tr>
+<td>TR26</td>
+<td>PID, (Q)EAAs or pseudonyms can be presented to a wrong relying party.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR39</td>
+<td>An attacker can unlawfully trace wallet users using unique/traceable
+identifiers.</td>
+<td>Data disclosure (R6) and Surveillance (R14)</td>
+</tr>
+<td>TR51</td>
+<td>An attacker can convince a user to share personal data (i.e. PID, EAA-s, pseudonyms, electronic signatures, logs and other data) with the attacker or with a third party that the user did not intend to do so.</td>
+<td>Data theft (R5) / Data disclosure (R6)</td>
+</tr>
+<td>TR55</td>
+<td>An attacker can bypass the user authentication method to use
+a pseudonym generated by a wallet unit.
+</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR84</td>
+<td>A group of colluding relying parties or PID providers can derive the
+user's identity data beyond data known to them.</td>
+<td>Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR85</td>
+<td>An attacker can track and trace a user by using person
+identification data of the user where identification of the user
+is not required.</td>
+<td>Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR91</td>
+<td>A relying party can replay elements from a previous session in
+another session.</td>
+<td>Transaction manipulation (R10)</td>
+</tr>
+<tr>
+<td>TR102</td>
+<td>An attacker can impersonate relying parties during the
+connection to relying parties.</td>
+<td>Unauthorised transaction (R9) / Data
+disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR105</td>
+<td>An attacker can perform man-in-the-middle attacks.</td>
+<td>Unauthorised transaction (R9) / Data
+disclosure (R6) / Surveillance (R14)</td>
+</tr>
+</tbody>
+</table>
+
+>Note that there is no threat corresponding to TR68-71 (Attacker can revoke without consent/reason) in relation to pseudonyms.
+
+
 
 ## 6 Additions and Changes to the ARF
 
