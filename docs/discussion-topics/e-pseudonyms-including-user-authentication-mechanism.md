@@ -273,11 +273,18 @@ Both the types *Attestation CA* and *Anonymization CA* are CA linkable as CAs ca
 
 Neither *Self Attestation* nor *No Attestation* includes any information from a CA and Relying Parties are not able to correlate information about multiple presentations of pseudonyms with this form of attestation type. That is they are both also CA unlinkable.
 
-#### 5.1.3 Advantages and Drawbacks of Different Attestation Types
+#### 5.1.3 Drawbacks of Different Attestation Types
+In the table below we summarize information from previous chapters w.r.t. drawback of the different attestation types.
 
-| Attestation Type | Advantages | Drawbacks |
-|------------------|------------|-----------|
-|                  |            |           |
+| Attestation Type   | Drawbacks                                                   |
+|--------------------|-------------------------------------------------------------|
+| Basic Attestations | Relying Party and CA linkable                               |
+| Attestation CA     | CA linkable and to some degree still Relying Party linkable |
+| Anonymization CA   | CA linkable                                                 |
+| Self Attestation   | No assurances for Relying Party                             |
+| No Attestation     | No assurances for Relying Party                             |
+|--------------------|-------------------------------------------------------------|
+
 
 ### 5.2 Wallet Unit Attestations
 
