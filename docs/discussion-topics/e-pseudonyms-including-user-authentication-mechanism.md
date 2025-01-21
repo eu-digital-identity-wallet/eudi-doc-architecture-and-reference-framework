@@ -306,6 +306,28 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 | No Attestation     | No assurances for Relying Parties                           |
 
 ### 5.2 Wallet Unit Attestations
+>Note that Topic C - Wallet Unit Attestation has not yet been drafted and the following is based on assumptions on content
+
+Topic C - Wallet Unit Attestations (WUA) And Key Attestations discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc. 
+
+Certain WUA elements are somewhat sensitive, as they may allow for linkability, and are only intended for PID and Attestation Providers, when performing issuance. Other parts of the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive and is intended for Relying Parties.
+
+When a Wallet Unit and Relying Party performs registration of a pseudonym, key material will be stored on the Wallet Unit. This can be seen as a special case of issuance, in which the Relying Party acts the issuer and will be interested in what security guarantees the Wallet Unit can provide. Topic C should distinguish between a Relying Party acting as a Relying Party and Pseudonym issuer.
+
+There are two main areas of Topic C that are particularly relevant in relation to Psedonyms:
+
+- **Wallet Trust Evidence:** Part of the WUA contains information on functional and cryptographic capabilities of the Wallet Unit (currently known as WTE). HRL WTE_24 *A Wallet Instance SHALL release a WTE only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party.* states that an RP must not receive WTE information from the WU, however this prohibits a number of the HRLs related to issuance. Essentially, only the *Self Attestation* and *No Attestation* attestation types mentioned in Chapter 4.2.1 can be supported without access to WTE.
+
+- **Revocation:** Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it may be desireable for the Relying Party to be able to revoke the entire Wallet Unit. If this functionality is to be supported, there must be some kind of attestation (see Chapter 4.2.1) in place. 
+
+#### 5.2.1 Questions Related to Wallet Unit Attestation
+
+Below, we list open questions that must still be clarified related to the interaction with WUA.
+
+**Question 1:** Should a Relying Party be able to revoke more than just local pseudonyms?
+
+
+
 
 ### 5.3 Digital Credential API
 
