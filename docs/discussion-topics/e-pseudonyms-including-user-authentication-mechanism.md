@@ -105,7 +105,7 @@ Technical specifications:\
 Below, we elaborate on the use cases inferred from the above legal requirements.
 The distinction between the two use cases follows from Article 14 2. [CIR.2014.2979].
 
-Both use cases are described in an online non-proximity-based setting where the pseudonyms are presented towards services through the internet.
+Both use cases are described in an online non-proximity-based setting where the pseudonyms are presented towards services over the internet.
 
 ### 3.1 Use Case A: Pseudonymous Authentication
 
