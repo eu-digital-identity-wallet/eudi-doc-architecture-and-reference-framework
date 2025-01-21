@@ -283,7 +283,6 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 | Anonymization CA   | CA linkable                                                 |
 | Self Attestation   | No assurances for Relying Party                             |
 | No Attestation     | No assurances for Relying Party                             |
-|--------------------|-------------------------------------------------------------|
 
 
 ### 5.2 Wallet Unit Attestations
