@@ -260,11 +260,18 @@ If an *Attestation CA* is used to issue certificates on multiple attestation key
 The mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
 
 If an *Anonymization CA* is used to issue certificates on single use only attestation keys, Relying Parties are not able to correlate information about multiple presentations.
-We refer to this as being *relying party unlinkable*.
+We refer to this as being *Relying Party unlinkable*.
 
-Both *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms. That is they are Relying Party unlinkable.
+Neither *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms. That is they are Relying Party unlinkable.
 
 #### 5.1.2 CA Linkability
+Certificate Authority (CA) linkability is the ability to track a users interactions with several different Relying Parties by combining the information from those Relying Parties with information from CAs (in case such exists).
+
+Note that all the attestation types that are Relying Party linkable also are CA linkable by definition as the information available to CAs and Relying Parties is a super set of the information available only to multiple Relying Parties.
+
+Both the types *Attestation CA* and *Anonymization CA* are CA linkable as CAs can store which public key that issue certificates to and share with which Wallet Unit. By correlating this with the information available at the Relying Parties it is possible to track how the different Wallet Unit uses the pseudonym functionality.
+
+Neither *Self Attestation* nor *No Attestation* includes any information from a CA and Relying Parties are not able to correlate information about multiple presentations of pseudonyms with this form of attestation type. That is they are both also CA unlinkable.
 
 #### 5.1.3 Advantages and Drawbacks of Different Attestation Types
 
