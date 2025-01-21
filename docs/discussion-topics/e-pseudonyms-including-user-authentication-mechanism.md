@@ -72,7 +72,7 @@ Below are the actual excerpts from the law including the recitals that establish
 *9. ... Relying parties shall not refuse the use of pseudonyms, where the identification of the user is not required by Union or national law. ...*
 
 
-Additionally, an pseudonyms are mentioned in Article 32 and Annex IV about validation of qualified electronic signatures and certificates. Note that the use of pseudonyms in this article is orthogonal to do this topic about pseudonyms used for authentication.
+Additionally, pseudonyms are mentioned in Article 32 and Annex IV about validation of qualified electronic signatures and certificates. Note that the use of pseudonyms in this article is orthogonal to do this topic about pseudonyms used for authentication.
 
 ### 2.2 [CIR.2024.2979] about Pseudonyms
 [CIR.2024.2979] specifies three main requirements for pseudonyms:
@@ -158,7 +158,7 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 ### 4.2 Overview of [WebAuthN]
 [WebAuthN] defines an API for creation and use of passkeys. Conceptually, in addition to the user, there are four different logical components in this specification:
 
-- **Relying Party Server:** The Relying Party that wishes to offer a service based upon these passkeys.
+- **Relying Party Server:** The Relying Party that wishes to offer a service based on authentication using passkeys.
 - **Relying Party Client:** The program provided by the Relying Party that runs in the client of the user and communicates with the Relying Party Server.
 - **Client:** The client that the user interacts with the Relying Party's server with.
 - **Authenticator:** The device controlled by the user to create, store and use the passkeys.
@@ -197,13 +197,16 @@ This is used to sign all attestations and a certificate on the public key is inc
 
 - **Anonymization CA:** Similar to the above except that it is explicit that the Authenticator requests a certificate for a new attestation key pair per generated passkey.
 
-- **Self Attestation:** The attestation is signed with the private key of the newly generated key pair.
+- **Self Attestation:** The attestation is signed with the private key of the newly generated key pair in the passkey.
   Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
 
 - **No attestation statement:** No attestation is given.
   Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
 
-In Chapter 5.1, we discuss how this relates to previously identified privacy risks about linkability (see also Topic A).
+We note that Article 5a 5 a viii of [eIDAS 2.0] states  "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for relying parties to verify the authenticity and validity of European Digital Identity Wallets;...*". The latter two form of attestation does not align with this requirement.
+
+
+In Chapter 5.1, we discuss how the other relates to previously identified privacy risks about user surveillance (see also Topic A).
 
 #### 4.2.2 Authentication
 The flow for authenticating using a passkey following [WebAuthN] is:
@@ -212,22 +215,36 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
 3. The Client checks that the information about the Relying Party is consistent with the callers origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
-   It then prompts the user to select one of the passkeys scoped to this relying party. 
+   It then prompts the user to select one of the passkeys scoped to this relying party.
    Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data.
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the signature with its stored public key and depending on the outcome of this verification considers the user authenticated.
 
 ### 4.3 Challenges
-Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms. 
+Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms.
 
-- [WebAuthN] does not define an interface between the Authenticator and the Client. 
+- [WebAuthN] does not define an interface between the Authenticator and the Client.
 - Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A) depending on the chosen type of attestation.
-- The information about the Relying Party is verified only at the Client and not by the Authenticator itself. 
-This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] it is stated that "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for authenticating and identifying relying parties by implementing authentication mechanisms in accordance with Article 5b ...*". 
+- The information about the Relying Party is verified only at the Client and not by the Authenticator itself.
+  This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] it is stated that "*European Digital Identity Wallets shall, in particular ... ensure that the relying parties can be authenticated and identified by implementing authentication mechanisms in accordance with Article 5b;...*".
 
 ## 5 Relation to Other Topics
 
 ### 5.1 Privacy Risks and Mitigations
+Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronically Attested Attributes (Q)EAA.
+Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthN] specification.
+In fact, from a linkability perspective, there are only very difference between the attestations present in the registration flow of [WebAuthN] and other attestations such ad PID and (Q)EAAs.
+
+Below we consider two different types of linkability concerns for the attestation types summarized in Chapter 4.2.1 namely Relying Party Linkability and CA Linkability.
+The latter form of linkability is similar to what is dubbed Attestation Provider Linkability in the discussion Paper for Topic A, but as there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthN] and to avoid confusion we therefore use a different wording here.
+
+In Chapter 5.3 we discuss how this relates to the risks and threads identified in the [RiskRegister].
+
+#### 5.1.1 Relying Party Linkability
+
+#### 5.1.2 CA Linkability
+
+
 
 ### 5.2 Wallet Unit Attestations
 
