@@ -376,7 +376,7 @@ in the real world.</td>
 </colgroup>
 <thead>
 <tr>
-<th><strong>R4. Idnetity theft</strong></th>
+<th><strong>R4. Identity theft</strong></th>
 </tr>
 </thead>
 <tbody>
