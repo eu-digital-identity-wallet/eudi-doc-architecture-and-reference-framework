@@ -168,6 +168,8 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 
 [WebAuthN] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with passkeys.
 The interface is referred to the *WebAuthnAPI*.
+However, [WebAuthN] does not specify how the Authenticator and the Client must communicate.
+We discuss the relation to Topic F in Chapter 5.
 
 The Wallet Unit will act as an Authenticator in this setting.
 
@@ -226,7 +228,6 @@ The flow for authenticating using a passkey following [WebAuthN] is:
 ### 4.3 Challenges
 Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms.
 
-- [WebAuthN] does not define an interface between the Authenticator and the Client.
 - Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A) depending on the chosen type of attestation.
 - The information about the Relying Party is verified only at the Client and not by the Authenticator itself.
   This may be a problem as in Article 5a 5 a vii [eIDAS 2.0] it is stated that "*European Digital Identity Wallets shall, in particular ... ensure that the relying parties can be authenticated and identified by implementing authentication mechanisms in accordance with Article 5b;...*".
@@ -287,6 +288,10 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 ### 5.2 Wallet Unit Attestations
 
 ### 5.3 Relation to Risk Register
+
+### 5.4 Digital Credential API
+As stated in Chapter 4, [WebAuthN] does not specify the interface between the Wallet Units (i.e., Authenticators) and the Client used by the user to initiate the usage of the pseudonyms.
+Discussion Topic F must also take into account providing a seamless integration for the use of pseudonyms also.
 
 ## 6 Additions and Changes to the ARF
 
