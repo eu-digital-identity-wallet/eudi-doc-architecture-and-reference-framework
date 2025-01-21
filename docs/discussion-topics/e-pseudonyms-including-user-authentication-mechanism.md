@@ -19,7 +19,7 @@ The document is structured as follows:
 
 - Chapter 2 presents the legal requirements for functionality related to pseudonyms.
 
-- Chapter 3 elaborates on two identified use cases for pseudonyms as well as lists open questions related to these use cases.
+- Chapter 3 explains on two identified use cases for pseudonyms as well as lists open questions related to these use cases.
 
 - Chapter 4 presents the technical approach to pseudonyms.
 
@@ -30,13 +30,13 @@ The document is structured as follows:
 
 ## 2 Legal Requirements for Pseudonyms
 
-There are two legal texts that impose direct requirements on the pseudonym functionality of the EUDIWs: [CIR.2024.2979] and [eiDAS 2.0].
+There are two legal texts that impose direct requirements on the pseudonym functionality of the Wallet Units: [CIR.2024.2979] and [eiDAS 2.0].
 Below we recap the respective legal requirements from these sources.
 
 ### 2.1 [eIDAS 2.0] about Pseudonyms
-There are two main requirements in [eIDAS 2.0] about Pseudonyms in relation to EUDIWs:
-1. EUDIWs must be able to generate pseudonyms and store them encrypted.
-2. Relying parties must accept identification via pseudonyms when there are no legal requirements for identification.
+There are two main requirements in [eIDAS 2.0] about Pseudonyms in relation to Wallet Units:
+1. Wallet Units must be able to generate pseudonyms and store them encrypted.
+2. Relying Parties must accept identification via pseudonyms when there are no legal requirements for identification.
 
 Below are the actual excerpts from the law including the recitals that establishes these requirements.
 
@@ -110,10 +110,10 @@ Both use cases are described in an online non-proximity based setting where the 
 Pseudonyms can be used to authenticate a user when it is not necessary for a relying party to learn the identity of a user.
 
 Concretely, the use-case is as follows:
-1. A user registers a pseudonym at a relying party using their EUDIW.
+1. A user registers a pseudonym at a relying party using their Wallet Unit.
 2. The user can afterwards do a series of interactions with this relying party.
 3. If the user at a later point wishes to build upon previous interactions with this relying party they should then be able to authenticate with the pseudonym used for registering. Thereby, the user "logs in" to the same account at the relying party.
-The user uses their EUDIW to perform this authentication.
+The user uses their Wallet Unit to perform this authentication.
 
 ### 3.2 Use Case B: Presentation of Attributes with Subsequent Authentication using Pseudonyms
 
@@ -121,10 +121,10 @@ Similarly, to above a user wishes to create an account with an associated pseudo
 However, in this scenario the user would like to register attested attributes in the form of either Person Identification Data (PID), Qualified Electronically Attested Attributes (QEAAs) or Electronically Attested Attributes (EAAs) while registering.
 
 Concretely, the use case goes as follows:
-1. A user registers a pseudonym and presents PID or (Q)EAAs to a relying party using their EUDIW.
+1. A user registers a pseudonym and presents PID or (Q)EAAs to a relying party using their Wallet Unit.
 2. The user can afterwards do a series of interactions with this relying party.
 3. If the user at a later point wishes to build upon previous interactions with this relying party they should then be able to authenticate with the pseudonym used for registering. Thereby, the user "logs in" to the same account at the relying party.
-The user uses their EUDIW to perform this authentication.
+The user uses their Wallet Unit to perform this authentication.
 
 ### 3.3 Questions Related to Use Cases
 
@@ -133,7 +133,7 @@ Below, we list open questions that must still be clarified related to the above 
 **Question 1:** Should any other use-cases be supported?
 
 **Question 2:** For both use cases: Should both cross-device and same-device flows be supported?
-I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the relying party from the same device and with a device different from the one hosting the EUDIW.
+I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the relying party from the same device and with a device different from the one hosting the Wallet Unit.
 
 **Question 3:** For Use Case B: What assurances must be given to the relying party?
 
