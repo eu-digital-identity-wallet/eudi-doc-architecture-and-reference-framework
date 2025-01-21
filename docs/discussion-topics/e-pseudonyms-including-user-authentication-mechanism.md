@@ -135,7 +135,10 @@ Below, we list open questions that must still be clarified related to the above 
 **Question 2:** For both use cases: Should both cross-device and same-device flows be supported?
 I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the relying party from the same device and with a device different from the one hosting the Wallet Unit.
 
-**Question 3:** For Use Case B: What assurances must be given to the relying party?
+**Question 3:** For both use cases: Should a single user be allowed to present several different pseudonyms to a single Relying Party?
+
+**Question 4:** For Use Case B: What assurances must be given to the Relying Party?
+
 
 ## 4 High Level Approach to Pseudonyms
 As specified in [CIR.2024.2979], [WebAuthN] defines the technical specification for pseudonyms.
@@ -230,21 +233,44 @@ Below we list challenges related to the use of [WebAuthN] as the technical speci
 
 ## 5 Relation to Other Topics
 
+Below we discuss how pseudonyms relates to the other topics being discussed.
+
 ### 5.1 Privacy Risks and Mitigations
 Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronically Attested Attributes (Q)EAA.
 Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthN] specification.
 In fact, from a linkability perspective, there are only very difference between the attestations present in the registration flow of [WebAuthN] and other attestations such ad PID and (Q)EAAs.
 
+In Chapter 5.3 we discuss how this relates to the risks and threads identified in the [RiskRegister].
+
 Below we consider two different types of linkability concerns for the attestation types summarized in Chapter 4.2.1 namely Relying Party Linkability and CA Linkability.
 The latter form of linkability is similar to what is dubbed Attestation Provider Linkability in the discussion Paper for Topic A, but as there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthN] and to avoid confusion we therefore use a different wording here.
 
-In Chapter 5.3 we discuss how this relates to the risks and threads identified in the [RiskRegister].
-
 #### 5.1.1 Relying Party Linkability
+Relying Party Linkability is the ability for Relying Parties to link together multiple authentications performed by a user using a Wallet Unit.
+Note that it inherent for the use cases that the same Relying Party must be able to link together multiple presentations of a pseudonym as it must be unique per Relying Party.
+However, two or more Relying Parties should not to be able to infer any information about whether they have interacted with one or multiple users by comparing multiple authentications using pseudonyms.
+
+To prevent this, it is necessary to ensure there are no unique (per Wallet Unit) presented to multiple different Relying Parties. Depending on the attestation form used for Registration (see Chapter 4.2.1) this may or may not be the case for [WebAuthN].
+
+If *Basic Attestations* are used where each wallet unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be exactly such unique value that is presented to multiple Relying Parties.
+In [WebAuthN] it is suggested to ensure that multiple different Authenticators hold the same attestation key pair thereby no longer making it a unique value for correlation.
+We note that letting several different units share the same private key is against best practices, as it increases the risk being compromised.
+
+If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different can be reduced. However, as long as attestation keys are used more than once, the Relying Parties can still induce *some information* by correlating registrations of Pseudonyms.
+The mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
+
+If an *Anonymization CA* is used to issue certificates on single use only attestation keys, Relying Parties are not able to correlate information about multiple presentations.
+We refer to this as being *relying party unlinkable*.
+
+Both *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms. That is they are Relying Party unlinakble.
 
 #### 5.1.2 CA Linkability
 
+#### 5.1.3 Advantages and Drawbacks of Different Attestation Types
 
+| Attestation Type | Advantages | Drawbacks |
+|------------------|------------|-----------|
+|                  |            |           |
 
 ### 5.2 Wallet Unit Attestations
 
