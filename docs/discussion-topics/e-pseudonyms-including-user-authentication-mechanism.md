@@ -221,7 +221,7 @@ This is used to sign all attestations and a certificate on the public key is inc
 - **Self Attestation:** The attestation is signed with the private key of the newly generated key pair in the passkey.
   Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
 
-- **No attestation statement:** No attestation is given.
+- **No Attestation Statement:** No attestation is given.
   Note that this does not give any guarantees for the Relying Party about which authenticator they are interacting with.
 
 We note that Article 5a 5 a viii of [eIDAS 2.0] states  "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for relying parties to verify the authenticity and validity of European Digital Identity Wallets;...*". The latter two form of attestation does not align with this requirement.
