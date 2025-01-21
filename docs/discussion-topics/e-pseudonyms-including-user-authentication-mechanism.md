@@ -275,7 +275,7 @@ If *Basic Attestations* are used where each wallet unit holds only one attestati
 In [WebAuthN] it is suggested to ensure that multiple different Authenticators hold the same attestation key pair thereby no longer making it a unique value for correlation.
 We note that letting several different units share the same private key is against best practices, as it increases the risk of keys being compromised.
 
-If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as attestation keys are used more than once, the Relying Parties can still induce *some information* by correlating registrations of Pseudonyms.
+If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as attestation keys are used more than once, the Relying Parties can still deduce *some information* by correlating registrations of Pseudonyms.
 The mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
 
 If an *Anonymization CA* is used to issue certificates on single-use-only attestation keys, Relying Parties are not able to correlate information about multiple presentations.
