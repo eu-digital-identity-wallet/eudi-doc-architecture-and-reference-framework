@@ -812,15 +812,15 @@ receive PIDs to be stored within the Wallet Unit.
 attestations that the User wants to include in their Wallet Unit.
 - The **Remote Signing Interface (RSI)** facilitates communication between the
 Wallet Unit and a Qualified Electronic Signature or Seal Remote Creation (QESRC)
-Provider. This interface is  used  by the Wallet Unit to generate a qualified
+Provider. This interface is used by the Wallet Unit to generate a qualified
 electronic signature or seal.
 
-*Note: that the "Attribute Deletion Request to Relying Party Interface" and the
+*Note that the "Attribute Deletion Request to Relying Party Interface" and the
 "Reporting Relying Party to DPA Interface", which are mentioned in the
 Regulation, are not depicted as interfaces in Figure 2. Functionality enabling a
 User to request a Relying Party to delete personal data (i.e., User attributes)
-obtained from the User's Wallet Unit is seen as a features of the Wallet
-Solution  The same applies to functionalities enabling the User to report a
+obtained from the User's Wallet Unit is seen as a feature of the Wallet
+Solution. The same applies to functionalities enabling the User to report a
 Relying Party to a Data Protection Authority.
 
 ### 4.4 Data presentation flows
@@ -896,7 +896,7 @@ for proximity flows:
 
 1. **Secure Cross-Device Flows**: Cross-device flows are vulnerable to phishing and
 relay attacks, necessitating enhanced security measures. Proximity checks,
-managed by the mobile operating system, can mitigate these the risks derived  by
+managed by the mobile operating system, can mitigate these the risks derived by
 these vulnerabilities by leveraging built-in security features to verify the
 authenticity of interactions, ensuring they are both secure and reliable.
 2. **Wallet Unit Selection**: In remote flows, where interactions
@@ -1034,7 +1034,7 @@ Passkeys. This is done as follows:
  check: the tunnel cannot be established if the User device and the device on
  which the browser runs are not close to each other.
  4. A tunnel is established between the two devices.
-  
+
 The browser then sends the OpenID4VP-compliant presentation request to the User
 device. If there are multiple Wallet Instances present on the User device, the
 device OS will determine to which of these the request will be forwarded,
@@ -1234,7 +1234,7 @@ Provider. This means it is registered by the corresponding Trusted List Provider
 and notified to the Commission, as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
 The Trusted List Provider can temporarily suspend a PID Provider or Attestation
-Provider.  This leads to the **Suspended** state. The Trusted List Provider can
+Provider. This leads to the **Suspended** state. The Trusted List Provider can
 unsuspend the PID Provider or Attestation Provider, bringing it back to the
 **Valid** state. The Trusted List Provider can also decide to completely
 withdraw the PID Provider or Attestation Provider, which brings the it in the
@@ -1281,7 +1281,7 @@ Figure 9: State diagram of Relying Party
 The **Valid** state is the first state of a Relying Party. This means it has
 been registered by a Relying Party Registrar, as described in [Section 6.4.2](#642-relying-party-registration).
 
-The Registrar can de-register a Relying Party.  This leads to the **Invalid**
+The Registrar can de-register a Relying Party. This leads to the **Invalid**
 state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration).
 A Wallet Unit will not present a PID or attestation to a Relying Party that is in this state.
 
@@ -1298,7 +1298,7 @@ under the supervision of the Member State. Each PID and attestation consists of
 the following key elements:
 
 - A set of **attributes**, which provide information about the subject of the attestation. The subject of the PID or attestation may be a natural person or a legal person. A Relying Party will request one or more of these attributes to get the reliable information they need to provide some service to the User. The set of attributes that an attestation may contain is defined in an attribute schema, see below.
-  
+
 - A set of **metadata**, meaning information about the attestation itself, such as its attestation type (PID, mDL, diploma, etc.), its Attestation Provider, and its administrative validity period, if applicable. This kind of metadata is also defined in an attribute schema. In addition, metadata also includes information that is necessary to ensure the security of the attestation. This includes at least its technical validity period. It also includes a public key of the attestation, which a Relying Party will use to verify that the attestation was not copied, see [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding). It may also include information allowing the Relying Party to verify that the attestation was not revoked, see [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 
 - A **proof**, which ensures the integrity, authenticity, and support of selective disclosure of the attestation. The format of the proof complies with the proof mechanism specified for this type of attestation, see below. The proof includes information that enables a Relying Party to verify the proof, for example a Attestation Provider certificate and a reference to a trust anchor that can be used to verify that certificate.
@@ -1338,7 +1338,7 @@ Please note that the differences between these attestation categories are purely
 
 Besides the fact that the Regulation defines the PID as a category of data that is legally different from EAAs, another difference between PID and EAA is that the presence or absence of a valid PID determines whether a Wallet Unit is in the Operational or the Valid state, as discussed in [Section 4.6.3](#463-wallet-unit).
 
-As implied in that section, it is possible for a Wallet Unit to contain multiple PIDs. In fact,  if the User has multiple nationalities, they may be able to receive a PID from multiple PID Providers in a single Wallet Unit. However, please note that a Wallet Provider is free to decide that its Wallet Unit does not support all PID Providers, and that, conversely, a PID Provider may decide that it does not support all Wallet Solutions; see [Section 6.5.2.3](#6523-user-validates-that-wallet-solution-is-usable-with-relevant-pid). Note that in this situation, the subject of all PIDs in the Wallet Unit will be the same person, namely the User of the Wallet Unit.
+As implied in that section, it is possible for a Wallet Unit to contain multiple PIDs. In fact, if the User has multiple nationalities, they may be able to receive a PID from multiple PID Providers in a single Wallet Unit. However, please note that a Wallet Provider is free to decide that its Wallet Unit does not support all PID Providers, and that, conversely, a PID Provider may decide that it does not support all Wallet Solutions; see [Section 6.5.2.3](#6523-user-validates-that-wallet-solution-is-usable-with-relevant-pid). Note that in this situation, the subject of all PIDs in the Wallet Unit will be the same person, namely the User of the Wallet Unit.
 
 Additionally, a Wallet Unit may contain multiple PIDs, where these PIDs have different subjects. This may happen in case the User is a natural person representing another natural person or a legal person. Examples of this include a parent holding the PID of a child, or a guardian holding the PID of a disabled or elderly person they can legally represent, or a company owner holding a legal-person PID for their company. However, such a situation may lead to operational complexities. In general, how to handle legal representation use cases within the EUDI Wallet ecosystem is a topic that will be further discussed with Member States in the future.
 
@@ -2113,7 +2113,7 @@ infrastructure.
 Note that for PID Providers it is not mandatory to possess all Wallet Provider
 Trusted Lists, if there are multiple. This is because it is not mandatory for a
 PID Provider to accept all certified Wallet Solutions in the EUDI Wallet
-ecosystem. Each PID Provider  will choose which Trusted Lists they need to
+ecosystem. Each PID Provider will choose which Trusted Lists they need to
 subscribe to. This is different for Attestation Providers: they must accept all
 Wallet Solutions and hence must possess all Wallet Provider Trusted Lists.
 
@@ -2379,7 +2379,7 @@ Notes:
 
 - The signature over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
     - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-        - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
+    - the solution can be certified for security at LoA "high" according to [chapter 7](#7-certification-and-risk-management)
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
 
@@ -2769,7 +2769,7 @@ For undated references, the latest version available applies.
 | [2015/1505] | [COMMISSION IMPLEMENTING DECISION (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. |
 | [eIDAS 2.0] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [Risk Register] | [Regulation (EU) 2024/2981, Annex I](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
-| [CIR 2024/2977]  | [Commission Implementing Regulation 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets |
+| [CIR 2024/2977] | [Commission Implementing Regulation 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets |
 | [CIR 2024/2979] | [Commission Implementing Regulation 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets |
 | [CIR 2024/2980] | [Commission Implementing Regulation 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notifications to the Commission concerning the European Digital Identity Wallet ecosystem |
 | [CIR 2024/2981] | [Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
@@ -2805,7 +2805,7 @@ For undated references, the latest version available applies.
 | [W3C VCDM v2.0] | Sporny, M. *et al,* "[Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)", W3C Candidate Recommendations Draft, 16 April 2024 |
 | [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)" |
 | [W3C WebAuthn] | [Web Authentication](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/), An API for accessing Public Key Credentials Level 2, W3C Recommendation |
-| [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available:  <https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html> |
+| [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available: <https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html> |
 | [OpenID4VCI]| Lodderstedt, T. et al., "OpenID for Verifiable Credential Issuance", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html> |
 | [OpenID4VP] | Terbu, O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
 | [HAIP] | Yasuda, K. et al, "OpenID4VC High Assurance Interoperability Profile", OpenId Foundation. Available: <https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0.html> |
