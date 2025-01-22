@@ -314,7 +314,7 @@ Certain WUA elements are somewhat sensitive, as they may allow for linkability, 
 
 When a Wallet Unit and Relying Party performs registration of a pseudonym, key material will be stored on the Wallet Unit. This can be seen as a special case of issuance, in which the Relying Party acts the issuer and will be interested in what security guarantees the Wallet Unit can provide. Topic C should distinguish between a Relying Party acting as a Relying Party and Pseudonym issuer.
 
-There are two main areas of Topic C that are particularly relevant in relation to Psedonyms:
+There are two main areas of Topic C that are particularly relevant in relation to Pseudonyms:
 
 - **Wallet Trust Evidence:** Part of the WUA contains information on functional and cryptographic capabilities of the Wallet Unit (currently known as WTE). HRL WTE_24 *A Wallet Instance SHALL release a WTE only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party.* states that an RP must not receive WTE information from the WU, however this prohibits a number of the HRLs related to issuance. Essentially, only the *Self Attestation* and *No Attestation* attestation types mentioned in Chapter 4.2.1 can be supported without access to WTE.
 
