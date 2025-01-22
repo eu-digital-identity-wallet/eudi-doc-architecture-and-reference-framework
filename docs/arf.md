@@ -202,7 +202,7 @@ A User can send a pseudonym to a Relying Party, in conjunction with a PID or att
 Units support the generation of pseudonyms for Users in compliance with the W3C
 WebAuthn API specification, [W3C WebAuthn].
 
-Note: Pseudonyms were added to the list of Topics to be discussed for next major
+Note: Pseudonyms were added to the list of Topics to be discussed for the next major
 release of the ARF.  These discussions will include which use cases for using a
 pseudonym must be supported by Wallet Units and the way in which this support
 will be technically implemented. This section will be updated in the next major
