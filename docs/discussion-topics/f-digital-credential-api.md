@@ -1,6 +1,6 @@
-# F - Digital Credentials API (former known as browser API)
+# F - Digital Credentials API
 
-Version 0.5, updated 16 January 2025
+Version 0.6, updated 23 January 2025
 
 ## 1. Introduction
 
@@ -278,12 +278,12 @@ workflow for presenting attributes stored in a Wallet Unit.
 2. **Relying Party Authentication**: Wallets are responsible for authenticating verifiers before delivering 
 attribute payloads. The Digital Credentials API should provide sufficient information to Wallet Units about the
 presentation request origin and other necessary context information, allowing Wallet Units to 
-identify and authenticate Relaying Parties, as well as to verify that the request from the Relying Party 
+identify and authenticate Relying Parties, as well as to verify that the request from the Relying Party 
 was not copied and replayed.
 
-3. **Relaying Party Authorization**: Although browsers and operating systems implementing
+3. **Relying Party Authorization**: Although browsers and operating systems implementing
 the Digital Credentials API should verify the web origin of Relying Parties, as well as that
-the presentation requests are transferred over TLS from the Relaying Party to the browser,
+the presentation requests are transferred over TLS from the Relying Party to the browser,
 they should not decide which verifiers are authorized to request attributes as this responsibility
 lies with national issuers and regulators.
 
@@ -335,7 +335,7 @@ eavesdropping the communication between the Wallet Unit and the RP's website
 ### 3.5 Availability preservation
 
 The use of the Digital Credentials API should account for failures in the process 
-of relaying request presentations and responses, and  should not enable Denial-of-Service 
+of relying request presentations and responses, and  should not enable Denial-of-Service 
 attacks against Wallet Units. Particularly:
 
 1. **Service continuity** Within the API's architecture, the Wallet Unit and the Relying Party 
@@ -390,7 +390,7 @@ browser and the operating system."
 | Reference | Description |
 | --- | --- |
 | [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
-| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft |
+| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v1.0, final |
 | [Cred_API] | Digital Credentials, Draft Community Group Report, 05 December 2024, available at [https://wicg.github.io/digital-credentials/](https://wicg.github.io/digital-credentials/)|
 | [Cred_Man] | Credential Management Level 1, 13 August 2024, available at [https://www.w3.org/TR/credential-management-1/](https://www.w3.org/TR/credential-management-1/)|
 | [Ctap] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023, available at [https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html](https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html)|
