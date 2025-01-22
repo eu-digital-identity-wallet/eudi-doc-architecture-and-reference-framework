@@ -614,7 +614,7 @@ structured as follows:
 - [Section 4.2](#42-design-principles) discusses the design principles that
 guided the design of the EUDI Wallet ecosystem, as described in this ARF.
 - [Section 4.3](#43-reference-architecture) presents an overview of the
-ecosystem's architecture, focussing on the components that make upa Wallet Unit
+ecosystem's architecture, focussing on the components that make up a Wallet Unit
 and on the interfaces between a Wallet Unit and other entities, as well as the
 protocols used on these interfaces.
 - [Section 4.4](#44-data-presentation-flows) discusses the different attestation
