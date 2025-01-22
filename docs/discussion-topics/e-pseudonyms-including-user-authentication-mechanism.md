@@ -190,18 +190,25 @@ The Wallet Unit will act as an Authenticator in this setting.
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
-Below we elaborate on how these different logical components work together to allow the registration and subsequent authentication using passkeys.
+[WebAuthN] relies on several different types of identifiers: 
+
+- **Relying Party ID:** An identifier unique to the Relying Party which must be a valid domain string. This is used to identify to the user (and Authenticator) which Relying Party is asking for registration/authentication.
+- **Credential ID:** A unique identifier chosen by the Authenticator for each passkey. 
+- **User ID:** An identifier unique to each user that is assigned by the Relying Party. This will be provided to the Authenticator when registering a new passkey and subsequently provided by the Relying Party to indicate to the Authenticator which passkeys are requested. The Authenticator will keep track of which passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.
+- **User Display Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This is to allow the user to easily distinguish and select which passkey they want to authenticate with if several are present. 
+
+Below we elaborate on how the different components work together to allow the registration and subsequent authentication using passkeys.
 
 #### 4.2.1 Registration
 
 The flow for registering a passkey in [WebAuthN] is the following:
 
-1. The Relying Party Server creates a challenge and sends this along with information about the user and the Relying Party to the Relying Party Client.
+1. The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Display Name to the Relying Party Client.
 2. The Relying Party Client forwards the information to the Client using the WebAuthnAPI.
-3. The Client checks that the information about the Relying Party is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
-4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair scoped to this specific Relying Party and an "attestation" (explained below). Finally, the public key of the key pair is sent to the Client
+3. The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
+4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair with a new Credential ID and set the scope of this to the specific Relying Party ID and User ID. Finally, the Authenticator generates and "attestation" (explained below) and sends this as well as the public key and its Credential ID to the Client
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
-6. The Relying Party Server verifies the information and registers the received public key.
+6. The Relying Party Server verifies the attestation and registers the received public key for this User ID.
 
 Note that Authenticator stores the public key pair in a way such that it is scoped uniquely to a specific Relying Party aligning with the requirements of [CIR.2024.2979], Article 14 2, which states that the pseudonyms must be unique to each Relying Party.
 
@@ -233,14 +240,15 @@ In Chapter 5.1, we discuss how the other relates to previously identified privac
 
 The flow for authenticating using a passkey following [WebAuthN] is:
 
-1. The Relying Party Server creates a challenge and sends this along with information about the Relying Party to the Relying Party Client.
+1. The Relying Party Server creates a challenge and sends this along with its Relying Party ID to the Relying Party Client.
 2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
-3. The Client checks that the information about the Relying Party is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
+3. The Client checks that the Relying Party ID is consistent with the caller's domain and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
-   It then prompts the user to select one of the passkeys scoped to this relying party.
-   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data.
+   It then prompts the user to select one of the passkeys scoped to this Relying Party ID. For this step the User Display Name can be presented to the user.
+   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID. 
+   This is then sent to the Client.
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
-6. The Relying Party Server verifies the signature with its stored public key and depending on the outcome of this verification considers the user authenticated.
+6. The Relying Party Server verifies the signature with its stored public key for this User ID and Credential ID and depending on the outcome of this verification considers the user authenticated.
 
 ### 4.3 Challenges
 
