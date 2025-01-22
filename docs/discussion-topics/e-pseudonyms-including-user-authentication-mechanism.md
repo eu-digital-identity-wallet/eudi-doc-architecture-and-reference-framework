@@ -190,12 +190,12 @@ The Wallet Unit will act as an Authenticator in this setting.
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
-[WebAuthN] relies on several different types of identifiers: 
+[WebAuthN] relies on several different types of identifiers including: 
 
-- **Relying Party ID:** An identifier unique to the Relying Party which must be a valid domain string. This is used to identify to the user (and Authenticator) which Relying Party is asking for registration/authentication.
+- **Relying Party ID:** An identifier unique to the Relying Party which must be a valid domain string. This what the user will identify the Relying Party by and let the Authenticator learn which Relying Party is asking for registration/authentication.
 - **Credential ID:** A unique identifier chosen by the Authenticator for each passkey. 
 - **User ID:** An identifier unique to each user that is assigned by the Relying Party. This will be provided to the Authenticator when registering a new passkey and subsequently provided by the Relying Party to indicate to the Authenticator which passkeys are requested. The Authenticator will keep track of which passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.
-- **User Display Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This is to allow the user to easily distinguish and select which passkey they want to authenticate with if several are present. 
+- **User Display Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This allows the user to easily distinguish and select which passkey they want to authenticate with if several are present. 
 
 Below we elaborate on how the different components work together to allow the registration and subsequent authentication using passkeys.
 
