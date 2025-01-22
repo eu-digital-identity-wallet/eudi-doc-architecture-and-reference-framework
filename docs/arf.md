@@ -40,7 +40,7 @@ including the adopted Commission Implementing Regulations:
 ### 1.2 Purpose of this document
 
 The purpose of this document is to explain the architecture of the EUDI Wallet
-ecosystem and all of its components, as well how these components will interact
+ecosystem and all of its components, as well as how these components will interact
 to ensure the security of the ecosystem and the privacy of its Users. Also, it
 serves as background information to allow a better understanding of the the
 high-level requirements established in Annex 2.
