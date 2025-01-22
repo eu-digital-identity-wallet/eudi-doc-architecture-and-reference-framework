@@ -122,7 +122,7 @@ The user uses their Wallet Unit to perform this authentication.
 ### 3.2 Use Case B: Presentation of Attributes with Subsequent Authentication using Pseudonyms
 
 Similarly, to above a user wishes to create an account with an associated pseudonym that can be used for subsequent authentication at later sessions.
-However, in this scenario the user would like to register attested attributes in the form of either Person Identification Data (PID), Qualified Electronically Attested Attributes (QEAAs), or Electronically Attested Attributes (EAAs) while registering.
+However, in this scenario the user would like to register verifiable attributes in the form of either Person Identification Data (PID), Qualified Electronic Attestation of Attributes (QEAAs), or Electronic Attestation of Attributes (EAAs) while registering.
 
 Concretely, the use case goes as follows:
 1. A user registers a pseudonym and presents PID or (Q)EAAs to a Relying Party using their Wallet Unit.
