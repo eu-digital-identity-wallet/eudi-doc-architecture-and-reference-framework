@@ -198,7 +198,7 @@ Unit presents mDL attributes to a machine without human oversight.
 
 ### 2.5 Pseudonyms
 
-A User can be idenfied by a pseudonym to a Relying Party. Wallet
+A User can send a pseudonym to a Relying Party, in conjunction with a PID or attestation, or standalone. Wallet
 Units support the generation of pseudonyms for Users in compliance with the W3C
 WebAuthn API specification, [W3C WebAuthn].
 
