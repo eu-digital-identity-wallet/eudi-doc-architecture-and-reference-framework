@@ -122,7 +122,8 @@ secure cryptographic interfaces between the Wallet Instance and WSCA, user
 interfaces with Wallet Instances, authentication mechanisms for users to access
 their devices, and certificate transparency. Additionally, the document will
 address the support and maintenance responsibilities of Wallet Providers, the
-EUDI Wallet Trust Mark, and the PID Rulebook.
+EUDI Wallet Trust Mark, the PID Rulebook and Transactional data needed by 
+Wallet Units in Payments and other use cases.
 
 A detailed list of these topics and the progress of their development is available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36)
 
