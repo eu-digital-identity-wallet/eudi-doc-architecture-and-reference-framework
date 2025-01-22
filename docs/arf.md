@@ -133,7 +133,7 @@ address the support and maintenance responsibilities of Wallet Providers, the
 EUDI Wallet Trust Mark, the PID Rulebook and Transactional data needed by 
 Wallet Units in Payments and other use cases.
 
-A detailed list of these topics and the progress of their development is available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36)
+A detailed list of these topics and the progress of their development is available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
 
 ## 2 Use Cases
 
@@ -156,10 +156,10 @@ and obtaining User approval.
 
 The eIDAS Expert Group has described service blueprints for the following use cases:
 
-- Identification and authentication to access online services, see [Section 2.2](#22-identification-and-authentication-to-access-online-services)
-- Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature)
-- Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence)
-- Pseudonyms, see [Section 2.5](#25-pseudonyms).
+- Identification and authentication to access online services, see [Section 2.2],(#22-identification-and-authentication-to-access-online-services)
+- Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature),
+- Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence),
+- Pseudonyms, see [Section 2.5](#25-pseudonyms),
 - Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.6](#26-other-use-cases).
 
 ### 2.2 Identification and authentication to access online services
@@ -206,7 +206,7 @@ Unit presents mDL attributes to a machine without human oversight.
 
 ### 2.5 Pseudonyms
 
-A User can send a pseudonym to a Relying Party, in conjunction with a PID or attestation, or standalone. Wallet
+A User can send a pseudonym to a Relying Party, either in conjunction with a PID or attestation or standalone. Wallet
 Units support the generation of pseudonyms for Users in compliance with the W3C
 WebAuthn API specification, [W3C WebAuthn].
 
@@ -380,8 +380,8 @@ following entities:
 - PID Providers,
 - QEAA Providers,
 - PuB-EAA Providers,
-- Access Certificate Authorities
-- Qualified Electronic Signature Remote Creation (QESRC) Providers
+- Access Certificate Authorities,
+- Qualified Electronic Signature Remote Creation (QESRC) Providers.
 
 Note: Trusted Lists and Trusted List Providers may also exist for non-qualified
 EAA Providers, but this is out of scope of the ARF.
