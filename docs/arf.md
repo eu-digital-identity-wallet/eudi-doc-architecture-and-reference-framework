@@ -104,7 +104,7 @@ not bound to Wallet Units are not included in the scope of this document.
 
 ### 1.6 Future work
 
-Several key areas require further exploration and refinement. These topics will
+In this version 1.5 of the ARF, several key areas still require further exploration and refinement. These topics will
 be discussed in collaboration with Member States, the European Digital Identity
 Cooperation Group, civil society, industry representatives, and professionals,
 ensuring comprehensive feedback from all relevant stakeholders. The outcomes of
@@ -537,6 +537,15 @@ a transaction, the Wallet Unit evaluates the policy based on data provided by
 the Relying Party, and warns the User if the outcome of that evaluation is
 negative. Please refer to [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present)
 for more information.
+
+Article 5b (10) of the [eIDAS 2.0] Regulation states "Intermediaries acting on behalf of relying parties shall be deemed to be relying parties and shall not store data about the content of the transaction.". Such an intermediary is a party that offers services to Relying Parties to, on their behalf, connect to Wallet Units and request the User attributes that these Relying Parties need. The intermediary then sends the presented attributes to the 'end' Relying Party. This implies that an intermediary performs all tasks assigned to a Relying Party in this ARF on behalf of the 'end' Relying Party, in particular:
+
+- Registering as a Relying Party, including registering the attributes the 'end' Relying Party wants to request, and obtaining an access certificate (see [Section
+6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance)) and a registration certificate (see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)) in the name of the 'end' Relying Party.
+- Requesting the presentation of attributes from Wallet Units, using one or more of the flows described in [Section 4.4](#44-data-presentation-flows).
+- Sending the obtained access certificate and registration certificate (bearing the name of the  'end' Relying Party) to the Wallet Unit, and performing Relying Party authentication using the corresponding private key.
+
+There must be an interface between an intermediary and a Relying Party, over which the 'end' Relying Party can request the intermediary to request some User attributes from a Wallet Unit and that the intermediary uses to send back the attribute values presented by the Wallet Unit. However, specifying this interface or the (security) requirements with which it needs to comply, is out of scope of the ARF.
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
