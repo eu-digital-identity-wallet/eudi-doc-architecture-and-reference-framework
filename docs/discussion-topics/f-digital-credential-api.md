@@ -354,25 +354,34 @@ attackers to block transactions by Relying Parties and Wallet Units
 The following High-Level Requirements will be added to Annex 2 of the ARF v1.9:
 
 #### REQUIREMENT 1
-A Wallet Unit and a Relying Party receiving an attestation from the Wallet Unit
-SHOULD ensure that the attributes included in the presented attestation 
-are accessible only to the Relying Party. For example, the presentation can 
-be encrypted in such a way that only the Relying Party is able to decrypt it.
+A Wallet Unit and a Relying Party Instance receiving an attestation from the Wallet 
+Unit SHALL ensure that the attributes included in the presented attestation are 
+accessible only to the Relying Party, by encrypting the presentation response. 
+This SHALL include preventing decryption of the presentation response or Man-in-the-Middle 
+attacks by the browser, the operating system, or other components between the Wallet 
+Unit and the Relying Party.
 
-#### REQUIREMENT 2
-A Wallet Unit SHALL not disclose the values of the attributes of stored attestations 
-to third parties, including the operating system, by any means other than the 
-presentation protocols specified in the Implementing Acts. This restriction 
-applies even if such disclosure enhances the usability of services provided 
-by the operating system or browsers (for example, attestation selection in 
-the context of the Credential API) 
 
-#### REQUIREMENT 3 (Conditional)
-Providing that the expectations set in chapter 3 are met, the following
+#### REQUIREMENT 2 (Conditional)
+Providing that the expectations set in chapter 3 with respect to 
+PID or attestation presentation are met, the following
 High-Level Requirement will be added to Annex 2 of the ARF v1.9:
 
 Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
 presentation flows. 
+
+#### REQUIREMENT 3 (Conditional)
+Providing that the expectations set in chapter 3 with respect to 
+PID or attestation presentation are met, the following
+High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+
+A Wallet Unit SHALL disclose the presence of all stored attestations to the Digital 
+Credential API framework, but SHALL NOT disclose the value of the attributes in 
+these attestations. ​
+
+​Note: This restriction applies even if such disclosure would enhance the services 
+provided by the operating system to the Wallet Unit, for example, attestation selection 
+in the context of the Digital Credential API.
 
 ### 4.2 High-Level Requirements to be changed
 #### RPA_01
