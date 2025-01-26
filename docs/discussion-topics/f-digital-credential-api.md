@@ -145,7 +145,7 @@ Web Platform Incubator Community Group (WICG) that builds upon Credential
 Management Level 1 API W3C Working Draft \[Cred_Man\]. The goal of the Digital
 Credentials API is to enable user agents (i.e., browsers) to mediate access to,
 and presentation of attestations. Currently, attestation issuance is not in the
-scope of this API, but future versions [may consider it](
+scope of this API, but future versions [will consider it](
 https://github.com/WICG/digital-credentials/issues/167). The Digital Credentials
 API can be used, for example, by a Relying Party website to request a PID or
 (Q)EEA stored in a Wallet Unit through the User's browser. The browser and the
@@ -251,18 +251,19 @@ establishing the secure tunnel. This advertisement is used as a proximity check,
 
 ### 3.1 Expected functionality
 
-1. **Wallet Selection and Invocation**: The Digital Credentials API should
+1. **Wallet Selection and Invocation for attestation presentation**: The Digital Credentials API should
  enable a browser or OS to search for Wallet Units containing attestations 
  that potentially match the request of the Relying Party, addressing user 
  experience and scaling concerns caused custom URI-based or universal link
-  (a.k.a. app link)-based approaches.​
+(a.k.a. app link)-based approaches.​
 
 2. **Secure Cross-Device Flows**: The Digital Credentials API should enable 
 APIs and protocols (e.g., CTAP2) that ensure secure cross-device engagement, mitigating
 threats such as phishing and relay attacks.
 
 3. **Protocol support**: The Digital Credentials API should support the protocols 
-specified in the Implementing Acts as remote presentation protocols for attestations.
+specified in the Implementing Acts as remote presentation protocols for attestations
+and attestation issuance.
 
 
 
@@ -351,7 +352,9 @@ attackers to block transactions by Relying Parties and Wallet Units
 ### 4.1 High-Level Requirements to be added to Annex 2
 The following High-Level Requirements will be added to Annex 2 of the ARF v1.9:
 
-#### REQUIREMENT 1
+#### 4.1.1 Requirements to be added (likely) to Topic 1
+
+##### REQUIREMENT 1
 A Wallet Unit and a Relying Party Instance receiving an attestation from the Wallet 
 Unit SHALL ensure that the attributes included in the presented attestation are 
 accessible only to the Relying Party, by encrypting the presentation response. 
@@ -360,17 +363,17 @@ attacks by the browser, the operating system, or other components between the Wa
 Unit and the Relying Party.
 
 
-#### REQUIREMENT 2 (Conditional)
+##### REQUIREMENT 2 (Conditional)
 Providing that the expectations set in chapter 3 with respect to 
-PID or attestation presentation are met, the following
+attestation presentation are met, the following
 High-Level Requirement will be added to Annex 2 of the ARF v1.9:
 
 Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
 presentation flows. 
 
-#### REQUIREMENT 3 (Conditional)
+##### REQUIREMENT 3 (Conditional)
 Providing that the expectations set in chapter 3 with respect to 
-PID or attestation presentation are met, the following
+attestation presentation are met, the following
 High-Level Requirement will be added to Annex 2 of the ARF v1.9:
 
 A Wallet Unit SHALL disclose the presence of all stored attestations to the Digital 
@@ -380,6 +383,16 @@ these attestations. ​
 ​Note: This restriction applies even if such disclosure would enhance the services 
 provided by the operating system to the Wallet Unit, for example, attestation selection 
 in the context of the Digital Credential API.
+
+#### 4.1.2 Requirements to be added (likely) to Topic 10/23
+
+##### REQUIREMENT 4 (Conditional)
+Providing that the expectations set in chapter 3 with respect to 
+attestation issuance are met, the following
+High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+
+Wallet Units and Relying Party Instances SHALL support the Digital Credentials API
+for attestation issuance.
 
 ### 4.2 High-Level Requirements to be changed
 #### RPA_01
