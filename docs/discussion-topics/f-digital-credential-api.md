@@ -1,6 +1,6 @@
 # F - Digital Credentials API
 
-Version 0.6, updated 23 January 2025
+Version 1.0, updated 27 January 2025
 
 ## 1. Introduction
 
