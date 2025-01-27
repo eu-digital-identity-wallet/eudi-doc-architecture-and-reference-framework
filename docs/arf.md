@@ -500,7 +500,7 @@ act as PuB-EAA Providers if they meet the requirements of the [eIDAS 2.0]
 Regulation, see [Section 3.7](#37-electronic-attestation-of-attributes-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers).
 In Figure 1 this is indicated by the arrow 'provides qualified data'.
 
-### 3.11 Relying Parties
+### 3.11 Relying Parties (including intermediaries)
 
 Relying Parties are natural or legal persons that rely upon an electronic
 identification scheme or on a Trust Service. They request attributes contained
@@ -532,13 +532,16 @@ the Relying Party, and warns the User if the outcome of that evaluation is
 negative. Please refer to [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present)
 for more information.
 
-Article 5b (10) of the [eIDAS 2.0] Regulation states "Intermediaries acting on behalf of relying parties shall be deemed to be relying parties and shall not store data about the content of the transaction.". Such an intermediary is a party that offers services to Relying Parties to, on their behalf, connect to Wallet Units and request the User attributes that these Relying Parties need. The intermediary then sends the presented attributes to the 'end' Relying Party. This implies that an intermediary performs all tasks assigned to a Relying Party in this ARF on behalf of the 'end' Relying Party, in particular:
+So-called intermediaries form a special class of Relying Party. Article 5b (10) of the [eIDAS 2.0] Regulation states "Intermediaries acting on behalf of relying parties shall be deemed to be relying parties and shall not store data about the content of the transaction.". Such an intermediary is a party that offers services to Relying Parties to, on their behalf, connect to Wallet Units and request the User attributes that these Relying Parties need. The intermediary then sends the presented attributes to the 'end' Relying Party. This implies that an intermediary performs all tasks assigned to a Relying Party in this ARF on behalf of the 'end' Relying Party. In particular:
 
-- Registering as a Relying Party, including registering the attributes the 'end' Relying Party wants to request, and obtaining an access certificate (see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance)) and a registration certificate (see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)) in the name of the 'end' Relying Party.
-- Requesting the presentation of attributes from Wallet Units, using one or more of the flows described in [Section 4.4](#44-data-presentation-flows).
-- Sending the obtained access certificate and registration certificate (bearing the name of the  'end' Relying Party) to the Wallet Unit, and performing Relying Party authentication using the corresponding private key.
+1. The intermediary registers once as a Relying Party and obtain an access certificate (see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance)) bearing its own name and Relying Party identifier.
+2. Next, the intermediary will separately register each of the 'end' Relying Parties that uses its services,  including registering the attributes the 'end' Relying Party wants to request. The intermediary obtains a registration certificate (see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)) showing the name of the 'end' Relying Party. The Registrar verify, in a manner to be decided by a Member State, that the intermediary is indeed using the services of the 'end' Relying Party. If all is correct, the Registrar will issue a registration certificate containing an additional attribute stating that the 'end' Relying Party is using the services of the intermediary.
+3. When asked by an 'end' Relying Party, the intermediary will request the presentation of attributes from Wallet Units, using one or more of the flows described in [Section 4.4](#44-data-presentation-flows). For this, the intermediary will use their own access certificate (point 1. above) and the registration certificate of the 'end' Relying Party (point 2. above).
+4. The intermediary forwards the User attributes it obtained from the Wallet Unit to the 'end' Relying Party. There must be an interface between an intermediary and a Relying Party, over which the 'end' Relying Party can request the intermediary to request some User attributes from a Wallet Unit and that the intermediary uses to send back the attribute values presented by the Wallet Unit. However, specifying this interface or the (security) requirements with which it needs to comply, is out of scope of the ARF. In particular, it is not required that the User attributes are end-to-end encrypted between the Wallet Unit and the 'end' Relying Party, such that an intermediary would not be able to see them.
 
-There must be an interface between an intermediary and a Relying Party, over which the 'end' Relying Party can request the intermediary to request some User attributes from a Wallet Unit and that the intermediary uses to send back the attribute values presented by the Wallet Unit. However, specifying this interface or the (security) requirements with which it needs to comply, is out of scope of the ARF.
+Note that this approach implies that an intermediary (if it is acting only as an intermediary, and never as an 'end' Relying Party in its own right) will not need a registration certificate. Conversely, an 'end' Relying Party using the services of an intermediary will not need an access certificate.
+
+As discussed in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes), during a transaction, a Wallet Unit requests the User for their approval to present any User attributes to the Relying Party. In this process, the Wallet Unit informs the User about the authenticated identity of the intermediary (from the access certificate), and also about the identity of the 'end' Relying Party and the fact that this Relying Party is using the services of the intermediary (from the registration certificate).
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -2281,7 +2284,7 @@ Subsequently, during each presentation of attributes:
 
 During registration, the Relying Party registered which attributes it intends to request from Wallet Units. The Registrar listed these attributes in a Relying Party registration certificate and sent it to the Relying Party, which distributes it to all of its Relying Party Instances.
 
-During a transaction, a Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User, at least in case one or more of the requested attributes is not included in the list of attributes in the registration certificate.
+During a transaction, a Relying Party Instance sends this registration certificate to the Wallet Unit in the presentation request. The Wallet Unit displays the contents of the registration certificate to the User when asking the User for approval, see [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes), at least in case one or more of the requested attributes is not included in the list of attributes in the registration certificate.
 
 The format of the registration certificate, as well as the way in which the
 Wallet Unit can verify that the registration certificate belongs to the
@@ -2345,8 +2348,9 @@ goal of each (group of) requested attributes.
 Secondly, selective disclosure implies that the Wallet Unit enables the User to approve or deny the presentation of each (group of) attributes separately. The User takes a decision based on at least the following information:
 
 - The authenticated identity of the Relying Party,
-- The information in the Relying Party's presentation certificate regarding the attributes that the Relying Party has registered during registration,
-- The outcome of the evaluation of the embedded disclosure policy.
+- The information in the Relying Party's registration certificate regarding the attributes that the Relying Party has registered during registration, at least in case one or more of the requested attributes is not included in the list of attributes in the registration certificate,
+- The information in the Relying Party's registration certificate regarding an intermediary used by the Relying Party, if any, see [Section 3.11](#311-relying-parties-including-intermediaries).
+- The outcome of the evaluation of the embedded disclosure policy, if any.
 
 After the User gives their approval, the Wallet Unit will present the approved
 User attributes to the Relying Party Instance.
@@ -2382,8 +2386,8 @@ Notes:
 - All PIDs and attestations in the EUDI Wallet ecosystem are digitally signed by the respective PID Provider or Attestation Provider, or by a WSCD that is part of the Wallet Unit. If an attestation is digitally signed by a WSCD, it is called a device-signed or self-issued attestation. Device-signed or self-issued PIDs or attestations are allowed only if it can be shown that the WSCD signs them at the required Level of Assurance (LoA). This implies that the level of security offered by the WSCD is at least equivalent to the security level of the secure infrastructure used by the PID Provider or Attestation Provider for signing PIDs or attestations.
 
 - The signature over the PID or attestation may or may not include the value of the presented attributes. If the attribute values are not included in the signature creation, the Relying Party trusts these attributes because they are presented over an authenticated channel set up between the secure environment (i.e., the WSCD or the secure infrastructure used by the PID Provider or Attestation Provider, see previous bullet) and the Relying Party. One possible way to set up such an authenticated channel is by ensuring the authenticity and integrity (but not the non-repudiation) of the attributes by means of a Message Authentication Code (MAC). The MAC is created by the secure environment over the presented attribute values. The MAC key is generated from an ephemeral key of the Relying Party (sent to the secure environment by the Wallet Instance) in combination with an ephemeral key created by the secure environment. The latter ephemeral key is sent to the Relying Party in such a way that the Relying Party can verify the authenticity of this key. Such a solution, or similar ones, can be used provided that:
-    - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-    - the solution can be certified for security at LoA "high" according to [Chapter 7](#7-certification-and-risk-management)
+  - the solution is fully compliant with the relevant standards, i.e., [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
+  - the solution can be certified for security at LoA "high" according to [Chapter 7](#7-certification-and-risk-management)
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
 
