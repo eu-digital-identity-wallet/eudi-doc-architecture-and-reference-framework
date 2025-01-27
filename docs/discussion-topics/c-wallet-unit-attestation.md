@@ -20,14 +20,15 @@ The document is structured as follows:
 
 - Chapter 2 presents the legal requirements for functionality related to wallet unit attestation and key attestation.
 
-- Chapter 3 explains reasoning behind wallet unit attestation as well as lists open questions related to this topic.
+- Chapter 3 discusses the high level purpose wallet unit attestation as well as lists open questions related to this topic.
 
-- Chapter 4 presents a number of HRL proposals related to WUA .
+- Chapter 4 present possible technical approaches and their consequences to WUA.
 
+- Chapter 5 presents issues in relation to privacy. 
 
-- Chapter 5 relates the topic to other topics being discussed and previously identified risks.
+- Chapter 6 relates the topic to other topics being discussed and previously identified risks.
 
-- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States. 
+- Chapter 7 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States. 
 
 ## 2 Legal Requirements for Wallet Unit Attestation
 Multiple legal texts impose direct requirements Wallet Unit Attestation and impose requirement that are solved using Wallet Unit Attestation: [CIR.2024.2977], [CIR.2024.2979], [CIR.2024.2982] and [eiDAS 2.0].
@@ -74,7 +75,7 @@ and validity of wallet units by that provider should apply prior to the issuance
 
 **Article 3**
 
-*5. Providers of person identification data shall ensure that person identification data that they issue is cryptographically bound to the wallet unit to which it is issued.\
+* 5. Providers of person identification data shall ensure that person identification data that they issue is cryptographically bound to the wallet unit to which it is issued.\
 9. Before issuing person identification data to a wallet unit, providers of person identification data shall authenticate and validate the wallet unit attestation of the wallet unit and verify that the wallet unit belongs to a wallet solution the provider of person identification data accepts or use another authentication mechanism in accordance with an electronic identity scheme notified at assurance level high.*
 
 **Article 5**
@@ -190,62 +191,90 @@ providers shall ensure that the following requirements are complied with:\
 
 ## 3 Purpose of WUA
 
-summary of requirements from IA -> condense the following:
-The above legal requirements impose the following use cases:
-1. WUA information must be displayed to users in certain cases.
-2. WUA information must allow relying parties, PID and attestation providers and other Wallet Units to validate the authenticity and revocation status of a WU.
-3. Wallet Providers must be able to revoke a Wallet Unit.
-4. Only the Wallet Providers of a Wallet Unit must be able to revoke that Wallet Unit.
-5. It is the Wallets Providers responsibility to create the WUA.
-6. PID issuers must be able to ensure their data is cryptographically bound to the wallet unit during issuance.
+The legal requirements of Chapter 2 address different aspects related to Wallet Unit Attestation. The aspects cover interaction with the user (i.e. requirements in relation to the user interface), interaction with other parties (i.e. what WUA should be used for) and the WUA itself (i.e. essential information that should be contained in the WUA). This document will not go into requirements on the user interface, but will focus on how WUA may be used in connection with other parties.
 
+The legal requirements in relation to the functional requirements of WUA can be summarized as the following functionality:
 
-The above use case requirements impose the following requirements on the WUA data object itself:
+1. WUA information must allow relying parties, PID and attestation providers and other Wallet Units to validate the authenticity and revocation status of a WU.
+2. Wallet Providers must be able to revoke a Wallet Unit.
+3. Only the Wallet Providers of a Wallet Unit must be able to revoke that Wallet Unit.
+4. It is the Wallets Providers responsibility to create the WUA.
+5. PID issuers must be able to ensure their data is cryptographically bound to the wallet unit during issuance.
+
+Similarly, the following requirements wrt. the WUA itself can derived:
 1. The WUA must contain information, allowing parties to verify the validity of the WU, e.g., it originates from a trusted Wallet Provider.
 2. The WUA must contain information, allowing parties to check if a WU has been revoked.
 3. The WUA must contain a public key, where the corresponding private key is protected by a WSCD. 
 
-> Question any missing requirements?
+> Question: are there any missing requirements?
+
+The majority of requirements are fairly straight forward and easy to understand, however there are two topics that warrant further investigation:
+
+[CIR.2024.2977] Article 3 states that:
+* 5. Providers of person identification data shall ensure that person identification data that they issue is cryptographically bound to the wallet unit to which it is issued.*
+
+The wording, _cryptographically bound_, of this is requirement may be interpreted in different ways. This interpretation, and the consequences of the interpretation, is discussed in Chapter 4.
+
+
+[CIR.2024.2977] Article 5 states that:
+* 4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
+...\
+(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;*
+
+The text states that providers of PID are obligated to revoke PID issued to a Wallet Unit, if that Wallet Unit is revoked. This implies that providers of PID are obliged to maintain a record of Wallet Units that have been issued PID and monitor the revocation status of these Wallet Units. Depending on how the WUA is constructed and how the above mentioned _cryptographic binding_ is done, it may be possible to make a revocation of the Wallet Unit automatically revoke any issued PID.
 
 
 
-Wallet Providers responsibility
 
-Binding to device issue : key association + hierarchical keys - mention possible solutions should be specified in other specification
-Key should come from "secure area" but is ultimately decided by wallet provider
+## 4 Technical approach to WUA
+>TODO Discuss how the requirements can be implemented on abstract level, highlight that ultimately it is the Wallet Providers responsibility 
 
-Revocation
+### Introduce "basic approach"
+Attestation on WU public key, signed by Wallet Provider.
+discuss pros, cons and limitations
 
-privacy Issues:
--WUA as identifier
- -Revocation by ID may leak
+### Key binding
+Sketch problem we're trying to solve
+(Short) Introduction to proof of association + hierarchical keys as possible techniques to solve the above problem
+Details to be found/specified in other specification/documentation
 
-Selective disclosure
+Ultimately the Wallet Providers responsibility: Key should come from "secure area" but is ultimately decided by wallet provider - text in Annex 2 Topic 9 wrt. WSCA
 
+### Revocation
+Introduce how this can be done. Discuss pros/cons/limitations. 
+
+### Details on WUA can be found in Rulebook
 Content of Rulebook -> Annex / chapter 6?
 
-
-### 3.3 Questions Related to WUA
-
-Below, we list open questions that must still be clarified related to the above.
-
-**Question 1:** Should xx?
-
->Note that, because the xx.
-
-## 4 High-Level Approach to Pseudonyms
-
-As specified in
-
-### 4.1 Introduction 
+### Relation to Pseudonyms
+WebAuthN expects x.509 certs in relation to attestation, compatibility with mdoc / sd-jwt/?
 
 
 
-## 5 Relation to Other Topics
 
-Below we discuss how pseudonyms relate to the other topics being discussed.
 
-### 5.1 Privacy Risks and Mitigations
+## 5 privacy Issues 
+-WUA as identifier - Linkability
+-Revocation may also allow for linkability
+
+-WUA (originally?) only intended for PID/Attestation providers - also needed by RP for revocation checks - Needs to be handled
+-Highlight Selective disclosure as suggested solution
+
+### Clarification before final paper:
+Is "cryptographic bound" relevant to discuss?
+Can we assume batch issuance to be a common practice for solving linkability issues?
+Should we discuss the level of detail in relation to revocation - linkability?
+Should we discuss how webauthn attestations are handled?
+
+Should the Rulebook be moved to STS work? It is mainly technical and not really something that's suitable for discussion.
+
+
+
+## 6 Relation to Other Topics
+%Not updated for WUA yet
+Below we discuss how wallet unit attestations relate to the other topics being discussed.
+
+### 6.1 Privacy Risks and Mitigations
 
 Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronically Attested Attributes (Q)EAA.
 Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthN] specification.
@@ -256,15 +285,15 @@ In Chapter 5.3 we discuss how this relates to the risks and threats identified i
 Below we consider two different types of linkability concerns for the attestation types summarized in Chapter 4.2.1 namely Relying Party Linkability and CA Linkability.
 The latter form of linkability is similar to what is dubbed Attestation Provider Linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthN] and to avoid confusion we, therefore, use a different wording here.
 
-#### 5.1.1 Linkability
+#### 6.1.1 Linkability
 content from pseudonyms might be relevant
 
-### 5.2 Psedonyms
+### 6.2 Psedonyms
 
 Special case of above
 
-### 5.3 Relation to Risk Register
-%copied from pseudonyms
+### 6.3 Relation to Risk Register
+>copied from pseudonyms not updated for WUA yet
 As pseudonyms may be used to provide authentication, a large number of the risks listed
 in the risk register for European Digital Identity Wallets \[RiskRegister\] are (at least indirectly)
 related to the use of pseudonyms:
@@ -559,9 +588,9 @@ R14, SR1, TR39, and TR84 are particularly relevant to consider given the discuss
 
 TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.
 
-## 6 Additions and Changes to the ARF
+## 7 Additions and Changes to the ARF
 
-## 7 References
+## 8 References
 
 | Reference       | Description                                                                                                                                                                                                                                                                          |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
