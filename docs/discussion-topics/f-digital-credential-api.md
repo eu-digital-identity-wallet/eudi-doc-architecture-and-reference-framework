@@ -373,18 +373,17 @@ attacks by the browser, the operating system, or other components between the Wa
 Unit and the Relying Party.
 
 
-##### REQUIREMENT 2 (Conditional)
+##### Conditional Requirements
 Providing that the expectations set in chapter 3 with respect to 
-attestation presentation are met, the following
-High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+attestation presentation are met, the following two
+High-Level Requirements will be added (likely) to Topic 1:
+
+###### REQUIREMENT 2 (conditional)
 
 Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
 presentation flows. 
 
-##### REQUIREMENT 3 (Conditional)
-Providing that the expectations set in chapter 3 with respect to 
-attestation presentation are met, the following
-High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+###### REQUIREMENT 3 (conditional)
 
 A Wallet Unit SHALL disclose the presence of all stored attestations to the Digital 
 Credential API framework, but SHALL NOT disclose the value of the attributes in 
@@ -396,11 +395,12 @@ in the context of the Digital Credential API.
 
 #### 4.1.2 Requirements to be added (likely) to Topic 10/23
 
-##### REQUIREMENT 4 (Conditional)
+##### Conditional Requirements
 Providing that the expectations set in chapter 3 with respect to 
 attestation issuance are met, the following
-High-Level Requirement will be added to Annex 2 of the ARF v1.9:
+High-Level Requirement will be added t(likely) to Topic 10/23:
 
+###### REQUIREMENT 4  (conditional)
 Wallet Units and Relying Party Instances SHALL support the Digital Credentials API
 for attestation issuance.
 
