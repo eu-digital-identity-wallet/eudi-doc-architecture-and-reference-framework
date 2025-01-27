@@ -96,8 +96,8 @@ fact.
 This document is structured as follows:
 
 - Chapter 2 introduces the Digital Credentials API
-- Chapter 3 presents the functionality expected by the Digital Credentials API and discusses existing ARF
-requirements in the context of the  Digital Credentials API. 
+- Chapter 3 presents the functionality expected by the Digital Credentials API when used
+in the context of ARF. 
 - Chapter 4 lists the additions and changes that will be made to the ARF 
 as a result of discussing this topic with Member States.
 
@@ -212,7 +212,7 @@ As of January 2025, the same-device flow is
 implemented using the following steps:
 
 -  The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit
--  The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
+-  The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorization](img/same-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by creating a `presentation request`.
 - The operating system searches for attestations that satisfy the requested attributes.
@@ -227,7 +227,7 @@ attributes through the browser, provided that the Wallet Unit contains the attri
 The cross-device flow is implemented using the following steps:
 
 - The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit
-- The browser asks consent from the User to allow Digital Credentials API invocation from this particular website.
+- The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorization in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by 
 creating a `presentation request`.
@@ -248,6 +248,9 @@ establishing the secure tunnel. This advertisement is used as a proximity check,
 ![Attestation selection](img/cross-select.png)
 
 ## 3. Expectations from the Digital Credentials API
+
+In this section expectations from the Digital Credentials API when used in the 
+context of ARF.
 
 ### 3.1 Expected functionality
 
