@@ -46,14 +46,14 @@ This PID Rulebook is structured as follows:
 
 ## Key words
 
-This document uses the capitalized key words ‘SHALL’, ‘SHOULD’ and ‘MAY’
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY'
 as specified in [RFC 2119], i.e., to indicate requirements,
 recommendations and options specified in this document.
 
-In addition, ‘must’ (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, i.e., a requirement that is not mandated by this document,
-but, for instance, by an external document. The word ‘can’ indicates a
-capability, whereas other words, such as ‘will’, and ‘is’ or ‘are’ are
+but, for instance, by an external document. The word 'can' indicates a
+capability, whereas other words, such as 'will', and 'is' or 'are' are
 intended as statements of fact.
 
 ## Terminology
@@ -62,6 +62,8 @@ This document uses the terminology specified in Annex 1 of the ARF
 v1.5.0.
 
 # Generic High-Level Requirements for PIDs
+
+
 
 >PID_01</th>
 <th><p>A PID Provider SHALL issue any PID in both the format specified
@@ -291,7 +293,7 @@ whom the person identification data relates [in conformance with RFC
 <tr>
 <td style="text-align: center;">mobile_phone_number</td>
 <td style="text-align: center;">Mobile telephone number of the User to
-whom the person identification data relates, starting with the ‘+’
+whom the person identification data relates, starting with the '+'
 symbol as the international code prefix and the country code, followed
 by numbers only.</td>
 </tr>
