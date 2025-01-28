@@ -138,6 +138,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 - The second column lists the corresponding attribute identifier to be used in presentation requests and responses according to [ISO18013-5].
 - The third column indicates the encoding of each attribute. This column uses CDDL representation types defined in [RFC 8610]. The following notes and requirements apply:
   - tstr, uint, bstr, bool and tdate are CDDL representation types defined in [RFC 8610].
+  - Regarding type tstr: this document confirms that, as specified in RFC 8949, a tstr SHALL be encoded in UTF-8 and SHALL support the full Unicode range.
   - All attributes having encoding type tstr SHALL have a maximum length of 150 characters.
   - This document specifies full-date as *full-date = #6.1004(tstr)*, where tag 1004 is specified in [RFC 8943].
   - In accordance with [RFC 8949], section 3.4.1, a tdate attribute shall contain a date-time string as specified in [RFC 3339]. In accordance with [RFC 8943], a full-date attribute shall contain a full-date string as specified in [RFC 3339].
