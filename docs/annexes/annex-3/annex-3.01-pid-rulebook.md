@@ -108,6 +108,7 @@ All data identifiers and definitions in this chapter are independent of any enco
 | age_over_NN | Attesting whether the User to whom the person identification data relates is at least NN years old. N <> 18. |
 | age_in_years | The current age of the User to whom the person identification data relates in years. |
 | age_birth_year | The year when the User to whom the person identification data relates was born. |
+| trust_anchor | This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. *Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the Regulation, which is mandatory for QEAAs. This PID Rulebook add this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.* |
 
 ## 4 ISO/IEC 18013-5-compliant encoding of PID
 
@@ -180,6 +181,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | age_over_NN | age_over_NN | bool |
 | age_in_years | age_in_years | uint |
 | age_birth_year | age_birth_year | uint |
+| trust_anchor | trust_anchor | tstr |
 
 #### 4.2.2 Attribute nationality
 
@@ -203,20 +205,35 @@ In order to ensure a single consistent encoding of the portrait, this PID Rulebo
 - The portrait image SHALL comply with the requirements for a Full Frontal Image Type in ISO/IEC 19794-5.
 - The image SHALL be encoded as binary data.
 
-#### 4.2.4 Attribute location_status
+#### 4.2.4 Attribute location_status and revocation of PIDs
 
-The attribute location\_status SHALL NOT be present in ISO/IEC 18013-5 compliant PIDs. For such PIDs, revocation information is included in the MSO, as specified in ISO/IEC 18013-5:2025.
+The attribute location_status, as defined in CIR 2024/2977, contains the revocation information needed by a Relying Party to verify that the PID Provider did not revoke the PID. This PID Rulebook requires the following for revocation of ISO/IEC 18013-5-compliant PIDs:
+
+ **Index** | **Requirement specification** |
+|-----------|--------------|
+| PID_ISO_10 | The attribute location_status SHALL NOT be present in a ISO/IEC 18013-5 compliant PID. |
+| PID_ISO_11 | When issuing a PID compliant with [ISO/IEC 18013-5] which must be revocable, a PID Provider SHALL include the revocation information in the MSO, as specified in ISO/IEC 18013-5:2025. The PID Provider SHALL decide whether to use a status_list or a identifier_list. |
 
 ## 5 SD-JWT VC-based encoding of PID
 
 ### 5.1 High-Level Requirements for SD-JWT VC-compliant PIDs
 
-High-level requirements for SD-JWT VC-compliant PIDs will be added to a later version of this PID Rulebook.
+High-level requirements for SD-JWT VC-compliant PIDs will be added to a future version of this PID Rulebook.
 
 ### 5.2 Encoding of PID attributes
 
-The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a later version of this PID Rulebook.
+The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a future version of this PID Rulebook.
 
-## 6 References
+## 6 Further requirements
+
+### 6.1 Embedded disclosure policies
+
+Requirements regarding the inclusion of an embedded disclosure policy into a PID, if any, will be added in a future version of this PID Rulebook.
+
+### 6.2 Displaying the PID to the User
+
+Requirements regarding how a Wallet Unit should display the PID and the PID attributes to the User, if any, will be added in a future version of this PID Rulebook.
+
+## 7 References
 
 See Chapter 9 of the main ARF 1.4.0 document.
