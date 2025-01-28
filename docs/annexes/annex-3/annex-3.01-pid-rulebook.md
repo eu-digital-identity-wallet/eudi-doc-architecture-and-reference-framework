@@ -140,8 +140,8 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
   - tstr, uint, bstr, bool and tdate are CDDL representation types defined in [RFC 8610].
   - Regarding type tstr: this document confirms that, as specified in RFC 8949, a tstr SHALL be encoded in UTF-8 and SHALL support the full Unicode range.
   - All attributes having encoding type tstr SHALL have a maximum length of 150 characters.
-  - This document specifies full-date as *full-date = #6.1004(tstr)*, where tag 1004 is specified in [RFC 8943].
-  - In accordance with [RFC 8949], section 3.4.1, a tdate attribute shall contain a date-time string as specified in [RFC 3339]. In accordance with [RFC 8943], a full-date attribute shall contain a full-date string as specified in [RFC 3339].
+  - This document specifies full-date as full-date = #6.1004(tstr), where tag 1004 is specified in [RFC 8943].
+  - In accordance with [RFC 8949], section 3.4.1, a tdate attribute SHALL contain a date-time string as specified in [RFC 3339]. In accordance with [RFC 8943], a full-date attribute SHALL contain a full-date string as specified in [RFC 3339].
   - The following requirements apply to the representation of dates in attributes, unless otherwise indicated:
     - Fractions of seconds SHALL NOT be used;
     - A local offset from UTC SHALL NOT be used; the time-offset defined in [RFC 3339] SHALL be to “Z”.
@@ -154,9 +154,9 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 |------------------------|--------------|------------------|
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
-| birth_date | birth_date | full-date |
+| birth_date | birth_date | full-date, see [Section 4.2.5](#425-attribute-birth_date).|
 | birth_place | birth_place | tstr |
-| nationality | nationality | nationalities, see [Section 4.2.2](#422-attribute-nationality) |
+| nationality | nationality | nationalities, see [Section 4.2.2](#422-attribute-nationality). |
 | resident_address | resident_address | tstr |
 | resident_country | resident_country | tstr |
 | resident_state | resident_state | tstr |
@@ -165,7 +165,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | resident_street | resident_street | tstr |
 | resident_house_number | resident_house_number | tstr |
 | personal_administrative_number | personal_administrative_number | tstr |
-| portrait | portrait | See [Section 4.2.3](#423-attribute-portrait) |
+| portrait | portrait | bstr, see [Section 4.2.3](#423-attribute-portrait). |
 | family_name_birth | family_name_birth | tstr |
 | given_name_birth | given_name_birth | tstr |
 | sex | sex | uint |
@@ -176,7 +176,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | issuing_country | issuing_country | tstr |
 | document_number | document_number | tstr |
 | issuing_jurisdiction | issuing_jurisdiction | tstr |
-| location_status | - | See [Section 4.2.4](#424-attribute-location_status) |
+| location_status | - | See [Section 4.2.4](#424-attribute-location_status). |
 | issuance_date | issuance_date | tdate or full-date |
 | age_over_18 | age_over_18 | bool |
 | age_over_NN | age_over_NN | bool |
@@ -214,6 +214,10 @@ The attribute location_status, as defined in CIR 2024/2977, contains the revocat
 |-----------|--------------|
 | PID_ISO_10 | The attribute location_status SHALL NOT be present in a ISO/IEC 18013-5 compliant PID. |
 | PID_ISO_11 | When issuing a PID compliant with [ISO/IEC 18013-5] which must be revocable, a PID Provider SHALL include the revocation information in the MSO, as specified in ISO/IEC 18013-5:2025. The PID Provider SHALL decide whether to use a status_list or a identifier_list. |
+
+#### 4.2.5 Attribute birth_date
+
+For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC 8943. This encoding does not contain provisions for encoding partial dates. This may cause challenges in case the birth date of a User is not (fully) known. To deal with such cases, a PID Provider could adopt a policy to choose appropriate values for the unknown date elements. However, mandating such a policy is out of scope of this document.
 
 ## 5 SD-JWT VC-based encoding of PID
 
