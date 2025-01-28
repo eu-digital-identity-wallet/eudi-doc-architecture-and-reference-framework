@@ -241,4 +241,4 @@ Requirements regarding how a Wallet Unit should display the PID and the PID attr
 
 ## 7 References
 
-See Chapter 9 of the main ARF 1.4.0 document.
+See Chapter 9 of the main ARF 1.5.0 document.
