@@ -168,7 +168,7 @@ A.  Relying Party authentication
 | RPA_04 | For the verification of Relying Party Instance access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of Relying Party Access Certificate Authorities of all Member States. *Note: For more information about Relying Party Access Certificate Authorities, please see [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].* |
 | RPA_05 | If Relying Party authentication fails for any reason, the Wallet Instance SHALL inform the User that the identity of the Relying Party could not be verified and that therefore the request is not trustworthy. |
 | RPA_06 | If Relying Party authentication succeeds, the Wallet Instance SHALL display to the User the name of the Relying Party as included in the Relying Party registration certificate (see [Topic 44]), together with the attributes requested by the Relying Party. The Wallet Instance SHALL do so when asking the User for approval according to RPA_07. 
-| RPA_06a | If the registration certificate indicates that the Relying Party is using the services of an intermediary, as described in [Topic 52], the Wallet Unit SHALL verify that the name of the intermediary included in the registration certificate is identical to the name included in the Relying Party Instance access certificate. If this verification fails, the Wallet Unit SHALL treat this as a Relying Party authentication failure. If this verification succeeds, the Wallet Instance SHALL display to the User the name of the intermediary. |
+| RPA_06a | If the registration certificate indicates that the Relying Party is using the services of an intermediary, as described in [Topic 52], the Wallet Unit SHALL verify that the name and the unique identifier of the intermediary included in the registration certificate are identical to the name and unique identifier included in the Relying Party Instance access certificate. If this verification fails, the Wallet Unit SHALL treat this as a Relying Party authentication failure. If this verification succeeds, the Wallet Instance SHALL display to the User the name of the intermediary. |
 | RPA_06b |  If Relying Party authentication fails for any reason, the Wallet Unit SHALL either not present the requested attributes to the Relying Party, or give the User the choice to present the requested attributes or not. *Note: It is up to the Wallet Provider to make a choice for one of the two options above.* |
 
 B.  User approval
@@ -1230,11 +1230,11 @@ Wallet Unit management
 | WIAM_08 |All communication between the Wallet Provider and the Wallet Unit SHALL be mutually authenticated and SHOULD be encrypted. |
 | WIAM_09 |If the User uninstalls the Wallet Unit, the Wallet Unit SHALL ensure that all cryptographic key material in the WSCA(s) related to the Wallet Unit is securely destroyed. This includes all keys of the WUAs, PIDs and attestations stored in the Wallet Unit. *Note: Key deletion is a cryptographic key operation and requires User authentication, as specified in requirement WUA_02.* |
 
-#### A.2.3.41 Topic 41 - Minimum requirements on PuB-EAAs rulebooks 
+#### A.2.3.41 Topic 41 - Minimum requirements on PuB-EAAs rulebooks
 
 See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
-#### A.2.3.42 Topic 42 - Requirements for QTSPs to access Authentic Sources 
+#### A.2.3.42 Topic 42 - Requirements for QTSPs to access Authentic Sources
 
 *Short description*
 
