@@ -144,7 +144,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
   - In accordance with [RFC 8949], section 3.4.1, a tdate attribute SHALL contain a date-time string as specified in [RFC 3339]. In accordance with [RFC 8943], a full-date attribute SHALL contain a full-date string as specified in [RFC 3339].
   - The following requirements apply to the representation of dates in attributes, unless otherwise indicated:
     - Fractions of seconds SHALL NOT be used;
-    - A local offset from UTC SHALL NOT be used; the time-offset defined in [RFC 3339] SHALL be to “Z”.
+    - A local offset from UTC SHALL NOT be used; the time-offset defined in [RFC 3339] SHALL be to "Z".
   - RFC 8949, section 4.2, describes four rules for canonical CBOR. Three of those rules SHALL be implemented for all CBOR structures in PIDs, as follows:
     - integers (major types 0 and 1) SHALL be as small as possible;
     - the expression of the length in a bstr, tstr, array or map SHALL be as short as possible;
@@ -154,7 +154,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 |------------------------|--------------|------------------|
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
-| birth_date | birth_date | full-date, see [Section 4.2.5](#425-attribute-birth_date).|
+| birth_date | birth_date | full-date, see [Section 4.2.5](#425-attribute-birth_date). |
 | birth_place | birth_place | tstr |
 | nationality | nationality | nationalities, see [Section 4.2.2](#422-attribute-nationality). |
 | resident_address | resident_address | tstr |
