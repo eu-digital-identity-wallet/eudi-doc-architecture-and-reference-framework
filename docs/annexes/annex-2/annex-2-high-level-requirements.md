@@ -16,7 +16,7 @@ responsible actor that should implement each requirement. There are no
 requirements imposed on the Users.
 
 All requirements in this Annex only apply in the context of the EUDI
-Wallet ecosystem. Attestations that are not bound to Wallet Units are not included in the scope of this Annex.
+Wallet ecosystem. Attestations that are not bound to Wallet Units, as described in section 6.6.3.8 of the ARF, are not included in the scope of this Annex.
 
 #### A.2.1.2 Key words 
 
@@ -45,13 +45,11 @@ for issuance), an underscore and a numerator, e.g. - ISSU_10.
 
 *Short description*
 
-The primary purpose of the EUDI Wallet ecosystem is to offer secure identification
-and authentication of Users at a high Level of Assurance (LoA) for both
-public and private online services. This essential functionality ensures
+The primary purpose of the EUDI Wallet ecosystem is to enable Users to access online services and to enable Relying Parties offering such services to identify and authenticate Users with a high level of assurance. This essential functionality ensures
 that Relying Parties can confidently verify that they are interacting
 with the correct User.
 
-In this use case, a User is utilising their Wallet Unit to confirm their
+In this use case, a User is using their Wallet Unit to present attributes related to their
 identity. The User accesses online services that require
 authentication. The User is concerned about sharing Person Identification Data (PID) during online
 interactions. Their objectives include identifying themselves with
@@ -59,20 +57,20 @@ services requiring User identification and maintaining control over
 personal data sharing.
 
 This Topic contains high-level requirements related to online
-identification and authentication of a User utilising their Wallet Unit.
+identification and authentication of a User using their Wallet Unit.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 | -- | -- |
 | OIA_01 | A Wallet Unit SHALL support technical specifications to respond to person identification data (PID) and attestation presentation requests by Relying Parties. |
-| OIA_02 | A Wallet Unit SHALL support proving cryptographic binding between a WSCA included in the Wallet Unit and a PID or attestation, in accordance with technical specifications. *Note: Such a mechanism is also called device binding or key binding.* |
-| OIA_03 | The Commission SHALL adopt the technical specifications for the PID or attestation presentation request-response protocol and for the device binding mechanism, according to the protocols and interfaces specified in [OpenID4VP] and [SD-JWT VC] for remote flows, and [ISO 18013-5] for proximity flows. |
+| OIA_02 | A Wallet Unit SHALL support proving cryptographic binding between a WSCA included in the Wallet Unit and a PID or attestation, in accordance with [SD-JWT VC] or [ISO/IEC 18013-5]. *Note: Such a mechanism is called device binding in [ISO/IEC 18013-5] and key binding in [SD-JWT VC].* |
+| OIA_03 | The Commission SHALL adopt the technical specifications for the PID or attestation presentation request-response protocol and for the device binding mechanism, according to the protocols and interfaces specified in [OpenID4VP] for remote flows, and [ISO 18013-5] for proximity flows. |
 | OIA_03a | Wallet Providers SHALL ensure that their Wallet Solution supports the protocol specified in 'OpenID for Verifiable Presentations', see [OpenID4VP], with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission. |
 | OIA_03b | For remote presentation flows, when the format of the requested attestation complies with [ISO/IEC 18013-5], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified [ISO/IEC 18013-7] Annex B. |
-| OIA_03c | For remote presentation flows, when the format of the requested attestation complies with [SD-JWT VC], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified in [HAIP]. |
+| OIA_03c | For remote presentation flows, when the format of the requested attestation complies with [SD-JWT VC], Relying Parties and Wallet Units SHALL comply with the requirements in the OpenID4VP profile for [SD-JWT VC] specified in [HAIP]. |
 | OIA_04 | A Wallet Unit SHALL verify and process PID or attestation presentation requests from Relying Parties in accordance with the protocols and interfaces specified in [OpenID4VP] for remote flows. |
-| OIA_05 | After verifying and processing a PID or attestation request, the Wallet Unit SHALL inform the User about the identity of the requesting Relying Party and the requested attributes. |
+| OIA_05 | After verifying and processing a PID or attestation request, the Wallet Unit SHALL display to the User the identity of the requesting Relying Party and the requested attributes. |
 | OIA_06 | A Wallet Unit SHALL transmit the requested attributes only after having received the User's authorisation. See also OIA_07. |
 | OIA_07 | A Wallet Unit SHALL support selective disclosure of attributes from PIDs and attestations to be released to the requesting Relying Parties. |
 | OIA_08 | Empty |
@@ -88,8 +86,7 @@ identification and authentication of a User utilising their Wallet Unit.
 
 *Short description*
 
-A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the regulations of all
-Member States.
+A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the Driving Licences Directive, once it is adopted.
 
 This Topic contains high-level requirements related to a User presenting a mobile Driver's Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.
 
@@ -105,7 +102,7 @@ The Person Identification Data (PID) Rulebook contains requirements specific to 
 
 The PID Rule Book contains the following main topics:
 
-1.  The PID attribute schema: This describes the structure, the type, the entity identifiers, and the logical organisation of the mandatory and optional attributes of the PID. It also describes how Member States can specify any possible national attributes. Two encodings for these attributes are specified, one compliant with [ISO18013-5], the other compliant with [SD-JWT VC].
+1.  The PID attribute schema: This describes the structure, the type, the entity identifiers, and the logical organisation of the mandatory and optional attributes and metadata of the PID, as specified in Commission Implementing Regulation (EU) 2024/2977. It also describes how Member States can specify any possible national attributes. Two encodings for these attributes are specified, one compliant with [ISO18013-5], the other compliant with [SD-JWT VC].
 2.  The trust infrastructure necessary for PIDs, for both ISO/IEC 18013-5-compliant and SD-JWT VC-compliant encodings.
 
 For more information, see Annex 3 - [PID Rulebook].
@@ -186,14 +183,14 @@ B.  User approval
 
 This Topic contains the high-level requirements (HLRs) relating to the (possible) revocation of PIDs, QEAAs, PuB-EAAs, non-qualified EEAs and WUAs by their providers. It also contains HLRs relating to the (possible) checking of the revocations status of a PID or attestation by a Relying Party.
 
-Note: This Topic does not pertain to access certificates for Relying Parties, PID Providers or Attestation Providers as discussed in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. Neither does it apply to any intermediate certificates establishing trust between these certificates and the respective trust anchors. These certificates are part of a Public Key Infrastructure (or an OpenID Federation, or a similar trust framework), and rules for revoking these certificates will be established within the respective PKI or trust framework.
+Note: This Topic does not pertain to access certificates for Relying Parties, PID Providers or Attestation Providers as discussed in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)]. Neither does it apply to any intermediate certificates establishing trust between these certificates and the respective trust anchors. These certificates are part of a Public Key Infrastructure (or a similar trust framework), and rules for revoking these certificates will be established within the respective PKI or trust framework.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
 | VCR_01 | A PID Provider, QEAA Provider, PuB-EAA Provider, or Wallet Provider SHALL use one of the following methods for revocation of a PID, QEAA, PuB-EAA, or WUA: Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary,Use an Attestation Status List mechanism specified per VCR_11, orUse an Attestation Revocation List mechanism specified per VCR_11. *Note: The 24-hour period originates from  ETSI EN 319 411-1 V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked.* |
-| VCR_02 | For non-qualified EAAs, the relevant Rulebook SHALL determine whether that type of EAA must be revocable. If a non-qualified EAA type must be revocable, the relevant Rulebook SHALL determine which of the methods mentioned in VCR_01 must be implemented by the relevant EAA Providers for the revocation of such an EAA. |
+| VCR_02 | For non-qualified EAAs, the relevant Rulebook SHALL specify whether that type of EAA must be revocable. If a non-qualified EAA type must be revocable, the relevant Rulebook SHALL determine which of the methods mentioned in VCR_01 must be implemented by the relevant EAA Providers for the revocation of such an EAA. |
 | VCR_03 | If a PID or attestation is revocable, the PID Provider of a given PID, or the Attestation Provider of a given attestation, SHALL be the only party in the EUDI Wallet ecosystem capable of executing the revocation of that PID or attestation. Similarly, if a WUA is revocable, the Wallet Provider of a given WUA SHALL be the only party in the EUDI Wallet ecosystem capable of executing the revocation of that WUA. *Note: A PID Provider, Attestation Provider or Wallet Provider MAY outsource the operation of the revocation process to a third party.* |
 | VCR_04 | A PID Provider, Attestation Provider or Wallet Provider that revoked a PID or attestation SHALL NOT reverse the revocation. |
 | VCR_05 | If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider, or Wallet Provider SHALL have a policy specifying under which conditions a PID, attestation, or WUA it issued will be revoked. |
