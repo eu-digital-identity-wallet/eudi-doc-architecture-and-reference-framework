@@ -226,7 +226,7 @@ attributes through the browser, provided that the Wallet Unit contains the attri
 
 The cross-device flow is implemented using the following steps:
 
-- The User visits the website of the Relying Party and indicates that they want to present some attributes from their Wallet Unit
+- The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units
 - The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorization in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by 
