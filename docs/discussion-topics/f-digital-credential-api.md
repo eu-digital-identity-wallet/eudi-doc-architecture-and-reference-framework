@@ -296,7 +296,7 @@ the Digital Credentials API should verify the web origin of Attestation Provider
 the credential offers and presentation requests are transferred over TLS from the Attestation Provider or 
 the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorized to 
 issue attestations or request attributes as this responsibility
-lies with national issuers and regulators, including Attestation Providers and Relying Parties registrars.
+lies with national issuers and regulators, including Relying Parties registrars.
 
 4. **Wallet Unit sovereignty**. When the Digital Credentials API is used, the operating 
 system should not override or remove control from the Wallet Unit. The User's Wallet Unit
