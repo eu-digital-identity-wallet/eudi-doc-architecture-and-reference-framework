@@ -1111,12 +1111,12 @@ issuance user journey, covering both remote and proximity use cases.
 | PID_ISS_01 | A Wallet Unit SHALL support at least the protocol defined in the technical specifications for PID issuance. A Wallet Unit MAY support additional protocols for PID issuance. The following requirements apply only to the protocol defined in the technical specifications. |
 | PID_ISS_02 | A Wallet Unit SHALL authenticate and validate the identity of the PID Provider it is communicating with. |
 | PID_ISS_03 | A PID Provider SHALL verify the authenticity of Wallet Unit's WUA. |
-| PID_ISS_04 | A Wallet Unit SHALL present the corresponding data request to the User, informing the User about the attributes to be issued by the PID Provider. |
-| PID_ISS_05 | A Wallet Unit SHALL inform the PID Provider of successful issuance only after having confirmed the User's authorisation to approve the PID issuance. |
+| PID_ISS_04 | A Wallet Unit SHALL present the corresponding data to the User, informing the User about the attributes to be issued by the PID Provider. |
+| PID_ISS_05 | Empty |
 | PID_ISS_06 | A Wallet Unit SHALL support device binding for PID, enabling the User to prove possession of the bound device. |
-| PID_ISS_07 | A Wallet Unit SHALL support an activation procedure for PID Providers to verify that PID is delivered to its subject. |
+| PID_ISS_07 | A Wallet Unit SHALL support an activation procedure for PID Providers to verify that a PID is delivered to its subject. |
 | PID_ISS_08 | A Wallet Unit SHALL support technical specifications for securely delivering the PID from the PID provider to the device controlled by the User. |
-| PID_ISS_09 | A Wallet Unit SHALL support technical specifications to notify the PID Provider of the outcome of the PID issuance process, that is -- whether it was successful or not (e.g., PID issued to the Wallet Unit or PID not issued to the Wallet Unit and User is informed accordingly). |
+| PID_ISS_09 | Empty |
 
 #### A.2.3.36 Topic 36 - Risk Analysis of the Wallet usage
 
