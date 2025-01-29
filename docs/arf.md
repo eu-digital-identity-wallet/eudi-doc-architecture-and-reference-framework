@@ -1687,7 +1687,7 @@ PID Providers, Attestation Providers and Relying Parties will no longer trust
 the trust anchors of the Wallet Provider and will therefore refuse to interact
 with any Wallet Unit provided by that Wallet Provider.
 
-When a Trusted List Provider suspends or withdraws a Wallet Provider, the Wallet Provider revokes all of their WUAs as described in [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked).
+When a Trusted List Provider withdraws a Wallet Provider, the Wallet Provider revokes all of its WUAs as described in [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked).
 
 If an entity has registered multiple Wallet Providers, each offering a different
 Wallet Solution, and one of these Wallet Providers is suspended or withdrawn,
@@ -1826,7 +1826,7 @@ As a result of successful registration,
 - the Registrar issues a registration certificate to the Relying Party. The
 purpose of the registration certificate is described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
 - a Relying Party Instance Access Certificate Authority (CA) associated with the
-Registar issues an access certificate to each Relying Party Instance of the
+Registrar issues an access certificate to each Relying Party Instance of the
 Relying Party. A Relying Party Instance needs such a certificate to authenticate
 itself towards Wallet Units when requesting the presentation of attributes, as
 described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance).

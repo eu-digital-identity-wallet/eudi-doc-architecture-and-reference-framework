@@ -386,7 +386,7 @@ This Topic also contains the high-level requirements for [Topic 23].
 | ISSU_27b | If applicable, an Attestation Provider SHALL ensure that the attributes attested in the attestation issued are valid for the identified attestation subject. |
 | ISSU_28 | For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in all Wallet Provider Trusted Lists. *Note: Wallet Provider Trusted Lists are explained in [[Topic 31](#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)].* |
 | ISSU_29 | An Attestation Provider SHALL support all Wallet Solutions, meaning that they SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation. |
-| ISSU_30 | Before issuing an attestation, an Attestation Provider SHALL: verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List.authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List.Verify that the Wallet Unit's WUA is not revoked. *Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-unit-attestation)] and [[Topic 38](#a2338-topic-38---wallet-unit-revocation)].* |
+| ISSU_30 | Before issuing an attestation, an Attestation Provider SHALL: - verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in a Wallet Provider Trusted List. - authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in the Wallet Provider Trusted List. - verify that the Wallet Unit's WUA is not revoked. *Note: For the WUA, see [[Topic 9](#a239-topic-9---wallet-unit-attestation)] and [[Topic 38](#a2338-topic-38---wallet-unit-revocation)].* |
 | ISSU_31 | Empty |
 | ISSU_32 | An Attestation Provider SHALL include its Attestation Provider access certificate in its Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01. |
 | ISSU_32a | An Attestation Provider SHALL sign its metadata (as defined in OpenID4VCI) using the private key corresponding to its Attestation Provider access certificate. |
@@ -618,12 +618,13 @@ of such a dashboard.  
 |-----------|-----------------|
 | DASH_01 | A Wallet Provider SHALL enable a User to access a dashboard functionality in their Wallet Unit. |
 | DASH_02 | The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: presentation transactions,signature creation transactions (see Topic 16),attribute deletion requests sent to a Relying Party (see [Topic 48]),complaints lodged with a Data Protection Authority (see [Topic 50]). *Note: For the data to be logged for an attribute deletion request or a complaint, see [Topic 48] and [Topic 50], respectively.* |
-| DASH_02a | The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must remove transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07.
+| DASH_02a | The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must delete transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07.
 | DASH_02b | The dashboard SHALL include a functionality to display to the User an overview of all transactions in the log. |
 | DASH_03 | For a presentation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: the date and time of the transaction,the corresponding Relying Party or requesting Wallet Unit,the document type(s) requested and/or presented the identifier(s) of the attribute(s) requested and/or presented.|
 | DASH_04 | For a signature creation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: the date and time of the transaction, the document or data signed (where possible) |
 | DASH_05 | Empty  |
-| DASH_06 | A Wallet Provider SHALL ensure that no transactions included in the log can be altered or deleted. |
+| DASH_06 | The Wallet Provider SHALL ensure the integrity of all transactions included in the log.  |
+| DASH_06a | Via the dashboard, the Wallet Unit SHALL enable the User to delete any transaction in the log. The Wallet Unit SHALL ensure that no other party can delete transactions from the log, except possibly for the reason mentioned in DASH_02a. |
 | DASH_07 | The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file. |
 | DASH_08 | For a natural-person User, a Wallet Instance SHALL provide a User interface. |
 | DASH_09 | The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. |
@@ -791,7 +792,7 @@ B.  *General requirements for the issuance of access certificates*
 | Reg_12 | The Commission SHALL provide technical specifications establishing the common Access Certificate Authority Certificate Policy mentioned in Reg_11. |
 | Reg_13 | The common Certificate Policy mentioned in Reg_12 SHALL require that an Access Certificate Authority logs all issued certificates for Certificate Transparency (CT).Note added to ARF 1.5.0: This requirement is still under discussion and might be changed or removed in a future version of this ARF. |
 | Reg_14 | The common Certificate Policy mentioned in Reg_12 SHALL require that an Access Certificate Authority provides one or more method(s) to revoke the access certificates it issued. |
-| Reg_15 | The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: the certificate subject which is a Relying Party is de-registered by the respective Registrar,the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended by the respective Registrar,on request of the certificate subject, oron request of a competent national authority. |
+| Reg_15 | The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: the certificate subject which is a Relying Party is de-registered by the respective Registrar,the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended by the respective Registrar, on request of the certificate subject, or on request of a competent national authority. |
 | Reg_16 | The common Certificate Policy mentioned in Reg_12 SHALL specify the profile of access certificates in detail. |
 | Reg_17 | The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance. |
 | Reg_18 | The common Certificate Policy mentioned in Reg_12 SHALL define the minimum change history information to be stored for resolving possible disputes regarding registration. |
@@ -803,8 +804,7 @@ C.  *Requirements for the registration of PID Providers*
 | Reg_19 | A Member State SHALL approve a PID Provider according to a well-defined policy before including it in its PID Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of PID Providers in its Registry. |
 | Reg_20 | A Member State SHALL identify PID Providers at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 |Reg_20a | A Registrar SHALL provide a method to suspend or withdraw a registered PID Provider. |
-| Reg_20b | A Registrar SHALL have a policy for suspension or withdrawal of registered PID Providers, which SHALL specify that a PID Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
-| Reg_20c | If a Registrar suspends or withdraws a registered PID Provider, that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7]. |
+| Reg_20b | A Registrar SHALL have a policy for the suspension or withdrawal of a registered PID Provider, which SHALL specify that a PID Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
 
 D.  *Requirements for the registration of Attestation Providers*
 
@@ -813,8 +813,7 @@ D.  *Requirements for the registration of Attestation Providers*
 | Reg_21 | A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers. |
 | Reg_22 | A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem. |
 |Reg_22a | A Registrar SHALL provide a method to suspend or withdraw a registered Attestation Provider. |
-| Reg_22b | A Registrar SHALL have a policy for suspension or withdrawal of registered Attestation Providers, which SHALL specify that an Attestation Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
-| Reg_22c | If a Registrar suspends or withdraws a registered Attestation Provider, that Attestation Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7]. |
+| Reg_22b | A Registrar SHALL have a policy for the suspension or withdrawal of a registered Attestation Provider, which SHALL specify that an Attestation Provider is suspended or withdrawn at least on request of the PID Provider or of a competent national authority. |
 
 E.  *Requirements for the registration of Relying Parties*
 
@@ -826,8 +825,8 @@ E.  *Requirements for the registration of Relying Parties*
 | Reg_26 | A Member State SHALL enable a Relying Party to update the information registered on it using a process comparable to the original registration process, and using the API or user interface mentioned in Reg_24. |
 | Reg_27 | Relying Parties SHALL make any updates necessary to ensure the continued correctness of the registered information without undue delay. |
 | Reg_28 | A Member State's Registry SHALL log all changes made on the information regarding a Relying Party, including at least initial registration, updates, deletion of information, and suspension or withdrawal. |
-| Reg_29 | A Registrar SHALL provide a method to suspend or withdraw a registered Relying Party. |
-| Reg_30 | A Registrar SHALL have a policy for de-registration of registered Relying Parties, which SHALL specify that a Relying Party is de-registered at least on request of the Relying Party or of a competent national authority. |
+| Reg_29 | A Registrar SHALL have a policy for the withdrawal of a registered Relying Party, which SHALL specify that a Relying Party is withdrawn at least on request of the Relying Party or of a competent national authority. |
+| Reg_30 | Empty |
 
 F.  *Requirements for the issuance of Relying Party Instance access certificates*
 
@@ -977,7 +976,6 @@ B.  Requirements for the notification of PID Providers
 | PPNot_05 | PID Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Trusted List which is sealed by the Commission. |
 | PPNot_06 | PID Provider Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | PPNot_07 | The format of the PID Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
-| PPNot_08 | If a PID Provider is suspended or withdrawn (see requirement GenNot_05 above), that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7]. |
 
 C.  Requirements for the notification of Wallet Providers
 
@@ -988,7 +986,7 @@ C.  Requirements for the notification of Wallet Providers
 | WPNot_03 | Wallet Providers SHALL ensure that all WUAs they issue can be authenticated using the trust anchors notified to the Commission. |
 | WPNot_04 | Wallet Provider trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Wallet Provider Trusted List which is sealed by the Commission. |
 | WPNot_05 | The format of the Wallet Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
-| WPNot_06 | If a Wallet Provider is suspended or withdrawn (see requirement GenNot_05 above), that Wallet Provider SHALL immediately revoke all of its valid WUAs, in accordance with the requirements in [Topic 38]. |
+| WPNot_06 | If a Wallet Provider is withdrawn (see requirement GenNot_05 above), that Wallet Provider SHALL immediately revoke all of its valid WUAs, in accordance with the requirements in [Topic 38]. If a Wallet Provider is suspended, that Wallet Provider and the Member State SHALL agree on the necessary precautionary measures that need to be taken, which MAY include the immediate revocation of all or some of its valid WUAs.|
 
 D.  Requirements for the notification of QEAA Providers
 
@@ -1003,7 +1001,6 @@ This notification is pursuant to [Art.45f](https://eur-lex.europa.eu/legal-conte
 | PuBPNot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about PuB-EAA Providers. |
 | PuBPNot_02 | The common set of information to be notified by Member States about PuB-EAA Providers SHALL include at least: 1. Identification data: i. MS/Country of establishment, ii. Name as registered in an official record, iii. Where applicable: a. Registration number as in official record, and b. Official record identification data. iv. Identification data of the Union or national law under which a. Either the PuB-EAA Provider is established as the responsible body for the Authentic Source based on which the electronic attestation of attributes is issued, or b. The PuB-EAA Provider is the body designated to act on behalf of the responsible body referred to in point 1. iv. a. v.The conformity assessment report issued by a conformity assessment body, confirming that the requirements set out in paragraphs 1, 2 and 6 of [Article 45f](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3902-1-1) are met. 2. Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PuB-EAA from the PuB-EAA Provider. |
 | PuBPNot_03 | The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
-| PuBPNot_04 | If a PuB-EAA Provider is suspended or withdrawn (see requirement GenNot_05 above), that PuB-EAA Provider SHALL immediately revoke all of its valid attestations, in accordance with the requirements in [Topic 7]. |
 
 F.  Requirements for the notification of (non-qualified) EAA Providers
 
@@ -1023,7 +1020,6 @@ For more information about Relying Party Access Certificate Authoritys, see [[To
 | RPACANot_03 | Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers SHALL ensure that their access certificates can be authenticated using the Access Certificate Authority trust anchors notified to the Commission. |
 | RPACANot_04 | Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission--compiled Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | RPACANot_05 | The format of an Access Certificate Authority Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
-| RPACA_06 | If an Access Certificate Authority is suspended or withdrawn (see requirement GenNot_05 above), that Access Certificate Authority SHALL immediately revoke all of its valid access certificates. |
 
 H.  Requirements for the publication of Trusted Lists compiled by the
     Commission
