@@ -16,7 +16,7 @@ responsible actor that should implement each requirement. There are no
 requirements imposed on the Users.
 
 All requirements in this Annex only apply in the context of the EUDI
-Wallet ecosystem. Attestations TEST that are not bound to Wallet Units are not included in the scope of this Annex.
+Wallet ecosystem. Attestations that are not bound to Wallet Units are not included in the scope of this Annex.
 
 #### A.2.1.2 Key words 
 
