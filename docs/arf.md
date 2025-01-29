@@ -537,12 +537,14 @@ So-called intermediaries form a special class of Relying Party. Article 5b (10) 
 1. The intermediary registers once as a Relying Party and obtains an access certificate (see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance)) bearing its own name and Relying Party identifier. This access certificate is not different from an access certificate issued to a 'normal' Relying Party, since an intermediary is, as a matter of legal fact, a Relying Party.
 2. Next, the intermediary will separately register each of the 'end' Relying Parties that uses its services, including registering the attributes the 'end' Relying Party wants to request. The intermediary obtains a registration certificate (see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)) showing the name of the 'end' Relying Party. The Registrar verify, in a manner to be decided by a Member State, that the 'end' Relying Party is indeed using the services of the intermediary. If all is correct, the Registrar will issue a registration certificate containing an additional attribute stating that the 'end' Relying Party is using the services of the intermediary.
 3. When asked by an 'end' Relying Party, the intermediary will request the presentation of attributes from Wallet Units, using one or more of the flows described in [Section 4.4](#44-data-presentation-flows). For this, the intermediary will use their own access certificate (point 1. above) and the registration certificate of the 'end' Relying Party (point 2. above).
-4. If a Wallet Unit, during a transaction, receives an registration certificate indicating that the Relying Party uses the services of an intermediary, it verifies that the name of the intermediary in the registration certificate is identical to the name in the access certificate. If this verification fails, the Wallet Unit treats this as a Relying Party authentication failure. If this verification succeeds, the Wallet Unit displays to the User the name of the intermediary when asking for User approval to present the requested attributes.
+4. If a Wallet Unit, during a transaction, receives an registration certificate indicating that the Relying Party uses the services of an intermediary, it verifies that the name and the identifier of the intermediary in the registration certificate are identical to the name and identifier in the access certificate. If this verification fails, the Wallet Unit treats this as a Relying Party authentication failure. If this verification succeeds, the Wallet Unit displays to the User the name of the intermediary when asking for User approval to present the requested attributes.
 5. The intermediary forwards the User attributes it obtained from the Wallet Unit to the 'end' Relying Party. There must be an interface between an intermediary and a Relying Party, over which the 'end' Relying Party can request the intermediary to request some User attributes from a Wallet Unit and that the intermediary uses to send back the attribute values presented by the Wallet Unit. However, specifying this interface or the (security) requirements with which it needs to comply, is out of scope of the ARF. In particular, it is not required that the User attributes are end-to-end encrypted between the Wallet Unit and the 'end' Relying Party, such that an intermediary would not be able to see them.
 
 Note that this approach implies that an intermediary (if it is acting only as an intermediary, and never as an 'end' Relying Party in its own right) will not need a registration certificate. Conversely, an 'end' Relying Party using the services of an intermediary will not need an access certificate.
 
 As discussed in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes), during a transaction, a Wallet Unit requests the User for their approval to present any User attributes to the Relying Party. In this process, the Wallet Unit informs the User about the authenticated identity of the intermediary (from the access certificate), and also about the identity of the 'end' Relying Party and the fact that this Relying Party is using the services of the intermediary (from the registration certificate).
+
+For high-level requirements on this topic, see [Topic 52].
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -2056,7 +2058,7 @@ the Wallet Unit and to all PIDs and attestations on the Wallet Unit.
 2. Once the PID or attestation is issued into the Wallet Unit, the User can present attributes from it to a Relying Party Instance, according to the User's decision and depending on successful authentication of the Relying Party. The required trust relationships for presenting PIDs and attestations, including User approval and Relying Party authentication, are discussed in [Section 6.6.3](#663-pid-or-attestation-presentation-to-relying-party).
 3. Instead of presenting attributes to a Relying Party, a User can also present them to another User, meaning that their Wallet Unit is interacting with another Wallet Unit. This is briefly discussed in [Section 6.6.4](#664-pid-or-attestation-presentation-to-another-wallet-unit).
 4. The PID Provider or the Attestation Provider remains responsible for managing the PID or attestation over its lifetime. Management may include re-issuing the PID or attestation with the same or with different attribute values. The Provider can also revoke the PID or the attestation, possibly based on a request of the User. The required trust relationships for managing PIDs and attestations are discussed in [Section 6.6.5](#665-pid-or-attestation-management).
-5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses the scenario that a User decides to delete the PID or an attestation from their Wallet Unit.
+5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses what happens if a User decides to delete a PID or an attestation from their Wallet Unit.
 
 #### 6.6.2 PID or attestation issuance
 
@@ -2559,6 +2561,8 @@ that the WSCD destroys the cryptographic key material associated with that PID
 or attestation. Before deleting the PID or attestation and the cryptographic
 keys, the WSCA included in the Wallet Unit will authenticate the User.
 
+For high-level requirements on this topic, see [Topic 51].
+
 ## 7 Certification and Risk Management
 
 ### 7.1 Introduction
@@ -2819,25 +2823,31 @@ For undated references, the latest version available applies.
 | [OpenID4VP] | Terbu, O. et al., "OpenID Connect for Verifiable Presentations", OpenID Foundation. Available: <https://openid.net/specs/openid-4-verifiable-presentations-1_0.html> |
 | [HAIP] | Yasuda, K. et al, "OpenID4VC High Assurance Interoperability Profile", OpenId Foundation. Available: <https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0.html> |
 | [Topic 6]| Annex 2 - Relying Party authentication and User approval |
-| [Topic 7] | Annex 2 - Attestation validity checks and revocation |
+| [Topic 7] | Annex 2 - Attestation revocation and revocation checking |
 | [Topic 9] | Annex 2 - Wallet Unit Attestation |
-| [Topic 10] | Annex 2 - Issuing a (Q)EAA to the Wallet Unit |
+| [Topic 10] | Annex 2 -Issuing a PID or attestation to a Wallet Unit |
 | [Topic 11] | Annex 2 - Pseudonyms |
-| [Topic 12] | Annex 2 - (Q)EAA Rulebook |
-| [Topic 16] | Annex 2 - Signing documents with Wallet Unit|
-| [Topic 18] | Annex 2 - Relying Party handling Wallet Unit attribute combined presentation |
+| [Topic 12] | Annex 2 - Attestation Rulebooks |
+| [Topic 16] | Annex 2 - Signing documents with a Wallet Unit |
+| [Topic 18] | Annex 2 - Combined presentations of attributes |
 | [Topic 19] | Annex 2 - User Navigation requirements (Dashboard logs for transparency) |
 | [Topic 23] | Annex 2 - PID issuance and (Q)EAA issuance |
-| [Topic 25] | Annex 2 - Unified definition and controlled vocabulary for attestation attributes|
-| [Topic 26] | Annex 2 - Attestations Catalogue|
-| [Topic 27] | Annex 2 - Relying Party registry |
+| [Topic 25] | Annex 2 - Unified definition and controlled vocabularies for attributes |
+| [Topic 26] | Annex 2 - Catalogue of attestations |
+| [Topic 27] | Annex 2 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties |
 | [Topic 30] | Annex 2 - Interaction between Wallet Units |
-| [Topic 31] | Annex 2 - PID, Wallet and Attestation Providers registration |
+| [Topic 31] | Annex 2 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication |
+| [Topic 33] | Annex 2 - Wallet Unit backup and restore |
 | [Topic 34] | Annex 2 - Migrate to a different Wallet solution |
 | [Topic 37] | Annex 2 - QES -- Remote Signing - Technical Requirements |
-| [Topic 38] | Annex 2 - Wallet Unit Revocation |
-| [Topic 43] | Annex 2 - Embedded disclosure policy |
+| [Topic 38] | Annex 2 - Wallet Unit revocation |
+| [Topic 42] | Annex 2 - Requirements for QTSPs to access Authentic Sources
+| [Topic 43] | Annex 2 - Embedded disclosure policies |
+| [Topic 44] | Annex 2 - Relying Party registration certificates |
+| [Topic 48] | Annex 2 - Blueprint for requesting data deletion to Relying Parties |
 | [Topic 50] | Annex 2 - Blueprint to report unlawful or suspicious request of data |
+| [Topic 51] | Annex 2 - PID or attestation deletion |
+| [Topic 52] | Annex 2 - Relying Party intermediaries |
 
 ## 10 Annexes
 

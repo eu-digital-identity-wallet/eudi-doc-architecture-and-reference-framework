@@ -142,7 +142,7 @@ For more information, see Annex 3 - [mDL Rulebook].
 #### A.2.3.5 Topic 5 - Wallet Unit Design Guide 
 There are no HLRs for this Topic.
 
-#### A.2.3.6 Topic 6 - Relying Party authentication and User Approval  
+#### A.2.3.6 Topic 6 - Relying Party authentication and User approval  
 
 *Short description*
 
@@ -323,15 +323,15 @@ WSCA.
 | WUA_35 | A WSCA SHALL consider two keys to be associated if they are associated to a common WUA key. |
 | WUA_36 | A WSCA SHOULD be able to generate a proof of association for two or more public keys. The WSCA SHALL generate such a proof if and only if the corresponding private keys are protected by that WSCA, and the WSCA has internally registered an association between these private keys. |
 
-#### A.2.3.10 Topic 10 - Issuing a PID or Attestation to a Wallet Unit 
-
-**Also containing Topic 23 - PID issuance and Attestation issuance**
+#### A.2.3.10 Topic 10 - Issuing a PID or attestation to a Wallet Unit
 
 *Short description*
 
 PID Providers and Attestation Providers issue PIDs and attestations to
 Wallet Units. This Topic lists the high-level technical
 requirements related to PID and attestation issuance.
+
+This Topic also contains the high-level requirements for [Topic 23].
 
 *HLRs*
 
@@ -463,7 +463,7 @@ D.  Miscellaneous requirements
 
 | **Index** | **Requirement specification** |
 |-----------|--------------------|
-| ARB_22 | The Schema Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, and privacy (including, possibly, an embedded disclosure policy as defined in [Topic 43](#a2343-topic-43---embedded-disclosure-policy)), of that attestation. *Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User.* |
+| ARB_22 | The Schema Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, and privacy (including, possibly, an embedded disclosure policy as defined in [Topic 43](#a2343-topic-43---embedded-disclosure-policies)), of that attestation. *Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User.* |
 | ARB_23 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a QEAA or a PuB-EAA SHALL specify which of the revocation mechanisms specified in [Topic 7](#a237-topic-7---attestation-revocation-and-revocation-checking) SHALL be supported by that attestation. |
 | ARB_24 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHALL specify whether that type of EAA must be revocable. If an EAA type must be revocable, the relevant Rulebook SHALL determine which of the revocation mechanisms specified in [Topic 7](#a237-topic-7---attestation-revocation-and-revocation-checking) SHALL be supported by that attestation. |
 | ARB_25 | The Commission SHALL take measures to ensure that the following information is included in a technical specification: - The identifier of the attribute containing the indication meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point a) and [Annex VII](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1) point a). - The syntax and semantics of this attribute in case the attestation is a QEAA, in case it is PuB-EAA, and in case it is a non-qualified EAA.  |
@@ -560,23 +560,15 @@ can have been provided to the Wallet Unit by one or by multiple PID Providers or
 
 This Topic answers the following questions:
 
--   How can a Relying Party request for a combined presentation of
-    attributes?
-
--   How can a Wallet Unit receiving such a request present the
-    attributes in a combined manner?
-
--   How can the Relying Party verify the authenticity of all released
-    attributes in a combined response?
-
--   How can the Relying Party verify whether all released attributes
-    were issued to the same User?
+- How can a Relying Party request for a combined presentation of attributes?
+- How can a Wallet Unit receiving such a request present the attributes in a combined manner?
+- How can the Relying Party verify the authenticity of all released attributes in a combined response?
+- How can the Relying Party verify whether all released attributes were issued to the same User?
 
 Regarding the last question:
 
--   The subject may be either a natural person or a legal person.
-
--   However, use cases such as delegation or legal representation, where
+- The subject may be either a natural person or a legal person.
+- However, use cases such as delegation or legal representation, where
     the Relying Party may request attributes that are originally part of
     multiple distinct attestations that were not issued to the same User,
     are not combined presentations and are out of scope of this Topic.
@@ -594,7 +586,6 @@ A.  Functional requirements for ecosystem components
 | ACP_05 | If (as a result of ACP_04), the Wallet Unit receives a proof of association from the WSCA, it SHALL include this proof in the response message containing the combined presentation of attributes and send it to the Relying Party. |
 | ACP_06 | If a Relying Party receives a combined presentation of attributes including a proof of association, it SHOULD verify this proof to validate that the attestations in this presentation were issued to the same User. |
 
-
 B.  Process requirements
 
 | **Index** | **Requirement specification** |
@@ -608,7 +599,7 @@ C.  Miscellaneous
 |-----------|-----------------|
 | ACP_09 | The common [ISO18013-5] and [OpenID4VP] protocols, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a proof of association to a Relying Party. The Commission SHALL take measures to ensure that this is the case. |
 
-#### A.2.3.19 Topic 19 - User navigation requirements (Dashboard logs for transparency) 
+#### A.2.3.19 Topic 19 - User navigation requirements (Dashboard logs for transparency)
 
 *Short description*
 
@@ -640,7 +631,7 @@ of such a dashboard.  
 | DASH_11 | A Wallet Unit issued to a legal person SHALL allow the legal person to interact with the Wallet Unit in the appropriate interface provided by the Wallet Provider. |
 | DASH_12 | The User interface referred to in DASH_08 SHALL enable the User, for each presentation transaction in the dashboard, to easily request the Relying Party to delete any or all attributes presented to it in that transaction, or to lodge a complaint about that particular transaction to a DPA. | 
 
-#### A.2.3.20 Topic 20 - Strong User (Customer) Authentication in the context of electronic payments 
+#### A.2.3.20 Topic 20 - Strong User (Customer) authentication in the context of electronic payments
 
 *Short description*
 
@@ -669,11 +660,11 @@ Central Bank Digital Currencies.  
 
 There are no HLRs for this Topic.
 
-#### A.2.3.21 Topic 21 - [Diplomas](https://ec.europa.eu/digital-building-blocks/wikis/display/EDIWCS/EPIC-21-Diplomas+with+EUDI+Wallet) with the EUDI Wallet ecosystem
+#### A.2.3.21 Topic 21 - Diplomas within the EUDI Wallet ecosystem
 
 There are no HLRs for this Topic.
 
-#### A.2.3.22 Topic 22 - Digital Travel Credentials with the EUDI Wallet ecosystem
+#### A.2.3.22 Topic 22 - Digital Travel Credentials within the EUDI Wallet ecosystem
 
 There are no HLRs for this Topic.
 
@@ -711,7 +702,7 @@ identification in proximity use cases where Users utilise their Wallet Units. 
 | ProxId_05 | A Wallet Unit SHALL transmit the requested User attributes to the requesting Relying Party Instance securely in accordance with ISO/IEC 18013-5 for proximity flows. |
 | ProxId_06 | Empty |
 
-#### A.2.3.25 Topic 25 - Unified definition and controlled vocabularies for attestation attributes 
+#### A.2.3.25 Topic 25 - Unified definition and controlled vocabularies for attributes
 
 *Short description*
 
@@ -722,22 +713,17 @@ EAAs, has already touched and defined high-level requirements regarding
 the attestation rulebook catalogue.
 
 The following main concepts were defined in [Topic 12](#a2312-topic-12---attestation-rulebooks) and developed in
-the current version of [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attestation-attributes): 
+the current version of [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attestation-attributes):
 
 - Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem MAY be registered and published in a publicly accessible catalogue.  
-
 - The Attestation Rulebook catalogue MAY also include Attestation Rulebooks for non-qualified EAAs.  
-
 - The Commission SHALL take measures to establish and maintain the Attestation Rulebooks catalogue.  
-
 - The Attestation Rulebooks catalogue will enable mainly Relying Parties, but also other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what is the identifier, syntax and semantics of each attribute in a type of attestation.  
 
 The following points are emphasised:
 
 - Registration of an Attestation Rulebook in the attestation catalogue is not mandatory.  
-
 - Registration in the Attestation Rulebook catalogue does not create any obligation of acceptance of the attestation by any Relying Party, nor does it necessarily imply cross-border recognition of that attestation.
-  
 - The Attestation Rulebooks catalogue can be hosted in the same environment as the catalogue of attributes.
 
 *HLRs*
@@ -752,7 +738,7 @@ The following points are emphasised:
 | CAT_03b | The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: [Representation Powers and Mandates (RPaM) Ontology](https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format)[SEMPER \| DE4A](https://www.de4a.eu/semper)[SEMIC Core Vocabularies](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies)[IANA Registry for JSON Web Token Claims](https://www.iana.org/assignments/jwt/jwt.xhtml) (for JSON-based attributes only)[ISO/IEC 23220-2](https://www.iso.org/standard/86782.html) (for CBOR-based attributes only)  |
 | CAT_04 | The Commission SHALL make publicly available the existence and maintenance of the catalogue of attributes mentioned in CAT_01, including processes to propose the registration to public and private parties, allowing to register attributes, and conditions for updating and/or removing attributes. These processes SHALL include archiving and logging changes of the history of the catalogue of attributes in an appropriate way, including versioning. *Note: There are layers on top of the attributes that need maintenance as well. So, maintenance in this case is more generic and encompasses more than just the attribute itself.* |
 
-#### A.2.3.26 Topic 26 - Attestations' Catalogue 
+#### A.2.3.26 Topic 26 - Catalogue of attestations
 
 *Short description*
 
@@ -960,7 +946,7 @@ interaction between two Wallet Units. This topic will be further discussed with 
 | W2W_06 | The Requestee Wallet Unit SHALL authenticate and validate the Requestor Wallet Unit, ensuring the validity of the Requestor Wallet Unit and the attribute request. |
 | W2W_07 | The Requestor Wallet Unit SHALL display the received attributes to its User. |
 
-#### A.2.3.31 Topic 31 - PID Provider, Wallet Provider, Attestation Provider and Access Certificate Authority notification and publication
+#### A.2.3.31 Topic 31 - PID Provider, Wallet Provider, Attestation Provide, and Access Certificate Authority notification and publication
 
 *Short description*
 
@@ -992,7 +978,6 @@ B.  Requirements for the notification of PID Providers
 | PPNot_06 | PID Provider Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled PID Provider Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | PPNot_07 | The format of the PID Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
 | PPNot_08 | If a PID Provider is suspended or withdrawn (see requirement GenNot_05 above), that PID Provider SHALL immediately revoke all of its valid PIDs, in accordance with the requirements in [Topic 7]. |
-
 
 C.  Requirements for the notification of Wallet Providers
 
@@ -1042,7 +1027,7 @@ For more information about Relying Party Access Certificate Authoritys, see [[To
 
 H.  Requirements for the publication of Trusted Lists compiled by the
     Commission
-    
+
 | **Index** | **Requirement specification** |
 |------------|------------------|
 | TLPub_01 | The European Commission SHALL establish technical specifications for the system enabling the publication by the Commission of the information notified by the Member States regarding PID Providers, Wallet Providers, PuB-EAA Providers, and Relying Party Access Certificate Authorities. |
@@ -1054,11 +1039,11 @@ H.  Requirements for the publication of Trusted Lists compiled by the
 | TLPub_07 | The Commission SHALL publish in the OJEU the trust anchors to be used for verifying the signature or seal mentioned in TLPub_05. |
 | TLPub_08 | As part of the specifications referred to in TLPub_01, the European Commission SHALL establish technical specifications for ensuring the availability and authenticity of the full history regarding the information notified about PID Providers, Wallet Providers, PuB-EAA Providers, and Access Certificate Authorities. |
 
-#### A.2.3.32 Topic 32 - PID interoperability 
+#### A.2.3.32 Topic 32 - PID interoperability
 
 See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
-#### A.2.3.33 Topic 33 - Wallet Unit backup and restore 
+#### A.2.3.33 Topic 33 - Wallet Unit backup and restore
 
 *Short description*
 
@@ -1141,7 +1126,7 @@ There are no HLRs for this Topic.
 
 See [Topic 16](#a2316-topic-16---signing-documents-with-eudi-wallet).
 
-#### A.2.3.38 Topic 38 - Wallet Unit Revocation  
+#### A.2.3.38 Topic 38 - Wallet Unit revocation  
 
 *Short description*
 
@@ -1258,7 +1243,7 @@ the public sector.  
 |QTSPAS_07a | The standards and procedures mentioned in QTSPAS_07 SHOULD, whenever possible, be aligned and compatible with those used for the platforms implementing the Once Only Technical System (OOTS). *Note: There is a clear synergy of both of these data exchange approaches. In fact, the national OOTS node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources.* |
 | QTSPAS_08 | A QTSP SHALL obtain approval from the User to verify the authenticity of the attributes, before requesting the verification of those attributes by the relevant Authentic Source or designated intermediary. |
 
-#### A.2.3.43 Topic 43 - Embedded disclosure policy
+#### A.2.3.43 Topic 43 - Embedded disclosure policies
 
 *Short description*
 
@@ -1279,7 +1264,7 @@ Where requirements in this Topic refer to a 'requesting Wallet Unit', what is me
 | EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting Wallet Unit. |
 | EDP_08 | The Commission SHALL take measures to create a technical specification establishing common mechanisms for the specification of embedded disclosure policies by PID Providers and Attestation Providers, and for the evaluation of such policies by Wallet Instances. |
 
-#### A.2.3.44 Topic 44 - Relying Party Registration Certificates
+#### A.2.3.44 Topic 44 - Relying Party registration certificates
 
 *Short description*
 This topic identifies high-level requirements for Relying Party registration certificates, which were introduced in Commission Implementing Regulation 2024/2982 [2024/2982]. A registration certificate is issued by a Relying Party registrar to a Relying Party during the registration process described in [Topic 27]. It contains mainly the list of attributes registered by the Relying Party according to Article 5b 2 (c) of the [eIDAS 2.0] Regulation. A registration certificate is signed by the Registrar.
@@ -1311,7 +1296,7 @@ B. Presentation and verification of Relying Party registration certificates
 
 See [Topic 12](#a2312-topic-12---attestation-rulebooks)
 
-#### A.2.3.46 Topic 46 - Protocols and interfaces for Presentation of PID and (Q)EAA with relying parties
+#### A.2.3.46 Topic 46 - Protocols and interfaces for Presentation of PID and (Q)EAA with Relying Parties
 
 See [Topic 1](#a231-topic-1---accessing-public-and-private-online-services-with-a-wallet-unit) and [Topic 12](#a2312-topic-12---attestation-rulebooks)
 
