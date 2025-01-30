@@ -643,6 +643,28 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 
 ## 6 Additions and Changes to the ARF
 
+Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document. 
+
+Note that the HRLs are the minimum HRLs that must be fulfilled by all actors in the eIDAS framework. 
+
+There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the following minimal HRLs. 
+
+### 6.1 Additions and Changes to HLRs
+
+
+#### 6.1.1 HRLs related to Use Cases
+
+#### 6.1.2 HRLs related to Relying Parties
+
+#### 6.1.3 HRLs for Interoperability
+
+#### 6.1.1 HRLS related to Privacy
+
+##### Requirement 1
+
+
+### 6.2 Additions and Changes to be added to the ARF Main Document
+
 ## 7 References
 
 | Reference       | Description                                                                                                                                                                                                                                                                          |
