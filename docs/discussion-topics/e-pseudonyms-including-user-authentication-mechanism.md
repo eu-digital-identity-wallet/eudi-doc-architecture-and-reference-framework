@@ -649,7 +649,7 @@ Note that the HRLs are the minimal HRLs that must be fulfilled by all actors in 
 There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the following minimal HRLs. 
 
 ### 6.1 Additions and Changes to HLRs
-
+The below HRLs will be added to the Annex II, Topic 11 of the ARF. 
 
 #### 6.1.1 HRLs related to Use Cases
 
@@ -657,19 +657,25 @@ There are no hindrances for member states or other actors to define for example 
 
 A Wallet Unit SHALL allow a User to generate a pseudonym and register this at a Relying Party. 
 
->Rationale: This is necessary to support Use Case A and B. 
+> Rationale: This is necessary to support Use Case A and B. 
 
 ##### Requirement 
 
 A Wallet Unit SHALL allow a User to authenticate with a pseudonym towards a Relying Party if the Wallet Unit was used to previously register a Pseudonym for the same Relying Party. 
 
->Rationale: This is necessary to support Use Case A and B. 
+> Rationale: This is necessary to support Use Case A and B. 
+
+##### Requirement
+
+A Wallet Unit SHALL allow the User to register multiple pseudonym values at a given Relying Party.
+
+> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible. 
 
 ##### Requirement 
 
 A Wallet Unit SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. 
 
->Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible. 
+> Rationale: The user should be able to freely choose which pseudonym to use if multiple are available. 
 
 #### 6.1.2 HRLs related to Relying Parties
 
@@ -677,13 +683,11 @@ A Wallet Unit SHALL allow a User to choose which pseudonym to authenticate with 
 
 #### 6.1.1 HRLS related to Privacy
 
-
-
 ##### Requirement 
 
 A Relying Party SHALL NOT be able to derive the User’s true identity, or any data identifying the User, from the pseudonym value received by the Relying Party.
 
-Rationale: This is what makes a pseudonym a pseudonym, as opposed to an identifier.
+> Rationale: This is what makes a pseudonym a pseudonym, as opposed to an identifier.
 
 ##### Requirement 
 A Wallet Unit MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party. 
@@ -696,7 +700,9 @@ Rationale: The wallet operates at different security levels depending on the act
 
 The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
 
-> Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to an existing record.
+> Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
+
+#### 6.1.4 HRLs related to Revocation
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
