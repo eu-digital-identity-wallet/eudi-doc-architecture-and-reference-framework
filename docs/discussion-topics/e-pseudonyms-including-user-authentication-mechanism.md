@@ -264,7 +264,7 @@ Below we discuss how pseudonyms relate to the other topics being discussed.
 
 ### 5.1 Privacy Risks and Mitigations
 
-Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronically Attested Attributes (Q)EAA.
+Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronic Attestations of Attributes (Q)EAA.
 Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthN] specification.
 In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthN] and other attestations such as PID and (Q)EAAs.
 
