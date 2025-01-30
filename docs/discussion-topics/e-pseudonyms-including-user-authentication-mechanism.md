@@ -665,7 +665,7 @@ A Wallet Unit SHALL allow a User to authenticate with a pseudonym towards a Rely
 
 > Rationale: This is necessary to support Use Case A and B. 
 
-#### Requirement
+##### Requirement
 
 A Wallet Unit SHALL be able to perform the actions specified in the above two requirements independently of whether the interaction with the Relying Party is initiated on the same device as the Wallet Unit or on a device different from the Wallet Unit. 
 
@@ -707,7 +707,7 @@ If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and a
 
 #### 6.1.3 HRLs for Interoperability
 
-#### Requirement
+##### Requirement
 
 Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this Annex and future technical specifications created by or on behalf of the Commission.
 
