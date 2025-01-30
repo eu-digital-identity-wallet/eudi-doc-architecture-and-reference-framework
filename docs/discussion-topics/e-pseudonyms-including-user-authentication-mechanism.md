@@ -733,7 +733,7 @@ A Wallet Unit MAY choose not verify the identity of a Relying Party upon receivi
 
 > Note that this is contrary to cases where a Wallet Unit receives a request for presentation of either PID or (Q)EAA. 
 
-Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Note that 
+> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification. 
 
 ##### Requirement 
 
