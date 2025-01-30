@@ -10,6 +10,15 @@ The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
 *Define high-level requirements for WUA as defined in the IAs of article 5a, and for the key attestation.*
 
+
+### Clarification before final paper:
+Is "cryptographic bound" relevant to discuss?
+Can we assume batch issuance to be a common practice for solving linkability issues?
+Should we discuss the level of detail in relation to revocation - linkability?
+Should we discuss how webauthn attestations are handled?
+
+Should the Rulebook be moved to STS work? It is mainly technical and not really something that's suitable for discussion.
+
 ### 1.2 Key Words
 This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
 In addition, 'must' (non-capitalized) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.
@@ -260,14 +269,6 @@ WebAuthN expects x.509 certs in relation to attestation, compatibility with mdoc
 -WUA (originally?) only intended for PID/Attestation providers - also needed by RP for revocation checks - Needs to be handled
 -Highlight Selective disclosure as suggested solution
 
-### Clarification before final paper:
-Is "cryptographic bound" relevant to discuss?
-Can we assume batch issuance to be a common practice for solving linkability issues?
-Should we discuss the level of detail in relation to revocation - linkability?
-Should we discuss how webauthn attestations are handled?
-
-Should the Rulebook be moved to STS work? It is mainly technical and not really something that's suitable for discussion.
-
 
 
 ## 6 Relation to Other Topics
@@ -293,10 +294,8 @@ content from pseudonyms might be relevant
 Special case of above
 
 ### 6.3 Relation to Risk Register
->copied from pseudonyms not updated for WUA yet
-As pseudonyms may be used to provide authentication, a large number of the risks listed
-in the risk register for European Digital Identity Wallets \[RiskRegister\] are (at least indirectly)
-related to the use of pseudonyms:
+The purpose of WUA is to allow parties interacting with the Wallet Unit, to ensure they are interacting with a legitimate Wallet Unit. Therefore WUA has
+impact on several of the risks listed in the risk register for European Digital Identity Wallets \[RiskRegister\]:
 
 <table>
 <colgroup>
@@ -314,8 +313,18 @@ related to the use of pseudonyms:
 <tbody>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
+<td>R1</td>
+<td>Creation or use of an existing electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
 <td>R2</td>
 <td>Creation or use of a fake electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R3</td>
+<td>Creation or use of fake attributes</td>
 </tr>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
@@ -324,23 +333,18 @@ related to the use of pseudonyms:
 </tr>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
-<td>R5</td>
-<td>Data theft</td>
-</tr>
-<tr>
-<td><strong>High-level risks to the wallets</strong></td>
 <td>R6</td>
 <td>Data disclosure</td>
 </tr>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
-<td>R9</td>
-<td>Unauthorised transaction</td>
+<td>R7</td>
+<td>Data manipulation</td>
 </tr>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
-<td>R10</td>
-<td>Transaction manipulation</td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
 </tr>
 <tr>
 <td><strong>High-level risks to the wallets</strong></td>
@@ -350,10 +354,25 @@ related to the use of pseudonyms:
 </tbody>
 </table>
 
-Some of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in
-its section III) are also relevant threats to consider in the context of pseudonyms. This is primarily
-TT5. Malicious actions, in which threats, such as TT5.1 Interception of information or TT5.3 Replay of messages, may lead to the risks
-expressed in the table above.
+The use of WUA is a mitigating mechanism with regard to some of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in
+its section III). This is primarily TT2. Errors and misconfigurations, TT3. Use of unreliable resources and TT5.Malicious actions. In relation to these
+threats, WUA is used to assure that the Wallet Unit is not compromised.
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R1. Creation or use of an existing electronic identity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of an existing electronic identity is defined as the creation of an electronic identity in a wallet that exists in the real world and is assigned to another user. By essence, this risk leads to the risks of Identity theft (R4), and Unauthorised transactions (R9).</td>
+</tr>
+</tbody>
+</table>
 
 <table>
 <colgroup>
@@ -368,6 +387,22 @@ expressed in the table above.
 <tr>
 <td>Creation or use of a fake electronic identity is defined as the creation of an electronic identity in a wallet that does not exist
 in the real world.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R3. Creation or use of fake attributes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of fake attributes is defined as the creation or use of attributes that cannot be validated to be issued by the claimed provider and cannot be trusted.</td>
 </tr>
 </tbody>
 </table>
@@ -395,14 +430,14 @@ impersonate a person.</td>
 </colgroup>
 <thead>
 <tr>
-<th><strong>R5. Data theft</strong></th>
+<th><strong>R6. Data disclosure</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception
-(unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to
-lead in some cases to Data disclosure (R6).</td>
+<td>Data disclosure is defined as the unauthorised exposure of personal
+data including special categories of personal data. The privacy breach risk
+is very similar when considered from a privacy rather than security viewpoint.</td>
 </tr>
 </tbody>
 </table>
@@ -413,14 +448,12 @@ lead in some cases to Data disclosure (R6).</td>
 </colgroup>
 <thead>
 <tr>
-<th><strong>R6. Data Disclosure</strong></th>
+<th><strong>R7. Data manipulation</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Data disclosure is defined as the unauthorised exposure of personal
-data including special categories of personal data. The privacy breach risk
-is very similar when considered from a privacy rather than security viewpoint.</td>
+<td>Data manipulation is defined as the unauthorised alteration of data.</td>
 </tr>
 </tbody>
 </table>
@@ -439,23 +472,6 @@ is very similar when considered from a privacy rather than security viewpoint.</
 <td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the
 wallet user. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also
 related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>R10. Transaction manipulation</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Transaction manipulation is defined as the unauthorised alteration of operations in the wallet. Transaction manipulation is
-an attack on integrity, and it is related to a data integrity breach.</td>
 </tr>
 </tbody>
 </table>
@@ -582,11 +598,9 @@ Effect on various risks</td>
 </tbody>
 </table>
 
->Note that there is no threat corresponding to TR68-71 (Attacker can revoke without consent/reason) in relation to pseudonyms.
+R14, SR1, TR39, TR84, TR85 are particularly relevant to consider given the discussion in Chapter 5.1<TODO>, namely linkability of WUA.
 
-R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [WebAuthN].
-
-TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.
+<TODO update with further details>
 
 ## 7 Additions and Changes to the ARF
 
