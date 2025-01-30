@@ -800,7 +800,7 @@ standardised in the scope of the EUDI Wallet ecosystem.
 - The **User Interface (UI)** is the point of interaction and communication
 between the User and the Wallet Instance. This interface will not be
 standardised in the scope of the EUDI Wallet ecosystem.
-- The **Presentation Interface (PI)** enables Relying Parties to securely
+- The **Presentation Interface (PI)** enables Relying Party Instances to securely
 request and receive PIDs, QEAAs, PuB-EAAs and EAAs from Wallet Units. This
 interface accommodates both remote and proximity interactions. For remote
 presentation flows, as detailed in [Section 4.4.3](#443-remote-presentation-flows), the Wallet Instance implements the
