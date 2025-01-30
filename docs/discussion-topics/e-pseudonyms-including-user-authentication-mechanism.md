@@ -665,6 +665,12 @@ A Wallet Unit SHALL allow a User to authenticate with a pseudonym towards a Rely
 
 > Rationale: This is necessary to support Use Case A and B. 
 
+#### Requirement
+
+A Wallet Unit SHALL be able to perform the actions specified in the above two requirements independently of whether the interaction with the Relying Party is initiated on the same device as the Wallet Unit or on a device different from the Wallet Unit. 
+
+> Rationale: Both cross device and same-device flows must be possible. 
+
 ##### Requirement
 
 A Wallet Unit SHALL allow the User to register multiple pseudonym values at a given Relying Party.
@@ -684,6 +690,20 @@ A Wallet Unit SHALL allow a User delete a pseudonym in which case it shall not b
 > Rationale: A User should be allowed to choose if they no longer wishes to have a pseudonym associated with their Wallet Unit. 
 
 #### 6.1.2 HRLs related to Relying Parties
+
+##### Requirement
+
+A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit.
+
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement. 
+
+##### Requirement
+
+If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party must be able to verify that the same Wallet Unit have been used to perform both actions. 
+
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement. 
+
+> Note: This may be implementable via "Proof of Association".
 
 #### 6.1.3 HRLs for Interoperability
 
@@ -724,6 +744,8 @@ The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make 
 #### 6.1.4 HRLs related to Revocation
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
+
+To be added once agreement on HRLs have been reached. 
 
 ## 7 References
 
