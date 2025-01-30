@@ -703,7 +703,7 @@ If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and a
 
 > Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs. 
 
-> Note: This may be implementable via "Proof of Association".
+> Note: This may be implementable via so-called "Proof of Association".
 
 #### 6.1.3 HRLs for Interoperability
 
