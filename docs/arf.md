@@ -16,7 +16,7 @@ common standards and technical specifications and a set of common guidelines and
 best practices.
 
 The Recommendation specifies that these outcomes will serve as a basis for the
-implementation of the proposal for a European Digital Identity Framework,
+implementation of the European Digital Identity Framework,
 without the process of developing the Toolbox interfering with, or prejudging
 the legislative process.
 
