@@ -723,7 +723,7 @@ A Wallet Unit SHALL always release a different value for the pseudonym of a give
 
 ##### Requirement
 
-It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Unit during registration, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
+It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
 
 > Rationale: If this was possible, it would defeat the purpose of using different pseudonym values and would allow colluding Relying Parties to track the User.
 
