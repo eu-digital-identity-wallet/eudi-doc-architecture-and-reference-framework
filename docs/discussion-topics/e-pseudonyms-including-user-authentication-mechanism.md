@@ -655,9 +655,21 @@ There are no hindrances for member states or other actors to define for example 
 
 ##### Requirement
 
-A Wallet Unit SHALL allow a user to generate a pseudonym and register this at a Relying Party. 
+A Wallet Unit SHALL allow a User to generate a pseudonym and register this at a Relying Party. 
 
-Rationale: This is necessary to support Use Case A and B. 
+>Rationale: This is necessary to support Use Case A and B. 
+
+##### Requirement 
+
+A Wallet Unit SHALL allow a User to authenticate with a pseudonym towards a Relying Party if the Wallet Unit was used to previously register a Pseudonym for the same Relying Party. 
+
+>Rationale: This is necessary to support Use Case A and B. 
+
+##### Requirement 
+
+A Wallet Unit SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. 
+
+>Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible. 
 
 #### 6.1.2 HRLs related to Relying Parties
 
@@ -674,11 +686,17 @@ A Relying Party SHALL NOT be able to derive the User’s true identity, or any d
 Rationale: This is what makes a pseudonym a pseudonym, as opposed to an identifier.
 
 ##### Requirement 
-A Wallet Unit MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the user otherwise have used to interact with the Relying Party. 
+A Wallet Unit MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party. 
 
 > Note that this is contrary to cases where a Wallet Unit receives a request for presentation of either PID or (Q)EAA. 
 
 Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Note that 
+
+##### Requirement 
+
+The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
+
+> Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to an existing record.
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
