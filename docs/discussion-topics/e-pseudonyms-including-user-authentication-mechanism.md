@@ -675,13 +675,19 @@ A Wallet Unit SHALL allow the User to register multiple pseudonym values at a gi
 
 A Wallet Unit SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. 
 
-> Rationale: The user should be able to freely choose which pseudonym to use if multiple are available. 
+> Rationale: A User should be able to freely choose which pseudonym to use if multiple are available. 
+
+##### Requirement 
+
+A Wallet Unit SHALL allow a User delete a pseudonym in which case it shall not be possible to recover. 
+
+> Rationale: A User should be allowed to choose if they no longer wishes to have a pseudonym associated with their Wallet Unit. 
 
 #### 6.1.2 HRLs related to Relying Parties
 
 #### 6.1.3 HRLs for Interoperability
 
-#### 6.1.1 HRLS related to Privacy
+#### 6.1.1 HRLs related to Privacy
 
 ##### Requirement 
 
@@ -689,7 +695,20 @@ A Relying Party SHALL NOT be able to derive the User’s true identity, or any d
 
 > Rationale: This is what makes a pseudonym a pseudonym, as opposed to an identifier.
 
+##### Requirement
+
+A Wallet Unit SHALL always release a different value for the pseudonym of a given User to different Relying Parties.
+
+> Rationale: This is important to ensure that colluding Relying Parties cannot use the pseudonym values to track the User.
+
+##### Requirement
+
+It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Unit during registration, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
+
+> Rationale: If this was possible, it would defeat the purpose of using different pseudonym values and would allow colluding Relying Parties to track the User.
+
 ##### Requirement 
+
 A Wallet Unit MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party. 
 
 > Note that this is contrary to cases where a Wallet Unit receives a request for presentation of either PID or (Q)EAA. 
