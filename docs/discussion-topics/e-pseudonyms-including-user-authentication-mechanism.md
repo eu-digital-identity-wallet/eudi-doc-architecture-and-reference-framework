@@ -105,7 +105,7 @@ Technical specifications:\
 ## 3 Use Cases
 
 Below, we elaborate on the use cases inferred from the above legal requirements.
-The distinction between the two use cases follows from Article 14 2. [CIR.2014.2979].
+The distinction between the two use cases follows from Article 14 2. [CIR.2024.2979].
 
 Both use cases are described in an online non-proximity-based setting where the pseudonyms are presented towards services over the internet.
 
@@ -706,6 +706,12 @@ If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and a
 > Note: This may be implementable via "Proof of Association".
 
 #### 6.1.3 HRLs for Interoperability
+
+#### Requirement
+
+Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this Annex and future technical specifications created by or on behalf of the Commission.
+
+> Rationale: It is stated in [CIR.2024.2979].
 
 #### 6.1.1 HRLs related to Privacy
 
