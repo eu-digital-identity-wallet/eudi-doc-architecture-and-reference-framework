@@ -655,13 +655,13 @@ The below HRLs will be added to the Annex II, Topic 11 of the ARF.
 
 ##### Requirement
 
-A Wallet Instance SHALL allow a User to generate a pseudonym and register this at a Relying Party.
+A Wallet Instance SHALL allow a User to generate a Pseudonym and register this at a Relying Party.
 
 > Rationale: This is necessary to support Use Case A and B.
 
 ##### Requirement
 
-A Wallet Instance SHALL allow a User to authenticate with a pseudonym towards a Relying Party if the Wallet Instance was used to previously register a Pseudonym for the same Relying Party.
+A Wallet Instance SHALL allow a User to authenticate with a Pseudonym towards a Relying Party if the Wallet Instance was used to previously register a Pseudonym for the same Relying Party.
 
 > Rationale: This is necessary to support Use Case A and B.
 
@@ -673,29 +673,29 @@ A Wallet Instance SHALL be able to perform the actions specified in the above tw
 
 ##### Requirement
 
-A Wallet Instance SHALL allow the User to register multiple different pseudonyms at a given Relying Party.
+A Wallet Instance SHALL allow the User to register multiple different Pseudonyms at a given Relying Party.
 
-> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible.
+> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more Pseudonyms should therefore be possible.
 
 ##### Requirement
-Wallet Instance SHALL enable the User to freely choose a User alias for each pseudonym registered at a Relying Party.
+Wallet Instance SHALL enable the User to freely choose a User alias for each Pseudonym registered at a Relying Party.
 An alias SHALL be a text string.
 Setting an alias SHALL be optional for the User.
-The User SHALL be able to change the alias for any pseudonym.
+The User SHALL be able to change the alias for any Pseudonym.
 
->Rationale: Setting an alias helps the User to recognize and distinguish pseudonyms, which otherwise may be meaningless sequences of symbols.
-
-##### Requirement
-
-A Wallet Instance SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of pseudonyms if assigned when this choice must be made.
-
-> Rationale: A User should be able to freely choose which pseudonym to use if multiple are available.
+>Rationale: Setting an alias helps the User to recognize and distinguish Pseudonyms, which otherwise may be meaningless sequences of symbols.
 
 ##### Requirement
 
-A Wallet Instance SHALL allow a User delete a pseudonym in which case it shall not be possible to recover.
+A Wallet Instance SHALL allow a User to choose which Pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of Pseudonyms if assigned when this choice must be made.
 
-> Rationale: A User should be allowed to choose if they no longer wishes to have a pseudonym associated with their Wallet Instance.
+> Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.
+
+##### Requirement
+
+A Wallet Instance SHALL allow a User to delete a Pseudonym in which case it shall not be possible to recover.
+
+> Rationale: A User should be allowed to choose if they no longer wishes to have a Pseudonym associated with their Wallet Instance.
 
 #### 6.1.2 HRLs related to Relying Parties
 
@@ -703,13 +703,13 @@ A Wallet Instance SHALL allow a User delete a pseudonym in which case it shall n
 
 A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Instance.
 
-> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement.
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this Pseudonym when this is a requirement.
 
 ##### Requirement
 
 A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Instance.
 
-> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement.
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this Pseudonym when this is a requirement.
 
 ##### Requirement
 
@@ -720,7 +720,7 @@ If Wallet Instance has authenticated using a Pseudonym towards a Relying Party a
 > Note: This may be implementable via so-called "Proof of Association".
 
 #### 6.1.3 HRLs related to Privacy
-Note that the requirements WTE\_03 and WTE\_04 ensures that a Wallet Instance ensures that a User is authenticated before pseudonyms are, viewed, created or used to authenticate towards Relying Parties.
+Note that the requirements WTE\_03 and WTE\_04 ensures that a Wallet Instance ensures that a User is authenticated before Pseudonyms are, viewed, created or used to authenticate towards Relying Parties.
 
 The placement of these HRLs will be discussed in Topic C.
 
@@ -730,45 +730,45 @@ A Wallet Instance SHALL store the information necessary for authenticating with 
 > Rationale: It is made explicit in Article 5a 4. b of [eiDAS 2.0] that the Pseudonyms must be stored encrypted.
 
 ##### Requirement
-A Wallet Instance SHALL get user approval before registering a pseudonym or authenticating with an existing pseudonym.
+A Wallet Instance SHALL get user approval before registering a Pseudonym or authenticating with an existing Pseudonym.
 
-> Rationale: This will ensure that in case a Wallet Instance is stolen it cannot unrightfully be used to authenticate with pseudonyms.
-
-##### Requirement
-
-A Relying Party SHALL NOT be able to derive the User’s true identity, or any data identifying the User, from the pseudonym value received by the Relying Party.
-
-> Rationale: This is what makes a pseudonym a pseudonym, as opposed to an identifier.
+> Rationale: This will ensure that in case a Wallet Instance is stolen it cannot unrightfully be used to authenticate with Pseudonyms.
 
 ##### Requirement
 
-A Wallet Instance SHALL always release a different value for the pseudonym of a given User to different Relying Parties.
+A Relying Party SHALL NOT be able to derive the User’s true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party.
 
-> Rationale: This is important to ensure that colluding Relying Parties cannot use the pseudonyms  to track the User.
-
-##### Requirement
-
-It SHALL NOT be possible to correlate pseudonyms based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
-
-> Rationale: If this was possible, it would defeat the purpose of using different pseudonyms and would allow colluding Relying Parties to track the User.
+> Rationale: This is what makes a Pseudonym a Pseudonym, as opposed to an identifier.
 
 ##### Requirement
 
-A Wallet Instance MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party.
+A Wallet Instance SHALL always release a different value for the Pseudonym of a given User to different Relying Parties.
+
+> Rationale: This is important to ensure that colluding Relying Parties cannot use the Pseudonyms  to track the User.
+
+##### Requirement
+
+It SHALL NOT be possible to correlate Pseudonyms based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that Pseudonyms released by a User to different Relying Parties belong to the same User.
+
+> Rationale: If this was possible, it would defeat the purpose of using different Pseudonyms and would allow colluding Relying Parties to track the User.
+
+##### Requirement
+
+A Wallet Instance MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a Pseudonym or authenticating with a Pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party.
 
 > Note that this is contrary to cases where a Wallet Instance receives a request for presentation of either PID or (Q)EAA.
 
-> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification.
+> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the Pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification.
 
 ##### Requirement
 
-The Wallet Instance SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
+The Wallet Instance SHALL ensure that Pseudonyms contain sufficient entropy to make the chance of colliding Pseudonyms (meaning two Users having the same Pseudonym value for the same Relying Party) negligible.
 
-> Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
+> Rationale: If Pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
 
 ##### Requirement
 
-A Wallet Instance MUST NOT share the user's optionally assigned pseudonym aliases with any Relying Party.
+A Wallet Instance MUST NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
 
 > Rationale: The aliases are a convenience thing for users and they should be allowed to choose them as they like without having to consider whether it contains sensitive data or not.
 
@@ -783,7 +783,7 @@ The Commission SHALL create or reference a profile or extension of the WebAuthn 
 
 Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this Annex and future technical specifications created by or on behalf of the Commission.
 
-> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with pseudonyms if they have an EUDIW.
+> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDIW.
 
 #### 6.1.5 HRLs to be Removed
 
@@ -793,7 +793,7 @@ PA_01 states:
 
 *Pseudonym Providers, Pseudonym attestations, and Wallet Instances SHALL comply with all applicable requirements in [Pseudonym Rulebook].*
 
-> Rationale for removal: Pseudonym providers are no longer used for the pseudonyms functionality.
+> Rationale for removal: Pseudonym providers are no longer used for the Pseudonyms functionality.
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
