@@ -408,7 +408,7 @@ Regulation) applies also to QEAA Providers, but specific rules for the Trust
 Service of issuing QEAAs may be defined as well.
 
 QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon
-request, including mutual authentication. Potentially, they also maintain an
+request. Potentially, they also maintain an
 interface towards Authentic Sources to verify attributes, as specified in Annex
 2 [Topic 42].
 
