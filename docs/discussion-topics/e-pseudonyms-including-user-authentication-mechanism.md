@@ -754,7 +754,7 @@ It SHALL NOT be possible to correlate Pseudonyms based on their value nor on the
 
 ##### Requirement
 
-A Wallet Instance MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a Pseudonym or authenticating with a Pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party.
+A Wallet Instance MAY choose not to verify the identity of a Relying Party upon receiving a request for either registering a Pseudonym or authenticating with a Pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party.
 
 > Note that this is contrary to cases where a Wallet Instance receives a request for presentation of either PID or (Q)EAA.
 
