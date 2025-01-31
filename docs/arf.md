@@ -149,8 +149,7 @@ Further discussions will explore the following topics:
 - transactional data needed by Wallet Units in Payments and other use cases.
 
 A detailed list of these topics and the progress of their development is
-available on
-[GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
+available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
 
 ## 2 Use Cases
 
@@ -911,8 +910,8 @@ between both parties.
 #### 4.4.3.1 Introduction
 
 Remote transaction flows are use cases in which the Relying Party Instance is
-remote from the User and the User device. The Relying Party Instance accesses
-the Wallet Instance over the internet, using a browser. These use cases can be
+remote from the User and the User device. The Relying Party Instance requests data to
+the Wallet Unit over the internet, using a browser. These use cases can be
 further distinguished in same-device flows, in which the browser is running on
 the same device as the Wallet Unit, and cross-device flows, where the browser is
 on a different device.
@@ -1934,8 +1933,7 @@ website.
 Conversely, a Wallet Solution is not required to support all PID Providers,
 where 'support' means that it is able to request the issuance of a PID from a
 PID Provider. Each Wallet Provider will, prior to or during installation of a
-Wallet Unit, let the User know which PID Providers are supported by this Wallet
-Unit.
+Wallet Instance, let the User know which PID Providers are supported by this Wallet Solution.
 
 For QEAAs, Pub-EAAs, and non-qualified EAAs, the situation is different.
 Providers of such attestations will support all Wallet Solutions and are not
