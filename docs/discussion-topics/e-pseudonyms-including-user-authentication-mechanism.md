@@ -646,7 +646,7 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document. 
 
 Note that the HRLs are the minimal HRLs that must be fulfilled by all actors in the eIDAS framework related to the pseudonym and user authentication functionality. 
-There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the following minimal HRLs. 
+There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the minimal HRLs defined below. 
 
 ### 6.1 Additions and Changes to HLRs
 The below HRLs will be added to the Annex II, Topic 11 of the ARF. 
@@ -748,6 +748,19 @@ The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make 
 > Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
 
 #### 6.1.4 HRLs related to Revocation
+
+#### 6.1.5 HRLs to be Removed
+
+##### Requirement PA_01 from Topic 11
+
+
+PA_01 states:
+
+*Pseudonym Providers, Pseudonym attestations, and Wallet Instances SHALL comply with all applicable requirements in [Pseudonym Rulebook].*
+
+> Rationale for removal: A pseudonym provider is no longer used for the pseudonyms functionality. 
+
+
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
