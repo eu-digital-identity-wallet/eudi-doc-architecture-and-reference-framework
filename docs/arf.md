@@ -662,7 +662,7 @@ The EUDI Wallet ecosystem prioritises User-centricity as a core design
 principle. This means placing User needs and experience at the forefront of
 every design decision. The Wallet Unit should be intuitive and easy to use, with
 seamless integration into existing use cases. Users should have full control
-over their attributes and privacy, with transparent information about what are
+over their attributes and privacy, with transparent information about what
 attributes are being presented and to whom. Additionally, the Wallet Unit should
 be accessible and inclusive, catering to Users with varying technical
 backgrounds and abilities. By prioritising User-centricity, the EUDI Wallet
