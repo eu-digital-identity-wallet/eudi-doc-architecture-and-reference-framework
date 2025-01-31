@@ -27,7 +27,7 @@ The document is structured as follows:
 
 - Chapter 5 relates the topic to other topics being discussed and previously identified risks.
 
-- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States. 
+- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2 Legal Requirements for Pseudonyms
 
@@ -191,12 +191,12 @@ The Wallet Unit will act as an Authenticator in this setting.
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
-[WebAuthn] relies on several different types of identifiers including: 
+[WebAuthn] relies on several different types of identifiers including:
 
 - **Relying Party ID:** An identifier unique to the Relying Party which must be a valid domain string. This what the user will identify the Relying Party by and let the Authenticator learn which Relying Party is asking for registration/authentication.
-- **Credential ID:** A unique identifier chosen by the Authenticator for each passkey. 
+- **Credential ID:** A unique identifier chosen by the Authenticator for each passkey.
 - **User ID:** An identifier unique to each user that is assigned by the Relying Party. This will be provided to the Authenticator when registering a new passkey and subsequently provided by the Authenticator when authenticating towards Relying Party. The Authenticator will keep track of which passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.
-- **User Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This allows the user to easily distinguish and select which passkey they want to authenticate with if several are present. 
+- **User Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This allows the user to easily distinguish and select which passkey they want to authenticate with if several are present.
 
 Below we elaborate on how the different components work together to allow the registration and subsequent authentication using passkeys.
 
@@ -246,7 +246,7 @@ The flow for authenticating using a passkey following [WebAuthn] is:
 3. The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
    It then prompts the user to select one of the passkeys scoped to this Relying Party ID. For this step the User Name can be presented to the user.
-   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID. 
+   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID.
    This is then sent to the Client.
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the signature with its stored public key for this User ID and Credential ID and depending on the outcome of this verification considers the user authenticated.
@@ -319,7 +319,7 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 ### 5.2 Wallet Unit Attestations
 >Note that Topic C - Wallet Unit Attestation has not yet been drafted and the following is based on assumptions on content
 
-Topic C - Wallet Unit Attestations (WUA) And Key Attestations discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc. 
+Topic C - Wallet Unit Attestations (WUA) And Key Attestations discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc.
 
 Certain WUA elements are somewhat sensitive, as they may allow for linkability, and are only intended for PID and Attestation Providers, when performing issuance. Other parts of the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive and is intended for Relying Parties.
 
@@ -329,7 +329,7 @@ There are two main areas of Topic C that are particularly relevant in relation t
 
 - **Wallet Trust Evidence:** Part of the WUA contains information on functional and cryptographic capabilities of the Wallet Unit (currently known as WTE). HRL WTE_24 *A Wallet Instance SHALL release a WTE only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party.* states that an RP must not receive WTE information from the WU, however this prohibits a number of the HRLs related to issuance. Essentially, only the *Self Attestation* and *No Attestation* attestation types mentioned in Chapter 4.2.1 can be supported without access to WTE.
 
-- **Revocation:** Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it may be desireable for the Relying Party to be able to revoke the entire Wallet Unit. If this functionality is to be supported, there must be some kind of attestation (see Chapter 4.2.1) in place. 
+- **Revocation:** Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it may be desireable for the Relying Party to be able to revoke the entire Wallet Unit. If this functionality is to be supported, there must be some kind of attestation (see Chapter 4.2.1) in place.
 
 #### 5.2.1 Questions Related to Wallet Unit Attestation
 
@@ -643,71 +643,79 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 
 ## 6 Additions and Changes to the ARF
 
-Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document. 
+Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document.
 
-Note that the HRLs are the minimal HRLs that must be fulfilled by all actors in the eIDAS framework related to the pseudonym and user authentication functionality. 
-There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the minimal HRLs defined below. 
+Note that the HRLs are the minimal HRLs that must be fulfilled by all actors in the EUDI Wallet ecosystem related to the pseudonym and user authentication functionality.
+There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the minimal HRLs defined below.
 
 ### 6.1 Additions and Changes to HLRs
-The below HRLs will be added to the Annex II, Topic 11 of the ARF. 
+The below HRLs will be added to the Annex II, Topic 11 of the ARF.
 
 #### 6.1.1 HRLs related to Use Cases
 
 ##### Requirement
 
-A Wallet Unit SHALL allow a User to generate a pseudonym and register this at a Relying Party. 
+A Wallet Instance SHALL allow a User to generate a pseudonym and register this at a Relying Party.
 
-> Rationale: This is necessary to support Use Case A and B. 
-
-##### Requirement 
-
-A Wallet Unit SHALL allow a User to authenticate with a pseudonym towards a Relying Party if the Wallet Unit was used to previously register a Pseudonym for the same Relying Party. 
-
-> Rationale: This is necessary to support Use Case A and B. 
+> Rationale: This is necessary to support Use Case A and B.
 
 ##### Requirement
 
-A Wallet Unit SHALL be able to perform the actions specified in the above two requirements independently of whether the interaction with the Relying Party is initiated on the same device as the Wallet Unit or on a device different from the Wallet Unit. 
+A Wallet Instance SHALL allow a User to authenticate with a pseudonym towards a Relying Party if the Wallet Instance was used to previously register a Pseudonym for the same Relying Party.
 
-> Rationale: Both cross device and same-device flows must be possible. 
+> Rationale: This is necessary to support Use Case A and B.
 
 ##### Requirement
 
-A Wallet Unit SHALL allow the User to register multiple pseudonym values at a given Relying Party.
+A Wallet Instance SHALL be able to perform the actions specified in the above two requirements independently of whether the interaction with the Relying Party is initiated on the same device as the Wallet Instance or on a device different from the Wallet Instance.
 
-> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible. 
+> Rationale: Both cross device and same-device flows must be possible.
 
-##### Requirement 
+##### Requirement
 
-A Wallet Unit SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. 
+A Wallet Instance SHALL allow the User to register multiple pseudonym values at a given Relying Party.
 
-> Rationale: A User should be able to freely choose which pseudonym to use if multiple are available. 
+> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible.
 
-##### Requirement 
+##### Requirement
+Wallet Instance SHALL enable the User to freely choose a User alias for each pseudonym registered at a Relying Party.
+An alias SHALL be a text string.
+Setting an alias SHALL be optional for the User.
+The User SHALL be able to change the alias for any pseudonym.
 
-A Wallet Unit SHALL allow a User delete a pseudonym in which case it shall not be possible to recover. 
+>Rationale: Setting an alias helps the User to recognize and distinguish pseudonym values, which otherwise may be meaningless sequences of symbols.
 
-> Rationale: A User should be allowed to choose if they no longer wishes to have a pseudonym associated with their Wallet Unit. 
+##### Requirement
+
+A Wallet Instance SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of pseudonyms if assigned.
+
+> Rationale: A User should be able to freely choose which pseudonym to use if multiple are available.
+
+##### Requirement
+
+A Wallet Instance SHALL allow a User delete a pseudonym in which case it shall not be possible to recover.
+
+> Rationale: A User should be allowed to choose if they no longer wishes to have a pseudonym associated with their Wallet Instance.
 
 #### 6.1.2 HRLs related to Relying Parties
 
 ##### Requirement
 
-A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit.
+A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Instance.
 
-> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement. 
-
-##### Requirement
-
-A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit.
-
-> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement. 
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement.
 
 ##### Requirement
 
-If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party must be able to verify that the same Wallet Unit have been used to perform both actions. 
+A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Instance.
 
-> Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs. 
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement.
+
+##### Requirement
+
+If Wallet Instance has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party must be able to verify that the same Wallet Instance have been used to perform both actions.
+
+> Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs.
 
 > Note: This may be implementable via so-called "Proof of Association".
 
@@ -721,7 +729,7 @@ Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with 
 
 #### 6.1.4 HRLs related to Privacy
 
-##### Requirement 
+##### Requirement
 
 A Relying Party SHALL NOT be able to derive the User’s true identity, or any data identifying the User, from the pseudonym value received by the Relying Party.
 
@@ -729,27 +737,27 @@ A Relying Party SHALL NOT be able to derive the User’s true identity, or any d
 
 ##### Requirement
 
-A Wallet Unit SHALL always release a different value for the pseudonym of a given User to different Relying Parties.
+A Wallet Instance SHALL always release a different value for the pseudonym of a given User to different Relying Parties.
 
 > Rationale: This is important to ensure that colluding Relying Parties cannot use the pseudonym values to track the User.
 
 ##### Requirement
 
-It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
+It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
 
 > Rationale: If this was possible, it would defeat the purpose of using different pseudonym values and would allow colluding Relying Parties to track the User.
 
-##### Requirement 
+##### Requirement
 
-A Wallet Unit MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party. 
+A Wallet Instance MAY choose not verify the identity of a Relying Party upon receiving a request for either registering a pseudonym or authenticating with a pseudonym if the identity is verified by the client the User otherwise have used to interact with the Relying Party.
 
-> Note that this is contrary to cases where a Wallet Unit receives a request for presentation of either PID or (Q)EAA. 
+> Note that this is contrary to cases where a Wallet Instance receives a request for presentation of either PID or (Q)EAA.
 
-> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification. 
+> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification.
 
-##### Requirement 
+##### Requirement
 
-The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
+The Wallet Instance SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
 
 > Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
 
@@ -761,13 +769,13 @@ PA_01 states:
 
 *Pseudonym Providers, Pseudonym attestations, and Wallet Instances SHALL comply with all applicable requirements in [Pseudonym Rulebook].*
 
-> Rationale for removal: A pseudonym provider is no longer used for the pseudonyms functionality. 
+> Rationale for removal: A pseudonym provider is no longer used for the pseudonyms functionality.
 
 
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
-To be added once agreement on HRLs have been reached. 
+To be added once agreement on HRLs have been reached.
 
 ## 7 References
 
