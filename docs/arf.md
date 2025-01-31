@@ -1247,7 +1247,7 @@ The Trusted List Provider can temporarily suspend a PID Provider or Attestation
 Provider. This leads to the **Suspended** state. The Trusted List Provider can
 unsuspend the PID Provider or Attestation Provider, bringing it back to the
 **Valid** state. The Trusted List Provider can also decide to completely
-withdraw the PID Provider or Attestation Provider, which brings the it in the
+withdraw the PID Provider or Attestation Provider, which brings it in the
 **Withdrawn** state. For more information about suspension or withdrawal, please
 refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal). A
 suspended or withdrawn PID Provider or Attestation Provider cannot issue PIDs or
