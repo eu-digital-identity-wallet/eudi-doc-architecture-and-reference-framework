@@ -673,7 +673,7 @@ A Wallet Instance SHALL be able to perform the actions specified in the above tw
 
 ##### Requirement
 
-A Wallet Instance SHALL allow the User to register multiple pseudonym values at a given Relying Party.
+A Wallet Instance SHALL allow the User to register multiple different pseudonyms at a given Relying Party.
 
 > Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more pseudonyms should therefore be possible.
 
@@ -683,11 +683,11 @@ An alias SHALL be a text string.
 Setting an alias SHALL be optional for the User.
 The User SHALL be able to change the alias for any pseudonym.
 
->Rationale: Setting an alias helps the User to recognize and distinguish pseudonym values, which otherwise may be meaningless sequences of symbols.
+>Rationale: Setting an alias helps the User to recognize and distinguish pseudonyms, which otherwise may be meaningless sequences of symbols.
 
 ##### Requirement
 
-A Wallet Instance SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of pseudonyms if assigned.
+A Wallet Instance SHALL allow a User to choose which pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of pseudonyms if assigned when this choice must be made.
 
 > Rationale: A User should be able to freely choose which pseudonym to use if multiple are available.
 
@@ -744,13 +744,13 @@ A Relying Party SHALL NOT be able to derive the User’s true identity, or any d
 
 A Wallet Instance SHALL always release a different value for the pseudonym of a given User to different Relying Parties.
 
-> Rationale: This is important to ensure that colluding Relying Parties cannot use the pseudonym values to track the User.
+> Rationale: This is important to ensure that colluding Relying Parties cannot use the pseudonyms  to track the User.
 
 ##### Requirement
 
-It SHALL NOT be possible to correlate pseudonym values based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
+It SHALL NOT be possible to correlate pseudonyms based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that pseudonyms released by a User to different Relying Parties belong to the same User.
 
-> Rationale: If this was possible, it would defeat the purpose of using different pseudonym values and would allow colluding Relying Parties to track the User.
+> Rationale: If this was possible, it would defeat the purpose of using different pseudonyms and would allow colluding Relying Parties to track the User.
 
 ##### Requirement
 
