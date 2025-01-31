@@ -10,7 +10,8 @@ RECOMMENDATION (EU) 2021/946 of 3 June 2021 on a [common Union Toolbox](https://
 coordinated approach towards a European Digital Identity
 Framework](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2021.210.01.0051.01.ENG),
 [OJ L 210/51, 14.6.2021](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AL%3A2021%3A210%3AFULL))
-calling on Member States to work towards the development of a Toolbox including
+calling on Member States to work closely together with the Commission
+towards the development of a Toolbox including
 a technical Architecture and Reference Framework (hereinafter the ARF), a set of
 common standards and technical specifications and a set of common guidelines and
 best practices.
