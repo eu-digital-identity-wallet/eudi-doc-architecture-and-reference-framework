@@ -699,6 +699,12 @@ A Relying Party SHALL be able to verify that a User is registering a Pseudonym u
 
 ##### Requirement
 
+A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit.
+
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this pseudonym when this is a requirement. 
+
+##### Requirement
+
 If Wallet Unit has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party must be able to verify that the same Wallet Unit have been used to perform both actions. 
 
 > Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs. 
@@ -713,7 +719,7 @@ Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with 
 
 > Rationale: It is stated in [CIR.2024.2979].
 
-#### 6.1.1 HRLs related to Privacy
+#### 6.1.4 HRLs related to Privacy
 
 ##### Requirement 
 
@@ -747,12 +753,9 @@ The Wallet Unit SHALL ensure that pseudonyms contain sufficient entropy to make 
 
 > Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
 
-#### 6.1.4 HRLs related to Revocation
-
 #### 6.1.5 HRLs to be Removed
 
 ##### Requirement PA_01 from Topic 11
-
 
 PA_01 states:
 
