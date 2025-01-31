@@ -2467,16 +2467,57 @@ standards specifies in detail how to carry out this verification.
 
 ##### 6.6.3.9 Relying Party Instance verifies or trusts User binding
 
-User binding (sometimes also called 'holder binding') is the property that the subject of the PID or attestation, meaning the natural or legal person described in it, is in fact the person that presents the PID or attestation to the Relying Party. User binding prevents an attacker from successfully presenting a PID or an attestation that they are not legally allowed to use.
+User binding (sometimes also called 'holder binding') is the property that the
+subject of the PID or attestation, meaning the natural or legal person described
+in it, is in fact the person that presents the PID or attestation to the Relying
+Party. User binding prevents an attacker from successfully presenting a PID or
+an attestation that they are not legally allowed to use.
 
-The mechanism(s) available for User binding depend on the presentation flow type (proximity or remote, supervised or unsupervised, see also [Section 4.4](#44-data-presentation-flows)), and on the attributes issued to the User by the PID Provider or Attestation Provider:
+The mechanism(s) available for User binding depend on the presentation flow type
+(proximity or remote, supervised or unsupervised, see also [Section
+4.4](#44-data-presentation-flows)), and on the attributes issued to the User by
+the PID Provider or Attestation Provider:
 
-1. In the first place, the Relying Party can always decide to trust the User authentication mechanisms implemented by the WSCD (see [Topic 9]). This means that the Relying Party trusts that the the WSCD has properly authenticated the User before allowing the User to present the attributes. Note that:
-   - This trust is not based on the outcome of any verification by the Relying Party but is a-priori trust in (in particular) the certified WSCD that is part of the Wallet Unit.
-   - Using this method implies that Relying Parties also trust device binding, as described in [Section 6.5.3](#653-wallet-unit-activation). The Relying Party Instance in fact first verifies that the PID or attestation is bound to a WSCD trusted by the PID Provider or Attestation Provider, and then trusts that the WSCD has properly authenticated the User.
-   - As a matter of fact, this User binding method will always be carried out, since the WSCD must authenticate its User when asking for User approval for presenting any attributes, and since device binding is also mandatory.
-2. In addition, in some cases, if a Relying Party does not want to only trust the above mechanism, it may be able to use User attributes to carry out an additional User binding process. For example, if the PID or attestation contains a User portrait, the Relying Party may be able to visually or biometrically compare that portrait to the face of the person presenting the attestation or by a photo taken of it by an automated machine or as a "selfie". This will generally be possible in supervised proximity presentations by human inspection, or in an unsupervised proximity flow if equipped with the appropriate equipment. It may also be possible to do this in unsupervised remote presentations by using face recognition technology, possibly even remotely. However, to generate trustworthy outcomes in such situations, special conditions and dedicated security measures are required, such as good lighting, clear instructions for the User for positioning their face and an approved liveness detection mechanism supporting Presentation Attacks Detection ([PAD](https://www.enisa.europa.eu/publications/remote-identity-proofing-attacks-countermeasures)), as well as mechanisms for injection attack detection, in particular deepfake detection.
-3. Lastly, if the person presenting the PID or attestation is able to present an identity document, the Relying Party may be able to verify User binding by comparing attributes from the PID or attestation, such as first and last name, to those in the identity document. However, this requires that the Relying Party can verify that the identity document is authentic and really belongs to the person presenting it. In practice this will often mean that the identity document is a photo ID, and the presentation must consequently be done in proximity and be supervised, or done remotely and supported by PAD.
+1. In the first place, the Relying Party can always decide to trust the User
+authentication mechanisms implemented by the WSCD (see [Topic 9]). This means
+that the Relying Party trusts that the the WSCD has properly authenticated the
+User before allowing the User to present the attributes. Note that:
+   - This trust is not based on the outcome of any verification by the Relying
+   Party but is a-priori trust in (in particular) the certified WSCD that is
+   part of the Wallet Unit.
+   - Using this method implies that Relying Parties also trust device binding,
+   as described in [Section 6.5.3](#653-wallet-unit-activation). The Relying
+   Party Instance in fact first verifies that the PID or attestation is bound to
+   a WSCD trusted by the PID Provider or Attestation Provider, and then trusts
+   that the WSCD has properly authenticated the User.
+   - As a matter of fact, this User binding method will always be carried out,
+   since the WSCD must authenticate its User when asking for User approval for
+   presenting any attributes, and since device binding is also mandatory.
+2. In addition, in some cases, if a Relying Party does not want to only trust
+the above mechanism, it may be able to use User attributes to carry out an
+additional User binding process. For example, if the PID or attestation contains
+a User portrait, the Relying Party may be able to visually or biometrically
+compare that portrait to the face of the person presenting the attestation or by
+a photo taken of it by an automated machine or as a "selfie". This will
+generally be possible in supervised proximity presentations by human inspection,
+or in an unsupervised proximity flow if equipped with the appropriate equipment.
+It may also be possible to do this in unsupervised remote presentations by using
+face recognition technology, possibly even remotely. However, to generate
+trustworthy outcomes in such situations, special conditions and dedicated
+security measures are required, such as good lighting, clear instructions for
+the User for positioning their face and an approved liveness detection mechanism
+supporting Presentation Attacks Detection
+([PAD](https://www.enisa.europa.eu/publications/remote-identity-proofing-attacks-countermeasures)),
+as well as mechanisms for injection attack detection, in particular deepfake
+detection.
+3. Lastly, if the person presenting the PID or attestation is able to present an
+identity document, the Relying Party may be able to verify User binding by
+comparing attributes from the PID or attestation, such as first and last name,
+to those in the identity document. However, this requires that the Relying Party
+can verify that the identity document is authentic and really belongs to the
+person presenting it. In practice this will often mean that the identity
+document is a photo ID, and the presentation must consequently be done in
+proximity and be supervised, or done remotely and supported by PAD.
 
 Finally, note that in a combined presentation of attributes according to the
 next section, if User binding is proven for one of the presented attestations,
@@ -2506,11 +2547,18 @@ attestations are associated. Key association is described in [Topic 9].
 
 ##### 6.6.3.11 Relying Party Instance authenticates the Wallet Unit and the Wallet Provider
 
-[Section 6.5.3](#653-wallet-unit-activation) above describes that a Wallet Provider, during the lifetime of a Wallet Unit, ensures that the Wallet Unit is always in possession of one or more valid Wallet Unit Attestations (WUAs). Either before or after requesting one or more PIDs or attestations from a Wallet Unit, a Relying Party Instance:
+[Section 6.5.3](#653-wallet-unit-activation) above describes that a Wallet
+Provider, during the lifetime of a Wallet Unit, ensures that the Wallet Unit is
+always in possession of one or more valid Wallet Unit Attestations (WUAs).
+Either before or after requesting one or more PIDs or attestations from a Wallet
+Unit, a Relying Party Instance:
 
 - requests a WUA from the Wallet Unit.
-- verifies the signature over the WUA using the Wallet Provider trust anchor obtained from the Wallet Provider Trusted List.
-- verifies that the Wallet Unit is in possession of the private key belonging to the public key in the WUA. This proves that the Wallet Unit is authentic and is provided by the trusted Wallet Provider.
+- verifies the signature over the WUA using the Wallet Provider trust anchor
+obtained from the Wallet Provider Trusted List.
+- verifies that the Wallet Unit is in possession of the private key belonging to
+the public key in the WUA. This proves that the Wallet Unit is authentic and is
+provided by the trusted Wallet Provider.
 
 ##### 6.6.3.12 Relying Party verifies that WUA is not revoked
 
@@ -2536,7 +2584,12 @@ relevant Data Protection Authority.
 The dashboard also enables the User to request a Relying Party to immediately
 erase personal data. For more information and requirements, see [Topic 48].
 
-To be able to substantiate a complaint, or to list data that must be deleted, the User needs to be informed about which attributes were requested by which Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes that were requested and presented. The aforementioned dashboard also enables the User to view the log and lodge a complaint for any attribute in the log. More details about the logging functionality can be found in [Topic 19].
+To be able to substantiate a complaint, or to list data that must be deleted,
+the User needs to be informed about which attributes were requested by which
+Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes
+that were requested and presented. The aforementioned dashboard also enables the
+User to view the log and lodge a complaint for any attribute in the log. More
+details about the logging functionality can be found in [Topic 19].
 
 #### 6.6.4 PID or attestation presentation to another Wallet Unit
 
@@ -2583,47 +2636,190 @@ For high-level requirements on this topic, see [Topic 51].
 
 ### 7.1 Introduction
 
-This chapter briefly describes the certification of Wallet Solutions and the eID schemes under which they are provided, covering the overall certification approach, design principles, and key requirements outlined in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) and Commission Implementing Regulation (CIR) laying down rules for on the certification of Wallet Solution (2024/2981), or simply the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981). Furthermore, references are made to the Annex I of the CIR, the [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,), supporting the risk-based approach of the Wallet Solutions. For more detailed requirements, please refer to the [CIR](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) itself.
+This chapter briefly describes the certification of Wallet Solutions and the eID
+schemes under which they are provided, covering the overall certification
+approach, design principles, and key requirements outlined in the [eIDAS
+Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+and Commission Implementing Regulation (CIR) laying down rules for on the
+certification of Wallet Solution (2024/2981), or simply the [CIR
+2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981).
+Furthermore, references are made to the Annex I of the CIR, the [Risk
+Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,),
+supporting the risk-based approach of the Wallet Solutions. For more detailed
+requirements, please refer to the
+[CIR](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+itself.
 
-The [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) requires certification of Wallet Solutions to ensure conformity of the Wallet Solutions with functional, security, and privacy related requirements, to achieve a high level of interoperability, security and trustworthiness. Certification applies to the Wallet Solutions and the eID schemes under which they are provided; for ease of reading this chapter only refers to Wallet Solutions. Furthermore, the object of certification includes software components, hardware components (in cases where they are provided directly or indirectly by the Wallet Provider) and the processes that support the provision and operation of a Wallet Solution, such as Wallet Unit activation, see [Section 6.5.3](#653-wallet-unit-activation).
+The [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+requires certification of Wallet Solutions to ensure conformity of the Wallet
+Solutions with functional, security, and privacy related requirements, to
+achieve a high level of interoperability, security and trustworthiness.
+Certification applies to the Wallet Solutions and the eID schemes under which
+they are provided; for ease of reading this chapter only refers to Wallet
+Solutions. Furthermore, the object of certification includes software
+components, hardware components (in cases where they are provided directly or
+indirectly by the Wallet Provider) and the processes that support the provision
+and operation of a Wallet Solution, such as Wallet Unit activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
-The aim is to harmonise the implementation of the requirements laid down by the Regulation and avoid divergent approaches to the maximum extent possible. For this reason, the Commission requested ENISA to prepare a candidate European certification scheme under the Cybersecurity Act, the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). As defining and adopting a dedicated, harmonised certification scheme for Wallet Solutions depends on agreements between Member States on detailed security requirements, on the availability of underlying certification schemes, and on established good practices in the Member States themselves, a transitory approach is foreseen by means of national certification schemes.
+The aim is to harmonise the implementation of the requirements laid down by the
+Regulation and avoid divergent approaches to the maximum extent possible. For
+this reason, the Commission requested ENISA to prepare a candidate European
+certification scheme under the Cybersecurity Act, the
+[CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). As defining and adopting a
+dedicated, harmonised certification scheme for Wallet Solutions depends on
+agreements between Member States on detailed security requirements, on the
+availability of underlying certification schemes, and on established good
+practices in the Member States themselves, a transitory approach is foreseen by
+means of national certification schemes.
 
-In other words, the certification approach for Wallet Solutions follows two phases. In the short-term, Member States provide national (transitory) certification schemes. In the medium term, a harmonised CSA scheme will be established. When the CSA-based scheme becomes available, it replaces the national schemes as for cybersecurity requirements. The schemes may continue to exist for functional requirements.
+In other words, the certification approach for Wallet Solutions follows two
+phases. In the short-term, Member States provide national (transitory)
+certification schemes. In the medium term, a harmonised CSA scheme will be
+established. When the CSA-based scheme becomes available, it replaces the
+national schemes as for cybersecurity requirements. The schemes may continue to
+exist for functional requirements.
 
 #### 7.2. Certification of Wallet Solutions against national certification schemes
 
-Until a dedicated Wallet Solution cybersecurity certification scheme under the CSA is available, the Regulation requires Member States to establish national certification schemes. This will be done in time to make available the Wallet Solutions before the end of 2026. The Commission has adopted the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) to provide the main requirements on Member States for creation of national certification schemes. The [CIR 2024/2981] and resulting national certification schemes are defined around a number of guiding principles:
+Until a dedicated Wallet Solution cybersecurity certification scheme under the
+CSA is available, the Regulation requires Member States to establish national
+certification schemes. This will be done in time to make available the Wallet
+Solutions before the end of 2026. The Commission has adopted the [CIR
+2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+to provide the main requirements on Member States for creation of national
+certification schemes. The [CIR 2024/2981] and resulting national certification
+schemes are defined around a number of guiding principles:
 
-First, the goal is to harmonise requirements to the extent possible. Member States are also encouraged to work together in the design and implementation of national schemes. Additionally, national schemes will leverage the use of relevant and existing certification schemes and standards for Wallet Solution certification and evaluation. Where available, relevant European CSA schemes must be used. Currently, only the Common Criteria based European candidate cybersecurity certification [EUCC](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en) scheme is available for the cybersecurity certification of ICT products, parts, or components for products. Upcoming CSA-based schemes include [EUCS](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en) & [EU5G](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en). Additionally, other existing or upcoming schemes​ include schemes based on FITCEM (EN 17640)​, national schemes such as on remote identity verification, or other private schemes (e.g. for mobile devices and apps)​. For harmonisation of functional requirements, the Commission Implementing Regulations (CIRs) adopted under [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5(a) are referenced. For harmonisation of certification requirements, the ISO/IEC 17065 framework under Regulation [765/2008] is used, complemented by ISO/IEC 17067 on the definition of schemes.
+First, the goal is to harmonise requirements to the extent possible. Member
+States are also encouraged to work together in the design and implementation of
+national schemes. Additionally, national schemes will leverage the use of
+relevant and existing certification schemes and standards for Wallet Solution
+certification and evaluation. Where available, relevant European CSA schemes
+must be used. Currently, only the Common Criteria based European candidate
+cybersecurity certification
+[EUCC](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en)
+scheme is available for the cybersecurity certification of ICT products, parts,
+or components for products. Upcoming CSA-based schemes include
+[EUCS](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en)
+&
+[EU5G](https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en).
+Additionally, other existing or upcoming schemes​ include schemes based on
+FITCEM (EN 17640)​, national schemes such as on remote identity verification, or
+other private schemes (e.g. for mobile devices and apps)​. For harmonisation of
+functional requirements, the Commission Implementing Regulations (CIRs) adopted
+under [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+article 5(a) are referenced. For harmonisation of certification requirements,
+the ISO/IEC 17065 framework under Regulation [765/2008] is used, complemented by
+ISO/IEC 17067 on the definition of schemes.
 
-Next, the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) refers to the composite nature of the Wallet Solutions as well as the potential different architectures in Member States, considering that the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) is technology (and architecture) neutral. This means that a final ('top-level') certification of the Wallet Solution will yield a composite certificate, built on certification of separate components, such as EUCC certification. Wallet Solutions are always to be certified against assurance level "high", as set out in [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) as well as [CIR (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2015_235_R_0002). That assurance level has to be reached by the overall Wallet Solution. Under this Regulation, some components of the Wallet Solution may be certified at a lower assurance level, provided this is duly justified and without prejudice to the assurance level "high" reached by the overall Wallet Solution. For the use of assurance information from other certification schemes or sources, a dependency analysis will be performed.
+Next, the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+refers to the composite nature of the Wallet Solutions as well as the potential
+different architectures in Member States, considering that the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+is technology (and architecture) neutral. This means that a final ('top-level')
+certification of the Wallet Solution will yield a composite certificate, built
+on certification of separate components, such as EUCC certification. Wallet
+Solutions are always to be certified against assurance level "high", as set out
+in [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+as well as [CIR (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2015_235_R_0002).
+That assurance level has to be reached by the overall Wallet Solution. Under
+this Regulation, some components of the Wallet Solution may be certified at a
+lower assurance level, provided this is duly justified and without prejudice to
+the assurance level "high" reached by the overall Wallet Solution. For the use
+of assurance information from other certification schemes or sources, a
+dependency analysis will be performed.
 
-Finally, in order to ensure a harmonised approach to cybersecurity and the assessment of the most critical risks that might affect the provision and operation of Wallet Units, a register of risks and threats is defined [#7.4-Risk-based-approach-and-risk-register]. The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) contains high level risks and threats in relation to Wallet Solutions and the ecosystem, as well as detailed threat scenarios that will be taken into consideration when designing Wallet Solutions, independent of their specific architecture.
+Finally, in order to ensure a harmonised approach to cybersecurity and the
+assessment of the most critical risks that might affect the provision and
+operation of Wallet Units, a register of risks and threats is defined
+[#7.4-Risk-based-approach-and-risk-register]. The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
+contains high level risks and threats in relation to Wallet Solutions and the
+ecosystem, as well as detailed threat scenarios that will be taken into
+consideration when designing Wallet Solutions, independent of their specific
+architecture.
 
-As a first step towards certification of Wallet Solutions under national schemes, Member States will assign a scheme owner, and design and roll out the scheme. As part of this process, Certification Bodies (CBs) will be accredited to carry out conformity assessments of Wallet Solutions against the requirements of the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) and the national scheme. Wallet Providers then request one or more designated CABs to assess and certify the conformity of their Wallet Solution. The CAB evaluates and certifies the conformity of the Wallet Solution if they meet the requirements.
+As a first step towards certification of Wallet Solutions under national
+schemes, Member States will assign a scheme owner, and design and roll out the
+scheme. As part of this process, Certification Bodies (CBs) will be accredited
+to carry out conformity assessments of Wallet Solutions against the requirements
+of the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+and the national scheme. Wallet Providers then request one or more designated
+CABs to assess and certify the conformity of their Wallet Solution. The CAB
+evaluates and certifies the conformity of the Wallet Solution if they meet the
+requirements.
 
-The European Commission and ENISA support Member States in designing and implementing national certification schemes in the Cooperation Group.
+The European Commission and ENISA support Member States in designing and
+implementing national certification schemes in the Cooperation Group.
 
 #### 7.3 Certification of Wallet Solutions against a dedicated CSA-based scheme
 
-In parallel to the work described above, ENISA is requested to draft a dedicated European cybersecurity certification scheme for the Wallet Solutions under the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). Once available, this CSA-based scheme will replace the national transitory schemes mentioned above for the cybersecurity requirement it covers. This scheme will be based on available national schemes, harmonised requirements, and identify any additional requirements relevant for cybersecurity. The scheme will further detail the cybersecurity requirements, identify and set normative standards and define the target level of assurance or security for the relevant Wallet Solution components.
+In parallel to the work described above, ENISA is requested to draft a dedicated
+European cybersecurity certification scheme for the Wallet Solutions under the
+[CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). Once available, this
+CSA-based scheme will replace the national transitory schemes mentioned above
+for the cybersecurity requirement it covers. This scheme will be based on
+available national schemes, harmonised requirements, and identify any additional
+requirements relevant for cybersecurity. The scheme will further detail the
+cybersecurity requirements, identify and set normative standards and define the
+target level of assurance or security for the relevant Wallet Solution
+components.
 
-The work to develop the CSA-based scheme follows the milestones set out by the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj) and is supported by the Ad Hoc Working Group or '[AHWG](https://www.enisa.europa.eu/news/call-for-experts-join-the-enisa-ad-hoc-working-group-on-eu-digital-identity-wallets-cybersecurity-certification)'. This group is composed of selected experts from private organisations and industry, with extensive knowledge and experience in the areas of cybersecurity certification, digital wallets, electronic identification and trust services. The first step is to have a candidate scheme ready for public consultation and submitted for feedback of the European Cybersecurity Certification Group or [ECCG](https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-certification-group). The ECCG’s opinion serves as advisory input to ensure the candidate scheme aligns to EU cybersecurity objectives, standards and regulatory requirements. Although the ECCG’s opinion is not binding, it will hold significant influence, as it reflects the collective expertise of national cybersecurity authorities, aiming to harmonise cybersecurity certification practices across Member States. Based on this input, the candidate scheme might be updated further. After finalisation of the ECCG opinion, the scheme will be transformed into a new Implementing Regulation and adopted by comitology procedure.
+The work to develop the CSA-based scheme follows the milestones set out by the
+[CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj) and is supported by the Ad
+Hoc Working Group or '[AHWG](https://www.enisa.europa.eu/news/call-for-experts-join-the-enisa-ad-hoc-working-group-on-eu-digital-identity-wallets-cybersecurity-certification)'.
+This group is composed of selected experts from private organisations and
+industry, with extensive knowledge and experience in the areas of cybersecurity
+certification, digital wallets, electronic identification and trust services.
+The first step is to have a candidate scheme ready for public consultation and
+submitted for feedback of the European Cybersecurity Certification Group or
+[ECCG](https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-certification-group).
+The ECCG’s opinion serves as advisory input to ensure the candidate scheme
+aligns to EU cybersecurity objectives, standards and regulatory requirements.
+Although the ECCG’s opinion is not binding, it will hold significant influence,
+as it reflects the collective expertise of national cybersecurity authorities,
+aiming to harmonise cybersecurity certification practices across Member States.
+Based on this input, the candidate scheme might be updated further. After
+finalisation of the ECCG opinion, the scheme will be transformed into a new
+Implementing Regulation and adopted by comitology procedure.
 
-Finally, ENISA is also asked to facilitate the transition from national certification schemes to the dedicated cybersecurity certification scheme under the CSA.
+Finally, ENISA is also asked to facilitate the transition from national
+certification schemes to the dedicated cybersecurity certification scheme under
+the CSA.
 
 ### 7.4 Risk-based approach and risk register
 
-This section details the approach to develop harmonised guidelines for the development of the transitory national certification schemes. In addition to the requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183) article 5c, cybersecurity risks and threats associated with the Wallet Solutions will be identified. Here, a risk-based approach is envisioned as the basis for certification by Member States, ensuring that the Wallet Solutions uphold confidentiality, availability and strong safeguards for User privacy and data protection. This is inspired by known processes, such as for the General Data Protection Regulation ([GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)) and related Data Protection Impact Assessments (DPIA).
+This section details the approach to develop harmonised guidelines for the
+development of the transitory national certification schemes. In addition to the
+requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+article 5c, cybersecurity risks and threats associated with the Wallet Solutions
+will be identified. Here, a risk-based approach is envisioned as the basis for
+certification by Member States, ensuring that the Wallet Solutions uphold
+confidentiality, availability and strong safeguards for User privacy and data
+protection. This is inspired by known processes, such as for the General Data
+Protection Regulation ([GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj))
+and related Data Protection Impact Assessments (DPIA).
 
-The risk-based approach sets out a common [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) that contains a comprehensive but non-exhaustive list of risks and threats related to the Wallet Solution. These risks and threats are architecture-agnostic and provide a benchmark overview of the most critical risks and threats to Wallet Solutions. By adopting this common set of risks and threats, national transitory certification schemes will achieve a baseline level of harmonisation.
+The risk-based approach sets out a common [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
+that contains a comprehensive but non-exhaustive list of risks and threats
+related to the Wallet Solution. These risks and threats are
+architecture-agnostic and provide a benchmark overview of the most critical
+risks and threats to Wallet Solutions. By adopting this common set of risks and
+threats, national transitory certification schemes will achieve a baseline level
+of harmonisation.
 
-The risk register will be applied by scheme owners, Wallet Providers, and Certification Bodies (CBs). When establishing their certification schemes, scheme owners will perform a risk assessment to refine and complement the risks and threats listed in the register with those specific to their architecture, and consider how the applicable risks and threats can be appropriately treated. Wallet Providers will complement the scheme’s risk assessment to identify any risks and threats specific to their implementation and propose appropriate mitigation measures for evaluation by the certification body.
+The risk register will be applied by scheme owners, Wallet Providers, and
+Certification Bodies (CBs). When establishing their certification schemes,
+scheme owners will perform a risk assessment to refine and complement the risks
+and threats listed in the register with those specific to their architecture,
+and consider how the applicable risks and threats can be appropriately treated.
+Wallet Providers will complement the scheme’s risk assessment to identify any
+risks and threats specific to their implementation and propose appropriate
+mitigation measures for evaluation by the certification body.
 
 #### 7.4.1 High-level risks and threats
 
-The following is an excerpt from [Risk Register]. To keep in line with the continuously evolving threat landscape, the risk register will be maintained and regularly updated in collaboration with the Cooperation Group.
+The following is an excerpt from [Risk Register]. To keep in line with the
+continuously evolving threat landscape, the risk register will be maintained and
+regularly updated in collaboration with the Cooperation Group.
 
 High-level risks and threats
 
@@ -2729,22 +2925,34 @@ organise and prioritise issues, making it easier to manage the repository.
 | Licence and Legal Concerns | Questions or concerns related to the licensing of the document, usage rights, attribution requirements, or legal implications for contributors and Users. |
 | Technical Clarification | Raise issues seeking clarification on specific technical content within the document. |
 
-- **Attach** relevant files, screenshots, or links to additional resources that provide context or assist in resolving the issue. This can include **references** to related documentation or discussions.
-- **Follow issue etiquette** by conducting a search to see if the issue has already been reported before creating a new one. This helps avoid duplicate issues.
+- **Attach** relevant files, screenshots, or links to additional resources that
+provide context or assist in resolving the issue. This can include
+**references** to related documentation or discussions.
+- **Follow issue etiquette** by conducting a search to see if the issue has
+already been reported before creating a new one. This helps avoid duplicate
+issues.
 
 ##### 8.2.1.2 Guidelines for discussing existing issues in the GitHub repository
 
-When discussing existing issues in the Github repository, please follow these general guidelines:
+When discussing existing issues in the Github repository, please follow these
+general guidelines:
 
-- **Communicate with respect and courtesy** towards other contributors, maintain a professional tone, and avoid using language that could be interpreted as confrontational or inflammatory.
-- Provide **context and background information** to help others understand your perspective. Explain the reasoning behind your comments.
-- Communicate your intentions and motivations behind your comments or suggestions to **avoid misunderstandings**.
+- **Communicate with respect and courtesy** towards other contributors, maintain
+a professional tone, and avoid using language that could be interpreted as
+confrontational or inflammatory.
+- Provide **context and background information** to help others understand your
+perspective. Explain the reasoning behind your comments.
+- Communicate your intentions and motivations behind your comments or
+suggestions to **avoid misunderstandings**.
 - Keep **discussions focused on the technical aspects of the issue** at hand.
-- Provide **constructive feedback and suggestions** in a helpful and supportive manner. Instead of simply pointing out problems, offer solutions or alternative approaches to address the issue positively.
+- Provide **constructive feedback and suggestions** in a helpful and supportive
+manner. Instead of simply pointing out problems, offer solutions or alternative
+approaches to address the issue positively.
 - Approach discussions with a **mindset of collaboration and problem-solving**.
 - Be **open to different perspectives**, as contributors may have different
 viewpoints, experiences, and expertise levels.
-- Be **open to different perspectives**, as contributors may have different viewpoints, experiences, and expertise levels.
+- Be **open to different perspectives**, as contributors may have different
+viewpoints, experiences, and expertise levels.
 - Contribute to a **positive and welcoming community atmosphere**.
 
 #### 8.2.2 Managing Issues and Pull Requests
