@@ -111,7 +111,7 @@ ensuring comprehensive feedback from all relevant stakeholders. The outcomes of
 these discussions will be incorporated into future versions of this ARF. The
 document will be iteratively updated to improve its content and address emerging
 topics, with the process for providing feedback and details on how updates will
-be managed outlined in Chapter 8.
+be managed outlined in [Chapter 8](#8-document-development).
 
 Among the areas identified for further discussion are privacy risks and
 mitigations, the re-issuance and batch issuance of PIDs and attestations, Wallet
