@@ -165,7 +165,7 @@ The eIDAS Expert Group has described service blueprints for the following use ca
 ### 2.2 Identification and authentication to access online services
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User
-identification and authentication at a high Level of Assurance (LoA) for various
+identification and authentication at Level of Assurance (LoA) high for various
 online services, both public and private. This capability is crucial, as it
 allows Relying Parties to confidently verify the identity of Users they interact
 with.
