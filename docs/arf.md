@@ -1989,7 +1989,7 @@ During the activation of a Wallet Unit, the Wallet Provider issues one or more W
 - Lastly, if a WUA is valid for 24 hours or longer, it contains information allowing a PID Provider, an Attestation Provider, or a Relying Party to verify that the Wallet Provider did not revoke the Wallet Unit Attestation, and hence the Wallet Unit itself. The WUA and the revocation mechanisms for Wallet Units are described in [Topic 38].
 
 The detailed format of the WUA will be discussed with Member States for ARF 2.0.
-However, it will be an attestation complyin either with [SD-JWT VC] or [ISO/IEC
+However, it will be an attestation complying either with [SD-JWT VC] or [ISO/IEC
 18013-5], allowing selective disclosure of attributes. This is necessary because
 Relying Parties do not need to know the properties of the Wallet Unit described
 in the first bullet above. Consequently, the Wallet Unit must be able to present
