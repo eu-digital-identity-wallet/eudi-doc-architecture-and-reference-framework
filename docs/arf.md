@@ -283,7 +283,7 @@ Figure 1: Overview of the EUDI Wallet ecosystem roles
 3. Person Identification Data (PID) Providers, see [Section 3.4](#34-person-identification-data-pid-providers),
 4. Trusted List Providers, see [Section 3.5](#35-trusted-list-provider),
 5. Qualified Electronic Attestation of Attributes (QEAA) Providers, see [Section 3.6](#36-qualified-electronic-attestation-of-attributes-qeaa-providers),
-6. Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers, see [Section 3.7](#37-electronic-attestation-of-attributes-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers),
+6. Electronic Attestation of Attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers, see [Section 3.7](#37-electronic-attestation-of-attributes-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers),
 7. Electronic Attestation of Attributes (EAA) Providers, see [Section 3.8](#38-non-qualified-electronic-attestation-of-attributes-eaa-providers),
 8. Qualified Electronic Signature Remote Creation Providers, see [Section 3.9](#39-qualified-electronic-signature-remote-creation-qesrc-providers),
 9. Authentic Sources, see [Section 3.10](#310-authentic-sources),
