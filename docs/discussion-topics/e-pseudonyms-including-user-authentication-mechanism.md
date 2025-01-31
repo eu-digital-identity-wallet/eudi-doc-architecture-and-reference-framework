@@ -793,9 +793,7 @@ PA_01 states:
 
 *Pseudonym Providers, Pseudonym attestations, and Wallet Instances SHALL comply with all applicable requirements in [Pseudonym Rulebook].*
 
-> Rationale for removal: A pseudonym provider is no longer used for the pseudonyms functionality.
-
-
+> Rationale for removal: Pseudonym providers are no longer used for the pseudonyms functionality.
 
 ### 6.2 Additions and Changes to be added to the ARF Main Document
 
