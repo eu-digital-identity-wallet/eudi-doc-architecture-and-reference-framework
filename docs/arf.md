@@ -217,7 +217,7 @@ release of the ARF.
 
 ### 2.6 Other use cases
 
-#### 2.6.1 Health
+#### 2.6.1 Health data
 
 Easy access to health data is crucial in both national and cross-border
 contexts. A Wallet Unit may enable access to patient summary, ePrescriptions,
