@@ -719,15 +719,20 @@ If Wallet Instance has authenticated using a Pseudonym towards a Relying Party a
 
 > Note: This may be implementable via so-called "Proof of Association".
 
-#### 6.1.3 HRLs for Interoperability
+#### 6.1.3 HRLs related to Privacy
+Note that the requirements WTE\_03 and WTE\_04 ensures that a Wallet Instance ensures that a User is authenticated before pseudonyms are, viewed, created or used to authenticate towards Relying Parties.
+
+The placement of these HRLs will be discussed in Topic C.
 
 ##### Requirement
+A Wallet Instance SHALL store the information necessary for authenticating with a Pseudonym encrypted in their WSCD.
 
-Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this Annex and future technical specifications created by or on behalf of the Commission.
+> Rationale: It is made explicit in Article 5a 4. b of [eiDAS 2.0] that the Pseudonyms must be stored encrypted.
 
-> Rationale: It is stated in [CIR.2024.2979].
+##### Requirement
+A Wallet Instance SHALL get user approval before registering a pseudonym or authenticating with an existing pseudonym.
 
-#### 6.1.4 HRLs related to Privacy
+> Rationale: This will ensure that in case a Wallet Instance is stolen it cannot unrightfully be used to authenticate with pseudonyms.
 
 ##### Requirement
 
@@ -760,6 +765,25 @@ A Wallet Instance MAY choose not verify the identity of a Relying Party upon rec
 The Wallet Instance SHALL ensure that pseudonyms contain sufficient entropy to make the chance of colliding pseudonyms (meaning two Users having the same pseudonym value for the same Relying Party) negligible.
 
 > Rationale: If pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
+
+##### Requirement
+
+A Wallet Instance MUST NOT share the user's optionally assigned pseudonym aliases with any Relying Party.
+
+> Rationale: The aliases are a convenience thing for users and they should be allowed to choose them as they like without having to consider whether it contains sensitive data or not.
+
+#### 6.1.3 HRLs for Interoperability
+
+##### Requirement
+The Commission SHALL create or reference a profile or extension of the WebAuthn specification compliant with the HRLs for this topic.
+
+> Rationale: It must be ensured that the HRLs are conformed to an in an interoperable manner.
+
+##### Requirement
+
+Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this Annex and future technical specifications created by or on behalf of the Commission.
+
+> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with pseudonyms if they have an EUDIW.
 
 #### 6.1.5 HRLs to be Removed
 
