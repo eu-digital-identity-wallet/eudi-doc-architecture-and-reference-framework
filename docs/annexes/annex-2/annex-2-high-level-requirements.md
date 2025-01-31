@@ -413,9 +413,11 @@ Moreover, pseudonyms were added to the list of topics to be discussed for ARF 2.
 
 *Short description*
 
-This Topic describes the high-level requirements for the Attestation Rulebooks that will specify the details of new types of attestations, including QEAAs, PuB-EAAs, and non-qualified EAAs. Attestation Rulebooks will be written by Attribute Schema Providers, a role which can be assumed by multiple types of organisation.
+Article 45e of the [eIDAS 2.0] Regulation sets up the legal basis for the Commission to "where necessary, establish specifications and procedures for the catalogue of attributes and schemes for the attestation of attributes and verification procedures for qualified electronic attestations of attributes". As described in section 5.6 of [ARF], these 'schemes for the attestation of attributes' will be described in so-called Attestation Rulebooks. A separate Rulebook will be created for each type of attestation. This Topic describes the high-level requirements for the Attestation Rulebooks that will specify the details of new types of attestations. 
 
-The goal of this Topic is to ensure that all Rulebooks that will be written in the future will contain the same type of information and the same level of detail, such that all attestations are interoperable.
+Attestation Rulebooks will be written by Attribute Schema Providers, a role which can be assumed by different types of organisation. The goal of this Topic is to ensure that all Rulebooks that will be written in the future will contain the same type of information and the same level of detail, such that all attestations are interoperable.
+
+Attestation Rulebooks may be registered and published in a publicly accessible catalogue, as described in [Topic 25].  
 
 *HLRs*
 
@@ -572,6 +574,8 @@ Regarding the last question:
     multiple distinct attestations that were not issued to the same User,
     are not combined presentations and are out of scope of this Topic.
 
+Note to version 1.5.0: This Topic refers to a 'proof of association' repeatedly. For this concept, see [Topic 9]. This concept will be further discussed with Member States. As a result, the requirements mentioning proof of association may change in a future version of this document.
+
 *HLRs*
 
 A.  Functional requirements for ecosystem components
@@ -581,7 +585,7 @@ A.  Functional requirements for ecosystem components
 |  ACP_01 | Wallet Units SHALL support the features in [ISO18013-5] and/or [OpenID4VP] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response. |
 | ACP_02 | Relying Parties SHOULD support the features in [ISO18013-5] and/or [OpenID4VP] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response. |
 | ACP_03 | Empty |
-| ACP_04 | If (as a result of ACP_03) a Wallet Unit determines it must release multiple attestations to a Relying Party in a combined presentation of attributes, it SHALL request a proof of association between the public keys of these attestations from the WSCA. |
+| ACP_04 | If a Wallet Unit determines it must release multiple attestations to a Relying Party in a combined presentation of attributes, it SHALL request a proof of association between the public keys of these attestations from the WSCA. |
 | ACP_05 | If (as a result of ACP_04), the Wallet Unit receives a proof of association from the WSCA, it SHALL include this proof in the response message containing the combined presentation of attributes and send it to the Relying Party. |
 | ACP_06 | If a Relying Party receives a combined presentation of attributes including a proof of association, it SHOULD verify this proof to validate that the attestations in this presentation were issued to the same User. |
 
@@ -626,8 +630,8 @@ of such a dashboard.  
 | DASH_06a | Via the dashboard, the Wallet Unit SHALL enable the User to delete any transaction in the log. The Wallet Unit SHALL ensure that no other party can delete transactions from the log, except possibly for the reason mentioned in DASH_02a. |
 | DASH_07 | The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file. |
 | DASH_08 | For a natural-person User, a Wallet Instance SHALL provide a User interface. |
-| DASH_09 | The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. |
-| DASH_10 | The Commission SHALL develop technical specifications for an EUDI Trust Mark referred to in DASH_09. |
+| DASH_09 | The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. *Note: The Commission will develop technical specifications for this Trust Mark.* |
+| DASH_10 | Empty |
 | DASH_11 | A Wallet Unit issued to a legal person SHALL allow the legal person to interact with the Wallet Unit in the appropriate interface provided by the Wallet Provider. |
 | DASH_12 | The User interface referred to in DASH_08 SHALL enable the User, for each presentation transaction in the dashboard, to easily request the Relying Party to delete any or all attributes presented to it in that transaction, or to lodge a complaint about that particular transaction to a DPA. | 
 
@@ -682,20 +686,22 @@ See [Topic 10](#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit).
 
 *Short description*
 
-In this use case, the User is utilising the Wallet Unit for
-identification purposes in proximity scenarios. The User is concerned
+In this use case, the User is using their Wallet Unit for
+identification purposes in proximity scenarios. As explained in Section 4.4.1 of [ARF], in a proximity flow, the User and their Wallet Instance are physically near the Relying Part Instance. PIDs and attestations are exchanged using proximity technology (e.g., NFC, Bluetooth) between the Wallet Unit and the Relying Party Instance. Note that this definition does not imply that a Wallet Unit and a Relying Party have to use proximity technologies if they are close together. They are free to use a remote flow (acording to [Topic 1]). However, there may be situations where either the Wallet Unit or the Relying Party Instance does not have an internet connection. In such cases, they must be able to use a proximity flow, if they are close together.
+
+The User is concerned
 about sharing personal data in proximity, while the User's objectives
 include identifying themselves to services requiring User identification
-and maintaining control over their personal data sharing. 
+and maintaining control over their personal data sharing.
 
 This topic lists high-level requirements related to User
-identification in proximity use cases where Users utilise their Wallet Units. 
+identification in proximity use cases where Users utilise their Wallet Units.
 
 *HLRs*
 
 | **Index** | **Requirement specification** |
 |-----------|----------------|
-| ProxId_01 | For proximity identification purposes, a Wallet Unit SHALL be able to establish a connection with Relying Party Instances and process their presentation requests in accordance with ISO/IEC 18013-5. |
+| ProxId_01 | For enable identification using proximity flows, Wallet Units and Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. |
 | ProxId_02 | Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. *Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit.* |
 | ProxId_03 | A Wallet Unit SHALL present the presentation request and the identity of the Relying Party to the User when processing the request. |
 | ProxId_04 | A Wallet Unit SHALL request its User to approve the presentation of attributes from their Wallet Unit for proximity identification before presenting them to the Relying Party. |
