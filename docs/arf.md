@@ -100,8 +100,7 @@ The definitions used in this document can be found in Annex 1 of this document.
 
 ### 1.5 Scope
 
-This document only applies to the EUDI Wallet ecosystem. Attestations that are
-not bound to Wallet Units are not included in the scope of this document.
+This document only applies to the EUDI Wallet ecosystem compliant to the Recommendation.
 
 ### 1.6 Future work
 
