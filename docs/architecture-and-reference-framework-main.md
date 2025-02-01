@@ -3595,6 +3595,6 @@ For undated references, the latest version available applies.
     - [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
     - [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
     - [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
-- Annex 5 - Design guides
+- Annex 5 - Design guides:
     - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
     - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
