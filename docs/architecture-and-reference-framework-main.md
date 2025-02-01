@@ -3581,7 +3581,7 @@ For undated references, the latest version available applies.
 
 - [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md) - High Level Requirements
 
-- [Annex 3] - Rulebooks
+- Annex 3 - Rulebooks
 
     [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
