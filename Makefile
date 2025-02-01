@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 # Source Files
-MAIN_DOC       := docs/arf.md
+MAIN_DOC       := docs/architecture-and-reference-framework-main.md
 ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3]/*.md)
 SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 
@@ -88,7 +88,7 @@ serve:
 copy-pdfs:
 	@echo "Copying PDF files from docs/ to $(BUILD_DIR)/pdf/..."
 	@mkdir -p $(BUILD_DIR)/pdf
-	@find docs -maxdepth 1 -type f -iname "*.pdf" -exec cp {} $(BUILD_DIR)/pdf \;
+	@find docs -maxdepth 3 -type f -iname "*.pdf" -exec cp {} $(BUILD_DIR)/pdf \;
 	@echo "PDF files have been copied."
 
 # Create a zip archive of all files in the build/pdf folder.
