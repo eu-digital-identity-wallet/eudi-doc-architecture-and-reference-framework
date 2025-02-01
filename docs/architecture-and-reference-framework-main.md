@@ -3583,7 +3583,7 @@ For undated references, the latest version available applies.
 
 - Annex 3 - Rulebooks
 
-    [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
+    - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
 
     - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
 
