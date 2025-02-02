@@ -1447,7 +1447,7 @@ driving licences in each Member State. From a technical point of view, all PIDs,
 QEAAs, PuB-EAAs, and EAAs comply with one of the attestation formats listed in
 [Section 5.4](#54-standardised-attestation-formats).
 
-### 5.3 PID
+### 5.3 Person Identification Data
 
 Besides the fact that the Regulation defines the PID as a category of data that
 is legally different from EAAs, another difference between PID and EAA is that
