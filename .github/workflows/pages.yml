@@ -22,7 +22,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
@@ -34,7 +34,10 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mike
-      - run: sudo apt install -y pandoc texlive-latex-base texlive-xetex
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: latest
+      - run: sudo apt install -y texlive-full texlive-xetex
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -43,4 +46,7 @@ jobs:
       - run: mike deploy --push --update-aliases 1.4.0 latest
       - run: mike set-default --push latest
       # - run: mike deploy --push 1.4.0
-      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
