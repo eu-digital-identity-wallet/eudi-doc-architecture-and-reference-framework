@@ -37,15 +37,18 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: latest
+      - uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: |
+            scheme-basic
+            hyperref
+            microtype
+            xelatex
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
       - run: git pull
-      - uses: xu-cheng/texlive-action@v2
-        with:
-          scheme: full
-          texlive_version: 2024
-          run: make
+      - run: make
       - run: mike deploy --push --update-aliases 1.4.0 latest
       - run: mike set-default --push latest
       # - run: mike deploy --push 1.4.0
