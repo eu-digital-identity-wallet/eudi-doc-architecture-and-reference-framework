@@ -37,9 +37,10 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: latest
-      - uses: teatimeguest/setup-texlive-action@v3
+      - uses: xu-cheng/texlive-action@v2
         with:
-          version: 2024
+          scheme: full
+          texlive_version: 2024
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
