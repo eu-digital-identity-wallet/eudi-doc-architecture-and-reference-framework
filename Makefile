@@ -94,7 +94,7 @@ copy-pdfs:
 # Create a zip archive of all files in the build/pdf folder.
 zip-pdfs: copy-pdfs
 	@echo "Creating zip archive of PDFs in $(BUILD_DIR)/pdf..."
-	@cd $(BUILD_DIR) && zip -r arf-$(VERSION)-$(BUILD).zip pdf/*
+	@cd $(BUILD_DIR) && zip -r arf-pdfs-v$(VERSION).zip pdf/*
 	@echo "Zip archive created at $(BUILD_DIR)/pdf.zip."
 
 # Clean generated files and directories.
