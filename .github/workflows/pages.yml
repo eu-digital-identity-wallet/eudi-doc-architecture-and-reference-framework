@@ -48,5 +48,5 @@ jobs:
       - run: mike set-default --push latest
       - uses: actions/upload-artifact@v4
         with:
-          name: build
-          path: build
+          name: architecture-and-reference-framework
+          path: build/pdf
