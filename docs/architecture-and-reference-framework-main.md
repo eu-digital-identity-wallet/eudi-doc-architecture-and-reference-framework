@@ -1604,92 +1604,62 @@ public.
 
 #### 6.1.1 Scope
 
-The trust model presented in this chapter describes, for all interactions
-between components of the EUDI Wallet ecosystem, which trust relationships are
-established between the interacting parties to enable these interactions.
+The trust model presented in this chapter defines how trust is established,
+maintained, validated, and managed among entities within the EUDI Wallet
+ecosystem. It outlines the underlying rules, assumptions, and mechanisms that
+govern trust relationships, determining whether an entity (such as a Wallet Unit,
+User Device, or Relying Party) can be considered trustworthy.
 
 ![Figure 11](media/Figure_11_Trust_Model.jpeg) <!-- <img src="Figure_11_Trust_Model.jpeg" style="width:7.16666447944007in;height:5.281294838145232in" /> -->
 
-Figure 11: EUDI Wallet trust architecture
+Figure 11 illustrates the key entities and the relationships in the trust model
+of the EUDI Wallet ecosystem.
 
-Figure 11 above shows the parties and components that are involved in the trust
-architecture for the EUDI Wallet ecosystem.
+At its core is the **Wallet Unit** (top middle, blue), which interacts with
+various entities throughout its lifecycle—installation, activation, management, and
+de-installation (detailed in [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).
+Each Wallet Unit is a configuration of a **Wallet Solution**, comprising a
+**Wallet Instance** and one or more WSCA/WSCDs, provided by a **Wallet
+Provider**. The Wallet Provider oversees these components and manages their
+registration, withdrawal, or suspension (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle)).
+A **Wallet Unit Attestation (WUA)** is issued to verify a Wallet Unit and can be
+revoked if needed.
 
-In the center of this ecosystem is the **Wallet Unit**, shown in the top middle
-in blue. [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle) describes
-the interactions between the Wallet Unit and other roles in the ecosystem in the
-lifecycle of a Wallet Unit, namely installation, activation, management, and
-de-installation.
+The Wallet Unit handles **User PIDs and attestations** (QEAAs, PuB-EAAs, and
+non-qualified EAAs). PIDs are issued by **PID Providers**, and attestations by
+**Attestation Providers**, both positioned to the left of the Wallet Unit in
+Figure 11. Before interacting with a Wallet Unit or being verified by a
+**Relying Party**, these providers must be registered with a **PID Provider
+Trusted List Provider (TLP)** or **Attestation Provider TLP**. Upon
+registration, they receive access certificates from a **PID Provider Access CA**
+or **Attestation Provider Access CA** ([Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle)).
 
-A Wallet Unit is a unique configuration of a Wallet Solution, including a Wallet
-Instance and one or more WSCA/WSCDs, provided by a **Wallet Provider**. The
-Wallet Instance is an instance of the Wallet Provider's Wallet Solution. Figure
-11 positions the Wallet Provider above the Wallet Unit and depicts the Wallet
-Provider Trusted List Provider (TLP) located in the lower right corner for each
-Member State. [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle)
-elaborates on the interactions among these entities throughout the lifecycle of
-a Wallet Solution and Wallet Provider, including processes such as registration
-and potential withdrawal or suspension. The Wallet Provider manages the latter
-by issuing a **Wallet Unit Attestation (WUA)** to a Wallet Unit and, when
-necessary, revoking it.
+Once a Wallet Unit receives PIDs or attestations, it can present **User
+attributes** to **Relying Party Instances** (right side of Figure 11). These
+instances are hardware/software setups enabling **Relying Parties** to interact
+with Wallet Units. Relying Parties register with a **Relying Party Registrar**,
+receiving an **Access Certificate** for each instance and a **Relying Party
+Registration Certificate** ([Section 6.4](#64-trust-throughout-a-relying-party-lifecycle)).
 
-One of the main functions of the Wallet Unit is to handle the User's PID(s) and
-attestations (QEAAs, PuB-EAAs and non-qualified EAAs). The PID(s) are issued by
-**PID Providers** and the attestations by **Attestation Providers**, shown to
-the left of the Wallet Unit in Figure 11. Like Wallet Providers, PID Providers
-and Attestation Providers are registered by a **PID Provider Trusted List
-Provider** (TLP) or by an **Attestation Provider Trusted List Provider** before
-they can interact with a Wallet Unit, and before a Relying Party can verify the
-PID(s) or attestation those Providers issue. As a result of the registration, a
-PID Provider or an Attestation Provider receives an access certificate from a
-**PID Provider Access Certificate Authority (CA)** or from an **Attestation
-Provider Access CA,** accordingly. [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle)
-describes interactions between these roles in the lifecycle of a PID Provider or
-an Attestation Provider, namely registration, and possibly withdrawal and
-suspension.
+[Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) further
+details the lifecycle of PIDs and attestations, including issuance,
+presentation, management, and deletion.
 
-After receiving one or more PIDs or attestations, a Wallet Unit can present User
-attributes from these attestations to **Relying Party Instances**. These are
-shown on the right-hand side of the Wallet Unit in Figure 11. A Relying Party
-Instance is a combination of hardware and software used by a **Relying Party**
-to interact with a Wallet Unit. A Relying Party can use multiple Relying Party
-Instances, especially in case the interactions with the Wallet Unit take place
-in proximity. Relying Parties are registered by a **Relying Party Registrar** in
-their Member State. As a result of the registration, a Relying Party receives an
-Access certificate for each of its Relying Party Instances from a **Relying
-Party Instance Access CA**. In addition, the Relying Party also receives a
-**Relying Party registration certificate** from the Registrar.
-*[Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes
-*interactions
-between these roles in the lifecycle of a Relying Party, namely registration,
-and possibly de-registration.
+**Notes:**
 
-Finally, [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle)
-describes interactions in the lifecycle of a PID or an attestation, namely
-issuance, presentation to a Relying Party or to another Wallet Unit, management,
-and deletion.
-
-Notes:
-
-- This trust model is conceptual and may be implemented by Member States in
-different ways. In some case, existing entities can probably be used to fulfil
-these roles.
-- For PIDs, qualified EAAs, and PuB-EAAs, interoperability is required (see
-[Section 4.2.2](#422-interoperability)) and therefore, this trust model will be
-implemented using X.509 certificates and X.509-based Certificate Authorities
-according to [[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280)] and
-[[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)]. The same is true for
-non-qualified EAAs complying with [ISO/IEC 18013-5]. However, for non-qualified
-EAAs complying with [SD-JWT VC] or [W3C VC DM v1.0 or 2.0], other trust
-frameworks may be used.
-- This trust model is valid for both remote and proximity use cases. However,
-technical measures taken to ensure that the requirements on trust are fulfilled
-may differ between these two use cases. Moreover, the authentication and
-authorisation mechanisms will depend on the characteristics of the interacting
-parties.
-- In this version of the ARF, the trust model does not yet include interactions
-needed to enable Users to create qualified electronic signatures or seals.
-Please refer to [Topic 16] and [Topic 37].
+- This conceptual trust model may be implemented with slight variations across
+Member States, such as adopting one or multiple Certification Authorities or
+leveraging existing entities that already fulfill this role.
+- For Access Certificates, PIDs, qualified EAAs, and PuB-EAAs, interoperability
+is essential ([Section 4.2.2](#422-interoperability)) and is based on a PKI
+following X.509 certificate standards
+([RFC5280](https://datatracker.ietf.org/doc/html/rfc5280),
+[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)). Non-qualified EAAs
+may adopt alternative trust model and mechanisms.
+- The model supports both remote and proximity use cases, though technical
+measures and authentication mechanisms may vary.
+- This version of the ARF does not yet include trust interactions for
+**qualified electronic signatures or seals** (see [Topic 16] and [Topic 37]).
 
 #### 6.1.2 Risks and mitigation measures
 
