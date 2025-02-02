@@ -37,7 +37,8 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: latest
-      - run: sudo apt install -y texlive-latex-extra
+      - run: sudo apt install -y texlive-latex-extra texlive-xelatex
+      - run: tlmgr init-usertree
       - run: tlmgr install soul adjustbox babel-german background bidi collectbox csquotes everypage filehook footmisc footnotebackref framed fvextra letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro sourcesanspro titling ucharcat unicode-math upquote xecjk xurl zref
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
