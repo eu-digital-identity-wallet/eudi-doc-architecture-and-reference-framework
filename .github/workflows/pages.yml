@@ -38,15 +38,14 @@ jobs:
         with:
           pandoc-version: latest
       - run: sudo apt install -y texlive-latex-extra
-      - run: sudo tlmgr install soul adjustbox babel-german background bidi collectbox csquotes everypage filehook footmisc footnotebackref framed fvextra letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro sourcesanspro titling ucharcat unicode-math upquote xecjk xurl zref
+      - run: tlmgr install soul adjustbox babel-german background bidi collectbox csquotes everypage filehook footmisc footnotebackref framed fvextra letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro sourcesanspro titling ucharcat unicode-math upquote xecjk xurl zref
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
       - run: git pull
       - run: make
-      - run: mike deploy --push --update-aliases 1.4.0 latest
+      - run: mike deploy --push --update-aliases latest
       - run: mike set-default --push latest
-      # - run: mike deploy --push 1.4.0
       - uses: actions/upload-artifact@v4
         with:
           name: build
