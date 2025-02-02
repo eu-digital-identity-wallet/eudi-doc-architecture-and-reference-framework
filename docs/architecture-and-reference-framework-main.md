@@ -1600,7 +1600,7 @@ public.
 
 ## 6 Trust model
 
-### 6.1 Overview
+### 6.1 Introduction
 
 #### 6.1.1 Scope
 
@@ -1658,7 +1658,9 @@ in proximity. Relying Parties are registered by a **Relying Party Registrar** in
 their Member State. As a result of the registration, a Relying Party receives an
 Access certificate for each of its Relying Party Instances from a **Relying
 Party Instance Access CA**. In addition, the Relying Party also receives a
-**Relying Party registration certificate** from the Registrar. [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes interactions
+**Relying Party registration certificate** from the Registrar.
+*[Section 6.4](#64-trust-throughout-a-relying-party-lifecycle) describes
+*interactions
 between these roles in the lifecycle of a Relying Party, namely registration,
 and possibly de-registration.
 
