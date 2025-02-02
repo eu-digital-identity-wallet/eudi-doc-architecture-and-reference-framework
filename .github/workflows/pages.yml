@@ -40,7 +40,7 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3
         with:
           version: 2024
-      - run: sudo apt install -y texlive-full texlive-xetex
+      - run: sudo apt install -y texlive-xetex
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
