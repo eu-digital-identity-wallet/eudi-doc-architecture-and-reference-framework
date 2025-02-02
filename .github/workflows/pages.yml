@@ -37,6 +37,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: latest
+      - run: sudo apt update -y
       - run: sudo apt install -y texlive-full texlive-xetex
       - run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
