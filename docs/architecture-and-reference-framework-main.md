@@ -1760,25 +1760,25 @@ Regulation mandates that each Relying Party register the attributes it intends
 to request from Users. According to [CIR 2024/2982], these registered attributes
 must be included in a Relying Party registration certificate, which the Wallet
 Unit uses to verify the legitimacy of the request and inform the User
-accordingly.This transparency ensures that Users can make an informed decision
+accordingly. This transparency ensures that Users can make an informed decision
 about whether to approve or deny the presentation of the requested attributes.
 More details on this requirement can be found in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
 3. **Attestation Provider Disclosure Policy Enforcement** – The Regulation also
 mandates that Attestation Providers can embed a disclosure policy within their
 attestations. This policy may include rules governing whether the Attestation
 Provider approves the presentation of certain attributes to an authenticated
-Relying Party. The Wallet Unit evaluates this policy—if present—alongside
-authenticated data from the Relying Party and informs the User of the outcome.
+Relying Party. The Wallet Unit evaluates this policy —if present— alongside
+authenticated data from the Relying Party, and informs the User of the outcome.
 This mechanism further supports the User in making a well-informed decision on
-whether to approve or deny attribute disclosure. More information on disclosure
+whether to approve or deny attribute presentation. More information on disclosure
 policy enforcement can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
 ##### 6.1.2.5 Risks and mitigation measures related to User privacy
 
 User privacy is a key aspect in the design and implementation of the EUDI Wallet
 ecosystem. Attributes are presented as electronic attestations using formats
-based on salted, hashed data. These attestations contain unique, fixed elements
-such as hashes, public keys, and signatures. Malicious Relying Parties could
+based on salted and hashed attributed. These attestations contain unique, fixed elements
+such as hash values, public keys, and signatures. Malicious Relying Parties could
 exploit these values to track Users by storing and comparing them across
 multiple transactions, identifying recurring patterns.  This privacy threat,
 known as **Relying Party linkability**, can occur within a single Relying Party
@@ -1786,15 +1786,15 @@ or among colluding entities.
 
 A similar privacy threat arises when colluding Relying Parties share unique
 values with a malicious Attestation Provider, allowing it to track User activity
-across multiple services, in this case it's called **Attestation Provider linkability**.
+across multiple services. In this case, it's called **Attestation Provider linkability**.
 
 Regarding the mitigation of these risks:
 
 - A trustworthy PID Provider or Attestation Provider can mitigate Relying Party
 linkability, either partially or fully, by issuing multiple PIDs or attestations
-to the same User. These attestations can be designed as disposable (single-use)
+to the same User. Wallet Units can use these attestations as disposable (single-use)
 or Relying Party-specific, ensuring that different Relying Parties receive
-distinct attestations that cannot be linked back to the same User. However, this
+distinct attestations that cannot be linked. However, this
 approach increases issuance complexity and management overhead. This topic will
 be further explored in the context of the next major release of ARF.
 Additionally, organizational and enforcement measures can help deter Relying
