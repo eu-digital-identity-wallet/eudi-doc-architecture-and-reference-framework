@@ -714,7 +714,7 @@ A Relying Party SHALL be able to verify that a User is authenticating with a Pse
 
 ##### Requirement 10
 
-If Wallet Instance has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party must be able to verify that the same Wallet Instance have been used to perform both actions.
+If Wallet Instance has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same Wallet Instance have been used to perform both actions.
 
 > Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs.
 
