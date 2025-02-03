@@ -643,10 +643,14 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 
 ## 6 Additions and Changes to the ARF
 
-Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document.
+Pseudonyms can could envisioned used as part of supporting many different functionalities. In particular, at least: 
+1. User authentication via. a pseudonym as envisioned in Use Case A and B. 
+2. Pseudonyms with attested attributes that can be presented to Relying Parties, using the attributes. This can further come in at least two variants namely self-attested attributes and third-party attested attributes each being useful in different settings.
 
-Note that the HRLs are the minimal HRLs that must be fulfilled by all actors in the EUDI Wallet ecosystem related to the pseudonym and user authentication functionality.
-There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support different pseudonyms use cases than those supported by the minimal HRLs defined below.
+Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document only to ensure user authentication via pseudonyms.
+There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support for example pseudonyms with attested attributes. 
+The below is merely a proposal for the minimal HRLs that must be fulfilled by all actors in the EUDI Wallet ecosystem related to the pseudonym and user authentication functionality.
+
 
 ### 6.1 Additions and Changes to HLRs
 The below HRLs will be added to the Annex II, Topic 11 of the ARF.
@@ -713,12 +717,11 @@ A Relying Party SHALL be able to verify that a User is authenticating with a Pse
 > Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this Pseudonym when this is a requirement.
 
 ##### Requirement 10
-
-If Wallet Instance has authenticated using a Pseudonym towards a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same Wallet Instance have been used to perform both actions.
+If Wallet Instance is used to register a Pseudonym at a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party in the same session, then this Relying Party SHALL be able to verify that the same Wallet Instance have been used to perform both actions.
 
 > Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs.
 
-> Note: This may be implementable via so-called "Proof of Association".
+> Note: The above *only* states the high-level requirement. Later technical specifications will define how this is enabled.
 
 #### 6.1.3 HRLs related to Privacy
 Note that the requirements WTE\_03 and WTE\_04 from Topic 9 ensures that a Wallet Instance must authenticate a User before Pseudonyms are, viewed, created or used to authenticate towards Relying Parties. We therefore do not think it is necessary to add further requirements realted to this. 
