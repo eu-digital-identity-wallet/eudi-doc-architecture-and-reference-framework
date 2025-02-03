@@ -227,9 +227,9 @@ The wording, _cryptographically bound_, may be interpreted in different ways. Wh
 
 The text states that providers of PID are obligated to revoke PID issued to a Wallet Unit, if that Wallet Unit is revoked. Depending on how the WUA is constructed and how the above mentioned _cryptographic binding_ is done, it may be possible (e.g. using Zero-Knowledge proofs) to make a revocation of the Wallet Unit automatically revoke any issued PID. Alternatively the providers of PID are obliged to maintain a record of Wallet Units that have been issued PID and periodically monitor the revocation status of these Wallet Units. In general two approaches to how revocation can be done:
 
-- Approach A: All attestations (PID, Attestations, Pseudonyms) are somehow cryptographically connected to the WUA. When a WUA is revoked, the connected attestations all become invalidated. The PID and attestation providers will not need to take action. In addition to the attestation itself, the WUA (or parts hereof) must be presented to the Relying Party.
+- Approach A: All attestations (PID, Attestations, Pseudonyms) are somehow cryptographically connected to the WUA, e.g. the PID may contain a reference to the WUA of the Wallet Instance it was issued to. During presentation of an attestation, both the attestation and the WUA (or parts hereof) are presented to the Relying Party, which verifies both the revocation status of the WUA and the validity (including revocation status) of the attestation. If the Wallet Instance is revoked, the connected attestations all automatically become invalidated and the PID and attestation providers will not need to take action.
 
-- Approach B: All attestations (PID, Attestations, Pseudonyms) contain their own revocation information. PID and Attestations providers must monitor the revocation status of all Wallet Units that have been issued PID or Attestations. Once a revoked WUA is detected the PID or Attestation provied can perform their own revocation. Only the attestion itself needs to be presented to the Relying Party.
+- Approach B: All attestations (PID, Attestations, Pseudonyms) are not linked with the WUA. During presentation, only the attestation is sent to the Relying Party, which verifies the validity (including revocation status). In order for this to work, PID and Attestations providers must monitor the revocation status of all Wallet Instances that have been issued PID or Attestations. Once a revoked WUA is detected the PID or Attestation provided can perform their own revocation.
 
 Following Approach A, will involve the WUA in nearly all activity of the Wallet Unit, hence the drawbacks mentioned in [topic-a] may become overwhelming.
 
@@ -308,8 +308,6 @@ The technical requirements above imply the following requirements for a WSCA.
 **Annex 2, Topic 38 contains HLRs on revocation of Wallet Units. This section will need to be updated to contain WUA rather than WIA. Furthermore the discussion on revocation may also trigger some minor changes.**
 
 
-<### Details on WUA can be found in Rulebook
-Content of Rulebook -> Annex / chapter 6?>
 
 
 ## 5 Relation to Other Topics
@@ -548,7 +546,7 @@ statistical trends that can be used to design further attacks.</td>
 </tbody>
 </table>
 
-More specifically, \[RiskRegister\] describes the following threats in relation to pseudonyms:
+More specifically, \[RiskRegister\] describes the following threats in relation to wallet unit attestations:
 
 <table style="width:100%;">
 <colgroup>
