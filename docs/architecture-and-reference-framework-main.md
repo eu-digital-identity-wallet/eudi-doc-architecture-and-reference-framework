@@ -1614,21 +1614,24 @@ Figure 11 illustrates the key entities and the relationships in the trust model
 of the EUDI Wallet ecosystem.
 
 At its core is the **Wallet Unit** (top middle, blue), which interacts with
-various entities throughout its lifecycle, which consists of installation, activation, management, and
-de-installation (detailed in [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).
-Each Wallet Unit is a configuration of a **Wallet Solution**, comprising a
+various entities throughout its lifecycle, which consists of installation,
+activation, management, and de-installation (detailed in [Section
+6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).  Each Wallet Unit is a
+configuration of a **Wallet Solution**, comprising a
 **Wallet Instance** and one or more WSCA/WSCDs, provided by a **Wallet
 Provider**. The Wallet Provider oversees these components and manages their
-registration, withdrawal, or suspension (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle)).
-A **Wallet Unit Attestation (WUA)** is issued to enable other entities to authenticate a Wallet Unit. The Wallet Provider can
-revoke the WUA if needed.
+registration, withdrawal, or suspension (see [Section
+6.2](#62-trust-throughout-a-wallet-solution-lifecycle)).  A **Wallet Unit
+Attestation (WUA)** is issued to enable other entities to authenticate a Wallet
+Unit. The Wallet Provider can revoke the WUA if needed.
 
 The Wallet Unit handles **User PIDs** and **attestations** (QEAAs, PuB-EAAs, and
 non-qualified EAAs). PIDs are issued by **PID Providers** and attestations by
 **Attestation Providers**, both positioned to the left of the Wallet Unit in
-Figure 11. Before interacting with a Wallet Unit these providers must be registered with a **PID Provider Trusted List Provider (TLP)** or **Attestation Provider TLP**. Upon
-registration, they receive an **access certificate** from a **PID Provider Access CA**
-or **Attestation Provider Access CA**. See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
+Figure 11. Before interacting with a Wallet Unit these providers must be
+registered with a **PID Provider Trusted List Provider (TLP)** or **Attestation
+Provider TLP**. Upon registration, they receive an **access certificate** from a
+**PID Provider Access CA** or **Attestation Provider Access CA**. See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
 
 Once a Wallet Unit receives a PID or attestation, it can present **User
 attributes** to **Relying Party Instances** (right side of Figure 11). These
@@ -1651,7 +1654,7 @@ is essential ([Section 4.2.2](#422-interoperability)) and is achieved by using a
 following X.509 certificate standards
 ([RFC5280](https://datatracker.ietf.org/doc/html/rfc5280),
 [RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)). Non-qualified EAAs
-may adopt alternative trust model and mechanisms.
+may adopt alternative trust model and verification mechanisms.
 - The model supports both remote and proximity use cases, though technical
 measures and authentication mechanisms may vary.
 - This version of the ARF does not yet include trust interactions for
