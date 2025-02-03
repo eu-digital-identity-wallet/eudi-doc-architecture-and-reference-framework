@@ -721,14 +721,14 @@ the attestation rulebook catalogue.
 The following main concepts were defined in [Topic 12](#a2312-topic-12---attestation-rulebooks) and developed in
 the current version of [Topic 25](#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attestation-attributes):
 
-- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem MAY be registered and published in a publicly accessible catalogue.  
-- The Attestation Rulebook catalogue MAY also include Attestation Rulebooks for non-qualified EAAs.  
-- The Commission SHALL take measures to establish and maintain the Attestation Rulebooks catalogue.  
-- The Attestation Rulebooks catalogue will enable mainly Relying Parties, but also other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what is the identifier, syntax and semantics of each attribute in a type of attestation.  
+- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem may be registered and published in a publicly accessible catalogue.
+- The Attestation Rulebook catalogue may also include Attestation Rulebooks for non-qualified EAAs.
+- The Commission will take measures to establish and maintain the Attestation Rulebooks catalogue.
+- The Attestation Rulebooks catalogue will enable mainly Relying Parties, but also other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what is the identifier, syntax, and semantics of each attribute in a type of attestation.
 
 The following points are emphasised:
 
-- Registration of an Attestation Rulebook in the attestation catalogue is not mandatory.  
+- Registration of an Attestation Rulebook in the attestation catalogue is not mandatory.
 - Registration in the Attestation Rulebook catalogue does not create any obligation of acceptance of the attestation by any Relying Party, nor does it necessarily imply cross-border recognition of that attestation.
 - The Attestation Rulebooks catalogue can be hosted in the same environment as the catalogue of attributes.
 
@@ -737,9 +737,9 @@ The following points are emphasised:
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
 | CAT_01 | The Commission SHALL establish a catalogue of attributes used within the EUDI Wallet ecosystem. *Note: The catalogue of attributes does not need to be a separate catalogue, but could be combined with the Attestation Rulebooks catalogue mentioned in CAT_05.* |
-| CAT_01a | The Commission SHALL enable any entity to register in the catalogue one or more attribute(s) of an attestation used within the EUDI Wallet ecosystem. |
-| CAT_01b | The Schema Provider for an Attestation Rulebook that is a QEAA or PuB-EAA SHOULD register all attributes in that QEAA or PuB-EAA in the catalogue of attributes. The Schema Provider for an Attestation Rulebook that is a non-qualified EEA MAY register the attributes in that EAA in the catalogue. |
-| CAT_02 | The Commission SHALL enable a self-registration process of attributes in the catalogue of attributes, without pre-approval by the registry, for both public and private entities. |
+| CAT_01a | The Commission SHALL enable any entity to request the registration in the catalogue of one or more attribute(s) of an attestation used within the EUDI Wallet ecosystem. |
+| CAT_01b | The Schema Provider for an Attestation Rulebook that is a QEAA or PuB-EAA SHOULD request the registration of all attributes in that QEAA or PuB-EAA in the catalogue of attributes. The Schema Provider for an Attestation Rulebook that is a non-qualified EEA MAY request the registration of the attributes in that EAA in the catalogue. |
+| CAT_02 | Empty |
 | CAT_03 | The Commission SHALL make the catalogue of attributes publicly available and machine-readable. *Note: The requirement for availability implies setting up the required means for high availability and avoiding a single point of failure.* |
 | CAT_03b | The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: [Representation Powers and Mandates (RPaM) Ontology](https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format)[SEMPER \| DE4A](https://www.de4a.eu/semper)[SEMIC Core Vocabularies](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies)[IANA Registry for JSON Web Token Claims](https://www.iana.org/assignments/jwt/jwt.xhtml) (for JSON-based attributes only)[ISO/IEC 23220-2](https://www.iso.org/standard/86782.html) (for CBOR-based attributes only)  |
 | CAT_04 | The Commission SHALL make publicly available the existence and maintenance of the catalogue of attributes mentioned in CAT_01, including processes to propose the registration to public and private parties, allowing to register attributes, and conditions for updating and/or removing attributes. These processes SHALL include archiving and logging changes of the history of the catalogue of attributes in an appropriate way, including versioning. *Note: There are layers on top of the attributes that need maintenance as well. So, maintenance in this case is more generic and encompasses more than just the attribute itself.* |
@@ -1048,7 +1048,7 @@ See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
 *Short description*
 
-Backup and restore functionality is needed in case the User has lost access to their current Wallet Unit, for example in case of lost, theft, or breakdown. It is also needed if the User wants to start using another Wallet Unit, for example because they have bought a new device, need to factory-reset their existing device, or want to migrate to another Wallet Solution. In all of these cases, the User wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible.
+Backup and restore functionality is needed in case the User has lost access to their current Wallet Unit, for example in case of loss, theft, or breakdown. It is also needed if the User wants to start using another Wallet Unit, for example because they have bought a new device, need to factory-reset their existing device, or want to migrate to another Wallet Solution. In all of these cases, the User wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible.
 
 The Regulation does not contain a requirement mandating backup and restore functionality in the Wallet. However, Wallet Providers should implement backup and restore functionality nevertheless, because it will be expected by Users. In fact, the requirements in [Topic 34] also ensure the possibility of backup and restore.
 
