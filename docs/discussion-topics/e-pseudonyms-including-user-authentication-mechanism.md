@@ -721,7 +721,7 @@ If Wallet Instance has authenticated using a Pseudonym towards a Relying Party a
 > Note: This may be implementable via so-called "Proof of Association".
 
 #### 6.1.3 HRLs related to Privacy
-Note that the requirements WTE\_03 and WTE\_04 ensures that a Wallet Instance ensures that a User is authenticated before Pseudonyms are, viewed, created or used to authenticate towards Relying Parties.
+Note that the requirements WTE\_03 and WTE\_04 from Topic 9 ensures that a Wallet Instance must authenticate a User before Pseudonyms are, viewed, created or used to authenticate towards Relying Parties. We therefore do not think it is necessary to add further requirements realted to this. 
 
 The placement of these HRLs will be discussed in Topic C.
 
