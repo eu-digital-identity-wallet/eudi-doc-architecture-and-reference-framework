@@ -1660,171 +1660,6 @@ measures and authentication mechanisms may vary.
 - This version of the ARF does not yet include trust interactions for
 **qualified electronic signatures or seals** (see [Topic 16] and [Topic 37]).
 
-#### 6.1.2 Risks and mitigation measures
-
-##### 6.1.2.1 Introduction
-
-This section briefly discusses some of the risks that were considered when this
-trust model was created, together with the mitigations for these risks and the
-residual risks that remain after these mitigations. This section is not intended
-to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole;
-for that register, see [Risk Register]. This section is limited to the scope of
-the ARF, namely, the Wallet Unit and its interactions with other parties in the
-ecosystem, as depicted in Figure 11.
-
-##### 6.1.2.2 Risks and mitigation measures related to confidentiality, integrity, and authenticity
-
-Within the EUDI Wallet ecosystem, many interactions take place between parties
-in which one party requests another party to perform a task. For example, a User
-may ask a PID Provider or an Attestation Provider to provide a PID or an
-attestation to a Wallet Unit, or a Relying Party may ask a User to present
-attributes from an attestation in their Wallet Unit.
-For any of these interactions, the following risks apply:
-
-- An attacker could impersonate one of the interacting parties. Therefore, the
-receiver of a message must be able to verify the identity of the sender. In
-other words, mutual authentication is needed. This authentication can be
-performed because valid parties in the EUDI Wallet ecosystem are put on a
-Trusted List by Member States. By verifying the signature over a message and
-verifying the associated public key certificates with a trust anchor included in
-a Trusted List, the receiver of a message can be sure about the identity of the
-message's sender.
-- Messages between parties could be intercepted, meaning that they could be read
-by an attacker. To mitigate this risk, messages must be encrypted to ensure
-confidentiality.
-- Intercepted messages could be changed by an attacker. To mitigate this risk,
-messages must be authenticated, so that the receiver can verify that originate
-from the authenticated sender and were not changed.
-
-##### 6.1.2.3 Risks and mitigation measures related to tampering of cryptographic keys and sensitive data
-
-The mechanisms for authentication and confidentiality described in the previous
-section rely on the security of cryptographic keys, especially private and
-secret keys. If an attacker can obtain, use, or tamper with these keys, these
-security mechanisms would break down. Therefore, all cryptographic keys are
-managed by dedicated secure applications (WSCAs), running on secure hardware
-(WSCDs), as described in [Section 4.3](#43-reference-architecture). The security
-of WSCDs and WSCAs is ensured by means of an appropriate certification process.
-
-These mitigation measures apply for all entities in the EUDI Wallet ecosystem
-that use cryptographic keys, including Wallet Units, Wallet Providers, PID
-Providers and Attestation Providers, Trusted List Providers, and Certificate
-Authorities. For Relying Parties and Relying Party Instances, such measures are
-formally not required.
-
-WSCDs and WSCAs in a Wallet Unit may also be used to store other sensitive data
-except cryptographic keys. In particular, they could be used to store User
-attributes, in such a way that attackers, including malicious applications
-residing on the same User device as the Wallet Instance, cannot retrieve these
-attributes. This is beneficial for User privacy.
-
-##### 6.1.2.4 Risks and mitigation measures related to authorisation
-
-In certain cases, there is a risk that a legitimate party within the EUDI Wallet
-ecosystem may attempt to perform actions beyond its authorized scope. This risk
-primarily affects two types of entities.
-
-First, a non-qualified EAA Provider may attempt to issue attestations for which
-it lacks the necessary authorization. For example, an Attestation Provider that
-has not been officially designated by a Member State or another relevant
-authority to issue diplomas may still attempt to generate an attestation of the
-diploma type. Within the EUDI Wallet ecosystem, this risk is limited to
-non-qualified EAA Providers, as PID Providers, QEAA Providers, and PuB-EAA
-Providers are assumed to be inherently trustworthy in this context.
-For more information, see [Section 6.3.2.2](#6322-pid-provider-or-attestation-provider-receives-an-access-certificate).
-
-This risk is mitigated by querying the Relying Party registry via an API. This
-registry, maintained by the Member State, contains comprehensive information
-about each Relying Party, allowing the system to verify the legitimacy of the
-issuer and ensure compliance with regulatory requirements.
-
-In the context of the Regulation, the term Relying Party encompasses both
-Attestation Providers and entities that provide services relying on
-attestations, ensuring a broad and consistent approach to trust and verification
-within the EUDI Wallet ecosystem.
-
-Second, a Relying Party in the EUDI Wallet ecosystem may attempt to request
-attributes from a Wallet Unit without being registered or authorized to
-do so. This risk is mitigated mainly by three measures:
-
-1. **Selective Disclosure and User Control** – The attestation formats and
-protocols specified in [ISO/IEC 18013-5] and [SD-JWT] + [OpenID4VP] enable
-selective disclosure of attributes. This allows a Relying Party to specify which
-attributes within an attestation it wishes to receive while excluding others, a
-feature known as *collection limitation*. Additionally, selective disclosure
-ensures that the User retains control over their data, as they can approve or
-deny the presentation of requested attributes. More details on selective
-disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
-2. **Mandatory Relying Party Registration of Requested Attributes** – The
-Regulation mandates that each Relying Party register the attributes it intends
-to request from Users. According to [CIR 2024/2982], these registered attributes
-must be included in a Relying Party registration certificate, which the Wallet
-Unit uses to verify the legitimacy of the request and inform the User
-accordingly. This transparency ensures that Users can make an informed decision
-about whether to approve or deny the presentation of the requested attributes.
-More details on this requirement can be found in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
-3. **Attestation Provider Disclosure Policy Enforcement** – The Regulation also
-mandates that Attestation Providers can embed a disclosure policy within their
-attestations. This policy may include rules governing whether the Attestation
-Provider approves the presentation of certain attributes to an authenticated
-Relying Party. The Wallet Unit evaluates this policy —if present— alongside
-authenticated data from the Relying Party, and informs the User of the outcome.
-This mechanism further supports the User in making a well-informed decision on
-whether to approve or deny attribute presentation. More information on disclosure
-policy enforcement can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
-
-##### 6.1.2.5 Risks and mitigation measures related to User privacy
-
-User privacy is a key aspect in the design and implementation of the EUDI Wallet
-ecosystem. Attributes are presented as electronic attestations using formats
-based on salted and hashed attributed. These attestations contain unique, fixed elements
-such as hash values, public keys, and signatures. Malicious Relying Parties could
-exploit these values to track Users by storing and comparing them across
-multiple transactions, identifying recurring patterns.  This privacy threat,
-known as **Relying Party linkability**, can occur within a single Relying Party
-or among colluding entities.
-
-A similar privacy threat arises when colluding Relying Parties share unique
-values with a malicious Attestation Provider, allowing it to track User activity
-across multiple services. In this case, it's called **Attestation Provider linkability**.
-
-Regarding the mitigation of these risks:
-
-- A trustworthy PID Provider or Attestation Provider can mitigate Relying Party
-linkability, either partially or fully, by issuing multiple PIDs or attestations
-to the same User. Wallet Units can use these attestations as disposable (single-use)
-or Relying Party-specific, ensuring that different Relying Parties receive
-distinct attestations that cannot be linked. However, this
-approach increases issuance complexity and management overhead. This topic will
-be further explored in the context of the next major release of ARF.
-Additionally, organizational and enforcement measures can help deter Relying
-Parties from colluding and tracking Users. In particular, Relying Parties found
-in violation will have their access certificates revoked, preventing them from
-further interactions with Wallet Units.
-- Attestation Provider linkability cannot be fully eliminated when using
-attestation formats based on salted hashes. The only viable mitigation is to
-adopt Zero-Knowledge Proofs (ZKPs) as a verification mechanism instead of
-relying on salted-attribute hashes. However, the integration of ZKPs in the EUDI
-Wallet ecosystem is still under discussion and development due to the complexity
-of implementing ZKP solutions in secure hardware and the lack of support in
-currently available secure hardware (WSCDs). This topic will be further explored
-in the context of of the next major release od the ARF. As with Relying Party
-linkability, organizational and enforcement measures can help deter Attestation
-Providers from colluding and tracking Users.  Additionally, many Attestation
-Providers are subject to regular audits, making it easier to detect collusion
-and tracking compared to Relying Parties.
-
-Zero-Knowledge Proof (ZKP) mechanisms for verifying personal information are
-highly promising and essential for ensuring privacy in various use-case
-scenarios. They enable Users to prove statements such as "I am over 18" without
-disclosing any personal data, offering a robust solution for privacy-preserving
-authentication and verification.
-
-One key area of development is age verification, where the European Commission
-is actively exploring and testing ZKP-based solutions. The outcomes of this
-initiative could pave the way for the adoption of ZKPs within the EUDI Wallet
-ecosystem, further strengthening privacy protections in future implementations.
-
 #### 6.1.3 Other trust relations
 
 Besides the trust relationships described in this chapter, other trust relations
@@ -3275,6 +3110,8 @@ the CSA.
 
 ### 7.4 Risk-based approach and risk register
 
+#### 7.4.1 Introduction
+
 This section details the approach to develop harmonised guidelines for the
 development of the transitory national certification schemes. In addition to the
 requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
@@ -3303,7 +3140,7 @@ Wallet Providers will complement the scheme’s risk assessment to identify any
 risks and threats specific to their implementation and propose appropriate
 mitigation measures for evaluation by the certification body.
 
-#### 7.4.1 High-level risks and threats
+#### 7.4.2 High-level risks and threats
 
 The following is an excerpt from [Risk Register]. To keep in line with the
 continuously evolving threat landscape, the risk register will be maintained and
@@ -3366,6 +3203,173 @@ Technical threats
     5.6 Supply chain attacks 
     5.7 Malware 
     5.8 Random number prediction 
+
+#### 7.4.3 Risks and mitigation measures discussed in Chapter 6 of this ARF
+
+##### 7.4.3.1 Introduction
+
+This section briefly discusses some of the risks that were considered when the
+trust model in [Chapter 6](#6) was created, together with the mitigations for these risks and the
+residual risks that remain after these mitigations. This section is not intended
+to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole;
+for that register, see [Risk Register]. This section is limited to the scope of
+the ARF, namely, the Wallet Unit and its interactions with other parties in the
+ecosystem, as depicted in Figure 11.
+
+##### 6.1.2.2 Risks and mitigation measures related to confidentiality, integrity, and authenticity
+
+Within the EUDI Wallet ecosystem, many interactions take place between parties
+in which one party requests another party to perform a task. For example, a User
+may ask a PID Provider or an Attestation Provider to provide a PID or an
+attestation to a Wallet Unit, or a Relying Party may ask a User to present
+attributes from an attestation in their Wallet Unit.
+For any of these interactions, the following risks apply:
+
+- An attacker could impersonate one of the interacting parties. Therefore, the
+receiver of a message must be able to verify the identity of the sender. In
+other words, mutual authentication is needed. This authentication can be
+performed because valid parties in the EUDI Wallet ecosystem are put on a
+Trusted List by Member States. By verifying the signature over a message and
+verifying the associated public key certificates with a trust anchor included in
+a Trusted List, the receiver of a message can be sure about the identity of the
+message's sender.
+- Messages between parties could be intercepted, meaning that they could be read
+by an attacker. To mitigate this risk, messages must be encrypted to ensure
+confidentiality.
+- Intercepted messages could be changed by an attacker. To mitigate this risk,
+messages must be authenticated, so that the receiver can verify that originate
+from the authenticated sender and were not changed.
+
+##### 6.1.2.3 Risks and mitigation measures related to tampering of cryptographic keys and sensitive data
+
+The mechanisms for authentication and confidentiality described in the previous
+section rely on the security of cryptographic keys, especially private and
+secret keys. If an attacker can obtain, use, or tamper with these keys, these
+security mechanisms would break down. Therefore, all cryptographic keys are
+managed by dedicated secure applications (WSCAs), running on secure hardware
+(WSCDs), as described in [Section 4.3](#43-reference-architecture). The security
+of WSCDs and WSCAs is ensured by means of an appropriate certification process.
+
+These mitigation measures apply for all entities in the EUDI Wallet ecosystem
+that use cryptographic keys, including Wallet Units, Wallet Providers, PID
+Providers and Attestation Providers, Trusted List Providers, and Certificate
+Authorities. For Relying Parties and Relying Party Instances, such measures are
+formally not required.
+
+WSCDs and WSCAs in a Wallet Unit may also be used to store other sensitive data
+except cryptographic keys. In particular, they could be used to store User
+attributes, in such a way that attackers, including malicious applications
+residing on the same User device as the Wallet Instance, cannot retrieve these
+attributes. This is beneficial for User privacy.
+
+##### 6.1.2.4 Risks and mitigation measures related to authorisation
+
+In certain cases, there is a risk that a legitimate party within the EUDI Wallet
+ecosystem may attempt to perform actions beyond its authorized scope. This risk
+primarily affects two types of entities.
+
+First, a non-qualified EAA Provider may attempt to issue attestations for which
+it lacks the necessary authorization. For example, an Attestation Provider that
+has not been officially designated by a Member State or another relevant
+authority to issue diplomas may still attempt to generate an attestation of the
+diploma type. Within the EUDI Wallet ecosystem, this risk is limited to
+non-qualified EAA Providers, as PID Providers, QEAA Providers, and PuB-EAA
+Providers are assumed to be inherently trustworthy in this context.
+For more information, see [Section 6.3.2.2](#6322-pid-provider-or-attestation-provider-receives-an-access-certificate).
+
+This risk is mitigated by querying the Relying Party registry via an API. This
+registry, maintained by the Member State, contains comprehensive information
+about each Relying Party, allowing the system to verify the legitimacy of the
+issuer and ensure compliance with regulatory requirements.
+
+In the context of the Regulation, the term Relying Party encompasses both
+Attestation Providers and entities that provide services relying on
+attestations, ensuring a broad and consistent approach to trust and verification
+within the EUDI Wallet ecosystem.
+
+Second, a Relying Party in the EUDI Wallet ecosystem may attempt to request
+attributes from a Wallet Unit without being registered or authorized to
+do so. This risk is mitigated mainly by three measures:
+
+1. **Selective Disclosure and User Control** – The attestation formats and
+protocols specified in [ISO/IEC 18013-5] and [SD-JWT] + [OpenID4VP] enable
+selective disclosure of attributes. This allows a Relying Party to specify which
+attributes within an attestation it wishes to receive while excluding others, a
+feature known as *collection limitation*. Additionally, selective disclosure
+ensures that the User retains control over their data, as they can approve or
+deny the presentation of requested attributes. More details on selective
+disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
+2. **Mandatory Relying Party Registration of Requested Attributes** – The
+Regulation mandates that each Relying Party register the attributes it intends
+to request from Users. According to [CIR 2024/2982], these registered attributes
+must be included in a Relying Party registration certificate, which the Wallet
+Unit uses to verify the legitimacy of the request and inform the User
+accordingly. This transparency ensures that Users can make an informed decision
+about whether to approve or deny the presentation of the requested attributes.
+More details on this requirement can be found in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
+3. **Attestation Provider Disclosure Policy Enforcement** – The Regulation also
+mandates that Attestation Providers can embed a disclosure policy within their
+attestations. This policy may include rules governing whether the Attestation
+Provider approves the presentation of certain attributes to an authenticated
+Relying Party. The Wallet Unit evaluates this policy —if present— alongside
+authenticated data from the Relying Party, and informs the User of the outcome.
+This mechanism further supports the User in making a well-informed decision on
+whether to approve or deny attribute presentation. More information on disclosure
+policy enforcement can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
+
+##### 6.1.2.5 Risks and mitigation measures related to User privacy
+
+User privacy is a key aspect in the design and implementation of the EUDI Wallet
+ecosystem. Attributes are presented as electronic attestations using formats
+based on salted and hashed attributed. These attestations contain unique, fixed elements
+such as hash values, public keys, and signatures. Malicious Relying Parties could
+exploit these values to track Users by storing and comparing them across
+multiple transactions, identifying recurring patterns.  This privacy threat,
+known as **Relying Party linkability**, can occur within a single Relying Party
+or among colluding entities.
+
+A similar privacy threat arises when colluding Relying Parties share unique
+values with a malicious Attestation Provider, allowing it to track User activity
+across multiple services. In this case, it's called **Attestation Provider linkability**.
+
+Regarding the mitigation of these risks:
+
+- A trustworthy PID Provider or Attestation Provider can mitigate Relying Party
+linkability, either partially or fully, by issuing multiple PIDs or attestations
+to the same User. Wallet Units can use these attestations as disposable (single-use)
+or Relying Party-specific, ensuring that different Relying Parties receive
+distinct attestations that cannot be linked. However, this
+approach increases issuance complexity and management overhead. This topic will
+be further explored in the context of the next major release of ARF.
+Additionally, organizational and enforcement measures can help deter Relying
+Parties from colluding and tracking Users. In particular, Relying Parties found
+in violation will have their access certificates revoked, preventing them from
+further interactions with Wallet Units.
+- Attestation Provider linkability cannot be fully eliminated when using
+attestation formats based on salted hashes. The only viable mitigation is to
+adopt Zero-Knowledge Proofs (ZKPs) as a verification mechanism instead of
+relying on salted-attribute hashes. However, the integration of ZKPs in the EUDI
+Wallet ecosystem is still under discussion and development due to the complexity
+of implementing ZKP solutions in secure hardware and the lack of support in
+currently available secure hardware (WSCDs). This topic will be further explored
+in the context of of the next major release od the ARF. As with Relying Party
+linkability, organizational and enforcement measures can help deter Attestation
+Providers from colluding and tracking Users.  Additionally, many Attestation
+Providers are subject to regular audits, making it easier to detect collusion
+and tracking compared to Relying Parties.
+
+Zero-Knowledge Proof (ZKP) mechanisms for verifying personal information are
+highly promising and essential for ensuring privacy in various use-case
+scenarios. They enable Users to prove statements such as "I am over 18" without
+disclosing any personal data, offering a robust solution for privacy-preserving
+authentication and verification.
+
+One key area of development is age verification, where the European Commission
+is actively exploring and testing ZKP-based solutions. The outcomes of this
+initiative could pave the way for the adoption of ZKPs within the EUDI Wallet
+ecosystem, further strengthening privacy protections in future implementations.
+
+
 
 ## 8 Document development
 
