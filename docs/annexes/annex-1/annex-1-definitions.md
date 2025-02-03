@@ -74,7 +74,7 @@ standard or a formal publication, that source is mentioned.
 | **Term** | **Definition** |
 |-----------|-----------|
 | Attestation | When not further qualified, a collective term for a QEEA, PuB-EAA, or (non-qualified) EAA. |
-| Attestation Provider | When not further qualified, a collective term for QEAA Provider, PuB-EAA Provider or (non-qualified) EAA Provider. |
+| Attestation Provider | When not further qualified, a collective term for QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider. |
 | Attestation Revocation List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations; and used by a Relying Party to verify the status. [Topic 7] |
 | Attestation Rulebook | A document describing the attestation type, namespace(s), and other features for a specific attestation type. [Topic 12] |
 | Attestation Status List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing status information (Valid or Invalid) for all PIDs and attestations that are valid at the time of publication. [Topic 7] |
