@@ -151,34 +151,111 @@ Further discussions will explore the following topics:
 A detailed list of these topics and the progress of their development is
 available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
 
-## 2 Use Cases
+## 2 Wallet functionalities
 
 ### 2.1 Introduction
 
+The **EUDI Wallet** shall be designed as a **secure, user-controlled digital
+tool** that enables Users to **manage and share their identity and credentials**
+across both **public and private services** in the EU. Its functionalities shall
+be built around **security, privacy, and user control**, ensuring **seamless
+interactions** while adhering to **data protection principles**.  
+
+This chapter outlines the **core functionalities** of the EUDI Wallet as defined
+by the regulation and examines how the **requirements for its implementation**
+align with **real-world use cases** where the Wallet will be utilized.  
+
+The **functionalities** of the EUDI Wallet can be grouped into the following
+categories:  
+
+- **Secure identification and authentication**, ensuring that Users can verify
+their identity in a trusted environment.  
+- **A mechanism for exchanging qualified and non-qualified data** through
+**electronic attestations of attributes**, enabling secure and verifiable data
+sharing.  
+- **Electronic signing of documents or data**, allowing Users to create
+**legally recognized qualified electronic signatures** and seals.
+
+### 2.2 Identification and authentication
+
+Using the **EUDI Wallet**, Users shall be able to:  
+
+- **Identify and authenticate** to online and offline services while enabling
+**selective disclosure**, ensuring that only the necessary data is shared,
+thereby minimizing exposure of personal information.  
+- **Generate and use pseudonyms** for authentication and enhance privacy and
+prevent tracking.  
+- **Securely authenticate Relying Parties or another Wallet** and exchange
+identification data in a trusted environment.  
+- **Onboard seamlessly** by leveraging existing **electronic identification
+schemes** for a smooth and secure registration process.  
+- **Be informed** when a Relying Party is authorized to access their data.
+- **Access a transaction log via a dashboard**, allowing Users to:  
+    - **Review past interactions** with Relying Parties.  
+    - **Request data erasure** under **GDPR (Article 17)** to maintain data
+    privacy.  
+    - **Report suspicious Relying Parties** to the relevant national data
+    protection authority.
+
+### 2.3 Data Exchange Mechanism with Attestations
+
+Using the **EUDI Wallet**, Users shall be able to:  
+
+- **Request, store, and present** personal identification data and **electronic
+attestations of attributes** (e.g., diplomas, licenses) under their **sole
+control**, ensuring secure usage in both **online and offline scenarios**.  
+- **Download their data, credentials, and configurations**, guaranteeing
+compliance with **data portability rights**.  
+- **Prevent tracking by trust service providers** when using attestations,
+ensuring **privacy-preserving interactions**.
+
+### 2.4 Qualified electronic signature
+
+Using the **EUDI Wallet**, Users shall be able to:  
+
+- **Create qualified electronic signatures and seals** for legally binding
+digital transactions.  
+- **Sign documents using qualified electronic signatures**, which shall be
+**provided by default and free of charge** within the Wallet, ensuring universal
+accessibility and compliance with legal standards.
+
+These functionalities can be reached by using the authentication and signing
+capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
+managed by a QTSP. See [Topic 16] and [Topic 37].
+
+### 2.5 The role of use cases in development of the Architecture Reference Framework
+
 The development of the Architecture Reference Framework (ARF) is strategically
-guided by use cases that showcase the User experience, value proposition, and
-business requirements of the EUDI Wallet ecosystem. In this process, the eIDAS
-Expert Group initially created service blueprints for each use case. These
-blueprints meticulously detail the service delivery's touch points, components,
-and processes. Their role is twofold: they are instrumental in the service
-design and function as a tool to improve User experience and service efficiency,
-while simultaneously highlighting potential areas for enhancement. Serving as a
-foundational element, these blueprints inform the development of common
-specifications. Detailed in the Annexes, these blueprints offer comprehensive
-solutions with the flexibility to incorporate alternative approaches and
-optional steps. It's important to note that User journeys may differ depending
-on the chosen implementation approach, affecting processes like data retrieval
-and obtaining User approval.
+driven by real-world use cases, ensuring that the User experience, value
+proposition, and regulation requirements of the EUDI Wallet ecosystem are
+effectively addressed. To achieve this, the European Digital Identity
+Cooperation Group initially created service blueprints for each use case, which
+detail service touchpoints, components, and processes.
 
-The eIDAS Expert Group has described service blueprints for the following use cases:
+These blueprints serve a dual purpose: they play a crucial role in service
+design, enhancing both User experience and operational efficiency, while also
+identifying areas for improvement. As a foundational element, these blueprints
+shape the development of common specifications, providing comprehensive yet
+flexible solutions that can accommodate alternative approaches and optional
+steps.
 
-- Identification and authentication to access online services, see [Section 2.2](#22-identification-and-authentication-to-access-online-services),
-- Qualified Electronic Signature, see [Section 2.3](#23-qualified-electronic-signature),
-- Mobile Driving Licence, see [Section 2.4](#24-mobile-driving-licence),
-- Pseudonyms, see [Section 2.5](#25-pseudonyms),
-- Several other use cases that will be detailed in subsequent versions of this document, see [Section 2.6](#26-other-use-cases).
+It is important to note that User journeys may vary based on the specific
+implementation approach, influencing aspects such as data retrieval and User
+approval processes. The Annexes contain detailed descriptions of these
+blueprints, ensuring transparency and adaptability.
 
-### 2.2 Identification and authentication to access online services
+The eIDAS Expert Group has outlined service blueprints for the following key use cases:
+
+- Identification and authentication to access online services, see [Section 2.5.1](#251-identification-and-authentication-to-access-online-services),
+- Qualified Electronic Signature, see [Section 2.4](#24-qualified-electronic-signature),
+- Mobile Driving Licence, see [Section 2.5.2](#252-mobile-driving-licence),
+- Additional use cases that will be introduced in future, see [Section 2.5.3](#253-other-use-cases).
+
+These blueprints, along with all relevant information on use cases
+implementation, will be compiled in a standardized format within a dedicated
+document titled the "Use Cases Manual", and distributed together with this document.
+
+#### 2.5.1 Identification and authentication to access online services
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User
 identification and authentication at Level of Assurance (LoA) high for various
@@ -194,17 +271,7 @@ presenting person identification data (PID) online. Their primary goals include
 reliably identifying themselves to services that demand User identification
 while maintaining control over the presentation of their personal data.
 
-Instead of using their PID to authenticate to online services, a User can also
-use a pseudonym provided by their Wallet Unit. See [Section 2.5](#25-pseudonyms).
-
-### 2.3 Qualified electronic signature
-
-The Wallet Unit enables Users to create qualified electronic signatures or
-seals. This goal can be reached by using the authentication and signing
-capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
-managed by a QTSP. See [Topic 16] and [Topic 37].
-
-### 2.4 Mobile Driving Licence
+#### 2.5.2 Mobile Driving Licence
 
 A significant use case for the Wallet Unit involves allowing Users to acquire,
 store, and present a mobile Driving Licence (mDL) as an attestation to prove
@@ -219,27 +286,15 @@ supervised flow, the Wallet Unit presents mDL attributes to a human Relying
 Party or under their supervision, whereas in the unsupervised flow, the Wallet
 Unit presents mDL attributes to a machine without human oversight.
 
-### 2.5 Pseudonyms
+#### 2.5.3 Other use cases
 
-A User can send a pseudonym to a Relying Party, either in conjunction with a PID
-or attestation or standalone. Wallet Units support the generation of pseudonyms
-for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn].
-
-Note: Pseudonyms were added to the list of Topics to be discussed for the next major
-release of the ARF.  These discussions will include which use cases for using a
-pseudonym must be supported by Wallet Units and the way in which this support
-will be technically implemented. This section will be updated in the next major
-release of the ARF.
-
-### 2.6 Other use cases
-
-#### 2.6.1 Health data
+##### 2.5.3.1 Health data
 
 Easy access to health data is crucial in both national and cross-border
 contexts. A Wallet Unit may enable access to patient summary, ePrescriptions,
 etc.
 
-#### 2.6.2 Educational attestations and professional qualifications
+##### 2.5.3.2 Educational attestations and professional qualifications
 
 Providing credentials for qualification recognition procedures can be costly and
 time-consuming for Users, Relying Parties such as companies and employers, and
@@ -247,16 +302,16 @@ Attestation Providers such as education and training providers or academic
 institutions. A Wallet Unit may be a repository for educational credentials and
 a means for exchanging them by the User to relevant Relying Parties.
 
-#### 2.6.3 Digital Finance
+##### 2.5.3.3 Digital Finance
 
 A Wallet Unit may facilitate complying with strong customer authentication
 requirements, using the user authentication capabilities described in
-[Section 2.2](#22-identification-and-authentication-to-access-online-services).
+[Section 2.5.1](#251-identification-and-authentication-to-access-online-services).
 In line with the Commission's Retail Payments Strategy, this use case would be
 developed in close coordination with Member States' advisory groups on retail
 payments and the finance industry.
 
-#### 2.6.4 Digital Travel Credential
+##### 2.5.3.4 Digital Travel Credential
 
 Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a
 supported format, to enable Relying Parties to identify Users, thus facilitating
@@ -264,7 +319,7 @@ a smooth travel experience and  User journey. Relying parties for a DTC may
 include governments, transportation providers, hospitality agents, or any other
 actors operating in a regulated environment which requires the use of a DTC.
 
-#### 2.6.5 Social Security
+##### 2.5.3.5 Social Security
 
 Documents related to social security are important for many EU citizens to prove
 their rights and obligations under social security legislation in the EU.
@@ -439,7 +494,7 @@ User attributes from the PID in the Wallet Unit.
 The terms and conditions of these services are for each QEEA Provider to
 determine, beyond what is specified in the [eIDAS 2.0] Regulation.
 
-### 3.7 Electronic attestation of attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
+### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
 
 As specified in the Regulation, an attestation may be issued by or on behalf of
 a public sector body responsible for an Authentic Source. This ARF calls such an
@@ -3569,7 +3624,7 @@ For undated references, the latest version available applies.
 | [Topic 34] | Annex 2 - Migrate to a different Wallet solution |
 | [Topic 37] | Annex 2 - QES -- Remote Signing - Technical Requirements |
 | [Topic 38] | Annex 2 - Wallet Unit revocation |
-| [Topic 42] | Annex 2 - Requirements for QTSPs to access Authentic Sources
+| [Topic 42] | Annex 2 - Requirements for QTSPs to access Authentic Sources |
 | [Topic 43] | Annex 2 - Embedded disclosure policies |
 | [Topic 44] | Annex 2 - Relying Party registration certificates |
 | [Topic 48] | Annex 2 - Blueprint for requesting data deletion to Relying Parties |
