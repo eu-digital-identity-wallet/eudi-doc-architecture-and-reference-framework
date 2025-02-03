@@ -131,22 +131,22 @@ Other topics that will be developed include:
 - scenarios involving a natural person representing another natural person,
 - Wallet-to-Wallet interactions,
 - combined presentations of attestations,
-- user requests for data deletion by relying parties,
-- mechanisms for users to report unlawful or suspicious data requests to data
+- User requests for data deletion by Relying Parties,
+- mechanisms for Users to report unlawful or suspicious data requests to data
 protection authorities (DPAs),
 - data portability.
 
 Further discussions will explore the following topics:
 
 - the development of catalogues for attestations,
-- secure cryptographic interfaces between the Wallet Instance and WSCA,
-- user interfaces with Wallet Instances,
-- authentication mechanisms for users to access their devices,
+- secure cryptographic interfaces between the Wallet Instance and the WSCA,
+- User interfaces with Wallet Instances,
+- authentication mechanisms for Users to access their devices,
 - certificate transparency,
 - support and maintenance responsibilities of Wallet Providers,
 - the EUDI Wallet Trust Mark,
 - the PID Rulebook,
-- transactional data needed by Wallet Units in Payments and other use cases.
+- transactional data needed by Wallet Units in payments and other use cases.
 
 A detailed list of these topics and the progress of their development is
 available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
@@ -260,7 +260,7 @@ payments and the finance industry.
 
 Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a
 supported format, to enable Relying Parties to identify Users, thus facilitating
-a smooth travel experience and  User journey. Relying parties for a DTC may
+a smooth travel experience and  User journey. Relying Parties for a DTC may
 include governments, transportation providers, hospitality agents, or any other
 actors operating in a regulated environment which requires the use of a DTC.
 
@@ -765,7 +765,7 @@ the fundamental rights of its Users. Finally, measures are taken to prevent
 Users from being tracked by Relying Parties, PID Providers, or Attestation
 Providers.
 
-For more information, please refer to [Sections 6.1.2.4](#6124-risks-and-mitigation-measures-related-to-authorisation) and [6.1.2.5](#6125-risks-and-mitigation-measures-related-to-user-tracking).
+For more information, please refer to [Sections 7.4.3.4](#7434-risks-and-mitigation-measures-related-to-authorisation) and [7.4.3.5](#7435-risks-and-mitigation-measures-related-to-user-privacy).
 
 #### 4.2.4 Security by design
 
@@ -778,7 +778,7 @@ data and access controls. By prioritising security from the outset, the EUDI
 Wallet architecture aims to be inherently resistant to cyberattacks and data
 breaches, fostering trust and User confidence in this EUDI Wallet ecosystem.
 
-For more information, please refer to [Sections 6.1.2.2](#6122-risks-and-mitigation-measures-related-to-confidentiality-integrity-and-authenticity) and [6.1.2.3](#6123-risks-and-mitigation-measures-related-to-tampering-of-cryptographic-keys-and-sensitive-data).
+For more information, please refer to [Sections 7.4.3.2](#7432-risks-and-mitigation-measures-related-to-confidentiality-integrity-and-authenticity) and [7.4.3.3](#7433-risks-and-mitigation-measures-related-to-tampering-of-cryptographic-keys-and-sensitive-data).
 
 ### 4.3 Reference architecture
 
@@ -952,7 +952,7 @@ NFC tag contains the information necessary to establish an NFC, BLE, or
 Wi-Fi Aware connection. The Relying Party Instance scans the QR code or the NFC
 tag and set ups the connection. The QR code or NFC tag also contains the
 information necessary to create an authenticated and encrypted secure channel
-between both parties.
+between both entities.
 
 #### 4.4.3 Remote presentation flows
 
@@ -1600,9 +1600,7 @@ public.
 
 ## 6 Trust model
 
-### 6.1 Introduction
-
-#### 6.1.1 Scope
+### 6.1 Scope
 
 The trust model presented in this chapter defines how trust is established,
 maintained, validated, and managed among entities within the EUDI Wallet
@@ -1626,19 +1624,18 @@ A **Wallet Unit Attestation (WUA)** is issued to enable other entities to authen
 revoke the WUA if needed.
 
 The Wallet Unit handles **User PIDs** and **attestations** (QEAAs, PuB-EAAs, and
-non-qualified EAAs). PIDs are issued by **PID Providers**, and attestations by
+non-qualified EAAs). PIDs are issued by **PID Providers** and attestations by
 **Attestation Providers**, both positioned to the left of the Wallet Unit in
-Figure 11. Before interacting with a Wallet Unit these providers must be registered with a **PID Provider
-Trusted List Provider (TLP)** or **Attestation Provider TLP**. Upon
-registration, they receive an **Access certificate** from a **PID Provider Access CA**
-or **Attestation Provider Access CA** ([Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle)).
+Figure 11. Before interacting with a Wallet Unit these providers must be registered with a **PID Provider Trusted List Provider (TLP)** or **Attestation Provider TLP**. Upon
+registration, they receive an **access certificate** from a **PID Provider Access CA**
+or **Attestation Provider Access CA**. See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
 
 Once a Wallet Unit receives a PID or attestation, it can present **User
 attributes** to **Relying Party Instances** (right side of Figure 11). These
 instances are hardware/software setups enabling **Relying Parties** to interact
 with Wallet Units. Relying Parties register with a **Relying Party Registrar**,
-receiving an **Access Certificate** for each Relying Party Instance, as well as a **Relying Party
-Registration Certificate** ([Section 6.4](#64-trust-throughout-a-relying-party-lifecycle)).
+receiving an **access certificate** for each Relying Party Instance, as well as a **Relying Party
+Registration Certificate** This is discussed in [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle).
 
 [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) further
 details the lifecycle of PIDs and attestations, including issuance,
@@ -1658,16 +1655,13 @@ may adopt alternative trust model and mechanisms.
 - The model supports both remote and proximity use cases, though technical
 measures and authentication mechanisms may vary.
 - This version of the ARF does not yet include trust interactions for
-**qualified electronic signatures or seals** (see [Topic 16] and [Topic 37]).
-
-#### 6.1.3 Other trust relations
-
-Besides the trust relationships described in this chapter, other trust relations
+**qualified electronic signatures or seals** (see [Topic 16] and [Topic 37] in Annex 2).
+- Besides the trust relationships described in this chapter, other trust relations
 are established as well. For instance, Users, PID Providers, Attestation
 Providers, and Relying Parties trust certification bodies and Trusted List
 Providers. This trust is primarily rooted in authority and in procedural
 measures, such as public oversight, published security and operational policies,
-and audits, rather than in technical measures. To verify that parties are indeed
+and audits, rather than in technical measures. To verify that entities are indeed
 interacting with a trusted authority, standard technical measures suitable for
 the context will be used.
 
@@ -1887,7 +1881,7 @@ trust anchors to verify the authenticity of Relying Party Instance access
 certificates. The Trusted List Provider signs and publishes the Relying Party
 Instance Access CA Trusted List and makes the URL of the Trusted List available
 to a common trust infrastructure maintained by the Commission, the so-called
-List of Trusted Lists. Using the common infrastructure, any party in the EUDI
+List of Trusted Lists. Using the common infrastructure, any entity in the EUDI
 Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
 
 More details on the Relying Party registration process can be found in [Topic 27].
@@ -2085,8 +2079,7 @@ During activation of the Wallet Unit, depending on the choice made by the Wallet
 Provider to combine the two User authentication mechanisms or not, the Wallet
 Provider will ask the User to set up one or two authentication mechanisms.
 
-Note that, as discussed in the first bullet in [Section
-6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding), the User
+Note that, as discussed in the first bullet in [Section 6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding), the User
 authentication mechanisms implemented in the WSCD may also play a role in
 ensuring User binding. User binding allow a Relying Party to trust that the
 person presenting a PID or attestation is in fact the subject of that PID or
@@ -2602,7 +2595,7 @@ will be further discussed with Member States for ARF 2.0.
 *decision to present an attribute to a Relying Party. Under no circumstances
 *User approval to present data from their Wallet Unit should be construed as
 *lawful grounds for the processing of personal data by the Relying Party or any
-*other party. A Relying Party requesting or processing personal data from a
+*other entity. A Relying Party requesting or processing personal data from a
 *Wallet Unit must ensure that it has grounds for lawful processing of that data,
 *according to Article 6 of the GDPR.**
 
@@ -2650,7 +2643,7 @@ in case one or more of the requested attributes is not included in the list of
 attributes in the registration certificate,
 - The information in the Relying Party's registration certificate regarding an
 intermediary used by the Relying Party, if any, see
-[Section3.11](#311-relying-parties-and-intermediaries).
+[Section 3.11](#311-relying-parties-and-intermediaries).
 - The outcome of the evaluation of the embedded disclosure policy, if any.
 
 After the User gives their approval, the Wallet Unit will present the approved
@@ -2726,9 +2719,9 @@ combination with an ephemeral key created by the secure environment. The latter
 ephemeral key is sent to the Relying Party in such a way that the Relying Party
 can verify the authenticity of this key. Such a solution, or similar ones, can
 be used provided that:
-    - the solution is fully compliant with the relevant standards, i.e.,
+  - the solution is fully compliant with the relevant standards, i.e.,
     [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-    - the solution can be certified for security at LoA "high" according to
+  - the solution can be certified for security at LoA "high" according to
     [Chapter 7](#7-certification-and-risk-management)
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
@@ -3209,38 +3202,38 @@ Technical threats
 ##### 7.4.3.1 Introduction
 
 This section briefly discusses some of the risks that were considered when the
-trust model in [Chapter 6](#6) was created, together with the mitigations for these risks and the
+trust model in [Chapter 6](#6-trust-model) was created, together with the mitigations for these risks and the
 residual risks that remain after these mitigations. This section is not intended
 to be a comprehensive risk register for the EUDI Wallet ecosystem as a whole;
-for that register, see [Risk Register]. This section is limited to the scope of
-the ARF, namely, the Wallet Unit and its interactions with other parties in the
-ecosystem, as depicted in Figure 11.
+for that register, see [Risk Register] and [Section 7.4.2](#742-high-level-risks-and-threats) above. This section is limited to the scope of
+the ARF, namely, the Wallet Unit and its interactions with other entities in the
+ecosystem, as depicted in Figure 11 in Chapter 6.
 
-##### 6.1.2.2 Risks and mitigation measures related to confidentiality, integrity, and authenticity
+##### 7.4.3.2 Risks and mitigation measures related to confidentiality, integrity, and authenticity
 
-Within the EUDI Wallet ecosystem, many interactions take place between parties
-in which one party requests another party to perform a task. For example, a User
+Within the EUDI Wallet ecosystem, many interactions take place between entities
+in which one entity requests another entity to perform a task. For example, a User
 may ask a PID Provider or an Attestation Provider to provide a PID or an
 attestation to a Wallet Unit, or a Relying Party may ask a User to present
 attributes from an attestation in their Wallet Unit.
 For any of these interactions, the following risks apply:
 
-- An attacker could impersonate one of the interacting parties. Therefore, the
-receiver of a message must be able to verify the identity of the sender. In
+- An attacker could impersonate one of the interacting entities. Therefore, the
+receiver of a message must be able to verify the identity of the sender, and vice versa. In
 other words, mutual authentication is needed. This authentication can be
-performed because valid parties in the EUDI Wallet ecosystem are put on a
+performed because valid entities in the EUDI Wallet ecosystem are put on a
 Trusted List by Member States. By verifying the signature over a message and
 verifying the associated public key certificates with a trust anchor included in
 a Trusted List, the receiver of a message can be sure about the identity of the
 message's sender.
-- Messages between parties could be intercepted, meaning that they could be read
+- Messages between entities could be intercepted, meaning that they could be read
 by an attacker. To mitigate this risk, messages must be encrypted to ensure
 confidentiality.
 - Intercepted messages could be changed by an attacker. To mitigate this risk,
 messages must be authenticated, so that the receiver can verify that originate
 from the authenticated sender and were not changed.
 
-##### 6.1.2.3 Risks and mitigation measures related to tampering of cryptographic keys and sensitive data
+##### 7.4.3.3 Risks and mitigation measures related to tampering of cryptographic keys and sensitive data
 
 The mechanisms for authentication and confidentiality described in the previous
 section rely on the security of cryptographic keys, especially private and
@@ -3262,9 +3255,9 @@ attributes, in such a way that attackers, including malicious applications
 residing on the same User device as the Wallet Instance, cannot retrieve these
 attributes. This is beneficial for User privacy.
 
-##### 6.1.2.4 Risks and mitigation measures related to authorisation
+##### 7.4.3.4 Risks and mitigation measures related to authorisation
 
-In certain cases, there is a risk that a legitimate party within the EUDI Wallet
+In certain cases, there is a risk that a legitimate entity within the EUDI Wallet
 ecosystem may attempt to perform actions beyond its authorized scope. This risk
 primarily affects two types of entities.
 
@@ -3317,7 +3310,7 @@ This mechanism further supports the User in making a well-informed decision on
 whether to approve or deny attribute presentation. More information on disclosure
 policy enforcement can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present).
 
-##### 6.1.2.5 Risks and mitigation measures related to User privacy
+##### 7.4.3.5 Risks and mitigation measures related to User privacy
 
 User privacy is a key aspect in the design and implementation of the EUDI Wallet
 ecosystem. Attributes are presented as electronic attestations using formats
@@ -3368,8 +3361,6 @@ One key area of development is age verification, where the European Commission
 is actively exploring and testing ZKP-based solutions. The outcomes of this
 initiative could pave the way for the adoption of ZKPs within the EUDI Wallet
 ecosystem, further strengthening privacy protections in future implementations.
-
-
 
 ## 8 Document development
 
