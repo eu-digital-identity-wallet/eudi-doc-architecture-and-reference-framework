@@ -1,4 +1,4 @@
-Version 0.2, updated 30 January 2025
+Version 0.3, updated 3 February 2025
 
 # E - Pseudonyms, including User authentication mechanism
 
