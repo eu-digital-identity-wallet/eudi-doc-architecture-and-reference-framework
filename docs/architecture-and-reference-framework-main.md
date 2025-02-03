@@ -1616,42 +1616,41 @@ Figure 11 illustrates the key entities and the relationships in the trust model
 of the EUDI Wallet ecosystem.
 
 At its core is the **Wallet Unit** (top middle, blue), which interacts with
-various entities throughout its lifecycle—installation, activation, management, and
+various entities throughout its lifecycle, which consists of installation, activation, management, and
 de-installation (detailed in [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).
 Each Wallet Unit is a configuration of a **Wallet Solution**, comprising a
 **Wallet Instance** and one or more WSCA/WSCDs, provided by a **Wallet
 Provider**. The Wallet Provider oversees these components and manages their
 registration, withdrawal, or suspension (see [Section 6.2](#62-trust-throughout-a-wallet-solution-lifecycle)).
-A **Wallet Unit Attestation (WUA)** is issued to verify a Wallet Unit and can be
-revoked if needed.
+A **Wallet Unit Attestation (WUA)** is issued to enable other entities to authenticate a Wallet Unit. The Wallet Provider can
+revoke the WUA if needed.
 
-The Wallet Unit handles **User PIDs and attestations** (QEAAs, PuB-EAAs, and
+The Wallet Unit handles **User PIDs** and **attestations** (QEAAs, PuB-EAAs, and
 non-qualified EAAs). PIDs are issued by **PID Providers**, and attestations by
 **Attestation Providers**, both positioned to the left of the Wallet Unit in
-Figure 11. Before interacting with a Wallet Unit or being verified by a
-**Relying Party**, these providers must be registered with a **PID Provider
+Figure 11. Before interacting with a Wallet Unit these providers must be registered with a **PID Provider
 Trusted List Provider (TLP)** or **Attestation Provider TLP**. Upon
-registration, they receive access certificates from a **PID Provider Access CA**
+registration, they receive an **Access certificate** from a **PID Provider Access CA**
 or **Attestation Provider Access CA** ([Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle)).
 
-Once a Wallet Unit receives PIDs or attestations, it can present **User
+Once a Wallet Unit receives a PID or attestation, it can present **User
 attributes** to **Relying Party Instances** (right side of Figure 11). These
 instances are hardware/software setups enabling **Relying Parties** to interact
 with Wallet Units. Relying Parties register with a **Relying Party Registrar**,
-receiving an **Access Certificate** for each instance and a **Relying Party
+receiving an **Access Certificate** for each Relying Party Instance, as well as a **Relying Party
 Registration Certificate** ([Section 6.4](#64-trust-throughout-a-relying-party-lifecycle)).
 
 [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) further
 details the lifecycle of PIDs and attestations, including issuance,
 presentation, management, and deletion.
 
-**Notes:**
+Notes:
 
 - This conceptual trust model may be implemented with slight variations across
 Member States, such as adopting one or multiple Certification Authorities or
 leveraging existing entities that already fulfill this role.
 - For Access Certificates, PIDs, qualified EAAs, and PuB-EAAs, interoperability
-is essential ([Section 4.2.2](#422-interoperability)) and is based on a PKI
+is essential ([Section 4.2.2](#422-interoperability)) and is achieved by using a PKI
 following X.509 certificate standards
 ([RFC5280](https://datatracker.ietf.org/doc/html/rfc5280),
 [RFC3647](https://datatracker.ietf.org/doc/html/rfc3647)). Non-qualified EAAs
