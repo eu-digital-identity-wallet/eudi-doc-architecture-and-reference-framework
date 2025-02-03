@@ -744,7 +744,7 @@ A Wallet Instance SHALL always release a different value for the Pseudonym of a 
 
 ##### Requirement 14
 
-It SHALL NOT be possible to correlate Pseudonyms based on their value nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that Pseudonyms released by a User to different Relying Parties belong to the same User.
+It SHALL NOT be possible to correlate Pseudonyms based on their values nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that Pseudonyms released by a User to different Relying Parties belong to the same User.
 
 > Rationale: If this was possible, it would defeat the purpose of using different Pseudonyms and would allow colluding Relying Parties to track the User.
 
