@@ -1,4 +1,4 @@
-Version 0.1, updated 31 January 2025
+Version 0.1, updated 3 Feruary 2025
 
 # C - Wallet Unit Attestation (WUA) and Key Attestation
 
@@ -189,6 +189,8 @@ providers shall ensure that the following requirements are complied with:\
 
 The legal requirements of Chapter 2 address different aspects related to Wallet Unit Attestation. The aspects cover interaction with the user (i.e. requirements in relation to the user interface), interaction with other parties (i.e. what WUA should be used for) and the WUA itself (i.e. essential information that should be contained in the WUA). This document will not go into requirements on the user interface, etc., but will focus on how WUA may be used in connection with other parties.
 
+**Furthermore, this document is ONLY intended to clarify the high level requirements related to WUA. The technical specifications related to WUA is to be developed by the Commission at a later point in time.**
+
 The legal requirements in relation to the functional requirements of WUA can be summarized as the following functionality:
 
 1. WUA information must allow relying parties, PID and attestation providers and other Wallet Units to validate the authenticity and revocation status of a Wallet Unit.
@@ -199,10 +201,10 @@ The legal requirements in relation to the functional requirements of WUA can be 
 
 Based on the funtional requirement, the following requirements with regard to the WUA itself can derived:
 1. The WUA must contain a public key, where the corresponding private key is protected by a WSCD. 
-2. The WUA must contain information, allowing parties to check if a WU has been revoked.
-3. The WUA must contain information, allowing parties to verify the validity of the WU, e.g., it originates from a trusted Wallet Provider, i.e. the WUA must contain a signature.
+2. The WUA must contain information, allowing parties to check if a Wallet Unit has been revoked.
+3. The WUA must contain information, allowing parties to verify the validity of the Wallet Unit, i.e. the WUA must contain a signature from the Wallet Provider.
 
-All of this can be achieved as a (revocable) attestation on a public key, issues by the Wallet Provider. Additionally the WUA should contain relevant information on the Wallet Unit capabilities. These must also be attested by the Wallet Provider and may be used to provide additional trust in the Wallet Unit.
+All of this can be achieved as a (revocable) attestation on a public key, issues by the Wallet Provider. Additionally the WUA should contain relevant information on the Wallet Unit capabilities, such as the WSCD/WSCA. These must also be attested by the Wallet Provider and may be used to provide additional trust in the Wallet Unit.
 
 > Question: Are there any missing requirements?
 
@@ -221,28 +223,30 @@ The wording, _cryptographically bound_, may be interpreted in different ways. Wh
 ### Revocation
 [CIR.2024.2977] Article 5 states that:
 
-4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
+*4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
 ...\
-(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;
+(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;*
 
-The text states that providers of PID are obligated to revoke PID issued to a Wallet Unit, if that Wallet Unit is revoked. Depending on how the WUA is constructed and how the above mentioned _cryptographic binding_ is done, it may be possible (e.g. using Zero-Knowledge proofs) to make a revocation of the Wallet Unit automatically revoke any issued PID. Alternatively the providers of PID are obliged to maintain a record of Wallet Units that have been issued PID and periodically monitor the revocation status of these Wallet Units. In general two approaches to how revocation can be done:
+The text states that providers of PID are obligated to revoke PID issued to a Wallet Unit, if that Wallet Unit is revoked. Depending on how the WUA is constructed and how the above mentioned _cryptographic binding_ is done, it may be possible (e.g. using Zero-Knowledge proofs) to make a revocation of the Wallet Unit automatically revoke any issued PID. Alternatively the providers of PID are obliged to maintain a record of Wallet Units that have been issued PID and periodically monitor the revocation status of these Wallet Units. In general there are two approaches as to how revocation can be done:
 
-- Approach A: All attestations (PID, Attestations, Pseudonyms) are somehow cryptographically connected to the WUA, e.g. the PID may contain a reference to the WUA of the Wallet Instance it was issued to. During presentation of an attestation, both the attestation and the WUA (or parts hereof) are presented to the Relying Party, which verifies both the revocation status of the WUA and the validity (including revocation status) of the attestation. If the Wallet Instance is revoked, the connected attestations all automatically become invalidated and the PID and attestation providers will not need to take action.
+- Approach A: All attestations (PID, Attestations, Pseudonyms) are somehow cryptographically connected to the WUA, e.g. the PID will contain a reference to the WUA of the Wallet Instance it was issued to. During presentation of an attestation, both the attestation and the WUA (or parts hereof) are presented to the Relying Party, which verifies both the revocation status of the WUA and the validity (including revocation status) of the attestation. If the Wallet Instance is revoked, the connected attestations all automatically become invalidated and the PID and attestation providers will not need to take action.
 
-- Approach B: All attestations (PID, Attestations, Pseudonyms) are not linked with the WUA. During presentation, only the attestation is sent to the Relying Party, which verifies the validity (including revocation status). In order for this to work, PID and Attestations providers must monitor the revocation status of all Wallet Instances that have been issued PID or Attestations. Once a revoked WUA is detected the PID or Attestation provided can perform their own revocation.
+- Approach B: Attestations (PID, Attestations, Pseudonyms) are not linked with the WUA. During presentation, only the attestation is sent to the Relying Party, which verifies the validity (including revocation status). In order for this to work, PID and Attestations providers must monitor the revocation status of all Wallet Instances that have been issued PID or Attestations. Once a revoked WUA is detected by the PID or Attestation provider, the provider can perform their own revocation of the issued PID or attestation.
 
-Following Approach A, will involve the WUA in nearly all activity of the Wallet Unit, hence the drawbacks mentioned in [topic-a] may become overwhelming.
+[Topic A] discusses privacy risks related to the usage of attestations, which also apply to the WUA.
+Using Approach A, will involve the WUA in nearly all activity of the Wallet Unit, hence the drawbacks mentioned in [Topic A] may become overwhelming.
 
 > Question: Which approach should be taken?
 
 
 ## 4 Current HLRs
-Currently the ARF, Annex 2, Topic 9, contains a number of High Level Requirements related to "Wallet Trust Evidence" and "Wallet Instance Attestation". These requirements cover multiple aspects of WUA and complicates the topic. As some of these HLRs relate more to the usage of WUA and the surrounding processes, rather than the WUA itself, it is proposed that these are moved to other content, e.g. it is important for the Wallet Provider to verify the capabilities of the WSCA before issuing the WUA (and the WUA may include a list of these capabilities), however this should not be a HLR of the WUA. The existing HLRs are listed in the tables below along with a proposal to keep or remove the HLR. The remaining HLRs will have their text updated to the new definitions (e.g. WUA).   
+Currently the ARF, Annex 2, Topic 9, contains a number of High Level Requirements related to "Wallet Trust Evidence" and "Wallet Instance Attestation". These requirements cover multiple aspects of WUA and complicates the topic. As some of these HLRs relate more to the usage of WUA and the surrounding processes, rather than the WUA itself, it is proposed that these are moved to other content, e.g. it is important for the Wallet Provider to verify the capabilities of the WSCA before issuing the WUA (and the WUA may include a list of these capabilities), however this should not be a HLR of the WUA. The existing HLRs are listed in the tables below along with a proposal to keep or remove the HLR. 
+>Note: The remaining HLRs will have their text updated to the new definitions (e.g. WUA rather than WTE/WIA).   
 
 | **Index** | **Requirement** | **Proposal** |
 |-----------|--------------|--------------|
-| WTE_01 | A Wallet Provider SHALL have to activate a new Wallet Instance before a User can use it to obtain an attestation. | Keep - WP must issue a WUA before Wallet can be used |
-| WTE_02 | A WSCA SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Instance (i.e., a WTE key) or of an attestation in a Wallet Instance. | Move - General requirement on WIP functionality|
+| WTE_01 | A Wallet Provider SHALL have to activate a new Wallet Instance before a User can use it to obtain an attestation. | Move - Genereal requirement on Wallet Instance functionality |
+| WTE_02 | A WSCA SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Instance (i.e., a WTE key) or of an attestation in a Wallet Instance. | Move - General requirement on Wallet Instance functionality|
 | WTE_03 | A Wallet Instance SHALL authenticate the User before performing any operation excluding cryptographic operations. The Wallet Instance MAY rely on a WSCA certified to be compliant with applicable requirements for level of assurance "high" to do so, but MAY also rely on other components. <p><br>Note: Cryptographic operations can only be performed by the WSCA after User authentication according to WTE_02. | Move - General requirement on WI functionality  |
 | WTE_04 | For a Wallet Instance containing a natural-person PID, the User mentioned in WTE_02 and WTE_03 SHALL be the natural person who is the subject of that PID. | Move - Legal/Procedural requirement for the Wallet Provider |
 | WTE_05 | For a Wallet Instance containing a legal-person PID, the User mentioned in WTE_02 and WTE_03 SHALL be a natural person appointed by the legal person who is the subject of that PID. <p><br>Note: This requirement does not imply that the actions of a legal-person Wallet Instance cannot be automated, or that the person(s) controlling the Wallet Instance must authenticate every time the Wallet Instance presents an attestation or creates a seal. The intent is that every operation performed by the legal-person Wallet Instance is performed under the responsibility of a natural person. | Move - Legal/Procedural requirement for the Wallet Provider |
@@ -316,7 +320,7 @@ Below we discuss how wallet unit attestations relate to the other topics being d
 ### 5.1 Privacy Risks and Mitigations
 
 
-Topic A - Privacy Risks and Mitigations highlight that WUA functions like any other attestation and therefore the risks and mitigations are the same:
+[Topic A - Privacy Risks and Mitigations] highlight that WUA functions like any other attestation and therefore the risks and mitigations are the same:
 - PID and Attestation providers may assume the role of Relying Party with regard to RP-linkability: When presenting a WUA to a Relying Party (in this case this includes PID and Attestation providers), the Relying Party may record attribute values and use these to track the user.
 - The Wallet Provider may assume the role of Attestation Provider with regard to AP-linkability: If the Wallet Provider colludes with Relying Parties (PID and Attestation providers), user behaviour may be tracked.
 - Using one of the one-time, limited-time, rotating batch or per-relying part attestations will all work with WUA. Note that the use pattern of WUA (it is only intended for PID and Attestation providers during issuance), it will most likely only be used a few times with a few Relying Parties (i.e. PID and attestation providers).
@@ -639,6 +643,9 @@ R14, SR1, TR39, TR84, TR85 are particularly relevant to consider given the discu
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [WebAuthN]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/                                                                                                                                          |
 | [ARF_DevPlan]   | Architecture and Reference Framework Development plan 2025, European Commission, v1,0.                                                                                                                                                                                               |
+| [Topic A]       | Topic A - Privacy Risks and Mitigations |
 | [RiskRegister]  | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [eIDAS 2.0]     | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework                                                                                        |
+| [CIR.2024.2977] | Commission Implementing Regulation (EU) 2024/2977 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets      |
 | [CIR.2024.2979] | Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets      |
+| [CIR.2024.2982] | Commission Implementing Regulation (EU) 2024/2982 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework      |
