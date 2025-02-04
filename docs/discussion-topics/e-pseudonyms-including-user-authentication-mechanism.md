@@ -728,6 +728,8 @@ Note that the requirements WTE\_03 and WTE\_04 from Topic 9 ensures that a Walle
 
 The placement of these HRLs will be discussed in Topic C.
 
+Further, note that RPA\_01 and RPA\_03 from Topic 6 ensures that Wallet Instances SHALL authenticate Relying Parties also in the Pseudonym use case. It is therefore not necessary to specify further HRLs related to this.
+
 ##### Requirement 11
 A Wallet Instance SHALL store the information necessary for authenticating with a Pseudonym encrypted in their WSCD.
 
