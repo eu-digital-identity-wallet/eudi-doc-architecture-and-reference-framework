@@ -16,23 +16,27 @@ common standards and technical specifications and a set of common guidelines and
 best practices.
 
 The Recommendation specifies that these outcomes will serve as a basis for the
-implementation of the European Digital Identity Framework,
+implementation of the [European Digital Identity Regulation],
 without the process of developing the Toolbox interfering with, or prejudging
 the legislative process.
 
-The Recommendation sets up a structured process of cooperation between Member
-States, the Commission and, where relevant, private sector operators, to develop
-the Toolbox. The European Digital Identity Cooperation Group to:
+The Recommendation establishes a structured framework for cooperation between
+Member States, the Commission, and, where relevant, private sector operators to
+develop the Toolbox. The European Digital Identity Cooperation Group (EDICG),
+formerly known as the eIDAS Expert Group, is responsible for:
 
 - exchanging best practices and cooperating with the Commission on emerging
 policy initiatives in the field of digital identity wallets, electronic
 identification means and trust services;
-- advising the Commission in the preparation of draft implementing and delegated acts;
-- supporting Supervisory Bodies in the implementation of the EUDI Regulation;
+- advising the Commission in the preparation of draft implementing and delegated
+acts;
+- supporting Supervisory Bodies in the implementation of the [European Digital
+Identity Regulation];
 - organising peer reviews of electronic identification schemes;
 - engaging with the Commission and other relevant stakeholders to develop a [Common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox);
 
-The European Digital Identity Cooperation Group's page can be found [at the official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
+The European Digital Identity Cooperation Group's page can be found [at the
+official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
 
 The European Digital Identity Cooperation Group has since further developed the
 concepts and specifications for the European Digital Identity Framework. The
@@ -54,23 +58,23 @@ serves as background information to allow a better understanding of the the
 high-level requirements established in Annex 2.
 
 Additionally, this document forms a reference to create uniform conditions for
-the implementation of the [European Digital Identity] Regulation and to define the technical
+the implementation of the [European Digital Identity Regulation] and to define the technical
 specifications, standards and procedures that the Commission will develop for
 the purpose of implementing this Regulation.
 
 Finally, this document is used to develop the Wallet Solution [reference implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md).
 
-The document presents a state-of-play of ongoing work of the eIDAS Expert Group
+The document presents a state-of-play of ongoing work of the European Digital Identity Cooperation Group
 and does not imply any formal agreement regarding its content. This document
 will be complemented and updated over time through the process of establishing
 the toolbox, as described in [Chapter 8](#8-document-development).
 
 This document holds no legal value and does not prejudge the final mandatory
-legal requirements for the EUDI Wallet ecosystem. Only the adopted European
-Digital Identity Framework Regulation [European Digital Identity], and the implementing and
-delegated acts adopted under that Regulation, are mandatory.
-This document serves as a foundation for regularly updating the implementing
-acts, ensuring alignment with technological and standards developments.
+legal requirements for the EUDI Wallet ecosystem. Only the adopted [European
+Digital Identity Regulation], and the implementing and delegated acts adopted
+under that Regulation, are mandatory.  This document serves as a foundation for
+regularly updating the implementing acts, ensuring alignment with technological
+and standards developments.
 
 ### 1.3 Relation to the Large-Scale Pilots (LSP)
 
@@ -106,12 +110,12 @@ the structural and functional aspects of the EUDI Wallet ecosystem, detailing
 its key components and their interactions. It provides a technical foundation to
 ensure **interoperability, security, and privacy**, aligning with the high-level
 requirements specified in **Annex 2**. The ARF serves as a reference for the
-**harmonized implementation of the [European Digital Identity] Regulation**, guiding the
+**harmonized implementation of the [European Digital Identity Regulation]**, guiding the
 development of **technical specifications, standards, and operational
 procedures**.
 
 This document **only applies to EUDI Wallet ecosystems compliant with the
-[European Digital Identity] Regulation**, ensuring consistency in architecture
+[European Digital Identity Regulation]**, ensuring consistency in architecture
 and implementation. It is designed to support the development of the Wallet
 Solution reference implementation while remaining adaptable to technological and
 regulatory advancements.
@@ -176,7 +180,7 @@ privacy, and User control, ensuring seamless interactions with Relying Parties a
 protection principles.  
 
 This chapter outlines the core functionalities of Wallet Solutions, as defined
-by the [European Digital Identity] Regulation, and examines how the requirements for its implementation
+by the [European Digital Identity Regulation], and examines how the requirements for its implementation
 align with real-world use cases where Users will use their Wallet Unit.  
 
 The functionalities of a Wallet Unit can be grouped into the following
@@ -251,7 +255,7 @@ implementation approach, influencing aspects such as data retrieval and User
 approval processes. The Annexes contain detailed descriptions of these
 blueprints, ensuring transparency and adaptability.
 
-The eIDAS Expert Group has outlined service blueprints for the following key use cases:
+The European Digital Identity Cooperation Group has outlined service blueprints for the following key use cases:
 
 - Identification and authentication to access online services, see [Section 2.5.1](#251-identification-and-authentication-to-access-online-services),
 - Qualified Electronic Signature, see [Section 2.4](#24-qualified-electronic-signature),
@@ -345,9 +349,9 @@ pregnancy and childbirth.
 
 ### 3.1 Introduction
 
-This chapter describes the EUDI Wallet ecosystem as it is foreseen in the
-Regulation. The different roles in the EUDI Wallet ecosystem are described in
-Figure 1 and detailed in the following sections.
+This chapter describes the EUDI Wallet ecosystem as it is foreseen in [European
+Digital Identity Regulation]. The different roles in the EUDI Wallet ecosystem
+are described in Figure 1 and detailed in the following sections.
 
 ![Figure 1: Overview of the EUDI Wallet ecosystem roles](media/Figure_1_Overview_of_EUDI_Wallet_roles.jpeg) <!-- <img src="Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" style="width="7.2131944444444445in" height="3.375in" /> -->
 
@@ -389,10 +393,11 @@ legal-person PID in their Wallet Unit next to their own natural-person PID.
 However, the topics of representation and delegation will be further discussed
 with Member States in the future and no decisions have been made yet.
 
-The use of a Wallet Unit by citizens is not mandatory under the [European Digital Identity]
-Regulation. However, each Member State will provide at least one European
-Digital Identity Wallet within 24 months after the entry into force of the
-implementing acts referred to in the Regulation.
+The use of a Wallet Unit by citizens is not mandatory under the [European
+Digital Identity Regulation]. However, each Member State will provide at least
+one European Digital Identity Wallet within 24 months after the entry into force
+of the implementing acts referred to in the [European Digital Identity
+Regulation].
 
 ### 3.3 Wallet Providers
 
@@ -416,7 +421,7 @@ are described in [Section 4.3.2](#432-components-of-a-wallet-unit). In
 particular, the Wallet Provider is responsible for ensuring that the Wallet
 Instance can access a Wallet Secure Cryptographic Device (WSCD) that has a level
 of security sufficient to ensure that the Wallet Unit can achieve Level of
-Assurance "high", as required in the Regulation. This is true even if the WSCD
+Assurance "high", as required in the [European Digital Identity Regulation]. This is true even if the WSCD
 is not delivered by the Wallet Provider but is integrated into the User device.
 For more information, see [Section 4.5](#45-wscd-architecture-types). Other actors
 in the ecosystem do not need to interact with or explicitly trust a WSCD
@@ -477,8 +482,8 @@ For more information, please refer to [Topic 27] and to [Topic 31].
 ### 3.6 Qualified Electronic Attestation of Attributes (QEAA) Providers
 
 Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The
-general trust framework for QTSPs (see Chapter III, Section 3 of the [European Digital Identity]
-Regulation) applies also to QEAA Providers, but specific rules for the Trust
+general trust framework for QTSPs (see Chapter III, Section 3 of the [European Digital Identity
+Regulation] applies also to QEAA Providers, but specific rules for the Trust
 Service of issuing QEAAs may be defined as well.
 
 QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon
@@ -496,14 +501,16 @@ identification and authentication at LoA high, by requesting and verifying
 User attributes from the PID in the Wallet Unit.
 
 The terms and conditions of these services are for each QEEA Provider to
-determine, beyond what is specified in the [European Digital Identity] Regulation.
+determine, beyond what is specified in the [European Digital Identity Regulation].
 
 ### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
 
-As specified in the Regulation, an attestation may be issued by or on behalf of
-a public sector body responsible for an Authentic Source. This ARF calls such an
-attestation a PuB-EAA. For a description of Authentic Sources, see [Section 3.10](#310-authentic-sources). A public sector body primarily is a state,
-regional or local authority, or a body governed by public law.
+As specified in the [European Digital Identity Regulation], an attestation may
+be issued by or on behalf of a public sector body responsible for an Authentic
+Source. This ARF calls such an attestation a PuB-EAA. For a description of
+Authentic Sources, see [Section 3.10](#310-authentic-sources). A public sector
+body primarily is a state, regional or local authority, or a body governed by
+public law.
 
 A PuB-EAA Provider, meaning a public sector body issuing PuB-EAAs, is not a
 QTSP. However, a PuB-EAA Provider has a qualified certificate, issued by a QTSP,
@@ -512,14 +519,14 @@ verifying the signature over the PuB-EAA, and subsequently verifying the
 signature of the qualified PuB-EAA Provider certificate. For more details, refer
 to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-the-pid-or-attestation).
 
-The Regulation stipulates that PuB-EAAs, like QEAAs, have the same legal effect
+the [European Digital Identity Regulation] stipulates that PuB-EAAs, like QEAAs, have the same legal effect
 as attestations in paper form. It is up to the Member States to define terms and
 conditions for the provisioning of Pub-EAAs, but PuB-EAA Providers will comply
 with the same technical specifications and standards as Providers of PIDs and
 other attestations.
 
 For the precise and legally binding definitions and obligations regarding the
-issuance of PuB-EAAs, please refer to the Regulation.
+issuance of PuB-EAAs, please refer to the [European Digital Identity Regulation].
 
 ### 3.8 Non-Qualified Electronic Attestation of Attributes (EAA) Providers
 
@@ -582,7 +589,7 @@ within a PID, QEAA, Pub-EAA or EAA from the Wallet Unit, subject to the approval
 of the User and within the limits of applicable legislation and rules.
 
 The reason for reliance on the Wallet Unit may be a legal requirement, a
-contractual agreement, or their own decision. In particular, the Regulation
+contractual agreement, or their own decision. In particular, the [European Digital Identity Regulation]
 requires that providers of very large online platforms must accept the EUDI
 Wallet for their user authentication processes.
 
@@ -607,7 +614,7 @@ negative. Please refer to [Section 6.6.3.4](#6634-wallet-unit-evaluates-disclosu
 for more information.
 
 So-called intermediaries form a special class of Relying Party. Article 5b (10)
-of the [European Digital Identity] Regulation states "Intermediaries acting on behalf of relying
+of the [European Digital Identity Regulation] states "Intermediaries acting on behalf of relying
 parties shall be deemed to be relying parties and shall not store data about the
 content of the transaction.". Such an intermediary is a party that offers
 services to Relying Parties to, on their behalf, connect to Wallet Units and
@@ -770,7 +777,7 @@ state transitions.
 
 ### 4.2 Design principles
 
-To effectively translate the European Digital Identity Regulation into a
+To effectively translate the [European Digital Identity Regulation] into a
 User-friendly, privacy-focused, and secure technical architecture, establishing
 design principles is crucial. These principles, rooted in the regulatory
 framework and enriched by industry best practices, will serve as fundamental
@@ -1217,7 +1224,7 @@ Wallet ecosystem, a Wallet Provider is allowed to use any of these architectures
 Note that, regardless of the architecture used, the Wallet Provider is
 responsible for ensuring that the Wallet Instance can access a WSCD that has a
 level of security sufficient to ensure that the Wallet Unit can achieve Level of
-Assurance "high", as required in the Regulation. The Wallet Provider remains
+Assurance "high", as required in the [European Digital Identity Regulation]. The Wallet Provider remains
 responsible for managing cryptographic keys on the WSCD (through the WSCA)
 throughout the lifetime of the Wallet Unit. The Wallet Provider is also
 responsible for attesting the properties of the WSCD (including relevant
@@ -1440,7 +1447,7 @@ A Wallet Unit will not present a PID or attestation to a Relying Party that is i
 
 Within the EUDI Wallet ecosystem, data is exchanged in the form of Electronic
 Attestations of Attributes (EAA), hereafter referred to as "attestations." Apart
-from EAA, the Regulation explicitly defines another category of data, called
+from EAA, the [European Digital Identity Regulation] explicitly defines another category of data, called
 Person Identification Data (PID), which establishes the identity of a natural
 person or a legal person. PID can only be issued by a PID provider operating
 under the supervision of the Member State. Each PID and attestation consists of
@@ -1491,7 +1498,7 @@ technical specifications to do so.
 
 ### 5.2 Attestation categories
 
-Within the European Digital Identity Wallet ecosystem, the Regulation
+Within the European Digital Identity Wallet ecosystem, the [European Digital Identity Regulation]
 distinguishes four legal categories of attestations, which are defined as
 follows:
 
@@ -1584,7 +1591,7 @@ Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.
 be assumed by different types of organisation:
 
 - Some Rulebooks already have been defined by the European Commission, in
-consultation with the eIDAS Expert Group. This concerns the PID Rulebook and the
+consultation with the European Digital Identity Cooperation Group (EDIGC). This concerns the PID Rulebook and the
 mDL Rulebook. These can be found in [Annex 3](#10-annexes) of this ARF.
 - The Rulebook for an attestation intended to be used across organisations
 and/or across borders can be defined by an organisation in which, insofar
@@ -1606,7 +1613,7 @@ organisation will be defined by that organisation.
 ### 5.6 Catalogues
 
 Section 2 in [Article 45e](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e3883-1-1)
-of the regulation, sets up the direct legal basis for the Commission to "where
+of the Regulation, sets up the direct legal basis for the Commission to "where
 necessary, establish specifications and procedures for the catalogue of
 attributes and schemes for the attestation of attributes and verification
 procedures for qualified electronic attestations of attributes".
@@ -2040,11 +2047,11 @@ Provider.
 of apps, if applicable, and ensuring that these limitations are restored after
 the Wallet Instance has been installed.
 
-Note: The Regulation does not exclude the possibility that a Wallet Instance may
-be installed on a non-mobile device, for example a server. The requirements
-above also apply for the installation of a Wallet Unit on a User device that is
-not a mobile device, and for which no official operating system app store may
-exist.
+Note: The [European Digital Identity Regulation] does not exclude the
+possibility that a Wallet Instance may be installed on a non-mobile device, for
+example a server. The requirements above also apply for the installation of a
+Wallet Unit on a User device that is not a mobile device, and for which no
+official operating system app store may exist.
 
 ##### 6.5.2.3 User validates that Wallet Solution is usable with relevant PID
 
@@ -2493,8 +2500,8 @@ the flow specified in [OpenID4VCI]. Additionally, the User uses an eID means on
 LoA High to authenticate towards the PID Provider. This process ensures that the
 new PID can only end up on the mobile device of the subject of the PID.
 
-Note that activation is formally required only for PIDs, since the [European Digital Identity]
-Regulation only requires PIDs to be issued at LoA "high". However, the above
+Note that activation is formally required only for PIDs, since the [European Digital Identity
+Regulation] only requires PIDs to be issued at LoA "high". However, the above
 applies for QEAAs, PuB-EAAs, and non-qualified EAAs as well.
 
 #### 6.6.3 PID or attestation presentation to Relying Party
@@ -2646,8 +2653,9 @@ During attestation issuance, an Attestation Provider optionally has embedded a
 disclosure policy in the attestation. Such an embedded disclosure policy
 contains rules determining which types of Relying Party are allowed by the
 Attestation Provider to receive specific attributes from the attestation. Note
-that the Regulation does not contain a requirement for PIDs to be able to
-contain an embedded disclosure policy, but only for QEAAs and PuB-EAAs.
+that the [European Digital Identity Regulation] does not contain a requirement
+for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs
+and PuB-EAAs.
 
 If a policy is present in the attestation, the Wallet Unit evaluates the policy,
 together with data obtained from the Relying Party, to determine whether the
@@ -2919,11 +2927,11 @@ it is proven for all of them.
 
 ##### 6.6.3.10 Relying Party Instance verifies combined presentation of attributes
 
-According to the Regulation, a combined presentation of attributes is a request
-for attributes from two or more attestations in the same action. In this case,
-the Relying Party will verify that these attestations belong to the same User,
-to prevent a hacked or fraudulent Wallet Unit from presenting attributes from
-different Users.
+According to the [European Digital Identity Regulation], a combined presentation
+of attributes is a request for attributes from two or more attestations in the
+same action. In this case, the Relying Party will verify that these attestations
+belong to the same User, to prevent a hacked or fraudulent Wallet Unit from
+presenting attributes from different Users.
 
 A Relying Party can verify this by comparing attributes from the different
 attestations. For example, the Relying Party may request the first and last name
@@ -2991,9 +2999,10 @@ details about the logging functionality can be found in [Topic 19].
 the trust relationships necessary when a Wallet Unit receives a request from a
 Relying Party Instance and presents attributes to that Relying Party Instance.
 
-However, the Regulation requires that a Wallet Unit is also able to receive such
-a request from another Wallet Unit, and present attributes to that requesting
-Wallet Unit. For more information and requirements, please refer to [Topic 30].
+However, the [European Digital Identity Regulation] requires that a Wallet Unit
+is also able to receive such a request from another Wallet Unit, and present
+attributes to that requesting Wallet Unit. For more information and
+requirements, please refer to [Topic 30].
 
 #### 6.6.5 PID or attestation management
 
@@ -3032,8 +3041,8 @@ For high-level requirements on this topic, see [Topic 51].
 
 This chapter briefly describes the certification of Wallet Solutions and the eID
 schemes under which they are provided, covering the overall certification
-approach, design principles, and key requirements outlined in the [eIDAS
-Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+approach, design principles, and key requirements outlined in the [European
+Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 and Commission Implementing Regulation (CIR) laying down rules for on the
 certification of Wallet Solution (2024/2981), or simply the [CIR
 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981).
@@ -3044,7 +3053,7 @@ requirements, please refer to the
 [CIR](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 itself.
 
-The [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+The [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 requires certification of Wallet Solutions to ensure conformity of the Wallet
 Solutions with functional, security, and privacy related requirements, to
 achieve a high level of interoperability, security and trustworthiness.
@@ -3056,13 +3065,13 @@ indirectly by the Wallet Provider) and the processes that support the provision
 and operation of a Wallet Solution, such as Wallet Unit activation, see [Section 6.5.3](#653-wallet-unit-activation).
 
 The aim is to harmonise the implementation of the requirements laid down by the
-Regulation and avoid divergent approaches to the maximum extent possible. For
-this reason, the Commission requested ENISA to prepare a candidate European
-certification scheme under the Cybersecurity Act, the
-[CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). As defining and adopting a
-dedicated, harmonised certification scheme for Wallet Solutions depends on
-agreements between Member States on detailed security requirements, on the
-availability of underlying certification schemes, and on established good
+[European Digital Identity Regulation] and avoid divergent approaches to the
+maximum extent possible. For this reason, the Commission requested ENISA to
+prepare a candidate European certification scheme under the Cybersecurity Act,
+the [CSA](https://eur-lex.europa.eu/eli/reg/2019/881/oj). As defining and
+adopting a dedicated, harmonised certification scheme for Wallet Solutions
+depends on agreements between Member States on detailed security requirements,
+on the availability of underlying certification schemes, and on established good
 practices in the Member States themselves, a transitory approach is foreseen by
 means of national certification schemes.
 
@@ -3076,10 +3085,10 @@ exist for functional requirements.
 #### 7.2. Certification of Wallet Solutions against national certification schemes
 
 Until a dedicated Wallet Solution cybersecurity certification scheme under the
-CSA is available, the Regulation requires Member States to establish national
-certification schemes. This will be done in time to make available the Wallet
-Solutions before the end of 2026. The Commission has adopted the [CIR
-2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+CSA is available, the [European Digital Identity Regulation] requires Member
+States to establish national certification schemes. This will be done in time to
+make available the Wallet Solutions before the end of 2026. The Commission has
+adopted the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 to provide the main requirements on Member States for creation of national
 certification schemes. The [CIR 2024/2981] and resulting national certification
 schemes are defined around a number of guiding principles:
@@ -3101,19 +3110,19 @@ Additionally, other existing or upcoming schemes​ include schemes based on
 FITCEM (EN 17640)​, national schemes such as on remote identity verification, or
 other private schemes (e.g. for mobile devices and apps)​. For harmonisation of
 functional requirements, the Commission Implementing Regulations (CIRs) adopted
-under [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+under [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 article 5(a) are referenced. For harmonisation of certification requirements,
 the ISO/IEC 17065 framework under Regulation [765/2008] is used, complemented by
 ISO/IEC 17067 on the definition of schemes.
 
 Next, the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 refers to the composite nature of the Wallet Solutions as well as the potential
-different architectures in Member States, considering that the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+different architectures in Member States, considering that the [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 is technology (and architecture) neutral. This means that a final ('top-level')
 certification of the Wallet Solution will yield a composite certificate, built
 on certification of separate components, such as EUCC certification. Wallet
 Solutions are always to be certified against assurance level "high", as set out
-in [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+in [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 as well as [CIR (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2015_235_R_0002).
 That assurance level has to be reached by the overall Wallet Solution. Under
 this Regulation, some components of the Wallet Solution may be certified at a
@@ -3185,7 +3194,7 @@ the CSA.
 
 This section details the approach to develop harmonised guidelines for the
 development of the transitory national certification schemes. In addition to the
-requirements set out in the [eIDAS Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+requirements set out in the [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 article 5c, cybersecurity risks and threats associated with the Wallet Solutions
 will be identified. Here, a risk-based approach is envisioned as the basis for
 certification by Member States, ensuring that the Wallet Solutions uphold
@@ -3353,7 +3362,7 @@ registry, maintained by the Member State, contains comprehensive information
 about each Relying Party, allowing the system to verify the legitimacy of the
 issuer and ensure compliance with regulatory requirements.
 
-In the context of the Regulation, the term Relying Party encompasses both
+In the context of the [European Digital Identity Regulation] Regulation, the term Relying Party encompasses both
 Attestation Providers and entities that provide services relying on
 attestations, ensuring a broad and consistent approach to trust and verification
 within the EUDI Wallet ecosystem.
@@ -3371,14 +3380,14 @@ ensures that the User retains control over their data, as they can approve or
 deny the presentation of requested attributes. More details on selective
 disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
 2. **Mandatory Relying Party Registration of Requested Attributes** – The
-Regulation mandates that each Relying Party register the attributes it intends
+[European Digital Identity Regulation] mandates that each Relying Party register the attributes it intends
 to request from Users. According to [CIR 2024/2982], these registered attributes
 must be included in a Relying Party registration certificate, which the Wallet
 Unit uses to verify the legitimacy of the request and inform the User
 accordingly. This transparency ensures that Users can make an informed decision
 about whether to approve or deny the presentation of the requested attributes.
 More details on this requirement can be found in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
-3. **Attestation Provider Disclosure Policy Enforcement** – The Regulation also
+3. **Attestation Provider Disclosure Policy Enforcement** – the [European Digital Identity Regulation] also
 mandates that Attestation Providers can embed a disclosure policy within their
 attestations. This policy may include rules governing whether the Attestation
 Provider approves the presentation of certain attributes to an authenticated
@@ -3565,7 +3574,7 @@ For undated references, the latest version available applies.
 | **Item Reference** | **Standard name/details**|
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [2015/1505] | [COMMISSION IMPLEMENTING DECISION (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. |
-| [European Digital Identity] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
+| [European Digital Identity Regulation] | [Regulation (EU) 2024/1183](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [Risk Register] | [Regulation (EU) 2024/2981, Annex I](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [CIR 2024/2977] | [Commission Implementing Regulation 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets |
 | [CIR 2024/2979] | [Commission Implementing Regulation 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets |
