@@ -21,16 +21,16 @@ without the process of developing the Toolbox interfering with, or prejudging
 the legislative process.
 
 The Recommendation sets up a structured process of cooperation between Member
-States, the Commission and, where relevant, private sector operators, to develop
-the Toolbox. The European Digital Identity Cooperation Group to:
+States, the Commission, and, where relevant, private sector operators, to develop
+the Toolbox. The European Digital Identity Cooperation Group was set up to:
 
-- exchanging best practices and cooperating with the Commission on emerging
+- exchange best practices and cooperate with the Commission on emerging
 policy initiatives in the field of digital identity wallets, electronic
 identification means and trust services;
-- advising the Commission in the preparation of draft implementing and delegated acts;
-- supporting Supervisory Bodies in the implementation of the EUDI Regulation;
-- organising peer reviews of electronic identification schemes;
-- engaging with the Commission and other relevant stakeholders to develop a [Common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox);
+- advise the Commission in the preparation of draft implementing and delegated acts;
+- support Supervisory Bodies in the implementation of the [eIDAS 2.0] Regulation;
+- organise peer reviews of electronic identification schemes;
+- engage with the Commission and other relevant stakeholders to develop a [Common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox);
 
 The European Digital Identity Cooperation Group's page can be found [at the official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
 
@@ -278,6 +278,8 @@ flows, which involve scenarios where the User is physically near a Relying
 Party, and the mDL attribute exchange occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying
 Party or under their supervision, whereas in the unsupervised flow, the Wallet
 Unit presents mDL attributes to a machine without human oversight.
+
+In addition, like any other attestation type, an mDL can be presented online, over the internet.
 
 #### 2.5.3 Other use cases
 
@@ -923,7 +925,7 @@ by another Wallet Unit to request User attributes, see [Section 6.6.4](#664-pid-
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to
 communicate with the Wallet Secure Cryptographic Application (WSCA). This
 interface is specifically designed for managing critical assets and
-executing cryptographic functions.To be able to support different types of
+executing cryptographic functions. To be able to support different types of
 WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of
 this interface.
 
@@ -1173,7 +1175,7 @@ the previous section.
 
 #### 4.4.3.4 Profiling the use of [OpenID4P] in remote presentation flows
 
-As mentioned above, for both same-device and cross-device remote presentation flows, the messages used to request and present attestations comply with [OpenID4VP]. The OpenID Foundation is standardizing a profile for the W3C Digital Credentials API, that will define how
+As mentioned above, for both same-device and cross-device remote presentation flows, the messages used to request and present attestations comply with [OpenID4VP]. The OpenID Foundation is standardising a profile for the W3C Digital Credentials API, that will define how
 OpenID4VP will be used over this API.
 
 In addition, there are two other profiles that will be used by Wallet Units and remote Relying Parties:
@@ -2015,7 +2017,7 @@ the Wallet Instance has been installed.
 
 Note: The Regulation does not exclude the possibility that a Wallet Instance may
 be installed on a non-mobile device, for example a server. The requirements
-above also apply for the installation of a Wallet Unit on a User device that is
+above also apply for the installation of a Wallet Instance on a User device that is
 not a mobile device, and for which no official operating system app store may
 exist.
 
