@@ -3,7 +3,7 @@
 ## Introduction
 
 The Architecture and Reference Framework (ARF) is in development. To complete
-the ARF, the commission concluded 23 open items - called topics - need to be
+the ARF, the commission concluded 24 open items - called topics - need to be
 addressed and discussed up to end of 2025. This ARF roadmap project provides and
 overview on these topics, including a planning when they are addressed.
 
@@ -29,5 +29,7 @@ The process of establishing high level requirements has 5 steps:
 
 + A - [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md)
 + B - [Re-issuance and batch issuance of PIDs and Attestations](b-re-issuance-and-batch-issuance-of-pids-and-attestations.md)
-+ F - [Digital Credential API (former known as browser API)](f-digital-credential-api.md)
++ C - [Wallet Unit Attestation (WUA) and Key Attestation](c-wallet-unit-attestation.md) 
++ D - [Embedded Disclosure Policies](d-embedded-disclosure-policies.md)
 + E - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md)
++ F - [Digital Credential API (former known as browser API)](f-digital-credential-api.md)
