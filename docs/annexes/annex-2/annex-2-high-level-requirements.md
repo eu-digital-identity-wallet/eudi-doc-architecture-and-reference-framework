@@ -397,7 +397,7 @@ This Topic also contains the high-level requirements for [Topic 23](#a2323-topic
 
 *Short description*
 
-Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. On a high level, this means that the WSCD in the Wallet Unit will be able to create key pairs. The public keys of these pairs function as pseudonyms for the User. Only the User can use these pseudonyms, since the WSCD authenticates the User before allowing a pseudonym to be used, see requirement WUA_02. The Wallet Unit will keep an internal structure to associate each pseudonym (public key) with a specific Relying Party, based on the Relying Party unique identifier in the Relying Party access certificate mentioned in requirement Reg_32.
+Wallet Units will support generating pseudonyms for Users in compliance with the W3C WebAuthn API specification, [W3C WebAuthn]. On a high level, this means that the WSCD in the Wallet Unit will be able to create key pairs. The public keys of these pairs function as pseudonyms for the User. Only the User can use these pseudonyms, since the WSCD authenticates the User before allowing a pseudonym to be used, see requirement WUA_02. The Wallet Unit will keep an internal structure to associate each pseudonym (public key) with a specific Relying Party, based on the Relying Party unique identifier in the Relying Party Instance access certificate mentioned in requirement Reg_32.
 
 Note to this Topic in version 1.5.0: The Commission received many comments on the Pseudonym Rulebook. In response, it decided to not publish the latest version of this Rulebook on the public GitHub repository for ARF 1.4.0. For ARF version 1.5.0, the Commission decided to drop the Pseudonym Rulebook and remove all references to it.
 
@@ -501,31 +501,36 @@ Qualified Electronic Signatures using a Wallet Unit.
 
 | **Index** | **Requirement specification** |
 |-----------|------------|
-| QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a Qualified Certificate for Qualified Electronic Signature bound to a QSCD. |
-| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL as a minimum be capable of signing User-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it. - The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. -If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.|
-| QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL implement secure authentication and signature or seal invocation capabilities in the Wallet Solution, either as a part of a local QSCD external to the Wallet Solution, or as part of a remote QSCD managed by a QTSP. |
-| QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure authentication and signature or seal functionality. |
-| QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a Remote QES Provider (i.e., a QTSP offering remote QES). |
-| QES_06 | Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: remote QES creation through secure authentication to a QTSP signature web portal.remote QES creation channelled by the Wallet Unit.remote QES creation channelled by a Relying Party. |
-| QES_07 | Wallet Providers SHALL ensure that a Signature Creation Application embedded in their Wallet Solution supports the Cloud Signature Consortium API Specification v.2.|
-| QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to sign documents based on the following signature formats, either using an internal or an external Signature Creation Application component (SCA):  PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1,XAdES (XML Advanced Electronic Signature) as specified in ETSI EN 319 132-1,JAdES (JSON Advanced Electronic Signature) as specified in ETSI TS 119 182-1,CAdES (CMS Advanced Electronic Signature) as specified in ETSI EN 319 122-1,ASiC (Associated Signature Container) as specified in ETSI EN 319 162-1. |
-| QES_09 | Wallet Providers SHALL ensure that if a Wallet Unit acts as the signature creation application, it supports at least one of the signature formats mentioned in QES_08. |
-| QES_10 | Wallet Providers SHOULD ensure that a Wallet Unit presents the document or data to be signed to the User.|
-| QES_11 | Wallet Providers SHALL ensure that a Wallet Unit is able to compute the hash or digest of the document or data to be signed through a Signature Create Application component either internal or external to the Wallet Unit, using relevant standards. |
+| QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a qualified certificate for Qualified Electronic Signatures, bound to a QSCD, that is either local, external, or remotely managed in relation to the Wallet Instance. |
+| QES_02 | Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. -If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party. |
+| QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL ensure that a Wallet Unit implements secure authentication of the User, as well as signature or seal invocation capabilities, as a part of a local, external or remote QSCD. |  
+| QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. *Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.* |
+| QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a remote QES Provider (i.e., a QTSP offering remote QES), except where the Wallet Unit interfaces with local or external QSCDs. |
+| QES_06 | Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: - remote QES creation through secure authentication to a QTSP signature web portal, - remote QES creation channelled by the Wallet Unit, - remote QES creation channelled by a Relying Party. |
+| QES_07 | Wallet Providers SHALL ensure that, where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Instance, it supports the Cloud Signature Consortium API Specification v.2. |
+| QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to create signatures or seals in accordance with the mandatory PAdES format as specified in ETSI EN 319 142-1 V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in ETSI EN 319 132-1 V1.2.1 (2022-02), - JAdES as specified in ETSI TS 119 182-1 V1.2.1 (2024-07), - CAdES as specified in ETSI EN 3191 22-1 V1.3.1 (2023-06), and - ASiC as specified in ETSI EN 319 162-1 V1.1.1 (2016-04) and ETSI EN 319 162-2 V1.1.1 (2016-04). |
+| QES_09 | Empty |
+| QES_10 | Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, the Wallet Unit presents the document or data to be signed or sealed to the User. |
+| QES_11 | Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit computes the hash or digest of the document or data to be signed through a Signature Create Application component. |
 | QES_12 | Wallet Providers SHALL ensure that a Wallet Unit is able to create the signature value of the document or data to be signed either using a local or a remote signing application. *Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.* |
-| QES_13 | Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions of qualified electronic signatures generated by the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to Topic 19. |
-| QES_14 | Wallet Providers SHALL ensure that Users will be able to give or refuse consent to the creation of a qualified electronic signature through their Wallet Instance. |
+| QES_13 | Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to the requirements in Topic 19. *Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.* |
+| QES_14 | Wallet Providers SHALL ensure that the User will be able to explicitly authorise  the creation of a qualified electronic signature or seal through their Wallet Unit. |
 | QES_15 | Wallet Providers SHALL ensure that a Wallet Unit can verify the registration of Qualified Trust Service Providers providing signatures services (in remote signature creation scenarios). |
 | QES_16 | Wallet Providers SHOULD ensure that a Wallet Unit supports multiple-signing scenarios where multiple signatories are required to sign the same document or data. |
-| QES_17 | Wallet Providers SHALL ensure that Wallet Units provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. |
-| QES_18 | Wallet Providers SHALL provide at least one default qualified signing service to Users, supported by a Qualified Trust Service Provider (QTSP) offering qualified signature service. |
+| QES_17 | Wallet Providers SHALL ensure that Wallet Units provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. *Note: See also QES_17a.* |
+| QES_17a | If the Signature Creation Application is external to the Wallet Unit, after the User authorises the usage of the private signing key, the Signature Creation Application SHALL return the outcome of the signature creation process to the Wallet Unit. |
+| QES_18 | Wallet Providers SHALL configure at least one default qualified signing service in the Wallet Unit. |
+| QES_19 | Empty |
+| QES_20 | Empty |
+| QES_21 | Empty |
+| QES_22 | Empty |
 
 *B.  Requirements for QTSPs*
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
-| QES_23 | QTSPs providing the remote QES part of a Wallet Solution SHALL support:   ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation.ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, and complies with the remote signing services with Sole Control Assurance Level (SCAL) 2 . |
-| QES_24 | Wallet Providers SHALL ensure that a Wallet Solution supporting remote signing supports SCAL2 as defined in CEN EN 419 241-1 (Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements), and communicates with the remote signing QTSP as defined in Cloud Signature Consortium API Specification v.2. |
+| QES_23 | QTSPs providing the remote QES part of a Wallet Solution SHALL support: 1. ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev, 2. ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation, 3. ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation. Wallet Providers and QTSPs providing the remote QES part of a Wallet Solution SHALL comply with Sole Control Assurance Level (SCAL) 2 as defined in CEN EN 419 241-1 (Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements). |
+| QES_24 | Empty |
 
 *C.  Requirements for the Commission*
 
@@ -720,14 +725,14 @@ the attestation rulebook catalogue.
 The following main concepts were defined in [Topic 12](#a2312-topic-12---attestation-rulebooks) and developed in
 the current version of this Topic:
 
-- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem MAY be registered and published in a publicly accessible catalogue.  
-- The Attestation Rulebook catalogue MAY also include Attestation Rulebooks for non-qualified EAAs.  
-- The Commission SHALL take measures to establish and maintain the Attestation Rulebooks catalogue.  
-- The Attestation Rulebooks catalogue will enable mainly Relying Parties, but also other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what is the identifier, syntax and semantics of each attribute in a type of attestation.  
+- Attestation Rulebooks for QEAAs and PuB-EAAs used within the EUDI Wallet ecosystem may be registered and published in a publicly accessible catalogue.
+- The Attestation Rulebook catalogue may also include Attestation Rulebooks for non-qualified EAAs.
+- The Commission will take measures to establish and maintain the Attestation Rulebooks catalogue.
+- The Attestation Rulebooks catalogue will enable mainly Relying Parties, but also other actors in the EUDI Wallet ecosystem, to know which attestation types exist, and what is the identifier, syntax, and semantics of each attribute in a type of attestation.
 
 The following points are emphasised:
 
-- Registration of an Attestation Rulebook in the attestation catalogue is not mandatory.  
+- Registration of an Attestation Rulebook in the attestation catalogue is not mandatory.
 - Registration in the Attestation Rulebook catalogue does not create any obligation of acceptance of the attestation by any Relying Party, nor does it necessarily imply cross-border recognition of that attestation.
 - The Attestation Rulebooks catalogue can be hosted in the same environment as the catalogue of attributes.
 
@@ -736,9 +741,9 @@ The following points are emphasised:
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
 | CAT_01 | The Commission SHALL establish a catalogue of attributes used within the EUDI Wallet ecosystem. *Note: The catalogue of attributes does not need to be a separate catalogue, but could be combined with the Attestation Rulebooks catalogue mentioned in CAT_05.* |
-| CAT_01a | The Commission SHALL enable any entity to register in the catalogue one or more attribute(s) of an attestation used within the EUDI Wallet ecosystem. |
-| CAT_01b | The Schema Provider for an Attestation Rulebook that is a QEAA or PuB-EAA SHOULD register all attributes in that QEAA or PuB-EAA in the catalogue of attributes. The Schema Provider for an Attestation Rulebook that is a non-qualified EEA MAY register the attributes in that EAA in the catalogue. |
-| CAT_02 | The Commission SHALL enable a self-registration process of attributes in the catalogue of attributes, without pre-approval by the registry, for both public and private entities. |
+| CAT_01a | The Commission SHALL enable any entity to request the registration in the catalogue of one or more attribute(s) of an attestation used within the EUDI Wallet ecosystem. |
+| CAT_01b | The Schema Provider for an Attestation Rulebook that is a QEAA or PuB-EAA SHOULD request the registration of all attributes in that QEAA or PuB-EAA in the catalogue of attributes. The Schema Provider for an Attestation Rulebook that is a non-qualified EEA MAY request the registration of the attributes in that EAA in the catalogue. |
+| CAT_02 | Empty |
 | CAT_03 | The Commission SHALL make the catalogue of attributes publicly available and machine-readable. *Note: The requirement for availability implies setting up the required means for high availability and avoiding a single point of failure.* |
 | CAT_03b | The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: [Representation Powers and Mandates (RPaM) Ontology](https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format)[SEMPER \| DE4A](https://www.de4a.eu/semper)[SEMIC Core Vocabularies](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies)[IANA Registry for JSON Web Token Claims](https://www.iana.org/assignments/jwt/jwt.xhtml) (for JSON-based attributes only)[ISO/IEC 23220-2](https://www.iso.org/standard/86782.html) (for CBOR-based attributes only)  |
 | CAT_04 | The Commission SHALL make publicly available the existence and maintenance of the catalogue of attributes mentioned in CAT_01, including processes to propose the registration to public and private parties, allowing to register attributes, and conditions for updating and/or removing attributes. These processes SHALL include archiving and logging changes of the history of the catalogue of attributes in an appropriate way, including versioning. *Note: There are layers on top of the attributes that need maintenance as well. So, maintenance in this case is more generic and encompasses more than just the attribute itself.* |
@@ -850,6 +855,8 @@ legal-person Wallet Unit. All core capabilities of a Wallet Unit
 for a natural person are available for a legal person. There are some
 differences between a natural and legal person that accordingly leads to
 different requirements for issuing legal-person PIDs and the Wallet Units containing legal-person PIDs.
+
+Notes:
 
 - A legal-person PID is issued under an eID scheme.
 - A legal-person PID is described in a legal-person PID Rulebook,
@@ -1016,8 +1023,8 @@ For more information about Relying Party Access Certificate Authoritys, see [[To
 
 | **Index** | **Requirement specification** |
 |------------|------------------|
-| RPACANot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about: Relying Party Access Certificate Authorities,QEAA Provider Access Certificate Authorities,PuB-EAA Provider Access Certificate Authorities,(non-qualified) EAA Provider Access Certificate Authorities. |
-| RPACANot_02 | The common set of information to be notified about an Access Certificate Authority SHALL include: Identification data:MS/Country of establishment,Name as registered in an official record, Where applicable:A business registration number from an official record,Identification data from that official record.Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units. |
+| RPACANot_01 | The European Commission SHALL establish technical specifications for the common set of information to be notified about Relying Party Access Certificate Authorities, QEAA Provider Access Certificate Authorities, PuB-EAA Provider Access Certificate Authorities, and (non-qualified) EAA Provider Access Certificate Authorities. |
+| RPACANot_02 | The common set of information to be notified about an Access Certificate Authority SHALL include: 1. Identification data: i) MS/Country of establishment, ii) Name as registered in an official record, iii) Where applicable: - A business registration number from an official record, - Identification data from that official record. 2. Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units. |
 | RPACANot_03 | Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers SHALL ensure that their access certificates can be authenticated using the Access Certificate Authority trust anchors notified to the Commission. |
 | RPACANot_04 | Access Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission--compiled Access Certificate Authority Trusted List which is signed or sealed by the Commission. |
 | RPACANot_05 | The format of an Access Certificate Authority Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231. |
@@ -1044,7 +1051,7 @@ See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 
 *Short description*
 
-Backup and restore functionality is needed in case the User has lost access to their current Wallet Unit, for example in case of lost, theft, or breakdown. It is also needed if the User wants to start using another Wallet Unit, for example because they have bought a new device, need to factory-reset their existing device, or want to migrate to another Wallet Solution. In all of these cases, the User wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible.
+Backup and restore functionality is needed in case the User has lost access to their current Wallet Unit, for example in case of loss, theft, or breakdown. It is also needed if the User wants to start using another Wallet Unit, for example because they have bought a new device, need to factory-reset their existing device, or want to migrate to another Wallet Solution. In all of these cases, the User wants to restore the PIDs and attestations in their existing Wallet Unit on their new Wallet Unit, with as minimal an effort as possible.
 
 The Regulation does not contain a requirement mandating backup and restore functionality in the Wallet. However, Wallet Providers should implement backup and restore functionality nevertheless, because it will be expected by Users. In fact, the requirements in [Topic 34](#a2334-topic-34---migrate-to-a-different-wallet-solution) also ensure the possibility of backup and restore.
 
@@ -1061,7 +1068,7 @@ The solution proposed in this Topic is to introduce a Migration Object in each W
 
 The fact that the Migration Object does not contain private keys means that PIDs and attestations cannot be backed up and restored from the object in such a way that they are usable in a new Wallet Unit without involvement of the PID Provider or Attestation Provider. Instead, the User must ask the respective PID Provider(s) or Attestation Provider(s) to re-issue the PID(s) or attestation(s) to the new Wallet Unit. The only function of the Migration Object is to simplify this process by listing the PIDs and attestations present in the existing Wallet Unit, together with the information needed by the new Wallet Unit to start the re-issuance process.
 
-The Migration Object does not contain attribute values or attribute identifiers, as that data is considered sensitive and is not useful anyway because of the limitations explained above. Instead, the object only contains a list of attestation types and the related Attestation Providers. However, even this limited information may be considered sensitive in some cases, for example a prescription from a fertility clinic. Therefore, the Migration Object is stored in such a way that its confidentiality is ensured and that it can be used only by the User.
+The Migration Object does not contain attribute values or attribute identifiers, as that data is considered sensitive and is not useful anyway because of the limitations explained above. Instead, the object only contains a list of attestation types and the related Attestation Providers. However, even this limited information may be considered sensitive in some cases. Therefore, the Migration Object is stored in such a way that its confidentiality is ensured and that it can be used only by the User.
 
 *HLRs*
 
@@ -1082,7 +1089,7 @@ B.  Restore Requirements
 |-----------|-----------------|
 | Mig_06 | Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User. |
 | Mig_07 | For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored. |
-| Mig_07b | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in Topic 19. |
+| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in Topic 19. |
 | Mig_08 | Empty |
 | Mig_09 | Empty |
 | Mig_10 | Empty |
@@ -1138,7 +1145,7 @@ A.  Issuing a Wallet Unit Attestation
 | **Index** | **Requirement specification** |
 |------------|-------------------|
 | WURevocation_01 | To enable a Relying Party or an Attestation Provider to verify the authenticity and (if necessary, see requirement VCR_01) the revocation status of a Wallet Unit it is interacting with, a Wallet Provider SHALL issue one or more Wallet Unit Attestations to the Wallet Unit, as specified in Topic 9. *Note: The first of these WUAs will be issued during the activation phase of a Wallet Unit. During the lifetime of the Wallet Unit, the Wallet Provider will re-issue WUAs as needed. Re-issuance of attestation, including WUAs, will be discussed with Member States for ARF 2.0.* |
-| WURevocation_02 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL ensure that the Wallet Unit at all times contains at least one valid WUA. *Note: To comply with WURevocation_04, the validity period of a WUA probably cannot be very long. This implies that the Wallet Provider must regularly issue new WUAs to a Wallet Unit.*|
+| WURevocation_02 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL ensure that the Wallet Unit at all times is able to respond with a valid WUA to a presentation request from a Relying Party. *Note: To comply with WURevocation_04, the validity period of a WUA probably cannot be very long. This implies that the Wallet Provider must regularly issue new WUAs to a Wallet Unit.*|
 | WURevocation_03 | Empty |
 | WURevocation_04 | The Wallet Provider SHALL manage the issuance processes for WUAs in such a way that the WUAs cannot be misused by colluding Relying Parties (and Attestation Providers) to track a User. *Notes: - See also WUA_09. - The requirements for WUA management in this regard are comparable to those for management of a PID or attestation. |
 | WURevocation_05 | Empty |
@@ -1161,7 +1168,7 @@ B.  Informing the User
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
-| WURevocation_14 | A Wallet Provider SHALL inform a User without delay in case the Wallet Provider decided to revoke the User's Wallet Unit. The Wallet Provider SHALL also inform the User about the reason(s) for the revocation. This information SHALL be understandable for the general public. It SHALL include (a reference to) technical details about any security breach if applicable. |
+| WURevocation_14 | A Wallet Provider SHALL inform a User without delay, and within 24 hours at most, in case the Wallet Provider decided to revoke the User's Wallet Unit. The Wallet Provider SHALL also inform the User about the reason(s) for the revocation. This information SHALL be understandable for the general public. It SHALL include (a reference to) technical details about any security breach if applicable. |
 | WURevocation_15 | Empty |
 | WURevocation_16 | To inform a User about the revocation of their Wallet Unit, the Wallet Provider SHALL use a communication channel that is independent of the Wallet Unit. In addition, the Wallet Provider MAY use the Wallet Unit itself to inform the User. |
 
@@ -1201,8 +1208,8 @@ Wallet Unit activation
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | WIAM_03 | A Wallet Provider SHALL ensure that a Wallet Instance starts a process to activate the new Wallet Unit with the Wallet Provider immediately after installation or when the User first opens the Wallet Instance. The Wallet Provider SHALL ensure that the Wallet Instance starts this process only with a secure backend of the Wallet Provider. |
-| WIAM_04 |During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution. |
-| WIAM_05 |During the activation process of a new Wallet Unit, the Wallet Provider SHALL collect information about the User device and the available WSCAs and WSCDs, as far as necessary to issue a Wallet Unit Attestation to the Wallet Unit conform all requirements in [Topic 9](#a239-topic-9---wallet-unit-attestation) section A. The Wallet Provider MAY collect additional information necessary for managing the Wallet Unit, but it SHALL NOT collect more information than it reasonably needs for legitimate purposes. The Wallet Provider SHALL request User consent (through the Wallet Instance) for all information and data it will collect, both during activation and throughout the lifetime of the Wallet Unit. The Wallet Provider SHALL inform the User about the purposes of data collection, in accordance with the General Data Protection Regulation. |
+| WIAM_04 | During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution. |
+| WIAM_05 | During the activation process of a new Wallet Unit, the Wallet Provider SHALL process information about the User device and the available WSCAs and WSCDs, as far as necessary to issue a Wallet Unit Attestation to the Wallet Unit conform all requirements in [Topic 9](#a239-topic-9---wallet-unit-attestation) section A. The Wallet Provider MAY process additional information necessary for managing the Wallet Unit, but it SHALL NOT process more information than it reasonably needs for legitimate purposes. The Wallet Provider SHALL request User consent (through the Wallet Instance) for all information and data it will process, both during activation and throughout the lifetime of the Wallet Unit. The Wallet Provider SHALL inform the User about the purposes of data processing, in accordance with the General Data Protection Regulation. |
 | WIAM_06 |The Wallet Provider SHALL request the User, through the new Wallet Instance, to set up a User account at the Wallet Provider. The Wallet Provider SHALL explain to the User that this is necessary to enable the User to request revocation of the Wallet Unit in case of theft or loss. The Wallet Provider SHALL register one or more User authentication methods that the Wallet Provider will use to authenticate the User in the future. These methods SHALL be independent of the Wallet Unit and the User device. The Wallet Provider SHALL allow the User to register using an alias instead of true identity data. The Wallet Provider SHALL NOT use any registered User data for purposes other than User authentication, unless the User gives explicit consent to do so. The Wallet Provider SHALL register the relationship between the Wallet Unit and the corresponding User account. |
 
 Wallet Unit management
@@ -1210,8 +1217,8 @@ Wallet Unit management
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | WIAM_07 | During the lifetime of the Wallet Unit, the Wallet Provider SHALL update the Wallet Unit as necessary to ensure its continued security and functionality. |
-| WIAM_08 |All communication between the Wallet Provider and the Wallet Unit SHALL be mutually authenticated and SHOULD be encrypted. |
-| WIAM_09 |If the User uninstalls the Wallet Unit, the Wallet Unit SHALL ensure that all cryptographic key material in the WSCA(s) related to the Wallet Unit is securely destroyed. This includes all keys of the WUAs, PIDs and attestations stored in the Wallet Unit. *Note: Key deletion is a cryptographic key operation and requires User authentication, as specified in requirement WUA_02.* |
+| WIAM_08 | All communication between the Wallet Provider and the Wallet Unit SHALL be mutually authenticated and SHOULD be encrypted. |
+| WIAM_09 | If the User uninstalls the Wallet Unit, the Wallet Unit SHALL ensure that all cryptographic key material in the WSCA(s) related to the Wallet Unit is securely destroyed. This includes all keys of the WUAs, PIDs and attestations stored in the Wallet Unit. *Note: Key deletion is a cryptographic key operation and requires User authentication, as specified in requirement WUA_02.* |
 
 #### A.2.3.41 Topic 41 - Minimum requirements on PuB-EAAs rulebooks
 
@@ -1232,12 +1239,11 @@ the public sector.  
 |-----------|------------------|
 | QTSPAS_01 | In accordance with technical specifications referred to in QTSPAS_07, Member States SHALL define: - discovery mechanisms that enable QTSPs to request information about Authentic Sources or designated intermediaries recognised at the national level. This includes information regarding the attributes of a natural or legal person for which the Authentic Source or designated intermediary is considered a primary source, or for which it is recognised as authentic in accordance with Union law or national law, including administrative practices. - procedures for QTSPs to request the verification of attributes from Authentic Sources. |
 | QTSPAS_02 | An Authentic Source in the public sector, or its designated intermediary, SHALL implement an interface complying with the technical specification mentioned in QTSPAS_07 for receiving verification requests and sending responses. For each received request, the Authentic Source SHALL - identify and authenticate the requestor in such a way that it can subsequently determine whether the requestor is a QTSP issuing qualified electronic attestation of attributes, for example by means of a lookup in the QTSP Trusted List. - authenticate the User and obtain their approval, if it is legally obliged to do so, in addition to the User authentication and approval already performed by the QTSP according to QTSPAS_08. - verify whether the attribute values claimed by the QTSP match the values held by the Authentic Source; and, finally, - respond with one of the following for each attribute: +'match', if the attribute value held for this User by the Authentic Source is identical to the value claimed by the QTSP, + 'no match', if the attribute value held for this User by the Authentic Source is not identical to the value claimed by the QTSP, including if the Authentic Source is the authentic source for this attribute but does not hold a value for this User, +'unknown', if the Authentic Source is not the authentic source for this attribute. |
-| QTSPAS_02b |An Authentic Source or designated intermediary SHALL respond to a verification request for attributes by any QTSP issuing qualified electronic attestation of attributes.|
-| QTSPAS_03 | An Authentic Source or designated intermediary SHALL implement QTSPAS_01 in a secure and privacy-preserving channel in accordance with the technical specifications referred to in QTSPAS_07. |
+| QTSPAS_03 | An Authentic Source or designated intermediary SHALL respond to a verification request for attributes by any QTSP issuing qualified electronic attestation of attributes.|
 | QTSPAS_04 | An Authentic Source or designated intermediary SHALL implement the technical specifications mentioned in QTSPAS_01, so that the QTSP will receive the result of the verification of the requested attributes as described in QTSPAS_02. If the verification is deferred, the response to the QTSP SHALL include the maximum time that it will take to verify the requested attributes, and a unique identifier that the QTSP SHALL use to obtain the result of the verification. |
 | QTSPAS_05 | A QTSP SHALL send an attribute verification request directly to the Authentic Source or designated intermediary recognised at national level, after discovering it using the mechanisms mentioned in QTSPAS_01. |
 | QTSPAS_06 | Member States SHALL specify the processes and mechanisms to designate the Authentic Sources or intermediaries recognised at national level in accordance with Union or national law, allowing these Authentic Sources or intermediaries to verify the attributes presented to them by QTSPs. |
-| QTSPAS_07 | The Commission SHALL publish, in agreement with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on Authentic Sources within the public sector, for which Member States must ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the User, their authenticity against the relevant authentic source. |
+| QTSPAS_07 | The Commission SHALL publish, in cooperation with the European Digital Identity Cooperation Group, a technical specification, referring to applicable standards, specifications and procedures, that will cover at least the attributes specified in Annex VI, wherever those attributes rely on Authentic Sources within the public sector, for which Member States must ensure that measures are taken to allow qualified providers of electronic attestations of attributes to verify by electronic means, at the request of the User, their authenticity against the relevant authentic source. |
 |QTSPAS_07a | The standards and procedures mentioned in QTSPAS_07 SHOULD, whenever possible, be aligned and compatible with those used for the platforms implementing the Once Only Technical System (OOTS). *Note: There is a clear synergy of both of these data exchange approaches. In fact, the national OOTS node would be a candidate for acting as an intermediary between QTSPs issuing QEEAs and the Authentic Sources.* |
 | QTSPAS_08 | A QTSP SHALL obtain approval from the User to verify the authenticity of the attributes, before requesting the verification of those attributes by the relevant Authentic Source or designated intermediary. |
 
@@ -1248,6 +1254,8 @@ the public sector.  
 This topic is focused on identifying high-level requirements for disclosure policies which may be embedded in an attestation. Such a policy may be created by the Attestation Provider, and allows the Wallet Unit, using data obtained from the Relying Party, to determine whether the Attestation Provider agrees with releasing specific attributes from the attestation to the Relying Party.
 
 Where requirements in this Topic refer to a 'requesting Wallet Unit', what is meant is a Wallet Unit that is used to request attributes from another Wallet Unit, as described in [Topic 30](#a2330-topic-30---interaction-between-wallet-units).
+
+This topic will be further discussed with Member States in the future.
 
 *HLRs*
 
@@ -1260,7 +1268,7 @@ Where requirements in this Topic refer to a 'requesting Wallet Unit', what is me
 | EDP_05 | An embedded disclosure policy SHOULD contain a link to a website of the Attestation Provider explaining the disclosure policy in layman's terms. If this is the case, the Wallet Unit SHALL display the link to the User and allow them to navigate to that website. |
 | EDP_06 | The Wallet Unit SHALL be capable of evaluating an embedded disclosure policy in conjunction with the information received from the requesting Relying Party or the requesting Wallet Unit, in order to determine if the Relying Party or the requesting Wallet Unit has permission from the Attestation Provider to access the requested attributes. |
 | EDP_07 | The Wallet Unit SHALL enable the User, based on the outcome of the evaluation of the embedded disclosure policy, to deny or allow the presentation of the requested electronic attestation of attributes to the requesting Relying Party or the requesting Wallet Unit. |
-| EDP_08 | The Commission SHALL take measures to create a technical specification establishing common mechanisms for the specification of embedded disclosure policies by PID Providers and Attestation Providers, and for the evaluation of such policies by Wallet Instances. |
+| EDP_08 | The Commission SHALL take measures to create a technical specification establishing common mechanisms for the specification of embedded disclosure policies by Attestation Providers, and for the evaluation of such policies by Wallet Instances. |
 
 #### A.2.3.44 Topic 44 - Relying Party registration certificates
 
@@ -1322,12 +1330,12 @@ Parties through their Wallet Unit.
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
-| DATA_DLT_01 | A Wallet Instance SHALL provide a User interface where Users can request Relying Parties to delete any User attributes, in accordance with the technical specifications mentioned in DATA_DLT_02 and with Regulation (EU) 2016/679 (GDPR). |
-| DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Relying Party interface allowing reception and processing of attribute deletion requests. |
+| DATA_DLT_01 | A Wallet Provider SHALL ensure that its Wallet Units support the technical specifications mentioned in DATA_DLT_02, allowing a User to request from a Relying Party the erasure of their attributes that were presented by that Wallet Unit to that Relying Party, in accordance with Regulation (EU) 2016/679. |
+| DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past. |
 | DATA_DLT_03 | A Wallet Instance SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted. |
 | DATA_DLT_04 | A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit. |
 | DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
-| DATA_DLT_06 | The log SHALL include as a minimum: Date of attribute deletion requestRelying Party to which the request was madeAttributes requested to be removed. |
+| DATA_DLT_06 | The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed. |
 
 #### A.2.3.49 Topic 49 - Protocol and interfaces for requesting data deletion to relying parties
 
@@ -1354,8 +1362,8 @@ Relying Parties.
 
 | **Index** | **Requirement specification** |
 |-----------|--------------------|
-| RPT_DPA_01 | A Wallet Unit SHALL provide an interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit. |
-| RPT_DPA_02 | The interface to lodge a complaint SHALL be accessible via the Wallet Instance. |
+| RPT_DPA_01 | A Wallet Unit SHALL provide a interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit. |
+| RPT_DPA_02 | The User interface enabling a User to start the process of lodging a complaint SHALL be accessible via the Wallet Instance. |
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
 | RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |

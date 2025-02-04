@@ -206,14 +206,9 @@ In order to ensure a single consistent encoding of the portrait, this PID Rulebo
 - The portrait image SHALL comply with the requirements for a Full Frontal Image Type in ISO/IEC 19794-5.
 - The image SHALL be encoded as binary data.
 
-#### 4.2.4 Attribute location_status and revocation of PIDs
+#### 4.2.4 Attribute location_status
 
-The attribute location_status, as defined in CIR 2024/2977, contains the revocation information needed by a Relying Party to verify that the PID Provider did not revoke the PID. This PID Rulebook requires the following for revocation of ISO/IEC 18013-5-compliant PIDs:
-
- **Index** | **Requirement specification** |
-|-----------|--------------|
-| PID_ISO_10 | The attribute location_status SHALL NOT be present in a ISO/IEC 18013-5 compliant PID. |
-| PID_ISO_11 | When issuing a PID compliant with [ISO/IEC 18013-5] which must be revocable, a PID Provider SHALL include the revocation information in the MSO, as specified in ISO/IEC 18013-5:2025. The PID Provider SHALL decide whether to use a status_list or a identifier_list. |
+For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be absent, since revocation information will be added to the MSO.
 
 #### 4.2.5 Attribute birth_date
 
