@@ -155,82 +155,75 @@ available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/project
 
 ### 2.1 Introduction
 
-The **EUDI Wallet** shall be designed as a **secure, user-controlled digital
-tool** that enables Users to **manage and share their identity and credentials**
-across both **public and private services** in the EU. Its functionalities shall
-be built around **security, privacy, and user control**, ensuring **seamless
-interactions** while adhering to **data protection principles**.  
+The EUDI Wallet ecosystem is designed as a secure, user-controlled digital
+environment that enables Users to user their Wallet Unit to manage and present their person identification data (PID) and attestations
+across both public and private services in the EU. Its functionalities are built around security, privacy, and user control, ensuring seamless
+interactions while adhering to data protection principles.  
 
-This chapter outlines the **core functionalities** of the EUDI Wallet as defined
-by the regulation and examines how the **requirements for its implementation**
-align with **real-world use cases** where the Wallet will be utilized.  
+This chapter outlines the core functionalities of Wallet Units, as defined
+by the [eIDAS 2.0] Regulation and examines how the requirements for its implementation
+align with real-world use cases where Users will use their Wallet Unit.  
 
-The **functionalities** of the EUDI Wallet can be grouped into the following
+The functionalities of a Wallet Unit can be grouped into the following
 categories:  
 
 - **Secure identification and authentication**, ensuring that Users can verify
 their identity in a trusted environment.  
-- **A mechanism for exchanging qualified and non-qualified data** through
-**electronic attestations of attributes**, enabling secure and verifiable data
-sharing.  
+- **Exchanging qualified and non-qualified User attributes** through secure and verifiable electronic attestations of attributes.  
 - **Electronic signing of documents or data**, allowing Users to create
-**legally recognized qualified electronic signatures** and seals.
+legally recognized qualified electronic signatures and seals.
+
+These functionalities are discussed in the next three sections.
 
 ### 2.2 Identification and authentication
 
-Using the **EUDI Wallet**, Users shall be able to:  
+Using their Wallet Units, Users are able to:  
 
-- **Identify and authenticate** to online and offline services while enabling
-**selective disclosure**, ensuring that only the necessary data is shared,
-thereby minimizing exposure of personal information.  
-- **Generate and use pseudonyms** for authentication and enhance privacy and
+- **Identify and authenticate** to online and offline services, while using
+**selective disclosure** of attributes as well as **User approval**. This ensures that only necessary and User-approved attributes are presented to Relying Parties, which minimises exposure of personal information.  
+- **Generate and use pseudonyms** for authentication, to enhance privacy and
 prevent tracking.  
-- **Securely authenticate Relying Parties or another Wallet** and exchange
-identification data in a trusted environment.  
-- **Onboard seamlessly** by leveraging existing **electronic identification
-schemes** for a smooth and secure registration process.  
-- **Be informed** when a Relying Party is authorized to access their data.
+- **Securely authenticate Relying Parties or other Wallet Units**, making sure that attributes are only presented to trusted entities.  
+- **Onboard seamlessly with PID Providers or attestation Providers** by leveraging existing electronic identification schemes, for a smooth and secure registration process.  
+- **Be informed** whether a Relying Party is authorised or registered to receive the requested attributes.
 - **Access a transaction log via a dashboard**, allowing Users to:  
-    - **Review past interactions** with Relying Parties.  
-    - **Request data erasure** under **GDPR (Article 17)** to maintain data
-    privacy.  
-    - **Report suspicious Relying Parties** to the relevant national data
+  - **Review past interactions** with Relying Parties and Wallet Units.  
+  - **Request data erasure** under the GDPR (Article 17) to maintain privacy.  
+  - **Report suspicious Relying Parties** to the relevant national data
     protection authority.
 
-### 2.3 Data Exchange Mechanism with Attestations
+### 2.3 Attribute Exchange Mechanism using Attestations
 
-Using the **EUDI Wallet**, Users shall be able to:  
+Using their Wallet Units, Users are able to:  
 
-- **Request, store, and present** personal identification data and **electronic
-attestations of attributes** (e.g., diplomas, licenses) under their **sole
-control**, ensuring secure usage in both **online and offline scenarios**.  
-- **Download their data, credentials, and configurations**, guaranteeing
-compliance with **data portability rights**.  
-- **Prevent tracking by trust service providers** when using attestations,
+- **Request, store, and present** personal identification data and electronic
+attestations of attributes (e.g., diplomas, licenses) under their sole
+control, ensuring secure usage in both **online and offline scenarios**.  
+- **Backup a list of their attributes, attestations, and configurations**, guaranteeing compliance with **data portability rights**.  
+- **Prevent tracking by Relying Parties** when using attestations,
 ensuring **privacy-preserving interactions**.
 
 ### 2.4 Qualified electronic signature
 
-Using the **EUDI Wallet**, Users shall be able to:  
+Using their Wallet Units, Users are able to:  
 
 - **Create qualified electronic signatures and seals** for legally binding
 digital transactions.  
-- **Sign documents using qualified electronic signatures**, which shall be
-**provided by default and free of charge** within the Wallet, ensuring universal
+- **Sign documents using qualified electronic signatures**, which are provided by default and free of charge within the Wallet Unit, ensuring universal
 accessibility and compliance with legal standards.
 
-These functionalities can be reached by using the authentication and signing
+These functionalities are implemented    by using the authentication and signing
 capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
 managed by a QTSP. See [Topic 16] and [Topic 37].
 
-### 2.5 The role of use cases in development of the Architecture Reference Framework
+### 2.5 The role of use cases in the development of the Architecture Reference Framework
 
 The development of the Architecture Reference Framework (ARF) is strategically
 driven by real-world use cases, ensuring that the User experience, value
-proposition, and regulation requirements of the EUDI Wallet ecosystem are
+proposition, and requirements of the EUDI Wallet ecosystem are
 effectively addressed. To achieve this, the European Digital Identity
 Cooperation Group initially created service blueprints for each use case, which
-detail service touchpoints, components, and processes.
+detail service touch points, components, and processes.
 
 These blueprints serve a dual purpose: they play a crucial role in service
 design, enhancing both User experience and operational efficiency, while also
@@ -249,7 +242,7 @@ The eIDAS Expert Group has outlined service blueprints for the following key use
 - Identification and authentication to access online services, see [Section 2.5.1](#251-identification-and-authentication-to-access-online-services),
 - Qualified Electronic Signature, see [Section 2.4](#24-qualified-electronic-signature),
 - Mobile Driving Licence, see [Section 2.5.2](#252-mobile-driving-licence),
-- Additional use cases that will be introduced in future, see [Section 2.5.3](#253-other-use-cases).
+- Additional use cases that will be introduced in the future, see [Section 2.5.3](#253-other-use-cases).
 
 These blueprints, along with all relevant information on use cases
 implementation, will be compiled in a standardized format within a dedicated
@@ -260,8 +253,7 @@ document titled the "Use Cases Manual", and distributed together with this docum
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User
 identification and authentication at Level of Assurance (LoA) high for various
 online services, both public and private. This capability is crucial, as it
-allows Relying Parties to confidently verify the identity of Users they interact
-with.
+allows Relying Parties to confidently verify the identity of Users they interact with.
 
 In this use case, a User employs their Wallet Unit to present some User
 attributes to a Relying Party, in order to access online services. Before
@@ -273,16 +265,14 @@ while maintaining control over the presentation of their personal data.
 
 #### 2.5.2 Mobile Driving Licence
 
-A significant use case for the Wallet Unit involves allowing Users to acquire,
-store, and present a mobile Driving Licence (mDL) as an attestation to prove
+A significant use case for the Wallet Unit involves allowing Users to request,
+store, and present a mobile Driving Licence (mDL) as an attestation in their Wallet Unit, allowing them mainly to prove
 their driving privileges. In this use case, the User employs a Wallet Unit to
 present a mDL to a Relying Party, for instance a police officer.
 
 The use case description concentrates on proximity supervised and unsupervised
 flows, which involve scenarios where the User is physically near a Relying
-Party, and the mDL attribute exchange occurs using proximity technologies (e.g.,
-NFC, Bluetooth). The two proximity flows have one significant difference: in the
-supervised flow, the Wallet Unit presents mDL attributes to a human Relying
+Party, and the mDL attribute exchange occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying
 Party or under their supervision, whereas in the unsupervised flow, the Wallet
 Unit presents mDL attributes to a machine without human oversight.
 
@@ -297,12 +287,12 @@ etc.
 ##### 2.5.3.2 Educational attestations and professional qualifications
 
 Providing credentials for qualification recognition procedures can be costly and
-time-consuming for Users, Relying Parties such as companies and employers, and
-Attestation Providers such as education and training providers or academic
-institutions. A Wallet Unit may be a repository for educational credentials and
+time-consuming for Users, Relying Parties (such as companies and employers), and
+Attestation Providers (such as education and training providers or academic
+institutions). A Wallet Unit may be a repository for educational credentials and
 a means for exchanging them by the User to relevant Relying Parties.
 
-##### 2.5.3.3 Digital Finance
+##### 2.5.3.3 Digital finance
 
 A Wallet Unit may facilitate complying with strong customer authentication
 requirements, using the user authentication capabilities described in
@@ -887,12 +877,12 @@ firmware covers security-related software, such as an operating system and
 cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
 different possible security architectures for the WSCD (for more details see
 [Section 4.5](#45-wscd-architecture-types)):
-    - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
+  - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
     accessed over a network.
-    - a local external WSCD, an external device, such as a smart card issued
+  - a local external WSCD, an external device, such as a smart card issued
     to the User specifically for this purpose,
-    - a local internal WSCD, a component within the User device, such as a SIM, e-SIM, or embedded Secure Element,
-    - a local native WSCD, a component embedded in the User device and accessed via
+  - a local internal WSCD, a component within the User device, such as a SIM, e-SIM, or embedded Secure Element,
+  - a local native WSCD, a component embedded in the User device and accessed via
     an API provided by the operating system.
 
 - **Wallet Secure Cryptographic Application (WSCA):** an application that
