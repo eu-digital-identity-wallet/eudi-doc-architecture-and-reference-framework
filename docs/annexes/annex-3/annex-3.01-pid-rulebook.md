@@ -108,7 +108,7 @@ All data identifiers and definitions in this chapter are independent of any enco
 | age_over_NN | Attesting whether the User to whom the person identification data relates is at least NN years old. N <> 18. |
 | age_in_years | The current age of the User to whom the person identification data relates in years. |
 | age_birth_year | The year when the User to whom the person identification data relates was born. |
-| trust_anchor | This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. *Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the Regulation, which is mandatory for QEAAs. This PID Rulebook add this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.* |
+| trust_anchor | This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. *Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the [European Digital Identity Regulation], which is mandatory for QEAAs. This PID Rulebook add this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.* |
 
 ## 4 ISO/IEC 18013-5-compliant encoding of PID
 

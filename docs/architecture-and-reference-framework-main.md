@@ -25,7 +25,7 @@ Member States, the Commission, and, where relevant, private sector operators to
 develop the Toolbox. The European Digital Identity Cooperation Group (EDICG),
 formerly known as the eIDAS Expert Group, is responsible for:
 
-- exchanging best practices and cooperating with the Commission on emerging
+- exchange best practices and cooperate with the Commission on emerging
 policy initiatives in the field of digital identity wallets, electronic
 identification means and trust services;
 - advising the Commission in the preparation of draft implementing and delegated
@@ -293,6 +293,8 @@ flows, which involve scenarios where the User is physically near a Relying
 Party, and the mDL attribute exchange occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying
 Party or under their supervision, whereas in the unsupervised flow, the Wallet
 Unit presents mDL attributes to a machine without human oversight.
+
+In addition, like any other attestation type, an mDL can be presented online, over the internet.
 
 #### 2.5.3 Other use cases
 
@@ -941,7 +943,7 @@ by another Wallet Unit to request User attributes, see [Section 6.6.4](#664-pid-
 - The **Secure Cryptographic Interface (SCI)** enables the Wallet Instance to
 communicate with the Wallet Secure Cryptographic Application (WSCA). This
 interface is specifically designed for managing critical assets and
-executing cryptographic functions.To be able to support different types of
+executing cryptographic functions. To be able to support different types of
 WSCA/WSCD, Wallet Instances may need to be able to handle multiple flavours of
 this interface.
 
@@ -1193,7 +1195,7 @@ the previous section.
 
 As mentioned above, for both same-device and cross-device remote presentation
 flows, the messages used to request and present attestations comply with
-[OpenID4VP]. The OpenID Foundation is standardizing a profile for the W3C
+[OpenID4VP]. The OpenID Foundation is standardising a profile for the W3C
 Digital Credentials API, that will define how OpenID4VP will be used over this
 API.
 
