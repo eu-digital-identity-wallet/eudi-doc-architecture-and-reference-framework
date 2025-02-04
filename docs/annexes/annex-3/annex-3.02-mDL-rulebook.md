@@ -51,4 +51,4 @@ mDL attestation within the EUDI Wallet ecosystem.
 
 ## 4 References
 
-See [Chapter 9](../../arf.md#9-references) of the main ARF 1.5.0 document.
+See [Chapter 9](../../architecture-and-reference-framework-main.md#9-references) of the main ARF 1.5.0 document.
