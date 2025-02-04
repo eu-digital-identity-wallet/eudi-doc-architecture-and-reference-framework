@@ -156,13 +156,15 @@ available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/project
 ### 2.1 Introduction
 
 The EUDI Wallet ecosystem is designed as a secure, user-controlled digital
-environment that enables Users to user their Wallet Unit to manage and present their person identification data (PID) and attestations
-across both public and private services in the EU. Its functionalities are built around security, privacy, and user control, ensuring seamless
-interactions while adhering to data protection principles.  
+environment that enables Users to user their Wallet Unit to manage and present 
+their person identification data (PID) and attestations across both public and 
+private services in the EU. Its functionalities are built around security, 
+privacy, and user control, ensuring seamless interactions while adhering to data 
+protection principles.  
 
-This chapter outlines the core functionalities of Wallet Units, as defined
+This chapter outlines the core functionalities of Wallet Solutionss, as defined
 by the [eIDAS 2.0] Regulation and examines how the requirements for its implementation
-align with real-world use cases where Users will use their Wallet Unit.  
+align with real-world use cases where Users will use their Wallet Solution.  
 
 The functionalities of a Wallet Unit can be grouped into the following
 categories:  
@@ -194,7 +196,7 @@ prevent tracking.
 
 ### 2.3 Attribute Exchange Mechanism using Attestations
 
-Using their Wallet Units, Users are able to:  
+Using their Wallet Solutions, Users are able to:  
 
 - **Request, store, and present** personal identification data and electronic
 attestations of attributes (e.g., diplomas, licenses) under their sole
@@ -205,14 +207,14 @@ ensuring **privacy-preserving interactions**.
 
 ### 2.4 Qualified electronic signature
 
-Using their Wallet Units, Users are able to:  
+Using their Wallet Solutions, Users are able to:  
 
 - **Create qualified electronic signatures and seals** for legally binding
 digital transactions.  
 - **Sign documents using qualified electronic signatures**, which are provided by default and free of charge within the Wallet Unit, ensuring universal
 accessibility and compliance with legal standards.
 
-These functionalities are implemented    by using the authentication and signing
+These functionalities are implemented by using the authentication and signing
 capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
 managed by a QTSP. See [Topic 16] and [Topic 37].
 
