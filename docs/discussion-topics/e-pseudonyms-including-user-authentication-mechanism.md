@@ -1,4 +1,4 @@
-Version 0.1, updated 22 January 2025
+Version 0.4, updated 4 February 2025
 
 # E - Pseudonyms, including User authentication mechanism
 
@@ -27,7 +27,7 @@ The document is structured as follows:
 
 - Chapter 5 relates the topic to other topics being discussed and previously identified risks.
 
-- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States. 
+- Chapter 6 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2 Legal Requirements for Pseudonyms
 
@@ -78,7 +78,7 @@ Additionally, pseudonyms are mentioned in Article 32 and Annex IV about the vali
 ### 2.2 [CIR.2024.2979] about Pseudonyms
 
 [CIR.2024.2979] specifies three main requirements for pseudonyms:
-1. [WebAuthN] defines the technical specification for pseudonyms.
+1. [WebAuthn] defines the technical specification for pseudonyms.
 2. The pseudonyms the wallet generates must be unique for each Relying Party.
 3. The pseudonyms can be used either stand alone or in combination with other attested attributes.
 
@@ -105,7 +105,7 @@ Technical specifications:\
 ## 3 Use Cases
 
 Below, we elaborate on the use cases inferred from the above legal requirements.
-The distinction between the two use cases follows from Article 14 2. [CIR.2014.2979].
+The distinction between the two use cases follows from Article 14 2. [CIR.2024.2979].
 
 Both use cases are described in an online non-proximity-based setting where the pseudonyms are presented towards services over the internet.
 
@@ -148,14 +148,15 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 3. The Relying Party is assured that the private key corresponding to the pseudonym being stored/authenticated *is* stored in a non-revoked Wallet Unit.
 4. For use case B: The Relying Party is assured that the private key corresponding to the pseudonym used to authenticate is stored on the same Wallet Unit as originally presented PID/(Q)EA.
 
-Note that, because the technical implementation of pseudonyms must rely on [WebAuthN], the possibility for achieving such assurances is to use attestations (for an explanation of this see Chapter 4).
+Note that, because the technical implementation of pseudonyms must rely on [WebAuthn], the possibility for achieving such assurances is to use attestations (for an explanation of this see Chapter 4).
 Therefore, higher assurances comes with a trade-off in terms of surveillance risks.
 For a further discussion of these risks see Chapter 5.1.
 
 ## 4 High-Level Approach to Pseudonyms
 
-As specified in [CIR.2024.2979], [WebAuthN] defines the technical specification for pseudonyms.
-The technology underlying [WebAuthN] is commonly refereed to as passkeys.
+As specified in [CIR.2024.2979], [WebAuthn] defines the technical specification for pseudonyms.
+
+Passkeys are a widely used type of credential which are created and asserted using the [WebAuthn] API.
 
 ### 4.1 Introduction to Passkeys
 
@@ -168,42 +169,42 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 2. The user registers the public key at the desired service.
 
 **Authentication:**
-1. When a user wishes to authenticate towards a service, the service will send them a challenge consisting of a random number.
+1. When a user wishes to authenticate towards a service, the service will send them a challenge consisting of a random value.
 2. The user uses the private key stored on their secure device to sign the challenge and sends this back to the service.
-3. The service verifies that the signature on the challenge verifies using the preregistered public key. If the signature verifies as expected, the user is considered authenticated and thereby granted access to the service.
+3. The service verifies that the signature on the challenge verifies using the preregistered public key. If the signature verifies and the origin matches as expected, the user is considered authenticated and thereby granted access to the service.
 
-### 4.2 Overview of [WebAuthN]
+### 4.2 Overview of [WebAuthn]
 
-[WebAuthN] defines an API for the creation and use of passkeys. Conceptually, in addition to the user, there are four different logical components in this specification:
+[WebAuthn] defines an API for the creation and use of passkeys. Conceptually, in addition to the user, there are four different logical components in this specification:
 
 - **Relying Party Server:** The Relying Party that wishes to offer a service based on authentication using passkeys.
 - **Relying Party Client:** The program provided by the Relying Party that runs in the client of the user and communicates with the Relying Party Server.
-- **Client:** The client that the user uses to interact with the Relying Party's server.
+- **Client:** The client that the user uses to interact with the Relying Party's server and their Authenticator.
 - **Authenticator:** The device controlled by the user to create, store, and use the passkeys.
 
-[WebAuthN] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with passkeys.
-The interface is referred to as the *WebAuthnAPI*.
-However, [WebAuthN] does not specify how the Authenticator and the Client must communicate.
+[WebAuthn] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with passkeys.
+The interface is referred to as the *WebAuthn API*.
+However, [WebAuthn] does not specify how the Authenticator and the Client must communicate.
 We briefly discuss the relation to Topic F in Chapter 5.
 
 The Wallet Unit will act as an Authenticator in this setting.
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
-[WebAuthN] relies on several different types of identifiers including: 
+[WebAuthn] relies on several different types of identifiers including:
 
 - **Relying Party ID:** An identifier unique to the Relying Party which must be a valid domain string. This what the user will identify the Relying Party by and let the Authenticator learn which Relying Party is asking for registration/authentication.
-- **Credential ID:** A unique identifier chosen by the Authenticator for each passkey. 
-- **User ID:** An identifier unique to each user that is assigned by the Relying Party. This will be provided to the Authenticator when registering a new passkey and subsequently provided by the Relying Party to indicate to the Authenticator which passkeys are requested. The Authenticator will keep track of which passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.
-- **User Display Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This allows the user to easily distinguish and select which passkey they want to authenticate with if several are present. 
+- **Credential ID:** A unique identifier chosen by the Authenticator for each passkey.
+- **User ID:** An identifier unique to each user that is assigned by the Relying Party. This will be provided to the Authenticator when registering a new passkey and subsequently provided by the Authenticator when authenticating towards Relying Party. The Authenticator will keep track of which passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.
+- **User Name:** An alias that may be chosen by the user or the Relying Party and assigned to a specific passkey on the Authenticator. This allows the user to easily distinguish and select which passkey they want to authenticate with if several are present.
 
 Below we elaborate on how the different components work together to allow the registration and subsequent authentication using passkeys.
 
 #### 4.2.1 Registration
 
-The flow for registering a passkey in [WebAuthN] is the following:
+The flow for registering a passkey in [WebAuthn] is the following:
 
-1. The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Display Name to the Relying Party Client.
+1. The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Name to the Relying Party Client.
 2. The Relying Party Client forwards the information to the Client using the WebAuthnAPI.
 3. The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics). It then generates a new key pair with a new Credential ID and set the scope of this to the specific Relying Party ID and User ID. Finally, the Authenticator generates and "attestation" (explained below) and sends this as well as the public key and its Credential ID to the Client
@@ -216,7 +217,7 @@ The term attestation is here used differently than elsewhere in the ARF.
 In this context, the attestation is not about attributes of the user, but rather about attributes of the Authenticator and is to ensure the Relying Party that they are talking with an Authenticator with certain attributes.
 The attestation often takes the form of a signature on the challenge as well as some other contextual data.
 
-In [WebAuthN], four different types of attestations are mentioned:
+In [WebAuthn], four different types of attestations are mentioned:
 
 - **Basic Attestation:** The Authenticator has a single master public/private key stored.
 This is used to sign all attestations and a certificate on the public key is included in the attestation data to allow the Relying Party to verify the signature.
@@ -238,21 +239,21 @@ In Chapter 5.1, we discuss how the other relates to previously identified privac
 
 #### 4.2.2 Authentication
 
-The flow for authenticating using a passkey following [WebAuthN] is:
+The flow for authenticating using a passkey following [WebAuthn] is:
 
 1. The Relying Party Server creates a challenge and sends this along with its Relying Party ID to the Relying Party Client.
 2. The Relying Party Client Client forwards the information to the browser using the WebAuthnAPI.
-3. The Client checks that the Relying Party ID is consistent with the caller's domain and forwards the information to the Authenticator along with other contextual data.
+3. The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
 4. The Authenticator authenticates the user (for example using a PIN or via biometrics).
-   It then prompts the user to select one of the passkeys scoped to this Relying Party ID. For this step the User Display Name can be presented to the user.
-   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID. 
+   It then prompts the user to select one of the passkeys scoped to this Relying Party ID. For this step the User Name can be presented to the user.
+   Finally, the private key of the chosen key pair is used to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID.
    This is then sent to the Client.
 5. The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.
 6. The Relying Party Server verifies the signature with its stored public key for this User ID and Credential ID and depending on the outcome of this verification considers the user authenticated.
 
 ### 4.3 Challenges
 
-Below we list challenges related to the use of [WebAuthN] as the technical specification for pseudonyms.
+Below we list challenges related to the use of [WebAuthn] as the technical specification for pseudonyms.
 
 - Attestations may be linkable (see discussion in Chapter 5.1 and also Topic A) depending on the chosen type of attestation.
 - The information about the Relying Party is verified only by the Client and not by the Authenticator itself.
@@ -264,14 +265,14 @@ Below we discuss how pseudonyms relate to the other topics being discussed.
 
 ### 5.1 Privacy Risks and Mitigations
 
-Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronically Attested Attributes (Q)EAA.
-Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthN] specification.
-In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthN] and other attestations such as PID and (Q)EAAs.
+Topic A - Privacy Risks and Mitigations discusses surveillance risks related to presenting Person Identification Data (PID) and (Qualified) Electronic Attestations of Attributes (Q)EAA.
+Similar, concerns are relevant for the pseudonyms functionality defined by the [WebAuthn] specification.
+In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthn] and other attestations such as PID and (Q)EAAs.
 
 In Chapter 5.3 we discuss how this relates to the risks and threats identified in the [RiskRegister].
 
 Below we consider two different types of linkability concerns for the attestation types summarized in Chapter 4.2.1 namely Relying Party Linkability and CA Linkability.
-The latter form of linkability is similar to what is dubbed Attestation Provider Linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthN] and to avoid confusion we, therefore, use a different wording here.
+The latter form of linkability is similar to what is dubbed Attestation Provider Linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthn] and to avoid confusion we, therefore, use a different wording here.
 
 #### 5.1.1 Relying Party Linkability
 
@@ -279,10 +280,10 @@ Relying Party Linkability is the ability for Relying Parties to link together mu
 Note that it is inherent for the use cases that the same Relying Party must be able to link together multiple presentations of a pseudonym as it must be unique per Relying Party.
 However, two or more Relying Parties should not be able to infer any information about whether they have interacted with one or multiple users by comparing multiple authentications using pseudonyms.
 
-To prevent this, it is necessary to ensure there are no unique (per Wallet Unit) presented to multiple different Relying Parties. Depending on the attestation form used for Registration (see Chapter 4.2.1) this may or may not be the case for [WebAuthN].
+To prevent this, it is necessary to ensure there are no unique (per Wallet Unit) presented to multiple different Relying Parties. Depending on the attestation form used for Registration (see Chapter 4.2.1) this may or may not be the case for [WebAuthn].
 
 If *Basic Attestations* are used where each wallet unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be exactly such unique value that is presented to multiple Relying Parties.
-In [WebAuthN] it is suggested to ensure that multiple different Authenticators hold the same attestation key pair thereby no longer making it a unique value for correlation.
+In [WebAuthn] it is suggested to ensure that multiple different Authenticators hold the same attestation key pair thereby no longer making it a unique value for correlation.
 We note that letting several different units share the same private key is against best practices, as it increases the risk of keys being compromised.
 
 If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as attestation keys are used more than once, the Relying Parties can still deduce *some information* by correlating registrations of Pseudonyms.
@@ -318,7 +319,7 @@ In the table below we summarize information from previous chapters w.r.t. drawba
 ### 5.2 Wallet Unit Attestations
 >Note that Topic C - Wallet Unit Attestation has not yet been drafted and the following is based on assumptions on content
 
-Topic C - Wallet Unit Attestations (WUA) And Key Attestations discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc. 
+Topic C - Wallet Unit Attestations (WUA) And Key Attestations discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc.
 
 Certain WUA elements are somewhat sensitive, as they may allow for linkability, and are only intended for PID and Attestation Providers, when performing issuance. Other parts of the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive and is intended for Relying Parties.
 
@@ -328,7 +329,7 @@ There are two main areas of Topic C that are particularly relevant in relation t
 
 - **Wallet Trust Evidence:** Part of the WUA contains information on functional and cryptographic capabilities of the Wallet Unit (currently known as WTE). HRL WTE_24 *A Wallet Instance SHALL release a WTE only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party.* states that an RP must not receive WTE information from the WU, however this prohibits a number of the HRLs related to issuance. Essentially, only the *Self Attestation* and *No Attestation* attestation types mentioned in Chapter 4.2.1 can be supported without access to WTE.
 
-- **Revocation:** Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it may be desireable for the Relying Party to be able to revoke the entire Wallet Unit. If this functionality is to be supported, there must be some kind of attestation (see Chapter 4.2.1) in place. 
+- **Revocation:** Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it may be desireable for the Relying Party to be able to revoke the entire Wallet Unit. If this functionality is to be supported, there must be some kind of attestation (see Chapter 4.2.1) in place.
 
 #### 5.2.1 Questions Related to Wallet Unit Attestation
 
@@ -341,7 +342,7 @@ Below, we list open questions that must still be clarified related to the intera
 
 ### 5.3 Digital Credential API
 
-As stated in Chapter 4, [WebAuthN] does not specify the interface between the Wallet Units (i.e., Authenticators) and the Client used by the user to initiate the usage of the pseudonyms.
+As stated in Chapter 4, [WebAuthn] does not specify the interface between the Wallet Units (i.e., Authenticators) and the Client used by the user to initiate the usage of the pseudonyms.
 Discussion Topic F must also take into account providing a seamless integration for the use of pseudonyms.
 
 ### 5.4 Relation to Risk Register
@@ -636,17 +637,166 @@ disclosure (R6) / Surveillance (R14)</td>
 
 >Note that there is no threat corresponding to TR68-71 (Attacker can revoke without consent/reason) in relation to pseudonyms.
 
-R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [WebAuthN].
+R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [WebAuthn].
 
 TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.
 
 ## 6 Additions and Changes to the ARF
 
+Pseudonyms can be used to support many different functionalities. In particular, at least: 
+1. User authentication via. a pseudonym as envisioned in Use Case A and B. 
+2. Pseudonyms with attested attributes that can be presented to Relying Parties, using the attributes. This can further come in at least two variants namely self-attested attributes and third-party attested attributes each being useful in different settings.
+
+Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document only to ensure user authentication via pseudonyms.
+There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support for example pseudonyms with attested attributes. 
+The below is merely a proposal for the minimal HRLs that must be fulfilled by all actors in the EUDI Wallet ecosystem related to the pseudonym and user authentication functionality.
+
+### 6.1 Additions and Changes to HLRs
+The below HRLs will be added to the Annex II, Topic 11 of the ARF.
+
+#### 6.1.1 HRLs related to Use Cases
+
+##### Requirement 1
+
+A Wallet Instance SHALL allow a User to generate a Pseudonym and register this at a Relying Party.
+
+> Rationale: This is necessary to support Use Case A and B.
+
+##### Requirement 2
+
+A Wallet Instance SHALL allow a User to authenticate with a Pseudonym towards a Relying Party if the Wallet Instance was used to previously register a Pseudonym for the same Relying Party.
+
+> Rationale: This is necessary to support Use Case A and B.
+
+##### Requirement 3
+
+A Wallet Instance SHALL be able to perform the actions specified in the above two requirements independently of whether the interaction with the Relying Party is initiated on the same device as the Wallet Instance or on a device different from the Wallet Instance.
+
+> Rationale: Both cross device and same-device flows must be possible.
+
+##### Requirement 4
+
+A Wallet Instance SHALL allow the User to register multiple different Pseudonyms at a given Relying Party.
+
+> Rationale: It should be possible for a User to use their EUDIW both in a work and personal context and more Pseudonyms should therefore be possible.
+
+##### Requirement 5
+
+Wallet Instance SHALL enable the User to freely choose a User alias for each Pseudonym registered at a Relying Party.
+An alias SHALL be a text string.
+Setting an alias SHALL be optional for the User.
+The User SHALL be able to change the alias for any Pseudonym.
+
+>Rationale: Setting an alias helps the User to recognize and distinguish Pseudonyms, which otherwise may be meaningless sequences of symbols.
+
+##### Requirement 6
+
+A Wallet Instance SHALL allow a User to choose which Pseudonym to authenticate with towards a Relying Party if multiple Pseudonyms are registered for this Relying Party. The user shall be presented with the alias of their of Pseudonyms if assigned when this choice must be made.
+
+> Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.
+
+##### Requirement 7
+
+A Wallet Instance SHALL allow a User to delete a Pseudonym in which case it shall not be possible to recover.
+
+> Rationale: A User should be allowed to choose if they no longer wishes to have a Pseudonym associated with their Wallet Instance.
+
+#### 6.1.2 HRLs related to Relying Parties
+
+##### Requirement 8
+
+A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Instance.
+
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this Pseudonym when this is a requirement.
+
+##### Requirement 9
+
+A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Instance.
+
+> Rationale: A Relying Party should be able to achieve a high level of trust in authentication performed using this Pseudonym when this is a requirement.
+
+##### Requirement 10
+If Wallet Instance is used to register a Pseudonym at a Relying Party and afterwards PID/(Q)EAAs are presented to the same Relying Party in the same session, then this Relying Party SHALL be able to verify that the same Wallet Instance have been used to perform both actions.
+
+> Rationale: A Relying Party should be able to be assured that they can trust subsequent authentications with the Pseudonym to have the properties as presented int he PID/(Q)EAAs.
+
+> Note: The above *only* states the high-level requirement. Later technical specifications will define how this is enabled.
+
+#### 6.1.3 HRLs related to Privacy
+Note that the requirements WTE\_03 and WTE\_04 from Topic 9 ensures that a Wallet Instance must authenticate a User before Pseudonyms are, viewed, created or used to authenticate towards Relying Parties. We therefore do not think it is necessary to add further requirements realted to this. 
+
+The placement of these HRLs will be discussed in Topic C.
+
+Further, note that RPA\_01 and RPA\_03 from Topic 6 ensures that Wallet Instances SHALL authenticate Relying Parties also in the Pseudonym use case. It is therefore not necessary to specify further HRLs related to this.
+
+##### Requirement 11
+A Wallet Instance SHALL store the information necessary for authenticating with a Pseudonym encrypted in their WSCD.
+
+> Rationale: It is made explicit in Article 5a 4. b of [eiDAS 2.0] that the Pseudonyms must be stored encrypted.
+
+##### Requirement 12
+
+A Relying Party SHALL NOT be able to derive the User’s true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party.
+
+> Rationale: This is what makes a Pseudonym a Pseudonym, as opposed to an identifier.
+
+##### Requirement 13
+
+A Wallet Instance SHALL always release a different value for the Pseudonym of a given User to different Relying Parties.
+
+> Rationale: This is important to ensure that colluding Relying Parties cannot use the Pseudonyms  to track the User.
+
+##### Requirement 14
+
+It SHALL NOT be possible to correlate Pseudonyms based on their values nor on the actions performed by the Wallet Instance during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that Pseudonyms released by a User to different Relying Parties belong to the same User.
+
+> Rationale: If this was possible, it would defeat the purpose of using different Pseudonyms and would allow colluding Relying Parties to track the User.
+
+##### Requirement 15
+
+The Wallet Instance SHALL ensure that Pseudonyms contain sufficient entropy to make the chance of colliding Pseudonyms (meaning two Users having the same Pseudonym value for the same Relying Party) negligible.
+
+> Rationale: If Pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
+
+##### Requirement 16
+
+A Wallet Instance MUST NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
+
+> Rationale: The aliases are a convenience thing for users and they should be allowed to choose them as they like without having to consider whether it contains sensitive data or not.
+
+#### 6.1.3 HRLs for Interoperability
+
+##### Requirement 17
+
+The Commission SHALL create or reference a profile or extension of the WebAuthn specification compliant with the HRLs for this topic.
+
+> Rationale: It must be ensured that the HRLs are conformed to an in an interoperable manner.
+
+##### Requirement 18
+
+Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this document and future technical specifications created by or on behalf of the Commission.
+
+> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDIW.
+
+#### 6.1.5 HRLs to be Removed
+
+##### Requirement PA_01 from Topic 11
+
+PA_01 states:
+
+*Pseudonym Providers, Pseudonym attestations, and Wallet Instances SHALL comply with all applicable requirements in [Pseudonym Rulebook].*
+
+> Rationale for removal: Pseudonym providers are no longer used for the Pseudonyms functionality.
+
+### 6.2 Additions and Changes to be added to the ARF Main Document
+
+To be added once agreement on HRLs have been reached.
+
 ## 7 References
 
 | Reference       | Description                                                                                                                                                                                                                                                                          |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [WebAuthN]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/                                                                                                                                          |
+| [WebAuthn]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/                                                                                                                                          |
 | [ARF_DevPlan]   | Architecture and Reference Framework Development plan 2025, European Commission, v1,0.                                                                                                                                                                                               |
 | [RiskRegister]  | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [eIDAS 2.0]     | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework                                                                                        |
