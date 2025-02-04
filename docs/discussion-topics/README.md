@@ -40,7 +40,7 @@ an update on the topic.
 + E - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md)
 + F - [Digital Credential API](f-digital-credential-api.md)
 + G - [Zero Knowledge Proof](g-zero-knowledge-proof.md)
-+ V - [PID rulebook](v-pid-rulebook)
++ V - [PID rulebook](v-pid-rulebook.md)
 
 ## Topics - Iteration 2 and 3
 
