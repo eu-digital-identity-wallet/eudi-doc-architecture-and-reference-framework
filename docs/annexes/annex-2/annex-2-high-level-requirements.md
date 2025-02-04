@@ -501,15 +501,15 @@ Qualified Electronic Signatures using a Wallet Unit.
 
 | **Index** | **Requirement specification** |
 |-----------|------------|
-| QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a Qualified Certificate for Qualified Electronic Signatures, bound to a QSCD, , that is either local, external, or remotely managed in relation to the Wallet Instance. |
-| QES_02 | Wallet Providers SHALL ensure that each User has free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures over any data.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL as a minimum be capable of signing User-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it. - The Signature Creation Application SHALL be able to generate signatures in formats compliant with QES_08 and QES_12. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. -If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.|
-| QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL implement secure authentication and signature or seal invocation capabilities in the Wallet Solution, either as a part of a local QSCD external to the Wallet Solution, or as part of a remote QSCD managed by a QTSP. |
-| QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure authentication and signature or seal functionality. |
-| QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a Remote QES Provider (i.e., a QTSP offering remote QES). |
-| QES_06 | Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: remote QES creation through secure authentication to a QTSP signature web portal.remote QES creation channelled by the Wallet Unit.remote QES creation channelled by a Relying Party. |
-| QES_07 | Wallet Providers SHALL ensure that a Signature Creation Application embedded in their Wallet Solution supports the Cloud Signature Consortium API Specification v.2.|
-| QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to sign documents based on the following signature formats, either using an internal or an external Signature Creation Application component (SCA):  PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1,XAdES (XML Advanced Electronic Signature) as specified in ETSI EN 319 132-1,JAdES (JSON Advanced Electronic Signature) as specified in ETSI TS 119 182-1,CAdES (CMS Advanced Electronic Signature) as specified in ETSI EN 319 122-1,ASiC (Associated Signature Container) as specified in ETSI EN 319 162-1. |
-| QES_09 | Wallet Providers SHALL ensure that if a Wallet Unit acts as the signature creation application, it supports at least one of the signature formats mentioned in QES_08. |
+| QES_01 | Wallet Providers SHALL ensure that each User has the possibility to receive a qualified certificate for Qualified Electronic Signatures, bound to a QSCD, that is either local, external, or remotely managed in relation to the Wallet Instance. |
+| QES_02 | Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. -If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.|
+| QES_03 | For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL ensure that a Wallet Unit implements secure authentication of the User, as well as signature or seal invocation capabilities, as a part of a local, external or remote QSCD. |  
+| QES_04 | Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. *Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.* |
+| QES_05 | Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a remote QES Provider (i.e., a QTSP offering remote QES), except where the Wallet Unit interfaces with local or external QSCDs. |
+| QES_06 | Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: - remote QES creation through secure authentication to a QTSP signature web portal, - remote QES creation channelled by the Wallet Unit, - remote QES creation channelled by a Relying Party. |
+| QES_07 | Wallet Providers SHALL ensure that where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Unit, it supports the Cloud Signature Consortium API Specification v.2. |
+| QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to create signatures or seals in accordance with the mandatory PAdES format as specified in ETSI EN 319 142-1 V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in ETSI EN 319 132-1 V1.2.1 (2022-02), - JAdES as specified in ETSI TS 119 182-1 V1.2.1 (2024-07), - CAdES as specified in ETSI EN 3191 22-1 V1.3.1 (2023-06), and - ASiC as specified in ETSI EN 319 162-1 V1.1.1 (2016-04) and ETSI EN 319 162-2 V1.1.1 (2016-04) |
+| QES_09 | Empty |
 | QES_10 | Wallet Providers SHOULD ensure that a Wallet Unit presents the document or data to be signed to the User.|
 | QES_11 | Wallet Providers SHALL ensure that a Wallet Unit is able to compute the hash or digest of the document or data to be signed through a Signature Create Application component either internal or external to the Wallet Unit, using relevant standards. |
 | QES_12 | Wallet Providers SHALL ensure that a Wallet Unit is able to create the signature value of the document or data to be signed either using a local or a remote signing application. *Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.* |
@@ -850,11 +850,12 @@ This topic is focused on identifying high-level requirements for a
 legal-person Wallet Unit. All core capabilities of a Wallet Unit
 for a natural person are available for a legal person. There are some
 differences between a natural and legal person that accordingly leads to
-different requirements for issuing legal-person PIDs and the Wallet Units containing legal-person PIDs. 
+different requirements for issuing legal-person PIDs and the Wallet Units containing legal-person PIDs 
 
--   A legal-person PID is issued under an eID scheme.
+Notes:
 
--   A legal-person PID is described in a legal-person PID Rulebook,
+- A legal-person PID is issued under an eID scheme.
+- A legal-person PID is described in a legal-person PID Rulebook,
     which is different from the natural-person PID Rulebook in [PID
     Rulebook]. A legal-person PID has a different attestation type than
     a natural-person PID, and also contains different attributes. For
@@ -862,8 +863,7 @@ different requirements for issuing legal-person PIDs and the Wallet Units contai
     persons. Specifying a different Rulebook for legal-person PIDs
     allows Relying Parties and other Wallet Units to request
     these attributes.  
-
--   A legal-person Wallet Solution may be implemented in the same
+- A legal-person Wallet Solution may be implemented in the same
     manner as a natural-person Wallet Solution, meaning chiefly that it
     is implemented on a mobile device operated by a single User, who is
     a natural person. However, a legal-person Wallet Solution may
