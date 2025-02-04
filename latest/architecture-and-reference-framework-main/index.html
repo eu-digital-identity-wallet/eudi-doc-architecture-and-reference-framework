@@ -408,13 +408,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-wallet-functionalities" class="md-nav__link">
+  <a href="#2-eudi-wallet-functionalities" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Wallet functionalities
+      2 EUDI Wallet functionalities
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2 Wallet functionalities">
+    <nav class="md-nav" aria-label="2 EUDI Wallet functionalities">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2110,13 +2110,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-wallet-functionalities" class="md-nav__link">
+  <a href="#2-eudi-wallet-functionalities" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Wallet functionalities
+      2 EUDI Wallet functionalities
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2 Wallet functionalities">
+    <nav class="md-nav" aria-label="2 EUDI Wallet functionalities">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3850,13 +3850,13 @@ protection authorities (DPAs),</li>
 </ul>
 <p>A detailed list of these topics and the progress of their development is
 available on <a href="https://github.com/orgs/eu-digital-identity-wallet/projects/36">GitHub</a>.</p>
-<h2 id="2-wallet-functionalities">2 Wallet functionalities</h2>
+<h2 id="2-eudi-wallet-functionalities">2 EUDI Wallet functionalities</h2>
 <h3 id="21-introduction">2.1 Introduction</h3>
 <p>The EUDI Wallet ecosystem is designed as a secure, User-controlled digital
-environment that enables Users to use their Wallet Unit to manage and present 
-their person identification data (PID) and attestations across both public and 
-private services in the EU. Its functionalities are built around security, 
-privacy, and User control, ensuring seamless interactions with Relying Parties and other entities, while adhering to data 
+environment that enables Users to use their Wallet Unit to manage and present
+their person identification data (PID) and attestations across both public and
+private services in the EU. Its functionalities are built around security,
+privacy, and User control, ensuring seamless interactions with Relying Parties and other entities, while adhering to data
 protection principles.  </p>
 <p>This chapter outlines the core functionalities of Wallet Solutions, as defined
 by the [European Digital Identity Regulation], and examines how the requirements for its implementation
@@ -3880,11 +3880,13 @@ prevent tracking.  </li>
 <li><strong>Securely authenticate Relying Parties or other Wallet Units</strong>, making sure that attributes are only presented to trusted entities.  </li>
 <li><strong>Onboard seamlessly with PID Providers or attestation Providers</strong> by leveraging existing electronic identification schemes, for a smooth and secure registration process.  </li>
 <li><strong>Be informed</strong> whether a Relying Party is authorised or registered to receive the requested attributes.</li>
-<li><strong>Access a transaction log via a dashboard</strong>, allowing Users to:  </li>
+<li><strong>Access a transaction log via a dashboard</strong>, allowing Users to:  <ul>
 <li><strong>Review past interactions</strong> with Relying Parties and Wallet Units.  </li>
 <li><strong>Request data erasure</strong> under the GDPR Article 17 to maintain privacy.  </li>
 <li><strong>Report suspicious Relying Parties</strong> to the relevant national data
-    protection authority.</li>
+protection authority.</li>
+</ul>
+</li>
 </ul>
 <h3 id="23-attribute-exchange-mechanism-using-attestations">2.3 Attribute Exchange Mechanism using Attestations</h3>
 <p>Using their Wallet Solutions, Users are able to:  </p>
@@ -4003,8 +4005,8 @@ pregnancy and childbirth.</li>
 <p>This chapter describes the EUDI Wallet ecosystem as it is foreseen in [European
 Digital Identity Regulation]. The different roles in the EUDI Wallet ecosystem
 are described in Figure 1 and detailed in the following sections.</p>
-<p><img alt="Figure 1: Overview of the EUDI Wallet ecosystem roles" src="../media/Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" /> <!-- <img src="Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" style="width="7.2131944444444445in" height="3.375in" /> --></p>
-<p>Figure 1: Overview of the EUDI Wallet ecosystem roles</p>
+<p><img alt="Figure 1: Overview of the EUDI Wallet ecosystem roles" src="../media/Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" /> <!-- <img src="Figure_1_Overview_of_EUDI_Wallet_roles.jpeg" style="width="7.2131944444444445in" height="3.375in" /> -->
+<em>Figure 1: Overview of the EUDI Wallet ecosystem roles</em></p>
 <ol>
 <li>Users of Wallet Units, see <a href="#32-users-of-wallet-units">Section 3.2</a>,</li>
 <li>Wallet Providers, see <a href="#33-wallet-providers">Section 3.3</a>,</li>
@@ -4423,14 +4425,14 @@ breaches, fostering trust and User confidence in this EUDI Wallet ecosystem.</p>
 <p>For more information, please refer to <a href="#7432-risks-and-mitigation-measures-related-to-confidentiality-integrity-and-authenticity">Sections 7.4.3.2</a> and <a href="#7433-risks-and-mitigation-measures-related-to-tampering-of-cryptographic-keys-and-sensitive-data">7.4.3.3</a>.</p>
 <h3 id="43-reference-architecture">4.3 Reference architecture</h3>
 <h3 id="431-overview">4.3.1 Overview</h3>
-<p>Figure 2 below gives an overview of the architecture of the EUDI Wallet
+<p>The figure below gives an overview of the architecture of the EUDI Wallet
 ecosystem and its components. In comparison to Figure 1, this figure presents
 more detail on the composition of a Wallet Unit and its interfaces to other
 entities. The depicted components of a Wallet Unit are described in <a href="#432-components-of-a-wallet-unit">Section 4.3.2</a>, while the interfaces are described in
 <a href="#433-wallet-unit-interfaces-and-protocols">Section 4.3.3</a>. The other entities
 shown in the figure were already described in <a href="#3-eudi-wallet-ecosystem">Chapter 3</a>.</p>
-<p><img alt="Figure 2" src="../media/Figure_2_High-Level_Architecture.jpeg" /> <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> --></p>
-<p>Figure 2: EUDI Wallet ecosystem reference architecture</p>
+<p><img alt="Figure 2" src="../media/Figure_2_High-Level_Architecture.jpeg" /> <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+<em>Figure 2: EUDI Wallet ecosystem reference architecture</em></p>
 <p>Note that a User device can host more than one Wallet Unit, either provided by
 multiple Wallet Providers or by the same one, if supported by that Wallet
 Provider. If a User device hosts more than one Wallet Unit, all statements in
@@ -4457,7 +4459,8 @@ level of assurance for authentication.</p>
 and software environment required to host and execute the Wallet Instance. The
 minimum hardware and software requirements for the User device will be
 determined by the Wallet Provider.</li>
-<li><strong>Wallet Secure Cryptographic Device (WSCD):</strong> tamper-resistant device that
+<li>
+<p><strong>Wallet Secure Cryptographic Device (WSCD):</strong> tamper-resistant device that
 provides an environment that is linked to and used by the wallet secure
 cryptographic application to protect critical assets and provide cryptographic
 functions for the secure execution of critical. This includes a keystore, but
@@ -4468,15 +4471,16 @@ WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD
 firmware covers security-related software, such as an operating system and
 cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
 different possible security architectures for the WSCD (for more details see
-<a href="#45-wscd-architecture-types">Section 4.5</a>):</li>
+<a href="#45-wscd-architecture-types">Section 4.5</a>):</p>
+<ul>
 <li>a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
-    accessed over a network.</li>
+accessed over a network.</li>
 <li>a local external WSCD, an external device, such as a smart card issued
-    to the User specifically for this purpose,</li>
+to the User specifically for this purpose,</li>
 <li>a local internal WSCD, a component within the User device, such as a SIM, e-SIM, or embedded Secure Element,</li>
-<li>
-<p>a local native WSCD, a component embedded in the User device and accessed via
-    an API provided by the operating system.</p>
+<li>a local native WSCD, a component embedded in the User device and accessed via
+an API provided by the operating system.</li>
+</ul>
 </li>
 <li>
 <p><strong>Wallet Secure Cryptographic Application (WSCA):</strong> an application that
@@ -4578,8 +4582,8 @@ described in more detail in one of the next sections.</p>
 Device are physically near the Relying Part Instance. In this case, the
 [ISO/IEC 18013-5] standard specifies how a communication channel is set up and
 how a presentation request and the corresponding response are exchanged.</p>
-<p><img alt="Figure 3" src="../media/Figure_3_Proximity_Flow.png" /> <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> --></p>
-<p>Figure 3: Proximity presentations</p>
+<p><img alt="Figure 3" src="../media/Figure_3_Proximity_Flow.png" /> <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+<em>Figure 3: Proximity presentations</em></p>
 <p>The attribute presentation flow begins when the User opens the Wallet Instance
 and instructs it to display a QR code or present an NFC tag. This QR code or
 NFC tag contains the information necessary to establish an NFC, BLE, or
@@ -4627,15 +4631,14 @@ presentation request ensures the authenticity of the request and enhances trust
 for both Wallet Units and Users.</li>
 </ol>
 <p>The next sections describe how these challenges can be solved for both
-same-device and cross-device remote presentation flows, by using the W3C Digital
-Credentials API. Note that requirements for Wallet Units and Relying Party
-Instances to use this browser API for remote presentation flows will be updated
-in the major release of this document.</p>
+same-device and cross-device remote presentation flows, by using the [W3C
+Digital Credentials API]. Note that requirements for Wallet Units and Relying
+Party Instances to use the [W3C Digital Credentials API] for remote presentation
+flows will be updated in the major release of this document.</p>
 <h4 id="4432-same-device-remote-presentation-flows">4.4.3.2 Same-device remote presentation flows</h4>
 <p><img alt="Figure 4" src="../media/Figure_4_Remote_Same-Device_Flow.png" /> <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
-Figure 4: Remote same-device presentations</p>
-<p>Figure 4 shows attribute presentation in a remote same-device flow.
-Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows
+<em>Figure 4: Remote same-device presentations</em></p>
+<p>Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows
 the browser on the User device and the relevant interfaces of this browser:</p>
 <ul>
 <li>The <strong>Remote same-device presentation</strong> interface establishes communication
@@ -4698,9 +4701,6 @@ origin information included in the presentation request, which may vary.</p>
 <h4 id="4433-cross-device-remote-presentation-flows">4.4.3.3 Cross-device remote presentation flows</h4>
 <p><img alt="Figure 5" src="../media/Figure_5_Remote_Cross-Device_Flow.jpeg" /> <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
 Figure 5: Remote cross-device presentations</p>
-<p>Figure 5 shows attribute presentation in a remote cross-device flow.</p>
-<p><img alt="Figure 5" src="../media/Figure_5_Remote_Cross-Device_Flow.jpeg" /> <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> --></p>
-<p>Figure 5: Remote cross-device presentations</p>
 <p>A remote cross-device attribute presentation flow begins when the User uses a
 browser on a device different from their User device to visit the website of the
 Relying Party. The website may offer the User the possibility to present
@@ -6134,11 +6134,13 @@ combination with an ephemeral key created by the secure environment. The latter
 ephemeral key is sent to the Relying Party in such a way that the Relying Party
 can verify the authenticity of this key. Such a solution, or similar ones, can
 be used provided that:</p>
-</li>
+<ul>
 <li>the solution is fully compliant with the relevant standards, i.e.,
-    [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].</li>
+[ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].</li>
 <li>the solution can be certified for security at LoA "high" according to
-    <a href="#7-certification-and-risk-management">Chapter 7</a></li>
+<a href="#7-certification-and-risk-management">Chapter 7</a></li>
+</ul>
+</li>
 </ul>
 <h5 id="6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked">6.6.3.7 Relying Party verifies that the PID or attestation is not revoked</h5>
 <p>To allow revocation checking of a PID or attestation, the PID Provider or
@@ -7129,10 +7131,12 @@ format, <em>MAJOR.MINOR.PATCH</em>, where:</p>
 <ul>
 <li><a href="../annexes/annex-1/annex-1-definitions/">Annex 1</a> - Definitions</li>
 <li><a href="../annexes/annex-2/annex-2-high-level-requirements/">Annex 2</a> - High Level Requirements</li>
-<li>Annex 3 - Rulebooks:</li>
+<li>Annex 3 - Rulebooks:<ul>
 <li><a href="../annexes/annex-3/annex-3.01-pid-rulebook/">Annex 3.1</a> - PID rulebook</li>
 <li><a href="../annexes/annex-3/annex-3.02-mDL-rulebook/">Annex 3.2</a> - mDL rulebook</li>
-<li>Annex 4 - Service Blueprints:</li>
+</ul>
+</li>
+<li>Annex 4 - Service Blueprints:<ul>
 <li><a href="../annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf">Annex 4.1</a> - Blueprint Initialisation and activation</li>
 <li><a href="../annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf">Annex 4.2</a> - Blueprint Online identification and authentication</li>
 <li><a href="../annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf">Annex 4.3</a> - Blueprint Issuing mDL</li>
@@ -7145,9 +7149,13 @@ format, <em>MAJOR.MINOR.PATCH</em>, where:</p>
 <li><a href="../annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf">Annex 4.10</a> - Blueprint QES -- View history of signatures</li>
 <li><a href="../annexes/annex-4/annex-4.11-local-qes-enrolment.pdf">Annex 4.11</a> - Blueprint Local QES - Enrolment</li>
 <li><a href="../annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf">Annex 4.12</a> - Blueprint Local QES -- Creating a signature.</li>
-<li>Annex 5 - Design guides:</li>
+</ul>
+</li>
+<li>Annex 5 - Design guides:<ul>
 <li><a href="../annexes/annex-5/annex-5.01-design-guide.pdf">Annex 5.1</a> - Wallet Unit design guide</li>
 <li><a href="../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf">Annex 5.2</a> - Wallet Unit design guide -- data sharing scenarios</li>
+</ul>
+</li>
 </ul>
 
 
