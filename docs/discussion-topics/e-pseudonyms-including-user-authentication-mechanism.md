@@ -753,20 +753,11 @@ It SHALL NOT be possible to correlate Pseudonyms based on their values nor on th
 
 ##### Requirement 15
 
-If the identity of a Relying Party is verified by the client the User has used to initiate an interaction with a Relying Party, then a Wallet Instance MAY choose not to verify the identity of a Relying Party upon receiving a request for registering a Pseudonym or authenticating with a Pseudonym.
-
-
-> Note that this is contrary to cases where a Wallet Instance receives a request for presentation of either PID or (Q)EAA.
-
-> Rationale: The wallet operates at different security levels depending on the action it is to perform. It is sufficient for the Pseudonyms functionality to operate at a lower level of security as it does not involve any Personally Identifiable Information (PII). Additionally, this aligns directly with the WebAuthn specification.
-
-##### Requirement 16
-
 The Wallet Instance SHALL ensure that Pseudonyms contain sufficient entropy to make the chance of colliding Pseudonyms (meaning two Users having the same Pseudonym value for the same Relying Party) negligible.
 
 > Rationale: If Pseudonym collision could occur in practice, User recognition by the Relying Party would fail, because the wrong User would be matched to another account and thereby the Relying Party could reveal sensitive information to a wrong User.
 
-##### Requirement 17
+##### Requirement 16
 
 A Wallet Instance MUST NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
 
@@ -774,13 +765,13 @@ A Wallet Instance MUST NOT share the user's optionally assigned Pseudonym aliase
 
 #### 6.1.3 HRLs for Interoperability
 
-##### Requirement 18
+##### Requirement 17
 
 The Commission SHALL create or reference a profile or extension of the WebAuthn specification compliant with the HRLs for this topic.
 
 > Rationale: It must be ensured that the HRLs are conformed to an in an interoperable manner.
 
-##### Requirement 19
+##### Requirement 18
 
 Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this document and future technical specifications created by or on behalf of the Commission.
 
