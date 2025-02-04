@@ -101,9 +101,11 @@ The definitions used in this document can be found in Annex 1 of this document.
 
 ### 1.5 Scope
 
-This document only applies to the EUDI Wallet ecosystem compliant to the Recommendation.
+The **EUDI Wallet Architecture and Reference Framework (ARF)** document defines the structural and functional aspects of the EUDI Wallet ecosystem, detailing its key components and their interactions. It provides a technical foundation to ensure **interoperability, security, and privacy**, aligning with the high-level requirements specified in **Annex 2**. The ARF serves as a reference for the **harmonized implementation of the [eIDAS 2.0] Regulation**, guiding the development of **technical specifications, standards, and operational procedures**. 
 
-### 1.6 Future work
+This document **only applies to EUDI Wallet ecosystems compliant with the Recommendation**, ensuring consistency in architecture and implementation. It is designed to support the development of the Wallet Solution reference implementation while remaining adaptable to technological and regulatory advancements.
+
+### 1.6 Additional topics
 
 In this version 1.5 of the ARF, several key areas still require further
 exploration and refinement. These topics will be discussed in collaboration with
