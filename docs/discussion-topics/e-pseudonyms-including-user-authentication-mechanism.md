@@ -643,14 +643,13 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 
 ## 6 Additions and Changes to the ARF
 
-Pseudonyms can could envisioned used as part of supporting many different functionalities. In particular, at least: 
+Pseudonyms can be used to support many different functionalities. In particular, at least: 
 1. User authentication via. a pseudonym as envisioned in Use Case A and B. 
 2. Pseudonyms with attested attributes that can be presented to Relying Parties, using the attributes. This can further come in at least two variants namely self-attested attributes and third-party attested attributes each being useful in different settings.
 
 Below we propose changes and additions to the ARF both related to High Level Requirements (HRLs) for the topic and for the ARF main document only to ensure user authentication via pseudonyms.
 There are no hindrances for member states or other actors to define for example additional attestation types that can be used to support for example pseudonyms with attested attributes. 
 The below is merely a proposal for the minimal HRLs that must be fulfilled by all actors in the EUDI Wallet ecosystem related to the pseudonym and user authentication functionality.
-
 
 ### 6.1 Additions and Changes to HLRs
 The below HRLs will be added to the Annex II, Topic 11 of the ARF.
