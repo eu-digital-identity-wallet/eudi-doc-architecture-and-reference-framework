@@ -3,12 +3,11 @@ subtitle: "Architecture and Reference Framework Annex 2 - High-Level Requirement
 ...
 # ANNEX 2 - High-Level Requirements <!-- omit from toc -->
 
-
 ## A.2 High-level requirements
 
-### A.2.1 Introduction 
+### A.2.1 Introduction
 
-#### A.2.1.1 Overview 
+#### A.2.1.1 Overview
 
 This annex to the [ARF 1.5.0](../../arf.md) includes high-level requirements
 (HLRs) related to the EUDI Wallet ecosystem. The requirements define the
