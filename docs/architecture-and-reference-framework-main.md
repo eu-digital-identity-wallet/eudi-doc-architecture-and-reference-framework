@@ -101,9 +101,11 @@ The definitions used in this document can be found in Annex 1 of this document.
 
 ### 1.5 Scope
 
-This document only applies to the EUDI Wallet ecosystem compliant to the Recommendation.
+The **EUDI Wallet Architecture and Reference Framework (ARF)** document defines the structural and functional aspects of the EUDI Wallet ecosystem, detailing its key components and their interactions. It provides a technical foundation to ensure **interoperability, security, and privacy**, aligning with the high-level requirements specified in **Annex 2**. The ARF serves as a reference for the **harmonized implementation of the [eIDAS 2.0] Regulation**, guiding the development of **technical specifications, standards, and operational procedures**.
 
-### 1.6 Future work
+This document **only applies to EUDI Wallet ecosystems compliant with the [eIDAS 2.0] Regulation**, ensuring consistency in architecture and implementation. It is designed to support the development of the Wallet Solution reference implementation while remaining adaptable to technological and regulatory advancements.
+
+### 1.6 Additional topics
 
 In this version 1.5.0 of the ARF, several key areas still require further
 exploration and refinement. These topics will be discussed in collaboration with
@@ -156,11 +158,13 @@ available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/project
 ### 2.1 Introduction
 
 The EUDI Wallet ecosystem is designed as a secure, User-controlled digital
-environment that enables Users to use their Wallet Unit to manage and present their person identification data (PID) and attestations
-across both public and private services in the EU. Its functionalities are built around security, privacy, and User control, ensuring seamless
-interactions with Relying Parties and other entities, while adhering to data protection principles.  
+environment that enables Users to use their Wallet Unit to manage and present 
+their person identification data (PID) and attestations across both public and 
+private services in the EU. Its functionalities are built around security, 
+privacy, and User control, ensuring seamless interactions with Relying Parties and other entities, while adhering to data 
+protection principles.  
 
-This chapter outlines the core functionalities of Wallet Units, as defined
+This chapter outlines the core functionalities of Wallet Solutions, as defined
 by the [eIDAS 2.0] Regulation, and examines how the requirements for its implementation
 align with real-world use cases where Users will use their Wallet Unit.  
 
@@ -193,7 +197,7 @@ prevent tracking.
 
 ### 2.3 Attribute Exchange Mechanism using Attestations
 
-Using their Wallet Units, Users are able to:  
+Using their Wallet Solutions, Users are able to:  
 
 - **Request, store, and present** personal identification data and electronic
 attestations of attributes under their sole
@@ -204,14 +208,14 @@ ensuring privacy-preserving interactions.
 
 ### 2.4 Qualified electronic signature
 
-Using their Wallet Units, Users are able to:  
+Using their Wallet Solutions, Users are able to:  
 
 - **Create qualified electronic signatures and seals** for legally binding
 digital transactions.  
 - **Sign documents using qualified electronic signatures**, which are provided by default and free of charge within the Wallet Unit, ensuring universal
 accessibility and compliance with legal standards.
 
-These functionalities are implemented    by using the authentication and signing
+These functionalities are implemented by using the authentication and signing
 capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
 managed by a QTSP. See [Topic 16] and [Topic 37].
 
