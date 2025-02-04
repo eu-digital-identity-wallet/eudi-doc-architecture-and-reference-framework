@@ -31,7 +31,7 @@ seven weeks after publication of the discussion paper, containing
 an update on the topic.  
 5. The published ARF version can be commented on GitHub.
 
-## Topics
+## Topics - Iteration 1
 
 + A - [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md)
 + B - [Re-issuance and batch issuance of PIDs and Attestations](b-re-issuance-and-batch-issuance-of-pids-and-attestations.md)
@@ -39,3 +39,9 @@ an update on the topic.
 + D - [Embedded Disclosure Policies](d-embedded-disclosure-policies.md)
 + E - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md)
 + F - [Digital Credential API](f-digital-credential-api.md)
++ G - [Zero Knowledge Proof](g-zero-knowledge-proof.md)
++ V - [PID rulebook](v-pid-rulebook)
+
+## Topics - Iteration 2 and 3
+
+See further the [ARF Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/36)
