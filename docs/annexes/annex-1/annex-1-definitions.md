@@ -8,17 +8,17 @@ subtitle: "Architecture and Reference Framework Annex 1 - Definitions"
 
 In the Architecture Reference Framework (ARF), v1.5.0, many terms are used that need a precise definition. This Annex to ARF 1.5.0 contains the definitions of these terms. In fact, there are three sources for these definitions:
 
-- In the first place, the [European Digital Identity] Regulation defines several of these terms. For
+- In the first place, the [European Digital Identity Regulation] defines several of these terms. For
 convenience, these definitions are listed in [Table 1](#a11-table-1---eidas-regulation-definitions).
 - Secondly, the adopted Commission Implementing Regulations [CIR 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977), [CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979), [CIR 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402980), [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402981), and [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982) also contain a list of definitions. Again for convenience, these definitions are included in [Table 2]
 - Thirdly, in writing the ARF, additional technical terms and corresponding definitions are
 used. These are listed in [Table 3](#a12-table-2----additional-definitions-used-in-this-arf).
 
-## A.2 Definitions from the [European Digital Identity] Regulation
+## A.2 Definitions from the [European Digital Identity Regulation]
 
-The following terms are defined in the [European Digital Identity] Regulation and used in the ARF.
+The following terms are defined in the [European Digital Identity Regulation] and used in the ARF.
 
-| **Term** | **Definition in [European Digital Identity] Regulation** |
+| **Term** | **Definition in [European Digital Identity Regulation]** |
 |-----------|-----------|
 | **Electronic attestation of attributes (EAA)** | An attestation in electronic form that allows attributes to be authenticated. |
 | **Attribute** | A characteristic, quality, right or permission of a natural or legal person or of an object. |
@@ -29,16 +29,16 @@ The following terms are defined in the [European Digital Identity] Regulation an
 | **Electronic identification scheme** | A system for electronic identification under which electronic identification means are issued to natural or legal persons or natural persons representing other natural persons or legal persons. |
 | **(Electronic) signature** | Data in electronic form which is attached to or logically associated with other data in electronic form and which is used by the signatory to sign. |
 | **(Electronic) seal** | Data in electronic form which is attached to or logically associated with other data in electronic form to ensure the latter’s origin and integrity |
-| **User** | A natural or legal person, or a natural person representing another natural person or a legal person, that uses trust services or electronic identification means provided in accordance with the [European Digital Identity] Regulation. |
+| **User** | A natural or legal person, or a natural person representing another natural person or a legal person, that uses trust services or electronic identification means provided in accordance with the [European Digital Identity Regulation]. |
 | **Person Identification Data (PID)** | A set of data that is issued in accordance with Union or national law and that enables the establishment of the identity of a natural or legal person, or of a natural person representing another natural person or a legal person. |
 | **Qualified Electronic Attestation of Attributes (QEAA)** | An electronic attestation of attributes which is issued by a qualified trust service provider and meets the requirements laid down in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e46-54-1). |
 | **Qualified Electronic Signature (QES)** | An advanced electronic signature that is created by a qualified electronic signature creation device, and which is based on a qualified certificate for electronic signatures. |
-| **Qualified Electronic Signature Creation Device (QSCD)** | Configured software or hardware used to create an electronic signature that meets the requirements laid down in [Annex II](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e38-51-1) of the [European Digital Identity] Regulation. |
+| **Qualified Electronic Signature Creation Device (QSCD)** | Configured software or hardware used to create an electronic signature that meets the requirements laid down in [Annex II](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e38-51-1) of the [European Digital Identity Regulation]. |
 | **Qualified Trust Service Provider (QTSP)** | Qualified Trust Service Provider means a trust service provider who provides one or more qualified trust services and is granted the qualified status by the supervisory body. |
 |**Relying Party** | A natural or legal person that relies upon electronic identification, European Digital Identity Wallets or other electronic identification means, or upon a trust service |
 | **Public Sector Body** | A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate. |
 
-**Table 1: Definition of terms used in the ARF originating from the [European Digital Identity] Regulation**
+**Table 1: Definition of terms used in the ARF originating from the [European Digital Identity Regulation]**
 
 ## A.3 Definitions from the adopted Commission Implementing Regulations
 
@@ -65,7 +65,7 @@ The following terms are defined in the adopted Commission Implementing Regulatio
 
 ## A.4 Additional definitions used in the ARF v1.5.0
 
-Note: The technical terms and definitions in Table 3 below are intended to be defined in such a way that they are aligned with the definitions used in the [European Digital Identity] Regulation and the Commission Implementing Regulations in Tables 1 and 2, and should be interpreted as such. In case any definition in Table 3 contradicts a definition from the [European Digital Identity] Regulation or the Commission Implementing Regulations, the latter take precedence.
+Note: The technical terms and definitions in Table 3 below are intended to be defined in such a way that they are aligned with the definitions used in the [European Digital Identity Regulation] and the Commission Implementing Regulations in Tables 1 and 2, and should be interpreted as such. In case any definition in Table 3 contradicts a definition from the [European Digital Identity Regulation] or the Commission Implementing Regulations, the latter take precedence.
 
 In some cases, a term has its origin in the context of
 a specific Topic in [Annex 2](../annex-2/annex-2-high-level-requirements.md). In such a case, the topic number appears in brackets following the definition. If the definition relies on an external source, such as a
