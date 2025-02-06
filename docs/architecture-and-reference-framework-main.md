@@ -2140,7 +2140,7 @@ attributes to a Relying Party, see [Section
 
 User authentication for opening the Wallet Instance above can be done either by
 the Wallet Instance or by a WSCD. In the latter case, it is the same mechanism
-employed before the presentaion of any attributes, see below. In the former
+employed before the presentation of any attributes, see below. In the former
 case, the mechanism is Wallet Unit-specific, meaning it is independent from any
 general User authentication mechanism used by the User device, such as a lock
 screen.
