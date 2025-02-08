@@ -981,7 +981,7 @@ the process.
 the Wallet Unit presents attestations to a machine, without human supervision.
 The interfaces and protocols used in this flow are the same as for the proximity
 supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
-- **Remote Same-Device Flow**:In this flow, the User utilises a web browser or
+- **Remote Same-Device Flow**: In this flow, the User utilises a web browser or
 another application on their User Device to access a Relying Party's a service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
