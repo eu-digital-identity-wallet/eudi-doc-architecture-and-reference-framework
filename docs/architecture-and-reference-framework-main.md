@@ -871,11 +871,6 @@ independently.
 
 The following have been identified as the core components of a Wallet Unit:
 
-- **User device (UD)**: A User Device comprises the hardware, operating system,
-and software environment required to host and execute the Wallet Instance. The
-minimum hardware and software requirements for the User device will be
-determined by the Wallet Provider.
-
 - **Wallet Instance (WI)**: The app or application installed on a User device,
 which is an instance of a Wallet Solution and belongs to and is controlled by a
 User. This component implements the core business logic and interfaces as
