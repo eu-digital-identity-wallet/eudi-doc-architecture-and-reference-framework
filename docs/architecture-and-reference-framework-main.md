@@ -1,5 +1,5 @@
 
-# European Digital Identity Wallet Architecture and Reference Framework 1.5.0
+# European Digital Identity Wallet Architecture and Reference Framework
 
 ## 1 Introduction
 
@@ -40,7 +40,7 @@ official page](https://digital-strategy.ec.europa.eu/en/policies/european-digita
 
 The European Digital Identity Cooperation Group has since further developed the
 concepts and specifications for the European Digital Identity Framework. The
-current ARF version 1.5.0 is based on the legal text adopted by the
+current ARF version is based on the legal text adopted by the
 co-legislators, including the adopted Commission Implementing Regulations:
 
 - [CIR 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977) regarding PID and EAA,
@@ -122,7 +122,7 @@ regulatory advancements.
 
 ### 1.6 Additional topics
 
-In this version 1.5.0 of the ARF, several key areas still require further
+In this version of the ARF, several key areas still require further
 exploration and refinement. These topics will be discussed in collaboration with
 Member States, the European Digital Identity Cooperation Group, civil society,
 industry representatives, and professionals, ensuring comprehensive feedback
@@ -176,18 +176,22 @@ The EUDI Wallet ecosystem is designed as a secure, User-controlled digital
 environment that enables Users to use their Wallet Unit to manage and present
 their person identification data (PID) and attestations across both public and
 private services in the EU. Its functionalities are built around security,
-privacy, and User control, ensuring seamless interactions with Relying Parties and other entities, while adhering to data
+privacy, and User control, ensuring seamless interactions with Relying Parties
+and other entities, while adhering to data
 protection principles.  
 
 This chapter outlines the core functionalities of Wallet Solutions, as defined
-by the [European Digital Identity Regulation], and examines how the requirements for its implementation
-align with real-world use cases where Users will use their Wallet Unit.  
+by the [European Digital Identity Regulation], and examines how the requirements
+for its implementation align with real-world use cases where Users will use
+their Wallet Unit.  
 
 The functionalities of a Wallet Unit can be grouped into the following
 categories:  
 
-- **Secure identification and authentication**, ensuring that Users can present person identification data in a trusted environment.  
-- **Exchanging qualified and non-qualified User attributes** through secure and verifiable electronic attestations of attributes.  
+- **Secure identification and authentication**, ensuring that Users can present
+person identification data in a trusted environment.  
+- **Exchanging qualified and non-qualified User attributes** through secure and
+verifiable electronic attestations of attributes.  
 - **Electronic signing of documents or data**, allowing Users to create
 legally recognized qualified electronic signatures and seals.
 
@@ -198,16 +202,22 @@ These functionalities are discussed in the next three sections.
 Using their Wallet Units, Users are able to:  
 
 - **Identify and authenticate** to online and offline services, while using
-**selective disclosure** of attributes as well as **User approval**. This ensures that only necessary and User-approved attributes are presented to Relying Parties, which minimises exposure of personal information.  
+**selective disclosure** of attributes as well as **User approval**. This
+*ensures that only necessary and User-approved attributes are presented to
+*Relying Parties, which minimises exposure of personal information.  
 - **Generate and use pseudonyms** for authentication, to enhance privacy and
 prevent tracking.  
-- **Securely authenticate Relying Parties or other Wallet Units**, making sure that attributes are only presented to trusted entities.  
-- **Onboard seamlessly with PID Providers or attestation Providers** by leveraging existing electronic identification schemes, for a smooth and secure registration process.  
-- **Be informed** whether a Relying Party is authorised or registered to receive the requested attributes.
+- **Securely authenticate Relying Parties or other Wallet Units**, making sure
+that attributes are only presented to trusted entities.  
+- **Onboard seamlessly with PID Providers or attestation Providers** by
+leveraging existing electronic identification schemes, for a smooth and secure
+registration process.  
+- **Be informed** whether a Relying Party is authorised or registered to receive
+the requested attributes.
 - **Access a transaction log via a dashboard**, allowing Users to:  
-    - **Review past interactions** with Relying Parties and Wallet Units.  
-    - **Request data erasure** under the GDPR Article 17 to maintain privacy.  
-    - **Report suspicious Relying Parties** to the relevant national data
+  - **Review past interactions** with Relying Parties and Wallet Units.  
+  - **Request data erasure** under the GDPR Article 17 to maintain privacy.  
+  - **Report suspicious Relying Parties** to the relevant national data
     protection authority.
 
 ### 2.3 Attribute Exchange Mechanism using Attestations
@@ -217,7 +227,8 @@ Using their Wallet Solutions, Users are able to:
 - **Request, store, and present** personal identification data and electronic
 attestations of attributes under their sole
 control, ensuring secure usage in both online and offline scenarios.  
-- **Backup a list of their attributes, attestations, and configurations**, guaranteeing compliance with data portability rights.  
+- **Backup a list of their attributes, attestations, and configurations**,
+guaranteeing compliance with data portability rights.  
 - **Prevent tracking by Relying Parties** when using attestations,
 ensuring privacy-preserving interactions.
 
@@ -227,7 +238,8 @@ Using their Wallet Solutions, Users are able to:
 
 - **Create qualified electronic signatures and seals** for legally binding
 digital transactions.  
-- **Sign documents using qualified electronic signatures**, which are provided by default and free of charge within the Wallet Unit, ensuring universal
+- **Sign documents using qualified electronic signatures**, which are provided
+by default and free of charge within the Wallet Unit, ensuring universal
 accessibility and compliance with legal standards.
 
 These functionalities are implemented by using the authentication and signing
@@ -273,28 +285,35 @@ identification and authentication at Level of Assurance (LoA) high for various
 online services, both public and private. This capability is crucial, as it
 allows Relying Parties to confidently verify the identity of Users they interact with.
 
-In this use case, a User employs their Wallet Unit to present some User
-attributes to a Relying Party, in order to access online services. Before
-presenting the attributes, the Wallet Unit authenticates the User. The User is
-particularly mindful of the privacy and security concerns associated with
-presenting person identification data (PID) online. Their primary goals include
-reliably identifying themselves to services that demand User identification
-while maintaining control over the presentation of their personal data.
+In this use case, a user utilizes their Wallet Unit to present specific
+attributes to a Relying Party in order to access online services. Before doing
+so, the Wallet Unit first authenticates the user.
+The user is particularly mindful of the privacy and security implications of
+sharing data when accessing online services.
+Their primary goals include reliably access and use online services by
+identifying themselves that demand User identification while maintaining control
+over the presentation of their personal data.Their primary objective is to
+securely and reliably access online services that require authentication while
+maintaining full control over how their personal data is presented and shared.
 
 #### 2.5.2 Mobile Driving Licence
 
 A significant use case for the Wallet Unit involves allowing Users to request,
-store, and present a mobile Driving Licence (mDL) as an attestation in their Wallet Unit, allowing them mainly to prove
-their driving privileges. In this use case, the User employs a Wallet Unit to
-present a mDL to a Relying Party, for instance a police officer.
+store, and present a mobile Driving Licence (mDL) as an attestation in their
+Wallet Unit, allowing them mainly to prove their driving privileges. In this use
+case, the User employs a Wallet Unit to present a mDL to a Relying Party, for
+instance a police officer.
 
 The use case description concentrates on proximity supervised and unsupervised
 flows, which involve scenarios where the User is physically near a Relying
-Party, and the mDL attribute exchange occurs using proximity technologies (e.g., NFC, Bluetooth). The two proximity flows have one significant difference: in the supervised flow, the Wallet Unit presents mDL attributes to a human Relying
+Party, and the mDL attribute exchange occurs using proximity technologies (e.g.,
+NFC, Bluetooth). The two proximity flows have one significant difference: in the
+supervised flow, the Wallet Unit presents mDL attributes to a human Relying
 Party or under their supervision, whereas in the unsupervised flow, the Wallet
 Unit presents mDL attributes to a machine without human oversight.
 
-In addition, like any other attestation type, an mDL can be presented online, over the internet.
+In addition, like any other attestation type, an mDL can be presented online,
+over the internet.
 
 #### 2.5.3 Other use cases
 
@@ -351,7 +370,7 @@ pregnancy and childbirth.
 
 ### 3.1 Introduction
 
-This chapter describes the EUDI Wallet ecosystem as it is foreseen in [European
+This chapter describes the EUDI Wallet ecosystem as it is foreseen in the [European
 Digital Identity Regulation]. The different roles in the EUDI Wallet ecosystem
 are described in Figure 1 and detailed in the following sections.
 
@@ -382,7 +401,7 @@ QEAA, PuB-EAA, or non-qualified EAA to Relying Parties. Users can also create
 qualified electronic signatures and seals (QES) and create and present
 pseudonyms.
 
-[CIR 2024/2982] (among others) defines 'wallet user' as 'a user who is in
+[CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982) (among others) defines 'wallet user' as 'a user who is in
 control of the wallet unit'. Being in control of the Wallet Unit implies being
 able to present a PID or attestation to a Relying Party. In most cases, the User
 (the person presenting a PID or attestation) is the subject of that PID or
@@ -898,12 +917,12 @@ firmware covers security-related software, such as an operating system and
 cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
 different possible security architectures for the WSCD (for more details see
 [Section 4.5](#45-wscd-architecture-types)):
-    - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
+  - a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
     accessed over a network.
-    - a local external WSCD, an external device, such as a smart card issued
+  - a local external WSCD, an external device, such as a smart card issued
     to the User specifically for this purpose,
-    - a local internal WSCD, a component within the User device, such as a SIM, e-SIM, or embedded Secure Element,
-    - a local native WSCD, a component embedded in the User device and accessed via
+  - a local internal WSCD, a component within the User device, such as a SIM, e-SIM, or embedded Secure Element,
+  - a local native WSCD, a component embedded in the User device and accessed via
     an API provided by the operating system.
 
 - **Wallet Secure Cryptographic Application (WSCA):** an application that
@@ -981,7 +1000,7 @@ the process.
 the Wallet Unit presents attestations to a machine, without human supervision.
 The interfaces and protocols used in this flow are the same as for the proximity
 supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
-- **Remote Same-Device Flow**:In this flow, the User utilises a web browser or
+- **Remote Same-Device Flow**: In this flow, the User utilises a web browser or
 another application on their User Device to access a Relying Party's a service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
@@ -2140,7 +2159,7 @@ attributes to a Relying Party, see [Section
 
 User authentication for opening the Wallet Instance above can be done either by
 the Wallet Instance or by a WSCD. In the latter case, it is the same mechanism
-employed before the presentaion of any attributes, see below. In the former
+employed before the presentation of any attributes, see below. In the former
 case, the mechanism is Wallet Unit-specific, meaning it is independent from any
 general User authentication mechanism used by the User device, such as a lock
 screen.
@@ -2797,9 +2816,9 @@ combination with an ephemeral key created by the secure environment. The latter
 ephemeral key is sent to the Relying Party in such a way that the Relying Party
 can verify the authenticity of this key. Such a solution, or similar ones, can
 be used provided that:
-    - the solution is fully compliant with the relevant standards, i.e.,
+  - the solution is fully compliant with the relevant standards, i.e.,
     [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].
-    - the solution can be certified for security at LoA "high" according to
+  - the solution can be certified for security at LoA "high" according to
     [Chapter 7](#7-certification-and-risk-management)
 
 ##### 6.6.3.7 Relying Party verifies that the PID or attestation is not revoked
@@ -3036,13 +3055,12 @@ schemes under which they are provided, covering the overall certification
 approach, design principles, and key requirements outlined in the [European
 Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 and Commission Implementing Regulation (CIR) laying down rules for on the
-certification of Wallet Solution (2024/2981), or simply the [CIR
-2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981).
+certification of Wallet Solution (2024/2981), or simply the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981).
 Furthermore, references are made to the Annex I of the CIR, the [Risk
 Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I,),
 supporting the risk-based approach of the Wallet Solutions. For more detailed
 requirements, please refer to the
-[CIR](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+[CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 itself.
 
 The [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
@@ -3102,7 +3120,7 @@ Additionally, other existing or upcoming schemes​ include schemes based on
 FITCEM (EN 17640)​, national schemes such as on remote identity verification, or
 other private schemes (e.g. for mobile devices and apps)​. For harmonisation of
 functional requirements, the Commission Implementing Regulations (CIRs) adopted
-under [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+under the [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 article 5(a) are referenced. For harmonisation of certification requirements,
 the ISO/IEC 17065 framework under Regulation [765/2008] is used, complemented by
 ISO/IEC 17067 on the definition of schemes.
@@ -3114,7 +3132,7 @@ is technology (and architecture) neutral. This means that a final ('top-level')
 certification of the Wallet Solution will yield a composite certificate, built
 on certification of separate components, such as EUCC certification. Wallet
 Solutions are always to be certified against assurance level "high", as set out
-in [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
+in the [European Digital Identity Regulation](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183)
 as well as [CIR (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2015_235_R_0002).
 That assurance level has to be reached by the overall Wallet Solution. Under
 this Regulation, some components of the Wallet Solution may be certified at a
@@ -3373,13 +3391,13 @@ deny the presentation of requested attributes. More details on selective
 disclosure and User approval can be found in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes).
 2. **Mandatory Relying Party Registration of Requested Attributes** – The
 [European Digital Identity Regulation] mandates that each Relying Party register the attributes it intends
-to request from Users. According to [CIR 2024/2982], these registered attributes
+to request from Users. According to [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982), these registered attributes
 must be included in a Relying Party registration certificate, which the Wallet
 Unit uses to verify the legitimacy of the request and inform the User
 accordingly. This transparency ensures that Users can make an informed decision
 about whether to approve or deny the presentation of the requested attributes.
 More details on this requirement can be found in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
-3. **Attestation Provider Disclosure Policy Enforcement** – the [European Digital Identity Regulation] also
+3. **Attestation Provider Disclosure Policy Enforcement** – The [European Digital Identity Regulation] also
 mandates that Attestation Providers can embed a disclosure policy within their
 attestations. This policy may include rules governing whether the Attestation
 Provider approves the presentation of certain attributes to an authenticated
@@ -3640,21 +3658,21 @@ For undated references, the latest version available applies.
 - [Annex 1](./annexes/annex-1/annex-1-definitions.md) - Definitions
 - [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md) - High Level Requirements
 - Annex 3 - Rulebooks:
-    - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
-    - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
+  - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md) - PID rulebook
+  - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md) - mDL rulebook
 - Annex 4 - Service Blueprints:
-    - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialisation and activation
-    - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf) - Blueprint Online identification and authentication
-    - [Annex 4.3](./annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf) - Blueprint Issuing mDL
-    - [Annex 4.4](./annexes/annex-4/annex-4.04-eudi-wallet-presenting-mdl-proximity-supervised.pdf) - Blueprint Presenting mDL (proximity-supervised)
-    - [Annex 4.5](./annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf) - Blueprint Presenting mDL (proximity-unsupervised)
-    - [Annex 4.6](./annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf) - Blueprint Remote QES -- Creating a signature for authentication / authorisation
-    - [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
-    - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature channelled by a Wallet Unit
-    - [Annex 4.9](./annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf) - Blueprint Remote QES - Creating a signature channelled by Relying Party
-    - [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
-    - [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
-    - [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
+  - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf) - Blueprint Initialisation and activation
+  - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf) - Blueprint Online identification and authentication
+  - [Annex 4.3](./annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf) - Blueprint Issuing mDL
+  - [Annex 4.4](./annexes/annex-4/annex-4.04-eudi-wallet-presenting-mdl-proximity-supervised.pdf) - Blueprint Presenting mDL (proximity-supervised)
+  - [Annex 4.5](./annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf) - Blueprint Presenting mDL (proximity-unsupervised)
+  - [Annex 4.6](./annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf) - Blueprint Remote QES -- Creating a signature for authentication / authorisation
+  - [Annex 4.7](./annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf) - Blueprint Remote QES - Enrolment
+  - [Annex 4.8](./annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf) - Blueprint Remote QES - Creating a signature channelled by a Wallet Unit
+  - [Annex 4.9](./annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf) - Blueprint Remote QES - Creating a signature channelled by Relying Party
+  - [Annex 4.10](./annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf) - Blueprint QES -- View history of signatures
+  - [Annex 4.11](./annexes/annex-4/annex-4.11-local-qes-enrolment.pdf) - Blueprint Local QES - Enrolment
+  - [Annex 4.12](./annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf) - Blueprint Local QES -- Creating a signature.
 - Annex 5 - Design guides:
-    - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
-    - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
+  - [Annex 5.1](./annexes/annex-5/annex-5.01-design-guide.pdf) - Wallet Unit design guide
+  - [Annex 5.2](./annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf) - Wallet Unit design guide -- data sharing scenarios
