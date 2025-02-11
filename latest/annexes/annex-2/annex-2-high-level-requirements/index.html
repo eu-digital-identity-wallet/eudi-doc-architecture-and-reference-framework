@@ -1098,7 +1098,7 @@ attributes.</p>
 Relying Party Instance access certificate offered by the entity with which it
 communicates, which is called a "Relying Party Instance". Note that
 there could be multiple Relying Party Instances for each Relying Party.</p>
-<p>The Wallet Unit communicates the outcome of Relying Party authentication to the User when it requests the User for approval to present the requested attributes. High-level requirements for User approval are also included in this Topic. The Wallet Unit also communicates the outcome of the verification of the Relying Party registration certificate, see <a href="#a2344">Topic 44</a>, and the outcome of the evaluation of an embedded disclosure policy, if present, see <a href="#a2343-topic-43---embedded-disclosure-policies">Topic 43</a>.</p>
+<p>The Wallet Unit communicates the outcome of Relying Party authentication to the User when it requests the User for approval to present the requested attributes. High-level requirements for User approval are also included in this Topic. The Wallet Unit also communicates the outcome of the verification of the Relying Party registration certificate, see <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, and the outcome of the evaluation of an embedded disclosure policy, if present, see <a href="#a2343-topic-43---embedded-disclosure-policies">Topic 43</a>.</p>
 <p><em>HLRs</em></p>
 <p>A.  Relying Party authentication</p>
 <table>
@@ -1185,7 +1185,7 @@ there could be multiple Relying Party Instances for each Relying Party.</p>
 <tbody>
 <tr>
 <td>VCR_01</td>
-<td>A PID Provider, QEAA Provider, PuB-EAA Provider, or Wallet Provider SHALL use one of the following methods for revocation of a PID, QEAA, PuB-EAA, or WUA: Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary,Use an Attestation Status List mechanism specified per VCR_11, orUse an Attestation Revocation List mechanism specified per VCR_11. <em>Note: The 24-hour period originates from  ETSI EN 319 411-1 V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked.</em></td>
+<td>A PID Provider, QEAA Provider, PuB-EAA Provider, or Wallet Provider SHALL use one of the following methods for revocation of a PID, QEAA, PuB-EAA, or WUA: - Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary,Use an Attestation Status List mechanism specified per VCR_11, or - Use an Attestation Revocation List mechanism specified per VCR_11. <em>Note: The 24-hour period originates from  ETSI EN 319 411-1 V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked.</em></td>
 </tr>
 <tr>
 <td>VCR_02</td>
@@ -1775,7 +1775,7 @@ requirements related to PID and attestation issuance.</p>
 <tbody>
 <tr>
 <td>ARB_05</td>
-<td>The Schema Provider for an Attestation Rulebook SHALL specify a value for the attestation type, which SHALL be unique within the scope of the EUDI Wallet ecosystem. Notes:In ISO/IEC 18013-5, the attestation type is called ‘document type’ and is included as a “docType” key-value pair in both the mdoc request and the mdoc response. Also, a method for generating unique attestation type values is recommended.In OpenID4VP, the attestation type is included in the “id” property of an Input Descriptor in a Presentation Request.In [SD-JWT VC], the attestation type is called ‘SD-JWT VC type’ and is included as a ‘vct’ claim in the SD-JWT.</td>
+<td>The Schema Provider for an Attestation Rulebook SHALL specify a value for the attestation type, which SHALL be unique within the scope of the EUDI Wallet ecosystem. <em>Notes: - In ISO/IEC 18013-5, the attestation type is called ‘document type’ and is included as a "docType" key-value pair in both the mdoc request and the mdoc response. Also, a method for generating unique attestation type values is recommended. - In OpenID4VP, the attestation type is included in the "id" property of an Input Descriptor in a Presentation Request. - In [SD-JWT VC], the attestation type is called ‘SD-JWT VC type’ and is included as a ‘vct’ claim in the SD-JWT.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1806,7 +1806,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ARB_08</td>
-<td>The Schema Provider for an Attestation Rulebook SHOULD, when specifying a new attribute, take into consideration existing conventions for attribute identifier values and attribute syntaxes. These conventions MAY depend on the format of the attestation, i.e., CBOR for ISO/IEC 18013-5-compliant attestations or JSON for SD-JWT VC-compliant attestations.</td>
+<td>The Schema Provider for an Attestation Rulebook SHOULD, when specifying a new attribute, take into consideration existing conventions for attribute identifier values and attribute syntaxes. <em>Note: These conventions may depend on the format of the attestation, i.e., CBOR for ISO/IEC 18013-5-compliant attestations or JSON for SD-JWT VC-compliant attestations.</em></td>
 </tr>
 <tr>
 <td>ARB_09</td>
@@ -1814,7 +1814,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ARB_10</td>
-<td>The Schema Provider for an Attestation Rulebook for an ISO/IEC 18013-5 compliant attestation MAY define a domestic namespace to specify attributes that are specific to that Rulebook and are not included in the applicable EU-wide or sectoral namespace. All requirements for namespaces in this Topic also apply for domestic namespaces</td>
+<td>The Schema Provider for an Attestation Rulebook for an ISO/IEC 18013-5 compliant attestation MAY define a domestic namespace to specify attributes that are specific to that Rulebook and are not included in the applicable EU-wide or sectoral namespace. All requirements for namespaces in this Topic also apply for domestic namespaces.</td>
 </tr>
 <tr>
 <td>ARB_11</td>
@@ -1927,7 +1927,7 @@ Qualified Electronic Signatures using a Wallet Unit.</p>
 </tr>
 <tr>
 <td>QES_02</td>
-<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. -If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</td>
+<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. - If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</td>
 </tr>
 <tr>
 <td>QES_03</td>
@@ -3545,8 +3545,7 @@ requested by the Relying Party are within the scope of their registered attribut
 <h4 id="a2345-topic-45-qeaa-rulebook">A.2.3.45 Topic 45 - QEAA Rulebook</h4>
 <p>See <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>.</p>
 <h4 id="a2346-topic-46-protocols-and-interfaces-for-presentation-of-pid-and-qeaa-with-relying-parties">A.2.3.46 Topic 46 - Protocols and interfaces for Presentation of PID and (Q)EAA with Relying Parties</h4>
-<p>See <a href="#a231-topic-1---accessing-public-and-private-online-services-with-a-wallet-unit">Topic 1</a> and <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>
-.</p>
+<p>See <a href="#a231-topic-1---accessing-public-and-private-online-services-with-a-wallet-unit">Topic 1</a> and <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>.</p>
 <h4 id="a2347-topic-47-protocols-and-interfaces-for-pid-and-qeaa-issuance-and-non-qualified-certificates-issuance">A.2.3.47 Topic 47 - Protocols and interfaces for PID and (Q)EAA issuance, and (non-)qualified certificates issuance</h4>
 <p>See <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>/<a href="#a2323-topic-23---pid-issuance-and-qeaa-issuance">23</a>.</p>
 <h4 id="a2348-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties">A.2.3.48 Topic 48 - Blueprint for requesting data deletion to Relying Parties</h4>
