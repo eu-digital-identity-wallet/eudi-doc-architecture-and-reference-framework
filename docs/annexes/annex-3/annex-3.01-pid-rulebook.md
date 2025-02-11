@@ -76,12 +76,16 @@ All data identifiers and definitions in this chapter are independent of any enco
 | resident_street | The name of the street where the user to whom the person identification data relates currently resides. |
 | resident_house_number | The house number where the user to whom the person identification data relates currently resides, including any affix or suffix. |
 | personal_administrative_number | A value assigned to the natural person that is unique among all personal administrative numbers issued by the provider of person identification data. Where Member States opt to include this attribute, they shall describe in their electronic identification schemes under which the person identification data is issued, the policy that they apply to the values of this attribute, including, where applicable, specific conditions for the processing of this value. |
-| portrait | Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. |
+| portrait | Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. **Further clarification added in this PID Rulebook:** See requirement PID_04 below. |
 | family_name_birth | Last name(s) or surname(s) of the User to whom the person identification data relates at the time of birth. |
 | given_name_birth | First name(s), including middle name(s), of the User to whom the person identification data relates at the time of birth. |
 | sex | Values shall be one of the following: 0 = not known; 1 = male; 2 = female; 3 = other; 4 = inter; 5 = diverse; 6 = open; 9 = not applicable. For values 0, 1, 2 and 9, ISO/IEC 5218 applies. |
-| email_address | Electronic mail address of the user to whom the person identification data relates, in conformance with [RFC 5322]. | 
+| email_address | Electronic mail address of the user to whom the person identification data relates, in conformance with [RFC 5322]. |
 | mobile_phone_number | Mobile telephone number of the User to whom the person identification data relates, starting with the '+' symbol as the international code prefix and the country code, followed by numbers only. |
+
+| **Index** | **Requirement specification** |
+|-----------|--------------|
+| PID_04 | The attribute portrait SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG). |
 
 ### 3.4 Mandatory metadata specified in CIR 2024/2977
 
@@ -154,7 +158,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 |------------------------|--------------|------------------|
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
-| birth_date | birth_date | full-date, see [Section 4.2.5](#425-attribute-birth_date). |
+| birth_date | birth_date | full-date, see [Section 4.2.4](#424-attribute-birth_date). |
 | birth_place | birth_place | tstr |
 | nationality | nationality | nationalities, see [Section 4.2.2](#422-attribute-nationality). |
 | resident_address | resident_address | tstr |
@@ -165,7 +169,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | resident_street | resident_street | tstr |
 | resident_house_number | resident_house_number | tstr |
 | personal_administrative_number | personal_administrative_number | tstr |
-| portrait | portrait | bstr, see [Section 4.2.3](#423-attribute-portrait). |
+| portrait | portrait | bstr |
 | family_name_birth | family_name_birth | tstr |
 | given_name_birth | given_name_birth | tstr |
 | sex | sex | uint |
@@ -176,7 +180,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | issuing_country | issuing_country | tstr |
 | document_number | document_number | tstr |
 | issuing_jurisdiction | issuing_jurisdiction | tstr |
-| location_status | - | See [Section 4.2.4](#424-attribute-location_status). |
+| location_status | - | See [Section 4.2.3](#423-attribute-location_status). |
 | issuance_date | issuance_date | tdate or full-date |
 | age_over_18 | age_over_18 | bool |
 | age_over_NN | age_over_NN | bool |
@@ -196,21 +200,11 @@ CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1
 
 Note: If the User to whom the person identification data relates has multiple nationalities (and the PID Provider is willing to attest to these multiple nationalities), the PID Provider can include all of the nationalities in the nationalities array. A potential drawback of this solution is that the User cannot selectively disclose only one or these nationalities, since for ISO/IEC 18013-5-compliant attestations, always the entire array will be presented if the User approves the presentation of the nationality attribute. A potential solution to this challenge is for the PID Provider to include only one nationality in the nationality attribute, and for the remaining nationalities use one or more domestic data attributes specified according to requirement PID_ISO_02.
 
-#### 4.2.3 Attribute portrait
-
-Commission Implementing Regulation 2024/2977 describes the optional attribute portrait as “Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications.”
-
-In order to ensure a single consistent encoding of the portrait, this PID Rulebook additionally specifies the following:
-
-- The attribute portrait SHALL consist of a single portrait image in JPEG format.
-- The portrait image SHALL comply with the requirements for a Full Frontal Image Type in ISO/IEC 19794-5.
-- The image SHALL be encoded as binary data.
-
-#### 4.2.4 Attribute location_status
+#### 4.2.3 Attribute location_status
 
 For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be absent, since revocation information will be added to the MSO.
 
-#### 4.2.5 Attribute birth_date
+#### 4.2.4 Attribute birth_date
 
 For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC 8943. This encoding does not contain provisions for encoding partial dates. This may cause challenges in case the birth date of a User is not (fully) known. To deal with such cases, a PID Provider could adopt a policy to choose appropriate values for the unknown date elements. However, mandating such a policy is out of scope of this document.
 
