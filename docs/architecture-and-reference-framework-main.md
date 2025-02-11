@@ -894,17 +894,12 @@ The following have been identified as the core components of a Wallet Unit:
 and software environment required to host and execute the Wallet Instance. The
 minimum hardware and software requirements for the User device will be
 determined by the Wallet Provider.
-
 - **Wallet Instance (WI)**: The app or application installed on a User device,
 which is an instance of a Wallet Solution and belongs to and is controlled by a
 User. This component implements the core business logic and interfaces as
 depicted in Figure 2. It directly interacts with the WSCA/WSCD (see bullets hereafter) to securely
 manage cryptographic assets and execute cryptographic functions, ensuring a high
 level of assurance for authentication.
-- **User device (UD)**: A User device comprises the hardware, operating system,
-and software environment required to host and execute the Wallet Instance. The
-minimum hardware and software requirements for the User device will be
-determined by the Wallet Provider.
 - **Wallet Secure Cryptographic Device (WSCD):** tamper-resistant device that
 provides an environment that is linked to and used by the wallet secure
 cryptographic application to protect critical assets and provide cryptographic
