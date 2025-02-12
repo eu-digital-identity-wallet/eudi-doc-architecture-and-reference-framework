@@ -2189,7 +2189,7 @@ Provider's requirements and therefore is fit to receive a PID or an attestation
 from the Provider.
 - Moreover, the WUA contains a WUA public key. During the issuance of a PID or
 an attestation (see [Section
-6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit),
+6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit)),
 a PID Provider or Attestation Provider can use this public key to verify that
 the Wallet Unit is in possession of the corresponding private key. Moreover, at
 that time, the Wallet Unit will send another public key to the PID Provider or
@@ -2716,7 +2716,7 @@ regarding User approval can be found in [Topic 6].
 
 Another prerequisite for effective User approval is that the Wallet Unit allows
 the selective disclosure of attributes. Selective disclosure implies mainly two
-thing. First, it enables a Relying Party to specify which of the attributes in
+things. First, it enables a Relying Party to specify which of the attributes in
 an attestation it wishes to receive (and which ones not). A Relying Party may
 have different purposes for the requested attributes. For example, an online
 liquor shop may need an age attestation to comply with its legal obligations,
@@ -3406,7 +3406,7 @@ policy enforcement can be found in [Section 6.6.3.4](#6634-wallet-unit-evaluates
 
 User privacy is a key aspect in the design and implementation of the EUDI Wallet
 ecosystem. Attributes are presented as electronic attestations using formats
-based on salted and hashed attributed. These attestations contain unique, fixed elements
+based on salted and hashed attributes. These attestations contain unique, fixed elements
 such as hash values, public keys, and signatures. Malicious Relying Parties could
 exploit these values to track Users by storing and comparing them across
 multiple transactions, identifying recurring patterns.  This privacy threat,
@@ -3437,7 +3437,7 @@ relying on salted-attribute hashes. However, the integration of ZKPs in the EUDI
 Wallet ecosystem is still under discussion and development due to the complexity
 of implementing ZKP solutions in secure hardware and the lack of support in
 currently available secure hardware (WSCDs). This topic will be further explored
-in the context of of the next major release od the ARF. As with Relying Party
+in the context of the next major release of the ARF. As with Relying Party
 linkability, organizational and enforcement measures can help deter Attestation
 Providers from colluding and tracking Users.  Additionally, many Attestation
 Providers are subject to regular audits, making it easier to detect collusion

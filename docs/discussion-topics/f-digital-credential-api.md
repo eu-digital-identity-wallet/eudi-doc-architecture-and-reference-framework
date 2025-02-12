@@ -167,7 +167,7 @@ information, such as the website domain or app package name, within the presenta
 ensuring the authenticity of the request and enhancing trust for both Wallet Units and Users.
 - **5. Session binding**: The Digital Credentials API allows information about a session
 to be embedded in a presentation request. At the same time the browser and the operating
-system handle context switching preventing session hijacking. 
+system handles context switching preventing session hijacking.
 
 
 
@@ -199,7 +199,7 @@ browser and the Android mobile operating system. In this experimental implementa
 exists a method for Wallet Units to indicate to a component, which is part of
 the Wallet Solution and it is referred to as the "matcher" in the current Android-specific
 implementation, the availability of attestations and,
-optionally, attributes included in the attestation. An example [can be found here.](
+optionally, attributes included in the attestation. An example [can be found here](
 https://digitalcredentials.dev/docs/wallets/android/#the-provider-api). This
 Android-specific documentation mentions that the information provided by the Wallet Unit is used
 by the Android operating system to render a selector, allowing Users to make an
@@ -211,22 +211,22 @@ informed choice about which attestation to proceed with.
 As of January 2025, the same-device flow is 
 implemented using the following steps:
 
--  The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units
+-  The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 -  The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorization](img/same-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by creating a `presentation request`.
 - The operating system searches for attestations that satisfy the requested attributes.
 - The browser presents to the User a selector that includes a list of potentially suitable attestations.
 ![Attestation selection](img/same-select.png)
-- The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data
+- The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data.
 - The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested 
-attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents
+attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents.
 
 #### 2.2.2 Cross-device flow
 
 The cross-device flow is implemented using the following steps:
 
-- The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units
+- The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 - The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorization in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by 
@@ -242,7 +242,7 @@ establishing the secure tunnel. This advertisement is used as a proximity check,
 (iv) The tunnel is established.
 
 ![QR Code display](img/cross-qr.png)
-- The presentation request is transferred through the tunnel to the device operating system
+- The presentation request is transferred through the tunnel to the device operating system.
 - The device operating system presents to the User a selector that includes a list of potentially suitable attestations.
 
 ![Attestation selection](img/cross-select.png)
@@ -257,13 +257,13 @@ context of ARF.
 1. **Wallet Selection and Invocation for attestation presentation**: The Digital Credentials API should
  enable a browser or OS to search for Wallet Units containing attestations 
  that potentially match the request of the Relying Party, addressing user 
- experience and scaling concerns caused custom URI-based or universal link
+ experience and scaling concerns caused by custom URI-based or universal link
 (a.k.a. app link)-based approaches.​
 
 2. **Wallet Selection and Invocation for attestation issuance**: The Digital Credentials API should
  enable a browser or OS to search for Wallet Units that can handle an attestation offer
  from a specific Attestation Provider, addressing user 
- experience and scaling concerns caused custom URI-based or universal link
+ experience and scaling concerns caused by custom URI-based or universal link
 (a.k.a. app link)-based approaches.​​
 
 3. **Secure Cross-Device Flows**: The Digital Credentials API should enable 
@@ -278,7 +278,7 @@ and attestation issuance.
 ### 3.2 Responsibilities
 The Digital Credentials API should operate as a secure transport layer, allowing all parties
 to fulfill their requirements as specified in Annex 2  of ARF. Browsers and operating systems
-facilitating remote transaction flows should not act on behalf of Attestation Providers,Relying Parties or Wallet 
+facilitating remote transaction flows should not act on behalf of Attestation Providers, Relying Parties or Wallet
 Units. Particularly:
 
 1. **Consent**:  Wallet Units and Relying Parties should handle user consent for attribute requests
@@ -296,7 +296,7 @@ the Digital Credentials API should verify the web origin of Attestation Provider
 the credential offers and presentation requests are transferred over TLS from the Attestation Provider or 
 the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorized to 
 issue attestations or request attributes as this responsibility
-lies with national issuers and regulators, including Relying Parties registrars.
+lies with national issuers and regulators, including Relying Party registrars.
 
 4. **Wallet Unit sovereignty**. When the Digital Credentials API is used, the operating 
 system should not override or remove control from the Wallet Unit. The User's Wallet Unit
@@ -328,7 +328,7 @@ those required by the EU.
 
 ### 3.4 Privacy preservation
 
-The use of the Digital Credentials API should not compromise User privacy. In more details. 
+The use of the Digital Credentials API should not compromise User privacy. In more detail:
 
 1. **Privacy preserving searching**: Wallet Units may have to "indicate" to the Digital Credentials 
 API framework the availability of attestations, to facilitate their discovery and use. 
@@ -344,8 +344,8 @@ This principle also extends to any tunneling services used to facilitate cross-d
 
 3. **Protection against data theft**: Browsers and operating systems providing support for 
 the Digital Credentials API should minimize the threat of data theft and disclosure through 
-eavesdropping the communication between the Wallet Unit and the Attestation Provider or 
-Relaying Party's website
+eavesdropping on the communication between the Wallet Unit and the Attestation Provider or
+Relying Party's website.
 
 ### 3.5 Availability preservation
 
@@ -356,7 +356,7 @@ attacks against Wallet Units. Particularly:
 1. **DoS protection**. The use of the Digital Credentials API should not facilitate Attestation Provider or Relying 
 Parties to perform Denial of Service attacks against Wallet Units, e.g., by enabling an Attestation Provider or Relying Party 
 to send multiple invalid requests. Similarly, the use of the Digital Credentials API should not enable 
-attackers to block transactions by Relying Parties and Wallet Units
+attackers to block transactions by Relying Parties and Wallet Units.
 
 ## 4 Additions and changes to the ARF
 ### 4.1 High-Level Requirements to be added to Annex 2
