@@ -2685,7 +2685,7 @@ will be further discussed with Member States for ARF 2.0.
 
 **Note: In this document the term 'User approval' exclusively refers to a User's
 *decision to present an attribute to a Relying Party. Under no circumstances
-*User approval to present data from their Wallet Unit should be construed as
+*should User approval to present data from their Wallet Unit be construed as
 *lawful grounds for the processing of personal data by the Relying Party or any
 *other entity. A Relying Party requesting or processing personal data from a
 *Wallet Unit must ensure that it has grounds for lawful processing of that data,
