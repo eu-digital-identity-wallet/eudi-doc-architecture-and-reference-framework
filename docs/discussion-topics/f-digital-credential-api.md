@@ -177,7 +177,7 @@ Using the Digital Credentials API, a Relying Party can interact with a Wallet
 Unit using a website and through a browser.
 
 The current version of Digital Credentials API extends Credential Management
-Level 1 API (the same API used by Passkey/WebAuthN) to allow websites to request
+Level 1 API (the same API used by WebAuthn/passkeys) to allow websites to request
 an attestation. This is achieved by providing a sequence of `presentation
 requests`,  where each presentation request includes an `exchange protocol` and
 `request data`. The format of the request data are specific to the exchange
@@ -232,7 +232,7 @@ The cross-device flow is implemented using the following steps:
 - The Relying Party  indicates to the browser which attributes they want to request by 
 creating a `presentation request`.
 - The browser uses CTAP 2.2 hybrid flow (section 11.5 of \[Ctap\]) to establish a tunnel between the 
-browser and the device where the Wallet Unit is installed (this is the same flow used by Passkey). 
+browser and the device where the Wallet Unit is installed (this is the same flow used by WebAuthn/passkeys).
 From a high level this is implemented as follows: (i) The browser presents a QR code which 
 includes information about the tunnel endpoint and keys that can be used for establishing 
 a secure session, (ii) the user scans the QR code using the device camera, (iii) the device 
