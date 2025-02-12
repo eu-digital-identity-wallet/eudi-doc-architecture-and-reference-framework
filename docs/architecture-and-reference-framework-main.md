@@ -2541,6 +2541,7 @@ Subsequently, after the Wallet Unit presents the selected attributes from the
 PID or attestation to the Relying Party Instance by sending a response to the
 request, the Relying Party validates the response. The following trust
 relationships are established:
+
 5. The Relying Party Instance verifies the signature of the PID or attestation.
 This ensures that the Relying Party can trust that the PID or attestation it
 receives is issued by an authentic Provider and has not been changed. This is
@@ -2890,17 +2891,17 @@ the PID Provider or Attestation Provider:
 authentication mechanisms implemented by the WSCD (see [Topic 9]). This means
 that the Relying Party trusts that the the WSCD has properly authenticated the
 User before allowing the User to present the attributes. Note that:
-   - This trust is not based on the outcome of any verification by the Relying
-   Party but is a-priori trust in (in particular) the certified WSCD that is
-   part of the Wallet Unit.
-   - Using this method implies that Relying Parties also trust device binding,
-   as described in [Section 6.5.3](#653-wallet-unit-activation). The Relying
-   Party Instance in fact first verifies that the PID or attestation is bound to
-   a WSCD trusted by the PID Provider or Attestation Provider, and then trusts
-   that the WSCD has properly authenticated the User.
-   - As a matter of fact, this User binding method will always be carried out,
-   since the WSCD must authenticate its User when asking for User approval for
-   presenting any attributes, and since device binding is also mandatory.
+    - This trust is not based on the outcome of any verification by the Relying
+    Party but is a-priori trust in (in particular) the certified WSCD that is
+    part of the Wallet Unit.
+    - Using this method implies that Relying Parties also trust device binding,
+    as described in [Section 6.5.3](#653-wallet-unit-activation). The Relying
+    Party Instance in fact first verifies that the PID or attestation is bound to
+    a WSCD trusted by the PID Provider or Attestation Provider, and then trusts
+    that the WSCD has properly authenticated the User.
+    - As a matter of fact, this User binding method will always be carried out,
+    since the WSCD must authenticate its User when asking for User approval for
+    presenting any attributes, and since device binding is also mandatory.
 2. In addition, in some cases, if a Relying Party does not want to only trust
 the above mechanism, it may be able to use User attributes to carry out an
 additional User binding process. For example, if the PID or attestation contains
