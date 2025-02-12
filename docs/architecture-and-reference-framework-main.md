@@ -2684,12 +2684,12 @@ will be further discussed with Member States for ARF 2.0.
 ##### 6.6.3.5 Wallet Unit obtains User approval for presenting selected attributes
 
 **Note: In this document the term 'User approval' exclusively refers to a User's
-*decision to present an attribute to a Relying Party. Under no circumstances
-*User approval to present data from their Wallet Unit should be construed as
-*lawful grounds for the processing of personal data by the Relying Party or any
-*other entity. A Relying Party requesting or processing personal data from a
-*Wallet Unit must ensure that it has grounds for lawful processing of that data,
-*according to Article 6 of the GDPR.**
+decision to present an attribute to a Relying Party. Under no circumstances
+User approval to present data from their Wallet Unit should be construed as
+lawful grounds for the processing of personal data by the Relying Party or any
+other entity. A Relying Party requesting or processing personal data from a
+Wallet Unit must ensure that it has grounds for lawful processing of that data,
+according to Article 6 of the GDPR.**
 
 Before presenting any attribute to a Relying Party, the Wallet Unit requests the
 User for their approval. This is critical for ensuring that the User remains in
