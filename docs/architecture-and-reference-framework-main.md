@@ -3526,8 +3526,6 @@ approaches to address the issue positively.
 - Approach discussions with a **mindset of collaboration and problem-solving**.
 - Be **open to different perspectives**, as contributors may have different
 viewpoints, experiences, and expertise levels.
-- Be **open to different perspectives**, as contributors may have different
-viewpoints, experiences, and expertise levels.
 - Contribute to a **positive and welcoming community atmosphere**.
 
 #### 8.2.2 Managing Issues and Pull Requests
