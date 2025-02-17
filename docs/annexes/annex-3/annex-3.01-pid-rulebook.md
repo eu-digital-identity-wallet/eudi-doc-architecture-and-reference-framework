@@ -231,39 +231,39 @@ PID attestations as SD-JWT allows for individual selective disclosure of objects
 and their properties. A hierarchical claim name structure is indicated by the
 notation `parent.child` in the table below.
 
-| **Data Identifier** | **Attribute identifier** | **Encoding format** |
+| **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference** | 
 |------------------------|--------------|------------------|
-| family_name | family_name | string |
-| given_name | given_name | string |
-| birth_date | birthdate | string, ISO 8601-1 \[ISO8601‑1\] YYYY-MM-DD format |
-| birth_place | place_of_birth.locality | string |
-| nationality | nationalities | array of strings |
-| resident_address | address.formatted | string |
-| resident_country | address.country | string |
-| resident_state | address.region | string |
-| resident_city | address.locality | string |
-| resident_postal_code | address.postal_code | string |
-| resident_street | address.street_address | string |
-| resident_house_number | address.house_number | string |
-| personal_administrative_number | personal_administrative_number | string |
-| portrait | picture | string; data URL containing the base64-encoded portrait  |
-| family_name_birth | birth_family_name | string |
-| given_name_birth | birth_given_name | string |
-| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* |
-| email_address | email | string |
-| mobile_phone_number | phone_number | string |
-| expiry_date | exp | number, as defined in \[RFC7519, Section 4.1.4\] |
-| issuing_authority | issuing_authority | string |
-| issuing_country | issuing_country | string |
-| document_number | document_number | string |
-| issuing_jurisdiction | issuing_jurisdiction | string |
-| location_status | - | See [Section 4.2.4](#424-attribute-location_status). |
-| issuance_date | iat | number, as defined in \[RFC7519, Section 4.1.6\] |
-| age_over_18 | age_over_18 | boolean |
-| age_over_NN | age_over_NN | boolean |
-| age_in_years | age_in_years | number |
-| age_birth_year | age_birth_year | number |
-| trust_anchor | trust_anchor | string |
+| family_name | family_name | string | Section 5.1 of \[OIDC\] | 
+| given_name | given_name | string | Section 5.1 of \[OIDC\] | 
+| birth_date | birthdate | string, ISO 8601-1 \[ISO8601‑1\] YYYY-MM-DD format | Section 5.1 of \[OIDC\] | 
+| birth_place | place_of_birth.locality | string | Section 4.1 of \[EKYC\] | 
+| nationality | nationalities | array of strings | Section 4.1 of \[EKYC\] | 
+| resident_address | address.formatted | string | Section 5.1 of \[OIDC\] | 
+| resident_country | address.country | string | Section 5.1 of \[OIDC\] | 
+| resident_state | address.region | string | Section 5.1 of \[OIDC\] | 
+| resident_city | address.locality | string | Section 5.1 of \[OIDC\] | 
+| resident_postal_code | address.postal_code | string | Section 5.1 of \[OIDC\] | 
+| resident_street | address.street_address | string | Section 5.1 of \[OIDC\] | 
+| resident_house_number | address.house_number | string | Section 5.1 of \[OIDC\] | 
+| personal_administrative_number | personal_administrative_number | string | |
+| portrait | picture | string; data URL containing the base64-encoded portrait  | Section 5.1 of \[OIDC\] | 
+| family_name_birth | birth_family_name | string | Section 4.1 of \[EKYC\] | 
+| given_name_birth | birth_given_name | string | Section 4.1 of \[EKYC\] | 
+| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* | Section 5.1 of \[OIDC\] | 
+| email_address | email | string | Section 5.1 of \[OIDC\] | 
+| mobile_phone_number | phone_number | string | Section 5.1 of \[OIDC\] | 
+| expiry_date | exp | number | Section 4.1 of \[RFC7519\] |
+| issuing_authority | issuing_authority | string | |
+| issuing_country | issuing_country | string | |
+| document_number | document_number | string | | 
+| issuing_jurisdiction | issuing_jurisdiction | string | |
+| location_status | - | See [Section 4.2.4](#424-attribute-location_status). | |
+| issuance_date | iat | number | Section 4.1 of \[RFC7519\] |
+| age_over_18 | age_equal_or_over.18 | boolean (Note: the age is a property of age_equal_or_over) | |
+| age_over_NN | age_equal_or_over.NN | boolean (Note: the age is a property of age_equal_or_over) | |
+| age_in_years | age_in_years | number | |
+| age_birth_year | age_birth_year | number | |
+| trust_anchor | trust_anchor | string | |
 
 
 Fields marked with (*) indicate that there is not a one-to-one mapping
@@ -310,7 +310,6 @@ defined initially:
 
 Domestic PID Type Metadata information SHALL be published at their
 respective URLs as defined in the SD-JWT VC specification.
-
 
 
 ### 5.4 Example
