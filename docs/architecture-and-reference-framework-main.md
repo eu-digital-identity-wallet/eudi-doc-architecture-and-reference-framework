@@ -299,7 +299,7 @@ data is presented and shared.
 A significant use case for the Wallet Unit involves allowing Users to request,
 store, and present a mobile Driving Licence (mDL) as an attestation in their
 Wallet Unit, allowing them mainly to prove their driving privileges. In this use
-case, the User employs a Wallet Unit to present a mDL to a Relying Party, for
+case, the User employs a Wallet Unit to present an mDL to a Relying Party, for
 instance a police officer.
 
 The use case description concentrates on proximity supervised and unsupervised
