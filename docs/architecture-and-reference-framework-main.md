@@ -96,7 +96,7 @@ reference implementation.
 The LSPs are expected to provide feedback on the ARF as they develop and
 interact with Relying Party services, Qualified or non-qualified Electronic
 Attestations of Attributes (Q)EAA Providers, Person Identification Data (PID)
-Providers, Qualified and non-Qualified Trust Service Providers and Users in
+Providers, Qualified and non-qualified Trust Service Providers and Users in
 meaningful interactions under the proposed use cases.
 
 ### 1.4 Definitions
