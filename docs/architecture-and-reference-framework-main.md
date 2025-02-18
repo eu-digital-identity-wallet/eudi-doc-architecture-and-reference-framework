@@ -763,7 +763,7 @@ Access Certificate Authorities must be notified by a Member State to the
 Commission. As part of the notification process, the trust anchors of the Access
 CA must be included in a Trusted List. A trust anchor is the combination of a
 public key and an identifier for the associated entity. Wallet Units need these
-trust anchors to verify of the signatures over the access certificates presented
+trust anchors to verify the signatures over the access certificates presented
 to them when a new PID or attestation is issued or when they receive an
 attribute presentation request from a Relying Party.
 
