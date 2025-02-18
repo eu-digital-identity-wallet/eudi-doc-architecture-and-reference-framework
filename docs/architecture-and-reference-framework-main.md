@@ -2378,7 +2378,7 @@ Note: It is not mandatory for each Wallet Unit to possess all PID Provider CA
 Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted
 Lists they need to subscribe to, for example depending on the Member State(s)
 they are operating in. It is however mandatory to possess all Attestation
-Provider CA Trusted Lists, as Wallet Units must support all QEAA Providers and
+Provider Access CA Trusted Lists, as Wallet Units must support all QEAA Providers and
 PuB-EAA Providers in the EUDI Wallet ecosystem.
 
 To start the process of requesting a PID or an attestation, the User directs the
