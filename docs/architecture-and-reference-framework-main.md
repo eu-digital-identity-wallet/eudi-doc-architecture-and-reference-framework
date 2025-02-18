@@ -2834,7 +2834,7 @@ attestation. To get the status of the attestation it has received from the
 Wallet Unit, the Relying Party obtains the status list from the URL specified in
 the attestation and verifies the value encoded at the bit position given by the
 index value in the attestation.
-- A revocation list is a list of PID identifiers or attestations identifiers
+- A revocation list is a list of PID identifiers or attestation identifiers
 revoked by the PID Provider or Attestation Provider. To get the status of the
 PID or attestation it has received from the Wallet Unit, the Relying Party
 obtains the revocation list from the URL specified in the attestation and
