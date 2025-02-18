@@ -1663,7 +1663,7 @@ Also, the following points are emphasised, to facilitate creation and adoption:
 - Registration of an Attestation Rulebook in the Attestation Rulebook catalogue
 is not mandatory.
 - Registration does not create any obligation or automatic acceptance by any
-third party, or automatically implies cross-border recognition of the type of
+third party, or automatically imply cross-border recognition of the type of
 attestation described in the Rulebook.
 - The Attestation Rulebooks catalogue can be in the same environment as the
 catalogue of attributes.
