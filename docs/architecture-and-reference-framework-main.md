@@ -290,11 +290,9 @@ attributes to a Relying Party in order to access online services. Before doing
 so, the Wallet Unit first authenticates the user.
 The user is particularly mindful of the privacy and security implications of
 sharing data when accessing online services.
-Their primary goals include reliably access and use online services by
-identifying themselves that demand User identification while maintaining control
-over the presentation of their personal data.Their primary objective is to
-securely and reliably access online services that require authentication while
-maintaining full control over how their personal data is presented and shared.
+Their primary objective is to securely and reliably access online services that
+require authentication while maintaining full control over how their personal
+data is presented and shared.
 
 #### 2.5.2 Mobile Driving Licence
 
