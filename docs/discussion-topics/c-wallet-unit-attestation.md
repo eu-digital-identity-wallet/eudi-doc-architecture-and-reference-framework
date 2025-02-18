@@ -232,7 +232,7 @@ What exactly is covered by "attestation on a public key" will depend on various 
 
 *4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
 ...\
-(b) where the wallet 
+(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;*
 Depending on how the WUA is constructed and how the above mentioned _cryptographic binding_ is done, it may be possible (e.g. by using Zero-Knowledge Proofs) to make a revocation of the Wallet Unit automatically invalidate any issued PID. Such techniques does not replace the need for PID Providers to revoke the issued PID themselves, as it might be possible for an attacker to copy a valid PID from a revoked Wallet Unit into a non-revoked Wallet Unit.
 
 The use of long-lived WUAs may lead to privacy risks. These are discussed in [Topic A], which discusses privacy risks related to the usage of attestations in general. These discussions also apply to the WUA.
