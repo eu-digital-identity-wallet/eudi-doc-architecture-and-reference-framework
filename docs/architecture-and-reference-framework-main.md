@@ -728,18 +728,18 @@ systems, secure cryptographic hardware, libraries, and app stores.
 
 ### 3.15 Attribute Schema Providers for QEAA, PuB-EAA and EAA
 
- Attribute Schema Providers publish attribute schemas describing the structure
- of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding
- of all attributes. These attribute schemas are published in Attestation
- Rulebooks, see [Section 5.5](#55-attestation-rulebooks). For PIDs and mDLs, the
- applicable Rulebooks are published by the Commission.
+Attribute Schema Providers publish attribute schemas describing the structure
+of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding
+of all attributes. These attribute schemas are published in Attestation
+Rulebooks, see [Section 5.5](#55-attestation-rulebooks). For PIDs and mDLs, the
+applicable Rulebooks are published by the Commission.
 
- A catalogue of published Attestation Rulebooks will enable other entities such
- as Relying Parties to discover which attestations exist within the EUDI Wallet
- ecosystem, and how attributes from these attestations can be requested and
- validated. The Commission sets out the technical specifications, standards, and
- procedures for this purpose. Common schemas, including by sector-specific
- organisations, are critical for widespread adoption of attestations.
+A catalogue of published Attestation Rulebooks will enable other entities such
+as Relying Parties to discover which attestations exist within the EUDI Wallet
+ecosystem, and how attributes from these attestations can be requested and
+validated. The Commission sets out the technical specifications, standards, and
+procedures for this purpose. Common schemas, including by sector-specific
+organisations, are critical for widespread adoption of attestations.
 
 ### 3.16 National Accreditation Bodies
 
