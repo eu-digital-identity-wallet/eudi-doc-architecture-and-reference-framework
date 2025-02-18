@@ -86,9 +86,9 @@ identification and authentication of a User using their Wallet Unit.
 
 *Short description*
 
-A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the Driving Licences Directive, once it is adopted.
+A User can obtain their mobile Driving Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the Driving Licences Directive, once it is adopted.
 
-This Topic contains high-level requirements related to a User presenting a mobile Driver's Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.
+This Topic contains high-level requirements related to a User presenting a mobile Driving Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.
 
 *HLRs*
 
