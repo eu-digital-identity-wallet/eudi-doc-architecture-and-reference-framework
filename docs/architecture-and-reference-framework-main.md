@@ -660,7 +660,7 @@ presentation of attributes from Wallet Units, using one or more of the flows
 described in [Section 4.4](#44-data-presentation-flows). For this, the
 intermediary will use their own access certificate (point 1. above) and the
 registration certificate of the 'end' Relying Party (point 2. above).
-4. If a Wallet Unit, during a transaction, receives an registration certificate
+4. If a Wallet Unit, during a transaction, receives a registration certificate
 indicating that the Relying Party uses the services of an intermediary, it
 verifies that the name and the identifier of the intermediary in the
 registration certificate are identical to the name and identifier in the access
