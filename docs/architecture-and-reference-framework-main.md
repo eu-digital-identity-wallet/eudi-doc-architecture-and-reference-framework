@@ -81,7 +81,7 @@ and standards developments.
 To support the development of a reference implementation of a Wallet Solution
 and to pilot its usage across different priority use cases, the Commission
 launched a call for proposals on 22 February 2022 under the Digital Europe
-Programme to pilot use cases for the EUDI Wallet ecosystem at a large-scale.
+Programme to pilot use cases for the EUDI Wallet ecosystem at a large scale.
 
 The objective of the Large-Scale Pilots (LSP) call is to support the piloting of
 the EUDI Wallet ecosystem around a range of use cases involving both public and
