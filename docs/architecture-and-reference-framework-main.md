@@ -327,7 +327,7 @@ Providing credentials for qualification recognition procedures can be costly and
 time-consuming for Users, Relying Parties (such as companies and employers), and
 Attestation Providers (such as education and training providers or academic
 institutions). A Wallet Unit may be a repository for educational credentials and
-a means for exchanging them by the User to relevant Relying Parties.
+a means for presenting them by the User to relevant Relying Parties.
 
 ##### 2.5.3.3 Digital finance
 
