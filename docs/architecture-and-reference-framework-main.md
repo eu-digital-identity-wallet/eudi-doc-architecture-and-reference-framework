@@ -142,7 +142,7 @@ Among the areas identified for further discussion are:
 
 Other topics that will be developed include:
 
-- the Digital Credential API,
+- the Digital Credentials API,
 - Zero Knowledge Proofs (ZKP),
 - transaction logs maintained by the Wallet Unit,
 - scenarios involving a natural person representing another natural person,

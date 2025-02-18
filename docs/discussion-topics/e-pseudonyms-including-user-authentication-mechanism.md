@@ -340,7 +340,7 @@ Below, we list open questions that must still be clarified related to the intera
 
 
 
-### 5.3 Digital Credential API
+### 5.3 Digital Credentials API
 
 As stated in Chapter 4, [WebAuthn] does not specify the interface between the Wallet Units (i.e., Authenticators) and the Client used by the user to initiate the usage of the pseudonyms.
 Discussion Topic F must also take into account providing a seamless integration for the use of pseudonyms.
