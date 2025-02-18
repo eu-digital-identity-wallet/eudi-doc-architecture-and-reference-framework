@@ -222,7 +222,7 @@ the requested attributes.
 
 ### 2.3 Attribute Exchange Mechanism using Attestations
 
-Using their Wallet Solutions, Users are able to:  
+Using their Wallet Units, Users are able to:
 
 - **Request, store, and present** personal identification data and electronic
 attestations of attributes under their sole
@@ -234,7 +234,7 @@ ensuring privacy-preserving interactions.
 
 ### 2.4 Qualified electronic signature
 
-Using their Wallet Solutions, Users are able to:  
+Using their Wallet Units, Users are able to:
 
 - **Create qualified electronic signatures and seals** for legally binding
 digital transactions.  
