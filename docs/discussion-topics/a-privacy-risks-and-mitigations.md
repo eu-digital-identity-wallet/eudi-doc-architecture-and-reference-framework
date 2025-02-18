@@ -857,7 +857,7 @@ To the maximum extent possible, Wallet Providers, PID Providers, and
 Attestation Providers SHALL:
 -   ensure that Users do not notice which of the methods referenced in requirement 3
     is used for their PIDs, attestations, or WUAs,
--   ensure that no User action is needed for the re-issuance of new attestations.
+-   ensure that no User action is needed for the re-issuance of PIDs or attestations.
 
 >Note: The topic of re-issuance will be further discussed with Member
 States in Topic B.
