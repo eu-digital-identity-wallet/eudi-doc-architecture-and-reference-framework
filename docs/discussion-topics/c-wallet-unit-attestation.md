@@ -647,7 +647,7 @@ See chapter 4 above. In addition, discussions of the WUA in the main part of the
 
 | Reference       | Description    |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [WebAuthN]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
+| [WebAuthn]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
 | [ARF_DevPlan]   | Architecture and Reference Framework Development plan 2025, European Commission, v1.0. |
 | [Topic A]       | Topic A - Privacy Risks and Mitigations |
 | [RiskRegister]  | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
