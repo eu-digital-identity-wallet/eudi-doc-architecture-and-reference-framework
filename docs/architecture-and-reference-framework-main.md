@@ -382,7 +382,7 @@ are described in Figure 1 and detailed in the following sections.
 3. Person Identification Data (PID) Providers, see [Section 3.4](#34-person-identification-data-pid-providers),
 4. Trusted List Providers, see [Section 3.5](#35-trusted-list-provider),
 5. Qualified Electronic Attestation of Attributes (QEAA) Providers, see [Section 3.6](#36-qualified-electronic-attestation-of-attributes-qeaa-providers),
-6. Electronic Attestation of Attributes issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers, see [Section 3.7](#37-eaa-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers),
+6. Electronic Attestation of Attributes issued by or on behalf of a public sector body responsible for an authentic source (PuB-EAA) Providers, see [Section 3.7](#37-eaa-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers),
 7. Electronic Attestation of Attributes (EAA) Providers, see [Section 3.8](#38-non-qualified-electronic-attestation-of-attributes-eaa-providers),
 8. Qualified Electronic Signature Remote Creation Providers, see [Section 3.9](#39-qualified-electronic-signature-remote-creation-qesrc-providers),
 9. Authentic Sources, see [Section 3.10](#310-authentic-sources),
@@ -523,7 +523,7 @@ User attributes from the PID in the Wallet Unit.
 The terms and conditions of these services are for each QEEA Provider to
 determine, beyond what is specified in the [European Digital Identity Regulation].
 
-### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (Pub-EAA) Providers
+### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (PuB-EAA) Providers
 
 As specified in the [European Digital Identity Regulation], an attestation may
 be issued by or on behalf of a public sector body responsible for an Authentic
@@ -541,7 +541,7 @@ to [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authenticity-of-t
 
 the [European Digital Identity Regulation] stipulates that PuB-EAAs, like QEAAs, have the same legal effect
 as attestations in paper form. It is up to the Member States to define terms and
-conditions for the provisioning of Pub-EAAs, but PuB-EAA Providers will comply
+conditions for the provisioning of PuB-EAAs, but PuB-EAA Providers will comply
 with the same technical specifications and standards as Providers of PIDs and
 other attestations.
 
@@ -605,7 +605,7 @@ In Figure 1 this is indicated by the arrow 'provides qualified data'.
 
 Relying Parties are natural or legal persons that rely upon an electronic
 identification scheme or on a Trust Service. They request attributes contained
-within a PID, QEAA, Pub-EAA or EAA from the Wallet Unit, subject to the approval
+within a PID, QEAA, PuB-EAA or EAA from the Wallet Unit, subject to the approval
 of the User and within the limits of applicable legislation and rules.
 
 The reason for reliance on the Wallet Unit may be a legal requirement, a
@@ -1871,7 +1871,7 @@ certificate does not contain further information about its authorisation or
 registration to issue attestations of a specific type, for instance an mDL or
 diploma. Authorisation is dealt with in the following manner:
 
-- For QEAA Providers and Pub-EAA Providers, no authorisation is necessary, since
+- For QEAA Providers and PuB-EAA Providers, no authorisation is necessary, since
 these kinds of Providers are trusted by other actors in the EUDI Wallet
 ecosystem to not fraudulently issue attestations that they are not legally
 allowed to issue. This trust is warranted since these kinds of Providers operate
@@ -2078,7 +2078,7 @@ PID Provider. Each Wallet Provider will, prior to or during installation of a
 Wallet Instance, let the User know which PID Providers are supported by this
 Wallet Solution.
 
-For QEAAs, Pub-EAAs, and non-qualified EAAs, the situation is different.
+For QEAAs, PuB-EAAs, and non-qualified EAAs, the situation is different.
 Providers of such attestations will support all Wallet Solutions and are not
 allowed to discriminate between them when processing a request for the issuance
 of an attestation. Conversely, a Wallet Solution supports all Attestation
