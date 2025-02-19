@@ -371,17 +371,15 @@ corresponding User, and to track at which Relying Parties the User
 presents their attestations.
 
 Unlike for Relying Party linkability, Attestation Provider linkability
-cannot be prevented for attestations using salted-attribute hashes. The
+cannot be technically prevented for attestations using salted-attribute hashes. The
 only way to technically mitigate this risk is by using Zero-Knowledge
-Proofs instead, as described in section 5. However, as for Relying Party
-linkability, organisational and repressive measures can be used to
+Proofs instead, as described in section 5. However, like for Relying Party
+linkability, organisational preventive, detective, and repressive measures can be used to
 discourage Attestation Providers from colluding and tracking Users
-and to mitigate Attestation Provider linkability. In
+and to mitigate Attestation Provider linkability. For example, Attestation Providers may purposely discard
+the unique values of an attestation after it has been issued, or remove any links to the User to whom it has been issued. In
 addition, many Attestation Providers are subject to regular audits,
-which means that collusion and tracking can more easily be detected.
-For example, detecting if Attestation Providers may purposely discard
-certain unique values of an attestation or forget the user for whom
-it has been issued.
+which means that collusion and tracking can more easily be detected by relevant authorities. Finally, Attestation Providers that are found to be tracking their Users in an illegal manner can be fined, have their access certificates revoked, or be otherwise punished.
 
 ### 2.4 WUAs and Wallet Providers
 
