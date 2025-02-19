@@ -17,6 +17,7 @@ theme:
 
 markdown_extensions:
   - footnotes
+  - sane_lists
   - tables
 repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
