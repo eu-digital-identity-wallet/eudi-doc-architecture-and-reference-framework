@@ -1031,8 +1031,8 @@ identification and authentication of a User using their Wallet Unit.</p>
 </table>
 <h4 id="a232-topic-2-mobile-driving-licence-within-the-eudi-wallet-ecoystem">A.2.3.2 Topic 2 - Mobile Driving Licence within the EUDI Wallet ecoystem</h4>
 <p><em>Short description</em></p>
-<p>A User can obtain their mobile Driver's Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the Driving Licences Directive, once it is adopted.</p>
-<p>This Topic contains high-level requirements related to a User presenting a mobile Driver's Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.</p>
+<p>A User can obtain their mobile Driving Licence (mDL) from an mDL Provider and store it in an Wallet Unit. The User can then present the mDL to a Relying Party upon request to prove their driving rights conveniently, securely, and in compliance with the Driving Licences Directive, once it is adopted.</p>
+<p>This Topic contains high-level requirements related to a User presenting a mobile Driving Licence (mDL) to a Relying Party in a supervised or unsupervised scenario, and also in an unsupervised scenario, in proximity mode.</p>
 <p><em>HLRs</em></p>
 <p>No high-level requirements are identified for this Topic, as the mDL is an attestation that must comply with all relevant requirements in other Topics.</p>
 <h4 id="a233-topic-3-pid-rulebook">A.2.3.3 Topic 3 - PID Rulebook</h4>
@@ -1154,7 +1154,7 @@ there could be multiple Relying Party Instances for each Relying Party.</p>
 <tbody>
 <tr>
 <td>RPA_07</td>
-<td>A Wallet Unit SHALL ensure the User approved the release of any attribute(s) in the Wallet Unit to a Relying Party, prior to releasing these attribute. A Wallet Unit SHALL always allow the User to refuse releasing an attribute requested by the Relying Party.</td>
+<td>A Wallet Unit SHALL ensure the User approved the release of any attribute(s) in the Wallet Unit to a Relying Party, prior to releasing these attributes. A Wallet Unit SHALL always allow the User to refuse releasing an attribute requested by the Relying Party.</td>
 </tr>
 <tr>
 <td>RPA_08</td>
@@ -1185,7 +1185,7 @@ there could be multiple Relying Party Instances for each Relying Party.</p>
 <tbody>
 <tr>
 <td>VCR_01</td>
-<td>A PID Provider, QEAA Provider, PuB-EAA Provider, or Wallet Provider SHALL use one of the following methods for revocation of a PID, QEAA, PuB-EAA, or WUA: - Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary,Use an Attestation Status List mechanism specified per VCR_11, or - Use an Attestation Revocation List mechanism specified per VCR_11. <em>Note: The 24-hour period originates from  ETSI EN 319 411-1 V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked.</em></td>
+<td>A PID Provider, QEAA Provider, PuB-EAA Provider, or Wallet Provider SHALL use one of the following methods for revocation of a PID, QEAA, PuB-EAA, or WUA: - Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary, Use an Attestation Status List mechanism specified per VCR_11, or - Use an Attestation Revocation List mechanism specified per VCR_11. <em>Note: The 24-hour period originates from  ETSI EN 319 411-1 V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked.</em></td>
 </tr>
 <tr>
 <td>VCR_02</td>
@@ -1703,7 +1703,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_34</td>
-<td>A Wallet Unit SHALL authenticate and validate the Attestation Provider access certificate before requesting the issuance of an attestation. The Wallet Unit SHALL verify at least that the access certificate indicates that its subject is a QEAA Provider, Pub-EAA Provider, or EAA Provider, that the access certificate is authentic and is valid at the time of validation, and that the issuer of the access certificate is a CA that is in the Attestation Provider Access Certificate Authority Trusted List, as documented in [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>]. <em>Note: PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting an EAA from a non-qualified EAA Provider, a Wallet Unit may need to verify that that EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. Such verification requirements, as well as the mechanisms allowing to do this, may be defined in the applicable Rulebook.</em></td>
+<td>A Wallet Unit SHALL authenticate and validate the Attestation Provider access certificate before requesting the issuance of an attestation. The Wallet Unit SHALL verify at least that the access certificate indicates that its subject is a QEAA Provider, PuB-EAA Provider, or EAA Provider, that the access certificate is authentic and is valid at the time of validation, and that the issuer of the access certificate is a CA that is in the Attestation Provider Access Certificate Authority Trusted List, as documented in [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>]. <em>Note: PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting an EAA from a non-qualified EAA Provider, a Wallet Unit may need to verify that that EAA Provider is authorised or registered to issue the type of EAA the Wallet Unit is requesting. Such verification requirements, as well as the mechanisms allowing to do this, may be defined in the applicable Rulebook.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1854,7 +1854,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ARB_20</td>
-<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a QEAA or a PuB-EAA SHALL include in the Rulebook one or more attributes or metadata representing the location meant in <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1">Annex V</a> point h) or <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1">Annex VII</a> point h) of the [European Digital Identity Regulation]. For a QEAA, this location SHALL indicate at least the URL at which a machine-readable version of the  trust anchor to be used for verifying the QEAA can be found or looked up. For a Pub-EAA, this location SHALL indicate at least the URL at which a machine-readable version of the qualified certificate that signed the PuB-EAA can be found or looked up.</td>
+<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a QEAA or a PuB-EAA SHALL include in the Rulebook one or more attributes or metadata representing the location meant in <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1">Annex V</a> point h) or <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1">Annex VII</a> point h) of the [European Digital Identity Regulation]. For a QEAA, this location SHALL indicate at least the URL at which a machine-readable version of the  trust anchor to be used for verifying the QEAA can be found or looked up. For a PuB-EAA, this location SHALL indicate at least the URL at which a machine-readable version of the qualified certificate that signed the PuB-EAA can be found or looked up.</td>
 </tr>
 <tr>
 <td>ARB_21</td>
