@@ -7,13 +7,13 @@ Version 1.0, updated 27 January 2025
 ### 1.1 Discussion Paper topic description
 
 This document is the Discussion Paper for eIDAS Coordination Group regarding
-Topic F: Digital Credential API (former known as browser API).
+Topic F: Digital Credentials API (formerly known as browser API).
 
 The ARF Development Plan \[ARF\_DevPlan\] describes this Topic as follows:
 
 *Define high-level requirements for the interface between the wallet and browsers and/or
 the operating system. These requirements are currently under discussion and being
-standardized through the Digital Credential API at W3C. The protocols to be used with
+standardized through the Digital Credentials API at W3C. The protocols to be used with
 this API, including message structures and contents, are being standardized by ISO and
 the OpenID Foundation.*
 
@@ -162,7 +162,7 @@ provided by the web browser and the mobile operating system, which can streamlin
 process, offering a seamless and intuitive user experience.
 - **3. Invocation Mechanism**: The Digital Credentials API removes the need for custom URL schemes 
 for invoking a Wallet Unit.
-- **4. Clear Origin Verification**: The Digital Credential API enables including the origin 
+- **4. Clear Origin Verification**: The Digital Credentials API enables including the origin 
 information, such as the website domain or app package name, within the presentation request 
 ensuring the authenticity of the request and enhancing trust for both Wallet Units and Users.
 - **5. Session binding**: The Digital Credentials API allows information about a session
@@ -391,7 +391,7 @@ these attestations. ​
 
 ​Note: This restriction applies even if such disclosure would enhance the services 
 provided by the operating system to the Wallet Unit, for example, attestation selection 
-in the context of the Digital Credential API.
+in the context of the Digital Credentials API.
 
 #### 4.1.2 Requirements to be added (likely) to Topic 10/23
 
