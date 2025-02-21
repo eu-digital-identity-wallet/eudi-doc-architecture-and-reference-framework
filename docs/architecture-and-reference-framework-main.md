@@ -1092,7 +1092,7 @@ between both entities.
 
 Remote transaction flows are use cases in which the Relying Party Instance is
 remote from the User and the User device. The Relying Party Instance requests
-data to the Wallet Unit over the internet, using a browser. These use cases can
+data from the Wallet Unit over the internet, using a browser. These use cases can
 be further distinguished in same-device flows, in which the browser is running
 on the same device as the Wallet Unit, and cross-device flows, where the browser
 is on a different device.
