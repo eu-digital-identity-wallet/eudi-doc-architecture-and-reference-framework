@@ -900,8 +900,8 @@ manage cryptographic assets and execute cryptographic functions, ensuring a high
 level of assurance for authentication.
 - **Wallet Secure Cryptographic Device (WSCD):** tamper-resistant device that
 provides an environment that is linked to and used by the wallet secure
-cryptographic application to protect critical assets and provide cryptographic
-functions for the secure execution of critical. This includes a keystore, but
+cryptographic application to protect critical assets and to securely execute
+cryptographic functions. This includes a keystore, but
 also the environment where the security-critical functions are executed. The
 WSCD is tamper-proof and duplication-proof. One WSCD may be included in multiple
 Wallet Units, e.g. in case of a remote HSM. The WSCD consists of two parts: the
