@@ -1102,7 +1102,7 @@ for proximity flows:
 
 1. **Secure Cross-Device Flows**: Cross-device flows are vulnerable to phishing
 and relay attacks, necessitating enhanced security measures. Proximity checks,
-managed by the operating system of the User device, can mitigate these the risks
+managed by the operating system of the User device, can mitigate the risks
 derived by these vulnerabilities by leveraging built-in security features to
 verify the authenticity of interactions, ensuring they are both secure and
 reliable.
