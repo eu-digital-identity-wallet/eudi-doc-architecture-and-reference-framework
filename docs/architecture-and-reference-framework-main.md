@@ -1855,7 +1855,7 @@ More details on the Wallet Provider notification process can be found in [Topic 
 Under specific conditions, a Trusted List Provider may decide to suspend or
 withdraw a Wallet Provider. This implies that the Wallet Provider's status in
 the respective Trusted List will be changed to Invalid. The conditions for this
-will be specified by each Trusted List Provider. As a result of de-registration,
+will be specified by each Trusted List Provider. As a result of this status change,
 PID Providers, Attestation Providers and Relying Parties will no longer trust
 the trust anchors of the Wallet Provider and will therefore refuse to interact
 with any Wallet Unit provided by that Wallet Provider.
