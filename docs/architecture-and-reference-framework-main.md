@@ -1417,7 +1417,7 @@ The following actions can be performed in the **Valid** state:
 
 - The Wallet Provider updates the Wallet Unit to a new version,
 - The Wallet Provider revokes the Wallet Unit, for instance at the User's
-request of if the security of the Wallet Instance is broken. Revocation of the
+request or if the security of the Wallet Instance is broken. Revocation of the
 Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see
 [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation)
 and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation)).
