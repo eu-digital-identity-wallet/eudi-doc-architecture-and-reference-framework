@@ -572,7 +572,7 @@
 
 
 <h1 id="d-embedded-disclosure-policies">D - Embedded Disclosure Policies</h1>
-<p>Version 0.9, updated 18 February 2025</p>
+<p>Version 1.0, updated 24 February 2025</p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for eIDAS Coordination Group regarding
@@ -741,7 +741,8 @@ Wallet Unit.</p>
 generating an error that reveals the attestation's existence while denying presentation to the
 Relying Party may leak information about the user. A Relying Party should
 not be able to distinguish between a nonexistent attestation and an existing
-attestation for which presentation is denied. It is noted that currently protocols
+attestation for which presentation is denied. Measures shall also be considered
+to prevent related timing attacks. It is noted that currently protocols
 specified in the Implementing Acts do not consider such error response. </p>
 <h3 id="33-authorization-of-intermediaries">3.3 Authorization of intermediaries</h3>
 <p>If Policy 2 defined in [2024/20179] is implemented based on Relying
@@ -789,7 +790,7 @@ Solutions. Therefore, this discussion paper does not propose any requirement for
 such a language.</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
 <h3 id="41-high-level-requirements-to-be-added-to-topic-43">4.1 High-Level Requirements to be added to topic 43</h3>
-<p>The following High-Level Requirements will be added to Annex 2 of the ARF v1.11</p>
+<p>The following High-Level Requirements will be added to Annex 2 of the ARF</p>
 <h4 id="requirement-1">REQUIREMENT 1</h4>
 <p>A Wallet Solution SHALL support  the implementation of the  'Authorised relying parties only policy' 
 using a  list of EU-wide unique identifiers of Relying Parties 
@@ -803,7 +804,7 @@ policy using a list of root or intermediate certificates</p>
 in attestation metadata in a way that is compatible with the issuance protocol
 considered by the ARF.</p>
 <h4 id="requirement-4">REQUIREMENT 4</h4>
-<p>When the presentation of an attestation is denied, the Wallet Unit SHALL behave 
+<p>When the presentation of an attestation is denied by the User, the Wallet Unit SHALL behave 
 towards the Relying Party as it would if the attestation did not exist.</p>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
 <p><strong>[ARB_22]</strong>
