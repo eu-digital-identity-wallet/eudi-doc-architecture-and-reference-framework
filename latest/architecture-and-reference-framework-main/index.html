@@ -3775,7 +3775,7 @@ and standards developments.</p>
 <p>To support the development of a reference implementation of a Wallet Solution
 and to pilot its usage across different priority use cases, the Commission
 launched a call for proposals on 22 February 2022 under the Digital Europe
-Programme to pilot use cases for the EUDI Wallet ecosystem at a large-scale.</p>
+Programme to pilot use cases for the EUDI Wallet ecosystem at a large scale.</p>
 <p>The objective of the Large-Scale Pilots (LSP) call is to support the piloting of
 the EUDI Wallet ecosystem around a range of use cases involving both public and
 private sector stakeholders. The LSPs will test the EUDI Wallet ecosystem in
@@ -3787,7 +3787,7 @@ reference implementation.</p>
 <p>The LSPs are expected to provide feedback on the ARF as they develop and
 interact with Relying Party services, Qualified or non-qualified Electronic
 Attestations of Attributes (Q)EAA Providers, Person Identification Data (PID)
-Providers, Qualified and non-Qualified Trust Service Providers and Users in
+Providers, Qualified and non-qualified Trust Service Providers and Users in
 meaningful interactions under the proposed use cases.</p>
 <h3 id="14-definitions">1.4 Definitions</h3>
 <p>The definitions used in this document can be found in Annex 1 of this document.</p>
@@ -3825,7 +3825,7 @@ providing feedback and details on how updates will be managed outlined in
 </ul>
 <p>Other topics that will be developed include:</p>
 <ul>
-<li>the Digital Credential API,</li>
+<li>the Digital Credentials API,</li>
 <li>Zero Knowledge Proofs (ZKP),</li>
 <li>transaction logs maintained by the Wallet Unit,</li>
 <li>scenarios involving a natural person representing another natural person,</li>
@@ -3897,7 +3897,7 @@ the requested attributes.</li>
     protection authority.</li>
 </ul>
 <h3 id="23-attribute-exchange-mechanism-using-attestations">2.3 Attribute Exchange Mechanism using Attestations</h3>
-<p>Using their Wallet Solutions, Users are able to:  </p>
+<p>Using their Wallet Units, Users are able to:</p>
 <ul>
 <li><strong>Request, store, and present</strong> personal identification data and electronic
 attestations of attributes under their sole
@@ -3908,7 +3908,7 @@ guaranteeing compliance with data portability rights.  </li>
 ensuring privacy-preserving interactions.</li>
 </ul>
 <h3 id="24-qualified-electronic-signature">2.4 Qualified electronic signature</h3>
-<p>Using their Wallet Solutions, Users are able to:  </p>
+<p>Using their Wallet Units, Users are able to:</p>
 <ul>
 <li><strong>Create qualified electronic signatures and seals</strong> for legally binding
 digital transactions.  </li>
@@ -3956,16 +3956,14 @@ attributes to a Relying Party in order to access online services. Before doing
 so, the Wallet Unit first authenticates the user.
 The user is particularly mindful of the privacy and security implications of
 sharing data when accessing online services.
-Their primary goals include reliably access and use online services by
-identifying themselves that demand User identification while maintaining control
-over the presentation of their personal data.Their primary objective is to
-securely and reliably access online services that require authentication while
-maintaining full control over how their personal data is presented and shared.</p>
+Their primary objective is to securely and reliably access online services that
+require authentication while maintaining full control over how their personal
+data is presented and shared.</p>
 <h4 id="252-mobile-driving-licence">2.5.2 Mobile Driving Licence</h4>
 <p>A significant use case for the Wallet Unit involves allowing Users to request,
 store, and present a mobile Driving Licence (mDL) as an attestation in their
 Wallet Unit, allowing them mainly to prove their driving privileges. In this use
-case, the User employs a Wallet Unit to present a mDL to a Relying Party, for
+case, the User employs a Wallet Unit to present an mDL to a Relying Party, for
 instance a police officer.</p>
 <p>The use case description concentrates on proximity supervised and unsupervised
 flows, which involve scenarios where the User is physically near a Relying
@@ -3986,7 +3984,7 @@ etc.</p>
 time-consuming for Users, Relying Parties (such as companies and employers), and
 Attestation Providers (such as education and training providers or academic
 institutions). A Wallet Unit may be a repository for educational credentials and
-a means for exchanging them by the User to relevant Relying Parties.</p>
+a means for presenting them by the User to relevant Relying Parties.</p>
 <h5 id="2533-digital-finance">2.5.3.3 Digital finance</h5>
 <p>A Wallet Unit may facilitate complying with strong customer authentication
 requirements, using the user authentication capabilities described in
@@ -4269,7 +4267,7 @@ presentation of attributes from Wallet Units, using one or more of the flows
 described in <a href="#44-data-presentation-flows">Section 4.4</a>. For this, the
 intermediary will use their own access certificate (point 1. above) and the
 registration certificate of the 'end' Relying Party (point 2. above).</li>
-<li>If a Wallet Unit, during a transaction, receives an registration certificate
+<li>If a Wallet Unit, during a transaction, receives a registration certificate
 indicating that the Relying Party uses the services of an intermediary, it
 verifies that the name and the identifier of the intermediary in the
 registration certificate are identical to the name and identifier in the access
@@ -4326,16 +4324,16 @@ providers of related subsystems may include, among others, hardware, operating
 systems, secure cryptographic hardware, libraries, and app stores.</p>
 <h3 id="315-attribute-schema-providers-for-qeaa-pub-eaa-and-eaa">3.15 Attribute Schema Providers for QEAA, PuB-EAA and EAA</h3>
 <p>Attribute Schema Providers publish attribute schemas describing the structure
- of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding
- of all attributes. These attribute schemas are published in Attestation
- Rulebooks, see <a href="#55-attestation-rulebooks">Section 5.5</a>. For PIDs and mDLs, the
- applicable Rulebooks are published by the Commission.</p>
+of QEAAs, PuB-EAAs and EAAs, including the identifier, semantics, and encoding
+of all attributes. These attribute schemas are published in Attestation
+Rulebooks, see <a href="#55-attestation-rulebooks">Section 5.5</a>. For PIDs and mDLs, the
+applicable Rulebooks are published by the Commission.</p>
 <p>A catalogue of published Attestation Rulebooks will enable other entities such
- as Relying Parties to discover which attestations exist within the EUDI Wallet
- ecosystem, and how attributes from these attestations can be requested and
- validated. The Commission sets out the technical specifications, standards, and
- procedures for this purpose. Common schemas, including by sector-specific
- organisations, are critical for widespread adoption of attestations.</p>
+as Relying Parties to discover which attestations exist within the EUDI Wallet
+ecosystem, and how attributes from these attestations can be requested and
+validated. The Commission sets out the technical specifications, standards, and
+procedures for this purpose. Common schemas, including by sector-specific
+organisations, are critical for widespread adoption of attestations.</p>
 <h3 id="316-national-accreditation-bodies">3.16 National Accreditation Bodies</h3>
 <p>National Accreditation Bodies (NAB), under <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32008R0765">Regulation (EC) No 765/2008</a>,
 are the bodies in Member States that perform accreditation with authority
@@ -4354,7 +4352,7 @@ certificate to prove their authenticity and validity.</p>
 Commission. As part of the notification process, the trust anchors of the Access
 CA must be included in a Trusted List. A trust anchor is the combination of a
 public key and an identifier for the associated entity. Wallet Units need these
-trust anchors to verify of the signatures over the access certificates presented
+trust anchors to verify the signatures over the access certificates presented
 to them when a new PID or attestation is issued or when they receive an
 attribute presentation request from a Relying Party.</p>
 <h2 id="4-high-level-architecture">4 High level architecture</h2>
@@ -5142,7 +5140,7 @@ attributes that are part of the attestation.</li>
 <li>Registration of an Attestation Rulebook in the Attestation Rulebook catalogue
 is not mandatory.</li>
 <li>Registration does not create any obligation or automatic acceptance by any
-third party, or automatically implies cross-border recognition of the type of
+third party, or automatically imply cross-border recognition of the type of
 attestation described in the Rulebook.</li>
 <li>The Attestation Rulebooks catalogue can be in the same environment as the
 catalogue of attributes.</li>
@@ -5767,7 +5765,7 @@ for more information on these Trusted Lists.</p>
 Trusted Lists, if there are multiple. Wallet Providers will choose which Trusted
 Lists they need to subscribe to, for example depending on the Member State(s)
 they are operating in. It is however mandatory to possess all Attestation
-Provider CA Trusted Lists, as Wallet Units must support all QEAA Providers and
+Provider Access CA Trusted Lists, as Wallet Units must support all QEAA Providers and
 PuB-EAA Providers in the EUDI Wallet ecosystem.</p>
 <p>To start the process of requesting a PID or an attestation, the User directs the
 Wallet Unit to contact the PID Provider or Attestation Provider. The User may
@@ -6166,7 +6164,7 @@ attestation. To get the status of the attestation it has received from the
 Wallet Unit, the Relying Party obtains the status list from the URL specified in
 the attestation and verifies the value encoded at the bit position given by the
 index value in the attestation.</li>
-<li>A revocation list is a list of PID identifiers or attestations identifiers
+<li>A revocation list is a list of PID identifiers or attestation identifiers
 revoked by the PID Provider or Attestation Provider. To get the status of the
 PID or attestation it has received from the Wallet Unit, the Relying Party
 obtains the revocation list from the URL specified in the attestation and
