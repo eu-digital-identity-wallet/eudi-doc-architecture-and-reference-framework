@@ -1106,7 +1106,7 @@ legal system-specific and administrative system-specific.
 Another use case for delegation is where the recognition of the power
 for a person to represent another person occurs on an *ad hoc* basis,
 based on a decision by the represented User and in the context of a
-specific Relying Party. The basis for such decisions is outside of the
+specific Relying Party. The basis for such decisions is outside the
 scope of eIDAS. Various scenarios can be considered:
 
 1. Natural person to natural person, based on the will of the

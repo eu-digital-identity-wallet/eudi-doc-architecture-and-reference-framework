@@ -1464,7 +1464,7 @@ Figure 9 shows the possible states of a PID or attestation.
 In the context of the EUDI Wallet ecosystem, a PID or attestation begins its
 lifecycle when being issued to a Wallet Unit. Please note that this means that
 the management of attributes in the Authentic Source (adhering to national
-structures and attribute definitions) is outside of the scope of the ARF.
+structures and attribute definitions) is outside the scope of the ARF.
 
 For certain use cases, a PID or attestation may be pre-provisioned, meaning it
 is not yet valid when issued. In that case, its state is **Issued**, and it will
