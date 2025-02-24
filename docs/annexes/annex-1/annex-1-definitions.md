@@ -97,7 +97,7 @@ standard or a formal publication, that source is mentioned.
 | **Term** | **Definition** |
 |-----------|-----------|
 | Administrative validity period (of a PID or attestation) | The date(s) from and/or up to which the attributes in the attestation are valid, which are represented as attribute(s) in the attestation. *Note: Some attestations, for instance diplomas, do not have an administrative validity period* |
-| Attestation | When not further qualified, a collective term for a QEEA, PuB-EAA, or (non-qualified) EAA. |
+| Attestation | When not further qualified, a collective term for a QEAA, PuB-EAA, or (non-qualified) EAA. |
 | Attestation Provider | When not further qualified, a collective term for QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider. |
 | Attestation Revocation List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations. [Topic 7] |
 | Attestation Rulebook | A document describing the attestation type, namespace(s), and other features for a specific attestation type. [Topic 12] |
