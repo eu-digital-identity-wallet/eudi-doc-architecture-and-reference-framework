@@ -518,7 +518,7 @@ possesses a PID. This would enable the QEAA Provider to carry out User
 identification and authentication at LoA high, by requesting and verifying
 User attributes from the PID in the Wallet Unit.
 
-The terms and conditions of these services are for each QEEA Provider to
+The terms and conditions of these services are for each QEAA Provider to
 determine, beyond what is specified in the [European Digital Identity Regulation].
 
 ### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (PuB-EAA) Providers
@@ -1855,7 +1855,7 @@ such a certificate to authenticate itself towards a Wallet Unit when issuing a
 PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider).
 A PID Provider access certificate indicates that its subject is a PID Provider.
 Similarly, an Attestation Provider access certificate indicates that its subject
-is a QEEA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
+is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
 
 Subsequently, the Access Certificate Authority is included in a PID Provider
 Access CA Trusted List or Attestation Provider Access CA Trusted List. This
