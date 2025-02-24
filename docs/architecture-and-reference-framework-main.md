@@ -1724,7 +1724,7 @@ attributes** to **Relying Party Instances** (right side of Figure 11). These
 instances are hardware/software setups enabling **Relying Parties** to interact
 with Wallet Units. Relying Parties register with a **Relying Party Registrar**,
 receiving an **access certificate** for each Relying Party Instance, as well as a **Relying Party
-Registration Certificate** This is discussed in [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle).
+Registration Certificate**. This is discussed in [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle).
 
 [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) further
 details the lifecycle of PIDs and attestations, including issuance,
@@ -2371,7 +2371,7 @@ for instance regarding the issuance protocol, are included in [Topic 10] and
 As shown in Figure 11, a Wallet Unit downloads the PID Provider Access CA
 Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly
 after having located them via the Commission common trust infrastructure. It
-also downloads all Attestation Provider Access CA Trusted List(s)See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
+also downloads all Attestation Provider Access CA Trusted List(s). See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
 for more information on these Trusted Lists.
 
 Note: It is not mandatory for each Wallet Unit to possess all PID Provider CA
@@ -2643,7 +2643,7 @@ During a transaction, a Relying Party Instance sends this registration
 certificate to the Wallet Unit in the presentation request. The Wallet Unit
 displays the contents of the registration certificate to the User when asking
 the User for approval, see
-[Section6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
+[Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
 at least in case one or more of the requested attributes is not included in the
 list of attributes in the registration certificate.
 
