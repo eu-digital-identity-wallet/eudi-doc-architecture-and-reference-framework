@@ -1,6 +1,6 @@
 # D - Embedded Disclosure Policies
 
-Version 0.9, updated 18 February 2025
+Version 1.0, updated 24 February 2025
 
 ## 1. Introduction
 
@@ -154,7 +154,8 @@ If an evaluation of the embedded disclosure policy results in "deny" and this re
 generating an error that reveals the attestation's existence while denying presentation to the
 Relying Party may leak information about the user. A Relying Party should
 not be able to distinguish between a nonexistent attestation and an existing
-attestation for which presentation is denied. It is noted that currently protocols
+attestation for which presentation is denied. Measures shall also be considered
+to prevent related timing attacks. It is noted that currently protocols
 specified in the Implementing Acts do not consider such error response. 
 
 
@@ -209,7 +210,7 @@ such a language.
  
 ## 4 Additions and changes to the ARF
 ### 4.1 High-Level Requirements to be added to topic 43
-The following High-Level Requirements will be added to Annex 2 of the ARF v1.11
+The following High-Level Requirements will be added to Annex 2 of the ARF
 
 #### REQUIREMENT 1
 A Wallet Solution SHALL support  the implementation of the  'Authorised relying parties only policy' 
@@ -227,7 +228,7 @@ in attestation metadata in a way that is compatible with the issuance protocol
 considered by the ARF.
 
 #### REQUIREMENT 4
-When the presentation of an attestation is denied, the Wallet Unit SHALL behave 
+When the presentation of an attestation is denied by the User, the Wallet Unit SHALL behave 
 towards the Relying Party as it would if the attestation did not exist.
  
 ### 4.2 High-Level Requirements to be changed
