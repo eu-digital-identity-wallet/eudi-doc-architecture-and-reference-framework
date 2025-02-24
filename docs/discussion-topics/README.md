@@ -38,7 +38,7 @@ an update on the topic.
 + C - [Wallet Unit Attestation (WUA) and Key Attestation](c-wallet-unit-attestation.md) 
 + D - [Embedded Disclosure Policies](d-embedded-disclosure-policies.md)
 + E - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md)
-+ F - [Digital Credential API](f-digital-credential-api.md)
++ F - [Digital Credentials API](f-digital-credential-api.md)
 + G - [Zero Knowledge Proof](g-zero-knowledge-proof.md)
 + V - [PID rulebook](v-pid-rulebook.md)
 
