@@ -1781,12 +1781,12 @@ of the Wallet Provider are included in a Wallet Provider Trusted List. During
 issuance of a PID or an attestation, the PID Provider or the Attestation
 Provider can use these trust anchors to verify the authenticity of a Wallet Unit
 Attestation signed by the Wallet Provider, so they can be sure they are dealing
-with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance) and [Topic
-9]. Similarly, when the Wallet Unit presents a PID or an attestation to a
+with an authentic Wallet Unit from a trusted Wallet Provider. See [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit),
+[Topic 9] and [Topic 38]. Similarly, when the Wallet Unit presents a PID or an attestation to a
 Relying Party, the Relying Party can use the Wallet Provider trust anchors to
 verify the authenticity of a Wallet Unit Attestation signed by the Wallet
-Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider)
-and [Topic 38].
+Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider),
+[Topic 9] and [Topic 38].
 
 If a certain entity offers multiple Wallet Solutions, they will register as a
 separate Wallet Provider for each of these Wallet Solutions. This implies that
