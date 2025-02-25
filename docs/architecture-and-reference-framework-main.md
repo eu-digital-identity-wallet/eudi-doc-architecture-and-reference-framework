@@ -2617,7 +2617,7 @@ described in [Section 6.6.3.6](#6636-relying-party-instance-verifies-the-authent
 6. The Relying Party verifies that the PID Provider or Attestation Provider did
 not revoke the PID or attestation. This is described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 7. The Relying Party verifies that the PID Provider or Attestation Provider
-issued this PID or attestation to the same Wallet Unit that provided it to the
+issued this PID or attestation to the same Wallet Unit that presented it to the
 Relying Party. In other words, it checks that the PID or attestation was not
 copied or replayed. This is generally called device binding, and it is discussed
 in [Section 6.6.3.8](#6638-relying-party-instance-verifies-device-binding)
