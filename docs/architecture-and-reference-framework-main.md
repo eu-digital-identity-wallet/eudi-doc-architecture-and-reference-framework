@@ -3425,7 +3425,7 @@ or Relying Party-specific, ensuring that different Relying Parties receive
 distinct attestations that cannot be linked. However, this
 approach increases issuance complexity and management overhead. This topic will
 be further explored in the context of the next major release of ARF.
-Additionally, organizational and enforcement measures can help deter Relying
+Additionally, organisational and enforcement measures can help deter Relying
 Parties from colluding and tracking Users. In particular, Relying Parties found
 in violation will have their access certificates revoked, preventing them from
 further interactions with Wallet Units.
@@ -3437,7 +3437,7 @@ Wallet ecosystem is still under discussion and development due to the complexity
 of implementing ZKP solutions in secure hardware and the lack of support in
 currently available secure hardware (WSCDs). This topic will be further explored
 in the context of the next major release of the ARF. As with Relying Party
-linkability, organizational and enforcement measures can help deter Attestation
+linkability, organisational and enforcement measures can help deter Attestation
 Providers from colluding and tracking Users.  Additionally, many Attestation
 Providers are subject to regular audits, making it easier to detect collusion
 and tracking compared to Relying Parties.
