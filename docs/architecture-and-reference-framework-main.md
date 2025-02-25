@@ -3294,7 +3294,7 @@ States to establish national certification schemes. This will be done in time to
 make available the Wallet Solutions before the end of 2026. The Commission has
 adopted the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 to provide the main requirements on Member States for creation of national
-certification schemes. The [CIR 2024/2981] and resulting national certification
+certification schemes. The [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) and resulting national certification
 schemes are defined around a number of guiding principles:
 
 First, the goal is to harmonise requirements to the extent possible. Member
