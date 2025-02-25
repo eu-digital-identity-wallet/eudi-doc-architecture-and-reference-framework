@@ -2588,7 +2588,7 @@ A Relying Party can request a User to present some attributes from a PID or from
 an attestation in their Wallet Unit. Figure 11 shows that a Relying Party uses a
 Relying Party Instance to interact with the Wallet Unit of the User. The
 relationship between the Relying Party and their Relying Party Instance is
-equivalent to the relationship between the User and their Wallet Unit.
+similar to the relationship between the User and their Wallet Unit.
 
 When processing the request, the following trust relationships are established:
 
