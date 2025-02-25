@@ -3338,8 +3338,8 @@ dependency analysis will be performed.
 
 Finally, in order to ensure a harmonised approach to cybersecurity and the
 assessment of the most critical risks that might affect the provision and
-operation of Wallet Units, a register of risks and threats is defined
-[#7.4-Risk-based-approach-and-risk-register]. The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
+operation of Wallet Units, a register of risks and threats is defined, see
+[7.4 Risk-based approach and risk register](#74-risk-based-approach-and-risk-register). The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
 contains high level risks and threats in relation to Wallet Solutions and the
 ecosystem, as well as detailed threat scenarios that will be taken into
 consideration when designing Wallet Solutions, independent of their specific
