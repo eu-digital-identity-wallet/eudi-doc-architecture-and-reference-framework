@@ -2847,7 +2847,7 @@ how to carry out signature verification.
 
 In addition, the Relying Party may want to verify that the Attestation Provider
 can legally issue the type of attestation in question. As described in
-[Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered),
+[Section 6.3.2.2](#6322-pid-provider-or-attestation-provider-receives-an-access-certificate),
 this is only needed for non-qualified EAA Providers, as the Relying Party trusts
 a PID Provider, QEAA Provider or PuB-EAA Provider. For EAA Providers, the
 applicable Rulebook may define methods that the Relying Party can use to verify
