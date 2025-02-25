@@ -2634,7 +2634,7 @@ Either before or after validating the PID or attestation per steps 5 - 9,
 
 1. The Relying Party Instance authenticates the Wallet Unit and the Wallet
 Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider).
-1. The Relying Party Instance verifies that the Wallet Provider did not revoke
+2. The Relying Party Instance verifies that the Wallet Provider did not revoke
 the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked)
 
 Finally, after the interaction with the Relying Party Instance is over,
