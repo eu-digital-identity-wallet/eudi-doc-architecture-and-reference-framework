@@ -1750,7 +1750,7 @@ of the EUDI Wallet ecosystem.
 
 At its core is the **Wallet Unit** (top middle, blue), which interacts with
 various entities throughout its lifecycle, which consists of installation,
-activation, management, and de-installation (detailed in [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).
+activation, management, and uninstallation (detailed in [Section 6.5](#65-trust-throughout-a-wallet-unit-lifecycle)).
 Each Wallet Unit is a configuration of a **Wallet Solution**, comprising a
 **Wallet Instance** and one or more WSCA/WSCDs, provided by a **Wallet
 Provider**. The Wallet Provider oversees these components and manages their
@@ -2061,7 +2061,7 @@ Wallet Unit when necessary. This is discussed in [Section
 6.5.4](#654-wallet-unit-management). Management will also include regular
 updates of the Wallet Instance application to ensure its continued security and
 functionality. However, this is not further defined in this chapter.
-4. The User may de-install the Wallet Instance; see [Section 6.5.5](#655-wallet-instance-de-installation).
+4. The User may uninstall the Wallet Instance; see [Section 6.5.5](#655-wallet-instance-uninstallation).
 
 #### 6.5.2 Wallet Instance installation
 
@@ -2301,7 +2301,7 @@ included in the WUA. They are strictly for use by the Wallet Provider only.
 #### 6.5.4 Wallet Unit management
 
 Starting from Wallet Unit activation and until the Wallet Instance is
-de-installed by the User, a Wallet Unit is managed by the User and the Wallet
+uninstalled by the User, a Wallet Unit is managed by the User and the Wallet
 Provider. The Wallet Provider is responsible at least to:
 
 - perform installation of a new version of the Wallet Solution as necessary.
@@ -2352,9 +2352,9 @@ Provider can use the same mechanism.
 Wallet Unit identifier provided by the Wallet Provider in the WUA during PID
 issuance; see [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation).
 
-#### 6.5.5 Wallet Instance de-installation
+#### 6.5.5 Wallet Instance uninstallation
 
-No trust relationships are required for Wallet Instance de-installation; anybody
+No trust relationships are required for Wallet Instance uninstallation; anybody
 able to access the device of the User will be able to do this.
 
 If the User uninstalls the Wallet Instance, the Wallet Instance ensures that the
@@ -3092,7 +3092,7 @@ requirements, please refer to [Topic 30](./annexes/annex-2/annex-2-high-level-re
 
 Starting from the issuance of a PID or attestation, the PID or attestation is
 managed by the User and the Wallet Provider. Management is performed until the
-PID, or attestation, is deleted or the Wallet Instance is de-installed by the
+PID, or attestation, is deleted or the Wallet Instance is uninstalled by the
 User. Management includes at least the following processes:
 
 1. Re-issuance of the PID or attestation when necessary.
