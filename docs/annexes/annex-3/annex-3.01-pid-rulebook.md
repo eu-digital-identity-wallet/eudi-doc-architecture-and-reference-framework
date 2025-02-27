@@ -222,7 +222,159 @@ High-level requirements for SD-JWT VC-compliant PIDs will be added to a future v
 
 ### 5.2 Encoding of PID attributes
 
-The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a future version of this PID Rulebook.
+SD-JWT encoded PID attestations SHALL use claim names registered in the JSON Web
+Token Claims Registry \[IANA-JWT-Claims\]. The table below maps the data
+identifiers defined above to the corresponding claim names. 
+
+Note that a hierarchical claim name structure can be used in SD-JWT VC encoded
+PID attestations as SD-JWT allows for individual selective disclosure of objects
+and their properties. A hierarchical claim name structure is indicated by the
+notation `parent.child` in the table below.
+
+| **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference** | 
+|------------------------|--------------|------------------|
+| family_name | family_name | string | Section 5.1 of \[OIDC\] | 
+| given_name | given_name | string | Section 5.1 of \[OIDC\] | 
+| birth_date | birthdate | string, ISO 8601-1 \[ISO8601‑1\] YYYY-MM-DD format | Section 5.1 of \[OIDC\] | 
+| birth_place | place_of_birth.locality | string | Section 4.1 of \[EKYC\] | 
+| nationality | nationalities | array of strings | Section 4.1 of \[EKYC\] | 
+| resident_address | address.formatted | string | Section 5.1 of \[OIDC\] | 
+| resident_country | address.country | string | Section 5.1 of \[OIDC\] | 
+| resident_state | address.region | string | Section 5.1 of \[OIDC\] | 
+| resident_city | address.locality | string | Section 5.1 of \[OIDC\] | 
+| resident_postal_code | address.postal_code | string | Section 5.1 of \[OIDC\] | 
+| resident_street | address.street_address | string | Section 5.1 of \[OIDC\] | 
+| resident_house_number | address.house_number | string | Section 5.1 of \[OIDC\] | 
+| personal_administrative_number | personal_administrative_number | string | |
+| portrait | picture | string; data URL containing the base64-encoded portrait  | Section 5.1 of \[OIDC\] | 
+| family_name_birth | birth_family_name | string | Section 4.1 of \[EKYC\] | 
+| given_name_birth | birth_given_name | string | Section 4.1 of \[EKYC\] | 
+| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* | Section 5.1 of \[OIDC\] | 
+| email_address | email | string | Section 5.1 of \[OIDC\] | 
+| mobile_phone_number | phone_number | string | Section 5.1 of \[OIDC\] | 
+| expiry_date | exp | number | Section 4.1 of \[RFC7519\] |
+| issuing_authority | issuing_authority | string | |
+| issuing_country | issuing_country | string | |
+| document_number | document_number | string | | 
+| issuing_jurisdiction | issuing_jurisdiction | string | |
+| location_status | - | See [Section 4.2.4](#424-attribute-location_status). | |
+| issuance_date | iat | number | Section 4.1 of \[RFC7519\] |
+| age_over_18 | age_equal_or_over.18 | boolean (Note: the age is a property of age_equal_or_over) | |
+| age_over_NN | age_equal_or_over.NN | boolean (Note: the age is a property of age_equal_or_over) | |
+| age_in_years | age_in_years | number | |
+| age_birth_year | age_birth_year | number | |
+| trust_anchor | trust_anchor | string | |
+
+
+Fields marked with (*) indicate that there is not a one-to-one mapping
+between the data element and a suitable pre-defined JWT claim.
+This should be resolved in future versions of this document.
+
+### 5.3 VCT
+
+SD-JWT VC defines the Verifiable Credential Type (`vct`). A type comes
+with associated metadata that, for instance, provides information about
+the type itself, outlines a schema detailing the claims that are
+optional or mandatory in the SD-JWT VC, and specifies their display
+methods. Additionally, a type can inherit from another type, enabling
+the creation of domestic types based on a broader EU-wide standard. The
+information regarding a type can be automatically discovered.
+
+The information provided in this document SHALL be specified as a
+Verifiable Credential Type in the format defined by SD-JWT VC, including
+a schema for PIDs, display (rendering) information, and other metadata
+specified by SD-JWT VC. This base type SHALL be identified by the URN
+`urn:eu.europa.ec.eudi:pid:1`. The version number "1" in this type MAY
+be used to distinguish between the first version of the PID attribute
+(defined in this document) and any future version.
+
+Domestic PID types for national attributes SHALL be defined using URLs
+and extend the EU-wide PID type. It is RECOMMENDED to implement a
+national base type and an extension for each version of the type. More
+than one domestic PID type MAY be defined per Member State. Domestic PID
+types SHALL specify in their Type Metadata any additional fields/claims
+and MAY define display information.
+
+EXAMPLE: For Germany, two Verifiable Credential Types for PIDs could be
+defined initially:
+
+ * `https://example.bmi.bund.de/credential/pid/` as the national base
+   type, where in the metadata of the type, the `extends` field would
+   reference the EU-wide type `urn:eu.europa.ec.eudi:pid:1`. This base
+   type would not define schema or display information, as these are
+   defined in the concrete versions of the type.
+ * `https://example.bmi.bund.de/credential/pid/1.0` as the first version
+   of the national credential type, defining in its metadata schema and
+   display information. The `extends` field would reference the base
+   type `https://example.bmi.bund.de/credential/pid/`.
+
+Domestic PID Type Metadata information SHALL be published at their
+respective URLs as defined in the SD-JWT VC specification.
+
+
+### 5.4 Example
+
+
+EXAMPLE: The following example shows a PID in SD-JWT VC format.
+
+```json
+{
+    "vct": "https://memberstate.example/credential/pid",
+    "vct#integrity": "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+
+    "given_name": "Jean",
+    "family_name": "Dupont",
+    "birthdate": "1980-05-23",
+
+    "age_equal_or_over": {
+        "12": true,
+        "14": true,
+        "16": true,
+        "18": true,
+        "21": true,
+        "65": false
+    },
+    "age_in_years": 44,
+    "age_birth_year": 1980,
+
+    "address": {
+        "street_address": "123 Via Appia",
+        "locality": "Rome",
+        "region": "Lazio",
+        "postal_code": "00100",
+        "country": "IT"
+    },
+
+    "nationalities": ["FR"],
+
+    "gender": "male",
+
+    "place_of_birth": {
+        "locality": "Leipzig",
+        "region": "Saxony",
+        "country": "DD"
+    },
+
+    "cnf": {
+        "jwk": {
+            "kty": "EC",
+            "crv": "P-256",
+            "x": "52aDI_ur05n1f_p3jiYGUU82oKZr3m4LsAErM536crQ",
+            "y": "ckhZ-KQ5aXNL91R8Eufg1aOf8Z5pZJnIvuCzNGfdnzo"
+        }
+    },
+
+    "issuing_authority": "DE",
+    "issuing_country": "DE"
+}
+```
+
+Note: The `cnf` claim is used for expressing key binding in SD-JWT VCs.
+The example above shows a public key in JWK format.
+
+Note: Additional technical claims are not shown here, including
+references to the issuer, validity status information, and more.
+
 
 ## 6 Further requirements
 
