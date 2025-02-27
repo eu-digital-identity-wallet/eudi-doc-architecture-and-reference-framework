@@ -213,7 +213,7 @@ implemented using the following steps:
 
 -  The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 -  The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
-![Website authorization](img/same-auth.png)
+![Website authorisation](img/same-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by creating a `presentation request`.
 - The operating system searches for attestations that satisfy the requested attributes.
 - The browser presents to the User a selector that includes a list of potentially suitable attestations.
@@ -228,7 +228,7 @@ The cross-device flow is implemented using the following steps:
 
 - The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 - The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
-![Website authorization in cross device flow](img/cross-auth.png)
+![Website authorisation in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by 
 creating a `presentation request`.
 - The browser uses CTAP 2.2 hybrid flow (section 11.5 of \[Ctap\]) to establish a tunnel between the 
@@ -291,10 +291,10 @@ presentation request origin and other necessary context information, allowing Wa
 identify and authenticate Relying Parties, as well as to verify that the request from the Relying Party 
 was not copied and replayed.
 
-3. **Attestation Provider and Relying Party Authorization**: Although browsers and operating systems implementing
+3. **Attestation Provider and Relying Party Authorisation**: Although browsers and operating systems implementing
 the Digital Credentials API should verify the web origin of Attestation Providers and Relying Parties, as well as that
 the credential offers and presentation requests are transferred over TLS from the Attestation Provider or 
-the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorized to 
+the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorised to
 issue attestations or request attributes as this responsibility
 lies with national issuers and regulators, including Relying Party registrars.
 
@@ -345,8 +345,8 @@ implement the search functionality and must ensure that no third party can acces
 
 2. **Privacy preserving attestation relay**:  The use of a browser as an intermediary in the attestation 
 issuance and presentation process should not create privacy risks, such as those arising from malicious add-ons 
-or unauthorized tracking mechanisms. Browsers should maintain strict privacy controls to ensure 
-that attestation-related data is neither exposed nor accessible to unauthorized third parties. 
+or unauthorised tracking mechanisms. Browsers should maintain strict privacy controls to ensure
+that attestation-related data is neither exposed nor accessible to unauthorised third parties.
 This principle also extends to any tunneling services used to facilitate cross-device flow.
 
 3. **Protection against data theft**: Browsers and operating systems providing support for 

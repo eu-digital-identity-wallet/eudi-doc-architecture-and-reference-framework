@@ -159,7 +159,7 @@ to prevent related timing attacks. It is noted that currently protocols
 specified in the Implementing Acts do not consider such error response. 
 
 
-### 3.3 Authorization of intermediaries 
+### 3.3 Authorisation of intermediaries
 If Policy 2 defined in \[2024/20179\] is implemented based on Relying
 Party identifiers included in WRPAC then the use of intermediaries  will be prevented. 
 It is reminded that according to requirement  RPI_01 of ARF 1.5.0:
@@ -185,14 +185,14 @@ Implementing embedded disclosure policies as simple whitelists may not be suitab
 for advanced use case that may require finer grained policies. For those use cases
 an embedded disclosure policy may require additional Relying Party attributes, or
 even user related attributes and user context,
-and define authorization rules using a policy definition language. 
+and define authorisation rules using a policy definition language. 
 Such an approach can provide 
 Attestation Providers with more fine-grained control over which
 Relying Parties can access an attestation and under which conditions. 
 
 Such a policy definition language are:
 * It shall be standardized
-* It shall allow rules for authorization based on Relying Party attributes, User attributes, and contextual attributes 
+* It shall allow rules for authorisation based on Relying Party attributes, User attributes, and contextual attributes 
 * It shall enable conditions and logical operations
 * It shall enable filtering of Relying Party certificates based on roots of trust
 * It shall enable definition of which attestation attributes can be accessed
