@@ -44,7 +44,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
       - run: git pull
       - run: make
-      - run: mike deploy --push --update-aliases latest
+      - run: mike deploy --push --update-aliases ${{ github.event.release.tag_name }} latest
       - run: mike set-default --push latest
       - uses: actions/upload-artifact@v4
         with:
