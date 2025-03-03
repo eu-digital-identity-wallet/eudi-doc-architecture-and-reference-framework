@@ -1012,7 +1012,7 @@ Credentials API is to enable user agents (i.e., browsers) to mediate access to,
 and presentation of, attestations. Currently, attestation issuance is not in the
 scope of this API, but future versions <a href="https://github.com/WICG/digital-credentials/issues/167">will consider it</a>. The Digital Credentials
 API can be used, for example, by a Relying Party website to request a PID or
-(Q)EEA stored in a Wallet Unit through the User's browser. The browser and the
+(Q)EAA stored in a Wallet Unit through the User's browser. The browser and the
 Wallet Unit may be in the same device (same-device flow) or in separate devices
 but in proximity (cross-device flow).</p>
 <p>The Digital Credentials API can address the challenges related to remote presentation
@@ -1066,7 +1066,7 @@ implemented using the following steps:</p>
 <ul>
 <li>The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.</li>
 <li>The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
-<img alt="Website authorization" src="../img/same-auth.png" /></li>
+<img alt="Website authorisation" src="../img/same-auth.png" /></li>
 <li>The Relying Party  indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
 <li>The operating system searches for attestations that satisfy the requested attributes.</li>
 <li>The browser presents to the User a selector that includes a list of potentially suitable attestations.
@@ -1080,7 +1080,7 @@ attributes through the browser, provided that the Wallet Unit contains the attri
 <ul>
 <li>The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.</li>
 <li>The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
-<img alt="Website authorization in cross device flow" src="../img/cross-auth.png" /></li>
+<img alt="Website authorisation in cross device flow" src="../img/cross-auth.png" /></li>
 <li>The Relying Party  indicates to the browser which attributes they want to request by 
 creating a <code>presentation request</code>.</li>
 <li>The browser uses CTAP 2.2 hybrid flow (section 11.5 of [Ctap]) to establish a tunnel between the 
@@ -1146,10 +1146,10 @@ identify and authenticate Relying Parties, as well as to verify that the request
 was not copied and replayed.</p>
 </li>
 <li>
-<p><strong>Attestation Provider and Relying Party Authorization</strong>: Although browsers and operating systems implementing
+<p><strong>Attestation Provider and Relying Party Authorisation</strong>: Although browsers and operating systems implementing
 the Digital Credentials API should verify the web origin of Attestation Providers and Relying Parties, as well as that
 the credential offers and presentation requests are transferred over TLS from the Attestation Provider or 
-the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorized to 
+the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorised to
 issue attestations or request attributes as this responsibility
 lies with national issuers and regulators, including Relying Party registrars.</p>
 </li>
@@ -1204,8 +1204,8 @@ implement the search functionality and must ensure that no third party can acces
 <li>
 <p><strong>Privacy preserving attestation relay</strong>:  The use of a browser as an intermediary in the attestation 
 issuance and presentation process should not create privacy risks, such as those arising from malicious add-ons 
-or unauthorized tracking mechanisms. Browsers should maintain strict privacy controls to ensure 
-that attestation-related data is neither exposed nor accessible to unauthorized third parties. 
+or unauthorised tracking mechanisms. Browsers should maintain strict privacy controls to ensure
+that attestation-related data is neither exposed nor accessible to unauthorised third parties.
 This principle also extends to any tunneling services used to facilitate cross-device flow.</p>
 </li>
 <li>
