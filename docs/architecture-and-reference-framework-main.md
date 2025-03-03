@@ -553,7 +553,7 @@ possesses a PID. This would enable the QEAA Provider to carry out User
 identification and authentication at LoA high, by requesting and verifying
 User attributes from the PID in the Wallet Unit.
 
-The terms and conditions of these services are for each QEEA Provider to
+The terms and conditions of these services are for each QEAA Provider to
 determine, beyond what is specified in the [European Digital Identity Regulation].
 
 ### 3.7 EAA issued by or on behalf of a public sector body responsible for an authentic source (PuB-EAA) Providers
@@ -1352,7 +1352,7 @@ A Wallet Solution has a state diagram of its own. The state of a Wallet Solution
 affects the state of all Wallet Units of that Wallet Solution. Figure 6 below
 shows the states of the Wallet Solution:
 
-![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_Statechart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
+![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_State chart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
 
 Figure 6: State diagram of Wallet Solution
 
@@ -1382,7 +1382,7 @@ attestation presented by such a Wallet Unit be accepted by a Relying Party.
 
 Figure 7 below shows the states of a Wallet Unit.
 
-![Figure 7](media/Figure_7_Statechart_Wallet_Unit.png) <!-- <img src="media/Figure_7_Statechart_Wallet_Unit.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
+![Figure 7](media/Figure_7_Statechart_Wallet_Unit.png) <!-- <img src="media/Figure_7_State chart_Wallet_Unit.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
 
 Figure 7: State diagram of Wallet Unit
 
@@ -1428,7 +1428,7 @@ as long as at least one of them is valid.
 
 Figure 8 shows the possible states of a PID Provider or Attestation Provider.
 
-![Figure 8](media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png) <!-- <img src="media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
+![Figure 8](media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png) <!-- <img src="media/Figure_8_State chart_PID_Provider_Attestation_Provider.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
 
 Figure 8: State diagram of PID Provider or Attestation Provider
 
@@ -1462,7 +1462,7 @@ transition to **Valid** when it reaches the beginning of its validity period.
 However, if a PID or attestation is issued on or after the validity start date,
 its state directly changes to **Valid**.
 
-![Figure 9](media/Figure_9_Statechart_PID.png) <!-- <img src="media/Figure_9_Statechart_PID.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+![Figure 9](media/Figure_9_Statechart_PID.png) <!-- <img src="media/Figure_9_State chart_PID.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
 
 Figure 9: State diagram of PID or attestation
 
@@ -1477,7 +1477,7 @@ PID or attestation is expired or revoked, it cannot transition back to
 
 Figure 10 shows the possible states of a Relying Party.
 
-![Figure 10](media/Figure_10_Statechart_Relying_Party.png) <!-- <img src="media/Figure_10_Statechart_Relying_Party.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+![Figure 10](media/Figure_10_Statechart_Relying_Party.png) <!-- <img src="media/Figure_10_State chart_Relying_Party.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
 
 Figure 9: State diagram of Relying Party
 
@@ -1630,7 +1630,7 @@ Attestation Rulebooks are defined by Attribute Schema Providers, see [Section 3.
 This role can be assumed by different types of organisation:
 
 - Some Rulebooks already have been defined by the European Commission, in
-consultation with the European Digital Identity Cooperation Group (EDIGC).
+consultation with the European Digital Identity Cooperation Group (EDICG).
 This concerns the [PID Rulebook](./annexes/annex-3/annex-3.01-pid-rulebook.md)
 and the [mDL Rulebook](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
 in Annex 3 of the ARF.
@@ -1902,7 +1902,7 @@ such a certificate to authenticate itself towards a Wallet Unit when issuing a
 PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider).
 A PID Provider access certificate indicates that its subject is a PID Provider.
 Similarly, an Attestation Provider access certificate indicates that its subject
-is a QEEA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
+is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.
 
 Subsequently, the Access Certificate Authority is included in a PID Provider
 Access CA Trusted List or Attestation Provider Access CA Trusted List. This
@@ -1993,7 +1993,7 @@ Figure 11 depicts the Relying Party Instance to the right of the Wallet Unit. A
 Relying Party Instance is a combination of hardware and software used by a
 Relying Party to interact with a Wallet Unit. A Relying Party can use multiple
 Relying Party Instances, especially in case the interactions with the Wallet
-Unit take place in proximity, for instance, a border control agency at an aiport
+Unit take place in proximity, for instance, a border control agency at an airport
 employing multiple lines where arriving passengers can present their PID.
 
 Figure 11 also shows the Relying Party. Below that, it shows that each Relying
@@ -2373,7 +2373,7 @@ Wallet Unit. This is briefly discussed in [Section 6.6.4](#664-pid-or-attestatio
 the PID or attestation over its lifetime. Management may include re-issuing the
 PID or attestation with the same or with different attribute values. The
 Provider can also revoke the PID or the attestation, possibly based on a request
-of the User. The managenent of PIDs and attestations is discussed in [Section 6.6.5](#665-pid-or-attestation-management).
+of the User. The management of PIDs and attestations is discussed in [Section 6.6.5](#665-pid-or-attestation-management).
 5. Finally, [Section 6.6.6](#666-pid-or-attestation-deletion) discusses what
 happens if a User decides to delete a PID or an attestation from their Wallet
 Unit.
@@ -2564,7 +2564,7 @@ Batch issuance means that instead of issuing a single PID or attestation to a
 Wallet Unit, a PID Provider or Attestation Provider issues a batch of them.  All
 PIDs or attestations in a batch have the same document type, attribute values
 and validity period. Apart from that, all of the descriptions in this section
-6.6.2 apply regarless of the number of attestations issued (single or batch).
+6.6.2 apply regardless of the number of attestations issued (single or batch).
 
 Batch issuance is discussed in more detail in the [Discussion Paper for Topic B](././discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations.md).
 
@@ -3118,7 +3118,7 @@ There may be different reasons for re-issuing a PID or attestation, for example:
 
 - The current PID(s) or attestation(s) are near the end of their
     technical validity period, or the Wallet Unit is running out of once-only
-    attestations. This is done to migitate the risk of Relying Party linkabilitty.
+    attestations. This is done to mitigate the risk of Relying Party linkabilitty.
 - The value of one or more of the attributes in the PID or attestation
     has changed.
 - The security architecture of the Wallet Solution may use PIDs and/or
