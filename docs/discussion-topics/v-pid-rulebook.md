@@ -5,10 +5,12 @@ Version 0.1, updated 20 February 2025
 ## 1. Introduction
 
 ### 1.1 Discussion Paper topic description
+
 This document is the Discussion Paper for European Digital Identity Cooperation
 Group regarding Topic V: PID rulebook
 
 ### 1.2 Related risks in the Risk Register
+
 Risks considered in [Topic_A] are also applicable here
 
 ### 1.3 Key words
@@ -25,7 +27,7 @@ fact.
 
 ### 1.4 Document structure
 
-- Chapter 2 introduces the objectives of this paper. 
+- Chapter 2 introduces the objectives of this paper.
 - Chapter 3 presents available attestation format.
 - Chapter 4 discusses interoperability Challenges in the EUDI Wallet.
 - Chapter 5 discusses privacy considerations.
@@ -61,7 +63,6 @@ Attestations, which offer a simpler and widely compatible format, complemented
 by the SD-JWT-VC draft, but still several details are missing. Ongoing
 discussions emphasize the need to balance flexibility, interoperability, and
 security while avoiding unnecessary complexity.  
-
 
 ## 3 Attestation formats
 
@@ -294,7 +295,6 @@ These developments mark a significant step toward making ZKPs practical,
 scalable, and compatible with the security requirements of the EUDI Wallet
 ecosystem, but further scrutiny and testing are necessary to confirm their
 feasibility in large-scale implementations.
-
 
 ## 6 Additions and changes to the ARF
 
