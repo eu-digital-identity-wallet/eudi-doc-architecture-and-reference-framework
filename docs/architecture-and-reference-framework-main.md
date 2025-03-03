@@ -1835,13 +1835,13 @@ issuance of a PID or an attestation, the PID Provider or the Attestation
 Provider can use these trust anchors to verify the authenticity of a Wallet Unit
 Attestation signed by the Wallet Provider, so they can be sure they are dealing
 with an authentic Wallet Unit from a trusted Wallet Provider.
-See [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance)
-and [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation).
+See [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit),
+[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation) and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
 Similarly, when the Wallet Unit presents a PID or an attestation to a Relying
 Party, the Relying Party can use the Wallet Provider trust anchors to verify the
 authenticity of a Wallet Unit Attestation signed by the Wallet
-Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider)
-and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
+Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider),
+[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation) and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
 
 If a certain entity offers multiple Wallet Solutions, they will register as a
 separate Wallet Provider for each of these Wallet Solutions. This implies that
@@ -2431,7 +2431,7 @@ for instance regarding the issuance protocol, are included in [Topic 10/23](./an
 As shown in Figure 11, a Wallet Unit downloads the PID Provider Access CA
 Trusted List(s) it needs from the relevant Trusted List Provider(s), possibly
 after having located them via the Commission common trust infrastructure. It
-also downloads all Attestation Provider Access CA Trusted List(s)See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
+also downloads all Attestation Provider Access CA Trusted List(s). See [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
 for more information on these Trusted Lists.
 
 Note: It is not mandatory for each Wallet Unit to possess all PID Provider CA
@@ -2634,7 +2634,7 @@ Either before or after validating the PID or attestation per steps 5 - 9,
 
 1. The Relying Party Instance authenticates the Wallet Unit and the Wallet
 Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider).
-1. The Relying Party Instance verifies that the Wallet Provider did not revoke
+2. The Relying Party Instance verifies that the Wallet Provider did not revoke
 the Wallet Unit, see [Section 6.6.3.12](#66312-relying-party-verifies-that-wua-is-not-revoked)
 
 Finally, after the interaction with the Relying Party Instance is over,
@@ -2713,7 +2713,7 @@ During a transaction, a Relying Party Instance sends this registration
 certificate to the Wallet Unit in the presentation request. The Wallet Unit
 displays the contents of the registration certificate to the User when asking
 the User for approval, see
-[Section6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
+[Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
 at least in case one or more of the requested attributes is not included in the
 list of attributes in the registration certificate.
 
@@ -2847,7 +2847,7 @@ how to carry out signature verification.
 
 In addition, the Relying Party may want to verify that the Attestation Provider
 can legally issue the type of attestation in question. As described in
-[Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered),
+[Section 6.3.2.2](#6322-pid-provider-or-attestation-provider-receives-an-access-certificate),
 this is only needed for non-qualified EAA Providers, as the Relying Party trusts
 a PID Provider, QEAA Provider or PuB-EAA Provider. For EAA Providers, the
 applicable Rulebook may define methods that the Relying Party can use to verify
@@ -3294,7 +3294,7 @@ States to establish national certification schemes. This will be done in time to
 make available the Wallet Solutions before the end of 2026. The Commission has
 adopted the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 to provide the main requirements on Member States for creation of national
-certification schemes. The [CIR 2024/2981] and resulting national certification
+certification schemes. The [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) and resulting national certification
 schemes are defined around a number of guiding principles:
 
 First, the goal is to harmonise requirements to the extent possible. Member
@@ -3338,8 +3338,8 @@ dependency analysis will be performed.
 
 Finally, in order to ensure a harmonised approach to cybersecurity and the
 assessment of the most critical risks that might affect the provision and
-operation of Wallet Units, a register of risks and threats is defined
-[#7.4-Risk-based-approach-and-risk-register]. The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
+operation of Wallet Units, a register of risks and threats is defined, see
+[7.4 Risk-based approach and risk register](#74-risk-based-approach-and-risk-register). The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
 contains high level risks and threats in relation to Wallet Solutions and the
 ecosystem, as well as detailed threat scenarios that will be taken into
 consideration when designing Wallet Solutions, independent of their specific

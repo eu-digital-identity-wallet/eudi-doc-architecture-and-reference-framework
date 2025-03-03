@@ -148,7 +148,7 @@ and presentation of, attestations. Currently, attestation issuance is not in the
 scope of this API, but future versions [will consider it](
 https://github.com/WICG/digital-credentials/issues/167). The Digital Credentials
 API can be used, for example, by a Relying Party website to request a PID or
-(Q)EEA stored in a Wallet Unit through the User's browser. The browser and the
+(Q)EAA stored in a Wallet Unit through the User's browser. The browser and the
 Wallet Unit may be in the same device (same-device flow) or in separate devices
 but in proximity (cross-device flow).
 
