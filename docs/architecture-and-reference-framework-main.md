@@ -1092,8 +1092,8 @@ between both entities.
 
 Remote transaction flows are use cases in which the Relying Party Instance is
 remote from the User and the User device. The Relying Party Instance requests
-data to the Wallet Unit over the internet, using a browser. These use cases can
-be further distinguished in same-device flows, in which the browser is running
+data from the Wallet Unit over the internet, using a browser. These use cases can
+be further distinguished as same-device flows, in which the browser is running
 on the same device as the Wallet Unit, and cross-device flows, where the browser
 is on a different device.
 
@@ -1102,8 +1102,8 @@ for proximity flows:
 
 1. **Secure Cross-Device Flows**: Cross-device flows are vulnerable to phishing
 and relay attacks, necessitating enhanced security measures. Proximity checks,
-managed by the operating system of the User device, can mitigate these the risks
-derived by these vulnerabilities by leveraging built-in security features to
+managed by the operating system of the User device, can mitigate the risks
+derived from these vulnerabilities by leveraging built-in security features to
 verify the authenticity of interactions, ensuring they are both secure and
 reliable.
 2. **Wallet Unit Selection**: In remote flows, where interactions
@@ -1417,7 +1417,7 @@ The following actions can be performed in the **Valid** state:
 
 - The Wallet Provider updates the Wallet Unit to a new version,
 - The Wallet Provider revokes the Wallet Unit, for instance at the User's
-request of if the security of the Wallet Instance is broken. Revocation of the
+request or if the security of the Wallet Instance is broken. Revocation of the
 Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see
 [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation)
 and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation)).
@@ -1464,7 +1464,7 @@ Figure 9 shows the possible states of a PID or attestation.
 In the context of the EUDI Wallet ecosystem, a PID or attestation begins its
 lifecycle when being issued to a Wallet Unit. Please note that this means that
 the management of attributes in the Authentic Source (adhering to national
-structures and attribute definitions) is outside of the scope of the ARF.
+structures and attribute definitions) is outside the scope of the ARF.
 
 For certain use cases, a PID or attestation may be pre-provisioned, meaning it
 is not yet valid when issued. In that case, its state is **Issued**, and it will
