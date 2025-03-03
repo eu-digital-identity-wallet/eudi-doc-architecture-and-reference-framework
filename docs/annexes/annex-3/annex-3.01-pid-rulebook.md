@@ -4,28 +4,55 @@
 
 ### 1.1 Document scope
 
-This document is the natural-person Person Identification Data (PID) Rulebook and is part of the Architecture Reference Framework (ARF) v1.5.0. It specifies how the mandatory and optional person identification data for the natural person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in Table 5 of that CIR, will be encoded as a within the EUDI Wallet ecosystem. Additionally, this document specifies further optional PID attributes that are not included in the CIR.
+This document is the natural-person Person Identification Data (PID) Rulebook
+and is part of the Architecture Reference Framework (ARF) v1.5.0. It specifies
+how the mandatory and optional person identification data for the natural
+person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing
+Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in
+Table 5 of that CIR, will be encoded as a within the EUDI Wallet ecosystem.
+Additionally, this document specifies further optional PID attributes that are
+not included in the CIR.
 
-This document also specifies how a PID and all attributes in it are encoded if the PID complies with [ISO/IEC 18013-5] and if it complies with [SD-JWT VC].
+This document also specifies how a PID and all attributes in it are encoded if
+the PID complies with [ISO/IEC 18013-5] and if it complies with [SD-JWT VC].
 
 Person identification data for the legal person is out of scope of this document.
 
-This PID Rulebook complies with all applicable requirements in Topic 12 (Attestation Rulebooks) in Annex 2 of the Architecture Reference Framework v1.5.0.
+This PID Rulebook complies with all applicable requirements in Topic 12
+(Attestation Rulebooks) in Annex 2 of the Architecture Reference Framework
+v1.5.0.
 
 ### 1.2 Document structure
 
 This PID Rulebook is structured as follows:
 
-- [Chapter 2](#2-generic-high-level-requirements-for-pids) contains generic high-level requirements, which are valid for all PIDs regardless of the encoding used.
-- [Chapter 3](#3-pid-attributes-and-metadata) describes the PID attributes and metadata on a generic level, regardless of the encoding used for the PID. Most of the content of this chapter is a direct copy of the Annex of Commission Implementing Regulation 2024/2977 on PID and EAA. However, a few additional attributes are specified in this chapter.
-- [Chapter 4](#4-isoiec-18013-5-compliant-encoding-of-pid) specifies how the PID attributes and metadata are encoded in case the PID complies with [ISO/IEC 18013-5].
-- [Chapter 5](#5-sd-jwt-vc-based-encoding-of-pid) specifies how the PID attributes and metadata are encoded in case the PID complies with [SD-JWT VC]. In the current version of this PID Rulebook, this chapter is empty; it will be specified after further discussion with Member States.
+- [Chapter 2](#2-generic-high-level-requirements-for-pids) contains generic
+high-level requirements, which are valid for all PIDs regardless of the encoding
+used.
+- [Chapter 3](#3-pid-attributes-and-metadata) describes the PID attributes and
+metadata on a generic level, regardless of the encoding used for the PID. Most
+of the content of this chapter is a direct copy of the Annex of Commission
+Implementing Regulation 2024/2977 on PID and EAA. However, a few additional
+attributes are specified in this chapter.
+- [Chapter 4](#4-isoiec-18013-5-compliant-encoding-of-pid) specifies how the PID
+attributes and metadata are encoded in case the PID complies with [ISO/IEC
+18013-5].
+- [Chapter 5](#5-sd-jwt-vc-based-encoding-of-pid) specifies how the PID
+attributes and metadata are encoded in case the PID complies with [SD-JWT VC].
+In the current version of this PID Rulebook, this chapter is empty; it will be
+specified after further discussion with Member States.
 
 ### 1.3 Key words
 
-This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as specified in [RFC 2119], i.e., to indicate requirements, recommendations and options specified in this document.
+This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in [RFC 2119], i.e., to indicate requirements, recommendations and
+options specified in this document.
 
-In addition, 'must' (non-capitalized) is used to indicate an external constraint, i.e., a requirement that is not mandated by this document, but, for instance, by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', and 'is' or 'are' are intended as statements of fact.
+In addition, 'must' (non-capitalized) is used to indicate an external
+constraint, i.e., a requirement that is not mandated by this document, but, for
+instance, by an external document. The word 'can' indicates a capability,
+whereas other words, such as 'will', and 'is' or 'are' are intended as
+statements of fact.
 
 ### 1.4 Terminology
 
@@ -33,7 +60,8 @@ This document uses the terminology specified in Annex 1 of the ARF v1.5.0.
 
 ## 2 Generic High-Level Requirements for PIDs
 
-The requirements in the table below are valid for all PIDs in the EUDI Wallet ecosystem, regardless of the encoding used.
+The requirements in the table below are valid for all PIDs in the EUDI Wallet
+ecosystem, regardless of the encoding used.
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
@@ -45,14 +73,25 @@ The requirements in the table below are valid for all PIDs in the EUDI Wallet ec
 
 ### 3.1 Introduction
 
-Sections 3.2, 3.3, 3.4 and 3.5 of this chapter lists the mandatory and optional PID attributes and PID metadata defined in CIR 2024/2977, respectively. Section 3.6 lists the optional PID attributes additionally defined in this PID Rulebook.
+Sections 3.2, 3.3, 3.4 and 3.5 of this chapter lists the mandatory and optional
+PID attributes and PID metadata defined in CIR 2024/2977, respectively. Section
+3.6 lists the optional PID attributes additionally defined in this PID Rulebook.
 
-The data identifiers and definitions given in Sections 3.2, 3.3, 3.4, and 3.5 are identical to those in CIR 2024/2977, except where explicitly indicated that some further explanations have been added in this Rulebook.
+The data identifiers and definitions given in Sections 3.2, 3.3, 3.4, and 3.5
+are identical to those in CIR 2024/2977, except where explicitly indicated that
+some further explanations have been added in this Rulebook.
 
-All data identifiers and definitions in this chapter are independent of any encoding used. Consequently,
+All data identifiers and definitions in this chapter are independent of any
+encoding used. Consequently,
 
-- the data identifiers in these tables are not necessarily the same as the attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. [Chapter 4](#4-isoiec-18013-5-compliant-encoding-of-pid) specifies the data element identifiers to be used for such PIDs.
-- the data identifiers in these tables are not necessarily the same as the claim names used for PIDs complying with [SD-JWT VC]. [Chapter 5](#5-sd-jwt-vc-based-encoding-of-pid) specifies the attribute identifiers to be used for such PIDs.
+- the data identifiers in these tables are not necessarily the same as the
+attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. [Chapter
+4](#4-isoiec-18013-5-compliant-encoding-of-pid) specifies the data element
+identifiers to be used for such PIDs.
+- the data identifiers in these tables are not necessarily the same as the claim
+names used for PIDs complying with [SD-JWT VC]. [Chapter
+5](#5-sd-jwt-vc-based-encoding-of-pid) specifies the attribute identifiers to be
+used for such PIDs.
 
 ### 3.2 Mandatory attributes specified in CIR 2024/2977
 
@@ -72,16 +111,20 @@ All data identifiers and definitions in this chapter are independent of any enco
 | resident_country | The country where the user to whom the person identification data relates currently resides, as an alpha-2 country code as specified in ISO 3166-1. |
 | resident_state | The state, province, district, or local area where the user to whom the person identification data relates currently resides. |
 | resident_city | The municipality, city, town, or village where the user to whom the person identification data relates currently resides. |
-| resident_postal_code | The postal code of the place where the user to whom the person identification data relates currently resides.
+| resident_postal_code | The postal code of the place where the user to whom the person identification data relates currently resides. |
 | resident_street | The name of the street where the user to whom the person identification data relates currently resides. |
 | resident_house_number | The house number where the user to whom the person identification data relates currently resides, including any affix or suffix. |
 | personal_administrative_number | A value assigned to the natural person that is unique among all personal administrative numbers issued by the provider of person identification data. Where Member States opt to include this attribute, they shall describe in their electronic identification schemes under which the person identification data is issued, the policy that they apply to the values of this attribute, including, where applicable, specific conditions for the processing of this value. |
-| portrait | Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. |
+| portrait | Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. **Further clarification added in this PID Rulebook:** See requirement PID_04 below. |
 | family_name_birth | Last name(s) or surname(s) of the User to whom the person identification data relates at the time of birth. |
 | given_name_birth | First name(s), including middle name(s), of the User to whom the person identification data relates at the time of birth. |
 | sex | Values shall be one of the following: 0 = not known; 1 = male; 2 = female; 3 = other; 4 = inter; 5 = diverse; 6 = open; 9 = not applicable. For values 0, 1, 2 and 9, ISO/IEC 5218 applies. |
-| email_address | Electronic mail address of the user to whom the person identification data relates, in conformance with [RFC 5322]. | 
+| email_address | Electronic mail address of the user to whom the person identification data relates, in conformance with [RFC 5322]. |
 | mobile_phone_number | Mobile telephone number of the User to whom the person identification data relates, starting with the '+' symbol as the international code prefix and the country code, followed by numbers only. |
+
+| **Index** | **Requirement specification** |
+|-----------|--------------|
+| PID_04 | The attribute portrait SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG). |
 
 ### 3.4 Mandatory metadata specified in CIR 2024/2977
 
@@ -114,7 +157,8 @@ All data identifiers and definitions in this chapter are independent of any enco
 
 ### 4.1 High-Level Requirements for ISO/IEC 18013-5-compliant PIDs
 
-The requirements in the table below are valid for PIDs in the EUDI Wallet ecosystem that are compliant with [ISO/IEC 18013-5].
+The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [ISO/IEC 18013-5].
 
 | **Index** | **Requirement specification** |
 |-----------|--------------|
@@ -132,29 +176,48 @@ The requirements in the table below are valid for PIDs in the EUDI Wallet ecosys
 
 #### 4.2.1 Overview
 
-The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specified in the table below. The table contains the following information for all attributes:
+The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is
+specified in the table below. The table contains the following information for
+all attributes:
 
-- The first column lists the data identifier specified in [Chapter 3](#3-pid-attributes-and-metadata) above.
-- The second column lists the corresponding attribute identifier to be used in presentation requests and responses according to [ISO18013-5].
-- The third column indicates the encoding of each attribute. This column uses CDDL representation types defined in [RFC 8610]. The following notes and requirements apply:
-  - tstr, uint, bstr, bool and tdate are CDDL representation types defined in [RFC 8610].
-  - Regarding type tstr: this document confirms that, as specified in RFC 8949, a tstr SHALL be encoded in UTF-8 and SHALL support the full Unicode range.
-  - All attributes having encoding type tstr SHALL have a maximum length of 150 characters.
-  - This document specifies full-date as full-date = #6.1004(tstr), where tag 1004 is specified in [RFC 8943].
-  - In accordance with [RFC 8949], section 3.4.1, a tdate attribute SHALL contain a date-time string as specified in [RFC 3339]. In accordance with [RFC 8943], a full-date attribute SHALL contain a full-date string as specified in [RFC 3339].
-  - The following requirements apply to the representation of dates in attributes, unless otherwise indicated:
-    - Fractions of seconds SHALL NOT be used;
-    - A local offset from UTC SHALL NOT be used; the time-offset defined in [RFC 3339] SHALL be to "Z".
-  - RFC 8949, section 4.2, describes four rules for canonical CBOR. Three of those rules SHALL be implemented for all CBOR structures in PIDs, as follows:
-    - integers (major types 0 and 1) SHALL be as small as possible;
-    - the expression of the length in a bstr, tstr, array or map SHALL be as short as possible;
-    - indefinite-length items SHALL be made into definite-length items.
+- The first column lists the data identifier specified in
+[Chapter 3](#3-pid-attributes-and-metadata) above.
+- The second column lists the corresponding attribute identifier to be used in
+presentation requests and responses according to [ISO18013-5].
+- The third column indicates the encoding of each attribute. This column uses
+CDDL representation types defined in [RFC 8610]. The following notes and
+requirements apply:
+    - tstr, uint, bstr, bool and tdate are CDDL representation types defined in
+  [RFC 8610].
+    - Regarding type tstr: this document confirms that, as specified in RFC
+    8949, a tstr SHALL be encoded in UTF-8 and SHALL support the full Unicode
+    range.
+    - All attributes having encoding type tstr SHALL have a maximum length of
+    150 characters.
+    - This document specifies full-date as full-date = #6.1004(tstr), where tag
+    1004 is specified in [RFC 8943].
+    - In accordance with [RFC 8949], section 3.4.1, a tdate attribute SHALL
+    contain a date-time string as specified in [RFC 3339]. In accordance with
+    [RFC 8943], a full-date attribute SHALL contain a full-date string as
+    specified in [RFC 3339].
+    - The following requirements apply to the representation of dates in
+    attributes, unless otherwise indicated:
+        - Fractions of seconds SHALL NOT be used;
+        - A local offset from UTC SHALL NOT be used; the time-offset defined in
+        [RFC 3339] SHALL be to "Z".
+    - RFC 8949, section 4.2, describes four rules for canonical CBOR. Three of
+    those rules SHALL be implemented for all CBOR structures in PIDs, as
+    follows:
+        - integers (major types 0 and 1) SHALL be as small as possible;
+        - the expression of the length in a bstr, tstr, array or map SHALL be as
+        short as possible;
+        - indefinite-length items SHALL be made into definite-length items.
 
 | **Data Identifier** | **Attribute identifier** | **Encoding format** |
 |------------------------|--------------|------------------|
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
-| birth_date | birth_date | full-date, see [Section 4.2.5](#425-attribute-birth_date). |
+| birth_date | birth_date | full-date, see [Section 4.2.4](#424-attribute-birth_date). |
 | birth_place | birth_place | tstr |
 | nationality | nationality | nationalities, see [Section 4.2.2](#422-attribute-nationality). |
 | resident_address | resident_address | tstr |
@@ -165,7 +228,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | resident_street | resident_street | tstr |
 | resident_house_number | resident_house_number | tstr |
 | personal_administrative_number | personal_administrative_number | tstr |
-| portrait | portrait | bstr, see [Section 4.2.3](#423-attribute-portrait). |
+| portrait | portrait | bstr |
 | family_name_birth | family_name_birth | tstr |
 | given_name_birth | given_name_birth | tstr |
 | sex | sex | uint |
@@ -176,7 +239,7 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 | issuing_country | issuing_country | tstr |
 | document_number | document_number | tstr |
 | issuing_jurisdiction | issuing_jurisdiction | tstr |
-| location_status | - | See [Section 4.2.4](#424-attribute-location_status). |
+| location_status | - | See [Section 4.2.3](#423-attribute-location_status). |
 | issuance_date | issuance_date | tdate or full-date |
 | age_over_18 | age_over_18 | bool |
 | age_over_NN | age_over_NN | bool |
@@ -186,7 +249,9 @@ The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is specifi
 
 #### 4.2.2 Attribute nationality
 
-The attribute nationality takes as its value an array of Alpha-2 country codes as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the encoding of this data element is:
+The attribute nationality takes as its value an array of Alpha-2 country codes
+as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
+encoding of this data element is:
 
 nationalities = [
 \+ CountryCode
@@ -194,45 +259,56 @@ nationalities = [
 
 CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1
 
-Note: If the User to whom the person identification data relates has multiple nationalities (and the PID Provider is willing to attest to these multiple nationalities), the PID Provider can include all of the nationalities in the nationalities array. A potential drawback of this solution is that the User cannot selectively disclose only one or these nationalities, since for ISO/IEC 18013-5-compliant attestations, always the entire array will be presented if the User approves the presentation of the nationality attribute. A potential solution to this challenge is for the PID Provider to include only one nationality in the nationality attribute, and for the remaining nationalities use one or more domestic data attributes specified according to requirement PID_ISO_02.
+Note: If the User to whom the person identification data relates has multiple
+nationalities (and the PID Provider is willing to attest to these multiple
+nationalities), the PID Provider can include all of the nationalities in the
+nationalities array. A potential drawback of this solution is that the User
+cannot selectively disclose only one or these nationalities, since for ISO/IEC
+18013-5-compliant attestations, always the entire array will be presented if the
+User approves the presentation of the nationality attribute. A potential
+solution to this challenge is for the PID Provider to include only one
+nationality in the nationality attribute, and for the remaining nationalities
+use one or more domestic data attributes specified according to requirement
+PID_ISO_02.
 
-#### 4.2.3 Attribute portrait
+#### 4.2.3 Attribute location_status
 
-Commission Implementing Regulation 2024/2977 describes the optional attribute portrait as “Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications.”
+For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be
+absent, since revocation information will be added to the MSO.
 
-In order to ensure a single consistent encoding of the portrait, this PID Rulebook additionally specifies the following:
+#### 4.2.4 Attribute birth_date
 
-- The attribute portrait SHALL consist of a single portrait image in JPEG format.
-- The portrait image SHALL comply with the requirements for a Full Frontal Image Type in ISO/IEC 19794-5.
-- The image SHALL be encoded as binary data.
-
-#### 4.2.4 Attribute location_status
-
-For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be absent, since revocation information will be added to the MSO.
-
-#### 4.2.5 Attribute birth_date
-
-For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC 8943. This encoding does not contain provisions for encoding partial dates. This may cause challenges in case the birth date of a User is not (fully) known. To deal with such cases, a PID Provider could adopt a policy to choose appropriate values for the unknown date elements. However, mandating such a policy is out of scope of this document.
+For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC
+8943. This encoding does not contain provisions for encoding partial dates. This
+may cause challenges in case the birth date of a User is not (fully) known. To
+deal with such cases, a PID Provider could adopt a policy to choose appropriate
+values for the unknown date elements. However, mandating such a policy is out of
+scope of this document.
 
 ## 5 SD-JWT VC-based encoding of PID
 
 ### 5.1 High-Level Requirements for SD-JWT VC-compliant PIDs
 
-High-level requirements for SD-JWT VC-compliant PIDs will be added to a future version of this PID Rulebook.
+High-level requirements for SD-JWT VC-compliant PIDs will be added to a future
+version of this PID Rulebook.
 
 ### 5.2 Encoding of PID attributes
 
-The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a future version of this PID Rulebook.
+The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a
+future version of this PID Rulebook.
 
 ## 6 Further requirements
 
 ### 6.1 Embedded disclosure policies
 
-Requirements regarding the inclusion of an embedded disclosure policy into a PID, if any, will be added in a future version of this PID Rulebook.
+Requirements regarding the inclusion of an embedded disclosure policy into a
+PID, if any, will be added in a future version of this PID Rulebook.
 
 ### 6.2 Displaying the PID to the User
 
-Requirements regarding how a Wallet Unit should display the PID and the PID attributes to the User, if any, will be added in a future version of this PID Rulebook.
+Requirements regarding how a Wallet Unit should display the PID and the PID
+attributes to the User, if any, will be added in a future version of this PID
+Rulebook.
 
 ## 7 References
 

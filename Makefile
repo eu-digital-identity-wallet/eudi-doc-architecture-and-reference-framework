@@ -26,7 +26,7 @@ SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 1.5.1
+VERSION        := 1.6.0
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -101,4 +101,3 @@ zip-pdfs: copy-pdfs
 clean:
 	@echo "Cleaning build and site directories..."
 	-$(RM) -rf $(BUILD_DIR) $(SITE_DIR)
-
