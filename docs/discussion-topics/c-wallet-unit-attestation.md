@@ -175,7 +175,7 @@ interfaces used by the wallet solutions should provide wallet users with a relia
 relying parties and other wallet units. Inversely, wallet providers should provide a mechanism to authenticate and
 validate wallet units so that relying parties can receive assurances with respect to trustworthiness and authenticity
 of the wallet units. Further, the technical infrastructure of the wallets should also be designed to ensure that only the
-minimal necessary amount of data is transferred only to the authorized relying parties, while keeping unlinkability
+minimal necessary amount of data is transferred only to the authorised relying parties, while keeping unlinkability
 between the different transactions. In order to facilitate the issuance of person identification data and electronic
 attestations of attributes, all wallet solutions should support a minimum set of protocols and interfaces.*
 

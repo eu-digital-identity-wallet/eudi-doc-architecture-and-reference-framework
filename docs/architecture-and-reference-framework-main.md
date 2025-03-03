@@ -3552,11 +3552,11 @@ attributes. This is beneficial for User privacy.
 ##### 7.4.3.4 Risks and mitigation measures related to authorisation
 
 In certain cases, there is a risk that a legitimate entity within the EUDI Wallet
-ecosystem may attempt to perform actions beyond its authorized scope. This risk
+ecosystem may attempt to perform actions beyond its authorised scope. This risk
 primarily affects two types of entities.
 
 First, a non-qualified EAA Provider may attempt to issue attestations for which
-it lacks the necessary authorization. For example, an Attestation Provider that
+it lacks the necessary authorisation. For example, an Attestation Provider that
 has not been officially designated by a Member State or another relevant
 authority to issue diplomas may still attempt to generate an attestation of the
 diploma type. Within the EUDI Wallet ecosystem, this risk is limited to
@@ -3575,7 +3575,7 @@ provide services relying on attestations, ensuring a broad and consistent
 approach to trust and verification within the EUDI Wallet ecosystem.
 
 Second, a Relying Party in the EUDI Wallet ecosystem may attempt to request
-attributes from a Wallet Unit without being registered or authorized to
+attributes from a Wallet Unit without being registered or authorised to
 do so. This risk is mitigated mainly by three measures:
 
 1. **Selective Disclosure and User Control** – The attestation formats and
@@ -3665,7 +3665,7 @@ attestation multiple times, the Wallet Unit will present the same attestation to
 this Relying Party each time. Topic 10/23 calls this 'Per-Relying Party
 attestations'.
 
-Additionally, organizational and enforcement measures can help deter Relying
+Additionally, organisational and enforcement measures can help deter Relying
 Parties from colluding and tracking Users. In particular, Relying Parties found
 in violation will have their access certificates revoked, preventing them from
 further interactions with Wallet Units.
@@ -3680,7 +3680,7 @@ Wallet ecosystem is still under discussion and development due to the complexity
 of implementing ZKP solutions in secure hardware and the lack of support in
 currently available secure hardware (WSCDs). This topic will be further explored
 in the context of the next major release of the ARF. As with Relying Party
-linkability, organizational and enforcement measures can help deter Attestation
+linkability, organisational and enforcement measures can help deter Attestation
 Providers from colluding and tracking Users.  Additionally, many Attestation
 Providers are subject to regular audits, making it easier to detect collusion
 and tracking compared to Relying Parties.
