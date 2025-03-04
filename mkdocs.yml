@@ -12,8 +12,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.path
-  icon:
-    logo: material/library-shelves 
+  logo: media/eu-logo.jpg
 
 markdown_extensions:
   - footnotes
