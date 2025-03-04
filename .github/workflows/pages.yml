@@ -27,7 +27,7 @@ jobs:
            ref: ''
       - name: Get latest tag
         id: tag
-        uses: 32teeth/action-github-tag@v1
+        uses: 32teeth/action-github-tag@v1.0.7
         with:
           numbers_only: true
       - uses: actions/setup-python@v4
