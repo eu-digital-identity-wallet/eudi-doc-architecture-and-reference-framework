@@ -22,38 +22,49 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout the repository
+        uses: actions/checkout@v4
         with:
-           ref: ''
-      - name: Get latest tag
-        id: tag
-        uses: 32teeth/action-github-tag@v1.0.7
-        with:
-          numbers_only: true
-      - uses: actions/setup-python@v4
+           ref: 'main'
+      - name: Get lastest tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+      - name: Setup python environment
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
+      - name: Setup cache
+        uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material mike
-      - run: |
+      - name: Install mkdocs theme
+        run: pip install mkdocs-material mike
+      - name: Configure fetch and merge
+        run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-      - run: git fetch origin && git merge origin
-      - run: mike deploy --push --update-aliases ${{steps.tag.outputs.tag}} latest
-      - run: mike set-default --push latest
-      - uses: r-lib/actions/setup-pandoc@v2
+          git fetch origin
+          git merge origin
+      - name: Deploy mkdocs
+      - run: |
+          mike deploy --push --update-aliases ${{ steps.latest_tag.outputs.tag }} latest
+          mike set-default --push latest
+      - name: Setup pandoc
+        uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: latest
-      - run: sudo apt update -y
-      - run: sudo apt install -y texlive-full texlive-xetex
-      - run: make
-      - uses: actions/upload-artifact@v4
+      - name: Install latex
+        run: |
+          sudo apt update -y
+          sudo apt install -y texlive-full texlive-xetex
+      - name: Build pdf
+        run: make
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: architecture-and-reference-framework
           path: build/pdf
