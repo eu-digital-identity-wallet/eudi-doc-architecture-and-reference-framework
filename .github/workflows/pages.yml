@@ -56,7 +56,6 @@ jobs:
           echo "arf_version=${VERSION:1}" >> $GITHUB_ENV
       - name: Deploy mkdocs
         run: |
-          mike delete --push latest
           mike deploy --push --update-aliases ${{ env.arf_version }} latest
           mike set-default --allow-empty --push latest
       - name: Setup pandoc
