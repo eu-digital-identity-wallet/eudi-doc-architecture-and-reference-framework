@@ -55,7 +55,7 @@ jobs:
           VERSION=${{ steps.latest_tag.outputs.tag }}
           echo "VERSION=${VERSION:1}" >> $GITHUB_ENV
           mike delete --push latest
-          mike deploy --push --update-aliases ${{ VERSION }} latest
+          mike deploy --push --update-aliases ${{ env.VERSION }} latest
           mike set-default --push latest
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
