@@ -53,9 +53,10 @@ jobs:
       - name: Deploy mkdocs
         run: |
           VERSION=${{ steps.latest_tag.outputs.tag }}
-          echo "VERSION=${VERSION:1}" >> $GITHUB_ENV
+          echo "arf_version=${VERSION:1}" >> $GITHUB_ENV
           mike delete --push latest
-          mike deploy --push --update-aliases ${{ env.VERSION }} latest
+          mike delete --push v1.6.0          
+          mike deploy --push --update-aliases ${{ env.arf_version }} latest
           mike set-default --push latest
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
