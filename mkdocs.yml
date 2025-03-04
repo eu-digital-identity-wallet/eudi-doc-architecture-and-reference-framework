@@ -30,6 +30,7 @@ nav:
 extra:
   version:
     provider: mike
+    alias: true
 
 plugins:
   - mike
