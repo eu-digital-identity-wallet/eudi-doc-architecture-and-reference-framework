@@ -54,6 +54,7 @@ jobs:
         run: |
           VERSION=${{ steps.latest_tag.outputs.tag }}
           echo "arf_version=${VERSION:1}" >> $GITHUB_ENV
+          echo "${VERSION:1}"
           mike delete --push latest
           mike delete --push v1.6.0          
           mike deploy --push --update-aliases ${{ env.arf_version }} latest
