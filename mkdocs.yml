@@ -10,8 +10,8 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.path
+    - toc.integrate     
   logo: media/eu-logo.jpg
 
 markdown_extensions:
