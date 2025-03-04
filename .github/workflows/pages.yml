@@ -52,6 +52,7 @@ jobs:
           git merge origin
       - name: Deploy mkdocs
         run: |
+          mike delete --push latest
           mike deploy --push --update-aliases ${{ steps.latest_tag.outputs.tag }} latest
           mike set-default --push latest
       - name: Setup pandoc
