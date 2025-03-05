@@ -342,7 +342,8 @@
 
 
 <h1 id="v-pid-rulebook">V - PID rulebook</h1>
-<p>Version 0.1, updated 20 February 2025</p>
+<p>Version 0.2, updated 4 March 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410">GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for European Digital Identity Cooperation
@@ -442,7 +443,7 @@ separately through additional specifications.</li>
 </ul>
 <p>For example:</p>
 <ul>
-<li>The OAuth SD-JWT-VC draft [Ter2024] defines data format specifications for
+<li>The OAuth SD-JWT-VC draft [SD-JWT VC] defines data format specifications for
 attestations based on JWT &amp; SD-JWT.</li>
 <li>The SD-JWT-VC Data Model proposal [Fet2024] was previously discussed by
 Germany as a possible approach for structuring JWT-based attestations</li>
@@ -523,6 +524,8 @@ maintenance costs.</li>
 practice, it introduces unnecessary complexity, security risks, and operational
 burdens.  A clear and limited selection of attestation models is essential to
 ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.</p>
+<p>For all the above reasons, the requirement [PID_\01] included in the the PID rulebook
+of Annex 3 of the ARF still applies. </p>
 <h2 id="5-privacy-considerations">5 Privacy considerations</h2>
 <p>Privacy is a critical concern, especially regarding how attestation data is
 shared and verified. All the attestation categories mentioned above implement
@@ -598,7 +601,17 @@ scalable, and compatible with the security requirements of the EUDI Wallet
 ecosystem, but further scrutiny and testing are necessary to confirm their
 feasibility in large-scale implementations.</p>
 <h2 id="6-additions-and-changes-to-the-arf">6 Additions and changes to the ARF</h2>
+<p>Based on the outcomes of the discussion of the focus group meeting, the requirement
+[PID_01] defined in Annex 3 of the ARF remains active. This requirement mandates
+the following:</p>
+<blockquote>
+<p>A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]</p>
+</blockquote>
 <h3 id="61-high-level-requirements-to-be-added">6.1 High-Level Requirements to be added</h3>
+<p>The following High-Level Requirements will be added in Annex 3 of the ARF</p>
+<h4 id="requirement-1">REQUIREMENT 1</h4>
+<p>The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
+format as specified in [SD-JWT VC]</p>
 <h3 id="62-high-level-requirements-to-be-changed">6.2 High-Level Requirements to be changed</h3>
 <h3 id="63-descriptions-to-be-added-to-the-arf-main-document">6.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="7-references">7 References</h2>
@@ -631,7 +644,7 @@ feasibility in large-scale implementations.</p>
 <td>Verifiable Credential Data Integrity 1.0, available at <a href="https://www.w3.org/TR/vc-data-integrity/">https://www.w3.org/TR/vc-data-integrity/</a></td>
 </tr>
 <tr>
-<td>[Ter2024]</td>
+<td>[SD-JWT VC]</td>
 <td>SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html">https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html</a></td>
 </tr>
 </tbody>
