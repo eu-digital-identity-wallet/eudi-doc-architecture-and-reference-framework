@@ -1,6 +1,8 @@
 # V - PID rulebook
 
-Version 0.1, updated 20 February 2025
+Version 0.2, updated 4 March 2025
+
+[GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410)
 
 ## 1. Introduction
 
@@ -121,7 +123,7 @@ separately through additional specifications.
 
 For example:
 
-- The OAuth SD-JWT-VC draft \[Ter2024\] defines data format specifications for
+- The OAuth SD-JWT-VC draft \[SD-JWT VC\] defines data format specifications for
 attestations based on JWT & SD-JWT.
 - The SD-JWT-VC Data Model proposal \[Fet2024\] was previously discussed by
 Germany as a possible approach for structuring JWT-based attestations
@@ -210,6 +212,9 @@ practice, it introduces unnecessary complexity, security risks, and operational
 burdens.  A clear and limited selection of attestation models is essential to
 ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.
 
+For all the above reasons, the requirement \[PID\_\01\] included in the the PID rulebook
+of Annex 3 of the ARF still applies. 
+
 ## 5 Privacy considerations
 
 Privacy is a critical concern, especially regarding how attestation data is
@@ -297,8 +302,18 @@ ecosystem, but further scrutiny and testing are necessary to confirm their
 feasibility in large-scale implementations.
 
 ## 6 Additions and changes to the ARF
+Based on the outcomes of the discussion of the focus group meeting, the requirement
+\[PID_01\] defined in Annex 3 of the ARF remains active. This requirement mandates
+the following:
+
+> A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]
 
 ### 6.1 High-Level Requirements to be added
+The following High-Level Requirements will be added in Annex 3 of the ARF
+
+#### REQUIREMENT 1
+The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
+format as specified in \[SD-JWT VC\]
 
 ### 6.2 High-Level Requirements to be changed
 
@@ -313,4 +328,4 @@ feasibility in large-scale implementations.
 |\[Jon2025\]| Securing Verifiable Credentials using JOSE and COSE, available at <https://www.w3.org/TR/vc-jose-cose/>|
 | \[Paq2024\] | Christian Paquin, Guru-Vamsi Policharla, and Greg Zaverucha, Crescent: Stronger Privacy for Existing Credentials, Cryptology ePrint Archive, Paper 2024/2013, 2024, available at <https://eprint.iacr.org/2024/2013> |
 |\[Spo2025\]| Verifiable Credential Data Integrity 1.0, available at <https://www.w3.org/TR/vc-data-integrity/>|
-|\[Ter2024\]| SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html>|
+|\[SD-JWT VC\]| SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html>|
