@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -191,23 +191,6 @@
   
 
       
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../discussion-topics" class="md-tabs__link">
-        
-  
-    
-  
-  Discussion topics
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -271,6 +254,7 @@
   
   <span class="md-ellipsis">
     EUDI Wallet
+    
   </span>
   
 
@@ -291,26 +275,7 @@
   
   <span class="md-ellipsis">
     Architecture and reference framework
-  </span>
-  
-
-      </a>
-    </li>
-  
-
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../discussion-topics" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Discussion topics
   </span>
   
 
@@ -701,6 +666,7 @@
                 
                   
 
+
   
   
 
@@ -790,16 +756,16 @@ this attestation type MAY be used to distinguish between the first
 version of the ISO-compliant PID attribute (defined in this document)
 and any future version.</p>
 <p>Similarly, PID Providers SHALL use the value "eu.europa.ec.eudi.pid.1"
-for the namespace of the first version of the PID attributes specified in Section <a href="#23-pid-attributes">2.3</a>. This namespace clearly indicates that any attributes defined
+for the namespace of the first version of the PID attributes specified in section <a href="#23-pid-attributes">2.3</a>. This namespace clearly indicates that any attributes defined
 within it are Person Identification Data specified in the context of the
 EUDI Wallet. Again, the version number "1" allows for future
-extension(s) or change(s) of the PID attributes defined in the next
+extension(s) or change(s) of the PID attributes defined the next
 section.</p>
 <p>Note that the attestation type and namespace have the same value. This
 is allowed according to ISO/IEC 18013-5.</p>
 <p>PID Providers SHALL use this attestation type and namespace for the
-ISO/IEC 18013-5 compliant attribute encoding specified in <a href="#242-isoiec-18013-5-compliant-encoding">Section 2.4.2</a>
-and for the SD-JWT-compliant encoding in <a href="#243-sd-jwt-compliant-encoding">Section 2.4.3</a>.</p>
+ISO/IEC 18013-5 compliant attribute encoding specified in <a href="#242-isoiec-18013-5-compliant-encoding">section 2.4.2</a>
+and for the SD-JWT-compliant encoding in <a href="#243-sd-jwt-compliant-encoding">section 2.4.3</a>.</p>
 <h4 id="222-domestic-pid-namespaces-for-national-attributes">2.2.2 Domestic PID namespaces for national attributes</h4>
 <p>ISO/IEC 18013-5 specifies a mechanism called domestic namespaces,
 allowing PID Providers to issue such national attributes to an EUDI
@@ -815,14 +781,14 @@ number in the domestic namespace.</p>
 <p>EXAMPLE: The first domestic PID namespace for Germany could be
 "eu.europa.ec.eudi.pid.de.1".</p>
 <p>PID Providers SHALL use the same domestic namespace for both ISO/IEC
-18013-5-compliant PIDs and SD-JWT-compliant PIDs, see Section 2.4.</p>
+18013-5-compliant PIDs and SD-JWT-compliant PIDs, see section 2.4.</p>
 <p>A PID Provider that defines a domestic namespace SHALL publish the
 namespace, including all attribute identifiers, their definition,
 presence and encoding format, in a Rulebook complying with all
 applicable requirements in [<a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>].</p>
 <h3 id="23-pid-attributes">2.3 PID attributes</h3>
 <h4 id="231-introduction">2.3.1 Introduction</h4>
-<p>PID attributes are defined in Table 1 in <a href="#232-overview">Section 2.3.2</a>.</p>
+<p>PID attributes are defined in Table 1 in <a href="#232-overview">section 2.3.2</a>.</p>
 <p>Table 1 contains the following information:</p>
 <ul>
 <li>The first column specifies the identifiers of the PID attributes.
@@ -872,7 +838,7 @@ mandatory attribute if requested.</p>
     where tag 1004 is specified in [<a href="https://datatracker.ietf.org/doc/html/rfc8943">RFC 8943</a>].</p>
 </li>
 <li>
-<p>In accordance with [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>], Section 3.4.1, a tdate
+<p>In accordance with [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>], section 3.4.1, a tdate
     attribute shall contain a date-time string as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>]. In accordance with [<a href="https://datatracker.ietf.org/doc/html/rfc8943">RFC 8943</a>], a full-date attribute
     shall contain a full-date string as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>].</p>
 </li>
@@ -935,7 +901,7 @@ mandatory attribute if requested.</p>
 </tr>
 <tr>
 <td>age_over_NN</td>
-<td>Additional current age attestations, NN ≠ 18.</td>
+<td>Additional current age attestations, NN &lt; 18.</td>
 <td>O</td>
 <td>bool</td>
 </tr>
@@ -1045,7 +1011,7 @@ mandatory attribute if requested.</p>
 <td>nationality</td>
 <td>Alpha-2 country code as specified in ISO 3166-1, representing the nationality of the PID User.</td>
 <td>O*</td>
-<td>See Section 2.3.6</td>
+<td>See section 2.3.6</td>
 </tr>
 <tr>
 <td>issuance_date</td>
@@ -1093,7 +1059,7 @@ mandatory attribute if requested.</p>
 </table>
 <p><strong>Table 1 PID attributes</strong></p>
 <p>Note: For the attributes for which the presence is indicated as O*, see
-<a href="#237-minimum-number-of-optional-attributes">Section 2.3.7</a>.</p>
+<a href="#237-minimum-number-of-optional-attributes">section 2.3.7</a>.</p>
 <h4 id="233-date-of-birth-related-attributes">2.3.3 Date of birth-related attributes</h4>
 <p>This document defines the following attributes related to the date of
 birth of the PID User:</p>
@@ -1111,12 +1077,12 @@ birth of the PID User:</p>
 <p>age_over_18 (mandatory)</p>
 </li>
 <li>
-<p>age_over_NN, NN ≠ 18 (optional)</p>
+<p>age_over_NN, NN \&lt;&gt; 18 (optional)</p>
 </li>
 </ul>
 <p>Having multiple attributes instead of only one allows having different
 levels of granularity for requests and responses, and thus allows PID
-Providers and Relying Parties to practice data minimisation. For
+Providers and Relying Parties to practice data minimization. For
 example, in some use cases, a Relying Party only needs to establish that
 the PID User is not a minor. In that case, requesting age_over_18
 suffices. Releasing more specific information, such as the PID User's
@@ -1194,10 +1160,10 @@ primarily to assist in, for example, automated form filling.</p>
 <h4 id="236-nationality">2.3.6 Nationality</h4>
 <p>The nationality or citizenship of the PID User is potentially a
 multi-valued attribute, because a citizen can have more than one
-nationality. However, their document defines an attribute nationality
+nationality. However, his document defines an attribute nationality
 taking as its value a single Alpha-2 country code. This implies that any
 additional nationality of the PID User must be added by the respective
-Member State as a domestic attribute, see <a href="#222-domestic-pid-namespaces-for-national-attributes">Section 2.2.2</a>.</p>
+Member State as a domestic attribute, see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>.</p>
 <h4 id="237-minimum-number-of-optional-attributes">2.3.7 Minimum number of optional attributes</h4>
 <p>PID Providers SHALL include at least four of the following six
 attributes (whose presence is indicated as O* in Table 1) in each PID,
@@ -1272,14 +1238,13 @@ specified in ISO/IEC 18013-5:2021 [ISO18013-5] and the format
 specified in [SD-JWT VC] must be used. For the latter, attributes must
 be encoded in JSON. For the former, attributes must be encoded in CBOR.</p>
 <p>This section therefore specifies two separate encodings for the PID data
-model, an ISO/IEC 18013-5-compliant encoding in CBOR, and an
+model, an ISO/IEC 18013-5-compliant encoding in CBOR, and a
 SD-JWT-compliant encoding in JSON.</p>
 <h4 id="242-isoiec-18013-5-compliant-encoding">2.4.2 ISO/IEC 18013-5-compliant encoding</h4>
 <h5 id="2421-encoding-rules">2.4.2.1 Encoding rules</h5>
-<p>If attributes specified in Table 1 are encoded with CBOR, they SHALL
+<p>If attributes specified in in Table 1 are encoded with CBOR, they SHALL
 be encoded as specified in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
-<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">Section 2.3.1</a>.
-Rules to encode CDDL representation types with CBOR are specified in
+<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a> Rules to encode CDDL representation types with CBOR are specified
 [RFC 8610] and [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>].</p>
 <h5 id="2422-further-stipulations">2.4.2.2 Further stipulations</h5>
 <p>The value of all attributes (both PID attributes and PID metadata) SHALL
@@ -1289,7 +1254,7 @@ MSO from ISO/IEC 18013-5 clause 9.1.2.4.</p>
 <ul>
 <li>
 <p>The value of the age_over_18, age_over_NN and age_in_years
-    attributes, if present, may change whenever the PID User has a
+    attributes, if present, changes whenever the PID User has a
     birthday. The value of many other attributes will also change over
     time. It is up to the PID Provider to ensure that the above
     requirement is complied with.</p>
@@ -1312,16 +1277,16 @@ within the Document Signer certificate; see ISO/IEC 18013-5 Annex B.</p>
 <p>Attributes in Table 1 SHALL be released only as Issuer Signed Items, as
 specified in [ISO/IEC 18013-5]. This means that these attributes SHALL
 be signed by the PID Provider, not by the Wallet Instance.</p>
-<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">Section 2.2.2</a>) MAY be signed either by the PID Provider or by the Wallet
+<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>) MAY be signed either by the PID Provider or by the Wallet
 Instance.</p>
 <p>All attributes in Table 1 SHALL be made selectively disclosable.</p>
 <h4 id="243-sd-jwt-compliant-encoding">2.4.3 SD-JWT-compliant encoding</h4>
 <h5 id="2431-encoding-rules">2.4.3.1 Encoding rules</h5>
 <p>If attributes are encoded with JSON, they SHALL be encoded as specified
 in [RFC 8259].</p>
-<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">Section 2.3.1</a>. Rules to encode CDDL representation types with JSON are specified
-in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>] Section 6.1.
-Given the CDDL representation types used in the current version of this document, the following rules are relevant:</p>
+<p>The CDDL representation types used in Table 1 are specified in <a href="#231-introduction-introduction-1">section 2.3.1</a>. Rules to encode CDDL representation types with JSON are specified
+in [<a href="https://datatracker.ietf.org/doc/html/rfc8949">RFC 8949</a>] section 6.1 Given the CDDL representation types used in
+the current version of this document, the following rules are relevant:</p>
 <ul>
 <li>
 <p>A CDDL uint (i.e., an unsigned integer) becomes a JSON number.</p>
@@ -1372,7 +1337,7 @@ be added here.</p>
 <p>PID attributes in Table 1 SHALL be released only in a VP Token, as
 specified in [OpenID4VP]. This means that these attributes SHALL be
 signed by the PID Provider, not by the Wallet Instance.</p>
-<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">Section 2.2.2</a>) MAY be released in either a VP Token or an ID Token.</p>
+<p>At the discretion of the PID Provider, domestic attributes (see <a href="#222-domestic-pid-namespaces-for-national-attributes">section 2.2.2</a>) MAY be released in either a VP Token or an ID Token.</p>
 <p>All attributes in Table 1 SHALL be made selectively disclosable.</p>
 <h2 id="3-trust-infrastructure-details">3 Trust infrastructure details</h2>
 <h3 id="31-introduction">3.1 Introduction</h3>
@@ -1418,7 +1383,7 @@ have their own arc 'next' to this one, if necessary.</em></p>
     attributes within ISO-compliant EUDI Wallets.</em></p>
 </li>
 <li>
-<p><em>id-eudi-iso-pid-kp OBJECT IDENTIFIER ::= {id-eudi-iso-pid 1} <br>- - arc for extended key purposes within certificates used for PID
+<p><em>id-eudi-iso-pid-kp OBJECT IDENTIFIER ::= {id- eudi-iso-pid 1} <br>- - arc for extended key purposes within certificates used for PID
 attributes within ISO-compliant EUDI Wallets</em></p>
 </li>
 <li>
@@ -1446,7 +1411,7 @@ authentication will be detailed in the relevant technical specification.</em></p
 <p>These OIDs SHALL be used in certificates used for PID attributes within
 the ISO-compliant EUDI Wallet ecosystem, in exactly the same way as the
 corresponding OIDs specified in ISO/IEC 18103-5 are used within the
-mobile driving licence ecosystem.</p>
+mobile driving license ecosystem.</p>
 <p>Notes:</p>
 <ul>
 <li>
@@ -1521,7 +1486,7 @@ PIDs will be detailed in a future version of this document.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
