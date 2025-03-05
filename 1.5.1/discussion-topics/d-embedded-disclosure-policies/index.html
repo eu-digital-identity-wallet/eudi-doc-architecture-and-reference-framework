@@ -436,19 +436,34 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#33-authorisation-of-intermediaries" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-extended-approaches" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 Authorisation of intermediaries
+      4. Extended approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Extended approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-relying-party-authorization-based-on-wrprcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Relying Party authorization based on WRPRCs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-fine-grained-policies-based-on-relying-party-attributes" class="md-nav__link">
+  <a href="#42-fine-grained-policies-based-on-relying-party-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 Fine-grained policies based on Relying Party attributes
+      4.2 Fine-grained policies based on Relying Party attributes
     </span>
   </a>
   
@@ -460,79 +475,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-additions-and-changes-to-the-arf" class="md-nav__link">
+  <a href="#5-additions-and-changes-to-the-arf" class="md-nav__link">
     <span class="md-ellipsis">
-      4 Additions and changes to the ARF
+      5 Additions and changes to the ARF
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4 Additions and changes to the ARF">
+    <nav class="md-nav" aria-label="5 Additions and changes to the ARF">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-high-level-requirements-to-be-added-to-topic-43" class="md-nav__link">
+  <a href="#51-high-level-requirements-to-be-added-to-annex-2" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 High-Level Requirements to be added to topic 43
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.1 High-Level Requirements to be added to topic 43">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirement-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      REQUIREMENT 1
+      5.1 High-Level Requirements to be added to Annex 2
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirement-2" class="md-nav__link">
+  <a href="#52-high-level-requirements-to-be-changed" class="md-nav__link">
     <span class="md-ellipsis">
-      REQUIREMENT 2
+      5.2 High-Level Requirements to be changed
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirement-3" class="md-nav__link">
+  <a href="#53-descriptions-to-be-added-to-the-arf-main-document" class="md-nav__link">
     <span class="md-ellipsis">
-      REQUIREMENT 3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requirement-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      REQUIREMENT 4
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-high-level-requirements-to-be-changed" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 High-Level Requirements to be changed
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-descriptions-to-be-added-to-the-arf-main-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 Descriptions to be added to the ARF main document
+      5.3 Descriptions to be added to the ARF main document
     </span>
   </a>
   
@@ -544,9 +517,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-references" class="md-nav__link">
+  <a href="#6-references" class="md-nav__link">
     <span class="md-ellipsis">
-      5 References
+      6 References
     </span>
   </a>
   
@@ -572,7 +545,7 @@
 
 
 <h1 id="d-embedded-disclosure-policies">D - Embedded Disclosure Policies</h1>
-<p>Version 1.0, updated 24 February 2025</p>
+<p>Version 0.5, updated 6 February 2025</p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for eIDAS Coordination Group regarding
@@ -648,8 +621,9 @@ fact.</p>
 <p>This document is structured as follows:</p>
 <ul>
 <li>Chapter 2 presents legal requirements for embedded disclosure policies. </li>
-<li>Chapter 3 discusses implementation and deployment issues and additional mechanisms for implementing embedded disclosure policies. </li>
-<li>Chapter 4 lists the additions and changes that will be made to the ARF 
+<li>Chapter 3 discusses implementation and deployment issues.</li>
+<li>Chapter 4 presents additional mechanisms for implementing embedded disclosure policies. </li>
+<li>Chapter 5 lists the additions and changes that will be made to the ARF 
 as a result of discussing this topic with Member States.</li>
 </ul>
 <h2 id="2-legal-requirements-for-embedded-disclosure-policies">2 Legal requirements for embedded disclosure policies</h2>
@@ -690,42 +664,30 @@ root (or list of specific roots) or intermediate certificate(s)</li>
 </ol>
 </blockquote>
 <p>Therefore, Wallet Units, as well as the mechanisms used for defining and
-evaluating policies, shall provide support for at least policies 2. and 3. above. </p>
-<p>An important component related to the evaluation of embedded disclosure policies
-is the <em>Wallet-Relying Party Registration Certificate</em> (WRPRC). The draft Implementing
-Regulation for "the registration of wallet-relying parties 
-and the common mechanism for the identification and authentication of wallet-relying<br />
-parties" introduces WRPRC and defines it as:</p>
-<blockquote>
-<p>a data object that indicates the attributes the relying party has registered to 
-intend to request from users</p>
-</blockquote>
-<p>Therefore, a Wallet Unit in addition to the common embedded disclosure policies 
-shall verify that the requested attributes are included in the provided WRPRC.</p>
+ evaluating policies, shall provide support for at least policies
+  2. and 3. above. </p>
 <h2 id="3-discussion">3 Discussion</h2>
 <h3 id="31-distribution-of-embedded-disclosure-policies">3.1 Distribution of embedded disclosure policies</h3>
-<p>The following two options can be considered for distributing embedded disclosure
-policies:</p>
-<p>(a) Embedded disclosure policies are provided in Provider metadata (e.g., 
-by extending the "credentials_configurations_supported" field
- of the "credential issuer metadata" specified in 
-section 11.2 of [OID4VCI]). This option does not require modifications 
-to the attestation format. </p>
-<p>(b) Embedded disclosure policies are included in the attestations. This option
-requires  modifications to the attestation format. As far as existing formats 
-are concerned, including ISO mdoc and IETF SD-JWT, it is not straightforward 
-how this can be implemented.</p>
-<p>Option (a) is the preferred distribution method. It 
-is reminded that according to requirement [ISS_32a] "An Attestation 
-Provider SHALL sign its metadata"</p>
-<p>Policies can be integrated directly into metadata or "linked"
-using a URL and stored by the Provider. The integrated approach does not require
-any additional communication with the Provider but attestations shall be revoked 
-when a policy is updated. On the other hand, the integrated approach prevents a provider
-from unilaterally changing an embedded disclosure policy. The linked approach also
-may introduce privacy risks, management overhead and hinder integration with 
-protocols such as the Digital Credential API</p>
-<p>For these reasons the integrated approach is the preferred option. </p>
+<p><strong>Question 1</strong>
+How should embedded disclosure policies be distributed? Options are:</p>
+<p>(a) Embedded disclosure policies are provided in Provider metadata (e.g., by extending
+the "Credential Issuer Metadata" specified in section 11.2 of [OID4VCI]). This option 
+does not require modifications to the attestation format. </p>
+<p>(b) Embedded disclosure policies are included in the attestations. This option requires 
+modifications to the attestation format. As far as existing formats are concerned, 
+including ISO mdoc and IETF SD-JWT, it is not straightforward how this can be 
+implemented.</p>
+<p>Policies can be integrated directly into metadata (or the attestation) or "linked"
+using a URL and stored by the Provider. The former approach has the advantage of 
+not requiring any communication with the Provider when evaluating a policy, which 
+may introduce privacy risks and hinder integration with protocols such as the Digital 
+Credential API. However, updating a policy would necessitate the revocation and 
+re-issuance of credentials.</p>
+<p>The latter option, on the other hand, simplifies policy updates. Nevertheless, it 
+requires Wallet Units to periodically communicate with the provider. 
+Moreover, this approach may pose challenges in offline scenarios.</p>
+<p><strong>Question 2</strong> Policies should be integrated or linked? Shall 
+ARF make a requirement about that or leave it as an option to the provider?</p>
 <h3 id="32-enforcing-of-edps-and-communication-of-results-to-rps">3.2 Enforcing of EDPs and communication of results to RPs</h3>
 <p>Article 10, paragraph 3 of Implementing Regulation (EU) 2024/2979 requires Wallet
 Units to "inform the wallet user of the (evaluation of the embedded disclosure policy) result." However,
@@ -741,13 +703,36 @@ Wallet Unit.</p>
 generating an error that reveals the attestation's existence while denying presentation to the
 Relying Party may leak information about the user. A Relying Party should
 not be able to distinguish between a nonexistent attestation and an existing
-attestation for which presentation is denied. Measures shall also be considered
-to prevent related timing attacks. It is noted that currently protocols
+attestation for which presentation is denied. It is noted that currently protocols
 specified in the Implementing Acts do not consider such error response. </p>
-<h3 id="33-authorisation-of-intermediaries">3.3 Authorisation of intermediaries</h3>
-<p>If Policy 2 defined in [2024/20179] is implemented based on Relying
-Party identifiers included in WRPAC then the use of intermediaries  will be prevented. 
-It is reminded that according to requirement  RPI_01 of ARF 1.5.0:</p>
+<p><strong>Question 3</strong>
+Do you agree that generating an authorization error may be a privacy threat and
+countermeasures should be considered?</p>
+<p><strong>Question 3a</strong>
+Shall Wallet Units be required to generate the same output (towards the Relying Party)
+in case an attestation does not exist and in case an attestation exists but 
+presentation is denied?</p>
+<h2 id="4-extended-approaches">4. Extended approaches</h2>
+<p>Embedded disclosure policies can be extended beyond the list of the common embedded
+disclosure policies defined in [2024/20179]. In this section we discuss possible 
+approaches. These approaches are motivated
+by the fact the Wallet Units should implement more advanced authorization decision processes
+to support <em>Wallet-Relying Party Registration Certificates</em>.</p>
+<p>The draft Implementing Regulation for "the registration of wallet-relying parties 
+and the common mechanism for the identification and authentication of wallet-relying 
+parties" introduces "wallet-relying party registration certificate" (WRPRC) and defines
+it as:</p>
+<blockquote>
+<p>a data object that indicates the attributes the relying party has registered to 
+intend to request from users</p>
+</blockquote>
+<p>Therefore, a Wallet Unit in addition to the common embedded disclosure policies 
+should verify that the requested attributes are included in the WRPRC</p>
+<h3 id="41-relying-party-authorization-based-on-wrprcs">4.1 Relying Party authorization based on WRPRCs</h3>
+<p>If Policies 2 and 3 considered by [2024/20179] are implemented based on Relying
+Party identifiers included in WRPAC and root of trusts for WRPAC respectively, this 
+will prevent the use of intermediaries. It is reminded that according to requirement<br />
+RPI_01 of ARF 1.5.0:</p>
 <blockquote>
 <p>[...] an intermediary obtains an access certificate containing its own name 
 and unique Relying Party identifier</p>
@@ -759,82 +744,37 @@ obtain a registration certificate from a Registrar [...] (which) SHALL contain
 that Relying Party's name and unique identifier, as well as the list of
 attributes registered for that Relying Party</p>
 </blockquote>
-<p>Therefore, intermediaries can only be supported only if embedded disclosure 
-policies consider the Relying Party identifiers included in a WRPRC. </p>
-<p>For this reason Policy 2 shall be implemented using Relying Party identifiers
-included in the presented WRPRC.</p>
-<h3 id="34-fine-grained-policies-based-on-relying-party-attributes">3.4 Fine-grained policies based on Relying Party attributes</h3>
-<p>Implementing embedded disclosure policies as simple whitelists may not be suitable
-for advanced use case that may require finer grained policies. For those use cases
-an embedded disclosure policy may require additional Relying Party attributes, or
+<p>Therefore, intermediaries can only be supported only if embedded disclosure policies
+consider the Relying Party identifiers included in a WRPRC and the corresponding
+root of trusts. </p>
+<p><strong>Question 5</strong>
+Shall the ARF require common embedded policies 2 and 3 to consider Relying Party
+identifiers from WRPRCs and root of trusts for WRPRCs respectively?</p>
+<h3 id="42-fine-grained-policies-based-on-relying-party-attributes">4.2 Fine-grained policies based on Relying Party attributes</h3>
+<p>Implementing embedded disclosure policies as simple whitelists hinders policy
+management, prevents fine-grained policies, and limits the expressiveness of a policy. 
+An embedded disclosure policy may consider additional Relying Party attributes, or
 even user related attributes and user context,
-and define authorisation rules using a policy definition language. 
+and define authorization rules using a policy definition language. 
 Such an approach can provide 
 Attestation Providers with more fine-grained control over which
 Relying Parties can access an attestation and under which conditions. </p>
-<p>Such a policy definition language are:
+<p>The expectations of such a policy definition language are (to be expressed as HLR):
 * It shall be standardized
-* It shall allow rules for authorisation based on Relying Party attributes, User attributes, and contextual attributes 
+* It shall allow rules for authorization based on Relying Party attributes, User attributes,
+and contextual attributes 
 * It shall enable conditions and logical operations
 * It shall enable filtering of Relying Party certificates based on roots of trust
 * It shall enable definition of which attestation attributes can be accessed
-if a rule if satisfied.
-* It shall enable rules based on "classes" or "types" or "groups" of Relying
-Parties.</p>
-<p>On the other hand, for such a language to be practical, the semantics of Relying 
-Party attributes used in policies would need to be defined at the EU level. This 
-is a complex and time-consuming process that would hinder the definition, standardization, 
-and eventual deployment of such a policy definition language. Mandating support for 
-such a language could create  barriers to the development and adoption of Wallet 
-Solutions. Therefore, this discussion paper does not propose any requirement for 
-such a language.</p>
-<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
-<h3 id="41-high-level-requirements-to-be-added-to-topic-43">4.1 High-Level Requirements to be added to topic 43</h3>
-<p>The following High-Level Requirements will be added to Annex 2 of the ARF</p>
-<h4 id="requirement-1">REQUIREMENT 1</h4>
-<p>A Wallet Solution SHALL support  the implementation of the  'Authorised relying parties only policy' 
-using a  list of EU-wide unique identifiers of Relying Parties 
-(as specified in [Reg_32]). Such an identifier SHALL be retrieved from the
-presented Wallet-Relying Party Registration Certificate.</p>
-<h4 id="requirement-2">REQUIREMENT 2</h4>
-<p>A Wallet Solution SHALL support the implementation of the 'Specific Root of Trust' 
-policy using a list of root or intermediate certificates</p>
-<h4 id="requirement-3">REQUIREMENT 3</h4>
-<p>An Attestation Provider SHALL integrate embedded disclosure policies 
-in attestation metadata in a way that is compatible with the issuance protocol
-considered by the ARF.</p>
-<h4 id="requirement-4">REQUIREMENT 4</h4>
-<p>When the presentation of an attestation is denied by the User, the Wallet Unit SHALL behave 
-towards the Relying Party as it would if the attestation did not exist.</p>
-<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
-<p><strong>[ARB_22]</strong>
-Remove "(including, possibly, an embedded disclosure policy as defined in 
-Topic 43)". Final text:</p>
-<blockquote>
-<p>The Schema Provider for an Attestation Rulebook SHALL specify all technical 
-details necessary to ensure interoperability, security, and privacy of that attestation. 
-Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User.</p>
-</blockquote>
-<p><strong>[EDP_01]</strong> 
-Remove ",as defined in the applicable Rulebook. Final text:</p>
-<blockquote>
-<p>A Wallet Unit SHALL enable an Attestation Provider to optionally include an 
-embedded disclosure policy in a QEAA, PuB-EAA, or non-qualified EAA. Note: The 
-[European Digital Identity Regulation] does not contain a requirement for PIDs to 
-be able to contain an embedded disclosure policy.</p>
-</blockquote>
-<p><strong>[EDP_02]</strong> 
-To be removed</p>
-<p><strong>[EDP_03]</strong> 
-Note will be removed. Additionally, "information" will be replace with "information
-included in the Wallet-Relying Party Registration Certificate". Final text:</p>
-<blockquote>
-<p>An embedded disclosure policy created by an Attestation Provider SHALL only refer 
-to information included in the Wallet-Relying Party Registration Certificate provided 
-in an authenticated manner to the Wallet Unit by the Relying Party or the requesting Wallet Unit. </p>
-</blockquote>
-<h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
-<h2 id="5-references">5 References</h2>
+if a rule if satisfied.</p>
+<p><strong>Question 6</strong>
+What other expectations  do you have from a policy definition language</p>
+<h2 id="5-additions-and-changes-to-the-arf">5 Additions and changes to the ARF</h2>
+<h3 id="51-high-level-requirements-to-be-added-to-annex-2">5.1 High-Level Requirements to be added to Annex 2</h3>
+<p>The following High-Level Requirements will be added to Annex 2 of the ARF v1.11</p>
+<h3 id="52-high-level-requirements-to-be-changed">5.2 High-Level Requirements to be changed</h3>
+<h3 id="53-descriptions-to-be-added-to-the-arf-main-document">5.3 Descriptions to be added to the ARF main document</h3>
+<h2 id="6-references">6 References</h2>
 <table>
 <thead>
 <tr>
