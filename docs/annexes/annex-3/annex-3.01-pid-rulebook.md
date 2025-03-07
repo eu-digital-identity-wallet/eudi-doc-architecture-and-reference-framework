@@ -14,7 +14,7 @@ and is part of the Architecture Reference Framework (ARF) v1.5.0. It specifies
 how the mandatory and optional person identification data for the natural
 person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing
 Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in
-Table 5 of that CIR, will be encoded as a within the EUDI Wallet ecosystem.
+Table 5 of that CIR, will be encoded within the EUDI Wallet ecosystem.
 Additionally, this document specifies further optional PID attributes that are
 not included in the CIR.
 
