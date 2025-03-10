@@ -123,7 +123,7 @@ who participated in this project.
 ## Licence
 
 This project is licensed under the [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/)
-see the [LICENCE](./LICENSE) file for details.
+see the [LICENCE](./LICENCE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 
