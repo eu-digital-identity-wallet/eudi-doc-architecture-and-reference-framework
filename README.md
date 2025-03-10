@@ -92,7 +92,7 @@ This repository contains:
 * "[Architecture and Reference Framework](docs/architecture-and-reference-framework-main.md)"
 the main narrative text that describes the European Digital Identity Wallet and
 its ecosystem.
-* "[Annexes](docs/annexes/README.md)" the list of annexes that provide additional
+* "[Annexes](docs/annexes/)" the list of annexes that provide additional
 information to the main narrative text. In particular, the annexes provide normative
 high-level requirements.
 * "[Technical Specifications](docs/technical-specifications/README.md)" the list
