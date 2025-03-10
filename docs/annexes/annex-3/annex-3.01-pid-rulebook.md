@@ -1,4 +1,9 @@
-# PID Rulebook
+---
+title: "European Digital Identity Wallet"
+subtitle: "ARF Annex 3.01 - PID Rulebook"
+...
+
+# ANNEX 3.01 - PID Rulebook
 
 ## 1 Introduction
 

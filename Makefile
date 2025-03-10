@@ -26,7 +26,7 @@ SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 1.6.0
+VERSION        := 1.6.1
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -57,7 +57,6 @@ PANDOC_EPUB_OPTIONS := --to epub3
 %.pdf : %.md
 	@mkdir -p $(BUILD_DIR)/pdf
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $(BUILD_DIR)/pdf/$(notdir $@) $<
-
 # Convert Markdown to DOCX
 %.docx : %.md
 	@mkdir -p $(BUILD_DIR)/docx
@@ -67,14 +66,13 @@ PANDOC_EPUB_OPTIONS := --to epub3
 %.epub : %.md
 	@mkdir -p $(BUILD_DIR)/epub
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/$(notdir $@) $<
-
 # Targets
 # -----------------------------------------------------------------------------
 
 .PHONY: all mkdocs serve copy-pdfs zip-pdfs clean
 
 # Default target: build all exported documents and the MkDocs site.
-all: $(EXPORTED_DOCS) zip-pdfs
+all: $(EXPORTED_DOCS) zip-pdfs mkdocs
 
 # Build the MkDocs site
 mkdocs:

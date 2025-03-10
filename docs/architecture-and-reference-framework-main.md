@@ -1,5 +1,9 @@
+---
+title: European Digital Identity Wallet
+subtitle: Architecture and Reference Framework
+...
 
-# European Digital Identity Wallet Architecture and Reference Framework
+# Architecture and Reference Framework
 
 ## 1 Introduction
 
@@ -927,7 +931,7 @@ entities. The depicted components of a Wallet Unit are described in [Section 4.3
 while the interfaces are described in [Section 4.3.3](#433-wallet-unit-interfaces-and-protocols).
 The other entities shown in the figure were already described in [Chapter 3](#3-eudi-wallet-ecosystem).
 
-![Figure 2](media/Figure_2_High-Level_Architecture.jpeg) <!-- <img src="Figure_2_High-Level_Architecture.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 2](media/Figure_2_High-Level_Architecture.jpeg)
 *Figure 2: EUDI Wallet ecosystem reference architecture*
 
 Note that a User device can host more than one Wallet Unit, either provided by
@@ -1075,7 +1079,7 @@ Device are physically near the Relying Part Instance. In this case, the
 [ISO/IEC 18013-5] standard specifies how a communication channel is set up and
 how a presentation request and the corresponding response are exchanged.
 
-![Figure 3](media/Figure_3_Proximity_Flow.png) <!-- <img src="Figure_3_Proximity_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 3](media/Figure_3_Proximity_Flow.png)
 *Figure 3: Proximity presentations*
 
 The attribute presentation flow begins when the User opens the Wallet Instance
@@ -1149,7 +1153,7 @@ discussion paper.
 
 ##### 4.4.3.2 Same-device remote presentation flows
 
-![Figure 4](media/Figure_4_Remote_Same-Device_Flow.png) <!-- <img src="Figure_4_Remote_Same-Device_Flow.png" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 4](media/Figure_4_Remote_Same-Device_Flow.png)
 *Figure 4: Remote same-device presentations*
 
 Compared to Figure 2, Figure 4 shows additional detail. In particular, it shows
@@ -1204,7 +1208,7 @@ information included in the presentation request, which may vary.
 
 ##### 4.4.3.3 Cross-device remote presentation flows
 
-![Figure 5](media/Figure_5_Remote_Cross-Device_Flow.jpeg) <!-- <img src="Figure_4_Remote_Cross-Device_Flow.jpeg" style="width="6.195290901137358in" height="6.5597200349956255in" /> -->
+![Figure 5](media/Figure_5_Remote_Cross-Device_Flow.jpeg)
 Figure 5: Remote cross-device presentations
 
 A remote cross-device attribute presentation flow begins when the User uses a
@@ -1360,7 +1364,7 @@ A Wallet Solution has a state diagram of its own. The state of a Wallet Solution
 affects the state of all Wallet Units of that Wallet Solution. Figure 6 below
 shows the states of the Wallet Solution:
 
-![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png) <!-- <img src="media/Figure_6_State chart_Wallet_Solution.png" style="width:3.8190529308836396in;height:4.104166666666667n" /> -->
+![Figure 6](media/Figure_6_Statechart_Wallet_Solution.png)
 
 Figure 6: State diagram of Wallet Solution
 
@@ -1390,7 +1394,7 @@ attestation presented by such a Wallet Unit be accepted by a Relying Party.
 
 Figure 7 below shows the states of a Wallet Unit.
 
-![Figure 7](media/Figure_7_Statechart_Wallet_Unit.png) <!-- <img src="media/Figure_7_State chart_Wallet_Unit.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
+![Figure 7](media/Figure_7_Statechart_Wallet_Unit.png)
 
 Figure 7: State diagram of Wallet Unit
 
@@ -1438,7 +1442,7 @@ as long as at least one of them is valid.
 
 Figure 8 shows the possible states of a PID Provider or Attestation Provider.
 
-![Figure 8](media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png) <!-- <img src="media/Figure_8_State chart_PID_Provider_Attestation_Provider.png" style="width:4.5927395013123355in;height:4.538937007874016in" /> -->
+![Figure 8](media/Figure_8_Statechart_PID_Provider_Attestation_Provider.png)
 
 Figure 8: State diagram of PID Provider or Attestation Provider
 
@@ -1472,7 +1476,7 @@ transition to **Valid** when it reaches the beginning of its validity period.
 However, if a PID or attestation is issued on or after the validity start date,
 its state directly changes to **Valid**.
 
-![Figure 9](media/Figure_9_Statechart_PID.png) <!-- <img src="media/Figure_9_State chart_PID.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+![Figure 9](media/Figure_9_Statechart_PID.png)
 
 Figure 9: State diagram of PID or attestation
 
@@ -1487,7 +1491,7 @@ PID or attestation is expired or revoked, it cannot transition back to
 
 Figure 10 shows the possible states of a Relying Party.
 
-![Figure 10](media/Figure_10_Statechart_Relying_Party.png) <!-- <img src="media/Figure_10_State chart_Relying_Party.png" style="width:4.34150699912511in;height:4.624997812773404in" /> -->
+![Figure 10](media/Figure_10_Statechart_Relying_Party.png)
 
 Figure 9: State diagram of Relying Party
 
@@ -1743,7 +1747,7 @@ ecosystem. It outlines the underlying rules, assumptions, and mechanisms that
 govern trust relationships, determining whether an entity (such as a Wallet
 Unit, User Device, or Relying Party) can be considered trustworthy.
 
-![Figure 11](media/Figure_11_Trust_Model.jpeg) <!-- <img src="Figure_11_Trust_Model.jpeg" style="width:7.16666447944007in;height:5.281294838145232in" /> -->
+![Figure 11](media/Figure_11_Trust_Model.jpeg)
 
 Figure 11 illustrates the key entities and the relationships in the trust model
 of the EUDI Wallet ecosystem.
@@ -1836,12 +1840,14 @@ Provider can use these trust anchors to verify the authenticity of a Wallet Unit
 Attestation signed by the Wallet Provider, so they can be sure they are dealing
 with an authentic Wallet Unit from a trusted Wallet Provider.
 See [Section 6.6.2.3](#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit),
-[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation) and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
+[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation)
+and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
 Similarly, when the Wallet Unit presents a PID or an attestation to a Relying
 Party, the Relying Party can use the Wallet Provider trust anchors to verify the
 authenticity of a Wallet Unit Attestation signed by the Wallet
 Provider; see [Section 6.6.3.11](#66311-relying-party-instance-authenticates-the-wallet-unit-and-the-wallet-provider),
-[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation) and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
+[Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation)
+and [Topic 38](./annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation).
 
 If a certain entity offers multiple Wallet Solutions, they will register as a
 separate Wallet Provider for each of these Wallet Solutions. This implies that
@@ -2660,7 +2666,7 @@ include functionality allowing the Wallet Unit to authenticate the Relying Party
 Instance. Although these protocols differ in the details, on a high level, they
 both implement Relying Party authentication as shown in Figure 12 below.
 
-![Figure 12](media/Figure_12_Relying_Party_Authentication.png) <!-- <img src="media/Figure_12_Relying_Party_Authentication.png" style="width:4.987771216097988in;height:4.385083114610674in" /> -->
+![Figure 12](media/Figure_12_Relying_Party_Authentication.png
 
 Figure 12 High-level overview of Relying Party authentication process
 
@@ -3128,7 +3134,7 @@ There may be different reasons for re-issuing a PID or attestation, for example:
 
 - The current PID(s) or attestation(s) are near the end of their
     technical validity period, or the Wallet Unit is running out of once-only
-    attestations. This is done to mitigate the risk of Relying Party linkabilitty.
+    attestations. This is done to mitigate the risk of Relying Party linkability.
 - The value of one or more of the attributes in the PID or attestation
     has changed.
 - The security architecture of the Wallet Solution may use PIDs and/or
@@ -3210,7 +3216,7 @@ Relying Party. Such a PID or attestation is very short-lived and is used only
 once.
 
 Within the scope of this document, this reason for re-issuance is very
-similar to the reasons discussed in [Section 6.6.5.2.2](#66522-re-issuance-to-limit-relying-party-linkability).
+similar to the reasons discussed in [Section 6.6.5.2](#6652-pid-or-attestation-re-issuance).
 
 ###### 6.6.5.3 PID or attestation revocation
 
@@ -3294,8 +3300,9 @@ States to establish national certification schemes. This will be done in time to
 make available the Wallet Solutions before the end of 2026. The Commission has
 adopted the [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
 to provide the main requirements on Member States for creation of national
-certification schemes. The [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) and resulting national certification
-schemes are defined around a number of guiding principles:
+certification schemes. The [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981)
+and resulting national certification schemes are defined around a number
+of guiding principles:
 
 First, the goal is to harmonise requirements to the extent possible. Member
 States are also encouraged to work together in the design and implementation of
@@ -3339,7 +3346,8 @@ dependency analysis will be performed.
 Finally, in order to ensure a harmonised approach to cybersecurity and the
 assessment of the most critical risks that might affect the provision and
 operation of Wallet Units, a register of risks and threats is defined, see
-[7.4 Risk-based approach and risk register](#74-risk-based-approach-and-risk-register). The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
+[7.4 Risk-based approach and risk register](#74-risk-based-approach-and-risk-register).
+The [Risk Register](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I)
 contains high level risks and threats in relation to Wallet Solutions and the
 ecosystem, as well as detailed threat scenarios that will be taken into
 consideration when designing Wallet Solutions, independent of their specific

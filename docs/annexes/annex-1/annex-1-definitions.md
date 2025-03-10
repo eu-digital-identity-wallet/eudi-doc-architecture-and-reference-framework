@@ -1,5 +1,6 @@
 ---
-subtitle: "Architecture and Reference Framework Annex 1 - Definitions"
+title: "European Digital Identity Wallet"
+subtitle: "ARF Annex 1 - Definitions"
 ...
 
 # ANNEX 1 - Definitions
@@ -12,7 +13,7 @@ precise definition. This Annex contains the definitions of these terms.
 In fact, there are three sources for these definitions:
 
 - In the first place, the [European Digital Identity Regulation] defines several
-of these terms. Forconvenience, these definitions are listed in [Section A.2](#a2-definitions-from-the-european-digital-identity-regulation).
+of these terms. For convenience, these definitions are listed in [Section A.2](#a2-definitions-from-the-european-digital-identity-regulation).
 - Secondly, the adopted Commission Implementing Regulations [CIR
 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977),
 [CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979),
@@ -69,7 +70,7 @@ contains the term as used in the ARF.
 | Embedded disclosure policy | A set of rules, embedded in an electronic attestation of attributes by its provider, that indicates the conditions that a wallet-relying party has to meet to access the electronic attestation of attributes |
 | Registrar (of wallet-relying parties) | The body responsible for establishing and maintaining the list of registered wallet-relying parties established in their territory who has been designated by a Member State |
 | Wallet Instance | The application installed and configured on a Wallet User’s device or environment, which is part of a Wallet Unit, and that the Wallet User uses to interact with the Wallet Unit |
-| Wallet Secure Cryptographic Application (WCSCA) | An application that manages critical assets by being linked to and using the cryptographic and non-cryptographic functions provided by the Wallet Secure Cryptographic Device |
+| Wallet Secure Cryptographic Application (WSCA) | An application that manages critical assets by being linked to and using the cryptographic and non-cryptographic functions provided by the Wallet Secure Cryptographic Device |
 | Wallet Secure Cryptographic Device (WSCD) | A tamper-resistant device that provides an environment that is linked to and used by the Wallet Secure Cryptographic Application to protect critical assets and provide cryptographic functions for the secure execution of critical operations |
 | Wallet Provider | A natural or legal person who provides Wallet Solutions |
 | critical assets | Assets within or in relation to a Wallet Unit of such extraordinary importance that where their availability, confidentiality or integrity are compromised, this would have a very serious, debilitating effect on the ability to rely on the Wallet Unit |
