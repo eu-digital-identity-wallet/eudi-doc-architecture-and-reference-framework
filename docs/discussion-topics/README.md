@@ -54,7 +54,7 @@ following topics:
 
 | Topic | Title |  |
 |-------|-------|--|
-| A | [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md) | [Roadmap issue] [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/327)|
+| A | [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/327)|
 | B | [Re-issuance and batch issuance of PIDs and Attestations](b-re-issuance-and-batch-issuance-of-pids-and-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/332)|
 | C | [Wallet Unit Attestation (WUA) and Key Attestation](c-wallet-unit-attestation.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/333) |
 | D | [Embedded Disclosure Policies](d-embedded-disclosure-policies.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/334) |
