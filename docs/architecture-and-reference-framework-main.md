@@ -2677,7 +2677,7 @@ Party authentication process can begin. Note that these actions are not carried
 out for every presentation, but only once (excluding possible updates):
 
 A) The Relying Party registered itself as described in
-[Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification)
+[Section 6.4.2](##642-relying-party-registration)
 and obtained a Relying Party Instance access certificate.
 
 B) The Wallet Unit obtained the trust anchor of the Relying Party Instance
