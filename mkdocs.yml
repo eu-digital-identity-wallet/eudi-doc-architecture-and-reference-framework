@@ -1,4 +1,4 @@
-site_name: European Digital Identity Wallet
+site_name: European Digital Identity
 theme:
   name: material
   palette:
@@ -11,7 +11,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
-    - toc.integrate     
+    - toc.integrate
   logo: media/eu-logo.jpg
 
 markdown_extensions:
@@ -22,9 +22,10 @@ repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-an
 repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 
 nav:
-  - EUDI Wallet: index.md
+  - European Digital Identity Wallet: index.md
   - Architecture and reference framework: architecture-and-reference-framework-main.md
   - Discussion topics: discussion-topics/README.md
+  - Technical specifications: technical-specifications/README.md
 
 extra:
   version:
