@@ -89,16 +89,16 @@ regarding protocols and interfaces.
 
 This repository contains:
 
-* "[Architecture and Reference Framework](docs/architecture-and-reference-framework-main.md)"
+* "[Architecture and Reference Framework](./architecture-and-reference-framework-main)"
 the main narrative text that describes the European Digital Identity Wallet and
 its ecosystem.
-* "[Annexes](docs/annexes/README.md)" the list of annexes that provide additional
+* "[Annexes](./annexes)" the list of annexes that provide additional
 information to the main narrative text. In particular, the annexes provide normative
 high-level requirements.
-* "[Technical Specifications](docs/technical-specifications/README.md)" the list
+* "[Technical Specifications](./technical-specifications)" the list
 of specifications that will be developed to support the implementation of the
 European Digital Identity Wallet.
-* "[Discussion Topics](docs/discussion-topics/README.md)" the list of discussion
+* "[Discussion Topics](./discussion-topics)" the list of discussion
 topics that are open for public consultation. The topics are organized into
 three iterations, each focusing on a specific set of subjects to be included in
 a major document release.
@@ -107,7 +107,7 @@ The latest **authoritative version** is tagged as [release/tag in this repositor
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct,
+Please read [CONTRIBUTING.md](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/CONTRIBUTING.md) for details on our code of conduct,
 and the process for submitting pull requests to us.
 
 ## Versioning
