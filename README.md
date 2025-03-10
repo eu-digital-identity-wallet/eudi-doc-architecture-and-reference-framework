@@ -92,7 +92,7 @@ This repository contains:
 * "[Architecture and Reference Framework](docs/architecture-and-reference-framework-main.md)"
 the main narrative text that describes the European Digital Identity Wallet and
 its ecosystem.
-* "[Annexes](docs/annexes/README.md)" the list of annexes that provide additional
+* "[Annexes](docs/annexes/)" the list of annexes that provide additional
 information to the main narrative text. In particular, the annexes provide normative
 high-level requirements.
 * "[Technical Specifications](docs/technical-specifications/README.md)" the list
@@ -120,10 +120,9 @@ see the [tags on this repository](https://github.com/eu-digital-identity-wallet/
 See the list of [contributors](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework/graphs/contributors)
 who participated in this project.
 
-## License
+## Licence
 
-This project is licensed under the [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/)
-see the [LICENSE.txt](LICENSE) file for details.
+See the [LICENCE](./LICENCE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 
