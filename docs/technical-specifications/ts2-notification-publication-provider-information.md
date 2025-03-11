@@ -58,7 +58,7 @@ and the published drafts of the forthcoming implementing acts [Draft of the CIR 
 while keeping the [SEMIC Style Guide](https://semiceu.github.io/style-guide/1.0.0/index.html) in mind and aligning it with the [Core Business Vocabulary](https://semiceu.github.io/Core-Business-Vocabulary/releases/2.2.0/) as much
 as reasonable. 
 
-![EUDI-Providers](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/provider-notification/docs/technical-specifications/img/EUDI-Providers.png)
+![EUDI-Providers](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/technical-specifications/img/EUDI-Providers.png)
 
 As outlined in the above figure, it contains the following **main classes**: 
 
