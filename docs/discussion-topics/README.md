@@ -78,7 +78,7 @@ Iteration is planned from 12 March 2025 to 02 July 2025 covering the following t
 | N | [Data portability](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
 | O | [Catalogues for Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
 | W | [Transactional data for payments and other use cases](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/371) |
-| X | [Relying Party registration](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/378) |
+| X | [Relying Party registration](x-relying-party-registration.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/378) |
 
 ### Iteration 3
 
