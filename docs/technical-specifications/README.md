@@ -59,3 +59,16 @@ its corresponding GitHub discussion area and roadmap issue.
 | **TS09** | Specification of Wallet-to-Wallet Interactions | Discussion area | Roadmap issue |
 | **TS10** | Data Portability and Download (Export) | Discussion area | Roadmap issue |
 | **TS11** | Specification of Interfaces and Formats for the Catalogue of Attestation Rulebooks and Attributes | Discussion area | Roadmap issue |
+
+## Tracking All Relevant Standards and Technical Specifications
+
+While the **technical specifications listed above are developed specifically for the EUDI Wallet**, a broader effort is **ongoing to track, analyze, and align all relevant standards—both existing and missing—that impact the EUDI Wallet ecosystem**.
+
+The **[EUDI Wallet Standards and Technical Specifications Repository](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications)** serves as a **centralized resource** for:
+
+- **Gap Analysis**: Identifying **missing or incomplete standards** necessary for the EUDI Wallet.
+- **Roadmap Planning**: Defining a **timeline** for addressing gaps and ensuring that relevant standards are ready for potential referencing in **Implementing Acts**.
+- **Public Transparency**: Providing a **clear, structured view** of ongoing standardization work and enabling **stakeholder feedback**.
+
+**For a visual overview of the tracking process:**  
+- **[View the Standardization Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/29/views/1)**
