@@ -891,7 +891,7 @@ identification in proximity use cases where Users utilise their Wallet Units.
 
 | **Index** | **Requirement specification** |
 |-----------|----------------|
-| ProxId_01 | For enable identification using proximity flows, Wallet Units and Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. |
+| ProxId_01 | To enable identification using proximity flows, Wallet Units and Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. |
 | ProxId_02 | Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes. *Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit.* |
 | ProxId_03 | A Wallet Unit SHALL present the presentation request and the identity of the Relying Party to the User when processing the request. |
 | ProxId_04 | A Wallet Unit SHALL request its User to approve the presentation of attributes from their Wallet Unit for proximity identification before presenting them to the Relying Party. |
