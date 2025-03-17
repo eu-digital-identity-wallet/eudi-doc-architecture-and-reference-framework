@@ -7,7 +7,7 @@ subtitle: "ARF Annex 3.02 - mDL Rulebook"
 
 *This is a working document that holds no legal value and does not
 reflect any common agreement or position of the co-legislators. It
-presents a state-of-play of ongoing work of the eIDAS Expert Group. This
+presents a state-of-play of ongoing work of the European Digital Identity Cooperation Group. This
 document is being continuously updated and should not be considered
 final.*
 
