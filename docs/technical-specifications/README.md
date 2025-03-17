@@ -67,7 +67,7 @@ While the **technical specifications listed above are developed specifically for
 The **[EUDI Wallet Standards and Technical Specifications Repository](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications)** serves as a **centralized resource** for:
 
 - **Gap Analysis**: Identifying **missing or incomplete standards** necessary for the EUDI Wallet.
-- **Roadmap Planning**: Defining a **timeline** for addressing gaps and ensuring that relevant standards are ready for potential referencing in **Implementing Acts**.
+- **Roadmap Planning**: Defining a **tentative timeline** for addressing gaps and ensuring that relevant standards are ready for potential referencing in **Implementing Acts**.
 - **Public Transparency**: Providing a **clear, structured view** of ongoing standardization work and enabling **stakeholder feedback**.
 
 **For a visual overview of the tracking process:**  
