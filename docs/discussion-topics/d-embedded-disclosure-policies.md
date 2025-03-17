@@ -6,8 +6,7 @@ Version 1.0, updated 24 February 2025
 
 ### 1.1 Discussion Paper topic description
 
-This document is the Discussion Paper for eIDAS Coordination Group regarding
-Topic D: Embedded Disclosure Policies.
+This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic D: Embedded Disclosure Policies.
 
 The ARF Development Plan \[ARF\_DevPlan\] describes this Topic as follows:
 

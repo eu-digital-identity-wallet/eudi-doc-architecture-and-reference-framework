@@ -6,7 +6,7 @@ Version 0.9, updated 17 February 2025
 
 ### 1.1 Discussion Paper topic description
 
-This document is the Discussion Paper for eIDAS Coordination Group
+This document is the Discussion Paper for the European Digital Identity Cooperation Group
 regarding Topic B: Re-issuance and batch issuance of PIDs and
 Attestations.
 

@@ -133,18 +133,20 @@ regulatory advancements.
 
 ### 1.6 Change log
 
-In this ARF v1.6.0, relevant text from the [Discussion Paper for Topic A](./discussion-topics/a-privacy-risks-and-mitigations.md)
-(Privacy risks and mitigations) was included in [Section 7.4.3.5](#7435-risks-and-mitigation-measures-related-to-user-privacy).
-Similarly, relevant text from [Discussion Paper for Topic B](./discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations.md)
-(Re-issuance and batch issuance of PIDs and attestations) was included in
-[Sections 6.6.2.7](#6627-batch-issuance) and [6.6.5.2](#6652-pid-or-attestation-re-issuance).
+In this version of the ARF, relevant text from the [Discussion Paper for Topic
+E](./discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md)
+(Pseudonyms including User authentication mechanism) was included in [Sections 2.5](#25-pseudonyms)
+and [4.7](#47-pseudonyms). The High-Level Requirements introduced in this
+discussion paper were included in Annex 2 in [Topic 11](./annexes/annex-2/annex-2-high-level-requirements.md#a2311-topic-11---pseudonyms).
 
-The High-Level Requirements introduced in these Discussion Papers were included
-in Annex 2, mainly in [Topic 10/23](./annexes/annex-2/annex-2-high-level-requirements.md#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit)
-and [Topic 7](./annexes/annex-2/annex-2-high-level-requirements.md#a237-topic-7---attestation-revocation-and-revocation-checking).
+Similarly, relevant text from [Discussion Paper for Topic F](./discussion-topics/f-digital-credential-api.md)
+(Digital Credential API) was included in [Section 4.4.3](#443-remote-presentation-flows),
+insofar not already present. The High-Level Requirements introduced in this
+discussion paper were included in Annex 2, mainly in [Topic 1](./annexes/annex-2/annex-2-high-level-requirements.md#a231-topic-1---accessing-online-services-with-a-wallet-unit),
+[Topic 6](./annexes/annex-2/annex-2-high-level-requirements.md#a236-topic-6---relying-party-authentication-and-user-approval),
+and [Topic 10/23](./annexes/annex-2/annex-2-high-level-requirements.md#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit).
 
-Apart from these changes, a limited number of editorial mistakes in ARF 1.5.0
-was corrected.
+Apart from these changes, a limited number of editorial mistakes were corrected.
 
 ### 1.7 Additional topics
 
@@ -161,13 +163,11 @@ providing feedback and details on how updates will be managed outlined in
 Among the areas identified for further discussion are:
 
 - Wallet Unit Attestation (WUA),
-- embedded disclosure policies,
-- the use of pseudonyms,
+- Embedded disclosure policies,
 - Relying Party registration.
 
 Other topics that will be developed include:
 
-- the Digital Credentials API,
 - Zero Knowledge Proofs (ZKP),
 - transaction logs maintained by the Wallet Unit,
 - scenarios involving a natural person representing another natural person,
@@ -219,8 +219,10 @@ person identification data in a trusted environment.
 verifiable electronic attestations of attributes.  
 - **Electronic signing of documents or data**, allowing Users to create
 legally recognized qualified electronic signatures and seals.
+- **Generate and use pseudonyms** for authentication, to enhance privacy and
+prevent tracking.  
 
-These functionalities are discussed in the next three sections.
+These functionalities are discussed in the next four sections.
 
 ### 2.2 Identification and authentication
 
@@ -230,8 +232,6 @@ Using their Wallet Units, Users are able to:
 **selective disclosure** of attributes as well as **User approval**. This
 *ensures that only necessary and User-approved attributes are presented to
 *Relying Parties, which minimises exposure of personal information.  
-- **Generate and use pseudonyms** for authentication, to enhance privacy and
-prevent tracking.  
 - **Securely authenticate Relying Parties or other Wallet Units**, making sure
 that attributes are only presented to trusted entities.  
 - **Onboard seamlessly with PID Providers or attestation Providers** by
@@ -245,7 +245,7 @@ the requested attributes.
     - **Report suspicious Relying Parties** to the relevant national data
     protection authority.
 
-### 2.3 Attribute Exchange Mechanism using Attestations
+### 2.3 Attribute exchange mechanism using attestations
 
 Using their Wallet Units, Users are able to:
 
@@ -257,7 +257,7 @@ guaranteeing compliance with data portability rights.
 - **Prevent tracking by Relying Parties** when using attestations,
 ensuring privacy-preserving interactions.
 
-### 2.4 Qualified electronic signature
+### 2.4 Qualified electronic signatures
 
 Using their Wallet Units, Users are able to:
 
@@ -272,7 +272,28 @@ capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
 managed by a QTSP. See [Topic 16](./annexes/annex-2/annex-2-high-level-requirements.md#a2316-topic-16---signing-documents-with-a-wallet-unit)
 and [Topic 37](./annexes/annex-2/annex-2-high-level-requirements.md#a2337-topic-37---qes----remote-signing---technical-requirements).
 
-### 2.5 The role of use cases in the development of the Architecture and Reference Framework
+### 2.5 Pseudonyms
+
+Pseudonyms can be used to authenticate a User when it is not necessary for a
+Relying Party to learn the identity of the User. As specified in [CIR
+2024/2979], [W3C WebAuthn] defines the technical specification for pseudonyms.
+Passkeys are a widely used type of credential which are created and asserted
+using the WebAuthn API. [Section 4.7](#47-pseudonyms) gives more information on
+the architecture and message flows of Passkeys.
+
+A User uses a pseudonym when they wish to create an account at a Relying Party
+without identifying themselves. The Relying Party associates the pseudonym with
+the account, such that it can be used for subsequent authentication in later
+interactions with that Relying Party. The User may additionally present
+attributes from a PID or attestation to the Relying Party, either during
+registration of the pseudonym or at a later interaction.
+
+See also [Topic 11](./annexes/annex-2/annex-2-high-level-requirements.md#a2311-topic-11---pseudonyms)
+and the [Discussion Paper on Topic E](./discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md).
+
+### 2.6 The role of use cases in the development of the Architecture and Reference Framework
+
+#### 2.6.1 Overview
 
 The development of the Architecture and Reference Framework (ARF) is strategically
 driven by real-world use cases, ensuring that the User experience, value
@@ -296,16 +317,16 @@ blueprints, ensuring transparency and adaptability.
 The European Digital Identity Cooperation Group has outlined service blueprints
 for the following key use cases:
 
-- Identification and authentication to access online services, see [Section 2.5.1](#251-identification-and-authentication-to-access-online-services),
-- Qualified Electronic Signature, see [Section 2.4](#24-qualified-electronic-signature),
-- Mobile Driving Licence, see [Section 2.5.2](#252-mobile-driving-licence),
-- Additional use cases that will be introduced in the future, see [Section 2.5.3](#253-other-use-cases).
+- Identification and authentication to access online services, see [Section 2.6.2](#262-identification-and-authentication-to-access-online-services),
+- Qualified Electronic Signature, see [Section 2.4](#24-qualified-electronic-signatures),
+- Mobile Driving Licence, see [Section 2.6.3](#263-mobile-driving-licence),
+- Additional use cases that will be introduced in the future, see [Section 2.6.4](#264-other-use-cases).
 
 These blueprints, along with all relevant information on use cases
 implementation, will be compiled in a standardized format within a dedicated
 document titled the "Use Cases Manual", and distributed together with this document.
 
-#### 2.5.1 Identification and authentication to access online services
+#### 2.6.2 Identification and authentication to access online services
 
 The EUDI Wallet ecosystem is primarily designed to facilitate secure User
 identification and authentication at Level of Assurance (LoA) high for various
@@ -321,7 +342,7 @@ online services.  Their primary objective is to securely and reliably access
 online services that require authentication while maintaining full control over
 how their personal data is presented and shared.
 
-#### 2.5.2 Mobile Driving Licence
+#### 2.6.3 Mobile Driving Licence
 
 A significant use case for the Wallet Unit involves allowing Users to request,
 store, and present a mobile Driving Licence (mDL) as an attestation in their
@@ -340,15 +361,15 @@ Unit presents mDL attributes to a machine without human oversight.
 In addition, like any other attestation type, an mDL can be presented online,
 over the internet.
 
-#### 2.5.3 Other use cases
+#### 2.6.4 Other use cases
 
-##### 2.5.3.1 Health data
+##### 2.6.4.1 Health data
 
 Easy access to health data is crucial in both national and cross-border
 contexts. A Wallet Unit may enable access to patient summary, ePrescriptions,
 etc.
 
-##### 2.5.3.2 Educational attestations and professional qualifications
+##### 2.6.4.2 Educational attestations and professional qualifications
 
 Providing credentials for qualification recognition procedures can be costly and
 time-consuming for Users, Relying Parties (such as companies and employers), and
@@ -356,16 +377,16 @@ Attestation Providers (such as education and training providers or academic
 institutions). A Wallet Unit may be a repository for educational credentials and
 a means for presenting them by the User to relevant Relying Parties.
 
-##### 2.5.3.3 Digital finance
+##### 2.6.4.3 Digital finance
 
 A Wallet Unit may facilitate complying with strong customer authentication
 requirements, using the user authentication capabilities described in
-[Section 2.5.1](#251-identification-and-authentication-to-access-online-services).
+[Section 2.6.2](#262-identification-and-authentication-to-access-online-services).
 In line with the Commission's Retail Payments Strategy, this use case would be
 developed in close coordination with Member States' advisory groups on retail
 payments and the finance industry.
 
-##### 2.5.3.4 Digital Travel Credential
+##### 2.6.4.4 Digital Travel Credential
 
 Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a
 supported format, to enable Relying Parties to identify Users, thus facilitating
@@ -373,7 +394,7 @@ a smooth travel experience and  User journey. Relying Parties for a DTC may
 include governments, transportation providers, hospitality agents, or any other
 actors operating in a regulated environment which requires the use of a DTC.
 
-##### 2.5.3.5 Social Security
+##### 2.6.4.5 Social Security
 
 Documents related to social security are important for many EU citizens to prove
 their rights and obligations under social security legislation in the EU.
@@ -383,7 +404,7 @@ Examples include:
 which is useful to prove that a person pays social contributions in another EU
 country, for example if they are a posted worker or work in several countries at
 the same time.
-- **Electronic Health Insurance Card (“EHIC”)** This is a free card that provides
+- **Electronic Health Insurance Card ("EHIC")** This is a free card that provides
 every citizen with access to medically necessary government-provided healthcare
 during a temporary stay in one of the 27 EU countries, Iceland, Liechtenstein,
 Norway, and Switzerland, under the same conditions and at the same cost (free in
@@ -1057,7 +1078,7 @@ another application on their User Device to access a Relying Party's a service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
 request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows),
-this request is managed by the web browser on the User's device, utilising
+this request is managed by the web browser on the User's device, utilising a
 solution like the [W3C Digital Credentials API] and, behind the scenes, an
 inter-app API provided by the device's operating system.
 - **Remote Cross-Device Flow**: In this flow, the User uses a web browser on a
@@ -1110,14 +1131,14 @@ managed by the operating system of the User device, can mitigate the risks
 derived from these vulnerabilities by leveraging built-in security features to
 verify the authenticity of interactions, ensuring they are both secure and
 reliable.
-2. **Wallet Unit Selection**: In remote flows, where interactions
+1. **Wallet Unit Selection**: In remote flows, where interactions
 do not originate from the Wallet Unit, Users may encounter difficulties in
-selecting and invoking the appropriate Wallet Instance to fulfil a specific
+selecting the appropriate Wallet Unit to fulfil a specific
 presentation request, particularly when multiple Wallet Units are present on the
 device. A unified interface provided by the web browser and the device operating
 system can streamline this process, offering a seamless and intuitive User
 experience.
-3. **Invocation Mechanism**: Establishing a communication channel between the
+1. **Invocation Mechanism**: Establishing a communication channel between the
 Wallet Unit and the remote Relying Party Instance presents challenges due to
 inconsistent invocation methods. One approach considered by standardisation
 bodies involves using custom URI schemes, such as "mdoc://" or "openid4vp://".
@@ -1126,12 +1147,21 @@ the Relying Party Instance requests a connection via a custom URI. Another
 approach is the use of domain-bound universal links (a.k.a. app links). However,
 relying on custom URI schemes or universal links introduces variability in User
 experiences across different browsers and operating systems, resulting in
-operational inefficiencies and potential security risks.
-4. **Clear Origin Verification**: Protecting against relay attacks requires precise
+operational inefficiencies and potential security risks. An interface provided by
+the web browser and the device OS does not need custom URL schemes or universal links
+for invoking a Wallet Unit.
+1. **Clear Origin Verification**: Protecting against relay attacks requires precise
 identification of the Relying Party Instance's origin. Including the origin
 information, such as the website domain or app package name, within the
 presentation request ensures the authenticity of the request and enhances trust
 for both Wallet Units and Users.
+1. **Session binding**: When presenting a PID or attestation to a remote Relying
+Party Instance, Users have to switch contexts. Existing protocols may enable
+attacks where the contexts are not bound to each other, resulting in session
+hijacking. Using an interface provided by the web browser and the device OS
+allows information about a session to be embedded in a presentation request. At
+the same time, the browser and the operating system handle proper context
+switching, preventing session hijacking.
 
 The next sections describe how these challenges might be solved for both
 same-device and cross-device remote presentation flows, by using the [W3C
@@ -1139,17 +1169,29 @@ Digital Credentials API]. This API is expected to establish a consistent browser
 behaviour for invoking Wallet Units, addressing these challenges. When supported
 by browsers, it should be considered the preferred option.
 
-However, the [W3C Digital Credentials API] is still under development and has
-not yet been standardized. Moreover, the API has not been implemented yet by all
-browsers and operating systems. Until these two conditions are fulfilled, the
-use of this API by Wallet Units and Relying Parties is optional, and custom URL
-schemes may continue to be used as well. If a Wallet Unit implements a custom
-URL scheme, it will need to implement mitigations for the associated issues.
-
-For the [W3C Digital Credentials API] to be mandated by this ARF in the future,
-it will have to align with the principles and requirements outlined in the
+The current version of the [W3C Digital Credentials API] extends the Credential Management
+Level 1 API (the same API used by WebAuthn / Passkeys, see [Section 4.7](#47-pseudonyms))
+to allow websites to request an attestation. This is achieved by providing a
+sequence of "presentation requests", where each presentation request includes an
+"exchange protocol" and "request data". The format of the request data are
+specific to the exchange protocol. The Digital Credentials API specifications
+will include a registry of supported protocols. For more information see the
 [Topic F: Digital Credentials API](./discussion-topics/f-digital-credential-api.md)
 discussion paper.
+
+However, the [W3C Digital Credentials API] is still under development and has
+not yet been standardized. For the [W3C Digital Credentials API] to be mandated
+by this ARF in the future, it will have to align with the principles and
+expectations outlined in
+[Chapter 3](./discussion-topics/f-digital-credential-api.md#3) of the Topic F
+discussion paper. Moreover, the API has not been implemented yet by all
+browsers and operating systems.
+
+Until these three conditions (standardisation, compliance with expectations, and
+broad support) are fulfilled, the use of this API by Wallet Units and Relying
+Parties is optional, and custom URL schemes may continue to be used as well. If
+a Wallet Unit implements a custom URL scheme, it will need to implement
+mitigations for the challenges described in this section.
 
 ##### 4.4.3.2 Same-device remote presentation flows
 
@@ -1161,10 +1203,10 @@ the browser on the User device and the relevant interfaces of this browser:
 
 - The **Remote same-device presentation** interface establishes communication
 between the web browser and a remote Relying Party Instance, which may operate
-on a server managed by the Relying Party. This interface complies with the
+on a server managed by the Relying Party. This interface may comply with the
 [Digital Credentials API], which is a browser API that is currently being
 standardised within the W3C.
-- The **WI-platform API** interface is an inter-app API that implements the
+- The **WI-platform API** interface is an inter-app API that may implement the
 Digital Credentials API mechanism at OS level. There are however no current plans
 to standardise this interface on the level of the API calls. These calls will be
 specified in the developer documentation for the respective OS. One of the key
@@ -1409,8 +1451,9 @@ to the Wallet Unit.
 Once a Wallet Unit is activated, it is in the **Operational** state. In this
 state, the User and the Wallet Provider manage the Wallet Unit and can perform
 the same actions as in the **Valid** state, see below. However, obviously, the
-User cannot present a PID to a Relying Party, nor can any other action with a
-PID be performed, because by definition no valid PID is present in this state.
+User cannot identify nor authenticate themselves by presenting a PID to a
+Relying Party, nor can any other action with a PID be performed, because by
+definition no valid PID is present in this state.
 
 If, in the **Operational** state, a PID Provider issues a PID to a Wallet Unit,
 it transitions to the **Valid** state. If, in either of these two states, the
@@ -1502,6 +1545,190 @@ The Registrar can de-register a Relying Party. This leads to the **Invalid**
 state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration).
 A Wallet Unit will not present a PID or attestation to a Relying Party that is
 in this state.
+
+### 4.7 Pseudonyms
+
+#### 4.7.1 Introduction to Passkeys
+
+As specified in [CIR 2024/2979], [W3C WebAuthn] defines the technical
+specification for pseudonyms. Passkeys are a widely used type of credential
+which are created and asserted using the WebAuthn API.
+
+Passkeys are to be seen as an alternative to passwords. The idea is that a User,
+when registering a user account at a service, uses a secure device to generate a
+public-private key pair, registers the public key at the service, and can then
+subsequently use the private key to authenticate towards the service at later
+points in time.
+
+In a bit more detail, the flow for using Passkeys is as follows:
+
+**Registration:**
+
+1. The User generates a public-private key pair and stores both the public and
+the private key at their secure device (referred to as an Authenticator).
+2. The User registers the public key at the desired Relying Party service.
+
+**Authentication:**
+
+1. When the User wishes to authenticate towards a service, the service will send
+them a challenge consisting of a random value.
+2. The User uses the private key stored on their Authenticator to sign the
+challenge and sends this back to the service.
+3. The service verifies that the signature on the challenge can be verified
+using the registered public key. If the signature verifies and the origin
+matches the expected origin, the User is considered authenticated and thereby
+granted access to the service.
+
+#### 4.7.2 Introduction to [W3C WebAuthn]
+
+##### 4.7.2.1 Overview
+
+[W3C WebAuthn] defines an API for the creation and use of Passkeys.
+Conceptually, in addition to the User, there are four different logical
+components in this specification:
+
+- **Relying Party Server:** The Relying Party that wishes to offer a service
+based on authentication using Passkeys.
+- **Relying Party Client:** The program provided by the Relying Party that runs
+in the Client of the User and communicates with the Relying Party Server. The
+Relying Party Client is typically some JavaScript code, provided by the Relying
+Party, that runs on the Client (i.e., browser).
+- **Client:** The client that the User uses to interact with the Relying Party's
+server and with the User's authenticator. The Client can be thought of as the
+browser that the User uses to access the Relying Party's service.
+- **Authenticator:** The device controlled by the User to create, store, and use
+the Passkeys. In the context of the EUDI Wallet, the Wallet Unit is the
+Authenticator.
+
+Note that the Relying Party Client and the Client are two programs that are
+executed on the same physical machine.
+
+[W3C WebAuthn] defines a model dividing the responsibilities between these
+different entities and defines an interface between the Relying Party Client and
+the Client. Additionally, it defines a challenge/response protocol to
+authenticate with Passkeys. The interface is referred to as the *WebAuthn API*.
+
+However, [W3C WebAuthn] does not specify how the Authenticator and the Client
+must communicate.
+
+[W3C WebAuthn] relies on several different types of identifiers, including:
+
+- **Relying Party ID:** An identifier unique to the Relying Party, which must be
+a valid domain string. This what the User will identify the Relying Party by and
+let the Authenticator learn which Relying Party is asking for
+registration/authentication.
+- **Credential ID:** A unique identifier chosen by the Authenticator for each
+Passkey.
+- **User ID:** An identifier unique to each User, which is assigned by the
+Relying Party. This will be provided to the Authenticator when registering a new
+Passkey. Subsequently, it will be provided by the Authenticator when
+authenticating towards the Relying Party. The Authenticator will keep track of
+which Passkeys are available for which User IDs and Relying Party IDs. The
+Relying Party keeps track of a User Name for each User ID.
+- **User Name:** An alias that may be chosen by the User or the Relying Party
+and assigned to a specific Passkey on the Authenticator. This allows the User to
+easily distinguish and select which Passkey they want to authenticate with, if
+several are present in the Authenticator for the given Relying Party.
+
+The next sections elaborate on how the different components work together to
+allow the registration and subsequent authentication using Passkeys.
+
+##### 4.7.2.2 Registration
+
+The flow for registering a Passkey in [W3C WebAuthn] is the following:
+
+0. The User requests (out of band of WebAuthn) the Relying Party to create a new
+Pseudonym.
+1. The Relying Party Server creates a challenge and sends this along with the
+User ID, the Relying Party ID, and the User Name to the Relying Party Client.
+2. The Relying Party Client forwards the information to the Client using the WebAuthnAPI.
+3. The Client checks that the Relying Party ID is consistent with the caller's
+origin and forwards the information to the Authenticator along with other
+contextual data.
+4. The Authenticator authenticates the User (for example using a PIN or via
+biometrics). It then generates a new key pair with a new Credential ID and set
+the scope of this to the specific Relying Party ID and User ID. Finally, the
+Authenticator may generate an attestation (explained in [Section
+4.7.2.3](#4723-pseudonym-attestation)) and send this, as well as the public key
+and its Credential ID, to the Client.
+5. The Client then forwards the information to the Relying Party Client that
+again forwards it to the Relying Party Server.
+6. The Relying Party Server verifies the attestation (if present) and registers
+the received public key for this User ID.
+
+Note that the Authenticator stores the public key in a way such that it is
+scoped uniquely to a specific Relying Party, aligning with the requirements of
+[CIR 2024/2979], Article 14 (2), which states that the pseudonyms must be unique
+to each Relying Party.
+
+##### 4.7.2.3 Pseudonym attestation
+
+The term 'attestation' is here used differently than elsewhere in the ARF. In
+this context, the attestation is not about attributes of the User, but rather
+about attributes of the Authenticator. The attestation serves to ensure the
+Relying Party that they are talking with an Authenticator with certain
+attributes. The attestation often takes the form of a signature on the challenge
+as well as some other contextual data.
+
+In [W3C WebAuthn], five different types of attestations are mentioned:
+
+- **Basic Attestation:** The Authenticator stores a single master public and
+private key. The private key is used to sign all attestations and a certificate
+on the public key is included in the attestation data to allow the Relying Party
+to verify the signature.
+
+- **Attestation CA:** Similar to the above, in the sense that the Authenticator
+stores a single master public and private key stored. However, instead of using
+this to attest Passkeys, the Authenticator uses this to authenticate towards a
+Certificate Authority (CA), which is then configured to issue certificates to
+the Authenticator on multiple attestation key pairs.
+
+- **Anonymization CA:** Similar to the second bullet above, except that it is
+explicit that the Authenticator requests a certificate for a new attestation key
+pair per generated Passkey.
+
+- **Self Attestation:** The attestation is signed with the private key of the
+newly generated key pair in the Passkey. Note that this does not give any
+guarantees for the Relying Party about the Authenticator they are interacting
+with.
+
+- **No Attestation Statement:** No attestation is given. Note that this does not
+give any guarantees for the Relying Party about the Authenticator they are
+interacting with.
+
+Please note that Article 5a (5) a) viii) of the [European Digital Identity
+Regulation] states "*European Digital Identity Wallets shall, in particular
+support common protocols and interfaces: ... for relying parties to verify the
+authenticity and validity of European Digital Identity Wallets;...*". The latter
+two forms of attestation do not align with this requirement.
+[Section 5.1 of the Discussion Paper for Topic E](./discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md#51-topic-a-privacy-risks-and-mitigations)
+discusses how the other three possibilities relate to privacy risks about user
+surveillance identified in [Section
+7.4.3.5](#7435-risks-and-mitigation-measures-related-to-user-privacy).
+
+#### 4.7.2.4 Authentication
+
+The flow for authentication using a Passkey following [W3C WebAuthn] is:
+
+1. The Relying Party Server creates a challenge and sends this along with its
+Relying Party ID to the Relying Party Client.
+2. The Relying Party Client forwards the information to the Client using the
+WebAuthn API.
+3. The Client checks that the Relying Party ID is consistent with the caller's
+origin and forwards the information to the Authenticator along with other
+contextual data.
+4. The Authenticator authenticates the User (for example using a PIN or via
+biometrics). It then prompts the User to select one of the Passkeys scoped to
+this Relying Party ID, if there are multiple. For this step the User Name can be
+presented to the User. Finally, the Authenticator uses the private key of the
+chosen key pair (= Passkey) to sign the challenge as well as some contextual
+data including the User ID, Credential ID, and the Relying Party ID. The
+Authenticator then sends this to the Client.
+5. The Client forwards the information to the Relying Party Client, which again
+forwards it to the Relying Party Server.
+6. The Relying Party Server verifies the signature with the stored public key
+for this User ID and Credential ID, and, depending on the outcome of this
+verification, considers the User to be authenticated.
 
 ## 5 Data model
 
@@ -1691,7 +1918,7 @@ affecting the quality of the overall system.
 For the development and success of the EUDI Wallet ecosystem, re-using the
 building blocks of attributes and attestations is therefore essential. Creating
 and maintaining controlled vocabularies, a catalogue of attributes, and
-attestation rulebooks enables shorter 'time-to-market' and efficient
+Attestation Rulebooks enables shorter 'time-to-market' and efficient
 implementation.
 
 Building on the requirements of [Topic 12](./annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks),
@@ -2235,7 +2462,7 @@ Provider will ask the User to set up one or two authentication mechanisms.
 
 Note that, as discussed in the first bullet in [Section 6.6.3.9](#6639-relying-party-instance-verifies-or-trusts-user-binding),
 the User authentication mechanisms implemented in the WSCD may also play a role
-in ensuring User binding. User binding allow a Relying Party to trust that the
+in ensuring User binding. User binding allows a Relying Party to trust that the
 person presenting a PID or attestation is in fact the subject of that PID or
 attestation.
 

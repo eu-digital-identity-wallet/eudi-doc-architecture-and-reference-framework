@@ -333,7 +333,7 @@ The table below summarizes information from the previous sections with regard to
 
 Certain WUA attributes are somewhat sensitive, as they may allow for linkability, and are only intended for PID Providers and Attestation Providers when performing issuance. Other metadata in the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive and is intended for Relying Parties.
 
-When a Wallet Unit and a Relying Party perform registration of a pseudonym, key material will be stored on the Wallet Unit (in its role as Authenticator). During this registration, the WUA may be used in connection with the pseudonym attestation (discussed in [Section 4.2.3](#423-pseudonym-attestation)). Topic C should consider what information can be presented to a Relying Party, when registrering a pseudonym.
+When a Wallet Unit and a Relying Party perform registration of a pseudonym, key material will be stored on the Wallet Unit (in its role as Authenticator). During this registration, the WUA may be used in connection with the pseudonym attestation (discussed in [Section 4.2.3](#423-pseudonym-attestation)). Topic C should consider what information can be presented to a Relying Party, when registering a pseudonym.
 
 There are two main areas of Topic C that are particularly relevant in relation to Pseudonyms:
 
@@ -684,7 +684,7 @@ A Wallet Unit SHOULD enable a User to freely choose a User alias for each Pseudo
 
 A Wallet Unit SHALL enable a User to choose which Pseudonym to authenticate with towards a Relying Party, if multiple Pseudonyms are registered for this Relying Party. The Wallet Unit SHOULD present the User with the aliases of the applicable Pseudonyms, if assigned, when making this choice.
 
-p> Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.
+> Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.
 
 ##### Requirement 7
 
@@ -794,7 +794,7 @@ The Commission SHALL create or reference a profile or extension of the WebAuthn 
 
 Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this document and future technical specifications created by or on behalf of the Commission.
 
-> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDIW.
+> Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDI Wallet.
 
 #### 6.2 HLRs to be Removed
 
