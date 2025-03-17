@@ -1,0 +1,1298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>C wallet unit attestation - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-wallet-unit-attestation-wua-and-key-attestation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C wallet unit attestation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 0.3, updated 25 February 2025</p>
+<h1 id="c-wallet-unit-attestation-wua-and-key-attestation">C - Wallet Unit Attestation (WUA) and Key Attestation</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic C: Wallet Unit Attestation (WUA) and key attestation.
+The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Define high-level requirements for WUA as defined in the IAs of article 5a, and for the key attestation.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalized) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p>Chapter 2 presents the legal requirements for functionality related to the Wallet Unit Attestation and key attestation.</p>
+</li>
+<li>
+<p>Chapter 3 discusses the high-level purpose of the Wallet Unit Attestation and introduces the two use cases for WUA.</p>
+</li>
+<li>
+<p>Chapter 4 relates the topic to other topics being discussed, and to previously identified risks.</p>
+</li>
+<li>
+<p>Chapter 5 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States. </p>
+</li>
+</ul>
+<h3 id="change-log">Change log</h3>
+<ul>
+<li>Changes for Version 0.3:
+-- Added Chapter 3.1, describing the use cases WUA should support.
+-- Updated revocation discussion in Chapter 3
+-- Restructured the HLRs
+-- Added, removed and changed HLR.</li>
+<li>Changes for Version 0.2:
+-- Updated discussions on revocation and cryptographic binding
+-- Changes to HLRs</li>
+</ul>
+<h2 id="2-legal-requirements-for-wallet-unit-attestation">2 Legal Requirements for Wallet Unit Attestation</h2>
+<p>Multiple legal texts impose direct requirements on the Wallet Unit Attestation and impose requirements that are solved by using Wallet Unit Attestation: [CIR 2024/2977], [CIR 2024/2979], [CIR 2024/2982] and the [European Digital Identity Regulation]. This section recaps the respective legal requirements from these sources.</p>
+<h3 id="21-european-digital-identity-regulation-about-wallet-unit-attestation">2.1  [European Digital Identity Regulation] about Wallet Unit Attestation</h3>
+<p>The [European Digital Identity Regulation] does not directly address the need for Wallet Unit Attestations. Rather, it requires that it should be possible to verify the authenticity and validity of an EUDI Wallet.</p>
+<p>Below are the actual excerpts from the Regulation, including the recitals and the Articles that establish these requirements.</p>
+<p><strong>Recital (34)</strong></p>
+<p><em>The use of European Digital Identity Wallets as well as the discontinuation of their use should be the exclusive right and choice of users. Member States should develop simple and secure procedures for the users to request immediate revocation of validity of European Digital Identity Wallets, including in the case of loss or theft. Upon the death of the user or the cessation of activity by a legal person, a mechanism should be established to enable the authority responsible for settling the succession of the natural person or assets of the legal person to request the immediate revocation of European Digital Identity Wallets.</em></p>
+<p><strong>Article 5a European Digital Identity Wallets</strong></p>
+<p><em>... 4.  European Digital Identity Wallets shall, in particular:\
+...\
+(a) support common protocols and interfaces:\
+...\
+(viii) for relying parties to verify the authenticity and validity of European Digital Identity Wallets;\
+...\
+... 8. Member States shall provide validation mechanisms free-of-charge, in order to:\
+(a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;\
+...\
+...9. Member States shall ensure that the validity of the European Digital Identity Wallet can be revoked in the following circumstances:\
+...</em></p>
+<h3 id="22-cir-20242977-about-wallet-unit-attestation">2.2 [CIR 2024/2977] about Wallet Unit Attestation</h3>
+<p>[CIR 2024/2977] specifies three main requirements related to Wallet Unit Attestation:</p>
+<ol>
+<li>PID issuers must ensure their data is cryptographically bound to the Wallet Unit during issuance.</li>
+<li>PID issuers must verify that the Wallet Unit belongs to a trusted Wallet Solution.</li>
+<li>Wallet Unit Attestations must support revocation.</li>
+</ol>
+<p>Below are the actual excerpts from the CIR, including the recitals and the Articles that establish these requirements.</p>
+<p><strong>Recital (10)</strong></p>
+<p><em>To protect the data of wallet users and to ensure the authenticity of electronic attestations of attributes, mechanisms
+for the authentication of providers of electronic attestations of attributes, and for the verification of the authenticity
+and validity of wallet units by that provider should apply prior to the issuance of the attestations to wallet units.</em></p>
+<p><strong>Article 3</strong></p>
+<p><em>5. Providers of person identification data shall ensure that person identification data that they issue is cryptographically bound to the wallet unit to which it is issued.</em></p>
+<p><em>9. Before issuing person identification data to a wallet unit, providers of person identification data shall authenticate and validate the wallet unit attestation of the wallet unit and verify that the wallet unit belongs to a wallet solution the provider of person identification data accepts or use another authentication mechanism in accordance with an electronic identity scheme notified at assurance level high.</em></p>
+<p><strong>Article 5</strong></p>
+<p><em>4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
+...\
+(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;</em></p>
+<h3 id="23-cir-20242979-about-wallet-unit-attestation">2.3 [CIR 2024/2979] about Wallet Unit Attestation</h3>
+<p>[CIR 2024/2979] specifies six main requirements related to Wallet Unit Attestation:</p>
+<ol>
+<li>Wallet Providers must ensure the Wallet Unit contains a Wallet Unit Attestation.</li>
+<li>The WUA must contain a public key, where the corresponding private key is protected by a WSCD.</li>
+<li>The WUA must be revocable only by the Wallet Provider that provided the WUA.</li>
+<li>The Wallet Provider must have certain responsibilities in relation to the revocation of the WUA.</li>
+<li>The WUA must contain information as to where revocation information can be found. This information must be made available in a privacy preserving manner.</li>
+<li>In case a Wallet Unit requests the presentation of attributes from another Wallet Unit, relevant information contained in the WUA of the requesting Wallet Unit may be logged by the requested Wallet Unit.</li>
+</ol>
+<p>Below are the actual excerpts from the CIR, including the recitals and the Articles that establish these requirements.</p>
+<p><strong>Recital (7)</strong></p>
+<p><em>Wallet units are to enable providers of person identification data or electronic attestations of attributes to verify that
+they are issuing this data or attestations to genuine wallet units of the wallet user.</em></p>
+<p><strong>Recital (8)</strong></p>
+<p><em>To ensure data protection by design and by default, the wallets should be provided with available state-of-the-art
+privacy enhancing techniques. These features should provide the possibility that wallets can be used without the
+wallet user being trackable across different wallet-relying parties, if applicable in the usage scenario. For instance,
+wallet providers should consider state-of-the-art privacy mitigating measures in relation to wallet unit attestations,
+such as using ephemeral wallet unit attestations or batch issuance. In addition, embedded disclosure policies should
+warn the wallet users against inappropriate or illegal disclosure of attributes from electronic attestations of
+attributes.</em></p>
+<p><strong>Recital (9)</strong></p>
+<p><em>Wallet unit attestations should make it possible for wallet-relying parties which request attributes from wallet units,
+to verify the validity status of the wallet unit that they are communicating with, as wallet unit attestations are to be
+revoked when a wallet unit is no longer considered valid. The information regarding the validity status of the wallet
+units should be made available in an interoperable manner, to ensure that it can be used by all wallet-relying parties.
+Moreover, for cases where wallet users lost their wallet units or no longer have control over it, wallet providers
+should enable wallet users to request the revocation of their wallet unit. To ensure the privacy and unlinkability,
+Member States should employ privacy preserving techniques also for the wallet unit attestation. This may include
+the usage of multiple wallet unit attestations for different purposes, disclosing only the minimally relevant
+information about the wallet necessary for a transaction, or to limit the lifetime of the wallet unit attestation as an
+alternative to the use of revocation identifiers.</em></p>
+<p><strong>Article 6</strong></p>
+<p><em>1. Wallet providers shall ensure that each wallet unit contains wallet unit attestations.\
+2. Wallet providers shall ensure that the wallet unit attestations referred to in paragraph 1 contain public keys and that the corresponding private keys are protected by a wallet secure cryptographic device.\
+3. Wallet providers shall:\
+( c ) ensure wallet users have the right to request revocation of their wallet unit attestations, using the authentication mechanisms referred to in point (b).</em></p>
+<p><strong>Article 7</strong></p>
+<p><em>1. Wallet providers shall be the only entities capable of revoking wallet unit attestations for wallet units that they have provided.\
+2. Wallet providers shall establish a publicly available policy specifying the conditions and the timeframe for the revocation of wallet unit attestations.\
+3. Where wallet providers have revoked wallet unit attestations, they shall inform affected wallet users within 24 hours of the revocation of their wallet units, including the reason for the revocation and the consequences for the wallet user. This information shall be provided in a manner that is concise, easily accessible and using clear and plain language.\
+4. Where wallet providers have revoked wallet unit attestations, they shall make publicly available the validity status of the wallet unit attestation in a privacy preserving manner and describe the location of that information in the wallet unit attestation.</em></p>
+<p><strong>Article 9</strong></p>
+<p><em>2. The logged information shall at least contain:\
+…\
+(b) the name, contact details, and the unique identifier of the corresponding wallet-relying party and the Member State in which that wallet-relying party is established, or in case of other wallet units, relevant information from the wallet unit attestation;</em></p>
+<h3 id="23-cir-20242982-about-wallet-unit-attestation">2.3 [CIR 2024/2982] about Wallet Unit Attestation</h3>
+<p>[CIR 2024/2982] specifies four main requirements related to Wallet Unit Attestations:</p>
+<ol>
+<li>Wallet Units must validate a WUA when interacting with other Wallet Units.</li>
+<li>WUA information must be displayed to Users in certain cases.</li>
+<li>Wallet Units must provide WUA to wallet-relying parties or Wallet Units upon request.</li>
+<li>Wallet Units must provide a WUA to PID Providers or Attestation Providers upon request.</li>
+</ol>
+<p>Below are the actual excerpts from the CIR, including the recitals and the Articles that establish these requirements.</p>
+<p><strong>Recital (5)</strong></p>
+<p><em>In order to ensure transparency and trustworthiness of wallet-relying parties towards wallet users, the protocols and
+interfaces used by the wallet solutions should provide wallet users with a reliable mechanism to authenticate wallet-
+relying parties and other wallet units. Inversely, wallet providers should provide a mechanism to authenticate and
+validate wallet units so that relying parties can receive assurances with respect to trustworthiness and authenticity
+of the wallet units. Further, the technical infrastructure of the wallets should also be designed to ensure that only the
+minimal necessary amount of data is transferred only to the authorised relying parties, while keeping unlinkability
+between the different transactions. In order to facilitate the issuance of person identification data and electronic
+attestations of attributes, all wallet solutions should support a minimum set of protocols and interfaces.</em></p>
+<p><strong>Article 3</strong></p>
+<p><em>Regarding the protocols and interfaces referred to in Articles 4 and 5, wallet providers shall ensure that wallet units:\
+(2) authenticate and validate the wallet unit attestations of other wallet units where interacting with other wallet units;\
+(3) authenticate and validate requests made using wallet-relying party access certificates or wallet unit attestations from other wallet units, where applicable;\
+(5) display to wallet users information contained in the wallet-relying party access certificates or in the wallet unit attestations;\
+(8) present wallet unit attestations of the wallet unit to wallet-relying parties or wallet units that request it;</em></p>
+<p><strong>Article 4</strong></p>
+<p><em>3. In relation to the issuance of person identification data and electronic attestations of attributes to a wallet unit, wallet
+providers shall ensure that the following requirements are complied with:\
+...\
+(b) where wallet users use their wallet unit to interact with providers of person identification data or electronic attestations of attributes, wallet units shall enable authentication and validation of the wallet unit components by presenting the wallet unit attestations to those providers upon their request;</em></p>
+<h2 id="3-purpose-of-the-wua">3 Purpose of the WUA</h2>
+<p>The legal requirements of Chapter 2 address different aspects related to the Wallet Unit Attestation. The aspects cover interaction with the User (i.e., requirements in relation to the User interface), interaction with other parties (i.e., what a WUA should be used for) and requirements on the WUA itself (i.e., essential information that should be contained in the WUA). This document will not go into requirements on the User interface, etc., but will focus on how WUAs may be used in connection with other parties.</p>
+<p><strong>Furthermore, this document is ONLY intended to clarify the high-level requirements related to the WUA. The technical specifications related to the WUA is to be developed by the Commission at a later point in time.</strong></p>
+<p>The legal requirements in relation to the functional requirements of WUA can be summarized as the following functionalities:</p>
+<ol>
+<li>Information contained in the WUA must allow Relying Parties, PID Providers and Attestation Providers and other Wallet Units to validate the authenticity and revocation status of a Wallet Unit.</li>
+<li>Wallet Providers must be able to revoke a Wallet Unit.</li>
+<li>Only the Wallet Provider of a Wallet Unit must be able to revoke that Wallet Unit.</li>
+<li>It is the Wallets Provider's responsibility to create the WUA.</li>
+<li>During issuance, PID Providers and Attestation Providers must be able to ensure their PIDs and attestations are cryptographically bound to the Wallet Unit.</li>
+<li>The WUA must consider the privacy of the User, i.e., techniques from Topic A should be used.</li>
+<li>Relying Parties on the one hand and PID Provider and Attestation Providers on the other hand require different information from the WUA.</li>
+<li>The Wallet Unit must handle presentation of the WUA automatically, without the involvement of the User.  </li>
+<li>The WUA must provide PID Providers and Attestation Providers assurance, that the private PID or attestation key is bound to the same WSCD as the WUA private key.</li>
+</ol>
+<p>Based on these functional requirements, the following requirements with regard to the WUA itself can be derived:</p>
+<ol>
+<li>The WUA must contain a public key, where the corresponding private key is protected by a WSCD. </li>
+<li>The WUA must contain information allowing parties to check if a Wallet Unit has been revoked.</li>
+<li>The WUA must contain information allowing parties to verify the validity of the Wallet Unit, i.e., the WUA must contain a signature from the Wallet Provider.</li>
+<li>The WUA must support both long and short validity terms.</li>
+</ol>
+<h3 id="31-use-cases">3.1 Use cases</h3>
+<p>The functional requirements described above can be summarized in two use cases related to WUA:
+- Use case 1 - Authenticity of the Wallet Unit: Many different entities in the EUDI Wallet ecosystem will need to verify the authenticity, including revocation status, of a Wallet Unit. These entities include PID Providers, Attestation Providers, Relying Parties and other Wallet Units (for Wallet-to-Wallet interaction). This use case can be supported by basic meta information in the WUA, i.e. a revocation handle and a signature from the Wallet Provider.
+- Use case 2 - Capabilities and keys of the Wallet Unit: Certain entities in the EUDI Wallet ecosystem (i.e. PID Providers and Attestation Providers) will need additional information on top of what is provided by use case 1. This information includes public keys used in relation to issuance and descriptions of the capabilities of the individual Wallet Unit, i.e. information on the WSCA/WSCD used.</p>
+<p>Privacy is an issue in relation to WUA and entities should be restricted to Use case 1, unless an actual need, i.e. Relying parties must not be allowed access to the information in the WUA suitable for Use case 2.</p>
+<p>Use case 2 can be achieved by implementing the WUA as a revocable signature on a public key, issued by the Wallet Provider. Additionally the WUA should contain relevant information on the Wallet Unit capabilities, including the properties of the WSCD/WSCA. These attributes must also be signed by the Wallet Provider and may be used to provide additional trust in the Wallet Unit. The signed attributes and public key (i.e. the WUA), may be seen as an attestation and can utilize other attestation specific requirements from the  ARF if beneficial.</p>
+<p>Use case 1 can be achieved similarly to Use case 2, except the WUA would not contain additional information/attributes on the Wallet Unit capabilities.</p>
+<p>The WUA should use a format the entities of the EUDI Wallet ecosystem would expect, i.e. be compatible with the interfaces defined in the ARF.</p>
+<p>This paper identifies two requirements in relation to WUA that warrant further discussion: cryptographic binding and revocation. These are discussed in the two next subsections.</p>
+<h3 id="cryptographically-binding">Cryptographically binding</h3>
+<p>[CIR 2024/2977], Article 3, states that:</p>
+<p><em>5. Providers of person identification data shall ensure that person identification data that they issue is cryptographically bound to the wallet unit to which it is issued.</em></p>
+<p>The wording, <em>cryptographically bound</em>, may be interpreted in different ways and is discussed in ARF 1.5.0 section 6.6.3.8. The WUA is intended to support this functionality by providing a base of trust, i.e. an attestation on a public key and the capabilities of the Wallet Unit. This approach will provide a trusted foundation, on which the Wallet Provider may choose to implement more advanced features. At the same time, this approach allows the WUA to be treated as "any other attestation".</p>
+<h3 id="revocation">Revocation</h3>
+<p>[CIR 2024/2977], Article 5, states that:</p>
+<p><em>4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
+...\
+(b) where the wallet unit attestation to which the person identification data was issued to has been revoked;</em></p>
+<p>As the WUA is used to revoke Wallet Units, it plays an important role in relation to PID provider. In order to fulfill the above requirement, the PID providers must keep track of all Wallet Units (i.e. the WUAs) to which PID has been issued and periodically (e.g. daily) monitor this list to check if a WUA has been revoked. For this to function, several properties are required:
+- The validity period of the WUA used in connection with issuance, should be long, preferably as long as the expected lifetime of the Wallet Unit. In practice this may be hard to achieve, as the Wallet Provider would need to guess the expected lifetime of the Wallet Units.
+- To mitigate the privacy risk of the long validity period of the WUA, the WUA could be a once-only attestation as specified in [Topic A].</p>
+<p>These requirements are discussed in [Topic A], which discusses privacy risks related to the usage of attestations in general. These discussions also apply to the WUA.</p>
+<h2 id="4-relation-to-other-topics">4 Relation to Other Topics</h2>
+<p>Below we discuss how Wallet Unit Attestations relate to the other topics being discussed.</p>
+<h3 id="41-privacy-risks-and-mitigations">4.1 Privacy Risks and Mitigations</h3>
+<p>[Topic A - Privacy Risks and Mitigations] highlight that WUA functions like any other attestation and therefore the risks and mitigations are the same:</p>
+<ul>
+<li>PID Providers and Attestation providers may assume the role of Relying Party with regard to RP-linkability: When presenting a WUA to a PID Provider or Attestation Provider, the Provider may record fixed values (hashes etc.) in all WUAs it receives and use these to track the User.</li>
+<li>The Wallet Provider may assume the role of Attestation Provider with regard to AP-linkability: If the Wallet Provider colludes with Relying Parties (including PID Providers and Attestation providers), User behaviour may be tracked.</li>
+<li>Using one of the one-time, limited-time, rotating batch or per-relying part attestations will all work with WUA. Note that the use pattern of WUA (it is only intended for PID and Attestation providers during issuance), it will most likely only be used a few times with a few Relying Parties (i.e. PID and attestation providers).</li>
+</ul>
+<h3 id="42-relation-to-risk-register">4.2 Relation to Risk Register</h3>
+<p>The purpose of WUA is to allow parties interacting with the Wallet Unit to ensure they are interacting with a legitimate Wallet Unit. Therefore the WUA has
+impact on several of the risks listed in the risk register for European Digital Identity Wallets [RiskRegister]:</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 14%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Risk type </strong></th>
+<th><strong>Risk ID </strong></th>
+<th><strong>Related risk titles </strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R1</td>
+<td>Creation or use of an existing electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R2</td>
+<td>Creation or use of a fake electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R3</td>
+<td>Creation or use of fake attributes</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R4</td>
+<td>Identify theft</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R7</td>
+<td>Data manipulation</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R14</td>
+<td>Surveillance</td>
+</tr>
+</tbody>
+</table>
+
+<p>The use of WUA is a mitigating mechanism with regard to some of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in
+its section III). This is primarily TT2. Errors and misconfigurations, TT3. Use of unreliable resources and TT5.Malicious actions. In relation to these
+threats, WUA is used to assure that the Wallet Unit is not compromised.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R1. Creation or use of an existing electronic identity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of an existing electronic identity is defined as the creation of an electronic identity in a wallet that exists in the real world and is assigned to another user. By essence, this risk leads to the risks of Identity theft (R4), and Unauthorised transactions (R9).</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R2. Creation or use of a fake electronic identity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of a fake electronic identity is defined as the creation of an electronic identity in a wallet that does not exist
+in the real world.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R3. Creation or use of fake attributes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of fake attributes is defined as the creation or use of attributes that cannot be validated to be issued by the claimed provider and cannot be trusted.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R4. Identity theft</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity theft is defined as the unauthorised acquisition of the wallet unit or loss of authentication factors enabling to
+impersonate a person.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R6. Data disclosure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal
+data including special categories of personal data. The privacy breach risk
+is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R7. Data manipulation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data manipulation is defined as the unauthorised alteration of data.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R9. Unauthorised transaction</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the
+wallet user. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also
+related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R14. Surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surveillance, or monitoring, is defined as the unauthorised tracking
+or observation of a wallet user's activities, communication, or data.
+Surveillance is often related to inference, which is defined as the
+deduction of sensitive or personal information from seemingly innocuous
+data.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>SR1. Wholesale surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wholesale surveillance is defined as the tracking or observation of
+the activities of many users through their wallet's communication or
+data. Wholesale surveillance is often associated with surveillance (R14)
+and inference at a global scale, where information about many users is
+combined to deduce sensitive or personal data about users or to identify
+statistical trends that can be used to design further attacks.</td>
+</tr>
+</tbody>
+</table>
+
+<p>More specifically, [RiskRegister] describes the following threats in relation to wallet unit attestations:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 51%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>ID<br />
+</strong><em>Identifier</em></th>
+<th><strong>Threat description<br />
+</strong><em>Description of the identified threat</em> (*)</th>
+<th><strong>Risk title<br />
+</strong><em>Related risks</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR10</td>
+<td>An attacker can activate a new wallet on an invalid WSCD.</td>
+<td>Creation or use of an existing electronic identity (R1) / Creation or use of a fake electronic identity (R2)
+</td>
+</tr>
+<tr>
+<td>TR12</td>
+<td>An attacker can circumvent the verification by the PID provider that the wallet is controlled by the user and have a PID issued into a compromised wallet under the attacker’s control.</td>
+<td>Creation or use of an existing electronic identity (R1) / Identify theft (R4) / Unauthorised transaction (R9)</td>
+</tr>
+<tr>
+<td>TR13</td>
+<td>    
+An attacker can get a valid PID into an invalid wallet uni</td>
+<td>    
+Creation or use of an existing electronic identity (R1) / Identify theft (R4) / Unauthorised transaction (R9)</td>
+</tr>
+<td>TR22</td>
+<td>An attacker can circumvent the verification by the (Q)EAA provider that the wallet is in control of the user and have a (Q)EAA issued into a compromised wallet under the attacker’s control.</td>
+<td>Creation or use of fake attributes (R3)</td>
+</tr>
+<td>TR39</td>
+<td>An attacker can unlawfully trace wallet users using unique/traceable identifiers.
+</td>
+<td>Data disclosure (R6) / Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR46</td>
+<td>An attacker can bypass or subvert the performance of checks by the wallet that verify whether the PID has been revoked by the PID provider to always return success.</td>
+<td>Data manipulation (R7)</td>
+</tr>
+<tr>
+<td>TR56</td>
+<td>An attacker can propose an application that mimics a specific legitimate wallet to users.</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR84</td>
+<td>A group of colluding relying parties or PID providers can derive the user’s identity data beyond data known to them.</td>
+<td>Surveillance (R14)</td>
+<tr>
+<td>TR85</td>
+<td>An attacker can track and trace a user by using person
+identification data of the user where identification of the user
+is not required.</td>
+<td>Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR107</td>
+<td>An attacker can steal information from a user by spoofing a wallet.</td>
+<td>    
+Effect on various risks</td>
+</tr>
+<tr>
+<td>TR112</td>
+<td>An attacker can modify a legitimate wallet instance and propose it to users as a legitimate one.</td>
+<td>Effect on various risks</td>
+</tr>
+</tbody>
+</table>
+
+<p>R14, SR1, TR39, TR84, TR85 are particularly relevant to consider given the discussion in Chapter 5.1<TODO>, namely linkability of WUA.</p>
+<h2 id="5-additions-and-changes-to-the-arf">5 Additions and Changes to the ARF</h2>
+<p>The existing High-Level Requirements described in ARF 1.5.0, Annex 2, Topic 9, cover multiple aspects of WUA, and in particular about the so-called proof of association (PoA). These requirements make assumptions on the technology used, which in general complicates the topic. This discussion paper therefore proposes to delete certain details in the requirements and replace them by High-Level Requirements for the purpose and properties discussed in this paper. The details described in ARF 1.5.0 Annex 2, should be left in a separate document, as input for a technical specification. </p>
+<p>In addition, some of the current HLRs are general in nature and not specific to WUA. This paper proposes that these HLRs are moved to another topic, e.g. Topic 40 on Wallet Unit Activation and Wallet Unit Management.</p>
+<p>The following tables contain the HLRs we propose to keep as part of Topic 9 (WUA), the HLRs we propose to move to other topics in Annex 2 of the ARF and the HLR we propose to remove entirely. In view of the large number of changes, this paper proposes to re-number all HLRs afterwards. Note that this is different than what was done for ARF 1.5.0.</p>
+<p>In addition, discussions of the WUA in the main part of the ARF will be updated accordingly.</p>
+<p>Note that the new HLRs for WUAs explicitly aim to be technology neutral and postpone the technical specification about how this functionality is to be implemented to a technical specification that will be developed by the commission. 
+In particular, the HLRs does not impose any restrictions on whether the functionality will be implemented as one or more distinct attestations, as verifiable metadata transferred during the protocols for issuance and presentations or something else.</p>
+<h3 id="51-new-hlrs-for-wuas">5.1 New HLRs for WUAs</h3>
+<h3 id="hlrs-for-use-cases">HLRs for Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_08a</td>
+<td>The WUA functionality SHALL provide the PID Provider or Attestation Provider with information about the capabilities of the WSCA and WSCD of the Wallet Unit to take a well-grounded decision on whether to issue an attestation or PID to the Wallet Unit.</td>
+<td>New.</td>
+</tr>
+<tr>
+<td>WUA_08b</td>
+<td>The WUA functionality SHALL enable Relying Parties to request and verify the authenticity and revocation status of the Wallet Unit.</td>
+<td>New.</td>
+</tr>
+<tr>
+<td>WUA_08c</td>
+<td>Wallet Providers SHALL ensure that a non-revoked Wallet Unit at all times can present WUAs, as requested by a Relying Party, PID Provider or Attestation Provider.</td>
+<td>New.</td>
+</tr>
+<tr>
+<td>WUA_20</td>
+<td>During PID or attestation issuance, a Wallet Unit SHALL provide the PID Provider or Attestation Provider with information on all WSCAs it is able to use for private key management and that comply with the PID Provider's or Attestation Provider's requirements.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_21</td>
+<td>During PID or attestation issuance, a Wallet Unit SHALL provide the PID Provider or Attestation Provider with the WUA describing the properties of the WSCA that generated the new PID or attestation private key and protects it.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_22</td>
+<td>If a Wallet Unit contains multiple WSCAs, it SHALL internally register which PIDs and attestations are bound to each of these WSCAs.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_24d</td>
+<td>A Wallet Unit SHALL handle the WUA functionality without interacting with the User. <em>Note: The WUA will always be presented along with something else, and there is therefore an implicit consent by the user.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_08d</td>
+<td>The WUA functionality SHALL enable PID Providers to request a Wallet Provider to revoke a Wallet Unit. <em>Note: To comply with requirement WURevocation_11</em></td>
+<td>New</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hlrs-related-to-keys">HLRs related to Keys</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_11</td>
+<td>WUAs SHALL contain a public key, and the corresponding private key SHALL be generated by the WSCA ~~described in the WUA~~. <em>Alternative formulation: A WUA SHALL contain a public key, and the corresponding private key SHALL be generated by a WSCA under control of the Wallet Unit.</em> ~~<em>Note: A WUA key pair is generated as per WUA_10.</em>~~</td>
+<td>Keep but note is removed</td>
+</tr>
+<tr>
+<td>WUA_13b</td>
+<td>The WSCA SHALL be able to prove that the private keys, belonging to two or more public keys, are stored in the same WSCA. <em>Note: these public keys may be included in WUAs, PIDs, attestations, or pseudonyms.</em></td>
+<td>New basic HLR</td>
+</tr>
+<tr>
+<td>WUA_18</td>
+<td>During PID or attestation issuance, a WSCA SHOULD be able to prove that one or more public keys stored in the same WSCA are associated on request of the PID Provider or Attestation Provider. The WSCA SHALL generate this proof only if the corresponding private keys are protected by the same WSCA.~~and the WSCA has internally registered an association between these private keys. <em>Notes: - It is possible that some private keys in a WSCA are not associated with each other, even though they are managed within the same WSCA. - If two keys are associated, this implies that they are both associated with the same WUA key.</em>~~</td>
+<td>Partial delete/keep/change: removed assumption on technology</td>
+</tr>
+<tr>
+<td>WUA_19</td>
+<td>During PID or attestation issuance, the PID Provider or Attestation Provider SHALL verify that the WSCA described in the WUA received from the Wallet Unit has proven possession of the private key corresponding to the public key in the WUA ~~(see WUA_17)~~.  The PID Provider or Attestation Provider SHALL also verify that the WSCA has proven possession of the new PID or attestation private key ~~(see WUA_14)~~. In addition, the PID Provider or Attestation Provider SHOULD verify that the WSCA has proven association (see WUA_18) between the new PID or attestation public key and the public key (from either the WUA or other attestation) requested by the PID Provider or Attestation Provider ~~according to WUA_15 or WUA_16.~~ <em>Notes: - See also WUA_13. - These three proofs MAY be implemented as a single cryptographic proof.</em></td>
+<td>Removed references to deleted HLRs</td>
+</tr>
+<tr>
+<td>WUA_19a</td>
+<td>The Wallet Unit shall enable both PID Providers, Attestation Providers and Relying Parties to verify that the Wallet Unit presenting a WUA possesses the private-key corresponding to the public key in the WUA</td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_24c</td>
+<td>A Relying Party requesting the creation of a pseudonym according to [WebAuthn], SHOULD be able to verify that the private key belonging to the public key it receives as a pseudonym, is stored in the same WSCA as the WUA private key.</td>
+<td>New: Support for pseudonyms</td>
+</tr>
+<tr>
+<td>WUA_25</td>
+<td>~~The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer the proofs of association and possession mentioned in WUA_19 to a PID Provider or Attestation Provider. <em>Note: These three proofs MAY be implemented as a single cryptographic proof.</em>~~ The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider or Attestation Provider to verify that the private key corresponding to the public key in the WUA and the PID or attestation private key are stored in the same WSCA.</td>
+<td>Changed: More general HLR</td>
+</tr>
+<tr>
+<td>WUA_27</td>
+<td>The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider or Attestation Provider to indicate in the Token Response: the WSCA to which the new PID or attestation key must be bound, for example by referring to a WSCA identifier listed in the WUA, or, alternatively, the existing PID or attestation public key with which the new attestation key must be associated.</td>
+<td>Keep, this is needed in case the Wallet Unit has access to multiple WSCAs.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="privacy">Privacy</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_09</td>
+<td>A Wallet Provider SHALL consider all relevant factors, including the risk of a WUA becoming a vector to track the User, when deciding on the validity period of a WUA. A Wallet Provider MAY use short-lived WUAs to mitigate such risks.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_24</td>
+<td>A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. ~~<em>Note: The reason for this requirement is that the Relying Party does not need to know anything about the User's device. Therefore, such data must not be released to Relying Parties, as doing so might violate User privacy.</em>~~ <em>Note: Use case 2 (data related to the User device), must not be supported for Relying Parties.</em></td>
+<td>Changed note.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="misc">Misc.</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_08</td>
+<td>The Commission SHALL create or reference technical specification for the WUA functionality compliant with the HLRs for this topic. ~~The Commission SHALL take measures to ensure that the contents, format and encoding of Wallet Unit Attestations is specified in a technical specification. This technical specification SHALL be a Rulebook complying with all requirements in <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>.~~ ~~Each WUA SHALL contain attributes describing the Wallet Unit and a single certified WSCA included in that Wallet Unit, in such a way that a PID Provider or Attestation Provider processing the WUA is able to take a well-grounded decision on whether to issue an attestation to that Wallet Unit. In addition, to comply with requirement WURevocation_11, the WUA SHALL contain a unique identifier of the Wallet Unit.  <em>Note: In general, a PID Provider or Attestation Provider will also need information about the User. Such information is not contained in the WUA.</em>~~</td>
+<td>Changed.</td>
+</tr>
+<tr>
+<td>WUA_13c</td>
+<td>The Wallet Provider SHALL ensure that Wallet Units conform to all requirements specified in the technical specification mentioned in WUA_08.</td>
+<td>New basic HLR</td>
+</tr>
+<tr>
+<td>WUA_23</td>
+<td>The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a WUA to a PID Provider or Attestation Provider.</td>
+<td>Keep</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-hlrs-to-be-moved-to-other-topics">5.2 HLRs to be Moved to Other Topics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_01</td>
+<td>A Wallet Provider SHALL activate a new Wallet Unit before a User can use it to have issued an PID or attestation. <em>Note: The WUA is issued as part of the activation and is not considered an attestation.</em></td>
+<td>Move - General requirement on Wallet Unit functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_02</td>
+<td>A WSCA SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Unit (i.e., a WUA key) or of a PID or an attestation in a Wallet Unit. For a PID key (which is part of the EUDI Wallet eID means), this WSCA SHALL be certified to be compliant with applicable requirements for level of assurance "high" in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. <em>Note: Many actions of the Wallet Unit, such as processing a Relying Party request and presenting an attestation, require multiple cryptographic operations, for example ephemeral key generation followed by key agreement and message encryption. This requirement does not imply that separate User authentication is necessary before each of these. Rather, a successful User authentication will be valid for all cryptographic operations necessary for a Wallet Unit action. It is up to the Wallet Provider to determine what constitutes a 'Wallet Unit action', finding a balance between security (more User authentications) and User convenience (fewer User authentications). During certification of the Wallet Solution, it will be verified that the solution provides an adequate level of security.</em></td>
+<td>Move - General requirement on Wallet Unit functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_03</td>
+<td>A Wallet Unit SHALL authenticate the User before performing any operation excluding cryptographic operations. The Wallet Unit MAY rely on a WSCA to do so, per WUA_02, but MAY also rely on a User authentication method implemented in the Wallet Instance. However, if implemented by the Wallet Instance, the User authentication mechanism SHALL be Wallet Instance-specific, meaning it SHALL be independent from any general User authentication mechanism for the User device, such as a lock screen. <em>Note: The goal of this requirement is to prevent any User interaction without User authentication, including, for example, using the user interface to see which attestations are present in the Wallet Unit or what are the values of specific User attributes. Cryptographic operations can only be performed by the WSCA after User authentication by the WSCA, according to WUA_02.</em></td>
+<td>Move - General requirement on Wallet Unit functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_03b</td>
+<td>For User authentication according to WUA_03, a Wallet Unit SHALL implement an idle timeout, after which User authentication SHALL again be required. The Wallet Unit SHOULD provide the User with the option to set the idle timeout to a duration shorter than the default timeout.</td>
+<td>Move - General requirement on Wallet Unit functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_06</td>
+<td>A Wallet Provider SHALL only activate a new Wallet Unit if it has verified that: - The Wallet Unit includes at least one WSCA that is certified to be compliant with applicable requirements in this Topic, for level of assurance "high" in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. In addition, the Wallet Unit MAY include one or more other WSCAs. - The WSCA(s) included in the Wallet Unit is not used by any other Wallet Unit. - The private key corresponding to the public key in the WUA (see WUA_07) is protected by the respective WSCA under control of the user.</td>
+<td>Move - General requirement on Wallet Unit and Wallet Provider functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_07</td>
+<td>During the activation of a new Wallet Unit, a Wallet Provider SHALL create and sign at least one Wallet Unit Attestation, and issue them to the Wallet Unit.</td>
+<td>Move - General requirement on Wallet Provider functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_28</td>
+<td>A WSCA SHALL be able to authenticate a User, in accordance with the requirements in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1.</td>
+<td>Move - General requirement on WSCA functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_29</td>
+<td>A WSCA SHALL be able to generate a new key pair on request of the Wallet Instance.</td>
+<td>Move - General requirement on WSCA functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_30</td>
+<td>A WSCA SHALL be able to prove possession of the private key corresponding to a public key on request of a Wallet Instance, for example by signing a challenge with that private key.</td>
+<td>Move - General requirement on WSCA functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_32</td>
+<td>A WSCA SHALL protect a private key it generated during the entire lifetime of the key. This protection SHALL at least imply that the WSCA prevents the private key from being extracted in the clear. If a WSCA is able to export a private key in encrypted format, the resulting protection SHALL be equivalent to the previous protection of the private key.</td>
+<td>Move - General requirement on WSCA functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_32a</td>
+<td>If a WSCA is able to export a private key, this capability must be specified as an attribute in the WUA.</td>
+<td>New + Move - General requirement on WSCA functionality. Should be moved to Topic 40 (Wallet Unit activation / Wallet Unit management)</td>
+</tr>
+<tr>
+<td>WUA_13a</td>
+<td>During PID or attestation issuance, a WSCA SHALL generate a new key pair for a new PID or attestation, on request of the PID Provider or Attestation Provider via the Wallet Instance.</td>
+<td>New basic HLR</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-hlrs-to-be-deleted">5.3 HLRs to be Deleted</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_10</td>
+<td>~~A WSCA SHALL generate a new key pair for a new WUA on request of the Wallet Provider via the Wallet Instance. The WSCA SHALL register the new key as a WUA key in an internal registry. The WSCA SHALL register the WUA key as an independent (i.e., non-associated) key in an internal registry. <em>Note: A WUA key can be associated later with a PID or attestation key when that PID or attestation key is created, see WUA_13.</em>~~</td>
+<td>Remove: Contains too much technical information and assumptions on the design of the proof of association.</td>
+</tr>
+<tr>
+<td>WUA_12</td>
+<td>~~In case the Wallet Provider must update the WUA because the information in the WUA is outdated, the Wallet Provider SHALL ensure that the Wallet Unit only releases the latest version of a WUA to an Attestation Provider.~~</td>
+<td>Remove: Re-issuance of WUA is covered in Topic B.</td>
+</tr>
+<tr>
+<td>WUA_13</td>
+<td>~~During PID or attestation issuance, a WSCA SHALL generate a new key pair for a new PID or attestation, on request of the PID Provider or Attestation Provider via the Wallet Instance. The PID Provider or Attestation Provider SHALL indicate a single WUA public key (see WUA_10) with which the new PID or attestation key must be associated. This indication can either be direct, by providing the WUA public key value, or indirect, by providing a public key value that has been associated with the WUA key previously. In the latter case, the WSCA SHALL look up the associated WUA key in its internal registry. The WSCA SHALL register the new key in an internal registry as an attestation key. The WSCA SHALL register the association between the new private key and the WUA private key in an internal registry. Notes: Direct indication of the WUA is used in case a PID Provider or Attestation Provider indicates during issuing that the new PID or attestation must be associated with a WUA public key, see WUA_15 and WUA_16.Indirect indication of the WUA key is used in case an Attestation Provider indicates during issuing that the new attestation must be associated with an existing PID or attestation, see WUA_16.In case of re-issuance of an existing (short-lived) PID or attestation, or in case of synchronous issuing in a remote HSM architecture, re-use of an existing key pair for the new PID or attestation may be acceptable and it may not be necessary to generate a new key pair for each new PID or attestation. Requirements regarding re-issuance processes will be added in a future version of this document.~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>WUA_14</td>
+<td>~~During PID or attestation issuance, a WSCA SHALL prove possession of the private key corresponding to the new PID or attestation public key, on request of the PID Provider or Attestation Provider via the Wallet Instance, for example by signing a challenge with that private key.~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>WUA_15</td>
+<td>~~A PID Provider SHALL indicate to a WSCA (via the Wallet Instance) the public key to which the new PID must be associated. This SHALL be a WUA public key.~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>WUA_16</td>
+<td>~~An Attestation Provider SHALL indicate to a WSCA (via the Wallet Instance) the public key to which the new attestation must be associated. This SHALL be either a WUA public key or the public key of a PID or attestation that already exists in the Wallet Unit. <em>Note: if the Attestation Provider indicates a PID or attestation public key, this is an indirect indication of a WUA key, see WUA_13.</em>~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>WUA_17</td>
+<td>~~During PID or attestation issuance, a WSCA SHALL prove possession of the private key corresponding to a WUA public key on request of a PID Provider or Attestation Provider via the Wallet Instance, for example by signing a challenge with that private key.~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>WUA_26</td>
+<td>~~The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a public key to a PID Provider or Attestation Provider, to be included in the new PID or attestation.~~</td>
+<td>Delete: This is already covered by OpenID4VCI</td>
+</tr>
+<tr>
+<td>WUA_31</td>
+<td>~~A WSCA SHALL register each newly generated key pair as either a WUA key or an attestation key, depending on information provided by the Wallet Instance in the key generation request. The internal registry used by the WSCA for this purpose SHALL be protected against modification by external parties.~~</td>
+<td>Delete: Too technical and makes too many assumptions on the design of the PoA.</td>
+</tr>
+<tr>
+<td>WUA_33</td>
+<td>~~A WSCA SHALL associate each newly generated attestation key with a WUA key indicated by the Wallet Instance. The WSCA SHALL record the association between these keys in an internal registry, which SHALL be protected against modification by external parties.~~</td>
+<td>Delete: Too technical and makes too many assumptions on the design of the PoA.</td>
+</tr>
+<tr>
+<td>WUA_34</td>
+<td>~~For the purposes of WUA_33, a Wallet Instance SHALL indicate the WUA key either directly, by WUA public key value, or indirectly, by value of a public key that is already associated to the intended WUA key. In the latter case, the WSCA SHALL look up the intended WUA key in its registry.~~</td>
+<td>Delete: Too technical and makes too many assumptions on the design of the PoA.</td>
+</tr>
+<tr>
+<td>WUA_35</td>
+<td>~~A WSCA SHALL consider two keys to be associated if they are associated to a common WUA key.~~</td>
+<td>Delete: Too technical and makes too many assumptions on the design of the PoA.</td>
+</tr>
+<tr>
+<td>WUA_36</td>
+<td>~~A WSCA SHOULD be able to generate a proof of association for two or more public keys. The WSCA SHALL generate such a proof if and only if the corresponding private keys are protected by that WSCA, and the WSCA has internally registered an association between these private keys.~~</td>
+<td>Delete: Too technical and makes too many assumptions on the design of the PoA.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-references">6 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[WebAuthn]</td>
+<td>Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/</td>
+</tr>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0.</td>
+</tr>
+<tr>
+<td>[Topic A]</td>
+<td>Topic A - Privacy Risks and Mitigations</td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td>[CIR 2024/2977]</td>
+<td>Commission Implementing Regulation (EU) 2024/2977 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td>[CIR 2024/2979]</td>
+<td>Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td>[CIR 2024/2982]</td>
+<td>Commission Implementing Regulation (EU) 2024/2982 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

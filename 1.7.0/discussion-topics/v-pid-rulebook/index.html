@@ -1,0 +1,746 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>V - PID rulebook - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v-pid-rulebook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              V - PID rulebook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="v-pid-rulebook">V - PID rulebook</h1>
+<p>Version 0.2, updated 4 March 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410">GitHub discussion</a></p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
+<p>This document is the Discussion Paper for European Digital Identity Cooperation
+Group regarding Topic V: PID rulebook</p>
+<h3 id="12-related-risks-in-the-risk-register">1.2 Related risks in the Risk Register</h3>
+<p>Risks considered in [Topic_A] are also applicable here</p>
+<h3 id="13-key-words">1.3 Key words</h3>
+<p>This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalized) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.</p>
+<h3 id="14-document-structure">1.4 Document structure</h3>
+<ul>
+<li>Chapter 2 introduces the objectives of this paper.</li>
+<li>Chapter 3 presents available attestation format.</li>
+<li>Chapter 4 discusses interoperability Challenges in the EUDI Wallet.</li>
+<li>Chapter 5 discusses privacy considerations.</li>
+<li>Chapter 6 gives a background about the discussion on W3C VCDM in the Expert Group.</li>
+<li>Chapter 7 lists the additions and changes that will be made to the ARF
+as a result of discussing this topic with Member States.</li>
+</ul>
+<h2 id="2-problem-statement">2. Problem statement</h2>
+<p>Currently, W3C VCDM 1.1 is referenced in the implementing acts, though it is
+understood to be a placeholder pending a final technical decision. This is
+because, in its current form, VCDM 1.1 remains an incomplete framework, lacking
+the necessary specifications to fully support the implementation of an EUDI
+Wallet.  </p>
+<p>To finalize the list of requirements and related technical specifications
+for implementing the PID based on the current ARF approach—which
+envisions issuing the PID in two formats:  </p>
+<ul>
+<li><strong>ISO/IEC 18013 series format</strong>, required for <strong>proximity scenarios</strong>.  </li>
+<li><strong>JSON-based format</strong>, better suited for <strong>online scenarios</strong>.  </li>
+</ul>
+<p>It is essential to <strong>fully define</strong> this second format by detailing all relevant
+aspects.  </p>
+<p>A clear and well-defined set of requirements and technical
+specifications for these components is crucial to accurately describe the
+PID and provide implementers with a robust framework for developing
+Wallet solutions.  </p>
+<p>In the current ARF, the decision leans toward adopting JWT-like Simple
+Attestations, which offer a simpler and widely compatible format, complemented
+by the SD-JWT-VC draft, but still several details are missing. Ongoing
+discussions emphasize the need to balance flexibility, interoperability, and
+security while avoiding unnecessary complexity.  </p>
+<h2 id="3-attestation-formats">3 Attestation formats</h2>
+<p>The topic of attestation formats and data models has been a long-standing discussion
+within the expert group. Over the past two years, it has been extensively debated
+among Member State experts, reflecting both its importance and complexity.</p>
+<p>When discussing verifiable attestations, at least four key aspects must be considered:</p>
+<ol>
+<li>Data Model – Defines how attestation information is structured and
+represented.</li>
+<li>Data Format – Specifies how attestations are serialized and exchanged.</li>
+<li>Security, Proof Mechanisms, and Signature Formats – Covers how attestation
+authenticity and integrity are ensured, including cryptographic signatures used
+to verify the PID Provider or Attestation Provider.</li>
+<li>Privacy Considerations – Ensures that attestations minimize data exposure,
+allow selective disclosure, and comply with privacy-preserving principles.</li>
+</ol>
+<h3 id="31-several-families-of-attestation-formats">3.1 Several families of attestation formats</h3>
+<p>There are at least three main families of attestation formats, each with distinct
+characteristics in terms of structure, flexibility, and implementation requirements:</p>
+<h4 id="311-isoiec-based-attestations-isoiec-18013-isoiec-23220-series">3.1.1 ISO/IEC-Based attestations (ISO/IEC 18013 &amp; ISO/IEC 23220 Series)</h4>
+<p>These standards define highly structured specifications for:</p>
+<ul>
+<li>Data models</li>
+<li>Data formats</li>
+<li>Security mechanisms</li>
+<li>Signature formats</li>
+<li>Communication protocols</li>
+</ul>
+<p>They are designed to ensure strict interoperability and security, particularly
+for official and regulated attestations, such as:</p>
+<ul>
+<li>Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardizes the
+issuance, storage, and verification of digital driving licenses.</li>
+<li>More general mobile identity attestations under ISO/IEC 23220, expanding the
+use cases beyond driving licenses.</li>
+</ul>
+<p>These specifications provide clear, predefined guidelines on how attestations should
+be issued, stored, and verified, ensuring compliance across jurisdictions and
+regulatory frameworks. However, they leave little room for flexibility, prioritizing
+high trust and compatibility across different systems.</p>
+<h4 id="312-jwt-like-simple-attestations">3.1.2 JWT-Like Simple attestations</h4>
+<p>Compared to ISO/IEC-based attestations, this category:</p>
+<ul>
+<li>Is not necessarily binary-encoded (primarily JSON-based).</li>
+<li>Uses JWT (JSON Web Token)-based attestations, which are simpler but widely
+used in practice.</li>
+<li>Does not define a specific data format or model—these aspects must be defined
+separately through additional specifications.</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li>The OAuth SD-JWT-VC draft [SD-JWT VC] defines data format specifications for
+attestations based on JWT &amp; SD-JWT.</li>
+<li>The SD-JWT-VC Data Model proposal [Fet2024] was previously discussed by
+Germany as a possible approach for structuring JWT-based attestations</li>
+</ul>
+<p>While JWT-based attestations offer simplicity and widespread adoption in web
+authentication (e.g., OAuth2, OpenID Connect), they lack built-in advanced
+cryptographic proof mechanisms unless extended via additional specifications.</p>
+<h4 id="313-w3c-verifiable-credentials-vcdm-11-20">3.1.3 W3C Verifiable Credentials (VCDM 1.1 &amp; 2.0)</h4>
+<p>This category is like JWT-based attestations in that it is JSON-based, but it provides
+a fully-fledged, and extensible data model for verifiable attestations.</p>
+<p>The W3C Verifiable Credentials Data Model (VCDM) defines a general data model,
+offering a high-level structure but leaving many technical aspects open for further
+definition, including:</p>
+<ul>
+<li>Security mechanisms</li>
+<li>Signature formats</li>
+<li>Transport protocols</li>
+</ul>
+<p>Key Features of W3C VCDM:</p>
+<ul>
+<li>JSON-LD (Linked Data) Based: Ensures structured and interoperable data
+exchange but introduces complexity.</li>
+<li>Extensible Framework: Allows different implementations but requires
+additional specifications.</li>
+<li>Security and Signature Formats: Not inherently defined—must be specified separately.</li>
+</ul>
+<p>To implement W3C VCDM-based attestations, separate specifications are needed for
+security mechanisms and signatures, such as:</p>
+<ol>
+<li>VC-JOSE-COSE [Jon2025]: Defines how to use JWT, SD-JWT, and COSE to secure
+attestations in the VCDM model.</li>
+<li>VC Data Integrity [Spo2025]: Provides a cryptographic proof format
+independent of JWT and COSE, relying on detached proofs (not embedded
+signatures) for better flexibility.</li>
+</ol>
+<p>These mechanisms offer different trade-offs, allowing PID Providers or
+Attestation Providers and Relying Parties to choose the appropriate security
+model based on their privacy, interoperability, and trust requirements.</p>
+<h5 id="3131-sd-jwt-and-its-relation-to-w3c-vcdm">3.1.3.1 SD-JWT and Its Relation to W3C VCDM</h5>
+<p>SD-JWT (Selective Disclosure JSON Web Token) is often mentioned in discussions
+related to W3C VCDM, but it serves a different purpose:</p>
+<ul>
+<li>Unlike W3C VCDM, SD-JWT is not a general framework for verifiable attestations
+but rather a technical specification that extends JWT to support selective
+disclosure.</li>
+<li>It allows attestation holders to disclose only selected parts of their
+attestations while keeping other data hidden, enhancing privacy and data
+minimization.</li>
+<li>Since W3C VCDM does not define how attestations should be cryptographically
+secured, W3C introduced VC-JOSE-COSE, which enables the use of SD-JWT within the
+VCDM model.</li>
+</ul>
+<p>Thus, W3C VCDM and SD-JWT are not competing approaches—rather, SD-JWT can be
+used as a security mechanism within W3C VCDM to provide privacy-preserving
+selective disclosure.</p>
+<h2 id="4-interoperability-challenges-in-the-eudi-wallet">4 Interoperability Challenges in the EUDI Wallet</h2>
+<p>To ensure interoperability in the EUDI Wallet, it is crucial that we do not
+allow open-ended choices or support multiple, competing attestation models
+beyond a strict minimum.  Currently, the EUDI Wallet already supports two
+attestation models:</p>
+<ol>
+<li>ISO/IEC 18013/23220 series  mdoc (mobile document format) – A well-defined,
+standardized model primarily used for official government-issued attestations.</li>
+<li>A JSON-based attestation format – Providing flexibility for broader use cases
+while ensuring compatibility with widely used web-based ecosystems.</li>
+</ol>
+<p>Adding a third or more attestation models would introduce significant risks, including:</p>
+<ul>
+<li>Interoperability issues: Different ecosystems may struggle to communicate
+seamlessly if multiple, incompatible models are used.</li>
+<li>Increased security risks: Supporting multiple formats increases attack
+surfaces, making it harder to apply consistent security measures.</li>
+<li>Code duplication and complexity: Wallet implementations and Relying Parties
+would need to support multiple verification pathways, increasing development and
+maintenance costs.</li>
+</ul>
+<p>Thus, while diversity in attestation formats may seem beneficial in theory, in
+practice, it introduces unnecessary complexity, security risks, and operational
+burdens.  A clear and limited selection of attestation models is essential to
+ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.</p>
+<p>For all the above reasons, the requirement [PID_\01] included in the the PID rulebook
+of Annex 3 of the ARF still applies. </p>
+<h2 id="5-privacy-considerations">5 Privacy considerations</h2>
+<p>Privacy is a critical concern, especially regarding how attestation data is
+shared and verified. All the attestation categories mentioned above implement
+selective disclosure using a technique called salted and hashed data.  This
+approach conceals specific attributes by hashing their values, allowing the user
+to select which attributes to disclose when presenting their attestations or
+attestations.</p>
+<p>However, this technique—like user signatures on presentations—leaves cryptographic
+"fingerprints" that could be exploited to track users across different interactions.</p>
+<p>While salting and hashing can obfuscate attestation data, it has inherent
+weaknesses, particularly in scenarios where PID Providers or Attestation
+Providers and Relying Parties collude:</p>
+<ol>
+<li>Collusion Between two Relying Parties: If two Relying Parties share collected
+attestations containing same hashes and signatures for the user, they can track
+and profile users across different interactions, compromising unlinkability.
+This specific scenario can be somehow mitigated with different techniques.</li>
+<li>Collusion Between PID Provider or Attestation Provider and Relying Party: If
+the PID Provider or Attestation Provider and Relying Party share collected
+attestations containing same hashes and signatures for the user, they can track
+and profile users across different interactions, compromising unlinkability.</li>
+</ol>
+<p>To truly mitigate these risks, more advanced cryptographic techniques—particularly
+Zero-Knowledge Proofs (ZKPs)—are required.</p>
+<p>ZKPs provide a stronger privacy-preserving alternative by allowing users to:</p>
+<ul>
+<li>Prove statements (e.g., "I am over 18") without revealing the underlying data
+(e.g., date of birth).</li>
+<li>Ensure unlinkability, even if a PID Provider or Attestation Provider and
+Relying Party collude.</li>
+<li>Prevent unnecessary data exposure, reducing the risk of attestation misuse.</li>
+</ul>
+<p>While hashed data with salts provides basic privacy protections and is essential
+when proving real identity, it does not ensure unlinkability and remains
+susceptible to PID Provider or Attestation Provider-Relying Party collusion. In
+contrast, ZKP-enhanced attestations offer a higher level of privacy assurance,
+enabling secure, verifiable, and unlinkable digital interactions while
+minimizing data exposure.</p>
+<p>Zero-Knowledge Proofs (ZKPs) are particularly useful in situations where you do
+not want—and are not required—to disclose specific personal information, such as
+your name or surname.</p>
+<p>However, if full identity verification is required (e.g., for opening a bank
+account or signing a contract), ZKPs cannot prevent linking, as the disclosed
+PII will inherently allow correlation. Therefore, ZKPs are most effective when
+proving eligibility without the need for full identity disclosure, enabling
+strong privacy protection in scenarios where anonymity and unlinkability are
+critical.</p>
+<p>Zero-Knowledge Proofs (ZKPs) can be integrated into any of the attestation
+categories mentioned above, and ongoing developments are actively working
+to implement ZKP support across different models.</p>
+<p>A particularly important effort focuses on developing ZKP mechanisms using
+cryptographic algorithms that are widely recognized and standardized by by NIST
+and SOG-IS.</p>
+<p>Specifically, there is growing interest in leveraging ECDSA-based ZKPs, as ECDSA
+is already supported by secure hardware such as Hardware Security Modules (HSMs)
+and Secure Elements (SEs). This approach aims to ensure that ZKP can be implemented
+efficiently within the EUDI Wallet ecosystem while maintaining strong security
+guarantees and compatibility with level of assurance requested by the Regulation.</p>
+<p>However, it is important to note that these developments are still relatively new
+and require further validation and broad review by experts in the cryptographic
+and identity communities. Ensuring that these mechanisms meet security, performance,
+and regulatory requirements will be essential before they can be widely adopted
+in real-world deployments.</p>
+<p>For more details on these advancements, the following recent research articles
+explore ECDSA-based ZKPs and their potential applications:</p>
+<ul>
+<li>Efficient Zero-Knowledge Proofs for ECDSA-Secured Credentials [Paq2024]</li>
+<li>ZKPs for ECDSA: Enabling Secure and Scalable Privacy-Preserving Authentication
+[Fri2024]</li>
+</ul>
+<p>These developments mark a significant step toward making ZKPs practical,
+scalable, and compatible with the security requirements of the EUDI Wallet
+ecosystem, but further scrutiny and testing are necessary to confirm their
+feasibility in large-scale implementations.</p>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and changes to the ARF</h2>
+<p>Based on the outcomes of the discussion of the focus group meeting, the requirement
+[PID_01] defined in Annex 3 of the ARF remains active. This requirement mandates
+the following:</p>
+<blockquote>
+<p>A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]</p>
+</blockquote>
+<h3 id="61-high-level-requirements-to-be-added">6.1 High-Level Requirements to be added</h3>
+<p>The following High-Level Requirements will be added in Annex 3 of the ARF</p>
+<h4 id="requirement-1">REQUIREMENT 1</h4>
+<p>The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
+format as specified in [SD-JWT VC]</p>
+<h3 id="62-high-level-requirements-to-be-changed">6.2 High-Level Requirements to be changed</h3>
+<h3 id="63-descriptions-to-be-added-to-the-arf-main-document">6.3 Descriptions to be added to the ARF main document</h3>
+<h2 id="7-references">7 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Fet2024]</td>
+<td>SD-JWT VC DM Credential Format, available at <a href="https://github.com/danielfett/sd-jwt-vc-dm">https://github.com/danielfett/sd-jwt-vc-dm</a>i</td>
+</tr>
+<tr>
+<td>[Fri2024]</td>
+<td>Matteo Frigo and abhi shelat, Anonymous credentials from ECDSA, Cryptology ePrint Archive, Paper 2024/2010, 2024, available at <a href="https://eprint.iacr.org/2024/2010">https://eprint.iacr.org/2024/2010</a></td>
+</tr>
+<tr>
+<td>[Jon2025]</td>
+<td>Securing Verifiable Credentials using JOSE and COSE, available at <a href="https://www.w3.org/TR/vc-jose-cose/">https://www.w3.org/TR/vc-jose-cose/</a></td>
+</tr>
+<tr>
+<td>[Paq2024]</td>
+<td>Christian Paquin, Guru-Vamsi Policharla, and Greg Zaverucha, Crescent: Stronger Privacy for Existing Credentials, Cryptology ePrint Archive, Paper 2024/2013, 2024, available at <a href="https://eprint.iacr.org/2024/2013">https://eprint.iacr.org/2024/2013</a></td>
+</tr>
+<tr>
+<td>[Spo2025]</td>
+<td>Verifiable Credential Data Integrity 1.0, available at <a href="https://www.w3.org/TR/vc-data-integrity/">https://www.w3.org/TR/vc-data-integrity/</a></td>
+</tr>
+<tr>
+<td>[SD-JWT VC]</td>
+<td>SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html">https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
