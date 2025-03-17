@@ -1427,9 +1427,9 @@ See [Topic 16](#a2316-topic-16---signing-documents-with-a-wallet-unit).
 ##### Description  <!-- omit from toc -->
 
 This Topic discusses Wallet Unit revocation. In particular, it answers the
-following questions:How can a Wallet Provider revoke a Wallet Unit?During
+following questions: - How can a Wallet Provider revoke a Wallet Unit? - During
 issuance of an attestation, how can an Attestation Provider verify whether a
-Wallet Unit has been revoked?When requesting attributes from an attestation, how
+Wallet Unit has been revoked? - When requesting attributes from an attestation, how
 can a Relying Party verify whether a Wallet Unit has been revoked?
 
 In case of a security issue, Article 5e of the [European Digital Identity
