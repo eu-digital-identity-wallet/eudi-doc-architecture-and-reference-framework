@@ -535,4 +535,4 @@ additional communication that could be used to track or link User activity.
 | \[Ora2024\] | Orange, “The BBS# protocol”, Technical Report, 2024 |
 | \[Paq2024\] | Christian Paquin, Guru-Vamsi Policharla, and Greg Zaverucha, Crescent: Stronger Privacy for Existing Credentials, Cryptology ePrint Archive, Paper 2024/2013, 2024, available at <https://eprint.iacr.org/2024/2013> |
 | [RiskRegister] | Annex 1 to the Commission Implementing Regulation (EU) 2024/2981 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
-| \[Topic\_A\] | Discussion Paper for eIDAS Coordination Group regarding Topic A: Privacy risks and mitigation, version 1.0 |
+| \[Topic\_A\] | Discussion Paper for the European Digital Identity Cooperation Group regarding Topic A: Privacy risks and mitigation, version 1.0 |

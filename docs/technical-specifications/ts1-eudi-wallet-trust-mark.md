@@ -17,46 +17,50 @@ The present document specifies the technical specification and requirements for 
 
 ## 1 Introduction and Overview
 
-The present document specifies technical and procedural aspects related to use of the **EU Digital Identity Wallet Trust Mark** (also referred as **EUDI Wallet Trust Mark** in this document) in the context of the EUDI Wallet, having regard to Regulation [(EU) 2024/1183](http://data.europa.eu/eli/reg/2024/1183/oj) of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the **European Digital Identity (EUDI) Framework**, and in particular Articles 5a(5) and 3(50) thereof.
+The present document specifies technical and procedural aspects related to use of the **EU Digital Identity Wallet Trust Mark** (also referred as **EUDI Wallet Trust Mark** in this document) in the context of the EUDI Wallet, having regard to the [European Digital Identity Regulation], and in particular Articles 5a(5) and 3(50) thereof.
 
 The purpose of a visible and recognisable trust mark is to add trust in the EUDI Wallet ecosystem and help the Users to recognise and validate the certification status of the EUDI Wallet Providers and their EUDI Wallet services.
 
-### 1.1 Requirements in Regulation EU 2024/1183
- - According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”** 
- 
- - According to Article 5a (5)(a) (iv), **the Trust Mark must be displayed to the User**.
- - According to Article 5a (8)(a), **the Member States shall provide validation mechanisms free-of-charge, in order to: (a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;**
+### 1.1 Requirements in the European Digital Identity Regulation
+
+- According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”** 
+- According to Article 5a (5)(a) (iv), **the Trust Mark must be displayed to the User**.
+- According to Article 5a (8)(a), **the Member States shall provide validation mechanisms free-of-charge, in order to: (a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;**
 
 ### 1.2 Scope for the Trust Mark Requirements and Design
+
 The EUDI Wallet Trust Mark must be designed and copyright protected, as a kind of label, which is only allowed to be displayed if the EUDI Wallet of the User both complies to the requirements of EUDI Wallet Solutions while being recognised by at least one Member State. If either of the aforementioned base requirements become non-applicable, the Wallet Provider must remove the visible trust mark and any references to it. 
 
-As the Regulation does not specify what verifiable means, or where it shall be displayed, the realisation of the EUDI Wallet Trust Mark should be done via collecting the business requirements, identifying any complexity limitations if any, and considering the priorities of the involved stakeholders (Member States). Only after this can the work of deriving a technical specification that enables the European Commission to manage such trust marks be carried out.
- 
- This early version of the document contains in several aspects proposals (not yet facts) and plans to facilitate the selection of desired technical complexity and process around the EUDI Wallet Trust Mark. It starts with collecting, primarily for discussion and priorisation purposes, the proposed high-level requirements in an actor-oriented requirement format: **"As an *actor* I shall/should *verb* to achieve *my required goal*"**. This document does not address the visual or user experience related design elements related to the trust mark; these are provided separately and may be derived from the final requirements listed in this specification.
+As the European Digital Identity Regulation does not specify what 'verifiable' means, or where the Trust Mark shall be displayed, the realisation of the EUDI Wallet Trust Mark should be done via collecting the business requirements, identifying any complexity limitations if any, and considering the priorities of the involved stakeholders (Member States). Only after this can the work of deriving a technical specification that enables the European Commission to manage such trust marks be carried out.
+
+ This early version of the document contains in several aspects proposals (not yet facts) and plans to facilitate the selection of desired technical complexity and process around the EUDI Wallet Trust Mark. It starts with collecting, primarily for discussion and priorisation purposes, the proposed high-level requirements in an actor-oriented requirement format: **"As an *actor* I shall/should *verb* to achieve *my required goal*"**. This document does not address the visual or user experience related design elements related to the Trust Mark; these are provided separately and may be derived from the final requirements listed in this specification.
 
 NOTE: Any possible requirements for trust indicators unrelated to the EUDI Wallet Solution are out of scope of this document. **The scope is the trust mark visible in the EUDI Wallet, not the Relying Party services and/or the Attestation Provider qualifications**.
 
 ### 1.3 Background: Existing European trust marks as a reference
 
-To our knowledge, the European Commission has launched a few business-to-consumer type trust mark programmes related to EU Regulations: the earlier being the EU Trust Mark for Qualified Trust Services (launched as an Implementing Act for eIDAS Regulation) and the newer Ecommerce Europe Trustmark for safe and ethical cross-border ecommerce. These trust marks are both bound to EU regulation, but are probably facing very different types of end customers and their awareness among EU Member State citizens is probably not actively studied. These are included here to provide a comparison/starting point for the topical EUDI Wallet trust mark specification work ahead.
+To our knowledge, the European Commission has launched a few business-to-consumer type trust mark programmes related to EU Regulations: the earlier being the EU Trust Mark for Qualified Trust Services (launched as an Implementing Act for the [eIDAS Regulation]((https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014R0910)) and the newer Ecommerce Europe Trustmark for safe and ethical cross-border ecommerce. These trust marks are both bound to an EU Regulation, but are probably facing very different types of end customers and their awareness among EU Member State citizens is probably not actively studied. These are included here to provide a comparison/starting point for the topical EUDI Wallet trust mark specification work ahead.
 
 #### 1.3.1 EU Trust Mark for Qualified Trust Services
-[Commission Implementing Regulation (EU) 2015/806 of 22 May 2015 laying down specifications relating to the form of the EU trust mark for qualified trust services](http://data.europa.eu/eli/reg_impl/2015/806/oj) specifies a trust mark for QTSPs. Use of the trust mark is optional and it is not verifiable according to Article 23 (1) of Regulation 910/2014, therefore the way this trust mark is implemented may not meet the needs of EUDI Wallet Trust Mark.
+
+[Commission Implementing Regulation (EU) 2015/806 of 22 May 2015 laying down specifications relating to the form of the EU trust mark for qualified trust services](http://data.europa.eu/eli/reg_impl/2015/806/oj) specifies a trust mark for QTSPs. Use of the trust mark is optional and it is not verifiable according to Article 23 (1) of Regulation 910/2014 (the eIDAS Regulation), therefore the way this trust mark is implemented may not meet the needs of EUDI Wallet Trust Mark.
 
 Some visible uses of the QTSP trust mark for reference:
+
 - [**TrustPro Web Page**](https://www.trustpro.eu/): Interactive logo, test this by browsing to the home page section just before the page footer area. Clicking on the EU Trust Mark links to the [EU/EEA Trusted List Browser](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls) page.
 - [**Penneo QTSP page (blog)**](https://penneo.com/blog/qualified-trust-service-providers/): Passive use of the logo on the informative QTSP related blog page. The logo is in no way related to validation, the available validation means (checking from the EU LTL via the eIDAS Dashboard) are explained separately in the main text.
 
 This overview of samples is in no way exhaustive as there may be well-hidden trust mark appearances among the EU QTSP web pages.
 
 #### 1.3.2 Ecommerce Europe
+
 The European Regulation on online dispute resolution for consumer disputes [EU 524/2013](http://data.europa.eu/eli/reg/2013/524/oj) states that "traders established within the European Union engaging in online sales or service contracts shall provide on their websites an electronic link to the European Online Dispute Resolution (ODR) platform (http://ec.europa.eu/odr)". Consumers who have a problem with an online purchase can file complaints on the European ODR platform. 
 
-When present on an online shop, the Ecommerce Europe Trustmark shows that the online shop is nationally certified for safe e-commerce by the respective national e-commerce association, and that it complies with European laws and regulations. This is done via a visual trust mark which is available for online shops only via the Member State's associations that are formally affiliated to the Ecommerce Europe scheme. Most EU countries have joined it, but some are notably missing, whilst others are closing their safe e-commerce activities (e.g. Norway from 1 February 2025). National associations typically have defined their own national graphic trust mark logo, use of which happens ahead or in parallel with the Ecommerce Europe equivalent. 
+When present on an online shop, the Ecommerce Europe Trustmark shows that the online shop is nationally certified for safe e-commerce by the respective national e-commerce association, and that it complies with European laws and regulations. This is done via a visual trust mark which is available for online shops only via the Member State's associations that are formally affiliated to the Ecommerce Europe scheme. Most EU countries have joined it, but some are notably missing, whilst others are closing their safe e-commerce activities (e.g. Norway from 1 February 2025). National associations typically have defined their own national graphic trust mark logo, use of which happens ahead or in parallel with the Ecommerce Europe equivalent.
 
-It seems that the Qualified Trust Service trust mark is just a logo specified by EC Regulation whose usage is granted for QTSPs present on the EU list of trusted lists, whereas the Ecommerce Europe trust mark is usually accompanied with a Member State specific trusted e-shop certificate, which can in the best case be verified through simple user-familiar means, such as linking the trust mark icon to the national association's trust mark verification page which shows key information of the online shop provider. A good example is the Swedish trygg E-handel certificate; it is implemented as a web site script provided for the company by the association upon accomplishing the registration and checks. 
+It seems that the Qualified Trust Service trust mark is just a logo specified by the Regulation 524/2013, whose usage is granted for QTSPs present on the EU list of trusted lists, whereas the Ecommerce Europe trust mark is usually accompanied with a Member State specific trusted e-shop certificate, which can in the best case be verified through simple user-familiar means, such as linking the trust mark icon to the national association's trust mark verification page which shows key information of the online shop provider. A good example is the Swedish trygg E-handel certificate; it is implemented as a web site script provided for the company by the association upon accomplishing the registration and checks.
 
-National certificates are commercial and incur often both an onboarding fee and an annual maintenance fee. The "issuer" of the E-commerce certificate (the local member association) must check the applicant's compliance against safe e-commerce rules set by the EC regulation available via [The Ecommerce Europe Trustmark Code of Conduct](https://ecommercetrustmark.eu/the-code-of-conduct/) prior to certificate issuance.
+National certificates are commercial and incur often both an onboarding fee and an annual maintenance fee. The "issuer" of the E-commerce certificate (the local member association) must check the applicant's compliance against safe e-commerce rules set by Regulation 524/2013, available via [The Ecommerce Europe Trustmark Code of Conduct](https://ecommercetrustmark.eu/the-code-of-conduct/), prior to certificate issuance.
 
 Some examples of national associations and their trust mark onboarding processes and list of certified e-shops:
 
@@ -76,6 +80,7 @@ Thus, a means left to provide technical validation would be a separate Trust Mar
 As a conclusion on the overview section, the overall approach for introducing the EUDI Wallet Trust Mark should be kept simple-enough to ensure it can serve its intended (business) function without creating an overly complicated governance or technical framework for the Wallet Providers or other actors in the EUDI ecosystem to deploy in parallel to their main goal - provisioning and maintaining secure wallet solutions for the Member State citizens. The key is how the verifiability requirement of Art 3(50) is approached keeping the desired simplicity in mind. Below two alternative routes are described to receive initial feedback from the stakeholders.
 
 #### 1.5.1 Logo and link to trusted list of EUDI Wallets (simple)
+
 The most lightweight solution would be arrange a technical link from the UI view showing the EUDI Wallet logo to the eIDAS Dashboard's respective view listing certified EUDI Wallets per Member State. Verification of the EUDI Wallet certification is here left for the user (via browsing the linked view on EC web site and finding his/her EUDI Wallet in the list) without underlying technical verification means. A potential UI view sample of this approach captured from the European Commission's design team working on UX and graphics for the Trust Mark is shown in Figure 1 - the User would click the 'EUDI Wallet Provider List link' and be transitioned to EC's public web site).
 
 ![Trust Mark at Onboarding View](./img/EUDIW-trustmark-onboarding-UIview.png)
@@ -83,6 +88,7 @@ The most lightweight solution would be arrange a technical link from the UI view
 Figure 1. Welcome view of an EUDI Wallet (concept image only)
 
 #### 1.5.2 Verifiable EUDI Wallet Trust Mark attestation
+
 The other approach, following the legal expectation for verifiability of the Trust Mark, would be linking of the visibility/visual showing of the EUDI Wallet Trust Mark to successful, User-requested verification of a new **verifiable attestation** based on reasoning in Section 1.4 above. This QEAA, EUDI Wallet Trust Mark Attestation, is provided for each operational EUDI Wallet in conjunction with the provisioning of the Wallet Unit Attestation (WUA), so that the User can actually verify their EUDI Wallet with a dedicated 'EUDI Wallet verifier tool' service (verifying the EUDI Wallet Trust Mark Attestation as User e.g. clicks/taps the other link on the UI view of Figure 1). Validness/invalidness indication view details would be up to the official verifier service (a single EU-wide service). 
 
 In this scenario, the preferred Attestation Providers for EUDI Wallet Trust Mark Attestation would be the Member States, and the attestation would be provided to each individual Wallet Unit belonging to a Wallet Provider's given certified Wallet Solution. EUDI Wallet Trust Mark Attestation could be requested automatically (without interaction required by the onboarding User, as will be with the Wallet Unit Attestation as well) by the Wallet Unit, after having received its Wallet Unit Attestation from the Wallet Provider. 
@@ -93,14 +99,13 @@ This implies in the EUDI trust framework that Member States would register as At
 
 Another possibility is that the Attestation Provider for the EUDI Wallet Trust Mark is the Conformity Assessment Body (CAB) that certified the Wallet Solution, not the Member State. If so, there would be only one Trust Mark per Wallet Solution (and Wallet Unit). CABs would need in this case be ready to handle the role of a Qualified Trust Service Provider which is not currently the case.
 
-> **NOTE: This early version of the specification doesn't provide full technical design of  this second solution. A dedicated Attestation Rulebook ([Topic 12] (https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks)in the ARF) with suitable attributes and UX guidelines for this approach need to be agreed if EUDI Wallet Trust Mark attestation is selected as the realisation route after consultation with the stakeholders.**
-
+> Note: This early version of the specification doesn't provide full technical design of  this second solution. A dedicated Attestation Rulebook ([Topic 12](../annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks) in the ARF) with suitable attributes and UX guidelines for this approach need to be agreed if EUDI Wallet Trust Mark attestation is selected as the realisation route after consultation with the stakeholders.
 
 ## 2 Actor-Oriented Requirements
 
 Initial set of EUDI Wallet Trust Mark specific requirements are presented below, separated per actor/role in the EUDI ecosystem:
 
-> **Note: Some of the requirements in this section should be understood as alternative approaches (marked with ALTx), i.e. either/or selections are encouraged when evaluating/discussing the listed items with the stakeholders. There will be less or more requirements based on the agreed solution goal and complexity allowed for the Trust Mark verification solution.**
+> Note: Some of the requirements in this section should be understood as alternative approaches (marked with ALTx), i.e. either/or selections are encouraged when evaluating/discussing the listed items with the stakeholders. There will be less or more requirements based on the agreed solution goal and complexity allowed for the Trust Mark verification solution.
 
 ### 2.1 (EUDI Wallet) User Requirements
 
@@ -150,7 +155,6 @@ Initial set of EUDI Wallet Trust Mark specific requirements are presented below,
 ### 2.4 Member State Requirements
 
 > **EWTM-MS1**: Not available yet - to be added once desired solution approach is agreed with the Member States.
-
 
 ## 3 System Architecture and Functional Description
 

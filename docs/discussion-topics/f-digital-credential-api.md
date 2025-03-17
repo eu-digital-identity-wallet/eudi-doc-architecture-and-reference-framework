@@ -6,8 +6,7 @@ Version 1.1, updated 20 February 2025
 
 ### 1.1 Discussion Paper topic description
 
-This document is the Discussion Paper for eIDAS Coordination Group regarding
-Topic F: Digital Credentials API (formerly known as browser API).
+This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic F: Digital Credentials API (formerly known as 'the browser API').
 
 The ARF Development Plan \[ARF\_DevPlan\] describes this Topic as follows:
 
