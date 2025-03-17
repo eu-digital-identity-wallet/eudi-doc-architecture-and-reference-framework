@@ -656,7 +656,7 @@ Note that it is inherent for the use cases that the <strong>same</strong> Relyin
 <h3 id="52-topic-c-wallet-unit-attestations">5.2 Topic C: Wallet Unit Attestations</h3>
 <p><a href="../c-wallet-unit-attestation/">Topic C - Wallet Unit Attestations (WUA) and Key Attestations</a> discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc.</p>
 <p>Certain WUA attributes are somewhat sensitive, as they may allow for linkability, and are only intended for PID Providers and Attestation Providers when performing issuance. Other metadata in the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive and is intended for Relying Parties.</p>
-<p>When a Wallet Unit and a Relying Party perform registration of a pseudonym, key material will be stored on the Wallet Unit (in its role as Authenticator). During this registration, the WUA may be used in connection with the pseudonym attestation (discussed in <a href="#423-pseudonym-attestation">Section 4.2.3</a>). Topic C should consider what information can be presented to a Relying Party, when registrering a pseudonym.</p>
+<p>When a Wallet Unit and a Relying Party perform registration of a pseudonym, key material will be stored on the Wallet Unit (in its role as Authenticator). During this registration, the WUA may be used in connection with the pseudonym attestation (discussed in <a href="#423-pseudonym-attestation">Section 4.2.3</a>). Topic C should consider what information can be presented to a Relying Party, when registering a pseudonym.</p>
 <p>There are two main areas of Topic C that are particularly relevant in relation to Pseudonyms:</p>
 <ul>
 <li>
@@ -988,7 +988,9 @@ disclosure (R6) / Surveillance (R14)</td>
 </blockquote>
 <h5 id="requirement-6">Requirement 6</h5>
 <p>A Wallet Unit SHALL enable a User to choose which Pseudonym to authenticate with towards a Relying Party, if multiple Pseudonyms are registered for this Relying Party. The Wallet Unit SHOULD present the User with the aliases of the applicable Pseudonyms, if assigned, when making this choice.</p>
-<p>p&gt; Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.</p>
+<blockquote>
+<p>Rationale: A User should be able to freely choose which Pseudonym to use if multiple are available.</p>
+</blockquote>
 <h5 id="requirement-7">Requirement 7</h5>
 <p>A Wallet Unit SHOULD enable a User to delete a Pseudonym.</p>
 <blockquote>
@@ -1074,7 +1076,7 @@ disclosure (R6) / Surveillance (R14)</td>
 <h5 id="requirement-22">Requirement 22</h5>
 <p>Wallet Providers SHALL ensure that their Wallet Solution supports WebAuthn with additions and changes as documented in this document and future technical specifications created by or on behalf of the Commission.</p>
 <blockquote>
-<p>Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDIW.</p>
+<p>Rationale: This ensures that Relying Parties can implement a uniform interface to let any User register and authenticate with Pseudonyms if they have an EUDI Wallet.</p>
 </blockquote>
 <h4 id="62-hlrs-to-be-removed">6.2 HLRs to be Removed</h4>
 <h5 id="requirement-pa_01-from-topic-11">Requirement PA_01 from Topic 11</h5>
