@@ -1358,7 +1358,7 @@ information on this method, please refer to
 </tr>
 <tr>
 <td>ISSU_47</td>
-<td>If the Wallet Unit has run out of unused PIDs, attestations, or WUAs, but is not able to request a new batch because it is offline, it SHALL fall back to method B (see requirement 6), or another available method. This means that, when requested by a Relying Party, the Wallet Unit SHALL again present one of the already used PIDs, attestations of WUAs. The Wallet Unit SHALL return to using method A as soon as it is able to go online and request a new batch of PIDs, attestations or WUAs.</td>
+<td>If the Wallet Unit has run out of unused PIDs, attestations, or WUAs, but is not able to request a new batch because it is offline, it SHALL fall back to method B (see requirement 6), or another available method. This means that, when requested by a Relying Party, the Wallet Unit SHALL again present one of the already used PIDs, attestations or WUAs. The Wallet Unit SHALL return to using method A as soon as it is able to go online and request a new batch of PIDs, attestations or WUAs.</td>
 </tr>
 </tbody>
 </table>
@@ -1853,7 +1853,7 @@ Qualified Electronic Signatures using a Wallet Unit.</p>
 </tr>
 <tr>
 <td>QES_02</td>
-<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. *Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. - If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</td>
+<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01.  Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. <em>Notes: - Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. - If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</em></td>
 </tr>
 <tr>
 <td>QES_03</td>
@@ -2229,7 +2229,7 @@ identification in proximity use cases where Users utilise their Wallet Units.</p
 <tbody>
 <tr>
 <td>ProxId_01</td>
-<td>For enable identification using proximity flows, Wallet Units and Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes.</td>
+<td>To enable identification using proximity flows, Wallet Units and Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID, attestation, or WUA attributes.</td>
 </tr>
 <tr>
 <td>ProxId_02</td>
@@ -2315,7 +2315,7 @@ the catalogue of attributes.</li>
 </tr>
 <tr>
 <td>CAT_03b</td>
-<td>The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: <a href="https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format">Representation Powers and Mandates (RPaM) Ontology</a><a href="https://www.de4a.eu/semper">SEMPER | DE4A</a><a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies">SEMIC Core Vocabularies</a><a href="https://www.iana.org/assignments/jwt/jwt.xhtml">IANA Registry for JSON Web Token Claims</a> (for JSON-based attributes only)<a href="https://www.iso.org/standard/86782.html">ISO/IEC 23220-2</a> (for CBOR-based attributes only)</td>
+<td>The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: - <a href="https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format">Representation Powers and Mandates (RPaM) Ontology</a> - <a href="https://www.de4a.eu/semper">SEMPER | DE4A</a> - <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies">SEMIC Core Vocabularies</a> - <a href="https://www.iana.org/assignments/jwt/jwt.xhtml">IANA Registry for JSON Web Token Claims</a> (for JSON-based attributes only) - <a href="https://www.iso.org/standard/86782.html">ISO/IEC 23220-2</a> (for CBOR-based attributes only)</td>
 </tr>
 <tr>
 <td>CAT_04</td>
@@ -3163,9 +3163,9 @@ Unit. This Topic focuses on natural persons only.</p>
 <h4 id="a2338-topic-38-wallet-unit-revocation">A.2.3.38 Topic 38 - Wallet Unit revocation</h4>
 <h5 id="description_27">Description  <!-- omit from toc --></h5>
 <p>This Topic discusses Wallet Unit revocation. In particular, it answers the
-following questions:How can a Wallet Provider revoke a Wallet Unit?During
+following questions: - How can a Wallet Provider revoke a Wallet Unit? - During
 issuance of an attestation, how can an Attestation Provider verify whether a
-Wallet Unit has been revoked?When requesting attributes from an attestation, how
+Wallet Unit has been revoked? - When requesting attributes from an attestation, how
 can a Relying Party verify whether a Wallet Unit has been revoked?</p>
 <p>In case of a security issue, Article 5e of the [European Digital Identity
 Regulation] requires Wallet Providers to first suspend a Wallet Unit and to
@@ -3231,7 +3231,7 @@ Provider will issue one or more new WUAs to the Wallet Unit.</p>
 </tr>
 <tr>
 <td>WURevocation_09</td>
-<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL administratively revoke or suspend the Wallet Unit and SHALL immediately revoke the corresponding WUA(s) if they have a remaining validity period of 24 hours or longer. The Wallet Provider SHALL do so at least in the following circumstances: If the security of the Wallet Unit, or the security of the mobile device and OS on which the corresponding Wallet Instance is installed, or the security of a WSCA it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability.If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units.If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability.If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability.</td>
+<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL administratively revoke or suspend the Wallet Unit and SHALL immediately revoke the corresponding WUA(s) if they have a remaining validity period of 24 hours or longer. The Wallet Provider SHALL do so at least in the following circumstances: - If the security of the Wallet Unit, or the security of the mobile device and OS on which the corresponding Wallet Instance is installed, or the security of a WSCA it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability. - If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units. - If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability. - If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability.</td>
 </tr>
 <tr>
 <td>WURevocation_9b</td>
@@ -3657,7 +3657,7 @@ reporting unlawful or inappropriate attribute requests from Relying Parties.</p>
 <tbody>
 <tr>
 <td>RPT_DPA_01</td>
-<td>A Wallet Unit SHALL provide a interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit.</td>
+<td>A Wallet Unit SHALL provide an interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit.</td>
 </tr>
 <tr>
 <td>RPT_DPA_02</td>
