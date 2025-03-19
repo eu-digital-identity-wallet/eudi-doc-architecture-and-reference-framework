@@ -390,7 +390,7 @@ and is part of the Architecture Reference Framework (ARF) v1.5.0. It specifies
 how the mandatory and optional person identification data for the natural
 person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing
 Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in
-Table 5 of that CIR, will be encoded as a within the EUDI Wallet ecosystem.
+Table 5 of that CIR, will be encoded within the EUDI Wallet ecosystem.
 Additionally, this document specifies further optional PID attributes that are
 not included in the CIR.</p>
 <p>This document also specifies how a PID and all attributes in it are encoded if
@@ -446,11 +446,11 @@ ecosystem, regardless of the encoding used.</p>
 </tr>
 <tr>
 <td>PID_02</td>
-<td>PID Providers SHALL use the attestation type “eu.europa.ec.eudi.pid.1” for both ISO/IEC 18013-5-compliant and SD-JWT VC-compliant PIDs. <em>Notes: - This identifier follows uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.</em></td>
+<td>PID Providers SHALL use the attestation type “eu.europa.ec.eudi.pid.1” for both ISO/IEC 18013-5-compliant and SD-JWT VC-compliant PIDs. <em>Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.</em></td>
 </tr>
 <tr>
 <td>PID_03</td>
-<td>A PID Provider SHALL ensure that all of the mandatory attributes listed in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a> are present in any PID it issues to a Wallet Unit. *Notes: = When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes.- A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.</td>
+<td>A PID Provider SHALL ensure that all of the mandatory attributes listed in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a> are present in any PID it issues to a Wallet Unit. <em>Notes: - When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes. - A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.</em></td>
 </tr>
 </tbody>
 </table>
@@ -693,7 +693,7 @@ ecosystem that are compliant with [ISO/IEC 18013-5].</p>
 </tr>
 <tr>
 <td>PID_ISO_04</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/799 in the PID as (issuer-signed or device-signed) data elements. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as (issuer-signed or device-signed) data elements. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
 </tr>
 <tr>
 <td>PID_ISO_05</td>
@@ -709,7 +709,7 @@ ecosystem that are compliant with [ISO/IEC 18013-5].</p>
 </tr>
 <tr>
 <td>PID_ISO_08</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4. *Note: The value of the age_over_18, age_over_NN, or age_in_years attributes, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4. <em>Note: The value of the age_over_18, age_over_NN, or age_in_years attributes, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
 </tr>
 <tr>
 <td>PID_ISO_09</td>
