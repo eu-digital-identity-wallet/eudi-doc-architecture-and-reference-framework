@@ -1,6 +1,6 @@
 # G - Zero Knowledge Proof
 
-Version 0.2, updated 5 March 2025
+Version 1.0, updated 18 March 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/408)
 
@@ -151,8 +151,8 @@ desirable property, and a Relying Party may need to correlate multiple
 presentations of the same attestation to the same User (e.g., in the case of
 "returning customers").  A ZKP scheme may allow Wallet Units to generate such
 "correlation proofs" while still preserving user privacy to the extent required.
-- Deniable Presentation: A ZKP scheme may allow a Wallet Unit to generate attestation 
-presentations are bound to specific Relying Party and allow for repudiation
+- Deniable Issuanace and Presentation: A ZKP scheme may allow for repudiation of issued
+and/or presented attestations.
 - Composite Proofs: A ZKP scheme may allow a Wallet Unit to generate 
 presentations over several attestations with hidden attribute binding (present
 vaccination credential + PID with matching name without revealing name)
@@ -291,7 +291,8 @@ A ZKP scheme shall hide all attributes of the PID or attestation while providing
 * The PID or attestation includes the revealed attribute.
 * The PID or attestation is within its validity period.
 * The PID or attestation has not been revoked.
-* The PID or attestation has been issued by an issuer included in a trusted list.
+* The PID or attestation has been issued by a trusted issuer, optionally without
+revealing the issuer.
 * The PID or attestation is bound to a key stored in the WSCD of the Wallet User.
 
 #### 4.1.2 Proof of personhood
@@ -305,13 +306,17 @@ In fact, this is a simpler form of the selective disclosure use case, as a ZKP s
 shall provide the same proofs, except for the proof that "the PID or attestation includes 
 the revealed attribute."
 
-#### 4.1.3 Proof of attestation possession
+For this use case, a suitable rate limiting mechanisms shall be used. The fact that
+a user shall authenticate to the WSCD before generating a proof is such a suitable
+mechanism. 
+
+#### 4.1.3 Proof of attestation 
 The previous use case can be generalized to any type of attestation. For example, 
 Users may want to prove that they are students (e.g., to receive a discount) without 
 revealing any additional information about their identity. This should be possible 
 for both remote and proximity presentation flows.
 
-#### 4.1.4 Privacy preserving binding of an attestation to a PID
+#### 4.1.4 Privacy-preserving binding of an attestation to a PID
 In many cases, "simple" attestations may need to be linked to the PID of a User. 
 For example, some countries require tickets for sporting events to include the User's 
 identity number. As a consequence, tickets for different sporting events can be 
@@ -324,7 +329,7 @@ this attribute or any other attributes contained in the PID.
 In addition to this binding, the ZKP scheme should also provide the same proofs 
 as the "Proof of Personhood" use case.
 
-#### 4.1.5 Verifiable pseudonyms
+#### 4.1.5 Privacy preserving linking of an attestation to a Relying Party identifier
 In some use cases, a Relying Party needs to correlate multiple presentations of 
 the same attestation (e.g., to detect a "returning customer"). A ZKP scheme can 
 be used to derive a pseudonym by combining an attribute of an attestation that 
@@ -443,79 +448,54 @@ environments and security requirements.
 The following High-Level Requirements will be added to Annex 2 of the ARF
 
 #### REQUIREMENT 1
-Once a suitable ZKP scheme is specified, a Wallet Unit solution SHALL use it to 
-implement selective disclosure of an attribute for remote or proximity-based presentation flows. 
-Using this scheme, a Wallet Unit SHALL: (i) generate a proof that the revealed 
-attribute(s) is (are) included in a PID or attestation, (ii) generate a proof 
-that the corresponding PID or attestation is within its validity period, (iii) 
-generate a proof that the corresponding PID or attestation has not been revoked, 
-(iv) generate a proof that the corresponding PID or attestation has been issued 
-by an issuer included in a trusted list, (v) generate a proof that the corresponding 
-PID or attestation is bound to a key stored in the WSCD of the Wallet User, and (vi) 
-ensure that no other information is generated that could be used to track a User or 
-link their activities.
+Inrespectively of the use case, a ZKP scheme SHALL provide support for the following generic functions: (i) generation of a proof that an (some) attribute(s) is (are) included in a PID or attestation (ii) generation of a proof that a PID or attestation is within its validity period (iii) generation of a proof that a PID or attestation has not been revoked (iv) generation of a proof that a PID or attestation is bound to a key stored in the WSCD of the Wallet User (v) generation of a proof that a PID or attestation has been issued by a trusted issuer without revealing the issuer. NOTE: Although function (vi) SHALL be supported
+it should be used only when issuer hiding is necessary. 
+
 
 #### REQUIREMENT 2
-Once a suitable ZKP scheme is specified, a Wallet Unit solution SHALL use it to 
-implement proof of personhood for remote presentation flows. 
-Using this scheme, a Wallet Unit SHALL: (i) generate a proof 
-that it stores a PID within its validity period, (ii) 
-generate a proof that the corresponding PID has not been revoked, 
-(iv) generate a proof that the corresponding PID has been issued 
-by an issuer included in a trusted list, (v) generate a proof that the corresponding 
-PID is bound to a key stored in the WSCD of the Wallet User, and (vi) 
-ensure that no other information is generated that could be used to track a User or 
-link their activities.
+A ZKP scheme SHALL support the selective disclosure of an attribute use case for remote or proximity-based presentation flows. 
 
 #### REQUIREMENT 3
-Once a suitable ZKP scheme is specified, a Wallet Unit solution SHALL use it to 
-implement proof of attestation possession for proximity-based or remote presentation flows. 
-Using this scheme, a Wallet Unit SHALL: (i) generate a proof 
-that it stores a PID or attestation  within its validity period, (ii) 
-generate a proof that the corresponding PID or attestation has not been revoked, 
-(iv) generate a proof that the corresponding PID or attestation has been issued 
-by an issuer included in a trusted list, (v) generate a proof that the corresponding 
-PID or attestation is bound to a key stored in the WSCD of the Wallet User, and (vi) 
-ensure that no other information is generated that could be used to track a User or 
-link their activities.
+A ZKP scheme SHALL support the  proof of attestation possession use case for proximity-based or remote presentation flows. 
 
 #### REQUIREMENT 4
-Once a suitable ZKP scheme is specified, a Wallet Unit solution SHALL use it to 
-implement privacy-preserving binding of an attestation to a PID for proximity-based 
-or remote presentation flows. Using this scheme, a Wallet Unit SHALL: (i) generate 
-a proof that it stores an attestation and a PID and that the attestation includes 
-a specific attribute also present in the PID, (ii) generate a proof that the 
-corresponding PID and attestation have not been revoked, (iii) generate a proof 
-that the corresponding PID and attestation have been issued by an issuer included 
-in a trusted list, (iv) generate a proof that the corresponding PID is bound to 
-a key stored in the WSCD of the Wallet User, and (v) ensure that no other information 
-is generated that could be used to track a User or link their activities.
+A ZKP scheme SHALL support the proof of personhood use case for remote presentation flows.
 
 #### REQUIREMENT 5
-Once a suitable ZKP scheme is specified, a Wallet Unit solution SHALL use it to 
-implement verifiable pseudonyms. Using this scheme, a Wallet Unit SHALL: (i) 
-request the issuance of an attestation that includes a secret attribute unique 
-to the User, without revealing this attribute to the Attestation Provider, (ii) 
-generate an attestation presentation that includes a pseudonym derived from the 
-secret attribute and the Relying Party identifier, and (iii) ensure that no other 
-information is generated that could be used to track a User or link their activities.
+A ZKP scheme SHOULD support the privacy-preserving binding of an attestation to a PID 
+use case for proximity-based or remote presentation flows. In addition to the generic
+functions defined in REQUIREMENT 1, for this use case, a ZKP scheme SHALL provide support
+for the following functions: (i) generation of a proof that the Wallet Unit stores an 
+attestation and a PID and that the attestation includes a specific attribute also present 
+in the PID
 
 #### REQUIREMENT 6
-A Wallet Solution SHALL ensure that integrated ZKP schemes can be used with the
-intended presentation flows. 
+A ZKP scheme SHOULD support the privacy-preserving linking of an attestation to a Relying
+Party identifier use case for proximity-based or remote presentation flows. In addition to 
+the generic functions defined in REQUIREMENT 1, for this use case, a ZKP scheme SHALL 
+provide support for the following functions: (i) generation of a request for the issuance of 
+an attestation that includes a secret attribute unique to the User, without revealing this 
+attribute to the Attestation Provider (ii) generation of an attestation presentation that 
+includes a verifiable pseudonym derived from the secret attribute and the Relying Party 
+identifier.
 
 #### REQUIREMENT 7
-A Wallet Solution SHALL ensure that integrated ZKP schemes do not affect the
-usability of the intended presentation flows. 
+ZKP scheme SHALL be usable with the intended remote and proximity presentation flows. While the inclusion of ZKP may introduce computational and verification delays, these delays shall not  degrade the user experience
+
 
 #### REQUIREMENT 8
-A Wallet Solution SHALL ensure that integrated ZKP schemes introduce minimal to
-the PID or attestation issuance process. 
+The selected ZKP scheme SHOULD be able to generate proofs for already issued attestations in different formats 
 
 #### REQUIREMENT 9
-A Wallet Solution SHALL ensure that integrated ZKP schemes do not introduce any 
-additional communication that could be used to track or link User activity. 
+A ZKP scheme SHALL NOT introduce any 
+additional communication or information that could be used to track or link User activity
+during, before, or after proof generation. 
 
+#### REQUIREMENT 10
+A ZKP scheme SHALL NOT use proprietary solutions
+
+#### REQUIREMENT 11
+A ZKP scheme SHALL be designed to support migration to post-quantum safe algorithms.
 
 ### 5.2 High-Level Requirements to be changed
 

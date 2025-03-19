@@ -1,6 +1,6 @@
 # D - Embedded Disclosure Policies
 
-Version 1.0, updated 24 February 2025
+Version 1.1, updated 18 March 2025
 
 ## 1. Introduction
 
@@ -149,7 +149,7 @@ of the embedded disclosure policy, to deny or allow the presentation of the requ
 electronic attestation of attributes to the requesting Relying Party or the requesting 
 Wallet Unit.
 
-If an evaluation of the embedded disclosure policy results in "deny" and this result is enforced,
+If an attestation presentation is denied by the user,
 generating an error that reveals the attestation's existence while denying presentation to the
 Relying Party may leak information about the user. A Relying Party should
 not be able to distinguish between a nonexistent attestation and an existing
@@ -180,27 +180,13 @@ For this reason Policy 2 shall be implemented using Relying Party identifiers
 included in the presented WRPRC.
 
 ### 3.4 Fine-grained policies based on Relying Party attributes
-Implementing embedded disclosure policies as simple whitelists may not be suitable
-for advanced use case that may require finer grained policies. For those use cases
-an embedded disclosure policy may require additional Relying Party attributes, or
-even user related attributes and user context,
-and define authorisation rules using a policy definition language. 
-Such an approach can provide 
-Attestation Providers with more fine-grained control over which
-Relying Parties can access an attestation and under which conditions. 
+Αdvanced use cases  may require embedded disclosure policies based on additional 
+Relying Party attributes, or
+even user related attributes and user context.
+In these use cases authorisation rules should be expressed using a policy definition language
 
-Such a policy definition language are:
-* It shall be standardized
-* It shall allow rules for authorisation based on Relying Party attributes, User attributes, and contextual attributes 
-* It shall enable conditions and logical operations
-* It shall enable filtering of Relying Party certificates based on roots of trust
-* It shall enable definition of which attestation attributes can be accessed
-if a rule if satisfied.
-* It shall enable rules based on "classes" or "types" or "groups" of Relying
-Parties.
-
-On the other hand, for such a language to be practical, the semantics of Relying 
-Party attributes used in policies would need to be defined at the EU level. This 
+On the other hand, for such a language to be practical, the semantics of attributes 
+used in policies would need to be defined at the EU level. This 
 is a complex and time-consuming process that would hinder the definition, standardization, 
 and eventual deployment of such a policy definition language. Mandating support for 
 such a language could create  barriers to the development and adoption of Wallet 
@@ -222,13 +208,14 @@ A Wallet Solution SHALL support the implementation of the 'Specific Root of Trus
 policy using a list of root or intermediate certificates
 
 #### REQUIREMENT 3
-An Attestation Provider SHALL integrate embedded disclosure policies 
+A PID or Attestation Provider SHALL integrate embedded disclosure policies 
 in attestation metadata in a way that is compatible with the issuance protocol
-considered by the ARF.
+considered by the ARF. A Wallet Unit SHALL retrieve and store locally the corresponding
+policies during PID or Attestation issuance. 
 
 #### REQUIREMENT 4
-When the presentation of an attestation is denied by the User, the Wallet Unit SHALL behave 
-towards the Relying Party as it would if the attestation did not exist.
+When the presentation of an attestation is denied by the User, the Wallet Unit SHALL behave
+towards the Relying Party as if the attestation did not exist.
  
 ### 4.2 High-Level Requirements to be changed
 **[ARB\_22]**

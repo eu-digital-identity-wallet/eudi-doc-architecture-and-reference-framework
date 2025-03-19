@@ -1,6 +1,6 @@
 # V - PID rulebook
 
-Version 0.2, updated 4 March 2025
+Version 1.0, updated 18 March 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410)
 
@@ -312,10 +312,20 @@ the following:
 The following High-Level Requirements will be added in Annex 3 of the ARF
 
 #### REQUIREMENT 1
-The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
-format as specified in \[SD-JWT VC\]
+A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, 
+where the vct claim will be a URN. A catalog linked in the PID rulebook will associate this URN with SD-JWT VC type metadata
+which will include the same information as the PID Rulebook.
+
 
 ### 6.2 High-Level Requirements to be changed
+The following requirement is modified (changes in bold)
+
+**Req_06b**For [SD-JWT VC]-compliant attestations, the Schema Provider for the Attestation 
+Rulebook SHALL ensure that each claim name is either included in the IANA registry for 
+JWT claims, or is Public Name as defined in RFC 7519, **or is a Private name specific
+to the attestation type, which is defined by the vct claim**. Note: [SD-JWT VC] does not 
+discuss how to avoid conflicting claim names. Since SD-JWTs are a special kind of JWTs, 
+the methods specified in RFC 7519 are applicable.
 
 ### 6.3 Descriptions to be added to the ARF main document
 
