@@ -383,7 +383,7 @@
 
 
 <h1 id="v-pid-rulebook">V - PID rulebook</h1>
-<p>Version 0.2, updated 4 March 2025</p>
+<p>Version 1.0, updated 18 March 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410">GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -651,9 +651,17 @@ the following:</p>
 <h3 id="61-high-level-requirements-to-be-added">6.1 High-Level Requirements to be added</h3>
 <p>The following High-Level Requirements will be added in Annex 3 of the ARF</p>
 <h4 id="requirement-1">REQUIREMENT 1</h4>
-<p>The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
-format as specified in [SD-JWT VC]</p>
+<p>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, 
+where the vct claim will be a URN. A catalog linked in the PID rulebook will associate this URN with SD-JWT VC type metadata
+which will include the same information as the PID Rulebook.</p>
 <h3 id="62-high-level-requirements-to-be-changed">6.2 High-Level Requirements to be changed</h3>
+<p>The following requirement is modified (changes in bold)</p>
+<p><strong>Req_06b</strong>For [SD-JWT VC]-compliant attestations, the Schema Provider for the Attestation 
+Rulebook SHALL ensure that each claim name is either included in the IANA registry for 
+JWT claims, or is Public Name as defined in RFC 7519, <strong>or is a Private name specific
+to the attestation type, which is defined by the vct claim</strong>. Note: [SD-JWT VC] does not 
+discuss how to avoid conflicting claim names. Since SD-JWTs are a special kind of JWTs, 
+the methods specified in RFC 7519 are applicable.</p>
 <h3 id="63-descriptions-to-be-added-to-the-arf-main-document">6.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="7-references">7 References</h2>
 <table>
