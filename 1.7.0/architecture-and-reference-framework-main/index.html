@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -2372,7 +2372,7 @@ process of establishing the toolbox, as described in <a href="#8-document-develo
 <p>This document holds no legal value and does not prejudge the final mandatory
 legal requirements for the EUDI Wallet ecosystem. Only the adopted [European
 Digital Identity Regulation], and the implementing and delegated acts adopted
-under that Regulation, are mandatory. This document serves as a foundation for
+under that Regulation, are mandatory.  This document serves as a foundation for
 regularly updating the implementing acts, ensuring alignment with technological
 and standards developments.</p>
 <h3 id="13-relation-to-the-large-scale-pilots-lsp">1.3 Relation to the Large-Scale Pilots (LSP)</h3>
@@ -2401,8 +2401,7 @@ the structural and functional aspects of the EUDI Wallet ecosystem, detailing
 its key components and their interactions. It provides a technical foundation to
 ensure <strong>interoperability, security, and privacy</strong>, aligning with the high-level
 requirements specified in <strong>Annex 2</strong>. The ARF serves as a reference for the
-<strong>harmonised implementation of the [European Digital Identity Regulation]</strong>,
-<strong>harmonised implementation of the [European Digital Identity Regulation]</strong>,
+<strong>harmonized implementation of the [European Digital Identity Regulation]</strong>,
 <em>guiding the
 development of </em><em>technical specifications, standards, and operational
 procedures</em>*.</p>
@@ -2474,52 +2473,54 @@ their person identification data (PID) and attestations across both public and
 private services in the EU. Its functionalities are built around security,
 privacy, and User control, ensuring seamless interactions with Relying Parties
 and other entities, while adhering to data
-protection principles.</p>
+protection principles.  </p>
 <p>This chapter outlines the core functionalities of Wallet Solutions, as defined
 by the [European Digital Identity Regulation], and examines how the requirements
 for its implementation align with real-world use cases where Users will use
-their Wallet Unit.</p>
+their Wallet Unit.  </p>
 <p>The functionalities of a Wallet Unit can be grouped into the following
-categories:</p>
+categories:  </p>
 <ul>
 <li><strong>Secure identification and authentication</strong>, ensuring that Users can present
-person identification data in a trusted environment.</li>
+person identification data in a trusted environment.  </li>
 <li><strong>Exchanging qualified and non-qualified User attributes</strong> through secure and
-verifiable electronic attestations of attributes.</li>
+verifiable electronic attestations of attributes.  </li>
 <li><strong>Electronic signing of documents or data</strong>, allowing Users to create
-legally recognised qualified electronic signatures and seals.</li>
+legally recognized qualified electronic signatures and seals.</li>
 <li><strong>Generate and use pseudonyms</strong> for authentication, to enhance privacy and
-prevent tracking.</li>
+prevent tracking.  </li>
 </ul>
 <p>These functionalities are discussed in the next four sections.</p>
 <h3 id="22-identification-and-authentication">2.2 Identification and authentication</h3>
-<p>Using their Wallet Units, Users are able to:</p>
+<p>Using their Wallet Units, Users are able to:  </p>
 <ul>
 <li><strong>Identify and authenticate</strong> to online and offline services, while using
 <strong>selective disclosure</strong> of attributes as well as <strong>User approval</strong>. This
 <em>ensures that only necessary and User-approved attributes are presented to
-</em>Relying Parties, which minimises exposure of personal information.</li>
+</em>Relying Parties, which minimises exposure of personal information.  </li>
 <li><strong>Securely authenticate Relying Parties or other Wallet Units</strong>, making sure
-that attributes are only presented to trusted entities.</li>
+that attributes are only presented to trusted entities.  </li>
 <li><strong>Onboard seamlessly with PID Providers or attestation Providers</strong> by
 leveraging existing electronic identification schemes, for a smooth and secure
-registration process.</li>
+registration process.  </li>
 <li><strong>Be informed</strong> whether a Relying Party is authorised or registered to receive
 the requested attributes.</li>
-<li><strong>Access a transaction log via a dashboard</strong>, allowing Users to:  </li>
+<li><strong>Access a transaction log via a dashboard</strong>, allowing Users to:  <ul>
 <li><strong>Review past interactions</strong> with Relying Parties and Wallet Units.  </li>
 <li><strong>Request data erasure</strong> under the GDPR Article 17 to maintain privacy.  </li>
 <li><strong>Report suspicious Relying Parties</strong> to the relevant national data
-    protection authority.</li>
+protection authority.</li>
+</ul>
+</li>
 </ul>
 <h3 id="23-attribute-exchange-mechanism-using-attestations">2.3 Attribute exchange mechanism using attestations</h3>
 <p>Using their Wallet Units, Users are able to:</p>
 <ul>
 <li><strong>Request, store, and present</strong> personal identification data and electronic
 attestations of attributes under their sole
-control, ensuring secure usage in both online and offline scenarios.</li>
+control, ensuring secure usage in both online and offline scenarios.  </li>
 <li><strong>Backup a list of their attributes, attestations, and configurations</strong>,
-guaranteeing compliance with data portability rights.</li>
+guaranteeing compliance with data portability rights.  </li>
 <li><strong>Prevent tracking by Relying Parties</strong> when using attestations,
 ensuring privacy-preserving interactions.</li>
 </ul>
@@ -2527,7 +2528,7 @@ ensuring privacy-preserving interactions.</li>
 <p>Using their Wallet Units, Users are able to:</p>
 <ul>
 <li><strong>Create qualified electronic signatures and seals</strong> for legally binding
-digital transactions.</li>
+digital transactions.  </li>
 <li><strong>Sign documents using qualified electronic signatures</strong>, which are provided
 by default and free of charge within the Wallet Unit, ensuring universal
 accessibility and compliance with legal standards.</li>
@@ -2578,7 +2579,7 @@ for the following key use cases:</p>
 <li>Additional use cases that will be introduced in the future, see <a href="#264-other-use-cases">Section 2.6.4</a>.</li>
 </ul>
 <p>These blueprints, along with all relevant information on use cases
-implementation, will be compiled in a standardised format within a dedicated
+implementation, will be compiled in a standardized format within a dedicated
 document titled the "Use Cases Manual", and distributed together with this document.</p>
 <h4 id="262-identification-and-authentication-to-access-online-services">2.6.2 Identification and authentication to access online services</h4>
 <p>The EUDI Wallet ecosystem is primarily designed to facilitate secure User
@@ -2586,11 +2587,11 @@ identification and authentication at Level of Assurance (LoA) high for various
 online services, both public and private. This capability is crucial, as it
 allows Relying Parties to confidently verify the identity of Users they interact
 with.</p>
-<p>In this use case, a user utilises their Wallet Unit to present specific
+<p>In this use case, a user utilizes their Wallet Unit to present specific
 attributes to a Relying Party in order to access online services. Before doing
-so, the Wallet Unit first authenticates the user. The user is particularly
+so, the Wallet Unit first authenticates the user.  The user is particularly
 mindful of the privacy and security implications of sharing data when accessing
-online services. Their primary objective is to securely and reliably access
+online services.  Their primary objective is to securely and reliably access
 online services that require authentication while maintaining full control over
 how their personal data is presented and shared.</p>
 <h4 id="263-mobile-driving-licence">2.6.3 Mobile Driving Licence</h4>
@@ -2629,7 +2630,7 @@ payments and the finance industry.</p>
 <h5 id="2644-digital-travel-credential">2.6.4.4 Digital Travel Credential</h5>
 <p>Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a
 supported format, to enable Relying Parties to identify Users, thus facilitating
-a smooth travel experience and User journey. Relying Parties for a DTC may
+a smooth travel experience and  User journey. Relying Parties for a DTC may
 include governments, transportation providers, hospitality agents, or any other
 actors operating in a regulated environment which requires the use of a DTC.</p>
 <h5 id="2645-social-security">2.6.4.5 Social Security</h5>
@@ -3129,7 +3130,8 @@ User. This component implements the core business logic and interfaces as
 depicted in Figure 2. It directly interacts with the WSCA/WSCD (see bullets
 hereafter) to securely manage cryptographic assets and execute cryptographic
 functions, ensuring a high level of assurance for authentication.</li>
-<li><strong>Wallet Secure Cryptographic Device (WSCD):</strong> tamper-resistant device that
+<li>
+<p><strong>Wallet Secure Cryptographic Device (WSCD):</strong> tamper-resistant device that
 provides an environment that is linked to and used by the wallet secure
 cryptographic application to protect critical assets and to securely execute
 cryptographic functions. This includes a keystore, but
@@ -3140,16 +3142,17 @@ WSCD hardware covers the hardware issued by the WSCD vendor and the WSCD
 firmware covers security-related software, such as an operating system and
 cryptographic libraries provided by the WSCD vendor. Figure 2 shows four
 different possible security architectures for the WSCD (for more details see
-<a href="#45-wscd-architecture-types">Section 4.5</a>):</li>
+<a href="#45-wscd-architecture-types">Section 4.5</a>):</p>
+<ul>
 <li>a remote WSCD, a remote device, such as a Hardware Security Module (HSM),
-    accessed over a network.</li>
+accessed over a network.</li>
 <li>a local external WSCD, an external device, such as a smart card issued
-    to the User specifically for this purpose,</li>
+to the User specifically for this purpose,</li>
 <li>a local internal WSCD, a component within the User device, such as a SIM,
-    e-SIM, or embedded Secure Element,</li>
-<li>
-<p>a local native WSCD, a component embedded in the User device and accessed via
-    an API provided by the operating system.</p>
+e-SIM, or embedded Secure Element,</li>
+<li>a local native WSCD, a component embedded in the User device and accessed via
+an API provided by the operating system.</li>
+</ul>
 </li>
 <li>
 <p><strong>Wallet Secure Cryptographic Application (WSCA):</strong> an application that
@@ -3326,7 +3329,7 @@ will include a registry of supported protocols. For more information see the
 <a href="../discussion-topics/f-digital-credential-api/">Topic F: Digital Credentials API</a>
 discussion paper.</p>
 <p>However, the [W3C Digital Credentials API] is still under development and has
-not yet been standardised. For the [W3C Digital Credentials API] to be mandated
+not yet been standardized. For the [W3C Digital Credentials API] to be mandated
 by this ARF in the future, it will have to align with the principles and
 expectations outlined in
 <a href="../discussion-topics/f-digital-credential-api/#3">Chapter 3</a> of the Topic F
@@ -3745,7 +3748,7 @@ Certificate Authority (CA), which is then configured to issue certificates to
 the Authenticator on multiple attestation key pairs.</p>
 </li>
 <li>
-<p><strong>Anonymisation CA:</strong> Similar to the second bullet above, except that it is
+<p><strong>Anonymization CA:</strong> Similar to the second bullet above, except that it is
 explicit that the Authenticator requests a certificate for a new attestation key
 pair per generated Passkey.</p>
 </li>
@@ -4744,7 +4747,7 @@ Digital Identity Regulation] only requires PIDs to be issued at LoA "high".
 However, the above applies for QEAAs, PuB-EAAs, and non-qualified EAAs as well.</p>
 <h5 id="6627-batch-issuance">6.6.2.7 Batch issuance</h5>
 <p>Batch issuance means that instead of issuing a single PID or attestation to a
-Wallet Unit, a PID Provider or Attestation Provider issues a batch of them. All
+Wallet Unit, a PID Provider or Attestation Provider issues a batch of them.  All
 PIDs or attestations in a batch have the same document type, attribute values
 and validity period. Apart from that, all of the descriptions in this section
 6.6.2 apply regardless of the number of attestations issued (single or batch).</p>
@@ -4830,7 +4833,7 @@ both implement Relying Party authentication as shown in Figure 12 below.</p>
 Party authentication process can begin. Note that these actions are not carried
 out for every presentation, but only once (excluding possible updates):</p>
 <p>A) The Relying Party registered itself as described in
-<a href="#642-relying-party-registration">Section 6.4.2</a>
+<a href="#632-pid-provider-or-attestation-provider-registration-and-notification">Section 6.3.2</a>
 and obtained a Relying Party Instance access certificate.</p>
 <p>B) The Wallet Unit obtained the trust anchor of the Relying Party Instance
 Access Certificate Authority.</p>
@@ -5017,11 +5020,13 @@ combination with an ephemeral key created by the secure environment. The latter
 ephemeral key is sent to the Relying Party in such a way that the Relying Party
 can verify the authenticity of this key. Such a solution, or similar ones, can
 be used provided that:</p>
-</li>
+<ul>
 <li>the solution is fully compliant with the relevant standards, i.e.,
-    [ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].</li>
+[ISO/IEC 18013-5] or [OpenID4VP] and [SD-JWT VC].</li>
 <li>the solution can be certified for security at LoA "high" according to
-    <a href="#7-certification-and-risk-management">Chapter 7</a></li>
+<a href="#7-certification-and-risk-management">Chapter 7</a></li>
+</ul>
+</li>
 </ul>
 <h5 id="6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked">6.6.3.7 Relying Party verifies that the PID or attestation is not revoked</h5>
 <p>To allow revocation checking of a PID or attestation, the PID Provider or
@@ -5033,7 +5038,7 @@ attestation within that list.</p>
 <p>Notes:</p>
 <ul>
 <li>For attestations with a validity period of less than 24 hours, including
-revocation information is not necessary.</li>
+revocation information is not necessary.  </li>
 <li>A status list is a bit string or byte string in which each bit or group of
 bits denotes the current revocation status (valid or revoked) of one
 attestation. To get the status of the attestation it has received from the
@@ -5088,22 +5093,20 @@ the PID Provider or Attestation Provider:</p>
 authentication mechanisms implemented by the WSCD (see <a href="../annexes/annex-2/annex-2-high-level-requirements/#a239-topic-9---wallet-unit-attestation">Topic 9</a>).
 This means that the Relying Party trusts that the the WSCD has properly
 authenticated the User before allowing the User to present the attributes. Note
-that:</li>
-</ol>
-<ul>
+that:<ul>
 <li>This trust is not based on the outcome of any verification by the Relying
- Party but on a a-priori trust in (in particular) the certified WSCD that is
- part of the Wallet Unit.</li>
+Party but on a a-priori trust in (in particular) the certified WSCD that is
+part of the Wallet Unit.</li>
 <li>Using this method implies that Relying Parties also trust device binding,
- as described in <a href="#6638-relying-party-instance-verifies-device-binding">Section 6.6.3.8</a>.
- The Relying Party Instance in fact first verifies that the PID or
- attestation is bound to a WSCD trusted by the PID Provider or Attestation
- Provider, and then trusts that the WSCD has properly authenticated the User.</li>
+as described in <a href="#6638-relying-party-instance-verifies-device-binding">Section 6.6.3.8</a>.
+The Relying Party Instance in fact first verifies that the PID or
+attestation is bound to a WSCD trusted by the PID Provider or Attestation
+Provider, and then trusts that the WSCD has properly authenticated the User.</li>
 <li>As a matter of fact, this User binding method will always be carried out,
- since the WSCD must authenticate its User when asking for User approval for
- presenting any attributes, and since device binding is also mandatory.</li>
+since the WSCD must authenticate its User when asking for User approval for
+presenting any attributes, and since device binding is also mandatory.</li>
 </ul>
-<ol start="2">
+</li>
 <li>In addition, in some cases, if a Relying Party does not want to only trust
 the above mechanism, it may be able to use User attributes to carry out an
 additional User binding process. For example, if the PID or attestation contains
@@ -5223,7 +5226,7 @@ the original attestation. However, this is not required; the PID Provider or
 Attestation Provider may change one or more attribute values. Re-issuance is
 only applied within the administrative validity period of a document. As an
 example, a mobile driving licence (mDL) will typically be issued in the form of
-attestations which have a technical validity period shorter than the
+attestations which have a technical  validity  period shorter than the
 administrative validity period of the license itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always share a valid mDL. However, when the
@@ -5235,14 +5238,14 @@ attestation in a batch as well.</p>
 <p>There may be different reasons for re-issuing a PID or attestation, for example:</p>
 <ul>
 <li>The current PID(s) or attestation(s) are near the end of their
- technical validity period, or the Wallet Unit is running out of once-only
- attestations. This is done to mitigate the risk of Relying Party linkability.</li>
+    technical validity period, or the Wallet Unit is running out of once-only
+    attestations. This is done to mitigate the risk of Relying Party linkability.</li>
 <li>The value of one or more of the attributes in the PID or attestation
- has changed.</li>
+    has changed.</li>
 <li>The security architecture of the Wallet Solution may use PIDs and/or
- attestations that are issued just-in-time, at the moment that PID or
- attestation is being requested by a Relying Party. This is sometimes
- called synchronous issuing.</li>
+    attestations that are issued just-in-time, at the moment that PID or
+    attestation is being requested by a Relying Party. This is sometimes
+    called synchronous issuing.</li>
 </ul>
 <p>These reasons are discussed in the next subsections. Re-issuance is discussed in
 more detail in the <a href="../discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/">Discussion Paper for Topic B</a>.</p>
@@ -5498,48 +5501,60 @@ mitigation measures for evaluation by the certification body.</p>
 continuously evolving threat landscape, the risk register will be maintained and
 regularly updated in collaboration with the Cooperation Group.</p>
 <p>High-level risks and threats</p>
-<p>R1 Creation or use of an existing electronic identity
- R2 Creation or use of a fake electronic identity
- R3 Creation or use of fake attributes
- R4 Identify theft
- R5 Data theft
- R6 Data disclosure
- R7 Data manipulation
- R8 Data loss
- R9 Unauthorised transaction
- R10 Transaction manipulation
- R11 Repudiation
- R12 Transaction data disclosure
- R13 Service disruption
- R14 Surveillance</p>
+<pre><code>R1     Creation or use of an existing electronic identity 
+R2     Creation or use of a fake electronic identity 
+R3     Creation or use of fake attributes 
+R4     Identify theft 
+R5     Data theft 
+R6     Data disclosure 
+R7     Data manipulation 
+R8     Data loss 
+R9     Unauthorised transaction 
+R10    Transaction manipulation 
+R11    Repudiation 
+R12    Transaction data disclosure 
+R13    Service disruption
+R14    Surveillance
+</code></pre>
 <p>System-related risks</p>
-<p>SR1 Wholesale surveillance
- SR2 Reputational damage
- SR3 Legal non-compliance</p>
+<pre><code>SR1 Wholesale surveillance 
+SR2 Reputational damage 
+SR3 Legal non-compliance
+</code></pre>
 <p>Technical threats</p>
-<p>TT1 Physical attacks</p>
-<p>1.1 Theft
- 1.2 Information leakage
- 1.3 Tampering</p>
-<p>TT2 Errors and misconfigurations</p>
-<p>2.1 Errors made when managing an IT system
- 2.2 Application-level errors or usage errors
- 2.3 Development-time errors and system misconfigurations</p>
-<p>TT3 Use of unreliable sources</p>
-<p>3.1 Erroneous use or configuration of wallet components</p>
-<p>TT4 Failure and outages</p>
-<p>4.1 Failure or dysfunction of equipment, devices or systems
- 4.2 Loss of resources
- 4.3 Loss of support services</p>
-<p>TT5 Malicious actions</p>
-<p>5.1 Interception of information
- 5.2 Phishing and spoofing
- 5.3 Replay of messages
- 5.4 Brute-force attack
- 5.5 Software vulnerabilities
- 5.6 Supply chain attacks
- 5.7 Malware
- 5.8 Random number prediction</p>
+<pre><code>TT1 Physical attacks
+
+1.1    Theft 
+1.2    Information leakage 
+1.3    Tampering
+
+TT2 Errors and misconfigurations
+
+2.1    Errors made when managing an IT system 
+2.2    Application-level errors or usage errors 
+2.3    Development-time errors and system misconfigurations
+
+TT3 Use of unreliable sources
+
+3.1    Erroneous use or configuration of wallet components
+
+TT4 Failure and outages
+
+4.1    Failure or dysfunction of equipment, devices or systems 
+4.2    Loss of resources 
+4.3 Loss of support services
+
+TT5 Malicious actions
+
+5.1 Interception of information 
+5.2 Phishing and spoofing 
+5.3 Replay of messages 
+5.4 Brute-force attack 
+5.5 Software vulnerabilities 
+5.6 Supply chain attacks 
+5.7 Malware 
+5.8 Random number prediction
+</code></pre>
 <h4 id="743-risks-and-mitigation-measures-discussed-in-chapter-6-of-this-arf">7.4.3 Risks and mitigation measures discussed in Chapter 6 of this ARF</h4>
 <h5 id="7431-introduction">7.4.3.1 Introduction</h5>
 <p>This section briefly discusses some of the risks that were considered when the
@@ -5639,7 +5654,7 @@ a disclosure policy within their attestations. This policy may include rules
 governing whether the Attestation Provider approves the presentation of certain
 attributes to an authenticated Relying Party. The Wallet Unit evaluates this
 policy —if present— alongside authenticated data from the Relying Party, and
-informs the User of the outcome. This mechanism further supports the User in
+informs the User of the outcome.  This mechanism further supports the User in
 making a well-informed decision on whether to approve or deny attribute
 presentation. More information on disclosure
 policy enforcement can be found in <a href="#6634-wallet-unit-evaluates-disclosure-policy-embedded-in-attestation-if-present">Section 6.6.3.4</a>.</li>
@@ -5655,7 +5670,7 @@ conclude that they concern the same User.</p>
 attestations containing unique, fixed elements such as hash values, salts,
 public keys, and signatures. Malicious Relying Parties could exploit these
 values to track Users by storing and comparing them across multiple
-transactions, identifying recurring patterns. This privacy threat, known as
+transactions, identifying recurring patterns.  This privacy threat, known as
 <strong>Relying Party linkability</strong>, can occur within a single Relying Party or among
 colluding entities.</p>
 <p>A similar privacy threat arises when colluding Relying Parties share the unique
@@ -5669,7 +5684,7 @@ track User activity across multiple services. In this case, it's called
 Provider or Attestation Provider can mitigate Relying Party linkability fully by
 issuing multiple PIDs or attestations to the same User. Wallet Units can use
 these attestations as disposable (single-use) attestations, which ensures
-attestations can never be linked by Relying Parties. <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10/23 in Annex 2</a>
+attestations can never be linked by Relying Parties.  <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10/23 in Annex 2</a>
 calls this 'once-only attestations', and requires Wallet Solutions to support
 this method. It also specifies how a PID Provider or Attestation Provider can
 indicate that they want a Wallet Unit to treat their PIDs or attestations in
@@ -5708,7 +5723,7 @@ of implementing ZKP solutions in secure hardware and the lack of support in
 currently available secure hardware (WSCDs). This topic will be further explored
 in the context of the next major release of the ARF. As with Relying Party
 linkability, organisational and enforcement measures can help deter Attestation
-Providers from colluding and tracking Users. Additionally, many Attestation
+Providers from colluding and tracking Users.  Additionally, many Attestation
 Providers are subject to regular audits, making it easier to detect collusion
 and tracking compared to Relying Parties.</p>
 <p>Zero-Knowledge Proof (ZKP) mechanisms for verifying personal information are
@@ -6150,28 +6165,34 @@ format, <em>MAJOR.MINOR.PATCH</em>, where:</p>
 <ul>
 <li>Definitions - <a href="../annexes/annex-1/annex-1-definitions/">Annex 1</a></li>
 <li>High Level Technical Requirements - <a href="../annexes/annex-2/annex-2-high-level-requirements/">Annex 2</a></li>
-<li>Rulebooks - Annex 3:</li>
+<li>Rulebooks - Annex 3:<ul>
 <li>PID rulebook - <a href="../annexes/annex-3/annex-3.01-pid-rulebook/">Annex 3.1</a></li>
 <li>mDL rulebook - <a href="../annexes/annex-3/annex-3.02-mDL-rulebook/">Annex 3.2</a></li>
-<li>Service Blueprints - Annex 4:</li>
+</ul>
+</li>
+<li>Service Blueprints - Annex 4:<ul>
 <li>Blueprint Initialisation and activation - <a href="../annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf">Annex 4.1</a></li>
 <li>Blueprint Online identification and authentication - <a href="../annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf">Annex 4.2</a></li>
 <li>Blueprint Issuing mDL - <a href="../annexes/annex-4/annex-4.03-eudi-wallet-issuing-mdl.pdf">Annex 4.3</a></li>
 <li>Blueprint Presenting mDL (proximity-supervised) - <a href="../annexes/annex-4/annex-4.04-eudi-wallet-presenting-mdl-proximity-supervised.pdf">Annex 4.4</a></li>
 <li>Blueprint Presenting mDL (proximity-unsupervised) - <a href="../annexes/annex-4/annex-4.05-eudi-wallet-presenting-mdl-proximity-unsupervised.pdf">Annex 4.5</a></li>
 <li>Blueprint Remote QES -- Creating a signature for authentication /
-    authorisation - <a href="../annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf">Annex 4.6</a></li>
+authorisation - <a href="../annexes/annex-4/annex-4.06-Remote-qes-creating-a-signature-eudi-wallet-used-for-authentication-authorisation.pdf">Annex 4.6</a></li>
 <li>Blueprint Remote QES - Enrolment - <a href="../annexes/annex-4/annex-4.07-remote-qes-enrolment.pdf">Annex 4.7</a></li>
 <li>Blueprint Remote QES - Creating a signature channelled by a Wallet Unit -
-    <a href="../annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf">Annex 4.8</a></li>
+<a href="../annexes/annex-4/annex-4.08-remote-qes-creating-a-signature-channeled-by-eudi-wallet.pdf">Annex 4.8</a></li>
 <li>Blueprint Remote QES - Creating a signature channelled by Relying Party -
-    <a href="../annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf">Annex 4.9</a></li>
+<a href="../annexes/annex-4/annex-4.09-remote-qes-creating-a-signature-channeled-by-relying-party.pdf">Annex 4.9</a></li>
 <li>Blueprint QES -- View history of signatures - <a href="../annexes/annex-4/annex-4.10-qes-view-history-of-signatures.pdf">Annex 4.10</a></li>
 <li>Blueprint Local QES - Enrolment - <a href="../annexes/annex-4/annex-4.11-local-qes-enrolment.pdf">Annex 4.11</a></li>
 <li>Blueprint Local QES -- Creating a signature - <a href="../annexes/annex-4/annex-4.12-local-qes-creating-a-signature.pdf">Annex 4.12</a></li>
-<li>Design Guides - Annex 5:</li>
+</ul>
+</li>
+<li>Design Guides - Annex 5:<ul>
 <li>Wallet Unit design guide - <a href="../annexes/annex-5/annex-5.01-design-guide.pdf">Annex 5.1</a></li>
 <li>Wallet Unit design guide -- data sharing scenarios - <a href="../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.pdf">Annex 5.2</a></li>
+</ul>
+</li>
 </ul>
 
 

@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -383,7 +383,7 @@
 
 
 <h1 id="v-pid-rulebook">V - PID rulebook</h1>
-<p>Version 1.0, updated 18 March 2025</p>
+<p>Version 0.2, updated 4 March 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410">GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -392,10 +392,10 @@ Group regarding Topic V: PID rulebook</p>
 <h3 id="12-related-risks-in-the-risk-register">1.2 Related risks in the Risk Register</h3>
 <p>Risks considered in [Topic_A] are also applicable here</p>
 <h3 id="13-key-words">1.3 Key words</h3>
-<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+<p>This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in RFC 2119, i.e., to indicate requirements, recommendations and
 options specified in this document.</p>
-<p>In addition, 'must' (non-capitalised) is used to indicate an external
+<p>In addition, 'must' (non-capitalized) is used to indicate an external
 constraint, for instance a self-evident necessity or a requirement that is
 mandated by an external document. The word 'can' indicates a capability, whereas
 other words, such as 'will' and 'is' or 'are' are intended as statements of
@@ -415,24 +415,24 @@ as a result of discussing this topic with Member States.</li>
 understood to be a placeholder pending a final technical decision. This is
 because, in its current form, VCDM 1.1 remains an incomplete framework, lacking
 the necessary specifications to fully support the implementation of an EUDI
-Wallet.</p>
-<p>To finalise the list of requirements and related technical specifications
+Wallet.  </p>
+<p>To finalize the list of requirements and related technical specifications
 for implementing the PID based on the current ARF approach—which
-envisions issuing the PID in two formats:</p>
+envisions issuing the PID in two formats:  </p>
 <ul>
-<li><strong>ISO/IEC 18013 series format</strong>, required for <strong>proximity scenarios</strong>.</li>
-<li><strong>JSON-based format</strong>, better suited for <strong>online scenarios</strong>.</li>
+<li><strong>ISO/IEC 18013 series format</strong>, required for <strong>proximity scenarios</strong>.  </li>
+<li><strong>JSON-based format</strong>, better suited for <strong>online scenarios</strong>.  </li>
 </ul>
 <p>It is essential to <strong>fully define</strong> this second format by detailing all relevant
-aspects.</p>
+aspects.  </p>
 <p>A clear and well-defined set of requirements and technical
 specifications for these components is crucial to accurately describe the
 PID and provide implementers with a robust framework for developing
-Wallet solutions.</p>
+Wallet solutions.  </p>
 <p>In the current ARF, the decision leans toward adopting JWT-like Simple
 Attestations, which offer a simpler and widely compatible format, complemented
 by the SD-JWT-VC draft, but still several details are missing. Ongoing
-discussions emphasise the need to balance flexibility, interoperability, and
+discussions emphasize the need to balance flexibility, interoperability, and
 security while avoiding unnecessary complexity.  </p>
 <h2 id="3-attestation-formats">3 Attestation formats</h2>
 <p>The topic of attestation formats and data models has been a long-standing discussion
@@ -442,11 +442,11 @@ among Member State experts, reflecting both its importance and complexity.</p>
 <ol>
 <li>Data Model – Defines how attestation information is structured and
 represented.</li>
-<li>Data Format – Specifies how attestations are serialised and exchanged.</li>
+<li>Data Format – Specifies how attestations are serialized and exchanged.</li>
 <li>Security, Proof Mechanisms, and Signature Formats – Covers how attestation
 authenticity and integrity are ensured, including cryptographic signatures used
 to verify the PID Provider or Attestation Provider.</li>
-<li>Privacy Considerations – Ensures that attestations minimise data exposure,
+<li>Privacy Considerations – Ensures that attestations minimize data exposure,
 allow selective disclosure, and comply with privacy-preserving principles.</li>
 </ol>
 <h3 id="31-several-families-of-attestation-formats">3.1 Several families of attestation formats</h3>
@@ -464,7 +464,7 @@ characteristics in terms of structure, flexibility, and implementation requireme
 <p>They are designed to ensure strict interoperability and security, particularly
 for official and regulated attestations, such as:</p>
 <ul>
-<li>Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardises the
+<li>Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardizes the
 issuance, storage, and verification of digital driving licenses.</li>
 <li>More general mobile identity attestations under ISO/IEC 23220, expanding the
 use cases beyond driving licenses.</li>
@@ -532,7 +532,7 @@ but rather a technical specification that extends JWT to support selective
 disclosure.</li>
 <li>It allows attestation holders to disclose only selected parts of their
 attestations while keeping other data hidden, enhancing privacy and data
-minimisation.</li>
+minimization.</li>
 <li>Since W3C VCDM does not define how attestations should be cryptographically
 secured, W3C introduced VC-JOSE-COSE, which enables the use of SD-JWT within the
 VCDM model.</li>
@@ -543,11 +543,11 @@ selective disclosure.</p>
 <h2 id="4-interoperability-challenges-in-the-eudi-wallet">4 Interoperability Challenges in the EUDI Wallet</h2>
 <p>To ensure interoperability in the EUDI Wallet, it is crucial that we do not
 allow open-ended choices or support multiple, competing attestation models
-beyond a strict minimum. Currently, the EUDI Wallet already supports two
+beyond a strict minimum.  Currently, the EUDI Wallet already supports two
 attestation models:</p>
 <ol>
 <li>ISO/IEC 18013/23220 series  mdoc (mobile document format) – A well-defined,
-standardised model primarily used for official government-issued attestations.</li>
+standardized model primarily used for official government-issued attestations.</li>
 <li>A JSON-based attestation format – Providing flexibility for broader use cases
 while ensuring compatibility with widely used web-based ecosystems.</li>
 </ol>
@@ -563,14 +563,14 @@ maintenance costs.</li>
 </ul>
 <p>Thus, while diversity in attestation formats may seem beneficial in theory, in
 practice, it introduces unnecessary complexity, security risks, and operational
-burdens. A clear and limited selection of attestation models is essential to
+burdens.  A clear and limited selection of attestation models is essential to
 ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.</p>
 <p>For all the above reasons, the requirement [PID_\01] included in the the PID rulebook
-of Annex 3 of the ARF still applies.</p>
+of Annex 3 of the ARF still applies. </p>
 <h2 id="5-privacy-considerations">5 Privacy considerations</h2>
 <p>Privacy is a critical concern, especially regarding how attestation data is
 shared and verified. All the attestation categories mentioned above implement
-selective disclosure using a technique called salted and hashed data. This
+selective disclosure using a technique called salted and hashed data.  This
 approach conceals specific attributes by hashing their values, allowing the user
 to select which attributes to disclose when presenting their attestations or
 attestations.</p>
@@ -618,7 +618,7 @@ critical.</p>
 categories mentioned above, and ongoing developments are actively working
 to implement ZKP support across different models.</p>
 <p>A particularly important effort focuses on developing ZKP mechanisms using
-cryptographic algorithms that are widely recognised and standardised by by NIST
+cryptographic algorithms that are widely recognized and standardized by by NIST
 and SOG-IS.</p>
 <p>Specifically, there is growing interest in leveraging ECDSA-based ZKPs, as ECDSA
 is already supported by secure hardware such as Hardware Security Modules (HSMs)
@@ -651,17 +651,9 @@ the following:</p>
 <h3 id="61-high-level-requirements-to-be-added">6.1 High-Level Requirements to be added</h3>
 <p>The following High-Level Requirements will be added in Annex 3 of the ARF</p>
 <h4 id="requirement-1">REQUIREMENT 1</h4>
-<p>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs,
-where the vct claim will be a URN. A catalog linked in the PID rulebook will associate this URN with SD-JWT VC type metadata
-which will include the same information as the PID Rulebook.</p>
+<p>The Schema Provider of the PID rulebook MAY provide PID metadata in a machine readable
+format as specified in [SD-JWT VC]</p>
 <h3 id="62-high-level-requirements-to-be-changed">6.2 High-Level Requirements to be changed</h3>
-<p>The following requirement is modified (changes in bold)</p>
-<p><strong>Req_06b</strong>For [SD-JWT VC]-compliant attestations, the Schema Provider for the Attestation
-Rulebook SHALL ensure that each claim name is either included in the IANA registry for
-JWT claims, or is Public Name as defined in RFC 7519, <strong>or is a Private name specific
-to the attestation type, which is defined by the vct claim</strong>. Note: [SD-JWT VC] does not
-discuss how to avoid conflicting claim names. Since SD-JWTs are a special kind of JWTs,
-the methods specified in RFC 7519 are applicable.</p>
 <h3 id="63-descriptions-to-be-added-to-the-arf-main-document">6.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="7-references">7 References</h2>
 <table>
