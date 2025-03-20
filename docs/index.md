@@ -14,7 +14,7 @@ addresses shortcomings in the eIDAS Regulation by improving the effectiveness of
 and extending its benefits to the private sector. Member States will offer
 citizens and businesses digital wallets that will be able to link various
 aspects of their national digital identities. These may be provided by public
-authorities or the private sector, if they are recognized by the Member States.
+authorities or the private sector, if they are recognised by the Member States.
 
 The EU Digital Identity Wallet will be:
 
@@ -99,7 +99,7 @@ high-level requirements.
 of specifications that will be developed to support the implementation of the
 European Digital Identity Wallet.
 * "[Discussion Topics](./discussion-topics)" the list of discussion
-topics that are open for public consultation. The topics are organized into
+topics that are open for public consultation. The topics are organised into
 three iterations, each focusing on a specific set of subjects to be included in
 a major document release.
 

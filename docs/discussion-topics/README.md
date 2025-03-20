@@ -3,7 +3,7 @@
 ## Introduction
 
 The Architecture and Reference Framework (ARF) is currently in development. To
-finalize it, the Commission, in collaboration with the European Digital Identity
+finalise it, the Commission, in collaboration with the European Digital Identity
 Cooperation Group (EDICG), has identified 24 open items,referred to as
 topics, that must be addressed and discussed by the end of 2025. The ARF roadmap
 project outlines these topics and provides a structured timeline for their
@@ -15,12 +15,12 @@ The Architecture and Reference Framework (ARF) defines high-level requirements
 for the European Digital Identity (EUDI) Wallet, serving as the foundation for
 developing the technical specifications, standards, and procedures referenced by
 the European Commission in the implementing acts of the European Digital Identity
-Regulation. These elements ensure a consistent and standardized implementation
+Regulation. These elements ensure a consistent and standardised implementation
 of the EUDI Wallet ecosystem.
 
 ## Process
 
-The process of defining high-level requirements consists of five steps:  
+The process of defining high-level requirements consists of five steps:
 
 1. A discussion paper on the topic is published on
 [GitHub](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/tree/main/docs/discussion-topics)
@@ -40,7 +40,7 @@ discussions can be tracked on the [ARF Roadmap](https://github.com/orgs/eu-digit
 
 ## Topics
 
-Topics are organized into three iterations, each focusing on a specific set of
+Topics are organised into three iterations, each focusing on a specific set of
 subjects to be included in a major document release. Below is the list of topics
 with links to their corresponding discussion papers. The requirements from each
 discussion paper will be consolidated and integrated into the major release at
@@ -52,7 +52,7 @@ process for the ARF.
 Iteration in progress from 27 November 2024 to 02 April 2025 covering the
 following topics:
 
-| Topic | Title |  |
+| Topic | Title | |
 |-------|-------|--|
 | A | [Privacy risks and mitigation](a-privacy-risks-and-mitigations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/327)|
 | B | [Re-issuance and batch issuance of PIDs and Attestations](b-re-issuance-and-batch-issuance-of-pids-and-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/332)|
@@ -67,7 +67,7 @@ following topics:
 
 Iteration is planned from 12 March 2025 to 02 July 2025 covering the following topics:
 
-| Topic | Title |  |
+| Topic | Title | |
 |-------|-------|--|
 | H | [Transaction logs kept by the wallet](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/338) |
 | I | [Natural person representing another natural person](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/339) |
@@ -84,7 +84,7 @@ Iteration is planned from 12 March 2025 to 02 July 2025 covering the following t
 
 Iteration is planned from 03 September 2025 to 26 November 2025 covering the following topics:
 
-| Topic | Title |  |
+| Topic | Title | |
 |-------|-------|--|
 | P | [Secure Cryptographic Interface between the Wallet Instance and the WSCA](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/346) |
 | Q | [Interface between the User and the Wallet Instance](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/347) |
