@@ -419,15 +419,14 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <li>Updated discussions on revocation and cryptographic binding</li>
 <li>Changes to HLRs</li>
 </ul>
-<h2 id="2-legal-requirements-for-the-wallet-unit-attestation">2 Legal Requirements for the Wallet Unit Attestation</h2>
 <p>Multiple legal texts impose direct requirements on the Wallet Unit Attestation, and impose requirements that are solved by using Wallet Unit Attestations: [CIR 2024/2977], [CIR 2024/2979], [CIR 2024/2982], and the [European Digital Identity Regulation]. This section recaps the respective legal requirements from these sources.</p>
-<h3 id="21-european-digital-identity-regulation-about-the-wallet-unit-attestation">2.1  [European Digital Identity Regulation] about the Wallet Unit Attestation</h3>
+<h3 id="21-european-digital-identity-regulation-about-the-wallet-unit-attestation">2.1 [European Digital Identity Regulation] about the Wallet Unit Attestation</h3>
 <p>The [European Digital Identity Regulation] does not directly address the need for Wallet Unit Attestations. Rather, it requires that it should be possible to verify the authenticity and validity of a Wallet Unit.</p>
 <p>Below are the actual excerpts from the Regulation, including the recitals and the Articles that establish these requirements.</p>
 <p><strong>Recital (34)</strong></p>
 <p><em>The use of European Digital Identity Wallets as well as the discontinuation of their use should be the exclusive right and choice of users. Member States should develop simple and secure procedures for the users to request immediate revocation of validity of European Digital Identity Wallets, including in the case of loss or theft. Upon the death of the user or the cessation of activity by a legal person, a mechanism should be established to enable the authority responsible for settling the succession of the natural person or assets of the legal person to request the immediate revocation of European Digital Identity Wallets.</em></p>
 <p><strong>Article 5a European Digital Identity Wallets</strong></p>
-<p><em>... 4.  European Digital Identity Wallets shall, in particular:\
+<p><em>... 4. European Digital Identity Wallets shall, in particular:\
 ...\
 (a) support common protocols and interfaces:\
 ...\
@@ -545,7 +544,7 @@ providers shall ensure that the following requirements are complied with:\
 <li>During issuance, PID Providers and Attestation Providers must be able to ensure their PIDs and attestations are cryptographically bound to the Wallet Unit.</li>
 <li>The WUA must consider the privacy of the User, i.e., techniques from Topic A should be used.</li>
 <li>Relying Parties on the one hand and PID Provider and Attestation Providers on the other hand require different information from the WUA.</li>
-<li>The Wallet Unit must handle presentation of the WUA automatically, without the involvement of the User.  </li>
+<li>The Wallet Unit must handle presentation of the WUA automatically, without the involvement of the User. </li>
 <li>The WUA must provide PID Providers and Attestation Providers assurance, that the private PID or attestation key is bound to the same WSCD as the WUA private key.</li>
 </ol>
 <p>Based on these functional requirements, the following requirements with regard to the WUA itself can be derived:</p>
@@ -556,13 +555,13 @@ providers shall ensure that the following requirements are complied with:\
 <li>The WUA must support both long and short validity terms.</li>
 </ol>
 <h3 id="31-use-cases">3.1 Use cases</h3>
-<p>The functional requirements described above can be summarised in two use cases related to WUA:</p>
+<p>The functional requirements described above can be summarised in two use cases related to the WUA:</p>
 <ul>
 <li>Use case 1 - Authenticity of the Wallet Unit: Many different entities in the EUDI Wallet ecosystem will need to verify the authenticity of a Wallet Unit, including its revocation status. These entities include PID Providers, Attestation Providers, and Relying Parties and other Wallet Units (for Wallet-to-Wallet interaction). This use case can be supported by basic meta information in the WUA, i.e. a revocation handle and a signature from the Wallet Provider.</li>
 <li>Use case 2 - Capabilities and keys of the Wallet Unit: Certain entities in the EUDI Wallet ecosystem (i.e. PID Providers and Attestation Providers) will need additional information on top of what is provided by use case 1. This information includes descriptions of the capabilities of the individual Wallet Unit, i.e. information on the WSCA/WSCD used.</li>
 </ul>
 <p>Privacy is an issue in relation to WUA and entities should be restricted to Use case 1, unless they have an actual need for Use case 2. In practice, this means Relying Parties and other Wallet Units must not be allowed access to the information in the WUA suitable for Use case 2. Furthermore, the WUA should be treated as any other attestation with regard to privacy, i.e., the discussions and solutions of [Topic A - Privacy Risks and Mitigations] also apply for WUA.</p>
-<p>Use case 2 can be achieved by implementing the WUA as a revocable signature on a public key, issued by the Wallet Provider. Additionally the WUA should contain relevant information on the Wallet Unit capabilities, including the properties of the WSCD/WSCA. These attributes must also be signed by the Wallet Provider and may be used to provide additional trust in the Wallet Unit. The signed attributes and public key (i.e. the WUA), may be seen as an attestation and can utilise other attestation specific requirements from the  ARF if beneficial.</p>
+<p>Use case 2 can be achieved by implementing the WUA as a revocable signature on a public key, issued by the Wallet Provider. Additionally the WUA should contain relevant information on the Wallet Unit capabilities, including the properties of the WSCD/WSCA. These attributes must also be signed by the Wallet Provider and may be used to provide additional trust in the Wallet Unit. The signed attributes and public key (i.e. the WUA), may be seen as an attestation and can utilise other attestation specific requirements from the ARF if beneficial.</p>
 <p>Use case 1 can be achieved similarly to Use case 2, except the WUA would not contain additional information/attributes on the Wallet Unit capabilities.</p>
 <p>The WUA should use a format the entities of the EUDI Wallet ecosystem would expect, i.e. be compatible with the interfaces defined in the ARF.</p>
 <p>This paper identifies two requirements in relation to WUA that warrant further discussion: cryptographic binding and revocation. These are discussed in the two next subsections.</p>
@@ -575,7 +574,7 @@ providers shall ensure that the following requirements are complied with:\
 <p><em>4. Where providers of person identification data revoke person identification data issued to wallet units, they shall do so in each of the following circumstances:\
 ...\
 (b) where the wallet unit attestation to which the person identification data was issued to has been revoked;</em></p>
-<p>As the WUA is used to revoke Wallet Units, it plays an important role in relation to PID providers. The Wallet Provider is responsibly for providing the revocation functionality; however, how it is to be used is described in Topic 38, Wallet Unit Revocation and Topic 7, Attestation Revocation and revocation checking. In order to fulfill the requirement in [CIR 2024/2977], the PID providers must keep track of all Wallet Units (i.e. all WUAs they received from Wallet Units during PID issuance) to which PID has been issued and periodically (e.g. daily) monitor this list to check if a WUA has been revoked. For this to function, several properties are required:</p>
+<p>As the WUA is used to revoke Wallet Units, it plays an important role in relation to PID providers. The Wallet Provider is responsibly for providing the revocation functionality; however, how it is to be used is described in Topic 38, Wallet Unit Revocation and Topic 7, Attestation Revocation and revocation checking. In order to fulfil the requirement in [CIR 2024/2977], the PID providers must keep track of all Wallet Units (i.e. all WUAs they received from Wallet Units during PID issuance) to which PID has been issued and periodically (e.g. daily) monitor this list to check if a WUA has been revoked. For this to function, several properties are required:</p>
 <ul>
 <li>The validity period of the WUA used in connection with issuance, should be long, preferably as long as the expected lifetime of the Wallet Unit. In practice this may be hard to achieve, as the Wallet Provider would need to guess the expected lifetime of the Wallet Units.</li>
 <li>To mitigate the privacy risk of the long validity period of the WUA, the WUA should be a once-only attestation as specified in [Topic A].</li>
@@ -897,7 +896,7 @@ Effect on various risks</td>
 <p>In addition, some of the current HLRs in Topic 9 are general in nature and not specific to the WUA. This paper proposes that these HLRs are moved to another topic, e.g. Topic 40 on Wallet Unit Activation and Wallet Unit Management.</p>
 <p>The following tables contain the HLRs we propose to keep as part of Topic 9 (WUA), the HLRs we propose to move to other topics in Annex 2 of the ARF, and the HLRs we propose to remove entirely. In view of the large number of changes, this paper proposes to re-number all HLRs afterwards. Note that this is different than the practice for other Topics, where requirements are not renumbered.</p>
 <p>In addition, discussions of the WUA in the main part of the ARF will be updated accordingly.</p>
-<p>Note that the new HLRs for WUAs explicitly aim to be technology neutral and postpone the technical specification about how this functionality is to be implemented to a technical specification that will be developed by the Commission. In the following, we define WUA as "data capable of achieving use case 1 and 2 from Section 3.1". In particular, the HLRs do not impose any restrictions on the format(s) used, whether the functionality will be implemented as one or more distinct attestations, as verifiable metadata transferred during the protocols for issuance and presentations or something else. These restrictions will  be defined in the STS mentioned in WUA_08.</p>
+<p>Note that the new HLRs for WUAs explicitly aim to be technology neutral and postpone the technical specification about how this functionality is to be implemented to a technical specification that will be developed by the Commission. In the following, we define WUA as "data capable of achieving use case 1 and 2 from Section 3.1". In particular, the HLRs do not impose any restrictions on the format(s) used, whether the functionality will be implemented as one or more distinct attestations, as verifiable metadata transferred during the protocols for issuance and presentations or something else. These restrictions will be defined in the STS mentioned in WUA_08.</p>
 <h3 id="51-new-hlrs-for-wuas">5.1 New HLRs for WUAs</h3>
 <h3 id="hlrs-related-to-use-cases">HLRs related to Use Cases</h3>
 <table>
@@ -1032,7 +1031,7 @@ Effect on various risks</td>
 <tbody>
 <tr>
 <td>WUA_08</td>
-<td>The Commission SHALL create or reference technical specification for the WUA compliant with the HLRs for this topic. ~~The Commission SHALL take measures to ensure that the contents, format and encoding of Wallet Unit Attestations is specified in a technical specification. This technical specification SHALL be a Rulebook complying with all requirements in [Topic 12].~~ ~~Each WUA SHALL contain attributes describing the Wallet Unit and a single certified WSCA included in that Wallet Unit, in such a way that a PID Provider or Attestation Provider processing the WUA is able to take a well-grounded decision on whether to issue an attestation to that Wallet Unit. In addition, to comply with requirement WURevocation_11, the WUA SHALL contain a unique identifier of the Wallet Unit.  <em>Note: In general, a PID Provider or Attestation Provider will also need information about the User. Such information is not contained in the WUA.</em>~~</td>
+<td>The Commission SHALL create or reference technical specification for the WUA compliant with the HLRs for this topic. ~~The Commission SHALL take measures to ensure that the contents, format and encoding of Wallet Unit Attestations is specified in a technical specification. This technical specification SHALL be a Rulebook complying with all requirements in [Topic 12].~~ ~~Each WUA SHALL contain attributes describing the Wallet Unit and a single certified WSCA included in that Wallet Unit, in such a way that a PID Provider or Attestation Provider processing the WUA is able to take a well-grounded decision on whether to issue an attestation to that Wallet Unit. In addition, to comply with requirement WURevocation_11, the WUA SHALL contain a unique identifier of the Wallet Unit. <em>Note: In general, a PID Provider or Attestation Provider will also need information about the User. Such information is not contained in the WUA.</em>~~</td>
 <td>Changed.</td>
 </tr>
 <tr>
@@ -1222,7 +1221,7 @@ Effect on various risks</td>
 <tbody>
 <tr>
 <td>[WebAuthn]</td>
-<td>Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/</td>
+<td>Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, <a href="https://www.w3.org/TR/webauthn-2/">https://www.w3.org/TR/webauthn-2/</a></td>
 </tr>
 <tr>
 <td>[ARF_DevPlan]</td>

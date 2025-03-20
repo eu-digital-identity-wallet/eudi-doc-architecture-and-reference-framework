@@ -410,15 +410,15 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p>Chapter 5 refers to other topics related to Relying Party registration.</p>
 </li>
 <li>
-<p>Chapter 6 presents the additions and changes that will be made to the ARF main document as a result of discussions. </p>
+<p>Chapter 6 presents the additions and changes that will be made to the ARF main document as a result of discussions.</p>
 </li>
 </ul>
 <h2 id="2-legal-requirements-for-relying-party-registration">2 Legal Requirements for Relying Party registration</h2>
 <p>Two legal texts impose direct requirements on the Relying Party registration: The evolving <a href="https://tinyurl.com/IA-5b-draft">Draft of the CIR for RP-Registration</a> and the [European Digital Identity Regulation]. This section recaps the respective legal requirements from these sources.</p>
-<h3 id="21-european-digital-identity-regulation-about-relying-party-registration">2.1  [European Digital Identity Regulation] about Relying Party registration</h3>
+<h3 id="21-european-digital-identity-regulation-about-relying-party-registration">2.1 [European Digital Identity Regulation] about Relying Party registration</h3>
 <p>The [European Digital Identity Regulation] requires the Relying Parties to be registered. It specifies the following requirements related to Relying Party registration:</p>
 <ol>
-<li>Setting up national registers of registered wallet-relying parties in each Member State </li>
+<li>Setting up national registers of registered wallet-relying parties in each Member State</li>
 <li>Registering Relying Party needs to provide at minimum, a definite set of information necessary to authenticate to EUDI Wallets including the intended use and indication of data requested for this use from the user</li>
 <li>Relying Parties shall only request data that is registered for the intended use</li>
 <li>Member States shall make the Relying Party register information available to the public in a manner that is both human and machine-readable</li>
@@ -428,10 +428,10 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </ol>
 <p>Below are the actual excerpts from the Regulation, including the recitals and the Articles that establish these requirements.</p>
 <p><strong>Recital (17)</strong></p>
-<p><em>For the purposes of registration, relying parties should provide the information necessary to allow for their electronic identification and authentication towards European Digital Identity Wallets. When declaring their intended use of the European Digital Identity Wallet, relying parties should provide information regarding the data that they will request, if any, in order to provide their services and the reason for the request. 
-Relying party registration facilitates the verification by Member States with regard to the lawfulness of the activities of the relying parties in accordance with Union law. The obligation to register provided for in this Regulation should be without prejudice to obligations laid down in other Union or national law, such as the information to be provided to the data subjects pursuant to the Regulation (EU) 2016/679. Relying parties should comply with the safeguards offered by Articles 35 and 36 of that Regulation, in particular by performing data protection impact assessments and by consulting the competent data protection authorities prior to data processing where data protection impact assessments indicate that the processing would result in a high risk. Such safeguards should support the lawful processing of personal data by relying parties, in particular with regard to special categories of data, such as health data. The registration of relying parties is intended to enhance transparency and trust in the use of European Digital Identity Wallets. 
-Registration should be cost-effective and proportionate to the related risks in order to ensure uptake by service providers. In that context, registration should provide for the use of automated procedures, including the reliance on and the use of existing registers by Member States, and should not entail a pre-authorisation process. 
-The registration process should enable a variety of use-cases that can differ in terms of mode of operation, whether online or in offline mode, or in terms of the requirement to authenticate devices for the purposes of interfacing with the European Digital Identity Wallet. 
+<p><em>For the purposes of registration, relying parties should provide the information necessary to allow for their electronic identification and authentication towards European Digital Identity Wallets. When declaring their intended use of the European Digital Identity Wallet, relying parties should provide information regarding the data that they will request, if any, in order to provide their services and the reason for the request.
+Relying party registration facilitates the verification by Member States with regard to the lawfulness of the activities of the relying parties in accordance with Union law. The obligation to register provided for in this Regulation should be without prejudice to obligations laid down in other Union or national law, such as the information to be provided to the data subjects pursuant to the Regulation (EU) 2016/679. Relying parties should comply with the safeguards offered by Articles 35 and 36 of that Regulation, in particular by performing data protection impact assessments and by consulting the competent data protection authorities prior to data processing where data protection impact assessments indicate that the processing would result in a high risk. Such safeguards should support the lawful processing of personal data by relying parties, in particular with regard to special categories of data, such as health data. The registration of relying parties is intended to enhance transparency and trust in the use of European Digital Identity Wallets.
+Registration should be cost-effective and proportionate to the related risks in order to ensure uptake by service providers. In that context, registration should provide for the use of automated procedures, including the reliance on and the use of existing registers by Member States, and should not entail a pre-authorisation process.
+The registration process should enable a variety of use-cases that can differ in terms of mode of operation, whether online or in offline mode, or in terms of the requirement to authenticate devices for the purposes of interfacing with the European Digital Identity Wallet.
 Registration should apply exclusively to relying parties providing services by means of digital interaction.</em></p>
 <p><strong>Recital (18)</strong></p>
 <p><em>Safeguarding Union citizens and residents in the Union against the unauthorised or fraudulent use of European Digital Identity Wallets is of high importance for ensuring trust in and for the wide uptake of European Digital Identity Wallets. Users should be provided with effective protection against such misuse. In particular, when facts that form the basis for fraudulent or otherwise illegal use of a European Digital Identity Wallet are established by a national judicial authority in the context of another procedure, supervisory bodies that are responsible for European Digital Identity Wallet issuers should, upon notification, take the necessary measures to ensure that the registration of the relying party and the inclusion of relying parties in the authentication mechanism are withdrawn or suspended until the notifying authority confirms that the irregularities identified have been remedied.</em></p>
@@ -479,86 +479,116 @@ Registration should apply exclusively to relying parties providing services by m
 <h3 id="22-cir-draft-on-relying-party-registration">2.2 CIR Draft on Relying Party registration</h3>
 <p>The current version of the [Draft of the CIR for RP-Registration] specifies the following requirements related to Relying Party registration:</p>
 <ol>
-<li>The roles: <ul>
+<li>The roles:</li>
+</ol>
+<ul>
 <li>wallet-relying party - a type of the relying party; includes: service providers, PID providers, attestation providers, trust service providers and intermediaries;</li>
 <li>registrar</li>
 </ul>
-</li>
+<ol>
 <li>Setting up at each Member State one or more national registers of registered wallet-relying parties.</li>
 <li>Make this information available to the public in a manner that is both human and machine-readable - via an API and website. The information made available shall be signed or sealed.</li>
 <li>Member States should set out and publish one or more registration policies applicable to national registers set up in their territory</li>
 <li>Wallet-relying parties should provide the necessary information (during registration process), including their entitlement(s), for inclusion in the national registers</li>
-<li>Registrars should set up online and, where applicable, automated registration processes and  shall verify registration infromation provided by the wallet-relying party in an automated manner where possible.</li>
-<li>The registrant receives:
-   + one ‘Wallet-Relying Party Access Certificate’, and
-   + one or more 'Wallet-Relying Party Registration Certificates' (one per intended use)</li>
-<li>The Wallet-Relying Party Registration Certificate contains (i.a.) intended use description and the list of entitlements, while the Wallet-Relying Party Access Certificate does NOT carry such information. </li>
+<li>Registrars should set up online and, where applicable, automated registration processes and shall verify registration information provided by the wallet-relying party in an automated manner where possible.</li>
+<li>The registrant receives:</li>
+</ol>
+<ul>
+<li>one ‘Wallet-Relying Party Access Certificate’, and</li>
+<li>one or more 'Wallet-Relying Party Registration Certificates' (one per intended use)</li>
+</ul>
+<ol start="7">
+<li>The Wallet-Relying Party Registration Certificate contains (i.a.) intended use description and the list of entitlements, while the Wallet-Relying Party Access Certificate does NOT carry such information.</li>
 <li>Wallets authenticate wallet-relying parties with use of the Wallet-Relying Party Access Certificates.</li>
 <li>In a transaction, a wallet solution will read out the intended use from the Wallet-Relying Party Registration Certificate and will inform the wallet user whenever the wallet-relying party is asking for more information than what they have registered as intended use and the user will have possibility to reject the transaction (as well as to make a claim or report the case to a competent authority).</li>
 <li>The registrar may suspend or cancel the registration with or without prior notice to the affected wallet-relying party based on proportionality assessment, taking into account the impact on the fundamental rights privacy, security and confidentiality of the users in the eco-system, as well as the severity of the disruption caused by the suspension or cancellation and the associated costs, both for the wallet-relying party and the user.</li>
 </ol>
-<p>The list of information to be provided by a wallet-relying party during registration (as per Annex I):
-+ official name of the wallet-relying party 
-+ user-friendly name of the wallet-relying party
-+ one or more official identifiers of the wallet-relying party (EORI, LEI, VAT number...)
-+ physical address and member state if not present in official identifier
-+ URL belonging to the wallet-relying party where applicable
-+ Detailed contact information
-+ description of the type of services provided
-+ For each intended use, a list of the data, including attestations and attributes, that the relying party intends to request
-+ description of intended use of the data
-+ indication whether the wallet-relying party is a public sector body
-+ the entitlement(s) of the wallet-relying party (Service provider, QEAA provider, intermediary…) </p>
-<p>The list of possible entitlements (as per Annex I): 
-+ Service_Provider 
-+ QEAA_Provider
-+ Non_Q_EAA_Provider
-+ PUB_EAA_Provider
-+ PID_Provider
-+ QCert_for_ESeal_Provider
-+ QCert_for_ESig_Provider
-+ rQSigCDs_Provider
-+ rQSealCDs_Provider
-+ ESig_ESeal_Creation_Provider
-+ Intermediary </p>
-<p>Requirements for electronic signatures or seals applied to the information made available on registered wallet-relying parties (as per Annex II):
-+ JavaScript Object Notation (JSON) and electronic signatures and electronic seals referred to in Article 3(4) shall be performed JavaScript Object Notation (JSON) in accordance with IETF 7515 for JSON Web Signatures </p>
-<p>Requirements on the API for the register (as per Annex II):
-+ a REST API compliant with OpenAPI version 3, supporting JSON as a format
-+ allow any requestor, without prior authentication, to make (search/read/list) requests to the register, for information about a wallet-relying party, allowing for partial matches
-+ be published and documented through OpenAPI version 3 compatible technical specification
-+ provide security functions in order to ensure the availability and integrity of the API and the information available through it 
-+ shall be secure by default and by design</p>
-<p>Requirements for wallet-relying party access certificates (as per Annex IV):
-+ issued under certificate policy and certificate practice statement compliant with at least the NCP requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)
-+ certificate to include 
-  - the location (entire certification path) where the certificate supporting the advanced electronic signature or advanced electronic seal on that certificate is available 
-  - a machine processable reference to the applicable certificate policy and certificate practice statement
-  - the information referred to in Annex I, points 1, 2, 3, 5 and 6 (a-b-c) </p>
-<p>Requirements for wallet-relying party registration certificates (as per ANNEX V):
-+ issued under certificate policy and certificate practice statement compliant with at least the NCP requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)
-+ certificate to include
-  - the location where the certificate supporting the advanced electronic signature or advanced electronic seal on that certificate is available, for the entire certification path to be built up to the expected trust anchor in the public key infrastructure hierarchy used by the provider 
-  - machine processable reference to the applicable certificate policy and certificate practice statement 
-  - registration information referred to in Annex I (points 1, 2, 3, 5 and 7, 8, 9, 10, 11); 
-  - declaration on legal requirement to identify natural persons referred to in Article 8 paragraph 7 
-  - common access policy as referred to in Article 8 paragraph 3
-+ attributes in the data exchange format JavaScript Object Notation (JSON) </p>
+<p>The list of information to be provided by a wallet-relying party during registration (as per Annex I):</p>
+<ul>
+<li>official name of the wallet-relying party</li>
+<li>user-friendly name of the wallet-relying party</li>
+<li>one or more official identifiers of the wallet-relying party (EORI, LEI, VAT number...)</li>
+<li>physical address and member state if not present in official identifier</li>
+<li>URL belonging to the wallet-relying party where applicable</li>
+<li>Detailed contact information</li>
+<li>description of the type of services provided</li>
+<li>For each intended use, a list of the data, including attestations and attributes, that the relying party intends to request</li>
+<li>description of intended use of the data</li>
+<li>indication whether the wallet-relying party is a public sector body</li>
+<li>the entitlement(s) of the wallet-relying party (Service provider, QEAA provider, intermediary…)</li>
+</ul>
+<p>The list of possible entitlements (as per Annex I):</p>
+<ul>
+<li>Service_Provider</li>
+<li>QEAA_Provider</li>
+<li>Non_Q_EAA_Provider</li>
+<li>PUB_EAA_Provider</li>
+<li>PID_Provider</li>
+<li>QCert_for_ESeal_Provider</li>
+<li>QCert_for_ESig_Provider</li>
+<li>rQSigCDs_Provider</li>
+<li>rQSealCDs_Provider</li>
+<li>ESig_ESeal_Creation_Provider</li>
+<li>Intermediary</li>
+</ul>
+<p>Requirements for electronic signatures or seals applied to the information made available on registered wallet-relying parties (as per Annex II):</p>
+<ul>
+<li>JavaScript Object Notation (JSON) and electronic signatures and electronic seals referred to in Article 3(4) shall be performed JavaScript Object Notation (JSON) in accordance with IETF 7515 for JSON Web Signatures</li>
+</ul>
+<p>Requirements on the API for the register (as per Annex II):</p>
+<ul>
+<li>a REST API compliant with OpenAPI version 3, supporting JSON as a format</li>
+<li>allow any requestor, without prior authentication, to make (search/read/list) requests to the register, for information about a wallet-relying party, allowing for partial matches</li>
+<li>be published and documented through OpenAPI version 3 compatible technical specification</li>
+<li>provide security functions in order to ensure the availability and integrity of the API and the information available through it</li>
+<li>shall be secure by default and by design</li>
+</ul>
+<p>Requirements for wallet-relying party access certificates (as per Annex IV):</p>
+<ul>
+<li>issued under certificate policy and certificate practice statement compliant with at least the NCP requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)</li>
+<li>
+<p>certificate to include</p>
+</li>
+<li>
+<p>the location (entire certification path) where the certificate supporting the advanced electronic signature or advanced electronic seal on that certificate is available</p>
+</li>
+<li>a machine processable reference to the applicable certificate policy and certificate practice statement</li>
+<li>the information referred to in Annex I, points 1, 2, 3, 5 and 6 (a-b-c)</li>
+</ul>
+<p>Requirements for wallet-relying party registration certificates (as per ANNEX V):</p>
+<ul>
+<li>issued under certificate policy and certificate practice statement compliant with at least the NCP requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)</li>
+<li>
+<p>certificate to include</p>
+</li>
+<li>
+<p>the location where the certificate supporting the advanced electronic signature or advanced electronic seal on that certificate is available, for the entire certification path to be built up to the expected trust anchor in the public key infrastructure hierarchy used by the provider</p>
+</li>
+<li>machine processable reference to the applicable certificate policy and certificate practice statement</li>
+<li>registration information referred to in Annex I (points 1, 2, 3, 5 and 7, 8, 9, 10, 11);</li>
+<li>declaration on legal requirement to identify natural persons referred to in Article 8 paragraph 7</li>
+<li>
+<p>common access policy as referred to in Article 8 paragraph 3</p>
+</li>
+<li>
+<p>attributes in the data exchange format JavaScript Object Notation (JSON)</p>
+</li>
+</ul>
 <p>Below are selected excerpts from the evolving [Draft of the CIR for RP-Registration], including the recitals and the Articles that establish these requirements.</p>
 <p><strong>Recital (1)</strong></p>
 <p><em>Member States should establish and maintain registers of registered wallet-relying parties established in their territory.</em></p>
-<p><strong>Recital (4)</strong> </p>
-<p><em>In order to facilitate the consultation of the information on registered wallet-relying parties across the Union, Member States should make this information available to the public in a manner that is both human and machine-readable.</em> </p>
-<p><strong>Recital (6)</strong> </p>
+<p><strong>Recital (4)</strong></p>
+<p><em>In order to facilitate the consultation of the information on registered wallet-relying parties across the Union, Member States should make this information available to the public in a manner that is both human and machine-readable.</em></p>
+<p><strong>Recital (6)</strong></p>
 <p><em>As registration policies are a useful tool for providing clear guidance to the wallet-relying parties on the registration process, Member States should set out and publish the registration policies applicable to registers set up in their territory.</em></p>
 <p><strong>Recital (7)</strong></p>
-<p><em>[...] another objective of the relying party registration is to facilitate the verification by Member States of the lawfulness of the activities of the wallet-relying parties. Therefore, wallet-relying parties should provide, for inclusion in the registers the necessary information, including their entitlement(s).</em>  </p>
+<p><em>[...] another objective of the relying party registration is to facilitate the verification by Member States of the lawfulness of the activities of the wallet-relying parties. Therefore, wallet-relying parties should provide, for inclusion in the registers the necessary information, including their entitlement(s).</em></p>
 <p><strong>Recital (8)</strong></p>
 <p><em>In order to ensure that the registration process is cost-effective and proportionate-to risk, and to strike an appropriate balance between meeting a high level of transparency and safety on the one hand and ensuring uptake by service providers on the other hand, registrars should set up online and, where applicable, automated registration processes for wallet-relying parties that are easy to use and they should verify applications for registration without undue delay.</em></p>
 <p><strong>Recital (10)</strong></p>
 <p><em>[...] wallet-relying parties should use wallet-relying party access certificates when they identify themselves to wallet units. To guarantee interoperability of those certificates across all wallets provided within the Union, wallet-relying parties access certificates should adhere to common requirements set-out in the Annex to this Regulation</em></p>
 <p><strong>Recital (11)</strong></p>
-<p><em>[...] wallet-relying parties are not to request users to provide any data other than those indicated for the intended use of wallets during the registration process. Wallet users should be enabled to verify the registration data of wallet-relying parties. To enable wallet users to verify that the attributes being requested by the wallet-relying party are within the scope of their registered attributes, Member States may require the issuance of wallet-relying party registration certificates to registered wallet-relying parties. To ensure the interoperability of the wallet-relying party registration certificates, Member States should ensure that those certificates meet the requirements and standards set out in the Annex of this Implementing Regulation.</em> </p>
+<p><em>[...] wallet-relying parties are not to request users to provide any data other than those indicated for the intended use of wallets during the registration process. Wallet users should be enabled to verify the registration data of wallet-relying parties. To enable wallet users to verify that the attributes being requested by the wallet-relying party are within the scope of their registered attributes, Member States may require the issuance of wallet-relying party registration certificates to registered wallet-relying parties. To ensure the interoperability of the wallet-relying party registration certificates, Member States should ensure that those certificates meet the requirements and standards set out in the Annex of this Implementing Regulation.</em></p>
 <p><strong>Recital (12)</strong>
 <em>[...] registrars should be able to suspend or cancel the registration of any wallet-relying party without prior notice where the registrars have reason to believe that the registration contains information which is not accurate, not up to date or misleading, the wallet-relying party is not compliant with the registration policy or the wallet-relying party is otherwise acting in breach of Union or national law in a way that relates to their role as a wallet-relying party. In order to safeguard the stability of the wallet ecosystem, the decision to suspend or cancel a registration should be proportionate to the service disruption caused by the suspension or cancellation and the associated cost and inconvenience for the service provider and the user. For the same reason, supervisory bodies are to be enabled to suspend and cancel the registration required pursuant to Article 46a(4), point (f) of Regulation (EU) No 910/2014.</em></p>
 <p><strong>Article 2</strong></p>
@@ -569,40 +599,40 @@ Registration should apply exclusively to relying parties providing services by m
 <p>National registers</p>
 <p><em>2 Member States shall make the information set out in Annex I on registered wallet-relying parties from all national registers publicly available online, both in human readable form and in a form suitable for automated processing</em></p>
 <p><em>3. The information shall be available through a single national application programming interface (‘API’) and through a national website. It shall be electronically signed or sealed by or on behalf of the registrar, in accordance with the requirements set out in Section 1 of Annex II.</em></p>
-<p><strong>Article 4</strong> </p>
-<p>Registration policies </p>
+<p><strong>Article 4</strong></p>
+<p>Registration policies</p>
 <p><em>1. Member States shall lay down and publish one or more national registration policies applicable to national registers.</em></p>
-<p><em>3. The registration policy shall cover at least the following points:</em> </p>
-<p><em>(a) the identification and authentication procedures applicable to wallet-relying parties during the registration process;</em> </p>
-<p><em>(b) the supporting documentation to be provided by the wallet-relying party to establish their identity, business registration, any applicable entitlement(s), and other relevant information that is required under the registration policy;</em> </p>
-<p><em>(c) where applicable, the description of the authentic sources or other official electronic records in the Member State where the register is set up, that can be relied upon to provide accurate data, information or other evidence required as part of the registration process;</em>  </p>
-<p><em>(d) where applicable, the automated means supported to enable wallet-relying parties to register or to update an existing registration;</em> </p>
-<p><em>(e) the means of redress available to wallet-relying parties under the law of the Member State where the register is set up;</em> </p>
-<p><em>(f) the rules and procedures for the verification of the identity of the registered wallet-relying party and of any other relevant information provided by that party.</em> </p>
+<p><em>3. The registration policy shall cover at least the following points:</em></p>
+<p><em>(a) the identification and authentication procedures applicable to wallet-relying parties during the registration process;</em></p>
+<p><em>(b) the supporting documentation to be provided by the wallet-relying party to establish their identity, business registration, any applicable entitlement(s), and other relevant information that is required under the registration policy;</em></p>
+<p><em>(c) where applicable, the description of the authentic sources or other official electronic records in the Member State where the register is set up, that can be relied upon to provide accurate data, information or other evidence required as part of the registration process;</em></p>
+<p><em>(d) where applicable, the automated means supported to enable wallet-relying parties to register or to update an existing registration;</em></p>
+<p><em>(e) the means of redress available to wallet-relying parties under the law of the Member State where the register is set up;</em></p>
+<p><em>(f) the rules and procedures for the verification of the identity of the registered wallet-relying party and of any other relevant information provided by that party.</em></p>
 <p><strong>Article 6</strong></p>
-<p>The registration process  </p>
-<p><em>3. Registrars shall verify, where applicable, in an automated manner:</em> </p>
-<p><em>(a) the accuracy and validity of the information required under Article 5;</em> </p>
-<p><em>(b) where applicable, the power of attorney of a representative of the wallet-relying party in accordance with the laws and procedures of the Member State where the register is set up;</em> </p>
-<p><em>(c) the type of entitlement(s) of the wallet-relying party as set out in </em><em>Annex I.</em>**  </p>
-<p><em>4. The verification of the information referred to in paragraph 3 shall include an authenticity and validity assessment of the provided information against the supporting documentation provided by the wallet-relying parties and against any authentic sources or other official electronic records in the Member State where the register is set up and to which the registrars have access in accordance with national law. The verification of entitlements of wallet-relying parties shall be carried out in accordance with </em><em>Annex III</em><em>.</em>  </p>
+<p>The registration process</p>
+<p><em>3. Registrars shall verify, where applicable, in an automated manner:</em></p>
+<p><em>(a) the accuracy and validity of the information required under Article 5;</em></p>
+<p><em>(b) where applicable, the power of attorney of a representative of the wallet-relying party in accordance with the laws and procedures of the Member State where the register is set up;</em></p>
+<p><em>(c) the type of entitlement(s) of the wallet-relying party as set out in <strong>Annex I.</strong></em></p>
+<p><em>4. The verification of the information referred to in paragraph 3 shall include an authenticity and validity assessment of the provided information against the supporting documentation provided by the wallet-relying parties and against any authentic sources or other official electronic records in the Member State where the register is set up and to which the registrars have access in accordance with national law. The verification of entitlements of wallet-relying parties shall be carried out in accordance with <strong>Annex III</strong>.</em></p>
 <p><em>5. When a wallet-relying party no longer intends to rely upon wallet units for the provision of public or private services under a specific registration, it shall notify the relevant registrar without undue delay and request the cancellation of that registration.</em></p>
-<p><strong>Article 7</strong>  </p>
-<p>Wallet-relying party access certificates  </p>
+<p><strong>Article 7</strong></p>
+<p>Wallet-relying party access certificates</p>
 <p><em>1. Member States shall ensure that providers of wallet-relying party access certificates issue wallet-relying party access certificates to wallet-relying parties registered in accordance with the requirements set out in Article 4 to Article 6 of this Regulation.</em></p>
-<p><em>2. Member States shall set up dedicated certificate policies and certificate practice statements in accordance with the requirements set out in Annex IV. Member States shall ensure that wallet-relying party access certificates meet the requirements set out in </em><em>Annex IV</em><em>.</em>   </p>
-<p><strong>Article 8</strong>  </p>
-<p>Wallet-relying party registration certificates  </p>
+<p><em>2. Member States shall set up dedicated certificate policies and certificate practice statements in accordance with the requirements set out in Annex IV. Member States shall ensure that wallet-relying party access certificates meet the requirements set out in <strong>Annex IV</strong>.</em></p>
+<p><strong>Article 8</strong></p>
+<p>Wallet-relying party registration certificates</p>
 <p><em>1. Member States may require providers of wallet-relying party registration certificates to issue wallet-relying party registration certificates to wallet-relying parties registered in accordance with the requirements set out in Article 4 to Article 6 of this Regulation.</em></p>
-<p><em>2. Where Member States require the provision of wallet-relying party registration certificates, Member States shall ensure that these certificates meet the requirements set out in </em><em>Annex V</em><em>.</em></p>
-<p><strong>Article 9</strong><br />
-Suspension and cancellation </p>
+<p><em>2. Where Member States require the provision of wallet-relying party registration certificates, Member States shall ensure that these certificates meet the requirements set out in <strong>Annex V</strong>.</em></p>
+<p><strong>Article 9</strong>
+Suspension and cancellation</p>
 <p><em>1. Registrars may suspend or cancel a registration of a wallet-relying party where such a suspension or cancellation is requested by a supervisory body pursuant to Article 46a(4), point (f) of Regulation (EU) No 910/2014 or where the registrars have reasons to believe that:</em>
 <em>(a) the registration contains information which is not accurate, not up to date or misleading;</em>
 <em>(b) the wallet-relying party is not compliant with the registration policy;</em>
 <em>(c) the wallet-relying party is requesting more attributes than what they have registered in accordance with Article 5 and Article 6 of this Regulation;</em>
 <em>(d) the wallet-relying party is otherwise acting in breach of Union or law of that Member State in a way that relates to their role as a wallet-relying party;</em></p>
-<p><em>4. When considering the suspension or cancellation in accordance with Article 9 paragraph 2, the registrar shall conduct a proportionality assessment, taking into account the impact on the fundamental rights privacy, security and confidentiality of the users in the eco-system, as well as the severity of the disruption caused by the suspension or cancellation and the associated costs, both for the wallet-relying party and the user. Based on the result of this assessment, the registrar may suspend or cancel the registration with or without prior notice to the affected wallet-relying party.</em> </p>
+<p><em>4. When considering the suspension or cancellation in accordance with Article 9 paragraph 2, the registrar shall conduct a proportionality assessment, taking into account the impact on the fundamental rights privacy, security and confidentiality of the users in the eco-system, as well as the severity of the disruption caused by the suspension or cancellation and the associated costs, both for the wallet-relying party and the user. Based on the result of this assessment, the registrar may suspend or cancel the registration with or without prior notice to the affected wallet-relying party.</em></p>
 <p><strong>ANNEX I</strong></p>
 <p>(summary)</p>
 <p>Information regarding wallet-relying parties</p>
@@ -619,18 +649,20 @@ Suspension and cancellation </p>
 <li>indication whether the wallet-relying party is a public sector body</li>
 <li>The entitlement(s) of the wallet-relying party</li>
 </ul>
-<p>The possible entitlements of the wallet-relying party:
-- Service_Provider
-- QEAA_Provider
-- Non_Q_EAA_Provider
-- PUB_EAA_Provider
-- PID_Provider
-- QCert_for_ESeal_Provider
-- QCert_for_ESig_Provider
-- rQSigCDs_Provider
-- rQSealCDs_Provider
-- ESig_ESeal_Creation_Provider
-- Intermediary</p>
+<p>The possible entitlements of the wallet-relying party:</p>
+<ul>
+<li>Service_Provider</li>
+<li>QEAA_Provider</li>
+<li>Non_Q_EAA_Provider</li>
+<li>PUB_EAA_Provider</li>
+<li>PID_Provider</li>
+<li>QCert_for_ESeal_Provider</li>
+<li>QCert_for_ESig_Provider</li>
+<li>rQSigCDs_Provider</li>
+<li>rQSealCDs_Provider</li>
+<li>ESig_ESeal_Creation_Provider</li>
+<li>Intermediary</li>
+</ul>
 <p><em>5. Detailed contact information of the wallet-relying party, one or more, including:</em>
 <em>(a) a website for providing helpdesk and support;</em>
 <em>(b) a phone number where the wallet-relying party can be contacted for matters pertaining to its registration and intended use of the wallet units;</em>
@@ -639,59 +671,61 @@ Suspension and cancellation </p>
 <p><em>7. A list of the attributes that the relying party intends to request, expressed as a friendly name and a technical name including the namespace that the attributes are grouped under in a machine-readable format for automated processing, with an indication if they are mandatory or optional.</em></p>
 <p><strong>ANNEX II</strong></p>
 <p>(summary)</p>
-<p><em>1. REQUIREMENTS ON ELECTRONIC SIGNATURES OR SEALS APPLIED TO THE INFORMATION MADE AVAILABLE ON REGISTERED WALLET-RELYING PARTIES</em> </p>
+<p><em>1. REQUIREMENTS ON ELECTRONIC SIGNATURES OR SEALS APPLIED TO THE INFORMATION MADE AVAILABLE ON REGISTERED WALLET-RELYING PARTIES</em></p>
 <ul>
 <li>The file format used by the API: be JavaScript Object Notation (JSON)</li>
-<li>electronic signatures and electronic seals - JSON Web Signatures (JWS) </li>
+<li>electronic signatures and electronic seals - JSON Web Signatures (JWS)</li>
 </ul>
-<p><em>2. REQUIREMENTS ON THE SINGLE API</em>  </p>
+<p><em>2. REQUIREMENTS ON THE SINGLE API</em></p>
 <ul>
 <li>REST API, supporting JSON data format</li>
-<li>published as OpenAPI version 3  </li>
-<li>allow any requestor, without prior authentication, to make (search/read/list) requests to the register  </li>
+<li>published as OpenAPI version 3</li>
+<li>allow any requestor, without prior authentication, to make (search/read/list) requests to the register</li>
 <li>provide security functions in order to ensure the availability and integrity of the API and the information available through it. The API shall be secure by default and by design.</li>
 </ul>
-<p><strong>ANNEX III</strong> </p>
+<p><strong>ANNEX III</strong></p>
 <p>(summary)</p>
-<p><em>Source of documentary evidence for the verification of entitlements of wallet-relying parties</em>
-+ verification of qualified trust service providers -  shall be based on the national trusted lists
-+ verification of non-qualified trust service providers - shall be based on the national trusted lists  or on national MS verification procedures  (set out in their registration policies)
-+ verification of providers of person identification data - shall be based on the list of providers of person identification data published by the Commission in accordance with Article 5a(18) of Regulation (EU) No 910/2014
-+ verification of providers of electronic attestations of attributes issued by or on behalf of a public sector body responsible for an authentic source - shall be based on the list published by the Commission in accordance with Article 45f(3) of Regulation (EU) No 910/2014</p>
-<p><strong>ANNEX IV</strong> </p>
+<p><em>Source of documentary evidence for the verification of entitlements of wallet-relying parties</em></p>
+<ul>
+<li>verification of qualified trust service providers - shall be based on the national trusted lists</li>
+<li>verification of non-qualified trust service providers - shall be based on the national trusted lists or on national MS verification procedures (set out in their registration policies)</li>
+<li>verification of providers of person identification data - shall be based on the list of providers of person identification data published by the Commission in accordance with Article 5a(18) of Regulation (EU) No 910/2014</li>
+<li>verification of providers of electronic attestations of attributes issued by or on behalf of a public sector body responsible for an authentic source - shall be based on the list published by the Commission in accordance with Article 45f(3) of Regulation (EU) No 910/2014</li>
+</ul>
+<p><strong>ANNEX IV</strong></p>
 <p>(summary)</p>
 <p><em>Requirements for wallet-relying party access certificates</em></p>
 <ul>
 <li>X.509 certificate</li>
 <li>certificate policy and certificate practice statement</li>
 <li>follow Normalised Certificate Policy (NCP) requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)</li>
-<li>plus additional requirements set out in the Annex IV </li>
+<li>plus additional requirements set out in the Annex IV</li>
 </ul>
-<p><strong>ANNEX V</strong> </p>
+<p><strong>ANNEX V</strong></p>
 <p>(summary)</p>
-<p><em>Requirements for wallet-relying party registration certificates</em> </p>
+<p><em>Requirements for wallet-relying party registration certificates</em></p>
 <ul>
 <li>non-X.509 certificate</li>
 <li>certificate policy and certificate practice statement</li>
 <li>follow Normalised Certificate Policy (NCP) requirements as specified in ETSI EN 319 411-1 version 2.5.1 (2023-10)</li>
-<li>includes the information referred to in Annex I, points 1, 2, 3, 5 and 7, 8, 9, 10, 11; </li>
-<li>expresses attributes in JavaScript Object Notation (JSON) format and in accordance with harmonised technical specifications; </li>
+<li>includes the information referred to in Annex I, points 1, 2, 3, 5 and 7, 8, 9, 10, 11;</li>
+<li>expresses attributes in JavaScript Object Notation (JSON) format and in accordance with harmonised technical specifications;</li>
 <li>plus additional requirements set out in the Annex V.</li>
 </ul>
 <h2 id="3-discussion">3 Discussion</h2>
-<p>The Relying Party registration covers from functional perspective of the ARF and the European Digital Identity ecosystem the following aspects: </p>
+<p>The Relying Party registration covers from functional perspective of the ARF and the European Digital Identity ecosystem the following aspects:</p>
 <p>1) the <strong>Registrar function</strong> for which the Member States are responsible to organise this function, register and a publicly accessible API at a national level (based on the future technical specifications and the CIR provided by the European Commission),
 2) the registration process mandated to be be followed by all Relying Parties resulting in issuance of <strong>Wallet-Relying Party Access Certificate</strong> (RPAC) and as many <strong>Wallet-Relying Party Registration Certificates</strong> (RPRC) as the Relying Party has dedicated intended uses (use cases, services provided to the EUDI Wallet Users),
 3) the <strong>operational use of aforementioned certificates</strong> in Relying Party transactions with the EUDI Wallet Units and their Users,
-4) <strong>handling the functional revocation of Relying Party certificates</strong> as necessitated by the legal requirements, 
+4) <strong>handling the functional revocation of Relying Party certificates</strong> as necessitated by the legal requirements,
 5) how the registration and operational use of the RP registration certificates shall be done when <strong>the Relying Party relies upon another Relying Party that has the operational role of an Intermediary</strong> to provide its intended use to the Wallet Units</p>
 <p>Having analysed the combined legal requirements, the current ARF (release 1.6), as well as recent German architecture concept proposals ([German non-paper on RP Authn], [German non-paper on WRP with attestations], that together contain considerable amount of technical detail and that were discussed indirectly in the context of topic D already), this section raises the following topics for discussion at level of High-Level Requirements relevant for the ARF:</p>
 <ul>
 <li>Requirements needed to support registrar issuance of RP registration certificates for proximity use cases, not just remote (specifically, support of both JWT and CWT formats of the RP registration certificates, support of both JOSE and COSE signature)</li>
 <li>Requirements impacted from the fact that registration certificates are issued per each registered intended use of the Relying Party</li>
 <li>Changes needed in the ARF due to earlier assumption that PID or Attestation Providers did not need a Relying Party registration certificate</li>
-<li>Identified HLR changes due to clarification of the role of intermediaries (adaptation to the modified role  of intermediaries and the related processes, e.g. registration process and RP registration certificate content if issued to an intermediary)  </li>
-<li>Modification related to distinguishing between lifecycle of the RP registration and the lifecycle of RPRC itself, as well as the relation between them (e.g. adapt the HLRs to the fact that certificates can only be revoked (no suspension), while the registration can be cancelled or suspended)  </li>
+<li>Identified HLR changes due to clarification of the role of intermediaries (adaptation to the modified role of intermediaries and the related processes, e.g. registration process and RP registration certificate content if issued to an intermediary)</li>
+<li>Modification related to distinguishing between lifecycle of the RP registration and the lifecycle of RPRC itself, as well as the relation between them (e.g. adapt the HLRs to the fact that certificates can only be revoked (no suspension), while the registration can be cancelled or suspended)</li>
 <li>Other terminology mismatches that need alignment between the draft IA and the ARF (eg. registration 'withdrawal' to be replaced with 'cancellation')</li>
 <li>Necessary adaptation of registration policy, certification policy and certification policy statement requirements in line with conclusions on the above issues</li>
 <li>Impacts on the other HLRs (Topic 6 - RP authentication, Topic 10 - attribute issuance at least)</li>
@@ -717,7 +751,7 @@ Suspension and cancellation </p>
 </tbody>
 </table>
 <h3 id="32-registration-certificate-per-intended-use">3.2 Registration certificate per intended use</h3>
-<p>According to the draft CIR on RPR a Relying Party will get issued a unique RPRC for each of its registered intended uses, and these registration certificates may be revoked independent of each other or of the associated RPAC. The access certificate is the Relying Party's 'master switch' to the EUDI ecosystem, whilst registration certificates are used to register and document the use case/s provided to the Wallet User. The registration certificate will not be a X.509 certificate, and thus the required certificate policies for RPRCs should be clarified both in the IA draft and the ARF. </p>
+<p>According to the draft CIR on RPR a Relying Party will get issued a unique RPRC for each of its registered intended uses, and these registration certificates may be revoked independent of each other or of the associated RPAC. The access certificate is the Relying Party's 'master switch' to the EUDI ecosystem, whilst registration certificates are used to register and document the use case/s provided to the Wallet User. The registration certificate will not be a X.509 certificate, and thus the required certificate policies for RPRCs should be clarified both in the IA draft and the ARF.</p>
 <p>Current RPRC_2 and RPC_3 in the ARF should be updated to reflect the text of the draft CIR on RPR, a requirement on use of unique RP identifier across the RPRCs, and a new HLR on creating applicable certificate policies is suggested for Topic 44 as follows:</p>
 <table>
 <thead>
@@ -752,8 +786,8 @@ Suspension and cancellation </p>
 </table>
 <h3 id="34-addressing-the-pid-providers-and-attestation-providers-on-rprcs">3.4 Addressing the PID Providers and Attestation Providers on RPRCs</h3>
 <p>The [Draft of the CIR for RP-Registration] implies that among all other roles defined in the ARF also the PID Providers and Attestation Providers will receive registration certificates, with the role registered as part of the registration and reflected in the certificate information (the specific entitlement being one or more of the set PID_Provider, QEAA_Provider, Non_Q_EAA_Provider or PUB_EAA_Provider). This needs to be reflected in the ARF, which so far has separated these roles from the Relying Parties (per definition of the ARF).</p>
-<p>Section 6.3.2.2 of the ARF says that "<em>A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.</em>" </p>
-<p>This is not the case per the draft CIR, the entitlements indicating the registered role are only present in the Relying Party registration certificate. </p>
+<p>Section 6.3.2.2 of the ARF says that "<em>A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.</em>"</p>
+<p>This is not the case per the draft CIR, the entitlements indicating the registered role are only present in the Relying Party registration certificate.</p>
 <p>Therefore, the definition set in the ARF needs to be adapted or extended accordingly, and Reg_17 on list of HLRs for the issuance of access certificates should be removed (entitlements not being present in access certificates):</p>
 <table>
 <thead>
@@ -775,7 +809,7 @@ Suspension and cancellation </p>
 <h3 id="35-registration-certificate-for-intermediaries">3.5 Registration certificate for intermediaries</h3>
 <p>The intention reflected in the draft IA is that the intermediaries are to receive the RPRC. If an end-Relying Party uses an intermediary, it (the end-RP) will not need to receive a Wallet-Relying Party certificate as the intermediary will apply for it and host the RPRCs for all of its customers.
 The intermediary will obtain as many RPRCs as number of its intermediated end-RPs entities (multiplied by the number of services/intended uses for each entity possibly).</p>
-<p>ARF (1.6) contains requirement RPI_02, assuming the intermediary does not receive its own registration certificate.  Therefore the ARF needs to be adapted to the intended role of the intermediaries as per the draft IA, which implies modifications of multiple HLRs. Here below presented are proposed changes to the key HRLs in this respect (other HLRs might need to be updated accordingly). </p>
+<p>ARF (1.6) contains requirement RPI_02, assuming the intermediary does not receive its own registration certificate. Therefore the ARF needs to be adapted to the intended role of the intermediaries as per the draft IA, which implies modifications of multiple HLRs. Here below presented are proposed changes to the key HRLs in this respect (other HLRs might need to be updated accordingly).</p>
 <table>
 <thead>
 <tr>
@@ -807,7 +841,7 @@ The intermediary will obtain as many RPRCs as number of its intermediated end-RP
 </tr>
 <tr>
 <td>RPRC_01</td>
-<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign <strong>or seal</strong> a registration certificate and issue it to the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: ~~These requirements do not apply in case the Relying Party acts only as an intermediary, see~~ </em><em>See also</em><em> Topic 52</em>.</td>
+<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign <strong>or seal</strong> a registration certificate and issue it to the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: ~~These requirements do not apply in case the Relying Party acts only as an intermediary, see~~ <strong>See also</strong> Topic 52</em>.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -818,13 +852,15 @@ The intermediary will obtain as many RPRCs as number of its intermediated end-RP
 </tbody>
 </table>
 <h3 id="36-registration-and-registration-certificate-life-cycles">3.6 Registration and Registration Certificate life cycles</h3>
-<p>The [Draft of the CIR for RP-Registration] (Article 9(4)) envisions 'suspension' and 'cancellation' of the registration (apart from the non-specified "active" state after the registration). 
+<p>The [Draft of the CIR for RP-Registration] (Article 9(4)) envisions 'suspension' and 'cancellation' of the registration (apart from the non-specified "active" state after the registration).
 At the same time the RP Registration certificate has its own life cycle, which envisions only 'revocation' (apart from the "valid" state after issuance).</p>
-<p>In addition, the IA draft text lists the following reasons of suspension/cancellation:
-+ the registration contains information which is inaccurate, out of date or misleading;
-+ the wallet-relying party is not complying with the registration policy;
-+ the wallet-relying party is otherwise acting in breach of Union or national law or of the European Declaration on Digital Rights and Principles for the Digital Decade 2023/C 23/016 in a way that relates to their role as a wallet-relying party for example if the wallet-relying party has not rightfully minimised the set of attributes it requests access to;
-+ by a supervisory body European Digital Identity Wallet Framework in the case of illegal or fraudulent use of the European Digital Identity Wallet</p>
+<p>In addition, the IA draft text lists the following reasons of suspension/cancellation:</p>
+<ul>
+<li>the registration contains information which is inaccurate, out of date or misleading;</li>
+<li>the wallet-relying party is not complying with the registration policy;</li>
+<li>the wallet-relying party is otherwise acting in breach of Union or national law or of the European Declaration on Digital Rights and Principles for the Digital Decade 2023/C 23/016 in a way that relates to their role as a wallet-relying party for example if the wallet-relying party has not rightfully minimised the set of attributes it requests access to;</li>
+<li>by a supervisory body European Digital Identity Wallet Framework in the case of illegal or fraudulent use of the European Digital Identity Wallet</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -836,17 +872,17 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_15</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: <strong>the certificate subject's registration is cancelled or suspended</strong>  ~~the certificate subject which is a Relying Party is de-registered by the respective Registrar,the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended~~ by the respective Registrar, on request of the certificate subject, or on request of a competent national authority.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: <strong>the certificate subject's registration is cancelled or suspended</strong> ~~the certificate subject which is a Relying Party is de-registered by the respective Registrar,the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended~~ by the respective Registrar, on request of the certificate subject, or on request of a competent national authority.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_22a</td>
-<td>A Registrar SHALL provide a method to suspend or ~~withdraw~~ cancel <strong>the registration of</strong> a registred Attestation Provider.</td>
+<td>A Registrar SHALL provide a method to suspend or ~~withdraw~~ cancel <strong>the registration of</strong> a registered Attestation Provider.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_22b</td>
-<td>A Registrar SHALL have a policy for the suspension or ~~withdrawal~~ <strong>cancellation</strong> of a registered Attestation Provider, which SHALL specify that an Attestation ~~Provider~~<strong>Provider's registration</strong>  is suspended or ~~withdrawn~~ <strong>cancelled</strong> at least on request of the PID Provider <strong>,Registrar</strong> or of a competent national authority.</td>
+<td>A Registrar SHALL have a policy for the suspension or ~~withdrawal~~ <strong>cancellation</strong> of a registered Attestation Provider, which SHALL specify that an Attestation ~~Provider~~<strong>Provider's registration</strong> is suspended or ~~withdrawn~~ <strong>cancelled</strong> at least on request of the PID Provider <strong>,Registrar</strong> or of a competent national authority.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -862,7 +898,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tbody>
 </table>
 <h2 id="4-current-hlrs-and-proposals-of-changes">4 Current HLRs and Proposals of Changes</h2>
-<p>ARF 1.5.0, Annex 2, Topic 27, Topic 44 and Topic 52, contains a number of High-Level Requirements related to the topic. 
+<p>ARF 1.5.0, Annex 2, Topic 27, Topic 44 and Topic 52, contains a number of High-Level Requirements related to the topic.
 The Topic 27 requirements cover general requirements for Member State registration processes and specific requirements for the registration of Relying Parties, whereas Topic 44 covers issuance of Relying Party registration certificates. Topic 52 focuses on the intermediaries.</p>
 <p>The existing HLRs are listed in the tables below, along with a proposal to keep, change, add, or remove the HLR.</p>
 <h3 id="41-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">4.1 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties</h3>
@@ -933,7 +969,7 @@ The Topic 27 requirements cover general requirements for Member State registrati
 </tr>
 </tbody>
 </table>
-<p>E.  Requirements for the registration of Relying Parties</p>
+<p>E. Requirements for the registration of Relying Parties</p>
 <table>
 <thead>
 <tr>
@@ -985,7 +1021,7 @@ The Topic 27 requirements cover general requirements for Member State registrati
 </tr>
 </tbody>
 </table>
-<p>F.  <em>Requirements for the issuance of Relying Party Instance access certificates</em></p>
+<p>F. <em>Requirements for the issuance of Relying Party Instance access certificates</em></p>
 <table>
 <thead>
 <tr>
@@ -1008,7 +1044,7 @@ The Topic 27 requirements cover general requirements for Member State registrati
 </tbody>
 </table>
 <h3 id="42-topic-44-relying-party-registration-certificates">4.2 Topic 44 - Relying Party Registration Certificates</h3>
-<p>A.  Issuance of Relying Party registration certificates </p>
+<p>A. Issuance of Relying Party registration certificates</p>
 <table>
 <thead>
 <tr>
@@ -1089,10 +1125,12 @@ The Topic 27 requirements cover general requirements for Member State registrati
 </table>
 <h2 id="5-relation-to-other-topics-tbd">5 Relation to Other Topics (TBD)</h2>
 <p>Below we discuss how Relying Party registration relates to the other topics being discussed.</p>
-<p>As indicated in the chapter 3, several changes are proposed in the context of the Relying Party registration. The changes introduced in the respective HLRs are to be also reflected in the remaining topics/HLRs, at least in referece to 
-+ Topic 6 - RP authentication,
-+ Topic 31 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication
-+ ...</p>
+<p>As indicated in the chapter 3, several changes are proposed in the context of the Relying Party registration. The changes introduced in the respective HLRs are to be also reflected in the remaining topics/HLRs, at least in reference to</p>
+<ul>
+<li>Topic 6 - RP authentication,</li>
+<li>Topic 31 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication</li>
+<li>...</li>
+</ul>
 <p>In result, the following modification are therefore proposed:</p>
 <table>
 <thead>
@@ -1111,7 +1149,7 @@ The Topic 27 requirements cover general requirements for Member State registrati
 </tbody>
 </table>
 <h3 id="51-use-of-certificate-transparency">5.1 Use of Certificate Transparency</h3>
-<p>[Topic S] refers to use of Certificate Transparencey (CT) in the context of Access Certificate. There is no decision yet whether CT will be used at all, as the initial intention of CT use was the context of browsers/QWACs.
+<p>[Topic S] refers to use of Certificate transparency (CT) in the context of Access Certificate. There is no decision yet whether CT will be used at all, as the initial intention of CT use was the context of browsers/QWACs.
 Same applies to RPRC (where the use of CT has even less sense, as this is not supposed to be a X.509 certificate).</p>
 <h3 id="52-user-requesting-data-deletion-to-relying-parties">5.2 User requesting data deletion to relying parties</h3>
 <p>[Topic L] will discuss requirements related to the EUDI Wallet User's means to request data deletion from any Relying Parties that they've provided with attestation data. This will be using the contact details which are required to be registered as part of the registration data set.</p>
@@ -1165,7 +1203,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
-<p>More specifically, [RiskRegister]  describes the following threats to a Wallet:</p>
+<p>More specifically, [RiskRegister] describes the following threats to a Wallet:</p>
 <table>
 <thead>
 <tr>
@@ -1195,13 +1233,9 @@ contains the following risks that are related to the Relying Party registration:
 <td>A relying party that consists of multiple units/entities that each have a different scope of what they are allowed to request/process, can request and process data for which they do not have lawful grounds for.</td>
 <td>Data disclosure (R6) / Unauthorised transaction (R9)</td>
 </tr>
-<tr>
-<td>## 6 Additions and Changes to the ARF (TBD)</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h2 id="6-additions-and-changes-to-the-arf-tbd">6 Additions and Changes to the ARF (TBD)</h2>
 <p>See chapter 4 above. In addition, discussions of the Relying Party registration in the main part of the ARF will be updated accordingly.</p>
 <h2 id="7-references">7 References</h2>
 <table>
