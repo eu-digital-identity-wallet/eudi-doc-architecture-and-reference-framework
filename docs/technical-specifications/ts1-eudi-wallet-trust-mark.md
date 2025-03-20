@@ -3,17 +3,18 @@
 # Specification of EUDI Wallet Trust Mark
 
 ## Abstract
+
 The present document specifies the technical specification and requirements for EUDI Wallet Trust Mark.
 
-#### [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/425)
+### [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/425)
 
 ## Versioning
 
-| Version | Date       | Description                                                                           | 
-|---------|------------|---------------------------------------------------------------------------------------|
-| `0.1`   | 20.01.2025 | Initial version for discussion                                               | 
-| `0.2`   | 18.02.2025 | Version with first internal feedback and improved scoping  | 
-| `0.3`   | 03.03.2025 | Version for public discussion with the Member States
+| Version | Date | Description |
+|---------|------------|------------|
+| `0.1` | 20.01.2025 | Initial version for discussion |
+| `0.2` | 18.02.2025 | Version with first internal feedback and improved scoping |
+| `0.3` | 03.03.2025 | Version for public discussion with the Member States |
 
 ## 1 Introduction and Overview
 
@@ -23,17 +24,17 @@ The purpose of a visible and recognisable trust mark is to add trust in the EUDI
 
 ### 1.1 Requirements in the European Digital Identity Regulation
 
-- According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”** 
+- According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”**
 - According to Article 5a (5)(a) (iv), **the Trust Mark must be displayed to the User**.
 - According to Article 5a (8)(a), **the Member States shall provide validation mechanisms free-of-charge, in order to: (a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;**
 
 ### 1.2 Scope for the Trust Mark Requirements and Design
 
-The EUDI Wallet Trust Mark must be designed and copyright protected, as a kind of label, which is only allowed to be displayed if the EUDI Wallet of the User both complies to the requirements of EUDI Wallet Solutions while being recognised by at least one Member State. If either of the aforementioned base requirements become non-applicable, the Wallet Provider must remove the visible trust mark and any references to it. 
+The EUDI Wallet Trust Mark must be designed and copyright protected, as a kind of label, which is only allowed to be displayed if the EUDI Wallet of the User both complies to the requirements of EUDI Wallet Solutions while being recognised by at least one Member State. If either of the aforementioned base requirements become non-applicable, the Wallet Provider must remove the visible trust mark and any references to it.
 
 As the European Digital Identity Regulation does not specify what 'verifiable' means, or where the Trust Mark shall be displayed, the realisation of the EUDI Wallet Trust Mark should be done via collecting the business requirements, identifying any complexity limitations if any, and considering the priorities of the involved stakeholders (Member States). Only after this can the work of deriving a technical specification that enables the European Commission to manage such trust marks be carried out.
 
- This early version of the document contains in several aspects proposals (not yet facts) and plans to facilitate the selection of desired technical complexity and process around the EUDI Wallet Trust Mark. It starts with collecting, primarily for discussion and priorisation purposes, the proposed high-level requirements in an actor-oriented requirement format: **"As an *actor* I shall/should *verb* to achieve *my required goal*"**. This document does not address the visual or user experience related design elements related to the Trust Mark; these are provided separately and may be derived from the final requirements listed in this specification.
+ This early version of the document contains in several aspects proposals (not yet facts) and plans to facilitate the selection of desired technical complexity and process around the EUDI Wallet Trust Mark. It starts with collecting, primarily for discussion and prioritisation purposes, the proposed high-level requirements in an actor-oriented requirement format: **"As an *actor* I shall/should *verb* to achieve *my required goal*"**. This document does not address the visual or user experience related design elements related to the Trust Mark; these are provided separately and may be derived from the final requirements listed in this specification.
 
 NOTE: Any possible requirements for trust indicators unrelated to the EUDI Wallet Solution are out of scope of this document. **The scope is the trust mark visible in the EUDI Wallet, not the Relying Party services and/or the Attestation Provider qualifications**.
 
@@ -54,7 +55,7 @@ This overview of samples is in no way exhaustive as there may be well-hidden tru
 
 #### 1.3.2 Ecommerce Europe
 
-The European Regulation on online dispute resolution for consumer disputes [EU 524/2013](http://data.europa.eu/eli/reg/2013/524/oj) states that "traders established within the European Union engaging in online sales or service contracts shall provide on their websites an electronic link to the European Online Dispute Resolution (ODR) platform (http://ec.europa.eu/odr)". Consumers who have a problem with an online purchase can file complaints on the European ODR platform. 
+The European Regulation on online dispute resolution for consumer disputes [EU 524/2013](http://data.europa.eu/eli/reg/2013/524/oj) states that "traders established within the European Union engaging in online sales or service contracts shall provide on their websites an electronic link to the European Online Dispute Resolution (ODR) platform (<http://ec.europa.eu/odr>)". Consumers who have a problem with an online purchase can file complaints on the European ODR platform.
 
 When present on an online shop, the Ecommerce Europe Trustmark shows that the online shop is nationally certified for safe e-commerce by the respective national e-commerce association, and that it complies with European laws and regulations. This is done via a visual trust mark which is available for online shops only via the Member State's associations that are formally affiliated to the Ecommerce Europe scheme. Most EU countries have joined it, but some are notably missing, whilst others are closing their safe e-commerce activities (e.g. Norway from 1 February 2025). National associations typically have defined their own national graphic trust mark logo, use of which happens ahead or in parallel with the Ecommerce Europe equivalent.
 
@@ -69,7 +70,7 @@ Some examples of national associations and their trust mark onboarding processes
 
 ### 1.4 Trust Mark as a verifiable attestation
 
-The technical means to make a trust mark digitally verifiable (as required by the Regulation) could be very similar to use of certificate authorities and existing PKI infrastructure. The European Commission could not rule out issuing or guiding a Member State to issue the EUDI Wallet trust mark as a QEAA for a particular Wallet Provider's audited and certified Wallet Solution. 
+The technical means to make a trust mark digitally verifiable (as required by the Regulation) could be very similar to use of certificate authorities and existing PKI infrastructure. The European Commission could not rule out issuing or guiding a Member State to issue the EUDI Wallet trust mark as a QEAA for a particular Wallet Provider's audited and certified Wallet Solution.
 
 In theory, at logical level a viable approach would be to link the EUDI Wallet Trust Mark to existence of the Wallet Unit Attestation (WUA) of the User's EUDI Wallet. An EUDI Wallet unit needs this attestation to work in the EUDI ecosystem to start with. Additionally WUA will not be issued to non-certified Wallet instances by law, so a logical link can be associated easily. However, the intended purpose of the WUA is to be verified by Attestation Providers only, not by the Users of the EUDI Wallet, the Relying Parties attempting verification, or the EUDI Wallet unit independent of the User. Thus, WUA does not really work in context of a generally verifiable trust mark.
 
@@ -89,9 +90,9 @@ Figure 1. Welcome view of an EUDI Wallet (concept image only)
 
 #### 1.5.2 Verifiable EUDI Wallet Trust Mark attestation
 
-The other approach, following the legal expectation for verifiability of the Trust Mark, would be linking of the visibility/visual showing of the EUDI Wallet Trust Mark to successful, User-requested verification of a new **verifiable attestation** based on reasoning in Section 1.4 above. This QEAA, EUDI Wallet Trust Mark Attestation, is provided for each operational EUDI Wallet in conjunction with the provisioning of the Wallet Unit Attestation (WUA), so that the User can actually verify their EUDI Wallet with a dedicated 'EUDI Wallet verifier tool' service (verifying the EUDI Wallet Trust Mark Attestation as User e.g. clicks/taps the other link on the UI view of Figure 1). Validness/invalidness indication view details would be up to the official verifier service (a single EU-wide service). 
+The other approach, following the legal expectation for verifiability of the Trust Mark, would be linking of the visibility/visual showing of the EUDI Wallet Trust Mark to successful, User-requested verification of a new **verifiable attestation** based on reasoning in Section 1.4 above. This QEAA, EUDI Wallet Trust Mark Attestation, is provided for each operational EUDI Wallet in conjunction with the provisioning of the Wallet Unit Attestation (WUA), so that the User can actually verify their EUDI Wallet with a dedicated 'EUDI Wallet verifier tool' service (verifying the EUDI Wallet Trust Mark Attestation as User e.g. clicks/taps the other link on the UI view of Figure 1). Validy/invalidy indication view details would be up to the official verifier service (a single EU-wide service).
 
-In this scenario, the preferred Attestation Providers for EUDI Wallet Trust Mark Attestation would be the Member States, and the attestation would be provided to each individual Wallet Unit belonging to a Wallet Provider's given certified Wallet Solution. EUDI Wallet Trust Mark Attestation could be requested automatically (without interaction required by the onboarding User, as will be with the Wallet Unit Attestation as well) by the Wallet Unit, after having received its Wallet Unit Attestation from the Wallet Provider. 
+In this scenario, the preferred Attestation Providers for EUDI Wallet Trust Mark Attestation would be the Member States, and the attestation would be provided to each individual Wallet Unit belonging to a Wallet Provider's given certified Wallet Solution. EUDI Wallet Trust Mark Attestation could be requested automatically (without interaction required by the onboarding User, as will be with the Wallet Unit Attestation as well) by the Wallet Unit, after having received its Wallet Unit Attestation from the Wallet Provider.
 
 A Wallet Provider could, in theory, obtain and showcase in the EUDI Wallet multiple EUDI Wallet Trust Marks for a given EUDI Wallet Solution's Wallet Units, corresponding to the number of EUDI Wallet certifications it has received from individual Member States. Essentially, this means a Wallet Provider could hold certifications from all EU Member States where the given EUDI Wallet Solution is recognised as a Certified EUDI Wallet. The EUDI Wallet Trust Mark Attestation could thus carry also some national approval related indicator along the EUDI Wallet Trust Mark logo, such as a small national flag suitable for display on a mobile device.
 
@@ -99,7 +100,7 @@ This implies in the EUDI trust framework that Member States would register as At
 
 Another possibility is that the Attestation Provider for the EUDI Wallet Trust Mark is the Conformity Assessment Body (CAB) that certified the Wallet Solution, not the Member State. If so, there would be only one Trust Mark per Wallet Solution (and Wallet Unit). CABs would need in this case be ready to handle the role of a Qualified Trust Service Provider which is not currently the case.
 
-> Note: This early version of the specification doesn't provide full technical design of  this second solution. A dedicated Attestation Rulebook ([Topic 12](../annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks) in the ARF) with suitable attributes and UX guidelines for this approach need to be agreed if EUDI Wallet Trust Mark attestation is selected as the realisation route after consultation with the stakeholders.
+> Note: This early version of the specification doesn't provide full technical design of this second solution. A dedicated Attestation Rulebook ([Topic 12](../annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks) in the ARF) with suitable attributes and UX guidelines for this approach need to be agreed if EUDI Wallet Trust Mark attestation is selected as the realisation route after consultation with the stakeholders.
 
 ## 2 Actor-Oriented Requirements
 
@@ -117,17 +118,17 @@ Initial set of EUDI Wallet Trust Mark specific requirements are presented below,
 
 **EWTM-U3**: As a potential User of a EUDI Wallet, I want to see which Member States support PID issuance to given Certified EUDI Wallet Solution.
 
-**EWTM-U4**: As a user of a EUDI Wallet, after installation, I want a means to check that the EUDI Wallet Solution certification is legitimate (ALT1) before I proceed to the actual EUDI Wallet Instance activation (see [ARF section 6.5.3](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#653-wallet-unit-activation)) or (ALT2) as part of the EUDI Wallet Instance actication.
+**EWTM-U4**:  As a User of a Wallet Unit, after installation, I want a means to check that the EUDI Wallet Solution certification is legitimate (ALT1) before I proceed to the actual EUDI Wallet Instance activation (see [ARF section 6.5.3](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#653-wallet-unit-activation)) or (ALT2) as part of the Wallet Unit activation.
 
-**EWTM-U5**: As a User of a EUDI Wallet, I want a means to check if the EUDI Wallet Unit that I am currently using is a Certified EUDI Wallet.
+**EWTM-U5**:  As a User of a Wallet Unit, I want a means to check if the EUDI Wallet Unit that I am currently using is a Certified EUDI Wallet.
 
-**EWTM-U6**: As a User of a EUDI Wallet, I want a visual but non-intrusive means to check if the EUDI Wallet certification is still valid, or certification status has changed since I last time visited my EUDI Wallet Unit.
+**EWTM-U6**:  As a User of a Wallet Unit, I want a visual but non-intrusive means to check if the EUDI Wallet certification is still valid, or certification status has changed since I last time visited my EUDI Wallet Unit.
 
-**EWTM-U7**: As a User of a EUDI Wallet, I want to be able to read fresh high-level information of the Certification status when I select (click or tap) a visual indicator (logo) of the EUDI Wallet Trust Mark in the EUDI Wallet Unit.
+**EWTM-U7**:  As a User of a Wallet Unit, I want to be able to read fresh high-level information of the Certification status when I select (click or tap) a visual indicator (logo) of the EUDI Wallet Trust Mark in the EUDI Wallet Unit.
 
-**EWTM-U8**: As a User of a EUDI Wallet, I want to get an out-of-band indication (e.g. push message or e-mail message) if the certification status and thus the linked EUDI Wallet Trust Mark status of the EUDI Wallet Solution I use is revoked.
+**EWTM-U8**:  As a User of a Wallet Unit, I want to get an out-of-band indication (e.g. push message or e-mail message) if the certification status and thus the linked EUDI Wallet Trust Mark status of the EUDI Wallet Solution I use is revoked.
 
-**EWTM-U9**: As a User of a EUDI Wallet, I want the EUDI Wallet Trust Mark to be always positioned in a standard location (such as UI view or menu item) in the EUDI Wallet Unit.
+**EWTM-U9**:  As a User of a Wallet Unit, I want the EUDI Wallet Trust Mark to be always positioned in a standard location (such as UI view or menu item) in the EUDI Wallet Unit.
 
 ### 2.2 Wallet Provider Requirements
 
@@ -150,7 +151,6 @@ Initial set of EUDI Wallet Trust Mark specific requirements are presented below,
 **EWTM-EC3**: As the European Commission, I want to issue each certified EUDI Wallet Solution a verifiable EUDI Wallet Trust Mark Attestation (ALT1).
 
 **EWTM-EC4**: As European Commission, I want a Member State certifying an EUDI Wallet Solution to issue an EUDI Wallet Trust Mark Attestation for each operational Wallet Unit of a Wallet Solution it certifies (ALT2).
-
 
 ### 2.4 Member State Requirements
 

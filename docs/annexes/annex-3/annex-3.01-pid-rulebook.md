@@ -49,11 +49,11 @@ specified after further discussion with Member States.
 
 ### 1.3 Key words
 
-This document uses the capitalized key words 'SHALL', 'SHOULD' and 'MAY' as
+This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in [RFC 2119], i.e., to indicate requirements, recommendations and
 options specified in this document.
 
-In addition, 'must' (non-capitalized) is used to indicate an external
+In addition, 'must' (non-capitalised) is used to indicate an external
 constraint, i.e., a requirement that is not mandated by this document, but, for
 instance, by an external document. The word 'can' indicates a capability,
 whereas other words, such as 'will', and 'is' or 'are' are intended as

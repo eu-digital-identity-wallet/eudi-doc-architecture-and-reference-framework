@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [1.7.1] - 2025-03-20
+
+Editorial changes and fixing typos.
+
 ## [1.7.0] - 2025-03-17
 
 Added results of "Topic E - Pseudonyms, including User authentication mechanism"

@@ -16,8 +16,8 @@ specifying the use cases where pseudonyms should be applied.*
 
 ### 1.2 Key Words
 
-This document uses the capitalized key words 'SHALL', 'SHALL NOT', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, prohibitions, recommendations and options specified in this document.
-In addition, 'must' (non-capitalized) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.
+This document uses the capitalised key words 'SHALL', 'SHALL NOT', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, prohibitions, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.
 
 ### 1.3 Document Structure
 
@@ -56,7 +56,7 @@ Below are the actual Articles from the Regulation that establish these requireme
 
 **Article 5a European Digital Identity Wallets**
 
-*... 4.  European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to:\
+*... 4. European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to:\
 ...\
 (b) generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet;\
 ...*
@@ -153,7 +153,7 @@ Below, we list questions that have been discussed at the focus meetings along wi
 
 **Question 1:** Should any other use cases be supported?
 
-> It should be possible to register attributes to the pseudonym later than at registration.  
+> It should be possible to register attributes to the pseudonym later than at registration. 
 
 **Question 2:** For both use cases: Should both cross-device and same-device flows be supported?
 I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the Relying Party from the same device and with a device different from the one hosting the Wallet Unit? The answer to this question will impose requirements on the interfaces between the Wallet Unit and the client a user initiates the interaction with.
@@ -231,7 +231,7 @@ The next sections elaborate on how the different components work together to all
 
 The flow for registering a Passkey in [WebAuthn] is the following:
 
-0. The User requests (out of band of WebAuthn) the Relying Party to create a new Pseudonym.   
+0. The User requests (out of band of WebAuthn) the Relying Party to create a new Pseudonym.
 1. The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Name to the Relying Party Client.
 2. The Relying Party Client forwards the information to the Client using the WebAuthnAPI.
 3. The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.
@@ -252,7 +252,7 @@ In [WebAuthn], five different types of attestations are mentioned:
 
 - **Attestation CA:** Similar to the above, in the sense that the Authenticator stores a single master public and private key stored. However, instead of using this to attest Passkeys, the Authenticator uses this to authenticate towards a Certificate Authority (CA), which is then configured to issue certificates to the Authenticator on multiple attestation key pairs.
 
-- **Anonymization CA:** Similar to the second bullet above, except that it is explicit that the Authenticator requests a certificate for a new attestation key pair per generated Passkey.
+- **Anonymisation CA:** Similar to the second bullet above, except that it is explicit that the Authenticator requests a certificate for a new attestation key pair per generated Passkey.
 
 - **Self Attestation:** The attestation is signed with the private key of the newly generated key pair in the Passkey. Note that this does not give any guarantees for the Relying Party about the authenticator they are interacting with.
 
@@ -288,7 +288,7 @@ This chapter discusses how pseudonyms relate to other topics being discussed.
 
 [Topic A - Privacy Risks and Mitigations](./a-privacy-risks-and-mitigations.md) discusses surveillance risks related to presenting PIDs and attestations. Similar concerns are relevant for the Pseudonym functionality defined by the [WebAuthn] specification. In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthn] and other attestations such as PID and (Q)EAAs. [Section 5.4](#54-relation-to-risk-register) discusses how this relates to the risks and threats identified in the [RiskRegister].
 
-The subsections below consider two different types of linkability concerns for the attestation types summarized in [Section 4.2.3](#423-pseudonym-attestation), namely Relying Party linkability and CA linkability. Note that the latter form of linkability is similar to what is dubbed Attestation Provider linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthn] and to avoid confusion a different wording is used here.
+The subsections below consider two different types of linkability concerns for the attestation types summarised in [Section 4.2.3](#423-pseudonym-attestation), namely Relying Party linkability and CA linkability. Note that the latter form of linkability is similar to what is dubbed Attestation Provider linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthn] and to avoid confusion a different wording is used here.
 
 #### 5.1.2 Relying Party Linkability
 
@@ -301,7 +301,7 @@ If *Basic Attestations* are used, where each Wallet Unit holds only one attestat
 
 If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as an Authenticator uses a single attestation key more than once to sign a Pseudonym, the Relying Parties can still deduce some information by correlating attestation public keys. This mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
 
-If an *Anonymization CA* is used to issue certificates on single-use-only attestation keys, Relying Parties are not able to correlate information about multiple presentations. This can be referred to as being *Relying Party-unlinkable*.
+If an *Anonymisation CA* is used to issue certificates on single-use-only attestation keys, Relying Parties are not able to correlate information about multiple presentations. This can be referred to as being *Relying Party-unlinkable*.
 
 Neither *Self Attestation* nor *No Attestation* allows Relying Parties to correlate information about multiple presentations of pseudonyms, as no attestation public key is released to the Relying Party. That is, they are Relying Party-unlinkable.
 
@@ -311,19 +311,19 @@ Certificate Authority (CA) linkability is the ability for a CA to track a User's
 
 Note that all attestation types that are Relying Party-linkable also are CA-linkable by definition, as the information available to CAs and Relying Parties is a superset of the information available only to multiple Relying Parties.
 
-Both the types *Attestation CA* and *Anonymization CA* are CA-linkable as CAs can store which public key they issue certificates to and share with which Wallet Unit. By correlating this with the information available at the Relying Parties, it is possible to track how a Wallet Unit uses the pseudonym functionality.
+Both the types *Attestation CA* and *Anonymisation CA* are CA-linkable as CAs can store which public key they issue certificates to and share with which Wallet Unit. By correlating this with the information available at the Relying Parties, it is possible to track how a Wallet Unit uses the pseudonym functionality.
 
 Neither *Self Attestation* nor *No Attestation* includes any information from a CA and Relying Parties are therefore not able to correlate information about multiple presentations of pseudonyms with this form of attestation type. That is, they are both also CA-unlinkable.
 
 #### 5.1.4 Drawbacks of Different Attestation Types
 
-The table below summarizes information from the previous sections with regard to drawbacks of the different attestation types.
+The table below summarises information from the previous sections with regard to drawbacks of the different attestation types.
 
-| Attestation Type   | Drawbacks  |
+| Attestation Type | Drawbacks |
 |--------------------|---------------------------------------|
 | Basic Attestations | Relying Party-linkable and CA-linkable |
-| Attestation CA     | CA-linkable and to some degree Relying Party- linkable |
-| Anonymization CA   | CA-linkable |
+| Attestation CA     | CA-linkable and to some degree Relying Party-linkable |
+| Anonymisation CA   | CA-linkable |
 | Self Attestation   | No assurances for Relying Parties |
 | No Attestation     | No assurances for Relying Parties |
 
@@ -660,7 +660,7 @@ A Wallet Unit SHALL enable a User to authenticate with a Pseudonym towards a Rel
 
 > Rationale: This is necessary to support Use Case A and B.
 
-> Note that requirement is only mandatory for Pseudonyms that were registered with the same Wallet Unit. However, Wallet Providers  MAY add backup of pseudonyms to their Wallet Solution and thereby support this functionality also for pseudonyms registered with different Wallet Units.
+> Note that requirement is only mandatory for Pseudonyms that were registered with the same Wallet Unit. However, Wallet Providers MAY add backup of pseudonyms to their Wallet Solution and thereby support this functionality also for pseudonyms registered with different Wallet Units.
 
 ##### Requirement 3
 
@@ -678,7 +678,7 @@ A Wallet Unit SHALL enable the User to use multiple different Pseudonyms at a gi
 
 A Wallet Unit SHOULD enable a User to freely choose a User alias for each Pseudonym registered at a Relying Party. Setting an alias SHOULD be optional for the User. The User SHOULD be able to change the alias for any Pseudonym.
 
->Rationale: Setting an alias helps the User to recognize and distinguish Pseudonyms, which otherwise may be meaningless sequences of symbols.
+>Rationale: Setting an alias helps the User to recognise and distinguish Pseudonyms, which otherwise may be meaningless sequences of symbols.
 
 ##### Requirement 6
 
@@ -756,7 +756,7 @@ A Relying Party SHALL NOT be able to derive the User’s true identity, or any d
 
 A Wallet Unit SHALL NOT reveal the same Pseudonym to different Relying Parties unless the User explicitly chooses otherwise.
 
-> Rationale: This is important to ensure that colluding Relying Parties cannot use the Pseudonyms  to track the User.
+> Rationale: This is important to ensure that colluding Relying Parties cannot use the Pseudonyms to track the User.
 
 ##### Requirement 17
 
@@ -808,10 +808,10 @@ PA_01 states:
 
 ## 7 References
 
-| Reference       | Description |
+| Reference | Description |
 |-----------------|-----------------|
-| [WebAuthn]      | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
-| [ARF_DevPlan]   | Architecture and Reference Framework Development plan 2025, European Commission, v1.0.|
-| [RiskRegister]  | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
+| [WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
+| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v1.0.|
+| [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [CIR.2024.2979] | Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets |
