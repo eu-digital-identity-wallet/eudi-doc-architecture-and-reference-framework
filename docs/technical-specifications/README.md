@@ -7,14 +7,14 @@ existing standards, technical specifications (STS), and the legal and technical
 requirements necessary to support the ecosystem.
 
 To bridge these gaps, the European Commission has established a
-standardization strategy and a structured standardization process.
+standardisation strategy and a structured standardisation process.
 
 ## Objective
 
 As part of this process, the EC, in collaboration with the European Digital
-Identity Cooperation Group and the European Standards Organizations (ESO), will
+Identity Cooperation Group and the European Standards Organisations (ESO), will
 lead the drafting of missing technical specifications where a clear need exists
-to support EUDI Wallet implementation within a short timeframe.  
+to support EUDI Wallet implementation within a short timeframe.
 
 By streamlining the drafting process, the EC ensures faster implementation while
 maintaining quality and compliance. In the long term, ESO, in coordination with
@@ -46,7 +46,7 @@ The initial drafts of the following technical specifications will be developed
 from **March 7, 2025, to August 15, 2025**. Each specification includes links to
 its corresponding GitHub discussion area and roadmap issue.
 
-| Id | Title |  |  |
+| Id | Title | | |
 |----|-------|--|--|
 | **TS01** | [EUDI Wallet Trust Mark](ts1-eudi-wallet-trust-mark.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/425) | Roadmap issue |
 | **TS02** | [Notification and Publication of Provider Information](ts2-notification-publication-provider-information.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/427) | Roadmap issue |
@@ -64,11 +64,11 @@ its corresponding GitHub discussion area and roadmap issue.
 
 While the **technical specifications listed above are developed specifically for the EUDI Wallet**, a broader effort is **ongoing to track, analyze, and align all relevant standards—both existing and missing—that impact the EUDI Wallet ecosystem**.
 
-The **[EUDI Wallet Standards and Technical Specifications Repository](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications)** serves as a **centralized resource** for:
+The **[EUDI Wallet Standards and Technical Specifications Repository](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications)** serves as a **centralised resource** for:
 
 - **Gap Analysis**: Identifying **missing or incomplete standards** necessary for the EUDI Wallet.
 - **Roadmap Planning**: Defining a **tentative timeline** for addressing gaps and ensuring that relevant standards are ready for potential referencing in **Implementing Acts**.
-- **Public Transparency**: Providing a **clear, structured view** of ongoing standardization work and enabling **stakeholder feedback**.
+- **Public Transparency**: Providing a **clear, structured view** of ongoing standardisation work and enabling **stakeholder feedback**.
 
 **For a visual overview of the tracking process:**  
-- **[View the Standardization Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/29/views/1)**
+- **[View the Standardisation Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/29/views/1)**
