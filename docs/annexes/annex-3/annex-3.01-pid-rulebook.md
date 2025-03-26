@@ -69,7 +69,7 @@ ecosystem, regardless of the encoding used.
 | **Index** | **Requirement specification** |
 |-----------|--------------|
 | PID_01 | A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]. *Note: CIR 2024/2977 mentions the W3C Verifiable Credentials Data Model v1.1 [W3C VCDM v1.1] instead of [SD-JWT VC]. However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, it is therefore impossible to implement a PID based on [W3C VCDM v1.1]. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification.* |
-| PID_02 | PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant and as the Verifiable Credential Type for SD-JWT VC-compliant PIDs. *Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.* |
+| PID_02 | PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant PIDs. *Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.* |
 | PID_03 | A PID Provider SHALL ensure that all of the mandatory attributes listed in [Section 3.2](#32-mandatory-attributes-specified-in-cir-20242977) are present in any PID it issues to a Wallet Unit. *Notes: - When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes. - A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.* |
 
 ## 3 PID attributes and metadata
@@ -297,7 +297,7 @@ ecosystem that are compliant with [SD-JWT VC].
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------------------|
-| PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim will follow the same format as the one defined in Requirement PID_02. The type indicated by the vct claim SHALL be the one defined in PID_02 or the SD-JWT VC type metadata associated with the type SHALL indicate that the type extends the one defined in PID_02 ("domestic type"). |
+| PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the `urn:eudi:` namespace. The type indicated by the vct claim SHALL be `urn:eudi:pid.1` for the type defined in this document or a domestic type that extends it. |
 | PID_SVC_02 | A catalog linked in the PID rulebook will associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID rulebook applicable to the type.  |
 | PID_SVC_03 | A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12]. |
 | PID_SVC_04 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. *Note: This implies that technically speaking, there is no difference between these attributes and metadata.* |
@@ -383,13 +383,14 @@ with associated metadata that, for instance, provides information about
 the type itself, outlines a schema detailing the claims that are
 optional or mandatory in the SD-JWT VC, and specifies their display
 methods. Additionally, a type can extend another type, enabling
-the creation of domestic types based on a common EU-wide type. Domestic
-types MAY define additional claims and display information.
+the creation of domestic types based on a common EU-wide type, while preserving
+the mandatory claims from the base type. Domestic
+types MAY however define additional claims and display information. Details
+are defined in [SD-JWT VC].
 
-PID_02 defined the base type to be "eu.europa.ec.eudi.pid.1". Domestic
-types can extend this base type.
+This document defines the base type to be "urn:eudi:pid.1".
 
-SD-JWT VC specified Type Metadata as a machine-readable format for information
+SD-JWT VC specifies Type Metadata as a machine-readable format for information
 regarding a type, including the information on claims such as what is contained
 in this document. Requirement PID_SVC_02 requires that the information on the
 common EU-wide type as well as on any domestic types is published and
@@ -402,7 +403,7 @@ EXAMPLE: The following example shows a PID in SD-JWT VC format.
 
 ```json
 {
-    "vct": "example.memberstate.pid.1",
+    "vct": "urn:eudi:pid.de.1",
 
     "given_name": "Jean",
     "family_name": "Dupont",
