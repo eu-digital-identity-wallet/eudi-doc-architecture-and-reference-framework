@@ -44,8 +44,6 @@ attributes and metadata are encoded in case the PID complies with [ISO/IEC
 18013-5].
 - [Chapter 5](#5-sd-jwt-vc-based-encoding-of-pid) specifies how the PID
 attributes and metadata are encoded in case the PID complies with [SD-JWT VC].
-In the current version of this PID Rulebook, this chapter is empty; it will be
-specified after further discussion with Member States.
 
 ### 1.3 Key words
 
@@ -78,7 +76,7 @@ ecosystem, regardless of the encoding used.
 
 ### 3.1 Introduction
 
-Sections 3.2, 3.3, 3.4 and 3.5 of this chapter lists the mandatory and optional
+Sections 3.2, 3.3, 3.4 and 3.5 of this chapter list the mandatory and optional
 PID attributes and PID metadata defined in CIR 2024/2977, respectively. Section
 3.6 lists the optional PID attributes additionally defined in this PID Rulebook.
 
@@ -299,7 +297,6 @@ version of this PID Rulebook.
 
 ### 5.2 Encoding of PID attributes
 
-<<<<<<< HEAD
 SD-JWT encoded PID attestations SHALL use claim names registered in the JSON Web
 Token Claims Registry \[IANA-JWT-Claims\]. The table below maps the data
 identifiers defined above to the corresponding claim names. 
@@ -453,10 +450,6 @@ The example above shows a public key in JWK format.
 Note: Additional technical claims are not shown here, including
 references to the issuer, validity status information, and more.
 
-=======
-The encoding of PID attributes for SD-JWT VC-compliant PIDs will be added to a
-future version of this PID Rulebook.
->>>>>>> main
 
 ## 6 Further requirements
 
