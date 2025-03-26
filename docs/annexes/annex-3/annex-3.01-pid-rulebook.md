@@ -297,19 +297,19 @@ ecosystem that are compliant with [SD-JWT VC].
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------------------|
-| PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the `urn:eudi:` namespace. The type indicated by the vct claim SHALL be `urn:eudi:pid:1` for the type defined in this document or a domestic type that extends it. |
-| PID_SVC_02 | A catalog linked in the PID rulebook will associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID rulebook applicable to the type.  |
+| PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the `urn:eudi:pid:` namespace. The type indicated by the vct claim SHALL be `urn:eudi:pid:1` for the type defined in this document or a domestic type that extends it. |
+| PID_SVC_02 | A catalog linked in the PID rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID rulebook applicable to the type.  |
 | PID_SVC_03 | A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12]. |
 | PID_SVC_04 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. *Note: This implies that technically speaking, there is no difference between these attributes and metadata.* |
 | PID_SVC_05 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in [Section 5.2](#52-encoding-of-pid-attributes). |
-| PID_SVC_06 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf and iat claims, if present. *Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.* |
-| PID_SVC_07 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf or iat claims, if present. |
+| PID_SVC_06 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf claim, if present. *Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.* |
+| PID_SVC_07 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf claim, if present. |
 | PID_SVC_08 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL make all claims (i.e., all top-level properties, all nested properties, and all array entries) selectively disclosable individually, except those claims defined as non-selectively disclosable in [SD-JWT VC]. |
 
 
 ### 5.2 Encoding of PID attributes
 
-Following Requirement ARB_06b, SD-JWT encoded PID attestations use claim names that are either registered in the JSON Web
+Following Requirement ARB_06b, SD-JWT VC-encoded PID attestations use claim names that are either registered in the JSON Web
 Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
 to the attestation type. The tables below maps the data
 identifiers defined above to the corresponding claim names.
@@ -343,7 +343,7 @@ The following IANA registered claim names are to be used for PIDs:
 | mobile_phone_number | phone_number | string | Section 5.1 of [OIDC] | 
 | portrait | picture | string; data URL containing the base64-encoded portrait in JPEG format according to PID_04  | Section 5.1 of [OIDC] |
 
-Note: The standard JWT claims nbf, exp and optionally iat are used to express the technical validity of the SD-JWT VC PID.
+Note: The standard JWT claims nbf and exp are used to express the technical validity of the SD-JWT VC PID.
 
 The following Private Names specific to the attestation type defined here are to be used for PIDs:
 
@@ -387,7 +387,7 @@ types MAY however define additional claims and display information. Details
 are defined in [SD-JWT VC].
 
 This document defines the base type to be "urn:eudi:pid:1". As a convention, all
-PIDs must use types in the namespace "urn:eudi:".
+PIDs must use types in the namespace "urn:eudi:pid:".
 
 SD-JWT VC specifies Type Metadata as a machine-readable format for information
 regarding a type, including the information on claims such as what is contained
