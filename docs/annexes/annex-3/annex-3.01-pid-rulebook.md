@@ -399,7 +399,7 @@ accessible in a catalog.
 ### 5.4 Example
 
 
-EXAMPLE: The following example shows a PID in SD-JWT VC format.
+EXAMPLE: The following example shows the payload of a PID in SD-JWT VC format before the encoding into the SD-JWT format.
 
 ```json
 {
@@ -430,7 +430,7 @@ EXAMPLE: The following example shows a PID in SD-JWT VC format.
 
     "nationalities": ["FR"],
 
-    "gender": "male",
+    "sex": 5,
 
     "place_of_birth": {
         "country": "DD"
