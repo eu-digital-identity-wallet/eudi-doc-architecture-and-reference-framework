@@ -290,50 +290,46 @@ scope of this document.
 
 ## 5 SD-JWT VC-based encoding of PID
 
-### 5.1 High-Level Requirements for SD-JWT VC-compliant PIDs
+### 5.1 Encoding of PID attributes
 
-High-level requirements for SD-JWT VC-compliant PIDs will be added to a future
-version of this PID Rulebook.
-
-### 5.2 Encoding of PID attributes
-
-SD-JWT encoded PID attestations SHALL use claim names registered in the JSON Web
-Token Claims Registry \[IANA-JWT-Claims\]. The table below maps the data
-identifiers defined above to the corresponding claim names. 
+SD-JWT encoded PID attestations use claim names that are either registered in the JSON Web
+Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
+to the attestation type. The table below maps the data
+identifiers defined above to the corresponding claim names.
 
 Note that a hierarchical claim name structure can be used in SD-JWT VC encoded
-PID attestations as SD-JWT allows for individual selective disclosure of objects
+PIDs as SD-JWT allows for individual selective disclosure of objects
 and their properties. A hierarchical claim name structure is indicated by the
 notation `parent.child` in the table below.
 
 | **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference** | 
 |------------------------|--------------|------------------|
-| family_name | family_name | string | Section 5.1 of \[OIDC\] | 
-| given_name | given_name | string | Section 5.1 of \[OIDC\] | 
-| birth_date | birthdate | string, ISO 8601-1 \[ISO8601‑1\] YYYY-MM-DD format | Section 5.1 of \[OIDC\] | 
-| birth_place | place_of_birth.locality | string | Section 4.1 of \[EKYC\] | 
-| nationality | nationalities | array of strings | Section 4.1 of \[EKYC\] | 
-| resident_address | address.formatted | string | Section 5.1 of \[OIDC\] | 
-| resident_country | address.country | string | Section 5.1 of \[OIDC\] | 
-| resident_state | address.region | string | Section 5.1 of \[OIDC\] | 
-| resident_city | address.locality | string | Section 5.1 of \[OIDC\] | 
-| resident_postal_code | address.postal_code | string | Section 5.1 of \[OIDC\] | 
-| resident_street | address.street_address | string | Section 5.1 of \[OIDC\] | 
-| resident_house_number | address.house_number | string | Section 5.1 of \[OIDC\] | 
+| family_name | family_name | string | Section 5.1 of [OIDC] | 
+| given_name | given_name | string | Section 5.1 of [OIDC] | 
+| birth_date | birthdate | string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format | Section 5.1 of [OIDC] | 
+| birth_place | place_of_birth.locality | string | Section 4.1 of [EKYC] | 
+| nationality | nationalities | array of strings | Section 4.1 of [EKYC] | 
+| resident_address | address.formatted | string | Section 5.1 of [OIDC] | 
+| resident_country | address.country | string | Section 5.1 of [OIDC] | 
+| resident_state | address.region | string | Section 5.1 of [OIDC] | 
+| resident_city | address.locality | string | Section 5.1 of [OIDC] | 
+| resident_postal_code | address.postal_code | string | Section 5.1 of [OIDC] | 
+| resident_street | address.street_address | string | Section 5.1 of [OIDC] | 
+| resident_house_number | address.house_number | string | Section 5.1 of [OIDC] | 
 | personal_administrative_number | personal_administrative_number | string | |
-| portrait | picture | string; data URL containing the base64-encoded portrait  | Section 5.1 of \[OIDC\] | 
-| family_name_birth | birth_family_name | string | Section 4.1 of \[EKYC\] | 
-| given_name_birth | birth_given_name | string | Section 4.1 of \[EKYC\] | 
-| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* | Section 5.1 of \[OIDC\] | 
-| email_address | email | string | Section 5.1 of \[OIDC\] | 
-| mobile_phone_number | phone_number | string | Section 5.1 of \[OIDC\] | 
-| expiry_date | exp | number | Section 4.1 of \[RFC7519\] |
+| portrait | picture | string; data URL containing the base64-encoded portrait  | Section 5.1 of [OIDC] | 
+| family_name_birth | birth_family_name | string | Section 4.1 of [EKYC] | 
+| given_name_birth | birth_given_name | string | Section 4.1 of [EKYC] | 
+| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* | Section 5.1 of [OIDC] | 
+| email_address | email | string | Section 5.1 of [OIDC] | 
+| mobile_phone_number | phone_number | string | Section 5.1 of [OIDC] | 
+| expiry_date | exp | number | Section 4.1 of [RFC7519] |
 | issuing_authority | issuing_authority | string | |
 | issuing_country | issuing_country | string | |
 | document_number | document_number | string | | 
 | issuing_jurisdiction | issuing_jurisdiction | string | |
 | location_status | - | See [Section 4.2.4](#424-attribute-location_status). | |
-| issuance_date | iat | number | Section 4.1 of \[RFC7519\] |
+| issuance_date | iat | number | Section 4.1 of [RFC7519] |
 | age_over_18 | age_equal_or_over.18 | boolean (Note: the age is a property of age_equal_or_over) | |
 | age_over_NN | age_equal_or_over.NN | boolean (Note: the age is a property of age_equal_or_over) | |
 | age_in_years | age_in_years | number | |
