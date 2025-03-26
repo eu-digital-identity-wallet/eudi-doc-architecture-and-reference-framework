@@ -367,12 +367,10 @@ The following Private Names specific to the attestation type defined here are to
 Note: Instead of separate claims for (for example) age_over_16, age_over_18, age_over_65, etc., a single claim age_equal_or_over is used. This claim is an object with properties for each age as follows:
 
 ```json
-{
-    "age_equal_or_over": {
-        "16": true,
-        "18": true,
-        "65": false
-    }
+"age_equal_or_over": {
+    "16": true,
+    "18": true,
+    "65": false
 }
 ```
 
@@ -388,7 +386,8 @@ the mandatory claims from the base type. Domestic
 types MAY however define additional claims and display information. Details
 are defined in [SD-JWT VC].
 
-This document defines the base type to be "urn:eudi:pid.1".
+This document defines the base type to be "urn:eudi:pid.1". As a convention, all
+PIDs must use types in the namespace "urn:eudi:".
 
 SD-JWT VC specifies Type Metadata as a machine-readable format for information
 regarding a type, including the information on claims such as what is contained
