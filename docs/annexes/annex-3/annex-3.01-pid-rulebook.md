@@ -69,7 +69,7 @@ ecosystem, regardless of the encoding used.
 | **Index** | **Requirement specification** |
 |-----------|--------------|
 | PID_01 | A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]. *Note: CIR 2024/2977 mentions the W3C Verifiable Credentials Data Model v1.1 [W3C VCDM v1.1] instead of [SD-JWT VC]. However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, it is therefore impossible to implement a PID based on [W3C VCDM v1.1]. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification.* |
-| PID_02 | PID Providers SHALL use the attestation type “eu.europa.ec.eudi.pid.1” for both ISO/IEC 18013-5-compliant and SD-JWT VC-compliant PIDs. *Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.* |
+| PID_02 | PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant and as the Verifiable Credential Type for SD-JWT VC-compliant PIDs. *Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.* |
 | PID_03 | A PID Provider SHALL ensure that all of the mandatory attributes listed in [Section 3.2](#32-mandatory-attributes-specified-in-cir-20242977) are present in any PID it issues to a Wallet Unit. *Notes: - When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes. - A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.* |
 
 ## 3 PID attributes and metadata
@@ -90,7 +90,7 @@ encoding used. Consequently,
 - the data identifiers in these tables are not necessarily the same as the
 attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. [Chapter
 4](#4-isoiec-18013-5-compliant-encoding-of-pid) specifies the data element
-identifiers to be used for such PIDs.
+identifiers to be used for PIDs in [ISO/IEC 18013-5] format
 - the data identifiers in these tables are not necessarily the same as the claim
 names used for PIDs complying with [SD-JWT VC]. [Chapter
 5](#5-sd-jwt-vc-based-encoding-of-pid) specifies the attribute identifiers to be
@@ -290,25 +290,45 @@ scope of this document.
 
 ## 5 SD-JWT VC-based encoding of PID
 
-### 5.1 Encoding of PID attributes
+### 5.1 High-Level Requirements for SD-JWT VC-based PIDs
 
-SD-JWT encoded PID attestations use claim names that are either registered in the JSON Web
+The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [SD-JWT VC].
+
+| **Index** | **Requirement specification** |
+|-----------|-------------------------------|
+| PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim will follow the same format as the one defined in Requirement PID_02. The type indicated by the vct claim SHALL be the one defined in PID_02 or the SD-JWT VC type metadata associated with the type SHALL indicate that the type extends the one defined in PID_02 ("domestic type"). |
+| PID_SVC_02 | A catalog linked in the PID rulebook will associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID rulebook applicable to the type.  |
+| PID_SVC_03 | A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12]. |
+| PID_SVC_04 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. *Note: This implies that technically speaking, there is no difference between these attributes and metadata.* |
+| PID_SVC_05 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in [Section 5.2](#52-encoding-of-pid-attributes). |
+| PID_SVC_06 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf and iat claims, if present. *Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.* |
+| PID_SVC_07 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf or iat claims, if present. |
+
+
+### 5.2 Encoding of PID attributes
+
+Following Requirement ARB_06b, SD-JWT encoded PID attestations use claim names that are either registered in the JSON Web
 Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
-to the attestation type. The table below maps the data
+to the attestation type. The tables below maps the data
 identifiers defined above to the corresponding claim names.
 
 Note that a hierarchical claim name structure can be used in SD-JWT VC encoded
 PIDs as SD-JWT allows for individual selective disclosure of objects
 and their properties. A hierarchical claim name structure is indicated by the
-notation `parent.child` in the table below.
+notation `parent.child` in the tables below.
 
-| **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference** | 
+The following IANA registered claim names are to be used for PIDs:
+
+| **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference/Notes** | 
 |------------------------|--------------|------------------|
 | family_name | family_name | string | Section 5.1 of [OIDC] | 
 | given_name | given_name | string | Section 5.1 of [OIDC] | 
 | birth_date | birthdate | string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format | Section 5.1 of [OIDC] | 
-| birth_place | place_of_birth.locality | string | Section 4.1 of [EKYC] | 
-| nationality | nationalities | array of strings | Section 4.1 of [EKYC] | 
+| birth_place | place_of_birth.country | string | Section 4.1 of [EKYC]; for the country | 
+| birth_place | place_of_birth.region | string | Section 4.1 of [EKYC]; for the state, province or other region | 
+| birth_place | place_of_birth.locality | string | Section 4.1 of [EKYC]; for the city or other locality | 
+| nationality | nationalities | array of strings | Section 4.1 of [EKYC]; using alpha-2 country codes as defined in [Section 3.2](#32-mandatory-attributes-specified-in-cir-20242977) | 
 | resident_address | address.formatted | string | Section 5.1 of [OIDC] | 
 | resident_country | address.country | string | Section 5.1 of [OIDC] | 
 | resident_state | address.region | string | Section 5.1 of [OIDC] | 
@@ -316,72 +336,63 @@ notation `parent.child` in the table below.
 | resident_postal_code | address.postal_code | string | Section 5.1 of [OIDC] | 
 | resident_street | address.street_address | string | Section 5.1 of [OIDC] | 
 | resident_house_number | address.house_number | string | Section 5.1 of [OIDC] | 
-| personal_administrative_number | personal_administrative_number | string | |
-| portrait | picture | string; data URL containing the base64-encoded portrait  | Section 5.1 of [OIDC] | 
 | family_name_birth | birth_family_name | string | Section 4.1 of [EKYC] | 
 | given_name_birth | birth_given_name | string | Section 4.1 of [EKYC] | 
-| sex | gender | string. Note: Data type mismatch - JWT claims use male, female and custom text values.* | Section 5.1 of [OIDC] | 
 | email_address | email | string | Section 5.1 of [OIDC] | 
 | mobile_phone_number | phone_number | string | Section 5.1 of [OIDC] | 
-| expiry_date | exp | number | Section 4.1 of [RFC7519] |
+| portrait | picture | string; data URL containing the base64-encoded portrait in JPEG format according to PID_04  | Section 5.1 of [OIDC] |
+
+Note: The standard JWT claims nbf, exp and optionally iat are used to express the technical validity of the SD-JWT VC PID.
+
+The following Private Names specific to the attestation type defined here are to be used for PIDs:
+
+| **Data Identifier** | **Attribute identifier** | **Encoding format** | **Notes** | 
+|------------------------|--------------|------------------|
+| expiry_date | date_of_expiry | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
+| issuance_date | date_of_issuance | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
+| personal_administrative_number | personal_administrative_number | string | |
+| sex | sex | number | numeric encoding as described in [Section 3.3](#33-optional-attributes-specified-in-cir-20242977); gender from [OIDC] uses a different value range and is therefore not used | 
 | issuing_authority | issuing_authority | string | |
 | issuing_country | issuing_country | string | |
 | document_number | document_number | string | | 
 | issuing_jurisdiction | issuing_jurisdiction | string | |
-| location_status | - | See [Section 4.2.4](#424-attribute-location_status). | |
-| issuance_date | iat | number | Section 4.1 of [RFC7519] |
-| age_over_18 | age_equal_or_over.18 | boolean (Note: the age is a property of age_equal_or_over) | |
-| age_over_NN | age_equal_or_over.NN | boolean (Note: the age is a property of age_equal_or_over) | |
+| location_status | - | See [Section 4.2.3](#423-attribute-location_status) | |
+| age_over_18 | age_equal_or_over.18 | boolean (see note below) | |
+| age_over_NN | age_equal_or_over.NN | boolean (see note below) | |
 | age_in_years | age_in_years | number | |
 | age_birth_year | age_birth_year | number | |
 | trust_anchor | trust_anchor | string | |
 
+Note: Instead of separate claims for (for example) age_over_16, age_over_18, age_over_65, etc., a single claim age_equal_or_over is used. This claim is an object with properties for each age as follows:
 
-Fields marked with (*) indicate that there is not a one-to-one mapping
-between the data element and a suitable pre-defined JWT claim.
-This should be resolved in future versions of this document.
+```json
+{
+    "age_equal_or_over": {
+        "16": true,
+        "18": true,
+        "65": false
+    }
+}
+```
 
-### 5.3 VCT
+### 5.3 Note on VCT
 
 SD-JWT VC defines the Verifiable Credential Type (`vct`). A type comes
 with associated metadata that, for instance, provides information about
 the type itself, outlines a schema detailing the claims that are
 optional or mandatory in the SD-JWT VC, and specifies their display
-methods. Additionally, a type can inherit from another type, enabling
-the creation of domestic types based on a broader EU-wide standard. The
-information regarding a type can be automatically discovered.
+methods. Additionally, a type can extend another type, enabling
+the creation of domestic types based on a common EU-wide type. Domestic
+types MAY define additional claims and display information.
 
-The information provided in this document SHALL be specified as a
-Verifiable Credential Type in the format defined by SD-JWT VC, including
-a schema for PIDs, display (rendering) information, and other metadata
-specified by SD-JWT VC. This base type SHALL be identified by the URN
-`urn:eu.europa.ec.eudi:pid:1`. The version number "1" in this type MAY
-be used to distinguish between the first version of the PID attribute
-(defined in this document) and any future version.
+PID_02 defined the base type to be "eu.europa.ec.eudi.pid.1". Domestic
+types can extend this base type.
 
-Domestic PID types for national attributes SHALL be defined using URLs
-and extend the EU-wide PID type. It is RECOMMENDED to implement a
-national base type and an extension for each version of the type. More
-than one domestic PID type MAY be defined per Member State. Domestic PID
-types SHALL specify in their Type Metadata any additional fields/claims
-and MAY define display information.
-
-EXAMPLE: For Germany, two Verifiable Credential Types for PIDs could be
-defined initially:
-
- * `https://example.bmi.bund.de/credential/pid/` as the national base
-   type, where in the metadata of the type, the `extends` field would
-   reference the EU-wide type `urn:eu.europa.ec.eudi:pid:1`. This base
-   type would not define schema or display information, as these are
-   defined in the concrete versions of the type.
- * `https://example.bmi.bund.de/credential/pid/1.0` as the first version
-   of the national credential type, defining in its metadata schema and
-   display information. The `extends` field would reference the base
-   type `https://example.bmi.bund.de/credential/pid/`.
-
-Domestic PID Type Metadata information SHALL be published at their
-respective URLs as defined in the SD-JWT VC specification.
-
+SD-JWT VC specified Type Metadata as a machine-readable format for information
+regarding a type, including the information on claims such as what is contained
+in this document. Requirement PID_SVC_02 requires that the information on the
+common EU-wide type as well as on any domestic types is published and
+accessible in a catalog.
 
 ### 5.4 Example
 
@@ -390,8 +401,7 @@ EXAMPLE: The following example shows a PID in SD-JWT VC format.
 
 ```json
 {
-    "vct": "https://memberstate.example/credential/pid",
-    "vct#integrity": "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+    "vct": "example.memberstate.pid.1",
 
     "given_name": "Jean",
     "family_name": "Dupont",
@@ -421,8 +431,6 @@ EXAMPLE: The following example shows a PID in SD-JWT VC format.
     "gender": "male",
 
     "place_of_birth": {
-        "locality": "Leipzig",
-        "region": "Saxony",
         "country": "DD"
     },
 
