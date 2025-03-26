@@ -1,22 +1,34 @@
 ---
-subtitle: "Architecture and Reference Framework Annex 1 - Definitions"
+title: "European Digital Identity Wallet"
+subtitle: "ARF Annex 1 - Definitions"
 ...
 
 # ANNEX 1 - Definitions
 
 ## A.1 Introduction
 
-In the Architecture Reference Framework (ARF), v1.5.0, many terms are used that need a precise definition. This Annex to ARF 1.5.0 contains the definitions of these terms. In fact, there are three sources for these definitions:
+In the Architecture Reference Framework (ARF) many terms are used that need a
+precise definition. This Annex contains the definitions of these terms.
 
-- In the first place, the [European Digital Identity Regulation] defines several of these terms. For
-convenience, these definitions are listed in [Table 1](#a11-table-1---eidas-regulation-definitions).
-- Secondly, the adopted Commission Implementing Regulations [CIR 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977), [CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979), [CIR 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402980), [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402981), and [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982) also contain a list of definitions. Again for convenience, these definitions are included in [Table 2]
-- Thirdly, in writing the ARF, additional technical terms and corresponding definitions are
-used. These are listed in [Table 3](#a12-table-2----additional-definitions-used-in-this-arf).
+In fact, there are three sources for these definitions:
+
+- In the first place, the [European Digital Identity Regulation] defines several
+of these terms. For convenience, these definitions are listed in [Section A.2](#a2-definitions-from-the-european-digital-identity-regulation).
+- Secondly, the adopted Commission Implementing Regulations [CIR
+2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977),
+[CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979),
+[CIR 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402980),
+[CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402981),
+and [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982)
+also contain a list of definitions. Again for convenience, these definitions are
+included in [Section A.3](#a3-definitions-from-the-adopted-commission-implementing-regulations)
+- Thirdly, in writing the ARF, additional technical terms and corresponding
+definitions are used. These are listed in [Section A.4](#a4-additional-definitions-used-in-the-arf).
 
 ## A.2 Definitions from the [European Digital Identity Regulation]
 
-The following terms are defined in the [European Digital Identity Regulation] and used in the ARF.
+The following terms are defined in the [European Digital Identity Regulation]
+and used in the ARF.
 
 | **Term** | **Definition in [European Digital Identity Regulation]** |
 |-----------|-----------|
@@ -38,11 +50,15 @@ The following terms are defined in the [European Digital Identity Regulation] an
 |**Relying Party** | A natural or legal person that relies upon electronic identification, European Digital Identity Wallets or other electronic identification means, or upon a trust service |
 | **Public Sector Body** | A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate. |
 
-**Table 1: Definition of terms used in the ARF originating from the [European Digital Identity Regulation]**
+**Table 1: Definition of terms used in the ARF originating from
+the [European Digital Identity Regulation]**
 
 ## A.3 Definitions from the adopted Commission Implementing Regulations
 
-The following terms are defined in the adopted Commission Implementing Regulations and used in the ARF. Note that small differences exist in the way in which terms are written, for example regarding capitalisation. The table contains the term as used in the ARF.
+The following terms are defined in the adopted Commission Implementing
+Regulations and used in the ARF. Note that small differences exist in the way in
+which terms are written, for example regarding capitalisation. The table
+contains the term as used in the ARF.
 
 | **Term** | **Definition** |
 |-----------|-----------|
@@ -54,7 +70,7 @@ The following terms are defined in the adopted Commission Implementing Regulatio
 | Embedded disclosure policy | A set of rules, embedded in an electronic attestation of attributes by its provider, that indicates the conditions that a wallet-relying party has to meet to access the electronic attestation of attributes |
 | Registrar (of wallet-relying parties) | The body responsible for establishing and maintaining the list of registered wallet-relying parties established in their territory who has been designated by a Member State |
 | Wallet Instance | The application installed and configured on a Wallet User’s device or environment, which is part of a Wallet Unit, and that the Wallet User uses to interact with the Wallet Unit |
-| Wallet Secure Cryptographic Application (WCSCA) | An application that manages critical assets by being linked to and using the cryptographic and non-cryptographic functions provided by the Wallet Secure Cryptographic Device |
+| Wallet Secure Cryptographic Application (WSCA) | An application that manages critical assets by being linked to and using the cryptographic and non-cryptographic functions provided by the Wallet Secure Cryptographic Device |
 | Wallet Secure Cryptographic Device (WSCD) | A tamper-resistant device that provides an environment that is linked to and used by the Wallet Secure Cryptographic Application to protect critical assets and provide cryptographic functions for the secure execution of critical operations |
 | Wallet Provider | A natural or legal person who provides Wallet Solutions |
 | critical assets | Assets within or in relation to a Wallet Unit of such extraordinary importance that where their availability, confidentiality or integrity are compromised, this would have a very serious, debilitating effect on the ability to rely on the Wallet Unit |
@@ -63,21 +79,30 @@ The following terms are defined in the adopted Commission Implementing Regulatio
 | Provider of wallet-relying party access certificates (Access Certificate Authority, Access CA) | A natural or legal person mandated by a Member State to issue Relying Party access certificates to (Wallet-) Relying Parties registered in that Member State. |
 | (Wallet-relying party) registration certificate | A data object that indicates the attributes the Relying Party has registered to intend to request from Users |
 
-## A.4 Additional definitions used in the ARF v1.5.0
+## A.4 Additional definitions used in the ARF
 
-Note: The technical terms and definitions in Table 3 below are intended to be defined in such a way that they are aligned with the definitions used in the [European Digital Identity Regulation] and the Commission Implementing Regulations in Tables 1 and 2, and should be interpreted as such. In case any definition in Table 3 contradicts a definition from the [European Digital Identity Regulation] or the Commission Implementing Regulations, the latter take precedence.
+Note: The technical terms and definitions in Table 3 below are intended to be
+defined in such a way that they are aligned with the definitions used in the
+[European Digital Identity Regulation] and the Commission Implementing
+Regulations in Tables 1 and 2, and should be interpreted as such. In case any
+definition in Table 3 contradicts a definition from the [European Digital
+Identity Regulation] or the Commission Implementing Regulations, the latter take
+precedence.
 
 In some cases, a term has its origin in the context of
-a specific Topic in [Annex 2](../annex-2/annex-2-high-level-requirements.md). In such a case, the topic number appears in brackets following the definition. If the definition relies on an external source, such as a
+a specific Topic in [Annex 2](../annex-2/annex-2-high-level-requirements.md). In
+such a case, the topic number appears in brackets following the definition. If
+the definition relies on an external source, such as a
 standard or a formal publication, that source is mentioned.
 
 | **Term** | **Definition** |
 |-----------|-----------|
-| Attestation | When not further qualified, a collective term for a QEEA, PuB-EAA, or (non-qualified) EAA. |
+| Administrative validity period (of a PID or attestation) | The date(s) from and/or up to which the attributes in the attestation are valid, which are represented as attribute(s) in the attestation. *Note: Some attestations, for instance diplomas, do not have an administrative validity period* |
+| Attestation | When not further qualified, a collective term for a QEAA, PuB-EAA, or (non-qualified) EAA. |
 | Attestation Provider | When not further qualified, a collective term for QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider. |
-| Attestation Revocation List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations; and used by a Relying Party to verify the status. [Topic 7] |
+| Attestation Revocation List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations. [Topic 7] |
 | Attestation Rulebook | A document describing the attestation type, namespace(s), and other features for a specific attestation type. [Topic 12] |
-| Attestation Status List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing status information (Valid or Invalid) for all PIDs and attestations that are valid at the time of publication. [Topic 7] |
+| Attestation Status List | A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing status information (Valid or Invalid) for all relevant PIDs or attestations. [Topic 7] *Note: Which PIDs or attestations are relevant is determined by the entity publishing the status list. For example, a status list may contain all PIDs or attestations whose validity period is not over yet at the time of publication of the list.* |
 | Attestation type | An identifier for a type of attestation, unique within the context of the EUDI Wallet ecosystem [Topic 12] |
 | Certificate Authority (CA) | An entity which is trusted by one or more parties in the EUDI Wallet ecosystem to create and seal certificates. |
 | Certificate Policy (CP) | A named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements. |
@@ -89,5 +114,6 @@ standard or a formal publication, that source is mentioned.
 | Qualified Electronic Signature Remote Creation Service Provider | A natural or a legal person that offers services related to the remote creation, validation, and management of qualified electronic signatures that meet eIDAS regulation legal requirements and standards to be considered as legally equivalent to handwritten signatures. |
 | Relying Party Instance | A software and/or hardware module with the capability to interact with a Wallet Unit and to perform Relying Party authentication, that is controlled by a Relying Party. |
 | Selective Disclosure | The capability enabling the User to present a subset of the attributes included in a PID or attestation. |
-| Trust Anchor | An authoritative entity represented by a public key and associated data. (Based on RFC 5194) |
+| Technical validity period (of a PID or attestation) | The dates (and possibly times) from and up to which the attestation is valid, which are represented as metadata of the attestation. *Note: All PIDs and attestations have a technical validity period, which is typically much shorter than its administrative validity period (if existent). The technical validity period is chosen based on a risk analysis, e.g. with regard to User privacy.* |
+| Trust Anchor | An authoritative entity represented by a public key and associated data. *Note: based on RFC 5914.* |
 | Trusted List | Repository of information about authoritative entities in a particular legal or contractual context which provides information about their current and historical status. |

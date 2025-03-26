@@ -1,0 +1,134 @@
+<?xml  version='1.0' encoding='utf-8' ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://data.europa.eu/eudi/model" targetNamespace="http://data.europa.eu/eudi/model" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:complexType name="Claim">
+		<xs:sequence>
+			<xs:element name="friendlyName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="required" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+			<xs:element name="URI" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="isRequiredByLaw" minOccurs="1" maxOccurs="1" type="Law"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Document">
+		<xs:sequence>
+			<xs:element name="content" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="type" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Identifier">
+		<xs:sequence>
+			<xs:element name="identifier" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="type" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Law">
+		<xs:sequence>
+			<xs:element name="lang" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="legalBasis" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PIDProvider">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="PIDIssuer" minOccurs="0" maxOccurs="1" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Policy">
+		<xs:sequence>
+			<xs:element name="policyURI" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="type" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Provider">
+		<xs:sequence>
+			<xs:element name="country" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="email" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+			<xs:element name="infoURI" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+			<xs:element name="legalName" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+			<xs:element name="phone" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+			<xs:element name="type" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="x5c" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="policy" minOccurs="0" maxOccurs="unbounded" type="Policy"/>
+			<xs:element name="regNum" minOccurs="0" maxOccurs="unbounded" type="Identifier"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PubEEAProvider">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="CAR" minOccurs="1" maxOccurs="1" type="xs:string"/>
+					<xs:element name="EEAIssuer" minOccurs="0" maxOccurs="1" type="xs:string"/>
+					<xs:element name="law" minOccurs="1" maxOccurs="unbounded" type="Law"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TrustService">
+		<xs:sequence>
+			<xs:element name="srvName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="srvQualifier" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+			<xs:element name="srvURI" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="status" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="statusDate" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="type" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="x5c" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TrustServiceProvider">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="trustSrv" minOccurs="1" maxOccurs="unbounded" type="TrustService"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WRPAccCertProvider">
+		<xs:complexContent>
+			<xs:extension base="TrustServiceProvider"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WRPRegistrar">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="register" minOccurs="1" maxOccurs="1" type="xs:string"/>
+					<xs:element name="registerURI" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WalletProvider">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="walletSol" minOccurs="0" maxOccurs="1" type="WalletSolution"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WalletRelyingParty">
+		<xs:complexContent>
+			<xs:extension base="Provider">
+				<xs:sequence>
+					<xs:element name="entitlement" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+					<xs:element name="isPSB" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+					<xs:element name="physicalAddress" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+					<xs:element name="requestedClaim" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+					<xs:element name="srvDescription" minOccurs="1" maxOccurs="1" type="xs:string"/>
+					<xs:element name="supportURI" minOccurs="1" maxOccurs="1" type="xs:string"/>
+					<xs:element name="supervisoryBody" minOccurs="1" maxOccurs="1" type="Provider"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WalletSolution">
+		<xs:sequence>
+			<xs:element name="refNum" minOccurs="1" maxOccurs="1" type="xs:string"/>
+			<xs:element name="solProvider" minOccurs="0" maxOccurs="1" type="xs:string"/>
+			<xs:element name="walletName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
