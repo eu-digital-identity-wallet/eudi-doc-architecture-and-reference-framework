@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [1.8.0] - 2025-03-26
+
+Added results of "Topic C - Wallet Unit Attestation (WUA) and key attestation"
+Added results of "Topic D - Embedded Disclosure Policies"
+Added results of "Topic G - Zero Knowledge Proof"
+Added results of "Topic V – PID rulebook"
+Adding links to "Standards and Technical Specifications" 
+Editorial changes and fixing typos.
+
 ## [1.7.1] - 2025-03-20
 
 Editorial changes and fixing typos.

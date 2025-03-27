@@ -13,9 +13,7 @@ final.*
 
 ## 1 Introduction
 
-This document is the mobile driving licence (mDL) Rulebook. It is part of ARF
-v1.5.0. It contains requirements specific to mDL attestations with the EUDI
-Wallet ecosystem.
+This document is the mobile driving licence (mDL) Rulebook. It is part of the Architecture and Reference Framework for the EUDI Wallet ecosystem. It contains requirements specific to mDL attestations with the EUDI Wallet ecosystem.
 
 This mDL Rulebook contains the following topics:
 

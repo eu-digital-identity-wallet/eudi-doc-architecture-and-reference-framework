@@ -48,17 +48,17 @@ its corresponding GitHub discussion area and roadmap issue.
 
 | Id | Title | | |
 |----|-------|--|--|
-| **TS01** | [EUDI Wallet Trust Mark](ts1-eudi-wallet-trust-mark.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/425) | Roadmap issue |
-| **TS02** | [Notification and Publication of Provider Information](ts2-notification-publication-provider-information.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/427) | Roadmap issue |
-| **TS03** | Specification of Wallet Unit Attestation (WUA) | Discussion area | Roadmap issue |
-| **TS04** | Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet | Discussion area | Roadmap issue |
-| **TS05** | Common Formats and API for Relying Party Registration Information | Discussion area | Roadmap issue |
-| **TS06** | Common Set of Relying Party Information to be Registered | Discussion area | Roadmap issue |
-| **TS07** | Specification of Common Interface for Data Deletion Requests to Relying Parties | Discussion area | Roadmap issue |
-| **TS08** | Specification of Common Interface for Lodging Complaints to DPAs | Discussion area | Roadmap issue |
-| **TS09** | Specification of Wallet-to-Wallet Interactions | Discussion area | Roadmap issue |
-| **TS10** | Data Portability and Download (Export) | Discussion area | Roadmap issue |
-| **TS11** | Specification of Interfaces and Formats for the Catalogue of Attestation Rulebooks and Attributes | Discussion area | Roadmap issue |
+| **TS01** | [EUDI Wallet Trust Mark](ts1-eudi-wallet-trust-mark.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/425) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/18) |
+| **TS02** | [Notification and Publication of Provider Information](ts2-notification-publication-provider-information.md) | [Discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/427) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/23) |
+| **TS03** | Specification of Wallet Unit Attestation (WUA) | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/17) |
+| **TS04** | Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/268) |
+| **TS05** | Common Formats and API for Relying Party Registration Information | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/14) |
+| **TS06** | Common Set of Relying Party Information to be Registered | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/16) |
+| **TS07** | Specification of Common Interface for Data Deletion Requests to Relying Parties | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/20) |
+| **TS08** | Specification of Common Interface for Lodging Complaints to DPAs | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/19) |
+| **TS09** | Specification of Wallet-to-Wallet Interactions | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/22) |
+| **TS10** | Data Portability and Download (Export) | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/24) |
+| **TS11** | Specification of Interfaces and Formats for the Catalogue of Attestation Rulebooks and Attributes | Discussion area | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/21) |
 
 ## Tracking All Relevant Standards and Technical Specifications
 

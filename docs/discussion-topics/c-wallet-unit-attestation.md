@@ -36,8 +36,8 @@ The document is structured as follows:
   - Restructured the HLRs
   - Added, removed and changed HLR.
 - Changes for Version 0.2:
- - Updated discussions on revocation and cryptographic binding
- - Changes to HLRs
+  - Updated discussions on revocation and cryptographic binding
+  - Changes to HLRs
 
 Multiple legal texts impose direct requirements on the Wallet Unit Attestation, and impose requirements that are solved by using Wallet Unit Attestations: [CIR 2024/2977], [CIR 2024/2979], [CIR 2024/2982], and the [European Digital Identity Regulation]. This section recaps the respective legal requirements from these sources.
 
@@ -251,7 +251,7 @@ The meaning of 'cryptographically bound' is discussed in ARF section 6.6.3.8. Th
 
 As the WUA is used to revoke Wallet Units, it plays an important role in relation to PID providers. The Wallet Provider is responsibly for providing the revocation functionality; however, how it is to be used is described in Topic 38, Wallet Unit Revocation and Topic 7, Attestation Revocation and revocation checking. In order to fulfil the requirement in [CIR 2024/2977], the PID providers must keep track of all Wallet Units (i.e. all WUAs they received from Wallet Units during PID issuance) to which PID has been issued and periodically (e.g. daily) monitor this list to check if a WUA has been revoked. For this to function, several properties are required:
 
-- The validity period of the WUA used in connection with issuance, should be long, preferably as long as the expected lifetime of the Wallet Unit. In practice this may be hard to achieve, as the Wallet Provider would need to guess the expected lifetime of the Wallet Units.
+- The validity period of the WUA used in connection with issuance (Use case 2) should be long, preferably as long as the expected lifetime of the Wallet Unit. In practice this may be hard to achieve, as the Wallet Provider would need to guess the expected lifetime of the Wallet Units.
 - To mitigate the privacy risk of the long validity period of the WUA, the WUA should be a once-only attestation as specified in [Topic A].
 
 These requirements are discussed in [Topic A], which discusses privacy risks related to the usage of attestations in general. These discussions also apply to the WUA. Note that the validity period of the WUA used in connection with Relying Parties can be shorter than in the issuance use case. This may make revocation easier to handle, however it will require more frequent interactions with the Wallet Provider, which could also raise privacy concerns.
