@@ -315,7 +315,7 @@ mechanism.
 
 #### 4.1.3 Proof of attestation
 
-The previous use case can be generalized to any type of attestation. For example,
+The previous use case can be generalised to any type of attestation. For example,
 Users may want to prove that they are students (e.g., to receive a discount) without
 revealing any additional information about their identity. This should be possible
 for both remote and proximity presentation flows.

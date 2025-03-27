@@ -527,7 +527,8 @@ In addition, the IA draft text lists the following reasons of suspension/cancell
 
 ## 4 Current HLRs and Proposals of Changes
 
-The ARF Annex 2, Topics 27, 44 and 52 contain a number of High-Level Requirements related to the topic. 
+
+The ARF, Annex 2, Topic 27, Topic 44 and Topic 52, contains a number of High-Level Requirements related to the topic.
 
 The Topic 27 requirements cover general requirements for Member State registration processes and specific requirements for the registration of Relying Parties, whereas Topic 44 covers issuance of Relying Party registration certificates. Topic 52 focuses on the intermediaries.
 

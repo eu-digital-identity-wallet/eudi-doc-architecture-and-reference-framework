@@ -140,7 +140,7 @@ For these reasons the integrated approach is the preferred option.
 
 Article 10, paragraph 3 of Implementing Regulation (EU) 2024/2979 requires Wallet
 Units to "inform the wallet user of the (evaluation of the embedded disclosure policy) result." However,
-it does not specify how this result should be enforced. Related to that ARF 1.5.0
+it does not specify how this result should be enforced. Related to that, the ARF
 includes the following requirement:
 
 > EDP_07 The Wallet Unit SHALL enable the User, based on the outcome of the evaluation
@@ -160,7 +160,7 @@ specified in the Implementing Acts do not consider such error response.
 
 If Policy 2 defined in \[2024/20179\] is implemented based on Relying
 Party identifiers included in WRPAC then the use of intermediaries  will be prevented.
-It is reminded that according to requirement  RPI_01 of ARF 1.5.0:
+It is reminded that according to requirement RPI_01 in Annex 2 of the ARF:
 
 > [...] an intermediary obtains an access certificate containing its own name
 and unique Relying Party identifier
