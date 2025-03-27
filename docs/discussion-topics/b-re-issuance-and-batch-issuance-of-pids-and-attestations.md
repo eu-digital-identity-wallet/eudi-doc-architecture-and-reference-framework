@@ -78,7 +78,7 @@ This document is structured as follows:
 
 ### 2.1 Description
 
-Version 1.5 of the ARF contains a large number of requirements regarding
+The ARF contains a large number of requirements regarding
 the issuance of PIDs and attestations, primarily in Topic 10/23 and also
 in Topic 9. These requirements do not distinguish between the first time
 a PID or attestation is issued and re-issuance of a PID or attestation
@@ -425,7 +425,7 @@ Option 1 has obvious drawbacks, in particular:
 Note that Option 4 is probably a solution to these drawbacks.
 
 Option 2 requires direct communication between the Wallet Provider and
-the PID Provider or Attestation Provider. The ARF v1.5 does not foresee
+the PID Provider or Attestation Provider. The ARF does not foresee
 such communication, primarily since it means that the Wallet Provider
 gets information about the PIDs and attestations present on each of
 their Wallet Units. From an architecture point of view, this would

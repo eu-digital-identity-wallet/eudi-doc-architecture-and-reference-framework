@@ -10,7 +10,7 @@ subtitle: "ARF Annex 3.01 - PID Rulebook"
 ### 1.1 Document scope
 
 This document is the natural-person Person Identification Data (PID) Rulebook
-and is part of the Architecture Reference Framework (ARF) v1.5.0. It specifies
+and is part of the Architecture Reference Framework (ARF). It specifies
 how the mandatory and optional person identification data for the natural
 person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing
 Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in
@@ -24,8 +24,7 @@ the PID complies with [ISO/IEC 18013-5] and if it complies with [SD-JWT VC].
 Person identification data for the legal person is out of scope of this document.
 
 This PID Rulebook complies with all applicable requirements in Topic 12
-(Attestation Rulebooks) in Annex 2 of the Architecture Reference Framework
-v1.5.0.
+(Attestation Rulebooks) in Annex 2 of the Architecture Reference Framework.
 
 ### 1.2 Document structure
 
@@ -59,7 +58,7 @@ statements of fact.
 
 ### 1.4 Terminology
 
-This document uses the terminology specified in Annex 1 of the ARF v1.5.0.
+This document uses the terminology specified in Annex 1 of the ARF.
 
 ## 2 Generic High-Level Requirements for PIDs
 
@@ -133,7 +132,7 @@ used for such PIDs.
 
 | **Data Identifier** | **Definition** |
 |------------------------|--------------|
-| expiry_date | Date (and if possible time) when the person identification data will expire. **Further clarification added in this PID Rulebook:** This attribute, as well as the optional issuance_date attribute specified in [Section 3.6](#36-additional-optional-attributes-specified-in-this-rulebook), pertains to the administrative validity period of the PID. It is up to the PID Provider to decide whether a PID has an administrative validity period. However, if present, it in general is different from the technical validity period of a PID. The technical validity period is a mandatory element of all PIDs (and also attestations) in the EUDI Wallet ecosystem. It typically is short, a few days or weeks, to mitigate any challenges regarding tracking of Users by malicious Relying Parties based on the repeated presentation of the same PID. On the other hand, the administrative validity period is typically at least a few years long. During the administrative validity period of a PID, the PID Provider will therefore provide multiple successive PIDs to a User, typically without any actions being expected from the User. However, when the administrative validity period of a PID ends, typically the User has to apply for an entirely new PID.|
+| expiry_date | Date (and if possible time) when the person identification data will expire. **Further clarification added in this PID Rulebook:** This attribute, as well as the optional issuance_date attribute specified in [Section 3.6](#36-additional-optional-attributes-specified-in-this-rulebook), pertains to the administrative validity period of the PID. It is up to the PID Provider to decide whether a PID has an administrative validity period. However, if present, it in general is different from the technical validity period of a PID. The technical validity period is a mandatory element of all PIDs (and also attestations) in the EUDI Wallet ecosystem. It typically is short, a few days or weeks at most, if not shorter, to mitigate challenges regarding tracking of Users by malicious Relying Parties based on the repeated presentation of the same PID. On the other hand, the administrative validity period is typically at least a few years long. During the administrative validity period of a PID, the PID Provider will therefore provide multiple successive PIDs to a User, typically without any actions being expected from the User. However, when the administrative validity period of a PID ends, typically the User has to apply for an entirely new PID.|
 | issuing_authority | Name of the administrative authority that issued the person identification data, or the ISO 3166 alpha-2 country code of the respective Member State if there is no separate authority entitled to issue person identification data. |
 | issuing_country | Alpha-2 country code, as specified in ISO 3166-1, of the country or territory of the provider of the person identification data. |
 
@@ -150,11 +149,11 @@ used for such PIDs.
 | **Data Identifier** | **Definition** |
 |------------------------|--------------|
 | issuance_date | Date (and if possible time) when the person identification data was issued and/or the administrative validity period of the person identification data began. See also the clarification for expiry_date in [Section 3.4](#34-mandatory-metadata-specified-in-cir-20242977). |
-| age_over_18 | Attesting whether the User to whom the person identification data relates is currently an adult (true) or a minor (false). |
-| age_over_NN | Attesting whether the User to whom the person identification data relates is at least NN years old. N <> 18. |
+| age_over_18 | Attesting whether the User to whom the person identification data relates is currently an adult (true) or a minor (false). If present, the requirements in clause 7.2.5 of ISO/IEC 18013-5 are applicable for this attribute. |
+| age_over_NN | Attesting whether the User to whom the person identification data relates is at least NN years old. N <> 18. Multiple instances of this attribute may be present, provided the value of NN is different in each of them. If present, the requirements in clause 7.2.5 of ISO/IEC 18013-5 are applicable for these attributes. |
 | age_in_years | The current age of the User to whom the person identification data relates in years. |
 | age_birth_year | The year when the User to whom the person identification data relates was born. |
-| trust_anchor | This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. *Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the [European Digital Identity Regulation], which is mandatory for QEAAs. This PID Rulebook add this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.* |
+| trust_anchor | This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. *Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the [European Digital Identity Regulation], which is mandatory for QEAAs. This PID Rulebook adds this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.* |
 
 ## 4 ISO/IEC 18013-5-compliant encoding of PID
 
@@ -186,7 +185,7 @@ all attributes:
 - The first column lists the data identifier specified in
 [Chapter 3](#3-pid-attributes-and-metadata) above.
 - The second column lists the corresponding attribute identifier to be used in
-presentation requests and responses according to [ISO18013-5].
+presentation requests and responses according to [ISO/IEC 18013-5].
 - The third column indicates the encoding of each attribute. This column uses
 CDDL representation types defined in [RFC 8610]. The following notes and
 requirements apply:
@@ -471,4 +470,4 @@ Rulebook.
 
 ## 7 References
 
-See Chapter 9 of the main ARF 1.5.0 document.
+See [Chapter 9](../../architecture-and-reference-framework-main.md#9-references) of the ARF main document.

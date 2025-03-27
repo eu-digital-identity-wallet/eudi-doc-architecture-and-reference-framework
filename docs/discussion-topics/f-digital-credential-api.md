@@ -364,7 +364,7 @@ attackers to block transactions by Relying Parties and Wallet Units.
 
 ### 4.1 High-Level Requirements to be added to Annex 2
 
-The following High-Level Requirements will be added to Annex 2 of the ARF v1.9:
+The following High-Level Requirements will be added to Annex 2 of the ARF:
 
 #### 4.1.1 Requirements to be added (likely) to Topic 1
 

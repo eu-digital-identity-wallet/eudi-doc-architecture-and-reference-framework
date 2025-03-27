@@ -4,10 +4,6 @@ Version 1.0, updated 14 January 2025
 
 ## 1 Introduction
 
-## 1 Introduction
-
-### 1.1 Discussion Paper topic description
-
 ### 1.1 Discussion Paper topic description
 
 This document is the Discussion Paper for eIDAS Coordination Group
@@ -34,7 +30,6 @@ A section will be added to the ARF to discuss:
 4. the ways in which these risks may be fully mitigated in the future,
  e.g. by means of ZKP-based proof mechanisms for attestations.
 
-5. the risks for User privacy related to revocation checking.
 5. the risks for User privacy related to revocation checking.
 
 In this version of the document, the feedback of Member States during
@@ -795,7 +790,7 @@ and the Commission's response to it
 ### 6.1 High-Level Requirements to be added to Annex 2
 
 The High-Level Requirements in this section will be added to Annex 2 of
-the ARF v1.7.
+the ARF.
 
 #### 6.1.1 Requirements to be added (likely) to Topic 10/23
 
