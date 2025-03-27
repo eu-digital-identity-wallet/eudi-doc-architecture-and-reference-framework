@@ -1010,45 +1010,230 @@ PIDs as SD-JWT allows for individual selective disclosure of objects
 and their properties. A hierarchical claim name structure is indicated by the
 notation <code>parent.child</code> in the tables below.</p>
 <p>The following IANA registered claim names are to be used for PIDs:</p>
-<p>| <strong>Data Identifier</strong> | <strong>Attribute identifier</strong> | <strong>Encoding format</strong> | <strong>Reference/Notes</strong> | 
-|------------------------|--------------|------------------|
-| family_name | family_name | string | Section 5.1 of [OIDC] | 
-| given_name | given_name | string | Section 5.1 of [OIDC] | 
-| birth_date | birthdate | string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format | Section 5.1 of [OIDC] | 
-| birth_place | place_of_birth.country | string | Section 4.1 of [EKYC]; for the country | 
-| birth_place | place_of_birth.region | string | Section 4.1 of [EKYC]; for the state, province or other region | 
-| birth_place | place_of_birth.locality | string | Section 4.1 of [EKYC]; for the city or other locality | 
-| nationality | nationalities | array of strings | Section 4.1 of [EKYC]; using alpha-2 country codes as defined in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a> | 
-| resident_address | address.formatted | string | Section 5.1 of [OIDC] | 
-| resident_country | address.country | string | Section 5.1 of [OIDC] | 
-| resident_state | address.region | string | Section 5.1 of [OIDC] | 
-| resident_city | address.locality | string | Section 5.1 of [OIDC] | 
-| resident_postal_code | address.postal_code | string | Section 5.1 of [OIDC] | 
-| resident_street | address.street_address | string | Section 5.1 of [OIDC] | 
-| resident_house_number | address.house_number | string | Section 5.1 of [OIDC] | 
-| family_name_birth | birth_family_name | string | Section 4.1 of [EKYC] | 
-| given_name_birth | birth_given_name | string | Section 4.1 of [EKYC] | 
-| email_address | email | string | Section 5.1 of [OIDC] | 
-| mobile_phone_number | phone_number | string | Section 5.1 of [OIDC] | 
-| portrait | picture | string; data URL containing the base64-encoded portrait in JPEG format according to PID_04  | Section 5.1 of [OIDC] |</p>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Encoding format</strong></th>
+<th><strong>Reference/Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>family_name</td>
+<td>family_name</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>given_name</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>birthdate</td>
+<td>string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.country</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the country</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.region</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the state, province or other region</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.locality</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the city or other locality</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>nationalities</td>
+<td>array of strings</td>
+<td>Section 4.1 of [EKYC]; using alpha-2 country codes as defined in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a></td>
+</tr>
+<tr>
+<td>resident_address</td>
+<td>address.formatted</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_country</td>
+<td>address.country</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_state</td>
+<td>address.region</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_city</td>
+<td>address.locality</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_postal_code</td>
+<td>address.postal_code</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_street</td>
+<td>address.street_address</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_house_number</td>
+<td>address.house_number</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>family_name_birth</td>
+<td>birth_family_name</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]</td>
+</tr>
+<tr>
+<td>given_name_birth</td>
+<td>birth_given_name</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]</td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>email</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>mobile_phone_number</td>
+<td>phone_number</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>picture</td>
+<td>string; data URL containing the base64-encoded portrait in JPEG format according to PID_04</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+</tbody>
+</table>
 <p>Note: The standard JWT claims nbf and exp are used to express the technical validity of the SD-JWT VC PID.</p>
 <p>The following Private Names specific to the attestation type defined here are to be used for PIDs:</p>
-<p>| <strong>Data Identifier</strong> | <strong>Attribute identifier</strong> | <strong>Encoding format</strong> | <strong>Notes</strong> | 
-|------------------------|--------------|------------------|
-| expiry_date | date_of_expiry | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
-| issuance_date | date_of_issuance | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
-| personal_administrative_number | personal_administrative_number | string | |
-| sex | sex | number | numeric encoding as described in <a href="#33-optional-attributes-specified-in-cir-20242977">Section 3.3</a>; gender from [OIDC] uses a different value range and is therefore not used | 
-| issuing_authority | issuing_authority | string | |
-| issuing_country | issuing_country | string | |
-| document_number | document_number | string | | 
-| issuing_jurisdiction | issuing_jurisdiction | string | |
-| location_status | - | See <a href="#423-attribute-location_status">Section 4.2.3</a> | |
-| age_over_18 | age_equal_or_over.18 | boolean (see note below) | |
-| age_over_NN | age_equal_or_over.NN | boolean (see note below) | |
-| age_in_years | age_in_years | number | |
-| age_birth_year | age_birth_year | number | |
-| trust_anchor | trust_anchor | string | |</p>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Encoding format</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expiry_date</td>
+<td>date_of_expiry</td>
+<td>string</td>
+<td>ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema]</td>
+</tr>
+<tr>
+<td>issuance_date</td>
+<td>date_of_issuance</td>
+<td>string</td>
+<td>ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema]</td>
+</tr>
+<tr>
+<td>personal_administrative_number</td>
+<td>personal_administrative_number</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>sex</td>
+<td>sex</td>
+<td>number</td>
+<td>numeric encoding as described in <a href="#33-optional-attributes-specified-in-cir-20242977">Section 3.3</a>; gender from [OIDC] uses a different value range and is therefore not used</td>
+</tr>
+<tr>
+<td>issuing_authority</td>
+<td>issuing_authority</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>issuing_country</td>
+<td>issuing_country</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>document_number</td>
+<td>document_number</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>issuing_jurisdiction</td>
+<td>issuing_jurisdiction</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>location_status</td>
+<td>-</td>
+<td>See <a href="#423-attribute-location_status">Section 4.2.3</a></td>
+<td></td>
+</tr>
+<tr>
+<td>age_over_18</td>
+<td>age_equal_or_over.18</td>
+<td>boolean (see note below)</td>
+<td></td>
+</tr>
+<tr>
+<td>age_over_NN</td>
+<td>age_equal_or_over.NN</td>
+<td>boolean (see note below)</td>
+<td></td>
+</tr>
+<tr>
+<td>age_in_years</td>
+<td>age_in_years</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>age_birth_year</td>
+<td>age_birth_year</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>trust_anchor</td>
+<td>trust_anchor</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Note: Instead of separate claims for (for example) age_over_16, age_over_18, age_over_65, etc., a single claim age_equal_or_over is used. This claim is an object with properties for each age as follows:</p>
 <pre><code class="language-json">&quot;age_equal_or_over&quot;: {
     &quot;16&quot;: true,
@@ -1076,7 +1261,7 @@ accessible in a catalog.</p>
 <h3 id="54-example">5.4 Example</h3>
 <p>EXAMPLE: The following example shows the payload of a PID in SD-JWT VC format before the encoding into the SD-JWT format.</p>
 <pre><code class="language-json">{
-    &quot;vct&quot;: &quot;urn:eudi:pid.de.1&quot;,
+    &quot;vct&quot;: &quot;urn:eudi:pid:de:1&quot;,
 
     &quot;given_name&quot;: &quot;Jean&quot;,
     &quot;family_name&quot;: &quot;Dupont&quot;,
