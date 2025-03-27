@@ -321,7 +321,7 @@ notation `parent.child` in the tables below.
 The following IANA registered claim names are to be used for PIDs:
 
 | **Data Identifier** | **Attribute identifier** | **Encoding format** | **Reference/Notes** | 
-|------------------------|--------------|------------------|
+|---------------------|--------------------------|---------------------|---------------------|
 | family_name | family_name | string | Section 5.1 of [OIDC] | 
 | given_name | given_name | string | Section 5.1 of [OIDC] | 
 | birth_date | birthdate | string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format | Section 5.1 of [OIDC] | 
@@ -347,7 +347,7 @@ Note: The standard JWT claims nbf and exp are used to express the technical vali
 The following Private Names specific to the attestation type defined here are to be used for PIDs:
 
 | **Data Identifier** | **Attribute identifier** | **Encoding format** | **Notes** | 
-|------------------------|--------------|------------------|
+|---------------------|--------------------------|---------------------|-----------|
 | expiry_date | date_of_expiry | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
 | issuance_date | date_of_issuance | string | ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema] |
 | personal_administrative_number | personal_administrative_number | string | |
@@ -401,7 +401,7 @@ EXAMPLE: The following example shows the payload of a PID in SD-JWT VC format be
 
 ```json
 {
-    "vct": "urn:eudi:pid.de.1",
+    "vct": "urn:eudi:pid:de:1",
 
     "given_name": "Jean",
     "family_name": "Dupont",
