@@ -297,7 +297,7 @@ ecosystem that are compliant with [SD-JWT VC].
 | **Index** | **Requirement specification** |
 |-----------|-------------------------------|
 | PID_SVC_01 | A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the `urn:eudi:pid:` namespace. The type indicated by the vct claim SHALL be `urn:eudi:pid:1` for the type defined in this document or a domestic type that extends it. |
-| PID_SVC_02 | A catalog linked in the PID rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID rulebook applicable to the type.  |
+| PID_SVC_02 | A catalog linked in the PID Rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID Rulebook applicable to the type.  |
 | PID_SVC_03 | A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12]. |
 | PID_SVC_04 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. *Note: This implies that technically speaking, there is no difference between these attributes and metadata.* |
 | PID_SVC_05 | When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in [Section 5.2](#52-encoding-of-pid-attributes). |

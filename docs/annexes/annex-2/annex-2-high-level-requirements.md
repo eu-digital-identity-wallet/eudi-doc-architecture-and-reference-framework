@@ -116,7 +116,7 @@ attestation that must comply with all relevant requirements in other Topics.
 The Person Identification Data (PID) Rulebook contains requirements specific to
 the PID within the EUDI Wallet ecosystem.
 
-The PID Rule Book contains the following main topics:
+The PID Rulebook contains the following main topics:
 
 1. The PID attribute schema: This describes the structure, the type, the entity
 identifiers, and the logical organisation of the mandatory and optional

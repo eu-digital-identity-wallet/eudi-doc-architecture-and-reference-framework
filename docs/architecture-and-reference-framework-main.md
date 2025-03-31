@@ -4153,8 +4153,8 @@ For undated references, the latest version available applies.
 - Definitions - [Annex 1](./annexes/annex-1/annex-1-definitions.md)
 - High Level Technical Requirements - [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md)
 - Rulebooks - Annex 3:
-    - PID rulebook - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md)
-    - mDL rulebook - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
+    - PID Rulebook - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md)
+    - mDL Rulebook - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
 - Service Blueprints - Annex 4:
     - Blueprint Initialisation and activation - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf)
     - Blueprint Online identification and authentication - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf)
