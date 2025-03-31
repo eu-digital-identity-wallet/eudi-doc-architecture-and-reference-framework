@@ -270,7 +270,7 @@ cannot selectively disclose only one of these nationalities, since for ISO/IEC
 User approves the presentation of the nationality attribute. A potential
 solution to this challenge is for the PID Provider to include only one
 nationality in the nationality attribute, and for the remaining nationalities
-use one or more domestic data attributes specified according to requirement
+to use one or more domestic data attributes specified according to requirement
 PID_ISO_02.
 
 #### 4.2.3 Attribute location_status
