@@ -309,7 +309,7 @@ private key corresponding to public key in the WUA is in possession by the Walle
 A topic related to the WUA is the following. It would be useful if the Wallet Unit would be able provide a proof that the PID or attestation private key is protected by the same WSCA as the WUA private
 key. Because if that is the case, the PID Provider or Attestation Provider can be sure that the
 security level of the new PID or attestation key is the same as the security
-level of the WUA key. Moreover, such a proof could also be useful if case of a combined presentation of attributes as discussed in [Topic 18](#a2318-topic-18---combined-presentations-of-attributes), to give assurance to the Relying Party that all of these attestations originate from the same WSCA/WSCD and thus are related to the same User.
+level of the WUA key. Moreover, such a proof could also be useful if case of a combined presentation of attributes as discussed in [Topic 18](#a2318-topic-18---combined-presentations-of-attributes), to give assurance to the Relying Party that all of these attestations originate from the same WSCA/WSCD and thus are related to the same User.
 
 However, at the moment of writing this version of the ARF, no commonly agreed technical specification of such a proof is available. Moreover, even if such a specification were available, it is
 not fully clear how many WSCAs/WSCDs available to Wallet Units will support the cryptographic functionalities
@@ -659,7 +659,7 @@ catalogue, as described in [Topic 25](#a2325-topic-25---unified-definition-and-c
 | ARB_09 | The Schema Provider for an Attestation Rulebook SHALL specify, for each attribute in the attestation, whether the presence of that attribute is mandatory, optional, or conditional. |
 | ARB_10 | The Schema Provider for an Attestation Rulebook for an ISO/IEC 18013-5 compliant attestation MAY define a domestic namespace to specify attributes that are specific to that Rulebook and are not included in the applicable EU-wide or sectoral namespace. All requirements for namespaces in this Topic also apply for domestic namespaces. |
 | ARB_11 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a QEAA or a PuB-EAA SHALL include in the Rulebook an attribute as meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point a) and [Annex VII](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1) point a) of the [European Digital Identity Regulation]. This attribute SHALL reference the technical specification meant in ARB_25. |
-| ARB_12 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include an attribute in the Rulebook indicating that the attestation is an EAA. This attribute SHALL reference the technical specification meant in ARB_25. |
+| ARB_12 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include an attribute in the Rulebook indicating that the attestation is an EAA. This attribute SHALL reference the technical specification meant in ARB_25. |
 | ARB_13 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a QEAA SHALL include in the Rulebook one or more attributes or metadata representing the set of data meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point b) of the [European Digital Identity Regulation]. |
 | ARB_14 | The Schema Provider for an attestation Rulebook describing a type of attestation that is a PuB-EAA SHALL include in the Rulebook one or more attributes or metadata representing the set of data meant in [Annex VII](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-56-1) point b) of the [European Digital Identity Regulation]. |
 | ARB_15 | The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include in the Rulebook one or more attributes or metadata representing the set of data meant in [Annex V](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e40-54-1) point b) of the [European Digital Identity Regulation]. |
@@ -835,7 +835,7 @@ function of a dashboard ensures a higher degree of transparency, privacy
 and control of the User over their personal data.
 
 This Topic lists high-level requirements related to the functions
-of such a dashboard.  
+of such a dashboard.  
 
 ##### HLRs <!-- omit from toc -->
 
@@ -862,11 +862,11 @@ of such a dashboard.  
 ##### Description <!-- omit from toc -->
 
 This topic deals with the requirement for Strong User (Customer) Authentication
-(SCA) in the context of authenticating a User as part of electronic payments.  
+(SCA) in the context of authenticating a User as part of electronic payments.  
 
 Users would like to be able to authenticate themselves during online
 payments securely and conveniently using their Wallet Units, so that
-they can enjoy a seamless and protected shopping/ payment experience.  
+they can enjoy a seamless and protected shopping/ payment experience.  
 
 The goal is to implement Strong Customer Authentication (SCA) for electronic
 payments, ensuring a high level of security and compliance with
@@ -878,10 +878,10 @@ lays down the requirements for strong customer authentication (SCA), which needs
 to be complied with when accessing a payment account online and for initiating
 electronic payments, or carrying out any action through a remote channel which
 may imply a risk of payment fraud or other abuses. The use of the wallet for SCA
-will be in full compliance with those requirements.  
+will be in full compliance with those requirements.  
 
 In the future, a Wallet Unit could also be used for payments with Central Bank
-Digital Currencies.  
+Digital Currencies.  
 
 ##### HLRs <!-- omit from toc -->
 
@@ -1110,7 +1110,7 @@ Notes:
  example, date of birth or age are not relevant information for legal
  persons. Specifying a different Rulebook for legal-person PIDs
  allows Relying Parties and other Wallet Units to request
- these attributes.  
+ these attributes.  
 - A legal-person Wallet Solution may be implemented in the same
  manner as a natural-person Wallet Solution, meaning chiefly that it
  is implemented on a mobile device operated by a single User, who is
@@ -1140,7 +1140,7 @@ does the same for legal-persons PIDs.
 [Article 5a](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1).5.(f)
 of the [European Digital Identity Regulation] also mentions the possibility of
 issuing eIDs that also could attest a natural person representing the natural or
-legal person.  At current time, this Topic proposes to not describe any
+legal person.  At current time, this Topic proposes to not describe any
 requirements for such eID schemes without further Member State input for such
 eID schemes. The main reason is that there is no cross-border legal framework
 for mutual recognition of powers and mandates. Powers and mandates are generally
@@ -1580,7 +1580,7 @@ See [Topic 12](#a2312-topic-12---attestation-rulebooks).
 This Topic discusses the ability of QTSPs issuing electronic attestations of
 attributes to verify those attributes by electronic means at the request
 of the User, wherever those attributes rely on Authentic Sources within
-the public sector.  
+the public sector.  
 
 ##### HLRs <!-- omit from toc -->
 
@@ -1692,7 +1692,7 @@ transparency, privacy and control of the Users over their personal
 data.
 
 This Topic lists high-level requirements related to the function
-of Users requesting the deletion of their personal data from Relying
+of Users requesting the deletion of their personal data from Relying
 Parties through their Wallet Unit.
 
 Note: A Relying Party may use the services of an intermediary to request data
