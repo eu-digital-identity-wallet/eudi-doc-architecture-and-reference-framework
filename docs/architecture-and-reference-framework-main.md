@@ -449,7 +449,7 @@ or attestation to a Relying Party. Within the use cases described in the current
 version of the ARF, the User is the subject of the PID(s) in the Wallet Unit.
 The User is also the subject of most of the attestations in the Wallet Unit, but
 there could be attestations that have no subject, such as vouchers, or that
-relate to objects owned or used by the User, such a vehicle registration card.
+relate to objects owned or used by the User, such as a vehicle registration card.
 
 Please note that this ARF assumes that a User device is a personal device, meaning that the User will not share it with other people, and that only the User can access and control the Wallet Unit.
 
