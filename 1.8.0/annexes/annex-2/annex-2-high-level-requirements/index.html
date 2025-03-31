@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
     
     
       
@@ -160,9 +160,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
+  
   
     
   
@@ -177,9 +179,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
+  
   
     
   
@@ -194,9 +198,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../discussion-topics/" class="md-tabs__link">
         
+  
   
     
   
@@ -211,9 +217,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../technical-specifications/" class="md-tabs__link">
         
+  
   
     
   
@@ -286,6 +294,7 @@
       <a href="../../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -306,6 +315,7 @@
     <li class="md-nav__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -331,6 +341,7 @@
       <a href="../../../discussion-topics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -351,6 +362,7 @@
     <li class="md-nav__item">
       <a href="../../../technical-specifications/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -853,7 +865,7 @@ private key corresponding to public key in the WUA is in possession by the Walle
 <p>A topic related to the WUA is the following. It would be useful if the Wallet Unit would be able provide a proof that the PID or attestation private key is protected by the same WSCA as the WUA private
 key. Because if that is the case, the PID Provider or Attestation Provider can be sure that the
 security level of the new PID or attestation key is the same as the security
-level of the WUA key. Moreover, such a proof could also be useful if case of a combined presentation of attributes as discussed in <a href="#a2318-topic-18---combined-presentations-of-attributes">Topic 18</a>, to give assurance to the Relying Party that all of these attestations originate from the same WSCA/WSCD and thus are related to the same User.</p>
+level of the WUA key. Moreover, such a proof could also be useful if case of a combined presentation of attributes as discussed in <a href="#a2318-topic-18---combined-presentations-of-attributes">Topic 18</a>, to give assurance to the Relying Party that all of these attestations originate from the same WSCA/WSCD and thus are related to the same User.</p>
 <p>However, at the moment of writing this version of the ARF, no commonly agreed technical specification of such a proof is available. Moreover, even if such a specification were available, it is
 not fully clear how many WSCAs/WSCDs available to Wallet Units will support the cryptographic functionalities
 necessary to generate such a proof. Therefore, creating such a proof is recommended (SHOULD), not required (SHALL). In this way, once a Wallet Unit includes a WSCD/WSCA that supports the required cryptographic functionalities, such a proof can be used as described in this Topic.</p>
@@ -1710,7 +1722,7 @@ catalogue, as described in <a href="#a2325-topic-25---unified-definition-and-con
 </tr>
 <tr>
 <td>ARB_12</td>
-<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include an attribute in the Rulebook indicating that the attestation is an EAA. This attribute SHALL reference the technical specification meant in ARB_25.</td>
+<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD include an attribute in the Rulebook indicating that the attestation is an EAA. This attribute SHALL reference the technical specification meant in ARB_25.</td>
 </tr>
 <tr>
 <td>ARB_13</td>
@@ -2069,7 +2081,7 @@ Wallet Unit. The User is concerned about data privacy, and thus the
 function of a dashboard ensures a higher degree of transparency, privacy
 and control of the User over their personal data.</p>
 <p>This Topic lists high-level requirements related to the functions
-of such a dashboard.  </p>
+of such a dashboard.  </p>
 <h5 id="hlrs_13">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
@@ -2144,10 +2156,10 @@ of such a dashboard.  </p>
 <h4 id="a2320-topic-20-strong-user-authentication-for-electronic-payments">A.2.3.20 Topic 20 - Strong User authentication for electronic payments</h4>
 <h5 id="description_14">Description <!-- omit from toc --></h5>
 <p>This topic deals with the requirement for Strong User (Customer) Authentication
-(SCA) in the context of authenticating a User as part of electronic payments.  </p>
+(SCA) in the context of authenticating a User as part of electronic payments.  </p>
 <p>Users would like to be able to authenticate themselves during online
 payments securely and conveniently using their Wallet Units, so that
-they can enjoy a seamless and protected shopping/ payment experience.  </p>
+they can enjoy a seamless and protected shopping/ payment experience.  </p>
 <p>The goal is to implement Strong Customer Authentication (SCA) for electronic
 payments, ensuring a high level of security and compliance with
 <a href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj#d1e5540-35-1">Article 97 of the PSD2</a>
@@ -2157,9 +2169,9 @@ lays down the requirements for strong customer authentication (SCA), which needs
 to be complied with when accessing a payment account online and for initiating
 electronic payments, or carrying out any action through a remote channel which
 may imply a risk of payment fraud or other abuses. The use of the wallet for SCA
-will be in full compliance with those requirements.  </p>
+will be in full compliance with those requirements.  </p>
 <p>In the future, a Wallet Unit could also be used for payments with Central Bank
-Digital Currencies.  </p>
+Digital Currencies.  </p>
 <h5 id="hlrs_14">HLRs <!-- omit from toc --></h5>
 <p>There are no HLRs for this Topic.</p>
 <h4 id="a2321-topic-21-diplomas-within-the-eudi-wallet-ecosystem">A.2.3.21 Topic 21 - Diplomas within the EUDI Wallet ecosystem</h4>
@@ -2587,7 +2599,7 @@ legal-person PIDs and the Wallet Units containing legal-person PIDs.</p>
  example, date of birth or age are not relevant information for legal
  persons. Specifying a different Rulebook for legal-person PIDs
  allows Relying Parties and other Wallet Units to request
- these attributes.  </li>
+ these attributes.  </li>
 <li>A legal-person Wallet Solution may be implemented in the same
  manner as a natural-person Wallet Solution, meaning chiefly that it
  is implemented on a mobile device operated by a single User, who is
@@ -2629,7 +2641,7 @@ does the same for legal-persons PIDs.</p>
 <p><a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a>.5.(f)
 of the [European Digital Identity Regulation] also mentions the possibility of
 issuing eIDs that also could attest a natural person representing the natural or
-legal person.  At current time, this Topic proposes to not describe any
+legal person.  At current time, this Topic proposes to not describe any
 requirements for such eID schemes without further Member State input for such
 eID schemes. The main reason is that there is no cross-border legal framework
 for mutual recognition of powers and mandates. Powers and mandates are generally
@@ -3422,7 +3434,7 @@ lifetime.</p>
 <p>This Topic discusses the ability of QTSPs issuing electronic attestations of
 attributes to verify those attributes by electronic means at the request
 of the User, wherever those attributes rely on Authentic Sources within
-the public sector.  </p>
+the public sector.  </p>
 <h5 id="hlrs_29">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
@@ -3622,7 +3634,7 @@ the function of requesting data deletion ensures a higher degree of
 transparency, privacy and control of the Users over their personal
 data.</p>
 <p>This Topic lists high-level requirements related to the function
-of Users requesting the deletion of their personal data from Relying
+of Users requesting the deletion of their personal data from Relying
 Parties through their Wallet Unit.</p>
 <p>Note: A Relying Party may use the services of an intermediary to request data
 from a Wallet Unit, see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>.
@@ -3911,7 +3923,9 @@ the prover knows the statement to be true, preserving privacy while enabling tru
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
