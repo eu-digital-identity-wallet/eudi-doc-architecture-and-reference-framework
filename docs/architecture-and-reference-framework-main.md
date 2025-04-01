@@ -2798,7 +2798,7 @@ However, the above applies for QEAAs, PuB-EAAs, and non-qualified EAAs as well.
 ##### 6.6.2.7.1 Introduction
 
 During attestation issuance, an Attestation Provider can optionally create an embedded
-disclosure policy for the attestation, and provide it to Wallet Units during attestation issuance. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the Attestation Provider to receive the attestation.
+disclosure policy for the attestation, and provide it to Wallet Units during attestation issuance. Such an embedded disclosure policy contains rules determining which (types of) Relying Parties are allowed by the Attestation Provider to receive the attestation.
 
 Note that the [European Digital Identity Regulation] does not contain a requirement
 for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs
