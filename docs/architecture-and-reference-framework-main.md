@@ -3879,7 +3879,7 @@ transactions, identifying recurring patterns. This privacy threat, known as
 colluding entities.
 
 A similar privacy threat arises when colluding Relying Parties share the unique
-values they obtained in an attestation with a malicious PID Provider or
+values they obtained from an attestation with a malicious PID Provider or
 Attestation Provider. This allow the PID Provider or Attestation Provider to
 track User activity across multiple services. In this case, it's called
 **Attestation Provider linkability**.
