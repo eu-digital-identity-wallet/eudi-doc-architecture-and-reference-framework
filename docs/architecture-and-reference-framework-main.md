@@ -2819,7 +2819,7 @@ which are explicitly listed in the disclosure policies.
 >3. 'Specific root of trust' indicating that wallet users should only disclose
 the specific electronic attestation of attributes to authenticated wallet-relying
 parties with wallet-relying party access certificates derived from a specific
-root (or list of specific roots) or intermediate certificate(s)
+root (or list of specific roots) or intermediate certificate(s).
 
 The first of these policies is the default and will be applied if the Attestation Provider does not provide an embedded disclosure policy for an attestation.
 
