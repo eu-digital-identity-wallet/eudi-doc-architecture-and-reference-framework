@@ -3455,7 +3455,7 @@ that re-issuance of an attestation may be used.
 
 A third reason for re-issuing a PID or attestation is where the PID Provider or
 Attestation Provider uses synchronous issuing in their security architecture. In
-such an architecture, the Wallet Unit requests the issuance of a new PID or
+such an architecture, the Wallet Unit requests the re-issuance of a new PID or
 attestation after it has received a request for that PID or attestation from a
 Relying Party. Such a PID or attestation is very short-lived and is used only
 once.
