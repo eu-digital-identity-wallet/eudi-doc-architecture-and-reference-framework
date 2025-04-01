@@ -132,7 +132,7 @@ The implementing act [CIR 2024/2979] has been adopted and the ARF document has b
 The topics identified for this paper are as follows:
 + scope of data to be logged by the Wallet Unit,
 + possible extent of data export from a Wallet Unit,
-+ usability of a Wallet Unit after the data import proces,
++ usability of a Wallet Unit after the data import process,
 + involvement of the PID and Attestation Providers in the Wallet Unit migration and recovery process.
 
 
