@@ -3906,7 +3906,7 @@ to be issued, but only partially mitigates Relying Party linkability. Topic
 10/23 calls this 'limited-time attestations'.
 
 Furthermore, Topic 10/23 describes two other approaches, which are optionally
-supported by Wallet Units, namely:
+supported by Wallet Solutions, namely:
 
 - the Attestation Provider issues attestations in batches to the Wallet Unit.
 The Wallet Unit then uses the attestations from a batch in a random order, until
