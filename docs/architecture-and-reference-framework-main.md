@@ -3405,7 +3405,7 @@ Given the above factors, it can generally be assumed that the technical validity
 period of a PID or attestations will be much shorter than their lifetime,
 meaning the period of time that a User wants to keep that PID or attestation in
 their Wallet Unit. That implies that new PIDs and attestations will need to be
-re-issued periodically, to replace the ones that are reaching their end of
+re-issued periodically, to replace the ones that are reaching end of their
 technical validity.
 
 A similar reason for re-issuing PIDs and attestations occurs when the
