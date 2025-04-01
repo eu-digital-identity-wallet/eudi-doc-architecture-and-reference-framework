@@ -1,0 +1,957 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>N export and data portability - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              N export and data portability
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1"></h1>
+<p>Version 0.9, updated 1 April 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/443">Link to GitHub discussion</a></p>
+<h1 id="topic-n-export-and-data-portability">Topic N - Export and data portability</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic N: Export and data portability (Article 5a(4)(f) and Article 5a(4)(g)).</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Requirements on the export and data portability functionalities supported by all Wallet Solutions is needed when source and target Wallet Instance are managed by the same of by different Wallet Providers.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p>Chapter 2 presents the legal requirements for functionality related to the export and portability of User's data from a Wallet Unit.</p>
+</li>
+<li>
+<p>Chapter 3 presents and discusses a list of identified issues, with suggested changes and/or new High-Level Requirements related to this topic.</p>
+</li>
+<li>
+<p>Chapter 4 presents a log of the additions and changes that will be made to High Level Requirements in the ARF as a result of discussing this topic with the Member States.</p>
+</li>
+<li>
+<p>Chapter 5 refers to other topics related to User's data export and portability.</p>
+</li>
+<li>
+<p>Chapter 6 presents the additions and changes that will be made to the ARF main document as a result of discussions. </p>
+</li>
+</ul>
+<h2 id="2-legal-requirements-for-export-and-data-portability">2 Legal Requirements for Export and Data Portability</h2>
+<p>Two legal texts impose direct requirements on Users's data export and portability: [European Digital Identity Regulation] and  <a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">[CIR 2024/2979]</a> as regards the integrity and core functionalities of European Digital Identity Wallets. </p>
+<p>This section recaps the respective legal requirements from these sources.</p>
+<h3 id="21-european-digital-identity-regulation-about-data-export-and-portability">2.1  [European Digital Identity Regulation] about Data Export and Portability</h3>
+<p>The [European Digital Identity Regulation] requires that the Wallet Units enable their Users to:
++ download the User’s data, electronic attestation of attributes and configurations (if technically possible),
++ import data to another Wallet Unit (portability),
++ all above performed in a User-friendly, transparent and traceable manner.</p>
+<p>Below are the actual excerpts from the Regulation, including the recitals and the articles that establish these requirements.</p>
+<p><strong>Article 5a</strong></p>
+<p><em>4. European Digital Identity Wallets shall enable the User, in a manner that is User-friendly, transparent, and traceable by the User, to:</em></p>
+<p><em>[...]</em></p>
+<p><em>(f) download, to the extent technically feasible, the User’s data, electronic attestation of attributes and configurations;</em></p>
+<p><em>(g) exercise the user’s rights to data portability.</em></p>
+<h3 id="22-cir-20242979-about-data-export-and-portability">2.2 [CIR 2024/2979] about Data Export and Portability</h3>
+<p>The current version of the [CIR 2024/2979] specifies the following requirements related to User's data export and portability:
++ the Wallet Unit stores User's data - personal data, as well as transacion data (that shall be logged), 
++  the Wallet Unit shall allow extracting and exporting (dowloading) the User's data from a Wallet Unit, to the extent of technical feasiblity (with exception of critical assets),
++ the Wallet Unit shall allow the wallet User to import User's data exported from another Wallet Unit (also from other Wallet provider),
++ the data should be protected in all steps (storage, export, import) to preserve integrity, authenticity and confidentiality,
++ the migration process from one Wallet Unit to another one should ensure level of assurance high,
++ the same technical solutions are recommended to be used to allow also implementing backup and recovery processes for Wallet Units.</p>
+<p>Below are selected excerpts from the [CIR 2024/2979], including the recitals and the articles that establish these requirements.</p>
+<p><strong>Recital (13)</strong></p>
+<p><em>Data export and portability objects can log the person identification data and electronic attestations of attributes that have been issued to a particular wallet unit. These objects allow wallet users to extract the relevant data from their wallet unit in order to strengthen their right to data portability.</em> </p>
+<p><em>Wallet providers are encouraged to use the same technical solutions to also implement backup and recovery processes for wallet units, making it possible to recover lost wallet units or to transfer information from one wallet provider to another, where appropriate and insofar as this can be done without impairing the right to data protection and the security of the digital identity ecosystem.</em></p>
+<p><strong>Article 9</strong></p>
+<p><em>Transaction logs</em></p>
+<p><em>1. Irrespective of whether or not a transaction is successfully completed, wallet instances shall log all transactions with wallet-relying parties and other wallet units, including electronic signing and sealing.</em></p>
+<p><em>2. The logged information shall at least contain:</em></p>
+<p><em>(a) the time and date of the transaction;</em></p>
+<p><em>(b) the name, contact details, and the unique identifier of the corresponding wallet-relying party and the Member State in which that wallet-relying party is established, or in case of other wallet units, relevant information from the wallet unit attestation;</em></p>
+<p><em>(c) the type or types of data requested and presented in the transaction;</em></p>
+<p><em>(d) in the case of non-completed transactions, the reason for such non-completion.</em></p>
+<p><em>3. Wallet providers shall ensure integrity, authenticity and confidentiality of the logged information.</em></p>
+<p><em>7. Wallet providers shall enable wallet users to export the logged information referred to in paragraph 2.</em></p>
+<p><strong>Article 13</strong></p>
+<p><em>Data export and portability</em></p>
+<p><em>Wallet units shall, where technically feasible and excepting cases of critical assets, support secure export and portability of personal data of the wallet user, to allow the wallet user to migrate to a wallet unit of a different wallet solution in a way that ensures level of assurance high as set out in Implementing Regulation (EU) 2015/1502.</em></p>
+<h2 id="3-discussion">3 Discussion</h2>
+<p>The implementing act [CIR 2024/2979] has been adopted and the ARF document has been aligned with the act in earlier stage, thus there are no identified discrepancies or major issues. Therefore this paper presents and clarifies the overall concept and technical assumptions and aims to collect feedback if there is a need of any improvements of HLR from the Member States and Coordination Group point of view.</p>
+<p>The topics identified for this paper are as follows:
++ scope of data to be logged by the Wallet Unit,
++ possible extent of data export from a Wallet Unit,
++ usability of a Wallet Unit after the data import process,
++ involvement of the PID and Attestation Providers in the Wallet Unit migration and recovery process.</p>
+<p>This document is ONLY intended to clarify the high-level requirements related to the export and data portability topic. The necessary technical specifications (including any policy documents) will be developed by the European Commission after an agreement on the requirements has been reached.</p>
+<h3 id="31-data-export">3.1 Data Export</h3>
+<p>The Article 5a of [European Digital Identity Regulation] requires from the Wallets to enable to </p>
+<blockquote>
+<p><em>download, to the extent technically feasible, the User’s data, electronic attestation of attributes and configurations</em></p>
+</blockquote>
+<p>as well as in Article 13 of [CIR 2024/2979]</p>
+<blockquote>
+<p><em>where technically feasible and excepting cases of critical assets, support secure export and portability of personal data of the wallet user, to allow the wallet user to migrate to a wallet unit of a different wallet solution in a way that ensures level of assurance high as set out in Implementing Regulation (EU) 2015/1502</em></p>
+</blockquote>
+<p>The technically feasible extent of the User's data export is therefore limited for security reasons. </p>
+<p>The ARF is in line with this. In the current version of ARF it is assumed that private keys of PIDs and attestations are not exportable (and not a part of so called Migration Object). In the consequence, the migration process in fact always entails re-issuance of PID and attestations of attributes (see section 3.2). </p>
+<p>Therefore, there are no identified HLRs modifications in this respect. </p>
+<h3 id="32-technical-feasibility-of-portability-and-migration">3.2 Technical Feasibility of Portability and Migration</h3>
+<p>The requirements set out in the Topic 34 of ARF define so called Migration Object, that contains a set of data - User's personal and transaction log data - ready to be exported from a Wallet Unit and imported into another one.</p>
+<p>This is to be noted that the Migration Object does not contain PID and attestations related private keys, and therefore the migration process requires re-issuance of all PID/attestations with the involvement of the PID / Attestation Providers.</p>
+<p>From the Topic 34 'Description' section:</p>
+<blockquote>
+<p><em>Note that the Migration Object does not contain any private keys associated with the PIDs or attestations. In most security architectures for a Wallet Solution described in Section 4.5 of the ARF main document, this is impossible, since the WSCA/WSCD that contains these private keys does not allow their extraction under any circumstances.</em></p>
+</blockquote>
+<p>The process might be however different if the keys are stored in a remote HSM (as the further text in the 'Description'): </p>
+<blockquote>
+<p><em>An exception may be architectures in which attestation private keys are managed in a remote HSM and the migration is to a new Wallet Unit of the same Wallet Provider. However, in such cases, restoring functionality of the PIDs and attestations in a new Wallet Unit does not necessitate that private keys must be exported to another HSM. Rather, it implies the User must be able to authenticate towards the existing HSM from the new Wallet Unit, and be recognised as an existing User.</em></p>
+</blockquote>
+<p>In any case, regardless the architecture, this is assumed that the Migration Object's role is only to facilitate the migration process, i.a. give a list of PIDs and attributes, so that can be re-issued in a new Wallet Unit. </p>
+<p>Finally</p>
+<blockquote>
+<p><em>The fact that the Migration Object does not contain private keys means that PIDs and attestations cannot be backed up and restored from the object in such a way that they are usable in a new Wallet Unit without involvement of the PID Provider or Attestation Provider. Instead, the User must ask the respective PID Provider(s) or Attestation Provider(s) to re-issue the PID(s) or attestation(s) to the new Wallet Unit. The only function of the Migration Object is to simplify this process by listing the PIDs and attestations present in the existing Wallet Unit, together with the information needed by the new Wallet Unit to start the re-issuance process.</em></p>
+</blockquote>
+<p>In conclusion, there are no modifications of HLR in relation to the essence.</p>
+<p>There are however minor corrections proposed to Mig_01 and Mig_05. </p>
+<p>For Mig_01, it is to clarify that the WUAs are not part of the migration object (as considered as not "User's data" as such) </p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mig_01</td>
+<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02. A list of PIDs and attestations present in the Wallet Unit <strong>, except Wallet Unit Attestations</strong>, according to the requirements in this Topic.</td>
+<td>Keep with proposed changes</td>
+</tr>
+</tbody>
+</table>
+<p>For Mig_05 it is to reflect "integrity and authenticity" aspect required by the Article 9 (2) of [CIR2024/2979]:</p>
+<blockquote>
+<p><em>3. Wallet providers shall ensure integrity, authenticity and confidentiality of the logged information.</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mig_05</td>
+<td>The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality, <strong>integrity and authenticity</strong> is protected and that it is protected against use by others than the User. <em>Note: This could be done, for example, by using password-based cryptography to encrypt the object.</em></td>
+<td>Keep with proposed modification</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-recovery-of-lost-wallet-units">3.3 Recovery of Lost Wallet Units</h3>
+<p>The recovery of lost of a Wallet Units follows the same process and the same limitations as for the migration process apply (see section 3.2).</p>
+<h3 id="34-scope-of-logged-information">3.4 Scope of Logged Information</h3>
+<p>Article 9(2) of [CIR 2024/2979] specifies the scope of data to be logged:</p>
+<blockquote>
+<p><em>The logged information shall at least contain: (a) the time and date of the transaction; (b) the name, contact details, and the unique identifier of the corresponding wallet-relying party and the Member State in which that wallet-relying party is established, or in case of other wallet units, relevant information from the wallet Unit attestation; (c) the type or types of data requested and presented in the transaction; (d) in the case of non-completed transactions, the reason for such non-completion.</em></p>
+</blockquote>
+<p>The ARF defines the scope of information to be logged as:
++ all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, signature and seal creation transactions, attribute deletion requests sent to a Relying Party, and complaints lodged with a Data Protection Authority (DASH_02, DASH_2a, DASH_03, DASH_04, DASH_05, Mig_01),
++ transactions related to qualified electronic signatures and seals generated by or through the Wallet Unit (QES_13),
++ reports sent to the DPA (RPT_DPA_05).</p>
+<p>In conclusion, the ARF is in line with the regulatory requirements in principle, and there are no essential modifications proposed for HLRs in this respect.</p>
+<p>However, there are the following minor changes proposed to improve consistency of the text:  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH_04</td>
+<td>For a signature <strong>and seal</strong> creation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the document or data signed (where possible), c) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_13</td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures <strong>and seals</strong> generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to the requirements in Topic 19. Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</td>
+<td>Keep with proposed changes</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, to improve clarity, there are ongoing changes that will be introduced in the next ARF realease in relation to DASH_03, DASH_04, DASH_05 (to state it more clearly that these information are logged).</p>
+<h2 id="4-current-hlrs-and-proposals-of-changes">4 Current HLRs and Proposals of Changes</h2>
+<p>ARF 1.8.0 contains a number of High-Level Requirements related to the topic included in the following sections:
++ Topic 19 - User navigation requirements (Dashboard logs for transparency)
++ Topic 34 - Migrate to a different Wallet Solution
++ Topic 16 - Signing documents with a Wallet Unit
++ Topic 50 - Blueprint to report unlawful or suspicious request of data</p>
+<p>The existing HLRs are listed in the tables below, along with a proposal to keep, change, add, or remove the HLR.</p>
+<h3 id="41-topic-19-user-navigation-requirements-dashboard-logs-for-transparency">4.1 Topic 19 - User navigation requirements (Dashboard logs for transparency)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH_02</td>
+<td>The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, signature creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), and complaints lodged with a Data Protection Authority (see Topic 50). <em>Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively.</em></td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>DASH_02a</td>
+<td>The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must delete transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>DASH_03</td>
+<td>For a presentation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see Topic 30), c) the name, contact details, and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>DASH_04</td>
+<td>For a signature <strong>and seal</strong> creation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the document or data signed (where possible), c) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>DASH_05</td>
+<td>For an issuance or re-issuance transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and/or issued (i.e., the size of the batch in case of batch issuance). d) in the case of non-completed transactions, the reason for such non-completion. e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>DASH_07</td>
+<td>The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file, while ensuring their confidentiality, authenticity and integrity.</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-topic-34-migrate-to-a-different-wallet-solution">4.2 Topic 34 - Migrate to a different Wallet Solution</h3>
+<p>A. Back-up requirements</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mig_01</td>
+<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02. A list of PIDs and attestations present in the Wallet Unit <strong>, except Wallet Unit Attestations</strong>, according to the requirements in this Topic.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>Mig_02</td>
+<td>The Commission SHALL define a technical specification of the Migration Object.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_03</td>
+<td>For each PID or attestation that is issued to it, a Wallet Unit SHALL add all data that is necessary to request re-issuance of that PID or attestation to the Migration Object. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_03b</td>
+<td>If the User deletes a PID or attestation from their Wallet Unit, the Wallet Unit SHALL delete the corresponding entry from the Migration Object.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_04</td>
+<td>The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. <em>Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.</em></td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_05</td>
+<td>The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality, <strong>integrity and authenticity</strong> is protected and that it is protected against use by others than the User. <em>Note: This could be done, for example, by using password-based cryptography to encrypt the object.</em></td>
+<td>Keep with proposed modification</td>
+</tr>
+</tbody>
+</table>
+<p>B. Restore Requirements</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mig_06</td>
+<td>Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_07</td>
+<td>For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_07a</td>
+<td>The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in <a href="#a2319-topic-19---User-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>Mig_11</td>
+<td>The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-topic-16-signing-documents-with-a-wallet-unit">4.3 Topic 16 - Signing documents with a Wallet Unit</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QES_13</td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures <strong>and seals</strong> generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to the requirements in Topic 19. Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</td>
+<td>Keep with proposed changes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="44-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data">4.4 Topic 50 - Blueprint to report unlawful or suspicious request of data</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RPT_DPA_05</td>
+<td>A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-relation-to-other-topics">5 Relation to Other Topics</h2>
+<h3 id="51-changes-to-other-topics">5.1 Changes to other topics</h3>
+<p>Below we discuss how User's data export and portability relates to the other topics being discussed.</p>
+<p>As indicated in the chapter 3 and 4, there are very few and insignificant changes proposed in the context of data export and portability. </p>
+<p>There are no identified impact to other ARF topics than mentioned in chapters 3 and 4.</p>
+<h3 id="52-topic-c-wallet-unit-attestation-wua-and-key-attestation">5.2 Topic C - Wallet Unit Attestation (WUA) and Key Attestation</h3>
+<p>The data export and portability topic may have relation with the WUA requirements, as the private key handling for PIDs and attestation has relevance for the discussion on the scope and technical feasibility of data to be exported/imported from/to a wallet.</p>
+<p>There were several changes introduced to the Topic C (and the related ARF Annex II [Topic 9]) in the earlier stages of the ARF work (see the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/c-wallet-unit-attestation.md">Topic C Discussion Paper</a>, resulting in reduction and simplification of the requirments. </p>
+<p>In result there is only one requirement with potential relevance:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_16</td>
+<td>If a WSCA is able to export a private key, the Wallet Provider SHALL specify this capability as an attribute in the WUA.</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<p>At the same time the Migration Object is assumed not to contain any private keys (refer to Topic 34). Therefore it is finally assumed, that there is no impacts to any of the WUA / [Topic 9] requirements. </p>
+<h3 id="53-relation-to-risk-register-tbd">5.3 Relation to Risk Register (tbd)</h3>
+<p>The risk register for European Digital Identity Wallets [RiskRegister]
+contains the following risks that are related to the Relying Party registration:</p>
+<table>
+<thead>
+<tr>
+<th>Risk type</th>
+<th>Risk id</th>
+<th>Related risk titles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R6 Data disclosure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R9 DUnauthorised transaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the wallet User. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+<p>More specifically, [RiskRegister]  describes the following threats to a Wallet:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Threat description</th>
+<th>Related risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR25</td>
+<td>The wallet can present attributes to a relying party without the approval of a User.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR29</td>
+<td>An attacker can leak attributes from the wallet and identify the wallet User where identification is not required/allowed.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR38</td>
+<td>Not being able to prove User’s consent for shared attributes, relying parties can affect the integrity of logs.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR40</td>
+<td>A relying party that consists of multiple units/entities that each have a different scope of what they are allowed to request/process, can request and process data for which they do not have lawful grounds for.</td>
+<td>Data disclosure (R6) / Unauthorised transaction (R9)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
+<p>See sections 4 and 5 above. In addition, data export and portability aspects in the main text of the ARF will be updated accordingly.</p>
+<h2 id="7-references-tbd">7 References (tbd)</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0</td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</td>
+</tr>
+<tr>
+<td>[Topic 9]</td>
+<td>Topic 9 - Wallet Unit Attestation</td>
+</tr>
+<tr>
+<td>[Topic 16]</td>
+<td>Topic 16 - Signing documents with a Wallet Unit</td>
+</tr>
+<tr>
+<td>[Topic 19]</td>
+<td>Topic 19 - User navigation requirements (Dashboard logs for transparency)</td>
+</tr>
+<tr>
+<td>[Topic 34]</td>
+<td>Topic 34 - Migrate to a different Wallet Solution</td>
+</tr>
+<tr>
+<td>[Topic 50 ]</td>
+<td>Topic 50 - Blueprint to report unlawful or suspicious request of data</td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a></td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td>[CIR 2024/2979]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</a>)</td>
+</tr>
+<tr>
+<td>[OID4VP]</td>
+<td>OpenID for Verifiable Presentations - draft 24</td>
+</tr>
+<tr>
+<td>[GDPR]</td>
+<td>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
