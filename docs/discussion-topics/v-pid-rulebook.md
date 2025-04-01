@@ -101,10 +101,10 @@ These standards define highly structured specifications for:
 They are designed to ensure strict interoperability and security, particularly
 for official and regulated attestations, such as:
 
-- Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardises the
-issuance, storage, and verification of digital driving licenses.
+- Mobile Driving Licences (mDLs) under ISO/IEC 18013-5, which standardises the
+issuance, storage, and verification of digital driving licences.
 - More general mobile identity attestations under ISO/IEC 23220, expanding the
-use cases beyond driving licenses.
+use cases beyond driving licences.
 
 These specifications provide clear, predefined guidelines on how attestations should
 be issued, stored, and verified, ensuring compliance across jurisdictions and
