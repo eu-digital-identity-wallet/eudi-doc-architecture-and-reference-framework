@@ -73,9 +73,9 @@ Iteration is planned from 12 March 2025 to 02 July 2025 covering the following t
 | I | [Natural person representing another natural person](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/339) |
 | J | [Wallet to Wallet interaction](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/340) |
 | K | [Combined presentation of Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/341) |
-| L | [User requesting data deletion to Relying Parties](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/342) |
-| M | [User reporting unlawful or suspicious request of data to DPAs](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/343) |
-| N | [Data portability](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
+| L | [User requesting data deletion to Relying Parties](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/342) |
+| M | [User reporting unlawful or suspicious request of data to DPAs](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/343) |
+| N | [Data portability](n-export-and-data-portability.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
 | O | [Catalogues for Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
 | W | [Transactional data for payments and other use cases](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/371) |
 | X | [Relying Party registration](x-relying-party-registration.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/378) |
