@@ -2,6 +2,8 @@
 
 Version 0.2, created 01 April 2025
 
+[GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/480)
+
 ## 1. Introduction
 
 ### 1.1 Discussion Paper topic description
