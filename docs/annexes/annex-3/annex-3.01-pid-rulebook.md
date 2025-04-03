@@ -265,12 +265,12 @@ Note: If the User to whom the person identification data relates has multiple
 nationalities (and the PID Provider is willing to attest to these multiple
 nationalities), the PID Provider can include all of the nationalities in the
 nationalities array. A potential drawback of this solution is that the User
-cannot selectively disclose only one or these nationalities, since for ISO/IEC
+cannot selectively disclose only one of these nationalities, since for ISO/IEC
 18013-5-compliant attestations, always the entire array will be presented if the
 User approves the presentation of the nationality attribute. A potential
 solution to this challenge is for the PID Provider to include only one
 nationality in the nationality attribute, and for the remaining nationalities
-use one or more domestic data attributes specified according to requirement
+to use one or more domestic data attributes specified according to requirement
 PID_ISO_02.
 
 #### 4.2.3 Attribute location_status
