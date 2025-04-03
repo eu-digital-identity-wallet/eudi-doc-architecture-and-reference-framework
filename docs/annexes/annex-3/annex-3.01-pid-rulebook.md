@@ -356,7 +356,7 @@ The following Private Names specific to the attestation type defined here are to
 | issuing_country | issuing_country | string | |
 | document_number | document_number | string | | 
 | issuing_jurisdiction | issuing_jurisdiction | string | |
-| location_status | - | See [Section 4.2.3](#423-attribute-location_status) | |
+| location_status | status | See [Section 4.2.3](#423-attribute-location_status) | |
 | age_over_18 | age_equal_or_over.18 | boolean (see note below) | |
 | age_over_NN | age_equal_or_over.NN | boolean (see note below) | |
 | age_in_years | age_in_years | number | |
