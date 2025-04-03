@@ -449,7 +449,7 @@ or attestation to a Relying Party. Within the use cases described in the current
 version of the ARF, the User is the subject of the PID(s) in the Wallet Unit.
 The User is also the subject of most of the attestations in the Wallet Unit, but
 there could be attestations that have no subject, such as vouchers, or that
-relate to objects owned or used by the User, such a vehicle registration card.
+relate to objects owned or used by the User, such as a vehicle registration card.
 
 Please note that this ARF assumes that a User device is a personal device, meaning that the User will not share it with other people, and that only the User can access and control the Wallet Unit.
 
@@ -2798,7 +2798,7 @@ However, the above applies for QEAAs, PuB-EAAs, and non-qualified EAAs as well.
 ##### 6.6.2.7.1 Introduction
 
 During attestation issuance, an Attestation Provider can optionally create an embedded
-disclosure policy for the attestation, and provide it Wallet Units during attestation issuance. Such an embedded disclosure policy contains rules determining which (types of) Relying Party are allowed by the Attestation Provider to receive the attestation.
+disclosure policy for the attestation, and provide it to Wallet Units during attestation issuance. Such an embedded disclosure policy contains rules determining which (types of) Relying Parties are allowed by the Attestation Provider to receive the attestation.
 
 Note that the [European Digital Identity Regulation] does not contain a requirement
 for PIDs to be able to contain an embedded disclosure policy, but only for QEAAs
@@ -2819,7 +2819,7 @@ which are explicitly listed in the disclosure policies.
 >3. 'Specific root of trust' indicating that wallet users should only disclose
 the specific electronic attestation of attributes to authenticated wallet-relying
 parties with wallet-relying party access certificates derived from a specific
-root (or list of specific roots) or intermediate certificate(s)
+root (or list of specific roots) or intermediate certificate(s).
 
 The first of these policies is the default and will be applied if the Attestation Provider does not provide an embedded disclosure policy for an attestation.
 
@@ -3365,11 +3365,11 @@ Attestation Provider may change one or more attribute values. Re-issuance is
 only applied within the administrative validity period of a document. As an
 example, a mobile driving licence (mDL) will typically be issued in the form of
 attestations which have a technical validity period shorter than the
-administrative validity period of the license itself. Re-issuance is used for
+administrative validity period of the licence itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always share a valid mDL. However, when the
 administrative validity period ends, there will be a process for obtaining a new
-administrative driving license, which is however out of scope of this document.
+administrative driving licence, which is however out of scope of this document.
 
 Note that, in general, if the original PID or attestation was issued in a batch,
 then the PID Provider or Attestation Provider will re-issue that PID or
@@ -3405,7 +3405,7 @@ Given the above factors, it can generally be assumed that the technical validity
 period of a PID or attestations will be much shorter than their lifetime,
 meaning the period of time that a User wants to keep that PID or attestation in
 their Wallet Unit. That implies that new PIDs and attestations will need to be
-issued periodically, to replace the ones that are reaching their end of
+re-issued periodically, to replace the ones that are reaching end of their
 technical validity.
 
 A similar reason for re-issuing PIDs and attestations occurs when the
@@ -3455,7 +3455,7 @@ that re-issuance of an attestation may be used.
 
 A third reason for re-issuing a PID or attestation is where the PID Provider or
 Attestation Provider uses synchronous issuing in their security architecture. In
-such an architecture, the Wallet Unit requests the issuance of a new PID or
+such an architecture, the Wallet Unit requests the re-issuance of a new PID or
 attestation after it has received a request for that PID or attestation from a
 Relying Party. Such a PID or attestation is very short-lived and is used only
 once.
@@ -3879,7 +3879,7 @@ transactions, identifying recurring patterns. This privacy threat, known as
 colluding entities.
 
 A similar privacy threat arises when colluding Relying Parties share the unique
-values they obtained in an attestation with a malicious PID Provider or
+values they obtained from an attestation with a malicious PID Provider or
 Attestation Provider. This allow the PID Provider or Attestation Provider to
 track User activity across multiple services. In this case, it's called
 **Attestation Provider linkability**.
@@ -3906,7 +3906,7 @@ to be issued, but only partially mitigates Relying Party linkability. Topic
 10/23 calls this 'limited-time attestations'.
 
 Furthermore, Topic 10/23 describes two other approaches, which are optionally
-supported by Wallet Units, namely:
+supported by Wallet Solutions, namely:
 
 - the Attestation Provider issues attestations in batches to the Wallet Unit.
 The Wallet Unit then uses the attestations from a batch in a random order, until
@@ -4153,8 +4153,8 @@ For undated references, the latest version available applies.
 - Definitions - [Annex 1](./annexes/annex-1/annex-1-definitions.md)
 - High Level Technical Requirements - [Annex 2](./annexes/annex-2/annex-2-high-level-requirements.md)
 - Rulebooks - Annex 3:
-    - PID rulebook - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md)
-    - mDL rulebook - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
+    - PID Rulebook - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md)
+    - mDL Rulebook - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
 - Service Blueprints - Annex 4:
     - Blueprint Initialisation and activation - [Annex 4.1](./annexes/annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf)
     - Blueprint Online identification and authentication - [Annex 4.2](./annexes/annex-4/annex-4.02-eudi-wallet-online-identification-and-authentication.pdf)
