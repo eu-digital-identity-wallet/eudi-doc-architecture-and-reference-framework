@@ -356,7 +356,7 @@ The following Private Names specific to the attestation type defined here are to
 | issuing_country | issuing_country | string | |
 | document_number | document_number | string | | 
 | issuing_jurisdiction | issuing_jurisdiction | string | |
-| location_status | status | See [Section 4.2.3](#423-attribute-location_status) | |
+| location_status | status | See [Section 5.2.2](#522-attribute-location_status) | |
 | age_over_18 | age_equal_or_over.18 | boolean (see note below) | |
 | age_over_NN | age_equal_or_over.NN | boolean (see note below) | |
 | age_in_years | age_in_years | number | |
@@ -372,6 +372,11 @@ Note: Instead of separate claims for (for example) age_over_16, age_over_18, age
     "65": false
 }
 ```
+
+#### 5.2.2 Attribute location_status
+
+In SD-JWT VC-compliant PIDs, the attribute location_status SHALL be expressed
+with the `status` claim as defined [SD-JWT VC].
 
 ### 5.3 Note on VCT
 
