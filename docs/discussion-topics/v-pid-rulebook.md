@@ -1,4 +1,4 @@
-# V - PID rulebook
+# V - PID Rulebook
 
 Version 1.2, updated 30 March 2025
 
@@ -9,7 +9,7 @@ Version 1.2, updated 30 March 2025
 ### 1.1 Discussion Paper topic description
 
 This document is the Discussion Paper for European Digital Identity Cooperation
-Group regarding Topic V: PID rulebook
+Group regarding Topic V: PID Rulebook
 
 ### 1.2 Related risks in the Risk Register
 
@@ -102,10 +102,10 @@ These standards define highly structured specifications for:
 They are designed to ensure strict interoperability and security, particularly
 for official and regulated attestations, such as:
 
-- Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardises the
-issuance, storage, and verification of digital driving licenses.
+- Mobile Driving Licences (mDLs) under ISO/IEC 18013-5, which standardises the
+issuance, storage, and verification of digital driving licences.
 - More general mobile identity attestations under ISO/IEC 23220, expanding the
-use cases beyond driving licenses.
+use cases beyond driving licences.
 
 These specifications provide clear, predefined guidelines on how attestations should
 be issued, stored, and verified. However, they leave little room for flexibility, prioritizing
@@ -211,7 +211,7 @@ practice, it introduces unnecessary complexity, security risks, and operational
 burdens. A clear and limited selection of attestation models is essential to
 ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.
 
-For all the above reasons, the requirement [PID_\01] included in the the PID rulebook
+For all the above reasons, the requirement [PID_\01] included in the the PID Rulebook
 of Annex 3 of the ARF still applies.
 
 ## 5 Privacy considerations
@@ -321,7 +321,7 @@ The following High-Level Requirements will be added in Annex 3 of the ARF
 #### REQUIREMENT 1
 
 A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs,
-where the vct claim will be a URN. A catalog linked in the PID rulebook will associate this URN with SD-JWT VC type metadata
+where the vct claim will be a URN. A catalog linked in the PID Rulebook will associate this URN with SD-JWT VC type metadata
 which will include the same information as the PID Rulebook.
 
 ### 6.2 High-Level Requirements to be changed
