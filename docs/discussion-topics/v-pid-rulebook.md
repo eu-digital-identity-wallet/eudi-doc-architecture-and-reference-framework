@@ -1,6 +1,6 @@
 # V - PID rulebook
 
-Version 1.0, updated 18 March 2025
+Version 1.2, updated 30 March 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410)
 
@@ -81,7 +81,8 @@ represented.
 authenticity and integrity are ensured, including cryptographic signatures used
 to verify the PID Provider or Attestation Provider.
 1. Privacy Considerations – Ensures that attestations minimise data exposure,
-allow selective disclosure, and comply with privacy-preserving principles.
+allow selective disclosure, and comply with privacy-preserving principles
+(in particular unlinkability as mandated by the Regulation).
 
 ### 3.1 Several families of attestation formats
 
@@ -107,8 +108,7 @@ issuance, storage, and verification of digital driving licenses.
 use cases beyond driving licenses.
 
 These specifications provide clear, predefined guidelines on how attestations should
-be issued, stored, and verified, ensuring compliance across jurisdictions and
-regulatory frameworks. However, they leave little room for flexibility, prioritizing
+be issued, stored, and verified. However, they leave little room for flexibility, prioritizing
 high trust and compatibility across different systems.
 
 #### 3.1.2 JWT-Like Simple attestations
@@ -124,9 +124,8 @@ separately through additional specifications.
 For example:
 
 - The OAuth SD-JWT-VC draft [SD-JWT VC] defines data format specifications for
-attestations based on JWT & SD-JWT.
-- The SD-JWT-VC Data Model proposal [Fet2024] was previously discussed by
-Germany as a possible approach for structuring JWT-based attestations
+attestations based on JWT & SD-JWT. A roadmap [Fet2024] was previously discussed
+by Germany as a possible approach for structuring JWT-based attestations.
 
 While JWT-based attestations offer simplicity and widespread adoption in web
 authentication (e.g., OAuth2, OpenID Connect), they lack built-in advanced
@@ -218,7 +217,7 @@ of Annex 3 of the ARF still applies.
 ## 5 Privacy considerations
 
 Privacy is a critical concern, especially regarding how attestation data is
-shared and verified. All the attestation categories mentioned above implement
+presented and verified. All the attestation categories mentioned above implement
 selective disclosure using a technique called salted and hashed data. This
 approach conceals specific attributes by hashing their values, allowing the user
 to select which attributes to disclose when presenting their attestations or
@@ -229,16 +228,21 @@ However, this technique—like user signatures on presentations—leaves cryptog
 
 While salting and hashing can obfuscate attestation data, it has inherent
 weaknesses, particularly in scenarios where PID Providers or Attestation
-Providers and Relying Parties collude:
+Providers and Relying Parties collude or if they are subject to data breaches 
+as described in [Topic A]:
 
-1. Collusion Between two Relying Parties: If two Relying Parties share collected
+1. Collusion Between or data breach of two Relying Parties: If two Relying Parties share collected
 attestations containing same hashes and signatures for the user, they can track
 and profile users across different interactions, compromising unlinkability.
+An attacker would be able to proceed to the same kind of attempt in case of 
+a data breach of the Relying Parties
 This specific scenario can be somehow mitigated with different techniques.
-1. Collusion Between PID Provider or Attestation Provider and Relying Party: If
+1. Collusion Between or data breach of PID Provider or Attestation Provider and Relying Party: If
 the PID Provider or Attestation Provider and Relying Party share collected
 attestations containing same hashes and signatures for the user, they can track
 and profile users across different interactions, compromising unlinkability.
+An attacker would be able to proceed to the same kind of attempt in case of a 
+data breach of the PID Provider or Attestation Provider and Relying Party.
 
 To truly mitigate these risks, more advanced cryptographic techniques—particularly
 Zero-Knowledge Proofs (ZKPs)—are required.
@@ -248,12 +252,13 @@ ZKPs provide a stronger privacy-preserving alternative by allowing users to:
 - Prove statements (e.g., "I am over 18") without revealing the underlying data
 (e.g., date of birth).
 - Ensure unlinkability, even if a PID Provider or Attestation Provider and
-Relying Party collude.
+Relying Party collude or are subject to a data breach.
 - Prevent unnecessary data exposure, reducing the risk of attestation misuse.
 
 While hashed data with salts provides basic privacy protections and is essential
 when proving real identity, it does not ensure unlinkability and remains
-susceptible to PID Provider or Attestation Provider-Relying Party collusion. In
+susceptible to PID Provider or Attestation Provider-Relying Party collusion or subjection 
+to a data breach. In
 contrast, ZKP-enhanced attestations offer a higher level of privacy assurance,
 enabling secure, verifiable, and unlinkable digital interactions while
 minimizing data exposure.
@@ -271,7 +276,7 @@ critical.
 
 Zero-Knowledge Proofs (ZKPs) can be integrated into any of the attestation
 categories mentioned above, and ongoing developments are actively working
-to implement ZKP support across different models.
+to implement ZKP support across different models. This is discussed in more depth in [Topic_G].
 
 A particularly important effort focuses on developing ZKP mechanisms using
 cryptographic algorithms that are widely recognised and standardised by by NIST
@@ -342,3 +347,4 @@ the methods specified in RFC 7519 are applicable.
 | [Paq2024] | Christian Paquin, Guru-Vamsi Policharla, and Greg Zaverucha, Crescent: Stronger Privacy for Existing Credentials, Cryptology ePrint Archive, Paper 2024/2013, 2024, available at <https://eprint.iacr.org/2024/2013> |
 |[Spo2025]| Verifiable Credential Data Integrity 1.0, available at <https://www.w3.org/TR/vc-data-integrity/>|
 |[SD-JWT VC]| SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html>|
+| [Topic_G] | Discussion Paper for the European Digital Identity Cooperation Group regarding Topic G: Zero Knowledge Proof, version 1.4 |

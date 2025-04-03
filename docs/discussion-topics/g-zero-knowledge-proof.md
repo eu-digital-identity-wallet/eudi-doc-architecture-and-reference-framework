@@ -1,6 +1,6 @@
 # G - Zero Knowledge Proof
 
-Version 1.0, updated 18 March 2025
+Version 1.4, updated 30 March 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/408)
 
@@ -128,6 +128,11 @@ attributes describe the same User
 determine if the selectively disclosed attributes describe the same User. This
 includes PID Providers or Attestation Providers colluding with Relying Parties.
 
+In accordance with [Topic A], the properties above must be understood as taking 
+into account not only the risk of a collusion (from issuers and/or verifiers) 
+but also the risk of a data breach (from the issuers and/or verifiers), allowing a 
+third-party (possibly an attacker) to combine data to the aim of establishing links.
+
 Additional privacy properties have also been defined in related literature. Such
 properties are:
 
@@ -173,8 +178,8 @@ Following ETSI TR 119 476 [ETSI_119476], ZKP schemes can be categorised into
 
 From a high-level perspective, multi-message signature-based solutions are
 implemented as follows. Initially, a PID Provider or Attestation Provider constructs an attestation that can
-be represented in the form of a list of messages. Then it uses a group signature
-algorithm and generates a (short) signature over the group of messages. A
+be represented in the form of a list of messages. Then it uses a multi-message signature
+algorithm and generates a (short) signature over the set of messages. A
 Wallet Unit can now selectively hide any of the messages and generate a
 ZKP which proves that “the Wallet Unit possesses a list of messages that
 together with the revealed ones can verify the signature of the PID Provider or Attestation Provider. A
@@ -182,28 +187,31 @@ scheme of this category is BBS+ and its variant BBS#.
 
 #### 3.1.1 BBS+/BBS#
 
-BBS+ is a digital signature protocol which is used for signing a group of
+BBS+ is a digital signature protocol which is used for signing a set of
 messages.  It was first envisioned by Boneh, Boyen, Shacham in [BBS2024] (from
 where it takes its name), touched and re-visited by [Cam2016]. Currently under
-standardisation by the IRTF Crypto Forum Research Group, BBS+ provides the ability to
-sign a group of individual messages, with only a single constant size signature.
+standardisation by the IRTF Crypto Forum Research Group [Loo2025], BBS+ provides the ability to
+sign a set of individual messages, with only a single constant size signature.
 The signature can be validated given the signer’s Public Key (PK) and the entire
-group of signed messages; this is equivalent to validating a “traditional”
-digital signature, if we consider the group of messages as a single compound
+set of signed messages; this is equivalent to validating a “traditional”
+digital signature, if we consider the set of messages as a single compound
 message. BBS+ can be combined with ZKPs allowing an entity to selectively hide
-elements of a singed group of messages. In particular, any entity that knows the
-signature and the original signed group of messages, can create a proof of
+elements of a signed set of messages. In particular, any entity that knows the
+signature and the original signed set of messages, can create a proof of
 knowledge of the signature while selectively disclosing only a sub-array of the
 signed messages. The proof can be validated with only the signer’s public key
 and the array of revealed messages. BBS+ is based on pairing friendly curves.
-BBS# [Ora2024] is a modification of BBS+ allowing group signatures and
-selective disclosure based on ECDSA, hence it can be used with existing WSCDs.
+BBS# [Ora2024] is a modification of BBS+ that removes the need for pairing-friendly 
+elliptic curves, and can be combined with ECDSA signatures for device binding. 
+Hence it can be used with existing WSCDs and P-256. The trade-off is that BBS# 
+requires interaction with the issuer that scales linearly in the number of presentations. 
+A recent work builds upon the ideas of BBS#, and provides a provably-secure variant of 
+such Server-Aided Anonymous Credentials  [Api2025]. The latter 
+work, also improves upon BBS# by preserving full unlinkability properties of BBS.
 
 #### 3.1.2 Advantages
 
 - Performant with low computational and communication overhead
-
-- They are generic and they can be used with any type of attestation
 
 #### 3.1.3 Disadvantages
 
@@ -216,8 +224,8 @@ These solutions are based on a program expressed in the form of an arithmetic
 circuit. This circuit receives a secret input, referred to as the witness,
 which can be for example an attestation, as well as a public statement. The
 circuit performs a calculation and outputs true if certain conditions hold (e.g.,
-“the attestation includes an age attribute with value > 18”). A Wallet Unit,
-can then generates a ZKP which proves that “the Wallet Unit knows a witness (e.g.,
+“the attestation includes an age attribute with value > 18”). A Wallet Unit
+can then generate a ZKP which proves that “the Wallet Unit knows a witness (e.g.,
 an attestation), which when provided as input to a certain circuit using the
 provided statement, the circuit outputs true”. Zero-Knowledge Succinct Non-Interactive
 Arguments of Knowledge (zk-SNARK) is a representative scheme of this category.
@@ -232,8 +240,9 @@ the prover and the verifier. This setup phase may require a secret input, which
 must be hidden from the prover (trusted setup) or it may not require a secret input (transparent setup).
 Furthermore, the secret input may be required for setting up all circuits, or
 only for a specific universal setup phase. The setup phase has an impact on the
-size of proof and the verification time. Recent advances in this area, such as
-[Fri2024] and [Paq2024] have demonstrated interoperability with existing attestation formats. A
+size of proof and the verification time. Recent advances in this area have demonstrated
+interoperability with existing identification and authentication systems (e.g., [Lav2016], [Ros2023] ) 
+as well as interoperability with existing attestation formats (e.g., [Fri2024], [Paq2024]). A
 key challenge that these new proposals aim to address is that many multi-message signature schemes,
 like BBS+, rely on new cryptographic assumptions that require system-wide
 changes to PID Providers' and Attestation Providers' infrastructure. Additionally, PID Providers or Attestation Providers often mandate that
@@ -244,12 +253,12 @@ across all user devices, or additional interactions between Wallet Units and PID
 some zk-SNARKs solutions, such as [Fri2024], can support
 this function without requiring such modifications.
 
-#### Advantages
+#### 3.2.2 Advantages
 
-- Can be used with existing signature algorithms. Do not require any change to
-the attestation signing process
+-  Do not require any change to the attestation signing process
+- Can be used to prove arbitrary properties on the attributes (e.g., range proof)
 
-#### Disadvantages
+#### 3.2.3 Disadvantages
 
 - Introduce computational overhead and in some cases storage overhead
 
@@ -263,7 +272,7 @@ In Chapter 2, we introduced key privacy properties of Zero-Knowledge Proof (ZKP)
 systems. Some of these properties can also be achieved using non-ZKP mechanisms.
 For example, selective disclosure can be implemented using salted and hashed
 data signatures, while batch issuance can help achieve unlinkability between
-presentations of the same credential. Similarly, short-lived certificates may be
+presentations of the same attestation. Similarly, short-lived attestations may be
 preferred to privacy-preserving revocation. On the other hand, certain privacy
 properties can only be ensured through ZKPs. Similarly, replacing these mechanisms
 with ZKP schemes may result in simpler protocols and attestation management processes.
@@ -273,7 +282,7 @@ identity verification is required, such as when opening a bank account. In
 contrast, other cases may only require proving a specific attribute or a
 property of an attribute—such as proving that a user is over 18 without
 revealing their exact birthdate. In cases where full identity verification is
-necessary, achieving unlinkability may not always be possible. Indeed, this is also
+necessary, achieving unlinkability is not possible. Indeed, this is also
 recognised by the [European Digital Identity Regulation] which in Article 5a, 16b
 mandates unlinkability "where the attestation of attributes does not require the
 identification of the user". In the following we identify use cases where ZKP shall be
@@ -282,9 +291,9 @@ used when it becomes available.
 #### 4.1.1 Selective disclosure of an attribute
 
 In many cases, Users are required to prove that they possess a PID or attestation
-that includes a specific attribute without revealing additional information about
+that includes a specific attribute having a specific value without revealing additional information about
 their identity. For example, they may need to prove possession of a PID that
-includes the "age over 18" attribute or a specific city. A ZKP scheme can be used
+includes the "age over 18" attribute with value equal to true or a specific city. A ZKP scheme can be used
 in this use case to provide privacy-preserving selective disclosure for both remote
 and proximity flows.
 
@@ -292,7 +301,7 @@ A ZKP scheme shall hide all attributes of the PID or attestation while providing
 
 - The PID or attestation includes the revealed attribute.
 - The PID or attestation is within its validity period.
-- The PID or attestation has not been revoked.
+- The PID or attestation has not been revoked (if revocation is used).
 - The PID or attestation has been issued by a trusted issuer, optionally without
 revealing the issuer.
 - The PID or attestation is bound to a key stored in the WSCD of the Wallet User.
@@ -309,7 +318,8 @@ In fact, this is a simpler form of the selective disclosure use case, as a ZKP s
 shall provide the same proofs, except for the proof that "the PID or attestation includes
 the revealed attribute."
 
-For this use case, a suitable rate limiting mechanisms shall be used. The fact that
+For this use case, a suitable rate limiting mechanism shall be used in order to prevent users
+from re-using an attestation in a malcious way. The fact that
 a user shall authenticate to the WSCD before generating a proof is such a suitable
 mechanism.
 
@@ -339,7 +349,7 @@ as the "Proof of Personhood" use case.
 In some use cases, a Relying Party needs to correlate multiple presentations of
 the same attestation (e.g., to detect a "returning customer"). A ZKP scheme can
 be used to derive a pseudonym by combining an attribute of an attestation that
-is unique to the User with the Relying Party identifier.
+is unique to the User with the Relying Party identifier (or in general with some Relying Party specific context).
 
 A related solution shall have the following properties:
 
@@ -348,6 +358,11 @@ Relying Party.
 - The attribute used for deriving the pseudonym shall also be hidden from the
 Provider; otherwise, a colluding Provider and Relying Parties would be able to
 correlate User presentations. This property can be achieved using blind issuance.
+
+Using a ZKP scheme a User can create only a fixed number of verifiable pseudonyms associated with the same
+Relying Party identifier (or context), as opposed for example
+to the WebAutnN-based approach presented in Topic E. 
+
 
 ### 4.2 Device binding using WSCD
 
@@ -363,7 +378,8 @@ Unit. During an interaction, the Relying Party verifies that the PID or
 attestation it received from a Wallet Unit is indeed bound to the WSCD included
 in the Wallet Unit. The Relying Party does so by requesting the Wallet Unit to
 sign some data using the private key corresponding to the public key in the PID
-or attestation.
+or attestation. However, the User public key can be used for tracking users and
+linking their activities. 
 
 A ZKP scheme should achieve the same functionality in a privacy-preserving
 manner. Specifically, using a ZKP scheme, a Wallet Unit should be able to prove
@@ -376,8 +392,8 @@ public key.
 ZKP schemes may introduce computational, communication, or storage overhead,
 which can impact their practicality in real-world deployments. For example,
 zkSNARKs may take several seconds to generate a proof, require tens or even hundreds
-of megabytes of auxiliary data per attestation type—data that must be stored and
-processed by the User’s device—and produce proofs that are several kilobytes in size.
+of megabytes of auxiliary data per attestation type (data that must be stored and
+processed by the User’s device) and produce proofs that are several kilobytes in size.
 
 To ensure usability, ZKP schemes should strike a balance between security and
 efficiency, introducing only tolerable levels of overhead.
@@ -397,7 +413,7 @@ attestation format. For instance, new fields might need to be added to the
 attestation presentation to include the proof itself, proof parameters (e.g.,
 the “index” of messages in multi-message signature formats), and other relevant
 data. These changes must align with the specifications of the relevant message
-format standards (e.g, ISO mdoc). Additionally, future versions of ARF may
+format standards (e.g,ISO/IEC 18013-5). Additionally, future versions of ARF may
 define different ZKP schemes for proximity and remote presentation flows.
 Regardless of the specific approach, ZKP scheme providers should collaborate
 with relevant standardisation bodies to ensure their schemes remain compatible
@@ -413,11 +429,10 @@ signaling ZKP support, and other relevant metadata. To ensure interoperability,
 ZKP scheme providers should collaborate with standardisation bodies to maintain
 compatibility with the corresponding protocols.
 
-Additionally, support for ZKP schemes is expected to follow the launch of the EUDI
-Wallet. PID Providers and Attestation Providers will likely have already invested
-in PID and attestation issuance infrastructure and software, with many PIDs and attestations
-already issued. A ZKP system should be designed to minimise disruptions to the existing
-issuance ecosystem at the time of its deployment.
+Additionally, support for ZKP schemes is expected to be introduced following the 
+launch of the EUDI Wallet. By that time, many PIDs and attestations will already 
+have been issued, and it should be possible to generate proofs for those already 
+issued attestations.
 
 Beyond changes to existing protocols, ZKP schemes may introduce additional
 interactions. For example, zkSNARK-based schemes may require the distribution of
@@ -456,62 +471,69 @@ The following High-Level Requirements will be added to Annex 2 of the ARF
 
 #### REQUIREMENT 1
 
-Irrespectively of the use case, a ZKP scheme SHALL provide support for the following generic functions: (i) generation of a proof that an (some) attribute(s) is (are) included in a PID or attestation (ii) generation of a proof that a PID or attestation is within its validity period (iii) generation of a proof that a PID or attestation has not been revoked (iv) generation of a proof that a PID or attestation is bound to a key stored in the WSCD of the Wallet User (v) generation of a proof that a PID or attestation has been issued by a trusted issuer without revealing the issuer. NOTE: Although function (vi) SHALL be supported
-it should be used only when issuer hiding is necessary.
+A ZKP scheme SHALL provide support for the following generic functions, while hiding 
+all attributes of PIDs or attestations: (i) generation of a proof that an (some) 
+attribute(s) having a specific value is (are) included in a PID or attestation, 
+(ii) generation of a proof that a PID or attestation is within its validity period, 
+(iii) generation of a proof that a PID or attestation has not been revoked, (iv) 
+generation of a proof that a PID or attestation is bound to a key stored in the 
+WSCD of the Wallet User. Additionally, a ZKP scheme SHOULD provide support for the
+following function which should  be used only when hiding 
+the PID Provider or Attestation Provider is necessary (v) generation of a proof that a 
+PID or attestation has 
+been issued by a trusted PID Provider or Attestation Provider without revealing 
+the PID Provider or Attestation Provider. 
+
 
 #### REQUIREMENT 2
 
-A ZKP scheme SHALL support the selective disclosure of an attribute use case for remote or proximity-based presentation flows.
+A ZKP scheme SHALL support proving possession of attestation of a given type.
 
 #### REQUIREMENT 3
 
-A ZKP scheme SHALL support the  proof of attestation possession use case for proximity-based or remote presentation flows.
+A ZKP scheme SHOULD support the privacy-preserving binding of an attestation to a PID. 
+In addition to the generic functions defined in ZKP_01, for this use case, a ZKP 
+scheme SHALL provide support for the following functions: (i) generation of a proof 
+that the Wallet Unit stores an attestation and a PID and that the attestation includes a 
+specific attribute, having a specific value, which is also present in the PID.
 
 #### REQUIREMENT 4
 
-A ZKP scheme SHALL support the proof of personhood use case for remote presentation flows.
+A ZKP scheme SHOULD support the derivation of a verifiable User pseudonym, by combining 
+an attribute value that is unique for the User with Relying Party specific context (e.g., the Relying Party identifier). 
+In addition to the generic functions defined in ZKP_01, for this use case, a ZKP scheme 
+SHALL provide support for the following functions: (i) generation of a request for 
+the issuance of an attestation that includes a secret attribute unique to the User, 
+without revealing this attribute to the Attestation Provider, (ii) generation of an 
+attestation presentation that includes a verifiable pseudonym derived from the secret 
+attribute and the Relying Party identifier.
 
 #### REQUIREMENT 5
 
-A ZKP scheme SHOULD support the privacy-preserving binding of an attestation to a PID
-use case for proximity-based or remote presentation flows. In addition to the generic
-functions defined in REQUIREMENT 1, for this use case, a ZKP scheme SHALL provide support
-for the following functions: (i) generation of a proof that the Wallet Unit stores an
-attestation and a PID and that the attestation includes a specific attribute also present
-in the PID
+A ZKP scheme SHALL be usable in both remote and proximity presentation flows. While 
+the inclusion of ZKP will introduce computational and verification delays, these delays 
+SHALL NOT critically undermine or defeat the service’s purpose (e.g. because of a 
+critical impact on the User experience of the Wallet Unit).
 
 #### REQUIREMENT 6
 
-A ZKP scheme SHOULD support the privacy-preserving linking of an attestation to a Relying
-Party identifier use case for proximity-based or remote presentation flows. In addition to
-the generic functions defined in REQUIREMENT 1, for this use case, a ZKP scheme SHALL
-provide support for the following functions: (i) generation of a request for the issuance of
-an attestation that includes a secret attribute unique to the User, without revealing this
-attribute to the Attestation Provider (ii) generation of an attestation presentation that
-includes a verifiable pseudonym derived from the secret attribute and the Relying Party
-identifier.
+A ZKP scheme SHOULD be able to generate proofs for already issued PIDs and attestations 
+in the formats specified in [ISO/IEC 18013-5] or [SD-JWT VC].
 
 #### REQUIREMENT 7
 
-ZKP scheme SHALL be usable with the intended remote and proximity presentation flows. While the inclusion of ZKP may introduce computational and verification delays, these delays shall not  degrade the user experience
+A ZKP scheme SHALL NOT introduce any additional communication or information that 
+could be used to track or link User activity during, before, or after proof generation.
 
 #### REQUIREMENT 8
 
-The selected ZKP scheme SHOULD be able to generate proofs for already issued attestations in different formats
+A ZKP scheme SHALL rely solely on algorithms standardised by a standardisation 
+organisation recognised by the Commission or in a standard recognised by the Commission.
+
 
 #### REQUIREMENT 9
-
-A ZKP scheme SHALL NOT introduce any
-additional communication or information that could be used to track or link User activity
-during, before, or after proof generation.
-
-#### REQUIREMENT 10
-
-A ZKP scheme SHALL NOT use proprietary solutions
-
-#### REQUIREMENT 11
-
-A ZKP scheme SHALL be designed to support migration to post-quantum safe algorithms.
+Use of a ZKP scheme SHALL NOT prevent the Wallet Unit's ability to provide User 
+authentication with Level of Assurance  "high".
 
 ### 5.2 High-Level Requirements to be changed
 
@@ -521,6 +543,7 @@ A ZKP scheme SHALL be designed to support migration to post-quantum safe algorit
 
 | Reference | Description |
 | --- | --- |
+| [Api2025] | Rutchathon Chairattana-Apirom, Franklin Harding, Anna Lysyanskaya, and Stefano Tessaro, "Server-Aided Anonymous Credentials," available at <https://eprint.iacr.org/2025/513>, 2025
 | [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft |
 | [BBS2024] | Boneh, Dan, Xavier Boyen, and Hovav Shacham. "Short group signatures." In Annual international cryptology conference, pp. 41-55. Berlin, Heidelberg: Springer Berlin Heidelberg, 2004. |
 | [Cam2016] | Camenisch, Jan, Manu Drijvers, and Anja Lehmann. "Anonymous attestation using the strong diffie hellman assumption revisited." In Trust and Trustworthy Computing: 9th International Conference, TRUST 2016, Vienna, Austria, August 29-30, 2016, Proceedings 9, pp. 1-20. Springer International Publishing, 2016 |
@@ -528,7 +551,10 @@ A ZKP scheme SHALL be designed to support migration to post-quantum safe algorit
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [ETSI\_119476] | ETSI TR 119 476 V1.2.1, Electronic Signatures and Trust  Infrastructures (ESI); Analysis of selective disclosure and zero-knowledge proofs applied to Electronic Attestation of Attributes |
 | [Fri2024] | Matteo Frigo and abhi shelat, Anonymous credentials from ECDSA, Cryptology ePrint Archive, Paper 2024/2010, 2024, available at <https://eprint.iacr.org/2024/2010> |
-| [Ora2024] | Orange, “The BBS# protocol”, Technical Report, 2024 |
+| [Lav2016] | Antoine Delignat-Lavaud, Cédric Fournet, Markulf Kohlweiss, and  Bryan Parno, "Cinderella: Turning Shabby X.509 Certificates into Elegant Anonymous Credentials with the Magic of Verifiable Computation, IEEE Symposium on Security and Privacy, 2016
+| [Loo2025] | Tobias Looker, Vasilis Kalos, Andrew Whitehead and  Mike Lodder, "The BBS Signature Scheme," available at <https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/>, 2025
+| [Ora2024] | Nicolas Desmoulins, Antoine Dumanois, Seyni Kane, and Jacques Traoré, “The BBS# protocol”, Technical Report, 2025 |
 | [Paq2024] | Christian Paquin, Guru-Vamsi Policharla, and Greg Zaverucha, Crescent: Stronger Privacy for Existing Credentials, Cryptology ePrint Archive, Paper 2024/2013, 2024, available at <https://eprint.iacr.org/2024/2013> |
 | [RiskRegister] | Annex 1 to the Commission Implementing Regulation (EU) 2024/2981 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
+| [Ros2023]| Michael Rosenberg, Jacob White, Christina Garman, and Ian Miers, "zk-creds: Flexible Anonymous Credentials from zkSNARKs and Existing Identity Infrastructure", IEEE Symposium on Security and Privacy, 2023
 | [Topic_A] | Discussion Paper for the European Digital Identity Cooperation Group regarding Topic A: Privacy risks and mitigation, version 1.0 |
