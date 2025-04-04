@@ -712,7 +712,7 @@ Suspension and cancellation</p>
 3) the <strong>operational use of aforementioned certificates</strong> in Relying Party transactions with the EUDI Wallet Units and their Users,
 4) <strong>handling the functional revocation of Relying Party certificates</strong> as necessitated by the legal requirements, 
 5) how the registration and operational use of the RP registration certificates shall be done when <strong>the Relying Party relies upon another Relying Party that is acting on its behalf (an intermediary)</strong> to provide its intended use towards the Wallet Units.</p>
-<p>Having analysed the combined legal requirements, the current ARF (release 1.6), as well as recent German architecture concept proposals ([German non-paper on RP Authn], [German non-paper on WRP with attestations], that together contain considerable amount of technical detail and that were discussed indirectly in the context of topic D already), this section raises the following topics for discussion at level of High-Level Requirements relevant for the ARF:</p>
+<p>Having analysed the combined legal requirements, the current ARF (release 1.8), as well as recent German architecture concept proposals ([German non-paper on RP Authn], [German non-paper on WRP with attestations], that together contain considerable amount of technical detail and that were discussed indirectly in the context of topic D already), this section raises the following topics for discussion at level of High-Level Requirements relevant for the ARF:</p>
 <ul>
 <li>Requirements needed to support registrar issuance of RP registration certificates for proximity use cases, not just remote (specifically, support of both JWT and CWT formats of the RP registration certificates, support of both JOSE and COSE signature)</li>
 <li>Requirements impacted from the fact that the Relying Party has an access certificate per Relying Party Instance (either in remote or proximity scenarios)</li>
@@ -726,7 +726,7 @@ Suspension and cancellation</p>
 </ul>
 <p>This document is ONLY intended to clarify the high-level requirements related to the Relying Party registration topic. The necessary technical specifications (including any policy documents) will be developed by the European Commission after agreement over the requirements has been reached.</p>
 <h3 id="31-proximity-use-case-support">3.1 Proximity use case support</h3>
-<p>The Annex IV and V of the draft CIR on RPR will bind legally what certificate standards are applicable for the RPAC and RPRC to be issued by the registrar. Use of the RPRC in context of proximity use case is mentioned in the ARF indirectly in (6.6.3.5), but necessary technical requirements for RPRC issuance are pointing at use of JOSE for signing/sealing the certificate, and the data format of the certificate contents being JSON (Annex V of the draft CIR). Option to support COSE/CWT at the registrar must be added to the requirements.</p>
+<p>The Annex IV and V of the [Draft CIR on Relying Party registration] will bind legally what certificate standards are applicable for the RPAC and RPRC to be issued by the registrar. Use of the RPRC in context of proximity use case is mentioned in the ARF indirectly in (6.6.3.5), but necessary technical requirements for RPRC issuance are pointing at use of JOSE for signing/sealing the certificate, and the data format of the certificate contents being JSON (Annex V of the draft CIR). Requirement for the Registrar to support provisioning of registration certificates in both JWT and CWT format was agreed to be added to the requirements.</p>
 <p>A new HLR is proposed to extend the scope of registration to apply over both online and proximity use cases:</p>
 <table>
 <thead>
@@ -739,14 +739,14 @@ Suspension and cancellation</p>
 <tbody>
 <tr>
 <td>Reg_30</td>
-<td>During registration, the Relying Party SHALL indicate if they intend to use proximity and/or remote presentation requests. For use with proximity presentation requests, the Registrar SHALL issue a registration certificate in CWT format. For use with remote presentation requests, the Registrar SHALL issue a registration certificate in JWT format.</td>
-<td>New (currently: Empty)</td>
+<td>During registration, the Relying Party SHALL be provided both JWT and CWT format registration certificates by the Registrar. <em>Note: This gives the Relying Party freedom to provide their intended use for both remote and proximity use cases, as necessary - without requesting use case implementation approach upon the registration event.</em></td>
+<td>New</td>
 </tr>
 </tbody>
 </table>
 <h3 id="32-access-certificates-with-multiple-relying-party-instances">3.2 Access certificates with multiple Relying Party instances</h3>
-<p>When addressing the RPACs, the Regulation does not recognise the need for multiple instances of Relying Party services in modern IT architectures (replication of RP servers and common dependance on multiple geographical cloud provider regions to ensure availability and continuity of RP services). Multi-instance Relying Parties will also be commonplace in proximity use cases with handheld or mounted verification devices interacting with the Wallet Units. The fact that multiple access certificates with individual private keys can be requested and issued by the access-certificate providers should be clarified in the ARF requirements on registering access certificates, and in the policy documents to be created based on the ARF high-level requirments.</p>
-<p>The HLR Reg_15 on policy for revocation is revised to mention multiple RPACs, and a new HLR Reg_15b is brought to clarify the need for controlled revocation of individual instance RPACs (the Relying Party still has at least one or more valid RPACs after revoking one or more RPACs assigned to its Relying Party Instances). Related to the existing HLRs on relying party access certificates Reg_31 and Reg_32, the requirements with their contextual notes should be moved under Topic 44 with rewording to mean RPRCs. To ensure binding of the RPAC and RPRC with the unique identifier of the Relying Party, a new HLR Reg_33 is introduced.</p>
+<p>When addressing the RPACs, the Regulation does not recognise the need for multiple instances of Relying Party services in modern IT architectures (replication of RP servers and common dependance on multiple geographical cloud provider regions to ensure availability and continuity of RP services). Multi-instance Relying Parties will also be commonplace in proximity use cases with handheld or mounted verification devices interacting with the Wallet Units. The fact that multiple access certificates with individual private keys can be requested and issued by the Access Certificate Authorities should be clarified in the ARF requirements on registering access certificates, and in the policy documents to be created based on the ARF high-level requirements.</p>
+<p>The HLR Reg_15 on policy for revocation is revised to mention multiple RPACs (<em>all</em> RPACS of a Relying Party), and a new HLR Reg_15b is brought to clarify the need for controlled revocation of individual instance RPACs (when the Relying Party still has at least one or more valid RPACs after revoking one or more RPACs assigned to its Relying Party Instances). Related to the existing HLRs on relying party access certificates Reg_31 and Reg_32, the requirements with their contextual notes should be moved under Topic 44 with rewording to mean RPRCs. To ensure binding of the RPAC and RPRC with the unique identifier of the Relying Party, a new HLR Reg_33 is introduced.</p>
 <table>
 <thead>
 <tr>
@@ -758,33 +758,34 @@ Suspension and cancellation</p>
 <tbody>
 <tr>
 <td>Reg_15</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes ~~an~~ <strong>all</strong> access certificate<strong>s of the certificate subject</strong> at least when: - the certificate subject which is a Relying Party is ~~de-registered~~<strong>cancelled or suspended</strong> by the respective Registrar, ~~- the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended by the respective Registrar,~~ - on request of the certificate subject, or - on request of a competent national authority.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes all access certificates of the certificate subject at least when: - the certificate subject which is a Relying Party is cancelled or suspended by the respective Registrar,  - on request of the certificate subject, or - on request of a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_15b</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for Relying Party Instance-specific revocation, which SHALL require that an Access Certificate Authority revokes one or more of the access certificates of the certificate subject at least when: - the corresponding Relying Party Instance is cancelled or suspended by the respective Registrar, - on request of the certificate subject. or - on request of a competent national authority. <em>Note: This policy is required for needs of executing partial revocation of access certificates, e.g. for situations when a Relying Party has issues not reaching to all of its instances.</em></td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for Relying Party Instance-specific revocation, which SHALL require that an Access Certificate Authority revokes one or more of the access certificates of the certificate subject at least when: - the corresponding Relying Party Instance is cancelled by the respective Registrar, - on request of the certificate subject. or - on request of a a national supervisory body. <em>Note: This policy is required for needs of executing partial revocation of access certificates, e.g. for situations when a Relying Party has issues not reaching to all of its instances.</em></td>
 <td>New</td>
 </tr>
 <tr>
 <td>Reg_31</td>
-<td>The <strong>common Relying Party Registration Certificate Policy</strong>~~common Certificate Policy mentioned in Reg_12~~ SHALL require that a Relying Party ~~Instance access~~ <strong>registration</strong> certificate contains a name for the Relying Party, in a format suitable for presenting to a User. Note: A Wallet Unit needs such a name when requesting User approval according to [Topic 6].</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains a name for the Relying Party, in a format suitable for presenting to a User. <em>Note: A Wallet Unit needs such a name when requesting User approval according to [Topic 6].</em></td>
 <td>Move modified HLR text under Topic 44 (new RPRC_03a)</td>
 </tr>
 <tr>
-<td>Reg_32</td>
-<td>The <strong>common Relying Party Registration Certificate Policy</strong>~~common Certificate Policy mentioned in Reg_12~~ SHALL require that a Relying Party ~~Instance access~~ <strong>registration</strong> certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a ~~composition~~concatenated list of </em><em>one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em>**  ~~a unique identifier of the registrar, defined in the policy, and a unique identifier for the Relying Party allocated by this registrar. - This Relying Party identifier is identical in all Relying Party Instance access certificates issued to a given Relying Party.~~</td>
+<td> Reg_32</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
 <td>Move modified HLR text under Topic 44 (new RPRC_03b). <em>Note: Identicality is covered in new HLR RPRC_09 - see Section 3.3</em></td>
 </tr>
 <tr>
 <td>Reg_33</td>
-<td>All Relying Party Instance access certificates of a Relying Party SHALL include identical Relying Party name and identical unique identifier identical to the ones defined in requirements RPRC_03a and RPRC_03b, respectively.</td>
+<td>All Relying Party Instance access certificates of a Relying Party SHALL include the user-friendly (common) name of Relying Party service and unique identifier identical to the ones defined in requirements RPRC_03a and RPRC_03b, respectively.</td>
 <td>New</td>
 </tr>
 </tbody>
 </table>
 <h3 id="33-registration-certificate-per-intended-use">3.3 Registration certificate per intended use</h3>
-<p>According to the draft CIR on RPR a Relying Party will get issued a unique RPRC for each of its registered intended uses, and these registration certificates may be revoked independent of each other or of the associated RPAC. The access certificates are the Relying Party's 'master switches' to the EUDI ecosystem, whilst registration certificates are used to register and document the use case/s provided to the Wallet User. The registration certificate will not be a X.509 certificate, and thus the required certificate policies for RPRCs should be clarified both in the IA draft and the ARF. </p>
+<p>The Relying Party registration requires Relying Parties to provide information necessary for authentication, their contact details, and the intended use of the European Digital Identity Wallets, including the specific data they will request from users. The RPAC (wallet Relying Party Access Certificate) authenticates who the Relying Party is, while the RPRC (wallet-Relying Party Registration Certificate) specifies what data that authenticated the Relying Party is entitled to request for a particular registered purpose (intended use). Crucially, Relying Parties are explicitly prohibited from requesting any data beyond what is indicated in their registration. This is a key mechanism for enforcing data minimisation and purpose limitation.</p>
+<p>According to the [Draft CIR on Relying Party registration] a Relying Party will get issued a unique RPRC for each of its registered intended uses, and these registration certificates may be revoked independent of each other or of the associated RPAC. The access certificates are the Relying Party's 'master switches' to the EUDI ecosystem, whilst registration certificates are used to register and document the use case/s provided to the Wallet User. The registration certificate will not be a X.509 certificate, and thus the required certificate policies for RPRCs should be clarified both in the IA draft and the ARF. </p>
 <p>Current RPRC_2 and RPC_3 in the ARF should be updated to reflect the text of the draft CIR on RPR, a new requirement on use of unique RP identifier across the RPRCs, and a new HLR on creating applicable certificate policies is suggested for Topic 44 as follows:</p>
 <table>
 <thead>
@@ -797,17 +798,17 @@ Suspension and cancellation</p>
 <tbody>
 <tr>
 <td>RPRC_01</td>
-<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign <strong>or seal</strong> a registration certificate and issue it to the Relying Party <strong>for each intended use requested to be registered by the Relying Party</strong>. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. Note: ~~These requirements do not apply in case the Relying Party acts only as an intermediary, s~~See Topic 52.</td>
+<td>During the registration process for Relying Parties, as specified in <a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, the Member State Registrar SHALL create and sign or seal a registration certificate and issue it to the Relying Party for each intended use requested to be registered by the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. Note: See <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
-<td>RPRC_2</td>
-<td>The Commission SHALL ensure that a technical specification is created, describing at least 1. the contents and format of registration certificates, 2. the signing method(s) used to ensure the authenticity of the registration certificates. 3. the trust infrastructure necessary for signing registration certificates and for verifying these signatures, including, if necessary, the use of Trusted Lists to establish trust in Member States Registrars and to distribute their trust anchors to Wallet Units. 4. the method used for binding each registration certificate to the Relying Party Instance access certificate that will be used during the same transaction. This binding method SHALL enable a Wallet Unit to verify that the registration certificate was in fact issued to the Relying Party that authenticated itself using the access certificate. The binding method SHALL consider situations in which the Relying Party uses the services of an intermediary (see Topic 52) to connect to the Wallet Unit. 5. whether or not a registration certificate must have a validity period. 6. ~~whether or not a registration certificate must be revocable, and if so,~~ the method to be used for revocation <strong>of registration certificates</strong>. Moreover, ~~if a registration certificate must be revocable,~~ the technical specification SHALL describe the impact of revocation, especially compared to the impact of revocation of the Relying Party Instance access certificates.</td>
+<td>RPRC_02</td>
+<td>The Commission SHALL ensure that a technical specification is created, describing at least 1. the contents and format of registration certificates, 2. the signing method(s) used to ensure the authenticity of the registration certificates. 3. the trust infrastructure necessary for signing registration certificates and for verifying these signatures, including, if necessary, the use of Trusted Lists to establish trust in Member States Registrars and to distribute their trust anchors to Wallet Units. 4. the method used for binding each registration certificate to the Relying Party Instance access certificate that will be used during the same transaction. This binding method SHALL enable a Wallet Unit to verify that the registration certificate was in fact issued to the Relying Party that authenticated itself using the access certificate. The binding method SHALL consider situations in which the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>) to connect to the Wallet Unit. 5. whether or not a registration certificate must have a validity period. 6. the method to be used for revocation of registration certificates. Moreover, the technical specification SHALL describe the impact of revocation, especially compared to the impact of revocation of the Relying Party Instance access certificates.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
-<td>RPRC_3</td>
-<td>The contents of a registration certificate <strong>issued per registered intended use of the Relying Party</strong> SHALL include at least ~~1. the list of attributes registered by the Relying Party, where each attribute is identified by the identifier specified for it in the applicable Attestation Rulebook, as specified in ARB_06a or ARB_06b. 2. the name of the Relying Party, which SHALL be identical to the name meant in Reg_31. 3. the EU-wide unique identifier of the Relying Party, as meant in Reg_32. 4.~~ <strong>information required in Annex V of the CIR for Relying Party Registration.</strong> ~~i~~<strong>I</strong>f the Relying Party uses the services of an intermediary (see Topic 52): the fact that this is the case, plus the name and unique identifier (as meant in ~~Reg_32~~<strong>RPRC_03a and RPRC_03b</strong>) of this intermediary.</td>
+<td>RPRC_03</td>
+<td>The contents of a registration certificate issued per registered intended use of the Relying Party SHALL include at least information required in Annex V of the CIR for Relying Party Registration. If the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>): the fact that this is the case, plus the user-friendly (common) name and unique identifier (as meant in RPRC_03a and RPRC_03b) of this intermediary.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -817,7 +818,7 @@ Suspension and cancellation</p>
 </tr>
 <tr>
 <td>RPRC_10</td>
-<td>The Commission SHALL provide technical specifications establishing common Certificate Policy for registration certificates, covering at least management and selection of signing keys, revocation and lifecycle maganagement of RPRCs on individual intended use level. Note: The TS could set the provider of RPRCs to follow applicable parts of technical standards such as EN 319 401 (for General Policy Requirements for TSPs) and TS 119 461 (for identity proofing of Relying Party representatives)</td>
+<td>The Commission SHALL provide technical specifications establishing common Certificate Policy for registration certificates, covering at least management and selection of signing keys, revocation and lifecycle maganagement of RPRCs on individual intended use level. <em>Note: The TS could set the provider of RPRCs to follow applicable parts of technical standards such as EN 319 401 (for General Policy Requirements for TSPs) and TS 119 461 (for identity proofing of Relying Party representatives).</em></td>
 <td>New</td>
 </tr>
 <tr>
@@ -827,7 +828,9 @@ Suspension and cancellation</p>
 </tr>
 </tbody>
 </table>
+<blockquote>
 <p>Note: The modifications suggested for RPRC_01 and RPRC_03 above include also the changes required from discussion on intermediaries at Section 3.5.</p>
+</blockquote>
 <h3 id="34-addressing-the-pid-providers-and-attestation-providers-on-rprcs">3.4 Addressing the PID Providers and Attestation Providers on RPRCs</h3>
 <p>The [Draft of the CIR for RP-Registration] implies that among all other roles defined in the ARF also the PID Providers and Attestation Providers will receive registration certificates, with the role registered as part of the registration and reflected in the certificate information (the specific entitlement being one or more of the set PID_Provider, QEAA_Provider, Non_Q_EAA_Provider or PUB_EAA_Provider). This needs to be reflected in the ARF, which so far has separated these roles from the Relying Parties (per definition of the ARF).</p>
 <p>Section 6.3.2.2 of the ARF says that "<em>A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.</em>"</p>
@@ -844,17 +847,27 @@ Suspension and cancellation</p>
 <tbody>
 <tr>
 <td>Reg_17</td>
-<td>~~The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance.~~</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance.</td>
 <td>Delete</td>
 </tr>
 </tbody>
 </table>
 <h3 id="35-registration-certificate-for-intermediaries">3.5 Registration certificate for intermediaries</h3>
-<p>The intention reflected in the [Draft of the CIR for RP-Registration] is that the intermediaries are to receive the RPRC of their End-Relying Parties. If an End-Relying Party uses an intermediary, it (the End-RP) will not need to itself apply or receive its Wallet-Relying Party certificate from the Registrar, as the intermediary will apply for it and host the RPRCs for all of its customers.</p>
-<p>A pure intermediary will receive only RPACs with its own unique identifier and name. The intermediated End-Relying Parties are not provided RPAC, and their set of RPRCs are hosted by their intermediary. It is not in the scope of the ARF to cover how the intended use specific RPRCs are to be managed between the End-Relying Party and the Intermediary.</p>
+<h4 id="351-registration-on-behalf-of-the-end-relying-parties">3.5.1 Registration on-behalf of the End-Relying Parties</h4>
+<p>The intention reflected in the [Draft of the CIR for RP-Registration] is that the intermediaries are to receive the RPRC of their End-Relying Parties. If an End-Relying Party uses an intermediary, it (the End-RP) will not need to itself apply or receive its Wallet-Relying Party certificate from the Registrar, if the intermediary (as part of their service towards the End-Relying Parties) registers for it and possesses the RPRCs for all of its customers. This will simplify the process of End-Relying Parties, who can This model is not mandated by the ARF, the processes how registration will be organised in Member States is left for national discretion.</p>
+<blockquote>
+<p>Note: The means to indicate to the national registry/ies that an entity is registering as an Intermediary is left for national discretion (see RPI_04), there is no such role/entitlement recognised in the Regulation.</p>
+</blockquote>
+<p>A pure intermediary will upon its registration receive only RPACs listing its own unique Relying Party identifier and (common) name. The intermediated End-Relying Parties are not provided RPACs, and their set of issued RPRCs are hosted by their intermediary. It is not in the scope of the ARF to cover how the intended use specific RPRCs are to be managed between the End-Relying Party and the Intermediary.</p>
 <p>As the intermediaries are acting on behalf of the End-Relying Parties, and will remain liable towards the Registrar on accuracy of the information to be registered, they must carry same identity proofing and data verification checks for their customers as the Registrar would do for the End-Relying Party in case of direct registration path. The Registrar shall also not trust blindly the Intermediary but execute the identity verification of both the Intermediary and the End-Relying Parties to be registered.</p>
-<p>The intermediary will obtain as many RPRCs as number of its intermediated end-RPs entities (multiplied by the number of services/intended uses for each entity possibly).</p>
-<p>The ARF (1.6) contains requirement RPI_02, assuming the intermediary does not receive registration certificates of its own, and this assumption remains valid unless the Relying Party acting as an intermediary has other wallet-relying party services with intended uses that invoke the duty to register an RPRC. </p>
+<blockquote>
+<p>Note: Attention must be paid towards compliance of principles such as lawfulness, fairness, transparency, storage limitation or accountability, and of requirements such as those related to data subject rights when using an Intermediary. The compliance against requirements of RPI_10 are therefore essential to be audited when defining the national registration and security policies for Intermediaries. There is no such intention from the Commission, as this (no EU-level policy setting) is already the case for the proxying TSPs since enforcement of (EU) 2014/910.</p>
+</blockquote>
+<h4 id="352-use-of-certificates-upon-on-behalf-operation-towards-wallet-units">3.5.2 Use of certificates upon on-behalf operation towards Wallet Units</h4>
+<p>When operating on behalf of its End-Relying Parties, the intermediary will possess as many RPRCs as number of its intermediated End-RPs entities (multiplied by the number of services/intended uses for each entity possibly). The ARF describes already how the certificates are to be used by the Intermediary and the Wallet Unit in RPI_06 to RPI_10. For clarity, the process of presenting the Intermediary RPAC and the End-Relying Party RPRC with necessary technical level binding is illustrated in Figure 1 below.</p>
+<p><img alt="Intermediary-certificate-presentation-to-wu" src="../img/intermediary-certificate-presentation-to-wu.png" /></p>
+<p>Figure 1 - Validation of identifiers between Intermediary RPAC and End-Relying Party RPRC.</p>
+<p>The ARF (1.8) contains requirement RPI_02, assuming the intermediary does not receive registration certificates of its own, and this assumption remains valid unless the Relying Party acting as an intermediary has other wallet-relying party services with intended uses that invoke the duty to register an RPRC. </p>
 <p>As summary, the ARF needs to be adapted to the intended role of the intermediaries as per the [Draft of the CIR for RP-Registration], which implies modifications of multiple HLRs. Below are the proposed changes to the key HRLs in this respect (other HLRs might need to be updated accordingly). </p>
 <table>
 <thead>
@@ -867,41 +880,42 @@ Suspension and cancellation</p>
 <tbody>
 <tr>
 <td>RPI_02</td>
-<td>An intermediary is acting ~~only~~ as an intermediary for other <strong>(End-)</strong> Relying Parties, ~~and not as a Relying Party in its own right, SHALL NOT obtain~~ <strong>but from the Registrar point of view is considered as a Relying Party and obtains</strong> a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its own name and Relying Party identifier.</td>
+<td>An intermediary is acting only as an intermediary for other (End-) Relying Parties, but from the Registrar point of view is considered as a Relying Party and obtains a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing Intermediary name and Relying Party identifier.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPI_03</td>
-<td>For each of the <strong>End-</strong> Relying Parties that uses its services, an intermediary SHALL obtain a registration certificate <strong>for each registered intended use</strong> from a Registrar, according to the requirements in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>. This registration certificate SHALL contain that <strong>End-</strong> Relying Party's name and unique identifier, as well as the list of attributes registered for that Relying Party.</td>
+<td>For each of the End-Relying Parties that uses its services, an intermediary SHALL possess a registration certificate for each registered intended use of the said End-Relying Party, according to the requirements in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>. This registration certificate SHALL contain that End-Relying Party's name and unique identifier, as well as the list of attributes registered for that Relying Party's intended use.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPI_05</td>
-<td>When issuing a registration certificate for ~~a Relying Party to~~ an intermediary, the Registrar SHALL include in the registration certificate the attribute<strong>s</strong> meant in ~~requirement RPRC_03, point 4~~ <strong>RPRC_03a and RPRC_03b</strong> containing the name and <strong>unique</strong> identifier of the ~~intermediary~~<strong>intermediated End-Relying Party</strong>.</td>
+<td>When issuing a registration certificate for an intermediary, the Registrar SHALL include in the registration certificate the attributes meant in RPRC_03a and RPRC_03b containing the name and unique identifier of the intermediated End-Relying Party.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPI_06</td>
-<td>When requested <strong>for an intended use</strong> by <strong>an intermediated End-Relying Party</strong> ~~Relying Party~~, an intermediary SHALL request the presentation of attributes from a specific Wallet Unit, using their own access certificate meant in requirement RPI_01, and the registration certificate <strong>issued for the intermediary in relation to this end-Relying Party and its intended use, as</strong> ~~of the Relying Party~~ meant in RPI_03.</td>
+<td>When requested for an intended use by an intermediated End-Relying Party, an intermediary SHALL request the presentation of attributes from a specific Wallet Unit, using the intermediary's access certificate meant in requirement RPI_01, and the registration certificate possessed by the intermediary in relation to the intermediated End-Relying Party and the intended use, as meant in RPI_03.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPRC_01</td>
-<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign <strong>or seal</strong> a registration certificate and issue it to the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: ~~These requirements do not apply in case the Relying Party acts only as an intermediary, see~~ </em><em>See also</em><em> Topic 52</em>.</td>
+<td>During the registration process for Relying Parties, as specified in <a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, the Member State Registrar SHALL create and sign or seal a registration certificate and issue it to the Relying Party for each intended use requested to be registered by the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: See Topic 52.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 </tbody>
 </table>
 <h3 id="36-registration-and-registration-certificate-life-cycles">3.6 Registration and Registration Certificate life cycles</h3>
-<h3 id="36-registration-and-registration-certificate-life-cycles_1">3.6 Registration and Registration Certificate life cycles</h3>
 <p>The Article 9 of [Draft of the CIR for RP-Registration]  envisions 'suspension' and 'cancellation' of the registration (apart from the non-specified "active" state after the registration). 
-At the same time the RP Registration certificate has its own life cycle, which envisions only 'revocation' (apart from the "valid" state after issuance).</p>
+At the same time the RP registration certificate has its own life cycle, which envisions only 'revocation' (apart from the "valid" state after issuance).</p>
 <p>In addition, the IA draft text lists the following reasons of suspension/cancellation:
 + the registration contains information which is inaccurate, out of date or misleading;
 + the wallet-relying party is not complying with the registration policy;
 + the wallet-relying party is requesting more attributes than they have registered; 
 + the wallet-relying party is otherwise acting in breach of Union or national law in a manner related to their role as wallet-relying party;
-+ by a supervisory body European Digital Identity Wallet Framework in the case of illegal or fraudulent use of the European Digital Identity Wallet</p>
++ by a supervisory body European Digital Identity Wallet Framework in the case of illegal or fraudulent use of the European Digital Identity Wallet.</p>
+<p>The technical specifications and policy documents that base their requirements on the ARF must specify the RPRC specific policies on lifecycle management (e.g., updates for and revocation of the existing RPRCs as indended uses and their data requirements change over time) and policies for eventual multi-registration (per intended use, per Member State) and cross-border registration. </p>
+<p>Defined policies should also address how to execute post-registration analysis and audits against the registered intended uses, unless the audits are to be left entirely for the EUDI Wallet Unit level functions - such as already introduced in the ARF <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#66313-wallet-unit-enables-the-user-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data">Section 6.6.3.13</a>, and the functionalities to be defined via Topic M - User reporting unlawful or suspicious request of data to DPAs.</p>
 <table>
 <thead>
 <tr>
@@ -913,27 +927,27 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_15</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: <strong>the certificate subject's registration is cancelled or suspended</strong> ~~the certificate subject which is a Relying Party is de-registered by the respective Registrar,the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended~~ by the respective Registrar, on request of the certificate subject, or on request of a competent national authority.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: the certificate subject's registration is cancelled by the respective Registrar, on request of the certificate subject, or on request of a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_22a</td>
-<td>A Registrar SHALL provide a method to suspend or ~~withdraw~~ cancel <strong>the registration of</strong> a registered Attestation Provider.</td>
+<td>A Registrar SHALL provide a method to suspend or cancel the registration of a registered Attestation Provider.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_22b</td>
-<td>A Registrar SHALL have a policy for the suspension or ~~withdrawal~~ <strong>cancellation</strong> of a registered Attestation Provider, which SHALL specify that an Attestation ~~Provider~~<strong>Provider's registration</strong> is suspended or ~~withdrawn~~ <strong>cancelled</strong> at least on request of the PID Provider <strong>,Registrar</strong> or of a competent national authority.</td>
+<td>A Registrar SHALL have a policy for the suspension or cancellation of a registered Attestation Provider, which SHALL specify that an Attestation Provider's registration is suspended or cancelled at least on request of the PID Provider,Registrar or of a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>REG_28</td>
-<td>A Member State's Registry SHALL log all changes made on the information regarding a Relying Party, including at least initial registration, updates, deletion of information, and suspension or <strong>cancellation</strong>~~withdrawal~~.</td>
+<td>A Member State's Registry SHALL log all changes made on the information regarding a Relying Party, including at least initial registration, updates, deletion of information, and suspension or cancellation.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>REG_29</td>
-<td>A Registrar SHALL have a policy for the <strong>cancellation and suspension</strong> ~~withdrawal~~ of <strong>the registration of</strong> a registered Relying Party, which SHALL specify that ~~a Relying Party is withdrawn~~ <strong>the Relying Party's registration is cancelled or suspended</strong> at least on request of the Relying Party <strong>, Registrar</strong> or ~~of~~ a competent national authority.</td>
+<td>A Registrar SHALL have a policy for the cancellation and suspension of the registration of a registered Relying Party, which SHALL specify that the Relying Party's registration is cancelled or suspended at least on request of the Relying Party, Registrar or a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 </tbody>
@@ -955,7 +969,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_01</td>
-<td>Member States SHALL provide processes and mechanisms for PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and <strong>other</strong> Relying Parties to register in a registry. Note: Member States may choose to implement a single registry for all these roles, or a separate registry for each of these roles.</td>
+<td>Member States SHALL provide processes and mechanisms for PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and other Relying Parties to register in a registry. <em>Note: Member States may choose to implement a single registry for all these roles, or a separate registry for each of these roles, or organise registries e.g. per applicable sector.</em></td>
 <td>Keep with proposed change</td>
 </tr>
 <tr>
@@ -980,12 +994,12 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_06</td>
-<td>The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_03, defining the minimum requirements for interoperability. Note: Requirements for this API are defined in Reg_08 and Reg_09.</td>
+<td>The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_03, defining the minimum requirements for interoperability. <em>Note: Requirements for this API are defined in Reg_08 and Reg_09.</em></td>
 <td>Keep</td>
 </tr>
 <tr>
 <td>Reg_07</td>
-<td>The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_04. Note: Requirements for this user interface are defined in Reg_08 and Reg_09.</td>
+<td>The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_04. <em>Note: Requirements for this user interface are defined in Reg_08 and Reg_09.</em></td>
 <td>Keep</td>
 </tr>
 <tr>
@@ -1012,7 +1026,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_10</td>
-<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>] issues ~~an~~ access certificate<strong>s on request</strong> to <strong>Relying Parties, including the</strong> ~~all~~ PID Providers, QEAA Providers, PuB-EAA Providers ~~,~~<strong>and</strong> (non-qualified) EAA Providers ~~, and Relying Parties~~ registered in one of the Member State's registries.</td>
+<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>] issues access certificates on request to Relying Parties, including the PID Providers, QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers registered in one of the Member State's registries.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -1037,12 +1051,12 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_15</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes ~~an~~ <strong>all</strong> access certificate<strong>s of the certificate subject</strong> at least when: - the certificate subject which is a Relying Party is ~~de-registered~~<strong>cancelled or suspended</strong> by the respective Registrar, ~~- the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended by the respective Registrar,~~ - on request of the certificate subject, or - on request of a competent national authority.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes all access certificates of the certificate subject at least when: - the certificate subject which is a Relying Party is cancelled by the respective Registrar,  - on request of the certificate subject, or - on request of a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_15b</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for Relying Party Instance-specific revocation, which SHALL require that an Access Certificate Authority revokes one or more of the access certificates of the certificate subject at least when: - the corresponding Relying Party Instance is cancelled or suspended by the respective Registrar, - on request of the certificate subject, or - on request of a competent national authority. <em>Note: This policy is required for needs of executing partial revocation of access certificates, e.g. for situations when a Relying Party has issues not reaching to all of its instances.</em></td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for Relying Party Instance-specific revocation, which SHALL require that an Access Certificate Authority revokes one or more of the access certificates of the certificate subject at least when: - the corresponding Relying Party Instance is cancelled by the respective Registrar, - on request of the certificate subject, or - on request of a national supervisory body. <em>Note: This policy is required for needs of executing partial revocation of access certificates, e.g. for situations when a Relying Party has issues not reaching to all of its instances.</em></td>
 <td>New</td>
 </tr>
 <tr>
@@ -1052,7 +1066,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_17</td>
-<td>~~The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance.~~</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance.</td>
 <td>Delete</td>
 </tr>
 <tr>
@@ -1075,22 +1089,22 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tr>
 <td>Reg_19</td>
 <td>A Member State SHALL approve a PID Provider according to a well-defined policy before including it in its PID Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of PID Providers in its Registry.</td>
-<td>Keep</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_20</td>
 <td>A Member State SHALL identify PID Providers at a level of confidence proportionate to the risk arising from the potential harm a fraudulent PID Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem.</td>
-<td>Keep</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_20a</td>
-<td>A Registrar SHALL provide a method to suspend or ~~withdraw~~<strong>cancel</strong> a registered PID Provider.</td>
-<td>Keep with proposed changes</td>
+<td>A Registrar SHALL provide a method to suspend or cancel a registered PID Provider.</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_20b</td>
-<td>A Registrar SHALL have a policy for the suspension or ~~withdrawal~~<strong>cancellation</strong> of a registered PID Provider, which SHALL specify that a PID Provider is suspended or ~~withdrawn~~<strong>cancelled</strong> at least on request of the PID Provider or of a competent national authority.</td>
-<td>Keep with proposed changes</td>
+<td>A Registrar SHALL have a policy for the suspension or cancellation of a registered PID Provider, which SHALL specify that a PID Provider is suspended or cancelled at least on request of the PID Provider or of a national supervisory body.</td>
+<td>Delete</td>
 </tr>
 </tbody>
 </table>
@@ -1107,22 +1121,22 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tr>
 <td>Reg_21</td>
 <td>A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers.</td>
-<td>Keep</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_22</td>
 <td>A Member State SHALL identify Attestation Providers (i.e., QEAA Providers, PuB-EAA Providers and non-qualified EAA Providers) at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Attestation Provider could cause to Users and other stakeholders in the EUDI Wallet ecosystem.</td>
-<td>Keep</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_22a</td>
-<td>A Registrar SHALL provide a method to suspend or ~~withdraw~~<strong>cancel</strong> a registered Attestation Provider.</td>
-<td>Keep with proposed changes</td>
+<td>A Registrar SHALL provide a method to suspend or cancel a registered Attestation Provider.</td>
+<td>Delete</td>
 </tr>
 <tr>
 <td>Reg_22b</td>
-<td>A Registrar SHALL have a policy for the suspension or ~~withdrawal~~<strong>cancellation</strong> of a registered Attestation Provider, which SHALL specify that an Attestation Provider is suspended or ~~withdrawn~~<strong>cancelled</strong> at least on request of the PID Provider or of a competent national authority.</td>
-<td>Keep with proposed changes</td>
+<td>A Registrar SHALL have a policy for the suspension or cancellation of a registered Attestation Provider, which SHALL specify that an Attestation Provider is suspended or cancelled at least on request of the PID Provider or of a national supervisory body.</td>
+<td>Delete</td>
 </tr>
 </tbody>
 </table>
@@ -1148,7 +1162,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_25</td>
-<td>~~A Member State SHALL identify a Relying Party at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Relying Party could cause to Users and other stakeholders in the EUDI Wallet ecosystem.~~</td>
+<td>A Member State SHALL identify a Relying Party at a level of confidence proportionate to the risk arising from the potential harm a fraudulent Relying Party could cause to Users and other stakeholders in the EUDI Wallet ecosystem.</td>
 <td>Delete</td>
 </tr>
 <tr>
@@ -1163,17 +1177,17 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_28</td>
-<td>A Member State's Registry SHALL log all changes made on the information regarding a Relying Party, including at least initial registration, updates, deletion of information, and suspension or ~~withdrawal~~<strong>cancellation</strong>.</td>
+<td>A Member State's Registry SHALL log all changes made on the information regarding a Relying Party, including at least initial registration, updates, deletion of information, and suspension or cancellation.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_29</td>
-<td>A Registrar SHALL have a policy for the ~~withdrawal~~<strong>cancellation</strong> of a registered Relying Party, which SHALL specify that a Relying Party is ~~withdrawn~~<strong>cancelled</strong> at least on request of the Relying Party or of a competent national authority.</td>
+<td>A Registrar SHALL have a policy for the cancellation of a registered Relying Party, which SHALL specify that a Relying Party is cancelled at least on request of the Relying Party or of a national supervisory body.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Reg_30</td>
-<td>During registration, the Relying Party SHALL indicate if they intend to use proximity and/or remote presentation requests. For use with proximity presentation requests, the Registrar SHALL issue a registration certificate in CWT format. For use with remote presentation requests, the Registrar SHALL issue a registration certificate in JWT format.</td>
+<td>During registration, the Relying Party SHALL be provided both JWT and CWT format registration certificates by the Registrar. <em>Note: This gives the Relying Party freedom to provide their intended use for both remote and proximity use cases, as necessary - without requesting use case implementation approach upon the registration event.</em></td>
 <td>New</td>
 </tr>
 </tbody>
@@ -1190,17 +1204,17 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_31</td>
-<td>The <strong>common Relying Party Registration Certificate Policy</strong>~~common Certificate Policy mentioned in Reg_12~~ SHALL require that a Relying Party ~~Instance access~~ <strong>registration</strong> certificate contains a name for the Relying Party, in a format suitable for presenting to a User. Note: A Wallet Unit needs such a name when requesting User approval according to [Topic 6].</td>
-<td>Move as modified to Topic 44 (new RPRC_03a)</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains a name for the Relying Party, in a format suitable for presenting to a User. <em>Note: A Wallet Unit needs such a name when requesting User approval according to [Topic 6].</em></td>
+<td>Move modified HLR text under Topic 44 (<strong>new RPRC_03a</strong>)</td>
 </tr>
 <tr>
-<td>Reg_32</td>
-<td>The <strong>common Relying Party Registration Certificate Policy</strong>~~common Certificate Policy mentioned in Reg_12~~ SHALL require that a Relying Party ~~Instance access~~ <strong>registration</strong> certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. Notes: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a ~~composition~~concatenated list of <strong>one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</strong>  ~~a unique identifier of the registrar, defined in the policy, and a unique identifier for the Relying Party allocated by this registrar. - This Relying Party identifier is identical in all Relying Party Instance access certificates issued to a given Relying Party.~~</td>
-<td>Move as modified to Topic 44 (new RPRC_03b).</td>
+<td> Reg_32</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
+<td>Move modified HLR text under Topic 44 (<strong>new RPRC_03b</strong>).</td>
 </tr>
 <tr>
 <td>Reg_33</td>
-<td>All Relying Party Instance access certificates of a Relying Party SHALL include identical Relying Party name and identical unique identifier identical to the ones defined in requirements RPRC_03a and RPRC_03b, respectively.</td>
+<td>All Relying Party Instance access certificates of a Relying Party SHALL include the user-friendly (common) name of Relying Party service and unique identifier identical to the ones defined in requirements RPRC_03a and RPRC_03b, respectively.</td>
 <td>New</td>
 </tr>
 </tbody>
@@ -1218,22 +1232,22 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>RPRC_01</td>
-<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign <strong>or seal</strong> a registration certificate and issue it to the Relying Party <strong>for each intended use requested to be registered by the Relying Party</strong>. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: ~~These requirements do not apply in case the Relying Party acts only as an intermediary, s~~See Topic 52.</em></td>
+<td>During the registration process for Relying Parties, as specified in Topic 27, the Member State Registrar SHALL create and sign or seal a registration certificate and issue it to the Relying Party for each intended use requested to be registered by the Relying Party. The registration certificate SHALL comply with the applicable requirements in the technical specification mentioned in RPRC_02. <em>Note: See Topic 52.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPRC_02</td>
-<td>The Commission SHALL ensure that a technical specification is created, describing at least 1. the contents and format of registration certificates, 2. the signing method(s) used to ensure the authenticity of the registration certificates. 3. the trust infrastructure necessary for signing registration certificates and for verifying these signatures, including, if necessary, the use of Trusted Lists to establish trust in Member States Registrars and to distribute their trust anchors to Wallet Units. 4. the method used for binding each registration certificate to the Relying Party Instance access certificate that will be used during the same transaction. This binding method SHALL enable a Wallet Unit to verify that the registration certificate was in fact issued to the Relying Party that authenticated itself using the access certificate. The binding method SHALL consider situations in which the Relying Party uses the services of an intermediary (see Topic 52) to connect to the Wallet Unit. 5. whether or not a registration certificate must have a validity period. 6. ~~whether or not a registration certificate must be revocable, and if so,~~ the method to be used for revocation <strong>of registration certificates</strong>. Moreover, ~~if a registration certificate must be revocable,~~ the technical specification SHALL describe the impact of revocation, especially compared to the impact of revocation of the Relying Party Instance access certificates.</td>
+<td>The Commission SHALL ensure that a technical specification is created, describing at least 1. the contents and format of registration certificates, 2. the signing method(s) used to ensure the authenticity of the registration certificates. 3. the trust infrastructure necessary for signing registration certificates and for verifying these signatures, including, if necessary, the use of Trusted Lists to establish trust in Member States Registrars and to distribute their trust anchors to Wallet Units. 4. the method used for binding each registration certificate to the Relying Party Instance access certificate that will be used during the same transaction. This binding method SHALL enable a Wallet Unit to verify that the registration certificate is bound to the Relying Party that authenticated itself using the access certificate. The binding method SHALL consider situations in which the Relying Party uses the services of an intermediary (see Topic 52) to connect to the Wallet Unit. 5. whether or not a registration certificate must have a validity period. 6. the method to be used for revocation of registration certificates. Moreover, the technical specification SHALL describe the impact of revocation, especially compared to the impact of revocation of the Relying Party Instance access certificates.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPRC_03</td>
-<td>The contents of a registration certificate <strong>issued per registered intended use of the Relying Party</strong> SHALL include at least ~~1. the list of attributes registered by the Relying Party, where each attribute is identified by the identifier specified for it in the applicable Attestation Rulebook, as specified in ARB_06a or ARB_06b. 2. the name of the Relying Party, which SHALL be identical to the name meant in Reg_31. 3. the EU-wide unique identifier of the Relying Party, as meant in Reg_32. 4.~~ <strong>information required in Annex V of the CIR for Relying Party Registration.</strong> ~~i~~<strong>I</strong>f the Relying Party uses the services of an intermediary (see Topic 52): the fact that this is the case, plus the name and unique identifier (as meant in ~~Reg_32~~<strong>RPRC_03a and RPRC_03b</strong>) of this intermediary.</td>
+<td>The contents of a registration certificate issued per registered intended use of the Relying Party SHALL include at least information required in Annex V of the CIR for Relying Party Registration. If the Relying Party uses the services of an intermediary (see Topic 52): the fact that this is the case, plus the user-friendly (common) name and unique identifier (as meant in RPRC_03a and RPRC_03b) of this intermediary.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPRC_03a</td>
-<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains a name for the Relying Party, in a format suitable for presenting to a User. <em>Note: A Wallet Unit needs such a name when requesting User approval according to [Topic 6]</em>.</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration instance certificate contains a common name for the Relying Party instance, in a format suitable for presenting to a User. <em>Notes: - A Wallet Unit needs such a name when requesting User approval according to [Topic 6], - If Relying Party uses an Intermediary, both Intermediary and End-Relying Party common names need to be shown when requesting User approval and the User should be informed that the Intermediary is representing/acting on behalf of the End-Relying Party</em>.</td>
 <td>New</td>
 </tr>
 <tr>
@@ -1268,7 +1282,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>RPRC_09</td>
-<td>The EU-wide unique identifier SHALL be identical in all registration certificates issued for a given Relying Party.</td>
+<td>The EU-wide unique identifier SHALL be identical in all registration certificates issued for a given Relying Party. <em>Note: In case the registration certificates issued to an End-Relying Party are held and presented by an Intermediary (Relying Party), the given Relying Party meant in the text is the End-Relying Party. An Intermediary will obtain and hold registration certificates with non-identical unique identifiers.</em></td>
 <td>New</td>
 </tr>
 <tr>
@@ -1278,7 +1292,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>RPRC_11</td>
-<td>There SHALL be only one valid registration certificate present in a presentation request for given intended use of a Relying Party. An error SHALL be reported by the Wallet Unit if it receives multiple registration certificates for the same intended use.</td>
+<td>There SHALL be only one valid registration certificate present in a presentation request for given intended use of a Relying Party. An error SHALL be reported (logged and shown for the User) by the Wallet Unit if it receives multiple registration certificates for the same intended use within same presentation request.</td>
 <td>New</td>
 </tr>
 </tbody>
@@ -1300,12 +1314,12 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>RPI_02</td>
-<td>An intermediary is acting ~~only~~ as an intermediary for other <strong>(End-)</strong> Relying Parties, ~~and not as a Relying Party in its own right, SHALL NOT obtain~~ <strong>but from the Registrar point of view is considered as a Relying Party and obtains</strong> a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its own name and Relying Party identifier.</td>
+<td>An intermediary is acting only as an intermediary for other (End-) Relying Parties, but from the Registrar and the regulation's point of view is considered as a Relying Party and obtains a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing Intermediary name and Relying Party identifier.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPI_03</td>
-<td>For each of the <strong>End-</strong> Relying Parties that uses its services, an intermediary SHALL obtain a registration certificate <strong>for each registered intended use</strong> from a Registrar, according to the requirements in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>. This registration certificate SHALL contain that <strong>End-</strong> Relying Party's name and unique identifier, as well as the list of attributes registered for that Relying Party.</td>
+<td>For each of the End-Relying Parties that uses its services, an intermediary SHALL be the holder of the registration certificate for each registered intended use of the said End-Relying Party, according to the requirements in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>. This registration certificate SHALL contain that End-Relying Party's name and unique identifier, as well as the list of attributes registered for that Relying Party's intended use.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -1315,12 +1329,12 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>RPI_05</td>
-<td>When issuing a registration certificate for ~~a Relying Party to~~ an intermediary, the Registrar SHALL include in the registration certificate the attribute<strong>s</strong> meant in ~~requirement RPRC_03, point 4~~ <strong>RPRC_03a and RPRC_03b</strong> containing the name and <strong>unique</strong> identifier of the ~~intermediary~~<strong>intermediated End-Relying Party</strong>.</td>
+<td>When issuing a registration certificate for an intermediary, the Registrar SHALL include in the registration certificate the attributes meant in RPRC_03a and RPRC_03b containing the name and unique identifier of the intermediated End-Relying Party.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPI_06</td>
-<td>When requested <strong>for an intended use</strong> by <strong>an intermediated End-Relying Party</strong> ~~Relying Party~~, an intermediary SHALL request the presentation of attributes from a specific Wallet Unit, using their own access certificate meant in requirement RPI_01, and the registration certificate <strong>issued for the intermediary in relation to this End-Relying Party and its intended use, as</strong> ~~of the Relying Party~~ meant in RPI_03.</td>
+<td>When requested for an intended use by an intermediated End-Relying Party, an intermediary SHALL request the presentation of attributes from a specific Wallet Unit, using the intermediary's access certificate meant in requirement RPI_01, and the registration certificate accessible to the intermediary in relation to the intermediated End-Relying Party and the intended use, as meant in RPI_03.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -1337,8 +1351,11 @@ At the same time the RP Registration certificate has its own life cycle, which e
 </table>
 <h2 id="5-relation-to-other-topics">5 Relation to Other Topics</h2>
 <p>Below we discuss how Relying Party registration relates to the other topics being discussed.</p>
-<p>As indicated in the chapter 3, several changes are proposed in the context of the Relying Party registration. The changes introduced in the respective HLRs are to be also reflected in the remaining topics/HLRs, at least in reference to Topic 6 and Topic 31. Note that term <strong>Registrar of Registration Certificates</strong> has been introduced, aside the formerly used Access Certificate Authority, to indicate that the Registrars need not be Certificate Authorities (CAs) unlike the issuers of X.509 access certificates.</p>
-<p>In result, the following modification are therefore proposed (<em>Note: only affected HLRs are listed, not exhaustive lists as in Section 4</em>):</p>
+<p>As indicated in the chapter 3, several changes are proposed in the context of the Relying Party registration. The changes introduced in the respective HLRs are to be also reflected in the remaining topics/HLRs, at least in reference to Topic 6 and Topic 31. Note that term <strong>Registration Certificate Authority</strong> has been introduced, aside the formerly used Access Certificate Authority.</p>
+<p>In result, the following modification are therefore proposed:</p>
+<blockquote>
+<p>Note: only affected HLRs are listed, not exhaustive lists as in Section 4.</p>
+</blockquote>
 <h3 id="51-topic-6-relying-party-authentication-and-user-approval">5.1 Topic 6 - Relying Party authentication and User approval</h3>
 <table>
 <thead>
@@ -1351,7 +1368,7 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>RPA_06a</td>
-<td>If the registration certificate indicates that ~~the Relying Party is using the services of~~ <strong>the certificate belongs to</strong> an intermediary, as described in <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>, the Wallet Unit SHALL verify that the name and the unique identifier of the intermediary included in the registration certificate are identical to the name and unique identifier included in the Relying Party Instance access certificate. If this verification fails, the Wallet Unit SHALL treat this as a Relying Party authentication failure. If this verification succeeds, the Wallet Instance SHALL display to the User the name of the intermediary <strong>and the intermediated End-Relying Party</strong>.</td>
+<td>If the registration certificate indicates that an intermediary, as described in <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>, the Wallet Unit SHALL verify that the name and the unique identifier of the intermediary included in the registration certificate are identical to the name and unique identifier included in the Relying Party Instance access certificate. If this verification fails, the Wallet Unit SHALL treat this as a Relying Party authentication failure. If this verification succeeds, the Wallet Instance SHALL display to the User the names of the intermediary and the intermediated End-Relying Party.</td>
 <td>Keep with proposed changes</td>
 </tr>
 </tbody>
@@ -1368,52 +1385,57 @@ At the same time the RP Registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>GenNot_01</td>
-<td>The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, ~~and~~ Access Certificate Authorities <strong>and Registrars of Registration Certificates</strong> by Member States to the Commission. <em>Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively.</em></td>
+<td>The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, Access Certificate Authorities and Registrars of Registration Certificates by Member States to the Commission. <em>Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>GenNot_02</td>
-<td>As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the notification of a PID Provider, PuB-EAA Provider, Wallet Provider, ~~or~~  Access Certificate Authorities <strong>or Registrars of Registration Certificates</strong> to the Commission. <em>Note: The outcome of the notification procedure is the publication of the information notified by the Member State according to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a> (18) in a machine and human readable manner using the common system mentioned in Section H, TLPub_01.</em></td>
+<td>As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the notification of a PID Provider, PuB-EAA Provider, Wallet Provider, Access Certificate Authorities or Registration Certificate Authorities to the Commission. <em>Note: The outcome of the notification procedure is the publication of the information notified by the Member State according to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a> (18) in a machine and human readable manner using the common system mentioned in Section H, TLPub_01.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>GenNot_05</td>
-<td>As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the suspension or ~~withdrawal~~<strong>cancellation</strong> of a PID Provider, PuB-EAA Provider, Wallet Provider, ~~or Relying Party~~ Access Certificate Authority <strong>or Registrar of Registration Certificates</strong>. These operating procedures SHALL include unambiguous conditions for suspension or ~~withdrawal~~<strong>cancellation</strong>. As an outcome of the suspension or ~~withdrawal~~<strong>cancellation</strong> procedure, the status of the suspended or ~~withdrawn~~<strong>cancelled</strong> PID Provider, PuB-EAA Provider, Wallet Provider, or ~~Relying Party~~ Access Certificate Authority in the Trusted List SHALL be changed to Invalid.</td>
+<td>As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the suspension or cancellation of a PID Provider, PuB-EAA Provider, Wallet Provider, Access Certificate Authority or Registration Certificate Authority. These operating procedures SHALL include unambiguous conditions for suspension or cancellation. As an outcome of the suspension or cancellation procedure, the status of the suspended or cancelled PID Provider, PuB-EAA Provider, Wallet Provider, Access Certificate Authority or Registration Certificate Authority in the Trusted List SHALL be changed to Invalid.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>PPNot_02</td>
-<td>The common set of information to be notified about a PID Provider SHALL include <strong>at least</strong>: 1. Identification data: i. MS/Country of establishment, ii. Name as registered in an official record, iii. Where applicable: a. A business registration number from an official record, b. Identification data from that official record. 2. PID Provider trust anchors, i.e., public keys and name as per point 1) ii) above, supporting the authentication of PIDs issued by the PID Provider, 3. PID Provider Access Certificate Authority trust anchors, i.e., public keys and CA name, supporting the authentication of the PID Provider by Wallet Units at the service supply point(s) listed per point 4. below. 4. Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PID. <em>Notes: - Relating to point 3. above: PID Provider Access Certificate Authority trust anchors are notified separately from the ~~Relying Party~~ Access Certificate Authority (see Section G below), since PID Providers are -legally speaking- not Relying Parties. - For the concept of an  Access Certificate Authority, see also [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>] and <a href="../../architecture-and-reference-framework-main.md#632-pid-provider-or-attestation-provider-registration-and-notification">Section 6.3.2 of the ARF main document</a>.</em></td>
+<td>The common set of information to be notified about a PID Provider SHALL include at least: 1. Identification data: i. MS/Country of establishment, ii. Name as registered in an official record, iii. Where applicable: a. A business registration number from an official record, b. Identification data from that official record. 2. PID Provider trust anchors, i.e., public keys and name as per point 1) ii) above, supporting the authentication of PIDs issued by the PID Provider, 3. PID Provider Access Certificate Authority trust anchors, i.e., public keys and CA name, supporting the authentication of the PID Provider by Wallet Units at the service supply point(s) listed per point 4. below. 4. Service supply point(s), i.e., the URL(s) at which a Wallet Unit can start the process of requesting and obtaining a PID. <em>Notes: - Relating to point 3. above: PID Provider Access Certificate Authority trust anchors are notified separately from the ~~Relying Party~~ Access Certificate Authority (see Section G below), since PID Providers are -legally speaking- not Relying Parties. - For the concept of an  Access Certificate Authority, see also [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>] and <a href="../../architecture-and-reference-framework-main.md#632-pid-provider-or-attestation-provider-registration-and-notification">Section 6.3.2 of the ARF main document</a>.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPACANot_01</td>
-<td>The European Commission SHALL establish technical specifications for the common set of information to be notified about ~~Relying Party Access Certificate Authorities, QEAA Provider Access Certificate Authorities, PuB-EAA Provider Access Certificate Authorities, and (non-qualified) EAA Provider Access Certificate Authorities~~<strong>Access Certificate Authorities and Registrars of Registration Certificates</strong>.</td>
+<td>The European Commission SHALL establish technical specifications for the common set of information to be notified about Access Certificate Authorities and Registrars of Registration Certificates.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPACANot_02</td>
-<td>The common set of information to be notified about an Access Certificate Authority <strong>and Registrars of Registration Certificates</strong> SHALL include: 1. Identification data: i) MS/Country of establishment, ii) Name as registered in an official record, iii) Where applicable: - A business registration number from an official record, - Identification data from that official record. 2. Access Certificate Authority <strong>or Registrar of Registration Certificates</strong> trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties ~~, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers~~ by Wallet Units.</td>
+<td>The common set of information to be notified about an Access Certificate Authority and Registrars of Registration Certificates SHALL include: 1. Identification data: i) MS/Country of establishment, ii) Name as registered in an official record, iii) Where applicable: - A business registration number from an official record, - Identification data from that official record. 2. Access Certificate Authority or Registration Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties by Wallet Units.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPACANot_04</td>
-<td>Access Certificate Authority <strong>and Registrar of Registration Certificates</strong> trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Access Certificate Authority <strong>and Registrar of Registration Certificates</strong> Trusted List<strong>s</strong> which ~~is~~<strong>are</strong> signed or sealed by the Commission.</td>
+<td>Access Certificate Authority and Registration Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Access Certificate Authority and Registration Certificate Authority Trusted Lists which are signed or sealed by the Commission. *Note: The adopted version of the CIR for Relying Party registration will clarify how the Trusted List for Registrars of Registration Certificates are to be arranged, the certificates not being PKI/X.509 certificates as is the case with standard EU Trusted Lists. It is also to be clarified in the related technical specification if Access Certificate Authorities can sign other certificates than access certificates. *</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>RPACANot_06</td>
-<td>If an Access Certificate Authority or Registrar of Relying Party Registration Certificates is suspended or cancelled (see requirement GenNot_05 above), that Access Certificate Authority or Registrar of Relying Party Registration Certificates SHALL immediately revoke all of its valid access certificates.</td>
+<td>If an Access Certificate Authority is suspended or cancelled (see requirement GenNot_05 above), that Access Certificate Authority SHALL immediately revoke all of its valid access certificates. <em>Note: When the access certificates of an Intermediary that has its RPACs issued by said suspended or cancelled Access Certificate Authority are revoked, the End-Relying Parties depending on said Intermediary, while having valid registration certificates from a Registrar will have no access to transact with EUDI Wallet Users until the End-Relying Parties a) transit to another Intermediary that has RPAC issued by an active Access Certification Authority or b)the original Access Certificate Authority can continue its operations and re-issue earlier revoked certificates for the original Intermediary.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>RPACANot_07</td>
+<td>If a Registrar of Relying Party Registration Certificates is suspended or cancelled (see requirement GenNot_05 above), that Registrar of Relying Party Registration Certificates SHALL immediately revoke all of its valid registration certificates.</td>
 <td>New</td>
 </tr>
 <tr>
 <td>TLPub_01</td>
-<td>The European Commission SHALL establish technical specifications for the system enabling the publication by the Commission of the information notified by the Member States regarding PID Providers, Wallet Providers, PuB-EAA Providers, ~~and Relying Party~~Access Certificate Authorities <strong>and Registrars of Registration Certificates</strong>.</td>
+<td>The European Commission SHALL establish technical specifications for the system enabling the publication by the Commission of the information notified by the Member States regarding PID Providers, Wallet Providers, PuB-EAA Providers, Access Certificate Authorities and Registrars of Registration Certificates.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>TLPub_02</td>
-<td>The European Commission SHALL establish technical specifications for the set of information to be published about: PID Providers, Wallet Providers,PuB-EAA Providers, ~~and~~ Access Certificate Authorities <strong>and Registrars of Registration Certificates</strong> based on the information notified by the Member States. <em>Note: The information to be published MAY be different from the information to be notified per requirements PPNot_01, WPNot_01, PuBPNot_01, and RPACANot_01 above, respectively.</em></td>
+<td>The European Commission SHALL establish technical specifications for the set of information to be published about: PID Providers, Wallet Providers,PuB-EAA Providers, Access Certificate Authorities and Registrars of Registration Certificates based on the information notified by the Member States. <em>Note: The information to be published MAY be different from the information to be notified per requirements PPNot_01, WPNot_01, PuBPNot_01, and RPACANot_01 above, respectively.</em></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
