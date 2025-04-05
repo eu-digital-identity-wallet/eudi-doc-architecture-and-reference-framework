@@ -66,13 +66,19 @@ PANDOC_EPUB_OPTIONS := --to epub3
 %.epub : %.md
 	@mkdir -p $(BUILD_DIR)/epub
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/$(notdir $@) $<
+
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all mkdocs serve copy-pdfs zip-pdfs clean
+.PHONY: all epub mkdocs serve copy-pdfs zip-pdfs clean
 
 # Default target: build all exported documents and the MkDocs site.
-all: $(EXPORTED_DOCS) zip-pdfs mkdocs
+all: $(EXPORTED_DOCS) epub zip-pdfs mkdocs
+
+# EPUB combined
+epub :
+	@mkdir -p $(BUILD_DIR)/epub
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/arf_combined.epub $(SOURCE_DOCS)
 
 # Build the MkDocs site
 mkdocs:
