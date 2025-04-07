@@ -376,7 +376,7 @@ Note: Instead of separate claims for (for example) age_over_16, age_over_18, age
 #### 5.2.2 Attribute location_status
 
 In SD-JWT VC-compliant PIDs, the attribute location_status SHALL be expressed
-with the `status` claim as defined [SD-JWT VC].
+with the `status` claim as defined in [SD-JWT VC].
 
 ### 5.3 Note on VCT
 
