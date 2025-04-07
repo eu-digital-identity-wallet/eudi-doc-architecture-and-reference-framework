@@ -375,8 +375,10 @@ Note: Instead of separate claims for (for example) age_over_16, age_over_18, age
 
 #### 5.2.2 Attribute location_status
 
-In SD-JWT VC-compliant PIDs, the attribute location_status SHALL be expressed
-with the `status` claim as defined in [SD-JWT VC].
+For SD-JWT VC-compliant PIDs, the PID issuer will add validity status
+information, if needed, as specified in [SD-JWT VC]. This PID Rulebook does not
+specify a separate attribute for including the location of validity status
+information.
 
 ### 5.3 Note on VCT
 
