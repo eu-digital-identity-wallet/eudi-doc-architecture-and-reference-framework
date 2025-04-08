@@ -304,7 +304,7 @@ released in relation to Use Case 2, meaning that to accommodate both use cases, 
 
 The PID Provider or Attestation Provider then asks the Wallet Unit to create a key
 pair for its new PID or attestation, and to prove that both this new private key and the
-private key corresponding to public key in the WUA are in possession by the Wallet Unit.
+private key corresponding to public key in the WUA are in possession of the Wallet Unit.
 
 A topic related to the WUA is the following. It would be useful if the Wallet Unit were able provide a proof that the PID or attestation private key is protected by the same WSCA as the WUA private
 key. Because if that is the case, the PID Provider or Attestation Provider can be sure that the
