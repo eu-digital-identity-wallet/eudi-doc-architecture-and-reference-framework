@@ -361,7 +361,7 @@ release of an attestation to a Relying Party is discussed in [[Topic 18](#a2318-
 | WUA_17   | A Wallet Provider SHALL consider all relevant factors, including offline usage, interoperability, and the risk of a WUA becoming a vector to track the User, when deciding on the validity period of a WUA. A Wallet Provider MAY use short-lived WUAs to mitigate such risks. *Note: The requirements for the validity period of WUAs presented to Relying Parties in the technical specification (see WUA_19) may be different from the validity period of WUAs presented to PID Providers and Attestation Providers.* |
 | WUA_18   | A Wallet Unit SHALL release data related to the User device in a WUA only to a PID Provider or Attestation Provider, and not to a Relying Party or any other party. *Note: Use case 2 (data related to the User device), must not be supported for Relying Parties.* |
 
-###### C.  Miscellaneous requirements <!-- omit from toc -->
+###### D.  Miscellaneous requirements <!-- omit from toc -->
 
 | **Index** | **Requirement specification** |
 |-----------|------------------------|
