@@ -596,7 +596,7 @@ Note: As specified in requirement PA_21, the Commission will create or reference
 | PA_16 | A Wallet Unit SHALL NOT reveal the same Pseudonym to different Relying Parties unless the User explicitly chooses otherwise. |
 | PA_17 | It SHALL NOT be possible to correlate Pseudonyms based on their values nor on other metadata sent by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that different Pseudonyms belong to the same User. |
 | PA_18 | The Wallet Unit SHALL ensure that Pseudonyms contain sufficient entropy to make the chance of colliding Pseudonyms (meaning two Users having the same Pseudonym value for the same Relying Party) negligible. |
-| PA_19 | A Wallet Unit SHALL NOT share the user's optionally assigned Pseudonym aliases with any Relying Party. |
+| PA_19 | A Wallet Unit SHALL NOT share the User's optionally assigned Pseudonym aliases with any Relying Party. |
 | PA_20 | The Wallet Unit SHOULD be able to verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. |
 
 ###### D. Requirements related to interoperability <!-- omit from toc -->
