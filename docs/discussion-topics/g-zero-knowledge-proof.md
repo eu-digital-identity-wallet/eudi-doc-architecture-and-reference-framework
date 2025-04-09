@@ -304,7 +304,7 @@ A ZKP scheme shall hide all attributes of the PID or attestation while providing
 - The PID or attestation has not been revoked (if revocation is used).
 - The PID or attestation has been issued by a trusted issuer, optionally without
 revealing the issuer.
-- The PID or attestation is bound to a key stored in the WSCD of the Wallet User.
+- The PID or attestation is bound to a key stored in the WSCD of the Wallet Unit.
 
 #### 4.1.2 Proof of personhood
 
@@ -477,7 +477,7 @@ attribute(s) having a specific value is (are) included in a PID or attestation,
 (ii) generation of a proof that a PID or attestation is within its validity period, 
 (iii) generation of a proof that a PID or attestation has not been revoked, (iv) 
 generation of a proof that a PID or attestation is bound to a key stored in the 
-WSCD of the Wallet User. Additionally, a ZKP scheme SHOULD provide support for the
+WSCD of the Wallet Unit. Additionally, a ZKP scheme SHOULD provide support for the
 following function which should  be used only when hiding 
 the PID Provider or Attestation Provider is necessary (v) generation of a proof that a 
 PID or attestation has 
