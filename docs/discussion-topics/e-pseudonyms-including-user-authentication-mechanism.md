@@ -772,7 +772,7 @@ The Wallet Unit SHALL ensure that Pseudonyms contain sufficient entropy to make 
 
 ##### Requirement 19
 
-A Wallet Unit MUST NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
+A Wallet Unit SHALL NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
 
 > Rationale: The aliases are a convenience thing for users and they should be allowed to choose them as they like without having to consider whether it contains sensitive data or not.
 
