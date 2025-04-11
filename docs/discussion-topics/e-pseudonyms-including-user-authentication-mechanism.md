@@ -93,7 +93,7 @@ In addition to the Articles listed in the previous section, pseudonyms are also 
 
 [CIR.2024.2979] specifies three main requirements for pseudonyms:
 
-1. [WebAuthn] defines the technical specification for pseudonyms.
+1. [W3C WebAuthn] defines the technical specification for pseudonyms.
 2. The pseudonyms the wallet Unit generates must be unique for each Relying Party.
 3. The pseudonyms can be used either stand-alone or in combination with other attested attributes.
 
@@ -173,7 +173,7 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 
 > There should be some assurance that keys are stored securely and option 4.
 
-Note that, because the technical implementation of pseudonyms must rely on [WebAuthn], the possibility for achieving such assurances is to use attestations (for an explanation of this see [Chapter 4](#4-high-level-approach-to-pseudonyms)).
+Note that, because the technical implementation of pseudonyms must rely on [W3C WebAuthn], the possibility for achieving such assurances is to use attestations (for an explanation of this see [Chapter 4](#4-high-level-approach-to-pseudonyms)).
 Therefore, higher assurances comes with a trade-off in terms of surveillance risks.
 For a further discussion of these risks see [Chapter 5.1](#51-topic-a-privacy-risks-and-mitigations)).
 
@@ -181,9 +181,9 @@ For a further discussion of these risks see [Chapter 5.1](#51-topic-a-privacy-ri
 
 ### 4.1 Introduction to Passkeys
 
-As specified in [CIR.2024.2979], [WebAuthn] defines the technical specification for pseudonyms.
+As specified in [CIR.2024.2979], [W3C WebAuthn] defines the technical specification for pseudonyms.
 
-Passkeys are a widely used type of credential which are created and asserted using the [WebAuthn] API.
+Passkeys are a widely used type of credential which are created and asserted using the [W3C WebAuthn] API.
 
 Passkeys are to be seen as an alternative to passwords.
 The idea is that a User, when registering a user account at a service, uses a secure device to generate a public-private key pair, registers the public key at the service, and can then subsequently use the private key to authenticate towards the service at later points in time.
@@ -201,11 +201,11 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 2. The User uses the private key stored on their secure device to sign the challenge and sends this back to the service.
 3. The service verifies that the signature on the challenge can be verified using the registered public key. If the signature verifies and the origin matches the expected origin, the User is considered authenticated and thereby granted access to the service.
 
-### 4.2 Introduction to [WebAuthn]
+### 4.2 Introduction to [W3C WebAuthn]
 
 #### 4.2.1 Overview
 
-[WebAuthn] defines an API for the creation and use of Passkeys. Conceptually, in addition to the User, there are four different logical components in this specification:
+[W3C WebAuthn] defines an API for the creation and use of Passkeys. Conceptually, in addition to the User, there are four different logical components in this specification:
 
 - **Relying Party Server:** The Relying Party that wishes to offer a service based on authentication using Passkeys.
 - **Relying Party Client:** The program provided by the Relying Party that runs in the Client of the User and communicates with the Relying Party Server. The Relying Party Client is typically some JavaScript code, provided by the Relying Party, that runs on the Client (i.e., browser).
@@ -214,11 +214,11 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
-[WebAuthn] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with Passkeys. The interface is referred to as the *WebAuthn API*.
+[W3C WebAuthn] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with Passkeys. The interface is referred to as the *WebAuthn API*.
 
-However, [WebAuthn] does not specify how the Authenticator and the Client must communicate. In this context, [Chapter 5](#5-relation-to-other-topics) briefly discuss the relation to [Topic F (Digital Credential API)](./f-digital-credential-api.md) .
+However, [W3C WebAuthn] does not specify how the Authenticator and the Client must communicate. In this context, [Chapter 5](#5-relation-to-other-topics) briefly discuss the relation to [Topic F (Digital Credential API)](./f-digital-credential-api.md) .
 
-[WebAuthn] relies on several different types of identifiers, including:
+[W3C WebAuthn] relies on several different types of identifiers, including:
 
 - **Relying Party ID:** An identifier unique to the Relying Party, which must be a valid domain string. This what the User will identify the Relying Party by and let the Authenticator learn which Relying Party is asking for registration/authentication.
 - **Credential ID:** A unique identifier chosen by the Authenticator for each Passkey.
@@ -229,7 +229,7 @@ The next sections elaborate on how the different components work together to all
 
 #### 4.2.2 Registration
 
-The flow for registering a Passkey in [WebAuthn] is the following:
+The flow for registering a Passkey in [W3C WebAuthn] is the following:
 
 0. The User requests (out of band of WebAuthn) the Relying Party to create a new Pseudonym.
 1. The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Name to the Relying Party Client.
@@ -246,7 +246,7 @@ Note that the Authenticator stores the public key in a way such that it is scope
 The term 'attestation' is here used differently than elsewhere in the ARF.
 In this context, the attestation is not about attributes of the User, but rather about attributes of the Authenticator. The attestation serves to ensure the Relying Party that they are talking with an Authenticator with certain attributes. The attestation often takes the form of a signature on the challenge as well as some other contextual data.
 
-In [WebAuthn], five different types of attestations are mentioned:
+In [W3C WebAuthn], five different types of attestations are mentioned:
 
 - **Basic Attestation:** The Authenticator stores a single master public and private key. The private key is used to sign all attestations and a certificate on the public key is included in the attestation data to allow the Relying Party to verify the signature.
 
@@ -262,7 +262,7 @@ Please note that Article 5a (5) a) viii) of the [European Digital Identity Regul
 
 #### 4.2.4 Authentication
 
-The flow for authentication using a Passkey following [WebAuthn] is:
+The flow for authentication using a Passkey following [W3C WebAuthn] is:
 
 1. The Relying Party Server creates a challenge and sends this along with its Relying Party ID to the Relying Party Client.
 2. The Relying Party Client forwards the information to the Client using the WebAuthn API.
@@ -273,7 +273,7 @@ The flow for authentication using a Passkey following [WebAuthn] is:
 
 ### 4.3 Challenges
 
-This section list challenges related to the use of [WebAuthn] as the technical specification for pseudonyms:
+This section list challenges related to the use of [W3C WebAuthn] as the technical specification for pseudonyms:
 
 1. Attestations may be linkable; see discussion in [Section 5.1](#51-topic-a-privacy-risks-and-mitigations) and also [Topic A](./a-privacy-risks-and-mitigations.md). This risk depends on the chosen type of attestation.
 2. The information about the Relying Party is verified only by the Client and not by the Authenticator itself. This may be a problem, as in Article 5a (5) a) vii) of the [European Digital Identity Regulation] it is stated that "*European Digital Identity Wallets shall, in particular ... ensure that the relying parties can be authenticated and identified by implementing authentication mechanisms in accordance with Article 5b;...*".
@@ -286,18 +286,18 @@ This chapter discusses how pseudonyms relate to other topics being discussed.
 
 #### 5.1.1 Introduction
 
-[Topic A - Privacy Risks and Mitigations](./a-privacy-risks-and-mitigations.md) discusses surveillance risks related to presenting PIDs and attestations. Similar concerns are relevant for the Pseudonym functionality defined by the [WebAuthn] specification. In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthn] and other attestations such as PID and (Q)EAAs. [Section 5.4](#54-relation-to-risk-register) discusses how this relates to the risks and threats identified in the [RiskRegister].
+[Topic A - Privacy Risks and Mitigations](./a-privacy-risks-and-mitigations.md) discusses surveillance risks related to presenting PIDs and attestations. Similar concerns are relevant for the Pseudonym functionality defined by the [W3C WebAuthn] specification. In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthn] and other attestations such as PID and (Q)EAAs. [Section 5.4](#54-relation-to-risk-register) discusses how this relates to the risks and threats identified in the [RiskRegister].
 
-The subsections below consider two different types of linkability concerns for the attestation types summarised in [Section 4.2.3](#423-pseudonym-attestation), namely Relying Party linkability and CA linkability. Note that the latter form of linkability is similar to what is dubbed Attestation Provider linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [WebAuthn] and to avoid confusion a different wording is used here.
+The subsections below consider two different types of linkability concerns for the attestation types summarised in [Section 4.2.3](#423-pseudonym-attestation), namely Relying Party linkability and CA linkability. Note that the latter form of linkability is similar to what is dubbed Attestation Provider linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [W3C WebAuthn] and to avoid confusion a different wording is used here.
 
 #### 5.1.2 Relying Party Linkability
 
 Relying Party linkability is the ability for Relying Parties to link together multiple authentications performed by a User using a Wallet Unit.
 Note that it is inherent for the use cases that the **same** Relying Party shall be able to link together multiple presentations of a pseudonym, as it must be unique per Relying Party. However, **different** Relying Parties should not be able to infer any information about whether they have interacted with one or multiple Users by comparing multiple authentications using pseudonyms.
 
-To prevent Relying Party linkability, it is necessary to ensure that no unique (per Wallet Unit) value is presented to multiple different Relying Parties. Depending on the type of attestation used for registration (see [Section 4.2.3](#423-pseudonym-attestation), this may or may not be the case for [WebAuthn].
+To prevent Relying Party linkability, it is necessary to ensure that no unique (per Wallet Unit) value is presented to multiple different Relying Parties. Depending on the type of attestation used for registration (see [Section 4.2.3](#423-pseudonym-attestation), this may or may not be the case for [W3C WebAuthn].
 
-If *Basic Attestations* are used, where each Wallet Unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be such a unique value that is presented to multiple Relying Parties. [WebAuthn] suggests to ensure that multiple different Authenticators hold the same attestation key pair, thereby no longer making it a unique value for correlation. However, please note that this implies letting several different Wallet Units share the same private key. This is against best security practices, as it implies private keys must be transferred to or from Wallet Units, which increases the risk of keys being compromised.
+If *Basic Attestations* are used, where each Wallet Unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be such a unique value that is presented to multiple Relying Parties. [W3C WebAuthn] suggests to ensure that multiple different Authenticators hold the same attestation key pair, thereby no longer making it a unique value for correlation. However, please note that this implies letting several different Wallet Units share the same private key. This is against best security practices, as it implies private keys must be transferred to or from Wallet Units, which increases the risk of keys being compromised.
 
 If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as an Authenticator uses a single attestation key more than once to sign a Pseudonym, the Relying Parties can still deduce some information by correlating attestation public keys. This mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
 
@@ -343,7 +343,7 @@ There are two main areas of Topic C that are particularly relevant in relation t
 
 ### 5.3 Topic F: Digital Credentials API
 
-As stated in [Chapter 4](#4-high-level-approach-to-pseudonyms), [WebAuthn] does not specify the interface between the Wallet Unit (i.e., Authenticator) and the Client used by the User to initiate the usage of the pseudonyms.
+As stated in [Chapter 4](#4-high-level-approach-to-pseudonyms), [W3C WebAuthn] does not specify the interface between the Wallet Unit (i.e., Authenticator) and the Client used by the User to initiate the usage of the pseudonyms.
 
 [Discussion Topic F](./f-digital-credential-api.md) must also take into account providing a seamless integration for the use of pseudonyms.
 
@@ -634,7 +634,7 @@ disclosure (R6) / Surveillance (R14)</td>
 
 >Note that there is no threat corresponding to TR68-71 (Attacker can revoke without consent/reason) in relation to pseudonyms.
 
-R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [WebAuthn].
+R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [W3C WebAuthn].
 
 TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.
 
@@ -772,7 +772,7 @@ The Wallet Unit SHALL ensure that Pseudonyms contain sufficient entropy to make 
 
 ##### Requirement 19
 
-A Wallet Unit MUST NOT share the user's optionally assigned Pseudonym aliases with any Relying Party.
+A Wallet Unit SHALL NOT share the User's optionally assigned Pseudonym aliases with any Relying Party.
 
 > Rationale: The aliases are a convenience thing for users and they should be allowed to choose them as they like without having to consider whether it contains sensitive data or not.
 
@@ -810,7 +810,7 @@ PA_01 states:
 
 | Reference | Description |
 |-----------------|-----------------|
-| [WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
+| [W3C WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
 | [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v1.0.|
 | [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
