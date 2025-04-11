@@ -70,7 +70,7 @@ Iteration is planned from 12 March 2025 to 02 July 2025 covering the following t
 | Topic | Title | |
 |-------|-------|--|
 | H | [Transaction logs kept by the wallet](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/338) |
-| I | [Natural person representing another natural person](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/339) |
+| I | [Natural person representing another natural person](i-natural-person-representing-another-natural-person.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/339) |
 | J | [Wallet to Wallet interaction](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/340) |
 | K | [Combined presentation of Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/341) |
 | L | [User requesting data deletion to Relying Parties](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/342) |
