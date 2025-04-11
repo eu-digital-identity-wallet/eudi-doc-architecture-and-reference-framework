@@ -95,9 +95,6 @@ its ecosystem.
 * "[Annexes](docs/annexes/)" the list of annexes that provide additional
 information to the main narrative text. In particular, the annexes provide normative
 high-level requirements.
-* "[Technical Specifications](docs/technical-specifications/README.md)" the list
-of specifications that will be developed to support the implementation of the
-European Digital Identity Wallet.
 * "[Discussion Topics](docs/discussion-topics/README.md)" the list of discussion
 topics that are open for public consultation. The topics are organized into
 three iterations, each focusing on a specific set of subjects to be included in
