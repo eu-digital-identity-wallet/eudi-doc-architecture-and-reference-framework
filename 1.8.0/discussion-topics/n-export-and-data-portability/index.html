@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#topic-n-export-and-data-portability" class="md-skip">
           Skip to content
         </a>
       
@@ -394,8 +394,7 @@
   
 
 
-<h1 id="_1"></h1>
-<p>Version 0.9, updated 1 April 2025</p>
+<p>Version 0.95, updated 7 April 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/443">Link to GitHub discussion</a></p>
 <h1 id="topic-n-export-and-data-portability">Topic N - Export and data portability</h1>
 <h2 id="1-introduction">1 Introduction</h2>
@@ -434,6 +433,8 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 + import data to another Wallet Unit (portability),
 + all above performed in a User-friendly, transparent and traceable manner.</p>
 <p>Below are the actual excerpts from the Regulation, including the recitals and the articles that establish these requirements.</p>
+<p><strong>Recital (48)</strong></p>
+<p><em>This Regulation should foster choice and the possibility of switching between European Digital Identity Wallets where a Member State has endorsed more than one European Digital Identity Wallet solution on its territory. In order to avoid lock-in effects in such situations, where technically feasible, the providers of European Digital Identity Wallets should ensure the effective portability of data at the request of European Digital Identity Wallet users, and should not be allowed to use contractual, economic or technical barriers to prevent or to discourage effective switching between different European Digital Identity Wallets.</em></p>
 <p><strong>Article 5a</strong></p>
 <p><em>4. European Digital Identity Wallets shall enable the User, in a manner that is User-friendly, transparent, and traceable by the User, to:</em></p>
 <p><em>[...]</em></p>
@@ -467,10 +468,11 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <h2 id="3-discussion">3 Discussion</h2>
 <p>The implementing act [CIR 2024/2979] has been adopted and the ARF document has been aligned with the act in earlier stage, thus there are no identified discrepancies or major issues. Therefore this paper presents and clarifies the overall concept and technical assumptions and aims to collect feedback if there is a need of any improvements of HLR from the Member States and Coordination Group point of view.</p>
 <p>The topics identified for this paper are as follows:
-+ scope of data to be logged by the Wallet Unit,
++ scope of data to be logged by the Wallet Unit and the log format,
 + possible extent of data export from a Wallet Unit,
 + usability of a Wallet Unit after the data import process,
-+ involvement of the PID and Attestation Providers in the Wallet Unit migration and recovery process.</p>
++ involvement of the PID and Attestation Providers in the Wallet Unit migration and recovery process,
++ terminology.</p>
 <p>This document is ONLY intended to clarify the high-level requirements related to the export and data portability topic. The necessary technical specifications (including any policy documents) will be developed by the European Commission after an agreement on the requirements has been reached.</p>
 <h3 id="31-data-export">3.1 Data Export</h3>
 <p>The Article 5a of [European Digital Identity Regulation] requires from the Wallets to enable to </p>
@@ -482,11 +484,11 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p><em>where technically feasible and excepting cases of critical assets, support secure export and portability of personal data of the wallet user, to allow the wallet user to migrate to a wallet unit of a different wallet solution in a way that ensures level of assurance high as set out in Implementing Regulation (EU) 2015/1502</em></p>
 </blockquote>
 <p>The technically feasible extent of the User's data export is therefore limited for security reasons. </p>
-<p>The ARF is in line with this. In the current version of ARF it is assumed that private keys of PIDs and attestations are not exportable (and not a part of so called Migration Object). In the consequence, the migration process in fact always entails re-issuance of PID and attestations of attributes (see section 3.2). </p>
+<p>The ARF is in line with this. In the current version of ARF it is assumed that private keys of PIDs and Attestations are not exportable (and not a part of the so called Migration Object). In consequence, the migration process always entails the issuance of new PIDs and Attestations of Attributes actually (see section 3.2). </p>
 <p>Therefore, there are no identified HLRs modifications in this respect. </p>
 <h3 id="32-technical-feasibility-of-portability-and-migration">3.2 Technical Feasibility of Portability and Migration</h3>
 <p>The requirements set out in the Topic 34 of ARF define so called Migration Object, that contains a set of data - User's personal and transaction log data - ready to be exported from a Wallet Unit and imported into another one.</p>
-<p>This is to be noted that the Migration Object does not contain PID and attestations related private keys, and therefore the migration process requires re-issuance of all PID/attestations with the involvement of the PID / Attestation Providers.</p>
+<p>This is to be noted that the Migration Object does not contain PID and attestations related private keys, and therefore the migration process requires issuance of new PID/Attestations (of the same type), with the involvement of the PID / Attestation Providers and User authentication.</p>
 <p>From the Topic 34 'Description' section:</p>
 <blockquote>
 <p><em>Note that the Migration Object does not contain any private keys associated with the PIDs or attestations. In most security architectures for a Wallet Solution described in Section 4.5 of the ARF main document, this is impossible, since the WSCA/WSCD that contains these private keys does not allow their extraction under any circumstances.</em></p>
@@ -549,9 +551,13 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p>The ARF defines the scope of information to be logged as:
 + all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, signature and seal creation transactions, attribute deletion requests sent to a Relying Party, and complaints lodged with a Data Protection Authority (DASH_02, DASH_2a, DASH_03, DASH_04, DASH_05, Mig_01),
 + transactions related to qualified electronic signatures and seals generated by or through the Wallet Unit (QES_13),
-+ reports sent to the DPA (RPT_DPA_05).</p>
-<p>In conclusion, the ARF is in line with the regulatory requirements in principle, and there are no essential modifications proposed for HLRs in this respect.</p>
-<p>However, there are the following minor changes proposed to improve consistency of the text:  </p>
++ reports sent to the DPA (RPT_DPA_05),
++ attribute deletion requests (DATA_DLT_05, DATA_DLT_06).</p>
+<p>In conclusion, the ARF is in line with the regulatory requirements in principle.</p>
+<p>However it is proposed to specify in the scope of logged information also the following cases:
++ PID/attestation deletion events (--&gt; changes proposed in DASH_02), 
++ other events possibly that will be relevant following the development of the ARF (eg. in relation to Topic W --&gt; apropriate clauses on logging will be proposed as a part of the Topic W discussion outcome and HLR set, that is yet to come).</p>
+<p>In addition, there are the follwing minor changes proposed to improve consistency of the text: </p>
 <table>
 <thead>
 <tr>
@@ -574,11 +580,34 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tbody>
 </table>
 <p>Additionally, to improve clarity, there are ongoing changes that will be introduced in the next ARF realease in relation to DASH_03, DASH_04, DASH_05 (to state it more clearly that these information are logged).</p>
+<h3 id="35-log-format">3.5 Log format</h3>
+<p>To enable migration between Wallet Units from different Wallet Solutions/Wallet Providers, the log format should be specified in a Technical Specification. Therefore it is proposed to add a new HLR, as below:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH_2c</td>
+<td>The Commission SHALL establish a technical specification for the common format of the log of transactions.</td>
+<td>New requirement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-terminology">3.6 Terminology</h3>
+<p>In the context of Topic N, the term "re-issuance" is used. As presented in this paper, it refers to the situation of migration, which actually entails process of issuance of new PIDs and attestations (of the same type), in a new Wallet Unit, like for the first time provisioning (which i.a. requires User authentication prior the issuance).  </p>
+<p>This term however is already used in the context of Topic B (Re-issuance and batch issuance of PIDs and Attestations), where it refers to a different process - replacement of a PID or Attestations that already exists in a Wallet Unit, performed by the same PID Provider or Attestation Provider that issued them, in a process that is transparent for the User as much as possible (e.g. avoiding authentication of the User possibly). </p>
+<p>Therefore this is proposed not to use this term in the context of Topic N. As a consequence, modifications of a some HLRs are proposed (Mig_03, Mig_11), as presented in the section 4.  </p>
 <h2 id="4-current-hlrs-and-proposals-of-changes">4 Current HLRs and Proposals of Changes</h2>
 <p>ARF 1.8.0 contains a number of High-Level Requirements related to the topic included in the following sections:
 + Topic 19 - User navigation requirements (Dashboard logs for transparency)
 + Topic 34 - Migrate to a different Wallet Solution
 + Topic 16 - Signing documents with a Wallet Unit
++ Topic 48 - Blueprint for requesting data deletion to Relying Parties
 + Topic 50 - Blueprint to report unlawful or suspicious request of data</p>
 <p>The existing HLRs are listed in the tables below, along with a proposal to keep, change, add, or remove the HLR.</p>
 <h3 id="41-topic-19-user-navigation-requirements-dashboard-logs-for-transparency">4.1 Topic 19 - User navigation requirements (Dashboard logs for transparency)</h3>
@@ -593,13 +622,18 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <tbody>
 <tr>
 <td>DASH_02</td>
-<td>The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, signature creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), and complaints lodged with a Data Protection Authority (see Topic 50). <em>Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively.</em></td>
-<td>Keep as-is</td>
+<td>The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, <strong>PID/attribute deletion,</strong> presentation transactions, signature creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), and complaints lodged with a Data Protection Authority (see Topic 50). <em>Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively.</em></td>
+<td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>DASH_02a</td>
 <td>The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must delete transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07.</td>
 <td>Keep as-is</td>
+</tr>
+<tr>
+<td>DASH_2c</td>
+<td>The Commission SHALL establish a technical specification for the common format of the log of transaction</td>
+<td>New requirement</td>
 </tr>
 <tr>
 <td>DASH_03</td>
@@ -646,8 +680,8 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tr>
 <tr>
 <td>Mig_03</td>
-<td>For each PID or attestation that is issued to it, a Wallet Unit SHALL add all data that is necessary to request re-issuance of that PID or attestation to the Migration Object. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation.</td>
-<td>Keep as-is</td>
+<td>For each PID or attestation that is issued to it, a Wallet Unit SHALL add <strong>to the Migration Object</strong> all data that is necessary to request ~~re-issuance~~<strong>issuance once again</strong> of that PID or attestation ~~to the Migration Object~~. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation.</td>
+<td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Mig_03b</td>
@@ -693,8 +727,8 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tr>
 <tr>
 <td>Mig_11</td>
-<td>The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</td>
-<td>Keep as-is</td>
+<td>The processes and interfaces used for ~~re-issuance~~<strong>issuance</strong> of a <strong>new</strong> PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</td>
+<td>Keep with proposed changes</td>
 </tr>
 </tbody>
 </table>
@@ -715,7 +749,29 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tr>
 </tbody>
 </table>
-<h2 id="44-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data">4.4 Topic 50 - Blueprint to report unlawful or suspicious request of data</h2>
+<h2 id="44-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties">4.4 Topic 48 - Blueprint for requesting data deletion to Relying Parties</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA_DLT_05</td>
+<td>A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in Topic 19).</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>DATA_DLT_06</td>
+<td>DATA_DLT_06  The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<h2 id="45-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data">4.5 Topic 50 - Blueprint to report unlawful or suspicious request of data</h2>
 <table>
 <thead>
 <tr>
@@ -758,7 +814,10 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tbody>
 </table>
 <p>At the same time the Migration Object is assumed not to contain any private keys (refer to Topic 34). Therefore it is finally assumed, that there is no impacts to any of the WUA / [Topic 9] requirements. </p>
-<h3 id="53-relation-to-risk-register-tbd">5.3 Relation to Risk Register (tbd)</h3>
+<h3 id="53-topic-l-user-requesting-data-deletion-to-relying-parties">5.3 Topic L - User requesting data deletion to relying parties</h3>
+<p>This topic refers to section "Topic 48 - Blueprint for requesting data deletion to Relying Parties" of the ARF Annex II.</p>
+<p>According the related HLRs, the transaction log should containt also information related to deletion of attributes (see section 4.4 of this document). As presented in section 4.4, there are no changes proposed to these HLRs.</p>
+<h3 id="54-relation-to-risk-register-tbd">5.4 Relation to Risk Register (tbd)</h3>
 <p>The risk register for European Digital Identity Wallets [RiskRegister]
 contains the following risks that are related to the Relying Party registration:</p>
 <table>
