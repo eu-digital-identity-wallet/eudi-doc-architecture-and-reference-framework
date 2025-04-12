@@ -3369,7 +3369,8 @@ administrative validity period of the licence itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always share a valid mDL. However, when the
 administrative validity period ends, there will be a process for obtaining a new
-administrative driving licence, which is however out of scope of this document.
+driving licence with new administrative validity period, which is however out of
+scope of this document.
 
 Note that, in general, if the original PID or attestation was issued in a batch,
 then the PID Provider or Attestation Provider will re-issue that PID or
