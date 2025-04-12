@@ -306,7 +306,7 @@ The PID Provider or Attestation Provider then asks the Wallet Unit to create a k
 pair for its new PID or attestation, and to prove that both this new private key and the
 private key corresponding to public key in the WUA are in possession of the Wallet Unit.
 
-A topic related to the WUA is the following. It would be useful if the Wallet Unit were able provide a proof that the PID or attestation private key is protected by the same WSCA as the WUA private
+A topic related to the WUA is the following. It would be useful for the Wallet Unit to be able to provide a proof that the PID or attestation private key is protected by the same WSCA as the WUA private
 key. Because if that is the case, the PID Provider or Attestation Provider can be sure that the
 security level of the new PID or attestation key is the same as the security
 level of the WUA key. Moreover, such a proof could also be useful in case of a combined presentation of attributes as discussed in [Topic 18](#a2318-topic-18---combined-presentations-of-attributes), to give assurance to the Relying Party that all of these attestations originate from the same WSCA/WSCD and thus are related to the same User.
