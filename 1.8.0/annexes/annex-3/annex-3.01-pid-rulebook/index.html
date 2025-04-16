@@ -413,18 +413,15 @@ the PID complies with [ISO/IEC 18013-5] and if it complies with [SD-JWT VC].</p>
 <h3 id="12-document-structure">1.2 Document structure</h3>
 <p>This PID Rulebook is structured as follows:</p>
 <ul>
-<li><a href="#2-generic-high-level-requirements-for-pids">Chapter 2</a> contains generic
-high-level requirements, which are valid for all PIDs regardless of the encoding
-used.</li>
-<li><a href="#3-pid-attributes-and-metadata">Chapter 3</a> describes the PID attributes and
+<li><a href="#2-pid-attributes-and-metadata">Chapter 2</a> describes the PID attributes and
 metadata on a generic level, regardless of the encoding used for the PID. Most
 of the content of this chapter is a direct copy of the Annex of Commission
 Implementing Regulation 2024/2977 on PID and EAA. However, a few additional
 attributes are specified in this chapter.</li>
-<li><a href="#4-isoiec-18013-5-compliant-encoding-of-pid">Chapter 4</a> specifies how the PID
+<li><a href="#3-isoiec-18013-5-compliant-encoding-of-pid">Chapter 3</a> specifies how the PID
 attributes and metadata are encoded in case the PID complies with [ISO/IEC
 18013-5].</li>
-<li><a href="#5-sd-jwt-vc-based-encoding-of-pid">Chapter 5</a> specifies how the PID
+<li><a href="#4-sd-jwt-vc-based-encoding-of-pid">Chapter 4</a> specifies how the PID
 attributes and metadata are encoded in case the PID complies with [SD-JWT VC].</li>
 </ul>
 <h3 id="13-key-words">1.3 Key words</h3>
@@ -437,53 +434,26 @@ instance, by an external document. The word 'can' indicates a capability,
 whereas other words, such as 'will', and 'is' or 'are' are intended as
 statements of fact.</p>
 <h3 id="14-terminology">1.4 Terminology</h3>
-<p>This document uses the terminology specified in Annex 1 of the ARF.</p>
-<h2 id="2-generic-high-level-requirements-for-pids">2 Generic High-Level Requirements for PIDs</h2>
-<p>The requirements in the table below are valid for all PIDs in the EUDI Wallet
-ecosystem, regardless of the encoding used.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Index</strong></th>
-<th><strong>Requirement specification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PID_01</td>
-<td>A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]. <em>Note: CIR 2024/2977 mentions the W3C Verifiable Credentials Data Model v1.1 [W3C VCDM v1.1] instead of [SD-JWT VC]. However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, it is therefore impossible to implement a PID based on [W3C VCDM v1.1]. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification.</em></td>
-</tr>
-<tr>
-<td>PID_02</td>
-<td>PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant PIDs. <em>Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.</em></td>
-</tr>
-<tr>
-<td>PID_03</td>
-<td>A PID Provider SHALL ensure that all of the mandatory attributes listed in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a> are present in any PID it issues to a Wallet Unit. <em>Notes: - When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes. - A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-pid-attributes-and-metadata">3 PID attributes and metadata</h2>
-<h3 id="31-introduction">3.1 Introduction</h3>
-<p>Sections 3.2, 3.3, 3.4 and 3.5 of this chapter list the mandatory and optional
-PID attributes and PID metadata defined in CIR 2024/2977, respectively. Section
-3.6 lists the optional PID attributes additionally defined in this PID Rulebook.</p>
-<p>The data identifiers and definitions given in Sections 3.2, 3.3, 3.4, and 3.5
+<p>This document uses the terminology specified in <a href="../../annex-1/annex-1-definitions/">Annex 1</a> of the ARF.</p>
+<h2 id="2-pid-attributes-and-metadata">2 PID attributes and metadata</h2>
+<h3 id="21-introduction">2.1 Introduction</h3>
+<p>Sections <a href="#22-mandatory-attributes-specified-in-cir-20242977">2.2</a>, <a href="#23-optional-attributes-specified-in-cir-20242977">2.3</a>, <a href="#24-mandatory-metadata-specified-in-cir-20242977">2.4</a> and <a href="#26-additional-optional-attributes-specified-in-this-rulebook">2.5</a> of this chapter list the mandatory and optional
+PID attributes and PID metadata defined in CIR 2024/2977. <a href="#26-additional-optional-attributes-specified-in-this-rulebook">Section 2.6</a> lists the optional PID attributes additionally defined in this PID Rulebook.</p>
+<p>Note that, when requesting PID attributes from a Wallet Unit, a Relying Party is not required to request all mandatory attributes. Also, a User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.</p>
+<p>The data identifiers and definitions given in Sections 2.2, 2.3, 2.4, and 2.5
 are identical to those in CIR 2024/2977, except where explicitly indicated that
 some further explanations have been added in this Rulebook.</p>
 <p>All data identifiers and definitions in this chapter are independent of any
 encoding used. Consequently,</p>
 <ul>
 <li>the data identifiers in these tables are not necessarily the same as the
-attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. <a href="#4-isoiec-18013-5-compliant-encoding-of-pid">Chapter
-4</a> specifies the data element
+attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. <a href="#3-isoiec-18013-5-compliant-encoding-of-pid">Chapter 3</a> specifies the data element
 identifiers to be used for PIDs in [ISO/IEC 18013-5] format</li>
 <li>the data identifiers in these tables are not necessarily the same as the claim
-names used for PIDs complying with [SD-JWT VC]. <a href="#5-sd-jwt-vc-based-encoding-of-pid">Chapter
-5</a> specifies the attribute identifiers to be
+names used for PIDs complying with [SD-JWT VC]. <a href="#4-sd-jwt-vc-based-encoding-of-pid">Chapter 4</a> specifies the attribute identifiers to be
 used for such PIDs.</li>
 </ul>
-<h3 id="32-mandatory-attributes-specified-in-cir-20242977">3.2 Mandatory attributes specified in CIR 2024/2977</h3>
+<h3 id="22-mandatory-attributes-specified-in-cir-20242977">2.2 Mandatory attributes specified in CIR 2024/2977</h3>
 <table>
 <thead>
 <tr>
@@ -514,7 +484,7 @@ used for such PIDs.</li>
 </tr>
 </tbody>
 </table>
-<h3 id="33-optional-attributes-specified-in-cir-20242977">3.3 Optional attributes specified in CIR 2024/2977</h3>
+<h3 id="23-optional-attributes-specified-in-cir-20242977">2.3 Optional attributes specified in CIR 2024/2977</h3>
 <table>
 <thead>
 <tr>
@@ -557,7 +527,7 @@ used for such PIDs.</li>
 </tr>
 <tr>
 <td>portrait</td>
-<td>Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. <strong>Further clarification added in this PID Rulebook:</strong> See requirement PID_04 below.</td>
+<td>Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. <strong>Further clarification added in this PID Rulebook:</strong> The detailed format of the portrait is specified in requirement PID_03 in <a href="../../annex-2/annex-2-high-level-requirements/#a233-topic-3---pid-rulebook">Annex 2, Topic 3</a>.</td>
 </tr>
 <tr>
 <td>family_name_birth</td>
@@ -581,21 +551,7 @@ used for such PIDs.</li>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th><strong>Index</strong></th>
-<th><strong>Requirement specification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PID_04</td>
-<td>The attribute portrait SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="34-mandatory-metadata-specified-in-cir-20242977">3.4 Mandatory metadata specified in CIR 2024/2977</h3>
+<h3 id="24-mandatory-metadata-specified-in-cir-20242977">2.4 Mandatory metadata specified in CIR 2024/2977</h3>
 <table>
 <thead>
 <tr>
@@ -606,7 +562,7 @@ used for such PIDs.</li>
 <tbody>
 <tr>
 <td>expiry_date</td>
-<td>Date (and if possible time) when the person identification data will expire. <strong>Further clarification added in this PID Rulebook:</strong> This attribute, as well as the optional issuance_date attribute specified in <a href="#36-additional-optional-attributes-specified-in-this-rulebook">Section 3.6</a>, pertains to the administrative validity period of the PID. It is up to the PID Provider to decide whether a PID has an administrative validity period. However, if present, it in general is different from the technical validity period of a PID. The technical validity period is a mandatory element of all PIDs (and also attestations) in the EUDI Wallet ecosystem. It typically is short, a few days or weeks at most, if not shorter, to mitigate challenges regarding tracking of Users by malicious Relying Parties based on the repeated presentation of the same PID. On the other hand, the administrative validity period is typically at least a few years long. During the administrative validity period of a PID, the PID Provider will therefore provide multiple successive PIDs to a User, typically without any actions being expected from the User. However, when the administrative validity period of a PID ends, typically the User has to apply for an entirely new PID.</td>
+<td>Date (and if possible time) when the person identification data will expire. <strong>Further clarification added in this PID Rulebook:</strong> This attribute, as well as the optional issuance_date attribute specified in <a href="#26-additional-optional-attributes-specified-in-this-rulebook">Section 2.6</a>, pertains to the administrative validity period of the PID. It is up to the PID Provider to decide whether a PID has an administrative validity period. However, if present, it in general is different from the technical validity period of a PID. The technical validity period is a mandatory element of all PIDs (and also attestations) in the EUDI Wallet ecosystem. It typically is short, a few days or weeks at most, if not shorter, to mitigate challenges regarding tracking of Users by malicious Relying Parties based on the repeated presentation of the same PID. On the other hand, the administrative validity period is typically at least a few years long. During the administrative validity period of a PID, the PID Provider will therefore provide multiple successive PIDs to a User, typically without any actions being expected from the User. However, when the administrative validity period of a PID ends, typically the User has to apply for an entirely new PID.</td>
 </tr>
 <tr>
 <td>issuing_authority</td>
@@ -618,7 +574,7 @@ used for such PIDs.</li>
 </tr>
 </tbody>
 </table>
-<h3 id="35-optional-metadata-specified-in-cir-20242977">3.5 Optional metadata specified in CIR 2024/2977</h3>
+<h3 id="25-optional-metadata-specified-in-cir-20242977">2.5 Optional metadata specified in CIR 2024/2977</h3>
 <table>
 <thead>
 <tr>
@@ -641,7 +597,7 @@ used for such PIDs.</li>
 </tr>
 </tbody>
 </table>
-<h3 id="36-additional-optional-attributes-specified-in-this-rulebook">3.6 Additional optional attributes specified in this Rulebook</h3>
+<h3 id="26-additional-optional-attributes-specified-in-this-rulebook">2.6 Additional optional attributes specified in this Rulebook</h3>
 <table>
 <thead>
 <tr>
@@ -652,7 +608,7 @@ used for such PIDs.</li>
 <tbody>
 <tr>
 <td>issuance_date</td>
-<td>Date (and if possible time) when the person identification data was issued and/or the administrative validity period of the person identification data began. See also the clarification for expiry_date in <a href="#34-mandatory-metadata-specified-in-cir-20242977">Section 3.4</a>.</td>
+<td>Date (and if possible time) when the person identification data was issued and/or the administrative validity period of the person identification data began. See also the clarification for expiry_date in <a href="#24-mandatory-metadata-specified-in-cir-20242977">Section 2.4</a>.</td>
 </tr>
 <tr>
 <td>age_over_18</td>
@@ -676,64 +632,15 @@ used for such PIDs.</li>
 </tr>
 </tbody>
 </table>
-<h2 id="4-isoiec-18013-5-compliant-encoding-of-pid">4 ISO/IEC 18013-5-compliant encoding of PID</h2>
-<h3 id="41-high-level-requirements-for-isoiec-18013-5-compliant-pids">4.1 High-Level Requirements for ISO/IEC 18013-5-compliant PIDs</h3>
-<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
-ecosystem that are compliant with [ISO/IEC 18013-5].</p>
-<table>
-<thead>
-<tr>
-<th><strong>Index</strong></th>
-<th><strong>Requirement specification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PID_ISO_01</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL use the value “eu.europa.ec.eudi.pid.1” for the identifier of the namespace for the PID attributes specified in <a href="#42-encoding-of-pid-attributes-and-metadata">Section 4.2</a>. <em>Notes: - The version number “1” allows for future extension(s) or change(s) of the ISO/IEC 18013-5-compliant PID attributes. - This namespace has the same value as the attestation type specified in requirement PID_02. This is allowed according to ISO/IEC 18013-5.</em></td>
-</tr>
-<tr>
-<td>PID_ISO_02</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider MAY include attributes that are not defined in this document. If so, these attributes SHALL be defined within a domestic PID namespace as meant in requirement ARB_10 in Annex 2. The PID Provider SHALL generate the identifier for this domestic PID namespace by appending the applicable ISO 3166-1 alpha-2 country code or the ISO 3166-2 region code, separated by a period, to the PID namespace specified in PID_ISO_01, excluding the version number. The PID Provider MAY include a version number in the domestic PID namespace identifier. <em>Note: For example, the identifier of the first domestic PID namespace for Germany could be “eu.europa.ec.eudi.pid.de.1”.</em></td>
-</tr>
-<tr>
-<td>PID_ISO_03</td>
-<td>A PID Provider that defines a domestic namespace SHALL publish the namespace, including all attribute identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
-</tr>
-<tr>
-<td>PID_ISO_04</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as (issuer-signed or device-signed) data elements. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
-</tr>
-<tr>
-<td>PID_ISO_05</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the third column of the tables in <a href="#421-overview">Section 4.2.1</a>.</td>
-</tr>
-<tr>
-<td>PID_ISO_06</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID in Concise Binary Object Representation (CBOR) according to [RFC 8949].</td>
-</tr>
-<tr>
-<td>PID_ISO_07</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that each PID contains at most one attribute with the same attribute identifier.</td>
-</tr>
-<tr>
-<td>PID_ISO_08</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4. <em>Note: The value of the age_over_18, age_over_NN, or age_in_years attributes, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
-</tr>
-<tr>
-<td>PID_ISO_09</td>
-<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the issuance_date attribute, if present, is not later than the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="42-encoding-of-pid-attributes-and-metadata">4.2 Encoding of PID attributes and metadata</h3>
-<h4 id="421-overview">4.2.1 Overview</h4>
+<h2 id="3-isoiec-18013-5-compliant-encoding-of-pid">3 ISO/IEC 18013-5-compliant encoding of PID</h2>
+<h3 id="31-encoding-of-pid-attributes-and-metadata">3.1 Encoding of PID attributes and metadata</h3>
+<h4 id="311-overview">3.1.1 Overview</h4>
 <p>The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is
 specified in the table below. The table contains the following information for
 all attributes:</p>
 <ul>
 <li>The first column lists the data identifier specified in
-<a href="#3-pid-attributes-and-metadata">Chapter 3</a> above.</li>
+<a href="#2-pid-attributes-and-metadata">Chapter 2</a> above.</li>
 <li>The second column lists the corresponding attribute identifier to be used in
 presentation requests and responses according to [ISO/IEC 18013-5].</li>
 <li>The third column indicates the encoding of each attribute. This column uses
@@ -793,7 +700,7 @@ short as possible;</li>
 <tr>
 <td>birth_date</td>
 <td>birth_date</td>
-<td>full-date, see <a href="#424-attribute-birth_date">Section 4.2.4</a>.</td>
+<td>full-date, see <a href="#314-attribute-birth_date">Section 3.1.4</a>.</td>
 </tr>
 <tr>
 <td>birth_place</td>
@@ -803,7 +710,7 @@ short as possible;</li>
 <tr>
 <td>nationality</td>
 <td>nationality</td>
-<td>nationalities, see <a href="#422-attribute-nationality">Section 4.2.2</a>.</td>
+<td>nationalities, see <a href="#312-attribute-nationality">Section 3.1.2</a>.</td>
 </tr>
 <tr>
 <td>resident_address</td>
@@ -903,7 +810,7 @@ short as possible;</li>
 <tr>
 <td>location_status</td>
 <td>-</td>
-<td>See <a href="#423-attribute-location_status">Section 4.2.3</a>.</td>
+<td>See <a href="#313-attribute-location_status">Section 3.1.3</a>.</td>
 </tr>
 <tr>
 <td>issuance_date</td>
@@ -937,7 +844,7 @@ short as possible;</li>
 </tr>
 </tbody>
 </table>
-<h4 id="422-attribute-nationality">4.2.2 Attribute nationality</h4>
+<h4 id="312-attribute-nationality">3.1.2 Attribute nationality</h4>
 <p>The attribute nationality takes as its value an array of Alpha-2 country codes
 as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
 encoding of this data element is:</p>
@@ -954,69 +861,26 @@ cannot selectively disclose only one of these nationalities, since for ISO/IEC
 User approves the presentation of the nationality attribute. A potential
 solution to this challenge is for the PID Provider to include only one
 nationality in the nationality attribute, and for the remaining nationalities
-to use one or more domestic data attributes specified according to requirement
-PID_ISO_02.</p>
-<h4 id="423-attribute-location_status">4.2.3 Attribute location_status</h4>
-<p>For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be
-absent, since revocation information will be added to the MSO.</p>
-<h4 id="424-attribute-birth_date">4.2.4 Attribute birth_date</h4>
+use one or more domestic data attributes specified according to requirement
+PID_06 in <a href="../../annex-2/annex-2-high-level-requirements/#a233-topic-3---pid-rulebook">Annex 2, Topic 3</a>.</p>
+<h4 id="313-attribute-location_status">3.1.3 Attribute location_status</h4>
+<p>For ISO/IEC 18013-5-compliant PIDs, the attribute location_status is
+absent, since the PID issuer will add revocation information, if needed, to the MSO as specified in [ISO/IEC 18013-5].</p>
+<h4 id="314-attribute-birth_date">3.1.4 Attribute birth_date</h4>
 <p>For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC
 8943. This encoding does not contain provisions for encoding partial dates. This
 may cause challenges in case the birth date of a User is not (fully) known. To
 deal with such cases, a PID Provider could adopt a policy to choose appropriate
 values for the unknown date elements. However, mandating such a policy is out of
 scope of this document.</p>
-<h2 id="5-sd-jwt-vc-based-encoding-of-pid">5 SD-JWT VC-based encoding of PID</h2>
-<h3 id="51-high-level-requirements-for-sd-jwt-vc-based-pids">5.1 High-Level Requirements for SD-JWT VC-based PIDs</h3>
-<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
-ecosystem that are compliant with [SD-JWT VC].</p>
-<table>
-<thead>
-<tr>
-<th><strong>Index</strong></th>
-<th><strong>Requirement specification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PID_SVC_01</td>
-<td>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the <code>urn:eudi:pid:</code> namespace. The type indicated by the vct claim SHALL be <code>urn:eudi:pid:1</code> for the type defined in this document or a domestic type that extends it.</td>
-</tr>
-<tr>
-<td>PID_SVC_02</td>
-<td>A catalog linked in the PID Rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID Rulebook applicable to the type.</td>
-</tr>
-<tr>
-<td>PID_SVC_03</td>
-<td>A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
-</tr>
-<tr>
-<td>PID_SVC_04</td>
-<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
-</tr>
-<tr>
-<td>PID_SVC_05</td>
-<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in <a href="#52-encoding-of-pid-attributes">Section 5.2</a>.</td>
-</tr>
-<tr>
-<td>PID_SVC_06</td>
-<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf claim, if present. <em>Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
-</tr>
-<tr>
-<td>PID_SVC_07</td>
-<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf claim, if present.</td>
-</tr>
-<tr>
-<td>PID_SVC_08</td>
-<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL make all claims (i.e., all top-level properties, all nested properties, and all array entries) selectively disclosable individually, except those claims defined as non-selectively disclosable in [SD-JWT VC].</td>
-</tr>
-</tbody>
-</table>
-<h3 id="52-encoding-of-pid-attributes">5.2 Encoding of PID attributes</h3>
-<p>Following Requirement ARB_06b, SD-JWT VC-encoded PID attestations use claim names that are either registered in the JSON Web
+<h2 id="4-sd-jwt-vc-based-encoding-of-pid">4 SD-JWT VC-based encoding of PID</h2>
+<h3 id="41-encoding-of-pid-attributes-and-metadata">4.1 Encoding of PID attributes and metadata</h3>
+<h3 id="411-overview">4.1.1 Overview</h3>
+<p>Following requirement ARB_06b, SD-JWT VC-encoded PIDs use claim names that are either registered in the JSON Web
 Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
-to the attestation type. The tables below maps the data
-identifiers defined above to the corresponding claim names.</p>
+to the attestation type. The tables below map the data
+identifiers defined above to the corresponding claim names and specify the encoding format of the claim value.</p>
+<p>A JSON string used in an SD-JWT VC-encoded PID SHALL be encoded in UTF-8 and SHALL support the full Unicode range, unless explicitly specified otherwise in the tables below or the references therein.</p>
 <p>Note that a hierarchical claim name structure can be used in SD-JWT VC encoded
 PIDs as SD-JWT allows for individual selective disclosure of objects
 and their properties. A hierarchical claim name structure is indicated by the
@@ -1072,7 +936,7 @@ notation <code>parent.child</code> in the tables below.</p>
 <td>nationality</td>
 <td>nationalities</td>
 <td>array of strings</td>
-<td>Section 4.1 of [EKYC]; using alpha-2 country codes as defined in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a></td>
+<td>Section 4.1 of [EKYC]; using alpha-2 country codes as defined in <a href="#22-mandatory-attributes-specified-in-cir-20242977">Section 2.2</a></td>
 </tr>
 <tr>
 <td>resident_address</td>
@@ -1143,13 +1007,13 @@ notation <code>parent.child</code> in the tables below.</p>
 <tr>
 <td>portrait</td>
 <td>picture</td>
-<td>string; data URL containing the base64-encoded portrait in JPEG format according to PID_04</td>
+<td>string; data URL containing the base64-encoded portrait in JPEG format according to PID_03 in <a href="../../annex-2/annex-2-high-level-requirements/#a233-topic-3---pid-rulebook">Annex 2, Topic 3</a></td>
 <td>Section 5.1 of [OIDC]</td>
 </tr>
 </tbody>
 </table>
-<p>Note: The standard JWT claims nbf and exp are used to express the technical validity of the SD-JWT VC PID.</p>
-<p>The following Private Names specific to the attestation type defined here are to be used for PIDs:</p>
+<p>Note: The standard JWT claims nbf and exp are used to express the technical validity period of a SD-JWT VC-compliant PID.</p>
+<p>The following Private Names specific to the attestation type defined in this document are to be used for PIDs:</p>
 <table>
 <thead>
 <tr>
@@ -1182,7 +1046,7 @@ notation <code>parent.child</code> in the tables below.</p>
 <td>sex</td>
 <td>sex</td>
 <td>number</td>
-<td>numeric encoding as described in <a href="#33-optional-attributes-specified-in-cir-20242977">Section 3.3</a>; gender from [OIDC] uses a different value range and is therefore not used</td>
+<td>numeric encoding as described in <a href="#23-optional-attributes-specified-in-cir-20242977">Section 2.3</a>; gender from [OIDC] uses a different value range and is therefore not used</td>
 </tr>
 <tr>
 <td>issuing_authority</td>
@@ -1211,7 +1075,7 @@ notation <code>parent.child</code> in the tables below.</p>
 <tr>
 <td>location_status</td>
 <td>-</td>
-<td>See <a href="#522-attribute-location_status">Section 5.2.2</a></td>
+<td>See <a href="#422-attribute-location_status">Section 4.2.2</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1253,12 +1117,12 @@ notation <code>parent.child</code> in the tables below.</p>
     &quot;65&quot;: false
 }
 </code></pre>
-<h4 id="522-attribute-location_status">5.2.2 Attribute location_status</h4>
+<h4 id="422-attribute-location_status">4.2.2 Attribute location_status</h4>
 <p>For SD-JWT VC-compliant PIDs, the PID issuer will add validity status
 information, if needed, as specified in [SD-JWT VC]. This PID Rulebook does not
 specify a separate attribute for including the location of validity status
 information.</p>
-<h3 id="53-note-on-vct">5.3 Note on VCT</h3>
+<h3 id="42-note-on-vct">4.2 Note on VCT</h3>
 <p>SD-JWT VC defines the Verifiable Credential Type (<code>vct</code>). A type comes
 with associated metadata that, for instance, provides information about
 the type itself, outlines a schema detailing the claims that are
@@ -1272,10 +1136,10 @@ are defined in [SD-JWT VC].</p>
 PIDs must use types in the namespace "urn:eudi:pid:".</p>
 <p>SD-JWT VC specifies Type Metadata as a machine-readable format for information
 regarding a type, including the information on claims such as what is contained
-in this document. Requirement PID_SVC_02 requires that the information on the
+in this document. Requirement PID_15 in <a href="../../annex-2/annex-2-high-level-requirements/#a233-topic-3---pid-rulebook">Annex 2, Topic 3</a> requires that the information on the
 common EU-wide type as well as on any domestic types is published and
 accessible in a catalog.</p>
-<h3 id="54-example">5.4 Example</h3>
+<h3 id="43-example">4.3 Example</h3>
 <p>EXAMPLE: The following example shows the payload of a PID in SD-JWT VC format before the encoding into the SD-JWT format.</p>
 <pre><code class="language-json">{
     &quot;vct&quot;: &quot;urn:eudi:pid:de:1&quot;,
@@ -1328,15 +1192,7 @@ accessible in a catalog.</p>
 The example above shows a public key in JWK format.</p>
 <p>Note: Additional technical claims are not shown here, including
 references to the issuer, validity status information, and more.</p>
-<h2 id="6-further-requirements">6 Further requirements</h2>
-<h3 id="61-embedded-disclosure-policies">6.1 Embedded disclosure policies</h3>
-<p>Requirements regarding the inclusion of an embedded disclosure policy into a
-PID, if any, will be added in a future version of this PID Rulebook.</p>
-<h3 id="62-displaying-the-pid-to-the-user">6.2 Displaying the PID to the User</h3>
-<p>Requirements regarding how a Wallet Unit should display the PID and the PID
-attributes to the User, if any, will be added in a future version of this PID
-Rulebook.</p>
-<h2 id="7-references">7 References</h2>
+<h2 id="5-references">5 References</h2>
 <p>See <a href="../../../architecture-and-reference-framework-main/#9-references">Chapter 9</a> of the ARF main document.</p>
 
 

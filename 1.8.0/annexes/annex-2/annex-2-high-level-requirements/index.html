@@ -424,19 +424,15 @@ for issuance), an underscore and a numerator, e.g. ISSU_10.</p>
 <h3 id="a23-high-level-requirements">A.2.3 High-Level Requirements</h3>
 <h4 id="a231-topic-1-accessing-online-services-with-a-wallet-unit">A.2.3.1 Topic 1 - Accessing Online Services with a Wallet Unit</h4>
 <h5 id="description">Description <!-- omit from toc --></h5>
-<p>The primary purpose of the EUDI Wallet ecosystem is to enable Users to access
-online services and to enable Relying Parties offering such services to identify
+<p>One of the main use cases of the EUDI Wallet ecosystem is to enable Users to access
+online services and to enable Relying Parties offering such services to, where needed, identify
 and authenticate Users with a high level of assurance. This essential
 functionality ensures that Relying Parties can confidently verify that they are
 interacting with the correct User.</p>
-<p>In this use case, a User is using their Wallet Unit to present attributes
-related to their identity. The User accesses online services that require
-authentication. The User is concerned about sharing Person Identification Data
-(PID) during online interactions. Their objectives include identifying
-themselves with services requiring User identification and maintaining control
-over personal data sharing.</p>
-<p>This Topic contains high-level requirements related to online
-identification and authentication of a User using their Wallet Unit.</p>
+<p>Note: As specified in the [European Digital Identity Regulation], legally speaking, the term 'Relying Party' also include QEAA Providers, PuB-EAA Providers,
+and non-qualified EAA Providers. However, for clarity this Annex uses the term 'Relying Party' exclusively in the meaning of a service provider interacting with a Wallet Unit to request and receive attributes from an attestation.</p>
+<p>In this use case, a User is using their Wallet Unit to present attributes in order to access online services offered by Relying Parties. The User is concerned about presenting such attributes during online interactions. Their objectives include maintaining control
+over the presentation of personal attributes from PIDs and attestations.</p>
 <h5 id="hlrs">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
@@ -464,11 +460,11 @@ identification and authentication of a User using their Wallet Unit.</p>
 </tr>
 <tr>
 <td>OIA_03b</td>
-<td>For remote presentation flows, when the format of the requested attestation complies with [ISO/IEC 18013-5], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified [ISO/IEC 18013-7] Annex B.</td>
+<td>For remote presentation flows, when the format of the requested attestation complies with [ISO/IEC 18013-5], Relying Parties and Wallet Units SHALL comply with the requirements in the profile for OpenID4VP specified in [ISO/IEC 18013-7] Annex B.</td>
 </tr>
 <tr>
 <td>OIA_03c</td>
-<td>For remote presentation flows, when the format of the requested attestation complies with [SD-JWT VC], Relying Parties and Wallet Units SHALL comply with the requirements in the OpenID4VP profile for [SD-JWT VC] specified in [HAIP].</td>
+<td>For remote presentation flows, when the format of the requested attestation complies with [SD-JWT VC], Relying Parties and Wallet Units SHALL comply with the requirements in the 'OpenID for Verifiable Presentations for IETF SD-JWT VC' profile specified in [HAIP].</td>
 </tr>
 <tr>
 <td>OIA_04</td>
@@ -528,7 +524,7 @@ identification and authentication of a User using their Wallet Unit.</p>
 </tr>
 <tr>
 <td>OIA_15</td>
-<td>For both proximity and remote presentation flows, a Relying Party SHALL validate the signature of a (non-qualified) EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see [<a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>]. <em>Notes: - OIA_12 – OIA_15 imply that a Relying Party Instance must know if the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. These requirements also imply that the Relying Party Instance must store trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs. - PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, when it receives a non-qualified attestation, a Relying Party Instance may have to verify that the non-qualified EAA Provider is authorised or registered to issue this type of attestation, in addition to verifying the signature over the attestation using the EAA Provider's trust anchor. Mechanisms allowing to do this should be defined in the applicable Rulebook, see ARB_26.</em></td>
+<td>For both proximity and remote presentation flows, a Relying Party SHALL validate the signature of a non-qualified EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see [<a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>]. <em>Notes: - OIA_12 – OIA_15 imply that a Relying Party Instance must know if the attestation it is requesting from a Wallet Instance is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. These requirements also imply that the Relying Party Instance must store trust anchors in such a way that, at the time of verification, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs. - PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, when it receives an non-qualified attestation, a Relying Party Instance may have to verify that the non-qualified EAA Provider is authorised or registered to issue this type of attestation, in addition to verifying the signature over the attestation using the EAA Provider's trust anchor. Mechanisms allowing to do this should be defined in the applicable Rulebook, see ARB_26.</em></td>
 </tr>
 <tr>
 <td>OIA_16</td>
@@ -552,19 +548,15 @@ attestation that must comply with all relevant requirements in other Topics.</p>
 <h5 id="description_2">Description <!-- omit from toc --></h5>
 <p>The Person Identification Data (PID) Rulebook contains requirements specific to
 the PID within the EUDI Wallet ecosystem.</p>
-<p>The PID Rulebook contains the following main topics:</p>
-<ol>
-<li>The PID attribute schema: This describes the structure, the type, the entity
-identifiers, and the logical organisation of the mandatory and optional
+<p>The PID Rule Book contains the PID attribute schema, which describes the structure, the type, the identifiers, and the logical organisation of the mandatory and optional
 attributes and metadata of the PID, as specified in Commission Implementing
 Regulation (EU) 2024/2977. It also describes how Member States can specify any
 possible national attributes. Two encodings for these attributes are specified,
-one compliant with [ISO/IEC 18013-5], the other compliant with [SD-JWT VC].
-2.The trust infrastructure necessary for PIDs, for both ISO/IEC
-18013-5-compliant and SD-JWT VC-compliant encodings.</li>
-</ol>
+one compliant with [ISO/IEC 18013-5], the other compliant with [SD-JWT VC].</p>
 <p>For more information, see Annex 3 - [PID Rulebook].</p>
-<h5 id="hlrs_2">HLRs <!-- omit from toc --></h5>
+<h5 id="a-generic-hlrs">A. Generic HLRs <!-- omit from toc --></h5>
+<p>The requirements in the table below are valid for all PIDs in the EUDI Wallet
+ecosystem, regardless of the encoding used.</p>
 <table>
 <thead>
 <tr>
@@ -576,6 +568,112 @@ one compliant with [ISO/IEC 18013-5], the other compliant with [SD-JWT VC].
 <tr>
 <td>PID_01</td>
 <td>PIDs and PID Providers SHALL comply with all requirements in [PID Rulebook].</td>
+</tr>
+<tr>
+<td>PID_02</td>
+<td>A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]. <em>Note: CIR 2024/2977 mentions the W3C Verifiable Credentials Data Model v1.1 instead of [SD-JWT VC]. The latest stable version of this standard is [W3C VCDM 2.0].  However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, such as those in [W3C VC-JOSE-COSE] or [W3C VC Data Integrity], and making further choices, it is impossible to implement a PID based on W3C VCDM. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification. See also <a href="../../../architecture-and-reference-framework-main/#534-w3c-verifiable-credentials">Section 5.3.4</a> of the ARF main document.</em></td>
+</tr>
+<tr>
+<td>PID_03</td>
+<td>The portrait in a PID SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG).</td>
+</tr>
+</tbody>
+</table>
+<h5 id="b-hlrs-for-isoiec-18013-5-compliant-pids">B. HLRs for ISO/IEC 18013-5-compliant PIDs <!-- omit from toc --></h5>
+<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [ISO/IEC 18013-5].</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_04</td>
+<td>PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant PIDs. <em>Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.</em></td>
+</tr>
+<tr>
+<td>PID_05</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL use the value “eu.europa.ec.eudi.pid.1” for the identifier of the namespace for the PID attributes specified in <a href="../../annex-3/annex-3.01-pid-rulebook/#42-encoding-of-pid-attributes-and-metadata">Section 4.2 of the PID Rulebook</a>. <em>Notes: - The version number “1” allows for future extension(s) or change(s) of the ISO/IEC 18013-5-compliant PID attributes. - This namespace has the same value as the attestation type specified in requirement PID_04. This is allowed according to ISO/IEC 18013-5.</em></td>
+</tr>
+<tr>
+<td>PID_06</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider MAY include attributes that are not defined in this document. If so, these attributes SHALL be defined within a domestic PID namespace as meant in requirement ARB_10 in Annex 2. The PID Provider SHALL generate the identifier for this domestic PID namespace by appending the applicable ISO 3166-1 alpha-2 country code or the ISO 3166-2 region code, separated by a period, to the PID namespace specified in PID_05, excluding the version number. The PID Provider MAY include a version number in the domestic PID namespace identifier. <em>Note: For example, the identifier of the first domestic PID namespace for Germany could be “eu.europa.ec.eudi.pid.de.1”.</em></td>
+</tr>
+<tr>
+<td>PID_07</td>
+<td>A PID Provider that defines a domestic namespace SHALL publish the namespace, including all attribute identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
+</tr>
+<tr>
+<td>PID_08</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as (issuer-signed or device-signed) data elements. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
+</tr>
+<tr>
+<td>PID_09</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the third column of the tables in <a href="../../annex-3/annex-3.01-pid-rulebook/#421-overview">Section 4.2.1 of the PID Rulebook</a>.</td>
+</tr>
+<tr>
+<td>PID_10</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID in Concise Binary Object Representation (CBOR) according to [RFC 8949].</td>
+</tr>
+<tr>
+<td>PID_11</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that each PID contains at most one attribute with the same attribute identifier.</td>
+</tr>
+<tr>
+<td>PID_12</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4. <em>Note: The value of the age_over_18, age_over_NN, or age_in_years attributes, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
+</tr>
+<tr>
+<td>PID_13</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the issuance_date attribute, if present, is not later than the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="c-hlrs-for-sd-jwt-vc-compliant-pids">C. HLRs for SD-JWT VC-compliant PIDs <!-- omit from toc --></h5>
+<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [SD-JWT VC].</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_14</td>
+<td>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the <code>urn:eudi:pid:</code> namespace. The type indicated by the vct claim SHALL be <code>urn:eudi:pid:1</code> for the type defined in this document or a domestic type that extends it.</td>
+</tr>
+<tr>
+<td>PID_15</td>
+<td>A catalog linked in the PID Rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID Rulebook applicable to the type.</td>
+</tr>
+<tr>
+<td>PID_16</td>
+<td>A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
+</tr>
+<tr>
+<td>PID_17</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
+</tr>
+<tr>
+<td>PID_18</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in <a href="../../annex-3/annex-3.01-pid-rulebook/#52-encoding-of-pid-attributes">Section 5.2 of the PID Rulebook</a>.</td>
+</tr>
+<tr>
+<td>PID_19</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf claim, if present. <em>Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
+</tr>
+<tr>
+<td>PID_20</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf claim, if present.</td>
+</tr>
+<tr>
+<td>PID_21</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL make all claims (i.e., all top-level properties, all nested properties, and all array entries) selectively disclosable individually, except those claims defined as non-selectively disclosable in [SD-JWT VC].</td>
 </tr>
 </tbody>
 </table>
@@ -591,7 +689,7 @@ Consequently, mDLs issued to a Wallet Unit will not be implemented
 as [SD JWT VC]- compliant documents. The mDL Rulebook therefore specifies
 only an ISO/IEC 18013-5 compliant encoding.</p>
 <p>For more information, see Annex 3 - [mDL Rulebook].</p>
-<h5 id="hlrs_3">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_2">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -626,7 +724,7 @@ Party registration certificate, see
 <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, and the outcome
 of the evaluation of an embedded disclosure policy, if present, see
 <a href="#a2343-topic-43---embedded-disclosure-policies">Topic 43</a>.</p>
-<h5 id="hlrs_4">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_3">HLRs <!-- omit from toc --></h5>
 <p>A. Relying Party authentication</p>
 <table>
 <thead>
@@ -726,7 +824,7 @@ Neither does it apply to any intermediate certificates establishing trust
 between these certificates and the respective trust anchors. These access
 certificates are part of a Public Key Infrastructure, and rules for revoking
 these certificates will be established within the respective PKI.</p>
-<h5 id="hlrs_5">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_4">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -777,7 +875,7 @@ these certificates will be established within the respective PKI.</p>
 </tr>
 <tr>
 <td>VCR_09</td>
-<td>If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider or Wallet Provider SHALL revoke a PID, attestation, or WUA if the value of one or more attributes in the PID, attestation, or WUA was changed and it is still valid for at least 24 hours. Subsequently, if the User's contact details are known, the PID Provider SHOULD, via an out-of-band manner, notify the User about the revocation and ask the User to request re-issuance of the PID, attestation, or WUA using their Wallet Unit. <em>Note: If the value of the attributes is determined by a party different from the Provider, such as an Authentic Source, the Provider is responsible for ensuring that this third party notifies them about such changes.</em></td>
+<td>If a PID, attestation, or WUA is revocable, the PID Provider, Attestation Provider or Wallet Provider SHALL revoke a PID, attestation, or WUA if the value of one or more attributes in the PID, attestation, or WUA was changed (including attributes being added or deleted) and it is still valid for at least 24 hours. Subsequently, if the User's contact details are known, the PID Provider SHOULD, via an out-of-band manner, notify the User about the revocation and ask the User to request re-issuance of the PID, attestation, or WUA using their Wallet Unit. <em>Note: If the value of the attributes is determined by a party different from the Provider, such as an Authentic Source, the Provider is responsible for ensuring that this third party notifies them about such changes.</em></td>
 </tr>
 <tr>
 <td>VCR_10</td>
@@ -809,11 +907,11 @@ these certificates will be established within the respective PKI.</p>
 </tr>
 <tr>
 <td>VCR_17</td>
-<td>When using an Attestation Status List for revocation, the Attestation List Provider SHALL randomly assign the index for each PID or attestation, to prevent this index from becoming a correlator. <em>Note: Randomly assigning indices within a bitstring or byte array is more complicated than creating random identifiers (e.g. serial numbers) for attestations, as is needed for an Attestation Revocation List. This is because duplicate indices and unnecessarily long bitstrings or byte arrays must be prevented.</em></td>
+<td>When using an Attestation Status List for revocation, the PID Provider, Attestation Provider or Wallet Provider SHALL randomly assign the index for each PID or attestation, to prevent this index from becoming a correlator. <em>Note: Randomly assigning indices within a bitstring or byte array is more complicated than creating random identifiers (e.g. serial numbers) for attestations, as is needed for an Attestation Revocation List. This is because duplicate indices and unnecessarily long bitstrings or byte arrays must be prevented.</em></td>
 </tr>
 <tr>
 <td>VCR_18</td>
-<td>When using an Attestation Status List for revocation, the Attestation List Provider SHALL represent a sufficiently large number of PIDs, attestations, or WUAs on each Attestation Status List to ensure herd privacy. <em>Note: In this context, herd privacy means that if a Relying Party requests a particular status list, the Attestation List Provider is not able to deduce which PID or attestation (likely) was presented to that Relying Party. </em>Note: Complying with this requirement may be difficult in case the number of PIDs, attestations, or WUAs to be represented on the list is small. In such a case, decoy entries can be added to the list to obfuscate the real number of referenced PIDs, attestations, or WUAs.*</td>
+<td>When using an Attestation Status List for revocation, the PID Provider, Attestation Provider or Wallet Provider SHALL represent a sufficiently large number of PIDs, attestations, or WUAs on each Attestation Status List to ensure herd privacy. <em>Note: In this context, herd privacy means that if a Relying Party requests a particular status list, the PID Provider, Attestation Provider or Wallet Provider is not able to deduce which PID or attestation (likely) was presented to that Relying Party. </em>Note: Complying with this requirement may be difficult in case the number of PIDs, attestations, or WUAs to be represented on the list is small. In such a case, decoy entries can be added to the list to obfuscate the real number of referenced PIDs, attestations, or WUAs.*</td>
 </tr>
 <tr>
 <td>VCR_19</td>
@@ -879,7 +977,7 @@ of how the WUA is issued during Wallet Unit activation and how it is
 used during attestation issuance. The role played by the WUA during the
 release of an attestation to a Relying Party is discussed in [<a href="#a2318-topic-18---combined-presentations-of-attributes">Topic 18</a>]
 (Combined presentation of attributes).</p>
-<h5 id="hlrs_6">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_5">HLRs <!-- omit from toc --></h5>
 <h6 id="a-support-for-wua-use-cases">A.  Support for WUA Use Cases <!-- omit from toc --></h6>
 <table>
 <thead>
@@ -938,11 +1036,19 @@ release of an attestation to a Relying Party is discussed in [<a href="#a2318-to
 </tr>
 <tr>
 <td>WUA_10</td>
-<td>The WSCA SHOULD be able to prove that two or more private keys, paired with two or more public keys, are stored in it. <em>Note: these public keys may be included in WUAs, PIDs, attestations, or pseudonyms.</em> <em>Note: The proof may be transitive, so a proof that two keys are stored/managed in the same WSCA may be done by proving keys relate to each other via a third key (also stored in the WSCA).</em></td>
+<td>The WSCA SHOULD be able to prove that two or more private keys, paired with two or more public keys, are stored in it. <em>Notes: -These public keys may be included in WUAs, PIDs, attestations, or pseudonyms. -The proof may be transitive, so a proof that two keys are stored/managed in the same WSCA may be done by proving keys relate to each other via a third key (also stored in the WSCA).</em></td>
 </tr>
 <tr>
 <td>WUA_11</td>
-<td>During PID or attestation issuance, the PID Provider or Attestation Provider SHALL verify that the WSCA described in the WUA received from the Wallet Unit has proven possession of the private key corresponding to the public key in the WUA. The PID Provider or Attestation Provider SHALL also verify that the WSCA has proven possession of the new PID or attestation private key. Finally, the PID Provider or Attestation Provider SHOULD verify that the new PID or attestation private key corresponding to the public key being attested to, is stored in the same WSCA as described in the WUA private key. <em>Notes: - See also WUA_10. - These three proofs MAY be implemented as a single cryptographic proof.</em></td>
+<td>During PID or attestation issuance, the PID Provider or Attestation Provider SHALL verify that the WSCA described in the WUA received from the Wallet Unit has proven possession of the private key corresponding to the public key in the WUA.</td>
+</tr>
+<tr>
+<td>WUA_11a</td>
+<td>During PID or attestation issuance, the PID Provider or Attestation Provider SHALL verify that a WSCA has proven possession of the new PID or attestation private key.</td>
+</tr>
+<tr>
+<td>WUA_11b</td>
+<td>During PID or attestation issuance, the PID Provider or Attestation Provider SHOULD verify the proof generated by the WSCA per requirement WUA_10, if present, to verify that the new PID or attestation private key is stored in the same WSCA as the WUA private key. <em>Note: The three proofs mentioned in WUA_11, WUA_11a and WUA_11b MAY be implemented as a single cryptographic proof.</em></td>
 </tr>
 <tr>
 <td>WUA_12</td>
@@ -1014,8 +1120,8 @@ release of an attestation to a Relying Party is discussed in [<a href="#a2318-to
 Wallet Units. This Topic lists the high-level technical
 requirements related to PID and attestation issuance.</p>
 <p>This Topic also contains the high-level requirements for <a href="#a2323-topic-23---pid-issuance-and-qeaa-issuance">Topic 23</a>.</p>
-<h5 id="hlrs_7">HLRs <!-- omit from toc --></h5>
-<h6 id="a-generic-hlrs">A - Generic HLRs <!-- omit from toc --></h6>
+<h5 id="hlrs_6">HLRs <!-- omit from toc --></h5>
+<h6 id="a-generic-hlrs_1">A - Generic HLRs <!-- omit from toc --></h6>
 <table>
 <thead>
 <tr>
@@ -1026,11 +1132,11 @@ requirements related to PID and attestation issuance.</p>
 <tbody>
 <tr>
 <td>ISSU_01</td>
-<td>Wallet Providers SHALL ensure that their Wallet Solution supports the OpenID4VCI protocol specified in [OpenID4VCI], as profiled by the OpenID4VP profile for [OpenID4VCI] specified in [HAIP], and with additions and changes as documented in this Annex (see e.g. this Topic and [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]) and in future technical specifications created by or on behalf of the Commission.</td>
+<td>Wallet Providers SHALL ensure that their Wallet Solution supports the OpenID4VCI protocol specified in [OpenID4VCI], as profiled by the 'OpenID for Verifiable Credential Issuance' profile specified in [HAIP], and with additions and changes as documented in this Annex (see e.g. this Topic and [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]) and in future technical specifications created by or on behalf of the Commission.</td>
 </tr>
 <tr>
 <td>ISSU_01a</td>
-<td>PID Providers and Attestation Providers SHALL support the OpenID4VCI protocol specified in [OpenID4VCI], as profiled by the OpenID4VP profile for [OpenID4VCI] specified in [HAIP], and with additions and changes as documented in this Annex (see e.g. this Topic and [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]) and in future technical specifications created by or on behalf of the Commission.</td>
+<td>PID Providers and Attestation Providers SHALL support the OpenID4VCI protocol specified in [OpenID4VCI], as profiled by the 'OpenID for Verifiable Credential Issuance' profile specified in [HAIP], and with additions and changes as documented in this Annex (see e.g. this Topic and [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]) and in future technical specifications created by or on behalf of the Commission.</td>
 </tr>
 <tr>
 <td>ISSU_02</td>
@@ -1046,7 +1152,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_05</td>
-<td>A Wallet Unit SHALL support a process to activate a newly issued PID, in accordance with <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> Section 2.2.2. The Wallet Unit SHALL NOT allow a User to use a non-activated PID. <em>Notes: - The goal of the activation process is to verify that the PID was delivered into the Wallet Unit and WSCA of the User who is the subject of the PID. - This requirement is not applicable for QEAAs, PuB-EAAs or non-qualified EAAs, since these are not identity means in the sense of Commission Implementing Regulation (EU) 2015/1502.</em></td>
+<td>A Wallet Unit SHALL support a process to activate a newly issued PID, in accordance with the requirements for LoA High in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> Section 2.2.2. The Wallet Unit SHALL NOT allow a User to use a non-activated PID. <em>Notes: - The goal of the activation process is to verify that the PID was delivered into the Wallet Unit and WSCA of the User who is the subject of the PID. - This requirement is not applicable for QEAAs, PuB-EAAs or non-qualified EAAs, since these are not identity means in the sense of Commission Implementing Regulation (EU) 2015/1502.</em></td>
 </tr>
 <tr>
 <td>ISSU_06</td>
@@ -1066,7 +1172,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_10</td>
-<td>After a Wallet Unit receives a non-qualified EAA from an EAA Provider, it SHALL validate the signature of the EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see [<a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>]. <em>Notes: - Requirements ISSU_07 to ISSU_10 are equivalent to requirements OIA_12 to OIA_15 in [<a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>]. These requirements imply that a Wallet Instance must be aware whether the attestation it is requesting from an issuer is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. These requirements also imply that the Wallet Unit must store trust anchors in such a way that, when it receives an issued attestation, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs. - PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting a non-qualified attestation, a Wallet Unit may need to verify that the non-qualified EAA Provider is authorised or registered to issue this type of attestation. Mechanisms allowing to do this may be defined in the applicable Rulebook, see ARB_26.</em></td>
+<td>After a Wallet Unit receives a non-qualified EAA from an EAA Provider, it SHALL validate the signature of the EAA using a trust anchor provided according to the mechanism(s) specified in the applicable Rulebook, see [<a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>]. <em>Notes: - Requirements ISSU_07 to ISSU_10 are equivalent to requirements OIA_12 to OIA_15 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>. These requirements imply that a Wallet Instance must be aware whether the attestation it is requesting from an issuer is a PID, a QEAA, a PuB-EAA, or a non-qualified EAA. These requirements also imply that the Wallet Unit must store trust anchors in such a way that, when it receives an issued attestation, it is able to distinguish between trust anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified EAAs. - PID Providers, QEAA Providers, and PuB-EAA Providers are trusted by other actors in the EUDI Wallet ecosystem to not fraudulently issue attestations (or PIDs) that they are not legally allowed to issue. This trust is warranted since these kinds of providers operate within a regulated framework and are regularly audited. However, non-qualified EAA Providers are unregulated and may not be completely trustworthy. Therefore, before requesting an non-qualified attestation, a Wallet Unit may need to verify that the non-qualified EAA Provider is authorised or registered to issue this type of attestation. Mechanisms allowing to do this may be defined in the applicable Rulebook, see ARB_26.</em></td>
 </tr>
 <tr>
 <td>ISSU_11</td>
@@ -1086,7 +1192,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_12b</td>
-<td>During PID or attestation issuance, a WSCA SHALL generate a new key pair for a new PID or attestation, on request of the PID Provider or Attestation Provider via the Wallet Instance.</td>
+<td>During PID or attestation issuance, a WSCA SHALL generate a new key pair for a new PID or attestation, on request of the PID Provider or Attestation Provider via the Wallet Instance. <em>Note: In case of synchronous issuing in a remote HSM architecture, re-use of an existing key pair for the new PID or attestation may be acceptable and it may not be necessary to generate a new key pair for each new PID or attestation.</em></td>
 </tr>
 <tr>
 <td>ISSU_12c</td>
@@ -1264,7 +1370,7 @@ wrong, then these requirements will be adapted accordingly.*</p>
 <tbody>
 <tr>
 <td>ISSU_35</td>
-<td>A PID Provider, Attestation Provider, or Wallet Provider SHALL ensure that all unique elements in a PID, attestation or WUA, including at least a) the salt used for hashing every attribute, b) the hash values of all attributes, c) the attestation identifier or index used for revocation purposes (if applicable), d) the attestation public key used for device binding and User binding, and e) the value of the Attestation Provider signature, have values that are unique across all PIDs, attestations, or WUAs issued by that Provider. <em>Note: This can be achieved, for example, by ensuring that salt values and attestation identifiers are pseudo-random numbers generated by a cryptographically secure pseudo-random number generator (CSPRNG).</em></td>
+<td>A PID Provider, Attestation Provider, or Wallet Provider SHALL ensure that all unique elements in a PID, attestation or WUA, including at least a) the salt used for hashing every attribute, b) the hash values of all attributes, c) the attestation identifier or index used for revocation purposes (if applicable), d) the attestation public key used for device binding, and e) the value of the Attestation Provider signature, have values that are unique across all PIDs, attestations, or WUAs issued by that Provider. <em>Note: This can be achieved, for example, by ensuring that salt values and attestation identifiers are pseudo-random numbers generated by a cryptographically secure pseudo-random number generator (CSPRNG).</em></td>
 </tr>
 <tr>
 <td>ISSU_35a</td>
@@ -1272,7 +1378,7 @@ wrong, then these requirements will be adapted accordingly.*</p>
 </tr>
 <tr>
 <td>ISSU_36</td>
-<td>When issuing PIDs, attestations, or WUAs in a batch to a Wallet Unit, a PID Provider, Attestation Provider, or Wallet Provider SHALL ensure that the timestamps in these PIDs, attestations, or WUAs do not enable Relying Parties to conclude that they are part of the same batch (and therefore belong to the same User). <em>Note: This can be done, for example, by ensuring that a sufficiently high number of batches, each issued to a different Wallet Unit, share the same timestamp values (herd privacy).</em></td>
+<td>When issuing PIDs, attestations, or WUAs in a batch to a Wallet Unit, a PID Provider, Attestation Provider, or Wallet Provider SHALL ensure that the timestamps in these PIDs, attestations, or WUAs do not enable Relying Parties to conclude that they are part of the same batch (and therefore belong to the same User). <em>Note: This can be done, for example, by making timestamps sufficiently imprecise that a high number of batches, each issued to a different Wallet Unit, share the same timestamp values (herd privacy).</em></td>
 </tr>
 <tr>
 <td>ISSU_37</td>
@@ -1280,7 +1386,7 @@ wrong, then these requirements will be adapted accordingly.*</p>
 </tr>
 <tr>
 <td>ISSU_38</td>
-<td>A PID Provider, Attestation Provider or Wallet Provider SHALL have a policy describing which of the methods A, B, C, or D it will use to limit the number of times a Wallet Unit may present a single PID, attestation, or WUA to Relying Parties. For each supported method, the policy SHALL also specify how the values for respective parameters for that method, such as validity period and batch size, will be chosen. The goal of the policy SHALL be to ensure that the risk of Relying Party linkability is mitigated to an acceptable level, given the (expected) usage of the PID, attestation, or WUA by the User. To determine what an acceptable level of risk is, the PID Provider, Attestation Provider, or Wallet Provider SHALL carry out a risk analysis regarding Relying Party linkability. <em>Note: If a PID Provider, Attestation Provider, or Wallet Provider issues multiple attestation types, these requirements apply for each type of attestation separately.</em></td>
+<td>A PID Provider, Attestation Provider or Wallet Provider SHALL have a policy describing which of the methods A, B, C, or D it will use to limit the number of times a Wallet Unit may present a single PID, attestation, or WUA to relying Parties. For each supported method, the policy SHALL also specify how the values for respective parameters for that method, such as technical validity period and batch size, will be chosen. The goal of the policy SHALL be to ensure that the risk of Relying Party linkability is mitigated to an acceptable level, given the (expected) usage of the PID, attestation, or WUA by the User. To determine what an acceptable level of risk is, the PID Provider, Attestation Provider, or Wallet Provider SHALL carry out a risk analysis regarding Relying Party linkability. <em>Note: If a PID Provider, Attestation Provider, or Wallet Provider issues multiple attestation types, these requirements apply for each type of attestation separately.</em></td>
 </tr>
 <tr>
 <td>ISSU_39</td>
@@ -1315,11 +1421,11 @@ information on this method, please refer to
 <tbody>
 <tr>
 <td>ISSU_43</td>
-<td>The Wallet Unit SHALL request the PID Provider, Attestation Provider, or Wallet Provider to issue PIDs, attestations, or WUAs in batches to the Wallet Unit. All PIDs, attestations, or WUAs in a batch SHALL have the same attribute values and the same validity period.</td>
+<td>The Wallet Unit SHALL request the PID Provider, Attestation Provider, or Wallet Provider to issue PIDs, attestations, or WUAs in batches to the Wallet Unit. All PIDs, attestations, or WUAs in a batch SHALL have the same attribute values and the same technical validity period.</td>
 </tr>
 <tr>
 <td>ISSU_44</td>
-<td>The Wallet Unit SHALL present each PID or, attestation, or WUA only once to a Relying Party, except when it has fallen back to Method B as specified below, or to another available method.</td>
+<td>The Wallet Unit SHALL present each PID, attestation, or WUA only once to a Relying Party, except when it has fallen back to Method B as specified below, or to another available method.</td>
 </tr>
 <tr>
 <td>ISSU_45</td>
@@ -1374,7 +1480,7 @@ is using Method C for a given type of PID, attestation, or WUA.</p>
 <tbody>
 <tr>
 <td>ISSU_51</td>
-<td>The Wallet Unit SHALL request the PID Provider, Attestation Provider, or Wallet Provider to issue PIDs, attestations, or WUAs in batches to the Wallet Unit. All PIDs, attestations, or WUAs in a batch SHALL have the same attribute values and the same validity period.</td>
+<td>The Wallet Unit SHALL request the PID Provider, Attestation Provider, or Wallet Provider to issue PIDs, attestations, or WUAs in batches to the Wallet Unit. All PIDs, attestations, or WUAs in a batch SHALL have the same attribute values and the same technical validity period.</td>
 </tr>
 <tr>
 <td>ISSU_52</td>
@@ -1417,7 +1523,7 @@ is using Method D for a given type of PID, attestation, or WUA.</p>
 </table>
 <h6 id="e-hlrs-for-re-issuance-and-batch-issuance-of-pids-attestations-and-wuas">E - HLRs for re-issuance and batch issuance of PIDs, attestations and WUAs <!-- omit from toc --></h6>
 <p>These HLRs were added as a result of the discussions of Topic B,
-re-issuance and batch issuance of PIDs and attestations. For more background
+re-issuance and batch issuance of PIDs, attestations and WUAs. For more background
 information on these requirements, please refer to <a href="../../../architecture-and-reference-framework-main/#6627-batch-issuance">Sections 6.6.2.7</a>
 and
 <a href="../../../architecture-and-reference-framework-main/#6652-pid-or-attestation-re-issuance">6.6.5.2</a> of the ARF main document, and to the <a href="../../../discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/">Discussion Paper for Topic B</a>.</p>
@@ -1431,35 +1537,35 @@ and
 <tbody>
 <tr>
 <td>ISSU_58</td>
-<td>A Wallet Unit SHALL give its User the option to manually initiate a re-issuance process for any of the PIDs or attestations in their Wallet Unit.</td>
+<td>A Wallet Unit SHALL give its User the option to manually initiate a re-issuance process for any of the PIDs or attestations in their Wallet Unit. <em>Note: This requirement does not apply for WUAs, since Users must not be involved in the management of WUAs.</em></td>
 </tr>
 <tr>
 <td>ISSU_59</td>
-<td>After a successful re-issuance, a Wallet Unit SHALL compare the attribute values of the re-issued PID or attestation with those of the existing PID or attestation, and SHALL notify the User in case of any differences.</td>
+<td>After a successful re-issuance, a Wallet Unit SHALL compare the attribute values of the re-issued PID or attestation with those of the existing PID or attestation, and SHALL notify the User in case of any differences. <em>Note: This requirement does not apply for WUAs, since Users must not be involved in the management of WUAs.</em></td>
 </tr>
 <tr>
 <td>ISSU_60</td>
-<td>A Wallet Unit SHALL gracefully handle situations in which re-issuance of a PID or attestation is refused by the PID Provider or Attestation Provider, for example by attempting a retry after an appropriate delay.</td>
+<td>A Wallet Unit SHALL gracefully handle situations in which re-issuance of a PID,  attestation, or WUA is refused by the PID Provider, Attestation Provider, or Wallet Provider,for example by attempting a retry after an appropriate delay.</td>
 </tr>
 <tr>
 <td>ISSU_61</td>
-<td>A Wallet Unit SHALL support PID or attestation first-time batch issuance with a single User authentication, regardless of the size of the batch. <em>Note: See also requirement WIAM_14.</em></td>
-</tr>
-<tr>
-<td>ISSU_61</td>
-<td>After a successful re-issuance of a PID or attestation, a Wallet Unit SHALL delete the correct pre-existing PID or attestation, meaning the one that the re-issued PID or attestation intends to replace.</td>
+<td>A Wallet Unit SHALL support PID or attestation first-time batch issuance with a single User authentication, regardless of the size of the batch. <em>Notes: - See also requirement WIAM_14. - This requirement does not apply for WUAs, since Users must not be involved in the management of WUAs.</em></td>
 </tr>
 <tr>
 <td>ISSU_62</td>
-<td>PID Providers, Attestation Providers, and Wallet Units SHALL support the features of [OpenID4VCI] enabling the re-issuance of all PIDs and attestations.</td>
+<td>If a PID, attestation, or WUA was successfully re-issued because the value of one or more of its attributes was changed (including attributes being added or deleted), a Wallet Unit SHOULD delete the correct pre-existing PID, attestation, or WUA. <em>Notes: - It is up to the Wallet Unit, possibly using metadata provided by the PID Provider, Attestation Provider, or Wallet Provider using the [OpenID4VCI] protocol, to determine the PID, attestation, or WUA to be deleted. - Additionally, per requirement VCR_09, the PID Provider, Attestation Provider, or Wallet Provider revokes the pre-existing PID, attestation, or WUA.</em></td>
 </tr>
 <tr>
 <td>ISSU_63</td>
-<td>PID Providers, Attestation Providers, and Wallet Units SHALL support the features of [OpenID4VCI] enabling the batch issuance of all PIDs and attestations.</td>
+<td>PID Providers, Attestation Providers, Wallet Providers, and Wallet Units SHALL support the features of [OpenID4VCI] enabling the re-issuance of all PIDs, attestations, and WUAs.</td>
 </tr>
 <tr>
 <td>ISSU_64</td>
-<td>The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider or Attestation Provider to verify that a re-issued PID or attestation is bound to the same WSCD to which the existing PID or attestation is bound. <em>Note: This can be done, for instance, by requiring that OAuth 2.0 Demonstrating Proof of Possession (DPoP) [RFC 9449] is used for each Refresh Token, and that the public key in the DPoP proof is identical to the public key in the existing PID or attestation issued to the Wallet Unit previously.</em></td>
+<td>PID Providers, Attestation Providers, Wallet Providers, and Wallet Units SHALL support the features of [OpenID4VCI] enabling the batch issuance of all PIDs, attestations, and WUAs.</td>
+</tr>
+<tr>
+<td>ISSU_65</td>
+<td>The common OpenID4VCI protocol referenced in requirement ISSU_01, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider, Attestation Provider or Wallet Provider to verify that a re-issued PID, attestation, or WUA is bound to the same WSCD to which the existing PID, attestation, or WUA is bound. <em>Note: This can be done, for instance, by requiring that OAuth 2.0 Demonstrating Proof of Possession (DPoP) [RFC 9449] is used for each Refresh Token, and that the public key in the DPoP proof is identical to the public key in the existing PID, attestation, or WUA issued to the Wallet Unit previously.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1481,8 +1587,7 @@ implemented. The below HRLs are the result of this discussion. For more
 background information on these requirements, please refer to the <a href="../../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/">Discussion
 Paper for Topic E</a>.</p>
 <p>Note: As specified in requirement PA_21, the Commission will create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification. The HLRs below are in fact requirements to be fulfilled by this technical specification.</p>
-<h5 id="hlrs_8">HLRs <!-- omit from toc --></h5>
-<h6 id="a-requirements-related-to-use-cases">A. Requirements related to Use Cases <!-- omit from toc --></h6>
+<h6 id="a-hlrs-related-to-use-cases">A. HLRs related to Use Cases <!-- omit from toc --></h6>
 <table>
 <thead>
 <tr>
@@ -1529,7 +1634,7 @@ Paper for Topic E</a>.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="b-requirements-related-to-relying-parties">B. Requirements related to Relying Parties <!-- omit from toc --></h6>
+<h6 id="b-hlrs-related-to-relying-parties">B. HLRs related to Relying Parties <!-- omit from toc --></h6>
 <table>
 <thead>
 <tr>
@@ -1556,7 +1661,7 @@ Paper for Topic E</a>.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="c-requirements-related-to-privacy">C. Requirements related to privacy <!-- omit from toc --></h6>
+<h6 id="c-hlrs-related-to-privacy">C. HLRs related to privacy <!-- omit from toc --></h6>
 <table>
 <thead>
 <tr>
@@ -1595,7 +1700,7 @@ Paper for Topic E</a>.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="d-requirements-related-to-interoperability">D. Requirements related to interoperability <!-- omit from toc --></h6>
+<h6 id="d-hlrs-related-to-interoperability">D. HLRs related to interoperability <!-- omit from toc --></h6>
 <table>
 <thead>
 <tr>
@@ -1606,7 +1711,7 @@ Paper for Topic E</a>.</p>
 <tbody>
 <tr>
 <td>PA_21</td>
-<td>The Commission SHALL create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification compliant with the HLRs specified in this Topic.</td>
+<td>The Commission SHALL create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification compliant with the HLRs specified in this Topic. This specification SHALL contain all details necessary for Wallet Units and Relying Parties to generate, register, and use Pseudonyms.</td>
 </tr>
 <tr>
 <td>PA_22</td>
@@ -1632,7 +1737,7 @@ the same type of information and the same level of detail, such that all
 attestations are interoperable.</p>
 <p>Attestation Rulebooks may be registered and published in a publicly accessible
 catalogue, as described in <a href="#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>.</p>
-<h5 id="hlrs_9">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_7">HLRs <!-- omit from toc --></h5>
 <h6 id="a-requirements-regarding-attestation-formats">A. Requirements regarding attestation formats <!-- omit from toc --></h6>
 <table>
 <thead>
@@ -1648,7 +1753,11 @@ catalogue, as described in <a href="#a2325-topic-25---unified-definition-and-con
 </tr>
 <tr>
 <td>ARB_01a</td>
-<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHALL specify that one or more of the following three common format(s) must be used for these attestations: - The format specified in ISO/IEC 18013-5, see [ISO18013-5]. - The format specified in "SD-JWT-based Verifiable Credentials (SD-JWT VC)", see [SD-JWT-VC]. - The format specified in “W3C Verifiable Credentials Data Model”, see [W3C VCDM v1.1] or [W3C VCDM v2.0].</td>
+<td>The Schema Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHALL specify that one or more of the following three common format(s) must be used for these attestations: - The format specified in ISO/IEC 18013-5, see [ISO18013-5]. - The format specified in "SD-JWT-based Verifiable Credentials (SD-JWT VC)", see [SD-JWT-VC]. - The format specified in “W3C Verifiable Credentials Data Model”, see [W3C VCDM v2.0].</td>
+</tr>
+<tr>
+<td>ARB_01b</td>
+<td>The Schema Provider for an Attestation Rulebook describing attestations using the format specified in [SD-JWT VC] SHALL ensure that these attestations comply with the 'SD-JWT VCs' profile specified in [HAIP].</td>
 </tr>
 <tr>
 <td>ARB_02</td>
@@ -1660,7 +1769,7 @@ catalogue, as described in <a href="#a2325-topic-25---unified-definition-and-con
 </tr>
 <tr>
 <td>ARB_04</td>
-<td>If an Attestation Rulebook specifies that a type of attestation can be issued in a format compliant with [W3C VCDM v1.1] or [W3C VCDM v2.0], the Schema Provider for that Attestation Rulebook SHALL ensure the Rulebook references one or more documents specifying in detail how a Relying Party can request attributes from a such an attestation, and how a User can selectively disclose attributes from such an attestation. Moreover, these referenced documents SHALL be approved by an EU standardisation body or by the European Digital Identity Cooperation Group established pursuant to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1">Article 46e</a>(1) of the [European Digital Identity Regulation].</td>
+<td>If an Attestation Rulebook specifies that a type of attestation can be issued in a format compliant with [W3C VCDM v2.0], the Schema Provider for that Attestation Rulebook SHALL ensure the Rulebook references one or more documents specifying in detail how a Relying Party can request attributes from a such an attestation, and how a User can selectively disclose attributes from such an attestation. Moreover, these referenced documents SHALL be approved by an EU standardisation body or by the European Digital Identity Cooperation Group established pursuant to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e4536-1-1">Article 46e</a>(1) of the [European Digital Identity Regulation].</td>
 </tr>
 </tbody>
 </table>
@@ -1811,7 +1920,7 @@ creation capabilities of the Wallet Unit as a part of a local QSCD,
 or by using a remote QSCD managed by a QTSP.</p>
 <p>This Topic contains high-level requirements related to the creation of
 Qualified Electronic Signatures using a Wallet Unit.</p>
-<h5 id="hlrs_10">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_8">HLRs <!-- omit from toc --></h5>
 <h6 id="a-requirement-for-wallet-providers">A. Requirement for Wallet Providers <!-- omit from toc --></h6>
 <table>
 <thead>
@@ -1975,7 +2084,7 @@ online account(s), even if their PID attribute values are not exactly the same
 as those in their account(s). Users regularly need to log in to cross-border
 services offered by public sector bodies. Identity matching enables them to use
 their Wallet Unit to do so.</p>
-<h5 id="hlrs_11">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_9">HLRs <!-- omit from toc --></h5>
 <p>There are no HLRs for this Topic.</p>
 <h4 id="a2318-topic-18-combined-presentations-of-attributes">A.2.3.18 Topic 18 - Combined presentations of attributes</h4>
 <h5 id="description_12">Description <!-- omit from toc --></h5>
@@ -2003,7 +2112,7 @@ to the same User?</li>
  multiple distinct attestations that were not issued to the same User,
  are not combined presentations and are out of scope of this Topic.</li>
 </ul>
-<h5 id="hlrs_12">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_10">HLRs <!-- omit from toc --></h5>
 <h6 id="a-functional-requirements-for-ecosystem-components">A. Functional requirements for ecosystem components <!-- omit from toc --></h6>
 <table>
 <thead>
@@ -2050,7 +2159,7 @@ to the same User?</li>
 <tbody>
 <tr>
 <td>ACP_07</td>
-<td>During issuance of an attestation, an Attestation Provider SHOULD be able to request that the private key for the new attestation is managed by the same WSCD as the private key of a PID or another attestation already existing on the Wallet Unit, provided that the Attestation Provider has verified during the issuance process that the new attestation indeed belongs to the User of that existing PID or attestation. <em>Note: Also see requirement WUA_10 in [Epic 09].</em></td>
+<td>During issuance of an attestation, an Attestation Provider SHOULD be able to request that the private key for the new attestation is managed by the same WSCD as the private key of a PID or another attestation already existing on the Wallet Unit, provided that the Attestation Provider has verified during the issuance process that the new attestation indeed belongs to the User of that existing PID or attestation. <em>Note: Also see requirement WUA_10 in <a href="#a239-topic-9---wallet-unit-attestation">Topic 09</a>.</em></td>
 </tr>
 <tr>
 <td>ACP_08</td>
@@ -2082,7 +2191,7 @@ function of a dashboard ensures a higher degree of transparency, privacy
 and control of the User over their personal data.</p>
 <p>This Topic lists high-level requirements related to the functions
 of such a dashboard.  </p>
-<h5 id="hlrs_13">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_11">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2109,15 +2218,15 @@ of such a dashboard.  </p>
 </tr>
 <tr>
 <td>DASH_03</td>
-<td>For a presentation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>), c) the name, contact details, and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>For a presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>), c) the name, contact details, and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion.</td>
 </tr>
 <tr>
 <td>DASH_04</td>
-<td>For a signature creation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the document or data signed (where possible), c) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>For a signature creation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the document or data signed (where possible), c) in the case of non-completed transactions, the reason for such non-completion.</td>
 </tr>
 <tr>
 <td>DASH_05</td>
-<td>For an issuance or re-issuance transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and/or issued (i.e., the size of the batch in case of batch issuance), d) in the case of non-completed transactions, the reason for such non-completion, e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User.</td>
+<td>For an issuance or re-issuance transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and/or issued (i.e., the size of the batch in case of batch issuance). d) in the case of non-completed transactions, the reason for such non-completion. e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User.</td>
 </tr>
 <tr>
 <td>DASH_06</td>
@@ -2172,7 +2281,7 @@ may imply a risk of payment fraud or other abuses. The use of the wallet for SCA
 will be in full compliance with those requirements.  </p>
 <p>In the future, a Wallet Unit could also be used for payments with Central Bank
 Digital Currencies.  </p>
-<h5 id="hlrs_14">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_12">HLRs <!-- omit from toc --></h5>
 <p>There are no HLRs for this Topic.</p>
 <h4 id="a2321-topic-21-diplomas-within-the-eudi-wallet-ecosystem">A.2.3.21 Topic 21 - Diplomas within the EUDI Wallet ecosystem</h4>
 <p>There are no HLRs for this Topic.</p>
@@ -2181,7 +2290,7 @@ Digital Currencies.  </p>
 <h4 id="a2323-topic-23-pid-issuance-and-qeaa-issuance">A.2.3.23 Topic 23 - PID issuance and (Q)EAA issuance</h4>
 <h5 id="description_15">Description <!-- omit from toc --></h5>
 <p>See <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</p>
-<h5 id="hlrs_15">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_13">HLRs <!-- omit from toc --></h5>
 <p>See <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</p>
 <h4 id="a2324-topic-24-user-identification-in-proximity-scenarios">A.2.3.24 Topic 24 - User identification in proximity scenarios</h4>
 <h5 id="description_16">Description <!-- omit from toc --></h5>
@@ -2202,7 +2311,7 @@ include identifying themselves to services requiring User identification
 and maintaining control over their personal data sharing.</p>
 <p>This topic lists high-level requirements related to User
 identification in proximity use cases where Users utilise their Wallet Units.</p>
-<h5 id="hlrs_16">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_14">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2243,11 +2352,11 @@ identification in proximity use cases where Users utilise their Wallet Units.</p
 </table>
 <h4 id="a2325-topic-25-unified-definition-and-controlled-vocabularies-for-attributes">A.2.3.25 Topic 25 - Unified definition and controlled vocabularies for attributes</h4>
 <h5 id="description_17">Description <!-- omit from toc --></h5>
-<p><a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a> that describes the
-high-level requirements (HLR) for the minimal requirements Rulebooks that will
+<p><a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a> describes the
+high-level requirements (HLR) for the Rulebooks that will
 specify the details of new types of attestations, including QEAAs, PuB-EAAs, and
-non-qualified EAAs, has already touched and defined high-level requirements
-regarding the attestation rulebook catalogue.</p>
+non-qualified EAAs. This Topic already touched and defined high-level requirements
+regarding the catalogue for Attestation Rulebooks.</p>
 <p>The following main concepts were defined in
 <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>
 and developed in the current version of this Topic:</p>
@@ -2272,7 +2381,7 @@ necessarily imply cross-border recognition of that attestation.</li>
 <li>The Attestation Rulebooks catalogue can be hosted in the same environment as
 the catalogue of attributes.</li>
 </ul>
-<h5 id="hlrs_17">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_15">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2314,7 +2423,7 @@ the catalogue of attributes.</li>
 <h4 id="a2326-topic-26-catalogue-of-attestations">A.2.3.26 Topic 26 - Catalogue of attestations</h4>
 <h5 id="description_18">Description <!-- omit from toc --></h5>
 <p>See <a href="#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>.</p>
-<h5 id="hlrs_18">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_16">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2361,15 +2470,15 @@ the catalogue of attributes.</li>
 </tr>
 </tbody>
 </table>
-<h4 id="a2327-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">A.2.3.27 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties</h4>
+<h4 id="a2327-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">A.2.3.27 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and non-qualified EAAs, and Relying Parties</h4>
 <h5 id="description_19">Description <!-- omit from toc --></h5>
-<p>PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers
+<p>PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers
 and Relying Parties SHALL register with a Registrar in their Member State. The
 main goal of the registration process is for the entity to receive an access
 certificate that Wallet Units can use to authenticate them.</p>
 <p>This Topic specifies high-level requirements related to the registration of the
 above mentioned entities.</p>
-<h5 id="hlrs_19">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_17">HLRs <!-- omit from toc --></h5>
 <p>A. <em>General requirements for Member State registration processes</em></p>
 <table>
 <thead>
@@ -2381,7 +2490,15 @@ above mentioned entities.</p>
 <tbody>
 <tr>
 <td>Reg_01</td>
-<td>Member States SHALL provide processes and mechanisms for PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and Relying Parties to register in a registry. <em>Note: Member States may choose to implement a single registry for all these roles, or a separate registry for each of these roles.</em></td>
+<td>Member States SHALL provide processes and mechanisms for PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers, and Relying Parties to register in a registry. <em>Note: Member States may choose to implement a single registry for all these roles, or a separate registry for each of these roles.</em></td>
+</tr>
+<tr>
+<td>Reg_01a</td>
+<td>The Commission SHALL provide specifications for a common set of data to be registered about a) PID Providers, b) QEAA Providers, c) PuB-EAA Providers, d) non-qualified EAA Providers. and e) Relying Parties.</td>
+</tr>
+<tr>
+<td>Reg_01b</td>
+<td>For PID Providers, QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers, the common set of data meant in Reg_01a SHALL include the attestation type(s) that the provider intends to issue to Wallet Units.</td>
 </tr>
 <tr>
 <td>Reg_02</td>
@@ -2428,7 +2545,7 @@ above mentioned entities.</p>
 <tbody>
 <tr>
 <td>Reg_10</td>
-<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>] issues an access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, (non-qualified) EAA Providers, and Relying Parties registered in one of the Member State's registries.</td>
+<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>] issues an access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers, and Relying Parties registered in one of the Member State's registries.</td>
 </tr>
 <tr>
 <td>Reg_11</td>
@@ -2448,7 +2565,7 @@ above mentioned entities.</p>
 </tr>
 <tr>
 <td>Reg_15</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: - the certificate subject which is a Relying Party is de-registered by the respective Registrar, - the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or (non-qualified) EAA Provider is withdrawn or suspended by the respective Registrar, - on request of the certificate subject, or - on request of a competent national authority.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL include a policy for revocation, which SHALL require that an Access Certificate Authority revokes an access certificate at least when: - the certificate subject which is a Relying Party is de-registered by the respective Registrar, - the certificate subject which is a PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider is withdrawn or suspended by the respective Registrar, - on request of the certificate subject, or - on request of a competent national authority.</td>
 </tr>
 <tr>
 <td>Reg_16</td>
@@ -2456,7 +2573,7 @@ above mentioned entities.</p>
 </tr>
 <tr>
 <td>Reg_17</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a (non-qualified) EAA Provider, or a Relying Party Instance.</td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL require that an access certificate indicates whether its subject is a PID Provider, a QEAA Provider, a PuB-EAA Provider, a non-qualified EAA Provider, or a Relying Party Instance.</td>
 </tr>
 <tr>
 <td>Reg_18</td>
@@ -2502,7 +2619,7 @@ above mentioned entities.</p>
 <tbody>
 <tr>
 <td>Reg_21</td>
-<td>A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers and (non-qualified) EAA Providers.</td>
+<td>A Member State SHALL approve an Attestation Provider according to a well-defined policy before including it in its Attestation Provider Registry. To that end, a Member State SHALL define specific vetting processes and rules of acceptance for inclusion of Attestation Providers in its Registry. These processes and rules SHOULD consider any relevant differences between QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers.</td>
 </tr>
 <tr>
 <td>Reg_22</td>
@@ -2610,7 +2727,7 @@ legal-person PIDs and the Wallet Units containing legal-person PIDs.</p>
  systems of the legal persons that give an Wallet Unit
  commands in accordance with rules defined by the legal person.</li>
 </ul>
-<h5 id="hlrs_20">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_18">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2673,7 +2790,7 @@ scope of eIDAS. Various scenarios can be considered:</p>
  death.</li>
 <li>A person empowering a bank to invest on their behalf.</li>
 </ol>
-<h5 id="hlrs_21">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_19">HLRs <!-- omit from toc --></h5>
 <p>There are no specific requirements in this Topic.</p>
 <h4 id="a2330-topic-30-interaction-between-wallet-units">A.2.3.30 Topic 30 - Interaction between Wallet Units</h4>
 <h5 id="description_22">Description <!-- omit from toc --></h5>
@@ -2684,7 +2801,7 @@ devices (online), or without internet connectivity for either or both devices
 (offline).</p>
 <p>This Topic lists the high-level requirements related to the interaction between
 two Wallet Units. This topic will be further discussed with Member States.</p>
-<h5 id="hlrs_22">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_20">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -2739,7 +2856,7 @@ certificates that are issued by these parties.</p>
 <p>This Topic contains High-Level Requirements for the notification of these
 parties by Member States, and for the publication of the notified information by
 the Commission.</p>
-<h5 id="hlrs_23">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_21">HLRs <!-- omit from toc --></h5>
 <p>A. Generic requirements for notification</p>
 <table>
 <thead>
@@ -2751,7 +2868,7 @@ the Commission.</p>
 <tbody>
 <tr>
 <td>GenNot_01</td>
-<td>The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, and Access Certificate Authorities by Member States to the Commission. <em>Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively.</em></td>
+<td>The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, and Access Certificate Authorities by Member States to the Commission. <em>Note: Notification does not apply to QEAA Providers and non-qualified EAA Providers, as explained in Sections D and F below, respectively.</em></td>
 </tr>
 <tr>
 <td>GenNot_02</td>
@@ -2889,8 +3006,8 @@ body.</p>
 </tr>
 </tbody>
 </table>
-<p>F. Requirements for the notification of (non-qualified) EAA Providers</p>
-<p>There is no notification of (non-qualified) EAA Providers foreseen by the
+<p>F. Requirements for the notification of non-qualified EAA Providers</p>
+<p>There is no notification of non-qualified EAA Providers foreseen by the
 [European Digital Identity Regulation]. As stated in [<a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>],
 the Schema Provider for an Attestation Rulebook describing a type of attestation
 that is an EAA defines in the Rulebook the mechanisms allowing a Relying Party
@@ -2898,14 +3015,14 @@ to obtain, in a trustworthy manner, the trust anchor(s) of EAA Providers issuing
 this type of EAA.</p>
 <p>G. Requirements for the notification of Access
  Certificate Authorities</p>
-<p>Relying Party Access Certificate Authorities (CA) are TSPs responsible for
+<p>Relying Party Access Certificate Authorities (CA) are responsible for
 signing access certificates they issue to Relying Parties. Legally speaking,
 Relying Parties in this context also include QEAA Providers, PuB-EAA Providers,
-and (non-qualified) EAA Providers, but for clarity these roles are mentioned
+and non-qualified EAA Providers, but for clarity these roles are mentioned
 separately in the requirements below. Where these requirements use the term
 'Access Certificate Authorities' without further qualifications, this includes
 Access Certificate Authorities for QEAA Providers, PuB-EAA Providers,
-(non-qualified) EAA Providers, and Relying Parties.</p>
+non-qualified EAA Providers, and Relying Parties.</p>
 <p>For more information about Relying Party Access Certificate Authority,
 see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>].</p>
 <table>
@@ -2918,15 +3035,15 @@ see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas
 <tbody>
 <tr>
 <td>RPACANot_01</td>
-<td>The European Commission SHALL establish technical specifications for the common set of information to be notified about Relying Party Access Certificate Authorities, QEAA Provider Access Certificate Authorities, PuB-EAA Provider Access Certificate Authorities, and (non-qualified) EAA Provider Access Certificate Authorities.</td>
+<td>The European Commission SHALL establish technical specifications for the common set of information to be notified about Relying Party Access Certificate Authorities, QEAA Provider Access Certificate Authorities, PuB-EAA Provider Access Certificate Authorities, and non-qualified EAA Provider Access Certificate Authorities.</td>
 </tr>
 <tr>
 <td>RPACANot_02</td>
-<td>The common set of information to be notified about an Access Certificate Authority SHALL include: 1. Identification data: i) MS/Country of establishment, ii) Name as registered in an official record, iii) Where applicable: - A business registration number from an official record, - Identification data from that official record. 2. Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers by Wallet Units.</td>
+<td>The common set of information to be notified about an Access Certificate Authority SHALL include: 1. Identification data: i) MS/Country of establishment, ii) Name as registered in an official record, iii) Where applicable: - A business registration number from an official record, - Identification data from that official record. 2. Access Certificate Authority trust anchors, i.e., public keys and name as per point 1) ii), supporting the authentication of Relying Parties, QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers by Wallet Units.</td>
 </tr>
 <tr>
 <td>RPACANot_03</td>
-<td>Relying Parties, QEAA Providers, PuB-EAA Providers, and (non-qualified) EAA Providers SHALL ensure that their access certificates can be authenticated using the Access Certificate Authority trust anchors notified to the Commission.</td>
+<td>Relying Parties, QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers SHALL ensure that their access certificates can be authenticated using the Access Certificate Authority trust anchors notified to the Commission.</td>
 </tr>
 <tr>
 <td>RPACANot_04</td>
@@ -2954,7 +3071,7 @@ see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas
 </tr>
 <tr>
 <td>TLPub_02</td>
-<td>The European Commission SHALL establish technical specifications for the set of information to be published about: PID Providers, Wallet Providers,PuB-EAA Providers, andAccess Certificate Authorities based on the information notified by the Member States. <em>Note: The information to be published MAY be different from the information to be notified per requirements PPNot_01, WPNot_01, PuBPNot_01, and RPACANot_01 above, respectively.</em></td>
+<td>The European Commission SHALL establish technical specifications for the set of information to be published about PID Providers, Wallet Providers, PuB-EAA Providers, and Access Certificate Authorities, based on the information notified by the Member States. <em>Note: The information to be published MAY be different from the information to be notified per requirements PPNot_01, WPNot_01, PuBPNot_01, and RPACANot_01 above, respectively.</em></td>
 </tr>
 <tr>
 <td>TLPub_03</td>
@@ -2998,7 +3115,7 @@ mandating backup and restore functionality in the Wallet. However, Wallet
 Providers should implement backup and restore functionality nevertheless,
 because it will be expected by Users. In fact, the requirements in <a href="#a2334-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>
 also ensure the possibility of backup and restore.</p>
-<h5 id="hlrs_24">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_22">HLRs <!-- omit from toc --></h5>
 <p>There are no specific requirements in this Topic.</p>
 <h4 id="a2334-topic-34-migrate-to-a-different-wallet-solution">A.2.3.34 Topic 34 - Migrate to a different Wallet Solution</h4>
 <h5 id="description_25">Description <!-- omit from toc --></h5>
@@ -3039,7 +3156,7 @@ attestation types and the related Attestation Providers. However, even this
 limited information may be considered sensitive in some cases. Therefore, the
 Migration Object is stored in such a way that its confidentiality is ensured and
 that it can be used only by the User.</p>
-<h5 id="hlrs_25">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_23">HLRs <!-- omit from toc --></h5>
 <p>A. Back-up requirements</p>
 <table>
 <thead>
@@ -3051,7 +3168,7 @@ that it can be used only by the User.</p>
 <tbody>
 <tr>
 <td>Mig_01</td>
-<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02.A list of PIDs and attestations present in the Wallet Unit, according to the requirements in this Topic.</td>
+<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: - The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02. - A list of PIDs and attestations present in the Wallet Unit, according to the requirements in this Topic.</td>
 </tr>
 <tr>
 <td>Mig_02</td>
@@ -3138,7 +3255,7 @@ that it can be used only by the User.</p>
 <h5 id="description_26">Description <!-- omit from toc --></h5>
 <p>This Topic analyses the User journeys for PID issuance to a Wallet
 Unit. This Topic focuses on natural persons only.</p>
-<h5 id="hlrs_26">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_24">HLRs <!-- omit from toc --></h5>
 <p>No HLRs are present for this Topic. Note that issuance of PID is discussed in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>; relevant HLRs can be found there.</p>
 <h4 id="a2336-topic-36-risk-analysis-of-the-wallet-usage">A.2.3.36 Topic 36 - Risk Analysis of the Wallet usage</h4>
 <p>There are no HLRs for this Topic.</p>
@@ -3160,7 +3277,7 @@ revoked. Instead, if the Wallet Provider administratively suspends a Wallet
 Unit, it will immediate revoke all corresponding WUAs. If (within three months)
 the situation is remedied and the Wallet Unit can be re-instated, the Wallet
 Provider will issue one or more new WUAs to the Wallet Unit.</p>
-<h5 id="hlrs_27">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_25">HLRs <!-- omit from toc --></h5>
 <p>A. Issuing a Wallet Unit Attestation</p>
 <table>
 <thead>
@@ -3309,8 +3426,7 @@ Provider will issue one or more new WUAs to the Wallet Unit.</p>
 Instance by the User, the subsequent activation of the Wallet Unit by the User
 and the Wallet Provider, and the management of the Wallet Unit throughout its
 lifetime.</p>
-<h5 id="hlrs_28">HLRs <!-- omit from toc --></h5>
-<p><em>Wallet Instance installation</em> <!-- omit from toc --></p>
+<h5 id="a-hlrs-for-wallet-instance-installation">A - HLRs for Wallet Instance installation <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3329,7 +3445,7 @@ lifetime.</p>
 </tr>
 </tbody>
 </table>
-<p><em>Wallet Unit activation</em> <!-- omit from toc --></p>
+<h5 id="b-hlrs-for-wallet-unit-activation">B - HLRs for Wallet Unit activation <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3360,7 +3476,7 @@ lifetime.</p>
 </tr>
 <tr>
 <td>WIAM_08</td>
-<td>A Wallet Provider SHALL only activate a new Wallet Unit if it has verified that: - The Wallet Unit includes at least one WSCA that is certified to be compliant with applicable requirements in this Topic, for level of assurance "high" in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. In addition, the Wallet Unit MAY include one or more other WSCAs. - The private key corresponding to the public key in the WUA (see WUA_07) is protected by the respective WSCA under control of the user.</td>
+<td>A Wallet Provider SHALL only activate a new Wallet Unit if it has verified that: - The Wallet Unit includes at least one WSCA that is certified to be compliant with applicable requirements in this Topic, for Level of Assurance High in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. In addition, the Wallet Unit MAY include one or more other WSCAs, which SHALL be certified to be compliant with applicable requirements for Level of Assurance Substantial or High. - The private key corresponding to the public key in the WUA (see WUA_07) is protected by the respective WSCA under control of the User.</td>
 </tr>
 <tr>
 <td>WIAM_09</td>
@@ -3372,7 +3488,7 @@ lifetime.</p>
 </tr>
 </tbody>
 </table>
-<p><em>Wallet Unit management</em> <!-- omit from toc --></p>
+<h5 id="c-hlrs-for-wallet-unit-management">C - HLRs for Wallet Unit management <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3399,11 +3515,11 @@ lifetime.</p>
 </tr>
 <tr>
 <td>WIAM_14</td>
-<td>A WSCA SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Unit (i.e., a WUA key) or of a PID or an attestation stored in a Wallet Unit. For a PID key (which is part of the EUDI Wallet eID means), this WSCA SHALL be certified to be compliant with applicable requirements for level of assurance "high" in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. <em>Note: Many actions of the Wallet Unit, such as processing a Relying Party request and presenting an attestation, require multiple cryptographic operations, for example ephemeral key generation followed by key agreement and message encryption. This requirement does not imply that separate User authentication is necessary before each of these. Rather, a successful User authentication will be valid for all cryptographic operations necessary for a Wallet Unit action. It is up to the Wallet Provider to determine what constitutes a 'Wallet Unit action', finding a balance between security (more User authentications) and User convenience (fewer User authentications). During certification of the Wallet Solution, it will be verified that the solution provides an adequate level of security.</em></td>
+<td>A WSCA SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Unit (i.e., a WUA key) or of a PID or an attestation stored in a Wallet Unit. For a PID key (which is part of the EUDI Wallet eID means), this WSCA SHALL be certified to be compliant with applicable requirements for Level of Assurance High in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1. <em>Note: Many actions of the Wallet Unit, such as processing a Relying Party request and presenting an attestation, require multiple cryptographic operations, for example ephemeral key generation followed by key agreement and message encryption. This requirement does not imply that separate User authentication is necessary before each of these. Rather, a successful User authentication will be valid for all cryptographic operations necessary for a Wallet Unit action. It is up to the Wallet Provider to determine what constitutes a 'Wallet Unit action', finding a balance between security (more User authentications) and User convenience (fewer User authentications). During certification of the Wallet Solution, it will be verified that the solution provides an adequate level of security.</em></td>
 </tr>
 <tr>
 <td>WIAM_15</td>
-<td>A Wallet Unit SHALL authenticate the User before performing any operation excluding cryptographic operations. The Wallet Unit SHOULD rely on a WSCA to do so, per WIAM_14. If this is infeasible, the Wallet Unit SHOULD use a User authentication mechanism implemented on OS level, such as a lock screen, but it MAY also use a separate User authentication mechanism implemented in the Wallet Instance. <em>Notes: - The goal of this requirement is to prevent any User interaction without User authentication, including, for example, using the user interface to see which attestations are present in the Wallet Unit or what are the values of specific User attributes. - Cryptographic operations are excluded in this requirement because they can only be performed after User authentication by the WSCA, according to WIAM_14. - An example where using a WSCA for User authentication is not feasible is a Wallet Unit using a remote HSM as its WSCA and being without internet connection. - In general, using an OS-level User authentication mechanism instead of a separate mechanism implemented in the Wallet Instance is beneficial for security and User experience. Please note that this ARF assumes that a User device is a personal device, meaning that the User will not share it with other people. - An example where using an OS-level User authentication mechanism is not feasible is where the User has disabled such mechanisms (i.e., no lock screen is used). In that case, a Wallet Unit that is not able to use a WSCA for authentication must use a separate User authentication mechanism implemented in the Wallet Instance as a fallback.</em></td>
+<td>A Wallet Unit SHALL authenticate the User before performing any operation excluding cryptographic operations. The Wallet Unit SHOULD rely on a WSCA to do so, per WIAM_14. If this is infeasible, the Wallet Unit SHOULD use a User authentication mechanism implemented on OS level, such as a lock screen, but, if this is infeasible, it MAY also use a separate User authentication mechanism implemented in the Wallet Instance. <em>Notes: - The goal of this requirement is to prevent any User interaction without User authentication. User interaction includes, for example, using the user interface to see which attestations are present in the Wallet Unit or what are the values of specific User attributes. - Cryptographic operations are excluded in this requirement because they can strictly only be performed after User authentication by the WSCA, according to WIAM_14. - An example where using a WSCA for User authentication is not feasible is a Wallet Unit using a remote HSM as its WSCA and being without internet connection. - In general, using an OS-level User authentication mechanism instead of a separate mechanism implemented in the Wallet Instance is beneficial for security and User experience. Please note that this ARF assumes that a User device is a personal device, meaning that the User will not share it with other people. - An example where using an OS-level User authentication mechanism is not feasible is where the User has disabled such mechanisms (i.e., no lock screen is used). In that case, a Wallet Unit that is not able to use a WSCA for User authentication must use a separate authentication mechanism implemented in the Wallet Instance as a fallback.</em></td>
 </tr>
 <tr>
 <td>WIAM_16</td>
@@ -3435,7 +3551,7 @@ lifetime.</p>
 attributes to verify those attributes by electronic means at the request
 of the User, wherever those attributes rely on Authentic Sources within
 the public sector.  </p>
-<h5 id="hlrs_29">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_26">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3492,7 +3608,7 @@ with releasing attributes from the attestation to the Relying Party. Note that
 an embedded disclosure policy, if present, is applicable for any attribute in
 the attestation.</p>
 <p>Note that embedded disclosure policies do not apply to Wallet-to-Wallet interactions as described in <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>.</p>
-<h5 id="hlrs_30">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_27">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3563,7 +3679,7 @@ information in the certificate to the User, where applicable. This enables Users
 to verify that the attributes being requested by the Relying Party are within
 the scope of their registered attributes, providing assurance that the request
 is legitimate and trustworthy.</p>
-<h5 id="hlrs_31">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_28">HLRs <!-- omit from toc --></h5>
 <p>A. Issuance of Relying Party registration certificates</p>
 <table>
 <thead>
@@ -3583,7 +3699,7 @@ is legitimate and trustworthy.</p>
 </tr>
 <tr>
 <td>RPRC_03</td>
-<td>The contents of a registration certificate SHALL include at least 1. the list of attributes registered by the Relying Party, where each attribute is identified by the identifier specified for it in the applicable Attestation Rulebook, as specified in ARB_06a or ARB_06b. 2. the name of the Relying Party, which SHALL be identical to the name meant in Reg_31. 3. the EU-wide unique identifier of the Relying Party, as meant in Reg_32. 4. if the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>): the fact that this is the case, plus the name and unique identifier (as meant in Reg_32) of this intermediary. 5. contact details for the Relying Party. <em>Note: The Wallet Unit needs this information at least to be able to send a data deletion request to the Relying Party, see [Topic 48].</em></td>
+<td>The contents of a registration certificate SHALL include at least 1. the list of attributes registered by the Relying Party, where each attribute is identified by the identifier specified for it in the applicable Attestation Rulebook, as specified in ARB_06a or ARB_06b. 2. the name of the Relying Party, which SHALL be identical to the name meant in Reg_31. 3. the EU-wide unique identifier of the Relying Party, as meant in Reg_32. 4. if the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>): the fact that this is the case, plus the name and unique identifier (as meant in Reg_32) of this intermediary. 5. contact details for the Relying Party. <em>Note: The Wallet Unit needs this information at least to be able to send a data deletion request to the Relying Party, see <a href="#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>.</em></td>
 </tr>
 </tbody>
 </table>
@@ -3641,7 +3757,7 @@ from a Wallet Unit, see <a href="#a2352-topic-52-relying-party-intermediaries">T
 However, such intermediaries are required to delete any data they obtain from a
 Wallet Unit immediately after sending it to the Relying Party. Data deletion
 requests are therefore always sent to the Relying Party, not the intermediary.</p>
-<h5 id="hlrs_32">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_29">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3689,7 +3805,7 @@ reporting suspicious or inappropriate requests ensures a higher degree of
 transparency, privacy and control of the Users over their personal data.</p>
 <p>This topic lists high-level requirements related to the function of Users
 reporting unlawful or inappropriate attribute requests from Relying Parties.</p>
-<h5 id="hlrs_33">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_30">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3724,7 +3840,7 @@ reporting unlawful or inappropriate attribute requests from Relying Parties.</p>
 <h5 id="description_34">Description <!-- omit from toc --></h5>
 <p>This topic lists high-level requirements related to a User deleting a PID or
 attestation from their Wallet Unit.</p>
-<h5 id="hlrs_34">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_31">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3768,7 +3884,7 @@ then performs all necessary verifications, and, if successful, sends the
 presented attributes to the 'end' Relying Party. This implies that an
 intermediary performs all tasks assigned to a Relying Party in this ARF on
 behalf of the 'end' Relying Party.</p>
-<h5 id="hlrs_35">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_32">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3827,7 +3943,7 @@ true without revealing any additional information beyond the validity of the
 statement itself. This ensures that the verifier gains no knowledge about how
 the prover knows the statement to be true, preserving privacy while enabling trust.</p>
 <p>The topic of ZKPs for the EUDI Wallet ecosystem was introduced in the <a href="../../../discussion-topics/g-zero-knowledge-proof/">Discussion Paper for Topic G</a>. The high-level requirements in this Topic were taken from that discussion paper.</p>
-<h5 id="hlrs_36">HLRs <!-- omit from toc --></h5>
+<h5 id="hlrs_33">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
 <tr>
@@ -3850,11 +3966,11 @@ the prover knows the statement to be true, preserving privacy while enabling tru
 </tr>
 <tr>
 <td>ZKP_04</td>
-<td>A ZKP scheme SHOULD support the derivation of a verifiable User pseudonym, by combining an attribute value that is unique for the User with Relying Party-specific context (e.g., the Relying Party identifier). In addition to the generic functions defined in ZKP_01, for this use case, a ZKP scheme SHALL provide support for the following functions: (i) generation of a request for the issuance of an attestation that includes a secret attribute unique to the User, without revealing this attribute to the Attestation Provider, (ii) generation of an attestation presentation that includes a verifiable pseudonym derived from the secret attribute, a Relying Party identifier, and context-related information. <em>Note: See section 4.1.5 of the Discussion Paper for Topic G.</em></td>
+<td>A ZKP scheme SHOULD support the derivation of a verifiable User pseudonym, by combining an attribute value that is unique for the User with Relying Party-specific context (e.g., the Relying Party identifier) In addition to the generic functions defined in ZKP_01, for this use case, a ZKP scheme SHALL provide support for the following functions: (i) generation of a request for the issuance of an attestation that includes a secret attribute unique to the User, without revealing this attribute to the Attestation Provider, (ii) generation of an attestation presentation that includes a verifiable pseudonym derived from the secret attribute, a Relying Party identifier, and context-related information. <em>Note: See section 4.1.5 of the Discussion Paper for Topic G.</em></td>
 </tr>
 <tr>
 <td>ZKP_05</td>
-<td>A ZKP scheme SHALL be usable in both remote and proximity presentation flows. While the inclusion of ZKP will introduce computational and verification delays, these delays SHALL NOT degrade the User experience of the Wallet Unit.</td>
+<td>A ZKP scheme SHALL be usable in both remote and proximity presentation flows. While the inclusion of ZKP will introduce computational and verification delays, these delays SHALL NOT critically undermine or defeat the purpose of the Relying Party service (e.g. because of a critical impact on the User experience of the Wallet Unit).</td>
 </tr>
 <tr>
 <td>ZKP_06</td>
@@ -3870,7 +3986,7 @@ the prover knows the statement to be true, preserving privacy while enabling tru
 </tr>
 <tr>
 <td>ZKP_09</td>
-<td>Use of a ZKP scheme SHALL NOT prevent the Wallet Unit's ability to provide User authentication with Level of Assurance  "high".</td>
+<td>Use of a ZKP scheme SHALL NOT prevent the Wallet Unit's ability to provide User authentication with Level of Assurance High.</td>
 </tr>
 </tbody>
 </table>
