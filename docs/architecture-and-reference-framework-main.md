@@ -3167,7 +3167,7 @@ include functionality allowing the Wallet Unit to authenticate the Relying Party
 Instance. Although these protocols differ in the details, on a high level, they
 both implement Relying Party authentication as shown in Figure 12 below.
 
-![Figure 12](media/Figure_12_Relying_Party_Authentication.png
+![Figure 12](media/Figure_12_Relying_Party_Authentication.png)
 
 Figure 12 High-level overview of Relying Party authentication process
 
