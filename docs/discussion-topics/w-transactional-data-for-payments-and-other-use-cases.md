@@ -40,7 +40,7 @@ The document is structured as follows:
 
 ## 2 Legal Requirements for Transactional Data for payments and other use cases
 
-The [European Digital Identity Regulation] requires the Wallets to support and provide a function of strong user authentication, that could be used to authenticate the User accessing or using an online service that require identification and strong authentication (by EU or local law or by contractual obligation).
+The [European Digital Identity Regulation] requires the Wallets to support and provide a function of strong user authentication, that could be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or local law or by contractual obligation).
 The online services might be of any type, provided by public or private Service Providers, in particular from  the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications (but not limited to these ones only).
 
 Therefore the Wallet Solutions should provide functionality that enable wallet-Relying Parties (which are the Service Providers) to use the Wallets as an external tool of User authentication.
@@ -69,7 +69,7 @@ _Where private relying parties that provide services, with the exception of micr
 ### 3.1 Introduction
 
 #### 3.1.1 The Use Cases
-The European Digital Identity Regulation requires the Wallet's provide a functionality of strong authentication to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  
+The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication to play the role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  
 
 Most of the use cases will use the standard Wallet functionality (meaning w/o the need to involve "transactional data"). However for the following use cases it is necessary handle the transactional data:
 + payments,
@@ -91,18 +91,18 @@ In general the life cycle of a Wallet Unit in the role of an authenticator, comp
 + authentication - performing User authentication in an on-line service, on request of that service,
 + de-registration - unlinking the Wallet Unit from a service and the User's account in that service.
 
-As the result of registration, a specific Attestation ("service credentials") is issued by the Service Provider or other Wallet-Relying Party (depending on the scheme) to the Wallet Unit. The registration relies on the standard Attestation issuance processes, and the data included in this Attestaion are defined by the Service Provider.
+As the result of registration, a specific Attestation ("service credentials") is issued by the Service Provider or other Wallet-Relying Party (depending on the scheme) to the Wallet Unit. The registration relies on the standard Attestation issuance processes, and the data included in this Attestation are defined by the Service Provider.
 
 In the authentication phase, the Wallet Unit will receive the presentation request of the "service credentials". The presentation is a standard process for the Wallet User, however the request should include transactional data (unique for each service transaction).
 In some cases, like payment authentication, the Wallet Unit should display to the User (some) transaction related data (that should be inlcuded in the transactional data).
 
-After the User accepting the presentation request, the Wallet response should include the transactional data, as well as piece of data generated dynamically by the Wallet Unit, for each such presentation, to provide a proof of the User's approval and meet compliance needs where necessary (eg. PSD2 dynamic linking). 
+After the User accepts the presentation request, the Wallet response should include the transactional data, as well as piece of data generated dynamically by the Wallet Unit, for each such presentation, to provide a proof of the User's approval and meet compliance needs where necessary (eg. PSD2 dynamic linking). 
 
 #### 3.1.3 The Goals of the Discussion
 
 The goal of the discussion is to work out set of generic HLRs that are not tied to any specific use case, unless justified. The intention is to keep the Wallet's role as limited as possible - just as an enabler of the use cases. 
 
-The legal text sets out the requirement of use the Wallet's as strong authenticator in the context of "online services". However the the ARF envisions transactions initiated in/from the same Wallet Unit or by another device in a proximity mode. 
+The legal text sets out the requirement of use the Wallet's as strong authenticator in the context of "online services". However the ARF envisions transactions initiated in/from the same Wallet Unit or by another device in a proximity mode. 
 
 To summarise, there are several fundamental questions to be discussed and answered before proposing the set of HLRs. These questions are presented in the next sections.
 
@@ -121,7 +121,7 @@ As the outcome:
 
 **Question 1:** Are rules for representing the contents of a transaction necessary and if so, who should specify these? 
 
-**Question 2:** Should it be possible to send a transaction to from one Wallet User to another Wallet User?  
+**Question 2:** Should it be possible to send a transaction from one Wallet User to another Wallet User?  
 
 **Question 3:** Should it be possible for a Wallet-Relying Party to define the structure and contents of a transaction? 
 
@@ -190,7 +190,7 @@ contains the following risks that are related to the Relying Party registration:
 |---|
 |Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint. |
 
-| R9 DUnauthorised transaction |
+| R9 Unauthorised transaction |
 |---|
 |Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the wallet User. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also related to unauthorised transactions, such as the misuse of cryptographic keys. |
 
