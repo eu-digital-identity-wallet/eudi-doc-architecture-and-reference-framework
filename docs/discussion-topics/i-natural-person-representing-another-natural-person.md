@@ -1,6 +1,6 @@
 # I - Natural person representing another natural person
 
-Version 0.1, updated 9 April 2025
+Version 0.2, updated 23 April 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495)
 
@@ -81,7 +81,7 @@ identification scheme under which the European Digital Identity Wallet is provid
 uniquely represents the natural person, legal person or **the natural person representing 
 the natural** or legal person, and is associated with that European Digital Identity Wallet
 
-Article 11a, 3c the same regulation requires that the interoperability framework shall 
+Article 11a, 3c of the same regulation requires that the interoperability framework shall 
 consist of:
 
 > [...] a reference to a minimum set of person identification data necessary to uniquely 
@@ -98,7 +98,7 @@ considers the representation of one natural person by another.
 
 One common use case is the legal representation of minors or individuals with 
 diminished legal capacity. For example parents or legal guardians should be empowered 
-to make decisions and act on behalf of their children end represent them when accessing 
+to make decisions and act on behalf of their children and represent them when accessing 
 educational platforms, healthcare services, government benefits, or other services. 
 The EU Digital Identity Wallet should therefore accommodate such delegation in a secure, 
 verifiable manner.
@@ -112,26 +112,17 @@ submit applications for social care services on behalf of the person they repres
 Power of attorney is another use case of a natural person (the agent) acting on 
 behalf of another natural person (the principal).
 
-**Question 1:**
-What are the other use cases for a natural person representing another natural
-person?
+
 
 ### 3.1 Attestation issuance
-Based the regulation, it should be possible to issue an attestation for a natural person to a legal representative.
+Based the regulation, it should be possible to issue an attestation for a natural 
+person to a legal representative. Rules for issuing an attestation to a legal
+representative SHALL be defined in the corresponding Rulebook according to the
+applicable legislation.
 
-**Question 2:** Who and how should the rules for issuing to a representative be defined?
-
-An option could be the PID or Attestation Provider defines these rules in the
-corresponding Rulebook
-
-**Question 3** Shall the attestation issued to a representative be different
-from those issued directly to a natural person?
-
-Options could be:
-
-* They should be the same
-* The attestation issued to a representative should provide an indication about
-the representative. 
+A PID or attestation issued to a legal representative SHALL be distinct from the 
+original issued to the natural person, and SHALL include information specifying 
+the nature of the representation. 
 
 The European Digital Identity Framework [European Digital Identity Regulation],
 ANNEX VI states:
@@ -150,49 +141,51 @@ authentic sources at national level (or via designated intermediaries). However,
 in other use cases (e.g., power of attorney) the represented natural person
 may need to authorize a representative. 
 
-**Question 4** 
-Should a natural person be able to mandate another natural person to act on its behalf? If yes how?
+To support such cases, mandates SHALL be managed through a distinct attestation type. 
+This mandate-specific attestation SHALL clearly define the operations the agent 
+is authorized to perform, thereby limiting the scope of its authorization. At the 
+same time a principal SHALL be able to revoke such an attestation. 
 
-Options can be:
-* Through the PID or Attestation Provider using an out-of-band API
-* Through the PID or Attestation Provider by participating in the issuance process 
-(e.g., by approving the issuance through her/his wallet)
-* By issuing to the representative a corresponding attestation, though her/his
-wallet, or through a 3rd party Provider.
-
-In the latter case, the format of this attestation should be specified (e.g., 
-define mechanisms for controlling the scope of authorization)
-
-**Question 5** What additional privacy and security mechanisms should be 
-considered for this case? E.g., "a principal SHALL be able to revoke
-authorization to other natural persons", "mechanisms for limiting the number
-of authorization SHALL be considered", "a principal SHALL have access to 
-a log of authorization through her/his wallet". 
 
 ## 3.2 Attestation Presentation
 A natural person should be able to represent another natural person 
-when interacting with a Relying Party. 
+when interacting with a Relying Party. The Relying Party SHALL always be aware
+that it interacts with a legal representative or an agent, either because this information is embedded
+in the corresponding PID or attestation, or because the corresponding Wallet Unit
+presents a mandate-specific attestation. 
 
-**Question 6** Shall the Relying Party be able to distinguish whether it interacts with a representative?
-
-Options can be:
-* No. The Relying Party should rely on the trust established by PID or Attestation Providers, who are responsible for verifying and issuing attestations or PID data to legitimate representatives. In this model, the delegation is abstracted away from the Relying Party, simplifying their process.
-* Yes. The fact that an attestation is being presented by a representative may influence the business logic, legal obligations, or risk assessment processes of the Relying Party.
-
-**Question 7** If the Relying Party shall be able to distinguish whether it interacts with a representative, shall it be able to access information about
-this representation? If yes, how? (For example it may access authentic sources)
-
-
-
-**Question 8** 
-Should a principal be able to access of an audit trail of actions performed on her/his behalf? If yes how? It is not straightforward how such functionality be implemented. 
-
-
+A Relying Party SHALL log all operation performed by a legal representative or agent and make
+them available to the principal when requested. 
 
 
 ## 4 Additions and changes to the ARF
 
 ### 4.1 High-Level Requirements to be added to Annex 2
+**Requirement 1**
+If a PID or attestation for a natural person can be issued to a legal 
+representative, the corresponding Rulebook SHALL define the rules governing such 
+issuance. These rules SHALL comply with applicable legislation.
+
+**Requirement 2**
+PID Providers and Attestation Providers SHALL ensure that PID or attestation issued 
+to a legal representative is distinct from the original issued to the natural person, 
+and it includes information specifying the nature of the representation. 
+
+**Requirement 3**
+The Commission SHALL create a Rulebook for attestations corresponding to mandates. 
+An attestation corresponding to a mandate SHALL be issued to the Wallet Unit of the
+agent and clearly define the operations 
+the agent is authorized to perform, thereby limiting the scope of its authorization.
+
+
+**Requirement 4**
+An Attestation Provider issuing attestations corresponding to mandates SHALL ensure that the 
+principal has the ability to revoke such attestations
+
+**Requirement 5**
+A Relying Party SHALL maintain a log of all actions performed by an agent or legal representative 
+and SHALL provide access to this log to the principal upon request.
+
 ### 4.2 High-Level Requirements to be changed
 
 ### 4.3 Descriptions to be added to the ARF main document
