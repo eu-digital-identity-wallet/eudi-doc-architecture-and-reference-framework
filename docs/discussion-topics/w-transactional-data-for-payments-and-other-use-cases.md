@@ -1,4 +1,4 @@
-# Version 0.3, updated 14 April 2025
+# Version 0.9, updated 22 April 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496)
@@ -69,13 +69,13 @@ _Where private relying parties that provide services, with the exception of micr
 ### 3.1 Introduction
 
 #### 3.1.1 The Use Cases
-The European Digital Identity Regulation requires the Wallet's provide a functionality of strong authentication to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  
+The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  
 
-Most of the use cases will use the standard Wallet functionality (meaning w/o the need to involve "transactional data"). However for the following use cases it is necessary handle the transactional data:
+Most of the use cases will use the standard Wallet functionality (meaning w/o the need to involve "transactional data"). However for the following use cases it is necessary to handle the transactional data:
 + payments,
 + remote qualified electronic signature.   
 
-In this paper we focus on the cases, where the transactional data are involved. 
+In this paper we focus on the use cases, where the transactional data is involved. 
 
 At the same time, [OID4VP] provides so called "transaction data" mechanism that: 
 
@@ -100,9 +100,9 @@ After the User accepting the presentation request, the Wallet response should in
 
 #### 3.1.3 The Goals of the Discussion
 
-The goal of the discussion is to work out set of generic HLRs that are not tied to any specific use case, unless justified. The intention is to keep the Wallet's role as limited as possible - just as an enabler of the use cases. 
+The goal of the discussion is to work out a set of generic HLRs that are not tied to any specific use case, unless justified. The intention is to keep the Wallet's role as limited as possible - just as an enabler of the use cases. 
 
-The legal text sets out the requirement of use the Wallet's as strong authenticator in the context of "online services". However the the ARF envisions transactions initiated in/from the same Wallet Unit or by another device in a proximity mode. 
+The legal text sets out the requirement to use the Wallet as a strong authenticator in the context of "online services". However the ARF envisions transactions initiated in/from the same Wallet Unit or by another device in proximity mode. 
 
 To summarise, there are several fundamental questions to be discussed and answered before proposing the set of HLRs. These questions are presented in the next sections.
 
@@ -135,38 +135,38 @@ As the outcome:
 
 **Question 8:** Should it be possible to include the actual contents in a transaction or should it be a representation (hash) of it?  
 
-**Question 9:** What is expected from the wallet as mandatory technical requirements to enable it as SCA for payment transaction according to PSD2/RTS ?
+ **Question 9:** What is the minimum set of information to be specified for a transaction? 
 
- **Question 10:** What is the minimum set of information to be specified for a transaction? 
+**Question 10:** Should batch transactions be supported? 
 
-**Question 11:** Should batch transactions be supported? 
+**Question 11:** What are the requirements for the proof of transaction?
 
-**Question 12:** What are the requirements for the proof of transaction?
+**Question 12:** Are there / what are the requirements to ensure a transaction is processed only once?
 
-**Question 13:** Should the Wallet verify payment transaction data/identifier and to make sure it is different every time? – is it a role of the Wallet? 
+**Question 13:** Should a log of all transactions carried out through the European Digital Identity Wallet be accessible via a common dashboard?
 
-**Question 14:** Are there / what are the requirements to ensure a transaction is processed only once?
-
-**Question 15:** Should an access a log of all transactions carried out through the European Digital Identity Wallet via a common dashboard?
-
-
+On the basis of the discussion and the feedback from Member States' representatives, the High-Level Requirements have been proposed as specified in the section 4.
 
 ## 4 Current HLRs and Proposals of Changes
 
 The topics of the ARF Annex 2 related to the Topic W are the following:
 + Topic 20 - Strong User authentication for electronic payments,
-+ Topic 16 - Topic 16 - Signing documents with a Wallet Unit.
++ Topic 16 - Signing documents with a Wallet Unit.
 
-The existing HLRs are listed in the tables below, along with a proposal to keep, change, add, or remove the HLR.
+Topic 20 does not have any requirements yet, so the set of new ones is proposed in the section 4.1.
+
+The HLRs set out in the Topic 16 have been reviewed too, however no changes have been identified as necessary from the Topic W perspective.
 
 
-### 4.1 Topic 20 - Strong User authentication for electronic payments (tbd)
+### 4.1 Topic 20 - Strong User Authentication for Electronic Payments and Other Use Cases
 
 
 **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| TD_01  | tbd |      New     |
-
+| TD_01  | The Wallet SHALL be able to identify and read out transactional data included in a presentation request. Rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
+| TD_02  | The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction. |      New     |
+| TD_03  | The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the Wallet User basing on the transactional data contained in the presentation request, according to rules set out in TD_01. |      New     |
+| TD_04  | The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code). |      New     |
 
 
 
@@ -183,25 +183,14 @@ contains the following risks that are related to the Relying Party registration:
 
 |Risk type | Risk id | Related risk titles|
 |-------------|-------|-------------------|
-|High-level risks to the wallets | R6 | Data disclosure|
-|High-level risks to the wallets |R9 | Unauthorised transaction|
 
-| R6 Data disclosure |
-|---|
-|Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint. |
 
-| R9 DUnauthorised transaction |
-|---|
-|Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the wallet User. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also related to unauthorised transactions, such as the misuse of cryptographic keys. |
 
 More specifically, \[RiskRegister\]  describes the following threats to a Wallet:
 
 |ID | Threat description | Related risks |
 |---------|-------|-------------------|
-|TR25 | The wallet can present attributes to a relying party without the approval of a User. | Data disclosure (R6) |
-|TR29 | An attacker can leak attributes from the wallet and identify the wallet User where identification is not required/allowed. | Data disclosure (R6) |
-|TR38 | Not being able to prove User’s consent for shared attributes, relying parties can affect the integrity of logs. |  Data disclosure (R6)  |
-|TR40 | A relying party that consists of multiple units/entities that each have a different scope of what they are allowed to request/process, can request and process data for which they do not have lawful grounds for. |  Data disclosure (R6) / Unauthorised transaction (R9)  |
+
 
 
 ## 6 Additions and Changes to the ARF 
@@ -216,6 +205,7 @@ See sections 4 and 5 above. In addition, transactional data related aspects in t
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
 | [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |                                                |
 | [Topic 20]                             | Topic 20 - Strong User authentication for electronic payments |
+| [Topic 16]                             | Topic 16 - Signing documents with a Wallet Unit |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |
