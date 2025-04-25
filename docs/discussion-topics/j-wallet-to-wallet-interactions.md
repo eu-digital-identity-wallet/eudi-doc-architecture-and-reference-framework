@@ -1,6 +1,8 @@
+# J - Wallet to Wallet Interactions
+
 Version 0.1, updated 23 April 2025
 
-# J - Wallet to Wallet Interactions
+[GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/510)
 
 ## 1 Introduction 
 

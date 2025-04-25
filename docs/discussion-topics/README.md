@@ -49,7 +49,7 @@ process for the ARF.
 
 ### Iteration 1
 
-Iteration in progress from 27 November 2024 to 02 April 2025 covering the
+Iteration in progress from 27 November 2024 to 25 April 2025 covering the
 following topics:
 
 | Topic | Title | |
@@ -62,10 +62,11 @@ following topics:
 | F | [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
 | G | [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
 | V | [PID Rulebook](v-pid-rulebook.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/356) |
+| X | [Relying Party registration](x-relying-party-registration.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/378) |
 
 ### Iteration 2
 
-Iteration is planned from 12 March 2025 to 02 July 2025 covering the following topics:
+Iteration is planned from 26 March 2025 to 02 July 2025 covering the following topics:
 
 | Topic | Title | |
 |-------|-------|--|
@@ -78,11 +79,11 @@ Iteration is planned from 12 March 2025 to 02 July 2025 covering the following t
 | N | [Data portability](n-export-and-data-portability.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
 | O | [Catalogues for Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
 | W | [Transactional data for payments and other use cases](w-transactional-data-for-payments-and-other-use-cases.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/371) |
-| X | [Relying Party registration](x-relying-party-registration.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/378) |
+
 
 ### Iteration 3
 
-Iteration is planned from 03 September 2025 to 26 November 2025 covering the following topics:
+Iteration is planned from 20 August 2025 to 26 November 2025 covering the following topics:
 
 | Topic | Title | |
 |-------|-------|--|
