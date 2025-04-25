@@ -394,7 +394,7 @@
   
 
 
-<p>Version 0.3, updated 25 March 2025</p>
+<p>Version 0.4, updated 25 April 2025</p>
 <p><a href="https://www.github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/431">Link to GitHub discussion</a></p>
 <h1 id="topic-x-relying-party-registration">Topic X - Relying Party Registration</h1>
 <h3 id="legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.</h3>
@@ -1491,7 +1491,7 @@ contains the following risks that are related to the Relying Party registration:
 <table>
 <thead>
 <tr>
-<th>R9 DUnauthorised transaction</th>
+<th>R9 Unauthorised transaction</th>
 </tr>
 </thead>
 <tbody>
@@ -1532,8 +1532,102 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
-<h2 id="6-additions-and-changes-to-the-arf-tbd">6 Additions and Changes to the ARF (TBD)</h2>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
 <p>The agreed Annex 2 HLR changes are listed in Section 4 and Section 5.1-5.2 above. In addition, discussions of the Relying Party registration in the main part of the ARF will be updated accordingly.</p>
+<p><em>Note: In addition, the latest changes of [Draft of the CIR for RP-Registration] make the issuance of the Relying Party registration certificates optional. This impacts this paper and the ARF. Therefore an impact analysis has been conducted, presented below. The changes that are needed will be included in ARF 1.10.0 that will be published until the end of next week.</em> </p>
+<h3 id="impact-analysis-to-the-arf-of-making-the-rprc-optional">Impact analysis to the ARF of making the RPRC optional</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Goal of RPRC according to ARF</th>
+<th>Section(s) in ARF</th>
+<th>Challenges if there is no RPRC</th>
+<th>Proposed solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The RPRC of a Relying Party contains the attributes that the Relying Party (i.e., a Service Provider) intends to request. The Wallet Unit notifies the User in case one or more of the requested attributes is not included in the list of attributes in the registration certificate.  The RPRC also contains the RP name and unique identifier, which is identical to the same data in the access cert.</td>
+<td>6.4.2, 6.6.3.3, 6.6.3.5, Annex 2, Topic 6,  RPA_06, RPA_06a &amp; new RPA_06x HLRs needed</td>
+<td>Need to define what the Wallet Unit needs to do in case no RPRC is present</td>
+<td>1) The RP access cert SHALL always contain the URL of an end point of the Registrar that the Wallet Unit can use to obtain information about the Relying Party. 2) The Wallet Unit SHALL enable the User to specify that they want to do additional verifications of the RP. By default, the Wallet Unit SHALL NOT do this verification. The Wallet Unit SHALL make clear that these additional verifications may involve an online check of information at a Registrar. 3) If the User has indicated that they want to do the additional verifications: a. the Wallet Unit SHALL retrieve the RPRC from the presentation request if present and proceed as already described in the ARF; b. If the RPRC is not present, the Wallet Unit SHALL request the Registrar at the URL in point 1) for the list of registered attributes of the Relying Party, using the unique ID of the RP from its access certificate; c. The Wallet Unit SHALL notify the User about the outcome of the verification in case the RP requests attributes that it did not register. The Wallet Unit SHALL also notify the User in case the Wallet Unit was not able to retrieve the RPRC information. Otherwise (i.e., if everything is OK), a User notification is optional. <em>General notes: (i) This approach means that the level of privacy/security of the User (by carrying out the additional verifications) is not dependent on whether the MS that registered the RP has issued an RPRC. Rather, if the User chooses to, they are carried out, regardless of whether there is an RPRC in the presentation request. (ii) There are a couple of reasons for setting the default to not doing the additional verifications: RPRCs were envisioned to enable additional verifications of RPs, on top of the authentication enabled by the RP access certificate. Since RPRCs are now optional, the additional verifications enabled by the RPRC should be viewed as optional as well. These additional verifications should therefore be done only if the User explicitly requests them. In addition, to avoid possible performance issues at the Registrars. (iii) In the IA, there is no obligation for an RP to include its RPRC in a presentation request, even if it has one. It's useful to document this in the ARF.</em></td>
+</tr>
+<tr>
+<td>2</td>
+<td>The RPRC contains a URL to the privacy policy of the Relying Party regarding the intended use</td>
+<td>This is not described in the ARF yet. This needs to be added in the main doc, section 6.6.3.3, as well as in Topic 44</td>
+<td>No way for the RP to declare its intended use in the request</td>
+<td>1) If it does not include a RPRC in the presentation request, the Relying Party SHALL include the URL to the privacy policy in a different field of the presentation request. The Commission SHALL reference or create an extension of ISO/IEC 18013-5 and OpenID4VP that enables this. 2) In case the RP is an intermediary, the URL SHALL be a URL pointing to the privacy policy of the end-RP, not the intermediary. See also issue #5 below. 3) The Wallet Unit SHALL enable the User to indicate that they want to be informed about the purpose of the RP. If the User indicates this, the Wallet Unit SHALL invoke a browser and take them to the URL.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>According to Topic X, the RPRC of a PID Provider or Attestation Provider contains its entitlements. However, according to the ARF section 6.3.2.3., this information is contained in the access certificate, because according to section 6.3.2.1, a PID Provider or Attestation Provider does not receive a RPRC when it registers. According to section 6.3.2.3, the access certificate of a PID Provider or Attestation Provider may optionally also contain the Provider's entitlement to issue attestations of a specific type, for instance an mDL or diploma. In the IA on RP registration, these are called sub-entitlements.</td>
+<td>6.3.2.1, 6.3.2.3, 6.6.2.1, 6.6.2.2, New/changed HLRs needed in Topic 10/23, Also updates to Topic X needed</td>
+<td>Contradictions need to be removed. Clarity needs to be given about where the Wallet Unit can find entitlements in case there is no RPRC.</td>
+<td>1) Unlike currently described in the ARF, a PID Provider or Attestation Provider optionally receives a RPRC during registration. This RPRC contains its basic entitlements as well as its sub-entitlements. So the sub-entitlements are not optional, like currently in the ARF. 2) The (sub-)entitlements of a PID Provider or Attestation Provider will not be included in the access cert, unlike currently described in the ARF. (Just like the registered attributes are not included in the access cert of an RP.) 3) The access cert of a PID Provider or Attestation Provider SHALL also contain the URL of an end point of the Registrar that the Wallet Unit can use to obtain information about the Provider. 4) If a Wallet Unit contacts an Attestation Provider to request issuance of an attestation, it receives an access certificate and optionally a RPRC from the Provider. If there is no RPRC, the Wallet Unit SHALL contact the Registrar and requests the entitlements of the Attestation Provider. 5) Like when a RPRC is present, the Wallet Unit SHALL notify the User in case the Attestation Provider has not been registered for the attestation type. In addition, the Wallet Unit SHALL also notify the User in case the Wallet Unit was not able to contact the Registrar. Otherwise (i.e., if everything is OK), a User notification is optional. <em>Notes: (i) In step 4 contacting the Register is mandatory and should not be left to the User to decide (like in #issue 1 above). This is because the risk to privacy is less compared to the analogous risk in issue #1.  (ii) Additionally, we need to check if the ARF already describes that a Relying Party can also check the subentitlement of an Attestation Provider.</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Embedded disclosure policies may be based on information in the RPRC as well as the access certificate.</td>
+<td>6.6.2.7.2, 6.6.3.4, EDP_02</td>
+<td>Not possible to base EDPs on information in the RPRC</td>
+<td>Let an EPD refer only to information in the access certificate. Since only policies 2 and 3 (per the IA) are mandated for EDPs, this is possible, because the unique RP identifier is in the access certificate</td>
+</tr>
+<tr>
+<td>5</td>
+<td>RPRC contains the (business) relation between an end-RP and the intermediary it uses. The RPRC of the end-RP contains an attribute containing the identifier of the intermediary. The Wallet Unit verifies that that this identifier is identical to the RP identifier in the access cert it got. In addition, the Wallet Unit shows the name/identifier of the end-RP in the RPRC to the User.</td>
+<td>3.11, 6.6.3.5, Annex 2 Topic 52, 3.11, 6.6.3.5</td>
+<td>No way for the Wallet Unit to know that the intermediary is requesting attributes on behalf of an end-RP. No way for the Wallet Unit to receive the name of the end-RP.</td>
+<td>The process is basically the same as for issue #1 above: 1) The URL of the end point of the Registrar mentioned in step 1) of issue #1 enables the Wallet Unit to obtain information about the intermediary as well as its end-Relying Parties. Note that according to the IA on RP registration, an intermediary and its end-RPs are always registered by the same Registrar. 2) If the intermediary does not include an RPRC in the presentation request, it SHALL include the user-friendly name and the unique identifier of the end-RP in a different field of the presentation request. The Commission SHALL reference or create an extension of ISO/IEC 18013-5 and OpenID4VP that enables this. The Wallet Unit SHALL show the user-friendly name of the end-RP to the User when asking for User approval. 3) If the User has indicated that they want to do the additional verifications meant in step 2) of issue #1, a. the Wallet Unit SHALL retrieve the RPRC from the presentation request, if present, and proceed as already described in the ARF 1.9.0.  b. If the RPRC is not present, the Wallet Unit SHALL retrieve the unique identifier of the end-PR from the presentation request and use it to request the Registrar at the URL in point 1) to confirm (i) that this RP indeed uses the services of this intermediary. (ii) that this end-RP has been properly registered for the attributes it is requesting. c. The Wallet Unit SHALL notify the User about the outcome of these verifications in case one or both of them are unsuccessful. The Wallet Unit SHALL also notify the User in case the Wallet Unit was not able to retrieve the RPRC information. Otherwise (i.e., if everything is OK), a User notification is optional.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>HLR DASH_03 says: For a presentation transaction executed through the Wallet Unit, the log SHALL contain the name, contact details, and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established. DASH_05 says For an issuance or re-issuance transaction executed through the Wallet Unit, the log SHALL contain the name, contact details, and unique identifier of the corresponding PID Provider or Attestation Provider. These HRLs do not say where the Wallet Unit gets this information, and neither does the main document.  But the assumption was from the RPRC. Moreover, in Topic M it was decided that the RPRC also contains the contact details of the relevant DPA.</td>
+<td>Topic 19, (After 1.10:) Topic 48, Topic 50</td>
+<td>The name and unique ID are in the RP access certificate, but the contact details are not (to my understanding). So we need to define where the Wallet Unit gets this information if there is no RPRC.</td>
+<td>DASH_03 and DASH_05 must be adapted to say that name and unique ID come from the access certificate, and that logging of the contact details is only required if there is a RPRC containing this info. Moreover, the Wallet Unit SHALL log the URL of the end point of the Registrar (from the access cert, see also point 1 in issue #1). During integration of Topic L (data deletion) and M (report to DPA) into the ARF, we need to specify how the Wallet Unit obtains the contact details of the RP or the DPA in case these are not in the log (because there was no RPRC). The Wallet Unit can contact the Registrar to do so.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-but-related-changes-to-be-done-in-the-arf-when-updating-texts-on-the-rprc">Other but related changes to be done in the ARF when updating texts on the RPRC</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+<th>Section(s) in ARF</th>
+<th>Proposed solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>The ARF does not contain the concept of a Trusted List of Relying Party Registrars. Yet, Topic 44 says that such Registrars sign RP registration certificates, and that Wallet Units must verify the authenticity of these certificates. A Wallet Unit can only do so if it has the trust anchors of all Registrars, and that implies we need a Trusted List for them.</td>
+<td>Main document chapter 6 (including in Figure 11), Annex 2 Topic 44.</td>
+<td>Add the Trusted List of Relying Party Registrars both in the ARF main document and in Topic 44.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The ARF main document does not distinguish a Registrar for Wallet Providers, PID Providers and Attestation Providers. Instead, it says that these entities are registered by a Trusted List Provider. This is also shown in Figure 11. This is not consistent with the language used in the IA on RP registration.</td>
+<td>Main document chapter 6 (including in Figure 11), Topic 44</td>
+<td>We need to introduce a separate Access Certificate Provider and Registration Certificate Provider, as these roles are introduced in the IA on Art 5b, in addition to the role of Registrar.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>The ARF is not clear on the number of RPRCs per request and the number of purposes per RPRC. This needs to be explained.</td>
+<td>6.6.3.3, Topic 44</td>
+<td>Each request by an RP shall have one purpose and shall therefore have only one RPRC. The RP may request attributes from multiple attestations, but those should all be covered by the same RPRC. (i) If the RP wants to request data for multiple purposes from the same Wallet Unit, they shall send multiple requests. (ii) It's the RP's responsibility to ensure that they get an RPRC for each of their purposes. (iii) A purpose is indicated by means of a URL to the privacy policy of the Relying Party regarding the intended use. See also issue #2 above.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Terminology</td>
+<td></td>
+<td>The ARF must no longer use "suspension" and "withdrawal" of the RP, but "suspension" and "cancellation" of the registration of an RP when talking about registration</td>
+</tr>
+</tbody>
+</table>
 <h2 id="7-references">7 References</h2>
 <table>
 <thead>
@@ -1585,7 +1679,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[OID4VP]</td>
-<td><a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0-24.html">OpenID for Verifiable Presentations - draft 24</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID for Verifiable Presentations</a></td>
 </tr>
 <tr>
 <td>[German non-paper on RP Authn]</td>
@@ -1597,15 +1691,15 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[ETSI EN 319 401]</td>
-<td><a href="https://www.etsi.org/deliver/etsi_en/319400_319499/319401/02.03.01_60/en_319401v020301p.pdf">ETSI Electronic Signatures and Infrastructures; General Policy Requirements for Trust Service Providers</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/140">ETSI Electronic Signatures and Infrastructures; General Policy Requirements for Trust Service Providers</a></td>
 </tr>
 <tr>
 <td>[ETSI TS 119 461]</td>
-<td><a href="https://www.etsi.org/deliver/etsi_ts/119400_119499/119461/01.01.01_60/ts_119461v010101p.pdf">ETSI Electronic Signatures and Infrastructures; Policy and security requirements for trust service components providing identity proofing of trust service subjects</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/271">ETSI Electronic Signatures and Infrastructures; Policy and security requirements for trust service components providing identity proofing of trust service subjects</a></td>
 </tr>
 <tr>
 <td>[ETSI EN 319 412-1]</td>
-<td><a href="https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.06.00_20/en_31941201v010600a.pdf">ETSI Electronic Signatures and Infrastructures; Certificate Profiles, Part 1: Overview and common data structures</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/178">ETSI Electronic Signatures and Infrastructures; Certificate Profiles, Part 1: Overview and common data structures</a></td>
 </tr>
 </tbody>
 </table>
