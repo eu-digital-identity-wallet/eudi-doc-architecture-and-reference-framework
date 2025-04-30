@@ -1,6 +1,6 @@
 # I - Natural person representing another natural person
 
-Version 0.2, updated 23 April 2025
+Version 0.3, updated 30 April 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495)
 
@@ -118,7 +118,7 @@ behalf of another natural person (the principal).
 Based the regulation, it should be possible to issue an attestation for a natural 
 person to a legal representative. Rules for issuing an attestation to a legal
 representative SHALL be defined in the corresponding Rulebook according to the
-applicable legislation.
+applicable national and european legislation.
 
 A PID or attestation issued to a legal representative SHALL be distinct from the 
 original issued to the natural person, and SHALL include information specifying 
@@ -143,19 +143,21 @@ may need to authorize a representative.
 
 To support such cases, mandates SHALL be managed through a distinct attestation type. 
 This mandate-specific attestation SHALL clearly define the operations the agent 
-is authorized to perform, thereby limiting the scope of its authorization. At the 
-same time a principal SHALL be able to revoke such an attestation. 
-
+is authorized to perform, thereby limiting the scope of its authorization. 
+Such an attestation SHALL be either short-lived or revocable. 
+In the case of revocable attestations, all entities which, according to applicable 
+law, must have the ability to revoke them SHALL be able to do so. Furthermore, high level
+requirements related to attestation revocation, defined in Annex 2 of ARF, are
+applicable to attestations corresponding to mandates.
 
 ## 3.2 Attestation Presentation
 A natural person should be able to represent another natural person 
 when interacting with a Relying Party. The Relying Party SHALL always be aware
-that it interacts with a legal representative or an agent, either because this information is embedded
-in the corresponding PID or attestation, or because the corresponding Wallet Unit
-presents a mandate-specific attestation. 
+that it interacts with a legal representative or an agent, either because this information is embedded in the corresponding PID or attestation, or because the corresponding Wallet Unit
+presents a mandate-specific attestation. In the case where the information is embedded, 
+it SHALL NOT be possible to hide the representation information contained in the PID 
+or attestation.
 
-A Relying Party SHALL log all operation performed by a legal representative or agent and make
-them available to the principal when requested. 
 
 
 ## 4 Additions and changes to the ARF
@@ -169,22 +171,22 @@ issuance. These rules SHALL comply with applicable legislation.
 **Requirement 2**
 PID Providers and Attestation Providers SHALL ensure that PID or attestation issued 
 to a legal representative is distinct from the original issued to the natural person, 
-and it includes information specifying the nature of the representation. 
+and it includes information specifying the nature of the representation. Wallet Units
+SHALL NOT hide this information from the Relying Parties.
 
 **Requirement 3**
 The Commission SHALL create a Rulebook for attestations corresponding to mandates. 
 An attestation corresponding to a mandate SHALL be issued to the Wallet Unit of the
-agent and clearly define the operations 
+agent and clearly define a validity period and the operations 
 the agent is authorized to perform, thereby limiting the scope of its authorization.
 
 
 **Requirement 4**
-An Attestation Provider issuing attestations corresponding to mandates SHALL ensure that the 
-principal has the ability to revoke such attestations
+An Attestation Provider issuing attestations corresponding to mandates SHALL ensure 
+that either the attestations are short-lived or that all entities which, according 
+to applicable law, must have the ability to revoke such attestations are able to do so.
 
-**Requirement 5**
-A Relying Party SHALL maintain a log of all actions performed by an agent or legal representative 
-and SHALL provide access to this log to the principal upon request.
+
 
 ### 4.2 High-Level Requirements to be changed
 
