@@ -1870,7 +1870,7 @@ attestations of attributes can be used:
 
 - The format specified in [ISO/IEC 18013-5] and generalised in [ISO/IEC 23220-2],
 - The format specified in 'SD-JWT-based Verifiable Credentials' [SD-JWT VC],
-- The format specified in 'W3C Verifiable Credentials Data Model v2.0'[W3C VCDM 2.0].
+- The format specified in 'W3C Verifiable Credentials Data Model v2.0' [W3C VCDM 2.0].
 
 The next subsections give more information about each of these formats and
 specifications, and explain where the different elements of an attestation, as
