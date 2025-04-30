@@ -1,4 +1,4 @@
-# Version 0.9, updated 22 April 2025
+# Version 0.95, updated 28 April 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496)
@@ -40,7 +40,7 @@ The document is structured as follows:
 
 ## 2 Legal Requirements for Transactional Data for payments and other use cases
 
-The [European Digital Identity Regulation] requires the Wallets to support and provide a function of strong user authentication, that could be used to authenticate the User accessing or using an online service that require identification and strong authentication (by EU or local law or by contractual obligation).
+The [European Digital Identity Regulation] requires the Wallets to support and provide a function of strong user authentication, that could be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or local law or by contractual obligation).
 The online services might be of any type, provided by public or private Service Providers, in particular from  the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications (but not limited to these ones only).
 
 Therefore the Wallet Solutions should provide functionality that enable wallet-Relying Parties (which are the Service Providers) to use the Wallets as an external tool of User authentication.
@@ -91,18 +91,18 @@ In general the life cycle of a Wallet Unit in the role of an authenticator, comp
 + authentication - performing User authentication in an on-line service, on request of that service,
 + de-registration - unlinking the Wallet Unit from a service and the User's account in that service.
 
-As the result of registration, a specific Attestation ("service credentials") is issued by the Service Provider or other Wallet-Relying Party (depending on the scheme) to the Wallet Unit. The registration relies on the standard Attestation issuance processes, and the data included in this Attestaion are defined by the Service Provider.
+As the result of registration, a specific Attestation ("service credentials") is issued by the Service Provider or other Wallet-Relying Party (depending on the scheme) to the Wallet Unit. The registration relies on the standard Attestation issuance processes, and the data included in this Attestation are defined by the Service Provider.
 
 In the authentication phase, the Wallet Unit will receive the presentation request of the "service credentials". The presentation is a standard process for the Wallet User, however the request should include transactional data (unique for each service transaction).
 In some cases, like payment authentication, the Wallet Unit should display to the User (some) transaction related data (that should be inlcuded in the transactional data).
 
-After the User accepting the presentation request, the Wallet response should include the transactional data, as well as piece of data generated dynamically by the Wallet Unit, for each such presentation, to provide a proof of the User's approval and meet compliance needs where necessary (eg. PSD2 dynamic linking). 
+After the User accepts the presentation request, the Wallet response should include the transactional data, as well as piece of data generated dynamically by the Wallet Unit, for each such presentation, to provide a proof of the User's approval and meet compliance needs where necessary (eg. PSD2 dynamic linking). 
 
 #### 3.1.3 The Goals of the Discussion
 
 The goal of the discussion is to work out a set of generic HLRs that are not tied to any specific use case, unless justified. The intention is to keep the Wallet's role as limited as possible - just as an enabler of the use cases. 
 
-The legal text sets out the requirement to use the Wallet as a strong authenticator in the context of "online services". However the ARF envisions transactions initiated in/from the same Wallet Unit or by another device in proximity mode. 
+The legal text sets out the requirement to use the Wallet as a strong authenticator in the context of "online services". However ARF envisions transactions initiated in/from the same Wallet Unit or by another device in proximity mode. 
 
 To summarise, there are several fundamental questions to be discussed and answered before proposing the set of HLRs. These questions are presented in the next sections.
 
@@ -121,7 +121,7 @@ As the outcome:
 
 **Question 1:** Are rules for representing the contents of a transaction necessary and if so, who should specify these? 
 
-**Question 2:** Should it be possible to send a transaction to from one Wallet User to another Wallet User?  
+**Question 2:** Should it be possible to send a transaction to/from one Wallet User to another Wallet User?  
 
 **Question 3:** Should it be possible for a Wallet-Relying Party to define the structure and contents of a transaction? 
 
@@ -163,10 +163,12 @@ The HLRs set out in the Topic 16 have been reviewed too, however no changes have
 
 **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| TD_01  | The Wallet SHALL be able to identify and read out transactional data included in a presentation request. Rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
-| TD_02  | The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction. |      New     |
-| TD_03  | The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the Wallet User basing on the transactional data contained in the presentation request, according to rules set out in TD_01. |      New     |
-| TD_04  | The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code). |      New     |
+| TD_01  | The Wallet SHALL be able to process and render transactional data included in a presentation request. Rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
+| TD_02 TO BE REPLACED  | The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction. |      New     |
+| TD_02 NEW VERSION PROPOSAL | The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data or its parts. The scope of transactional data included in the response is set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. _Note: Such a response, signed with the private key of the attestation that was the subject of the presentation request, constitutes as a proof of transaction. This requirement is met by use of key binding in [SD-JWT-VC]._    |      New     |
+| TD_03  | The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the User (like font size and colour, background colour, text  position, labels in the buttons to 'approve' or 'reject' a transaction) basing on the transactional data contained in the presentation request, according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request.   |      New     |
+| TD_04  | The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code), according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. _Note: For payment SCA this requirement is met by use of key binding in [SD-JWT-VC]._  |      New     |
+
 
 
 
