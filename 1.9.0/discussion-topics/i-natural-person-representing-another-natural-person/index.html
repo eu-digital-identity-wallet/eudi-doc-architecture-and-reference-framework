@@ -395,7 +395,7 @@
 
 
 <h1 id="i-natural-person-representing-another-natural-person">I - Natural person representing another natural person</h1>
-<p>Version 0.2, updated 23 April 2025</p>
+<p>Version 0.3, updated 30 April 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -494,7 +494,7 @@ behalf of another natural person (the principal).</p>
 <p>Based the regulation, it should be possible to issue an attestation for a natural 
 person to a legal representative. Rules for issuing an attestation to a legal
 representative SHALL be defined in the corresponding Rulebook according to the
-applicable legislation.</p>
+applicable national and european legislation.</p>
 <p>A PID or attestation issued to a legal representative SHALL be distinct from the 
 original issued to the natural person, and SHALL include information specifying 
 the nature of the representation. </p>
@@ -515,16 +515,19 @@ in other use cases (e.g., power of attorney) the represented natural person
 may need to authorize a representative. </p>
 <p>To support such cases, mandates SHALL be managed through a distinct attestation type. 
 This mandate-specific attestation SHALL clearly define the operations the agent 
-is authorized to perform, thereby limiting the scope of its authorization. At the 
-same time a principal SHALL be able to revoke such an attestation. </p>
+is authorized to perform, thereby limiting the scope of its authorization. 
+Such an attestation SHALL be either short-lived or revocable. 
+In the case of revocable attestations, all entities which, according to applicable 
+law, must have the ability to revoke them SHALL be able to do so. Furthermore, high level
+requirements related to attestation revocation, defined in Annex 2 of ARF, are
+applicable to attestations corresponding to mandates.</p>
 <h2 id="32-attestation-presentation">3.2 Attestation Presentation</h2>
 <p>A natural person should be able to represent another natural person 
 when interacting with a Relying Party. The Relying Party SHALL always be aware
-that it interacts with a legal representative or an agent, either because this information is embedded
-in the corresponding PID or attestation, or because the corresponding Wallet Unit
-presents a mandate-specific attestation. </p>
-<p>A Relying Party SHALL log all operation performed by a legal representative or agent and make
-them available to the principal when requested. </p>
+that it interacts with a legal representative or an agent, either because this information is embedded in the corresponding PID or attestation, or because the corresponding Wallet Unit
+presents a mandate-specific attestation. In the case where the information is embedded, 
+it SHALL NOT be possible to hide the representation information contained in the PID 
+or attestation.</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
 <p><strong>Requirement 1</strong>
@@ -534,18 +537,17 @@ issuance. These rules SHALL comply with applicable legislation.</p>
 <p><strong>Requirement 2</strong>
 PID Providers and Attestation Providers SHALL ensure that PID or attestation issued 
 to a legal representative is distinct from the original issued to the natural person, 
-and it includes information specifying the nature of the representation. </p>
+and it includes information specifying the nature of the representation. Wallet Units
+SHALL NOT hide this information from the Relying Parties.</p>
 <p><strong>Requirement 3</strong>
 The Commission SHALL create a Rulebook for attestations corresponding to mandates. 
 An attestation corresponding to a mandate SHALL be issued to the Wallet Unit of the
-agent and clearly define the operations 
+agent and clearly define a validity period and the operations 
 the agent is authorized to perform, thereby limiting the scope of its authorization.</p>
 <p><strong>Requirement 4</strong>
-An Attestation Provider issuing attestations corresponding to mandates SHALL ensure that the 
-principal has the ability to revoke such attestations</p>
-<p><strong>Requirement 5</strong>
-A Relying Party SHALL maintain a log of all actions performed by an agent or legal representative 
-and SHALL provide access to this log to the principal upon request.</p>
+An Attestation Provider issuing attestations corresponding to mandates SHALL ensure 
+that either the attestations are short-lived or that all entities which, according 
+to applicable law, must have the ability to revoke such attestations are able to do so.</p>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="5-references">5 References</h2>
