@@ -701,6 +701,7 @@ certificate (see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-p
 bearing its own name and Relying Party identifier. This access certificate is not
 different from an access certificate issued to a 'normal' Relying Party, since
 an intermediary is, as a matter of legal fact, a Relying Party.
+Note: In addition, the intermediary may receive a registration certificate, if issued (see [Section 6.6.3.3](#6633-Wallet-Unit-allows-User-to-verify-that-Relying-Party-does-not-request-more-attributes-than-it-registered)). However this certificate is not used in intermediated transactions. 
 2. Next, the intermediary will separately register each of the 'end' Relying
 Parties that uses its services, including registering the attributes the 'end'
 Relying Party wants to request. The intermediary obtains a registration
@@ -715,14 +716,19 @@ presentation of attributes from Wallet Units, using one or more of the flows
 described in [Section 4.4](#44-data-presentation-flows). For this, the
 intermediary will use their own access certificate (point 1. above) and the
 registration certificate of the 'end' Relying Party (point 2. above).
-4. If a Wallet Unit, during a transaction, receives a registration certificate
-indicating that the Relying Party uses the services of an intermediary, it
+
+4. If a Wallet Unit during a transaction, obtains information that the Relying Party uses the services of an intermediary, it
 verifies that the name and the identifier of the intermediary in the
 registration certificate are identical to the name and identifier in the access
 certificate. If this verification fails, the Wallet Unit treats this as a
 Relying Party authentication failure. If this verification succeeds, the Wallet
 Unit displays to the User the name of the intermediary next to the name of the 'end' Relying Party when asking for User
-approval to present the requested attributes.
+approval to present the requested attributes. 
+
+    The Wallet Unit obtains information whether the Relying Party uses the services of an intermediary, along with the name of the 'end' Relying Party, from:
+    + the registration certificate - if provided in the presentation request, or
+    + the information contained in the presentation request (note: this will need an extension of [ISO/IEC 18013-5] and [OpenID4VP])
+
 5. When a Wallet Unit presents a PID or attestation to the intermediary, the
 intermediary verifies the authenticity of the PID or attestation, its revocation
 status, device binding, and User binding, as well as any combined presentation
@@ -751,8 +757,7 @@ WUAs immediately after it has completed all necessary verifications.
 
 Note that this approach implies that an intermediary (if it is acting only as an
 intermediary, and never as an 'end' Relying Party in its own right) will not
-need a registration certificate. Conversely, an 'end' Relying Party using the
-services of an intermediary will not need an access certificate.
+need a registration certificate (despite it might be issued by a Registrar, according to rules set out by a given Member State). Conversely, an 'end' Relying Party using the services of an intermediary will not need an access certificate.
 
 As discussed in [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
 during a transaction, a Wallet Unit requests the User for their approval to
@@ -763,6 +768,10 @@ and the fact that this Relying Party is using the services of the intermediary
 (from the registration certificate).
 
 For high-level requirements on this topic, see [Topic 52](./annexes/annex-2/annex-2-high-level-requirements.md#a2352-topic-52-relying-party-intermediaries).
+
+In addition, before approval, the User may want to verify the 'end' Relying Party registration information and the scope of attributes requested, as described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)).
+
+
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -1070,18 +1079,18 @@ the Wallet Unit presents attestations to a machine, without human supervision.
 The interfaces and protocols used in this flow are the same as for the proximity
 supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
 - **Remote Same-Device Flow**: In this flow, the User utilises a web browser or
-another application on their User Device to access a Relying Party's a service.
+another application on their User device to access a Relying Party's a service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
 request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows),
 this request is managed by the web browser on the User's device, utilising a
 solution like the [W3C Digital Credentials API].
 - **Remote Cross-Device Flow**: In this flow, the User uses a web browser on a
-device other than their Wallet Instance, for instance a desktop or laptop, to
-access the Relying Party's service. If the Relying Party needs to send a
+device other than the User device on which their Wallet Unit is installed to
+access the Relying Party's service. This other device could be for instance a desktop, laptop, or another mobile device. If the Relying Party needs to send a
 presentation request to the User's Wallet Unit, it presents this request to the
 web browser on the other device. Again using the [W3C Digital Credentials API],
-this web browser might set up a secure communication channel between the other device
+this web browser sets up a secure communication channel between the other device
 and the User's device. [Section 4.4.3.3](#4433-cross-device-remote-presentation-flows)
 explains this in more detail.
 
@@ -1214,7 +1223,7 @@ A remote same-device attribute presentation flow begins when the User accesses
 the Relying Party's website using a browser on their device. The website may
 provide an option for the User to present attributes from their Wallet Unit,
 typically via a button or similar interface. When the User selects this option,
-the browser prompts the User for permission to connect to the Wallet Unit. Upon
+the browser may ask the User for permission to initiate the presentation flow. Upon
 granting permission, the Relying Party Instance sends a presentation request
 compliant with the OpenID4VP specification to the browser via the Digital
 Credentials API. The browser, working in tandem with the device's operating
@@ -1248,8 +1257,7 @@ A remote cross-device attribute presentation flow begins when the User uses a
 browser on a device different from their User device to visit the website of the
 Relying Party. The website may offer the User the possibility to present
 attributes from their Wallet Unit, for example by clicking a button. If the User
-does so, the browser will ask the User for permission to connect to the Wallet
-Unit. If the User allows this, the Relying Party Instance sends a presentation
+does so, the browser may ask the User for permission to initiate the presentation flow. If the User allows this, the Relying Party Instance sends a presentation
 request to the browser over the Digital Credentials API. The browser then
 establishes a tunnel towards the User device, using the FIDO CTAP 2.2 hybrid
 flow, see section 11.5 of [CTAP]. Note that this flow is also used for FIDO
@@ -1484,17 +1492,17 @@ Figure 8 shows the possible states of a PID Provider or Attestation Provider.
 Figure 8: State diagram of PID Provider or Attestation Provider
 
 The **Valid** state is the first state of a PID Provider or Attestation
-Provider. This means it is registered by the corresponding Trusted List Provider
+Provider. This means it is registered by the corresponding Trusted List Provider (Registrar)
 and notified to the Commission, as described in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 
 The Trusted List Provider can temporarily suspend a PID Provider or Attestation
 Provider. This leads to the **Suspended** state. The Trusted List Provider can
 unsuspend the PID Provider or Attestation Provider, bringing it back to the
 **Valid** state. The Trusted List Provider can also decide to completely
-withdraw the PID Provider or Attestation Provider, which brings it in the
-**Withdrawn** state. For more information about suspension or withdrawal, please
-refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
-A suspended or withdrawn PID Provider or Attestation Provider cannot issue PIDs or
+cancel registration of the PID Provider or Attestation Provider, which brings it in the
+**Cancelled** state. For more information about suspension or cancellation, please
+refer to [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-cancellation).
+A PID Provider or Attestation Provider with suspended or cancelled registration cannot issue PIDs or
 attestations to Wallet Units, nor will a PID or attestation issued by such a PID
 Provider or Attestation Provider be accepted by Relying Parties.
 
@@ -1530,15 +1538,20 @@ Figure 10 shows the possible states of a Relying Party.
 
 ![Figure 10](media/Figure_10_Statechart_Relying_Party.png)
 
-Figure 9: State diagram of Relying Party
+Figure 10: State diagram of Relying Party
 
 The **Valid** state is the first state of a Relying Party. This means it has
 been registered by a Relying Party Registrar, as described in [Section 6.4.2](#642-relying-party-registration).
 
-The Registrar can de-register a Relying Party. This leads to the **Invalid**
-state. For more information about de-registration, please refer to [Section 6.4.3](#643-relying-party-de-registration).
-A Wallet Unit will not present a PID or attestation to a Relying Party that is
-in this state.
+The Registrar can suspend or cancel registration of a Relying Party.
+This leads to the **Suspended** state. The Registrar can
+unsuspend the Relying Party, bringing it back to the
+**Valid** state. The Registrar can also decide to completely
+cancel registration of the PID Provider or Attestation Provider, which brings it in the
+**Cancelled** state. For more information about suspension or cancellation, please
+refer to [Section 6.4.3](#643-relying-party-de-registration).
+A Wallet Unit will not present a PID or attestation to a Relying Party that its registration is suspended or cancelled.
+
 
 ### 4.7 Pseudonyms
 
@@ -2197,9 +2210,9 @@ The Wallet Unit handles **User PIDs** and **attestations** (QEAAs, PuB-EAAs, and
 non-qualified EAAs). PIDs are issued by **PID Providers** and attestations by
 **Attestation Providers**, both positioned to the left of the Wallet Unit in
 [Figure 11](#61-scope). Before interacting with a Wallet Unit these providers must be
-registered with a **PID Provider Trusted List Provider (TLP)** or **Attestation
-Provider TLP**. Upon registration, they receive an **access certificate** from a
-**PID Provider Access CA** or **Attestation Provider Access CA**.
+registered with a **PID Provider Registrar** or **Attestation
+Provider Registrar**. Upon registration, they receive an **access certificate** (from a
+**PID Provider Access CA** or **Attestation Provider Access CA**) and may optain one or more **registration certificates** ( from a **PID Provider Registration CA** or **Attestation Provider Registration CA**).
 See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
 
 Once a Wallet Unit receives a PID or attestation, it can present **User
@@ -2207,7 +2220,7 @@ attributes** to **Relying Party Instances** (right side of [Figure 11](#61-scope
 instances are hardware/software setups enabling **Relying Parties** to interact
 with Wallet Units. Relying Parties register with a **Relying Party Registrar**,
 receiving an **access certificate** for each Relying Party Instance, as well as
-a **Relying Party Registration Certificate**.
+may obtain one or more **Relying Party Registration Certificates**.
 This is discussed in [Section 6.4](#64-trust-throughout-a-relying-party-lifecycle).
 
 [Section 6.6](#66-trust-throughout-a-pid-or-an-attestation-lifecycle) further
@@ -2316,7 +2329,7 @@ lifecycle of a PID Provider or Attestation Provider:
 
 1. A PID Provider or an Attestation Provider is registered by a Trusted List Provider in its Member State. This is discussed in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 2. Under specific conditions, a Trusted List Provider may decide to suspend or
-withdraw a registered PID Provider or Attestation Provider. This is discussed in
+cancel registration of a registered PID Provider or Attestation Provider. This is discussed in
 [Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
 
 #### 6.3.2 PID Provider or Attestation Provider registration and notification
@@ -2326,12 +2339,12 @@ withdraw a registered PID Provider or Attestation Provider. This is discussed in
 [Figure 11](#61-scope) depicts the PID Providers and Attestation Providers to the left of the
 Wallet Unit. To the left and below of this, the figure also shows that each PID
 Provider and Attestation Provider will register itself with a PID Provider
-Trusted List Provider or an Attestation Provider Trusted List Provider in its Member State. The Member State notifies the PID Provider or Attestation Provider to the European Commission.
+Registrar or an Attestation Provider Registrar in its Member State. The Member State notifies the PID Provider or Attestation Provider to the European Commission.
 
 If the registration and notification processes are successful, at least the following happens:
 
 - Data about the PID Provider or Attestation Provider is included in the registry of the relevant Registrar.
-- The PID Provider or Attestation Provider receives an access certificate.
+- The PID Provider or Attestation Provider receives an access certificate, and optionally one or more registration certificates.
 - The trust anchors of the PID Provider or Attestation Provider are included in
 a Trusted List.
 
@@ -2367,9 +2380,7 @@ Certificate Authority issues one or more access certificates to the PID Provider
 or to the Attestation Provider. A PID Provider or an Attestation Provider needs
 such a certificate to authenticate itself towards a Wallet Unit when issuing a
 PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider).
-A PID Provider access certificate indicates that its subject is a PID Provider.
-Similarly, an Attestation Provider access certificate indicates that its subject
-is a QEAA Provider, a PuB-EAA Provider, or a non-qualified EAA Provider.
+
 
 Subsequently, the Access Certificate Authority is included in a PID Provider
 Access CA Trusted List or Attestation Provider Access CA Trusted List. This
@@ -2378,14 +2389,28 @@ use these trust anchors to verify the authenticity of a PID Provider or an
 Attestation Provider access certificate during the issuance of a PID or an
 attestation. For more information, see [Topic 31](./annexes/annex-2/annex-2-high-level-requirements.md#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication).
 
-The access certificate of a PID Provider or Attestation Provider may contain the
-Provider's entitlement to issue attestations of a specific type, for instance an
-mDL or diploma. If this is the case, a Wallet Unit can use this information to
-verify that a Provider it is contacting to obtain a specific type of attestation
-is indeed entitled to issue attestations of that type. If the access certificate
-does not contain this information, the Wallet Unit can always obtain this
-information from the register of the relevant Trusted List Provider; see
-[Section 6.3.2.2](#6322-data-about-the-pid-provider-or-attestation-provider-is-included-in-the-registry).
+A PID Provider access certificate does not indicate that its subject is a PID Provider.
+Similarly, an Attestation Provider access certificate does not indicate that its subject
+is a QEAA Provider, a PuB-EAA Provider, or a non-qualified EAA Provider. Such information is included
+in the registration certificates (if issued), or available in the Registrar's on-line service.
+Furthermore, the access certificate of a PID Provider or Attestation Provider does not contain the
+Provider's entitlements, e.g. to issue attestations of a specific type, for instance an
+mDL or diploma ("intended use"). Such information is included in the Relying Party's registration certificate (if issued) and available in the Registrar's on-line service.
+
+See [Section 6.6.3.3](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/feature/1.10.0/docs/architecture-and-reference-framework-main.md#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered) to learn more about the registration certificate content.
+
+A Wallet Unit can use this information to verify that a Provider it is contacting to issue a specific type of attestation, is entitled to do so (verification of the type of the Provider and the "intended use"). 
+
+If the registration certificate is not available, the Wallet Unit can always obtain this
+information from the Registrar's on-line service (see
+[Section 6.3.2.2](#6322-data-about-the-pid-provider-or-attestation-provider-is-included-in-the-registry)). 
+
+To manage both flows - with use of the registration certificate and without - the access certificates contains 
++ information (a flag) to indicate whether the registration certificate was issued or not,
++ URL to the the Registrar's on-line service providing information on the Relying Parties registrations.
+In case the intermediary is acting on behalf of an 'end' Relying Party, the information if the registration certificate is available is contained in the presentation request. (Note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
+
+
 
 ##### 6.3.2.4 PID Provider or Attestation Provider trust anchors are included in a Trusted List
 
@@ -2409,25 +2434,25 @@ More details on the PID Provider or Attestation Provider notification process,
 as well as on the information registered and published in the PID Provider
 Trusted List or Attestation Provider Trusted List, can be found in [Topic 31](./annexes/annex-2/annex-2-high-level-requirements.md#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication).
 
-#### 6.3.3 PID Provider or Attestation Provider suspension or withdrawal
+#### 6.3.3 PID Provider's or Attestation Provider's registration suspension or cancellation
 
-Under specific conditions, a Trusted List Provider may decide to suspend or
-withdraw a registered PID Provider or Attestation Provider. The conditions for
-this will be specified by each Trusted List Provider.
+Under specific conditions, a Registrar may decide to suspend or
+cancel registration of a PID Provider or Attestation Provider. The conditions for
+this will be specified by each Registrar.
 
-Suspension or withdrawal implies that the PID Provider or Attestation Provider
+Suspension or cancellation implies that the PID Provider or Attestation Provider
 access certificates are revoked. As a result, the PID Provider or Attestation
 Provider will no longer be able to issue PIDs or attestations to Wallet Units.
 
-For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or withdrawal
+For a PID Provider, QEAA Provider or PuB-EAA Provider, suspension or cancellation
 also implies that its status in the respective Trusted List will be changed to
 Invalid. As a result, Relying Parties will no longer trust PIDs or attestations
-issued by the suspended or withdrawn Provider. For non-qualified EAA Providers,
+issued by the Provider with suspended or cancelled registration. For non-qualified EAA Providers,
 the applicable Rulebook (see [Topic 12](./annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks))
 may define additional mechanisms ensuring that Relying Parties will no longer
-trust the trust anchors of EAA Providers that have been suspended or withdrawn.
+trust the trust anchors of EAA Providers of which registration was suspended or cancelled.
 
-When a Trusted List Provider suspends or withdraws a PID Provider or Attestation
+When a Registrar suspends or cancels registration of a PID Provider or Attestation
 Provider, the PID Provider or Attestation Provider revokes all of their PIDs or
 attestations as described in [Section 6.6.3.7](#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked).
 
@@ -2439,7 +2464,7 @@ attestations as described in [Section 6.6.3.7](#6637-relying-party-verifies-that
 
 1. A Relying Party is registered by a Registrar in the Member State where it
 resides. Relying Party registration is discussed in [Section 6.4.2](#642-relying-party-registration).
-2. Under specific conditions, a Registrar may decide to de-register a registered
+2. Under specific conditions, a Registrar may decide to suspend or cancel registation of a
 Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-de-registration).
 
 #### 6.4.2 Relying Party registration
@@ -2454,19 +2479,20 @@ employing multiple lines where arriving passengers can present their PID.
 [Figure 11](#61-scope) also shows the Relying Party. Below that, it shows that each Relying
 Party will register itself with a Relying Party Registrar in its Member State.
 If the registration process is successful, the Registrar includes the Relying
-Party in its public registry.
+Party in its public registry. 
+
+A Relying Party may register in the context of its several services, one per each intended use and requiring a specific attributes to be obtained from a Wallet Unit. In result, a single Relying Party may register multiple times and may be issued more than one registration certificate.  
 
 As a result of successful registration,
 
-- the Registrar issues a registration certificate to the Relying Party. The
-purpose of the registration certificate is described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
+- the Relying Party Registration Certificate Authority (CA) may issue a registration certificate to the Relying Party. The purpose of the registration certificate is described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered).
 - a Relying Party Instance Access Certificate Authority (CA) associated with the
 Registrar issues an access certificate to each Relying Party Instance of the
 Relying Party. A Relying Party Instance needs such a certificate to authenticate
 itself towards Wallet Units when requesting the presentation of attributes, as
 described in [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance).
 
-Subsequently, a Trusted List Provider in each Member State creates a Relying
+Subsequently, a Relying Party Registrar (or a Trusted List Provider acting on its behalf) in each Member State creates a Relying
 Party Instance Access CA Trusted List containing the trust anchor(s) of all
 associated Relying Party Instance Access CA(s). A Wallet Unit can use these
 trust anchors to verify the authenticity of Relying Party Instance access
@@ -2480,10 +2506,10 @@ More details on the Relying Party registration process can be found in [Topic 27
 
 #### 6.4.3 Relying Party de-registration
 
-Under specific conditions, a Registrar may decide to de-register a registered
+Under specific conditions, a Registrar may decide to suspend or cancel registration of a registered
 Relying Party. The conditions for this will be specified by each Registrar.
 
-De-registration involves revocation of all valid Relying Party Instance access
+Suspension or cancellation involves revocation of all valid Relying Party Instance access
 certificates by the relevant Access CA, such that the Relying Party is no longer
 able to interact with Wallet Units.
 
@@ -2917,15 +2943,21 @@ for example use the Wallet Unit to scan a QR code or tap an NFC tag to do so.
 Note that no centralised service discovery mechanism for PID or attestation
 issuance is foreseen.
 
+
 Before requesting the issuance of a PID or an attestation, the Wallet Unit
 authenticates the PID Provider or the Attestation Provider. To do so, the Wallet
 Unit verifies the access certificate presented to it by the PID Provider or
-Attestation Provider in its Issuer metadata according to [OpenID4VCI]. The
-Wallet Unit checks that the access certificate indicates that its subject is a
-PID Provider or an Attestation Provider. The Wallet Unit also verifies that the
-access certificate is authentic, that it is valid at the time of validation, and
-that the issuer of the certificate is a CA that is in the PID Provider or
-Attestation Provider Access CA Trusted List.
+Attestation Provider in its Issuer metadata according to [OpenID4VCI]. 
+To verify the role and the entitlements of the requesting entity (whether it is an 
+PID Provider or an Attestation Provider and what type of attestation provider), the Wallet unit checks the registration information contained in the registration certificate 
+(if available) or the Registrar's on-line service.
+
+
+The Wallet Unit also verifies that the access certificate and registration certificate (if provided) 
+are authentic, that they are valid at the time of validation, and that the issuers of the certificates 
+are in the PID Provider or Attestation Provider Access CA Trusted List.
+
+
 
 ##### 6.6.2.3 PID Provider or Attestation Provider validates the Wallet Unit
 
@@ -3067,7 +3099,7 @@ root (or list of specific roots) or intermediate certificate(s).
 
 The first of these policies is the default and will be applied if the Attestation Provider does not provide an embedded disclosure policy for an attestation.
 
-For expressing conditions on Relying Parties, an embedded disclosure policy will refer to information included in the Relying Party registration certificate or the access certificate provided to the Wallet Unit by the Relying Party. Note that Relying Party registration certificates and access certificates are signed and hence the information they contain is authenticated.
+For expressing conditions on Relying Parties, an embedded disclosure policy will refer to information included in the access certificate provided to the Wallet Unit by the Relying Party. Note that access certificates are signed and hence the information they contain is authenticated.
 
 Wallet Units, as well as the mechanisms used for defining and evaluating policies, will provide support for at least policies 2. and 3. above. The Commission will ensure a technical specification is created that specifies how these policies will be formatted.
 
@@ -3107,7 +3139,7 @@ how this will be done.
 attributes than it has registered for, and informs the User about the outcome of
 this verification. See [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)
 for more information.
-3. The Attestation Provider, during issuance, may optionally have embedded a
+3. The Attestation Provider, during issuance, may optionally embedded a
 disclosure policy in the attestation. If such a policy is present for the
 requested attestation, the Wallet Unit evaluates the disclosure policy and
 informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present).
@@ -3188,8 +3220,7 @@ Subsequently, during each presentation of attributes:
 
 1. The Relying Party Instance prepares a request for some attributes to the
 Wallet Unit and includes its Relying Party Instance access certificate in the
-request, plus all intermediate certificates up to (but excluding) the trust
-anchor.
+request, plus all intermediate certificates up to (but excluding) the trust anchor.
 2. The Relying Party Instance signs some data in the attribute request using its
 private key.
 3. The Relying Party Instance sends the request to the Wallet Unit.
@@ -3212,12 +3243,15 @@ the Relying Party Instance.
 ##### 6.6.3.3 Wallet Unit allows User to verify that Relying Party does not request more attributes than it registered
 
 During registration, the Relying Party registered which attributes it intends to
-request from Wallet Units. The Registrar listed these attributes in a Relying
-Party registration certificate and sent it to the Relying Party, which
-distributes it to all of its Relying Party Instances.
+request from Wallet Units. 
+If the registration certificate had been issued for this Relying Party, 
++ the Registrar listed these attributes in this certificate and sent it to the Relying Party,
++ the Relying Party may distribute it to all of its Relying Party Instances,
++ the Relying Party Instance may send this registration certificate to the Wallet Unit in each presentation request.
 
-During a transaction, a Relying Party Instance sends this registration
-certificate to the Wallet Unit in the presentation request. The Wallet Unit
+
+During a transaction, the Wallet Unit offers to the User an option to perform verification of the 
+Relying Party registration information. If the User choses to do so, the Wallet Unit
 displays the contents of the registration certificate to the User when asking
 the User for approval, see
 [Section 6.6.3.5](#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes),
@@ -3229,12 +3263,25 @@ Wallet Unit can verify that the registration certificate belongs to the
 authenticated Relying Party, will be specified in a technical specification. For
 more information, see [Topic 44](./annexes/annex-2/annex-2-high-level-requirements.md#a2344-topic-44---relying-party-registration-certificates).
 
+In case the registration certificate was not issued or not provided in the presentation 
+request, the Wallet Unit offers to the User an alternative option to perform verification of the 
+Relying Party information, through an on-line check instead. 
+
+If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
++ the Relying Party Access Certificate, or
++ the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
+
+Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relaying Party access certificate or from the presentation request in case the requestor is an intermediary).
+The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
+The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional). 
+
+
+
 ##### 6.6.3.4 Wallet Unit evaluates embedded disclosure policy, if present
 
 During attestation issuance, an Attestation Provider optionally created an embedded
-disclosure policy for the attestation, see [Section 6.6.2.7](#6627-provisioning-embedded-disclosure-policies). If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy,
-together with information in the access certificate or the registration certificate presented by the Relying Party, to determine whether the
-Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of these certificates before using any data contained in them.
+disclosure policy for the attestation, see [Section 6.6.2.7](#6627-provisioning-embedded-disclosure-policies).
+If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy, together with information in the access certificate, to determine whether the Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of these certificates before using any data contained in them.
 
 The Wallet Unit presents the outcome of the disclosure policy evaluation to the
 User in the form of an advice, when requesting User approval. For example, "The
@@ -3292,13 +3339,14 @@ approve or deny the presentation of each (group of) attributes separately. The
 User takes a decision based on at least the following information:
 
 - The authenticated identity of the Relying Party,
-- The information in the Relying Party's registration certificate regarding the
-attributes that the Relying Party has registered during registration, at least
+- The information in the Relying Party's registration certificate or the information 
+received from the Registrar's on-line service regarding the
+attributes that the Relying Party has registered during registration ("intended use")- at least
 in case one or more of the requested attributes is not included in the list of
-attributes in the registration certificate,
-- The information in the Relying Party's registration certificate regarding an
-intermediary used by the Relying Party, if any, see
-[Section 3.11](#311-relying-parties-and-intermediaries).
+registered attributes,
+- The information in the Relying Party's registration certificate or the information 
+received from the Registrar's on-line service regarding an
+intermediary used by the Relying Party, if any - see [Section 3.11](#311-relying-parties-and-intermediaries).
 - The outcome of the evaluation of the embedded disclosure policy, if any.
 
 After the User gives their approval, the Wallet Unit will present the approved
@@ -3565,9 +3613,9 @@ data. For more information and requirements, see [Topic 48](./annexes/annex-2/an
 
 To be able to substantiate a complaint, or to list data that must be deleted,
 the User needs to be informed about which attributes were requested by which
-Relying Parties. To enable this, a Wallet Unit maintains a log of all attributes
+Relying Parties. To enable this, a Wallet Unit maintains a log of all transactions that are performed. For presentation transactions, this log includes the attributes
 that were requested and presented. The aforementioned dashboard also enables the
-User to view the log and lodge a complaint for any attribute in the log. More
+User to view the log and lodge a complaint for any transaction in the log. More
 details about the logging functionality can be found in [Topic 19](./annexes/annex-2/annex-2-high-level-requirements.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency).
 
 #### 6.6.4 PID or attestation presentation to another Wallet Unit
@@ -4321,7 +4369,7 @@ For undated references, the latest version available applies.
 | [CIR 2024/2977] | [Commission Implementing Regulation 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets |
 | [CIR 2024/2979] | [Commission Implementing Regulation 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets |
 | [CIR 2024/2980] | [Commission Implementing Regulation 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notifications to the Commission concerning the European Digital Identity Wallet ecosystem |
-| [CIR 2024/2981] | [Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
+| [CIR 2024/2981] | [Commission Implementing Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [CIR 2024/2982] | [Commission Implementing Regulation 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402982) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework |
 | [ISO/IEC 18013-5] | [ISO/IEC 18013-5](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application |
 | [ISO/IEC 18013-7] | [ISO/IEC 18013-7](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/1), Personal identification --- ISO-compliant driving licence - Part 7: Mobile driving licence (mDL) add-on functions |
@@ -4356,9 +4404,9 @@ For undated references, the latest version available applies.
 | [W3C VCDM v2.0] | Sporny, M. *et al,* [Verifiable Credentials Data Model v2.0](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/115), W3C Proposed Recommendation |
 | [W3C VC-JOSE-COSE] | Jones, M. *et al,* "[Securing Verifiable Credentials using JOSE and COSE](https://www.w3.org/TR/vc-jose-cose/)", W3C Proposed Recommendation |
 | [W3C VC Data Integrity] | Sporny, M. *et al,* [Verifiable Credential Data Integrity 1.0](https://www.w3.org/TR/vc-data-integrity/), W3C Proposed Recommendation |
-| [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://wicg.github.io/digital-credentials/)", Draft Community Group Report |
+| [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/10)", Draft Community Group Report |
 | [W3C WebAuthn] | Jeff Hodges *et al,* [Web Authentication](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314), An API for accessing Public Key Credentials Level 2, W3C Recommendation |
-| [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available: <https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html> |
+| [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available: <https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/365> |
 | [OpenID4VCI]| Lodderstedt, T. et al., "[OpenID for Verifiable Credential Issuance](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/3)", OpenID Foundation. |
 | [OpenID4VP] | Terbu, O. et al., "[OpenID Connect for Verifiable Presentations](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2)", OpenID Foundation.  |
 | [OIDC] | Sakimura, N. et al., "OpenID Connect Core 1.0", OpenID Foundation. Available: <https://openid.net/specs/openid-connect-core-1_0.html> |
@@ -4366,32 +4414,32 @@ For undated references, the latest version available applies.
 | [EKYC Schema] | Lodderstedt, T. et al., "OpenID Identity Assurance Schema Definition 1.0", OpenID Foundation. Available: <https://openid.net/specs/openid-ida-verified-claims-1_0-final.html> |
 | [HAIP] | Yasuda, K. et al, "[OpenID4VC High Assurance Interoperability Profile](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/4)", OpenId Foundation. |
 | [IANA-JWT-Claims] | IANA JSON Web Token Claims Registry. Available: <https://www.iana.org/assignments/jwt/jwt.xhtml> |
-| [Topic 6]| Annex 2 - Relying Party authentication and User approval |
-| [Topic 7] | Annex 2 - Attestation revocation and revocation checking |
-| [Topic 9] | Annex 2 - Wallet Unit Attestation |
-| [Topic 10] | Annex 2 -Issuing a PID or attestation to a Wallet Unit |
-| [Topic 11] | Annex 2 - Pseudonyms |
-| [Topic 12] | Annex 2 - Attestation Rulebooks |
-| [Topic 16] | Annex 2 - Signing documents with a Wallet Unit |
-| [Topic 18] | Annex 2 - Combined presentations of attributes |
-| [Topic 19] | Annex 2 - User Navigation requirements (Dashboard logs for transparency) |
-| [Topic 23] | Annex 2 - PID issuance and (Q)EAA issuance |
-| [Topic 25] | Annex 2 - Unified definition and controlled vocabularies for attributes |
-| [Topic 26] | Annex 2 - Catalogue of attestations |
-| [Topic 27] | Annex 2 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties |
-| [Topic 30] | Annex 2 - Interaction between Wallet Units |
-| [Topic 31] | Annex 2 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication |
-| [Topic 33] | Annex 2 - Wallet Unit backup and restore |
-| [Topic 34] | Annex 2 - Migrate to a different Wallet solution |
-| [Topic 37] | Annex 2 - QES -- Remote Signing - Technical Requirements |
-| [Topic 38] | Annex 2 - Wallet Unit revocation |
-| [Topic 42] | Annex 2 - Requirements for QTSPs to access Authentic Sources |
-| [Topic 43] | Annex 2 - Embedded disclosure policies |
-| [Topic 44] | Annex 2 - Relying Party registration certificates |
-| [Topic 48] | Annex 2 - Blueprint for requesting data deletion to Relying Parties |
-| [Topic 50] | Annex 2 - Blueprint to report unlawful or suspicious request of data |
-| [Topic 51] | Annex 2 - PID or attestation deletion |
-| [Topic 52] | Annex 2 - Relying Party intermediaries |
+| [[Topic 6](annexes/annex-2/annex-2-high-level-requirements.md#a236-topic-6---relying-party-authentication-and-user-approval)]| Annex 2 - Relying Party authentication and User approval |
+| [[Topic 7](annexes/annex-2/annex-2-high-level-requirements.md#a237-topic-7---attestation-revocation-and-revocation-checking)] | Annex 2 - Attestation revocation and revocation checking |
+| [[Topic 9](annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation)] | Annex 2 - Wallet Unit Attestation |
+| [[Topic 10](annexes/annex-2/annex-2-high-level-requirements.md#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit)] | Annex 2 -Issuing a PID or attestation to a Wallet Unit |
+| [[Topic 11](annexes/annex-2/annex-2-high-level-requirements.md#a2311-topic-11---pseudonyms)] | Annex 2 - Pseudonyms |
+| [[Topic 12](annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks)] | Annex 2 - Attestation Rulebooks |
+| [[Topic 16](annexes/annex-2/annex-2-high-level-requirements.md#a2316-topic-16---signing-documents-with-a-wallet-unit)] | Annex 2 - Signing documents with a Wallet Unit |
+| [[Topic 18](annexes/annex-2/annex-2-high-level-requirements.md#a2318-topic-18---combined-presentations-of-attributes)] | Annex 2 - Combined presentations of attributes |
+| [[Topic 19](annexes/annex-2/annex-2-high-level-requirements.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)] | Annex 2 - User Navigation requirements (Dashboard logs for transparency) |
+| [[Topic 23](annexes/annex-2/annex-2-high-level-requirements.md#a2323-topic-23---pid-issuance-and-qeaa-issuance)] | Annex 2 - PID issuance and (Q)EAA issuance |
+| [[Topic 25](annexes/annex-2/annex-2-high-level-requirements.md#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attributes)] | Annex 2 - Unified definition and controlled vocabularies for attributes |
+| [[Topic 26](annexes/annex-2/annex-2-high-level-requirements.md#a2326-topic-26---catalogue-of-attestations)] | Annex 2 - Catalogue of attestations |
+| [[Topic 27](annexes/annex-2/annex-2-high-level-requirements.md#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)] | Annex 2 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties |
+| [[Topic 30](annexes/annex-2/annex-2-high-level-requirements.md#a2330-topic-30---interaction-between-wallet-units)] | Annex 2 - Interaction between Wallet Units |
+| [[Topic 31](annexes/annex-2/annex-2-high-level-requirements.md#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication)] | Annex 2 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication |
+| [[Topic 33](annexes/annex-2/annex-2-high-level-requirements.md#a2333-topic-33---wallet-unit-backup-and-restore)] | Annex 2 - Wallet Unit backup and restore |
+| [[Topic 34](annexes/annex-2/annex-2-high-level-requirements.md#a2334-topic-34---migrate-to-a-different-wallet-solution)] | Annex 2 - Migrate to a different Wallet solution |
+| [[Topic 37](annexes/annex-2/annex-2-high-level-requirements.md#a2337-topic-37---qes----remote-signing---technical-requirements)] | Annex 2 - QES -- Remote Signing - Technical Requirements |
+| [[Topic 38](annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation)] | Annex 2 - Wallet Unit revocation |
+| [[Topic 42](annexes/annex-2/annex-2-high-level-requirements.md#a2342-topic-42---requirements-for-qtsps-to-access-authentic-sources)] | Annex 2 - Requirements for QTSPs to access Authentic Sources |
+| [[Topic 43](annexes/annex-2/annex-2-high-level-requirements.md#a2343-topic-43---embedded-disclosure-policies)] | Annex 2 - Embedded disclosure policies |
+| [[Topic 44](annexes/annex-2/annex-2-high-level-requirements.md#a2344-topic-44---relying-party-registration-certificates)] | Annex 2 - Relying Party registration certificates |
+| [[Topic 48](annexes/annex-2/annex-2-high-level-requirements.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties)] | Annex 2 - Blueprint for requesting data deletion to Relying Parties |
+| [[Topic 50](annexes/annex-2/annex-2-high-level-requirements.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data)] | Annex 2 - Blueprint to report unlawful or suspicious request of data |
+| [[Topic 51](annexes/annex-2/annex-2-high-level-requirements.md#a2351-topic-51---pid-or-attestation-deletion)] | Annex 2 - PID or attestation deletion |
+| [[Topic 52](annexes/annex-2/annex-2-high-level-requirements.md#a2352-topic-52-relying-party-intermediaries)] | Annex 2 - Relying Party intermediaries |
 
 ## 10 Annexes
 

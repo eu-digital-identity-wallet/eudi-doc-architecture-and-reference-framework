@@ -26,7 +26,7 @@ SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 1.9.0
+VERSION        := 1.10.0
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -75,10 +75,10 @@ PANDOC_EPUB_OPTIONS := --to epub3
 # Default target: build all exported documents and the MkDocs site.
 all: $(EXPORTED_DOCS) epub zip-pdfs mkdocs
 
-# EPUB combined
+# EPUB combined main text + annexes
 epub :
 	@mkdir -p $(BUILD_DIR)/epub
-	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/arf_combined.epub $(SOURCE_DOCS)
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/architecture-and-reference-framework-main-and-annexes.epub $(SOURCE_DOCS)
 
 # Build the MkDocs site
 mkdocs:

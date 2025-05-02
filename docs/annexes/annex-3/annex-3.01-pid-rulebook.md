@@ -184,7 +184,7 @@ requirements apply:
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
 | birth_date | birth_date | full-date, see [Section 3.1.4](#314-attribute-birth_date). |
-| birth_place | birth_place | tstr |
+| birth_place | place_of_birth | See [Section 3.1.5](#315-attribute-birth_place). |
 | nationality | nationality | nationalities, see [Section 3.1.2](#312-attribute-nationality). |
 | resident_address | resident_address | tstr |
 | resident_country | resident_country | tstr |
@@ -219,11 +219,13 @@ The attribute nationality takes as its value an array of Alpha-2 country codes
 as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
 encoding of this data element is:
 
+```
 nationalities = [
-\+ CountryCode
+  \+ CountryCode
 ]
 
 CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1
+```
 
 Note: If the User to whom the person identification data relates has multiple
 nationalities (and the PID Provider is willing to attest to these multiple
@@ -251,6 +253,21 @@ deal with such cases, a PID Provider could adopt a policy to choose appropriate
 values for the unknown date elements. However, mandating such a policy is out of
 scope of this document.
 
+#### 3.1.5 Attribute place_of_birth
+
+The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, locality.
+Using CDDL notation as specified in RFC 8610, the encoding of this data element is:
+  
+```
+place_of_birth =
+{
+  ? country: tstr ; a single alpha-2 country code as specified in ISO 3166-1
+  ? region: tstr ; the name of a state, province, district, or local area
+  ? locality: tstr ; the name of a municipality, city, town, or village
+}
+```
+
+
 ## 4 SD-JWT VC-based encoding of PID
 
 ### 4.1 Encoding of PID attributes and metadata
@@ -276,9 +293,7 @@ The following IANA registered claim names are to be used for PIDs:
 | family_name | family_name | string | Section 5.1 of [OIDC] |
 | given_name | given_name | string | Section 5.1 of [OIDC] |
 | birth_date | birthdate | string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format | Section 5.1 of [OIDC] |
-| birth_place | place_of_birth.country | string | Section 4.1 of [EKYC]; for the country |
-| birth_place | place_of_birth.region | string | Section 4.1 of [EKYC]; for the state, province or other region |
-| birth_place | place_of_birth.locality | string | Section 4.1 of [EKYC]; for the city or other locality |
+| birth_place | place_of_birth | JSON structure | Section 4.1 of [EKYC];  At least one of the members (country, region or locality) SHALL be present in the JSON structure |
 | nationality | nationalities | array of strings | Section 4.1 of [EKYC]; using alpha-2 country codes as defined in [Section 2.2](#22-mandatory-attributes-specified-in-cir-20242977) |
 | resident_address | address.formatted | string | Section 5.1 of [OIDC] |
 | resident_country | address.country | string | Section 5.1 of [OIDC] |

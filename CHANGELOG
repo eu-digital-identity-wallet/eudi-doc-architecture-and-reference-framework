@@ -5,11 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
-## [1.9.0] - 2025-04-16
+## [1.10.0] - 2025-05-02
 
-Processed comments on ARF 1.8.0. 
+Added changes due to adopted Commission Implementing Regulation for Relying Party registration 
+Added results of "Topic X – Relying Party registration". 
 Editorial changes and fixing typos.
 
+#### Sections/topics with changes
+
++ [Main document](docs/architecture-and-reference-framework-main.md)
+  + section 3.11, section 4.4,1, section 4.4.3.1, section 4.4.3.3, section 4.6.4, section 4.6.6, section 6.1, section 6.3.1, section 6.3.2.1, section 6.3.2.3, section 6.3.3, section 6.4.1, section 6.4.2, section 6.4.3, section 6.6.2.2, section 6.6.2.7.2, section 6.6.3.3, section 6.6.3.4, section 6.6.3.5, section 6.6.3.13, 
+ 
++ [Annex 2](docs/annexes/annex-2/annex-2-high-level-requirements.md) (High-level Requirements) 
+  + Topic 3: PID_04, PID, 06, PID_07, PID_16
+  + Topic 6: RPA_06, RPA_06a, RPA_06c, RPA_06d, 
+  + Topic 10: ISSU_24, ISSU_24a, ISSU_27, ISSU_34, ISSU_34a,
+  + Topic 19: DASH_03, DASH_05, 
+  + Topic 31:  GenNot_01, GenNot_02, GenNot_05, RPnot_02, RPACANot_01, RPACANot_02, RPACANot_04, RPACANot_06, RPACANot_07, TLPub_01, TLPub_02, TLPub_08
+  + Topic 40: WIAM_15, 
+  + Topic 43: EDP_02, EDP_02a, 
+  + Topic 44: RPRC_01, RPRC_02, RPRC_03, RPRC_03a, RPRC_03b, RPRC_07, RPRC_09, RPRC_10, RPRC_11
+  + Topic 52: RPI_01 to RPI_10
+ 
++ [Annex 3](docs/annexes/annex-3/annex-3.01-pid-rulebook.md) (PID rulebook)
+  + The attribute place_of_birth is now better defined for both the mdoc and SD-JWT formats.
+
+## [1.9.0] - 2025-04-16
+
+Processed comments on ARF 1.8.0.
+Editorial changes and fixing typos.
 
 ## [1.8.0] - 2025-03-26
 
