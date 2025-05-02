@@ -714,8 +714,8 @@ short as possible;</li>
 </tr>
 <tr>
 <td>birth_place</td>
-<td>birth_place</td>
-<td>tstr</td>
+<td>place_of_birth</td>
+<td>See <a href="#315-attribute-birth_place">Section 3.1.5</a>.</td>
 </tr>
 <tr>
 <td>nationality</td>
@@ -858,10 +858,12 @@ short as possible;</li>
 <p>The attribute nationality takes as its value an array of Alpha-2 country codes
 as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
 encoding of this data element is:</p>
-<p>nationalities = [
-+ CountryCode
-]</p>
-<p>CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1</p>
+<pre><code>nationalities = [
+  \+ CountryCode
+]
+
+CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1
+</code></pre>
 <p>Note: If the User to whom the person identification data relates has multiple
 nationalities (and the PID Provider is willing to attest to these multiple
 nationalities), the PID Provider can include all of the nationalities in the
@@ -883,6 +885,16 @@ may cause challenges in case the birth date of a User is not (fully) known. To
 deal with such cases, a PID Provider could adopt a policy to choose appropriate
 values for the unknown date elements. However, mandating such a policy is out of
 scope of this document.</p>
+<h4 id="315-attribute-place_of_birth">3.1.5 Attribute place_of_birth</h4>
+<p>The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, locality.
+Using CDDL notation as specified in RFC 8610, the encoding of this data element is:</p>
+<pre><code>place_of_birth =
+{
+  ? country: tstr ; a single alpha-2 country code as specified in ISO 3166-1
+  ? region: tstr ; the name of a state, province, district, or local area
+  ? locality: tstr ; the name of a municipality, city, town, or village
+}
+</code></pre>
 <h2 id="4-sd-jwt-vc-based-encoding-of-pid">4 SD-JWT VC-based encoding of PID</h2>
 <h3 id="41-encoding-of-pid-attributes-and-metadata">4.1 Encoding of PID attributes and metadata</h3>
 <h3 id="411-overview">4.1.1 Overview</h3>
@@ -926,21 +938,9 @@ notation <code>parent.child</code> in the tables below.</p>
 </tr>
 <tr>
 <td>birth_place</td>
-<td>place_of_birth.country</td>
-<td>string</td>
-<td>Section 4.1 of [EKYC]; for the country</td>
-</tr>
-<tr>
-<td>birth_place</td>
-<td>place_of_birth.region</td>
-<td>string</td>
-<td>Section 4.1 of [EKYC]; for the state, province or other region</td>
-</tr>
-<tr>
-<td>birth_place</td>
-<td>place_of_birth.locality</td>
-<td>string</td>
-<td>Section 4.1 of [EKYC]; for the city or other locality</td>
+<td>place_of_birth</td>
+<td>JSON structure</td>
+<td>Section 4.1 of [EKYC];  At least one of the members (country, region or locality) SHALL be present in the JSON structure</td>
 </tr>
 <tr>
 <td>nationality</td>
