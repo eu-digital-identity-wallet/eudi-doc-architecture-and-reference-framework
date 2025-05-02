@@ -16,7 +16,7 @@
     
     
       
-        <title>V - PID Rulebook - European Digital Identity</title>
+        <title>V - PID rulebook - European Digital Identity</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              V - PID Rulebook
+              V - PID rulebook
             
           </span>
         </div>
@@ -122,18 +122,8 @@
     
     <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -392,13 +382,13 @@
   
 
 
-<h1 id="v-pid-rulebook">V - PID Rulebook</h1>
-<p>Version 1.2, updated 30 March 2025</p>
+<h1 id="v-pid-rulebook">V - PID rulebook</h1>
+<p>Version 1.0, updated 18 March 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/410">GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for European Digital Identity Cooperation
-Group regarding Topic V: PID Rulebook</p>
+Group regarding Topic V: PID rulebook</p>
 <h3 id="12-related-risks-in-the-risk-register">1.2 Related risks in the Risk Register</h3>
 <p>Risks considered in [Topic_A] are also applicable here</p>
 <h3 id="13-key-words">1.3 Key words</h3>
@@ -457,8 +447,7 @@ represented.</li>
 authenticity and integrity are ensured, including cryptographic signatures used
 to verify the PID Provider or Attestation Provider.</li>
 <li>Privacy Considerations – Ensures that attestations minimise data exposure,
-allow selective disclosure, and comply with privacy-preserving principles
-(in particular unlinkability as mandated by the Regulation).</li>
+allow selective disclosure, and comply with privacy-preserving principles.</li>
 </ol>
 <h3 id="31-several-families-of-attestation-formats">3.1 Several families of attestation formats</h3>
 <p>There are at least three main families of attestation formats, each with distinct
@@ -475,13 +464,14 @@ characteristics in terms of structure, flexibility, and implementation requireme
 <p>They are designed to ensure strict interoperability and security, particularly
 for official and regulated attestations, such as:</p>
 <ul>
-<li>Mobile Driving Licences (mDLs) under ISO/IEC 18013-5, which standardises the
-issuance, storage, and verification of digital driving licences.</li>
+<li>Mobile Driving Licenses (mDLs) under ISO/IEC 18013-5, which standardises the
+issuance, storage, and verification of digital driving licenses.</li>
 <li>More general mobile identity attestations under ISO/IEC 23220, expanding the
-use cases beyond driving licences.</li>
+use cases beyond driving licenses.</li>
 </ul>
 <p>These specifications provide clear, predefined guidelines on how attestations should
-be issued, stored, and verified. However, they leave little room for flexibility, prioritizing
+be issued, stored, and verified, ensuring compliance across jurisdictions and
+regulatory frameworks. However, they leave little room for flexibility, prioritizing
 high trust and compatibility across different systems.</p>
 <h4 id="312-jwt-like-simple-attestations">3.1.2 JWT-Like Simple attestations</h4>
 <p>Compared to ISO/IEC-based attestations, this category:</p>
@@ -495,8 +485,9 @@ separately through additional specifications.</li>
 <p>For example:</p>
 <ul>
 <li>The OAuth SD-JWT-VC draft [SD-JWT VC] defines data format specifications for
-attestations based on JWT &amp; SD-JWT. A roadmap [Fet2024] was previously discussed
-by Germany as a possible approach for structuring JWT-based attestations.</li>
+attestations based on JWT &amp; SD-JWT.</li>
+<li>The SD-JWT-VC Data Model proposal [Fet2024] was previously discussed by
+Germany as a possible approach for structuring JWT-based attestations</li>
 </ul>
 <p>While JWT-based attestations offer simplicity and widespread adoption in web
 authentication (e.g., OAuth2, OpenID Connect), they lack built-in advanced
@@ -574,11 +565,11 @@ maintenance costs.</li>
 practice, it introduces unnecessary complexity, security risks, and operational
 burdens. A clear and limited selection of attestation models is essential to
 ensure a coherent, secure, and interoperable EUDI Wallet ecosystem.</p>
-<p>For all the above reasons, the requirement [PID_\01] included in the the PID Rulebook
+<p>For all the above reasons, the requirement [PID_\01] included in the the PID rulebook
 of Annex 3 of the ARF still applies.</p>
 <h2 id="5-privacy-considerations">5 Privacy considerations</h2>
 <p>Privacy is a critical concern, especially regarding how attestation data is
-presented and verified. All the attestation categories mentioned above implement
+shared and verified. All the attestation categories mentioned above implement
 selective disclosure using a technique called salted and hashed data. This
 approach conceals specific attributes by hashing their values, allowing the user
 to select which attributes to disclose when presenting their attestations or
@@ -587,21 +578,16 @@ attestations.</p>
 "fingerprints" that could be exploited to track users across different interactions.</p>
 <p>While salting and hashing can obfuscate attestation data, it has inherent
 weaknesses, particularly in scenarios where PID Providers or Attestation
-Providers and Relying Parties collude or if they are subject to data breaches 
-as described in [Topic A]:</p>
+Providers and Relying Parties collude:</p>
 <ol>
-<li>Collusion Between or data breach of two Relying Parties: If two Relying Parties share collected
+<li>Collusion Between two Relying Parties: If two Relying Parties share collected
 attestations containing same hashes and signatures for the user, they can track
 and profile users across different interactions, compromising unlinkability.
-An attacker would be able to proceed to the same kind of attempt in case of 
-a data breach of the Relying Parties
 This specific scenario can be somehow mitigated with different techniques.</li>
-<li>Collusion Between or data breach of PID Provider or Attestation Provider and Relying Party: If
+<li>Collusion Between PID Provider or Attestation Provider and Relying Party: If
 the PID Provider or Attestation Provider and Relying Party share collected
 attestations containing same hashes and signatures for the user, they can track
-and profile users across different interactions, compromising unlinkability.
-An attacker would be able to proceed to the same kind of attempt in case of a 
-data breach of the PID Provider or Attestation Provider and Relying Party.</li>
+and profile users across different interactions, compromising unlinkability.</li>
 </ol>
 <p>To truly mitigate these risks, more advanced cryptographic techniques—particularly
 Zero-Knowledge Proofs (ZKPs)—are required.</p>
@@ -610,13 +596,12 @@ Zero-Knowledge Proofs (ZKPs)—are required.</p>
 <li>Prove statements (e.g., "I am over 18") without revealing the underlying data
 (e.g., date of birth).</li>
 <li>Ensure unlinkability, even if a PID Provider or Attestation Provider and
-Relying Party collude or are subject to a data breach.</li>
+Relying Party collude.</li>
 <li>Prevent unnecessary data exposure, reducing the risk of attestation misuse.</li>
 </ul>
 <p>While hashed data with salts provides basic privacy protections and is essential
 when proving real identity, it does not ensure unlinkability and remains
-susceptible to PID Provider or Attestation Provider-Relying Party collusion or subjection 
-to a data breach. In
+susceptible to PID Provider or Attestation Provider-Relying Party collusion. In
 contrast, ZKP-enhanced attestations offer a higher level of privacy assurance,
 enabling secure, verifiable, and unlinkable digital interactions while
 minimizing data exposure.</p>
@@ -631,7 +616,7 @@ strong privacy protection in scenarios where anonymity and unlinkability are
 critical.</p>
 <p>Zero-Knowledge Proofs (ZKPs) can be integrated into any of the attestation
 categories mentioned above, and ongoing developments are actively working
-to implement ZKP support across different models. This is discussed in more depth in [Topic_G].</p>
+to implement ZKP support across different models.</p>
 <p>A particularly important effort focuses on developing ZKP mechanisms using
 cryptographic algorithms that are widely recognised and standardised by by NIST
 and SOG-IS.</p>
@@ -667,7 +652,7 @@ the following:</p>
 <p>The following High-Level Requirements will be added in Annex 3 of the ARF</p>
 <h4 id="requirement-1">REQUIREMENT 1</h4>
 <p>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs,
-where the vct claim will be a URN. A catalog linked in the PID Rulebook will associate this URN with SD-JWT VC type metadata
+where the vct claim will be a URN. A catalog linked in the PID rulebook will associate this URN with SD-JWT VC type metadata
 which will include the same information as the PID Rulebook.</p>
 <h3 id="62-high-level-requirements-to-be-changed">6.2 High-Level Requirements to be changed</h3>
 <p>The following requirement is modified (changes in bold)</p>
@@ -710,10 +695,6 @@ the methods specified in RFC 7519 are applicable.</p>
 <tr>
 <td>[SD-JWT VC]</td>
 <td>SD-JWT-based Verifiable Credentials (SD-JWT VC), IETF draft, available at <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html">https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-08.html</a></td>
-</tr>
-<tr>
-<td>[Topic_G]</td>
-<td>Discussion Paper for the European Digital Identity Cooperation Group regarding Topic G: Zero Knowledge Proof, version 1.4</td>
 </tr>
 </tbody>
 </table>
