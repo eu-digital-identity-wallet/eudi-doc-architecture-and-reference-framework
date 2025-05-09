@@ -70,10 +70,10 @@ PANDOC_EPUB_OPTIONS := --to epub3
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all epub mkdocs serve copy-pdfs zip-pdfs clean
+.PHONY: all epub pdf mkdocs serve copy-pdfs zip-pdfs clean
 
 # Default target: build all exported documents and the MkDocs site.
-all: $(EXPORTED_DOCS) epub zip-pdfs mkdocs
+all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
 
 # EPUB combined main text + annexes
 epub :
@@ -82,7 +82,7 @@ epub :
 
 pdf :
 	@mkdir -p $(BUILD_DIR)/pdf
-	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $(BUILD_DIR)/pdf/architecture-and-reference-framework-main-and-annexes.pdf $(SOURCE_DOCS)
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -M subtitle="Architecture and Reference Framework" -o $(BUILD_DIR)/pdf/architecture-and-reference-framework-main-and-annexes.pdf $(SOURCE_DOCS)
 # Build the MkDocs site
 mkdocs:
 	$(MKDOCS) build
