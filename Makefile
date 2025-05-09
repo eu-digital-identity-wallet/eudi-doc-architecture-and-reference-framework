@@ -80,6 +80,9 @@ epub :
 	@mkdir -p $(BUILD_DIR)/epub
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/architecture-and-reference-framework-main-and-annexes.epub $(SOURCE_DOCS)
 
+pdf :
+	@mkdir -p $(BUILD_DIR)/pdf
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $(BUILD_DIR)/pdf/architecture-and-reference-framework-main-and-annexes.pdf $(SOURCE_DOCS)
 # Build the MkDocs site
 mkdocs:
 	$(MKDOCS) build
