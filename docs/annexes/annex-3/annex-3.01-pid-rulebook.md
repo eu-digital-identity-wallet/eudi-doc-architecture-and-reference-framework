@@ -272,7 +272,7 @@ place_of_birth =
 
 ### 4.1 Encoding of PID attributes and metadata
 
-### 4.1.1 Overview
+#### 4.1.1 Overview
 
 Following requirement ARB_06b, SD-JWT VC-encoded PIDs use claim names that are either registered in the JSON Web
 Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
@@ -322,7 +322,7 @@ The following Private Names specific to the attestation type defined in this doc
 | issuing_country | issuing_country | string | |
 | document_number | document_number | string | |
 | issuing_jurisdiction | issuing_jurisdiction | string | |
-| location_status | - | See [Section 4.2.2](#422-attribute-location_status) | |
+| location_status | - | See [Section 4.1.2](#412-attribute-location_status) | |
 | age_over_18 | age_equal_or_over.18 | boolean (see note below) | |
 | age_over_NN | age_equal_or_over.NN | boolean (see note below) | |
 | age_in_years | age_in_years | number | |
@@ -340,7 +340,7 @@ Note: Instead of separate claims for (for example) age_over_16, age_over_18, age
 ```
 
 
-#### 4.2.2 Attribute location_status
+#### 4.1.2 Attribute location_status
 
 For SD-JWT VC-compliant PIDs, the PID issuer will add validity status
 information, if needed, as specified in [SD-JWT VC]. This PID Rulebook does not
