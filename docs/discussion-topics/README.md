@@ -73,7 +73,7 @@ Iteration is planned from 26 March 2025 to 02 July 2025 covering the following t
 | H | [Transaction logs kept by the wallet](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/338) |
 | I | [Natural person representing another natural person](i-natural-person-representing-another-natural-person.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/339) |
 | J | [Wallet to Wallet interaction](j-wallet-to-wallet-interactions.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/340) |
-| K | [Combined presentation of Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/341) |
+| K | [Combined presentation of Attestations](k-combined-presentation-of-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/341) |
 | L | [User requesting data deletion to Relying Parties](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/342) |
 | M | [User reporting unlawful or suspicious request of data to DPAs](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/343) |
 | N | [Data portability](n-export-and-data-portability.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
