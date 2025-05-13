@@ -16,7 +16,7 @@
     
     
       
-        <title>I - Natural person representing another natural person - European Digital Identity</title>
+        <title>K - Combined presentation of Attestations - European Digital Identity</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#i-natural-person-representing-another-natural-person" class="md-skip">
+        <a href="#k-combined-presentation-of-attestations" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              I - Natural person representing another natural person
+              K - Combined presentation of Attestations
             
           </span>
         </div>
@@ -404,19 +404,20 @@
   
 
 
-<h1 id="i-natural-person-representing-another-natural-person">I - Natural person representing another natural person</h1>
-<p>Version 0.3, updated 30 April 2025</p>
-<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495">Link to GitHub discussion</a></p>
+<h1 id="k-combined-presentation-of-attestations">K - Combined presentation of Attestations</h1>
+<p>Version 0.1, updated 7 May 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/519">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
-Topic I - Natural person representing another natural person.</p>
+Topic K - Combined presentation of Attestations</p>
 <p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
-<p>Outline the requirements how the Wallet will support the representation of another 
-natural person need to be clearly defined. Considerations about representing minors should be done.</p>
-<p>This paper focuses only in the case of a natural person representing another
-natural person and <em>not in the case of a natural person representing a legal 
-person</em>.</p>
+<p>Requirements for implementing “combined presentation” need to be clearly defined. 
+Combined presentation involves a transaction in which a Relying Party requests 
+multiple attributes associated with the same User from various attestations 
+(PID and/or (Q)EAAs) in a single request and receives those attributes consolidated 
+in a single response. The goal for the Relying Party is to verify that all received 
+attributes belong to the same User.</p>
 <h2 id="12-key-words">1.2 Key words</h2>
 <p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in RFC 2119, i.e., to indicate requirements, recommendations and
@@ -429,135 +430,177 @@ fact.</p>
 <h2 id="13-document-structure">1.3 Document structure</h2>
 <p>This document is structured as follows:</p>
 <ul>
-<li>Chapter 2 presents legal requirements for the representation of another 
-natural person.</li>
-<li>Chapter 3 discusses uses cases of a natural person representing another natural
-person, as well as attestation issuance, and attestation presentation for these use
-cases.</li>
+<li>Chapter 2 presents legal requirements and High Level Requirements (HLRs) defined
+in the Annex 2 of the ARF for the combined presentation of Attestations.</li>
+<li>Chapter 3 details the topic and introduces discussion items</li>
 <li>Chapter 4 lists the additions and changes that will be made to the ARF
 as a result of discussing this topic with Member States.</li>
 </ul>
-<h2 id="2-legal-requirements-for-representation-of-another-natural-person">2. Legal requirements for representation of another natural person</h2>
-<p>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11
-April 2024 amending Regulation (EU) No 910/2014 as regards establishing the
-European Digital Identity Framework [European Digital Identity Regulation]
-article 3, 1 states:</p>
+<h2 id="2-legal-requirements-and-existing-high-level-requirements">2. Legal requirements and existing High Level Requirements</h2>
+<p>According to the [European Digital Identity Regulation], article 5a (4):</p>
 <blockquote>
-<p>“electronic identification” means the process of using person identification 
-data in electronic form uniquely representing either a natural or legal person, 
-or <strong>a natural person representing another natural person</strong> or a legal person</p>
+<p>European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, 
+transparent, and traceable by the user, to:
+(a) securely request, obtain, select, <strong>combine</strong>, store, delete, share and present, under the sole 
+control of the user, person identification data and, where applicable, in combination with electronic 
+attestations of attributes, to authenticate to relying parties online and, where appropriate, 
+in offline mode, in order to access public and private services, while ensuring that selective disclosure 
+of data is possible; [...]</p>
 </blockquote>
-<p>Similarly, article 3, 3 states</p>
-<blockquote>
-<p>“person identification data” means a set of data that is issued in accordance 
-with Union or national law and that enables the establishment of the identity of 
-a natural or legal person, or of <strong>a natural person representing another natural person 
-or a legal person</strong>.</p>
-</blockquote>
-<p>Additionally, article 3, 4 states</p>
-<blockquote>
-<p>“electronic identification scheme” means a system for electronic identification 
-under which electronic identification means are issued to natural or legal persons
-or <strong>natural persons representing other natural persons</strong> or legal persons</p>
-</blockquote>
-<p>Similarly, article 3, 5a states</p>
-<blockquote>
-<p>“user” means a natural or legal person, or <strong>a natural person representing another natural 
-person</strong> or a legal person, that uses trust services or electronic identification means 
-provided in accordance with this Regulation.</p>
-</blockquote>
-<p>Article 5a, 5(f) of the same regulation states:</p>
-<blockquote>
-<p>ensure that the person identification data, which is available from the electronic 
-identification scheme under which the European Digital Identity Wallet is provided, 
-uniquely represents the natural person, legal person or <strong>the natural person representing 
-the natural</strong> or legal person, and is associated with that European Digital Identity Wallet</p>
-</blockquote>
-<p>Article 11a, 3c of the same regulation requires that the interoperability framework shall 
-consist of:</p>
-<blockquote>
-<p>[...] a reference to a minimum set of person identification data necessary to uniquely 
-represent a natural or legal person, or a <strong>natural person representing another natural person</strong> 
-or a legal person, which is available from electronic identification schemes</p>
-</blockquote>
-<p>Finally, ANNEX VI of the same regulation (MINIMUM LIST OF ATTRIBUTES) states:</p>
-<blockquote>
-<p>[...] 9. Powers and mandates to represent natural or legal persons</p>
-</blockquote>
-<h2 id="3-discussion">3 Discussion</h2>
-<p>The European Digital Identity Framework [European Digital Identity Regulation]
-considers the representation of one natural person by another. </p>
-<p>One common use case is the legal representation of minors or individuals with 
-diminished legal capacity. For example parents or legal guardians should be empowered 
-to make decisions and act on behalf of their children and represent them when accessing 
-educational platforms, healthcare services, government benefits, or other services. 
-The EU Digital Identity Wallet should therefore accommodate such delegation in a secure, 
-verifiable manner.</p>
-<p>Another significant use case is the management of affairs for elderly or incapacitated 
-individuals. In these cases individuals can be assigned as legal representatives to 
-manage healthcare, financial, and personal matters.This could translate into a caregiver 
-or relative holding a proper delegation to, for instance, access health records or 
-submit applications for social care services on behalf of the person they represent.</p>
-<p>Power of attorney is another use case of a natural person (the agent) acting on 
-behalf of another natural person (the principal).</p>
-<h3 id="31-attestation-issuance">3.1 Attestation issuance</h3>
-<p>Based the regulation, it should be possible to issue an attestation for a natural 
-person to a legal representative. Rules for issuing an attestation to a legal
-representative SHALL be defined in the corresponding Rulebook according to the
-applicable national and european legislation.</p>
-<p>A PID or attestation issued to a legal representative SHALL be distinct from the 
-original issued to the natural person, and SHALL include information specifying 
-the nature of the representation. </p>
-<p>The European Digital Identity Framework [European Digital Identity Regulation],
-ANNEX VI states:</p>
-<blockquote>
-<p>Member States shall ensure that measures are taken to allow qualified trust service 
-providers of electronic attestations of attributes to verify by electronic means at 
-the request of the user, the authenticity of the following attributes against the 
-relevant authentic source at national level or via designated intermediaries 
-recognised at national level, in accordance with Union or national law and where these attributes rely on authentic sources within the public sector: </p>
-<p>[...] 9. Powers and mandates to represent natural or legal persons;</p>
-</blockquote>
-<p>Therefore, for certain use cases (e.g., parent-child relationship) a PID or 
-Attestation provider should be able to retrieve relevant information from 
-authentic sources at national level (or via designated intermediaries). However,
-in other use cases (e.g., power of attorney) the represented natural person
-may need to authorize a representative. </p>
-<p>To support such cases, mandates SHALL be managed through a distinct attestation type. 
-This mandate-specific attestation SHALL clearly define the operations the agent 
-is authorized to perform, thereby limiting the scope of its authorization. 
-Such an attestation SHALL be either short-lived or revocable. 
-In the case of revocable attestations, all entities which, according to applicable 
-law, must have the ability to revoke them SHALL be able to do so. Furthermore, high level
-requirements related to attestation revocation, defined in Annex 2 of ARF, are
-applicable to attestations corresponding to mandates.</p>
-<h2 id="32-attestation-presentation">3.2 Attestation Presentation</h2>
-<p>A natural person should be able to represent another natural person 
-when interacting with a Relying Party. The Relying Party SHALL always be aware
-that it interacts with a legal representative or an agent, either because this information is embedded in the corresponding PID or attestation, or because the corresponding Wallet Unit
-presents a mandate-specific attestation. In the case where the information is embedded, 
-it SHALL NOT be possible to hide the representation information contained in the PID 
-or attestation.</p>
+<p>Annex 2 of ARF includes the following High Level Requirements (HLRs) for
+to the combined presentation of Attestations:</p>
+<h3 id="a-functional-requirements-for-ecosystem-components">A. Functional requirements for ecosystem components <!-- omit from toc --></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACP_01</td>
+<td>Wallet Units SHALL support the features in [ISO18013-5] and/or [OpenID4VP] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response.</td>
+</tr>
+<tr>
+<td>ACP_02</td>
+<td>Relying Parties SHOULD support the features in [ISO18013-5] and/or [OpenID4VP] (as applicable) that allow requesting and releasing attributes from multiple attestations in a single request and response.</td>
+</tr>
+<tr>
+<td>ACP_04</td>
+<td>If a Wallet Unit determines it must release multiple attestations to a Relying Party in a combined presentation of attributes, it SHOULD request a proof from the WSCA that the WSCA manages all of the private keys of these attestations.</td>
+</tr>
+<tr>
+<td>ACP_05</td>
+<td>If, as a result of ACP_04, the Wallet Unit receives such a proof from the WSCA, it SHALL include this proof in the response message containing the combined presentation of attributes and send it to the Relying Party.</td>
+</tr>
+<tr>
+<td>ACP_06</td>
+<td>If a Relying Party receives a combined presentation of attributes including a proof as meant in ACP_04, it SHOULD verify this proof to validate that the attestations in this presentation were issued to the same User.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-process-requirements">B. Process requirements <!-- omit from toc --></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACP_07</td>
+<td>During issuance of an attestation, an Attestation Provider SHOULD be able to request that the private key for the new attestation is managed by the same WSCD as the private key of a PID or another attestation already existing on the Wallet Unit, provided that the Attestation Provider has verified during the issuance process that the new attestation indeed belongs to the User of that existing PID or attestation.</td>
+</tr>
+<tr>
+<td>ACP_08</td>
+<td>When receiving a combined presentation of attributes, a Relying Party SHOULD NOT refuse the attestations solely because a proof as meant in ACP_04 is absent.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c-miscellaneous">C. Miscellaneous <!-- omit from toc --></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACP_09</td>
+<td>The common [ISO18013-5] and [OpenID4VP] protocols, or an EUDI Wallet-specific extension or profile thereof, SHALL enable a Wallet Unit to transfer a proof as meant in ACP_04 to a Relying Party. The Commission SHALL take measures to ensure that this is the case.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-discussion">3. Discussion</h2>
+<p>The concept of <em>combined presentation</em> refers to a process where a Relying Party 
+requests multiple attributes concerning a single User, drawn from separate attestations 
+(e.g., PID and/or (Q)EAAs), and receives a consolidated, verified response. The key 
+functional goal is to enable the Relying Party to confirm that all presented attributes 
+genuinely pertain to the same User without 
+compromising trust, privacy, or data integrity.</p>
+<h3 id="31-use-cases">3.1 Use Cases</h3>
+<h3 id="real-world-use-cases-for-combined-presentation">Real-World Use Cases for Combined Presentation</h3>
+<p>Scenarios where a User is asked to present different attributes from various 
+physical documents are common in the real world—and are also relevant in the digital domain. 
+These scenarios can be addressed more efficiently through combined presentation 
+allowing a Relying Party to receive a consolidated set of attributes 
+from different attestations.</p>
+<h4 id="university-admissions"><strong>University Admissions</strong></h4>
+<p>A university evaluating prospective students may request a digital presentation containing:</p>
+<ul>
+<li><strong>Personal identification</strong> (from a PID),</li>
+<li><strong>Academic credentials</strong> (from diploma or qualification attestations),</li>
+<li><strong>Work or research experience</strong> (from employment attestations or other EAAs).</li>
+</ul>
+<p>These attributes typically originate from different issuers and must be validated as 
+belonging to the same applicant. A combined presentation enables the university to 
+efficiently pre-screen candidates based on custom admission criteria, while avoiding 
+the processing of unnecessary data.</p>
+<h4 id="professional-licensing"><strong>Professional Licensing</strong></h4>
+<p>A regulatory body responsible for licensing professionals (e.g., doctors, lawyers, engineers) may require a presentation that includes:</p>
+<ul>
+<li><strong>Proof of identity</strong> (PID),</li>
+<li><strong>Professional degrees and certifications</strong> (from educational authorities),</li>
+<li><strong>Proof of prior licensure or work experience</strong> (from previous employers or licensing bodies).</li>
+</ul>
+<p>By accepting a combined presentation, the authority can streamline application reviews 
+while ensuring all data belongs to the same applicant, supported by secure bindings 
+across attestations.</p>
+<h4 id="rental-or-loan-applications"><strong>Rental or Loan Applications</strong></h4>
+<p>When applying for a loan or renting a property, a service provider may request attributes such as:</p>
+<ul>
+<li><strong>Identity verification</strong> (from PID),</li>
+<li><strong>Proof of income or employment</strong> (from employer attestations),</li>
+<li><strong>Creditworthiness or financial history</strong> (from financial institutions or credit bureaus).</li>
+</ul>
+<p>These data points are usually dispersed across documents and issuers. Combined presentation 
+allows the User to share only the required attributes in a secure, verifiable, 
+and privacy-preserving way—simplifying onboarding while reducing the risk of fraud 
+or misrepresentation.</p>
+<h3 id="32-identity-matching">3.2 Identity Matching</h3>
+<p>A preliminary requirement for the combined presentation of attestations is 
+<strong>identity matching</strong>. The Relying Party shall be able to verify that all attributes 
+included in the presentation originate from attestations that refer to the same 
+entity. Without such a mechanism, there is a risk of malicious combinations; for example, 
+using a valid facial image from one User together with another person's <code>"age over 18"</code> 
+attribute could enable fraud or unauthorized access.</p>
+<p>High-Level Requirement ACP_04 of Annex 2 in the ARF mandates that Wallet Solutions 
+support <strong>cryptographic binding</strong> of attestations to ensure that the WSCA manages 
+all of the private keys of these attestations. However, other mechanisms may also be employed to support identity matching, including:</p>
+<ul>
+<li><strong>Relying Party-Specific Identifiers</strong>: Unique identifiers assigned by the 
+Relying Party—such as customer or contract numbers—can serve as a means of 
+linking multiple attestations to the same User.</li>
+<li><strong>Attribute-Based Binding</strong>: Attestations may share a common unique identifier (e.g., PID number).</li>
+</ul>
+<p><strong>Question 1</strong> Is ACP_04 enough? 
+<strong>Note</strong> ACP_04 should be considered in conjunction with ACP_07. Relying solely on 
+cryptographic binding,  may not be sufficient if a User stores in their Wallet Unit 
+an attestation that actually belongs to another individual. In such cases, cryptographic 
+binding alone could still allow malicious combinations of attributes. Therefore, 
+it may be necessary to extend ACP_04. </p>
+<h3 id="33-security-consideration">3.3 Security consideration</h3>
+<h4 id="policies-for-including-attributes">Policies for Including Attributes</h4>
+<p>Each attestation may have its own <strong>Embedded Disclosure Policy</strong>. In parallel,
+the <strong>Relying Party Registration Certificate</strong> may grant different access rights 
+to different types of attestations. 
+When a Relying Party requests a combined presentation containing attributes from 
+multiple attestations, the <strong>strictest applicable policy</strong> must prevail. </p>
+<h4 id="validity-of-combined-presentation">Validity of Combined Presentation</h4>
+<p>The <strong>validity period</strong> of a combined presentation shall be determined by the 
+<strong>minimum validity</strong> of the individual attestations whose attributes are included. </p>
+<h4 id="privacy-considerations">Privacy Considerations</h4>
+<p>Although individual attributes may not be personally identifying or trackable on 
+their own, their <strong>combination across attestations</strong> may create a <strong>unique tracking vector</strong>. </p>
+<p><strong>Question 2</strong> Are there other security issues that should be explicitly addressed?</p>
+<p><strong>Question 3</strong> How can the privacy risks from attribute combinations be mitigated?</p>
+<p><strong>Question 4</strong>  These considerations are implied but not explicitly considered in Topic 18. 
+Should a related requirement be introduced?</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
-<p><strong>Requirement 1</strong>
-If a PID or attestation for a natural person can be issued to a legal 
-representative, the corresponding Rulebook SHALL define the rules governing such 
-issuance. These rules SHALL comply with applicable legislation.</p>
-<p><strong>Requirement 2</strong>
-PID Providers and Attestation Providers SHALL ensure that PID or attestation issued 
-to a legal representative is distinct from the original issued to the natural person, 
-and it includes information specifying the nature of the representation. Wallet Units
-SHALL NOT hide this information from the Relying Parties.</p>
-<p><strong>Requirement 3</strong>
-The Commission SHALL create a Rulebook for attestations corresponding to mandates. 
-An attestation corresponding to a mandate SHALL be issued to the Wallet Unit of the
-agent and clearly define a validity period and the operations 
-the agent is authorized to perform, thereby limiting the scope of its authorization.</p>
-<p><strong>Requirement 4</strong>
-An Attestation Provider issuing attestations corresponding to mandates SHALL ensure 
-that either the attestations are short-lived or that all entities which, according 
-to applicable law, must have the ability to revoke such attestations are able to do so.</p>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="5-references">5 References</h2>
@@ -576,10 +619,6 @@ to applicable law, must have the ability to revoke such attestations are able to
 <tr>
 <td>[European Digital Identity Regulation]</td>
 <td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
-</tr>
-<tr>
-<td>[Topic_A]</td>
-<td>Discussion Paper for the European Digital Identity Cooperation Group regarding Topic A: Privacy risks and mitigation, version 1.0</td>
 </tr>
 </tbody>
 </table>
