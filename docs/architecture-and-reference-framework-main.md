@@ -323,7 +323,7 @@ document titled the "Use Cases Manual", and distributed together with this docum
 One of the main use cases of the EUDI Wallet ecosystem is secure User
 identification and authentication. A User presents data from their PID, which is
 issued and managed at Level of Assurance (LoA) High, to various online services,
-both public and private.. This capability is crucial, as it allows Relying
+both public and private. This capability is crucial, as it allows Relying
 Parties to confidently verify the identity of Users they interact with.
 
 In this use case, a User utilises their Wallet Unit to present specific
