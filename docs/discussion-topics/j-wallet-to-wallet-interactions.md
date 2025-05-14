@@ -164,7 +164,7 @@ A Wallet Unit SHALL support functionality for, using the connection established 
 #### 4.1.2 Requirements for Security 
 
 ##### Requirement 5
-If the Presenter makes a suggestion for a presentation request, then the Wallet Unit of the Verifier SHALL NOT allow the Verifier to include more attributes in their presentation request send to the Presenter.
+If the Presenter makes a suggestion for a presentation request, then the Wallet Unit of the Verifier SHALL NOT allow the Verifier to include more attributes in their presentation request sent to the Presenter.
 
 > Rationale: A Verifier shall not be allowed to ask the Presenter to disclose more information than what the Presenter originally intends to, but asking for less information is fine.
 
