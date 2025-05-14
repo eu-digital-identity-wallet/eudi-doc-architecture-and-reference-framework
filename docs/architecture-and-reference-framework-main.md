@@ -2330,7 +2330,7 @@ lifecycle of a PID Provider or Attestation Provider:
 1. A PID Provider or an Attestation Provider is registered by a Trusted List Provider in its Member State. This is discussed in [Section 6.3.2](#632-pid-provider-or-attestation-provider-registration-and-notification).
 2. Under specific conditions, a Trusted List Provider may decide to suspend or
 cancel registration of a registered PID Provider or Attestation Provider. This is discussed in
-[Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-withdrawal).
+[Section 6.3.3](#633-pid-provider-or-attestation-provider-suspension-or-cancellation).
 
 #### 6.3.2 PID Provider or Attestation Provider registration and notification
 
@@ -2434,7 +2434,7 @@ More details on the PID Provider or Attestation Provider notification process,
 as well as on the information registered and published in the PID Provider
 Trusted List or Attestation Provider Trusted List, can be found in [Topic 31](./annexes/annex-2/annex-2-high-level-requirements.md#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication).
 
-#### 6.3.3 PID Provider's or Attestation Provider's registration suspension or cancellation
+#### 6.3.3 PID Provider or Attestation Provider suspension or cancellation
 
 Under specific conditions, a Registrar may decide to suspend or
 cancel registration of a PID Provider or Attestation Provider. The conditions for
