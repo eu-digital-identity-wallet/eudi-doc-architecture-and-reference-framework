@@ -1548,7 +1548,7 @@ Relying Party to the **Suspended** state. Subsequently the Registrar can
 unsuspend the Relying Party, bringing it back to the **Valid** state. The
 Registrar can also decide to completely cancel registration of the Relying
 Party, which brings it in the **Cancelled** state. For more information about
-suspension or cancellation, please refer to [Section 6.4.3](#643-relying-party-de-registration).
+suspension or cancellation, please refer to [Section 6.4.3](#643-relying-party-suspension-or-cancellation).
 A Wallet Unit will not present a PID or attestation to a Relying Party whose
 registration is suspended or cancelled.
 
@@ -2464,7 +2464,7 @@ attestations as described in [Section 6.6.3.7](#6637-relying-party-verifies-that
 1. A Relying Party is registered by a Registrar in the Member State where it
 resides. Relying Party registration is discussed in [Section 6.4.2](#642-relying-party-registration).
 2. Under specific conditions, a Registrar may decide to suspend or cancel registation of a
-Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-de-registration).
+Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-suspension-or-cancellation).
 
 #### 6.4.2 Relying Party registration
 
@@ -2503,7 +2503,7 @@ Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.
 
 More details on the Relying Party registration process can be found in [Topic 27](./annexes/annex-2/annex-2-high-level-requirements.md#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties).
 
-#### 6.4.3 Relying Party de-registration
+#### 6.4.3 Relying Party suspension or cancellation
 
 Under specific conditions, a Registrar may decide to suspend or cancel registration of a registered
 Relying Party. The conditions for this will be specified by each Registrar.
