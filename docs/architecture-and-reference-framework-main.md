@@ -1885,7 +1885,7 @@ Providers, and Attestation Providers for these formats and specifications.
 #### 5.3.2 ISO/IEC 18013-5 and ISO/IEC 23220-2
 
 The ISO/IEC 18013-5 standard was originally developed as a standard for mobile
-driving licenses (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
+driving licences (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
 Unit containing an mDL attestation (as defined in the [mDL Rulebook](./annexes/annex-3/annex-3.02-mDL-rulebook.md)), while an mDL reader is
 a Relying Party requesting such an attestation.
 
@@ -3660,8 +3660,9 @@ attestations which have a technical validity period shorter than the
 administrative validity period of the licence itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always present a valid mDL. When the
-administrative validity period ends, there will be an administrative process for obtaining a new
-driving license, which is however out of scope of this document.
+administrative validity period ends, there will be an administrative process
+for obtaining a new driving licence, which is however out of scope of this
+document.
 
 Note that, in general, if the original PID or attestation was issued in a batch,
 then the PID Provider or Attestation Provider will re-issue that PID or

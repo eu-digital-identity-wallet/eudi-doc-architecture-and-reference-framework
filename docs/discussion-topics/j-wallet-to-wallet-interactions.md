@@ -74,7 +74,7 @@ Below, we will use the following terminology.
 ### 3.2 Basic Use Case
 Wallet-to-Wallet interactions cover the use case, where a natural person, wishes to present a PID or (Q)EAA to another natural person, using their EUDI Wallets. Note that legal entities are not allowed to bypass the processes and rules governing Relying Parties using Wallet-to-Wallet Interactions between natural persons instead of presentations towards Relying Parties.
  
-We envision that the below use case could be used as basis for Wallet-to-Wallet interactions. As an example, the use case could occur in a setting where one private person wants to rent their car (the *Verifier*) to another private person (the *Presenter*), if the Presenter has a valid driving license:
+We envision that the below use case could be used as basis for Wallet-to-Wallet interactions. As an example, the use case could occur in a setting where one private person wants to rent their car (the *Verifier*) to another private person (the *Presenter*), if the Presenter has a valid driving licence:
 
 1. The two EUDI Wallet Users meet in physical proximity and agree (out of band of the EUDI Wallet system), that one (the *Presenter*) should present a specific PID (or other attestation), including what data fields, towards the other (the *Verifier*).
 2. Both users select *Wallet-to-Wallet mode* in their respective EUDI Wallet Unit UI and are asked to specify their role (*Presenter* or *Verifier*).
