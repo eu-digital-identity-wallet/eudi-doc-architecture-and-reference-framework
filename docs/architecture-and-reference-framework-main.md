@@ -3268,7 +3268,7 @@ request, the Wallet Unit offers to the User an alternative option to perform ver
 Relying Party information, through an on-line check instead. 
 
 If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
-+ the Relying Party Access Certificate, or
++ the Relying Party access certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
 
 Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
