@@ -3140,7 +3140,7 @@ how this will be done.
 attributes than it has registered for, and informs the User about the outcome of
 this verification. See [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)
 for more information.
-3. The Attestation Provider, during issuance, may optionally embedded a
+3. The Attestation Provider, during issuance, may optionally embed a
 disclosure policy in the attestation. If such a policy is present for the
 requested attestation, the Wallet Unit evaluates the disclosure policy and
 informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present).
