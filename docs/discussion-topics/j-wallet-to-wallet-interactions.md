@@ -201,7 +201,7 @@ The Presenter Wallet Unit SHALL make it clear to the user whether they are prese
 > Rationale: To prevent abuse of the wallet to wallet functionality by other Relying Parties it is important that the Presenter is made aware that they are interacting with a natural person and not another legal entity in case they would expect to be interacting with another legal entity. 
 
 ##### Requirement 12
-Wallet Units SHALL only be able to receive at most 10 presentations an hour. 
+Wallet Units SHALL only be able to receive at most 10 presentations per hour. 
 
 > Rationale: This is to prevent large-scale abuse of the wallet to wallet functionality by another legal entity than a natural person to relying on it.
 
