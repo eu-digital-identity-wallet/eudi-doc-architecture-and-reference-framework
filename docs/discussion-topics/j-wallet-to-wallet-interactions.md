@@ -78,7 +78,7 @@ We envision that the below use case could be used as basis for Wallet-to-Wallet 
 
 1. The two EUDI Wallet Users meet in physical proximity and agree (out of band of the EUDI Wallet system), that one (the *Presenter*) should present a specific PID (or other attestation), including what data fields, towards the other (the *Verifier*).
 2. Both users select *Wallet-to-Wallet mode* in their respective EUDI Wallet Unit UI and are asked to specify their role (*Presenter* or *Verifier*).
-3. The *Presenter* should given an option to suggest which PID or Attestation (and which data fields) to share with the *Verifier* (i.e. produce a *suggested presentation request*).
+3. The *Presenter* should be given an option suggesting which PID or Attestation (and which data fields) to share with the *Verifier* (i.e. produce a *suggested presentation request*).
 4. A handshake protocol is performed and a data connection is established between the two devices. This protocol also sends the *suggested presentation request* to the *Verifier*, if it was specified.
 5. If the Presenter specified a *suggested presentation request* in step 3, this is now displayed to the *Verifier* in the EUDI Wallet Unit UI. Based on this, the *Verifier* specifies, what PID or attestation (and which data fields) should be presented, in the Wallet-to-Wallet presentation, i.e. a *presentation request*. Note that the *presentation request* can be created from scratch if there was no *suggested presentation request* or it can contain all, or a subset, of the elements specified in the *suggested presentation request*.
 6. The *presentation request* and some information about the *Verifier* is sent to the *Presenter*    
