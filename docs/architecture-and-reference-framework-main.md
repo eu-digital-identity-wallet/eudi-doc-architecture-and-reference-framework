@@ -2451,7 +2451,7 @@ Invalid. As a result, Relying Parties will no longer trust PIDs or attestations
 issued by the Provider with suspended or cancelled registration. For non-qualified EAA Providers,
 the applicable Rulebook (see [Topic 12](./annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks))
 may define additional mechanisms ensuring that Relying Parties will no longer
-trust the trust anchors of EAA Providers of which registration was suspended or cancelled.
+trust the trust anchors of EAA Providers whose registration is suspended or cancelled.
 
 When a Registrar suspends or cancels registration of a PID Provider or Attestation
 Provider, the PID Provider or Attestation Provider revokes all of their PIDs or
