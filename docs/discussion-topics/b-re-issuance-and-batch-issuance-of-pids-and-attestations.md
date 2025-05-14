@@ -93,7 +93,7 @@ value of the attributes in the new attestation will typically be the
 same as in the original attestation. However, this is not required; the
 PID Provider or Attestation Provider may change one or more attribute
 values. Re-issuance, as described in this document, is only applied within
-the administrative validity period of a document. As an example, a mobile driving licence (mDL) is issued in the form of attestations which have a technical validity period shorter than the administrative validity period of the licence itself. Re-issuance is used for obtaining fresh attestations as needed during the administrative validity period, to ensure that the User can always share a valid mDL. However, when the administrative validity period ends, there will be a process for obtaining a new administrative driving license. This is however out of scope of this document.
+the administrative validity period of a document. As an example, a mobile driving licence (mDL) is issued in the form of attestations which have a technical validity period shorter than the administrative validity period of the licence itself. Re-issuance is used for obtaining fresh attestations as needed during the administrative validity period, to ensure that the User can always share a valid mDL. However, when the administrative validity period ends, there will be a process for obtaining a new administrative driving licence. This is however out of scope of this document.
 
 Batch issuance means that instead of issuing a single PID or attestation
 to a Wallet Unit, a PID Provider or Attestation Provider issues a batch of them.
