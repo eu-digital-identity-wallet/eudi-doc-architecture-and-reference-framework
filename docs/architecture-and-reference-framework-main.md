@@ -3272,7 +3272,7 @@ If the User choses to perform such a check, the Wallet Unit retrieves a URL of t
 + the Relying Party Access Certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
 
-Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relaying Party access certificate or from the presentation request in case the requestor is an intermediary).
+Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
 The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
 The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional). 
 
