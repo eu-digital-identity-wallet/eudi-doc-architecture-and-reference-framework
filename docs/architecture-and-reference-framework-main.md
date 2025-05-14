@@ -2213,7 +2213,7 @@ non-qualified EAAs). PIDs are issued by **PID Providers** and attestations by
 [Figure 11](#61-scope). Before interacting with a Wallet Unit these providers must be
 registered with a **PID Provider Registrar** or **Attestation
 Provider Registrar**. Upon registration, they receive an **access certificate** (from a
-**PID Provider Access CA** or **Attestation Provider Access CA**) and may optain one or more **registration certificates** ( from a **PID Provider Registration CA** or **Attestation Provider Registration CA**).
+**PID Provider Access CA** or **Attestation Provider Access CA**) and may obtain one or more **registration certificates** ( from a **PID Provider Registration CA** or **Attestation Provider Registration CA**).
 See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
 
 Once a Wallet Unit receives a PID or attestation, it can present **User
