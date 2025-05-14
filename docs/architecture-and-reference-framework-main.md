@@ -1543,15 +1543,14 @@ Figure 10: State diagram of Relying Party
 The **Valid** state is the first state of a Relying Party. This means it has
 been registered by a Relying Party Registrar, as described in [Section 6.4.2](#642-relying-party-registration).
 
-The Registrar can suspend or cancel registration of a Relying Party.
-This leads to the **Suspended** state. The Registrar can
-unsuspend the Relying Party, bringing it back to the
-**Valid** state. The Registrar can also decide to completely
-cancel registration of the PID Provider or Attestation Provider, which brings it in the
-**Cancelled** state. For more information about suspension or cancellation, please
-refer to [Section 6.4.3](#643-relying-party-de-registration).
-A Wallet Unit will not present a PID or attestation to a Relying Party that its registration is suspended or cancelled.
-
+The Registrar can suspend registration of a Relying Party, which brings the
+Relying Party to the **Suspended** state. Subsequently the Registrar can
+unsuspend the Relying Party, bringing it back to the **Valid** state. The
+Registrar can also decide to completely cancel registration of the Relying
+Party, which brings it in the **Cancelled** state. For more information about
+suspension or cancellation, please refer to [Section 6.4.3](#643-relying-party-de-registration).
+A Wallet Unit will not present a PID or attestation to a Relying Party whose
+registration is suspended or cancelled.
 
 ### 4.7 Pseudonyms
 
