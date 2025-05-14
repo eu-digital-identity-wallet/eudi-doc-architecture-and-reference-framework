@@ -2165,9 +2165,10 @@ transaction flows.
 The [OpenID4VP] standard defines message structures, transaction flows, and an
 HTTP-based interface specification between Wallet Units and Relying Parties.
 [OpenID4VP] also specifies security mechanisms ensuring:
-    - the confidentiality and authenticity of all data exchanged between a
-    Wallet Unit and a Relying,
-    - Relying Party authentication.
+
+- the confidentiality and authenticity of all data exchanged between a Wallet
+  Unit and a Relying Party,
+- Relying Party authentication.
 
 [OpenID4VP] is suitable only for remote transaction flows.
 
