@@ -404,7 +404,7 @@
   
 
 
-<p>Version 0.95, updated 7 April 2025</p>
+<p>Version 0.97, updated 16 May 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/443">Link to GitHub discussion</a></p>
 <h1 id="topic-n-export-and-data-portability">Topic N - Export and data portability</h1>
 <h2 id="1-introduction">1 Introduction</h2>
@@ -552,7 +552,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tbody>
 </table>
 <h3 id="33-recovery-of-lost-wallet-units">3.3 Recovery of Lost Wallet Units</h3>
-<p>The recovery of lost of a Wallet Units follows the same process and the same limitations as for the migration process apply (see section 3.2).</p>
+<p>The recovery of a lost Wallet Unit follows the same process and the same limitations as for the migration process apply (see section 3.2).</p>
 <h3 id="34-scope-of-logged-information">3.4 Scope of Logged Information</h3>
 <p>Article 9(2) of [CIR 2024/2979] specifies the scope of data to be logged:</p>
 <blockquote>
@@ -567,7 +567,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p>However it is proposed to specify in the scope of logged information also the following cases:
 + PID/attestation deletion events (--&gt; changes proposed in DASH_02), 
 + other events possibly that will be relevant following the development of the ARF (eg. in relation to Topic W --&gt; apropriate clauses on logging will be proposed as a part of the Topic W discussion outcome and HLR set, that is yet to come).</p>
-<p>In addition, there are the follwing minor changes proposed to improve consistency of the text: </p>
+<p>In addition, the following minor changes have been proposed, to improve consistency of the text: </p>
 <table>
 <thead>
 <tr>
@@ -700,8 +700,8 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </tr>
 <tr>
 <td>Mig_04</td>
-<td>The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. <em>Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.</em></td>
-<td>Keep as-is</td>
+<td>The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice <strong>(from the options supported by the Wallet Solution)</strong>, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. <em>Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.</em></td>
+<td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Mig_05</td>
@@ -722,8 +722,8 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <tbody>
 <tr>
 <td>Mig_06</td>
-<td>Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User.</td>
-<td>Keep as-is</td>
+<td>Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User <strong>(from the options supported by the Wallet Solution)</strong>.</td>
+<td>Keep with proposed changes</td>
 </tr>
 <tr>
 <td>Mig_07</td>
@@ -826,7 +826,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p>At the same time the Migration Object is assumed not to contain any private keys (refer to Topic 34). Therefore it is finally assumed, that there is no impacts to any of the WUA / [Topic 9] requirements. </p>
 <h3 id="53-topic-l-user-requesting-data-deletion-to-relying-parties">5.3 Topic L - User requesting data deletion to relying parties</h3>
 <p>This topic refers to section "Topic 48 - Blueprint for requesting data deletion to Relying Parties" of the ARF Annex II.</p>
-<p>According the related HLRs, the transaction log should containt also information related to deletion of attributes (see section 4.4 of this document). As presented in section 4.4, there are no changes proposed to these HLRs.</p>
+<p>According to the related HLRs, the transaction log should also contain information related to deletion of attributes (see section 4.4 of this document). As presented in section 4.4, there are no changes proposed to these HLRs.</p>
 <h3 id="54-relation-to-risk-register-tbd">5.4 Relation to Risk Register (tbd)</h3>
 <p>The risk register for European Digital Identity Wallets [RiskRegister]
 contains the following risks that are related to the Relying Party registration:</p>
@@ -960,7 +960,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[OID4VP]</td>
-<td>OpenID for Verifiable Presentations - draft 24</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID for Verifiable Presentations</a></td>
 </tr>
 <tr>
 <td>[GDPR]</td>
