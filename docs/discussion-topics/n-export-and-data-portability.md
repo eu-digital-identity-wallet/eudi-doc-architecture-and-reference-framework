@@ -1,4 +1,4 @@
-Version 0.95, updated 7 April 2025
+Version 0.97, updated 16 May 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/443)
@@ -214,7 +214,7 @@ For Mig_05 it is to reflect "integrity and authenticity" aspect required by the 
 
 ### 3.3 Recovery of Lost Wallet Units
 
-The recovery of lost of a Wallet Units follows the same process and the same limitations as for the migration process apply (see section 3.2).
+The recovery of a lost Wallet Unit follows the same process and the same limitations as for the migration process apply (see section 3.2).
 
 
 ### 3.4 Scope of Logged Information
@@ -238,7 +238,7 @@ However it is proposed to specify in the scope of logged information also the fo
 + other events possibly that will be relevant following the development of the ARF (eg. in relation to Topic W --> apropriate clauses on logging will be proposed as a part of the Topic W discussion outcome and HLR set, that is yet to come).
 
 
-In addition, there are the follwing minor changes proposed to improve consistency of the text: 
+In addition, the following minor changes have been proposed, to improve consistency of the text: 
 
 | **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
@@ -305,7 +305,7 @@ A. Back-up requirements
 | Mig_02 | The Commission SHALL define a technical specification of the Migration Object. |       Keep as-is     |
 | Mig_03 | For each PID or attestation that is issued to it, a Wallet Unit SHALL add **to the Migration Object** all data that is necessary to request ~~re-issuance~~**issuance once again** of that PID or attestation ~~to the Migration Object~~. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys associated with the PID or attestation. |     Keep with proposed changes       |
 | Mig_03b | If the User deletes a PID or attestation from their Wallet Unit, the Wallet Unit SHALL delete the corresponding entry from the Migration Object. |     Keep as-is       |
-| Mig_04 | The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. *Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.* |      Keep as-is      |
+| Mig_04 | The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice **(from the options supported by the Wallet Solution)**, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. *Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.* |      Keep with proposed changes      |
 | Mig_05 | The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality, **integrity and authenticity** is protected and that it is protected against use by others than the User. *Note: This could be done, for example, by using password-based cryptography to encrypt the object.* |      Keep with proposed modification      |
 
 
@@ -313,7 +313,7 @@ B. Restore Requirements
 
 | **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| Mig_06    | Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User. |     Keep as-is         |
+| Mig_06    | Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User **(from the options supported by the Wallet Solution)**. |     Keep with proposed changes         |
 | Mig_07 | For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored. |      Keep as-is      |
 | Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](#a2319-topic-19---User-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
 | Mig_11 | The processes and interfaces used for ~~re-issuance~~**issuance** of a **new** PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in [Topic 10](#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit). |      Keep with proposed changes      |
@@ -374,7 +374,7 @@ At the same time the Migration Object is assumed not to contain any private keys
 
 This topic refers to section "Topic 48 - Blueprint for requesting data deletion to Relying Parties" of the ARF Annex II.
 
-According the related HLRs, the transaction log should containt also information related to deletion of attributes (see section 4.4 of this document). As presented in section 4.4, there are no changes proposed to these HLRs.
+According to the related HLRs, the transaction log should also contain information related to deletion of attributes (see section 4.4 of this document). As presented in section 4.4, there are no changes proposed to these HLRs.
 
 
 ### 5.4 Relation to Risk Register (tbd)
@@ -423,5 +423,5 @@ See sections 4 and 5 above. In addition, data export and portability aspects in 
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |
-| [OID4VP] | OpenID for Verifiable Presentations - draft 24 |
+| [OID4VP] | [OpenID for Verifiable Presentations](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2) |
 | [GDPR]   |  Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) |
