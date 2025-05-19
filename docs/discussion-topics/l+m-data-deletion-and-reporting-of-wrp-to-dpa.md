@@ -1,6 +1,6 @@
-# L+M - Requesting erasure of personal data at a wallet-relying party and lodging a complaint with the competent data protection supervisory authority
+# L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
 
-Version 0.3, created 14 April 2025
+Version 0.9, created 14 May 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/480)
 
@@ -9,7 +9,7 @@ Version 0.3, created 14 April 2025
 ### 1.1 Discussion Paper topic description
 
 The present discussion paper discusses how a wallet user can use her wallet unit to request the 
-erasure of personal data at a wallet-relying party and for lodging a complaint with the competent 
+erasure of personal data at a wallet-relying party and for reporting a relying party to the competent 
 data protection supervisory authority. 
 
 The present paper builds upon and recalls (see [clause 3](#3-existing-high-level-requirements)) 
@@ -40,7 +40,12 @@ fact.
 
 Article 2 (4) of [(EU) No 910/2014](http://data.europa.eu/eli/reg/2014/910/oj) stipulates that this regulation is without prejudice to the 
 ''General Data Protection Regulation'' (GDPR) [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) and hence it seems to be appropriate to recall 
-the most relevant stipulations from GDPR here. 
+the most relevant stipulations from GDPR here.  In particular, the lodging of a complaint to 
+Data Protection Authorities on the grounds of Article 57 (1) (f) of regulation (EU) 2016/679
+is a different and independent recourse mechanism from the reporting to a Data Protection Authority 
+provided for in Article 5a (4) (d) (iii) of the regulation (EU) No. 910/2014. This does not 
+prevent a Data Protection Authorities to use in its GDPR-based tasks information gathering 
+from eIDAS-based reports received.
 
 #### 1.4.1 Definitions from (EU) 2016/679 
 
@@ -50,8 +55,6 @@ following definitions:
 >(1) ‘**personal data**’ means any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person;
 >
 >(2) ‘**processing**’ means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;
->
->(3) ‘**restriction of processing**’ means the marking of stored personal data with the aim of limiting their processing in the future;
 >
 >(5) ‘**pseudonymisation**’ means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;
 >
@@ -103,13 +106,65 @@ Article 5 Nr. 2 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) st
 
 >2.   The controller shall be responsible for, and be able to demonstrate compliance with, paragraph 1 (‘**accountability**’).
 
+##### Article 6 (Lawfulness of processing)
+
+Article 6 Nr. 1 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
+
+>1. Processing shall be lawful only if and to the extent that at least one of the following applies:
+>
+>> (a) the data subject has given consent to the processing of his or her personal data for one or more specific purposes;
+>
+>> (b) processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;
+>
+>> (c) processing is necessary for compliance with a legal obligation to which the controller is subject;
+>
+>> (d) processing is necessary in order to protect the vital interests of the data subject or of another natural person;
+>
+>> (e) processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;
+> 
+>> (f) processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.
+>
+> Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks.
+
+
+
 ##### Article 11 (Processing which does not require identification)
 
 Article 11 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
 
 >1. If the purposes for which a controller processes personal data do not or do no longer require the identification of a data subject by the controller, the controller shall not be obliged to maintain, acquire or process additional information in order to identify the data subject for the sole purpose of complying with this Regulation.
 >
->2.   Where, in cases referred to in paragraph 1 of this Article, the controller is able to demonstrate that it is **not in a position to identify the data subject**, the controller shall inform the data subject accordingly, if possible. In such cases, **Articles 15 to 20 shall not apply** except where the data subject, for the purpose of exercising his or her rights under those articles, provides additional information enabling his or her identification.
+>2.   Where, in cases referred to in paragraph 1 of this Article, the controller is able to demonstrate 
+>     that it is **not in a position to identify the data subject**, the controller shall inform the data
+>     subject accordingly, if possible. In such cases, **Articles 15 to 20 shall not apply except where the data subject**, 
+>     for the purpose of exercising his or her rights under those articles, **provides additional information** enabling his or her identification.
+
+##### Article 12 (Transparent information, communication and modalities for the exercise of the rights of the data subject)
+
+Article 12 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
+
+>1. The controller shall take appropriate measures to provide any information referred to in Articles 
+ 13 and 14 and any communication under Articles 15 to 22 and 34 relating to processing to the data subject in a concise, transparent, intelligible and easily accessible form, using clear and plain language, in particular for any information addressed specifically to a child. The information shall be provided in writing, or by other means, including, where appropriate, by electronic means. When requested by the data subject, the information may be provided orally, provided that the identity of the data subject is proven by other means.
+>
+>2. The controller shall facilitate the exercise of data subject rights under Articles 15 to 22. In the cases referred to in Article 11(2), the controller shall not refuse to act on the request of the data subject for exercising his or her rights under Articles 15 to 22, unless the controller demonstrates that it is not in a position to identify the data subject.
+>
+>3. The controller shall provide information on action taken on a request under Articles 15 to 22 to the data subject without undue delay and in any event within one month of receipt of the request. That period may be extended by two further months where necessary, taking into account the complexity and number of the requests. The controller shall inform the data subject of any such extension within one month of receipt of the request, together with the reasons for the delay. Where the data subject makes the request by electronic form means, the information shall be provided by electronic means where possible, unless otherwise requested by the data subject.
+>
+>4. If the controller does not take action on the request of the data subject, the controller shall inform the data subject without delay and at the latest within one month of receipt of the request of the reasons for not taking action and on the possibility of lodging a complaint with a supervisory authority and seeking a judicial remedy.
+>
+>5. Information provided under Articles 13 and 14 and any communication and any actions taken under Articles 15 to 22 and 34 shall be provided free of charge. Where requests from a data subject are manifestly unfounded or excessive, in particular because of their repetitive character, the controller may either:
+>>(a) charge a reasonable fee taking into account the administrative costs of providing the information or communication or taking the action requested; or
+>>
+>>(b) refuse to act on the request. 
+>
+> The controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.
+
+>6. Without prejudice to Article 11, where the controller has reasonable doubts concerning the identity of the natural person making the request referred to in Articles 15 to 21, the controller may request the provision of additional information necessary to confirm the identity of the data subject.
+>
+>7. The information to be provided to data subjects pursuant to Articles 13 and 14 may be provided in combination with standardised icons in order to give in an easily visible, intelligible and clearly legible manner a meaningful overview of the intended processing. Where the icons are presented electronically they shall be machine-readable.
+>
+>8. The Commission shall be empowered to adopt delegated acts in accordance with Article 92 for the purpose of determining the information to be presented by the icons and the procedures for providing standardised icons.
+
 
 ##### Article 17 (Right to erasure (‘right to be forgotten’))
 
@@ -154,17 +209,19 @@ Article 24 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipula
 >
 >3.   Adherence to approved codes of conduct as referred to in Article 40 or approved certification mechanisms as referred to in Article 42 may be used as an element by which to demonstrate compliance with the obligations of the controller.
 
+##### Article 25 (Data protection by design and by default)
+
+Article 25 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
+
+>1. Taking into account the state of the art, the cost of implementation and the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for rights and freedoms of natural persons posed by the processing, the controller shall, both at the time of the determination of the means for processing and at the time of the processing itself, implement appropriate technical and organisational measures, such as pseudonymisation, which are designed to implement data-protection principles, such as data minimisation, in an effective manner and to integrate the necessary safeguards into the processing in order to meet the requirements of this Regulation and protect the rights of data subjects.
+>
+>2. The controller shall implement appropriate technical and organisational measures for ensuring that, by default, only personal data which are necessary for each specific purpose of the processing are processed. That obligation applies to the amount of personal data collected, the extent of their processing, the period of their storage and their accessibility. In particular, such measures shall ensure that by default personal data are not made accessible without the individual's intervention to an indefinite number of natural persons.
+
 ##### Article 28 (Processor)
 
 Article 28 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following: 
 
 >1.   Where processing is to be carried out on behalf of a controller, the controller shall use only processors providing sufficient guarantees to implement appropriate technical and organisational measures in such a manner that processing will meet the requirements of this Regulation and ensure the protection of the rights of the data subject.
-
-##### Article 31 (Cooperation with the supervisory authority)
-
-Article 31 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
-
->The controller and the processor and, where applicable, their representatives, shall cooperate, on request, with the supervisory authority in the performance of its tasks.
 
 ##### Article 32 (Security of processing)
 
@@ -214,29 +271,31 @@ Article 40 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipula
 >
 >>(k) out-of-court proceedings and other dispute resolution procedures for resolving disputes between controllers and data subjects with regard to processing, without prejudice to the rights of data subjects pursuant to Articles 77 and 79.
 
+##### Article 42 (Certification)
+
+Article 42 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following: 
+
+>1. The Member States, the supervisory authorities, the Board and the Commission shall encourage, in particular at Union level, the establishment of data protection certification mechanisms and of data protection seals and marks, for the purpose of demonstrating compliance with this Regulation of processing operations by controllers and processors. The specific needs of micro, small and medium-sized enterprises shall be taken into account.
+>
+>2. In addition to adherence by controllers or processors subject to this Regulation, data protection certification mechanisms, seals or marks approved pursuant to paragraph 5 of this Article may be established for the purpose of demonstrating the existence of appropriate safeguards provided by controllers or processors that are not subject to this Regulation pursuant to Article 3 within the framework of personal data transfers to third countries or international organisations under the terms referred to in point (f) of Article 46(2). Such controllers or processors shall make binding and enforceable commitments, via contractual or other legally binding instruments, to apply those appropriate safeguards, including with regard to the rights of data subjects.
+>
+>3. The certification shall be voluntary and available via a process that is transparent.
+>
+>4. A certification pursuant to this Article does not reduce the responsibility of the controller or the processor for compliance with this Regulation and is without prejudice to the tasks and powers of the supervisory authorities which are competent pursuant to Article 55 or 56.
+>
+>5. A certification pursuant to this Article shall be issued by the certification bodies referred to in Article 43 or by the competent supervisory authority, on the basis of criteria approved by that competent supervisory authority pursuant to Article 58(3) or by the Board pursuant to Article 63. Where the criteria are approved by the Board, this may result in a common certification, the European Data Protection Seal.
+>
+>6. The controller or processor which submits its processing to the certification mechanism shall provide the certification body referred to in Article 43, or where applicable, the competent supervisory authority, with all information and access to its processing activities which are necessary to conduct the certification procedure.
+>
+>7. Certification shall be issued to a controller or processor for a maximum period of three years and may be renewed, under the same conditions, provided that the relevant criteria continue to be met. Certification shall be withdrawn, as applicable, by the certification bodies referred to in Article 43 or by the competent supervisory authority where the criteria for the certification are not or are no longer met.
+>
+>8. The Board shall collate all certification mechanisms and data protection seals and marks in a register and shall make them publicly available by any appropriate means.
+
 ##### Article 51 (Supervisory authority)
 
 Article 51 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following: 
 
 >1. Each Member State shall provide for one or more independent public authorities to be responsible for monitoring the application of this Regulation, in order to protect the fundamental rights and freedoms of natural persons in relation to processing and to facilitate the free flow of personal data within the Union (‘supervisory authority’).
-
-##### Article 57 (Tasks)
-
-Article 57 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
-
->1.   Without prejudice to other tasks set out under this Regulation, each supervisory authority shall on its territory:
->
-> [...]
->
->> (f) handle **complaints lodged by a data subject**, or by a body, organisation or association in accordance with Article 80, and investigate, to the extent appropriate, the subject matter of the complaint and **inform the complainant of the progress and the outcome** of the investigation within a reasonable period, in particular if further investigation or coordination with another supervisory authority is necessary;
-
-##### Article 77 (Right to lodge a complaint with a supervisory authority))
-
-Article 77 of [(EU) 2016/679](http://data.europa.eu/eli/reg/2016/679/oj) stipulates the following:
-
->1.   Without prejudice to any other administrative or judicial remedy, every data subject shall have the right to lodge a complaint with a supervisory authority, in particular **in the Member State of his or her habitual residence, place of work or place of the alleged infringement** if the data subject considers that the processing of personal data relating to him or her infringes this Regulation.
->
->2.   The supervisory authority with which the complaint has been lodged **shall inform the complainant on the progress and the outcome** of the complaint including the possibility of a judicial remedy pursuant to Article 78.
 
 ### 1.5 Relevant requirements from (EU) No 910/2014
 
@@ -331,7 +390,7 @@ This document is structured as follows:
 
 ## 2. Overview
 
-According to Article 5a (a) of Regulation [(EU) No 910/2014](http://data.europa.eu/eli/reg/2014/910/oj)
+According to Article 5a (5) (a) of Regulation [(EU) No 910/2014](http://data.europa.eu/eli/reg/2014/910/oj)
 a wallet solution shall support common protocols and interfaces for
 
 * (ix) requesting a relying party to **erase the personal data** stored at a wallet-relying party pursuant to Article 17 of Regulation
@@ -344,8 +403,10 @@ The present document discusses topics related to these protocols and interfaces,
 ![Overview](img/Privacy-Architecture.svg)
 
 >**Note:** The discussion with the experts from the EU Member States soon revealed, that 
-> one may safely assume that there are **already suitable processes in place** for both processes addressed within the 
-> present document.
+> one may safely assume that there are already suitable processes in place for the process of data erasure
+> requests addressed within the present document. For reports to Data Protection Authorities, there may 
+> exist partially similar processes linked to handling GDPR-related complaints in spite of their different legal 
+> grounds (both processes involve a user sending information to a Data Protection Authority about a third party).
 > 
 > Therefore, the overall strategy of the present document is to utilise the existing interfaces 
 > and processes of the relying parties and supervisory authorities as much as possible and abstain from
@@ -400,25 +461,39 @@ The resulting requirement **DATA_DLT_01** is hence specified as follows, whereas
    **already have procedures, protocols and interfaces in place to handle data deletion requests** in accordance
    with regulation (EU) 2016/679. There was a consensus among the participants in the discussion, that the wallet unit should simply
    re-use the already existing interfaces offered by the wallet-relying parties. As there are no standardised protocols
-   and interfaces for this purpose (yet), this implies that the wallet unit can only
-   offer to **open an external mail client with a suitable template text** or offer to **open a specific URL with an
-   external browser** to ask for the deletion of data in a web form provided by the wallet-relying party. It was suggested,
-   that the registration certificate should contain the necessary contact information of the wallet-relying party, 
-   including an email address or the location of a web form for privacy-related enquiries.
+   and interfaces for this purpose (yet), this implies that the wallet unit can offer only to **open an external mail client with a suitable 
+   template text** or offer only to **open a specific URL with an external browser** to ask for the deletion of data 
+   in a web form provided by the wallet-relying party. It was suggested, that the registration certificate should contain 
+   the necessary contact information of the wallet-relying party, including an email address or the location of a web form 
+   for privacy-related enquiries.
 
 3) It was also discussed that the details of the handling of the data deletion request is
    within the responsibility of the wallet-relying party in its role as controller, or processor
-   acting on behalf of a controller. According to Article 24 of (EU) 2016/679 the controller is responsible for
-   the implementation of suitable technical and organisational measures for the protection of personal data in
-   line with Article 32 of (EU) 2016/679, which obviously includes the requirement to **authenticate the user**, which
-   submits a data deletion request, **or the request itself** using an appropriate electronic signature.
-   The **technical details** for this authentication procedure are however within the **responsibility of the
-   wallet-relying party**, acting as controller or processor. 
+   acting on behalf of a controller. According to Article 12 (6) of Regulation (EU) 2016/679, the controller may 
+   request additional information necessary to confirm the identity of the data subject. In any case Article 24 of 
+   (EU) 2016/679 clarifies that the controller is responsible for the implementation of suitable technical and 
+   organisational measures for the protection of personal data in line with Article 32 of (EU) 2016/679, which 
+   obviously includes the requirement to **authenticate the user**, which submits a data deletion request, 
+   **or the request itself** using an appropriate electronic signature. The **technical details** for this 
+   authentication procedure are within the **responsibility of the wallet-relying party**, 
+   acting as controller or processor, and hence there can only be a **recommendation** for the wallet-relying party 
+   to utilise the strong authentication or signature facilities offered by the wallet solutions for this purpose.
 
-   It seems that the Commission and the EU Member States can only  encourage and facilitate the development of appropriate **codes of conducts** for wallet-relying parties according to
-   Article 5f of (EU) No. 910/2014 and Article 40 of (EU) 2016/679, which could include the **recommendation** to utilise the strong
-   and trustworthy **authentication, identification and qualified electronic signature** capabilities of the wallet solutions for
-   implementing the necessary authentication procedure.
+This additional recommendation **DATA_DLT_07** is specified as follows: 
+
+> While the Wallet-Relying Party is responsible for choosing appropriate authentication mechanisms before
+> executing a data deletion request, it is RECOMMENDED to use the authentication and signature 
+> facilities offered by the Wallet Solutions for this purpose.    
+
+   It seems that the Commission and the EU Member States can only encourage and facilitate the development of 
+   appropriate **codes of conducts** for wallet-relying parties according to Article 5f of (EU) No. 910/2014, 
+   which may also address privacy-related aspects, such as the exercise of rights of data subjects according 
+   to Article 40 Nr. 2 (f) of (EU) 2016/679 for example. These code of conducts could
+   include the **recommendation** to utilise the strong and trustworthy **authentication, identification and 
+   qualified electronic signature** capabilities of the wallet solutions for implementing the necessary 
+   authentication procedure. In a similar manner, such aspects may also be addressed in certification criteria 
+   according to Article 42 of (EU) 2016/679.
+   
 
 #### 4.2 Discussions related to DATA_DLT_03
 
@@ -485,12 +560,12 @@ aspects related to **RPT_DPA_01** have been discussed:
    of the wallet provider and it may even offer a link to the members of the European Data Protection Board at
    https://www.edpb.europa.eu/about-edpb/about-edpb/members_en.
 
-Against the background of the discussion, it was agreed upon updating **RPT_DPA_01** to the following text:
+Against the background of the discussion and comments received, it was agreed upon updating **RPT_DPA_01** to the following text:
 
 > When prompted by the User, a Wallet Unit SHALL provide the contact details of the DPA, which supervises
-> the Relying Party, if available, and SHALL make it easy for the User to send a report of suspicious Relying Party
-> presentation requests to this DPA. If these are not available, the Wallet Unit SHALL provide the contact
-> details of the DPA of the region in which the Wallet Provider is residing. In addition, the Wallet Unit MAY
+> the Relying Party, if available, and SHALL make it easy for the User to send a report of allegedly unlawful or 
+> suspicious Relying Party presentation requests to this DPA. If these are not available, the Wallet Unit SHALL 
+> provide the contact details of the DPA of the region in which the Wallet Provider is residing. In addition, the Wallet Unit MAY
 > also provide contact details of other DPAs taken from the "European Data Protection Board" website (https://www.edpb.europa.eu/about-edpb/about-edpb/members_en),
 > and allow the User to choose a DPA to continue the reporting process.
 
@@ -567,7 +642,7 @@ to the DPA and hence it is not entirely clear, whether it makes sense to log it.
 
 Against this background it was decided to slightly revise the text of **RPT_DPA_05** as follows:
 
-> **As far as technically possible**, a Wallet Unit SHALL log the **initiation of a** report sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).
+> A Wallet Unit SHALL log the **initiation of a** report sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).
 
 ### 5.6 Additional high level requirement RPT_DPA_06
 
@@ -586,19 +661,20 @@ the following high level requirement as **RPT_DPA_06**:
 
 ## 6. Updated set of High Level Requriements 
 
-### 6.1 Update for Topic 48 (Erasure or personal data at a wallet-relying party)
+### 6.1 Update for Topic 48 (Erasure of personal data at a wallet-relying party)
 
 The updated set of high-level requirements after the discussion will give rise to an 
 update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties):
 
-| **Index**              | **Requirement specification**                                                                                                                                                                                                                                                                                                    |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Index**              | **Requirement specification**                                                                                                                                                                                                                                                                                                     |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DATA_DLT_01            | A Wallet Provider SHALL ensure that its Wallet Units support the technical specifications mentioned in DATA_DLT_02, allowing a User to request from a Relying Party the erasure of their attributes that were presented by that Wallet Unit to that Relying Party, in accordance with **Article 17 of** Regulation (EU) 2016/679. |
-| DATA_DLT_02            | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.                                                                                 |
-| DATA_DLT_03            | A Wallet Instance SHALL provide a function where the User may select one Relying Party <s>**or multiple Relying Parties**</s> for which an attribute deletion request must be submitted.                                                                                                                                         |
-| <s>**DATA_DLT_04**</s> | <s>**A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.**</s>                                                                                                                                                                                              |
-| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                            |
-| DATA_DLT_06            | The log SHALL **also document the initiation of a data deletion request and** include as a minimum: - Date **and time** of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.   |
+| DATA_DLT_02            | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.                                                                                  |
+| DATA_DLT_03            | A Wallet Instance SHALL provide a function where the User may select one Relying Party <s>**or multiple Relying Parties**</s> for which an attribute deletion request must be submitted.                                                                                                                                          |
+| <s>**DATA_DLT_04**</s> | <s>**A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.**</s>                                                                                                                                                                                               |
+| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
+| DATA_DLT_06            | The log SHALL **also document the initiation of a data deletion request and** include as a minimum: - Date **and time** of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.                                                                                       |
+| **DATA_DLT_07**        | **While the Wallet-Relying Party is responsible for choosing appropriate authentication mechanisms before executing a data deletion request, it is RECOMMENDED to use the authentication and signature facilities offered by the Wallet Solutions for this purpose.**                                                             |
 
 
 ### 6.2 Update for Topic 50 (Reporting a wallet-relying party to the competent data protection supervisory authority)
@@ -606,14 +682,14 @@ update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-arch
 The updated set of high-level requirements after the discussion will give rise to an update of 
 [Topic 50](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data):
 
-| **Index**             | **Requirement specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPT_DPA_01            | **When prompted by the User, a Wallet Unit SHALL provide the contact details of the DPA, which supervises the Relying Party, if available, and SHALL make it easy for the User to send a report of suspicious Relying Party presentation requests to this DPA. If these are not available, the Wallet Unit SHALL provide the contact details of the DPA of the region in which the Wallet Provider is residing. In addition, the Wallet Unit MAY also provide contact details of other DPAs taken from the "European Data Protection Board" website (https://www.edpb.europa.eu/about-edpb/about-edpb/members_en), and allow the User to choose a DPA to continue the reporting process.** |
-| RPT_DPA_02            | The User interface enabling a User to start the process of **reporting a Wallet-relying Party to a DPA** SHALL be accessible via the log provided by the Wallet Unit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| <s>**RPT_DPA_03**</s> | <s>**A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices.**</s>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| RPT_DPA_04            | **Wallet providers SHALL ensure that wallet units allow wallet users to substantiate the reports, including by attaching relevant information to identify the wallet-relying parties, and the wallet users’ claims in machine-readable format.</br> Note: The log kept by the Wallet Unit will be standardized and is machine-readable in order to enable data portability. An excerpt from this log therefore can be used to substantiate the report.**                                                                                                                                                                                                                                  |
-| RPT_DPA_05            | **As far as technically possible**, a Wallet Unit SHALL log the **initiation of a** report sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **RPT_DPA_06**        | **The Wallet Unit SHALL take the contact details of the DPA, which supervises the Relying Party, either (in this order) from a) included in  the RPRC in the log entry, b) included in the RPAC in the log entry, c) looked up by the Wallet Unit from the RP Registry, based on the Subject of the RPAC in the log entry. </br> The contact information includes  at least one of email address, phone number, or a URL of a webform.**
+| **Index**             | **Requirement specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RPT_DPA_01            | **When prompted by the User, a Wallet Unit SHALL provide the contact details of the DPA, which supervises the Relying Party, if available, and SHALL make it easy for the User to send a report of allegedly unlawful or suspicious Relying Party presentation requests to this DPA. If these are not available, the Wallet Unit SHALL provide the contact details of the DPA of the region in which the Wallet Provider is residing. In addition, the Wallet Unit MAY also provide contact details of other DPAs taken from the "European Data Protection Board" website (https://www.edpb.europa.eu/about-edpb/about-edpb/members_en), and allow the User to choose a DPA to continue the reporting process.** |
+| RPT_DPA_02            | The User interface enabling a User to start the process of **reporting a Wallet-relying Party to a DPA** SHALL be accessible via the log provided by the Wallet Unit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| <s>**RPT_DPA_03**</s> | <s>**A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices.**</s>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| RPT_DPA_04            | **Wallet providers SHALL ensure that wallet units allow wallet users to substantiate the reports, including by attaching relevant information to identify the wallet-relying parties, and the wallet users’ claims in machine-readable format.</br> Note: The log kept by the Wallet Unit will be standardized and is machine-readable in order to enable data portability. An excerpt from this log therefore can be used to substantiate the report.**                                                                                                                                                                                                                                                         |
+| RPT_DPA_05            | A Wallet Unit SHALL log the **initiation of a** report sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **RPT_DPA_06**        | **The Wallet Unit SHALL take the contact details of the DPA, which supervises the Relying Party, either (in this order) from a) included in  the RPRC in the log entry, b) included in the RPAC in the log entry, c) looked up by the Wallet Unit from the RP Registry, based on the Subject of the RPAC in the log entry. </br> The contact information includes  at least one of email address, phone number, or a URL of a webform.**                                                                                                                                                                                                                                                                         
 |
 
 
