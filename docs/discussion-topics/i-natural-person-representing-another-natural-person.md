@@ -1,6 +1,6 @@
 # I - Natural person representing another natural person
 
-Version 0.3, updated 30 April 2025
+Version 0.4, updated 20 May 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495)
 
@@ -93,7 +93,7 @@ Finally, ANNEX VI of the same regulation (MINIMUM LIST OF ATTRIBUTES) states:
 > [...] 9. Powers and mandates to represent natural or legal persons
 
 ## 3 Discussion
-The European Digital Identity Framework [European Digital Identity Regulation]
+The [European Digital Identity Regulation]
 considers the representation of one natural person by another. 
 
 One common use case is the legal representation of minors or individuals with 
@@ -115,74 +115,45 @@ behalf of another natural person (the principal).
 
 
 ### 3.1 Attestation issuance
-Based the regulation, it should be possible to issue an attestation for a natural 
-person to a legal representative. Rules for issuing an attestation to a legal
-representative SHALL be defined in the corresponding Rulebook according to the
-applicable national and european legislation.
+Based on the [European Digital Identity Regulation], it should be possible to issue 
+an attestation for a natural person to a representative, in accordance with 
+applicable national and European legislation. For certain use cases (e.g., parent-child 
+relationships), a PID or attestation provider should be able to retrieve the relevant 
+information from authentic sources at the national level or through designated 
+intermediaries. In other cases (e.g., power of attorney), the represented natural 
+person may be required to explicitly authorize the representative.
 
-A PID or attestation issued to a legal representative SHALL be distinct from the 
-original issued to the natural person, and SHALL include information specifying 
-the nature of the representation. 
+Attestation for a natural person issued to a representative SHALL be managed through a distinct attestation 
+type. This attestation type SHALL specify the nature of the representation and 
+SHALL clearly define the operations that the representative is authorized to perform, 
+thereby restricting the scope of their authority. It SHALL NOT be possible to conceal 
+this information.
 
-The European Digital Identity Framework [European Digital Identity Regulation],
-ANNEX VI states:
-
-> Member States shall ensure that measures are taken to allow qualified trust service 
-providers of electronic attestations of attributes to verify by electronic means at 
-the request of the user, the authenticity of the following attributes against the 
-relevant authentic source at national level or via designated intermediaries 
-recognised at national level, in accordance with Union or national law and where these attributes rely on authentic sources within the public sector: 
-
-> [...] 9. Powers and mandates to represent natural or legal persons;
-
-Therefore, for certain use cases (e.g., parent-child relationship) a PID or 
-Attestation provider should be able to retrieve relevant information from 
-authentic sources at national level (or via designated intermediaries). However,
-in other use cases (e.g., power of attorney) the represented natural person
-may need to authorize a representative. 
-
-To support such cases, mandates SHALL be managed through a distinct attestation type. 
-This mandate-specific attestation SHALL clearly define the operations the agent 
-is authorized to perform, thereby limiting the scope of its authorization. 
-Such an attestation SHALL be either short-lived or revocable. 
-In the case of revocable attestations, all entities which, according to applicable 
-law, must have the ability to revoke them SHALL be able to do so. Furthermore, high level
-requirements related to attestation revocation, defined in Annex 2 of ARF, are
-applicable to attestations corresponding to mandates.
+Furthermore, this attestation type SHALL be either short-lived or revocable. In 
+the case of revocable attestations, all entities that, according to applicable law, 
+are entitled to revoke them SHALL have the capability to do so. It is emphasized 
+that the high-level requirements concerning attestation revocation, as defined in 
+Annex 2 of the ARF, also apply to this attestation type.
 
 ## 3.2 Attestation Presentation
-A natural person should be able to represent another natural person 
-when interacting with a Relying Party. The Relying Party SHALL always be aware
-that it interacts with a legal representative or an agent, either because this information is embedded in the corresponding PID or attestation, or because the corresponding Wallet Unit
-presents a mandate-specific attestation. In the case where the information is embedded, 
-it SHALL NOT be possible to hide the representation information contained in the PID 
-or attestation.
-
-
+A natural person should be able to represent another natural person when interacting 
+with a Relying Party. The Relying Party SHALL always be made aware that it is 
+interacting with a legal representative or agent. This is ensured by the fact that 
+the corresponding Wallet Unit presents an attestation of a distinct type, specifically 
+issued representations.
 
 ## 4 Additions and changes to the ARF
 
 ### 4.1 High-Level Requirements to be added to Annex 2
 **Requirement 1**
-If a PID or attestation for a natural person can be issued to a legal 
-representative, the corresponding Rulebook SHALL define the rules governing such 
-issuance. These rules SHALL comply with applicable legislation.
+The Commission SHALL create a Rulebook for attestations issued to a natural
+person representing another natural person. The Rulebook SHALL include attributes
+used for defining a validity period, the nature of the representation, and the operations 
+the representative is authorized to perform, thereby limiting the scope of its authorization.
 
 **Requirement 2**
-PID Providers and Attestation Providers SHALL ensure that PID or attestation issued 
-to a legal representative is distinct from the original issued to the natural person, 
-and it includes information specifying the nature of the representation. Wallet Units
-SHALL NOT hide this information from the Relying Parties.
-
-**Requirement 3**
-The Commission SHALL create a Rulebook for attestations corresponding to mandates. 
-An attestation corresponding to a mandate SHALL be issued to the Wallet Unit of the
-agent and clearly define a validity period and the operations 
-the agent is authorized to perform, thereby limiting the scope of its authorization.
-
-
-**Requirement 4**
-An Attestation Provider issuing attestations corresponding to mandates SHALL ensure 
+An Attestation Provider issuing attestations to a natural
+person representing another natural person  SHALL ensure 
 that either the attestations are short-lived or that all entities which, according 
 to applicable law, must have the ability to revoke such attestations are able to do so.
 
