@@ -1539,9 +1539,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#633-pid-providers-or-attestation-providers-registration-suspension-or-cancellation" class="md-nav__link">
+  <a href="#633-pid-provider-or-attestation-provider-suspension-or-cancellation" class="md-nav__link">
     <span class="md-ellipsis">
-      6.3.3 PID Provider's or Attestation Provider's registration suspension or cancellation
+      6.3.3 PID Provider or Attestation Provider suspension or cancellation
     </span>
   </a>
   
@@ -1581,9 +1581,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#643-relying-party-de-registration" class="md-nav__link">
+  <a href="#643-relying-party-suspension-or-cancellation" class="md-nav__link">
     <span class="md-ellipsis">
-      6.4.3 Relying Party de-registration
+      6.4.3 Relying Party suspension or cancellation
     </span>
   </a>
   
@@ -2785,7 +2785,7 @@ document titled the "Use Cases Manual", and distributed together with this docum
 <p>One of the main use cases of the EUDI Wallet ecosystem is secure User
 identification and authentication. A User presents data from their PID, which is
 issued and managed at Level of Assurance (LoA) High, to various online services,
-both public and private.. This capability is crucial, as it allows Relying
+both public and private. This capability is crucial, as it allows Relying
 Parties to confidently verify the identity of Users they interact with.</p>
 <p>In this use case, a User utilises their Wallet Unit to present specific
 attributes from a PID to a Relying Party in order to access online services.
@@ -3829,14 +3829,14 @@ PID or attestation is expired or revoked, it cannot transition back to
 <p>Figure 10: State diagram of Relying Party</p>
 <p>The <strong>Valid</strong> state is the first state of a Relying Party. This means it has
 been registered by a Relying Party Registrar, as described in <a href="#642-relying-party-registration">Section 6.4.2</a>.</p>
-<p>The Registrar can suspend or cancel registration of a Relying Party.
-This leads to the <strong>Suspended</strong> state. The Registrar can
-unsuspend the Relying Party, bringing it back to the
-<strong>Valid</strong> state. The Registrar can also decide to completely
-cancel registration of the PID Provider or Attestation Provider, which brings it in the
-<strong>Cancelled</strong> state. For more information about suspension or cancellation, please
-refer to <a href="#643-relying-party-de-registration">Section 6.4.3</a>.
-A Wallet Unit will not present a PID or attestation to a Relying Party that its registration is suspended or cancelled.</p>
+<p>The Registrar can suspend registration of a Relying Party, which brings the
+Relying Party to the <strong>Suspended</strong> state. Subsequently the Registrar can
+unsuspend the Relying Party, bringing it back to the <strong>Valid</strong> state. The
+Registrar can also decide to completely cancel registration of the Relying
+Party, which brings it in the <strong>Cancelled</strong> state. For more information about
+suspension or cancellation, please refer to <a href="#643-relying-party-suspension-or-cancellation">Section 6.4.3</a>.
+A Wallet Unit will not present a PID or attestation to a Relying Party whose
+registration is suspended or cancelled.</p>
 <h3 id="47-pseudonyms">4.7 Pseudonyms</h3>
 <h4 id="471-introduction-to-passkeys">4.7.1 Introduction to Passkeys</h4>
 <p>As specified in [CIR 2024/2979], [W3C WebAuthn] defines the technical
@@ -4124,7 +4124,7 @@ attestations of attributes can be used:</p>
 <ul>
 <li>The format specified in [ISO/IEC 18013-5] and generalised in [ISO/IEC 23220-2],</li>
 <li>The format specified in 'SD-JWT-based Verifiable Credentials' [SD-JWT VC],</li>
-<li>The format specified in 'W3C Verifiable Credentials Data Model v2.0'[W3C VCDM 2.0].</li>
+<li>The format specified in 'W3C Verifiable Credentials Data Model v2.0' [W3C VCDM 2.0].</li>
 </ul>
 <p>The next subsections give more information about each of these formats and
 specifications, and explain where the different elements of an attestation, as
@@ -4394,10 +4394,12 @@ transaction flows.</p>
 <h4 id="563-secure-data-exchange-using-openid4vp">5.6.3 Secure data exchange using [OpenID4VP]</h4>
 <p>The [OpenID4VP] standard defines message structures, transaction flows, and an
 HTTP-based interface specification between Wallet Units and Relying Parties.
-[OpenID4VP] also specifies security mechanisms ensuring:
-    - the confidentiality and authenticity of all data exchanged between a
-    Wallet Unit and a Relying,
-    - Relying Party authentication.</p>
+[OpenID4VP] also specifies security mechanisms ensuring:</p>
+<ul>
+<li>the confidentiality and authenticity of all data exchanged between a Wallet
+  Unit and a Relying Party,</li>
+<li>Relying Party authentication.</li>
+</ul>
 <p>[OpenID4VP] is suitable only for remote transaction flows.</p>
 <p>[OpenID4VP] can be used for transporting attestations in different formats,
 including especially the formats used within the EUDI Wallet ecosystem. Within
@@ -4432,7 +4434,7 @@ non-qualified EAAs). PIDs are issued by <strong>PID Providers</strong> and attes
 <a href="#61-scope">Figure 11</a>. Before interacting with a Wallet Unit these providers must be
 registered with a <strong>PID Provider Registrar</strong> or <strong>Attestation
 Provider Registrar</strong>. Upon registration, they receive an <strong>access certificate</strong> (from a
-<strong>PID Provider Access CA</strong> or <strong>Attestation Provider Access CA</strong>) and may optain one or more <strong>registration certificates</strong> ( from a <strong>PID Provider Registration CA</strong> or <strong>Attestation Provider Registration CA</strong>).
+<strong>PID Provider Access CA</strong> or <strong>Attestation Provider Access CA</strong>) and may obtain one or more <strong>registration certificates</strong> (from a <strong>PID Provider Registration CA</strong> or <strong>Attestation Provider Registration CA</strong>).
 See <a href="#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle">Section 6.3</a>.</p>
 <p>Once a Wallet Unit receives a PID or attestation, it can present <strong>User
 attributes</strong> to <strong>Relying Party Instances</strong> (right side of <a href="#61-scope">Figure 11</a>). These
@@ -4533,7 +4535,7 @@ lifecycle of a PID Provider or Attestation Provider:</p>
 <li>A PID Provider or an Attestation Provider is registered by a Trusted List Provider in its Member State. This is discussed in <a href="#632-pid-provider-or-attestation-provider-registration-and-notification">Section 6.3.2</a>.</li>
 <li>Under specific conditions, a Trusted List Provider may decide to suspend or
 cancel registration of a registered PID Provider or Attestation Provider. This is discussed in
-<a href="#633-pid-provider-or-attestation-provider-suspension-or-withdrawal">Section 6.3.3</a>.</li>
+<a href="#633-pid-provider-or-attestation-provider-suspension-or-cancellation">Section 6.3.3</a>.</li>
 </ol>
 <h4 id="632-pid-provider-or-attestation-provider-registration-and-notification">6.3.2 PID Provider or Attestation Provider registration and notification</h4>
 <h5 id="6321-introduction">6.3.2.1 Introduction</h5>
@@ -4551,7 +4553,7 @@ a Trusted List.</li>
 <p>These processes are discussed in the next subsections.</p>
 <h4 id="6322-data-about-the-pid-provider-or-attestation-provider-is-included-in-the-registry">6.3.2.2 Data about the PID Provider or Attestation Provider is included in the registry</h4>
 <p>When a PID Provider or Attestation Provider is registered, the Trusted List Provider registers a set of data about the PID Provider or Attestation Provider in its register. The Trusted List Provider makes the contents of the register available to the general public, both in machine-readable and human-readable format.</p>
-<p>The data to be registered about a PID Provider or Attestation Provider includes the attestation type(s) that the PID Provider or Attestation Provider intends to issue to Wallet Units. This will enable Wallet Units and Relying to verify the entitlement of a given PID Provider or Attestation Provider to issue a specific attestation type. For example, a PuB-EAA Provider may be entitled to issue mDLs in a specific Member State, but may not be entitled to issue diplomas.</p>
+<p>The data to be registered about a PID Provider or Attestation Provider includes the attestation type(s) that the PID Provider or Attestation Provider intends to issue to Wallet Units. This will enable Wallet Units and Relying Parties to verify the entitlement of a given PID Provider or Attestation Provider to issue a specific attestation type. For example, a PuB-EAA Provider may be entitled to issue mDLs in a specific Member State, but may not be entitled to issue diplomas.</p>
 <p>Note that the need to verify this entitlement depends on the legal status of the Provider:</p>
 <ul>
 <li>For PID Providers, their entitlement to issue PIDs follows already from the fact that their trust anchors are included in the PID Provider Trusted List; see <a href="#6324-pid-provider-or-attestation-provider-trust-anchors-are-included-in-a-trusted-list">Section 6.3.2.4</a>.</li>
@@ -4615,7 +4617,7 @@ list exists, it does not have to comply with the requirements in <a href="../ann
 <p>More details on the PID Provider or Attestation Provider notification process,
 as well as on the information registered and published in the PID Provider
 Trusted List or Attestation Provider Trusted List, can be found in <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
-<h4 id="633-pid-providers-or-attestation-providers-registration-suspension-or-cancellation">6.3.3 PID Provider's or Attestation Provider's registration suspension or cancellation</h4>
+<h4 id="633-pid-provider-or-attestation-provider-suspension-or-cancellation">6.3.3 PID Provider or Attestation Provider suspension or cancellation</h4>
 <p>Under specific conditions, a Registrar may decide to suspend or
 cancel registration of a PID Provider or Attestation Provider. The conditions for
 this will be specified by each Registrar.</p>
@@ -4628,7 +4630,7 @@ Invalid. As a result, Relying Parties will no longer trust PIDs or attestations
 issued by the Provider with suspended or cancelled registration. For non-qualified EAA Providers,
 the applicable Rulebook (see <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>)
 may define additional mechanisms ensuring that Relying Parties will no longer
-trust the trust anchors of EAA Providers of which registration was suspended or cancelled.</p>
+trust the trust anchors of EAA Providers whose registration is suspended or cancelled.</p>
 <p>When a Registrar suspends or cancels registration of a PID Provider or Attestation
 Provider, the PID Provider or Attestation Provider revokes all of their PIDs or
 attestations as described in <a href="#6637-relying-party-verifies-that-the-pid-or-attestation-is-not-revoked">Section 6.6.3.7</a>.</p>
@@ -4639,7 +4641,7 @@ attestations as described in <a href="#6637-relying-party-verifies-that-the-pid-
 <li>A Relying Party is registered by a Registrar in the Member State where it
 resides. Relying Party registration is discussed in <a href="#642-relying-party-registration">Section 6.4.2</a>.</li>
 <li>Under specific conditions, a Registrar may decide to suspend or cancel registation of a
-Relying Party. This is discussed in <a href="#643-relying-party-de-registration">Section 6.4.3</a>.</li>
+Relying Party. This is discussed in <a href="#643-relying-party-suspension-or-cancellation">Section 6.4.3</a>.</li>
 </ol>
 <h4 id="642-relying-party-registration">6.4.2 Relying Party registration</h4>
 <p><a href="#61-scope">Figure 11</a> depicts the Relying Party Instance to the right of the Wallet Unit. A
@@ -4672,7 +4674,7 @@ to a common trust infrastructure maintained by the Commission, the so-called
 List of Trusted Lists. Using the common infrastructure, any entity in the EUDI
 Wallet ecosystem will be able to find all Trusted Lists in the ecosystem.</p>
 <p>More details on the Relying Party registration process can be found in <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.</p>
-<h4 id="643-relying-party-de-registration">6.4.3 Relying Party de-registration</h4>
+<h4 id="643-relying-party-suspension-or-cancellation">6.4.3 Relying Party suspension or cancellation</h4>
 <p>Under specific conditions, a Registrar may decide to suspend or cancel registration of a registered
 Relying Party. The conditions for this will be specified by each Registrar.</p>
 <p>Suspension or cancellation involves revocation of all valid Relying Party Instance access
@@ -5216,7 +5218,7 @@ how this will be done.</li>
 attributes than it has registered for, and informs the User about the outcome of
 this verification. See <a href="#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered">Section 6.6.3.3</a>
 for more information.</li>
-<li>The Attestation Provider, during issuance, may optionally embedded a
+<li>The Attestation Provider, during issuance, may optionally embed a
 disclosure policy in the attestation. If such a policy is present for the
 requested attestation, the Wallet Unit evaluates the disclosure policy and
 informs the User about the outcome of this evaluation. See <a href="#6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present">Section 6.6.3.4</a>.</li>
@@ -5332,13 +5334,13 @@ Relying Party information, through an on-line check instead. </p>
 <p>If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
 + the Relying Party Access Certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).</p>
-<p>Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relaying Party access certificate or from the presentation request in case the requestor is an intermediary).
+<p>Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
 The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
 The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional). </p>
 <h5 id="6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present">6.6.3.4 Wallet Unit evaluates embedded disclosure policy, if present</h5>
 <p>During attestation issuance, an Attestation Provider optionally created an embedded
 disclosure policy for the attestation, see <a href="#6627-provisioning-embedded-disclosure-policies">Section 6.6.2.7</a>.
-If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy, together with information in the access certificate, to determine whether the Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of these certificates before using any data contained in them.</p>
+If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy, together with information in the access certificate, to determine whether the Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of the access certificate before using any data contained in it.</p>
 <p>The Wallet Unit presents the outcome of the disclosure policy evaluation to the
 User in the form of an advice, when requesting User approval. For example, "The
 issuer of your medical data does not want you to present data from \&lt;attestation name&gt; to
