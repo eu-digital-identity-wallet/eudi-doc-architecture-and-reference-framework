@@ -323,7 +323,7 @@ document titled the "Use Cases Manual", and distributed together with this docum
 One of the main use cases of the EUDI Wallet ecosystem is secure User
 identification and authentication. A User presents data from their PID, which is
 issued and managed at Level of Assurance (LoA) High, to various online services,
-both public and private.. This capability is crucial, as it allows Relying
+both public and private. This capability is crucial, as it allows Relying
 Parties to confidently verify the identity of Users they interact with.
 
 In this use case, a User utilises their Wallet Unit to present specific
@@ -1869,7 +1869,7 @@ attestations of attributes can be used:
 
 - The format specified in [ISO/IEC 18013-5] and generalised in [ISO/IEC 23220-2],
 - The format specified in 'SD-JWT-based Verifiable Credentials' [SD-JWT VC],
-- The format specified in 'W3C Verifiable Credentials Data Model v2.0'[W3C VCDM 2.0].
+- The format specified in 'W3C Verifiable Credentials Data Model v2.0' [W3C VCDM 2.0].
 
 The next subsections give more information about each of these formats and
 specifications, and explain where the different elements of an attestation, as
@@ -2164,9 +2164,10 @@ transaction flows.
 The [OpenID4VP] standard defines message structures, transaction flows, and an
 HTTP-based interface specification between Wallet Units and Relying Parties.
 [OpenID4VP] also specifies security mechanisms ensuring:
-    - the confidentiality and authenticity of all data exchanged between a
-    Wallet Unit and a Relying,
-    - Relying Party authentication.
+
+- the confidentiality and authenticity of all data exchanged between a Wallet
+  Unit and a Relying Party,
+- Relying Party authentication.
 
 [OpenID4VP] is suitable only for remote transaction flows.
 
@@ -2211,7 +2212,7 @@ non-qualified EAAs). PIDs are issued by **PID Providers** and attestations by
 [Figure 11](#61-scope). Before interacting with a Wallet Unit these providers must be
 registered with a **PID Provider Registrar** or **Attestation
 Provider Registrar**. Upon registration, they receive an **access certificate** (from a
-**PID Provider Access CA** or **Attestation Provider Access CA**) and may optain one or more **registration certificates** ( from a **PID Provider Registration CA** or **Attestation Provider Registration CA**).
+**PID Provider Access CA** or **Attestation Provider Access CA**) and may obtain one or more **registration certificates** (from a **PID Provider Registration CA** or **Attestation Provider Registration CA**).
 See [Section 6.3](#63-trust-throughout-a-pid-provider-or-an-attestation-provider-lifecycle).
 
 Once a Wallet Unit receives a PID or attestation, it can present **User
@@ -2353,7 +2354,7 @@ These processes are discussed in the next subsections.
 
 When a PID Provider or Attestation Provider is registered, the Trusted List Provider registers a set of data about the PID Provider or Attestation Provider in its register. The Trusted List Provider makes the contents of the register available to the general public, both in machine-readable and human-readable format.
 
-The data to be registered about a PID Provider or Attestation Provider includes the attestation type(s) that the PID Provider or Attestation Provider intends to issue to Wallet Units. This will enable Wallet Units and Relying to verify the entitlement of a given PID Provider or Attestation Provider to issue a specific attestation type. For example, a PuB-EAA Provider may be entitled to issue mDLs in a specific Member State, but may not be entitled to issue diplomas.
+The data to be registered about a PID Provider or Attestation Provider includes the attestation type(s) that the PID Provider or Attestation Provider intends to issue to Wallet Units. This will enable Wallet Units and Relying Parties to verify the entitlement of a given PID Provider or Attestation Provider to issue a specific attestation type. For example, a PuB-EAA Provider may be entitled to issue mDLs in a specific Member State, but may not be entitled to issue diplomas.
 
 Note that the need to verify this entitlement depends on the legal status of the Provider:
 
@@ -2449,7 +2450,7 @@ Invalid. As a result, Relying Parties will no longer trust PIDs or attestations
 issued by the Provider with suspended or cancelled registration. For non-qualified EAA Providers,
 the applicable Rulebook (see [Topic 12](./annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks))
 may define additional mechanisms ensuring that Relying Parties will no longer
-trust the trust anchors of EAA Providers of which registration was suspended or cancelled.
+trust the trust anchors of EAA Providers whose registration is suspended or cancelled.
 
 When a Registrar suspends or cancels registration of a PID Provider or Attestation
 Provider, the PID Provider or Attestation Provider revokes all of their PIDs or
@@ -3138,7 +3139,7 @@ how this will be done.
 attributes than it has registered for, and informs the User about the outcome of
 this verification. See [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)
 for more information.
-3. The Attestation Provider, during issuance, may optionally embedded a
+3. The Attestation Provider, during issuance, may optionally embed a
 disclosure policy in the attestation. If such a policy is present for the
 requested attestation, the Wallet Unit evaluates the disclosure policy and
 informs the User about the outcome of this evaluation. See [Section 6.6.3.4](#6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present).
@@ -3270,7 +3271,7 @@ If the User choses to perform such a check, the Wallet Unit retrieves a URL of t
 + the Relying Party Access Certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
 
-Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relaying Party access certificate or from the presentation request in case the requestor is an intermediary).
+Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
 The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
 The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional). 
 
@@ -3280,7 +3281,7 @@ The Wallet Unit also notifies the User in case the Wallet Unit is not able to re
 
 During attestation issuance, an Attestation Provider optionally created an embedded
 disclosure policy for the attestation, see [Section 6.6.2.7](#6627-provisioning-embedded-disclosure-policies).
-If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy, together with information in the access certificate, to determine whether the Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of these certificates before using any data contained in them.
+If such a policy is present for the requested attestation, the Wallet Unit evaluates the policy, together with information in the access certificate, to determine whether the Attestation Provider allows this Relying Party to receive the requested attestation. Note that the Wallet Unit verifies the authenticity of the access certificate before using any data contained in it.
 
 The Wallet Unit presents the outcome of the disclosure policy evaluation to the
 User in the form of an advice, when requesting User approval. For example, "The
