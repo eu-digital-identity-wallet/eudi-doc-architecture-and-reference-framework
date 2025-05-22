@@ -405,7 +405,7 @@
 
 
 <h1 id="k-combined-presentation-of-attestations">K - Combined presentation of Attestations</h1>
-<p>Version 0.1, updated 7 May 2025</p>
+<p>Version 0.2, updated 19 May 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/519">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -567,21 +567,25 @@ included in the presentation originate from attestations that refer to the same
 entity. Without such a mechanism, there is a risk of malicious combinations; for example, 
 using a valid facial image from one User together with another person's <code>"age over 18"</code> 
 attribute could enable fraud or unauthorized access.</p>
-<p>High-Level Requirement ACP_04 of Annex 2 in the ARF mandates that Wallet Solutions 
-support <strong>cryptographic binding</strong> of attestations to ensure that the WSCA manages 
-all of the private keys of these attestations. However, other mechanisms may also be employed to support identity matching, including:</p>
+<p>A potential solution is a <strong>cryptographic binding</strong> of attestations, generated with the support of an Issuer.<br />
+This binding provides proof that the private keys corresponding to the involved 
+attestations are managed by the same WSCA. However, no mechanism currently exists 
+that is both sufficiently secure and usable for adoption by the ARF. As a result, alternative 
+mechanisms should be considered:</p>
 <ul>
-<li><strong>Relying Party-Specific Identifiers</strong>: Unique identifiers assigned by the 
-Relying Party—such as customer or contract numbers—can serve as a means of 
-linking multiple attestations to the same User.</li>
-<li><strong>Attribute-Based Binding</strong>: Attestations may share a common unique identifier (e.g., PID number).</li>
+<li>
+<p><strong>Relying Party-Specific Identifiers</strong>: Unique identifiers assigned by the Relying 
+Party — such as customer or contract numbers — that can be used to associate multiple attestations with the same User.</p>
+</li>
+<li>
+<p><strong>Attribute-Based Binding</strong>: Attestations may include a shared unique identifier
+ (e.g., a PID number), which can serve as a binding element.</p>
+</li>
+<li>
+<p><strong>Issuer-Attested Binding</strong>: An Issuer may issue a new attestation to the Wallet 
+Unit explicitly confirming that two or more attestations refer to the same entity. </p>
+</li>
 </ul>
-<p><strong>Question 1</strong> Is ACP_04 enough? 
-<strong>Note</strong> ACP_04 should be considered in conjunction with ACP_07. Relying solely on 
-cryptographic binding,  may not be sufficient if a User stores in their Wallet Unit 
-an attestation that actually belongs to another individual. In such cases, cryptographic 
-binding alone could still allow malicious combinations of attributes. Therefore, 
-it may be necessary to extend ACP_04. </p>
 <h3 id="33-security-consideration">3.3 Security consideration</h3>
 <h4 id="policies-for-including-attributes">Policies for Including Attributes</h4>
 <p>Each attestation may have its own <strong>Embedded Disclosure Policy</strong>. In parallel,
@@ -595,13 +599,19 @@ multiple attestations, the <strong>strictest applicable policy</strong> must pre
 <h4 id="privacy-considerations">Privacy Considerations</h4>
 <p>Although individual attributes may not be personally identifying or trackable on 
 their own, their <strong>combination across attestations</strong> may create a <strong>unique tracking vector</strong>. </p>
-<p><strong>Question 2</strong> Are there other security issues that should be explicitly addressed?</p>
-<p><strong>Question 3</strong> How can the privacy risks from attribute combinations be mitigated?</p>
-<p><strong>Question 4</strong>  These considerations are implied but not explicitly considered in Topic 18. 
-Should a related requirement be introduced?</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
+<p>Topic 18 and the corresponding requirements (ACP_01 - ACP_09) will be removed. Requirements
+ACP_01 and ACP_02 are already covered by the requirements set in Topic 1. The removal of 
+requirements ACP_03- ACP_09 is justified by the fact that they rely on cryptographic 
+mechanisms that are currently unavailable or not sufficiently mature for practical deployment. 
+As these requirements cannot be fulfilled in a secure and reliable manner with today’s technology, 
+their inclusion would impose unrealistic expectations on implementers. Instead, alternative 
+mechanisms—such as those described in <strong>Section 3.2</strong>—offer practical and implementable approaches 
+that can achieve the intended security goals using currently available infrastructure. 
+These alternatives are currently the only viable approach for implementing secure
+combined presentation of attestations.</p>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="5-references">5 References</h2>
 <table>
