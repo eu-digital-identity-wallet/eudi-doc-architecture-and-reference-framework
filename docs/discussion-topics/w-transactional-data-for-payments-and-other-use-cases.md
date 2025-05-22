@@ -1,4 +1,4 @@
-# Version 0.95, updated 28 April 2025
+# Version 0.97, updated 19 May 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496)
@@ -69,19 +69,21 @@ _Where private relying parties that provide services, with the exception of micr
 ### 3.1 Introduction
 
 #### 3.1.1 The Use Cases
-The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  
+The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication of a User, to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation). 
 
-Most of the use cases will use the standard Wallet functionality (meaning w/o the need to involve "transactional data"). However for the following use cases it is necessary to handle the transactional data:
-+ payments,
+In addition, the Wallet is supposed to provide the functionality of a Qualified Electronic Signature. In case of remote QES, the Wallet can play a role of a tool to activate (authorise) signature creation in a remote signing service.  
+
+Therefore, despite there might be many use cases where there will be no need to involve "transactional data", at least for the following use cases it is necessary to do so:
++ payments authentication,
 + remote qualified electronic signature.   
 
-In this paper we focus on the use cases, where the transactional data is involved. 
+In this paper we focus on the use cases where transactional data is involved. 
 
 At the same time, [OID4VP] provides so called "transaction data" mechanism that: 
 
 >enables a binding between the User's identification/authentication and the user’s authorization, for example to complete a payment transaction, or to sign specific document(s) using QES (Qualified Electronic Signatures)
 
-This mechanism seems to be suitable for the purpose of handling the transactional data.  
+This mechanism seems to be suitable for the purpose of handling the transactional data. Similarly, the [ISO/IEC 18013-5] protocol payload is also able to bear transactional data if needed.
 
 
 #### 3.1.2 The Role of the Wallet
@@ -163,13 +165,12 @@ The HLRs set out in the Topic 16 have been reviewed too, however no changes have
 
 **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| TD_01  | The Wallet SHALL be able to process and render transactional data included in a presentation request. Rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
-| TD_02 TO BE REPLACED  | The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction. |      New     |
-| TD_02 NEW VERSION PROPOSAL | The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data or its parts. The scope of transactional data included in the response is set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. _Note: Such a response, signed with the private key of the attestation that was the subject of the presentation request, constitutes as a proof of transaction. This requirement is met by use of key binding in [SD-JWT-VC]._    |      New     |
-| TD_03  | The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the User (like font size and colour, background colour, text  position, labels in the buttons to 'approve' or 'reject' a transaction) basing on the transactional data contained in the presentation request, according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request.   |      New     |
-| TD_04  | The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code), according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. _Note: For payment SCA this requirement is met by use of key binding in [SD-JWT-VC]._  |      New     |
-
-
+| TD_01  | The Wallet **Unit** SHALL be able to process and render transactional data included in a presentation request. **The Wallet Unit SHALL be able to display transactional data (or parts of it) to the User in a clear, understandable and accurate manner when obtaining the User's confirmation for the transaction.** **Specific** rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
+| ~~TD_02~~  | ~~The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction.~~ |      ~~New~~     |
+| TD_02  | The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data (or parts of it). The ~~scope~~**format and content** of transactional data included in the response SHALL be set out in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request.    |      New     |
+| **TD_03**  | **The Wallet Unit SHALL sign the response, including transactional data, with the private key of the Attestation, using the mechanisms provided by [SD-JWT-VC] and [ISO/IEC 18013-5].   _Note: Such a response constitutes a proof of transaction, as well as fulfils the requirement of the authentication code required in [PSD2]._**   |      **New**     |
+| TD_04  | The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the User (like font size and colour, background colour, text  position, labels in the buttons to 'approve' or 'reject' a transaction) based on the transactional data contained in the presentation request, according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request.   |      New     |
+| ~~TD_04~~  | ~~The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code), according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. Note: For payment SCA this requirement is met by use of key binding in [SD-JWT-VC].~~   |      ~~New~~     |
 
 
 ## 5 Relation to Other Topics 
@@ -209,12 +210,12 @@ See sections 4 and 5 above. In addition, transactional data related aspects in t
 | [Topic 20]                             | Topic 20 - Strong User authentication for electronic payments |
 | [Topic 16]                             | Topic 16 - Signing documents with a Wallet Unit |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
-| [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
+| [European Digital Identity Regulation] | [Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng) |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |
-| [OID4VP] | OpenID for Verifiable Presentations - draft 24 |
-| [GDPR]   |  Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) |
-| [PSD2]   |  Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC |
-| [RTS SCA]   |  Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication |
+| [OID4VP] | [OpenID for Verifiable Presentations](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2) |
+| [ISO/IEC - 18013-5]   |  [Mobile driving licence (mDL) application](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84) |
+| [PSD2]   |  [Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC](https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng) |
+| [RTS SCA]   |  [Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication](https://eur-lex.europa.eu/eli/reg_del/2018/389/oj/eng) |
 
 
 

@@ -1,6 +1,6 @@
 # K - Combined presentation of Attestations
 
-Version 0.1, updated 7 May 2025
+Version 0.2, updated 19 May 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/519)
 
@@ -139,7 +139,6 @@ and privacy-preserving way—simplifying onboarding while reducing the risk of f
 or misrepresentation.
 
 
-
 ### 3.2 Identity Matching 
 A preliminary requirement for the combined presentation of attestations is 
 **identity matching**. The Relying Party shall be able to verify that all attributes 
@@ -148,22 +147,20 @@ entity. Without such a mechanism, there is a risk of malicious combinations; for
 using a valid facial image from one User together with another person's `"age over 18"` 
 attribute could enable fraud or unauthorized access.
 
-High-Level Requirement ACP_04 of Annex 2 in the ARF mandates that Wallet Solutions 
-support **cryptographic binding** of attestations to ensure that the WSCA manages 
-all of the private keys of these attestations. However, other mechanisms may also be employed to support identity matching, including:
+A potential solution is a **cryptographic binding** of attestations, generated with the support of an Issuer.  
+This binding provides proof that the private keys corresponding to the involved 
+attestations are managed by the same WSCA. However, no mechanism currently exists 
+that is both sufficiently secure and usable for adoption by the ARF. As a result, alternative 
+mechanisms should be considered:
 
-- **Relying Party-Specific Identifiers**: Unique identifiers assigned by the 
-Relying Party—such as customer or contract numbers—can serve as a means of 
-linking multiple attestations to the same User.
-- **Attribute-Based Binding**: Attestations may share a common unique identifier (e.g., PID number).
+- **Relying Party-Specific Identifiers**: Unique identifiers assigned by the Relying 
+Party — such as customer or contract numbers — that can be used to associate multiple attestations with the same User.
 
+- **Attribute-Based Binding**: Attestations may include a shared unique identifier
+ (e.g., a PID number), which can serve as a binding element.
 
-**Question 1** Is ACP_04 enough? 
-**Note** ACP_04 should be considered in conjunction with ACP_07. Relying solely on 
-cryptographic binding,  may not be sufficient if a User stores in their Wallet Unit 
-an attestation that actually belongs to another individual. In such cases, cryptographic 
-binding alone could still allow malicious combinations of attributes. Therefore, 
-it may be necessary to extend ACP_04. 
+- **Issuer-Attested Binding**: An Issuer may issue a new attestation to the Wallet 
+Unit explicitly confirming that two or more attestations refer to the same entity. 
 
 ### 3.3 Security consideration
 #### Policies for Including Attributes
@@ -182,19 +179,22 @@ Although individual attributes may not be personally identifying or trackable on
 their own, their **combination across attestations** may create a **unique tracking vector**. 
 
 
-**Question 2** Are there other security issues that should be explicitly addressed?
-
-**Question 3** How can the privacy risks from attribute combinations be mitigated?
-
-**Question 4**  These considerations are implied but not explicitly considered in Topic 18. 
-Should a related requirement be introduced?
-
 ## 4 Additions and changes to the ARF
 
 ### 4.1 High-Level Requirements to be added to Annex 2
 
 
 ### 4.2 High-Level Requirements to be changed
+Topic 18 and the corresponding requirements (ACP_01 - ACP_09) will be removed. Requirements
+ACP_01 and ACP_02 are already covered by the requirements set in Topic 1. The removal of 
+requirements ACP_03- ACP_09 is justified by the fact that they rely on cryptographic 
+mechanisms that are currently unavailable or not sufficiently mature for practical deployment. 
+As these requirements cannot be fulfilled in a secure and reliable manner with today’s technology, 
+their inclusion would impose unrealistic expectations on implementers. Instead, alternative 
+mechanisms—such as those described in **Section 3.2**—offer practical and implementable approaches 
+that can achieve the intended security goals using currently available infrastructure. 
+These alternatives are currently the only viable approach for implementing secure
+combined presentation of attestations.
 
 ### 4.3 Descriptions to be added to the ARF main document
 
