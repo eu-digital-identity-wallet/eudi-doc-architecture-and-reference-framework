@@ -1885,7 +1885,7 @@ Providers, and Attestation Providers for these formats and specifications.
 #### 5.3.2 ISO/IEC 18013-5 and ISO/IEC 23220-2
 
 The ISO/IEC 18013-5 standard was originally developed as a standard for mobile
-driving licenses (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
+driving licences (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
 Unit containing an mDL attestation (as defined in the [mDL Rulebook](./annexes/annex-3/annex-3.02-mDL-rulebook.md)), while an mDL reader is
 a Relying Party requesting such an attestation.
 
@@ -3268,7 +3268,7 @@ request, the Wallet Unit offers to the User an alternative option to perform ver
 Relying Party information, through an on-line check instead. 
 
 If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
-+ the Relying Party Access Certificate, or
++ the Relying Party access certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
 
 Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
@@ -3660,8 +3660,9 @@ attestations which have a technical validity period shorter than the
 administrative validity period of the licence itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always present a valid mDL. When the
-administrative validity period ends, there will be an administrative process for obtaining a new
-driving license, which is however out of scope of this document.
+administrative validity period ends, there will be an administrative process
+for obtaining a new driving licence, which is however out of scope of this
+document.
 
 Note that, in general, if the original PID or attestation was issued in a batch,
 then the PID Provider or Attestation Provider will re-issue that PID or
