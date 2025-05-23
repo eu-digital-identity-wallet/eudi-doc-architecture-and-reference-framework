@@ -4137,7 +4137,7 @@ states the detailed requirements regarding support by Wallet Units, PID
 Providers, and Attestation Providers for these formats and specifications.</p>
 <h4 id="532-isoiec-18013-5-and-isoiec-23220-2">5.3.2 ISO/IEC 18013-5 and ISO/IEC 23220-2</h4>
 <p>The ISO/IEC 18013-5 standard was originally developed as a standard for mobile
-driving licenses (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
+driving licences (mDL) and mDL readers. In terms of this ARF, an mDL is a Wallet
 Unit containing an mDL attestation (as defined in the <a href="../annexes/annex-3/annex-3.02-mDL-rulebook/">mDL Rulebook</a>), while an mDL reader is
 a Relying Party requesting such an attestation.</p>
 <p>ISO/IEC 18013-5 specifies:</p>
@@ -5332,7 +5332,7 @@ more information, see <a href="../annexes/annex-2/annex-2-high-level-requirement
 request, the Wallet Unit offers to the User an alternative option to perform verification of the 
 Relying Party information, through an on-line check instead. </p>
 <p>If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
-+ the Relying Party Access Certificate, or
++ the Relying Party access certificate, or
 + the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).</p>
 <p>Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
 The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
@@ -5678,8 +5678,9 @@ attestations which have a technical validity period shorter than the
 administrative validity period of the licence itself. Re-issuance is used for
 obtaining fresh attestations as needed during the administrative validity
 period, to ensure that the User can always present a valid mDL. When the
-administrative validity period ends, there will be an administrative process for obtaining a new
-driving license, which is however out of scope of this document.</p>
+administrative validity period ends, there will be an administrative process
+for obtaining a new driving licence, which is however out of scope of this
+document.</p>
 <p>Note that, in general, if the original PID or attestation was issued in a batch,
 then the PID Provider or Attestation Provider will re-issue that PID or
 attestation in a batch as well.</p>
