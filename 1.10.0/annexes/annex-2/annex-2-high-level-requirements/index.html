@@ -3129,7 +3129,7 @@ see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas
 </tr>
 <tr>
 <td>TLPub_08</td>
-<td>As part of the specifications referred to in TLPub_01, the European Commission SHALL establish technical specifications for ensuring the availability and authenticity of the full history regarding the information notified about PID Providers, Wallet Providers, PuB EAA Providers, Access Certificate Authorities and Registrars of Registration Certificates.</td>
+<td>As part of the specifications referred to in TLPub_01, the European Commission SHALL establish technical specifications for ensuring the availability and authenticity of the full history regarding the information notified about PID Providers, Wallet Providers, PuB-EAA Providers, Access Certificate Authorities and Registrars of Registration Certificates.</td>
 </tr>
 </tbody>
 </table>
@@ -3657,10 +3657,10 @@ the attestation.</p>
 </tr>
 <tr>
 <td>EDP_02</td>
-<td>A Wallet Unit SHALL support embedded disclosure policies implementing the 'Authorised relying parties only policy' described in Annex III of Implementing Regulation (EU) 2024/2979. Such an embedded disclosure policy SHALL contain a list of EU-wide unique identifiers of Relying Parties as specified in Reg_32. The Wallet Unit SHALL retrieve the identifier from the Relying Party access certificate presented by the Relying Party, and compare it to the list of authorised identifiers in the policy. <em>Note: If the Relying Party is an intermediary, see EDP_2a</em></td>
+<td>A Wallet Unit SHALL support embedded disclosure policies implementing the 'Authorised relying parties only policy' described in Annex III of Implementing Regulation (EU) 2024/2979. Such an embedded disclosure policy SHALL contain a list of EU-wide unique identifiers of Relying Parties as specified in Reg_32. The Wallet Unit SHALL retrieve the identifier from the Relying Party access certificate presented by the Relying Party, and compare it to the list of authorised identifiers in the policy. <em>Note: If the Relying Party is an intermediary, see EDP_02a.</em></td>
 </tr>
 <tr>
-<td>EDP_2a</td>
+<td>EDP_02a</td>
 <td>If the Relying Party is an intermediary, the Wallet Unit SHALL retrieve the name and the unique identifier of the 'end' Relying Party from the presentation request and use them to obtain information from the Registrar's on-line service on the 'end' Relying Party and an intermediary it is linked to (to check if it is the same entity as in the access certificate).</td>
 </tr>
 <tr>
@@ -3785,7 +3785,7 @@ is legitimate and trustworthy.</p>
 </tr>
 <tr>
 <td>RPRC_10</td>
-<td>The Commission SHALL provide technical specifications establishing common Certificate Policy for registration certificates, covering at least management and selection of signing keys, revocation and lifecycle management of RPRCs on individual intended use level. <em>Note: The TS could set the provider of RPRCs to follow applicable parts of technical standards such as EN 319 401 (for General Policy Requirements for TSPs) and TS 119 461 (for identity proofing of Relying Party representatives).</em></td>
+<td>The Commission SHALL provide technical specifications establishing the common Relying Party Registration Certificate Policy, covering at least management and selection of signing keys, revocation and lifecycle management of registration certificates on individual intended use level. <em>Note: The TS could set the provider of RPRCs to follow applicable parts of technical standards such as EN 319 401 (for General Policy Requirements for TSPs) and TS 119 461 (for identity proofing of Relying Party representatives).</em></td>
 </tr>
 <tr>
 <td>PRRC 11</td>
@@ -3958,7 +3958,7 @@ behalf of the intermediated Relying Party.</p>
 </tr>
 <tr>
 <td>RPI_02</td>
-<td>An intermediary is acting only on behalf of another RP, but from the Registrar and the regulation's point of view is considered as a Relying Party and may obtain a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its name and identifier.</td>
+<td>An intermediary is acting only on behalf of another Relying Party, but from the Registrar and the regulation's point of view is considered as a Relying Party and may obtain a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its name and identifier.</td>
 </tr>
 <tr>
 <td>RPI_03</td>
