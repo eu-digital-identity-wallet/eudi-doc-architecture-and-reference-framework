@@ -786,7 +786,7 @@ of the evaluation of an embedded disclosure policy, if present, see
 </tr>
 <tr>
 <td>RPA_06c</td>
-<td>If the Relying Party registration certificate is not available, the name of the Relying party is retrieved from the access certificate. The User SHALL be offered on option to perform an on-line verification of the Relying Party information and the registered intended use, meaning to obtain the list of registered attributes ("intended use"). If the User chooses to do so, the Wallet Unit retrieves a URL of the Registrar's on-line service (or Trusted List, if applicable) to fetch such information and run comparison and display the warning as defined in RPA_06.</td>
+<td>If the Relying Party registration certificate is not available, the name of the Relying party is retrieved from the access certificate. The User SHALL be offered an option to perform an on-line verification of the Relying Party information and the registered intended use, meaning to obtain the list of registered attributes ("intended use"). If the User chooses to do so, the Wallet Unit retrieves a URL of the Registrar's on-line service (or Trusted List, if applicable) to fetch such information and run comparison and display the warning as defined in RPA_06.</td>
 </tr>
 <tr>
 <td>RPA_06d</td>
@@ -3081,7 +3081,7 @@ see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas
 </tr>
 <tr>
 <td>RPACANot_06</td>
-<td>If an Access Certificate Authority is suspended or cancelled (see requirement GenNot_05 above), that Access Certificate Authority SHALL immediately revoke all of its valid access certificates. <em>Note: When the access certificates of an Intermediary that has its RPACs issued by said suspended or cancelled Access Certificate Authority are revoked, the End-Relying Parties depending on said Intermediary, while having valid registration certificates from a Registrar will have no access to transact with EUDI Wallet Users until the End-Relying Parties a) transit to another Intermediary that has RPAC issued by an active Access Certification Authority or b)the original Access Certificate Authority can continue its operations and re-issue earlier revoked certificates for the original Intermediary.</em></td>
+<td>If an Access Certificate Authority is suspended or cancelled (see requirement GenNot_05 above), that Access Certificate Authority SHALL immediately revoke all of its valid access certificates. <em>Note: When the access certificates of an Intermediary that has its RPACs issued by said suspended or cancelled Access Certificate Authority are revoked, the End-Relying Parties depending on said Intermediary, while having valid registration certificates from a Registrar will have no access to transact with EUDI Wallet Users until the End-Relying Parties a) transit to another Intermediary that has RPAC issued by an active Access Certification Authority or b) the original Access Certificate Authority can continue its operations and re-issue earlier revoked certificates for the original Intermediary.</em></td>
 </tr>
 <tr>
 <td>RPACANot_07</td>
@@ -3788,7 +3788,7 @@ is legitimate and trustworthy.</p>
 <td>The Commission SHALL provide technical specifications establishing the common Relying Party Registration Certificate Policy, covering at least management and selection of signing keys, revocation and lifecycle management of registration certificates on individual intended use level. <em>Note: The TS could set the provider of RPRCs to follow applicable parts of technical standards such as EN 319 401 (for General Policy Requirements for TSPs) and TS 119 461 (for identity proofing of Relying Party representatives).</em></td>
 </tr>
 <tr>
-<td>PRRC 11</td>
+<td>RPRC_11</td>
 <td>There SHALL be only one valid registration certificate present in a presentation request for given intended use of a Relying Party. An error SHALL be reported (logged and shown for the User) by the Wallet Unit if it receives multiple registration certificates for the same intended use within same presentation request.</td>
 </tr>
 </tbody>
@@ -3958,7 +3958,7 @@ behalf of the intermediated Relying Party.</p>
 </tr>
 <tr>
 <td>RPI_02</td>
-<td>An intermediary is acting only on behalf of another Relying Party, but from the Registrar and the regulation's point of view is considered as a Relying Party and may obtain a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its name and identifier.</td>
+<td>An intermediary is acting only on behalf of another Relying Party, but from the Registrar and the regulation's point of view is considered a Relying Party and may obtain a registration certificate according to <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, containing its name and identifier.</td>
 </tr>
 <tr>
 <td>RPI_03</td>
