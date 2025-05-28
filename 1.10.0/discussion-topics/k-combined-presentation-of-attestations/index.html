@@ -405,7 +405,7 @@
 
 
 <h1 id="k-combined-presentation-of-attestations">K - Combined presentation of Attestations</h1>
-<p>Version 0.2, updated 19 May 2025</p>
+<p>Version 1.0, updated 26 May 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/519">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -564,28 +564,32 @@ or misrepresentation.</p>
 <p>A preliminary requirement for the combined presentation of attestations is 
 <strong>identity matching</strong>. The Relying Party shall be able to verify that all attributes 
 included in the presentation originate from attestations that refer to the same 
-entity. Without such a mechanism, there is a risk of malicious combinations; for example, 
+User. Without such a mechanism, there is a risk of malicious combinations; for example, 
 using a valid facial image from one User together with another person's <code>"age over 18"</code> 
 attribute could enable fraud or unauthorized access.</p>
-<p>A potential solution is a <strong>cryptographic binding</strong> of attestations, generated with the support of an Issuer.<br />
-This binding provides proof that the private keys corresponding to the involved 
-attestations are managed by the same WSCA. However, no mechanism currently exists 
-that is both sufficiently secure and usable for adoption by the ARF. As a result, alternative 
-mechanisms should be considered:</p>
+<p>Solutions for enabling Relying Parties to verify that all attributes 
+included in a presentation originate from attestations that refer to the same 
+User include the following:</p>
 <ul>
 <li>
 <p><strong>Relying Party-Specific Identifiers</strong>: Unique identifiers assigned by the Relying 
-Party — such as customer or contract numbers — that can be used to associate multiple attestations with the same User.</p>
+Party—such as customer or contract numbers—that can be used to associate multiple attestations with the same User.</p>
 </li>
 <li>
-<p><strong>Attribute-Based Binding</strong>: Attestations may include a shared unique identifier
- (e.g., a PID number), which can serve as a binding element.</p>
+<p><strong>Attribute-Based Binding</strong>: Attestations may include a shared unique identifier 
+(e.g., a PID number), which can serve as a binding reference across different attestations.</p>
 </li>
 <li>
-<p><strong>Issuer-Attested Binding</strong>: An Issuer may issue a new attestation to the Wallet 
-Unit explicitly confirming that two or more attestations refer to the same entity. </p>
+<p><strong>Issuer-Attested Binding</strong>: An Issuer may issue a dedicated attestation to the Wallet 
+Unit explicitly confirming that two or more attestations relate to the same entity.</p>
+</li>
+<li>
+<p><strong>Cryptographic Binding</strong>: The Wallet Unit generates a Proof of Association (PoA) 
+demonstrating that the private keys associated with the involved 
+attestations are managed by the same WSCD.</p>
 </li>
 </ul>
+<p>We discuss in more detail the latter mechanism in Section 3.4.</p>
 <h3 id="33-security-consideration">3.3 Security consideration</h3>
 <h4 id="policies-for-including-attributes">Policies for Including Attributes</h4>
 <p>Each attestation may have its own <strong>Embedded Disclosure Policy</strong>. In parallel,
@@ -599,10 +603,49 @@ multiple attestations, the <strong>strictest applicable policy</strong> must pre
 <h4 id="privacy-considerations">Privacy Considerations</h4>
 <p>Although individual attributes may not be personally identifying or trackable on 
 their own, their <strong>combination across attestations</strong> may create a <strong>unique tracking vector</strong>. </p>
+<h3 id="34-proofs-of-association-poa">3.4 Proofs of Association (PoA)</h3>
+<p>A <strong>Proof of Association (PoA)</strong> is an envisioned cryptographic mechanism that allows 
+a Wallet Unit to prove that the private keys corresponding to two (or more) public keys 
+are managed by the same WSCD.</p>
+<p>PoA can be used during attestation issuance, e.g., to prove that the public key 
+included in a PID and the public key to be embedded in a newly requested attestation 
+are both managed by the same WSCD, as well as, during presentation, e.g., <br />
+to prove that the public keys associated with two (or more) device-bound 
+attestations are managed by the same WSCD.</p>
+<p>A PoA offers the following advantages</p>
+<ul>
+<li>
+<p><strong>Simplified signature process</strong>:<br />
+  Proving possession of one of the private keys can be interpreted as proof of possession 
+  for all associated keys, reducing the need for multiple presentation signatures.</p>
+</li>
+<li>
+<p><strong>Privacy-preserving correlation</strong>:<br />
+  Attestations can be linked without disclosing identifying attributes that may 
+  lead to tracking. For example, including a PID number across multiple attestations 
+  could enable linking; PoA avoids this by offering cryptographic correlation.</p>
+</li>
+</ul>
+<p>A PoA <strong>does not, by itself, guarantee</strong> that two attestations belong to the same User. 
+For such assurance, a Provider must ensure that the device to which an attestation 
+is bound is indeed controlled by the User to whom the attestation refers.</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
+<p>Topic 18 will be modified to capture the text of sections 3.3 - 3.4</p>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
+<h3 id="requirement-1">REQUIREMENT 1</h3>
+<p>A Proof of Association scheme SHALL rely solely on algorithms standardised by a standardisation 
+organisation recognised by the Commission or in a standard recognised by the Commission.</p>
+<h3 id="requirement-2">REQUIREMENT 2</h3>
+<p>A Proof of Association scheme SHALL enable a proof that two or more public keys, 
+each embedded in a separate device-bound attestation, are managed by the same WSCD.</p>
+<h3 id="requirement-3">REQUIREMENT 3</h3>
+<p>A Proof of Association scheme MAY be implemented using a Zero-Knowledge Proof mechanism 
+that satisfies the requirements specified in Topic G.</p>
+<h3 id="requirement-4">REQUIREMENT 4</h3>
+<p>A Proof of Association scheme SHALL be usable in attestation issuance flow as well as in
+both remote and proximity presentation flows.</p>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
-<p>Topic 18 and the corresponding requirements (ACP_01 - ACP_09) will be removed. Requirements
+<p>Requirements (ACP_01 - ACP_09) will be removed. Requirements
 ACP_01 and ACP_02 are already covered by the requirements set in Topic 1. The removal of 
 requirements ACP_03- ACP_09 is justified by the fact that they rely on cryptographic 
 mechanisms that are currently unavailable or not sufficiently mature for practical deployment. 
@@ -611,7 +654,8 @@ their inclusion would impose unrealistic expectations on implementers. Instead, 
 mechanisms—such as those described in <strong>Section 3.2</strong>—offer practical and implementable approaches 
 that can achieve the intended security goals using currently available infrastructure. 
 These alternatives are currently the only viable approach for implementing secure
-combined presentation of attestations.</p>
+combined presentation of attestations. Additionally, we introduce a new High-Level
+Requirement describing the desirable properties of such a mechanism. </p>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="5-references">5 References</h2>
 <table>
