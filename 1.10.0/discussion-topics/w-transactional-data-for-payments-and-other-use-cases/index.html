@@ -12,15 +12,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
-        <title>Version 0.97, updated 19 May 2025 - European Digital Identity</title>
+        <title>Version 0.95, updated 28 April 2025 - European Digital Identity</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#version-097-updated-19-may-2025" class="md-skip">
+        <a href="#version-095-updated-28-april-2025" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.97, updated 19 May 2025
+              Version 0.95, updated 28 April 2025
             
           </span>
         </div>
@@ -170,11 +170,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../.." class="md-tabs__link">
         
-  
   
     
   
@@ -189,11 +187,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
-  
   
     
   
@@ -208,11 +204,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
-  
   
     
   
@@ -227,11 +221,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../technical-specifications/" class="md-tabs__link">
         
-  
   
     
   
@@ -304,7 +296,6 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -325,7 +316,6 @@
     <li class="md-nav__item">
       <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -351,7 +341,6 @@
       <a href="../" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -372,7 +361,6 @@
     <li class="md-nav__item">
       <a href="../../technical-specifications/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -404,7 +392,7 @@
   
 
 
-<h1 id="version-097-updated-19-may-2025">Version 0.97, updated 19 May 2025</h1>
+<h1 id="version-095-updated-28-april-2025">Version 0.95, updated 28 April 2025</h1>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496">Link to GitHub discussion</a></p>
 <h1 id="topic-w-transactional-data-for-payments-and-other-use-cases">Topic W - Transactional data for payments and other use cases</h1>
 <h2 id="1-introduction">1 Introduction</h2>
@@ -448,17 +436,16 @@ The online services might be of any type, provided by public or private Service 
 <h2 id="3-discussion">3 Discussion</h2>
 <h3 id="31-introduction">3.1 Introduction</h3>
 <h4 id="311-the-use-cases">3.1.1 The Use Cases</h4>
-<p>The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication of a User, to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation). </p>
-<p>In addition, the Wallet is supposed to provide the functionality of a Qualified Electronic Signature. In case of remote QES, the Wallet can play a role of a tool to activate (authorise) signature creation in a remote signing service.  </p>
-<p>Therefore, despite there might be many use cases where there will be no need to involve "transactional data", at least for the following use cases it is necessary to do so:
-+ payments authentication,
+<p>The European Digital Identity Regulation requires the Wallets to provide a functionality of strong authentication to play a role of an authenticator for various services, while the Service Providers are obliged to accept them in their (online) services. Consequently, to enable such processes, the Wallet Units should be able to handle transactional data related to an (external) service and a transaction, to enable required functionality, provide a proof of transaction and auditability, as well as ensure compliance with other regulations where necessary (like Payment Services related legislation).  </p>
+<p>Most of the use cases will use the standard Wallet functionality (meaning w/o the need to involve "transactional data"). However for the following use cases it is necessary to handle the transactional data:
++ payments,
 + remote qualified electronic signature.   </p>
-<p>In this paper we focus on the use cases where transactional data is involved. </p>
+<p>In this paper we focus on the use cases, where the transactional data is involved. </p>
 <p>At the same time, [OID4VP] provides so called "transaction data" mechanism that: </p>
 <blockquote>
 <p>enables a binding between the User's identification/authentication and the user’s authorization, for example to complete a payment transaction, or to sign specific document(s) using QES (Qualified Electronic Signatures)</p>
 </blockquote>
-<p>This mechanism seems to be suitable for the purpose of handling the transactional data. Similarly, the [ISO/IEC 18013-5] protocol payload is also able to bear transactional data if needed.</p>
+<p>This mechanism seems to be suitable for the purpose of handling the transactional data.  </p>
 <h4 id="312-the-role-of-the-wallet">3.1.2 The Role of the Wallet</h4>
 <p>In general the life cycle of a Wallet Unit in the role of an authenticator, comprises the following phases:
 + registration - registering the Wallet as an authenticator for a service, that includes User identification and authentication, User consent (for the registration) and linking a Wallet Unit with a service and User's account in that service,
@@ -511,33 +498,28 @@ In some cases, like payment authentication, the Wallet Unit should display to th
 <tbody>
 <tr>
 <td>TD_01</td>
-<td>The Wallet <strong>Unit</strong> SHALL be able to process and render transactional data included in a presentation request. <strong>The Wallet Unit SHALL be able to display transactional data (or parts of it) to the User in a clear, understandable and accurate manner when obtaining the User's confirmation for the transaction.</strong> <strong>Specific</strong> rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]).</td>
+<td>The Wallet SHALL be able to process and render transactional data included in a presentation request. Rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]).</td>
 <td>New</td>
 </tr>
 <tr>
-<td>~~TD_02~~</td>
-<td>~~The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction.~~</td>
-<td>~~New~~</td>
-</tr>
-<tr>
-<td>TD_02</td>
-<td>The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data (or parts of it). The ~~scope~~<strong>format and content</strong> of transactional data included in the response SHALL be set out in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request.</td>
+<td>TD_02 TO BE REPLACED</td>
+<td>The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction.</td>
 <td>New</td>
 </tr>
 <tr>
-<td><strong>TD_03</strong></td>
-<td><strong>The Wallet Unit SHALL sign the response, including transactional data, with the private key of the Attestation, using the mechanisms provided by [SD-JWT-VC] and [ISO/IEC 18013-5].   <em>Note: Such a response constitutes a proof of transaction, as well as fulfils the requirement of the authentication code required in [PSD2].</em></strong></td>
-<td><strong>New</strong></td>
+<td>TD_02 NEW VERSION PROPOSAL</td>
+<td>The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data or its parts. The scope of transactional data included in the response is set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. <em>Note: Such a response, signed with the private key of the attestation that was the subject of the presentation request, constitutes as a proof of transaction. This requirement is met by use of key binding in [SD-JWT-VC].</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>TD_03</td>
+<td>The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the User (like font size and colour, background colour, text  position, labels in the buttons to 'approve' or 'reject' a transaction) basing on the transactional data contained in the presentation request, according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request.</td>
+<td>New</td>
 </tr>
 <tr>
 <td>TD_04</td>
-<td>The Wallet Unit SHALL be able to dynamically adapt the dialog (message) displayed to the User (like font size and colour, background colour, text  position, labels in the buttons to 'approve' or 'reject' a transaction) based on the transactional data contained in the presentation request, according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request.</td>
+<td>The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code), according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. <em>Note: For payment SCA this requirement is met by use of key binding in [SD-JWT-VC].</em></td>
 <td>New</td>
-</tr>
-<tr>
-<td>~~TD_04~~</td>
-<td>~~The Wallet Unit SHALL be able to generate and include in an attestation presentation response a unique, cryptographically random value with the sufficient entropy (authentication code), according to rules set out in an Attestation Rulebook or information provided to the Wallet Unit in the presentation request. Note: For payment SCA this requirement is met by use of key binding in [SD-JWT-VC].~~</td>
-<td>~~New~~</td>
 </tr>
 </tbody>
 </table>
@@ -613,7 +595,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[European Digital Identity Regulation]</td>
-<td><a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng">Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</a></td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
 </tr>
 <tr>
 <td>[CIR 2024/2979]</td>
@@ -621,19 +603,19 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[OID4VP]</td>
-<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID for Verifiable Presentations</a></td>
+<td>OpenID for Verifiable Presentations - draft 24</td>
 </tr>
 <tr>
-<td>[ISO/IEC - 18013-5]</td>
-<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84">Mobile driving licence (mDL) application</a></td>
+<td>[GDPR]</td>
+<td>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)</td>
 </tr>
 <tr>
 <td>[PSD2]</td>
-<td><a href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng">Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC</a></td>
+<td>Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC</td>
 </tr>
 <tr>
 <td>[RTS SCA]</td>
-<td><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj/eng">Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication</a></td>
+<td>Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication</td>
 </tr>
 </tbody>
 </table>
@@ -683,12 +665,10 @@ contains the following risks that are related to the Relying Party registration:
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
