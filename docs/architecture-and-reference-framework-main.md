@@ -48,16 +48,24 @@ concepts and specifications for the European Digital Identity Framework. The
 current ARF version is based on the legal text adopted by the
 co-legislators, including the adopted Commission Implementing Regulations:
 
-- [CIR 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977)
+- [CIR 2024/2977](https://data.europa.eu/eli/reg_impl/2024/2977/oj)
 regarding PID and EAA,
-- [CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979)
+- [CIR 2024/2979](https://data.europa.eu/eli/reg_impl/2024/2979/oj)
 regarding integrity and core functionalities,
-- [CIR 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402980)
+- [CIR 2024/2980](https://data.europa.eu/eli/reg_impl/2024/2980/oj)
 regarding ecosystem notifications,
-- [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402981)
+- [CIR 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj)
 regarding certification of Wallet Solutions,
-- [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982)
-regarding protocols and interfaces.
+- [CIR 2024/2982](https://data.europa.eu/eli/reg_impl/2024/2982/oj)
+regarding protocols and interfaces,
+- [CIR 2025/846](https://data.europa.eu/eli/reg_impl/2025/846/oj)
+regarding cross border identity matching,
+- [CIR 2025/847](https://data.europa.eu/eli/reg_impl/2025/847/oj)
+regarding security breaches of European Digital Identity Wallets,
+- [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)
+regarding registration of Wallet Relying Parties,
+- [CIR 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj)
+regarding the list of certified European Digital Identity Wallets.
 
 ### 1.2 Purpose of this document
 
@@ -132,15 +140,17 @@ regulatory advancements.
 
 ### 1.6 Change log
 
-In this version of the ARF,
+Processed comments provide in the Coordination Group meeting on 21 May 2025:
 
-- relevant text from the [Discussion Paper for Topic D](./discussion-topics/d-embedded-disclosure-policies.md)
-(Embedded disclosure policies) was included in [Sections 6.6.2.7](#6627-provisioning-embedded-disclosure-policies)
-and [6.6.3.4](#6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present). The High-Level Requirements introduced in this discussion paper were included in Annex 2 in [Topic 43](./annexes/annex-2/annex-2-high-level-requirements.md#a2343-topic-43---embedded-disclosure-policies).
-- relevant text from the [Discussion Paper for Topic C](./discussion-topics/c-wallet-unit-attestation.md)
-(Wallet Unit Attestation) was included in [Section 6.5.3.4](#6534-wallet-provider-issues-one-or-more-wallet-unit-attestations-to-the-wallet-unit), as well as other sections. However, only limited changes were made. The High-Level Requirements introduced and changed in this discussion paper were included in Annex 2 in [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation). Other High-Level Requirements that used to be in Topic 9 were moved elsewhere, mainly to [Topic 40](./annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management).
-- relevant text from the [Discussion Paper for Topic G](./discussion-topics/g-zero-knowledge-proof.md) (Zero-Knowledge Proofs) was included in [Section 7.4.3.5.3](#74353-zero-knowledge-proofs). The High-Level Requirements introduced in this discussion paper were included in Annex 2 in [Topic 53](./annexes/annex-2/annex-2-high-level-requirements.md#a2353-topic-53-zero-knowledge-proofs).
-- relevant text from the [Discussion Paper for Topic V](./discussion-topics/v-pid-rulebook.md) (PID Rulebook) was included in [Section 5.3](#53-attestation-formats-and-proof-mechanisms). Furthermore, high-level requirements and a specification of the encoding and format of [SD-JTW VC]-based PIDs were added to the [PID Rulebook](./annexes/annex-3/annex-3.01-pid-rulebook.md).
+- added remark on WUA - Work is still in progress on [TS3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md),
+- added remark on Pseudonyms - Topic E will be revisited in ARF development iteration 3,
+- added remark on ZKP - Topic G will be revisited in ARF development iteration 3,
+- added remark the use of the [W3C Digital Credentials API] is optional (section 4.4.3.1),
+- added the planning of a new topic Z, for discussion on device-bound Attestations and section 1.7,
+- updates on Relying Party registration to align with [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj).
+- Added changes due to adopted Commission Implementing Regulation for Relying Party registration ([CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj))
+regarding registration of Wallet Relying Parties,
+- References were added to the Standards and Technical Specifications (STS) Roadmap.
 
 Apart from these changes, a limited number of editorial mistakes were corrected.
 
@@ -158,10 +168,6 @@ providing feedback and details on how updates will be managed outlined in
 
 Among the areas identified for further discussion are:
 
-- Relying Party registration.
-
-Other topics that will be developed include:
-
 - transaction logs maintained by the Wallet Unit,
 - scenarios involving a natural person representing another natural person,
 - Wallet-to-Wallet interactions,
@@ -170,9 +176,6 @@ Other topics that will be developed include:
 - mechanisms for Users to report unlawful or suspicious data requests to data
 protection authorities (DPAs),
 - data portability.
-
-Further discussions will explore the following topics:
-
 - the development of catalogues for attestations,
 - secure cryptographic interfaces between the Wallet Instance and the WSCA,
 - User interfaces with Wallet Instances,
@@ -180,7 +183,8 @@ Further discussions will explore the following topics:
 - certificate transparency,
 - support and maintenance responsibilities of Wallet Providers,
 - the EUDI Wallet Trust Mark,
-- transactional data needed by Wallet Units in payments and other use cases.
+- transactional data needed by Wallet Units in payments and other use cases,
+- device-bound Attestations.
 
 A detailed list of these topics and the progress of their development is
 available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
@@ -265,6 +269,8 @@ managed by a QTSP. See [Topic 16](./annexes/annex-2/annex-2-high-level-requireme
 and [Topic 37](./annexes/annex-2/annex-2-high-level-requirements.md#a2337-topic-37---qes----remote-signing---technical-requirements).
 
 ### 2.5 Pseudonyms
+
+**NOTE: A Technical Specification specifying all details necessary for implementing pseudonyms will be created in the future. Discussions on the pseudonyms are ongoing.**
 
 Pseudonyms can be used to authenticate a User when it is not necessary for a
 Relying Party to learn the identity of the User. As specified in [CIR
@@ -701,7 +707,7 @@ certificate (see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-p
 bearing its own name and Relying Party identifier. This access certificate is not
 different from an access certificate issued to a 'normal' Relying Party, since
 an intermediary is, as a matter of legal fact, a Relying Party.
-Note: In addition, the intermediary may receive a registration certificate, if issued (see [Section 6.6.3.3](#6633-Wallet-Unit-allows-User-to-verify-that-Relying-Party-does-not-request-more-attributes-than-it-registered)). However this certificate is not used in intermediated transactions. 
+Note: In addition, the intermediary may receive a registration certificate, if issued (see [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)). However this certificate is not used in intermediated transactions.
 2. Next, the intermediary will separately register each of the 'end' Relying
 Parties that uses its services, including registering the attributes the 'end'
 Relying Party wants to request. The intermediary obtains a registration
@@ -723,11 +729,11 @@ registration certificate are identical to the name and identifier in the access
 certificate. If this verification fails, the Wallet Unit treats this as a
 Relying Party authentication failure. If this verification succeeds, the Wallet
 Unit displays to the User the name of the intermediary next to the name of the 'end' Relying Party when asking for User
-approval to present the requested attributes. 
+approval to present the requested attributes.
 
     The Wallet Unit obtains information whether the Relying Party uses the services of an intermediary, along with the name of the 'end' Relying Party, from:
-    + the registration certificate - if provided in the presentation request, or
-    + the information contained in the presentation request (note: this will need an extension of [ISO/IEC 18013-5] and [OpenID4VP])
+    - the registration certificate - if provided in the presentation request, or
+    - the information contained in the presentation request (note: this will need an extension of [ISO/IEC 18013-5] and [OpenID4VP])
 
 5. When a Wallet Unit presents a PID or attestation to the intermediary, the
 intermediary verifies the authenticity of the PID or attestation, its revocation
@@ -770,8 +776,6 @@ and the fact that this Relying Party is using the services of the intermediary
 For high-level requirements on this topic, see [Topic 52](./annexes/annex-2/annex-2-high-level-requirements.md#a2352-topic-52-relying-party-intermediaries).
 
 In addition, before approval, the User may want to verify the 'end' Relying Party registration information and the scope of attributes requested, as described in [Section 6.6.3.3](#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered)).
-
-
 
 ### 3.12 Conformity Assessment Bodies (CAB)
 
@@ -1189,8 +1193,7 @@ expectations outlined in
 discussion paper. Moreover, the API has not been implemented yet by all
 browsers and operating systems.
 
-Until these three conditions (standardisation, compliance with expectations, and
-broad support) are fulfilled, the use of this API by Wallet Units and Relying
+The use of this API by Wallet Units and Relying
 Parties is optional, and custom URL schemes may be used as well. If
 a Wallet Unit implements a custom URL scheme, it will need to implement
 mitigations for the challenges described in this section.
@@ -1903,6 +1906,7 @@ attestation, while allowing selective disclosure of attributes.
 attestation in proximity flows, see [Section 5.6.2](#562-secure-data-exchange-using-isoiec-18013-5-and-isoiec-18013-7).
 
 Point to note about ISO/IEC 18013-5:
+
 - the mDL attribute schema (see
 first bullet above) is the only aspect of ISO/IEC 18013-5 that is specific for mDLs.
 All other aspects are generic and can be used for any other attestation type,
@@ -2139,8 +2143,8 @@ subsequently communicate over BLE, NFC, or Wi-Fi Aware.
     Wallet Unit and a Relying Party,
     - Relying Party authentication, see [Section 6.6.3.2](#6632-wallet-unit-authenticates-the-relying-party-instance).
 
-As already explained in [Section 5.3.2](#532-isoiec-18013-5), although ISO/IEC
-18013-5 nominally specified the mobile driving licence, all of the above aspects
+As already explained in [Section 5.3.2](#532-isoiec-18013-5-and-isoiec-23220-2), although ISO/IEC
+18013-5 nominally specifies the mobile driving licence, all of the above aspects
 are generic and can be used for any type of attestation.
 
 Whereas ISO/IEC 18013-5 specifies proximity transaction flows only, ISO/IEC
@@ -2381,7 +2385,6 @@ or to the Attestation Provider. A PID Provider or an Attestation Provider needs
 such a certificate to authenticate itself towards a Wallet Unit when issuing a
 PID or an attestation to it, as described in [Section 6.6.2.2](#6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider).
 
-
 Subsequently, the Access Certificate Authority is included in a PID Provider
 Access CA Trusted List or Attestation Provider Access CA Trusted List. This
 Trusted List contains at least the trust anchor(s) of the CA. A Wallet Unit can
@@ -2399,18 +2402,16 @@ mDL or diploma ("intended use"). Such information is included in the Relying Par
 
 See [Section 6.6.3.3](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/feature/1.10.0/docs/architecture-and-reference-framework-main.md#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered) to learn more about the registration certificate content.
 
-A Wallet Unit can use this information to verify that a Provider it is contacting to issue a specific type of attestation, is entitled to do so (verification of the type of the Provider and the "intended use"). 
+A Wallet Unit can use this information to verify that a Provider it is contacting to issue a specific type of attestation, is entitled to do so (verification of the type of the Provider and the "intended use").
 
 If the registration certificate is not available, the Wallet Unit can always obtain this
 information from the Registrar's on-line service (see
-[Section 6.3.2.2](#6322-data-about-the-pid-provider-or-attestation-provider-is-included-in-the-registry)). 
+[Section 6.3.2.2](#6322-data-about-the-pid-provider-or-attestation-provider-is-included-in-the-registry)).
 
-To manage both flows - with use of the registration certificate and without - the access certificates contains 
-+ information (a flag) to indicate whether the registration certificate was issued or not,
-+ URL to the the Registrar's on-line service providing information on the Relying Parties registrations.
+To manage both flows - with use of the registration certificate and without - the access certificates contains
+- information (a flag) to indicate whether the registration certificate was issued or not,
+- URL to the the Registrar's on-line service providing information on the Relying Parties registrations.
 In case the intermediary is acting on behalf of an 'end' Relying Party, the information if the registration certificate is available is contained in the presentation request. (Note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
-
-
 
 ##### 6.3.2.4 PID Provider or Attestation Provider trust anchors are included in a Trusted List
 
@@ -2464,7 +2465,7 @@ attestations as described in [Section 6.6.3.7](#6637-relying-party-verifies-that
 
 1. A Relying Party is registered by a Registrar in the Member State where it
 resides. Relying Party registration is discussed in [Section 6.4.2](#642-relying-party-registration).
-2. Under specific conditions, a Registrar may decide to suspend or cancel registation of a
+2. Under specific conditions, a Registrar may decide to suspend or cancel registration of a
 Relying Party. This is discussed in [Section 6.4.3](#643-relying-party-suspension-or-cancellation).
 
 #### 6.4.2 Relying Party registration
@@ -2479,7 +2480,7 @@ employing multiple lines where arriving passengers can present their PID.
 [Figure 11](#61-scope) also shows the Relying Party. Below that, it shows that each Relying
 Party will register itself with a Relying Party Registrar in its Member State.
 If the registration process is successful, the Registrar includes the Relying
-Party in its public registry. 
+Party in its public registry.
 
 A Relying Party may register in the context of its several services, one per each intended use and requiring a specific attributes to be obtained from a Wallet Unit. In result, a single Relying Party may register multiple times and may be issued more than one registration certificate.  
 
@@ -2708,7 +2709,9 @@ attestation.
 
 During the activation of a Wallet Unit, the Wallet Provider issues one or more
 Wallet Unit Attestations to the Wallet Unit. The Wallet Unit Attestation (WUA)
-is described in [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation). More information on the WUA can also be found in the [Discussion Paper for topic C](./discussion-topics/c-wallet-unit-attestation.md).
+is described in [Topic 9](./annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation). More information on the WUA can also be found in the [Discussion Paper for topic C](./discussion-topics/c-wallet-unit-attestation.md) and in the [Technical Specification 3](./technical-specifications/ts3-wallet-unit-attestation.md).
+
+**NOTE: The Technical Specification 3 referenced above is not finalised yet. Discussions on the WUA are ongoing. In particular, no final decision has been taken yet regarding the use of a WUA on the Relying Party interface. Nevertheless, it seems likely that this will not be a possibility, and that a Wallet Unit will send a WUA only to a PID Provider or Attestation Provider during issuance.**
 
 A WUA has three main purposes:
 
@@ -2770,7 +2773,7 @@ Unit.  In particular, the Wallet Provider will ensure that the risk of malicious
 Relying Parties linking multiple presentations of the same WUA, with the goal of
 tracking the User, is minimised. For example, the Wallet Provider may set up the
 Wallet Unit in such a way that each Wallet Unit Attestation is presented to at
-most one PID Provider, Attestation Provider, or Relying Party. Such a WUA is 
+most one PID Provider, Attestation Provider, or Relying Party. Such a WUA is
 called a 'once-only' attestation, see [Section 7.4.3.5](#7435-risks-and-mitigation-measures-related-to-user-privacy).
 
 ##### 6.5.3.5 Wallet Provider sets up a User account for User
@@ -2943,21 +2946,17 @@ for example use the Wallet Unit to scan a QR code or tap an NFC tag to do so.
 Note that no centralised service discovery mechanism for PID or attestation
 issuance is foreseen.
 
-
 Before requesting the issuance of a PID or an attestation, the Wallet Unit
 authenticates the PID Provider or the Attestation Provider. To do so, the Wallet
 Unit verifies the access certificate presented to it by the PID Provider or
-Attestation Provider in its Issuer metadata according to [OpenID4VCI]. 
-To verify the role and the entitlements of the requesting entity (whether it is an 
-PID Provider or an Attestation Provider and what type of attestation provider), the Wallet unit checks the registration information contained in the registration certificate 
+Attestation Provider in its Issuer metadata according to [OpenID4VCI].
+To verify the role and the entitlements of the requesting entity (whether it is an
+PID Provider or an Attestation Provider and what type of attestation provider), the Wallet unit checks the registration information contained in the registration certificate
 (if available) or the Registrar's on-line service.
 
-
-The Wallet Unit also verifies that the access certificate and registration certificate (if provided) 
-are authentic, that they are valid at the time of validation, and that the issuers of the certificates 
+The Wallet Unit also verifies that the access certificate and registration certificate (if provided)
+are authentic, that they are valid at the time of validation, and that the issuers of the certificates
 are in the PID Provider or Attestation Provider Access CA Trusted List.
-
-
 
 ##### 6.6.2.3 PID Provider or Attestation Provider validates the Wallet Unit
 
@@ -3243,14 +3242,13 @@ the Relying Party Instance.
 ##### 6.6.3.3 Wallet Unit allows User to verify that Relying Party does not request more attributes than it registered
 
 During registration, the Relying Party registered which attributes it intends to
-request from Wallet Units. 
-If the registration certificate had been issued for this Relying Party, 
-+ the Registrar listed these attributes in this certificate and sent it to the Relying Party,
-+ the Relying Party may distribute it to all of its Relying Party Instances,
-+ the Relying Party Instance may send this registration certificate to the Wallet Unit in each presentation request.
+request from Wallet Units.
+If the registration certificate had been issued for this Relying Party,
+- the Registrar listed these attributes in this certificate and sent it to the Relying Party,
+- the Relying Party may distribute it to all of its Relying Party Instances,
+- the Relying Party Instance may send this registration certificate to the Wallet Unit in each presentation request.
 
-
-During a transaction, the Wallet Unit offers to the User an option to perform verification of the 
+During a transaction, the Wallet Unit offers to the User an option to perform verification of the
 Relying Party registration information. If the User choses to do so, the Wallet Unit
 displays the contents of the registration certificate to the User when asking
 the User for approval, see
@@ -3263,19 +3261,17 @@ Wallet Unit can verify that the registration certificate belongs to the
 authenticated Relying Party, will be specified in a technical specification. For
 more information, see [Topic 44](./annexes/annex-2/annex-2-high-level-requirements.md#a2344-topic-44---relying-party-registration-certificates).
 
-In case the registration certificate was not issued or not provided in the presentation 
-request, the Wallet Unit offers to the User an alternative option to perform verification of the 
-Relying Party information, through an on-line check instead. 
+In case the registration certificate was not issued or not provided in the presentation
+request, the Wallet Unit offers to the User an alternative option to perform verification of the
+Relying Party information, through an on-line check instead.
 
-If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from: 
-+ the Relying Party access certificate, or
-+ the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
+If the User choses to perform such a check, the Wallet Unit retrieves a URL of the Registrar's on-line service from:
+- the Relying Party access certificate, or
+- the information contained in the presentation request - in case of requestor being an intermediary (note: this needs an extension of [ISO/IEC 18013-5] and [OpenID4VP]).
 
 Next, the Wallet Unit makes a verification request via this URL, using the unique ID of the Relying Party (retrieved from the Relying Party access certificate or from the presentation request in case the requestor is an intermediary).
-The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before. 
-The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional). 
-
-
+The Wallet Unit notifies the User about the outcome of the verification in case the Relying Party requested attributes that it had not registered at Registrar before.
+The Wallet Unit also notifies the User in case the Wallet Unit is not able to retrieve the Relying Party registration information (otherwise the notification is optional).
 
 ##### 6.6.3.4 Wallet Unit evaluates embedded disclosure policy, if present
 
@@ -3339,12 +3335,12 @@ approve or deny the presentation of each (group of) attributes separately. The
 User takes a decision based on at least the following information:
 
 - The authenticated identity of the Relying Party,
-- The information in the Relying Party's registration certificate or the information 
+- The information in the Relying Party's registration certificate or the information
 received from the Registrar's on-line service regarding the
 attributes that the Relying Party has registered during registration ("intended use")- at least
 in case one or more of the requested attributes is not included in the list of
 registered attributes,
-- The information in the Relying Party's registration certificate or the information 
+- The information in the Relying Party's registration certificate or the information
 received from the Registrar's on-line service regarding an
 intermediary used by the Relying Party, if any - see [Section 3.11](#311-relying-parties-and-intermediaries).
 - The outcome of the evaluation of the embedded disclosure policy, if any.
@@ -3456,6 +3452,8 @@ not.
 For more details and requirements on revocation, see [Topic 7](./annexes/annex-2/annex-2-high-level-requirements.md#a237-topic-7---attestation-revocation-and-revocation-checking).
 
 ##### 6.6.3.8 Relying Party Instance verifies device binding
+
+**NOTE: Discussions on device binding are ongoing, in particular regarding whether non-device bound attestations should be supported by a Wallet Unit, and if so, what the requirements for this support should be.**
 
 Device binding is the property that a PID or an attestation is bound to a
 specific device (in fact, a WSCD) and cannot be used independent from that
@@ -4218,6 +4216,8 @@ further interactions with Wallet Units.
 
 ###### 7.4.3.5.3 Zero-Knowledge Proofs
 
+**NOTE: Discussions on Zero-Knowledge Proofs are ongoing. No specific ZKP has been selected to be supported by components in the EUDI Wallet ecosystem.**
+
 Attestation Provider linkability cannot be fully eliminated when using
 attestation formats based on salted hashes. The only viable mitigation is to
 adopt Zero-Knowledge Proofs (ZKPs) as a verification mechanism instead of
@@ -4241,6 +4241,8 @@ initiative could pave the way for the adoption of ZKPs within the EUDI Wallet
 ecosystem, further strengthening privacy protections in future implementations.
 
 The [Discussion Paper for Topic G](./discussion-topics/g-zero-knowledge-proof.md) (Zero-Knowledge Proofs) presents the (desired) privacy properties of Zero-Knowledge Proof schemes. It introduces the main families of Zero-Knowledge Proof schemes and gives an overview of representative solutions. Finally, it discusses topics related to the integration of Zero-Knowledge Proof schemes into the EUDI Wallet ecosystem.
+
+High-level requirements for Zero-Knowledge Proofs to be used in the EUDI Wallet ecosystem are included in [Topic 53](./annexes/annex-2/annex-2-high-level-requirements.md#a2353-topic-53-zero-knowledge-proofs) of Annex 2.
 
 ## 8 Document development
 
@@ -4360,7 +4362,7 @@ format, *MAJOR.MINOR.PATCH*, where:
 
 ## 9 References
 
-For undated references, the latest version available applies.
+Note: All standards and technical specifications (as opposed to Regulations and Implementing Regulations) in this list are undated. A reference is added to the entry for the respective document on the Standards and Technical Specifications Roadmap, which contains the latest information regarding the targeted version.
 
 | **Item Reference** | **Standard name/details**|
 |--------------------|---------------------------|
@@ -4372,6 +4374,10 @@ For undated references, the latest version available applies.
 | [CIR 2024/2980] | [Commission Implementing Regulation 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notifications to the Commission concerning the European Digital Identity Wallet ecosystem |
 | [CIR 2024/2981] | [Commission Implementing Regulation (EU) 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets |
 | [CIR 2024/2982] | [Commission Implementing Regulation 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402982) of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework |
+| [CIR 2025/846] | [Commission Implementing Regulation 2025/846](https://data.europa.eu/eli/reg_impl/2025/846/oj) of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards cross-border identity matching of natural persons |
+| [CIR 2025/847] | [Commission Implementing Regulation 2025/847](https://data.europa.eu/eli/reg_impl/2025/847/oj) of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reactions to security breaches of European Digital Identity Wallets |
+| [CIR 2025/848] | [Commission Implementing Regulation 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj) of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the registration of wallet-relying parties |
+| [CIR 2025/849] | [Commission Implementing Regulation 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj) of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the submission of information to the Commission and to the Cooperation Group for the list of certified European Digital Identity Wallets |
 | [ISO/IEC 18013-5] | [ISO/IEC 18013-5](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84), Personal identification --- ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application |
 | [ISO/IEC 18013-7] | [ISO/IEC 18013-7](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/1), Personal identification --- ISO-compliant driving licence - Part 7: Mobile driving licence (mDL) add-on functions |
 | [ISO/IEC 23220-2] |  [ISO/IEC 23220-2](https://www.iso.org/standard/86782.html), --- Cards and security devices for personal identification — Building blocks for identity management via mobile devices - Part 2: Data objects and encoding rules for generic eID systems |
@@ -4403,8 +4409,8 @@ For undated references, the latest version available applies.
 | [GP CS] | GPC_SPE_034 [Card Specification](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/243), v2.3.1, March 2018, GlobalPlatform |
 | [GSMA SAM] | [GSMA Secured Applications for Mobile](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/241), v1.1, 03 November 2023, GSM Association |
 | [W3C VCDM v2.0] | Sporny, M. *et al,* [Verifiable Credentials Data Model v2.0](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/115), W3C Proposed Recommendation |
-| [W3C VC-JOSE-COSE] | Jones, M. *et al,* "[Securing Verifiable Credentials using JOSE and COSE](https://www.w3.org/TR/vc-jose-cose/)", W3C Proposed Recommendation |
-| [W3C VC Data Integrity] | Sporny, M. *et al,* [Verifiable Credential Data Integrity 1.0](https://www.w3.org/TR/vc-data-integrity/), W3C Proposed Recommendation |
+| [W3C VC-JOSE-COSE] | Jones, M. *et al,* "[Securing Verifiable Credentials using JOSE and COSE](https://www.w3.org/TR/vc-jose-cose/)", W3C Recommendation |
+| [W3C VC Data Integrity] | Sporny, M. *et al,* [Verifiable Credential Data Integrity 1.0](https://www.w3.org/TR/vc-data-integrity/), W3C Recommendation |
 | [W3C Digital Credentials API] | Caceres, M., Cappalli, T., Goto, S. *et al,* "[Digital Credentials API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/10)", Draft Community Group Report |
 | [W3C WebAuthn] | Jeff Hodges *et al,* [Web Authentication](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314), An API for accessing Public Key Credentials Level 2, W3C Recommendation |
 | [CTAP] | Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023. Available: <https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/365> |

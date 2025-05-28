@@ -77,7 +77,6 @@ Iteration is planned from 26 March 2025 to 02 July 2025 covering the following t
 | L | [User requesting data deletion to Relying Parties](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/342) |
 | M | [User reporting unlawful or suspicious request of data to DPAs](l+m-data-deletion-and-dpa-complaint.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/343) |
 | N | [Data portability](n-export-and-data-portability.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/344) |
-| O | [Catalogues for Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
 | U | [EUDI Wallet Trust Mark](u-eudi-wallet-trust-mark.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/351) |
 | W | [Transactional data for payments and other use cases](w-transactional-data-for-payments-and-other-use-cases.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/371) |
 
@@ -94,4 +93,10 @@ Iteration is planned from 20 August 2025 to 26 November 2025 covering the follow
 | R | [Authentication of the User to the device](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/348) |
 | S | [Certificate transparency](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/349) |
 | T | [Support and maintenance by the Wallet Provider](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/350) |
+| Z | [Device-bound Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/tbd) |
 
+Earlier topics, planned to be revisited in iteration 3:
+| Topic | Title | |
+|-------|-------|--|
+| E | Revisited - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
+| G | Revisited - [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
