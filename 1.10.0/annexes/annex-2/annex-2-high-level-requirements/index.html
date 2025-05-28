@@ -944,9 +944,10 @@ these certificates will be established within the respective PKI.</p>
 the ideas described in this Topic, particularly relating to revocation and
 the differing needs of Relying Parties on one side and
 PID Providers and Attestation Providers on the other.
-Further details on these subjects will be provided in a technical specification
-and the high level requirements in Topic 9 intentionally do not go into these technical details. To support the varying needs of the actors, the technical specification may specify two types of WUA, containing
+Further details on these subjects will be provided in <a href="./technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>
+and the high level requirements in Topic 9 intentionally do not go into these technical details. To support the varying needs of the actors, <a href="./technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> may specify two types of WUA, containing
 different information, and having different validity periods and different formats.</p>
+<p><strong>NOTE: <a href="./technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> is not finalised yet. Discussions on the WUA are ongoing. In particular, no final decision has been taken yet regarding the use of a WUA on the Relying Party interface. Nevertheless, it seems likely that this will not be a possibility, and that a Wallet Unit will send a WUA only to a PID Provider or Attestation Provider during issuance.</strong></p>
 <h5 id="description_6">Description <!-- omit from toc --></h5>
 <p>When a User's Wallet Unit interacts with other actors
 in the EUDI Wallet ecosystem, e.g., PID Providers, Attestation Providers
@@ -1245,7 +1246,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_17</td>
-<td>A PID Provider SHALL implement device binding for all PIDs it issues, meaning it SHALL ensure that a PID is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_11 in [<a href="#a239-topic-9---wallet-unit-attestation">Topic 09</a>]. <em>Note: Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT-VC].</em></td>
+<td>A PID Provider SHALL implement device binding for all PIDs it issues, meaning it SHALL ensure that a PID is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_11 in [<a href="#a239-topic-9---wallet-unit-attestation">Topic 09</a>]. <em>Notes: - Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT-VC]. - Discussions on device binding are ongoing, in particular regarding whether non-device-bound PIDs or attestations should be supported by a Wallet Unit, and if so, what the requirements for this support should be.</em></td>
 </tr>
 <tr>
 <td>ISSU_18</td>
@@ -1324,7 +1325,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_27</td>
-<td>An Attestation Provider SHALL implement device binding for all attestations it issues, meaning it SHALL ensure that an attestation is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_11 in [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]. <em>Note: device binding is called 'mdoc authentication'  in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT-VC].</em></td>
+<td>An Attestation Provider SHALL implement device binding for all attestations it issues, meaning it SHALL ensure that an attestation is cryptographically bound to a WSCA included in the Wallet Unit, as specified in requirement WUA_11 in [<a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a>]. <em>Notes: -Device binding is called 'mdoc authentication'  in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT-VC]. - Discussions on device binding are ongoing, in particular regarding whether non-device-bound PIDs or attestations should be supported by a Wallet Unit, and if so, what the requirements for this support should be.</em></td>
 </tr>
 <tr>
 <td>ISSU_27a</td>
@@ -1612,7 +1613,7 @@ pseudonyms and the HLRs for the technical specification of how it must be
 implemented. The below HRLs are the result of this discussion. For more
 background information on these requirements, please refer to the <a href="../../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/">Discussion
 Paper for Topic E</a>.</p>
-<p>Note: As specified in requirement PA_21, the Commission will create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification. The HLRs below are in fact requirements to be fulfilled by this technical specification.</p>
+<p><strong>NOTE: As specified in requirement PA_21, the Commission will create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification. The HLRs below are in fact requirements to be fulfilled by this technical specification. Discussions on the pseudonyms are ongoing.</strong></p>
 <h6 id="a-hlrs-related-to-use-cases">A. HLRs related to Use Cases <!-- omit from toc --></h6>
 <table>
 <thead>
@@ -3073,7 +3074,7 @@ see [<a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas
 </tr>
 <tr>
 <td>RPACANot_04</td>
-<td>Access Certificate Authority and Registration Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Access Certificate Authority and Registration Certificate Authority Trusted Lists which are signed or sealed by the Commission. <em>Note: The adopted version of the CIR for Relying Party registration will clarify how the Trusted List for Registrars of Registration Certificates are to be arranged, the certificates not being PKI/X.509 certificates as is the case with standard EU Trusted Lists. It is also to be clarified in the related technical specification if Access Certificate Authorities can sign other certificates than access certificates.</em></td>
+<td>Access Certificate Authority and Registration Certificate Authority trust anchors SHALL be accepted because of their secure notification by the Member States to the Commission and by their publication in the corresponding Commission-compiled Access Certificate Authority and Registration Certificate Authority Trusted Lists which are signed or sealed by the Commission.</td>
 </tr>
 <tr>
 <td>RPACANot_05</td>
@@ -3710,7 +3711,7 @@ Registrar to a Relying Party during the registration process described in
 <a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.
 It contains mainly the list of attributes registered by the Relying Party
 according to Article 5b 2 (c) of the [European Digital Identity Regulation]. A
-registration certificate is signed by the Registrar. 
+registration certificate is signed by the Registrar.
 As a Relying Party is obliged to register for each purpose ("intended use") separately, a single Relying Party may possess multiple registration certificates.  </p>
 <p>Commission Implementing Regulation 2024/2982 requires a Wallet Unit to
 authenticate and validate the registration certificate (if available), and to display to the User the
@@ -3738,7 +3739,7 @@ is legitimate and trustworthy.</p>
 </tr>
 <tr>
 <td>RPRC_03</td>
-<td>The contents of a registration certificate issued per registered intended use of the Relying Party SHALL include at least information required in Annex V of the CIR for Relying Party Registration. If the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>): the fact that this is the case, plus the user-friendly (common) name and unique identifier (as meant in RPRC_03a and RPRC_03b) of this intermediary.</td>
+<td>The contents of a registration certificate issued per registered intended use of the Relying Party SHALL include at least information required in Annex V of the <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj">CIR 2025/848</a> regarding registration of Wallet Relying Parties. If the Relying Party uses the services of an intermediary (see <a href="#a2352-topic-52-relying-party-intermediaries">Topic 52</a>): the fact that this is the case, plus the user-friendly (common) name and unique identifier (as meant in RPRC_03a and RPRC_03b) of this intermediary.</td>
 </tr>
 <tr>
 <td>RPRC_03a</td>
@@ -3746,7 +3747,7 @@ is legitimate and trustworthy.</p>
 </tr>
 <tr>
 <td>RPRC_03b</td>
-<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] sections 5.1.4 or 5.1.5 and used as the Distinguished Name (DN) of the certificate subject in both access and registration certificates of the Relying Party. Exact specification is left for the technical specifications to be developed by the European Commission.</em></td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj">CIR 2025/848</a> regarding registration of Wallet Relying Parties, expressed in semantic form defined in [ETSI EN319 412-1] sections 5.1.4 or 5.1.5 and used as the Distinguished Name (DN) of the certificate subject in both access and registration certificates of the Relying Party. Exact specification is left for the technical specifications to be developed by the European Commission.</em></td>
 </tr>
 </tbody>
 </table>
@@ -3996,6 +3997,7 @@ behalf of the intermediated Relying Party.</p>
 </table>
 <h4 id="a2353-topic-53-zero-knowledge-proofs">A.2.3.53 Topic 53 Zero-Knowledge Proofs</h4>
 <h5 id="description_36">Description <!-- omit from toc --></h5>
+<p><strong>NOTE: Discussions on Zero-Knowledge Proofs are ongoing. No specific ZKP has been selected to be supported by components in the EUDI Wallet ecosystem.</strong></p>
 <p>This topic lists high-level requirements for a Zero-Knowledge Proof scheme to be used within the EUDI Wallet ecosystem as a proof mechanism for PIDs and attestations. A Zero-Knowledge Proof (ZKP) is a cryptographic protocol that allows one party
 (the prover) to convince another party (the verifier) that a given statement is
 true without revealing any additional information beyond the validity of the
