@@ -74,16 +74,24 @@ concepts and specifications for the European Digital Identity Framework. The
 current ARF version is based on the [legal text adopted](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18)
 by the co-legislators, including the adopted Commission Implementing Regulations:
 
-* [CIR 2024/2977](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2977)
+- [CIR 2024/2977](https://data.europa.eu/eli/reg_impl/2024/2977/oj)
 regarding PID and EAA,
-* [CIR 2024/2979](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402979)
+- [CIR 2024/2979](https://data.europa.eu/eli/reg_impl/2024/2979/oj)
 regarding integrity and core functionalities,
-* [CIR 2024/2980](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402980)
+- [CIR 2024/2980](https://data.europa.eu/eli/reg_impl/2024/2980/oj)
 regarding ecosystem notifications,
-* [CIR 2024/2981](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402981)
+- [CIR 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj)
 regarding certification of Wallet Solutions,
-* [CIR 2024/2982](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982)
-regarding protocols and interfaces.
+- [CIR 2024/2982](https://data.europa.eu/eli/reg_impl/2024/2982/oj)
+regarding protocols and interfaces,
+- [CIR 2025/846](https://data.europa.eu/eli/reg_impl/2025/846/oj)
+regarding cross border identity matching,
+- [CIR 2025/847](https://data.europa.eu/eli/reg_impl/2025/847/oj)
+regarding security breaches of European Digital Identity Wallets,
+- [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)
+regarding registration of Wallet Relying Parties,
+- [CIR 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj)
+regarding the list of certified European Digital Identity Wallets.
 
 ## Contents of the repository
 
