@@ -99,5 +99,6 @@ Earlier topics, planned to be revisited in iteration 3:
 | Topic | Title | |
 |-------|-------|--|
 | E | Revisited - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
+| F | Revisited - [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
 | G | Revisited - [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
 
