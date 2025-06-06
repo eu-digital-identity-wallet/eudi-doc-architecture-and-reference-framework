@@ -977,13 +977,19 @@ different possible security architectures for the WSCD (for more details see
     an API provided by the operating system.
 
 - **Wallet Secure Cryptographic Application (WSCA):** an application that
-manages critical assets by being linked to and using the cryptographic and
-non-cryptographic functions provided by the Wallet Secure Cryptographic Device. Different types of WSCD generally use different types of WSCA. For example, if the WSCD is a remote HSM, the WSCA may be (but does not have to be) a dedicated firmware module. If the WSCD is a external smartcard or an internal e-SIM or embedded Secure Element, the WSCA takes the form of a dedicated JavaCard applet running on the e-SIM or SE. If the WSCD is a local native WSCD, the WSCD is integrated into the OS of the User device.
-The WSCA interfaces directly with the Wallet Instance. For more details see
-[Section 4.5](#45-wscd-architecture-types).
+  manages critical assets by being linked to and using the cryptographic and
+  non-cryptographic functions provided by the Wallet Secure Cryptographic
+  Device. Different types of WSCD generally use different types of WSCA. For
+  example, if the WSCD is a remote HSM, the WSCA may be (but does not have to
+  be) a dedicated firmware module. If the WSCD is a external smartcard or an
+  internal e-SIM or embedded Secure Element, the WSCA takes the form of a
+  dedicated JavaCard applet running on the e-SIM or SE. If the WSCD is a local
+  native WSCD, the WSCD is integrated into the OS of the User device. The WSCA
+  interfaces directly with the Wallet Instance. For more details see [Section
+  4.5](#45-wscd-architecture-types).
 - **Wallet Provider backend (WPB**): The Wallet Provider backend offers Users
-support with their Wallet Units, performs essential maintenance, and issues
-Wallet Unit Attestations through the Wallet Provider Interface (WPI).
+  support with their Wallet Units, performs essential maintenance, and issues
+  Wallet Unit Attestations through the Wallet Provider Interface (WPI).
 
 #### 4.3.3 Wallet Unit interfaces and protocols
 
