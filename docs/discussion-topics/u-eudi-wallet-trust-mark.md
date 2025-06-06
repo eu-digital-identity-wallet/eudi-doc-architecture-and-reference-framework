@@ -4,6 +4,7 @@
 |---------|------------|----------------------------------------------------------------------------|
 | `0.1`   | 21.05.2025 | Initial version                                                            |
 | `0.2`   | 03.06.2025 | Updated version after the first session                                    |
+| `0.3`   | 05.06.2025 | Updated version after the second session                                   |
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/536)
 
@@ -70,23 +71,23 @@ fact.
 - Chapter 6 lists the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2 Legal requirements for EUDI Wallet Trust Mark in Regulation EU 2024/1183
- - According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”** 
- 
+ - According to Article 3 (50), the EUDI Wallet Trust Mark is defined as **"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”**
  - According to Article 5a (5)(a) (iv), **the Trust Mark must be displayed to the User**.
  - According to Article 5a (8)(a), **the Member States shall provide validation mechanisms free-of-charge, in order to: (a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;**
 - According to the Article 5d, the European Commission publishes the list of certified EUDI Wallets as an official list in the Official Journal of the European Union, thus acting as a reference for which Wallet Solutions are certified. **Removal from the list means certification is no longer valid**.
+
 ## 3. Problem statement
 
-The purpose of a visible and recognisable trust mark on the EUDI Wallet is to add trust in the EUDI Wallet ecosystem and help the Users to recognise and validate the certification status of the EUDI Wallet Solutions of their EUDI Wallet Provider. 
+The purpose of a visible and recognisable trust mark on the EUDI Wallet is to add trust in the EUDI Wallet ecosystem and help the Users to recognise and validate the certification status of the EUDI Wallet Solutions of their EUDI Wallet Provider.
 
 A technical solution exists to verify the certification status of each Wallet Unit before any digital transaction is carried out between the Wallet Unit and its counterparts - the **Wallet Unit Attestation**. As a technical and non-visible attestation towards the Wallet Users it doesn't provide the visibility and recognisability emphasised in the Regulation. A means to deliver a visible trust mark to the Wallet Unit needs therefore to be arranged, and the Users shall be provided means to personally verify the status of the Wallet Solution they depend on.
 
 Neither this discussion paper nor the technical specification is responsible for the visual elements of the EUDI Wallet Trust Mark realisation - responsible entity is a parallel European Commission project that takes input from the Member States and [Trust Mark Specification]. It is stated in the [Trust Mark Specification] that the European Commission is responsible for the EUDI Wallet Trust Mark in terms of graphic design, ownership of the logo registration process and takes responsibility for drafting rules and usage guidelines, and distribution to the designated actors within the ecosystem.
 
-The specification work, which is usually carried out once the HLRs have been defined in the ARF, has already been completed. The Section 3 of the [Trust Mark Specification] specifies the mandatory action-oriented high-level requirements for a simple solution that 
+The specification work, which is usually carried out once the HLRs have been defined in the ARF, has already been completed. The Section 3 of the [Trust Mark Specification] specifies the mandatory action-oriented high-level requirements for a simple solution that
 
-* focuses on providing the EUDI Trust Mark logo only to valid Wallet Instances, and 
-* enables the Wallet Provider to equip each Wallet Instance with links to the EU list of certified EUDI Wallets and the individual (certified) Wallet Solution information page underneath the main list. 
+* focuses on providing the EUDI Trust Mark logo only to valid Wallet Instances, and
+* enables the Wallet Provider to equip each Wallet Instance with links to the EU list of certified EUDI Wallets and the individual (certified) Wallet Solution information page underneath the main list.
 
 The European Commission will provide the EUDI Wallet Trust Mark graphics elements and will host the Wallet Solution specific content that will be displayed to Wallet Users through a browser window opened from the Wallet Instance upon the User making an deliberate action (e.g. a tap/click of a provided link). Two types of URLs are defined; one to open the page containing the general list of certified EUDI Wallets at the time of reviewing the page, the other that contains information specific to the certified Wallet Solution.
 
@@ -118,7 +119,7 @@ Figure 1. EUDI Wallet Trust Mark System Architecture
 
 Similarly, a copy of the EU Commission and Wallet Provider -side actor descriptions  #5-7, #9-11 and #13-14 accompanying the system architecture picture (for complete listing see [Section 4.2.2](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md#422) of the [Trust Mark Specification]) is provided below for convenience:
 
-"The **European Commission's** responsible unit for the Trust Mark information and listing of certified EUDI Wallets manages that 
+"The **European Commission's** responsible unit for the Trust Mark information and listing of certified EUDI Wallets manages that
 - (5) the EUDI Wallet Trust Mark materials are available online as required behind a web resource (TrustMarkResourceURL)
 - (6) the certified Wallet Solution is given a WalletSolutionID, information of the Wallet Solution is added to the official list of certified wallets
 - (7) a Wallet Solution specific information page is created and published online
@@ -130,7 +131,7 @@ Similarly, a copy of the EU Commission and Wallet Provider -side actor descripti
 ...
 
 The **Wallet Provider**, after receiving the information,  
-- updates the Wallet Solution asset where needed (10) in order to 
+- updates the Wallet Solution asset where needed (10) in order to
 - (11) be able to render the Wallet Solution specific EUDI Wallet UI view with expected graphics and other information of the Trust Mark.
 
 ...
@@ -151,7 +152,7 @@ The below table was evolved via discussions in the focus group meetings, the **B
 
 | **TS Index** | TS Requirement | **Proposed ARF Index** | **Proposed ARF Requirement specification** |
 |--------------|----------------|------------------------|-------------------------------|
-| **EWTM-U4**  | As a user of a EUDI Wallet, after installation, I want a means to check that the EUDI Wallet Solution certification is legitimate as part of the EUDI Wallet Instance activation. *Note: Certification related information is made available to the EUDI Wallet Unit via the WUA issuance.*| WIAM_05  | During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution **and as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution**.                  |
+| **EWTM-U4**  | As a user of a EUDI Wallet, after installation, I want a means to check that the EUDI Wallet Solution certification is legitimate as part of the EUDI Wallet Instance activation. *Note: Certification related information is made available to the EUDI Wallet Unit via the WUA issuance.*| WIAM_04  | During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution **and as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution**.                  |
 | **EWTM-U5** | As a User of a EUDI Wallet, I want a means to check on demand if the EUDI Wallet Unit that I am currently using is a Certified EUDI Wallet. | DASH_09  | The User interface referred to in DASH_08 SHALL ~~display~~ provide a view with the ~~an~~ EU Digital Identity Wallet Trust Mark **and accompanying information of the certification status of the Wallet Solution** complying with technical specification **provided on the EUDI Wallet Trust Mark**. (Original note to be removed.)    |
 | **EWTM-U6** | As a User of a EUDI Wallet, I want to be able to read fresh high-level information of the Certification status when I select (click or tap) a visual indicator (logo) of the EUDI Wallet Trust Mark in the EUDI Wallet Unit. | DASH_13 (New) | The view of DASH_09 SHALL in addition to the Trust Mark provide links to the certification information defined in the technical specification provided on the EUDI Wallet Trust Mark. |
 | **EWTM-U7** | As a User of a EUDI Wallet, I want the EUDI Wallet Trust Mark to be always positioned in a standard location (such as UI view or menu item) in the EUDI Wallet Unit. | DASH_14 (New)  | Positioning of the view of DASH_09 in the Wallet UI navigation should follow provided design guidelines from the European Commission. *Note: The information/UI view should probably be offered to the User at first upon Wallet Unit activation (see WIAM_05 in Topic 40) and be located under the 'Settings' or 'About' view or similar of the Wallet Instance. Guidance from the European Commission is expected to the Wallet Providers.* |
@@ -168,46 +169,44 @@ The following High-Level Requirements will be added in Annex 2 Topic *19* of the
 
 **REQUIREMENT 1** (**DASH_013**, mandatory)
 
-The view of DASH_09 SHALL in addition to the Trust Mark provide links to the certification information defined in the technical specification provided on the EUDI Wallet Trust Mark. 
+Positioning of the view of DASH_09 in the Wallet UI navigation SHALL follow provided design guidelines from the European Commission.
 
-**REQUIREMENT 2** (**DASH_014**, conditional)
+#### 6.1.2 New requirements to be added to Topic 40
 
-Positioning of the view of DASH_09 in the Wallet UI navigation should follow provided design guidelines from the European Commission. 
+The following High-Level Requirements will be added in Annex 2 Topic *40* of the ARF:
 
-Note: The information/UI view should probably be offered to the User at first upon Wallet Unit activation (see WIAM_05 in Topic 40) and be located under the 'Settings' or 'About' view or similar of the Wallet Instance. Guidance from the European Commission is expected to the Wallet Providers.
+**REQUIREMENT 2** (**WIAM_10a**, mandatory)
+
+During the activation process of a new Wallet Unit, the Wallet Provider SHALL as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution.
 
 ### 6.2 High-Level Requirements to be changed in Annex 2
 
-The following requirement are modified (deletions in strikethrough, changes in bold):
+The following requirement is modified in Topic *19* (deletions in strikethrough, changes in bold):
 
-**DASH_09 (Topic 19)**
+**DASH_09**
 
-The User interface referred to in DASH_08 SHALL ~~display~~ provide a view with the ~~an~~ EU Digital Identity Wallet Trust Mark **and accompanying information of the certification status of the Wallet Solution** complying with technical specification **provided on the EUDI Wallet Trust Mark**.
+The User interface referred to in DASH_08 SHALL ~~display~~ provide a view with the ~~an~~ EU Digital Identity Wallet Trust Mark **, the accompanying general text information on certification of Wallet Solutions, and provide the links to the certification status information as defined in the [Specification of EUDI Wallet Trust Mark](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md)**.
 
-Original note is to be removed.
-
-**WIAM_05 (Topic 40)**
-
-During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution **and as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution**.
-
+Original note in DASH_09 is to be removed.
 
 ### 6.3 Descriptions to be added to the ARF main document
 
 Proposed draft text for the description on the utility of EUDI Wallet Trust Mark:
 
-"According to the [European Digital Identity Regulation] the User needs to be provided a means to verify that they are installing or (after initialisation) are indeed using a trusted, certified EUDI Wallet Solution. The simple solution to arrange the requirement is a Trust Mark UI view. When invoked in the Wallet Instance, it 
-* renders the official trust mark graphics/logo, 
+"According to the [European Digital Identity Regulation] the User needs to be provided a means to verify that they are installing or (after initialisation) are indeed using a trusted, certified EUDI Wallet Solution. The simple solution to arrange the requirement is a Trust Mark UI view. When invoked in the Wallet Instance, it
+* renders the official trust mark graphics/logo,
 * an informational text about certification localised for User's device language, and 
-* provides web links to trusted list of EUDI Wallets and the Wallet certification information page of User's Wallet Solution. 
+* provides web links to trusted list of EUDI Wallets and the Wallet certification information page of User's Wallet Solution.
 
-The latter two are hosted and managed dynamically by the European Commission, therefore the use case depends on certain metadata that will be known to the Wallet Provider only when the Wallet certification process has been completed. That is, the Wallet needs to bypass certification with incomplete - or a test version of the - EUDI Wallet Trust Mark UI view. 
+The latter two are hosted and managed dynamically by the European Commission, therefore the use case depends on certain metadata that will be known to the Wallet Provider only when the Wallet certification process has been completed. That is, the Wallet needs to bypass certification with incomplete - or a test version of the - EUDI Wallet Trust Mark UI view.
 
-The [Trust Mark Specification] concentrates on defining the exact technical contents and the provisioning process to enable the UI view rendering at the Wallet Instance. The Annex 2 Topics 19 and 40 set the broad requirements as part of the EUDI Wallet Dashboard function and what is required upon Wallet Unit activation and maintenance phases."
+The [Specification of EUDI Wallet Trust Mark](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md) concentrates on defining the exact technical contents and the provisioning process to enable the UI view rendering at the Wallet Instance. The Annex 2 Topics 19 and 40 set the broad requirements as part of the EUDI Wallet Dashboard function and what is required upon Wallet Unit activation and maintenance phases."
 
 ## 7 References
 
 | Reference      | Description |
 |-------------------------------------------|----------------------------------------------|
+|[Risk Register]                            | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I), draft |
 | [WCAG 2.1]                                | [Web Content Accessibility Guide version 2.1](https://www.w3.org/TR/WCAG21/) |
 | [Trust Mark Specification]                | [Specification of EUDI Wallet Trust Mark](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md)             |
 | [Issuance WUA Specification]              | [Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md)                                     |
