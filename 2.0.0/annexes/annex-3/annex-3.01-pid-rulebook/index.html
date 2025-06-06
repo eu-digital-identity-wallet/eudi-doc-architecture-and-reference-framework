@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -170,11 +170,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
-  
   
     
   
@@ -189,11 +187,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
-  
   
     
   
@@ -208,11 +204,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../discussion-topics/" class="md-tabs__link">
         
-  
   
     
   
@@ -227,11 +221,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../technical-specifications/" class="md-tabs__link">
         
-  
   
     
   
@@ -304,7 +296,6 @@
       <a href="../../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -325,7 +316,6 @@
     <li class="md-nav__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -351,7 +341,6 @@
       <a href="../../../discussion-topics/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -372,7 +361,6 @@
     <li class="md-nav__item">
       <a href="../../../technical-specifications/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -715,7 +703,7 @@ short as possible;</li>
 <tr>
 <td>birth_place</td>
 <td>place_of_birth</td>
-<td>See <a href="#315-attribute-place_of_birth">Section 3.1.5</a>.</td>
+<td>See <a href="#315-attribute-birth_place">Section 3.1.5</a>.</td>
 </tr>
 <tr>
 <td>nationality</td>
@@ -886,13 +874,13 @@ deal with such cases, a PID Provider could adopt a policy to choose appropriate
 values for the unknown date elements. However, mandating such a policy is out of
 scope of this document.</p>
 <h4 id="315-attribute-place_of_birth">3.1.5 Attribute place_of_birth</h4>
-<p>The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, or locality.
+<p>The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, locality.
 Using CDDL notation as specified in RFC 8610, the encoding of this data element is:</p>
 <pre><code>place_of_birth =
 {
-  ? &quot;country&quot;: tstr  ; a single alpha-2 country code as specified in ISO 3166-1
-  ? &quot;region&quot;: tstr   ; the name of a state, province, district, or local area
-  ? &quot;locality&quot;: tstr ; the name of a municipality, city, town, or village
+  ? country: tstr ; a single alpha-2 country code as specified in ISO 3166-1
+  ? region: tstr ; the name of a state, province, district, or local area
+  ? locality: tstr ; the name of a municipality, city, town, or village
 }
 </code></pre>
 <h2 id="4-sd-jwt-vc-based-encoding-of-pid">4 SD-JWT VC-based encoding of PID</h2>
@@ -1253,12 +1241,10 @@ references to the issuer, validity status information, and more.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
