@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.1.0] - 2025 - 06 - 06
+
+Changes:
+- corrections and clarifications were made regarding the optional issuance and use of registration certificates, and the optional use of information registered by a Registrar,
+- all references to the possible use of a WUA on the presentation interface between Wallet Units and Relying Parties were removed,
+- added remark on DC-API - Topic F will be additionally discussed in ARF development iteration 3
+- CDDL syntax updated PID rulebook in section 3.1.5
+
+Editorial changes and fixing typos.
+
 ## [2.0.0] - 2025-05-28
 
 Processed comments provide in the Coordination Group meeting on 21 May 2025.

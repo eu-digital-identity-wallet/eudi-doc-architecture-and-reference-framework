@@ -184,7 +184,7 @@ requirements apply:
 | family_name | family_name | tstr |
 | given_name | given_name | tstr |
 | birth_date | birth_date | full-date, see [Section 3.1.4](#314-attribute-birth_date). |
-| birth_place | place_of_birth | See [Section 3.1.5](#315-attribute-birth_place). |
+| birth_place | place_of_birth | See [Section 3.1.5](#315-attribute-place_of_birth). |
 | nationality | nationality | nationalities, see [Section 3.1.2](#312-attribute-nationality). |
 | resident_address | resident_address | tstr |
 | resident_country | resident_country | tstr |
@@ -255,18 +255,17 @@ scope of this document.
 
 #### 3.1.5 Attribute place_of_birth
 
-The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, locality.
+The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, or locality.
 Using CDDL notation as specified in RFC 8610, the encoding of this data element is:
   
 ```
 place_of_birth =
 {
-  ? country: tstr ; a single alpha-2 country code as specified in ISO 3166-1
-  ? region: tstr ; the name of a state, province, district, or local area
-  ? locality: tstr ; the name of a municipality, city, town, or village
+  ? "country": tstr  ; a single alpha-2 country code as specified in ISO 3166-1
+  ? "region": tstr   ; the name of a state, province, district, or local area
+  ? "locality": tstr ; the name of a municipality, city, town, or village
 }
 ```
-
 
 ## 4 SD-JWT VC-based encoding of PID
 
@@ -338,7 +337,6 @@ Note: Instead of separate claims for (for example) age_over_16, age_over_18, age
     "65": false
 }
 ```
-
 
 #### 4.1.2 Attribute location_status
 
