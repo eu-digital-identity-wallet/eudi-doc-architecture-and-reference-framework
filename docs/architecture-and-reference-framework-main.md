@@ -146,6 +146,7 @@ In this version of the ARF,
 - all references to the possible use of a WUA on the presentation interface between Wallet Units and Relying Parties were removed.
 - made some changes regarding User authentication by the Wallet Unit, see [Section 6.5.3.3](#6533-wallet-provider-requests-user-to-set-up-at-least-one-user-authentication-mechanism) and [Topic 40](./annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management).
 - solved several smaller issues raised via Confluence or GitHub.
+- updated CDDL syntax in [section 3.1.5](./annexes/annex-3/annex-3.01-pid-rulebook.md#315-attribute-place_of_birth) of the PID rulebook.
 
 Apart from these changes, a limited number of editorial mistakes were corrected.
 

@@ -95,10 +95,10 @@ Iteration is planned from 20 August 2025 to 26 November 2025 covering the follow
 | T | [Support and maintenance by the Wallet Provider](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/350) |
 | Z | [Device-bound Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/tbd) |
 
-Earlier topics, planned to be revisited in iteration 3:
+Earlier topics, planned to be additinally discussed in iteration 3:
 | Topic | Title | |
 |-------|-------|--|
-| E | Revisited - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
-| F | Revisited - [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
-| G | Revisited - [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
+| E | To be additinally discussed - [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
+| F | To be additinally discussed - [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
+| G | To be additinally discussed - [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
 
