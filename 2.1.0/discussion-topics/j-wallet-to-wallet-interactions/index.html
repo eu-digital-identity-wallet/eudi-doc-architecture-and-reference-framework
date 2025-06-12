@@ -405,7 +405,7 @@
 
 
 <h1 id="j-wallet-to-wallet-interactions">J - Wallet to Wallet Interactions</h1>
-<p>Version 0.4, updated 3 June 2025</p>
+<p>Version 0.5, updated 11 June 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/510">GitHub discussion</a></p>
 <h2 id="1-introduction">1 Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
@@ -554,7 +554,7 @@ If no <em>presentation offer</em> was specified, the <em>Verifier</em> is asked 
 <p>Rationale: A Wallet Unit shall be able to take the role of a Holder in a wallet to wallet interaction. </p>
 </blockquote>
 <h5 id="requirement-3">Requirement 3</h5>
-<p>A Wallet Unit SHOULD provide the User with the option, using a user-friendly UI, to suggest to the other Wallet Unit, which attestations and attributes it can include in a presentation request, i.e., a presentation offer. If the User uses the functionality, the suggestion SHALL be transferred as part of the protocol mentioned in Requirement 1. </p>
+<p>A Wallet Unit SHOULD provide the User with the option to inform other Wallet Units of which attestations and attributes it can include in presentation requests, i.e., a presentation offer. If such option exists, it SHALL be accessible through a user-friendly UI and, if the User uses the functionality, the information SHALL be transferred as part of the protocol mentioned in Requirement 1.</p>
 <blockquote>
 <p>Rationale: The Holder shall be given the choice to select which attestations and attributes they want to share.  It should be easy for a Holder to select which attributes it wishes to present.</p>
 </blockquote>
@@ -610,7 +610,7 @@ If no <em>presentation offer</em> was specified, the <em>Verifier</em> is asked 
 <p>Rationale: This is to prevent large-scale abuse of the wallet to wallet functionality by another legal entity than a natural person to relying on it.</p>
 </blockquote>
 <h5 id="requirement-13">Requirement 13</h5>
-<p>A Holder Wallet Unit SHALL not persistently store the content of a received presentation. The Holder Wallet Unit SHOULD minimize the time the received presentation is stored in memory. </p>
+<p>A Verifier Wallet Unit SHALL not persistently store the content of a received presentation. The Verifier Wallet Unit SHOULD minimize the time the received presentation is stored in memory. </p>
 <blockquote>
 <p>Rationale: This requirements ensures that the Holder obtains similar privacy guarantees to what they would have achieved by showing a physical card to another natural person. I.e., if no explicit actions are taken to store the (such as the Verifier taking a photo of the attributes), then the presentation is only ephemeral. </p>
 </blockquote>
