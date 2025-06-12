@@ -1,4 +1,4 @@
-# Version 0.6, updated 3 June 2025
+# Version 0.9, updated 11 June 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/537)
@@ -162,6 +162,9 @@ _Data export and portability objects can log the person identification data and 
 
 This topic has been discussed already in the context of Topic N - Export and Data Portability. Refer to [Discussion Paper](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/n-export-and-data-portability.md) for more. The outcome of that discussion has been taken into account in this paper.
 
+As presented in the chapter 2, the purpose of the transaction log is clearly defined: to enable user to view the history of transactions (together with information what Relying Parties received User's data and types of data) and to execute data protection rights. Other possible purposes, like using the log to investigate identity theft or other frauds, are out of the scope of ARF.
+
+
 ### 3.2 The scope of logging
 
 According to Recital (13) of [European Digital Identity Regulation]
@@ -205,7 +208,13 @@ Therefore, at this stage, general questions may be raised:
 - **Are there any other types of events that should be logged?​**
 - **Are there types of events that should NOT be logged?**
 
-Basing on the feedback, no changes to HLRs are proposed.
+Basing on the feedback, the following changes to HLRs are proposed to DASH_02:
+- adding sealing transactions,
+- adding signing and sealing certificate issuance transations,
+- rewording deletion transactions,
+- adding Wallet-to-Wallet transactions.
+
+See chapter 4.1 for the proposed new text of DASH_02. 
 
 
 ### 3.3 The level of detail and privacy protection
@@ -240,13 +249,10 @@ To conclude, at this stage, general questions may be raised:
 - **Are the current HLRs sufficient in this context?**
 
 Basing on the feedback, the following changes HLRs are proposed:
-- adding intended use information to the trasaction log (modification of DASH_03), 
-- introducing a new HLR to clarify that actual data like attributes values or transactional data content shall not be logged (DASH_03a).
+- adding intended use information to the trasaction log (modification of DASH_03),
+- introducing a new HLR to clarify that actual data like attributes values or transactional data content shall not be logged (DASH_03c).
+See chapter 4 for the proposed new text of DASH_03 and DASH_03c.
 
-| **Index** | **Requirement specification**                                | **Proposal** |
-|-----------|--------------------------------------------------------------|--------------|
-| DASH_03  | For a presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if the registration certificate was available), and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see Topic 30), c) the name, contact details (if a registration certificate was available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) URL address of the Registrar's on-line service, **g) information on the intended use, as registered by the Relying Party at the competent Registrar (if made available to the Wallet Unit)**. _Notes: the URL address can be retrieved from the access certificate; **intended use information may be retrieved from the Registration Certificate or from the Registrar's online service (see Topic 44)**._ |       Keep with proposed changes (aggregating changes from topic N and H discussions)       |
-| **DASH_03a** | **For a presentation transaction executed through the Wallet Unit, the log SHALL NOT contain attribute values or transactional data.​**| New requirement  |
 
 
 ### 3.4 Pseudonyms
@@ -263,15 +269,11 @@ In ARF, this is addressed by the [Topic 11]. In particular, as presented in PA_0
 the user shall be able to review all the transactions where the pseudonyms were used.
 
 
-Therefore, for clarity and consistency, it is proposed to mention "pseudonym transactions" as part of the scope of transaction log in the HLR DASH_02. At the same time, it is proposed to update PA_08, to replace "SHOULD" with "SHALL".
+Therefore, for clarity and consistency, it is proposed to mention "pseudonym transactions" as part of the scope of transaction log in the HLR DASH_02, as well as to add a new requirement to provide scope of details for such type of event (DASH_03a). 
 
-Summarising, the proposals for new text of DASH_02 and PA_08 are the following:
+At the same time, it is proposed to update PA_08, to replace "SHOULD" with "SHALL".
 
-
-| **Index** | **Requirement specification**                                | **Proposal** |
-|-----------|--------------------------------------------------------------|--------------|
-| DASH_02  | The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, **pseudonym presentation transactions**, signature creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), ~~and~~ complaints lodged with a Data Protection Authority (see Topic 50)**, and PID or Attestation deletion transactions**. _Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively._ |      Keep with proposed changes        |
-| PA_08 | A Wallet Unit ~~SHOULD~~**SHALL** enable to the User to manage pseudonyms within the Wallet Unit in a user-friendly and transparent manner. Users ~~SHOULD~~**SHALL** be informed about when and with which Relying Party their pseudonyms were used and be able to view a complete transaction log (including canceled or unsuccessful transactions). |      Keep with proposed changes        |
+See chapter 4 for the proposed new text of DASH_02, DASH03a and PA_08. 
 
 
 ### 3.5 Transaction log security
@@ -317,6 +319,26 @@ To enable migration between Wallet Units from different Wallet Solutions/Wallet 
 The above requirement is being introduced to ARF.
 
 
+### 3.7 Wallet to Wallet transaction logging
+
+During the discussion, it was indetified, that the transaction log should also include Wallet-to-Wallet transactions. Therefore, apart from modification of DASH_02 (see section 3.2), it is proposed to add a new HLR (W2W_08) - refer to chapter 4.7.
+
+
+### 3.8 Transaction log deletion
+
+ARF envisions for Users possibility to delete transactions from the log. This is contained in the requirement DASH_06a:
+
+| **Index** | **Requirement specification**                                | 
+|-----------|--------------------------------------------------------------|
+| DASH_06a | Via the dashboard, the Wallet Unit SHALL enable the User to delete any transaction in the log. The Wallet Unit SHALL ensure that no other entity can delete transactions from the log, except possibly for the reason mentioned in DASH_02a. |
+
+Following the feedback, it is proposed to exted the requirements to assure Users awarness about consequences of log deletion, such as hindering execution of data protection rights, as well as to offer and instruct how to export the log before deletion. 
+
+In result:
+- modifications of DASH_06a and DASH_02a, 
+- creation of a new requirement DASH_06b
+
+were proposed. Refer to chapter 4.1 for details.
 
 
 ## 4 Current HLRs and Proposals of Changes
@@ -328,6 +350,7 @@ ARF contains a number of High-Level Requirements related to the topic, included 
 + Topic 48 - Blueprint for requesting data deletion to Relying Parties
 + Topic 50 - Blueprint to report unlawful or suspicious request of data
 + Topic 11 - Pseudonyms
++ Topic 30 - Interaction between Wallet Units
 
 
 At the same time all of them have been discussed in the context of Topic N discussion.
@@ -339,15 +362,21 @@ In any case, the existing HLRs are listed in the tables below, along with a prop
 
 | **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| DASH_02  | The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, **pseudonym presentation transactions**, signature creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), ~~and~~ complaints lodged with a Data Protection Authority (see Topic 50)**, and PID or Attestation deletion transactions**. _Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively._ |      Keep with proposed changes        |
-| DASH_02a  | The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must delete transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07. |      Keep as-is        |
+| DASH_01  | A Wallet Provider SHALL enable a User to access a **user-friendly** dashboard functionality in their Wallet Unit |       Keep with proposed changes     |
+| DASH_02  | The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, **pseudonym presentation transactions**, **signing and sealing certificate issuance transactions,** signature **and seal** creation transactions (see Topic 16), attribute deletion requests sent to a Relying Party (see Topic 48), ~~and~~ complaints lodged with a Data Protection Authority (see Topic 50)**, PID or Attestation deletion transactions, and Wallet-to-Wallet transactions**. _Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively._ |      Keep with proposed changes        |
+| DASH_02a  | The Wallet Unit SHALL retain transactions in the log at least for the time period specified in applicable legislation. If the Wallet Unit must delete transactions from the log, for instance because of size limitations, the Wallet Unit SHALL notify the User via the dashboard before doing so **(indicating potential consequence of hindering execution of data protection rights)** and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07. |      Keep as-is        |
 | DASH_2c  | The Commission SHALL establish a technical specification for the common format of the log of transaction  |      New requirement as proposed in Topic N discussion (no further changes)        |
-| DASH_03  | For a presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if the registration certificate was available), and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see Topic 30), c) the name, contact details (if a registration certificate was available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) URL address of the Registrar's on-line service, **g) information on the intended use, as registered by the Relying Party at the competent Registrar (if made available to the Wallet Unit)**. _Notes: the URL address can be retrieved from the access certificate; **intended use information may be retrieved from the Registration Certificate or from the Registrar's online service (see Topic 44)**._ |       Keep with proposed changes (aggregating changes from topic N and H discussions)       |
-| **DASH_03a** | **For a presentation transaction executed through the Wallet Unit, the log SHALL NOT contain attribute values or transactional data.​**| New requirement  |
+| DASH_03  | For a presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if the registration certificate was available), and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see Topic 30), c) the name, contact details (if a registration certificate was available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) URL address of the Registrar's on-line service, **g) information on the intended use and URL to the privacy policy, as registered by the Relying Party at the competent Registrar (if made available to the Wallet Unit)**. _Notes: the URL address can be retrieved from the access certificate; **intended use information may be retrieved from the Registration Certificate or from the Registrar's online service (see Topic 44)**._ |       Keep with proposed changes (aggregating changes from topic N and H discussions)  |
+| **DASH_03a**  | **For a pseudonym presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if the registration certificate was available), and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see Topic 30), c) the name, contact details (if a registration certificate was available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) URL address of the Registrar's on-line service, g) information on the intended use and URL to the privacy policy, as registered by the Relying Party at the competent Registrar (if made available to the Wallet Unit). _Notes: the URL address can be retrieved from the access certificate; intended use information may be retrieved from the Registration Certificate or from the Registrar's online service (see Topic 44)._** |   New requirement    |
+| **DASH_03b** | **For a presentation and pseudonym presentation transactions executed through the Wallet Unit, the log SHALL NOT contain the value of any attributes presented or the value of any transactional data included in the presentation request.​**  |   New requirement   |
+| **DASH_03c** | **For a Wallet-to-Wallet transaction, the log SHALL contain at least: a) date and time of the transaction, b) role of the Wallet Unit (Presenter or Verifier), c) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, d) in the case of non-completed transactions, the reason for such non-completion.** | New requirement |
 | DASH_04  | For a signature **and seal** creation transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the document or data signed (where possible), c) in the case of non-completed transactions, the reason for such non-completion. |      Keep with changes proposed in Topic N discussion (no further changes)     |
+| **DASH_04a**  | **For signing and sealing certificate issuance transactions executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the issued certificate or certificate identifier (where possible), c) in the case of non-completed transactions, the reason for such non-completion.** |      New requirement     |
+| **DASH_04b**  | **For PID or Attestation deletion transactions from the transaction log, the dashboard SHALL display to the User at least: a) the date and time of the deletion transaction, b) the type of deleted transaction, c) in the case of non-completed transactions, the reason for such non-completion.** |      New requirement     |
 | DASH_05  | For an issuance or re-issuance transaction executed through the Wallet Unit, the dashboard SHALL display to the User at least: a) the date and time of the transaction, b) the name, contact details, and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and/or issued (i.e., the size of the batch in case of batch issuance). d) in the case of non-completed transactions, the reason for such non-completion. e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User. |       Keep as-is       |
 | DASH_06 | The Wallet Provider SHALL ensure the confidentiality, integrity, and authenticity of all transactions included in the log. | Keep as-is |
-| DASH_06a | Via the dashboard, the Wallet Unit SHALL enable the User to delete any transaction in the log. The Wallet Unit SHALL ensure that no other entity can delete transactions from the log, except possibly for the reason mentioned in DASH_02a. | Keep as-is |
+| DASH_06a | Via the dashboard, the Wallet Unit SHALL enable the User to delete any transaction in the log. ~~The Wallet Unit SHALL ensure that no other entity can delete transactions from the log, except possibly for the reason mentioned in DASH_02a.~~ **If the User decides to delete transactions from the log, the Wallet Unit SHALL notify the User via the dashboard before doing so (indicating potential consequence of hindering execution of data protection rights) and SHALL instruct the User how to export the transactions that are about to be deleted; see DASH_07.** | Keep with proposed changes |
+| **DASH_06b** | **The Wallet Unit SHALL ensure that no other entity (than the User) can delete transactions from the log, except possibly for the reason mentioned in DASH_02a.** | New requirement |
 | DASH_07  | The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file, while ensuring their confidentiality, authenticity and integrity. |       Keep as-is       |
 | DASH_10 | The Wallet Unit SHALL make the logs accessible to the Wallet Provider if this is necessary for the provisioning of the Wallet Unit, and only after obtaining explicit consent from the User via the dashboard. |       Keep as-is       |
 
@@ -367,7 +396,6 @@ B. Restore Requirements
 | **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
 | Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](#a2319-topic-19---User-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
-
 
 
 
@@ -399,6 +427,13 @@ B. Restore Requirements
 | **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
 | PA_08 | A Wallet Unit ~~SHOULD~~**SHALL** enable to the User to manage pseudonyms within the Wallet Unit in a user-friendly and transparent manner. Users ~~SHOULD~~**SHALL** be informed about when and with which Relying Party their pseudonyms were used and be able to view a complete transaction log (including canceled or unsuccessful transactions). |      Keep with proposed changes        |
+
+
+## 4.7 Topic 30 - Interaction between Wallet Units (tbc)
+
+| **Index** | **Requirement specification**                                | **Proposal** |
+|-----------|--------------------------------------------------------------|--------------|
+|  W2W_08   | Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to Wallet-to-Wallet transactions, allowing the User to view the history of the presentation requests and responses (sent or received respectively, depending on the role of a Wallet Unit in a transaction). | New requirement  |
 
 
 ## 5 Relation to Other Topics 

@@ -1,6 +1,6 @@
 # J - Wallet to Wallet Interactions
 
-Version 0.4, updated 3 June 2025
+Version 0.5, updated 11 June 2025
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/510)
 
@@ -159,7 +159,7 @@ A Wallet Unit SHALL support functionality for, using the connection established 
 > Rationale: A Wallet Unit shall be able to take the role of a Holder in a wallet to wallet interaction. 
 
 ##### Requirement 3
-A Wallet Unit SHOULD provide the User with the option, using a user-friendly UI, to suggest to the other Wallet Unit, which attestations and attributes it can include in a presentation request, i.e., a presentation offer. If the User uses the functionality, the suggestion SHALL be transferred as part of the protocol mentioned in Requirement 1. 
+A Wallet Unit SHOULD provide the User with the option to inform other Wallet Units of which attestations and attributes it can include in presentation requests, i.e., a presentation offer. If such option exists, it SHALL be accessible through a user-friendly UI and, if the User uses the functionality, the information SHALL be transferred as part of the protocol mentioned in Requirement 1.
 
 > Rationale: The Holder shall be given the choice to select which attestations and attributes they want to share.  It should be easy for a Holder to select which attributes it wishes to present.
 
@@ -219,7 +219,7 @@ Wallet Units SHALL take measures to limit the number of Wallet-to-Wallet present
 > Rationale: This is to prevent large-scale abuse of the wallet to wallet functionality by another legal entity than a natural person to relying on it.
 
 ##### Requirement 13
-A Holder Wallet Unit SHALL not persistently store the content of a received presentation. The Holder Wallet Unit SHOULD minimize the time the received presentation is stored in memory. 
+A Verifier Wallet Unit SHALL not persistently store the content of a received presentation. The Verifier Wallet Unit SHOULD minimize the time the received presentation is stored in memory. 
 
 > Rationale: This requirements ensures that the Holder obtains similar privacy guarantees to what they would have achieved by showing a physical card to another natural person. I.e., if no explicit actions are taken to store the (such as the Verifier taking a photo of the attributes), then the presentation is only ephemeral. 
 
