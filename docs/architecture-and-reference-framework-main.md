@@ -4069,7 +4069,7 @@ Attestation Provider. This allow the PID Provider or Attestation Provider to
 track User activity across multiple services. In this case, it's called
 **Attestation Provider linkability**.
 
-This topic is discussed in more detail in the [Discussion Paper for Topic A](../../discussion-topics/a-privacy-risks-and-mitigations.md).
+This topic is discussed in more detail in the [Discussion Paper for Topic A](./discussion-topics/a-privacy-risks-and-mitigations.md).
 
 ###### 7.4.3.5.2 Mitigating Relying Party linkability
 
