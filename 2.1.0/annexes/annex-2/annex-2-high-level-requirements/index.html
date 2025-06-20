@@ -454,19 +454,19 @@ over the presentation of personal attributes from PIDs and attestations.</p>
 <tbody>
 <tr>
 <td>OIA_01</td>
-<td>A Wallet Unit SHALL support technical specifications to respond to person identification data (PID) and attestation presentation requests by Relying Parties.</td>
+<td>A Wallet Unit SHALL support [SD-JWT VC] for remote presentation flows and [ISO/IEC 18013-5] for proximity presentation flows, to receive and respond to presentation requests for person identification data (PID) and attestations by Relying Parties.</td>
 </tr>
 <tr>
 <td>OIA_02</td>
-<td>A Wallet Unit SHALL support proving cryptographic binding between a WSCA included in the Wallet Unit and a PID or attestation, in accordance with [SD-JWT VC] or [ISO/IEC 18013-5]. <em>Note: Such a mechanism is called device binding in [ISO/IEC 18013-5] and key binding in [SD-JWT VC].</em></td>
+<td>A Wallet Unit SHALL support proving cryptographic device binding between a WSCA included in the Wallet Unit and a PID or attestation, in accordance with [SD-JWT VC] or [ISO/IEC 18013-5]. <em>Notes: Such a mechanism is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT VC]. - Discussions on device binding are ongoing, in particular regarding whether non-device-bound PIDs or attestations should be supported by a Wallet Unit, and if so, what the requirements for this support should be.</em></td>
 </tr>
 <tr>
 <td>OIA_03</td>
-<td>The Commission SHALL adopt the technical specifications for the PID or attestation presentation request-response protocol and for the device binding mechanism, according to the protocols and interfaces specified in [OpenID4VP] for remote flows, and [ISO 18013-5] for proximity flows.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>OIA_03a</td>
-<td>Wallet Providers SHALL ensure that their Wallet Solution supports the protocol specified in 'OpenID for Verifiable Presentations', see [OpenID4VP], with additions and changes as documented in this Annex and in future technical specifications created by or on behalf of the Commission.</td>
+<td>Wallet Providers SHALL ensure that their Wallet Solution supports the protocol specified in 'OpenID for Verifiable Presentations', see [OpenID4VP], with additions and changes as documented in this Annex and in technical specifications referenced in this Annex.</td>
 </tr>
 <tr>
 <td>OIA_03b</td>
@@ -486,7 +486,7 @@ over the presentation of personal attributes from PIDs and attestations.</p>
 </tr>
 <tr>
 <td>OIA_06</td>
-<td>A Wallet Unit SHALL present the requested attributes only after having received the User's authorisation. See also OIA_07.</td>
+<td>A Wallet Unit SHALL present the requested attributes only after having received the User's authorisation. <em>Note: See also OIA_07</em>.</td>
 </tr>
 <tr>
 <td>OIA_07</td>
@@ -822,7 +822,7 @@ of the evaluation of an embedded disclosure policy, if present, see
 their providers. It also contains HLRs relating to the (possible) checking of
 the revocations status of a PID or attestation by a Relying Party.</p>
 <p>Note: This Topic does not pertain to access certificates for Relying Parties,
-PID Providers or Attestation Providers as discussed in
+PID Providers, or Attestation Providers as discussed in
 [<a href="#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>].
 Neither does it apply to any intermediate certificates establishing trust
 between these certificates and the respective trust anchors. These access
@@ -942,13 +942,13 @@ these certificates will be established within the respective PKI.</p>
 the ideas described in this Topic, particularly relating to revocation and
 the differing needs of Relying Parties on one side and
 PID Providers and Attestation Providers on the other.
-Further details on these subjects will be provided in <a href="./technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>
+Further details on these subjects will be provided in <a href="../../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a>
 and the high level requirements in Topic 9 intentionally do not go into these technical details.</p>
-<p><strong>NOTE: <a href="./technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> is not finalised yet. Discussions on the WUA are ongoing. In particular, no final decision has been taken yet regarding the use of a WUA on the Relying Party interface. Nevertheless, it seems likely that this will not be a possibility, and that a Wallet Unit will send a WUA only to a PID Provider or Attestation Provider during issuance.</strong></p>
+<p><strong>NOTE: <a href="../../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a> is not finalised yet. Discussions on the WUA are ongoing. In particular, no final decision has been taken yet regarding the use of a WUA on the Relying Party interface. Nevertheless, it seems likely that this will not be a possibility, and that a Wallet Unit will send a WUA only to a PID Provider or Attestation Provider during issuance.</strong></p>
 <h5 id="description_6">Description <!-- omit from toc --></h5>
 <p>When a User's Wallet Unit interacts with other actors
 in the EUDI Wallet ecosystem, in particular PID Providers, Attestation Providers,
-or Relying Parties, these actors may want to verify if the Wallet Unit is  authentic and has not been revoked. </p>
+or Relying Parties, these actors may want to verify if the Wallet Unit is  authentic and has not been revoked.</p>
 <p>Furthermore, when a PID Provider or Attestation Provider receives a request from a
 User to issue a PID or attestation to the User's Wallet Unit,
 the PID Provider or Attestation Provider needs to decide whether it can
@@ -1111,15 +1111,15 @@ used during PID or attestation issuance.</p>
 <tbody>
 <tr>
 <td>WUA_19</td>
-<td>The Commission SHALL create or reference technical specification for the WUA, compliant with the HLRs in this topic. <em>Note: This is <a href="../../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a>.</em></td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>WUA_20</td>
-<td>A Wallet Provider SHALL ensure that its Wallet Units comply with all relevant requirements specified in the technical specification mentioned in WUA_19.</td>
+<td>A Wallet Provider SHALL ensure that its Wallet Units comply with all relevant requirements specified in <a href="../../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a>.</td>
 </tr>
 <tr>
 <td>WUA_20a</td>
-<td>A PID Provider or Attestation Provider SHALL comply with all relevant requirements specified in the technical specification mentioned in WUA_19.</td>
+<td>A PID Provider or Attestation Provider SHALL comply with all relevant requirements specified in <a href="../../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a>.</td>
 </tr>
 <tr>
 <td>WUA_21</td>
@@ -1339,7 +1339,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_29</td>
-<td>An Attestation Provider SHALL support all Wallet Solutions, meaning that they SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation.</td>
+<td>An Attestation Provider SHALL support all Wallet Solutions, except in case the attestation in question is a Strong User Authentication (SUA) attestation as meant in<a href="#a2320-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a> and the Wallet Provider does not support processing of the transactional data associated with the SUA attestation. Except for such cases, an Attestation Provider SHALL NOT discriminate between Wallet Solutions when processing a request for the issuance of an attestation.</td>
 </tr>
 <tr>
 <td>ISSU_30</td>
@@ -1363,7 +1363,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_33a</td>
-<td>A Wallet Provider SHALL support all Attestation Providers, meaning that its Wallet Units SHALL be capable of requesting the issuance of a QEAA, PuB-EAA, or non-qualified EAA from these Providers at the User's request.</td>
+<td>A Wallet Provider SHALL support all Attestation Providers, except possibly if the attestation in question is a Strong User Authentication (SUA) attestation as meant in <a href="#a2320-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a> and the Wallet Provider chooses to not support processing of the transactional data associated with that attestation. Except for such cases, Wallet Units SHALL be capable of requesting the issuance of a QEAA, PuB-EAA, or non-qualified EAA from all Attestation Providers at the User's request.</td>
 </tr>
 <tr>
 <td>ISSU_34</td>
@@ -2014,7 +2014,7 @@ Qualified Electronic Signatures using a Wallet Unit.</p>
 </tr>
 <tr>
 <td>QES_13</td>
-<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to the requirements in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures or seals generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to the requirements in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></td>
 </tr>
 <tr>
 <td>QES_14</td>
@@ -2236,11 +2236,11 @@ of such a dashboard.  </p>
 <tbody>
 <tr>
 <td>DASH_01</td>
-<td>A Wallet Provider SHALL enable a User to access a dashboard functionality in their Wallet Unit.</td>
+<td>A Wallet Provider SHALL enable a User to access a user-friendly dashboard functionality in their Wallet Unit.</td>
 </tr>
 <tr>
 <td>DASH_02</td>
-<td>The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: issuance and re-issuance transactions, presentation transactions, signature or seal creation transactions (see <a href="#a2316-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>), attribute deletion requests sent to a Relying Party (see <a href="#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>), and complaints lodged with a Data Protection Authority (see <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>). <em>Note: For the data to be logged for an attribute deletion request or a complaint, see Topic 48 and Topic 50, respectively.</em></td>
+<td>The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: a) PID or attestation issuance and re-issuance transactions, b) PID or attestation presentation transactions , c) Wallet-to-Wallet transactions, (see <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>, d) pseudonym registration or presentation transactions, e) signature or seal creation transactions (see <a href="#a2316-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>), f) data deletion requests sent to a Relying Party (see <a href="#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>), g) reports sent to a Data Protection Authority (see <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>), h) PID or attestation deletions by the User. <em>Note: For the data to be logged for a data deletion request to a Relying Party or a report sent to a DPA, see Topic 48 and Topic 50, respectively. For other types of transaction, the data to be logged is specified in the requirements in this Topic.</em></td>
 </tr>
 <tr>
 <td>DASH_02a</td>
@@ -2251,16 +2251,36 @@ of such a dashboard.  </p>
 <td>The dashboard SHALL include a functionality to display to the User an overview of all transactions in the log.</td>
 </tr>
 <tr>
+<td>DASH_02c</td>
+<td>The Commission SHALL establish a technical specification for the common format of the transaction log, including measures to ensure and/or verify its confidentiality, integrity, and authenticity.</td>
+</tr>
+<tr>
 <td>DASH_03</td>
-<td>For a presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if available), and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, or relevant information from the WUA of the Requestor Wallet Unit (see <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>), c) the name, contact details (if available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) the URL of the associated Registrar's online service.  <em>Note: this URL can be retrieved from the access certificate.</em></td>
+<td>For a PID or attestation presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name and unique identifier of the corresponding Relying Party, and the Member State in which that Relying Party is established, c) the name, contact details (if available), and unique identifier of the intermediary, if an intermediary is involved in the transaction, d) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, e) in the case of non-completed transactions, the reason for such non-completion, f) the URL of the associated Registrar's online service,  <em>Note: this URL can be retrieved from the access certificate.</em> g) the  web form URL (if available), e-mail address (if available), and telephone number (if available) provided by the Relying Party for sending data deletion requests, see requirement RPRC_03d in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>, h) the web form URL (if available), e-mail address (if available), and telephone number (if available) provided by the Data Protection Authority supervising the Relying Party for reporting suspicious attribute presentation requests, see requirement RPRC_03e in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>.</td>
+</tr>
+<tr>
+<td>DASH_03a</td>
+<td>For a PID or attestation presentation transaction executed through the Wallet Unit, the log SHALL NOT contain the value of any attributes presented or the value of any transactional data included in the presentation request. ​</td>
+</tr>
+<tr>
+<td>DASH_03b</td>
+<td>For a Wallet-to-Wallet transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the role of the Wallet Unit (Presenter or Verifier), c) the attestation type(s) and the identifier(s) of the attribute(s) that were requested, as well as those that were presented, d) in the case of non-completed transactions, the reason for such non-completion.</td>
+</tr>
+<tr>
+<td>DASH_03c</td>
+<td>For a pseudonym registration or presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) identifying information about the Relying Party, if known to the Wallet Unit, c) whether it is a pseudonym registration or pseudonym presentation transaction, d) in the case of non-completed transactions, the reason for such non-completion. <em>Note: Regarding point b), see PA_20 in <a href="#a2311-topic-11---pseudonyms">Topic 11</a>.</em></td>
 </tr>
 <tr>
 <td>DASH_04</td>
-<td>For a signature or seal creation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the document or data signed or sealed (where possible), c) in the case of non-completed transactions, the reason for such non-completion.</td>
+<td>For a signature or seal creation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the document or data signed or sealed (if available to the Wallet Unit), c) in the case of non-completed transactions, the reason for such non-completion.</td>
 </tr>
 <tr>
 <td>DASH_05</td>
-<td>For an issuance or re-issuance transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if available), and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and issued (i.e., the size of the batch in case of batch issuance). d) in the case of non-completed transactions, the reason for such non-completion. e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User, f) the URL of the associated Registrar's online service. <em>Note: this URL can be retrieved from the access certificate.</em></td>
+<td>For a PID or attestation issuance or re-issuance transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the name, contact details (if available), and unique identifier of the corresponding PID Provider or Attestation Provider, c) the attestation type requested, as well as the attestation type issued, d) the number of attestations requested and issued (i.e., the size of the batch in case of batch issuance). d) in the case of non-completed transactions, the reason for such non-completion. e) for a re-issuance transaction, whether it was triggered by the User or by the Wallet Unit without involvement of the User, f) the URL of the associated Registrar's online service. <em>Note: this URL can be retrieved from the access certificate.</em></td>
+</tr>
+<tr>
+<td>DASH_05a</td>
+<td>For the deletion of a PID or attestation by the User, the log SHALL contain at least: a) the date and time of the deletion event, b) the attestation type of the deleted PID or attestation. c) The name and unique identifier of the corresponding PID Provider or Attestation Provider. <em>Note: This requirement is not about deletion of transactions from the log, as per DASH_06a.</em></td>
 </tr>
 <tr>
 <td>DASH_06</td>
@@ -2272,7 +2292,7 @@ of such a dashboard.  </p>
 </tr>
 <tr>
 <td>DASH_07</td>
-<td>The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file, while ensuring their confidentiality, authenticity and integrity.</td>
+<td>The dashboard SHALL allow the User to export the details of one or more transactions in the log to a file, using the common format specified according to DASH_02c, while ensuring their confidentiality, authenticity and integrity.</td>
 </tr>
 <tr>
 <td>DASH_08</td>
@@ -2280,7 +2300,7 @@ of such a dashboard.  </p>
 </tr>
 <tr>
 <td>DASH_09</td>
-<td>The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. <em>Note: The Commission will develop technical specifications for this Trust Mark.</em></td>
+<td>The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark. To enable this, Wallet Providers and Wallet Units SHALL comply with all relevant requirements in <a href="../../../technical-specifications/ts1-eudi-wallet-trust-mark/">Technical Specification 1</a>.</td>
 </tr>
 <tr>
 <td>DASH_10</td>
@@ -2292,31 +2312,64 @@ of such a dashboard.  </p>
 </tr>
 <tr>
 <td>DASH_12</td>
-<td>The User interface referred to in DASH_08 SHALL enable the User, for each presentation transaction in the dashboard, to easily request the Relying Party to delete any or all attributes presented to it in that transaction, or to lodge a complaint about that particular transaction to a DPA.</td>
+<td>The User interface referred to in DASH_08 SHALL enable the User, for each presentation transaction in the dashboard, to easily request the Relying Party to delete any or all attributes presented to it in that transaction, or to send a report about that particular transaction to a DPA.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="a2320-topic-20-strong-user-authentication-for-electronic-payments">A.2.3.20 Topic 20 - Strong User authentication for electronic payments</h4>
 <h5 id="description_14">Description <!-- omit from toc --></h5>
-<p>This topic deals with the requirement for Strong User (Customer) Authentication
-(SCA) in the context of authenticating a User as part of electronic payments.  </p>
-<p>Users would like to be able to authenticate themselves during online
-payments securely and conveniently using their Wallet Units, so that
-they can enjoy a seamless and protected shopping/ payment experience.  </p>
-<p>The goal is to implement Strong Customer Authentication (SCA) for electronic
-payments, ensuring a high level of security and compliance with
-<a href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj#d1e5540-35-1">Article 97 of the PSD2</a>
-(and with the future PSD3/PSR).</p>
-<p><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj">Commission Delegated Regulation (EU) 2018/389</a>
-lays down the requirements for strong customer authentication (SCA), which needs
-to be complied with when accessing a payment account online and for initiating
-electronic payments, or carrying out any action through a remote channel which
-may imply a risk of payment fraud or other abuses. The use of the wallet for SCA
-will be in full compliance with those requirements.  </p>
-<p>In the future, a Wallet Unit could also be used for payments with Central Bank
-Digital Currencies.  </p>
+<p>Note:The description in this section was adapted from the <a href="../../../discussion-topics/w-transactional-data-for-payments-and-other-use-cases/">Discussion Paper for Topic W</a>. The high-level requirements in the next section, were taken from this paper as well.</p>
+<p>The [European Digital Identity Regulation] requires Wallet Units to provide a functionality of strong User authentication (SUA), among others in the context of payments.</p>
+<p>In general, the life cycle of a Wallet Unit in the role of an authenticator for strong User authentication comprises the following phases:</p>
+<ul>
+<li>
+<p><strong>Registration</strong>: The User registers the Wallet Unit as an authenticator for a service. This process includes:</p>
+<ul>
+<li>User identification and authentication, for example by presenting a PID,</li>
+<li>User consent for the registration,</li>
+<li>Linking a Wallet Unit with the service and a User account in that service. This happens by issuing a dedicated SUA attestation to the Wallet Unit, containing User attributes relevant for the service. The issuance process for this SUA attestation complies with all requirements for attestation issuance in this ARF. Like any other attestation, the SUA attestation contains a public key, and the associated private key is stored in a WSCA.</li>
+<li><strong>Strong User Authentication</strong>: A Relying Party sends a presentation request to the Wallet Unit to request relevant attributes from the SUA attestation. This presentation request includes transactional data. In the context of electronic payments, the transactional data will include at least the payment amount and the payee. After presenting the data to the User and obtaining the User's consent, the Wallet Unit signs the transactional data. It does so by including (a representation of) the transactional data in the signature creation process used for device binding. Note that the syntax and semantics of the transactional data, as well as rules for how the data must be presented to the User and how the data will be prepared for inclusion in the device binding signature, will be defined in the Attestation Rulebook for the SUA attestation.</li>
+<li><strong>De-registration</strong>: Unlinking the Wallet Unit from the service and/or the User's account in that service. This will involve deletion or revocation of the SUA attestation.</li>
+</ul>
+</li>
+</ul>
+<p>Note that it is not required that each Wallet Unit support all SUA attestations (meaning all attestations for which a Relying Party can add transactional data in a presentation request). This is because such transactional data must be processed in a way that in general will be different for each service, as specified in the applicable Attestation Rulebook. As there may be multiple such Rulebooks, it would be arduous for a Wallet Provider to ensure compliance with all of them.</p>
+<p>Rather, a Wallet Provider decides which SUA attestation(s) its Wallet Units will support. The Wallet Provider then ensures that its Wallet Units complies with all requirements regarding the processing and rendering of transactional data, as stated in the associated Attestation Rulebooks. The Attestation Provider of a SUA attestation ensures that it does not issue a SUA attestation to a Wallet Unit that does not support that attestation. Note that this implies that the Attestation Provider has a way of knowing which Wallet Solutions support their SUA attestation. Mechanisms for ensuring this are out of scope of the ARF.</p>
 <h5 id="hlrs_12">HLRs <!-- omit from toc --></h5>
-<p>There are no HLRs for this Topic.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUA_01</td>
+<td>If a Wallet Provider decides to support a particular type of SUA attestation, its Wallet Units SHALL be able to process the transactional data included in a presentation request for that SUA attestation, according to all requirements in the associated Attestation Rulebook.</td>
+</tr>
+<tr>
+<td>SUA_02</td>
+<td>The Attestation Rulebook (see <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a> of a SUA attestation SHALL specify the syntax and semantics of the transactional data associated with that attestation, as well as all necessary requirements for Wallet Units to process that transactional data, at least regarding a) displaying the data to the User when obtaining consent for signing the data, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA transaction by a Wallet Unit.</td>
+</tr>
+<tr>
+<td>SUA_03</td>
+<td>The Attestation Provider of a SUA attestation SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the Attestation Rulebook for that attestation.</td>
+</tr>
+<tr>
+<td>SUA_04</td>
+<td>In the response to a presentation request that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. <em>Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.</em></td>
+</tr>
+<tr>
+<td>SUA_05</td>
+<td>The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). <em>Notes: - The resulting signature value constitutes a proof of transaction and fulfils the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>.</em></td>
+</tr>
+<tr>
+<td>SUA_06</td>
+<td>The Wallet Unit SHALL be able to adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to 'approve' or 'reject' a transaction), according to requirements in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="a2321-topic-21-diplomas-within-the-eudi-wallet-ecosystem">A.2.3.21 Topic 21 - Diplomas within the EUDI Wallet ecosystem</h4>
 <p>There are no HLRs for this Topic.</p>
 <h4 id="a2322-topic-22-digital-travel-credentials-within-the-eudi-wallet-ecosystem">A.2.3.22 Topic 22 - Digital Travel Credentials within the EUDI Wallet ecosystem</h4>
@@ -2356,15 +2409,15 @@ identification in proximity use cases where Users utilise their Wallet Units.</p
 <tbody>
 <tr>
 <td>ProxId_01</td>
-<td>To enable identification using proximity flows, Wallet Units SHALL support device retrieval as specified in ISO/IEC 18013-5 for presenting PID or attestation attributes. Wallet Units SHALL comply with the requirements for mDLs in clause 6 and for mdocs in clauses 8 and 9 of ISO/IEC 18013-5. <em>Note: Nominally, ISO/IEC 18013-5 is intended only for mDLs and mDL readers. The corresponding standard for mobile documents in general (including Wallet Units with the EUDI Wallet ecosystem) will be ISO/IEC 23220-4, which is based on ISO/IEC 18013-5. However, the latter standard is not finished yet and therefore cannot be referenced at the moment. To guarantee interoperability between Wallet Units and Relying Party Instances in proximity scenarios, it is necessary to make choices from among the possibilities specified in ISO/IEC 18013-5. Making the same choices as for mDLs ensure this.</em></td>
+<td>To enable identification using proximity flows, Wallet Units SHALL support device retrieval as specified in ISO/IEC 18013-5 for presenting PID or attestation attributes. Wallet Units SHALL comply with the requirements for mDLs and mdocs ISO/IEC 18013-5. <em>Note: Nominally, ISO/IEC 18013-5 is intended only for mDLs and mDL readers. The corresponding standard for mobile documents in general (including Wallet Units with the EUDI Wallet ecosystem) will be ISO/IEC 23220-4, which is based on ISO/IEC 18013-5. However, the latter standard is not finished yet and therefore cannot be referenced at the moment. To guarantee interoperability between Wallet Units and Relying Party Instances in proximity scenarios, it is necessary to make choices from among the possibilities specified in ISO/IEC 18013-5. Making the same choices as for mDLs ensure this.</em></td>
 </tr>
 <tr>
 <td>ProxId_01a</td>
-<td>If a Relying Party supports using proximity flows, its Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting PID or attestation attributes. Such Relying Party Instances SHALL comply with the requirements for mDL readers in clause 6 and for mdoc readers in clauses 8 and 9. <em>Note: See note to ProxId_01. Support for proximity flows by Relying Parties is not mandatory.</em></td>
+<td>If a Relying Party supports using proximity flows, its Relying Party Instances SHALL support device retrieval as specified in ISO/IEC 18013-5 for requesting PID or attestation attributes. Such Relying Party Instances SHALL comply with the requirements for mDL readers and mdoc readers in ISO/IEC 18013-5. <em>Note: See note to ProxId_01. Support for proximity flows by Relying Parties is not mandatory.</em></td>
 </tr>
 <tr>
 <td>ProxId_02</td>
-<td>Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes. <em>Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit.</em></td>
+<td>Wallet Units, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes. <em>Note: Using server retrieval, a Relying Party would request User attributes directly from a PID Provider or Attestation Provider, after having received an authentication and/or authorisation token from the User's Wallet Unit.</em></td>
 </tr>
 <tr>
 <td>ProxId_03</td>
@@ -2446,7 +2499,7 @@ the catalogue of attributes.</li>
 </tr>
 <tr>
 <td>CAT_03b</td>
-<td>The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: - <a href="https://joinup.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology#:~:text=The%20ultimate%20objective%20of%20the,structured%20and%20machine%2Dreadable%20format">Representation Powers and Mandates (RPaM) Ontology</a> - <a href="https://www.de4a.eu/semper">SEMPER | DE4A</a> - <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies">SEMIC Core Vocabularies</a> - <a href="https://www.iana.org/assignments/jwt/jwt.xhtml">IANA Registry for JSON Web Token Claims</a> (for JSON-based attributes only) - <a href="https://www.iso.org/standard/86782.html">ISO/IEC 23220-2</a> (for CBOR-based attributes only)</td>
+<td>The Commission SHALL consider the following semantic artifacts for inclusion in the catalogue of attributes: - <a href="https://interoperable-europe.ec.europa.eu/collection/isa-action-201612-semantic-interoperability-representation-powers-and-mandates-0/solution/representation-powers-and-mandates-ontology">Representation Powers and Mandates (RPaM) Ontology</a>, - <a href="https://www.de4a.eu/semper">SEMPER | DE4A</a>, - <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies#What%20are%20the%20Core%20Vocabularies">SEMIC Core Vocabularies</a>, - <a href="https://www.iana.org/assignments/jwt/jwt.xhtml">IANA Registry for JSON Web Token Claims</a> (for JSON-based attributes only), - <a href="https://www.iso.org/standard/86782.html">ISO/IEC 23220-2</a> (for CBOR-based attributes only).</td>
 </tr>
 <tr>
 <td>CAT_04</td>
@@ -2528,11 +2581,11 @@ above mentioned entities.</p>
 </tr>
 <tr>
 <td>Reg_01a</td>
-<td>The Commission SHALL provide specifications for a common set of data to be registered about a) PID Providers, b) QEAA Providers, c) PuB-EAA Providers, d) non-qualified EAA Providers. and e) Relying Parties.</td>
+<td>Member States SHALL register a common set of data about a) PID Providers, b) QEAA Providers, c) PuB-EAA Providers, d) non-qualified EAA Providers. and e) Relying Parties, according to the relevant requirements in <a href="../../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/">Technical Specification 6</a>. <em>Note: For PID Providers, QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers, the common set of data specified in [Technical Specification 6] include the attestation type(s) that the provider intends to issue to Wallet Units.</em></td>
 </tr>
 <tr>
 <td>Reg_01b</td>
-<td>For PID Providers, QEAA Providers, PuB-EAA Providers, and non-qualified EAA Providers, the common set of data meant in Reg_01a SHALL include the attestation type(s) that the provider intends to issue to Wallet Units.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>Reg_02</td>
@@ -2540,31 +2593,31 @@ above mentioned entities.</p>
 </tr>
 <tr>
 <td>Reg_03</td>
-<td>Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the [European Digital Identity Regulation] Article 5b 5, for the purpose of transparency to Users and other stakeholders.</td>
+<td>Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the relevant requirements in <a href="../../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a>, for the purpose of transparency to Users and other stakeholders.</td>
 </tr>
 <tr>
 <td>Reg_04</td>
-<td>Member States SHALL make the registry available online, in a common human-readable format.</td>
+<td>Member States SHALL make the registry entries available online, in a human-readable format. The website used for this purpose SHALL use a secure channel protecting the authenticity and integrity of the information in the registry during transport. Member States SHALL NOT require authentication or prior registration and authorisation of any person wishing to retrieve the information in the registry.</td>
 </tr>
 <tr>
 <td>Reg_05</td>
-<td>The Commission SHALL establish a technical specification for the common formats mentioned in Reg_03 and Reg_04.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>Reg_06</td>
-<td>The Commission SHALL provide specifications for a common API for retrieving registry entries from the Member States registries per Reg_03, defining the minimum requirements for interoperability. <em>Note: Requirements for this API are defined in Reg_08 and Reg_09.</em></td>
+<td>Member States SHALL support the common API specified in <a href="../../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a> for to enable automated retrieval of registry entries from the Member States' registries. <em>Note: [Technical Specification 5] specifies the use of a secure channel protecting the authenticity and integrity of the information in the registry during transport, and does not require authentication or prior registration and authorisation of any entity wishing to retrieve the information in the registry.</em></td>
 </tr>
 <tr>
 <td>Reg_07</td>
-<td>The Commission SHALL provide specifications for a common user interface for accessing the Member State registries per Reg_04. <em>Note: Requirements for this user interface are defined in Reg_08 and Reg_09.</em></td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>Reg_08</td>
-<td>The API mentioned in Reg_06 and the user interface mentioned in Reg_07 SHALL use a secure channel protecting the authenticity and integrity of the information in the registry during transport.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>Reg_09</td>
-<td>The API mentioned in Reg_06 and the user interface mentioned in Reg_07 SHALL NOT require authentication or prior registration and authorisation of any entity wishing to retrieve the information in the registry.</td>
+<td>Empty</td>
 </tr>
 </tbody>
 </table>
@@ -2727,7 +2780,7 @@ above mentioned entities.</p>
 </tr>
 <tr>
 <td>Reg_32</td>
-<td>The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a composition of a unique identifier of the registrar, defined in the policy, and a unique identifier for the Relying Party allocated by this registrar. - This Relying Party identifier is identical in all Relying Party Instance access certificates issued to a given Relying Party.</em></td>
+<td>The common Certificate Policy mentioned in Reg_12 SHALL require that a Relying Party Instance access certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to send a report of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a composition of a unique identifier of the registrar, defined in the policy, and a unique identifier for the Relying Party allocated by this registrar. - This Relying Party identifier is identical in all Relying Party Instance access certificates issued to a given Relying Party.</em></td>
 </tr>
 </tbody>
 </table>
@@ -2784,57 +2837,39 @@ legal-person PIDs and the Wallet Units containing legal-person PIDs.</p>
 </tr>
 </tbody>
 </table>
-<h4 id="a2329-topic-29-delegation-paradigm">A.2.3.29 Topic 29 - Delegation paradigm</h4>
+<h4 id="a2329-topic-29-representation-paradigm">A.2.3.29 Topic 29 - Representation paradigm</h4>
 <h5 id="description_21">Description <!-- omit from toc --></h5>
-<p><a href="#a233-topic-3---pid-rulebook">Topic 3</a> describes requirements for a rulebook of
-natural-person PIDs. <a href="#a2328-topic-28---wallet-unit-for-legal-persons">Topic 28</a>
-does the same for legal-persons PIDs.</p>
-<p><a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a>.5.(f)
-of the [European Digital Identity Regulation] also mentions the possibility of
-issuing eIDs that also could attest a natural person representing the natural or
-legal person.  At current time, this Topic proposes to not describe any
-requirements for such eID schemes without further Member State input for such
-eID schemes. The main reason is that there is no cross-border legal framework
-for mutual recognition of powers and mandates. Powers and mandates are generally
-legal system-specific and administrative system-specific.</p>
-<p>Another use case for delegation is where the recognition of the power
-for a person to represent another person occurs on an <em>ad hoc</em> basis,
-based on a decision by the represented User and in the context of a
-specific Relying Party. The basis for such decisions is outside the
-scope of eIDAS. Various scenarios can be considered:</p>
-<ol>
-<li>Natural person to natural person, based on the will of the
- represented person: One individual authorises another individual to
- represent them, for example:
-   - Picking up a prescription from the pharmacy or a package from
- the post office for a family member.
-   - Empowering a person to vote on your behalf.
-   - Empowering a notary to sell your house on your behalf to a
- certain party for a certain amount.
-   - Empowering your employer to apply for a residence permit on your
- behalf.</li>
-<li>Natural person to natural person, based on some decision by an
- authority, or also as a consequence of national, EU or international
- law.</li>
-<li>Legal guardian being able to take decisions on behalf of child,
- disabled person, or elderly person.</li>
-<li>Natural person to legal person: An individual authorising a legal
- entity to represent them.</li>
-<li>A person empowering a law firm to be the executor of the trust upon their
- death.</li>
-<li>A person empowering a bank to invest on their behalf.</li>
-</ol>
+<p><strong>Note: The description of this Topic, as well as the High-Level Requirements in it, were developed in the <a href="../../../discussion-topics/i-natural-person-representing-another-natural-person/">Discussion Paper for Topic I</a>. Please see that paper for more information.</strong></p>
+<p>Based on the [European Digital Identity Regulation], it should be possible to issue a dedicated representation attestation for a natural person to a representative, in accordance with applicable national and European legislation. For certain use cases (e.g., parent-child relationships), the Attestation Provider of such attestations will be able to retrieve the relevant information from authentic sources at the national level. In other cases (e.g., power of attorney), the represented natural person may be required to explicitly authorize the representative.</p>
+<p>Representation attestations for a natural person issued to a representative have a distinct attestation type. The Attestation Rulebook describing this attestation type shall specify the nature of the representation and shall clearly define the operations that the representative is authorized to perform, thereby restricting the scope of their authority.</p>
+<p>Furthermore, this representation attestation type (like any other attestation type, see <a href="#a237-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>) is either short-lived or revocable. In the case of revocable attestations, all entities that, according to applicable law, are entitled to revoke them have the capability to request the Attestation Provider to do so. It is emphasized that the high-level requirements concerning attestation revocation, as defined in <a href="#a237-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>, also apply to this attestation type.</p>
+<p>A User holding a representation attestation is able to represent another natural person when interacting with a Relying Party. The Relying Party is always aware that it is interacting with a legal representative or agent. This is ensured by the fact that the corresponding Wallet Unit presents an attestation having a distinct type, specifically for representation attestations.</p>
 <h5 id="hlrs_19">HLRs <!-- omit from toc --></h5>
-<p>There are no specific requirements in this Topic.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RP_01</td>
+<td>The Commission SHALL create an Attestation Rulebook for representation attestations issued to a natural person representing another natural person. The Rulebook SHALL specify the unique attestation type of these representation attestations. The Rulebook SHALL also specify attributes used for defining a validity period, the nature of the representation, and the operations the representative is authorised to perform, thereby limiting the scope of its authorisation.</td>
+</tr>
+<tr>
+<td>RP_02</td>
+<td>An Attestation Provider issuing representation attestations to a natural person representing another natural person SHALL ensure that either the attestations are short-lived or that all entities which, according to applicable law, must have the ability to request revocation of such attestations, are able to do so.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="a2330-topic-30-interaction-between-wallet-units">A.2.3.30 Topic 30 - Interaction between Wallet Units</h4>
 <h5 id="description_22">Description <!-- omit from toc --></h5>
-<p>A User can request another User to release an attestation of attributes, where
-both Users use their Wallet Unit. This can be done when their devices are close
-together (that is, in physical proximity) with internet connectivity for both
-devices (online), or without internet connectivity for either or both devices
-(offline).</p>
+<p>A User can request another User to present an attestation, where
+both Users use their Wallet Unit. This can be done only when their devices are close
+together (that is, in physical proximity). In this context, the requesting Wallet Unit is called the Verifier Wallet Unit, and the presenting Wallet Unit is called the Holder Wallet Unit. The User of a Holder Wallet Unit is called a Holder, and the User of a Verifier Wallet Unit is called a Verifier.</p>
 <p>This Topic lists the high-level requirements related to the interaction between
-two Wallet Units. This topic will be further discussed with Member States.</p>
+two Wallet Units. These are based on the <a href="../../../discussion-topics/j-wallet-to-wallet-interactions/">Discussion Paper for Topic J</a> and on subsequent discussions in the context of <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>. For a generic discussion of this topic, please refer to <a href="../../../architecture-and-reference-framework-main/#664-pid-or-attestation-presentation-to-another-wallet-unit">Section 6.4</a> of the ARF main document.</p>
 <h5 id="hlrs_20">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
@@ -2846,35 +2881,91 @@ two Wallet Units. This topic will be further discussed with Member States.</p>
 <tbody>
 <tr>
 <td>W2W_01</td>
-<td>A Wallet Unit SHALL support an interface and protocol for: - Establishing a connection with another Wallet Unit, - Receiving PID and (Q)EAA presentation requests from another Wallet Unit, - Validating such requests, - Responding to such requests in accordance with the technical specifications as defined by [OpenID4VP] and [ISO/IEC 18013-5].</td>
-</tr>
-<tr>
-<td>W2W_01a</td>
-<td>In addition to W2W_01, a Wallet Unit SHALL support an interface and protocol for: - Sending PID and (Q)EAA presentation requests to another Wallet Unit, - Receiving and validating the corresponding presentation response, in accordance with the technical specifications as defined by [OpenID4VP] and [ISO/IEC 18013-5].</td>
+<td>A Wallet Unit SHALL be able to act as a Holder Wallet Unit, in accordance with all requirements in this Topic.</td>
 </tr>
 <tr>
 <td>W2W_02</td>
-<td>The Commission SHALL develop technical specifications for exchanging PIDs and attestations between two Wallet Units in accordance with the technical specifications as defined by [OpenID4VP] and [ISO/IEC 18013-5].</td>
+<td>When acting as a Holder Wallet Unit, if there is a contradiction between a requirement for Holder Wallet Units in this Topic and any requirement for Wallet Units in other Topics in this document, the requirement in this Topic SHALL take precedence. However, when acting as a Holder Wallet Unit, a Wallet Unit SHALL comply with all requirements for Wallet Units in other Topics in this document that do not contradict any requirement in this Topic.</td>
 </tr>
 <tr>
 <td>W2W_03</td>
-<td>The Requestor Wallet Unit SHALL authenticate its User prior to requesting attestations presentation from another Wallet Unit.</td>
+<td>A Wallet Unit SHALL be able to act as a Verifier Wallet Unit, in accordance with all requirements in this Topic.</td>
 </tr>
 <tr>
 <td>W2W_04</td>
-<td>The Requestee Wallet Unit SHALL request User approval, as specified in [<a href="#a236-topic-6---relying-party-authentication-and-user-approval">Topic 6</a>], before presenting requested attestations or attributes to another Wallet Unit. The Wallet Unit SHALL inform the User about the attributes that are being requested, and of the outcome of authentication and validation checks of the request and the requestor.</td>
+<td>When acting as a Verifier Wallet Unit, a Wallet Unit SHALL NOT comply with any requirement for Wallet Units in other Topics in this document.</td>
 </tr>
 <tr>
 <td>W2W_05</td>
-<td>The Requestor Wallet Unit SHOULD have pre-defined a list of attributes of PID or attestations that can be requested from the Requestee Wallet Unit.</td>
+<td>A Wallet Unit SHALL act as a Holder Wallet Unit only if the User selects a 'Holder Wallet Unit mode'. If the User closes the Wallet Unit, or after a period of non-activity, the Wallet Unit SHALL return to 'normal' mode.</td>
 </tr>
 <tr>
 <td>W2W_06</td>
-<td>The Requestee Wallet Unit SHALL authenticate and validate the Requestor Wallet Unit, ensuring the validity of the Requestor Wallet Unit and the attribute request.</td>
+<td>When entering the Holder Wallet Unit mode, a Wallet Unit SHALL inform its User that this mode should only be used for interactions with natural persons using a Wallet Unit, and that the User should not proceed if they are in fact interacting with a Relying Party.</td>
 </tr>
 <tr>
 <td>W2W_07</td>
-<td>The Requestor Wallet Unit SHALL display the received attributes to its User.</td>
+<td>A Wallet Unit SHALL act as a Verifier Wallet Unit only if the User selects a 'Verifier Wallet Unit mode'. If the User closes the Wallet Unit, or after a period of non-activity, the Wallet Unit SHALL return to 'normal' mode.</td>
+</tr>
+<tr>
+<td>W2W_08</td>
+<td>A Verifier Wallet Unit and a Holder Wallet Unit SHALL support attestation presentation only in proximity, meaning they SHALL support only [ISO/IEC 18013-5] to communicate.</td>
+</tr>
+<tr>
+<td>W2W_09</td>
+<td>Holder Wallet Units SHALL comply with the requirements for mDLs and for mdocs in ISO/IEC 18013-5, unless specified differently in <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>.</td>
+</tr>
+<tr>
+<td>W2W_10</td>
+<td>Verifier Wallet Units SHALL comply with the requirements for mDL readers and for mdoc readers in ISO/IEC 18013-5, unless specified differently in <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>.</td>
+</tr>
+<tr>
+<td>W2W_11</td>
+<td>A Holder Wallet Unit SHOULD provide the Holder, through a user-friendly UI, with the option to inform the Verifier Wallet Unit about the attributes which the Verifier should include in the presentation request, by sending a presentation offer. If the Holder creates a presentation offer, the Holder Wallet Unit SHALL transfer it to the Verifier Wallet Unit as specified in <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>. <em>Note: This will use an extension of the device engagement structure specified in ISO/IEC 18013-5.</em></td>
+</tr>
+<tr>
+<td>W2W_12</td>
+<td>A Holder Wallet Unit SHALL recommend the Holder to create a presentation offer, as this will increase the chance of success of the use case.</td>
+</tr>
+<tr>
+<td>W2W_13</td>
+<td>A Verifier Wallet Unit SHALL provide the Verifier, through a user-friendly UI, with the possibility to select the attributes that will be included in the presentation request.</td>
+</tr>
+<tr>
+<td>W2W_14</td>
+<td>For the purposes of W2W_07, if the Verifier Wallet Unit received a presentation offer, it SHALL present this offer to the Verifier, and enable the Verifier to include one or more of the attributes in the offer into the presentation request. However, the Verifier Wallet Unit SHALL NOT allow the Verifier to include any attribute not present in the offer.</td>
+</tr>
+<tr>
+<td>W2W_15</td>
+<td>For the purposes of W2W_07, if the Verifier Wallet Unit did not receive a presentation offer, it SHALL present the Verifier with a list of attributes that can be included in the presentation request. The Verifier Wallet Unit MAY ask the Verifier some questions about the purpose of the use case to narrow down the list.</td>
+</tr>
+<tr>
+<td>W2W_16</td>
+<td>A Verifier Wallet Unit SHALL authenticate the Verifier according to WIAM_15 and SHALL obtain the User's approval prior to sending a presentation request to a Holder Wallet Unit.</td>
+</tr>
+<tr>
+<td>W2W_17</td>
+<td>A Verifier Wallet Unit SHALL implement measures to limit the number of presentation requests it can send per unit of time, to prevent abuse of the Wallet-to-Wallet functionality by Relying Parties. The limitation strategy, for instance exponential backoff time between subsequent presentation requests or hard limits for the number of requests, SHALL be decided by the Wallet Provider, based on applicable requirements in <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>.</td>
+</tr>
+<tr>
+<td>W2W_18</td>
+<td>When receiving a presentation request, a Holder Wallet Unit SHOULD verify the validity of the Verifier Wallet Unit before presenting a received request to the Holder, provided <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a> specifies a suitable mechanism for doing so.</td>
+</tr>
+<tr>
+<td>W2W_19</td>
+<td>When receiving a presentation response, a Verifier Wallet SHALL verify the received attestation according to requirements OIA_12 - OIA_15 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>.</td>
+</tr>
+<tr>
+<td>W2W_20</td>
+<td>A Verifier Wallet Unit SHALL display any received attributes to the Verifier.</td>
+</tr>
+<tr>
+<td>W2W_21</td>
+<td>A Verifier Wallet Unit SHALL NOT persistently store any attestations or attributes received. A Verifier Wallet Unit SHOULD minimize the time the received presentation is stored in memory. A Verifier Wallet Unit SHALL comply with OIA_16 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>.</td>
+</tr>
+<tr>
+<td>W2W_22</td>
+<td>Wallet Providers SHOULD take measures to prevent a User from taking screenshots while their Wallet Unit is acting as a Verifier Wallet Unit.</td>
 </tr>
 </tbody>
 </table>
@@ -2902,11 +2993,11 @@ the Commission.</p>
 <tbody>
 <tr>
 <td>GenNot_01</td>
-<td>The European Commission SHALL establish technical specifications for a common system enabling the notification of PID Providers, PuB-EAA Providers, Wallet Providers, Access Certificate Authorities, and Registrars by Member States to the Commission. <em>Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively.</em></td>
+<td>Member States SHALL notify PID Providers, PuB-EAA Providers, Wallet Providers, Access Certificate Authorities, and Registrars to the European Commission, according all relevant requirements in <a href="../../../technical-specifications/ts2-notification-publication-provider-information/">Technical Specification 2</a>. <em>Note: Notification does not apply to QEAA Providers and (non-qualified) EAA Providers, as explained in Sections D and F below, respectively.</em></td>
 </tr>
 <tr>
 <td>GenNot_02</td>
-<td>As part of the specifications referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the notification of a PID Provider, PuB-EAA Provider, Wallet Provider, Access Certificate Authority, or Registrar to the Commission. <em>Note: The outcome of the notification procedure is the publication of the information notified by the Member State according to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a> (18) in a machine and human readable manner using the common system mentioned in Section H, TLPub_01.</em></td>
+<td>As part of  [Technical Specification 2] referred to in GenNot_01, the European Commission SHALL establish standard operating procedures for the notification of a PID Provider, PuB-EAA Provider, Wallet Provider, Access Certificate Authority, or Registrar to the Commission. <em>Note: The outcome of the notification procedure is the publication of the information notified by the Member State according to <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183#d1e1347-1-1">Article 5a</a> (18) in a machine and human readable manner using the common system mentioned in Section H, TLPub_01.</em></td>
 </tr>
 <tr>
 <td>GenNot_03</td>
@@ -3174,7 +3265,7 @@ access to their existing Wallet Unit.</p>
 <p>The solution described in this Topic is to introduce a Migration Object in each
 Wallet Unit. This object is a list of PIDs and attestations contained in the
 Wallet Unit, together with the information needed to request (re-)issuance of
-that PID or attestation. Note that the Migration Object does not contain any
+that PID or attestation. In addition, the Migration Object also contains the transaction log kept by the Wallet Unit, see <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. Note that the Migration Object does not contain any
 private keys of PIDs or attestations. In most security
 architectures for a Wallet Solution described in <a href="../../../architecture-and-reference-framework-main/#45-wscd-architecture-types">Section 4.5 of the ARF main document</a>, this is
 impossible, since the WSCA/WSCD that contains these private keys does not allow
@@ -3189,14 +3280,13 @@ new Wallet Unit, and be recognised as an existing User.</p>
 and attestations cannot be backed up and restored from the object in such a way
 that they are usable in a new Wallet Unit without involvement of the PID
 Provider or Attestation Provider. Instead, the User must ask the respective PID
-Provider(s) or Attestation Provider(s) to re-issue the PID(s) or attestation(s)
-to the new Wallet Unit. The only function of the Migration Object is to simplify
+Provider(s) or Attestation Provider(s) to issue the PID(s) or attestation(s) existing on the User's old Wallet Unit once again to the new Wallet Unit. The only function of the Migration Object is to simplify
 this process by listing the PIDs and attestations present in the existing Wallet
 Unit, together with the information needed by the new Wallet Unit to start the
-re-issuance process.</p>
+issuance process.</p>
 <p>The Migration Object does not contain attribute values or attribute identifiers,
 as that data is considered sensitive and is not useful anyway because of the
-limitations explained above. Instead, the object only contains a list of
+limitations explained above. Instead, the object contains a list of
 attestation types and the related Attestation Providers. However, even this
 limited information may be considered sensitive in some cases. Therefore, the
 Migration Object is stored in such a way that its confidentiality is ensured and
@@ -3213,7 +3303,7 @@ that it can be used only by the User.</p>
 <tbody>
 <tr>
 <td>Mig_01</td>
-<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: - The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02. - A list of PIDs and attestations present in the Wallet Unit, according to the requirements in this Topic.</td>
+<td>A Wallet Unit SHALL include and keep up-to-date a Migration Object, containing the following information: - The contents of the log for all transactions executed through the Wallet Unit, as listed in requirement DASH_02. - A list of PIDs and attestations, except Wallet Unit Attestations, present in the Wallet Unit, according to the requirements in this Topic.</td>
 </tr>
 <tr>
 <td>Mig_02</td>
@@ -3221,7 +3311,7 @@ that it can be used only by the User.</p>
 </tr>
 <tr>
 <td>Mig_03</td>
-<td>For each PID or attestation that is issued to it, a Wallet Unit SHALL add all data that is necessary to request re-issuance of that PID or attestation to the Migration Object. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys of the PID or attestation.</td>
+<td>For each PID or attestation that is issued to it, a Wallet Unit SHALL add to the Migration Object all data necessary to request issuance of that PID or attestation once again. This SHALL include at least the attestation type and the PID Provider or Attestation Provider that issued the PID or attestation, as well as their service supply points. However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, and SHALL NOT contain any private keys of the PID or attestation.</td>
 </tr>
 <tr>
 <td>Mig_03a</td>
@@ -3229,11 +3319,11 @@ that it can be used only by the User.</p>
 </tr>
 <tr>
 <td>Mig_04</td>
-<td>The Wallet Unit SHALL store the Migration Object in an external storage or remote location of the User's choice, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. <em>Note: The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Unit.</em></td>
+<td>The Wallet Unit SHALL store the Migration Object in an external storage or remote storage location of the User's choice, from among the storage options supported by the Wallet Unit, in such a way that the User can still retrieve the object from a new Wallet Unit in case the existing Wallet Unit becomes unavailable. <em>Notes: - It is up to the Wallet Provider to decide which external storage options or remote storage locations the Wallet Unit supports for storing the Migration Object. - The new Wallet Unit may be either an instance of the same Wallet Solution as the old one, or an instance of a different Wallet Solution.</em></td>
 </tr>
 <tr>
 <td>Mig_05</td>
-<td>The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality is protected and that it is protected against use by others than the User. <em>Note: This could be done, for example, by using password-based cryptography to encrypt the object.</em></td>
+<td>The Wallet Unit SHALL store the Migration Object in such a way that its confidentiality, integrity, and authenticity is protected and that it is protected against use by others than the User. <em>Note: This could be done, for example, by using password-based cryptography to encrypt the object.</em></td>
 </tr>
 </tbody>
 </table>
@@ -3248,7 +3338,7 @@ that it can be used only by the User.</p>
 <tbody>
 <tr>
 <td>Mig_06</td>
-<td>Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User.</td>
+<td>Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote storage location indicated by the User, from among the storage options supported by the Wallet Unit.</td>
 </tr>
 <tr>
 <td>Mig_07</td>
@@ -3272,7 +3362,7 @@ that it can be used only by the User.</p>
 </tr>
 <tr>
 <td>Mig_11</td>
-<td>The processes and interfaces used for re-issuance of a PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</td>
+<td>The processes and interfaces used for issuance of a PID or attestation as part of a migration process SHALL be the same as those used for a 'normal' issuance process, as specified in <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</td>
 </tr>
 <tr>
 <td>Mig_12</td>
@@ -3313,7 +3403,7 @@ following questions: - How can a Wallet Provider revoke a Wallet Unit? - During
 issuance of an attestation, how can an Attestation Provider verify whether a
 Wallet Unit has been revoked? - When requesting attributes from an attestation, how
 can a Relying Party verify whether a Wallet Unit has been revoked?</p>
-<p>Related to the last question, [CIR 2024/2977], Article 5, 4.(b) says "Where providers of person identification data revoke person identification data issued to wallet units, they shall do so (...) where the wallet unit attestation to which the person identification data was issued to has been revoked". This implies that if a Relying Party verifies that a PID it obtained from a Wallet Unit is valid (i.e., not revoked), it can trust that the Wallet Unit is also valid. Consequently, there is no need for a separate mechanism that would allow the Relying Party to verify the revocation status of a Wallet Unit directly with the Wallet Provider. Although the CIR requires this mechanism only for PIDs, other Attestation Providers may similarly revoke an attestation if the Wallet Unit on which it resides is revoked. Note that if an Attestation Provider does not support this, a Relying Party obtaining an attestation from a Wallet Unit has no way of knowing whether the Wallet Unit is revoked. Depending on the value of the attestation, this risk may be acceptable for the Relying Party. </p>
+<p>Related to the last question, [CIR 2024/2977], Article 5, 4.(b) says "Where providers of person identification data revoke person identification data issued to wallet units, they shall do so (...) where the wallet unit attestation to which the person identification data was issued to has been revoked". This implies that if a Relying Party verifies that a PID it obtained from a Wallet Unit is valid (i.e., not revoked), it can trust that the Wallet Unit is also valid. Consequently, there is no need for a separate mechanism that would allow the Relying Party to verify the revocation status of a Wallet Unit directly with the Wallet Provider. Although the CIR requires this mechanism only for PIDs, other Attestation Providers may similarly revoke an attestation if the Wallet Unit on which it resides is revoked. Note that if an Attestation Provider does not support this, a Relying Party obtaining an attestation from a Wallet Unit has no way of knowing whether the Wallet Unit is revoked. Depending on the value of the attestation, this risk may be acceptable for the Relying Party.</p>
 <p>In case of a security issue, Article 5e of the [European Digital Identity
 Regulation] requires Wallet Providers to first suspend a Wallet Unit and to
 revoke it only if the issue cannot be solved within three months. However, the
@@ -3661,7 +3751,7 @@ from the Relying Party, to determine whether the Attestation Provider agrees
 with releasing attributes from the attestation to the Relying Party. Note that
 an embedded disclosure policy, if present, is applicable for any attribute in
 the attestation.</p>
-<p>Note that embedded disclosure policies do not apply to Wallet-to-Wallet interactions as described in <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>.</p>
+<p>Note that embedded disclosure policies do not apply to Wallet-to-Wallet interactions as described in <a href="#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>, because a requesting Wallet Unit is not registered and therefore no authenticated information is available to evaluate an embedded disclosure policy.</p>
 <h5 id="hlrs_27">HLRs <!-- omit from toc --></h5>
 <table>
 <thead>
@@ -3721,7 +3811,7 @@ the attestation.</p>
 <h5 id="description_31">Description <!-- omit from toc --></h5>
 <p>This topic identifies high-level requirements for Relying Party registration
 certificates, which were introduced in Commission Implementing Regulation
-2024/2982 [2024/2982]. A registration certificate may be issued by a 
+2024/2982 [2024/2982]. A registration certificate may be issued by a
 Registrar to a Relying Party during the registration process described in
 <a href="#a2327-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.
 If present, it contains mainly the list of attributes registered by the Relying Party
@@ -3764,11 +3854,19 @@ the scope of their registered attributes ("intended use"), providing assurance t
 </tr>
 <tr>
 <td>RPRC_03b</td>
-<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to allow the User to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official Relying Party identifiers listed in Annex I(3) of the <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj">CIR 2025/848</a> regarding registration of Wallet Relying Parties, expressed in the semantic form defined in [ETSI EN 319 412-1] sections 5.1.4 or 5.1.5. The exact specification is left for the technical specifications to be developed by the European Commission.</em></td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Notes: - The Wallet Instance needs such an identifier at least to allow the User to send a report of suspicious Relying Party presentation requests to a data protection authority according to <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official Relying Party identifiers listed in Annex I(3) of the <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj">CIR 2025/848</a> regarding registration of Wallet Relying Parties, expressed in the semantic form defined in [ETSI EN 319 412-1] sections 5.1.4 or 5.1.5. The exact specification is left for the technical specifications to be developed by the European Commission.</em></td>
 </tr>
 <tr>
 <td>RPRC_03c</td>
 <td>The EU-wide unique identifier meant in RPRC_03b SHALL be identical in all registration certificates issued for a given Relying Party. <em>Note: In case the registration certificates issued to an intermediated Relying Party are held and presented by an intermediary, the Relying Party meant in this requirement is the intermediated Relying Party. An intermediary may obtain and hold registration certificates with a different unique identifier.</em></td>
+</tr>
+<tr>
+<td>RPRC_03d</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains at least one of the following: a) the URL of a web form provided by the Relying Party, which Users can use to send attribute erasure requests, b) an e-mail address of the Relying Party, on which the Relying Party is prepared to receive attribute erasure requests from Users, c) a telephone number of the Relying Party, on which the Relying Party is prepared to receive attribute erasure requests from Users. <em>Note: See <a href="#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a> for more information about attribute erasure requests.</em></td>
+</tr>
+<tr>
+<td>RPRC_03e</td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains at least one of the following: a) the URL of web form provided by the Data Protection Authority supervising the Relying Party, which Users can use to report suspicious attribute presentation requests. b) an e-mail address of that DPA, on which the DPA is prepared to receive reports about suspicious attribute presentation requests from Users, c) a telephone number of that DPA, on which the DPA is prepared to receive reports about suspicious attribute presentation requests from Users. <em>Note: See <a href="#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a> for more information about reporting suspicious attribute presentation requests.</em></td>
 </tr>
 </tbody>
 </table>
@@ -3861,27 +3959,39 @@ requests are therefore always sent to the Relying Party, not the intermediary.</
 <tbody>
 <tr>
 <td>DATA_DLT_01</td>
-<td>A Wallet Provider SHALL ensure that its Wallet Units support the technical specifications mentioned in DATA_DLT_02, allowing a User to request from a Relying Party the erasure of their attributes that were presented by that Wallet Unit to that Relying Party, in accordance with Regulation (EU) 2016/679.</td>
+<td>A Wallet Provider SHALL ensure that its Wallet Units support the possibilities mentioned in DATA_DLT_02, allowing a User to request from a Relying Party the erasure of their attributes that were presented by that Wallet Unit to that Relying Party, in accordance with Article 17 of Regulation (EU) 2016/679.</td>
 </tr>
 <tr>
 <td>DATA_DLT_02</td>
-<td>The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.</td>
+<td>A Wallet Unit SHALL support at least the following possibilities to send a data erasure request to a Relying Party: a) Open a URL in an external browser to ask for the deletion of data in a web form provided by the Relying Party, b) Open an external mail client and start a draft e-mail to the Relying Party, with a suitable template text, c) open an external phone client and start a phone call. Depending on whether a Relying Party URL, e-mail address, and/or phone number was logged for the relevant attestation presentation transaction (see requirement DASH_03 in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>), the Wallet Unit SHALL offer the User to use one or more of these possibilities.</td>
+</tr>
+<tr>
+<td>DATA_DLT_02a</td>
+<td>If the User initiates sending a data erasure request for a particular attestation presentation transaction, but no Relying Party URL, e-mail address, or telephone number is available in the log for that transaction, the Wallet Unit SHALL connect to the URL of the online service of the Registrar indicated in the log to obtain this information. The Wallet Unit SHALL inform the User that it must connect to the Registrar to look up the contact information it needs to send a data deletion request. <em>Note: this situation may occur if there was no registration certificate in the presentation request and the User did not request the Wallet Unit to obtain the information registered about the Relying Party from the Registrar. See RPRC_04 - RPRC_06b in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>.</em></td>
 </tr>
 <tr>
 <td>DATA_DLT_03</td>
-<td>A Wallet Instance SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted.</td>
+<td>A Wallet Instance SHALL provide a function where the User may select one Relying Party to which a data deletion request must be submitted.</td>
 </tr>
 <tr>
 <td>DATA_DLT_04</td>
-<td>A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>DATA_DLT_05</td>
-<td>A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>).</td>
+<td>A Wallet Unit SHALL include the initiation of a data deletion request in a log, so it can be displayed to the User via the dashboard as specified in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: Because the request is sent by an external web browser, e-mail client, or phone client (see DATA_DLT_02), the Wallet Unit can only log the initiation of the request.</em></td>
 </tr>
 <tr>
 <td>DATA_DLT_06</td>
-<td>The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.</td>
+<td>For the initiation of a data deletion request, the log SHALL contain at least: - Date and time of the initiation of the request, - Name and unique identifier of the Relying Party to which the request was made, - Attributes requested to be deleted.</td>
+</tr>
+<tr>
+<td>DATA_DLT_07</td>
+<td>Before executing a data deletion request, a Relying Party SHALL authenticate the requesting User (or the request itself), using appropriate authentication mechanisms of its own choosing. The Relying Party SHOULD use the authentication or signature facilities offered by the User's Wallet Unit for this purpose.</td>
+</tr>
+<tr>
+<td>DATA_DLT_08</td>
+<td>Wallet Units, Relying Parties, and Registrars SHALL comply with the relevant requirements in <a href="../../../technical-specifications/ts7-common-interface-for-data-deletion-request/">Technical Specification 7</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -3909,23 +4019,31 @@ reporting unlawful or inappropriate attribute requests from Relying Parties.</p>
 <tbody>
 <tr>
 <td>RPT_DPA_01</td>
-<td>A Wallet Unit SHALL provide an interface to lodge a complaint of suspicious Relying Party presentation requests to the DPA of the Member State that provided the Wallet Unit.</td>
+<td>A Wallet Unit SHALL enable the User to start the process of reporting a suspicious presentation request to a DPA. When prompted by the User, a Wallet Unit SHALL provide the contact details of the DPA which supervises the Relying Party that made the suspicious request, if available in the log for that request (see DASH_03). If the contact details of the supervising DPA are not available in the log, the Wallet Unit SHALL provide the contact details of the DPA of the region in which the Wallet Provider is residing. In addition, the Wallet Unit MAY also provide the contact details of other DPAs, taken from the "European Data Protection Board" website (<a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en">https://www.edpb.europa.eu/about-edpb/about-edpb/members_en</a>). <em>Note: The DPA contact details may be unavailable in the log if there was no registration certificate in the presentation request and the User did not request the Wallet Unit to obtain the information registered about the Relying Party from the Registrar. See RPRC_04 - RPRC_06b in <a href="#a2344-topic-44---relying-party-registration-certificates">Topic 44</a>.</em></td>
 </tr>
 <tr>
 <td>RPT_DPA_02</td>
-<td>The User interface enabling a User to start the process of lodging a complaint SHALL be accessible via the Wallet Instance.</td>
+<td>The Wallet Unit SHALL offer the User the option to report a suspicious request to a DPA via the transaction log presented in the dashboard, see <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>.</td>
+</tr>
+<tr>
+<td>RPT_DPA_02a</td>
+<td>A Wallet Unit SHALL support at least the following possibilities to report a suspicious presentation request to a DPA, depending on what contact details are available for the DPA: a) Open a URL in an external browser to report the request in a web form provided by the DPA. b) Open an external e-mail client and start a draft e-mail to the DPA, with a suitable template text, c) open an external phone client and start a phone call.</td>
 </tr>
 <tr>
 <td>RPT_DPA_03</td>
-<td>A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices.</td>
+<td>Empty</td>
 </tr>
 <tr>
 <td>RPT_DPA_04</td>
-<td>A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation.</td>
+<td>A Wallet Provider SHALL ensure that a Wallet Unit allows its User to substantiate a report sent to a DPA, including by attaching relevant information to identify the Relying Party and the Users’ claims in a machine-readable format. <em>Note: The log kept by the Wallet Unit will be standardized and is machine-readable in order to enable data portability. An excerpt from this log therefore can be used to substantiate the report.</em></td>
 </tr>
 <tr>
 <td>RPT_DPA_05</td>
 <td>A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in <a href="#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>).</td>
+</tr>
+<tr>
+<td>RPT_DPA_06</td>
+<td>Wallet Units, Data Protection Authorities, and Registrars SHALL comply with the relevant requirements in <a href="../../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/">Technical Specification 8</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -4042,7 +4160,7 @@ behalf of the intermediated Relying Party.</p>
 </table>
 <h4 id="a2353-topic-53-zero-knowledge-proofs">A.2.3.53 Topic 53 Zero-Knowledge Proofs</h4>
 <h5 id="description_36">Description <!-- omit from toc --></h5>
-<p><strong>NOTE: Discussions on Zero-Knowledge Proofs are ongoing. No specific ZKP has been selected to be supported by components in the EUDI Wallet ecosystem.</strong></p>
+<p><strong>NOTE: Discussions on Zero-Knowledge Proofs are ongoing. No specific ZKP has been selected to be supported by components in the EUDI Wallet ecosystem. For an up-to-date discussion, see <a href="../../../technical-specifications/ts4-zkp/">Technical Specification 4</a>.</strong></p>
 <p>This topic lists high-level requirements for a Zero-Knowledge Proof scheme to be used within the EUDI Wallet ecosystem as a proof mechanism for PIDs and attestations. A Zero-Knowledge Proof (ZKP) is a cryptographic protocol that allows one party
 (the prover) to convince another party (the verifier) that a given statement is
 true without revealing any additional information beyond the validity of the
