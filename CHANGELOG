@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.2.0] - 2025 - 06 - 20
+
+Changes:
+- added results of "Topic L - User requesting data deletion to relying parties"
+- added results of "Topic M - User reporting unlawful or suspicious request of data to DPAs"
+- added results of "Topic N - Export and data portability"
+- added results of "Topic I - Natural person representing another natural person"
+- added results of "Topic W - Transactional data for payment and other use cases
+- added results of "Topic J - Wallet to Wallet interaction"
+
 ## [2.1.0] - 2025 - 06 - 06
 
 Changes:
