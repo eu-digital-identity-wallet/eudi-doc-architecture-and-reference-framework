@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -170,11 +170,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
-  
   
     
   
@@ -189,11 +187,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
-  
   
     
   
@@ -208,11 +204,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../discussion-topics/" class="md-tabs__link">
         
-  
   
     
   
@@ -227,11 +221,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../technical-specifications/" class="md-tabs__link">
         
-  
   
     
   
@@ -304,7 +296,6 @@
       <a href="../../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -325,7 +316,6 @@
     <li class="md-nav__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -351,7 +341,6 @@
       <a href="../../../discussion-topics/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -372,7 +361,6 @@
     <li class="md-nav__item">
       <a href="../../../technical-specifications/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -471,12 +459,12 @@ and used in the ARF.</p>
 <td>Data in electronic form which is attached to or logically associated with other data in electronic form to ensure the latter’s origin and integrity</td>
 </tr>
 <tr>
-<td><strong>Person Identification Data (PID)</strong></td>
-<td>A set of data that is issued in accordance with Union or national law and that enables the establishment of the identity of a natural or legal person, or of a natural person representing another natural person or a legal person.</td>
+<td><strong>User</strong></td>
+<td>A natural or legal person, or a natural person representing another natural person or a legal person, that uses trust services or electronic identification means provided in accordance with the [European Digital Identity Regulation].</td>
 </tr>
 <tr>
-<td><strong>Public Sector Body</strong></td>
-<td>A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate.</td>
+<td><strong>Person Identification Data (PID)</strong></td>
+<td>A set of data that is issued in accordance with Union or national law and that enables the establishment of the identity of a natural or legal person, or of a natural person representing another natural person or a legal person.</td>
 </tr>
 <tr>
 <td><strong>Qualified Electronic Attestation of Attributes (QEAA)</strong></td>
@@ -499,12 +487,8 @@ and used in the ARF.</p>
 <td>A natural or legal person that relies upon electronic identification, European Digital Identity Wallets or other electronic identification means, or upon a trust service</td>
 </tr>
 <tr>
-<td><strong>strong User authentication</strong></td>
-<td>An authentication based on the use of at least two authentication factors from different categories of either knowledge, something only the user knows, possession, something only the user possesses or inherence, something the user is, that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data</td>
-</tr>
-<tr>
-<td><strong>User</strong></td>
-<td>A natural or legal person, or a natural person representing another natural person or a legal person, that uses trust services or electronic identification means provided in accordance with the [European Digital Identity Regulation].</td>
+<td><strong>Public Sector Body</strong></td>
+<td>A state, regional or local authority, a body governed by public law or an association formed by one or several such authorities or one or several such bodies governed by public law, or a private entity mandated by at least one of those authorities, bodies or associations to provide public services, when acting under such a mandate.</td>
 </tr>
 </tbody>
 </table>
@@ -599,7 +583,7 @@ Identity Regulation] or the Commission Implementing Regulations, the latter take
 precedence.</p>
 <p>In some cases, a term has its origin in the context of
 a specific Topic in <a href="../../annex-2/annex-2-high-level-requirements/">Annex 2</a>. In
-such a case, the topic number is mentioned in a note. If
+such a case, the topic number appears in brackets following the definition. If
 the definition relies on an external source, such as a
 standard or a formal publication, that source is mentioned.</p>
 <table>
@@ -612,7 +596,7 @@ standard or a formal publication, that source is mentioned.</p>
 <tbody>
 <tr>
 <td>Administrative validity period (of a PID or attestation)</td>
-<td>The date(s) from and/or up to which the attributes in the attestation are valid, which are represented as attribute(s) in the attestation. <em>Note: Some attestations, for instance diplomas, do not have an administrative validity period.</em></td>
+<td>The date(s) from and/or up to which the attributes in the attestation are valid, which are represented as attribute(s) in the attestation. <em>Note: Some attestations, for instance diplomas, do not have an administrative validity period</em></td>
 </tr>
 <tr>
 <td>Attestation</td>
@@ -624,19 +608,19 @@ standard or a formal publication, that source is mentioned.</p>
 </tr>
 <tr>
 <td>Attestation Revocation List</td>
-<td>A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a237-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.</em></td>
+<td>A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing a list of identifiers of revoked PIDs or attestations. [Topic 7]</td>
 </tr>
 <tr>
 <td>Attestation Rulebook</td>
-<td>A document describing the attestation type, namespace(s), and other features for a specific attestation type. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>.</em></td>
+<td>A document describing the attestation type, namespace(s), and other features for a specific attestation type. [Topic 12]</td>
 </tr>
 <tr>
 <td>Attestation Status List</td>
-<td>A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing status information (Valid or Invalid) for all relevant PIDs or attestations. <em>Notes: -See <a href="../../annex-2/annex-2-high-level-requirements/#a237-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>. -Which PIDs or attestations are relevant is determined by the entity publishing the status list. For example, a status list may contain all PIDs or attestations whose validity period is not over yet at the time of publication of the list.</em></td>
+<td>A mechanism provided by a PID Provider or an Attestation Provider (or a trusted party acting on its behalf) for communicating the revocation status of PIDs and attestations, by publishing status information (Valid or Invalid) for all relevant PIDs or attestations. [Topic 7] <em>Note: Which PIDs or attestations are relevant is determined by the entity publishing the status list. For example, a status list may contain all PIDs or attestations whose validity period is not over yet at the time of publication of the list.</em></td>
 </tr>
 <tr>
 <td>Attestation type</td>
-<td>An identifier for a type of attestation, unique within the context of the EUDI Wallet ecosystem. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>.</em></td>
+<td>An identifier for a type of attestation, unique within the context of the EUDI Wallet ecosystem [Topic 12]</td>
 </tr>
 <tr>
 <td>Certificate Authority (CA)</td>
@@ -647,16 +631,8 @@ standard or a formal publication, that source is mentioned.</p>
 <td>A named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements.</td>
 </tr>
 <tr>
-<td>Holder (when used in the context of Wallet-to-Wallet interactions)</td>
-<td>A User wishing to use their Wallet Unit to present attributes from a PID or attestation to the User of another Wallet Unit. <em>Notes: See also Verifier. - See <a href="../../annex-2/annex-2-high-level-requirements/#a2330-topic-30---interaction-between-wallet-units">Topic 30</a>.</em></td>
-</tr>
-<tr>
-<td>Holder Wallet Unit</td>
-<td>A Wallet Unit used by a Holder.</td>
-</tr>
-<tr>
 <td>Namespace</td>
-<td>A specification of the attribute identifier, syntax and semantics of attributes that can be used in an attestation, having an identifier that is unique within the context of the EUDI Wallet ecosystem. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>.</em></td>
+<td>A specification of the attribute identifier, syntax and semantics of attributes that can be used in an attestation, having an identifier that is unique within the context of the EUDI Wallet ecosystem. [Topic 12]</td>
 </tr>
 <tr>
 <td>National Accreditation Bodies (NAB)</td>
@@ -664,11 +640,11 @@ standard or a formal publication, that source is mentioned.</p>
 </tr>
 <tr>
 <td>Notification</td>
-<td>The act of transferring information to the European Commission. *Note: see <a href="../../annex-2/annex-2-high-level-requirements/#a2331-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topics 31</a>.</td>
+<td>The act of transferring information to the European Commission. [Topics 31]</td>
 </tr>
 <tr>
 <td>Pseudonym</td>
-<td>Data uniquely representing a User which in itself does not allow to infer the User's attributes or person identification data, without the use of additional information that is kept separately by the issuer of the data uniquely representing the user. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2311-topic-11---pseudonyms">Topic 11</a>.</em></td>
+<td>Data uniquely representing a user which in itself does not allow to infer any user's attribute or person identification data, without the use of additional information that is kept separately by the issuer of the data uniquely representing the user.</td>
 </tr>
 <tr>
 <td>Public Key Infrastructure (PKI)</td>
@@ -687,10 +663,6 @@ standard or a formal publication, that source is mentioned.</p>
 <td>The capability enabling the User to present a subset of the attributes included in a PID or attestation.</td>
 </tr>
 <tr>
-<td>SUA attestation</td>
-<td>An attestation used for strong user authentication in the context of electronic payments, such that, when a Relying Party sends a presentation request for the attestation to a Wallet Unit, it includes transactional data in the request. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2320-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a></em></td>
-</tr>
-<tr>
 <td>Technical validity period (of a PID or attestation)</td>
 <td>The dates (and possibly times) from and up to which the attestation is valid, which are represented as metadata of the attestation. <em>Note: All PIDs and attestations have a technical validity period, which is typically much shorter than its administrative validity period (if existent). The technical validity period is chosen based on a risk analysis, e.g. with regard to User privacy.</em></td>
 </tr>
@@ -701,14 +673,6 @@ standard or a formal publication, that source is mentioned.</p>
 <tr>
 <td>Trusted List</td>
 <td>Repository of information about authoritative entities in a particular legal or contractual context which provides information about their current and historical status.</td>
-</tr>
-<tr>
-<td>Verifier (when used in the context of Wallet-to-Wallet interactions)</td>
-<td>A User wishing to use their Wallet Unit to request attributes from a PID or attestation from the User of another Wallet Unit. <em>Note: See <a href="../../annex-2/annex-2-high-level-requirements/#a2330-topic-30---interaction-between-wallet-units">Topic 30</a></em></td>
-</tr>
-<tr>
-<td>Verifier Wallet Unit</td>
-<td>A Wallet Unit used by a Verifier.</td>
 </tr>
 </tbody>
 </table>
@@ -761,12 +725,10 @@ standard or a formal publication, that source is mentioned.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

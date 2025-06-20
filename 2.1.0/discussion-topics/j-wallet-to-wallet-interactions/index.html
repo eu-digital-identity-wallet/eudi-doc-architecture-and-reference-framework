@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -170,11 +170,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../.." class="md-tabs__link">
         
-  
   
     
   
@@ -189,11 +187,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
-  
   
     
   
@@ -208,11 +204,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link">
         
-  
   
     
   
@@ -227,11 +221,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../technical-specifications/" class="md-tabs__link">
         
-  
   
     
   
@@ -304,7 +296,6 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -325,7 +316,6 @@
     <li class="md-nav__item">
       <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -351,7 +341,6 @@
       <a href="../" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -372,7 +361,6 @@
     <li class="md-nav__item">
       <a href="../../technical-specifications/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -405,7 +393,7 @@
 
 
 <h1 id="j-wallet-to-wallet-interactions">J - Wallet to Wallet Interactions</h1>
-<p>Version 0.5, updated 11 June 2025</p>
+<p>Version 0.4, updated 3 June 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/510">GitHub discussion</a></p>
 <h2 id="1-introduction">1 Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
@@ -554,7 +542,7 @@ If no <em>presentation offer</em> was specified, the <em>Verifier</em> is asked 
 <p>Rationale: A Wallet Unit shall be able to take the role of a Holder in a wallet to wallet interaction. </p>
 </blockquote>
 <h5 id="requirement-3">Requirement 3</h5>
-<p>A Wallet Unit SHOULD provide the User with the option to inform other Wallet Units of which attestations and attributes it can include in presentation requests, i.e., a presentation offer. If such option exists, it SHALL be accessible through a user-friendly UI and, if the User uses the functionality, the information SHALL be transferred as part of the protocol mentioned in Requirement 1.</p>
+<p>A Wallet Unit SHOULD provide the User with the option, using a user-friendly UI, to suggest to the other Wallet Unit, which attestations and attributes it can include in a presentation request, i.e., a presentation offer. If the User uses the functionality, the suggestion SHALL be transferred as part of the protocol mentioned in Requirement 1. </p>
 <blockquote>
 <p>Rationale: The Holder shall be given the choice to select which attestations and attributes they want to share.  It should be easy for a Holder to select which attributes it wishes to present.</p>
 </blockquote>
@@ -610,7 +598,7 @@ If no <em>presentation offer</em> was specified, the <em>Verifier</em> is asked 
 <p>Rationale: This is to prevent large-scale abuse of the wallet to wallet functionality by another legal entity than a natural person to relying on it.</p>
 </blockquote>
 <h5 id="requirement-13">Requirement 13</h5>
-<p>A Verifier Wallet Unit SHALL not persistently store the content of a received presentation. The Verifier Wallet Unit SHOULD minimize the time the received presentation is stored in memory. </p>
+<p>A Holder Wallet Unit SHALL not persistently store the content of a received presentation. The Holder Wallet Unit SHOULD minimize the time the received presentation is stored in memory. </p>
 <blockquote>
 <p>Rationale: This requirements ensures that the Holder obtains similar privacy guarantees to what they would have achieved by showing a physical card to another natural person. I.e., if no explicit actions are taken to store the (such as the Verifier taking a photo of the attributes), then the presentation is only ephemeral. </p>
 </blockquote>
@@ -744,12 +732,10 @@ If no <em>presentation offer</em> was specified, the <em>Verifier</em> is asked 
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
