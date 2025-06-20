@@ -26,7 +26,7 @@ SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 2.1.0
+VERSION        := 2.2.0
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
