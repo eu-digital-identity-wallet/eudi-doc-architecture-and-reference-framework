@@ -1,6 +1,6 @@
 # K - Combined presentation of Attestations
 
-Version 1.0, updated 26 May 2025
+Version 1.4, updated 19 Jun 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/519)
 
@@ -86,8 +86,25 @@ The concept of *combined presentation* refers to a process where a Relying Party
 requests multiple attributes concerning a single User, drawn from separate attestations 
 (e.g., PID and/or (Q)EAAs), and receives a consolidated, verified response. The key 
 functional goal is to enable the Relying Party to confirm that all presented attributes 
-genuinely pertain to the same User without 
-compromising trust, privacy, or data integrity.
+genuinely pertain to the same User without compromising trust, privacy, or data integrity.
+
+The **combined presentation of attributes**, when designed with privacy in mind, 
+becomes a powerful tool for protecting individuals from unnecessary exposure. Rather 
+than relying on full identification for every transaction, we can instead implement 
+solutions that enable Users to prove only what is strictly necessary—**without revealing who they are**. 
+This aligns directly with the commitments laid out in the **EUDI framework**: access to digital 
+services must be **privacy-protective by design** (recital 4), supported by **privacy-enhancing technologies** 
+(recital 14), and uphold the principle of **unobservability** (recital 32).
+In this light, **Article 5a(16)(b)** provides a clear obligation: when attributes are presented 
+together, this must be done in a way that avoids unnecessary identification of the User. 
+Instead, **privacy-preserving combined presentation** opens the door to new possibilities. It enables 
+the transition of many real-world processes—currently performed under full identification—into more private 
+digital equivalents. Consider, for example, eligibility checks for educational programs. A student should
+ be able to prove they reside in a particular city and have qualifying grades **without revealing their name, gender, or exact address**.
+The same logic applies more broadly: renting a car or a bicycle, or purchasing restricted goods like alcohol, 
+often requires only proof of eligibility—not identity. With the right mechanisms in place, 
+we can **minimize data exposure while maintaining trust** in the transaction.
+
 
 ### 3.1 Use Cases 
 
@@ -103,14 +120,18 @@ from different attestations.
 
 A university evaluating prospective students may request a digital presentation containing:
 
-- **Personal identification** (from a PID),
+- **Citizenship or permanent residency in the European Union** (PID)
 - **Academic credentials** (from diploma or qualification attestations),
 - **Work or research experience** (from employment attestations or other EAAs).
 
 These attributes typically originate from different issuers and must be validated as 
 belonging to the same applicant. A combined presentation enables the university to 
 efficiently pre-screen candidates based on custom admission criteria, while avoiding 
-the processing of unnecessary data.
+the processing of unnecessary data. If the evaluation is positive and the student is 
+deemed admissable to the study they desire to follow, the registration can start, 
+in which case the identification information can be requested in a new, combined presentation. 
+This shows how secure combined presentation is a privacy preserving technology that 
+can for example prevent discrimination, e.g., based on the cultural origin of a last name.
 
 #### **Professional Licensing**
 
@@ -152,15 +173,22 @@ included in a presentation originate from attestations that refer to the same
 User include the following:
 
 - **Relying Party-Specific Identifiers**: Unique identifiers assigned by the Relying 
-Party—such as customer or contract numbers—that can be used to associate multiple attestations with the same User.
+Party—such as customer or contract numbers—that can be used to associate multiple attestations 
+with the same User.
+
+- **Session-Based Binding**: It can be assumed that attributes presented in a single 
+presentation response are belonging to the same User. 
 
 - **Attribute-Based Binding**: Attestations may include a shared unique identifier 
-(e.g., a PID number), which can serve as a binding reference across different attestations.
+(e.g., a PID number), which can serve as a binding reference across different attestations,
+or redundant person identification data (such as name and date of birth), which can be used 
+to related attestations to each other and to person, analogous to the present-day process, 
+based on paper documents
 
 - **Issuer-Attested Binding**: An Issuer may issue a dedicated attestation to the Wallet 
 Unit explicitly confirming that two or more attestations relate to the same entity.
 
-- **Cryptographic Binding**: The Wallet Unit generates a Proof of Association (PoA) 
+- **Cryptographic Binding**: The Wallet Unit generates a cryptographic binding
 demonstrating that the private keys associated with the involved 
 attestations are managed by the same WSCD.
 
@@ -182,29 +210,36 @@ The **validity period** of a combined presentation shall be determined by the
 Although individual attributes may not be personally identifying or trackable on 
 their own, their **combination across attestations** may create a **unique tracking vector**. 
 
-### 3.4 Proofs of Association (PoA)
-A **Proof of Association (PoA)** is an envisioned cryptographic mechanism that allows 
+Additionally, **Relying Party-Specific Identifiers** and **Attribute-Based Binding** may 
+lead to the inclusion of attributes in an attestation that reveal more information 
+about the User than necessary (e.g., the User’s PID number). To mitigate this, 
+selective disclosure mechanisms SHALL be used to conceal such attributes when 
+they are not required for the specific transaction.
+
+### 3.4 Cryptographic Binding of attestation
+This is an envisioned cryptographic mechanism that allows 
 a Wallet Unit to prove that the private keys corresponding to two (or more) public keys 
 are managed by the same WSCD.
 
-PoA can be used during attestation issuance, e.g., to prove that the public key 
+Such a mechanisms can be used during attestation issuance, e.g., to prove that the public key 
 included in a PID and the public key to be embedded in a newly requested attestation 
 are both managed by the same WSCD, as well as, during presentation, e.g.,   
 to prove that the public keys associated with two (or more) device-bound 
 attestations are managed by the same WSCD.
 
-A PoA offers the following advantages
+This mechanism offers the following advantages
 
 - **Simplified signature process**:  
   Proving possession of one of the private keys can be interpreted as proof of possession 
   for all associated keys, reducing the need for multiple presentation signatures.
 
 - **Privacy-preserving correlation**:  
-  Attestations can be linked without disclosing identifying attributes that may 
-  lead to tracking. For example, including a PID number across multiple attestations 
-  could enable linking; PoA avoids this by offering cryptographic correlation.
+  Attestations can be linked without using identifying attributes that may 
+  lead to tracking if not properly hidden during presentation. For example, including 
+  a PID number in attestations could enable linking; PoA avoids this by 
+  offering cryptographic correlation.
 
-A PoA **does not, by itself, guarantee** that two attestations belong to the same User. 
+This mechanism **does not, by itself, guarantee** that two attestations belong to the same User. 
 For such assurance, a Provider must ensure that the device to which an attestation 
 is bound is indeed controlled by the User to whom the attestation refers.
  
@@ -214,28 +249,41 @@ is bound is indeed controlled by the User to whom the attestation refers.
 Topic 18 will be modified to capture the text of sections 3.3 - 3.4
 
 ### 4.1 High-Level Requirements to be added to Annex 2
+The following requirements will be added in Topic 18
 
-### REQUIREMENT 1
-A Proof of Association scheme SHALL rely solely on algorithms standardised by a standardisation 
+### REQUIREMENT ACP_10
+A Cryptographic Binding of attestations scheme SHALL rely solely on algorithms standardised by a standardisation 
 organisation recognised by the Commission or in a standard recognised by the Commission.
 
-### REQUIREMENT 2
-A Proof of Association scheme SHALL enable a proof that two or more public keys, 
+### REQUIREMENT ACP_11
+A Cryptographic Binding of attestations scheme SHALL enable a proof that two or more public keys, 
 each embedded in a separate device-bound attestation, are managed by the same WSCD.
 
-### REQUIREMENT 3
-A Proof of Association scheme MAY be implemented using a Zero-Knowledge Proof mechanism 
+### REQUIREMENT ACP_12
+A Cryptographic Binding of attestations scheme MAY be implemented using a Zero-Knowledge Proof mechanism 
 that satisfies the requirements specified in Topic G.
 
-### REQUIREMENT 4
-A Proof of Association scheme SHALL be usable in attestation issuance flow as well as in
+### REQUIREMENT ACP_13
+A Cryptographic Binding of attestations scheme SHALL support attestation issuance flow as well as 
 both remote and proximity presentation flows.
+
+### REQUIREMENT ACP_14
+An Attribute Schema Provider MAY specify an attribute in an Attestation Rulebook that MAY be issued
+by the Attestation Provider to indicate whether a Cryptographic Binding of attestations scheme
+was used during attestation issuance. 
+
+### REQUIREMENT ACP_15
+During issuance of an attestation, an Attestation Provider MAY be able to request 
+that the private key for the new attestation is managed by the same WSCD as the private 
+key of a PID or another attestation already existing on the Wallet Unit, provided 
+that the Attestation Provider has verified during the issuance process that the new 
+attestation indeed belongs to the User of that existing PID or attestation.
 
 
 ### 4.2 High-Level Requirements to be changed
 Requirements (ACP_01 - ACP_09) will be removed. Requirements
 ACP_01 and ACP_02 are already covered by the requirements set in Topic 1. The removal of 
-requirements ACP_03- ACP_09 is justified by the fact that they rely on cryptographic 
+requirements ACP_03 - ACP_09 is justified by the fact that they rely on cryptographic 
 mechanisms that are currently unavailable or not sufficiently mature for practical deployment. 
 As these requirements cannot be fulfilled in a secure and reliable manner with today’s technology, 
 their inclusion would impose unrealistic expectations on implementers. Instead, alternative 
