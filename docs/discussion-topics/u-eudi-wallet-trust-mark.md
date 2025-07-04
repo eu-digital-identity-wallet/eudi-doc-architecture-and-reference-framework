@@ -5,6 +5,7 @@
 | `0.1`   | 21.05.2025 | Initial version                                                            |
 | `0.2`   | 03.06.2025 | Updated version after the first session                                    |
 | `0.3`   | 05.06.2025 | Updated version after the second session                                   |
+| `1.0`   | 02.07.2025 | Final version for publication and inclusion in ARF Release 2.4             |
 
 [GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/536)
 
