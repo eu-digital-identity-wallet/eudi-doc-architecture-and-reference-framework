@@ -2981,7 +2981,7 @@ Digital Currencies.</p>
 their rights and obligations under social security legislation in the EU.
 Examples include:</p>
 <ul>
-<li><strong>Portable Document (“PDA1”)</strong> This is a statement of applicable legislation
+<li><strong>Portable Document ("PDA1")</strong> This is a statement of applicable legislation
 which is useful to prove that a person pays social contributions in another EU
 country, for example if they are a posted worker or work in several countries at
 the same time.</li>
@@ -4884,17 +4884,25 @@ measures, a fraudulent EAA Provider may be able to issue types of QEAAs,
 PuB-EAAs or EAAs that it is not legally entitled to issue. To prevent this, a
 Wallet Unit or Relying Party may query the applicable register, as described in
 the previous bullet. In addition, the applicable Rulebook (see <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>)</li>
-<li>For PID Providers, their entitlement to issue PIDs follows already from the fact that their trust anchors are included in the PID Provider Trusted List; see <a href="#6324-pid-provider-or-attestation-provider-trust-anchors-are-included-in-a-trusted-list">Section 6.3.2.4</a>.</li>
-<li>For QEAA Providers, no checking of entitlement (apart from the fact that they are a QEAA) is necessary, since QEAA Providers are trusted by other actors in the EUDI Wallet
-ecosystem to not fraudulently issue attestations that they are not legally
-entitled to issue. This trust is warranted since QEAA Providers operate
-within a regulated framework and are regularly audited.</li>
-<li>For PuB-EAA Providers, checking of entitlement may be necessary, since the legal and regulatory framework within which they operate is different from that of QEAAs. To verify the entitlements of an PuB-EAA Provider it is interacting with, a Wallet Unit or Relying Party can query the registry of the Registrar mentioned in the access certificate of the PuB-EAA Provider.</li>
-<li>For non-qualified EAA Providers, checking of entitlement is necessary, since they are unregulated
-and may not be completely trustworthy. Without additional measures, a fraudulent
-EAA Provider may be able to issue types of QEAAs, PuB-EAAs or EAAs
-that it is not legally entitled to issue. To prevent this, a Wallet Unit or Relying Party may query the applicable register, as described in the previous bullet. In addition, the applicable
-Rulebook (see <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>)
+<li>For PID Providers, their entitlement to issue PIDs follows already from the
+fact that their trust anchors are included in the PID Provider Trusted List; see
+<a href="#6324-pid-provider-or-attestation-provider-trust-anchors-are-included-in-a-trusted-list">Section 6.3.2.4</a>.</li>
+<li>For QEAA Providers, no checking of entitlement (apart from the fact that they
+are a QEAA) is necessary, since QEAA Providers are trusted by other actors in
+the EUDI Wallet ecosystem to not fraudulently issue attestations that they are
+not legally entitled to issue. This trust is warranted since QEAA Providers
+operate within a regulated framework and are regularly audited.</li>
+<li>For PuB-EAA Providers, checking of entitlement may be necessary, since the
+legal and regulatory framework within which they operate is different from that
+of QEAAs. To verify the entitlements of an PuB-EAA Provider it is interacting
+with, a Wallet Unit or Relying Party can query the registry of the Registrar
+mentioned in the access certificate of the PuB-EAA Provider.</li>
+<li>For non-qualified EAA Providers, checking of entitlement is necessary, since
+they are unregulated and may not be completely trustworthy. Without additional
+measures, a fraudulent EAA Provider may be able to issue types of QEAAs,
+PuB-EAAs or EAAs that it is not legally entitled to issue. To prevent this, a
+Wallet Unit or Relying Party may query the applicable register, as described in
+the previous bullet. In addition, the applicable Rulebook (see <a href="../annexes/annex-2/annex-2-high-level-requirements/#a2312-topic-12---attestation-rulebooks">Topic 12</a>)
 may define alternative mechanisms allowing a Wallet Unit or Relying Party to
 verify an EAA Provider's entitlements.</li>
 </ul>
@@ -6391,7 +6399,7 @@ such an architecture, the Wallet Unit requests the re-issuance of a new PID or
 attestation after it has received a request for that PID or attestation from a
 Relying Party. Such a PID or attestation is very short-lived and is used only
 once.</p>
-<p>The conditions on User awareness and authentication discussed in <a href="#66522-re-issuance-to-limit-relying-party-linkability">Section 6.6.5.2.2</a>
+<p>The conditions on User awareness and authentication discussed in <a href="#6652-pid-or-attestation-re-issuance">Section 6.6.5.2.2</a>
 are also valid for a synchronous re-issuance process.</p>
 <h6 id="6653-pid-or-attestation-revocation">6.6.5.3 PID or attestation revocation</h6>
 <p>PID or attestation management includes ensuring that PIDs and attestations can
@@ -6475,9 +6483,9 @@ scheme is available for the cybersecurity certification of ICT products, parts,
 or components for products. Upcoming CSA-based schemes include
 <a href="https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en">EUCS</a>
 &amp; <a href="https://certification.enisa.europa.eu/about-eu-certification/developing-certification-schemes_en">EU5G</a>.
-Additionally, other existing or upcoming schemes​ include schemes based on
-FITCEM (EN 17640)​, national schemes such as on remote identity verification, or
-other private schemes (e.g. for mobile devices and apps)​. For harmonisation of
+Additionally, other existing or upcoming schemes include schemes based on
+FITCEM (EN 17640), national schemes such as on remote identity verification, or
+other private schemes (e.g. for mobile devices and apps). For harmonisation of
 functional requirements, the Commission Implementing Regulations (CIRs) adopted
 under the <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32024R1183">European Digital Identity Regulation</a>
 article 5(a) are referenced. For harmonisation of certification requirements,
@@ -6539,9 +6547,9 @@ certification, digital wallets, electronic identification and trust services.
 The first step is to have a candidate scheme ready for public consultation and
 submitted for feedback of the European Cybersecurity Certification Group or
 <a href="https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-certification-group">ECCG</a>.
-The ECCG’s opinion serves as advisory input to ensure the candidate scheme
+The ECCG's opinion serves as advisory input to ensure the candidate scheme
 aligns to EU cybersecurity objectives, standards and regulatory requirements.
-Although the ECCG’s opinion is not binding, it will hold significant influence,
+Although the ECCG's opinion is not binding, it will hold significant influence,
 as it reflects the collective expertise of national cybersecurity authorities,
 aiming to harmonise cybersecurity certification practices across Member States.
 Based on this input, the candidate scheme might be updated further. After
@@ -6574,7 +6582,7 @@ Certification Bodies (CBs). When establishing their certification schemes,
 scheme owners will perform a risk assessment to refine and complement the risks
 and threats listed in the register with those specific to their architecture,
 and consider how the applicable risks and threats can be appropriately treated.
-Wallet Providers will complement the scheme’s risk assessment to identify any
+Wallet Providers will complement the scheme's risk assessment to identify any
 risks and threats specific to their implementation and propose appropriate
 mitigation measures for evaluation by the certification body.</p>
 <h4 id="742-high-level-risks-and-threats">7.4.2 High-level risks and threats</h4>
@@ -6703,7 +6711,7 @@ approach to trust and verification within the EUDI Wallet ecosystem.</p>
 attributes from a Wallet Unit without being registered or authorised to
 do so. This risk is mitigated mainly by three measures:</p>
 <ol>
-<li><strong>Selective Disclosure and User Control</strong> – The attestation formats and
+<li><strong>Selective Disclosure and User Control</strong> - The attestation formats and
 protocols specified in [ISO/IEC 18013-5] and [SD-JWT VC] (in combination with
 [OpenID4VP]) enable selective disclosure of attributes. This allows a Relying
 Party to specify which attributes within an attestation it wishes to receive
@@ -6712,7 +6720,7 @@ Additionally, selective disclosure ensures that the User retains control over
 their data, as they can approve or deny the presentation of requested
 attributes. More details on selective
 disclosure and User approval can be found in <a href="#6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes">Section 6.6.3.5</a>.</li>
-<li><strong>Mandatory Relying Party Registration of Intended Requested Attributes</strong> – The
+<li><strong>Mandatory Relying Party Registration of Intended Requested Attributes</strong> - The
 [European Digital Identity Regulation] mandates that each Relying Party register
 the attributes it intends to request from Users. According to <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202402982">CIR 2024/2982</a>,
 these registered attributes must be included in a Relying Party registration
@@ -6721,7 +6729,7 @@ and inform the User accordingly. This transparency ensures that Users can make
 an informed decision about whether to approve or deny the presentation of the
 requested attributes.
 More details on this requirement can be found in <a href="#6633-wallet-unit-allows-user-to-verify-that-relying-party-does-not-request-more-attributes-than-it-registered">Section 6.6.3.3</a>.</li>
-<li><strong>Attestation Provider Disclosure Policy Enforcement</strong> – The [European
+<li><strong>Attestation Provider Disclosure Policy Enforcement</strong> - The [European
 Digital Identity Regulation] also mandates that Attestation Providers can embed
 a disclosure policy within their attestations. This policy may include rules
 governing whether the Attestation Provider approves the presentation of this

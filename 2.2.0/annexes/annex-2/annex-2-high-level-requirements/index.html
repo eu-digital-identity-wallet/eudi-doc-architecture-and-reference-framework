@@ -523,7 +523,7 @@ over the presentation of personal attributes from PIDs and attestations.</p>
 </tr>
 <tr>
 <td>OIA_12</td>
-<td>For both proximity and remote presentation flows, a Relying Party SHALL validate the signature of a PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with [<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</td>
+<td>For both proximity and remote presentation flows, a Relying Party SHALL validate the signature of a PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with [<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</td>
 </tr>
 <tr>
 <td>OIA_13</td>
@@ -765,7 +765,7 @@ of the evaluation of an embedded disclosure policy, if present, see
 </tr>
 <tr>
 <td>RPA_04</td>
-<td>For the verification of Relying Party Instance access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of Relying Party Access Certificate Authorities of all Member States. <em>Note: For more information about Relying Party Access Certificate Authorities, please see [<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</em></td>
+<td>For the verification of Relying Party Instance access certificates, a Wallet Unit SHALL accept the trust anchors in the Trusted List(s) of Relying Party Access Certificate Authorities of all Member States. <em>Note: For more information about Relying Party Access Certificate Authorities, please see [<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</em></td>
 </tr>
 <tr>
 <td>RPA_05</td>
@@ -824,7 +824,7 @@ their providers. It also contains HLRs relating to the (possible) checking of
 the revocations status of a PID or attestation by a Relying Party.</p>
 <p>Note: This Topic does not pertain to access certificates for Relying Parties,
 PID Providers, or Attestation Providers as discussed in
-[<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].
+[<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].
 Neither does it apply to any intermediate certificates establishing trust
 between these certificates and the respective trust anchors. These access
 certificates are part of a Public Key Infrastructure, and rules for revoking
@@ -1160,7 +1160,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_07</td>
-<td>After a Wallet Unit receives a PID from a PID Provider, it SHALL validate the signature of the PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with <a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>. <em>Note: This signature validation may not be useful in architectures where the Wallet Provider is also the PID Provider and the validation of the PID signature would be done by the same component (namely, a remote HSM) that created the signature. However, in such a situation, additional measures SHALL be taken to ensure that any errors in the PID issuance process will be detected.</em></td>
+<td>After a Wallet Unit receives a PID from a PID Provider, it SHALL validate the signature of the PID using a trust anchor provided in a PID Provider Trusted List made available in accordance with <a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>. <em>Note: This signature validation may not be useful in architectures where the Wallet Provider is also the PID Provider and the validation of the PID signature would be done by the same component (namely, a remote HSM) that created the signature. However, in such a situation, additional measures SHALL be taken to ensure that any errors in the PID issuance process will be detected.</em></td>
 </tr>
 <tr>
 <td>ISSU_08</td>
@@ -1243,7 +1243,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_19</td>
-<td>For the verification of a WUA, a PID Provider SHALL accept the trust anchors in the Wallet Provider Trusted List it needs. <em>Notes: - The Wallet Provider Trusted List is explained in [<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>]. - It is not mandatory for a PID Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which Trusted Lists they need to subscribe to.</em></td>
+<td>For the verification of a WUA, a PID Provider SHALL accept the trust anchors in the Wallet Provider Trusted List it needs. <em>Notes: - The Wallet Provider Trusted List is explained in [<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>]. - It is not mandatory for a PID Provider to accept all Wallet Provider Trusted Lists, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which Trusted Lists they need to subscribe to.</em></td>
 </tr>
 <tr>
 <td>ISSU_19a</td>
@@ -1322,7 +1322,7 @@ requirements related to PID and attestation issuance.</p>
 </tr>
 <tr>
 <td>ISSU_28</td>
-<td>For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider Trusted List. <em>Note: The Wallet Provider Trusted List is explained in [<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</em></td>
+<td>For the verification of a WUA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider Trusted List. <em>Note: The Wallet Provider Trusted List is explained in [<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>].</em></td>
 </tr>
 <tr>
 <td>ISSU_29</td>
@@ -2599,7 +2599,7 @@ above mentioned entities.</p>
 <tbody>
 <tr>
 <td>Reg_10</td>
-<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31----notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>] issues an access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers, and Relying Parties registered in one of the Member State's registries.</td>
+<td>A Member State SHALL ensure that an Access Certificate Authority notified according to [<a href="#a2331-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>] issues an access certificate to all PID Providers, QEAA Providers, PuB-EAA Providers, non-qualified EAA Providers, and Relying Parties registered in one of the Member State's registries.</td>
 </tr>
 <tr>
 <td>Reg_11</td>
