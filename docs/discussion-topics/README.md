@@ -87,7 +87,7 @@ Iteration is planned from 20 August 2025 to 26 November 2025 covering the follow
 
 | Topic | Title | |
 |-------|-------|--|
-| O | [Catalogues for Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
+| O | [Catalogues for Attestations](o-catalogues-for-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/345) |
 | P | [Secure Cryptographic Interface between the Wallet Instance and the WSCA](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/346) |
 | Q | [Interface between the User and the Wallet Instance](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/347) |
 | R | [Authentication of the User to the device](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/348) |
