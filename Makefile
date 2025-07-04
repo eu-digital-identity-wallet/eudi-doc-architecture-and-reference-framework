@@ -20,7 +20,7 @@
 
 # Source Files
 MAIN_DOC       := docs/architecture-and-reference-framework-main.md
-ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3]/*.md)
+ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3,5]/*.md)
 SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 
 # Directories and Build Information
