@@ -1,0 +1,745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>EUDI Wallet – Design Guide - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eudi-wallet-design-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EUDI Wallet – Design Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../discussion-topics/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eudi-wallet-design-guide">EUDI Wallet – Design Guide</h1>
+<p><em>For the EUDI Wallet ecosystem</em></p>
+<p><em>November 2024</em>
+<em>v1.1.0</em></p>
+<p><em>This is a working document that holds no legal value and does not reflect any common agreement or position of the co-legislators. It presents a state-of-play of ongoing work of the eIDAS Expert Group. This document is being continuously updated and should not be considered final.</em></p>
+<h2 id="1-introduction"><strong>1 Introduction</strong></h2>
+<h3 id="11-purpose-of-the-design-guide"><strong>1.1 Purpose of the design guide</strong></h3>
+<p>This design guide outlines the principles, guidelines, and best practices for creating consistent and effective design solutions for the EUDI wallet. The purpose of a design guide is to ensure that all design work produced by a team or across different teams is consistent, coherent, adheres to certain standards and aligns with the overall goals and values of the project.</p>
+<p>As many sections will be subject to national implementation this document includes guidelines to assist in creating a user interface that is useful, usable, and enjoyable to use. It also provides specific instructions and tips for creating accessible and inclusive designs.</p>
+<hr />
+<h3 id="12-boundaries-of-the-design-guide"><strong>1.2 Boundaries of the design guide</strong></h3>
+<p>It shall be highlighted that this design guide does not aim to provide detailed design elements to be adopted by national EUDI Wallet implementations. Overall, the objective of the EUDI Wallet Design Guide is to:</p>
+<ul>
+<li>Identify key design principles and provide guidelines against these design principles;</li>
+<li>Identify specific areas of the EUDI Wallet for which design principles are considered
+    important and expand on those in future iterations of the EUDI Wallet Design Guide.</li>
+</ul>
+<p>The design guidelines listed in this document shall not be considered as mandatory towards the implementations of the EUDI Wallet, but rather stand as recommendations to ensure a common user experience across the different national implementations.</p>
+<hr />
+<h3 id="13-importance-of-design-consistency"><strong>1.3 Importance of design consistency</strong></h3>
+<p>UI (User Interface) consistency is important because it provides a better user experience and helps users navigate a mobile application more easily. When elements such as icons, colours, and fonts are consistent throughout an application, users can quickly learn how to use it and understand the application's intention.</p>
+<p><strong>Familiarity</strong>:</p>
+<p>Consistent UI elements give users a sense of familiarity and they can feel more comfortable using the application. If the user interface changes too often, it can cause confusion and frustration.</p>
+<p><strong>Efficiency</strong>:</p>
+<p>Consistency in the user interface can make navigation easier and more efficient. Users will know where to find the features they need, and they reduce cognitive load.</p>
+<p><strong>Accessibility</strong>:</p>
+<p>Consistent UI elements make it easier for users with disabilities to navigate the application. Users with visual impairments, for example, can more easily use screen readers when consistent UI elements are used.</p>
+<p>Overall, UI consistency is an essential aspect of good user interface design. It makes the application more user-friendly, efficient, and accessible.</p>
+<hr />
+<h3 id="14-overview-of-design-criteria"><strong>1.4 Overview of design criteria</strong></h3>
+<p>Twelve design criteria have been selected which we go over in details in 'Section 2'. The first 10 are the usability heuristics from the <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen Norman group</a>. They are called "heuristics"  because they are broad rules of thumb and not specific usability guidelines. These are used to evaluate a User Interface, so it is good to have them as guiding principles during the design phase as well. These 10 principles are:</p>
+<ul>
+<li>Visibility of system status</li>
+<li>Match between system and the real world</li>
+<li>User control and freedom</li>
+<li>Consistency and standards</li>
+<li>Error prevention</li>
+<li>Recognition rather than recall</li>
+<li>Flexibility and efficiency of use</li>
+<li>Aesthetic and minimalist design</li>
+<li>Help users recognize, diagnose, and recover from errors</li>
+<li>Help and documentation</li>
+</ul>
+<p>An additional 2 were added to address these important areas:</p>
+<ul>
+<li>Accessibility</li>
+<li>Writing</li>
+</ul>
+<hr />
+<h2 id="2-design-criteria"><strong>2 Design criteria</strong></h2>
+<pre><code>Disclaimer: The design guidelines listed in this document shall not be considered as mandatory towards the implementations of the EUDI Wallet, but rather stand as recommendations to ensure a common user experience across the different national implementations. Any design elements included in the following chapter are indicative and are only used to better illustrate the corresponding design criteria.
+</code></pre>
+<hr />
+<h3 id="21-visibility-of-system-status"><strong>2.1 Visibility of system status</strong></h3>
+<pre><code>The design should always keep users informed about what is going on through appropriate feedback within a reasonable amount of time.
+</code></pre>
+<h4 id="211-indicative-examples"><strong>2.1.1 Indicative examples</strong></h4>
+<p><strong>Document management</strong></p>
+<p>When adding  or removing a document the application should let the user know whether the process was completed successfully of not.</p>
+<p><img alt="Document Management example showing success and failure states" src="../images/5.01/Figure_1_Document_Management_example.png" /></p>
+<p><em>Figure 1: Document Management example</em></p>
+<p><br></p>
+<p><strong>Interactive elements</strong></p>
+<p>Interactive elements such as buttons must have a pressed and focused state.</p>
+<p><img alt="Interactive Elements example showing button states" src="../images/5.01/Figure_2_Interactive_Elements_example.png" /></p>
+<p><em>Figure 2: Interactive Elements example</em></p>
+<hr />
+<h3 id="22-match-between-system-and-the-real-world"><strong>2.2 Match between system and the real world</strong></h3>
+<pre><code>The design should speak the users' language. Use words, phrases, and concepts familiar to the user, rather than internal jargon. Follow real-world conventions, making information appear in a natural and logical order.
+</code></pre>
+<h4 id="221-indicative-examples"><strong>2.2.1 Indicative examples</strong></h4>
+<p><strong>Document representation</strong></p>
+<p>Documents should be (where possible) represented in the UI by what is familiar to the user instead of generic / ambiguous icons.</p>
+<p><img alt="Document Presentation Example showing realistic document representations" src="../images/5.01/Figure_3_Document_Presentation_Example.png" />
+<em>Figure 3: Document Presentation Example</em></p>
+<p><br></p>
+<p><strong>Labels</strong></p>
+<p>Stay away from technical terms and jargon. Use labels that people use in their everyday life.</p>
+<p><img alt="Labels example showing user-friendly terminology" src="../images/5.01/Figure_4_Labels_example.png" />
+<em>Figure 4: Labels example</em></p>
+<p><br></p>
+<p><strong>Icons</strong></p>
+<p>People spend most of their time in other apps/websites. Use icons that are familiar and clear to them instead on ambiguous ones.</p>
+<p><img alt="Icons Example showing clear vs ambiguous icons" src="../images/5.01/Figure_5_Icons_Example.png" />
+<em>Figure 5: Icons Example</em></p>
+<hr />
+<h3 id="23-user-control-and-freedom"><strong>2.3 User control and freedom</strong></h3>
+<pre><code>Users often perform actions by mistake. They need a clearly marked &quot;emergency exit&quot; to leave the unwanted action without having to go through an extended process.
+</code></pre>
+<h4 id="231-indicative-examples"><strong>2.3.1 Indicative examples</strong></h4>
+<p><strong>Undo &amp; Redo</strong></p>
+<p>The third principle talks about giving the freedom to the user to navigate and perform actions</p>
+<ul>
+<li>for instance, the freedom to undo or redo any accidental moves</li>
+</ul>
+<p><img alt="Undo and Redo Example showing action reversibility" src="../images/5.01/Figure_6_Undo_and_Redo_Example.png" />
+<em>Figure 6: Undo and Redo Example</em></p>
+<hr />
+<h3 id="24-consistency-and-standards"><strong>2.4 Consistency and standards</strong></h3>
+<pre><code>Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions.
+</code></pre>
+<p>App should follow interface standards and platform conventions. Conventions have been established that users are familiar with. This knowledge should be capitalised upon to make the app have a higher level of intuitiveness.</p>
+<p>E.g. Position of menu, Navigation bar, Search location</p>
+<hr />
+<h3 id="25-error-prevention"><strong>2.5 Error prevention</strong></h3>
+<pre><code>Good error messages are important, but the best designs carefully prevent problems from occurring in the first place. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action.
+</code></pre>
+<h4 id="251-indicative-examples"><strong>2.5.1 Indicative examples</strong></h4>
+<p><strong>Confirmation dialogs</strong></p>
+<p>For accidental actions such as miss-clicks</p>
+<p><img alt="Confirmation Dialogs Example showing user verification before action" src="../images/5.01/Figure_7_Confirmation_Dialogs_Example.png" />
+<em>Figure 7: Confirmation Dialogs Example</em></p>
+<p><br></p>
+<p><strong>Flexible inputs</strong></p>
+<p>Flexible inputs allow people to answer questions the way they want instead of the way a database requires them to. But these input fields come with a promise to users: "whatever format you choose, we'll take it." For example, a phone number can be entered in various ways by different people. The field can either format it accordingly on each own or provide a hint of the expected format instead of producing in-line errors or result in guesswork.</p>
+<p><img alt="Flexible Inputs Example showing different input format acceptance" src="../images/5.01/Figure_8_Flexible_Inputs_Example.png" />
+<em>Figure 8: Flexible Inputs Example</em></p>
+<hr />
+<h3 id="26-recognition-rather-than-recall"><strong>2.6 Recognition rather than recall</strong></h3>
+<pre><code>Minimize the user's memory load by making elements, actions, and options visible. The user should not have to remember information from one part of the interface to another. Information required to use the design (e.g. field labels or menu items) should be visible or easily retrievable when needed.
+</code></pre>
+<hr />
+<h3 id="27-flexibility-and-efficiency-of-use"><strong>2.7 Flexibility and efficiency of use</strong></h3>
+<pre><code>Offer shortcuts — quick ways to get one or more tasks done with your apps. They should speed up the interaction with an app for the expert user
+</code></pre>
+<h4 id="271-indicative-examples"><strong>2.7.1 Indicative examples</strong></h4>
+<p>It's possible to improve the efficiency of interaction with an app for experienced users with ways that will allow them to complete frequent actions faster.</p>
+<p><strong>Bookmarked or Recently used documents on homepage</strong></p>
+<p>Users can customise their home screens with the documents most relevant for them.</p>
+<hr />
+<h3 id="28-aesthetic-and-minimalist-design"><strong>2.8 Aesthetic and minimalist design</strong></h3>
+<pre><code>Interfaces should not contain information which is irrelevant or rarely needed. Every extra unit of information in an interface competes with the relevant units of information and diminishes their relative visibility. Use whitespace in harmony with your content.
+</code></pre>
+<hr />
+<h3 id="29-help-users-recognize-diagnose-and-recover-from-errors"><strong>2.9 Help users recognize, diagnose, and recover from errors</strong></h3>
+<pre><code>Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution.
+</code></pre>
+<h4 id="291-indicative-examples"><strong>2.9.1 Indicative examples</strong></h4>
+<p><img alt="Error Messages Examples showing clear problem indications and solutions" src="../images/5.01/Figure_9_Error_Messages_Examples.png" />
+<em>Figure 9: Error Messages Examples</em></p>
+<hr />
+<h3 id="210-help-and-documentation"><strong>2.10 Help and documentation</strong></h3>
+<pre><code>It's best if the system doesn't need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks.
+</code></pre>
+<h4 id="2101-indicative-examples"><strong>2.10.1 Indicative examples</strong></h4>
+<p>This can come in the form of App-onboarding, tutorials, F.A.Q.s or a Help section.</p>
+<hr />
+<h3 id="211-accessibility"><strong>2.11 Accessibility</strong></h3>
+<p>An estimated 100 million people in the EU have some form of disability, and so represent an important segment of its population and a large user group.</p>
+<p><em>With Europe's aging population this number is only going to rise. Keeping this in mind, it is important to distinguish accessibility from disabilities. Accessibility in this case, refers to making a website accessible to users who due to their temporary or permanent condition, their age, or their situation may face issues with accessing website content. For example, individuals with reduced manual dexterity due to injury or neurological conditions (permanent), or with an injured arm (temporary), or a new parent holding a baby (situational) all experience difficulties that may impede movement, coordination, or sensation or what is most commonly referred to as motor disability. Therefore, it concerns a much wider audience that one may initially think. The definition of disability differs as the term disability refers to 'long- term  physical, mental, intellectual or sensory impairments which in interaction with various barriers may hinder a person's full and effective participation in society on an equal basis with others. By delivering the user experience in a way that is accessible to people with the aforementioned needs, we are providing equal access to information for all citizens regardless of their situation or condition</em>.</p>
+<hr />
+<h4 id="2111-layout"><strong>2.11.1 Layout</strong></h4>
+<p>Aim to have at least the main controls for the app at the bottom half of the screen when they are easily reachable with the thumb when operating the phone with one hand. The top half should be used for displaying information, documents, QR codes etc.</p>
+<p><img alt="Layout diagram showing thumb reachable areas on mobile screen" src="../images/5.01/Figure_10_Layout.png" />
+<em>Figure 10: Layout</em></p>
+<hr />
+<h4 id="2112-target-sizes"><strong>2.11.2 Target sizes</strong></h4>
+<p>A target size is the area that can be activated in order to interact with an element. Individuals with dexterity challenges may find it more challenging to utilize a website if the target size is smaller. In this section, we'll examine methods (<a href="https://developer.apple.com/design/human-interface-guidelines/layout">Apple's HIG</a> and <a href="https://m3.material.io/foundations/layout/understanding-layout/overview">Google's Material</a>) for generating target sizes that are user-friendly, uniform, and properly spaced. A person's ability to interact with smaller controls may be impacted by a disability or a combination of disabilities that affect their motor movements and dexterity, as well as by the act of using a website while on the move, such as while walking or commuting.</p>
+<p><img alt="Target Sizes diagram showing recommended touch target dimensions" src="../images/5.01/Figure_11_Target_Sizes.png" />
+<em>Figure 11 : Target Sizes</em></p>
+<hr />
+<h4 id="2113-colour-contrast-guidelines"><strong>2.11.3 Colour contrast guidelines</strong></h4>
+<p>Text to background colour contrast should meet a 4.5:1 ratio.</p>
+<p>How to check: enter the hex codes for the foreground and background colours using: https://whocanuse.com/</p>
+<hr />
+<h4 id="2114-font-size-guidelines"><strong>2.11.4 Font size guidelines</strong></h4>
+<p>The UI should be designed to support up to x 2 the text size without breaking.</p>
+<hr />
+<h4 id="2115-animations"><strong>2.11.5 Animations</strong></h4>
+<p>Avoid adding flashing, blinking, and rotating animations on the background. Excessive screen movement with no mechanism to control can make it difficult for users to gather information.</p>
+<p>Animations and transitions should be:</p>
+<ul>
+<li><strong>Informative</strong> (Motion design informs users by highlighting relationships between elements,
+    action availability, and action outcomes.)</li>
+<li><strong>Focused</strong> (Motion focuses attention on what's important, without creating unnecessary
+    distraction.)</li>
+<li><strong>Expressive</strong> (Motion celebrates moments in user journeys, adds character to common
+    interactions, and can express a brand's style.)</li>
+</ul>
+<hr />
+<h4 id="2116-screen-readers"><strong>2.11.6 Screen readers</strong></h4>
+<p>Make sure you provide the relative support for screen readers. Consider how the reader is going to read the screen and place items accordingly for convenience. In case of having to read through a lot of content to get to the main controls, consider providing a skip button.</p>
+<hr />
+<h3 id="212-writing"><strong>2.12 Writing</strong></h3>
+<p>Text should be understandable by anyone, anywhere, regardless of their culture or language. UI text can make interfaces more usable and build trust. Text should be clear, accurate, and concise.</p>
+<h4 id="2121-write-in-the-present-tense"><strong>2.12.1 Write in the present tense</strong></h4>
+<p>Use the present tense to describe product behaviour. Avoid using the future tense as this usually requires later updates.</p>
+<p>Use the present tense to describe product behaviour. Avoid using the future tense to describe the way a product always acts. When you need to write in the past or future tenses, use simple verb forms. This may not be applicable to all languages; the overall goal is to be as concise as possible without compromising clarity.</p>
+<p><img alt="Example showing &quot;Document added&quot; text" src="../images/5.01/Document_added.png" /></p>
+<p>Write in the present tense.</p>
+<p><img alt="Example showing &quot;Document has been added&quot; text" src="../images/5.01/Document_has_been_added.png" /></p>
+<p>Don't write in different variations of the present tense, such as the present perfect tense.</p>
+<hr />
+<h4 id="2122-begin-with-the-objective"><strong>2.12.2 Begin with the objective</strong></h4>
+<p>When a phrase describes a goal and the action needed to achieve it, start the sentence with the goal.</p>
+<pre><code>To add a document, click +
+</code></pre>
+<p><img alt="Example showing &quot;To add a document, click +&quot; text" src="../images/5.01/To_add_a_document.png" /></p>
+<p>Start a statement with the objective ("to add a document") and end it with the user action
+("click + ").</p>
+<pre><code>Click + to add a document
+</code></pre>
+<p><img alt="Example showing &quot;Click + to add a document&quot; text" src="../images/5.01/Click_to_add_a_document.png" /></p>
+<p>Don't state the action the user takes ("Click + ") before the objective ("to add a document").</p>
+<hr />
+<h4 id="2123-avoid-combining-first-and-second-person"><strong>2.12.3 Avoid combining first and second person</strong></h4>
+<p>To avoid confusing the user, avoid using "me" or "my," and "you" or "your," in the same phrase.</p>
+<pre><code>Change your preferences in My Account
+</code></pre>
+<p><img alt="Example showing &quot;Change your preferences in My Account&quot; text" src="../images/5.01/Change_your_preferences_in_My_Account.png" /></p>
+<p>Don't refer to the user in both the second person and the first person within the same phrase.</p>
+<pre><code>Change your preferences in Account
+</code></pre>
+<p><img alt="Example showing &quot;Change your preferences in Account&quot; text" src="../images/5.01/Change_your_preferences_in_Account.png" /></p>
+<hr />
+<h2 id="3-eudi-wallet-design-considerations"><strong>3 EUDI Wallet – Design Considerations</strong></h2>
+<p>This section lists specific areas/features on which design considerations are deemed important to ensure a common user experience across the national implementations of the EUDI Wallets. It shall be noted that this list highlights specific areas which are prioritised as important but does not aim to be an exhaustive list.</p>
+<h3 id="31-user-authentication"><strong>3.1 User authentication</strong></h3>
+<ul>
+<li>Covering common user authentication aspects, e.g. PIN, biometrics etc.</li>
+<li>Exploring the balance between the corresponding security aspects comparing to the user friction points throughout the entire user flow (e.g. required only at the point of sharing data? Or at login as well?)</li>
+<li><em>Guidelines around 'user consent'</em> in data sharing scenarios (e.g. requesting user consent,
+    enforcing trust)</li>
+</ul>
+<hr />
+<h3 id="32-browsing-credentialsdocuments"><strong>3.2 Browsing credentials/documents</strong></h3>
+<ul>
+<li>Guidelines in relation to displaying a list of credentials/attestations in the EUDI Wallet</li>
+</ul>
+<hr />
+<h3 id="33-qr-code-presentation"><strong>3.3 QR code presentation</strong></h3>
+<ul>
+<li>Guidelines in relation to presenting the QR code for the corresponding proximity use cases</li>
+</ul>
+<hr />
+<h3 id="34-confirmationsummaryauthentication-results"><strong>3.4 Confirmation/Summary/Authentication results</strong></h3>
+<ul>
+<li>Guidelines in relation to the authentication results presentation, i.e. successful/unsuccessful identification and authentication</li>
+<li>Guidelines in relation to data transfer results for proximity sharing use cases, i.e. successful/unsuccessful data transfer)</li>
+<li>Covering guidelines related to the confirmation/summary results presented to the user</li>
+</ul>
+<hr />
+<h3 id="35-error-messages"><strong>3.5 Error Messages</strong></h3>
+<ul>
+<li>
+<p>Handling/Display of error messages in different scenarios</p>
+</li>
+<li>
+<p>Erroneous user credentials</p>
+</li>
+<li>
+<p>User is not authenticated.</p>
+</li>
+<li>
+<p>Document is considered invalid.</p>
+</li>
+<li>
+<p>Relying party is not considered trusted.</p>
+</li>
+<li>
+<p>Principles/guidelines on how these shall be presented/structured etc.</p>
+</li>
+</ul>
+<hr />
+<h3 id="36-privacysecurity-by-design"><strong>3.6 Privacy/Security by Design</strong></h3>
+<ul>
+<li>Covering applicability of privacy/security aspects in the data sharing process (e.g. visual representation _of 'password' field)</li>
+</ul>
+<hr />
+<h3 id="37-trust-mark"><strong>3.7 Trust Mark</strong></h3>
+<ul>
+<li>Establish trust through the use of the EUDI Wallet Trust Mark</li>
+<li>Applicability and placement in the corresponding sharing processes</li>
+</ul>
+<hr />
+<h3 id="38-notification-guidelines"><strong>3.8 Notification guidelines</strong></h3>
+<ul>
+<li>Guidelines in relation to displaying user notifications (where applicable) in the EUDI Wallet</li>
+</ul>
+<hr />
+<h2 id="4-conclusion"><strong>4 Conclusion</strong></h2>
+<p>In conclusion, this EUDI Wallet Design Guide document represents the first iteration of what intends to be a 'living' document, which will be further elaborated for the specificities of the EUDI Wallet functionalities, as listed in section 3 of the document. As such, it is recognized that there may be areas for further elaboration and analysis on which feedback and improvement suggestions from stakeholders is anticipated.</p>
+<p>Taking into consideration that the EUDI Wallet Design Guide shall be applicable for the national implementations of the EUDI Wallet, the boundaries of this document are set to common principles that shall be applicable to all national implementations. These shall be considered as recommendations to ensure a similar user experience across the different national implementations. By taking a collaborative approach and continuously improving upon this document, the aim is to create a EUDI Wallet Design Guide that assists in the national implementations, while at the same time meets the user expectations. We encourage stakeholders to review this EUDI Wallet Design Guide document thoroughly and kindly provide feedback that will assist if further shaping this design guide.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
