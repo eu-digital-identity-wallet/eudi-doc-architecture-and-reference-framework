@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.3.0] - 2025 - 07 - 04
+
+Changes:
+- added results of "Topic K - Combined presentation of Attestations"
+- processed comments on Relying Party Registrars, WUA compatibility issues against OID4VCI, some other comments from 1.8.0 and 1.10.0
+- fixed missing reference links to STS Roadmap issues
+- added a paragraph on accessibility
+- reflected the existence of the new Rulebook template
+
 ## [2.2.0] - 2025 - 06 - 20
 
 Changes:

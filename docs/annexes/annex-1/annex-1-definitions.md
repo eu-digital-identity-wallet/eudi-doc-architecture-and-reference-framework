@@ -78,6 +78,7 @@ contains the term as used in the ARF.
 | (Wallet-) Relying Party | A Relying Party that intends to rely upon Wallet Units for the provision of public or private services by means of digital interaction |
 | (Wallet-relying party) access certificate | A certificate for electronic seals or signatures authenticating and validating the (Wallet-) Relying Party, issued by a provider of wallet-relying party access certificates |
 | Provider of wallet-relying party access certificates (Access Certificate Authority, Access CA) | A natural or legal person mandated by a Member State to issue Relying Party access certificates to (Wallet-) Relying Parties registered in that Member State. |
+| Provider of (wallet-relying party) registration certificates | a natural or legal person mandated by a Member State to issue (wallet-relying party) registration certificates to (wallet-)relying parties registered in that Member State |
 | (Wallet-relying party) registration certificate | A data object that indicates the attributes the Relying Party has registered to intend to request from Users |
 
 ## A.4 Additional definitions used in the ARF
