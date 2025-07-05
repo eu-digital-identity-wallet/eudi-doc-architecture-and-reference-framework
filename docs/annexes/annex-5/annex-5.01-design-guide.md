@@ -111,7 +111,7 @@ An additional 2 were added to address these important areas:
 
 ## 2 Design criteria
 
-```
+```text
 Disclaimer: The design guidelines listed in this document shall not be
 considered as mandatory towards the implementations of the EUDI Wallet, but
 rather stand as recommendations to ensure a common user experience across the
@@ -124,7 +124,7 @@ corresponding design criteria.
 
 ### 2.1 Visibility of system status
 
-```
+```text
 The design should always keep users informed about what is going on through
 appropriate feedback within a reasonable amount of time.
 ```
@@ -150,7 +150,7 @@ _Figure 2: Interactive Elements example_
 
 ### 2.2 Match between system and the real world
 
-```
+```text
 The design should speak the users' language. Use words, phrases, and concepts
 familiar to the user, rather than internal jargon. Follow real-world
 conventions, making information appear in a natural and logical order.
@@ -186,7 +186,7 @@ _Figure 5: Icons Example_
 
 ### 2.3 User control and freedom
 
-```
+```text
 Users often perform actions by mistake. They need a clearly marked "emergency
 exit" to leave the unwanted action without having to go through an extended
 process.
@@ -208,7 +208,7 @@ _Figure 6: Undo and Redo Example_
 
 ### 2.4 Consistency and standards
 
-```
+```text
 Users should not have to wonder whether different words, situations, or actions
 mean the same thing. Follow platform and industry conventions.
 ```
@@ -223,7 +223,7 @@ E.g. Position of menu, Navigation bar, Search location
 
 ### 2.5 Error prevention
 
-```
+```text
 Good error messages are important, but the best designs carefully prevent
 problems from occurring in the first place. Either eliminate error-prone
 conditions or check for them and present users with a confirmation option before
@@ -255,7 +255,7 @@ _Figure 8: Flexible Inputs Example_
 
 ### 2.6 Recognition rather than recall
 
-```
+```text
 Minimize the user's memory load by making elements, actions, and options
 visible. The user should not have to remember information from one part of the
 interface to another. Information required to use the design (e.g. field labels
@@ -266,7 +266,7 @@ or menu items) should be visible or easily retrievable when needed.
 
 ### 2.7 Flexibility and efficiency of use
 
-```
+```text
 Offer shortcuts quick ways to get one or more tasks done with your apps. They
 should speed up the interaction with an app for the expert user
 ```
@@ -285,7 +285,7 @@ Users can customise their home screens with the documents most relevant for them
 
 ### 2.8 Aesthetic and minimalist design
 
-```
+```text
 Interfaces should not contain information which is irrelevant or rarely needed.
 Every extra unit of information in an interface competes with the relevant units
 of information and diminishes their relative visibility. Use whitespace in
@@ -296,7 +296,7 @@ harmony with your content.
 
 ### 2.9 Help users recognize, diagnose, and recover from errors
 
-```
+```text
 Error messages should be expressed in plain language (no error codes), precisely
 indicate the problem, and constructively suggest a solution.
 ```
@@ -310,7 +310,7 @@ _Figure 9: Error Messages Examples_
 
 ### 2.10 Help and documentation
 
-```
+```text
 It's best if the system doesn't need any additional explanation. However, it may
 be necessary to provide documentation to help users understand how to complete
 their tasks.
@@ -450,7 +450,7 @@ perfect tense.
 When a phrase describes a goal and the action needed to achieve it, start the
 sentence with the goal.
 
-```
+```text
 To add a document, click +
 ```
 
@@ -459,7 +459,7 @@ To add a document, click +
 Start a statement with the objective ("to add a document") and end it with the
 user action ("click + ").
 
-```
+```text
 Click + to add a document
 ```
 
@@ -475,7 +475,7 @@ a document").
 To avoid confusing the user, avoid using "me" or "my," and "you" or "your," in
 the same phrase.
 
-```
+```text
 Change your preferences in My Account
 ```
 
@@ -484,7 +484,7 @@ Change your preferences in My Account
 Don't refer to the user in both the second person and the first person within
 the same phrase.
 
-```
+```text
 Change your preferences in Account
 ```
 
