@@ -286,9 +286,7 @@ unique value. These elements include:
  applicable),
 
 - The attestation public key used for device binding and User binding,
-- The attestation public key used for device binding and User binding,
 
-- The value of the Attestation Provider signature.
 - The value of the Attestation Provider signature.
 
 In addition, also timestamps, such as the signing or issuing time of the
