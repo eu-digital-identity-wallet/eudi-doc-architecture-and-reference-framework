@@ -2597,25 +2597,6 @@ fact that their trust anchors are included in the PID Provider Trusted List; see
 - For QEAA Providers, no checking of entitlement (apart from the fact that they
 are a QEAA) is necessary, since QEAA Providers are trusted by other actors in
 the EUDI Wallet ecosystem to not fraudulently issue attestations that they are
-not legally entitlement to issue. This trust is warranted since QEAA Providers
-operate within a regulated framework and are regularly audited.
-- For PuB-EAA Providers, checking of entitlement may be necessary, since the
-legal and regulatory framework within which they operate is different from that
-of QEAAs. To verify the entitlements of an PuB-EAA Provider it is interacting
-with, a Wallet Unit or Relying Party can query the registry of the Registrar
-mentioned in the access certificate of the PuB-EAA Provider.
-- For non-qualified EAA Providers, checking of entitlement is necessary, since
-they are unregulated and may not be completely trustworthy. Without additional
-measures, a fraudulent EAA Provider may be able to issue types of QEAAs,
-PuB-EAAs or EAAs that it is not legally entitled to issue. To prevent this, a
-Wallet Unit or Relying Party may query the applicable register, as described in
-the previous bullet. In addition, the applicable Rulebook (see [Topic 12](./annexes/annex-2/annex-2-high-level-requirements.md#a2312-topic-12---attestation-rulebooks))
-- For PID Providers, their entitlement to issue PIDs follows already from the
-fact that their trust anchors are included in the PID Provider Trusted List; see
-[Section 6.3.2.4](#6324-pid-provider-or-attestation-provider-trust-anchors-are-included-in-a-trusted-list).
-- For QEAA Providers, no checking of entitlement (apart from the fact that they
-are a QEAA) is necessary, since QEAA Providers are trusted by other actors in
-the EUDI Wallet ecosystem to not fraudulently issue attestations that they are
 not legally entitled to issue. This trust is warranted since QEAA Providers
 operate within a regulated framework and are regularly audited.
 - For PuB-EAA Providers, checking of entitlement may be necessary, since the
