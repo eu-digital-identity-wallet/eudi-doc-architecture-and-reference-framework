@@ -115,7 +115,7 @@ The latest **authoritative version** is tagged as [release/tag in this repositor
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct,
+Please read [CONTRIBUTING.md](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/CONTRIBUTING.md) for details on our code of conduct,
 and the process for submitting pull requests to us.
 
 ## Versioning
@@ -130,7 +130,7 @@ who participated in this project.
 
 ## License
 
-See the [LICENSE](../LICENSE) file for details.
+See the [LICENCE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENCE) file for details.
 
 ## [European Commission website](https://commission.europa.eu/index_en)
 
