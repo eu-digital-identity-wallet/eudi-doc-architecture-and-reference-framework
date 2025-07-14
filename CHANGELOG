@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 ## [2.3.0] - 2025 - 07 - 04
 
 Changes:
+
 - added results of "Topic K - Combined presentation of Attestations"
-- processed comments on Relying Party Registrars, WUA compatibility issues against OID4VCI, some other comments from 1.8.0 and 1.10.0
+- processed comments on Relying Party Registrars, WUA compatibility issues
+against OID4VCI, some other comments from 1.8.0 and 1.10.0
 - fixed missing reference links to STS Roadmap issues
 - added a paragraph on accessibility
 - reflected the existence of the new Rulebook template
@@ -17,8 +19,10 @@ Changes:
 ## [2.2.0] - 2025 - 06 - 20
 
 Changes:
+
 - added results of "Topic L - User requesting data deletion to relying parties"
-- added results of "Topic M - User reporting unlawful or suspicious request of data to DPAs"
+- added results of "Topic M - User reporting unlawful or suspicious request of
+data to DPAs"
 - added results of "Topic N - Export and data portability"
 - added results of "Topic I - Natural person representing another natural person"
 - added results of "Topic W - Transactional data for payment and other use cases
@@ -27,9 +31,14 @@ Changes:
 ## [2.1.0] - 2025 - 06 - 06
 
 Changes:
-- corrections and clarifications were made regarding the optional issuance and use of registration certificates, and the optional use of information registered by a Registrar,
-- all references to the possible use of a WUA on the presentation interface between Wallet Units and Relying Parties were removed,
-- added remark on DC-API - Topic F will be additionally discussed in ARF development iteration 3
+
+- corrections and clarifications were made regarding the optional issuance and
+use of registration certificates, and the optional use of information registered
+by a Registrar,
+- all references to the possible use of a WUA on the presentation interface
+between Wallet Units and Relying Parties were removed,
+- added remark on DC-API - Topic F will be additionally discussed in ARF
+development iteration 3
 - CDDL syntax updated PID rulebook in section 3.1.5
 
 Editorial changes and fixing typos.
@@ -37,39 +46,55 @@ Editorial changes and fixing typos.
 ## [2.0.0] - 2025-05-28
 
 Processed comments provide in the Coordination Group meeting on 21 May 2025.
+
 - added remark on WUA - Work is still in progress on [TS3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md),
-- added remark on Pseudonyms - Topic E will be revisted in ARF development iteration 3,
-- added remark on ZKP - Topic G will be revisited in ARF development iteration 3,
-- added remark the use of the [W3C Digital Credentials API] is optional (section 4.4.3.1),
-- added the planning of a new topic Z, for discussion on device-bound Attestations and section 1.7,
+- added remark on Pseudonyms - Topic E will be revised in ARF development
+iteration 3,
+- added remark on ZKP - Topic G will be revisited in ARF development iteration
+3,
+- added remark the use of the [W3C Digital Credentials API] is optional (section
+4.4.3.1),
+- added the planning of a new topic Z, for discussion on device-bound
+Attestations and section 1.7,
 - updates on Relying Party registration to align with [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj).
 
 Editorial changes and fixing typos.
 
 ## [1.10.0] - 2025-05-02
 
-Added changes due to adopted Commission Implementing Regulation for Relying Party registration ([CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)) regarding registration of Wallet Relying Parties.
+Added changes due to adopted Commission Implementing Regulation for Relying
+Party registration ([CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj))
+regarding registration of Wallet Relying Parties.
 
 Editorial changes and fixing typos.
 
-#### Sections/topics with changes
+### Sections/topics with changes
 
-+ [Main document](docs/architecture-and-reference-framework-main.md)
-  + section 3.11, section 4.4,1, section 4.4.3.1, section 4.4.3.3, section 4.6.4, section 4.6.6, section 6.1, section 6.3.1, section 6.3.2.1, section 6.3.2.3, section 6.3.3, section 6.4.1, section 6.4.2, section 6.4.3, section 6.6.2.2, section 6.6.2.7.2, section 6.6.3.3, section 6.6.3.4, section 6.6.3.5, section 6.6.3.13, 
- 
-+ [Annex 2](docs/annexes/annex-2/annex-2-high-level-requirements.md) (High-level Requirements) 
-  + Topic 3: PID_04, PID, 06, PID_07, PID_16
-  + Topic 6: RPA_06, RPA_06a, RPA_06c, RPA_06d, 
-  + Topic 10: ISSU_24, ISSU_24a, ISSU_27, ISSU_34, ISSU_34a,
-  + Topic 19: DASH_03, DASH_05, 
-  + Topic 31:  GenNot_01, GenNot_02, GenNot_05, RPnot_02, RPACANot_01, RPACANot_02, RPACANot_04, RPACANot_06, RPACANot_07, TLPub_01, TLPub_02, TLPub_08
-  + Topic 40: WIAM_15, 
-  + Topic 43: EDP_02, EDP_02a, 
-  + Topic 44: RPRC_01, RPRC_02, RPRC_03, RPRC_03a, RPRC_03b, RPRC_07, RPRC_09, RPRC_10, RPRC_11
-  + Topic 52: RPI_01 to RPI_10
- 
-+ [Annex 3](docs/annexes/annex-3/annex-3.01-pid-rulebook.md) (PID rulebook)
-  + The attribute place_of_birth is now better defined for both the mdoc and SD-JWT formats.
+- [Main document](docs/architecture-and-reference-framework-main.md)
+    - section 3.11, section 4.4,1, section 4.4.3.1, section 4.4.3.3, section
+    4.6.4, section 4.6.6, section 6.1, section 6.3.1, section 6.3.2.1, section
+    6.3.2.3, section 6.3.3, section 6.4.1, section 6.4.2, section 6.4.3, section
+    6.6.2.2, section 6.6.2.7.2, section 6.6.3.3, section 6.6.3.4, section
+    6.6.3.5, section 6.6.3.13,
+
+- [Annex 2](docs/annexes/annex-2/annex-2-high-level-requirements.md) (High-level
+Requirements)
+    - Topic 3: PID_04, PID, 06, PID_07, PID_16
+    - Topic 6: RPA_06, RPA_06a, RPA_06c, RPA_06d,
+    - Topic 10: ISSU_24, ISSU_24a, ISSU_27, ISSU_34, ISSU_34a,
+    - Topic 19: DASH_03, DASH_05,
+    - Topic 31:  GenNot_01, GenNot_02, GenNot_05, RPnot_02, RPACANot_01,
+    RPACANot_02, RPACANot_04, RPACANot_06, RPACANot_07, TLPub_01, TLPub_02,
+    TLPub_08
+    - Topic 40: WIAM_15,
+    - Topic 43: EDP_02, EDP_02a,
+    - Topic 44: RPRC_01, RPRC_02, RPRC_03, RPRC_03a, RPRC_03b, RPRC_07, RPRC_09,
+    RPRC_10, RPRC_11
+    - Topic 52: RPI_01 to RPI_10
+
+- [Annex 3](docs/annexes/annex-3/annex-3.01-pid-rulebook.md) (PID rulebook)
+    - The attribute place_of_birth is now better defined for both the mdoc and
+    SD-JWT formats.
 
 ## [1.9.0] - 2025-04-16
 
@@ -81,8 +106,8 @@ Editorial changes and fixing typos.
 Added results of "Topic C - Wallet Unit Attestation (WUA) and key attestation"
 Added results of "Topic D - Embedded Disclosure Policies"
 Added results of "Topic G - Zero Knowledge Proof"
-Added results of "Topic V – PID rulebook"
-Adding links to "Standards and Technical Specifications" 
+Added results of "Topic V - PID rulebook"
+Adding links to "Standards and Technical Specifications"
 Editorial changes and fixing typos.
 
 ## [1.7.1] - 2025-03-20
