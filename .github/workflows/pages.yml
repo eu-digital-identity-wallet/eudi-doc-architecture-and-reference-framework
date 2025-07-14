@@ -43,7 +43,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - name: Install mkdocs theme
-        run: pip install mkdocs-material mike
+        run: pip install mkdocs-material mike "mkdocs-material[imaging]"
       - name: Configure fetch and merge
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
