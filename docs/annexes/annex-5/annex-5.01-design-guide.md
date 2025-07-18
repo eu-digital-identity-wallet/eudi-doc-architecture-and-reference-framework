@@ -136,14 +136,14 @@ appropriate feedback within a reasonable amount of time.
 When adding  or removing a document the application should let the user know
 whether the process was completed successfully of not.
 
-![Document Management example showing success and failure states](../../media/5.01/Figure_1_Document_Management_example.png)
+![Document Management example showing success and failure states](media/5.01/Figure_1_Document_Management_example.png)
 _Figure 1: Document Management example_
 
 ###### Interactive elements
 
 Interactive elements such as buttons must have a pressed and focused state.
 
-![Interactive Elements example showing button states](../../media/5.01/Figure_2_Interactive_Elements_example.png)
+![Interactive Elements example showing button states](media/5.01/Figure_2_Interactive_Elements_example.png)
 _Figure 2: Interactive Elements example_
 
 ---
@@ -163,7 +163,7 @@ conventions, making information appear in a natural and logical order.
 Documents should be (where possible) represented in the UI by what is familiar
 to the user instead of generic / ambiguous icons.
 
-![Document Presentation Example showing realistic document representations](../../media/5.01/Figure_3_Document_Presentation_Example.png)
+![Document Presentation Example showing realistic document representations](media/5.01/Figure_3_Document_Presentation_Example.png)
 _Figure 3: Document Presentation Example_
 
 ##### Labels
@@ -171,7 +171,7 @@ _Figure 3: Document Presentation Example_
 Stay away from technical terms and jargon. Use labels that people use in their
 everyday life.
 
-![Labels example showing user-friendly terminology](../../media/5.01/Figure_4_Labels_example.png)
+![Labels example showing user-friendly terminology](media/5.01/Figure_4_Labels_example.png)
 _Figure 4: Labels example_
 
 ##### Icons
@@ -179,7 +179,7 @@ _Figure 4: Labels example_
 People spend most of their time in other apps/websites. Use icons that are
 familiar and clear to them instead on ambiguous ones.
 
-![Icons Example showing clear vs ambiguous icons](../../media/5.01/Figure_5_Icons_Example.png)
+![Icons Example showing clear vs ambiguous icons](media/5.01/Figure_5_Icons_Example.png)
 _Figure 5: Icons Example_
 
 ---
@@ -201,7 +201,7 @@ perform actions
 
 - for instance, the freedom to undo or redo any accidental moves
 
-![Undo and Redo Example showing action reversibility](../../media/5.01/Figure_6_Undo_and_Redo_Example.png)
+![Undo and Redo Example showing action reversibility](media/5.01/Figure_6_Undo_and_Redo_Example.png)
 _Figure 6: Undo and Redo Example_
 
 ---
@@ -236,7 +236,7 @@ they commit to the action.
 
 For accidental actions such as miss-clicks
 
-![Confirmation Dialogue Example showing user verification before action](../../media/5.01/Figure_7_Confirmation_Dialogs_Example.png)
+![Confirmation Dialogue Example showing user verification before action](media/5.01/Figure_7_Confirmation_Dialogs_Example.png)
 _Figure 7: Confirmation Dialogues Example_
 
 ##### Flexible inputs
@@ -248,7 +248,7 @@ number can be entered in various ways by different people. The field can either
 format it accordingly on each own or provide a hint of the expected format
 instead of producing in-line errors or result in guesswork.
 
-![Flexible Inputs Example showing different input format acceptance](../../media/5.01/Figure_8_Flexible_Inputs_Example.png)
+![Flexible Inputs Example showing different input format acceptance](media/5.01/Figure_8_Flexible_Inputs_Example.png)
 _Figure 8: Flexible Inputs Example_
 
 ---
@@ -303,7 +303,7 @@ indicate the problem, and constructively suggest a solution.
 
 #### 2.9.1 Indicative examples
 
-![Error Messages Examples showing clear problem indications and solutions](../../media/5.01/Figure_9_Error_Messages_Examples.png)
+![Error Messages Examples showing clear problem indications and solutions](media/5.01/Figure_9_Error_Messages_Examples.png)
 _Figure 9: Error Messages Examples_
 
 ---
@@ -353,7 +353,7 @@ screen when they are easily reachable with the thumb when operating the phone
 with one hand. The top half should be used for displaying information,
 documents, QR codes etc.
 
-![Layout diagram showing thumb reachable areas on mobile screen](../../media/5.01/Figure_10_Layout.png)
+![Layout diagram showing thumb reachable areas on mobile screen](media/5.01/Figure_10_Layout.png)
 _Figure 10: Layout_
 
 ---
@@ -371,7 +371,7 @@ a disability or a combination of disabilities that affect their motor movements
 and dexterity, as well as by the act of using a website while on the move, such
 as while walking or commuting.
 
-![Target Sizes diagram showing recommended touch target dimensions](../../media/5.01/Figure_11_Target_Sizes.png)
+![Target Sizes diagram showing recommended touch target dimensions](media/5.01/Figure_11_Target_Sizes.png)
 _Figure 11 : Target Sizes_
 
 ---
@@ -434,11 +434,11 @@ past or future tenses, use simple verb forms. This may not be applicable to all
 languages; the overall goal is to be as concise as possible without compromising
 clarity.
 
-![Example showing "Document added" text](../../media/5.01/Document_added.png)
+![Example showing "Document added" text](media/5.01/Document_added.png)
 
 Write in the present tense.
 
-![Example showing "Document has been added" text](../../media/5.01/Document_has_been_added.png)
+![Example showing "Document has been added" text](media/5.01/Document_has_been_added.png)
 
 Don't write in different variations of the present tense, such as the present
 perfect tense.
@@ -454,7 +454,7 @@ sentence with the goal.
 To add a document, click +
 ```
 
-![Example showing "To add a document, click +" text](../../media/5.01/To_add_a_document.png)
+![Example showing "To add a document, click +" text](media/5.01/To_add_a_document.png)
 
 Start a statement with the objective ("to add a document") and end it with the
 user action ("click + ").
@@ -463,7 +463,7 @@ user action ("click + ").
 Click + to add a document
 ```
 
-![Example showing "Click + to add a document" text](../../media/5.01/Click_to_add_a_document.png)
+![Example showing "Click + to add a document" text](media/5.01/Click_to_add_a_document.png)
 
 Don't state the action the user takes ("Click + ") before the objective ("to add
 a document").
@@ -479,7 +479,7 @@ the same phrase.
 Change your preferences in My Account
 ```
 
-![Example showing "Change your preferences in My Account" text](../../media/5.01/Change_your_preferences_in_My_Account.png)
+![Example showing "Change your preferences in My Account" text](media/5.01/Change_your_preferences_in_My_Account.png)
 
 Don't refer to the user in both the second person and the first person within
 the same phrase.
@@ -488,7 +488,7 @@ the same phrase.
 Change your preferences in Account
 ```
 
-![Example showing "Change your preferences in Account" text](../../media/5.01/Change_your_preferences_in_Account.png)
+![Example showing "Change your preferences in Account" text](media/5.01/Change_your_preferences_in_Account.png)
 
 ---
 
