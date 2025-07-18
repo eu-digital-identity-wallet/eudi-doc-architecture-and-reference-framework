@@ -1,0 +1,1065 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/f-digital-credential-api/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>F - Digital Credentials API - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="F - Digital Credentials API - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/f-digital-credential-api.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/f-digital-credential-api/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="F - Digital Credentials API - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/f-digital-credential-api.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#f-digital-credentials-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              F - Digital Credentials API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="f-digital-credentials-api">F - Digital Credentials API</h1>
+<p>Version 1.1, updated 20 February 2025</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic F: Digital Credentials API (formerly known as 'the browser API').</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Define high-level requirements for the interface between the wallet and browsers and/or
+the operating system. These requirements are currently under discussion and being
+standardised through the Digital Credentials API at W3C. The protocols to be used with
+this API, including message structures and contents, are being standardised by ISO and
+the OpenID Foundation.</em></p>
+<h3 id="12-related-risks-in-the-risk-register">1.2 Related risks in the Risk Register</h3>
+<p>The risk register for European Digital Identity Wallets [RiskRegister]
+contains the following risks that are related to the use of the Digital
+Credentials API:</p>
+<table>
+<thead>
+<tr>
+<th>Risk type</th>
+<th>Risk id</th>
+<th>Related risk titles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R5</td>
+<td>Data theft</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R10</td>
+<td>Transaction manipulation</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R13</td>
+<td>Service disruption</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R14</td>
+<td>Surveillance</td>
+</tr>
+<tr>
+<td>System-related risks</td>
+<td>SR3</td>
+<td>Legal non-compliance</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R5 Data theft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception (unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to lead in some cases to Data disclosure (R6).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R6 Data disclosure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R9 Unauthorised transaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the wallet user. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R10 Transaction manipulation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction manipulation is defined as the unauthorised alteration of operations in the wallet. Transaction manipulation is an attack on integrity, and it is related to a data integrity breach.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R13 Service disruption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service disruption is defined as an interruption or degradation in the normal operation of the wallet. A specific kind of service disruption is user lock-out, defined as the inability of a user to access their account or their wallet.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R14 Surveillance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surveillance, or monitoring, is defined as the unauthorised tracking or observation of a wallet user's activities, communication, or data. Surveillance is often related to inference, which is defined as the deduction of sensitive or personal information from seemingly innocuous data.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SR3 Legal non-compliance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Legal non-compliance is defined as a situation when relevant laws, regulations or standards cannot be adhered to. In the context of the wallet, as security and privacy of the solution are legal requirements, all threats are likely to lead to some kind of legal non-compliance.</td>
+</tr>
+</tbody>
+</table>
+<p>More specifically, [RiskRegister]  describes the following threats to a Wallet:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Threat description</th>
+<th>Related risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR25</td>
+<td>The wallet can present attributes to a relying party without the approval of a user.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR28</td>
+<td>An attacker can get a user into wrongfully approving a request for electronic attestations of attributes (phishing or other).</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR29</td>
+<td>An attacker can leak attributes from the wallet and identify the wallet user where identification is not required/allowed.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR31</td>
+<td>A request can be leaked to an attacker.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR34</td>
+<td>An attacker can know whether a wallet is installed on the same device he is using, or on another one, and get information on it.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR50</td>
+<td>An attacker can eavesdrop during the connection from the wallet to relying parties.</td>
+<td>Data theft (R5) / Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR50</td>
+<td>An attacker can convince a user to share personal data (i.e. PID, EAA-s, pseudonyms, electronic signatures, logs and other data) with the attacker or with a third party that the user did not intend to do so.</td>
+<td>Data theft (R5) / Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR76</td>
+<td>A relying party can send multiple invalid requests.</td>
+<td>Service disruption (R13)</td>
+</tr>
+<tr>
+<td>TR80</td>
+<td>An attacker can block transactions by relying parties, users and/or PID provider.</td>
+<td>Service disruption (R13)</td>
+</tr>
+<tr>
+<td>TR88</td>
+<td>Attackers can make changes to a request's metadata (service name, usages, etc.).</td>
+<td>Transaction manipulation (R10)</td>
+</tr>
+<tr>
+<td>TR93</td>
+<td>An attacker can replace or modify the PID during its transfer from the wallet unit to the online relying party.</td>
+<td>Transaction manipulation (R10)</td>
+</tr>
+<tr>
+<td>TR103</td>
+<td>The user behind the relying party - browser connection can be different from the user behind the relying party - wallet connection.</td>
+<td>Unauthorised transaction (R9) / Data disclosure (R6) / Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR105</td>
+<td>An attacker can perform man-in-the-middle attacks</td>
+<td>Unauthorised transaction (R9) / Data disclosure (R6) / Surveillance (R14)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-key-words">1.3 Key words</h2>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.</p>
+<h2 id="14-document-structure">1.4 Document structure</h2>
+<p>This document is structured as follows:</p>
+<ul>
+<li>Chapter 2 introduces the Digital Credentials API</li>
+<li>Chapter 3 presents the functionality expected from the Digital Credentials API so
+it can be used in the context of ARF.</li>
+<li>Chapter 4 lists the additions and changes that will be made to the ARF
+as a result of discussing this topic with Member States.</li>
+</ul>
+<h2 id="2-digital-credentials-api">2. Digital Credentials API</h2>
+<h3 id="21-overview">2.1 Overview</h3>
+<h3 id="problem-statement">Problem Statement</h3>
+<p>Remote transaction flows are use cases in which the Relying Party Instance
+is remote from the User and the User device. The Relying Party Instance accesses
+the Wallet Instance over the internet, using a browser. These use cases can be
+further distinguished in same-device flows, in which the browser is running on
+the same device as the Wallet Unit, and cross-device flows, where the browser is
+on a different device.</p>
+<p>Remote presentation flows come with a number of challenges:</p>
+<ul>
+<li><strong>1. Secure Cross-Device Flows</strong>: Cross-device flows are vulnerable to
+phishing and relay attacks, necessitating enhanced security measures.</li>
+<li><strong>2. Wallet Unit Selection and Invocation</strong>:  In remote flows, where interactions do
+not originate from the Wallet Unit, Users may encounter difficulties in selecting and
+invoking the appropriate Wallet Instance to fulfill a specific presentation request,
+particularly when multiple Wallet Units are present on the device.</li>
+<li><strong>3. Invocation Mechanism</strong>: Establishing a communication channel between the Wallet Unit
+and the remote Relying Party Instance presents challenges due to inconsistent invocation methods.
+One approach considered by standardization bodies involves using custom URI schemes, such as "mdoc://"
+or "openid4vp://". In this approach, the operating system would trigger the Wallet Unit
+when the Relying Party Instance requests a connection via a custom URI. However, relying on custom
+URI schemes introduces variability in user experiences across different browsers and operating systems,
+resulting in operational inefficiencies and potential security risks.</li>
+<li><strong>4. Clear Origin Verification</strong>: Protecting against relay attacks requires precise
+identification of the Relying Party Instance's origin.</li>
+<li><strong>5. Session binding</strong>: When presenting a PID or attestation to a remote Relying Party,
+users have to switch contexts. Existing protocols may enable attacks where the contexts are not
+"bound" to each other resulting in session "hijacking".</li>
+</ul>
+<h3 id="proposed-solution">Proposed solution</h3>
+<p>Digital Credentials API [Cred_API] is a possible solution to the identified
+challenges. Digital Credentials API has the potential to enhance usability, scalability,
+and security while providing a consistent and reliable user experience.</p>
+<p>Digital Credentials API is a Draft Community Group report of the
+Web Platform Incubator Community Group (WICG) that builds upon Credential
+Management Level 1 API W3C Working Draft [Cred_Man]. The goal of the Digital
+Credentials API is to enable user agents (i.e., browsers) to mediate access to,
+and presentation of, attestations. Currently, attestation issuance is not in the
+scope of this API, but future versions <a href="https://github.com/WICG/digital-credentials/issues/167">will consider it</a>. The Digital Credentials
+API can be used, for example, by a Relying Party website to request a PID or
+(Q)EAA stored in a Wallet Unit through the User's browser. The browser and the
+Wallet Unit may be in the same device (same-device flow) or in separate devices
+but in proximity (cross-device flow).</p>
+<p>The Digital Credentials API can address the challenges related to remote presentation
+flows as follows:</p>
+<ul>
+<li><strong>1. Secure Cross-Device Flows</strong>: The Digital Credentials API enables  a secure transport with
+proximity checks for cross-device requests</li>
+<li><strong>2. Wallet Unit Selection and Invocation</strong>: The Digital Credentials API enables a unified interface
+provided by the web browser and the operating system, which can streamline this
+process, offering a seamless and intuitive user experience.</li>
+<li><strong>3. Invocation Mechanism</strong>: The Digital Credentials API does not need custom URL schemes
+for invoking a Wallet Unit.</li>
+<li><strong>4. Clear Origin Verification</strong>: The Digital Credentials API enables including the origin
+information, such as the website domain or app package name, within the presentation request
+ensuring the authenticity of the request and enhancing trust for both Wallet Units and Users.</li>
+<li><strong>5. Session binding</strong>: The Digital Credentials API allows information about a session
+to be embedded in a presentation request. At the same time the browser and the operating
+system handles context switching preventing session hijacking.</li>
+</ul>
+<h3 id="22-relying-party-wallet-unit-interaction">2.2 Relying Party - Wallet Unit interaction</h3>
+<p>Using the Digital Credentials API, a Relying Party can interact with a Wallet
+Unit using a website and through a browser.</p>
+<p>The current version of Digital Credentials API extends Credential Management
+Level 1 API (the same API used by WebAuthn/passkeys) to allow websites to request
+an attestation. This is achieved by providing a sequence of <code>presentation
+requests</code>, where each presentation request includes an <code>exchange protocol</code> and
+<code>request data</code>. The format of the request data are specific to the exchange
+protocol. The Digital Credentials API specifications will include a registry of
+supported protocols.</p>
+<p>As a next step, the browser sends the request to the operating system which
+searches matching attestations in installed Wallet Units. The cross-device
+flow can be used to search for matching attestations in Wallet Units installed
+in a different device, located in close proximity to the browser. If more than
+one matching attestation is found, the browser prompts the User to select one.
+As a next step, request data is sent to the corresponding
+Wallet Unit. Then, the Wallet Unit asks user consent and generates a
+presentation based on the selected exchange protocol. The presentation is
+relayed back to the Relying Party's website.</p>
+<p>As of January 2025, Digital Credentials API support is provided only by the Chrome
+browser and the Android mobile operating system. In this experimental implementation there
+exists a method for Wallet Units to indicate to a component, which is part of
+the Wallet Solution and it is referred to as the "matcher" in the current Android-specific
+implementation, the availability of attestations and,
+optionally, attributes included in the attestation. An example <a href="https://digitalcredentials.dev/docs/wallets/android/#the-provider-api">can be found here</a>. This
+Android-specific documentation mentions that the information provided by the Wallet Unit is used
+by the Android operating system to render a selector, allowing Users to make an
+informed choice about which attestation to proceed with.</p>
+<h4 id="221-same-device-flow">2.2.1 Same-device flow</h4>
+<p>As of January 2025, the same-device flow is
+implemented using the following steps:</p>
+<ul>
+<li>The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.</li>
+<li>The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
+<img alt="Website authorisation" src="../img/same-auth.png" /></li>
+<li>The Relying Party indicates to the browser which attributes they want to request by creating a <code>presentation request</code>.</li>
+<li>The operating system searches for attestations that satisfy the requested attributes.</li>
+<li>The browser presents to the User a selector that includes a list of potentially suitable attestations.
+<img alt="Attestation selection" src="../img/same-select.png" /></li>
+<li>The User selects an attestation. The operating system invokes the Wallet Unit providing as input the selected attestation and the request data.</li>
+<li>The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested
+attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents.</li>
+</ul>
+<h4 id="222-cross-device-flow">2.2.2 Cross-device flow</h4>
+<p>The cross-device flow is implemented using the following steps:</p>
+<ul>
+<li>The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.</li>
+<li>The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
+<img alt="Website authorisation in cross device flow" src="../img/cross-auth.png" /></li>
+<li>The Relying Party  indicates to the browser which attributes they want to request by
+creating a <code>presentation request</code>.</li>
+<li>The browser uses CTAP 2.2 hybrid flow (section 11.5 of [Ctap]) to establish a tunnel between the
+browser and the device where the Wallet Unit is installed (this is the same flow used by WebAuthn/passkeys).
+From a high level this is implemented as follows: (i) The browser presents a QR code which
+includes information about the tunnel endpoint and keys that can be used for establishing
+a secure session, (ii) the user scans the QR code using the device camera, (iii) the device
+where the Wallet Unit is installed emits a BLE advertisement which is received by the
+browser. The advertisement includes in an encrypted form information required for
+establishing the secure tunnel. This advertisement is used as a proximity check,
+(iv) The tunnel is established.</li>
+</ul>
+<p><img alt="QR Code display" src="../img/cross-qr.png" /></p>
+<ul>
+<li>The presentation request is transferred through the tunnel to the device operating system.</li>
+<li>The device operating system presents to the User a selector that includes a list of potentially suitable attestations.</li>
+</ul>
+<p><img alt="Attestation selection" src="../img/cross-select.png" /></p>
+<h2 id="3-expectations-from-the-digital-credentials-api">3. Expectations from the Digital Credentials API</h2>
+<p>This section presents the functionality expected from the Digital Credentials API so
+it can be used in the context of ARF</p>
+<h3 id="31-expected-functionality">3.1 Expected functionality</h3>
+<ol>
+<li>
+<p><strong>Wallet Selection and Invocation for attestation presentation</strong>: The Digital Credentials API should
+ enable a browser or OS to search for Wallet Units containing attestations
+ that potentially match the request of the Relying Party, addressing user
+ experience and scaling concerns caused by custom URI-based or universal link
+(a.k.a. app link)-based approaches.​</p>
+</li>
+<li>
+<p><strong>Wallet Selection and Invocation for attestation issuance</strong>: The Digital Credentials API should
+ enable a browser or OS to search for Wallet Units that can handle an attestation offer
+ from a specific Attestation Provider, addressing user
+ experience and scaling concerns caused by custom URI-based or universal link
+(a.k.a. app link)-based approaches.​​</p>
+</li>
+<li>
+<p><strong>Secure Cross-Device Flows</strong>: The Digital Credentials API should enable
+APIs and protocols (e.g., CTAP2) that ensure secure cross-device engagement, mitigating
+threats such as phishing and relay attacks.</p>
+</li>
+<li>
+<p><strong>Protocol support</strong>: The Digital Credentials API should support the protocols
+specified in the Implementing Acts as remote presentation protocols for attestations
+and attestation issuance.</p>
+</li>
+</ol>
+<h3 id="32-responsibilities">3.2 Responsibilities</h3>
+<p>The Digital Credentials API should operate as a secure transport layer, allowing all parties
+to fulfill their requirements as specified in Annex 2 of ARF. Browsers and operating systems
+facilitating remote transaction flows should not act on behalf of Attestation Providers, Relying Parties or Wallet
+Units. Particularly:</p>
+<ol>
+<li>
+<p><strong>Consent</strong>: Wallet Units and Relying Parties should handle user consent for attribute requests
+and presentations. The Digital Credentials API should not add an additional consent layer to the
+workflow for presenting attributes stored in a Wallet Unit.</p>
+</li>
+<li>
+<p><strong>Relying Party Authentication</strong>: Wallets Units are responsible for authenticating Relying Parties before delivering
+attribute payloads. The Digital Credentials API should provide sufficient information to Wallet Units about the
+presentation request origin and other necessary context information, allowing Wallet Units to
+identify and authenticate Relying Parties, as well as to verify that the request from the Relying Party
+was not copied and replayed.</p>
+</li>
+<li>
+<p><strong>Attestation Provider and Relying Party Authorisation</strong>: Although browsers and operating systems implementing
+the Digital Credentials API should verify the web origin of Attestation Providers and Relying Parties, as well as that
+the credential offers and presentation requests are transferred over TLS from the Attestation Provider or
+the Relying Party to the browser, they should not decide which Attestation Providers or Relying Parties are authorised to
+issue attestations or request attributes as this responsibility
+lies with national issuers and regulators, including Relying Party registrars.</p>
+</li>
+<li>
+<p><strong>Wallet Unit sovereignty</strong>. When the Digital Credentials API is used, the operating
+system should not override or remove control from the Wallet Unit. The User's Wallet Unit
+should retain full authority over attestation management, including issuance, storage, and
+presentation. This ensures that the Wallet Unit remains the trusted component for safeguarding
+user data and interactions. The operating system and browser should not disrupt the Wallet Unit's
+security functions.</p>
+</li>
+</ol>
+<h3 id="33-technological-neutrality-and-cross-platform-interoperability">3.3 Technological Neutrality and Cross-Platform Interoperability</h3>
+<p>The Digital Credentials API should preserve technological neutrality and avoid
+any reliance on vendor-specific extensions. Particularly:</p>
+<ol>
+<li>
+<p><strong>Attestation format neutrality</strong>: The Digital Credentials API should be neutral
+and open with respect to the format of attestations to be used. For example, if a
+"Registry of Protocols for Requesting Digital Credentials" is utilised, adding or
+removing protocols to the registry should follow established criteria and processes,
+and involve multiple stakeholders. Adding or removing protocols to the registry
+should follow established criteria and processes, and involve multiple stakeholders.
+The criteria and processes should be transparent, objective and non-discriminatory;
+in other words well-governed.</p>
+</li>
+<li>
+<p><strong>Cross-platform compatibility and interoperability</strong>. The Digital Credentials
+API should be compatible with most browsers and operating systems, and should
+provide cross-platform interoperability, ensuring users are not locked into a
+specific vendor's browser or operating system</p>
+</li>
+<li>
+<p><strong>Wallet Solution neutrality</strong>.  Any approved Wallet Solution should be able
+to use the Digital Credentials API. Usage of the API should not require additional
+vetting processes by vendors or impose constraints on Wallet Providers other than
+those required by the EU.</p>
+</li>
+</ol>
+<h3 id="34-privacy-preservation">3.4 Privacy preservation</h3>
+<p>The use of the Digital Credentials API should not compromise User privacy. In more detail:</p>
+<ol>
+<li>
+<p><strong>Privacy preserving searching</strong>: Wallet Units may have to "indicate" to the Digital Credentials
+API framework the availability of attestations, to facilitate their discovery and use.
+However, this process should be designed and implemented in a way that it does not introduce
+privacy threats, such as exposing attribute values to any other party, including the OS/browser
+vendor, other applications on the same device, other users of the same device, or Relying Parties.
+Similarly, the OS should have access only to the bare minimum information required to
+implement the search functionality and must ensure that no third party can access this information.</p>
+</li>
+<li>
+<p><strong>Privacy preserving attestation relay</strong>:  The use of a browser as an intermediary in the attestation
+issuance and presentation process should not create privacy risks, such as those arising from malicious add-ons
+or unauthorised tracking mechanisms. Browsers should maintain strict privacy controls to ensure
+that attestation-related data is neither exposed nor accessible to unauthorised third parties.
+This principle also extends to any tunneling services used to facilitate cross-device flow.</p>
+</li>
+<li>
+<p><strong>Protection against data theft</strong>: Browsers and operating systems providing support for
+the Digital Credentials API should minimise the threat of data theft and disclosure through
+eavesdropping on the communication between the Wallet Unit and the Attestation Provider or
+Relying Party's website.</p>
+</li>
+</ol>
+<h3 id="35-availability-preservation">3.5 Availability preservation</h3>
+<p>The use of the Digital Credentials API should not enable Denial-of-Service
+attacks against Wallet Units. Particularly:</p>
+<ol>
+<li><strong>DoS protection</strong>. The use of the Digital Credentials API should not facilitate Attestation Provider or Relying
+Parties to perform Denial of Service attacks against Wallet Units, e.g., by enabling an Attestation Provider or Relying Party
+to send multiple invalid requests. Similarly, the use of the Digital Credentials API should not enable
+attackers to block transactions by Relying Parties and Wallet Units.</li>
+</ol>
+<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
+<h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
+<p>The following High-Level Requirements will be added to Annex 2 of the ARF:</p>
+<h4 id="411-requirements-to-be-added-likely-to-topic-1">4.1.1 Requirements to be added (likely) to Topic 1</h4>
+<h5 id="requirement-1">REQUIREMENT 1</h5>
+<p>A Wallet Unit and a Relying Party Instance receiving an attestation from the Wallet
+Unit SHALL ensure that the attributes included in the presented attestation are
+accessible only to the Relying Party, by encrypting the presentation response.
+This SHALL include preventing decryption of the presentation response or Man-in-the-Middle
+attacks by the browser, the operating system, or other components between the Wallet
+Unit and the Relying Party.</p>
+<h5 id="conditional-requirements">Conditional Requirements</h5>
+<p>Providing that the expectations set in chapter 3 are met, the following two
+High-Level Requirements will be added (likely) to Topic 1:</p>
+<h6 id="requirement-2-conditional">REQUIREMENT 2 (conditional)</h6>
+<p>Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
+presentation flows.</p>
+<h6 id="requirement-3-conditional">REQUIREMENT 3 (conditional)</h6>
+<p>A Wallet Unit SHALL disclose the presence of all stored attestations and attributes to the Digital
+Credentials API framework, but SHALL NOT disclose the value of the attributes in
+these attestations.</p>
+<p>Note: This restriction applies even if such disclosure would enhance the services
+provided by the operating system to the Wallet Unit, for example, attestation selection
+in the context of the Digital Credentials API.</p>
+<h6 id="requirement-4-conditional">REQUIREMENT 4 (conditional)</h6>
+<p>A Relying Party's request MAY be processed by the browser for searching available
+attestations, for preventing fraud targeting the user, or for troubleshooting purposes.
+It SHOULD be processed by the browser for user security purposes. It SHALL NOT be
+processed by the browser for market analysis purposes (including as a secondary
+purpose) or the browser’s own purposes.</p>
+<h4 id="412-requirements-to-be-added-likely-to-topic-1023">4.1.2 Requirements to be added (likely) to Topic 10/23</h4>
+<h5 id="conditional-requirements_1">Conditional Requirements</h5>
+<p>Providing that the expectations set in chapter 3 are met, the following
+High-Level Requirement will be added (likely) to Topic 10/23:</p>
+<h6 id="requirement-5-conditional">REQUIREMENT 5  (conditional)</h6>
+<p>Wallet Units and Attestation Providers SHALL support the Digital Credentials API
+for attestation issuance.</p>
+<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
+<h4 id="rpa_01">RPA_01</h4>
+<p>The following text will be appended to RPA_01 "The Wallet Unit SHALL retain full authority over
+this process, for example, this process SHALL NOT be handled by a third party, including the
+browser and the operating system."</p>
+<h4 id="rpa_07">RPA_07</h4>
+<p>The following text will be appended to RPA_07 "The Wallet Unit SHALL retain full authority over
+this process, for example, this process SHALL NOT be handled by a third party, including the
+browser and the operating system."</p>
+<h2 id="6-references">6 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</td>
+</tr>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0, final</td>
+</tr>
+<tr>
+<td>[Cred_API]</td>
+<td>Digital Credentials, Draft Community Group Report, 20 February 2025, available at <a href="https://wicg.github.io/digital-credentials/">https://wicg.github.io/digital-credentials/</a></td>
+</tr>
+<tr>
+<td>[Cred_Man]</td>
+<td>Credential Management Level 1, 13 August 2024, available at <a href="https://www.w3.org/TR/credential-management-1/">https://www.w3.org/TR/credential-management-1/</a></td>
+</tr>
+<tr>
+<td>[Ctap]</td>
+<td>Client to Authenticator Protocol (CTAP) Review Draft, March 21, 2023, available at <a href="https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html">https://fidoalliance.org/specs/fido-v2.2-rd-20230321/fido-client-to-authenticator-protocol-v2.2-rd-20230321.html</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
