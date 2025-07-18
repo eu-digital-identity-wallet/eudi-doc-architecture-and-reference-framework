@@ -286,9 +286,7 @@ unique value. These elements include:
  applicable),
 
 - The attestation public key used for device binding and User binding,
-- The attestation public key used for device binding and User binding,
 
-- The value of the Attestation Provider signature.
 - The value of the Attestation Provider signature.
 
 In addition, also timestamps, such as the signing or issuing time of the
@@ -415,19 +413,14 @@ mitigated partly or fully by the following two measures:
  attestation.
 
 Regarding the second point above: An Attestation Provider can employ and possibly combine
-Regarding the second point above: An Attestation Provider can employ and possibly combine
 at least four different methods to achieve this:
 
 - Method A: Once-only attestations,
-- Method A: Once-only attestations,
 
-- Method B: Limited-time attestations,
 - Method B: Limited-time attestations,
 
 - Method C: Rotating batches of attestations,
-- Method C: Rotating batches of attestations,
 
-- Method D: Per-Relying Party attestations.
 - Method D: Per-Relying Party attestations.
 
 These methods are discussed in the next sections of this chapter. Based
@@ -712,9 +705,7 @@ specifies three methods:
  hours or less, such that revocation will never be necessary,
 
 - Use an Attestation Status List mechanism specified.
-- Use an Attestation Status List mechanism specified.
 
-- Use an Attestation Revocation List mechanism specified.
 - Use an Attestation Revocation List mechanism specified.
 
 The latter two methods imply that a Relying Party must regularly
@@ -810,7 +801,6 @@ at least
 - the attestation public key used for device binding and User
  binding,
 
-- the value of the Attestation Provider signature,
 - the value of the Attestation Provider signature,
 
 have values that are unique across all PIDs, attestations, or WUAs
