@@ -219,7 +219,7 @@ The attribute nationality takes as its value an array of Alpha-2 country codes
 as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
 encoding of this data element is:
 
-```
+``` text
 nationalities = [
   \+ CountryCode
 ]
@@ -258,7 +258,7 @@ scope of this document.
 The attribute place_of_birth SHALL contain at least one of the following key-value pairs: country, region, or locality.
 Using CDDL notation as specified in RFC 8610, the encoding of this data element is:
   
-```
+``` text
 place_of_birth =
 {
   ? "country": tstr  ; a single alpha-2 country code as specified in ISO 3166-1
