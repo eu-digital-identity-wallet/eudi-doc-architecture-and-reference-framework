@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.3.0/annexes/annex-5/annex-5.01-design-guide/">
-      
       
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -22,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -38,8 +36,8 @@
       
         
         
-        
-        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -49,32 +47,6 @@
       
 
     
-    
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="European Digital Identity Wallet - European Digital Identity" >
-      
-        <meta  property="og:description"  content="None" >
-      
-        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.3.0/assets/images/social/annexes/annex-5/annex-5.01-design-guide.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.3.0/annexes/annex-5/annex-5.01-design-guide/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="European Digital Identity Wallet - European Digital Identity" >
-      
-        <meta  name="twitter:description"  content="None" >
-      
-        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.3.0/assets/images/social/annexes/annex-5/annex-5.01-design-guide.png" >
-      
     
     
   </head>
@@ -198,11 +170,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
-  
   
     
   
@@ -217,11 +187,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-tabs__link">
         
-  
   
     
   
@@ -236,11 +204,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../discussion-topics/" class="md-tabs__link">
         
-  
   
     
   
@@ -255,11 +221,9 @@
   
   
   
-  
     <li class="md-tabs__item">
       <a href="../../../technical-specifications/" class="md-tabs__link">
         
-  
   
     
   
@@ -332,7 +296,6 @@
       <a href="../../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     European Digital Identity Wallet
     
@@ -353,7 +316,6 @@
     <li class="md-nav__item">
       <a href="../../../architecture-and-reference-framework-main/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Architecture and reference framework
@@ -379,7 +341,6 @@
       <a href="../../../discussion-topics/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Discussion topics
     
@@ -400,7 +361,6 @@
     <li class="md-nav__item">
       <a href="../../../technical-specifications/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     Technical specifications
@@ -514,7 +474,7 @@ principles are:</p>
 </ul>
 <hr />
 <h2 id="2-design-criteria">2 Design criteria</h2>
-<pre><code class="language-text">Disclaimer: The design guidelines listed in this document shall not be
+<pre><code>Disclaimer: The design guidelines listed in this document shall not be
 considered as mandatory towards the implementations of the EUDI Wallet, but
 rather stand as recommendations to ensure a common user experience across the
 different national implementations. Any design elements included in the
@@ -523,22 +483,22 @@ corresponding design criteria.
 </code></pre>
 <hr />
 <h3 id="21-visibility-of-system-status">2.1 Visibility of system status</h3>
-<pre><code class="language-text">The design should always keep users informed about what is going on through
+<pre><code>The design should always keep users informed about what is going on through
 appropriate feedback within a reasonable amount of time.
 </code></pre>
 <h4 id="211-indicative-examples">2.1.1 Indicative examples</h4>
 <h5 id="document-management">Document management</h5>
 <p>When adding  or removing a document the application should let the user know
 whether the process was completed successfully of not.</p>
-<p><img alt="Document Management example showing success and failure states" src="../media/5.01/Figure_1_Document_Management_example.png" />
+<p><img alt="Document Management example showing success and failure states" src="media/5.01/Figure_1_Document_Management_example.png" />
 <em>Figure 1: Document Management example</em></p>
 <h6 id="interactive-elements">Interactive elements</h6>
 <p>Interactive elements such as buttons must have a pressed and focused state.</p>
-<p><img alt="Interactive Elements example showing button states" src="../media/5.01/Figure_2_Interactive_Elements_example.png" />
+<p><img alt="Interactive Elements example showing button states" src="media/5.01/Figure_2_Interactive_Elements_example.png" />
 <em>Figure 2: Interactive Elements example</em></p>
 <hr />
 <h3 id="22-match-between-system-and-the-real-world">2.2 Match between system and the real world</h3>
-<pre><code class="language-text">The design should speak the users' language. Use words, phrases, and concepts
+<pre><code>The design should speak the users' language. Use words, phrases, and concepts
 familiar to the user, rather than internal jargon. Follow real-world
 conventions, making information appear in a natural and logical order.
 </code></pre>
@@ -546,21 +506,21 @@ conventions, making information appear in a natural and logical order.
 <h5 id="document-representation">Document representation</h5>
 <p>Documents should be (where possible) represented in the UI by what is familiar
 to the user instead of generic / ambiguous icons.</p>
-<p><img alt="Document Presentation Example showing realistic document representations" src="../media/5.01/Figure_3_Document_Presentation_Example.png" />
+<p><img alt="Document Presentation Example showing realistic document representations" src="media/5.01/Figure_3_Document_Presentation_Example.png" />
 <em>Figure 3: Document Presentation Example</em></p>
 <h5 id="labels">Labels</h5>
 <p>Stay away from technical terms and jargon. Use labels that people use in their
 everyday life.</p>
-<p><img alt="Labels example showing user-friendly terminology" src="../media/5.01/Figure_4_Labels_example.png" />
+<p><img alt="Labels example showing user-friendly terminology" src="media/5.01/Figure_4_Labels_example.png" />
 <em>Figure 4: Labels example</em></p>
 <h5 id="icons">Icons</h5>
 <p>People spend most of their time in other apps/websites. Use icons that are
 familiar and clear to them instead on ambiguous ones.</p>
-<p><img alt="Icons Example showing clear vs ambiguous icons" src="../media/5.01/Figure_5_Icons_Example.png" />
+<p><img alt="Icons Example showing clear vs ambiguous icons" src="media/5.01/Figure_5_Icons_Example.png" />
 <em>Figure 5: Icons Example</em></p>
 <hr />
 <h3 id="23-user-control-and-freedom">2.3 User control and freedom</h3>
-<pre><code class="language-text">Users often perform actions by mistake. They need a clearly marked &quot;emergency
+<pre><code>Users often perform actions by mistake. They need a clearly marked &quot;emergency
 exit&quot; to leave the unwanted action without having to go through an extended
 process.
 </code></pre>
@@ -571,11 +531,11 @@ perform actions</p>
 <ul>
 <li>for instance, the freedom to undo or redo any accidental moves</li>
 </ul>
-<p><img alt="Undo and Redo Example showing action reversibility" src="../media/5.01/Figure_6_Undo_and_Redo_Example.png" />
+<p><img alt="Undo and Redo Example showing action reversibility" src="media/5.01/Figure_6_Undo_and_Redo_Example.png" />
 <em>Figure 6: Undo and Redo Example</em></p>
 <hr />
 <h3 id="24-consistency-and-standards">2.4 Consistency and standards</h3>
-<pre><code class="language-text">Users should not have to wonder whether different words, situations, or actions
+<pre><code>Users should not have to wonder whether different words, situations, or actions
 mean the same thing. Follow platform and industry conventions.
 </code></pre>
 <p>App should follow interface standards and platform conventions. Conventions have
@@ -584,7 +544,7 @@ capitalised upon to make the app have a higher level of intuitiveness.</p>
 <p>E.g. Position of menu, Navigation bar, Search location</p>
 <hr />
 <h3 id="25-error-prevention">2.5 Error prevention</h3>
-<pre><code class="language-text">Good error messages are important, but the best designs carefully prevent
+<pre><code>Good error messages are important, but the best designs carefully prevent
 problems from occurring in the first place. Either eliminate error-prone
 conditions or check for them and present users with a confirmation option before
 they commit to the action.
@@ -592,7 +552,7 @@ they commit to the action.
 <h4 id="251-indicative-examples">2.5.1 Indicative examples</h4>
 <p>Confirmation dialogue</p>
 <p>For accidental actions such as miss-clicks</p>
-<p><img alt="Confirmation Dialogue Example showing user verification before action" src="../media/5.01/Figure_7_Confirmation_Dialogs_Example.png" />
+<p><img alt="Confirmation Dialogue Example showing user verification before action" src="media/5.01/Figure_7_Confirmation_Dialogs_Example.png" />
 <em>Figure 7: Confirmation Dialogues Example</em></p>
 <h5 id="flexible-inputs">Flexible inputs</h5>
 <p>Flexible inputs allow people to answer questions the way they want instead of
@@ -601,18 +561,18 @@ to users: "whatever format you choose, we'll take it." For example, a phone
 number can be entered in various ways by different people. The field can either
 format it accordingly on each own or provide a hint of the expected format
 instead of producing in-line errors or result in guesswork.</p>
-<p><img alt="Flexible Inputs Example showing different input format acceptance" src="../media/5.01/Figure_8_Flexible_Inputs_Example.png" />
+<p><img alt="Flexible Inputs Example showing different input format acceptance" src="media/5.01/Figure_8_Flexible_Inputs_Example.png" />
 <em>Figure 8: Flexible Inputs Example</em></p>
 <hr />
 <h3 id="26-recognition-rather-than-recall">2.6 Recognition rather than recall</h3>
-<pre><code class="language-text">Minimize the user's memory load by making elements, actions, and options
+<pre><code>Minimize the user's memory load by making elements, actions, and options
 visible. The user should not have to remember information from one part of the
 interface to another. Information required to use the design (e.g. field labels
 or menu items) should be visible or easily retrievable when needed.
 </code></pre>
 <hr />
 <h3 id="27-flexibility-and-efficiency-of-use">2.7 Flexibility and efficiency of use</h3>
-<pre><code class="language-text">Offer shortcuts quick ways to get one or more tasks done with your apps. They
+<pre><code>Offer shortcuts quick ways to get one or more tasks done with your apps. They
 should speed up the interaction with an app for the expert user
 </code></pre>
 <h4 id="271-indicative-examples">2.7.1 Indicative examples</h4>
@@ -623,22 +583,22 @@ faster.</p>
 <p>Users can customise their home screens with the documents most relevant for them.</p>
 <hr />
 <h3 id="28-aesthetic-and-minimalist-design">2.8 Aesthetic and minimalist design</h3>
-<pre><code class="language-text">Interfaces should not contain information which is irrelevant or rarely needed.
+<pre><code>Interfaces should not contain information which is irrelevant or rarely needed.
 Every extra unit of information in an interface competes with the relevant units
 of information and diminishes their relative visibility. Use whitespace in
 harmony with your content.
 </code></pre>
 <hr />
 <h3 id="29-help-users-recognize-diagnose-and-recover-from-errors">2.9 Help users recognize, diagnose, and recover from errors</h3>
-<pre><code class="language-text">Error messages should be expressed in plain language (no error codes), precisely
+<pre><code>Error messages should be expressed in plain language (no error codes), precisely
 indicate the problem, and constructively suggest a solution.
 </code></pre>
 <h4 id="291-indicative-examples">2.9.1 Indicative examples</h4>
-<p><img alt="Error Messages Examples showing clear problem indications and solutions" src="../media/5.01/Figure_9_Error_Messages_Examples.png" />
+<p><img alt="Error Messages Examples showing clear problem indications and solutions" src="media/5.01/Figure_9_Error_Messages_Examples.png" />
 <em>Figure 9: Error Messages Examples</em></p>
 <hr />
 <h3 id="210-help-and-documentation">2.10 Help and documentation</h3>
-<pre><code class="language-text">It's best if the system doesn't need any additional explanation. However, it may
+<pre><code>It's best if the system doesn't need any additional explanation. However, it may
 be necessary to provide documentation to help users understand how to complete
 their tasks.
 </code></pre>
@@ -670,7 +630,7 @@ information for all citizens regardless of their situation or condition</em>.</p
 screen when they are easily reachable with the thumb when operating the phone
 with one hand. The top half should be used for displaying information,
 documents, QR codes etc.</p>
-<p><img alt="Layout diagram showing thumb reachable areas on mobile screen" src="../media/5.01/Figure_10_Layout.png" />
+<p><img alt="Layout diagram showing thumb reachable areas on mobile screen" src="media/5.01/Figure_10_Layout.png" />
 <em>Figure 10: Layout</em></p>
 <hr />
 <h4 id="2112-target-sizes">2.11.2 Target sizes</h4>
@@ -684,7 +644,7 @@ spaced. A person's ability to interact with smaller controls may be impacted by
 a disability or a combination of disabilities that affect their motor movements
 and dexterity, as well as by the act of using a website while on the move, such
 as while walking or commuting.</p>
-<p><img alt="Target Sizes diagram showing recommended touch target dimensions" src="../media/5.01/Figure_11_Target_Sizes.png" />
+<p><img alt="Target Sizes diagram showing recommended touch target dimensions" src="media/5.01/Figure_11_Target_Sizes.png" />
 <em>Figure 11 : Target Sizes</em></p>
 <hr />
 <h4 id="2113-colour-contrast-guidelines">2.11.3 Colour contrast guidelines</h4>
@@ -727,37 +687,37 @@ tense to describe the way a product always acts. When you need to write in the
 past or future tenses, use simple verb forms. This may not be applicable to all
 languages; the overall goal is to be as concise as possible without compromising
 clarity.</p>
-<p><img alt="Example showing &quot;Document added&quot; text" src="../media/5.01/Document_added.png" /></p>
+<p><img alt="Example showing &quot;Document added&quot; text" src="media/5.01/Document_added.png" /></p>
 <p>Write in the present tense.</p>
-<p><img alt="Example showing &quot;Document has been added&quot; text" src="../media/5.01/Document_has_been_added.png" /></p>
+<p><img alt="Example showing &quot;Document has been added&quot; text" src="media/5.01/Document_has_been_added.png" /></p>
 <p>Don't write in different variations of the present tense, such as the present
 perfect tense.</p>
 <hr />
 <h4 id="2122-begin-with-the-objective">2.12.2 Begin with the objective</h4>
 <p>When a phrase describes a goal and the action needed to achieve it, start the
 sentence with the goal.</p>
-<pre><code class="language-text">To add a document, click +
+<pre><code>To add a document, click +
 </code></pre>
-<p><img alt="Example showing &quot;To add a document, click +&quot; text" src="../media/5.01/To_add_a_document.png" /></p>
+<p><img alt="Example showing &quot;To add a document, click +&quot; text" src="media/5.01/To_add_a_document.png" /></p>
 <p>Start a statement with the objective ("to add a document") and end it with the
 user action ("click + ").</p>
-<pre><code class="language-text">Click + to add a document
+<pre><code>Click + to add a document
 </code></pre>
-<p><img alt="Example showing &quot;Click + to add a document&quot; text" src="../media/5.01/Click_to_add_a_document.png" /></p>
+<p><img alt="Example showing &quot;Click + to add a document&quot; text" src="media/5.01/Click_to_add_a_document.png" /></p>
 <p>Don't state the action the user takes ("Click + ") before the objective ("to add
 a document").</p>
 <hr />
 <h4 id="2123-avoid-combining-first-and-second-person">2.12.3 Avoid combining first and second person</h4>
 <p>To avoid confusing the user, avoid using "me" or "my," and "you" or "your," in
 the same phrase.</p>
-<pre><code class="language-text">Change your preferences in My Account
+<pre><code>Change your preferences in My Account
 </code></pre>
-<p><img alt="Example showing &quot;Change your preferences in My Account&quot; text" src="../media/5.01/Change_your_preferences_in_My_Account.png" /></p>
+<p><img alt="Example showing &quot;Change your preferences in My Account&quot; text" src="media/5.01/Change_your_preferences_in_My_Account.png" /></p>
 <p>Don't refer to the user in both the second person and the first person within
 the same phrase.</p>
-<pre><code class="language-text">Change your preferences in Account
+<pre><code>Change your preferences in Account
 </code></pre>
-<p><img alt="Example showing &quot;Change your preferences in Account&quot; text" src="../media/5.01/Change_your_preferences_in_Account.png" /></p>
+<p><img alt="Example showing &quot;Change your preferences in Account&quot; text" src="media/5.01/Change_your_preferences_in_Account.png" /></p>
 <hr />
 <h2 id="3-eudi-wallet-design-considerations">3 EUDI Wallet - Design Considerations</h2>
 <p>This section lists specific areas/features on which design considerations are
@@ -898,12 +858,10 @@ design guide.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
