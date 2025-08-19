@@ -93,7 +93,7 @@ Iteration is planned from 20 August 2025 to 26 November 2025 covering the follow
 | R | [Authentication of the User to the device](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/348) |
 | S | [Certificate transparency](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/349) |
 | T | [Support and maintenance by the Wallet Provider](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/350) |
-| Z | [Device-bound Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/567) |
+| Z | [Device-bound Attestations](z-device-bound-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/567) |
 | AA | [Support of Electronic Payments Customer Authentication (SCA) with the Wallet](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/568) |
 
 Earlier topics, planned to be additionally discussed in iteration 3:
