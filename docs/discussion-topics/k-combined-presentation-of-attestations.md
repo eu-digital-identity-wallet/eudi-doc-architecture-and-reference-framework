@@ -236,7 +236,7 @@ This mechanism offers the following advantages
 - **Privacy-preserving correlation**:  
   Attestations can be linked without using identifying attributes that may 
   lead to tracking if not properly hidden during presentation. For example, including 
-  a PID number in attestations could enable linking; PoA avoids this by 
+  a PID number in attestations could enable linking; Cryptographic Binding avoids this by
   offering cryptographic correlation.
 
 This mechanism **does not, by itself, guarantee** that two attestations belong to the same User. 
