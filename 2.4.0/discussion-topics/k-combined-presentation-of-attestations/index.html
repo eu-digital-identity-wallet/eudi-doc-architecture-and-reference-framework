@@ -663,7 +663,7 @@ lead to the inclusion of attributes in an attestation that reveal more informati
 about the User than necessary (e.g., the User’s PID number). To mitigate this, 
 selective disclosure mechanisms SHALL be used to conceal such attributes when 
 they are not required for the specific transaction.</p>
-<h3 id="34-cryptographic-binding-of-attestation">3.4 Cryptographic Binding of attestation</h3>
+<h3 id="34-cryptographic-binding-of-attestations">3.4 Cryptographic Binding of attestations</h3>
 <p>This is an envisioned cryptographic mechanism that allows 
 a Wallet Unit to prove that the private keys corresponding to two (or more) public keys 
 are managed by the same WSCD.</p>
@@ -683,7 +683,7 @@ attestations are managed by the same WSCD.</p>
 <p><strong>Privacy-preserving correlation</strong>:<br />
   Attestations can be linked without using identifying attributes that may 
   lead to tracking if not properly hidden during presentation. For example, including 
-  a PID number in attestations could enable linking; PoA avoids this by 
+  a PID number in attestations could enable linking; Cryptographic Binding avoids this by
   offering cryptographic correlation.</p>
 </li>
 </ul>

@@ -433,14 +433,16 @@
 
 
 <h1 id="z-device-bound-attestations">Z - Device-bound Attestations</h1>
-<p>Version 0.4, updated 19 Aug 2025</p>
+<p>Version 0.5, updated 1 Sep 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/581">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
 Topic Z - Device-bound Attestations</p>
 <p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
-<p>Currently the ARF only assumes device-bound Attestations. Should this be extended to not-device-bound Attestations. What specific high level requirements for not-device-bound Attestations should the ARF specify? </p>
+<p>Currently the ARF only assumes device-bound Attestations. Should this be 
+extended to not-device-bound Attestations. What specific high level requirements for 
+not-device-bound Attestations should the ARF specify? </p>
 <h2 id="12-key-words">1.2 Key words</h2>
 <p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in RFC 2119, i.e., to indicate requirements, recommendations and
@@ -453,7 +455,8 @@ fact.</p>
 <h2 id="13-document-structure">1.3 Document structure</h2>
 <p>This document is structured as follows:
 - Chapter 2 presents requirements related to device-bound attestations. 
-- Chapter 3 discusses use cases for non device-bound attestations.</p>
+- Chapter 3 discusses use cases for non device-bound attestations.
+- Chapter 4 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.</p>
 <h2 id="2-existing-requirements-related-to-device-bound-attestations">2. Existing requirements related to device-bound attestations</h2>
 <p>Device binding refers to the practice of cryptographically linking an attestation 
 to a specific device,  through the use of a private key stored in secure hardware. </p>
@@ -491,34 +494,16 @@ is device-bound.</p>
 <li>The attestation is bound to a device, but the Relying Party does not require a binding proof.</li>
 <li>The attestation is not bound to any device.</li>
 </ol>
-<p><strong>Question 1</strong></p>
-<p>What are the advantages and disadvantages of each case?</p>
 <h2 id="3-use-cases-for-non-device-bound-attestations">3. Use cases for non device-bound attestations</h2>
 <h3 id="low-security-attestations">Low security attestations</h3>
 <p>A prominent use case for non device-bound attestations involves low-risk, low-security 
 attestations such as event tickets, discount vouchers, or other entitlements where 
 strong holder binding is not required. </p>
-<p>In such cases, the level of assurance needed by the Relying Party is minimal, and the 
-main functionality expected from the Wallet is to display a QR code that can be scanned 
-at the point of access. Once the QR code is presented, no further interaction is needed 
-between the Wallet Unit and the Relying Party. As a result, the Wallet functions 
-primarily as a display interface rather than as an active participant in the verification protocol.</p>
-<p>This model can be implemented efficiently by embedding the QR code as a display 
-property of the attestation, allowing a User to simply present it to a compatible 
-QR reader. In this setup, the Wallet assumes a passive role and has no control 
-over the Relying Party with which the User interacts. Notably, this interaction 
-flow is not explicitly addressed in the ARF. Moreover, since the QR code is treated 
-as a static image from the Wallet’s perspective, if it encodes multiple attributes, 
-the User cannot perform selective disclosure. In this context, whether or not the 
-attestation is bound to the device becomes irrelevant. It is reminded, however, 
-that [ISO/IEC 18013-5] enforces device binding as part of its specification.</p>
+<p>In such cases, the level of assurance needed by the Relying Party is minimal.</p>
 <p>It should be highlighted however, holder binding and device binding are related 
 but not the same. An attestation may be bound to a device but not to a User. 
 Device binding in this case will prevent attestation sharing, as well as replay 
 attacks (as discussed in Section 2). </p>
-<p><strong>Question 2</strong></p>
-<p>What are the advantages and disadvantages of using device-bound attestations in this
-use case? </p>
 <h3 id="attestations-bound-to-a-biometric-trait">Attestations Bound to a Biometric Trait</h3>
 <p>Another use case for non device-bound attestations involves attestations that are 
 bound to a biometric trait of the User rather than to the device. In this model, 
@@ -532,9 +517,6 @@ externally—either by a biometric sensor operated by the Relying Party or throu
 trusted third-party service that conducts biometric matching.</p>
 <p>On the other hand, device binding may offer additional security advantages as
 discussed in Section 2.  </p>
-<p><strong>Question 3</strong></p>
-<p>What are the advantages and disadvantages of using device-bound attestations in this
-use case? </p>
 <h3 id="combined-presentation-of-attestations">Combined presentation of attestations</h3>
 <p>One of the use cases for supporting non device-bound attestations is the combined 
 presentation of multiple attestations. In certain scenarios, users may need to 
@@ -549,13 +531,89 @@ data, such as name, date of birth, or address, can be used to infer linkage.</p>
 presentation to be device-bound. For example, a PID can be securely bound to a device, 
 while complementary attestations, such as a university diploma or a professional license, 
 may remain portable and unbound. </p>
-<p><strong>Question 4</strong></p>
-<p>What are the advantages and disadvantages of using device-bound attestations in this
-use case?</p>
-<hr />
-<p><strong>Question 5</strong></p>
-<p>What are other use cases for non device-bound attestations?</p>
-<h2 id="references">References</h2>
+<p><strong>Question</strong>
+What should happen with respect to re-issuance? Currently the ARF specifies the following:</p>
+<blockquote>
+<p>In the absence of User authentication, and to prevent that a re-issued PID or attestation 
+ends up at the wrong User, the PID Provider or Attestation Provider ensures that the re-issued 
+PID or attestation is bound to the same WSCA/WSCD as the PID or attestation it replaces.</p>
+</blockquote>
+<p>But this not applicable to non device-bound attestations. It is noted that even if an attacker
+cannot use the re-issued attestation (e.g., because "claim-based" binding is used) sensitive
+information about a user may be inferred. </p>
+<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
+<p>Currently the ARF only considers device-bound attestations. It will adapted to also
+consider non device-bound attestations. </p>
+<h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
+<p>The following HLR will be added to Topic 12 (Attestation Rulebooks)</p>
+<p><strong>ARB_30</strong>
+The Schema Provider for an Attestation Rulebook SHALL specify whether an attestation 
+is device-bound or not.  </p>
+<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
+<p><strong>OAI_02</strong> A Wallet Unit SHALL support proving cryptographic device binding between a 
+WSCA/WSCD included in the Wallet Unit and a PID or <strong>device-bound</strong> attestation,
+in accordance with [SD-JWT VC] or [ISO/IEC 18013-5]. Notes: Such a mechanism is called 
+'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT VC]. 
+~~Discussions on device binding are ongoing, in particular regarding whether non-device-bound 
+PIDs or attestations should be supported by a Wallet Unit, and if so, what the requirements for 
+this support should be.~~</p>
+<p><strong>ISSU_17</strong> A PID Provider SHALL implement device binding for all PIDs it issues, 
+meaning it SHALL ensure that a PID is cryptographically bound to a WSCA/WSCD included 
+in the Wallet Unit, as specified in requirement WUA_11 in [Topic 9]. Notes: 
+Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' 
+in [SD-JWT-VC]. ~~Discussions on device binding are ongoing, in particular regarding 
+whether non-device-bound PIDs or attestations should be supported by a Wallet Unit, 
+and if so, what the requirements for this support should be.~~</p>
+<p><strong>ISSU_27</strong> ~~An Attestation Provider SHALL implement device binding for all 
+attestations it issues, meaning it SHALL ensure that an attestation is cryptographically 
+bound to a WSCA/WSCD included in the Wallet Unit, as specified in requirement WUA_11 in 
+[Topic 9]. Notes: -Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] 
+and 'key binding' in [SD-JWT-VC]. - Discussions on device binding are ongoing, 
+in particular regarding whether non-device-bound PIDs or attestations should be 
+supported by a Wallet Unit, and if so, what the requirements for this support should be.~~</p>
+<p><strong>ISSU_27</strong> An Attestation Provider SHALL support the issuance of both device-bound
+and non device-bound attestation. When an issued attestation is device-bound, an Attestation Provider
+SHALL ensure that the attestation is cryptographically 
+bound to a WSCA/WSCD included in the Wallet Unit, as specified in requirement WUA_11 in 
+[Topic 9]</p>
+<p><strong>ISSU_65</strong> The common OpenID4VCI protocol referenced in requirement ISSU_01, or an 
+EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider, 
+Attestation Provider or Wallet Provider to verify that a re-issued PID, attestation, 
+or WUA is bound to the same WSCA/WSCD to which the existing PID, <strong>device-bound</strong> attestation, or WUA is bound. 
+Note: This can be done, for instance, by requiring that OAuth 2.0 Demonstrating 
+Proof of Possession (DPoP) [RFC 9449] is used for each Refresh Token, and that the 
+public key in the DPoP proof is identical to the public key in the existing PID, 
+attestation, or WUA issued to the Wallet Unit previously.</p>
+<p><strong>ZKP_01</strong>
+A ZKP scheme SHALL provide support for the following generic functions, while hiding 
+all attributes of PIDs or attestations: (i) generation of a proof that an (some) 
+attribute(s) having a specific value is (are) included in a PID or attestation, 
+(ii) generation of a proof that a PID or attestation is within its validity period, 
+(iii) generation of a proof that a PID or attestation has not been revoked, and 
+(iv) generation of a proof that a PID or <strong>device-bound</strong> attestation is bound to 
+a key stored in the WSCA/WSCD of the Wallet Unit. Additionally, a ZKP scheme SHOULD 
+provide support for the following function, which SHOULD be used only when hiding 
+the PID Provider or Attestation Provider is necessary: (v) generation of a proof 
+that a PID or attestation has been issued by a trusted PID Provider or Attestation 
+Provider, without revealing the PID Provider or Attestation Provider. 
+Notes: - See section 4.1.1 of the Discussion Paper for Topic G.</p>
+<p><strong>Mig_03</strong> For each PID or <strong>device-bound</strong> attestation that is issued to it, a Wallet Unit SHALL 
+add to the Migration Object all data necessary to request issuance of that PID or attestation once again. 
+This SHALL include at least the attestation type and the PID Provider or 
+Attestation Provider that issued the PID or attestation, as well as their service supply points.
+However, the Migration Object SHALL NOT contain attribute identifiers or attribute values, 
+and SHALL NOT contain any private keys of the PID or  <strong>device-bound</strong> attestation.
+<strong>For non device-bound attestations a Wallet Unit SHALL add to the Migration Object all data necessary to
+transfer the attestation to a new device. This includes attribute identifiers or attribute values</strong></p>
+<h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
+<p>Section "6.6.3.8 Relying Party Instance verifies device binding" will be modified
+to reflect that non device-bound attestation can exist. Section 
+"6.6.2.3.3 Verifies that the PID key or the attestation key is protected by the WSCD"
+will be modified to reflect that non device-bound attestation can exist</p>
+<h3 id="44-other-changes">4.4 Other changes</h3>
+<p>The Rulebook template will be modified according to the new HRL <strong>ARB_30</strong>. TS 10
+will be modified according to the new HRL <strong>Mig_03</strong>. </p>
+<h2 id="5-references">5. References</h2>
 <table>
 <thead>
 <tr>
