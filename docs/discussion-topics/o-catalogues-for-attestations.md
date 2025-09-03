@@ -1,22 +1,25 @@
 # O - Catalogues for Attestations
 
-Version 0.2, updated 3 Jul 2025
+Version 0.3, updated 29 Aug 2025
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/557)
 
 ## 1. Introduction
 
 ### 1.1 Discussion Paper topic description
 
-This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
-Topic O - Catalogues for Attestations
+This document is the Discussion Paper for European Digital Identity Cooperation Group
+on topic **O - Catalogues for Attestations**
 
 The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
-Requirements need to be defined to implement the catalogue of Attestation Rulebooks 
+> Requirements need to be defined to implement the catalogue of Attestation Rulebooks 
 and attributes as outlined in ARF 1.4.1 Annex 2, Topics 25 and 26. Specifically, 
 interfaces for registering a Rulebook and for searching and requesting rulebooks and 
 attribute definitions should be specified.
 
+Following the *Commission Implementing Regulation (EU) 2025/1569 of 29 July 2025*
+this document discusses  **catalogue of attributes** and 
+**catalogue of schemes for the attestation of attributes**.
 
 ## 1.2 Key words
 
@@ -34,12 +37,12 @@ fact.
 
 This document is structured as follows:
 
-- Chapter 2 presents an overview of catalogues of attributes and catalogues of
-attestation Rulebooks as discussed in the current version of the ARF.
+- Chapter 2 introduces catalogue of attributes and catalogue of schemes for the 
+attestation of attributes based on the existing legislation and the ARF.
 - Chapter 3 lists the additions and changes that will be made to the ARF
 as a result of discussing this topic with Member States.
 
-## 2. Existing requirements related to catalogues for Attestations
+## 2. Existing requirements related to catalogues for Attestations and Definitions.
 Article 45e Article 45e of the [European Digital Identity Regulation] specifies that
 
 > [...] the Commission shall, taking into account relevant international standards, 
@@ -49,39 +52,111 @@ as well as schemes for the attestation of attributes and verification procedures
 for qualified electronic attestations of attributes for the purposes of paragraph 
 1 of this Article.
 
-Topic 12 of ARF 2.2 outlines the high-level requirements (HLR) for Rulebooks that 
-define new types of attestations. Among other aspects, it introduces the concept 
-of a catalogue to support the management and discovery of these Rulebooks and attributes. 
+It is clarified that the *scheme for the attestation of attributes* is not the
+same as the *Attestation Rulebook*. Particularly:
 
-In line with the foundations laid out in Topic 12, Topics 25 and 26 further elaborate 
-on the purpose and structure of the catalogue of Attestation Rulebooks and the catalogue of attributes. 
+- **Scheme for the attestation of attributes** is a machine-readable attestation definition
+- **Attestation Rulebook** is a human readable specification of the scheme for the attestation of attributes​
 
-It is envisioned that Rulebooks can be registered and made available in a publicly 
-accessible catalogue. Particularly, Topic 26 specifies that Schema Providers  for 
-an Attestation Rulebook that is a QEAA or PuB-EAA
-SHOULD register their Rulebooks in the catalogue of Attestation Rulebooks. The Schema 
-Provider for an Attestation Rulebook that is a non-qualified EAA MAY also choose 
-to register their Rulebooks in the catalogue of Attestation Rulebooks.
+The *Commission Implementing Regulation (EU) 2025/1569* additionally defines
+the **catalogue of schemes for the attestation of attributes**. The scope of these two catalogues
+is specified in articles 7 and 8 of the implementing regulation. Particularly, with respect
+to the catalogue of attributes the following are defined:
 
-To enhance discoverability and technical integration, existing HLRs state the the catalogue will be made 
-publicly available and machine-readable. It may be hosted in full or partially 
-by the Commission and can include an e-discovery mechanism or links to external 
-catalogues. The infrastructure supporting the catalogue will be designed for high 
-availability and will avoid single points of failure, ensuring resilience and reliability.
+**Article 7 paragraph 3**
 
-Furthermore, it is required that he registration process will be self-service and open, 
-requiring no prior approval from the registry. Similarly, the Commission will also 
-publicly communicate the existence and maintenance of the catalogue, along with the 
-procedures for proposing a new registration, updating existing records, or removing outdated ones. 
-All such changes will be subject to versioning, archiving, and logging, ensuring full traceability 
-and accountability throughout the lifecycle of each Rulebook. The specifications and
-formats of these catalogues will be provided by TS11 - Specification of Interfaces 
-and Formats for the Catalogue of Attestation Rulebooks and Attributes.
+> Member States shall request the inclusion of attributes listed in Annex VI to Regulation (EU) 
+No 910/2014 to the catalogue of attributes wherever those attributes rely on authentic sources for 
+the purpose of the verification by qualified trust service providers.
 
-### 2.1 Existing high-level requirements
+**Article 7 paragraph 3**
+ 
+> In addition, Member States may request the inclusion of attributes not listed in Annex VI to 
+the catalogue of attributes wherever those attributes rely on authentic sources within the public sector. 
+Private entities that are considered to be a primary source of information or recognised as authentic 
+in accordance with Union or national law, including administrative practice, may request the inclusion
+of attributes not listed in Annex VI to the catalogue of attributes wherever the requesting entity is 
+responsible for those attributes.
+
+Similarly, with respect to the catalogue of schemes for the attestation of attributes
+the following are defined:
+
+**Article 8 paragraph 3**
+
+> Owners of a scheme for the attestation of attributes may request adding schemes to the catalogue of schemes [...]
+
+Therefore, the two catalogues are distinct and serve different purposes. The catalogue 
+of attributes is limited to attributes that rely on authentic sources within the public 
+sector, with its primary objective being the discovery of verification points. Only specific
+type of entities shall be allowed to add or modify an entry in this catalogue. In contrast, 
+the catalogue of schemes for the attestation of attributes has a broader scope, as it 
+allows any scheme owner to register their attestation scheme.
+
+The ARF includes high-level requirements (HLR) for these catalogues, which however
+are considered outdated and will be updated. For more details see Section 3 of this
+document
+
+### 2.1 Catalogues' contents
+Articles 7 and 8 of the *Commission Implementing Regulation (EU) 2025/1569*
+define the minimum parameters that a  request to include or modify an entry
+in the catalogues shall contain. Specifically, a request to include or to modify 
+an attribute in the catalogue of attributes shall contain at least:
+
+* identification of the entity making the request
+* where applicable, a reference to Union or national law or administrative practice 
+under which the entity making the request is considered to be a primary source of 
+information or recognised authentic source.
+* if the request refers to an attribute already existing in the catalogue or is a new attribute
+* a namespace for the identifier of the attributes, the value of which is unique within the catalogue of attributes
+* an identifier of the attribute, unique within the namespace, and the version of the attribute
+* semantic description of the attribute
+* the data type of the attribute
+* the verification point for the attribute at national level or a link to a description 
+on how to initiate the verification requests.
+
+Similarly,  a request to include or to modify a scheme in the catalogue of 
+schemes for the attestation of attributes shall contain at least:
+
+* the name of the scheme [...]
+* the name and contact information of the scheme for the attestation of attributes owner
+* the status and version of the scheme
+* a reference to specific laws, standards or guidelines, where the issuance, 
+validation, or use of an electronic attestation of attributes within the scope of the scheme is subject to them
+* the format or formats of electronic attestation of attributes within the scope of the scheme;
+* one or more namespaces, attribute identifiers, semantic descriptions and data types of each attribute 
+that is part of an electronic attestation of attributes within the scope of the scheme, either by 
+reference to an attribute in the catalogue of attributes in Article 7, or an attribute defined 
+in an analogue way within the scope of the scheme
+* a description of the trust model and the governance mechanisms applied under the scheme, including the revocation mechanisms;
+*  any requirements concerning the providers [...] or the sources of information on which those providers rely 
+when issuing electronic attestations of attributes [...]
+* a statement whether electronic attestations of attributes within the scope of the 
+scheme are to be issued as qualified electronic attestations of attributes, as 
+electronic attestations of attributes issued by or on behalf of a public sector body 
+responsible for an authentic source, or as both.
+
+The contents of both catalogues SHALL be available in both human and machine readable formats. 
+
+## 3 Additions and changes to the ARF
+
+### 3.1 High-Level Requirements to be added to Annex 2
+The following High-Level Requirement is proposed to be added under Topic 12:
+
+**ARB_30**
+A Schema Provider for an Attestation Rulebook MAY generate a machine-readable version 
+of the attestation schema and register it in the catalogue of schemes for the attestation of attributes.
+The registration SHALL include a reference to the corresponding Attestation Rulebook.
+
+### 3.2 High-Level Requirements to be changed
+The requirements specified in Topics 25 and 26 shall be removed, as they are considered outdated. 
+In addition, the content of these topics shall be updated to reflect the conclusions of 
+this discussion paper. Topic 25 shall also clarify that the scope of the catalogue of attributes is 
+limited. Consequently, any references to Topic 25 that describe this catalogue as a general-purpose 
+catalogue should be revised accordingly.
+
+A list of the requirements that shall be removed follows:
 
 **Topic 25**
-
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
@@ -105,91 +180,13 @@ and Formats for the Catalogue of Attestation Rulebooks and Attributes.
 | CAT_09 | The Commission SHALL make publicly available the existence and maintenance of the Attestation Rulebooks catalogue mentioned in CAT_01, including processes to propose the registration to public and private parties, allowing to register an Attestation Rulebook, and conditions for updating and/or removing Attestation Rulebooks. These processes SHALL include archiving and logging changes of the history of the Attestation Rulebooks catalogue in an appropriate way, including versioning. |
 | CAT_10 | The body registering an Attestation Rulebook SHALL include a unique reference to this body and the way to contact it, or how to find information for doing so. *Notes: - Topic 12 describes an option for Member State-specific (i.e., domestic) Rulebooks, extending a EU-wide Rulebook. - Rulebooks may also be shared between interested parties in an out-of-band manner.* |
 
-### 2.3 Discussion
-**Question 1**
-
-What is the relationship between the two catalogues (catalogue of attributes and catalogue of attestations)? Should they exist independently, 
-or can they be combined? A note in [CAT_01] states:  
-*"[...] The catalogue of attributes does not need to be a separate catalogue, but 
-could be combined with the Attestation Rulebooks."*  
-Is this note still valid?
-
----
-
-**Question 2**
-
-What is the relationship between the catalogue of attributes and other registries? 
-For example, [ARB_06b] requires that:  
-*“For [SD-JWT VC]-compliant attestations, the Schema Provider for the Attestation 
-Rulebook SHALL ensure that each claim name is either included in the IANA registry 
-for JWT claims, or is a Public Name as defined in [RFC 7519].”*
-
-Possible interpretations of the role of the catalogue of attributes include:
-
-* It will serve as an **alternative registry** (e.g., instead of registering with IANA).
-* It will be a **complementary registry** (e.g., registration with both IANA and the catalogue of attributes is required).
-* It will be the **only mandatory registry** (e.g., registration with IANA is optional).
-
----
-
-**Question 3**
-
-How should attributes with the same semantics and identifier but from different 
-namespaces be handled?  
-For example, `first_name` may exist in `eu.europa.ec.eudi.pid.1`, `org.iso.18013.5.1.
-mDL`, etc.
-
-* There should be a separate entry for each identifier–namespace pair, and reuse 
-across namespaces should be encouraged.
-
----
-
-**Question 4**
-
-Do we need machine-readable catalogues?  
-Some existing requirements highlight the need for “high availability and avoiding a 
-single point of failure.” But in what way could a catalogue be considered a single 
-point of failure? Will it be used during issuance or the presentation process?
-
-* Probably not. The catalogue should serve as an **informational resource**, and 
-Wallet Units should **not be required** to interact with it at runtime.
-* A machine-readable catalogue could be very useful for both the Provider and the 
-RP, e.g., a very generic Provider can be envisioned where the attestation to be 
-issued is configured based on the machine-readable catalogue. Similarly, a very generic 
-Wallet could leverage the use of machine-readable catalogue
-
----
-
-**Question 5**
-
-Is CAT_07 valid as written? Is fully self-service registration without approval a 
-desirable feature? What does “self-registration” truly mean in this context? Should 
-the process be automated?
-
-* It is likely that **some manual review and approval** will be necessary.
-
----
-
-**Question 6**
-
-Is there a need for registry structures, such as hierarchy or grouping? For example, 
-IANA supports “groups of registries” and “subregistries.”
-
-* This might be beneficial—for instance, in cases where **country-specific 
-extensions** to a Rulebook are defined. However, it may also introduce **unnecessary 
-complexity**.
-* **Grouping attestations** could improve usability (similar to IANA), but this 
-raises questions: **Who will manage the groups?**
-
-
-
-
-## 3 Additions and changes to the ARF
-
-### 3.1 High-Level Requirements to be added to Annex 2
-### 3.2 High-Level Requirements to be changed
 
 ### 3.3 Descriptions to be added to the ARF main document
+The ARF includes in various locations the term `catalogue of published Attestation Rulebooks`
+(e.g., section 3.15). This should be rephrased to `catalogue of schemes for the attestation of attributes`.
+
+Similarly, Section 5.5 of the ARF has to be re-written and adapted to the definitions set 
+in Section 2 of this document. 
 
 ## 4 References
 
