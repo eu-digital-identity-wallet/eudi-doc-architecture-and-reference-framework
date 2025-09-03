@@ -216,7 +216,7 @@ about the User than necessary (e.g., the User’s PID number). To mitigate this,
 selective disclosure mechanisms SHALL be used to conceal such attributes when 
 they are not required for the specific transaction.
 
-### 3.4 Cryptographic Binding of attestation
+### 3.4 Cryptographic Binding of attestations
 This is an envisioned cryptographic mechanism that allows 
 a Wallet Unit to prove that the private keys corresponding to two (or more) public keys 
 are managed by the same WSCD.
@@ -236,7 +236,7 @@ This mechanism offers the following advantages
 - **Privacy-preserving correlation**:  
   Attestations can be linked without using identifying attributes that may 
   lead to tracking if not properly hidden during presentation. For example, including 
-  a PID number in attestations could enable linking; PoA avoids this by 
+  a PID number in attestations could enable linking; Cryptographic Binding avoids this by
   offering cryptographic correlation.
 
 This mechanism **does not, by itself, guarantee** that two attestations belong to the same User. 
