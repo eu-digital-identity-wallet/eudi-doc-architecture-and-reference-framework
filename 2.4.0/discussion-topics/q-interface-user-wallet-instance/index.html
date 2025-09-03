@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/i-natural-person-representing-another-natural-person/">
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/q-interface-user-wallet-instance/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>I - Natural person representing another natural person - European Digital Identity</title>
+        <title>Q interface user wallet instance - European Digital Identity</title>
       
     
     
@@ -53,11 +53,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="I - Natural person representing another natural person - European Digital Identity" >
+        <meta  property="og:title"  content="Q interface user wallet instance - European Digital Identity" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/i-natural-person-representing-another-natural-person.png" >
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/q-interface-user-wallet-instance.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -65,15 +65,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/i-natural-person-representing-another-natural-person/" >
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/q-interface-user-wallet-instance/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="I - Natural person representing another natural person - European Digital Identity" >
+        <meta  name="twitter:title"  content="Q interface user wallet instance - European Digital Identity" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/i-natural-person-representing-another-natural-person.png" >
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/q-interface-user-wallet-instance.png" >
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#i-natural-person-representing-another-natural-person" class="md-skip">
+        <a href="#topic-q-interface-between-the-user-and-the-wallet-instance" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              I - Natural person representing another natural person
+              Q interface user wallet instance
             
           </span>
         </div>
@@ -432,140 +432,116 @@
   
 
 
-<h1 id="i-natural-person-representing-another-natural-person">I - Natural person representing another natural person</h1>
-<p>Version 0.4, updated 20 May 2025</p>
-<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495">Link to GitHub discussion</a></p>
-<h2 id="1-introduction">1. Introduction</h2>
-<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
-<p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
-Topic I - Natural person representing another natural person.</p>
+<p>Version 0.2, updated 02 September 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496">Link to GitHub discussion</a></p>
+<h1 id="topic-q-interface-between-the-user-and-the-wallet-instance">Topic Q - Interface between the User and the Wallet Instance</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic Q - Interface between the User and the Wallet Instance.</p>
 <p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
-<p>Outline the requirements how the Wallet will support the representation of another 
-natural person need to be clearly defined. Considerations about representing minors should be done.</p>
-<p>This paper focuses only in the case of a natural person representing another
-natural person and <em>not in the case of a natural person representing a legal 
-person</em>.</p>
-<h2 id="12-key-words">1.2 Key words</h2>
-<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
-specified in RFC 2119, i.e., to indicate requirements, recommendations and
-options specified in this document.</p>
-<p>In addition, 'must' (non-capitalised) is used to indicate an external
-constraint, for instance a self-evident necessity or a requirement that is
-mandated by an external document. The word 'can' indicates a capability, whereas
-other words, such as 'will' and 'is' or 'are' are intended as statements of
-fact.</p>
-<h2 id="13-document-structure">1.3 Document structure</h2>
-<p>This document is structured as follows:</p>
+<p><em>This topic is to discuss and identify whether the ARF needs to contain high-level requirements regarding the UI of a Wallet Instance.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
 <ul>
-<li>Chapter 2 presents legal requirements for the representation of another 
-natural person.</li>
-<li>Chapter 3 discusses uses cases of a natural person representing another natural
-person, as well as attestation issuance, and attestation presentation for these use
-cases.</li>
-<li>Chapter 4 lists the additions and changes that will be made to the ARF
-as a result of discussing this topic with Member States.</li>
+<li>Chapter 2 presents the legal requirements for complying with accessibility guidelines and regulations.</li>
+<li>Chapter 3 discusses topics related to  user interface requirements related to wallet units focusing on the accessibility aspects</li>
+<li>Chapter 4 presents the additions and changes that will be made to the ARF main document as a result of discussions. </li>
 </ul>
-<h2 id="2-legal-requirements-for-representation-of-another-natural-person">2. Legal requirements for representation of another natural person</h2>
-<p>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11
-April 2024 amending Regulation (EU) No 910/2014 as regards establishing the
-European Digital Identity Framework [European Digital Identity Regulation]
-article 3, 1 states:</p>
-<blockquote>
-<p>“electronic identification” means the process of using person identification 
-data in electronic form uniquely representing either a natural or legal person, 
-or <strong>a natural person representing another natural person</strong> or a legal person</p>
-</blockquote>
-<p>Similarly, article 3, 3 states</p>
-<blockquote>
-<p>“person identification data” means a set of data that is issued in accordance 
-with Union or national law and that enables the establishment of the identity of 
-a natural or legal person, or of <strong>a natural person representing another natural person 
-or a legal person</strong>.</p>
-</blockquote>
-<p>Additionally, article 3, 4 states</p>
-<blockquote>
-<p>“electronic identification scheme” means a system for electronic identification 
-under which electronic identification means are issued to natural or legal persons
-or <strong>natural persons representing other natural persons</strong> or legal persons</p>
-</blockquote>
-<p>Similarly, article 3, 5a states</p>
-<blockquote>
-<p>“user” means a natural or legal person, or <strong>a natural person representing another natural 
-person</strong> or a legal person, that uses trust services or electronic identification means 
-provided in accordance with this Regulation.</p>
-</blockquote>
-<p>Article 5a, 5(f) of the same regulation states:</p>
-<blockquote>
-<p>ensure that the person identification data, which is available from the electronic 
-identification scheme under which the European Digital Identity Wallet is provided, 
-uniquely represents the natural person, legal person or <strong>the natural person representing 
-the natural</strong> or legal person, and is associated with that European Digital Identity Wallet</p>
-</blockquote>
-<p>Article 11a, 3c of the same regulation requires that the interoperability framework shall 
-consist of:</p>
-<blockquote>
-<p>[...] a reference to a minimum set of person identification data necessary to uniquely 
-represent a natural or legal person, or a <strong>natural person representing another natural person</strong> 
-or a legal person, which is available from electronic identification schemes</p>
-</blockquote>
-<p>Finally, ANNEX VI of the same regulation (MINIMUM LIST OF ATTRIBUTES) states:</p>
-<blockquote>
-<p>[...] 9. Powers and mandates to represent natural or legal persons</p>
-</blockquote>
+<h2 id="2-legal-requirements-for-the-wallet-units-user-interface">2 Legal Requirements for the Wallet Units' User Interface</h2>
+<h3 id="21-the-european-accessibility-act">2.1 The European Accessibility Act</h3>
+<p>The [European Accessibility Act Directive] requires the Wallets to follow general accessibility principles for digital products and services in the EU market that ensure all users (especially those with disabilities) will have equal access to all the features and functionalities offered.</p>
+<p>Therefore, the Wallets must be inclusive and user friendly to support individuals with functional limitations, including those with physical, mental, intellectual, sensory, and age-related impairments, whether temporary or permanent.</p>
+<p>To achieve this, the Wallets must meet specific guidelines and rules that impact decisions made on the user interface (UI) design and the user experience (UX) design.</p>
+<p>The European Accessibility Act specifies the established European standard EN 301 549 as the primary guideline. As its technical framework, the EN 301 549 includes the Web Content Accessibility Guidelines (WCAG) developed by the World Wide Web Consortium (W3C).</p>
+<p>Regarding the accessibility of Wallet Units for Users, the following legal requirements and standards apply:</p>
+<ul>
+<li>
+<p><strong><a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf">EN 301 549 V3.2.1 - Accessibility requirements for ICT products and services</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882#rct_47">DIRECTIVE (EU) 2019/882 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL</a></strong> on the accessibility requirements for products and services</p>
+</li>
+<li>
+<p><strong><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj">DIRECTIVE (EU) 2016/2102 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL</a></strong> on the accessibility of the websites and mobile applications of public sector bodies</p>
+</li>
+<li>
+<p><strong><a href="https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1">Web Content Accessibility Guidelines (WCAG) 2 requirements and techniques</a></strong></p>
+</li>
+</ul>
+<h3 id="22-legal-obligations-by-eu-member-states">2.2 Legal obligations by EU Member States</h3>
+<p>EU Member States have a legal obligation to comply with the European Accessibility Act Directive by adopting and implementing its requirements into their national laws by June 28, 2025. Taking into account that each Wallet Unit implementation must adopt their national legislation, we need to harmonise the accessibiilty requirements of the Wallets in order to achieve a seamless cross-border use within the EU.</p>
 <h2 id="3-discussion">3 Discussion</h2>
-<p>The [European Digital Identity Regulation]
-considers the representation of one natural person by another. </p>
-<p>One common use case is the legal representation of minors or individuals with 
-diminished legal capacity. For example parents or legal guardians should be empowered 
-to make decisions and act on behalf of their children and represent them when accessing 
-educational platforms, healthcare services, government benefits, or other services. 
-The EU Digital Identity Wallet should therefore accommodate such delegation in a secure, 
-verifiable manner.</p>
-<p>Another significant use case is the management of affairs for elderly or incapacitated 
-individuals. In these cases individuals can be assigned as legal representatives to 
-manage healthcare, financial, and personal matters.This could translate into a caregiver 
-or relative holding a proper delegation to, for instance, access health records or 
-submit applications for social care services on behalf of the person they represent.</p>
-<p>Power of attorney is another use case of a natural person (the agent) acting on 
-behalf of another natural person (the principal).</p>
-<h3 id="31-attestation-issuance">3.1 Attestation issuance</h3>
-<p>Based on the [European Digital Identity Regulation], it should be possible to issue 
-an attestation for a natural person to a representative, in accordance with 
-applicable national and European legislation. For certain use cases (e.g., parent-child 
-relationships), a PID or attestation provider should be able to retrieve the relevant 
-information from authentic sources at the national level or through designated 
-intermediaries. In other cases (e.g., power of attorney), the represented natural 
-person may be required to explicitly authorize the representative.</p>
-<p>Attestation for a natural person issued to a representative SHALL be managed through a distinct attestation 
-type. This attestation type SHALL specify the nature of the representation and 
-SHALL clearly define the operations that the representative is authorized to perform, 
-thereby restricting the scope of their authority. It SHALL NOT be possible to conceal 
-this information.</p>
-<p>Furthermore, this attestation type SHALL be either short-lived or revocable. In 
-the case of revocable attestations, all entities that, according to applicable law, 
-are entitled to revoke them SHALL have the capability to do so. It is emphasized 
-that the high-level requirements concerning attestation revocation, as defined in 
-Annex 2 of the ARF, also apply to this attestation type.</p>
-<h2 id="32-attestation-presentation">3.2 Attestation Presentation</h2>
-<p>A natural person should be able to represent another natural person when interacting 
-with a Relying Party. The Relying Party SHALL always be made aware that it is 
-interacting with a legal representative or agent. This is ensured by the fact that 
-the corresponding Wallet Unit presents an attestation of a distinct type, specifically 
-issued representations.</p>
-<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
-<h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
-<p><strong>Requirement 1</strong>
-The Commission SHALL create a Rulebook for attestations issued to a natural
-person representing another natural person. The Rulebook SHALL include attributes
-used for defining a validity period, the nature of the representation, and the operations 
-the representative is authorized to perform, thereby limiting the scope of its authorization.</p>
-<p><strong>Requirement 2</strong>
-An Attestation Provider issuing attestations to a natural
-person representing another natural person  SHALL ensure 
-that either the attestations are short-lived or that all entities which, according 
-to applicable law, must have the ability to revoke such attestations are able to do so.</p>
-<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
-<h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
+<h3 id="31-conformance-to-the-wcag">3.1 Conformance to the WCAG</h3>
+<p>The broader EU digital landscape includes the European Accessibility Act, which mandates that digital products and services, including those using the EUDI Wallet, must be accessible by default for people with disabilities.</p>
+<p>The European Accessibility Act requires WCAG 2.1 Level AA conformance for digital products and services, not WCAG 2.2, as WCAG 2.1 AA is the currently recognized baseline for compliance. While the more recent WCAG 2.2 is not a legal requirement under the European Accessibility Act, it is encouraged to exceed the minimum standard and adopt the newer guidelines for future-proofing and a more accessible user experience. </p>
+<p>WCAG 2.2 adds new success criteria that build upon WCAG 2.1, with a stronger focus on users with cognitive, low-vision, and motor disabilities, particularly on mobile devices. It introduces concepts like minimum pointer target sizes and consistent help mechanisms to address these needs, while also including more specific rules for focus visibility and reducing complex drag gestures.</p>
+<p><strong>Why WCAG 2.2 is Encouraged (but not required by the European Accessibility Act)</strong></p>
+<ul>
+<li><strong>Updated and improved:</strong> While WCAG 2.1 AA is the current baseline, WCAG 2.2 has been published with updated guidelines and improvements.</li>
+<li><strong>Proactive Approach:</strong> Adopting WCAG 2.2 demonstrates a proactive approach to accessibility, going beyond the basic legal requirements.</li>
+<li><strong>Better User Experience:</strong> Following WCAG 2.2 guidelines can lead to a better and more comprehensive experience for users with various disabilities.</li>
+<li><strong>Future-Proofing:</strong> Aligning with the newer standard prepares Wallets for potential future changes and ensures long-term accessibility.</li>
+</ul>
+<h4 id="311-levels-of-conformance">3.1.1 Levels of conformance</h4>
+<p>As specified by the WCAG all digital applications must focus on the following principles:</p>
+<ul>
+<li><strong>Principle 1 – Perceivable:</strong> Information and user interface components must be presentable to users in ways they can perceive.</li>
+<li><strong>Principle 2 – Operable:</strong> User interface components and navigation must be operable.</li>
+<li><strong>Principle 3 – Understandable:</strong> Information and the operation of the user interface must be understandable.</li>
+<li><strong>Principle 4 – Robust:</strong> Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.</li>
+</ul>
+<p>For each of those principles there are three levels of conformance with the WCAG:</p>
+<ul>
+<li><strong>Level A:</strong> Basic accessibility</li>
+<li><strong>Level AA:</strong> Most commonly targeted and often a legal standard, and</li>
+<li><strong>Level AAA:</strong> Most stringent level, providing the broadest accessibility but not always practical or absolutely necessary.</li>
+</ul>
+<p>Each higher level includes all the criteria of the previous level, with Level AAA providing the maximum level of access to the widest range of users.</p>
+<h4 id="312-ensuring-conformance">3.1.2 Ensuring conformance</h4>
+<p>To ensure conformance to the WCAG, it is recommended that Wallets undergo a usability audit which involves testing using automated tools and, where required, manual hands-on user testing.</p>
+<h3 id="313-conformance-beyond-the-wcag">3.1.3 Conformance beyond the WCAG</h3>
+<p>While the WCAG covers the technical standards concerning web content and the user interface (UI) layer, the European Accessibility Act's scope is broader and mandates a deeper responsibility on how the Wallet Units must be governed in terms of privacy, security and support.</p>
+<p>It should be therefore made clear that compliance to the WCAG does not necessarily mean full compliance with the European Accessibility Act.</p>
+<h3 id="32-the-goals-of-the-discussion">3.2 The Goals of the Discussion</h3>
+<p>The goal of the discussion is to establish a set of rules that will accompany the Wallets in terms of conformance to accesibility standards.</p>
+<p>To summarise, there are several fundamental questions to be discussed and answered before proposing the set of HLRs. These questions are presented in the next sections.</p>
+<p>Note: This document is ONLY intended to clarify or create the high-level requirements related to this topic. The necessary technical specifications will be developed by the European Commission after an agreement on the requirements has been reached.</p>
+<h3 id="33-questions-for-discussion">3.3 Questions for Discussion</h3>
+<p>Here below is the list of the fundamental questions that need to be answered prior to drafting HLRs.</p>
+<p><strong>Question 1:</strong> Should Wallets conform to the WCAG 2.1 or the WCAG 2.2?</p>
+<p><strong>Question 2:</strong> What should be the minimum level of accessibility met? (i.e. AA or AAA)</p>
+<p><strong>Question 3:</strong> Should performing a usability audit be mandatory or optional?</p>
+<p><strong>Question 4:</strong> Should manual hands-on user testing be mandatory or optional?</p>
+<p><strong>Question 5:</strong> How often and under what circumstances should Wallets undergo an accessibility audit?</p>
+<h2 id="4-additions-and-changes-to-the-arf">4  Additions and Changes to the ARF</h2>
+<h3 id="arf-240">ARF 2.4.0</h3>
+<p>Currently "Accessibility" is addressed shortly in section 6.5.4. </p>
+<p>"Accessibility" is lso addressed in Annex 2, topic 40, part D. The mentioned HLRs for Wallet unit accessibility are: </p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_21</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units comply with requirements and standards outlined in <a href="http://data.europa.eu/eli/dir/2016/2102/oj">Directive 2016/2012 on the accessibility of websites and mobile applications of public sector bodies</a>, including European Standard EN 301 549 V1.1.2 (2015-04).</td>
+</tr>
+<tr>
+<td>WIAM_22</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units comply with accessibility requirements for products and services established under <a href="http://data.europa.eu/eli/dir/2019/882/oj">Directive (EU) 2019/882</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proposed-arf-changes">Proposed ARF changes</h3>
+<p>It is planned to introduce a new section in the ARF on accessibility, after section 7. This new section 8 will contain how the Wallet will comply with the current existing regulation on accessibility. The current content in section 6.5.4 on accessibility will be removed. </p>
+<p>In Annex 2 the content of topic 40, part D will be moved to a new topic, topic 54.     </p>
+<p>Besides these planned changes, further changes on this subject will follow the discussion's outcome.</p>
 <h2 id="5-references">5 References</h2>
 <table>
 <thead>
@@ -577,15 +553,11 @@ to applicable law, must have the ability to revoke such attestations are able to
 <tbody>
 <tr>
 <td>[ARF_DevPlan]</td>
-<td>Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0</td>
 </tr>
 <tr>
-<td>[European Digital Identity Regulation]</td>
-<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
-</tr>
-<tr>
-<td>[Topic_A]</td>
-<td>Discussion Paper for the European Digital Identity Cooperation Group regarding Topic A: Privacy risks and mitigation, version 1.0</td>
+<td>[Web Content Accessibility Guidelines (WCAG) 2 requirements and techniques]</td>
+<td>A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques.</td>
 </tr>
 </tbody>
 </table>

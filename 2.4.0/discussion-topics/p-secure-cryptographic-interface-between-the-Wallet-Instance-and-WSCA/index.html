@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/i-natural-person-representing-another-natural-person/">
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>I - Natural person representing another natural person - European Digital Identity</title>
+        <title>P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity</title>
       
     
     
@@ -53,11 +53,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="I - Natural person representing another natural person - European Digital Identity" >
+        <meta  property="og:title"  content="P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/i-natural-person-representing-another-natural-person.png" >
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -65,15 +65,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/i-natural-person-representing-another-natural-person/" >
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="I - Natural person representing another natural person - European Digital Identity" >
+        <meta  name="twitter:title"  content="P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/i-natural-person-representing-another-natural-person.png" >
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/assets/images/social/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.png" >
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#i-natural-person-representing-another-natural-person" class="md-skip">
+        <a href="#p-secure-cryptographic-interface-between-the-wallet-instance-and-wsca" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              I - Natural person representing another natural person
+              P - Secure Cryptographic Interface between the Wallet Instance and WSCA
             
           </span>
         </div>
@@ -432,19 +432,17 @@
   
 
 
-<h1 id="i-natural-person-representing-another-natural-person">I - Natural person representing another natural person</h1>
-<p>Version 0.4, updated 20 May 2025</p>
-<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/495">Link to GitHub discussion</a></p>
+<h1 id="p-secure-cryptographic-interface-between-the-wallet-instance-and-wsca">P - Secure Cryptographic Interface between the Wallet Instance and WSCA</h1>
+<p>Version 0.2, updated 1 Sep. 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/578">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
 <p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
-Topic I - Natural person representing another natural person.</p>
+Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA</p>
 <p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
-<p>Outline the requirements how the Wallet will support the representation of another 
-natural person need to be clearly defined. Considerations about representing minors should be done.</p>
-<p>This paper focuses only in the case of a natural person representing another
-natural person and <em>not in the case of a natural person representing a legal 
-person</em>.</p>
+<p>The need for harmonization of this interface needs to be discussed. If the WSCA is 
+delivered by the Wallet Provider, the situation is different than when the WSCA is delivered by 
+the WSCD provider.</p>
 <h2 id="12-key-words">1.2 Key words</h2>
 <p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
 specified in RFC 2119, i.e., to indicate requirements, recommendations and
@@ -455,115 +453,115 @@ mandated by an external document. The word 'can' indicates a capability, whereas
 other words, such as 'will' and 'is' or 'are' are intended as statements of
 fact.</p>
 <h2 id="13-document-structure">1.3 Document structure</h2>
-<p>This document is structured as follows:</p>
+<p>This document is structured as follows:
+- Section 2 presents definition and existing High Level Requirements related to
+topic P
+- Section 3 discusses existing technologies
+- Section 4 presents the additions and changes that will be made to the ARF as 
+a result of discussing this topic with Member States.</p>
+<h2 id="2-definitions-and-existing-high-level-requirements">2. Definitions,  and existing High Level Requirements</h2>
+<p>According to the ARF </p>
+<blockquote>
+<p>Wallet Secure Cryptographic Application (WSCA) (is) an application that manages 
+critical assets by being linked to and using the cryptographic and non-cryptographic 
+functions provided by the Wallet Secure Cryptographic Device. Different types of 
+WSCD generally use different types of WSCA. For example, if the WSCD is a remote 
+HSM, the WSCA may be (but does not have to be) a dedicated firmware module. If the
+WSCD is a external smartcard or an internal e-SIM or embedded Secure Element, 
+the WSCA takes the form of a dedicated JavaCard applet running on the e-SIM or SE. 
+If the WSCD is a local native WSCD, the WSCD is integrated into the OS of the User device. 
+The WSCA interfaces directly with the Wallet Instance</p>
+</blockquote>
+<p>In accordance with the High-Level Requirements outlined in Annex 2 of the ARF, the Wallet 
+Secure Cryptographic Application (WSCA) shall provide the following functionalities to the 
+Wallet Instance:</p>
 <ul>
-<li>Chapter 2 presents legal requirements for the representation of another 
-natural person.</li>
-<li>Chapter 3 discusses uses cases of a natural person representing another natural
-person, as well as attestation issuance, and attestation presentation for these use
-cases.</li>
-<li>Chapter 4 lists the additions and changes that will be made to the ARF
-as a result of discussing this topic with Member States.</li>
+<li>A WSCA SHALL enable operations that enable the cryptographic device binding between a WSCA/WSCD
+and a PID or attestation [OIA_02]</li>
+<li>A WSCA SHALL provide functionality that enables the Wallet Instance to determine 
+whether the User has been successfully authenticated before allowing the User to provide 
+or withhold consent for the release of any attributes [RPA_08, WIAM_14, WIAM_17].</li>
+<li>A WSCA SHALL provide functionalities that enable the Wallet Instance to generate a 
+Wallet Unit Attestation (WUA) in accordance with the specifications defined in Topic 9 [WUA_01].</li>
+<li>A WSCA SHALL provide information that enable a Wallet Instance to determine if
+the WSCA complies with the requirements of a PID Provider or Attestation Provider regarding 
+User authentication and key storage [WUA_05].</li>
+<li>A WSCA SHOULD provide an interface allowing Wallet Instances to request a Cryptographic 
+Binding of Attestations, which SHALL prove that the WSCA manages two or more private keys, 
+paired with two or more public keys provided to it by the Wallet Unit [ACP_01].</li>
+<li>A WSCA SHALL provide the Wallet Instance with information indicating whether the export 
+of a private key is supported [WUA_16].</li>
+<li>A WSCA SHALL provide functionalites for generating new key pairs [ISSU_12b, WIAM_18].</li>
+<li>A WSCA SHALL provide the Wallet Instance with storage capabilities for storing information 
+required to authenticate using a Pseudonym [PA_14].</li>
+<li>A WSHA SHALL provide the Wallet Instance with information that can be used for Wallet
+Unit activation [WIAM_05].</li>
+<li>A WSCA SHALL enforce isolation mechanisms that ensure a Wallet Unit can access only 
+the cryptographic keys associated with that specific Wallet Unit, in case the WSCA contains keys 
+related to multiple Wallet Units [WIAM_09]. </li>
+<li>A WSCA SHALL provide the Wallet Instance with functionalites to securly destroy 
+generated cryptographic keys and sensitive data [WIAM_13, WIAM_21, PAD_04, PAD_06]. </li>
+<li>A WSCA/WSCD SHALL be able to prove possession of the private key corresponding to a 
+ public key on request of a Wallet Instance, for example by signing a challenge with that 
+ private key [WIAM_19].</li>
 </ul>
-<h2 id="2-legal-requirements-for-representation-of-another-natural-person">2. Legal requirements for representation of another natural person</h2>
-<p>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11
-April 2024 amending Regulation (EU) No 910/2014 as regards establishing the
-European Digital Identity Framework [European Digital Identity Regulation]
-article 3, 1 states:</p>
-<blockquote>
-<p>“electronic identification” means the process of using person identification 
-data in electronic form uniquely representing either a natural or legal person, 
-or <strong>a natural person representing another natural person</strong> or a legal person</p>
-</blockquote>
-<p>Similarly, article 3, 3 states</p>
-<blockquote>
-<p>“person identification data” means a set of data that is issued in accordance 
-with Union or national law and that enables the establishment of the identity of 
-a natural or legal person, or of <strong>a natural person representing another natural person 
-or a legal person</strong>.</p>
-</blockquote>
-<p>Additionally, article 3, 4 states</p>
-<blockquote>
-<p>“electronic identification scheme” means a system for electronic identification 
-under which electronic identification means are issued to natural or legal persons
-or <strong>natural persons representing other natural persons</strong> or legal persons</p>
-</blockquote>
-<p>Similarly, article 3, 5a states</p>
-<blockquote>
-<p>“user” means a natural or legal person, or <strong>a natural person representing another natural 
-person</strong> or a legal person, that uses trust services or electronic identification means 
-provided in accordance with this Regulation.</p>
-</blockquote>
-<p>Article 5a, 5(f) of the same regulation states:</p>
-<blockquote>
-<p>ensure that the person identification data, which is available from the electronic 
-identification scheme under which the European Digital Identity Wallet is provided, 
-uniquely represents the natural person, legal person or <strong>the natural person representing 
-the natural</strong> or legal person, and is associated with that European Digital Identity Wallet</p>
-</blockquote>
-<p>Article 11a, 3c of the same regulation requires that the interoperability framework shall 
-consist of:</p>
-<blockquote>
-<p>[...] a reference to a minimum set of person identification data necessary to uniquely 
-represent a natural or legal person, or a <strong>natural person representing another natural person</strong> 
-or a legal person, which is available from electronic identification schemes</p>
-</blockquote>
-<p>Finally, ANNEX VI of the same regulation (MINIMUM LIST OF ATTRIBUTES) states:</p>
-<blockquote>
-<p>[...] 9. Powers and mandates to represent natural or legal persons</p>
-</blockquote>
-<h2 id="3-discussion">3 Discussion</h2>
-<p>The [European Digital Identity Regulation]
-considers the representation of one natural person by another. </p>
-<p>One common use case is the legal representation of minors or individuals with 
-diminished legal capacity. For example parents or legal guardians should be empowered 
-to make decisions and act on behalf of their children and represent them when accessing 
-educational platforms, healthcare services, government benefits, or other services. 
-The EU Digital Identity Wallet should therefore accommodate such delegation in a secure, 
-verifiable manner.</p>
-<p>Another significant use case is the management of affairs for elderly or incapacitated 
-individuals. In these cases individuals can be assigned as legal representatives to 
-manage healthcare, financial, and personal matters.This could translate into a caregiver 
-or relative holding a proper delegation to, for instance, access health records or 
-submit applications for social care services on behalf of the person they represent.</p>
-<p>Power of attorney is another use case of a natural person (the agent) acting on 
-behalf of another natural person (the principal).</p>
-<h3 id="31-attestation-issuance">3.1 Attestation issuance</h3>
-<p>Based on the [European Digital Identity Regulation], it should be possible to issue 
-an attestation for a natural person to a representative, in accordance with 
-applicable national and European legislation. For certain use cases (e.g., parent-child 
-relationships), a PID or attestation provider should be able to retrieve the relevant 
-information from authentic sources at the national level or through designated 
-intermediaries. In other cases (e.g., power of attorney), the represented natural 
-person may be required to explicitly authorize the representative.</p>
-<p>Attestation for a natural person issued to a representative SHALL be managed through a distinct attestation 
-type. This attestation type SHALL specify the nature of the representation and 
-SHALL clearly define the operations that the representative is authorized to perform, 
-thereby restricting the scope of their authority. It SHALL NOT be possible to conceal 
-this information.</p>
-<p>Furthermore, this attestation type SHALL be either short-lived or revocable. In 
-the case of revocable attestations, all entities that, according to applicable law, 
-are entitled to revoke them SHALL have the capability to do so. It is emphasized 
-that the high-level requirements concerning attestation revocation, as defined in 
-Annex 2 of the ARF, also apply to this attestation type.</p>
-<h2 id="32-attestation-presentation">3.2 Attestation Presentation</h2>
-<p>A natural person should be able to represent another natural person when interacting 
-with a Relying Party. The Relying Party SHALL always be made aware that it is 
-interacting with a legal representative or agent. This is ensured by the fact that 
-the corresponding Wallet Unit presents an attestation of a distinct type, specifically 
-issued representations.</p>
+<p>** Question 1**</p>
+<p>Is there any HLR for this interface?</p>
+<h2 id="3-existing-technologies">3. Existing technologies</h2>
+<p>In mobile devices, the Wallet Secure Cryptographic Device (WSCD) is often embedded within 
+the device hardware. The WSCA, in this case is platform-dependent and acts as the interface 
+layer between the Wallet Instance and the secure capabilities of the device.</p>
+<p>For example, on Android devices, the WSCA may be implemented as part of the Android
+Keystore system, which interfaces with hardware-backed security modules such as StrongBox 
+or TEE-backed Keymaster. For more details, see the Android documentation:</p>
+<ul>
+<li><a href="https://developer.android.com/training/articles/keystore">Android Keystore System</a></li>
+<li><a href="https://source.android.com/docs/security/features/keystore">Hardware-backed Keystore</a></li>
+</ul>
+<p>Similarly, on Apple iOS devices, the WSCA functionality is typically exposed through the 
+Secure Enclave, accessed via platform APIs such as Keychain Services and CryptoKit. 
+For more details, see the Apple documentation:</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/security/keychain_services">Keychain Services</a></li>
+<li><a href="hhttps://developer.apple.com/documentation/cryptokit">CryptoKit</a></li>
+<li><a href="https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave">Secure Enclave</a></li>
+</ul>
+<p>In some cases WSCD is implemented as an eSIM or a Secure Element (SE) that supports JavaCard technology. 
+In these cases, the WSCA can be deployed as a JavaCard applet running directly on the eSIM or SE. 
+JavaCard is a lightweight, Java-based platform designed to run on resource-constrained secure elements, 
+providing cryptographic services, secure storage, and access control in a tamper-resistant environment.</p>
+<p>GlobalPlatform maintains the <strong>Open Mobile API</strong> specification, which defines a standardized interface that 
+enables mobile applications to access Secure Elements (SEs) on the device—such as embedded Secure Elements (eSE), 
+UICCs (SIM cards), or eSIMs. The Open Mobile API was originally defined by the SIMalliance (now part of 
+GlobalPlatform) and has been implemented in some Android devices, either directly in the Android OS or 
+through vendor-specific middleware. More details can be found here:</p>
+<ul>
+<li><a href="https://globalplatform.org/specs-library/open-mobile-api-specification/">GlobalPlatform Open Mobile API Specification</a></li>
+</ul>
+<p>When WSCD functionality is provided by external HSMs, PKCS#11 can be considered.
+The PKCS#11 specification, also known as Cryptoki, defines a standard interface for cryptographic 
+okens such as hardware security modules (HSMs), smartcards, and other secure key containers. 
+It enables applications to perform operations such as key generation, digital signing, 
+encryption, and decryption using keys stored in a secure device, without exposing the 
+keys to application memory. </p>
+<p>The PKCS#11 standard is maintained by the OASIS consortium. More details can be found here:</p>
+<ul>
+<li><a href="https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html">PKCS#11 Current Version (v3.1)</a></li>
+</ul>
+<p>The Key Management Interoperability Protocol (KMIP) is an open standard that can be used 
+for interacting with remote HSMs. KMIP defines a protocol for communication between 
+clients (e.g., applications or middleware) and key management servers (e.g., HSMs, key vaults), 
+supporting operations such as key creation, retrieval, rotation, and deletion.
+KMIP is  supported in enterprise-grade hardware security modules and software-based key managers. 
+KMIP is maintained by the OASIS KMIP Technical Committee and the latest specifications are publicly available:</p>
+<ul>
+<li><a href="https://docs.oasis-open.org/kmip/kmip-spec/v2.1/os/kmip-spec-v2.1-os.html">KMIP Specification v2.1 (OASIS)</a></li>
+</ul>
+<p>** Question 2 **
+Are other technologies that can be considered? Shall any action with respect to these
+technologies be taken?</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
-<p><strong>Requirement 1</strong>
-The Commission SHALL create a Rulebook for attestations issued to a natural
-person representing another natural person. The Rulebook SHALL include attributes
-used for defining a validity period, the nature of the representation, and the operations 
-the representative is authorized to perform, thereby limiting the scope of its authorization.</p>
-<p><strong>Requirement 2</strong>
-An Attestation Provider issuing attestations to a natural
-person representing another natural person  SHALL ensure 
-that either the attestations are short-lived or that all entities which, according 
-to applicable law, must have the ability to revoke such attestations are able to do so.</p>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
 <h2 id="5-references">5 References</h2>
@@ -582,10 +580,6 @@ to applicable law, must have the ability to revoke such attestations are able to
 <tr>
 <td>[European Digital Identity Regulation]</td>
 <td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
-</tr>
-<tr>
-<td>[Topic_A]</td>
-<td>Discussion Paper for the European Digital Identity Cooperation Group regarding Topic A: Privacy risks and mitigation, version 1.0</td>
 </tr>
 </tbody>
 </table>
