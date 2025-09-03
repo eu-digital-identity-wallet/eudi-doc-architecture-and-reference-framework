@@ -1,0 +1,171 @@
+# P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+
+Version 0.2, updated 1 Sep. 2025
+
+[Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/578)
+
+## 1. Introduction
+
+### 1.1 Discussion Paper topic description
+
+This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
+Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+
+The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
+
+The need for harmonization of this interface needs to be discussed. If the WSCA is 
+delivered by the Wallet Provider, the situation is different than when the WSCA is delivered by 
+the WSCD provider.
+
+
+## 1.2 Key words
+
+This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.
+
+In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.
+
+## 1.3 Document structure
+
+This document is structured as follows:
+- Section 2 presents definition and existing High Level Requirements related to
+topic P
+- Section 3 discusses existing technologies
+- Section 4 presents the additions and changes that will be made to the ARF as 
+a result of discussing this topic with Member States.
+
+## 2. Definitions,  and existing High Level Requirements 
+According to the ARF 
+
+> Wallet Secure Cryptographic Application (WSCA) (is) an application that manages 
+critical assets by being linked to and using the cryptographic and non-cryptographic 
+functions provided by the Wallet Secure Cryptographic Device. Different types of 
+WSCD generally use different types of WSCA. For example, if the WSCD is a remote 
+HSM, the WSCA may be (but does not have to be) a dedicated firmware module. If the
+WSCD is a external smartcard or an internal e-SIM or embedded Secure Element, 
+the WSCA takes the form of a dedicated JavaCard applet running on the e-SIM or SE. 
+If the WSCD is a local native WSCD, the WSCD is integrated into the OS of the User device. 
+The WSCA interfaces directly with the Wallet Instance
+
+In accordance with the High-Level Requirements outlined in Annex 2 of the ARF, the Wallet 
+Secure Cryptographic Application (WSCA) shall provide the following functionalities to the 
+Wallet Instance:
+
+- A WSCA SHALL enable operations that enable the cryptographic device binding between a WSCA/WSCD
+and a PID or attestation [OIA_02]
+- A WSCA SHALL provide functionality that enables the Wallet Instance to determine 
+whether the User has been successfully authenticated before allowing the User to provide 
+or withhold consent for the release of any attributes [RPA_08, WIAM_14, WIAM_17].
+- A WSCA SHALL provide functionalities that enable the Wallet Instance to generate a 
+Wallet Unit Attestation (WUA) in accordance with the specifications defined in Topic 9 [WUA_01].
+- A WSCA SHALL provide information that enable a Wallet Instance to determine if
+the WSCA complies with the requirements of a PID Provider or Attestation Provider regarding 
+User authentication and key storage [WUA_05].
+- A WSCA SHOULD provide an interface allowing Wallet Instances to request a Cryptographic 
+Binding of Attestations, which SHALL prove that the WSCA manages two or more private keys, 
+paired with two or more public keys provided to it by the Wallet Unit [ACP_01].
+- A WSCA SHALL provide the Wallet Instance with information indicating whether the export 
+of a private key is supported [WUA_16].
+- A WSCA SHALL provide functionalites for generating new key pairs [ISSU_12b, WIAM_18].
+- A WSCA SHALL provide the Wallet Instance with storage capabilities for storing information 
+required to authenticate using a Pseudonym [PA_14].
+- A WSHA SHALL provide the Wallet Instance with information that can be used for Wallet
+Unit activation [WIAM_05].
+- A WSCA SHALL enforce isolation mechanisms that ensure a Wallet Unit can access only 
+the cryptographic keys associated with that specific Wallet Unit, in case the WSCA contains keys 
+related to multiple Wallet Units [WIAM_09]. 
+- A WSCA SHALL provide the Wallet Instance with functionalites to securly destroy 
+generated cryptographic keys and sensitive data [WIAM_13, WIAM_21, PAD_04, PAD_06]. 
+- A WSCA/WSCD SHALL be able to prove possession of the private key corresponding to a 
+ public key on request of a Wallet Instance, for example by signing a challenge with that 
+ private key [WIAM_19].
+
+** Question 1**
+
+Is there any HLR for this interface?
+
+## 3. Existing technologies
+
+In mobile devices, the Wallet Secure Cryptographic Device (WSCD) is often embedded within 
+the device hardware. The WSCA, in this case is platform-dependent and acts as the interface 
+layer between the Wallet Instance and the secure capabilities of the device.
+
+For example, on Android devices, the WSCA may be implemented as part of the Android
+Keystore system, which interfaces with hardware-backed security modules such as StrongBox 
+or TEE-backed Keymaster. For more details, see the Android documentation:
+
+- [Android Keystore System](https://developer.android.com/training/articles/keystore)
+- [Hardware-backed Keystore](https://source.android.com/docs/security/features/keystore)
+
+Similarly, on Apple iOS devices, the WSCA functionality is typically exposed through the 
+Secure Enclave, accessed via platform APIs such as Keychain Services and CryptoKit. 
+For more details, see the Apple documentation:
+
+- [Keychain Services](https://developer.apple.com/documentation/security/keychain_services)
+- [CryptoKit](hhttps://developer.apple.com/documentation/cryptokit)
+- [Secure Enclave](https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave)
+
+In some cases WSCD is implemented as an eSIM or a Secure Element (SE) that supports JavaCard technology. 
+In these cases, the WSCA can be deployed as a JavaCard applet running directly on the eSIM or SE. 
+JavaCard is a lightweight, Java-based platform designed to run on resource-constrained secure elements, 
+providing cryptographic services, secure storage, and access control in a tamper-resistant environment.
+
+GlobalPlatform maintains the **Open Mobile API** specification, which defines a standardized interface that 
+enables mobile applications to access Secure Elements (SEs) on the device—such as embedded Secure Elements (eSE), 
+UICCs (SIM cards), or eSIMs. The Open Mobile API was originally defined by the SIMalliance (now part of 
+GlobalPlatform) and has been implemented in some Android devices, either directly in the Android OS or 
+through vendor-specific middleware. More details can be found here:
+
+- [GlobalPlatform Open Mobile API Specification](https://globalplatform.org/specs-library/open-mobile-api-specification/)
+
+When WSCD functionality is provided by external HSMs, PKCS#11 can be considered.
+The PKCS#11 specification, also known as Cryptoki, defines a standard interface for cryptographic 
+okens such as hardware security modules (HSMs), smartcards, and other secure key containers. 
+It enables applications to perform operations such as key generation, digital signing, 
+encryption, and decryption using keys stored in a secure device, without exposing the 
+keys to application memory. 
+
+The PKCS#11 standard is maintained by the OASIS consortium. More details can be found here:
+
+- [PKCS#11 Current Version (v3.1)](https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html)
+
+The Key Management Interoperability Protocol (KMIP) is an open standard that can be used 
+for interacting with remote HSMs. KMIP defines a protocol for communication between 
+clients (e.g., applications or middleware) and key management servers (e.g., HSMs, key vaults), 
+supporting operations such as key creation, retrieval, rotation, and deletion.
+KMIP is  supported in enterprise-grade hardware security modules and software-based key managers. 
+KMIP is maintained by the OASIS KMIP Technical Committee and the latest specifications are publicly available:
+
+- [KMIP Specification v2.1 (OASIS)](https://docs.oasis-open.org/kmip/kmip-spec/v2.1/os/kmip-spec-v2.1-os.html)
+
+
+** Question 2 **
+Are other technologies that can be considered? Shall any action with respect to these
+technologies be taken?
+
+
+## 4 Additions and changes to the ARF
+
+
+
+### 4.1 High-Level Requirements to be added to Annex 2
+
+
+
+### 4.2 High-Level Requirements to be changed
+
+
+### 4.3 Descriptions to be added to the ARF main document
+
+## 5 References
+
+| Reference | Description |
+| --- | --- |
+| [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft |
+| [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |
+
