@@ -1,7 +1,7 @@
 
 Version 0.2, updated 02 September 2025
 
-[Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/496)
+[Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/586)
 
 
 # Topic Q - Interface between the User and the Wallet Instance
