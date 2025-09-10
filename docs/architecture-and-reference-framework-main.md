@@ -3555,7 +3555,7 @@ gets this information from the certificate. If no registration certificate is
 available, the Wallet Unit contacts the Registrar to obtain this information. To
 do so, the Wallet Unit retrieves a URL of the Registrar's online service, as
 well as the unique ID of the Relying Party, from the Relying Party access
-certificate
+certificate.
 
 The Wallet Unit compares the list of registered attributes to the list of
 attributes that the Relying Party requests. The Wallet Unit notifies the User in
