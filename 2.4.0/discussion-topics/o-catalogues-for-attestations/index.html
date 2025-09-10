@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -433,7 +433,7 @@
 
 
 <h1 id="o-catalogues-for-attestations">O - Catalogues for Attestations</h1>
-<p>Version 0.3, updated 29 Aug 2025
+<p>Version 0.4, updated 8 Sep 2025
 <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/557">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -563,6 +563,10 @@ responsible for an authentic source, or as both.</li>
 A Schema Provider for an Attestation Rulebook MAY generate a machine-readable version 
 of the attestation schema and register it in the catalogue of schemes for the attestation of attributes.
 The registration SHALL include a reference to the corresponding Attestation Rulebook.</p>
+<p>The following High-Level Requirement is proposed to be added under Topic 25:</p>
+<p><strong>CAT_11</strong>
+A request to include  or to modify an attribute in the catalogue of attributes SHALL indicate
+how a verification point for an attribute  can be used</p>
 <h3 id="32-high-level-requirements-to-be-changed">3.2 High-Level Requirements to be changed</h3>
 <p>The requirements specified in Topics 25 and 26 shall be removed, as they are considered outdated. 
 In addition, the content of these topics shall be updated to reflect the conclusions of 
@@ -652,7 +656,10 @@ catalogue should be revised accordingly.</p>
 <p>The ARF includes in various locations the term <code>catalogue of published Attestation Rulebooks</code>
 (e.g., section 3.15). This should be rephrased to <code>catalogue of schemes for the attestation of attributes</code>.</p>
 <p>Similarly, Section 5.5 of the ARF has to be re-written and adapted to the definitions set 
-in Section 2 of this document. </p>
+in Section 2 of this document.</p>
+<p>Finally, Section 5.5 will be revised to clearly state that the catalogue of attributes 
+will be used by QTSPs, and that each Member State remains free to implement its own verification 
+mechanisms, including the use of OOTS.</p>
 <h2 id="4-references">4 References</h2>
 <table>
 <thead>
