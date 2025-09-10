@@ -3762,8 +3762,8 @@ For more details and requirements on revocation, see [Topic 7](./annexes/annex-2
 ##### 6.6.3.8 Relying Party Instance verifies device binding
 
 **NOTE: Discussions on device binding are ongoing, in particular regarding
-*whether non-device bound attestations should be supported by a Wallet Unit, and
-*if so, what the requirements for this support should be.**
+whether non-device bound attestations should be supported by a Wallet Unit, and
+if so, what the requirements for this support should be.**
 
 Device binding is the property that a PID or an attestation is bound to a
 specific device (in fact, a WSCD) and cannot be used independent from that
