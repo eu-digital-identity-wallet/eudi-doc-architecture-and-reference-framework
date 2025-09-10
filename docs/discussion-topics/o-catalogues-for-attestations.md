@@ -1,6 +1,6 @@
 # O - Catalogues for Attestations
 
-Version 0.3, updated 29 Aug 2025
+Version 0.4, updated 8 Sep 2025
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/557)
 
 ## 1. Introduction
@@ -147,6 +147,13 @@ A Schema Provider for an Attestation Rulebook MAY generate a machine-readable ve
 of the attestation schema and register it in the catalogue of schemes for the attestation of attributes.
 The registration SHALL include a reference to the corresponding Attestation Rulebook.
 
+The following High-Level Requirement is proposed to be added under Topic 25:
+
+**CAT_11**
+A request to include  or to modify an attribute in the catalogue of attributes SHALL indicate
+how a verification point for an attribute  can be used
+
+
 ### 3.2 High-Level Requirements to be changed
 The requirements specified in Topics 25 and 26 shall be removed, as they are considered outdated. 
 In addition, the content of these topics shall be updated to reflect the conclusions of 
@@ -157,6 +164,7 @@ catalogue should be revised accordingly.
 A list of the requirements that shall be removed follows:
 
 **Topic 25**
+
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------|
@@ -186,7 +194,11 @@ The ARF includes in various locations the term `catalogue of published Attestati
 (e.g., section 3.15). This should be rephrased to `catalogue of schemes for the attestation of attributes`.
 
 Similarly, Section 5.5 of the ARF has to be re-written and adapted to the definitions set 
-in Section 2 of this document. 
+in Section 2 of this document.
+
+Finally, Section 5.5 will be revised to clearly state that the catalogue of attributes 
+will be used by QTSPs, and that each Member State remains free to implement its own verification 
+mechanisms, including the use of OOTS.
 
 ## 4 References
 
