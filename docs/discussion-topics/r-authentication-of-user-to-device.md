@@ -142,7 +142,7 @@ The current version of ARF (2.4) contains the following HLRs related to Wallet U
 | WIAM_15a | In order to ensure that operating system-level authentication can be used and is sufficiently secure, during installation of the Wallet Unit, the Wallet Unit SHALL enforce the activation of an OS-level User authentication mechanism with adequate security policies. |  
 | WIAM_15b | During installation of the Wallet Unit, the Wallet Unit SHALL enable the User to indicate if they want to use a Wallet Unit-specific PIN for User authentication, or use the OS-level User authentication mechanism. The Wallet Unit SHALL enable the User to change this preference during the lifetime of the Wallet Unit. | 
 
-In the opinion of the ARF editors team, the above requirements are sufficient. The detailed requirements and the appropriate means or controls (eg. minimal length or complexity of the PIN/passwords, restricting the acceptable methods), are to be defined by the Wallet Solution providers to meet the requirements of LoA High and the Wallet Solution certification (as set out by [CIR 2024/2981]).
+In the opinion of the ARF editors team, the above requirements are sufficient. The detailed requirements and the appropriate means or controls (eg. minimal length or complexity of the PIN/passwords, restricting the acceptable methods), are to be defined by the Wallet Providers to meet the requirements of LoA High and the Wallet Solution certification (as set out by [CIR 2024/2981]).
 
 **Question 1: Is there a need to update the requirements?**
 
@@ -158,7 +158,7 @@ The current version of ARF (2.4) contains the following HLRs related to authenti
 | WIAM_16 | For User authentication according to WIAM_15, a Wallet Unit SHALL implement an idle timeout, after which User authentication SHALL again be required. The Wallet Unit SHOULD provide the User with the option to set the idle timeout to a duration shorter than the default timeout. | 
 | WIAM_17 | A WSCA/WSCD SHALL be able to authenticate a User in accordance with the requirements in [Commission Implementing Regulation (EU) 2015/1502](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502) section 2.2.1. | 
 
-In the opinion of the ARF editors team, the above requirements are sufficient. The detailed requirements and the appropriate means or controls (eg. minimal length or complexity of the PIN/passwords, restricting the acceptable methods), are to be defined by the Wallet Solution providers to meet the requirements of LoA and the Wallet Solution certification (as set out by [CIR 2024/2981]).
+In the opinion of the ARF editors team, the above requirements are sufficient. The detailed requirements and the appropriate means or controls (eg. minimal length or complexity of the PIN/passwords, restricting the acceptable methods), are to be defined by the Wallet Providers to meet the requirements of LoA and the Wallet Solution certification (as set out by [CIR 2024/2981]).
 
 
 **Question 2: Is there a need to update the requirements?**

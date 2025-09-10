@@ -1606,7 +1606,7 @@ bringing the Solution back to the **Valid** state. The issuing Member State can
 also decide to completely cancel the Wallet Solution, which brings the Wallet
 Solution in the **Cancelled** state.
 
-A Wallet Unit that is part of a suspended or cancelled Wallet Solution Provider
+A Wallet Unit that is part of a suspended or cancelled Wallet Solution
 cannot request the issuance of a PID or attestation. Nor will a PID or
 attestation presented by such a Wallet Unit be accepted by a Relying Party.
 
