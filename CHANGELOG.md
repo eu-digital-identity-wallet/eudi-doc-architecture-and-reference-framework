@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.5.0] - 2025 - 09 - 12
+
+Changes:
+
+- The **PID rulebook** and **mDL rulebook** (previously in Annex 3) have been
+moved to the [attestation rulebooks repository](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/).
+- A new **Chapter 8 on Accessibility** has been introduced.  
+    - The former accessibility content from Section 6.5.4 has been removed.  
+    - In Annex 2, a new **Topic 54 on Accessibility** has been created, and
+    relevant content has been moved from Topic 40 to Topic 54.  
+- Several issues raised via Confluence and GitHub have been resolved.  
+- In addition, a limited number of editorial corrections have been made.  
+
 ## [2.4.0] - 2025 - 07 - 18
 
 Changes:
