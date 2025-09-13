@@ -3111,7 +3111,7 @@ the User's device language, and
 web page containing certification information of User's Wallet Solution.
 
 The information in the third bullet is hosted and managed dynamically by the
-European Commission.  The [Technical Specification 1](../../technical-specifications/ts1-eudi-wallet-trust-mark.md)
+European Commission.  The [Technical Specification 1](./technical-specifications/ts1-eudi-wallet-trust-mark.md)
 on the EUDI Wallet Trust Mark concentrates on defining the exact technical
 contents and the provisioning process to enable the UI view rendering at the
 Wallet Instance.
@@ -3120,6 +3120,7 @@ sets the high-level requirements for the Trust Mark as part of the Wallet Unit
 dashboard functionality. [Topic 40](./annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management)
 specifies what is required regarding the Trust Mark upon Wallet Unit activation
 and maintenance.
+
 
 #### 6.5.4 Wallet Unit management
 
