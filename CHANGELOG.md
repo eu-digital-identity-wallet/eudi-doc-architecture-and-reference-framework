@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
-## [2.5.0] - 2025 - 09 - 12
+## [2.5.0] - 2025-09-12
 
 Changes:
 
@@ -18,26 +18,28 @@ moved to the [attestation rulebooks repository](https://github.com/eu-digital-id
 - Several issues raised via Confluence and GitHub have been resolved.  
 - In addition, a limited number of editorial corrections have been made.  
 
-## [2.4.0] - 2025 - 07 - 18
+## [2.4.0] - 2025-07-18
 
 Changes:
 
-- the discussion Paper for Topic U was integrated into Section 6.5.3.6, and into Topic 19 and Topic 40.
+- the discussion Paper for Topic U was integrated into Section 6.5.3.6, and into
+Topic 19 and Topic 40.
 - the discussion Paper for Topic H was integrated into Topic 19.
 - a number of issues raised via Confluence or GitHub were solved.
 - apart from these changes, a limited number of editorial mistakes were corrected.
 
-## [2.3.0] - 2025 - 07 - 04
+## [2.3.0] - 2025-07-04
 
 Changes:
 
 - added results of "Topic K - Combined presentation of Attestations"
-- processed comments on Relying Party Registrars, WUA compatibility issues against OID4VCI, some other comments from 1.8.0 and 1.10.0
+- processed comments on Relying Party Registrars, WUA compatibility issues
+against OID4VCI, some other comments from 1.8.0 and 1.10.0
 - fixed missing reference links to STS Roadmap issues
 - added a paragraph on accessibility
 - reflected the existence of the new Rulebook template
 
-## [2.2.0] - 2025 - 06 - 20
+## [2.2.0] - 2025-06-20
 
 Changes:
 
@@ -49,7 +51,7 @@ data to DPAs"
 - added results of "Topic W - Transactional data for payment and other use cases
 - added results of "Topic J - Wallet to Wallet interaction"
 
-## [2.1.0] - 2025 - 06 - 06
+## [2.1.0] - 2025-06-06
 
 Changes:
 
@@ -58,7 +60,8 @@ use of registration certificates, and the optional use of information registered
 by a Registrar,
 - all references to the possible use of a WUA on the presentation interface
 between Wallet Units and Relying Parties were removed,
-- added remark on DC-API - Topic F will be additionally discussed in ARF development iteration 3
+- added remark on DC-API - Topic F will be additionally discussed in ARF
+development iteration 3
 - CDDL syntax updated PID rulebook in section 3.1.5
 
 Editorial changes and fixing typos.
@@ -68,10 +71,13 @@ Editorial changes and fixing typos.
 Processed comments provide in the Coordination Group meeting on 21 May 2025.
 
 - added remark on WUA - Work is still in progress on [TS3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md),
-- added remark on Pseudonyms - Topic E will be revised in ARF development iteration 3,
+- added remark on Pseudonyms - Topic E will be revised in ARF development
+iteration 3,
 - added remark on ZKP - Topic G will be revisited in ARF development iteration 3,
-- added remark the use of the [W3C Digital Credentials API] is optional (section 4.4.3.1),
-- added the planning of a new topic Z, for discussion on device-bound Attestations and section 1.7,
+- added remark the use of the [W3C Digital Credentials API] is optional (section
+4.4.3.1),
+- added the planning of a new topic Z, for discussion on device-bound
+Attestations and section 1.7,
 - updates on Relying Party registration to align with [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj).
 
 Editorial changes and fixing typos.

@@ -18,7 +18,27 @@ the European Commission in the implementing acts of the European Digital Identit
 Regulation. These elements ensure a consistent and standardised implementation
 of the EUDI Wallet ecosystem.
 
-## Process
+## Drafting Process
+
+The **Architecture and Reference Framework (ARF)** is developed in close
+collaboration with Member States, experts from the European Digital Identity
+Cooperation Group, and with feedback from industry and the wider community via
+GitHub.  
+
+Each [discussion topic](https://github.com/orgs/eu-digital-identity-wallet/projects/36)
+is documented in a **Discussion Paper**, refined until consensus is reached, and
+then integrated into the next ARF release. An overview of all papers and the ARF
+versions they contributed to is available in the [README file](README.md).
+
+Once integrated, a Discussion Paper is **no longer updated**. Its content may
+become outdated due to:  
+
+- editorial adjustments at the time of integration,  
+- interdependence with later discussion topics, or  
+- continuous feedback received through Confluence, GitHub, and internal reviews.
+
+Historic Discussion Papers are **not normative**. The authoritative requirements
+are always those in the latest version of **Annex 2 of the ARF**.  
 
 The process of defining high-level requirements consists of five steps:
 
@@ -82,7 +102,8 @@ Iteration took place from 26 March 2025 to 02 July 2025 covering the following t
 
 ### Iteration 3
 
-Iteration is planned from 20 August 2025 to 26 November 2025 covering the following topics:
+Iteration is planned from 20 August 2025 to 26 November 2025 covering the
+following topics:
 
 | Topic | Title | Link | Integrated into ARF version |
 |-------|-------|--|---|
@@ -102,11 +123,3 @@ Earlier topics, planned to be additionally discussed in iteration 3:
 | E | [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
 | F | [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
 | G | [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
-
-### Final notes
-
-Once a Discussion Paper has been integrated into the ARF, it will no longer be kept updated. This implies that over time, its content may become obsoleted, for example when high-level requirements that were originally introduced in that Discussion Paper are amended. Such amendments may occur for a number of reasons:
-
-- Sometimes, requirements and descriptions are already (slightly) changed at the moment a Discussion Paper is integrated in the ARF. This is mostly to ensure consistency throughout the ARF regarding language and style. Sometimes also some further discussions happen between authors of the ARF and of a Discussion Paper, and some requirements are made more precise as a result.
-- In general, discussion topics are not fully separated. As a result, the introduction of new Discussion Papers leads to changes in existing requirements and descriptions in the ARF.
-- The Commission continuously receives comments via Confluence and GitHub, and comments are also raised internally. When accepted, such comments lead to further changes in the ARF.

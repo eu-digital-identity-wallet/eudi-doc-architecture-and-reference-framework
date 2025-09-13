@@ -17,6 +17,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.path
     - toc.integrate
+    - navigation.instant
+    - navigation.sections
+    - toc.follow
   logo: media/eu-logo.jpg
 
 markdown_extensions:

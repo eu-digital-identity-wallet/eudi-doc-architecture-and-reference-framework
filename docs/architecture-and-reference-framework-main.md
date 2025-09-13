@@ -1,6 +1,5 @@
 ---
 title: European Digital Identity Wallet
-subtitle: Architecture and Reference Framework
 ...
 
 # Architecture and Reference Framework
@@ -40,7 +39,8 @@ Identity Regulation];
 - engaging with the Commission and other relevant stakeholders to develop a
 [Common Union Toolbox](https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox);
 
-The European Digital Identity Cooperation Group's page can be found [at the official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
+The European Digital Identity Cooperation Group's page can be found
+[at the official page](https://digital-strategy.ec.europa.eu/en/policies/european-digital-identity-cooperation-group).
 
 The European Digital Identity Cooperation Group has since further developed the
 concepts and specifications for the European Digital Identity Framework. The
@@ -193,7 +193,7 @@ The current areas identified for further discussion include:
 
 A detailed list of these topics, along with progress updates, is available on [GitHub](https://github.com/orgs/eu-digital-identity-wallet/projects/36).
 
-### 1.8 ARF process and Discussion Papers
+### 1.8 Drafting Process and Discussion Papers
 
 The development of the **Architecture and Reference Framework (ARF)** is guided
 by discussions with Member States and experts from the European Digital Identity
@@ -3120,7 +3120,6 @@ sets the high-level requirements for the Trust Mark as part of the Wallet Unit
 dashboard functionality. [Topic 40](./annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management)
 specifies what is required regarding the Trust Mark upon Wallet Unit activation
 and maintenance.
-
 
 #### 6.5.4 Wallet Unit management
 
