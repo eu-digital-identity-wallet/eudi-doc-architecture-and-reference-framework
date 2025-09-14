@@ -134,7 +134,8 @@ meaningful interactions under the proposed use cases.
 
 ### 1.4 Definitions
 
-The definitions used in this document can be found in Annex 1 of this document.
+The definitions used in this document can be found in
+[Annex 1](./annexes/annex-1/annex-1-definitions.md) of this document.
 
 ### 1.5 Scope
 
@@ -2110,7 +2111,7 @@ accordance with Article 45f and with Annex VII of the Regulation.
 
 For more information, please refer to [Section 3.7](#37-eaa-issued-by-or-on-behalf-of-a-public-sector-body-responsible-for-an-authentic-source-pub-eaa-providers).
 
-#### 5.2.5 Non-Qualified EAA
+#### 5.2.5 Non-Qualified Electronic Attestation of Attributes (EAA)
 
 A non-qualified EAA is an EAA which is not a QEAA or a PuB-EAA. For more
 information, please refer to [Section 3.8](#38-non-qualified-electronic-attestation-of-attributes-eaa-providers).
@@ -2475,11 +2476,10 @@ the signed transactional data.
 
 ### 6.1 Scope
 
-The trust model presented in this chapter defines how trust is established,
-maintained, validated, and managed among entities within the EUDI Wallet
-ecosystem. It outlines the underlying rules, assumptions, and mechanisms that
-govern trust relationships, determining whether an entity (such as a Wallet
-Unit, User Device, or Relying Party) can be considered trustworthy.
+This chapter explains how trust works in the EUDI Wallet system, how it is established,
+maintained, validated, and managed. It describes the rules and assumptions that decide
+whether different parts of the system, like a wallet app, a user's device, or a
+service provider, can be trusted.
 
 ![Figure 11](media/Figure_11_Trust_Model.jpeg)
 

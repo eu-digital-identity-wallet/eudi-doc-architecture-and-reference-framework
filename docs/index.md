@@ -2,20 +2,20 @@
 
 ![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./media/top-banner-arf.png)
 
-Under the [Electronic Identification, Authentication and Trust Services (eIDAS)
-Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation),
-EU Member States may, on a voluntary basis, notify and recognise, national
-electronic identification schemes in their Member States. The recognition of
-notified electronic identification became mandatory in 2018. Yet, there is no
-requirement for Member States to develop a national electronic identification
-and to make it interoperable with those in other Member States. This has led to
-discrepancies between countries. The new [European Digital Identity Regulation](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18)
-addresses shortcomings in the eIDAS Regulation by improving the effectiveness of
-the framework and extending its benefits to the private sector. Member States
-will offer citizens and businesses digital wallets that will be able to link
-various aspects of their national digital identities. These may be provided by
-public authorities or the private sector, if they are recognised by the Member
-States.
+The [eIDAS Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation)
+allows EU Member States to notify and recognise each other's national electronic ID
+systems. Since 2018, any scheme that has been notified must be recognised across
+the EU. But there's no obligation for every country to create its own electronic
+ID or to make it work with others. This has led to big differences from one
+Member State to another.  
+
+The new [European Digital Identity Regulation](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18)
+is designed to fix these gaps. It makes the rules more effective and also opens
+them up to the private sector. Every Member State will now offer people and
+businesses a **European Digital Identity Wallet**. These wallets will let users connect
+different parts of their national digital identity in one secure app. They can
+be provided directly by governments or by private companies, as long as they are
+officially recognised.  
 
 The EU Digital Identity Wallet will be:
 
@@ -151,8 +151,9 @@ who participated in this project.
 See the [LICENCE](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/LICENCE)
 file for details.
 
-## [European Commission website](https://commission.europa.eu/index_en)
+## European Digital Identity
 
+* [EUDI Wallet website](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/694487738/EU+Digital+Identity+Wallet+Home)
 * [Contact the European Commission](https://commission.europa.eu/about-european-commission/contact_en)
 * [Follow the European Commission on social media](https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission)
 * [Resources for partners](https://commission.europa.eu/resources-partners_en)
