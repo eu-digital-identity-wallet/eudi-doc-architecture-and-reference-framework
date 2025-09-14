@@ -3,11 +3,11 @@
 ![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./media/top-banner-arf.png)
 
 The [eIDAS Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation)
-allows EU Member States to notify and recognise each other's national electronic ID
-systems. Since 2018, any scheme that has been notified must be recognised across
-the EU. But there's no obligation for every country to create its own electronic
-ID or to make it work with others. This has led to big differences from one
-Member State to another.  
+allows EU Member States to notify and recognise each other's national electronic
+ID systems. Since 2018, any scheme that has been notified must be recognised
+across the EU. But there's no obligation for every country to create its own
+electronic ID or to make it work with others. This has led to big differences
+from one Member State to another.  
 
 The new [European Digital Identity Regulation](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18)
 is designed to fix these gaps. It makes the rules more effective and also opens
