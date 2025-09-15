@@ -36,7 +36,7 @@ on a mobile device, requesting access to a Relying Party's service (i.e. app
 or browser) and authorizes by using the EUDI Wallet app, which is also installed
 on the same device.
 
-![Login interface showing EUDI Wallet login button on mobile device](media/5.02/Login_with_EUDI_wallet.png)
+![Login interface showing EUDI Wallet login button on mobile device](./media/5.02/Login_with_EUDI_wallet.png)
 
 In contrast, in the 'remote cross-device' flow, the EUDI Wallet user consumes
 information from a Relying Party service on another device than the EUDI Wallet
@@ -44,7 +44,7 @@ device, e.g. user visits the relying party's service on their web browser on a
 PC and uses the EUDI Wallet app to scan a QR Code on a login page in order to
 get access to a service provided by the Relying Party.
 
-![Login screen with EUDI Wallet login option on desktop browser](media/5.02/Login_with_EUDI_wallet2.png)
+![Login screen with EUDI Wallet login option on desktop browser](./media/5.02/Login_with_EUDI_wallet2.png)
 
 In relation to the 'proximity' flows, both flows are related to scenarios where
 the EUDI Wallet User is physically close to a Relying Party, the user does not
@@ -56,7 +56,7 @@ human acting as a Relying Party (who may operate a device of their own). In the
 unsupervised flow, the EUDI Wallet presents verifiable attributes to a machine
 without human supervision.
 
-![Share information screen showing QR and NFC sharing options](media/5.02/Share_information.png)
+![Share information screen showing QR and NFC sharing options](./media/5.02/Share_information.png)
 
 ---
 
@@ -86,7 +86,7 @@ analysed in this Design Guide. These are:
 - Password
 - OTP
 
-![Multiple authentication method screens showing PIN, pattern, biometrics, password and OTP options](media/5.02/Identification_methods.png)
+![Multiple authentication method screens showing PIN, pattern, biometrics, password and OTP options](./media/5.02/Identification_methods.png)
 
 It shall be clarified that different levels of security shall be required per
 use case, e.g. sharing a user's 'Person Identification Data' is associated with
@@ -119,7 +119,7 @@ The criteria used for the rating are:
 authentication process
 - **Accessibility**: Adherence to accessibility standards/specificities
 
-![Radar chart comparing different authentication methods across multiple criteria](media/5.02/Authentication_means.png)
+![Radar chart comparing different authentication methods across multiple criteria](./media/5.02/Authentication_means.png)
 
 > **_NOTE:_** _Ratings have been based on a desk study and not actual first-hand
 testing._
@@ -241,7 +241,7 @@ party and how you become one.
 The EUDI Wallet aims to promote user confidence and foster a sense of control
 and privacy, thereby enhancing the overall adoption and utility of the app.
 
-![Data sharing screens showing mandatory and optional information requests from Relying Party](media/5.02/RP_requests_info.png)
+![Data sharing screens showing mandatory and optional information requests from Relying Party](./media/5.02/RP_requests_info.png)
 
 ---
 
@@ -315,7 +315,7 @@ Handling/Display of error messages in different scenarios.
   When the user attempts to log in to the app, expects to receive feedback
   indicating the success or failure of their login attempt.
 
-  ![Login error screen showing incorrect password message](media/5.02/Erroneous_user_credentials.png)
+  ![Login error screen showing incorrect password message](./media/5.02/Erroneous_user_credentials.png)
   _The user gets an error message indicating that his credentials were wrong:_
 
 - **5.2 Multiple failed attempts to login or present information**
@@ -332,7 +332,7 @@ Handling/Display of error messages in different scenarios.
   factors attempting to gain unauthorized access by repeatedly guessing passwords
   or usernames.
 
-  ![Login screen showing too many attempts error with timer](media/5.02/Erroneous_user_credentials2.png)
+  ![Login screen showing too many attempts error with timer](./media/5.02/Erroneous_user_credentials2.png)
 
   _The user gets an error message indicating that they must try again later:_
 
@@ -343,7 +343,7 @@ Handling/Display of error messages in different scenarios.
   screen, indicating that the document could not be verified because it is
   expired or revoked.
 
-  ![Error message showing additional documents required](media/5.02/Error.png)
+  ![Error message showing additional documents required](./media/5.02/Error.png)
   
   _The user gets a message indicating the status of the document:_
 
@@ -354,7 +354,7 @@ Handling/Display of error messages in different scenarios.
   how to renew or update the document, directing the user to the appropriate
   authorities, or providing relevant instructions.
 
-  ![Warning notification about document expiration with renewal option](media/5.02/Warning.png)
+  ![Warning notification about document expiration with renewal option](./media/5.02/Warning.png)
   
   _The user gets a message indicating that the document expires shortly:_
 
@@ -370,7 +370,7 @@ not be verified (Maybe address safety)**
   -a physical person or a digital service- and it turns out that the third party
   is not valid or is a fraud, they must get an alert warning message.
 
-  ![Alert warning about untrusted relying party with security options](media/5.02/Alert.png)
+  ![Alert warning about untrusted relying party with security options](./media/5.02/Alert.png)
   
   _The user gets a message indicating that they must not share information with
   that party. The options are to report it, to close the app, or to search for
@@ -383,7 +383,7 @@ not be verified (Maybe address safety)**
   document is not present in the user's app, an error message is displayed,
   notifying the user that the document is not stored in their app.
 
-  ![Error message showing missing ID card document with add document option](media/5.02/Error2.png)
+  ![Error message showing missing ID card document with add document option](./media/5.02/Error2.png)
   
   _The error message then suggests adding the document from the available
   documents list._
