@@ -1,5 +1,5 @@
 
-Version 0.2, updated 02 September 2025
+Version 0.3, updated 15 September 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/586)
 
@@ -40,15 +40,19 @@ Therefore, the Wallets must be inclusive and user friendly to support individual
 
 To achieve this, the Wallets must meet specific guidelines and rules that impact decisions made on the user interface (UI) design and the user experience (UX) design.
 
-The European Accessibility Act specifies the established European standard EN 301 549 as the primary guideline. As its technical framework, the EN 301 549 includes the Web Content Accessibility Guidelines (WCAG) developed by the World Wide Web Consortium (W3C).
+The Directive (EU) 2016/2102 (Web Accessibility Directive) - specifies the established European standard EN 301 549 V1.1.2 (2015-04) as the primary and minimum guideline. Newer versions of the 301 549 exist, but they do not automatically change the legal obligations of the Member States with respect to the WAD.
 
-Regarding the accessibility of Wallet Units for Users, the following legal requirements and standards apply:
+EN 301 549 v2.1.2 (which was referenced in the Official Journal in 2018) [was replaced by v3.2.1 in August 2021](https://digital-strategy.ec.europa.eu/en/policies/latest-changes-accessibility-standard#requirements-not-wcag) and an even newer version v4.1.1 is scheduled to be published in May 2026.
 
-- **[EN 301 549 V3.2.1 - Accessibility requirements for ICT products and services](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)**
+As its technical framework, the EN 301 549 includes the Web Content Accessibility Guidelines (WCAG) developed by the World Wide Web Consortium (W3C).
 
-- **[DIRECTIVE (EU) 2019/882 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882#rct_47)** on the accessibility requirements for products and services
+In summary, regarding the accessibility of Wallet Units for Users, the following legal requirements and standards apply:
 
-- **[DIRECTIVE (EU) 2016/2102 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/dir/2016/2102/oj)** on the accessibility of the websites and mobile applications of public sector bodies
+- **[DIRECTIVE (EU) 2019/882](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882#rct_47)** - European Accessibility Act - Accessibility requirements for products and services
+
+- **[DIRECTIVE (EU) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj)** - Web Accessibility Directive - Accessibility of the websites and mobile applications of public sector bodies 
+
+- **[Europan Standard EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)** - Accessibility requirements for ICT products and services
 
 - **[Web Content Accessibility Guidelines (WCAG) 2 requirements and techniques](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1)**
 
@@ -60,9 +64,7 @@ EU Member States have a legal obligation to comply with the European Accessibili
 
 ### 3.1 Conformance to the WCAG
 
-The broader EU digital landscape includes the European Accessibility Act, which mandates that digital products and services, including those using the EUDI Wallet, must be accessible by default for people with disabilities.
-
-The European Accessibility Act requires WCAG 2.1 Level AA conformance for digital products and services, not WCAG 2.2, as WCAG 2.1 AA is the currently recognized baseline for compliance. While the more recent WCAG 2.2 is not a legal requirement under the European Accessibility Act, it is encouraged to exceed the minimum standard and adopt the newer guidelines for future-proofing and a more accessible user experience. 
+Directive EN 301 549 v3.2.1 references WCAG 2.1 in order to ensure conformance for digital products and services and is currently under revision. While the [upcoming version 4.1.1 is scheduled to be published in May 2026](https://portal.etsi.org/eWPM/index.html#/schedule?WKI_ID=64282), its contents are not publically availabe yet. However, sources suggest it will incorporate WCAG 2.2 criteria.
 
 WCAG 2.2 adds new success criteria that build upon WCAG 2.1, with a stronger focus on users with cognitive, low-vision, and motor disabilities, particularly on mobile devices. It introduces concepts like minimum pointer target sizes and consistent help mechanisms to address these needs, while also including more specific rules for focus visibility and reducing complex drag gestures.
 
@@ -89,55 +91,35 @@ For each of those principles there are three levels of conformance with the WCAG
 
 Each higher level includes all the criteria of the previous level, with Level AAA providing the maximum level of access to the widest range of users.
 
+It should be noted that in Directive EN 301 549, WCAG Level AAA is included for informative purposes only (i.e. “optional / to consider when possible”), not as a normative obligation.
+
 
 #### 3.1.2 Ensuring conformance
-To ensure conformance to the WCAG, it is recommended that Wallets undergo a usability audit which involves testing using automated tools and, where required, manual hands-on user testing.
+To ensure conformance to the WCAG, it is recommended that Wallets undergo a usability/accessibility audit which involves testing using automated tools and, where required, manual hands-on user testing, throughout the development lifecycle.
 
-### 3.1.3 Conformance beyond the WCAG
+The European Accessibility Act does not require mobile app providers to provide proof of an accessibility/usability audit before releasing a product. However, Wallet providers are responsible for ensuring compliance and must be able to demonstrate it if asked (via documentation and accessibility statements), but the system is based on self-declaration, not pre-approval. Authorities in each Member State can request such documentation.
+
+#### 3.1.3 Conformance beyond the WCAG
 While the WCAG covers the technical standards concerning web content and the user interface (UI) layer, the European Accessibility Act's scope is broader and mandates a deeper responsibility on how the Wallet Units must be governed in terms of privacy, security and support.
 
 It should be therefore made clear that compliance to the WCAG does not necessarily mean full compliance with the European Accessibility Act.
 
-### 3.2 The Goals of the Discussion
-
-The goal of the discussion is to establish a set of rules that will accompany the Wallets in terms of conformance to accesibility standards.
-
-To summarise, there are several fundamental questions to be discussed and answered before proposing the set of HLRs. These questions are presented in the next sections.
-
-Note: This document is ONLY intended to clarify or create the high-level requirements related to this topic. The necessary technical specifications will be developed by the European Commission after an agreement on the requirements has been reached.
-
-
-### 3.3 Questions for Discussion 
-
-Here below is the list of the fundamental questions that need to be answered prior to drafting HLRs.
-
-**Question 1:** Should Wallets conform to the WCAG 2.1 or the WCAG 2.2?
-
-**Question 2:** What should be the minimum level of accessibility met? (i.e. AA or AAA)
-
-**Question 3:** Should performing a usability audit be mandatory or optional?
-
-**Question 4:** Should manual hands-on user testing be mandatory or optional?
-
-**Question 5:** How often and under what circumstances should Wallets undergo an accessibility audit?
-
 
 ## 4  Additions and Changes to the ARF
 
-### ARF 2.4.0
-Currently "Accessibility" is addressed shortly in section 6.5.4. 
 
-"Accessibility" is lso addressed in Annex 2, topic 40, part D. The mentioned HLRs for Wallet unit accessibility are: 
+**ARF 2.5.0**
+A new Chapter 8 on Accessibility has been introduced.
++ The former accessibility content from Section 6.5.4 has been removed.
++ In Annex 2, a new Topic 54 on Accessibility has been created, and relevant content has been moved from Topic 40 to Topic 54.
+
+The mentioned HLRs for Wallet unit accessibility are: 
 
 | **Index** | **Requirement specification** |
 |-----------|------------------|
 | WIAM_21 | Wallet Providers SHALL ensure that their Wallet Units comply with requirements and standards outlined in [Directive 2016/2012 on the accessibility of websites and mobile applications of public sector bodies](http://data.europa.eu/eli/dir/2016/2102/oj), including European Standard EN 301 549 V1.1.2 (2015-04). |
 | WIAM_22 | Wallet Providers SHALL ensure that their Wallet Units comply with accessibility requirements for products and services established under [Directive (EU) 2019/882](http://data.europa.eu/eli/dir/2019/882/oj). |
 
-### Proposed ARF changes 
-It is planned to introduce a new section in the ARF on accessibility, after section 7. This new section 8 will contain how the Wallet will comply with the current existing regulation on accessibility. The current content in section 6.5.4 on accessibility will be removed. 
-
-In Annex 2 the content of topic 40, part D will be moved to a new topic, topic 54.     
 
 Besides these planned changes, further changes on this subject will follow the discussion's outcome.
 
