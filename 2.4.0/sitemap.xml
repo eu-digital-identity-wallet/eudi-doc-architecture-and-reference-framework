@@ -2,170 +2,150 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/architecture-and-reference-framework-main/</loc>
-         <lastmod>2025-09-15</lastmod>
-    </url>
-    <url>
-         <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-1/annex-1-definitions/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-2/annex-2-high-level-requirements/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-3/annex-3.01-pid-rulebook/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-3/annex-3.02-mDL-rulebook/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-5/annex-5.01-design-guide/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/a-privacy-risks-and-mitigations/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/c-wallet-unit-attestation/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/d-embedded-disclosure-policies/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/e-pseudonyms-including-user-authentication-mechanism/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/f-digital-credential-api/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/g-zero-knowledge-proof/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/h-transaction-logs-kept-by-the-wallet/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/i-natural-person-representing-another-natural-person/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/j-wallet-to-wallet-interactions/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/k-combined-presentation-of-attestations/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/n-export-and-data-portability/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/o-catalogues-for-attestations/</loc>
-         <lastmod>2025-09-15</lastmod>
-    </url>
-    <url>
-         <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/</loc>
-         <lastmod>2025-09-15</lastmod>
-    </url>
-    <url>
-         <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/q-interface-user-wallet-instance/</loc>
-         <lastmod>2025-09-15</lastmod>
-    </url>
-    <url>
-         <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/r-authentication-of-user-to-device/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/u-eudi-wallet-trust-mark/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/v-pid-rulebook/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/w-transactional-data-for-payments-and-other-use-cases/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/x-relying-party-registration/</loc>
-         <lastmod>2025-09-15</lastmod>
-    </url>
-    <url>
-         <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/discussion-topics/z-device-bound-attestations/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts1-eudi-wallet-trust-mark/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts2-notification-publication-provider-information/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts3-wallet-unit-attestation/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts4-zkp/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts6-common-set-of-rp-information-to-be-registered/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts7-common-interface-for-data-deletion-request/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
     <url>
          <loc>https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.4.0/technical-specifications/ts9-wallet-to-wallet-interactions/</loc>
-         <lastmod>2025-09-15</lastmod>
+         <lastmod>2025-09-18</lastmod>
     </url>
 </urlset>
