@@ -1,0 +1,704 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.5.0/discussion-topics/s-certificate-transparancy/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>S certificate transparancy - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="S certificate transparancy - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.5.0/assets/images/social/discussion-topics/s-certificate-transparancy.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.5.0/discussion-topics/s-certificate-transparancy/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="S certificate transparancy - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.5.0/assets/images/social/discussion-topics/s-certificate-transparancy.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-s-certificate-transparency" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              S certificate transparancy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 0.3, updated 17 September 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/584">Link to GitHub discussion</a></p>
+<h1 id="topic-s-certificate-transparency">Topic S - Certificate Transparency</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper">1.1 Discussion Paper</h3>
+<p>This document is the discussion paper for the European Digital Identity 
+Cooperation Group regarding Topic S – Certificate Transparency.</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as for discussion.</p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as 
+specified in RFC 2119, i.e., to indicate requirements, recommendations and 
+options specified in this document. In addition, 'must' (non-capitalised) is 
+used to indicate an external constraint, for instance a self-evident necessity 
+or a requirement that is mandated by an external document. The word 'can' 
+indicates a capability, whereas other words,  such as 'will', 'is' or 'are' 
+are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>Chapter 2 presents the legal requirements for Certificate Transparency </li>
+<li>Chapter 3 discusses topics related to Certificate Transparency </li>
+<li>Chapter 4 presents the additions and changes that will be made to the ARF main 
+document as a result of discussions</li>
+</ul>
+<h2 id="2-high-level-and-legal-requirements-for-certificate-transparency">2 High level and Legal Requirements for Certificate Transparency</h2>
+<h3 id="21-commission-implementing-regulation-eu-2025848">2.1 Commission Implementing Regulation (EU) 2025/848</h3>
+<p>The Commission Implementing Regulation (EU) 2025/848 [CIR 2025/848] in Annex IV 
+in section 3(j) it is stated regarding certificate policy and practice statement 
+of a CA issuing access certificates that it should include:</p>
+<ul>
+<li><em>a description, where relevant, on how a provider of wallet-relying party 
+access certificates logs all wallet-relying party access certificates they 
+have issued, in compliance with internet engineering task force (‘IETF’) 
+request for comments (‘RFC’) 9162 Certificate Transparency version 2.0</em></li>
+</ul>
+<p>Note: “<em>…a provider of wallet-relying party access certificates</em>” – above is 
+a CA authorized to issue access certificates.</p>
+<h3 id="22-arf">2.2 ARF</h3>
+<p>The Annex 2 of the ARF includes the following high-level requirement in 
+"Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and 
+non-qualified EAAs, and Relying Parties"</p>
+<blockquote>
+<p><strong>Reg_13</strong> The common Certificate Policy mentioned in Reg_12 SHALL require that 
+an Access Certificate Authority logs all issued certificates for Certificate 
+Transparency (CT). Note: This requirement is still under discussion and might 
+be changed or removed in a future version of this ARF.</p>
+</blockquote>
+<h2 id="3-discussion">3 Discussion</h2>
+<h3 id="31-certificate-transparency">3.1 Certificate Transparency</h3>
+<p>A CA issuing access certificates SHALL register these in a CT log according to 
+RFC 9162. Examples of CT log providers are Google and Cloudflare for SSL/TLS 
+certificates issued for a domain or subdomain.</p>
+<h4 id="certificate-transparency-logs">Certificate Transparency Logs</h4>
+<p>Certificate Transparency (CT) is an open framework designed to improve the 
+security and accountability of the Public Key Infrastructure (PKI) used on the 
+web. At its core, CT introduces public, verifiable logs that record every TLS 
+certificate issued by Certificate Authorities (CAs). These logs serve as a 
+global ledger, making the issuance of certificates visible to everyone rather 
+than being a private matter between a CA and a website operator.</p>
+<p>CT logs are <strong>immutable</strong> and <strong>append-only</strong>. This means that once a 
+certificate is submitted to a log, it can never be removed or altered; new 
+entries can only be appended. Each log is structured as a <em>Merkle tree</em>, 
+allowing cryptographic proofs that a certificate has been included in the log 
+and that the log’s history has not been tampered with.  </p>
+<p>CAs submit newly issued certificates (or pre-certificates) to one or more CT 
+logs, which then return a <strong>Signed Certificate Timestamp (SCT)</strong>. The SCT can 
+be embedded in the certificate proving that the certificate is publicly 
+recorded.</p>
+<p>The key value of CT lies in <strong>detection</strong>. By making certificate issuance 
+publicly auditable, CT enables the identification of certificates that should 
+not have been issued. This could happen in cases where:
+- A CA misbehaves by issuing certificates without proper validation.
+- An attacker obtains unauthorized certificates due to a key breach.</p>
+<p>Because all legitimate certificates must appear in CT logs, website operators, 
+browsers, and third parties can detect suspicious or unauthorized certificates, 
+thereby preventing large-scale attacks like domain impersonation.
+Two important roles support CT’s accountability model:</p>
+<ul>
+<li>
+<p><strong>Monitors</strong> continuously watch CT logs for new certificates, typically 
+focusing on specific domains or patterns. A domain owner can use monitors to 
+detect if a CA has issued a certificate for their domain without authorization.
+This early warning system helps organizations respond quickly to misissuance or 
+compromise.</p>
+</li>
+<li>
+<p><strong>Auditors</strong> verify the correctness of CT logs. They check that logs are 
+consistent (no history has been rewritten) and that certificates claiming 
+inclusion are indeed recorded. Auditors ensure that log operators cannot 
+secretly remove or alter certificates, preserving the immutability and 
+integrity of the system.</p>
+</li>
+</ul>
+<h3 id="32-the-goals-of-the-discussion">3.2 The Goals of the Discussion</h3>
+<p>The goal of the discussion is to establish how Certificate Transparency can be 
+implemented. </p>
+<p>There are some questions to be discussed before proposing a set of HLRs. These 
+questions are presented in the next sections.</p>
+<p>This document is only intended to clarify or create the high-level requirements 
+related to this topic. The necessary technical specifications will be developed 
+by the European Commission after an agreement on the requirements has been 
+reached.</p>
+<h3 id="33-questions-for-discussion">3.3 Questions for Discussion</h3>
+<p>Below is a list of questions to be addressed before drafting HLRs related to 
+Certificate Transparency:</p>
+<p><strong>Question 1:</strong> Will current CT log providers (e.g. Google and Cloudflare), 
+currently primarily for TLS certificates, accept to handle other certificates 
+such as access certificates?</p>
+<p>Currently, Certificate Transparency (CT) logs, operated by providers such as 
+Google and Cloudflare, are primarily used to record TLS certificates in the 
+Web PKI. For the EUDI ecosystem, a similar level of transparency and 
+accountability will be necessary when dealing with other types of certificates, 
+such as access certificates. To achieve this, <strong>existing CT log providers 
+should agree to accept certificates issued by CAs trusted within the EUDI 
+ecosystem</strong>.   </p>
+<p>Alternatively, the <strong>European Commission could establish its own CT log</strong> 
+infrastructure to ensure availability and trustworthiness for EUDI use cases. 
+However, the security of any CT log does not stem only from its operator. For a 
+log to be reliable, it must be accompanied by <strong>multiple independent auditors 
+and monitors</strong>, each interacting with the log from different vantage points. 
+This distributed oversight ensures that the log remains immutable and 
+append-only, and that no unauthorized modifications or omissions go unnoticed. 
+Finally, drawing from the Web PKI best practice, it is important that
+ <strong>each certificate be registered in at least two independent CT logs</strong>. </p>
+<p><strong>Question 2:</strong> How Wallet Instance shall verify the inclusion of an access 
+certificate in a Certificate Transparency Log?</p>
+<p>In the Web PKI, browsers do not directly interact with Certificate Transparency 
+(CT) logs to verify the inclusion of a certificate. Instead, they <strong>trust the 
+Signed Certificate Timestamp (SCT)</strong> provided by the log, effectively treating 
+the log as a trusted third party. This design choice is primarily motivated 
+by <strong>privacy concerns</strong>: if a browser queried the log directly, the log operator 
+would learn which websites a user visits. The same privacy considerations apply 
+within the <strong>EUDI Wallet architecture</strong>. If a Wallet Instance were to contact 
+a CT log to verify the inclusion of an access certificate, the log provider 
+would gain visibility into the Relying Parties with which the Wallet interacts.
+One possible alternative is for a <strong>Wallet Solution to download the entire 
+log</strong> and verify certificate inclusion locally, thereby avoiding direct 
+interactions with the log provider. However, the <strong>size and scalability of 
+such logs are currently unpredictable</strong>, and this approach may prove 
+impractical depending on how large the logs grow in practice.  </p>
+<p><strong>Question 3:</strong> If the complete log is publicly visible, does this pose any 
+vulnerability, e.g. subdomains? Here is an example of a CT log for the 
+Swedish Tax Authority https://crt.sh/?q=skatteverket.se that is publicly available. </p>
+<p>It should be noted that Web PKI CT logs are already used by malicious entities
+for detecting new domains (see for example, Kondracki et al. "Uninvited Guests: 
+Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
+Security, 2022)</p>
+<p><strong>Question 4</strong> How should a malicious log entry be handled in the context of 
+Certificate Transparency?</p>
+<p>It is important to recognize that <strong>Certificate Transparency (CT) logs do 
+not prevent the issuance or logging of malicious certificates</strong>. Instead, their 
+purpose is to <strong>make such misissuance detectable</strong> by ensuring that every 
+certificate is publicly recorded in an immutable and append-only log. Because 
+of this immutability, once a certificate has been submitted, <strong>it 
+cannot be removed from the log</strong>, even if it is later identified as malicious 
+or unauthorized. This characteristic is essential for ensuring the integrity of 
+the log, but it also creates the need for strong operational responses. To gain 
+the full benefits of CT, an <strong>efficient detection and revocation mechanism</strong> 
+must be in place. Detection ensures that malicious or misissued certificates 
+are quickly identified, while revocation mechanisms ensure that these 
+certificates can no longer be used to impersonate domains or services. Without 
+such measures, the visibility provided by CT would not translate into 
+effective protection.</p>
+<p>There might be other questions to be considered regarding Certificate Transparency?</p>
+<h2 id="4-high-level-requirements">4  High Level Requirements</h2>
+<p>Currently no High-Level Requirements for Certificate Transparency are included in the ARF.</p>
+<h3 id="41-possible-hlrs">4.1 Possible HLRs</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Reference</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CT_01</td>
+<td>A CA issuing access certificates SHALL register these in a CT log according to RFC 9162.</td>
+</tr>
+<tr>
+<td>CT_02</td>
+<td>...?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-proposed-arf-changes">4.2 Proposed ARF changes</h3>
+<p>It is planned to introduce a new section in the ARF on Certificate Transparency. This new section will describe aspects of CA’s issuing access certificates.</p>
+<p>Besides these planned changes, further changes on this subject will follow the discussion's outcome.</p>
+<p>Besides these planned changes, further changes on this subject will follow the discussion's outcome.</p>
+<h2 id="5-references">5 References</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Reference</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v2.5.0</td>
+</tr>
+<tr>
+<td>[CIR 2025/848]</td>
+<td>Commission Implementing Regulation (EU) 2025/848</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
