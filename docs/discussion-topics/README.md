@@ -111,15 +111,15 @@ following topics:
 | P | [Secure Cryptographic Interface between the Wallet Instance and the WSCA](p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/346) |Not yet integrated |
 | Q | [Interface between the User and the Wallet Instance](q-interface-user-wallet-instance.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/347) | Not yet integrated |
 | R | [Authentication of the User to the device](r-authentication-of-user-to-device.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/348) | Not yet integrated |
-| S | [Certificate transparency](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/349) | Not yet integrated |
+| S | [Certificate transparency](s-certificate-transparancy.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/349) | Not yet integrated |
 | T | [Support and maintenance by the Wallet Provider](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/350) | Not yet integrated |
-| Z | [Device-bound Attestations](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/567) | Not yet integrated |
-| AA | [Support of Electronic Payments Customer Authentication (SCA) with the Wallet](#topics) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/568) | Not yet integrated |
+| Z | [Device-bound Attestations](z-device-bound-attestations.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/567) | Not yet integrated |
+| AA | [Support of Electronic Payments Customer Authentication (SCA) with the Wallet](aa-support-of-electronic-payments-SCA-with-wallet.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/568) | Not yet integrated |
 
-Earlier topics, planned to be additionally discussed in iteration 3:
+#### Earlier topics, planned to be additionally discussed in iteration 3:
 
-| Topic | Title | Link |
-|-------|-------|--|
-| E | [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) |
-| F | [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |
-| G | [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |
+| Topic | Title | Link |Integrated into ARF version |
+|-------|-------|--|--|
+| E | [Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/335) | Not yet integrated |
+| F | [Digital Credentials API](f-digital-credential-api.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/336) |  |
+| G | [Zero Knowledge Proof](g-zero-knowledge-proof.md) | [Roadmap issue](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/337) |  |

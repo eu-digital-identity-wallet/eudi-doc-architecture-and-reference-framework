@@ -1,6 +1,6 @@
 # The European Digital Identity Wallet
 
-![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./docs/media/top-banner-arf.png)
+![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](docs/media/top-banner-arf.png)
 
 Under the [Electronic Identification, Authentication and Trust Services (eIDAS)
 Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation),
@@ -92,7 +92,23 @@ regarding security breaches of European Digital Identity Wallets,
 - [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)
 regarding registration of Wallet Relying Parties,
 - [CIR 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj)
-regarding the list of certified European Digital Identity Wallets.
+regarding the list of certified European Digital Identity Wallets,
+- [CIR 2025/1566](http://data.europa.eu/eli/reg_impl/2025/1566/oj)
+regarding the verification the identity and attributes of a QC or QEAA holder,
+- [CIR 2025/1567](http://data.europa.eu/eli/reg_impl/2025/1567/oj)
+regarding management of remote QSCDs as qualified trust services,
+- [CIR 2025/1568](http://data.europa.eu/eli/reg_impl/2025/1568/oj)
+regarding peer reviews of eID schemes,
+- [CIR 2025/1569](http://data.europa.eu/eli/reg_impl/2025/1569/oj)
+regarding QEAAs and EAAs provided by or on behalf of a public sector body
+responsible for an authentic source,
+- [CIR 2025/1570](http://data.europa.eu/eli/reg_impl/2025/1570/oj)
+regarding notification of information on certified QSCDSs,
+- [CIR 2025/1571](http://data.europa.eu/eli/reg_impl/2025/1571/oj)
+regarding the formats and procedures for annual reports by supervisory bodies,
+- [CIR 2025/1572](http://data.europa.eu/eli/reg_impl/2025/1572/oj)
+regarding the format and procedures for notification of intention and
+verification with regard to the initiation of qualified trust services.
 
 ## Contents of the repository
 
@@ -101,7 +117,7 @@ This repository contains:
 * "[Architecture and Reference Framework](docs/architecture-and-reference-framework-main.md)"
 the main narrative text that describes the European Digital Identity Wallet and
 its ecosystem.
-* "[Annexes](docs/annexes/)" the list of annexes that provide additional
+* "[Annexes](docs/annexes/README.md)" the list of annexes that provide additional
 information to the main narrative text. In particular, the annexes provide normative
 high-level requirements.
 * "[Discussion Topics](docs/discussion-topics/README.md)" the list of discussion
