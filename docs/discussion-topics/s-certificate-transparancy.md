@@ -131,9 +131,9 @@ reached.
 Below is a list of questions to be addressed before drafting HLRs related to 
 Certificate Transparency:
 
-**Question 1:** Will current CT log providers (e.g. Google and Cloudflare), 
-currently primarily for TLS certificates, accept to handle other certificates 
-such as access certificates?
+**Question 1:** A CT log shall be provided by an EU infrastructure, which shall be able to
+handle the registration of access certificates. Are there any specific
+requirements for this infrastructure?
 
 Currently, Certificate Transparency (CT) logs, operated by providers such as 
 Google and Cloudflare, are primarily used to record TLS certificates in the 
@@ -155,9 +155,8 @@ Finally, drawing from the Web PKI best practice, it is important that
 
 
 
-**Question 2:** How Wallet Instance shall verify the inclusion of an access 
-certificate in a Certificate Transparency Log?
-
+**Question 2:** How shall a Wallet Instance verify the inclusion of an access certificate in a
+Certificate Transparency Log?
 
 In the Web PKI, browsers do not directly interact with Certificate Transparency 
 (CT) logs to verify the inclusion of a certificate. Instead, they **trust the 
@@ -175,17 +174,15 @@ such logs are currently unpredictable**, and this approach may prove
 impractical depending on how large the logs grow in practice.  
 
 
-**Question 3:** If the complete log is publicly visible, does this pose any 
-vulnerability, e.g. subdomains? Here is an example of a CT log for the 
-Swedish Tax Authority https://crt.sh/?q=skatteverket.se that is publicly available. 
+**Question 3:** If the complete log is publicly visible, does this pose any threat?
 
 It should be noted that Web PKI CT logs are already used by malicious entities
 for detecting new domains (see for example, Kondracki et al. "Uninvited Guests: 
 Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
 Security, 2022)
 
-**Question 4** How should a malicious log entry be handled in the context of 
-Certificate Transparency?
+**Question 4** How should a malicious log entry be handled in the context of Certificate
+Transparency?
 
 It is important to recognize that **Certificate Transparency (CT) logs do 
 not prevent the issuance or logging of malicious certificates**. Instead, their 
@@ -213,7 +210,8 @@ Currently no High-Level Requirements for Certificate Transparency are included i
 | **Reference** | **Requirement specification** |
 |-----------|------------------|
 | CT_01 | A CA issuing access certificates SHALL register these in a CT log according to RFC 9162. |
-| CT_02 | ...?|
+| CT_02 | In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system |
+| CT_03 | ...?|
 
 ### 4.2 Proposed ARF changes 
 It is planned to introduce a new section in the ARF on Certificate Transparency. This new section will describe aspects of CA’s issuing access certificates.
