@@ -1,4 +1,4 @@
-Version 0.9, updated 16 September 2025
+Version 0.9.1, updated 24 September 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/585)
 
