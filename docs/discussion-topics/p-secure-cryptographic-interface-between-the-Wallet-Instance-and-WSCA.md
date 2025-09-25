@@ -1,6 +1,6 @@
 # Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
 
-Version 0.3, updated 15 Sep. 2025
+Version 0.4, updated 23 Sep. 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/578)
 
@@ -119,7 +119,7 @@ of a private key is supported [WUA_16].
 - A WSCA SHALL provide functionalites for generating new key pairs [ISSU_12b, WIAM_18].
 - A WSCA SHALL provide the Wallet Instance with storage capabilities for storing information 
 required to authenticate using a Pseudonym [PA_14].
-- A WSHA SHALL provide the Wallet Instance with information that can be used for Wallet
+- A WSCA SHALL provide the Wallet Instance with information that can be used for Wallet
 Unit activation [WIAM_05].
 - A WSCA SHALL enforce isolation mechanisms that ensure a Wallet Unit can access only 
 the cryptographic keys associated with that specific Wallet Unit, in case the WSCA contains keys 
@@ -207,6 +207,9 @@ states:
 schemes shall formulate assumptions for this evaluation of the WSCA under 
 which resistance against attackers with high attack potential in accordance 
 with Implementing Regulation (EU) 2015/1502 [...]
+
+Similarly, in section 4.5 it will be made clearer that WSCA and WSCD do not have
+to be coupled. 
 
 ## 5 References
 
