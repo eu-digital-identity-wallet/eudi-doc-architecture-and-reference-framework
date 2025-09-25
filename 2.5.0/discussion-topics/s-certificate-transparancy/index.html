@@ -534,9 +534,9 @@ reached.</p>
 <h3 id="33-questions-for-discussion">3.3 Questions for Discussion</h3>
 <p>Below is a list of questions to be addressed before drafting HLRs related to 
 Certificate Transparency:</p>
-<p><strong>Question 1:</strong> Will current CT log providers (e.g. Google and Cloudflare), 
-currently primarily for TLS certificates, accept to handle other certificates 
-such as access certificates?</p>
+<p><strong>Question 1:</strong> A CT log shall be provided by an EU infrastructure, which shall be able to
+handle the registration of access certificates. Are there any specific
+requirements for this infrastructure?</p>
 <p>Currently, Certificate Transparency (CT) logs, operated by providers such as 
 Google and Cloudflare, are primarily used to record TLS certificates in the 
 Web PKI. For the EUDI ecosystem, a similar level of transparency and 
@@ -553,8 +553,8 @@ This distributed oversight ensures that the log remains immutable and
 append-only, and that no unauthorized modifications or omissions go unnoticed. 
 Finally, drawing from the Web PKI best practice, it is important that
  <strong>each certificate be registered in at least two independent CT logs</strong>. </p>
-<p><strong>Question 2:</strong> How Wallet Instance shall verify the inclusion of an access 
-certificate in a Certificate Transparency Log?</p>
+<p><strong>Question 2:</strong> How shall a Wallet Instance verify the inclusion of an access certificate in a
+Certificate Transparency Log?</p>
 <p>In the Web PKI, browsers do not directly interact with Certificate Transparency 
 (CT) logs to verify the inclusion of a certificate. Instead, they <strong>trust the 
 Signed Certificate Timestamp (SCT)</strong> provided by the log, effectively treating 
@@ -569,15 +569,13 @@ log</strong> and verify certificate inclusion locally, thereby avoiding direct
 interactions with the log provider. However, the <strong>size and scalability of 
 such logs are currently unpredictable</strong>, and this approach may prove 
 impractical depending on how large the logs grow in practice.  </p>
-<p><strong>Question 3:</strong> If the complete log is publicly visible, does this pose any 
-vulnerability, e.g. subdomains? Here is an example of a CT log for the 
-Swedish Tax Authority https://crt.sh/?q=skatteverket.se that is publicly available. </p>
+<p><strong>Question 3:</strong> If the complete log is publicly visible, does this pose any threat?</p>
 <p>It should be noted that Web PKI CT logs are already used by malicious entities
 for detecting new domains (see for example, Kondracki et al. "Uninvited Guests: 
 Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
 Security, 2022)</p>
-<p><strong>Question 4</strong> How should a malicious log entry be handled in the context of 
-Certificate Transparency?</p>
+<p><strong>Question 4</strong> How should a malicious log entry be handled in the context of Certificate
+Transparency?</p>
 <p>It is important to recognize that <strong>Certificate Transparency (CT) logs do 
 not prevent the issuance or logging of malicious certificates</strong>. Instead, their 
 purpose is to <strong>make such misissuance detectable</strong> by ensuring that every 
@@ -610,6 +608,10 @@ effective protection.</p>
 </tr>
 <tr>
 <td>CT_02</td>
+<td>In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system</td>
+</tr>
+<tr>
+<td>CT_03</td>
 <td>...?</td>
 </tr>
 </tbody>
