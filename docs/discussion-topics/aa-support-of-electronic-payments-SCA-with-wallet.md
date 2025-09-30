@@ -1,4 +1,4 @@
-# Version 0.2, updated 18 September 2025
+# Version 0.95, updated 30 September 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/582)
@@ -14,7 +14,7 @@ This document is the Discussion Paper for the European Digital Identity Cooperat
 
 The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
-_Support of Electronic Payments Customer Authentication (SCA) with the Wallet needs to be discussed further. Intention is to draft and finalise the minimal needed high level technical requirements for the ARF._
+_Support of Electronic Payments Customer Authentication (SCA) with the Wallet needs to be discussed further. Intention is to draft and finalise the minimally needed high-level technical requirements for the ARF._
 
 
 ### 1.2 Key Words
@@ -30,7 +30,7 @@ The document is structured as follows:
 
 - Chapter 3 presents the use cases in the scope of discussion.
 
-- Chapter 4 presents and discuss new requirements.
+- Chapter 4 presents and discusses new requirements.
 
 - Chapter 5 refers to other topics related to support of electronic payments customer authentication (SCA) with the Wallet.
 
@@ -45,35 +45,35 @@ The legal requirements applicable to Topic AA, were collected and discussed in T
 
 As an outcome of Topic W discussion, the set of new HLRs was introduced to ARF's [Topic 20].
 
-The purpose of Topic AA is to discuss further, in delail, various aspect necessary to enable Wallet Solution Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 (payments and other use cases as defined by PSD2), basing on experience from the Large Scale Projects (EWC and Nobid).  
+The purpose of Topic AA is to discuss further, detail, various aspects necessary to enable Wallet Solution Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 (payments and other use cases as defined by PSD2), basing on experience from the Large Scale Projects (EWC and Nobid).  
 
 
 ## 3 Use Cases
 
 Under the [European Digital Identity Regulation], a requirement has been introduced for providers in the banking and financial services sector to allow their users to perform strong user authentication with an EU Digital Identity Wallet (Article 5f(2)).
 
-At the same time, application of strong user authentication for this sector is governed by [PSD2] and [RTS SCA], which require Strong Customer Authentication (SCA) where the user:
-+ initiates an electronic payment transaction, or
-+ accesses its payment account online, or
-+ carries out any action through a remote channel which may imply a risk of payment fraud or other abuses.
+At the same time, application of strong user authentication for this sector is governed by [PSD2] and [RTS SCA], which require Strong Customer Authentication (SCA) where the User:
++ (1) initiates an electronic payment transaction, or
++ (2) accesses its payment account online, or
++ (3) carries out any action through a remote channel which may imply a risk of payment fraud or other abuses.
 
 
 One important part of SCA is that the User’s consent is valid only for a specific action for which it has been requested, and must not be used to authorise another action (or the same action multiple times). This is known as "Dynamic Linking".
 
-In the case of initiating an electronic payment transaction or a series thereof, payers can further give their consent either directly to their Account Servicing Payment Service Provider (ASPSP) (eg. bank), or via a payee or a Payment Initiation Service Provider (PISP)  (Artcile 64(2) of [PSD2]).
+In the case of initiating an electronic payment transaction or a series thereof, payers can further give their consent either directly to their Account Servicing Payment Service Provider (ASPSP) (eg. bank), or via a payee or a Payment Initiation Service Provider (PISP)  (Article 64(2) of [PSD2]).
 
 The ARF's [Topic 20] introduces the concept of dedicated SUA attestations issued into the User’s wallet by their ASPSP and then later presented in conjunction with transactional data to be signed by the Wallet Unit (for Dynamic Linking). 
 
-In the PSD2 context, there will be two distinct usages for SUA attestations depending on the User’s counterparty: 
+In the PSD2 context, finally there will be two distinct usages for SUA attestations depending on the User’s counterparty: 
 
-+ Interaction between the User and their ASPSP: Here, the ASPSP acts as both the Attestation Issuer and Relying Party, effectively creating a 2-party model (“**issuer-requested flow**”). In this scenario, **all three SCA use cases are permitted**;
++ Interaction between the User and their ASPSP: Here, the ASPSP acts as both the Attestation Issuer and Relying Party, effectively creating a **2-party model** (“**issuer-requested flow**”). In this scenario, **all three SCA use cases are permitted**;
 
-+ Interaction between the User and a payee or PISP: Here, the Attestation Issuer differs from the Relying Party, creating a 3-party model (“**payee-requested flow**”). In this scenario, **only the payment initiation SCA use case is permitted**.
++ Interaction between the User and a payee or PISP: Here, the Attestation Issuer differs from the Relying Party, creating a **3-party model** (“**payee-requested flow**”). In this scenario, **only the payment initiation SCA use case is permitted**.
 
 
 ## 4 New requirements discussion 
 
-This chapter contains various additional requirements for consideration and discussion, that may in result turn into the HLRs or may cause modification of existing ones in [Topic 20].
+This chapter contains various additional requirements for consideration and discussion, that may, as a result, turn into HLRs or may cause modification of existing ones in [Topic 20].
 
 
 ### 4.1 Process control
@@ -86,7 +86,18 @@ In consequence, the Wallet Unit must, when receiving a presentation request for 
 _**Question 1: Should the Wallet Unit be able to validate if the transaction data type is permitted for a given SUA attestation type and conforms to the transaction data type schema?**_
 
 
-_Note: In the opinion of the ARF team, this is necessary that Wallet Unit is able to perform such validations, for any presentation request that involves transactional data. How the validation should be performed, will be specific per SUA attestation type, and should be specified in the related Attestation Rulebooks and/or Technical Specifications._
+_Note: In the opinion of the ARF team, this is necessary that Wallet Unit is able to perform such validations, for any presentation request that involves transactional data. How the validation should be performed, will be specific per SUA attestation type, and should be specified in the related Attestation Rulebook(s) and/or Technical Specification(s)._
+
+
+_(Update after the Focus Meeting 1:)_
+
+Following the discussions and comments, it is proposed to add a new HLR:  
+
+| **Index** | **Requirement specification**                                | 
+|-----------|--------------------------------------------------------------|
+| **SUA_07**    | **Upon receiving presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for  the given attestation and that the transactional data conforms to the related technical specification and/or attestation rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.** |  
+
+All the details related to the format, syntax, processing and rendering rules of transactional data are to be defined in the related technical specification. For payment/PSD2 related SCA use cases, the specification will be included in "Technical Specification 12", that is already planned for development.   
 
 
 ### 4.2 Dialog messages(s)
@@ -95,7 +106,7 @@ Depending on the transaction type, the User will be displayed corresponding dial
 
 However there are additional aspects to be considered, specific for payment/PSD2 context.
 
-The following chapters provide consideration on potential additional requirements. For each the general question apply:
+The following chapters provide consideration on potential additional requirements. For each, the general question applies:
 
 _**Question 2: Which of the following requirements should turn into HLRs?**_
 
@@ -141,19 +152,65 @@ The following requirements are being considered:
 
 _Note: In the opinion of the ARF team, the "Visual Assurance" requirements could be potentially included in a related Technical Specification. Regarding the remaining two, these are security related ones. The security measures of the Wallet Solution are to be designed by the Provider and in principle will to be proven in the certification process, where the [CIR 2024/2979] lists relevant threats against which the Wallet Solution must provide countermeasures. In conclusion, there is no need do introduce above requirements as HLRs._
 
+### 4.3 Authentication code
 
-## 5 Relation to Other Discussion Topics 
+_(Section added after the Focus Meeting 1)_
 
-The dialog messages shall follow accessibility rules, that are disucssed in Topic Q.
+The current HLRs (by intention) do not specify how the authentication code is to be generated, its form or syntax. Following the discussion on Topic W, it was assumed that native mechanisms of the presentation protocols (like related to key binding and response signature) are sufficient here. The appropriate information is in SUA_05:
+
+>The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). *Notes: - The resulting signature value and constitutes a proof of transaction and fulfils the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in [Topic 1](#a231-topic-1---accessing-online-services-with-a-wallet-unit).*
+
+
+Following the discussions and comments, there is a need to re-discuss, how the authentication code can be created in an optimal way. For instance, the EWC and NOBID LSPs propose to use a [JTI](https://www.rfc-editor.org/rfc/rfc7519.html#section-4.1.7) in the Key Binding JWT of OID4VP, as an easy-to-handle authentication code.
+
+_**Question 3: Are the native mechanisms of SD-JWT and mDoc sufficient to deliver authentication code? Is there a need for change of HLR(s) in this respect?**_
+
+### 4.4 Fraud signals
+
+_(Section added after the Focus Meeting 1)_
+
+[RTS SCA] contains generic requirements for PSPs in Article 2 to have transaction monitoring mechanisms detect unauthorised or fraudulent transactions:
+
+>1. Payment service providers shall have transaction monitoring mechanisms in place that enable them to detect unauthorised or fraudulent payment transactions for the purpose of the implementation of the security measures referred to in points (a) and (b) of Article 1. Those mechanisms shall be based on the analysis of payment transactions taking into account elements which are typical of the payment service user in the circumstances of a normal use of the personalised security credentials.
+
+>2. Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors:
+(a) lists of compromised or stolen authentication elements;
+(b) the amount of each payment transaction;
+(c) known fraud scenarios in the provision of payment services;
+(d) signs of malware infection in any sessions of the authentication procedure;
+(e) in case the access device or the software is provided by the payment service provider, a log of the use of the access device or the software provided to the payment service user and the abnormal use of the access device or the software.
+
+The ARF does not envision any risk signals collection from the Wallet Units or making them available externally, there is no any HLRs related to the topic. Technically this is feasible and could be done at the Wallet Solution providers discretion. However, at the same time, there are strong legal requirements related to privacy protection directly in [European Digital Identity Regulation]. Finally, this aspect is outside the mandate for the ARF scope, and there is no intention to include any requirements related to risk signals. This does not however prevent Wallet Solution providers to include such additional features, the ARF does not prevent from doing so.  
 
 
 
-## 6 Additions and Changes to the ARF 
+## 5 Current HLRs and Proposals of Changes
+
+
+| **Index** | **Requirement specification** | **Proposal** |
+|-----------|-----------------|---------------|
+| SUA_01 | The Wallet Units SHALL be able to process the transactional data included in a presentation request for ~~that an~~ a SUA attestation, according to all requirements in the ~~associated~~ Attestation Rulebook **associated with that SUA attestation**. | Keep with proposed changes  |
+| SUA_02 | The Attestation Rulebook (see [Topic 12](#a2312-topic-12---attestation-rulebooks) of a SUA attestation SHALL specify syntax and semantics of the transactional data associated with **and intended for** that attestation ~~, as well as all necessary requirements for Wallet Units to process that transactional data, at least regarding a) displaying the data to the User when obtaining consent for signing the data, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit~~. | Keep with proposed changes  |
+| **SUA_02a** | **The Technical Specification associated with the given SUA attestation SHALL specify all necessary requirements for Wallet Units to process  transactional data intended for this SUA attestation, at least regarding a) rendering and displaying the data to the User when obtaining consent for presentation, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit.** | New requirement  |
+| SUA_03 | The Attestation Provider of a SUA attestation SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the Attestation Rulebook for that attestation. | Keep as-is  |
+| SUA_04 | In the response to a presentation request that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.* | Keep as-is  |
+| SUA_05 | The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). *Notes: - The resulting signature value and constitutes a proof of transaction and fulfils the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in [Topic 1](#a231-topic-1---accessing-online-services-with-a-wallet-unit).* | Keep as-is  |
+| SUA_06 | The Wallet Unit SHALL be able to adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to 'approve' or 'reject' a transaction), according to requirements in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. | Keep as-is  |
+| **SUA_07**    | **Upon receiving presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for  the given attestation and that the transactional data conforms to the related technical specification and/or attestation rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.** |  New requirement  |
+
+
+## 6 Relation to Other Discussion Topics 
+
+The dialogue messages shall follow accessibility rules, which are discussed in Topic Q.
+
+
+
+## 7 Additions and Changes to the ARF 
 
 See sections 4 and 5 above. In addition, transactional data related aspects in the main text of the ARF will be updated accordingly.
 
 
-## 7 References
+## 8 References
 
 | Reference                              | Description                                                  |
 |----------------------------------------|--------------------------------------------------------------|
