@@ -1,5 +1,5 @@
 
-Version 0.3, updated 17 September 2025
+Version 0.4, updated 28 September 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/584)
 
@@ -35,7 +35,7 @@ The document is structured as follows:
 document as a result of discussions
 
 
-## 2 High level and Legal Requirements for Certificate Transparency
+## 2 High-level and Legal Requirements for Certificate Transparency
 
 ### 2.1 Commission Implementing Regulation (EU) 2025/848
 
@@ -115,7 +115,7 @@ integrity of the system.
 
 ### 3.2 The Goals of the Discussion
 
-The goal of the discussion is to establish how Certificate Transparency can be 
+The goal of this discussion is to establish how Certificate Transparency can be 
 implemented. 
 
 There are some questions to be discussed before proposing a set of HLRs. These 
@@ -126,15 +126,12 @@ related to this topic. The necessary technical specifications will be developed
 by the European Commission after an agreement on the requirements has been 
 reached.
 
-### 3.3 Questions for Discussion 
+### 3.3 Discussion topics
 
-Below is a list of questions to be addressed before drafting HLRs related to 
+Below is a list of topics to be addressed before drafting HLRs related to 
 Certificate Transparency:
 
-**Question 1:** A CT log shall be provided by an EU infrastructure, which shall be able to
-handle the registration of access certificates. Are there any specific
-requirements for this infrastructure?
-
+#### EU CT log infrastructure 
 Currently, Certificate Transparency (CT) logs, operated by providers such as 
 Google and Cloudflare, are primarily used to record TLS certificates in the 
 Web PKI. For the EUDI ecosystem, a similar level of transparency and 
@@ -153,10 +150,10 @@ append-only, and that no unauthorized modifications or omissions go unnoticed.
 Finally, drawing from the Web PKI best practice, it is important that
  **each certificate be registered in at least two independent CT logs**. 
 
+- Should compliance be stated in the CPS of the access certificate provider which 
+CT log that it uses?
 
-
-**Question 2:** How shall a Wallet Instance verify the inclusion of an access certificate in a
-Certificate Transparency Log?
+#### CT log usage
 
 In the Web PKI, browsers do not directly interact with Certificate Transparency 
 (CT) logs to verify the inclusion of a certificate. Instead, they **trust the 
@@ -173,18 +170,27 @@ interactions with the log provider. However, the **size and scalability of
 such logs are currently unpredictable**, and this approach may prove 
 impractical depending on how large the logs grow in practice.  
 
+Therefore, a Wallet Instance shall only verify that an access certificate 
+contains a valid SCT. At the same time, Relying Parties and access certificate 
+issuers shall cooperate with monitoring services to detect potentially mis-issued certificates. 
 
-**Question 3:** If the complete log is publicly visible, does this pose any threat?
+
+#### Security threats
 
 It should be noted that Web PKI CT logs are already used by malicious entities
 for detecting new domains (see for example, Kondracki et al. "Uninvited Guests: 
 Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
 Security, 2022)
 
-**Question 4** How should a malicious log entry be handled in the context of Certificate
-Transparency?
+However it is not expected this to be case  for CT logs got access certificates, 
+since the list of access certificates is already public. 
 
-It is important to recognize that **Certificate Transparency (CT) logs do 
+- That all access certificates are collated in one or more place – does this pose any threat?
+
+#### Incidence response
+
+
+It is important to recognise that **Certificate Transparency (CT) logs do 
 not prevent the issuance or logging of malicious certificates**. Instead, their 
 purpose is to **make such misissuance detectable** by ensuring that every 
 certificate is publicly recorded in an immutable and append-only log. Because 
@@ -199,6 +205,8 @@ certificates can no longer be used to impersonate domains or services. Without
 such measures, the visibility provided by CT would not translate into 
 effective protection.
 
+- Should there be a process, besides the CT log, to handle misbehaving CA’s e.g. exclusion from Trusted Lists?
+
 There might be other questions to be considered regarding Certificate Transparency?
 
 ## 4  High Level Requirements
@@ -209,16 +217,24 @@ Currently no High-Level Requirements for Certificate Transparency are included i
 
 | **Reference** | **Requirement specification** |
 |-----------|------------------|
-| CT_01 | A CA issuing access certificates SHALL register these in a CT log according to RFC 9162. |
+| CT_01 | A CA issuing access certificates SHALL register these in a CT log according to RFC 9162, if such a log is available. |
 | CT_02 | In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system |
-| CT_03 | ...?|
+| CT_03 | The issuing CA SHALL include at least one Signed Certificate Timestamp (SCT) in the certificate|
+| CT_04 | The Wallet Unit SHALL check that the access certificate includes at least one Signed Certificate Timestamp (SCT) |
+| CT_05 | A Wallet Unit SHALL not communicate with a RP which access certificate does not include a SCT (Can this be “outsourced” to other entity?) |
+| CT_NN | ...|
+
+The HLRs should address:
+1. How the certificate verifier perform checks against the CT log? Directly or via a fraud detection system?
+2. What checks that should be performed and what constitutes a malicious entry?
+3. What protocols that should be offered by a fraud detection system to all certificate verifiers?
 
 ### 4.2 Proposed ARF changes 
 It is planned to introduce a new section in the ARF on Certificate Transparency. This new section will describe aspects of CA’s issuing access certificates.
 
-Besides these planned changes, further changes on this subject will follow the discussion's outcome.
+In addition to these planned changes, further changes on this subject will follow the outcome of the discussion.
 
-Besides these planned changes, further changes on this subject will follow the discussion's outcome.
+
 
 ## 5 References
 
