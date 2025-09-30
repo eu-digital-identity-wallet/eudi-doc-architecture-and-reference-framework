@@ -33,7 +33,7 @@ fact.
 This document is structured as follows:
 
 - Chapter 2 introduces support and maintenance expectations set on Wallet Providers based on the existing legislation and the ARF, and lists the Annex 2 HLRs found to relate (also, in addition to their home topic) with support and maintenance on the latest ARF version (2.5.0).
-- Chapter 3 Opens the discussion whether specific high-level requirements are desirable
+- Chapter 3 Opens the discussion whether specific high-level requirements are desirable.
 - Chapter 4 will list the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2. Existing requirements related to Wallet Provider's support and maintenance duties
