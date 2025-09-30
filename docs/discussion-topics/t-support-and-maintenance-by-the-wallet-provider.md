@@ -1,4 +1,4 @@
-# T - Support and maintenance by the Wallet Provider
+# T - Support and Maintenance by the Wallet Provider
 
 Version 0.1, 01 Oct 2025
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/583)
@@ -8,7 +8,7 @@ Version 0.1, 01 Oct 2025
 ### 1.1 Discussion Paper topic description
 
 This document is the Discussion Paper for European Digital Identity Cooperation Group
-on topic **T - Support and maintenance by the Wallet Provider**
+on topic **T - Support and Maintenance by the Wallet Provider**
 
 The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
@@ -33,7 +33,7 @@ fact.
 This document is structured as follows:
 
 - Chapter 2 introduces support and maintenance expectations set on Wallet Providers based on the existing legislation and the ARF, and lists the Annex 2 HLRs found to relate (also, in addition to their home topic) with support and maintenance on the latest ARF version (2.5.0).
-- Chapter 3 Opens the discussion whether specific high-level requirements are desirable.
+- Chapter 3 opens the discussion whether specific high-level requirements are desirable.
 - Chapter 4 will list the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2. Existing requirements related to Wallet Provider's support and maintenance duties
@@ -44,7 +44,7 @@ Article xx of the [European Digital Identity Regulation] specifies that
 
 ### 2.2 Sections in the ARF related to Wallet Solution and Wallet Unit lifecycle management
 
-The Trust model discussion in the ARF main text (Section 6) has the following lifecycle management related subsections, and although not directly mentioning support duty of the Wallet Provider may be of relevance for this topic:
+The Trust model discussion in the ARF main text (Section 6) has the following lifecycle management related subsections, and although not directly mentioning the support duties of the Wallet Provider, may be relevant for this topic:
 
 [Section 6.2.3](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#623-wallet-provider-suspension-or-cancellation) of the main document discusses what happens on Wallet Unit level if a Wallet Provider is cancelled or suspended. Informing duty by the Wallet Provider of such event for the Wallet Users is defined in Annex 2/[Topic 38](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation) part B part of the ARF.
 
@@ -76,7 +76,7 @@ Topic 9 covers HLRs for Wallet Unit Attestation (WUA). WUA_03 below relates to (
 
 #### 2.3.2 Topic 38
 
-Topic 38 covers HLRs addresseing Wallet Unit revocation. HLRs having a link between the Wallet Provider and Wallet User have been picked for this topic discussion
+Topic 38 covers HLRs addressing Wallet Unit revocation. HLRs having a link between the Wallet Provider and Wallet User have been picked for this topic discussion
 
 | **Index** | **Requirement specification**   |
 |-----------|----------------------------------------------|
@@ -110,7 +110,7 @@ Annex 2 [Topic 40](https://github.com/eu-digital-identity-wallet/eudi-doc-archit
 
 The support and maintenance functions of the Wallet Provider are in the current ARF mostly implicit and embedded under technical topics that either link to issuance, revocation or lifecycle management of technical artefacts (functional requirements under various topics). 
 
-Many operative functions of a Wallet Provider related to sustained custoner support and active engineering towards keeping the Wallet Solution up to date might be addressed by listing comprehensive non-functional requirements unless they are part of the Wallet Provider certification checklists. The open question is: would such HLRs make sense to be specified as EC technical requirements? 
+Many operative functions of a Wallet Provider related to sustained customer support and active engineering towards keeping the Wallet Solution up to date might be addressed by listing comprehensive non-functional requirements unless they are part of the Wallet Provider certification checklists. The open question is: would it make sense to specify such HLRs as EC technical requirements? 
 
 
 ## 4 Additions and changes to the ARF
