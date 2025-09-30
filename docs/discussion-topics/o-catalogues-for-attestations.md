@@ -1,11 +1,11 @@
-# O - Catalogues for Attestations
+# Topic O - Catalogues for Attestations
 
-Version 0.4, updated 8 Sep 2025
+Version 1.0, updated 29 Sep 2025
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/557)
 
 ## 1. Introduction
 
-### 1.1 Discussion Paper topic description
+### 1.1 Discussion Paper Topic description
 
 This document is the Discussion Paper for European Digital Identity Cooperation Group
 on topic **O - Catalogues for Attestations**
@@ -14,8 +14,7 @@ The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
 > Requirements need to be defined to implement the catalogue of Attestation Rulebooks 
 and attributes as outlined in ARF 1.4.1 Annex 2, Topics 25 and 26. Specifically, 
-interfaces for registering a Rulebook and for searching and requesting rulebooks and 
-attribute definitions should be specified.
+interfaces for registering a Rulebook, and for searching and requesting Rulebooks and attribute definitions, should be specified.
 
 Following the *Commission Implementing Regulation (EU) 2025/1569 of 29 July 2025*
 this document discusses  **catalogue of attributes** and 
@@ -37,8 +36,7 @@ fact.
 
 This document is structured as follows:
 
-- Chapter 2 introduces catalogue of attributes and catalogue of schemes for the 
-attestation of attributes based on the existing legislation and the ARF.
+- Chapter 2 introduces catalogue of attributes and the catalogue of schemes for the attestation of attributes based on the existing legislation and the ARF.
 - Chapter 3 lists the additions and changes that will be made to the ARF
 as a result of discussing this topic with Member States.
 
@@ -56,7 +54,7 @@ It is clarified that the *scheme for the attestation of attributes* is not the
 same as the *Attestation Rulebook*. Particularly:
 
 - **Scheme for the attestation of attributes** is a machine-readable attestation definition
-- **Attestation Rulebook** is a human readable specification of the scheme for the attestation of attributes​
+- **Attestation Rulebook** is a human-readable specification of the scheme for the attestation of attributes​
 
 The *Commission Implementing Regulation (EU) 2025/1569* additionally defines
 the **catalogue of schemes for the attestation of attributes**. The scope of these two catalogues
@@ -88,7 +86,7 @@ the following are defined:
 Therefore, the two catalogues are distinct and serve different purposes. The catalogue 
 of attributes is limited to attributes that rely on authentic sources within the public 
 sector, with its primary objective being the discovery of verification points. Only specific
-type of entities shall be allowed to add or modify an entry in this catalogue. In contrast, 
+types of entities shall be allowed to add or modify an entry in this catalogue. In contrast, 
 the catalogue of schemes for the attestation of attributes has a broader scope, as it 
 allows any scheme owner to register their attestation scheme.
 
@@ -135,7 +133,7 @@ scheme are to be issued as qualified electronic attestations of attributes, as
 electronic attestations of attributes issued by or on behalf of a public sector body 
 responsible for an authentic source, or as both.
 
-The contents of both catalogues SHALL be available in both human and machine readable formats. 
+The contents of both catalogues SHALL be available in both human and machine- readable formats. 
 
 ## 3 Additions and changes to the ARF
 
@@ -151,7 +149,7 @@ The following High-Level Requirement is proposed to be added under Topic 25:
 
 **CAT_11**
 A request to include  or to modify an attribute in the catalogue of attributes SHALL indicate
-how a verification point for an attribute  can be used
+how a verification point for an attribute can be used.
 
 
 ### 3.2 High-Level Requirements to be changed
@@ -193,7 +191,7 @@ A list of the requirements that shall be removed follows:
 The ARF includes in various locations the term `catalogue of published Attestation Rulebooks`
 (e.g., section 3.15). This should be rephrased to `catalogue of schemes for the attestation of attributes`.
 
-Similarly, Section 5.5 of the ARF has to be re-written and adapted to the definitions set 
+Similarly, Section 5.5 of the ARF has to be rewritten and adapted to the definitions set 
 in Section 2 of this document.
 
 Finally, Section 5.5 will be revised to clearly state that the catalogue of attributes 
