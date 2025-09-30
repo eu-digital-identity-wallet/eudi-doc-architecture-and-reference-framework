@@ -1,12 +1,12 @@
-# Z - Device-bound Attestations
+# Topic Z - Device-bound Attestations
 
-Version 0.6, updated 8 Sep 2025
+Version 1.0, updated 29 Sep 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/581)
 
 ## 1. Introduction
 
-### 1.1 Discussion Paper topic description
+### 1.1 Discussion Paper Topic description
 
 This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
 Topic Z - Device-bound Attestations
@@ -14,8 +14,7 @@ Topic Z - Device-bound Attestations
 The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:
 
 Currently the ARF only assumes device-bound Attestations. Should this be 
-extended to not-device-bound Attestations. What specific high level requirements for 
-not-device-bound Attestations should the ARF specify? 
+extended to not-device-bound Attestations. What specific high-level requirements for non-device-bound Attestations should the ARF specify? 
 
 
 ## 1.2 Key words
@@ -33,7 +32,7 @@ fact.
 ## 1.3 Document structure
 This document is structured as follows:
 - Chapter 2 presents requirements related to device-bound attestations. 
-- Chapter 3 discusses use cases for non device-bound attestations.
+- Chapter 3 discusses use cases for non-device-bound attestations.
 - Chapter 4 presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 ## 2. Definitions, Existing requirements related to device-bound attestations
@@ -43,11 +42,9 @@ In the context of the ARF **device binding refers to the binding of an attestati
 to a cryptographic key stored in a WSCD**. 
 
 One of the key advantages of device binding is its ability to prevent the sharing 
-or unauthorized reuse of attestations. Since the attestation is tied to a cryptographic 
+or unauthorised reuse of attestations. Since the attestation is tied to a cryptographic 
 key that only exists on the user device, it becomes significantly more difficult 
-for users to copy and transfer an attestation to another device or individual. Similarly,
-device binding prevents replay attacks, since each presentation shall include
-a fresh proof bound to the Relying Party.
+for users to copy and transfer an attestation to another device or individual. Similarly, device binding prevents replay attacks, as each presentation shall include a fresh proof bound to the Relying Party.
 
 On the other hand, when device binding is enforced, the portability of attestations 
 would most likely require re-issuance of the attestation on the new device. Another 
@@ -91,8 +88,7 @@ strong holder binding is not required.
 
 In such cases, the level of assurance needed by the Relying Party is minimal.
 
-It should be highlighted however, holder binding and device binding are related 
-but not the same. An attestation may be bound to a device but not to a User. 
+It should be highlighted, however, that holder binding and device binding are related but not the same. An attestation may be bound to a device but not to a User. 
 Device binding in this case will prevent attestation sharing, as well as replay 
 attacks (as discussed in Section 2). 
 
@@ -114,6 +110,8 @@ trusted third-party service that conducts biometric matching.
 On the other hand, device binding may offer additional security advantages as
 discussed in Section 2.  
 
+It should be noted that biometric-bound attestations are not currently considered by
+the ARF. 
 
 ### Combined presentation of attestations
 One of the use cases for supporting non device-bound attestations is the combined 
@@ -131,17 +129,21 @@ presentation to be device-bound. For example, a PID can be securely bound to a d
 while complementary attestations, such as a university diploma or a professional license, 
 may remain portable and unbound. 
 
+It should be noted that the security and privacy considerations of combined 
+attestation presentations are out of scope for this paper; they are addressed 
+in Topic K
+
 ## 4 Discussion
 ### Re-issuance of non device bound attestations
-Currently the ARF specifies the following:
+Currently the ARF specifies the following for attestations that can be re-issued
+using a refresh token:
 
 > In the absence of User authentication, and to prevent that a re-issued PID or attestation 
 ends up at the wrong User, the PID Provider or Attestation Provider ensures that the re-issued 
 PID or attestation is bound to the same WSCA/WSCD as the PID or attestation it replaces.
 
-But this not applicable to non device-bound attestations. It is noted that even if an attacker
-cannot use the re-issued attestation (e.g., because "claim-based" binding is used) sensitive
-information about a user may be inferred. 
+But this is not applicable to non-device-bound attestations. It is noted that even if an attacker
+cannot use the re-issued attestation (e.g., because "claim-based" binding is used) sensitive information about a User may be inferred. 
 
 In order to ensure that a re-issued non device-bound attestation does not end up 
 with the wrong User, the corresponding refresh tokens SHALL be bound to the WSCA/WSCD 
@@ -157,8 +159,7 @@ attestations can be stolen and re-used by a third party. Attestation Providers
 should always assess this risk.
 
 ## 5 Additions and changes to the ARF
-Currently the ARF only considers device-bound attestations. It will adapted to also
-consider non device-bound attestations. 
+Currently the ARF only considers device-bound attestations. It will be adapted to also consider non-device-bound attestations. 
 
 ### 5.1 High-Level Requirements to be added to Annex 2
 The following HLR will be added to Topic 12 (Attestation Rulebooks)
@@ -206,7 +207,7 @@ and 'key binding' in [SD-JWT-VC]. - Discussions on device binding are ongoing,
 in particular regarding whether non-device-bound PIDs or attestations should be 
 supported by a Wallet Unit, and if so, what the requirements for this support should be.~~
 
-**ISSU_27** An Attestation Provider MAY implement device binding for all attestations it issues. When an issued
+**ISSU_27** An Attestation Provider SHOULD implement device binding for all attestations it issues. When an issued
 attestation is device-bound, an Attestation Provider SHALL ensure that the attestation is
 cryptographically bound to a WSCA/WSCD included in the Wallet Unit, as specified in requirement
 WUA_11 in [Topic 9]
