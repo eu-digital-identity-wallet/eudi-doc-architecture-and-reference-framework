@@ -1,5 +1,5 @@
 
-Version 0.4, updated 28 September 2025
+Version 0.5, updated 8 October 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/584)
 
@@ -131,7 +131,7 @@ reached.
 Below is a list of topics to be addressed before drafting HLRs related to 
 Certificate Transparency:
 
-#### EU CT log infrastructure 
+#### 3.3.1 EU CT log infrastructure 
 Currently, Certificate Transparency (CT) logs, operated by providers such as 
 Google and Cloudflare, are primarily used to record TLS certificates in the 
 Web PKI. For the EUDI ecosystem, a similar level of transparency and 
@@ -150,10 +150,12 @@ append-only, and that no unauthorized modifications or omissions go unnoticed.
 Finally, drawing from the Web PKI best practice, it is important that
  **each certificate be registered in at least two independent CT logs**. 
 
-- Should compliance be stated in the CPS of the access certificate provider which 
-CT log that it uses?
+ It is assumed that the new European CT log infrastructure will define what 
+ version of RFC 9162 and other implementation requirements such as the number 
+ of CT logs a CA issuing access certificates shall register with is defined.
 
-#### CT log usage
+
+#### 3.3.2 CT log usage
 
 In the Web PKI, browsers do not directly interact with Certificate Transparency 
 (CT) logs to verify the inclusion of a certificate. Instead, they **trust the 
@@ -171,24 +173,20 @@ such logs are currently unpredictable**, and this approach may prove
 impractical depending on how large the logs grow in practice.  
 
 Therefore, a Wallet Instance shall only verify that an access certificate 
-contains a valid SCT. At the same time, Relying Parties and access certificate 
+contains one or more valid SCT. At the same time, Relying Parties and access certificate 
 issuers shall cooperate with monitoring services to detect potentially mis-issued certificates. 
 
-
-#### Security threats
+#### 3.3.3 Security threats
 
 It should be noted that Web PKI CT logs are already used by malicious entities
 for detecting new domains (see for example, Kondracki et al. "Uninvited Guests: 
 Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
 Security, 2022)
 
-However it is not expected this to be case  for CT logs got access certificates, 
-since the list of access certificates is already public. 
+However, this is not expected to be case for CT logs for access certificates, 
+as the list of access certificates is already public. Collating all access certificates in one or more CT logs does not seem to pose any threat as this information is already publicly available.
 
-- That all access certificates are collated in one or more place – does this pose any threat?
-
-#### Incidence response
-
+#### 3.3.4 Incident response
 
 It is important to recognise that **Certificate Transparency (CT) logs do 
 not prevent the issuance or logging of malicious certificates**. Instead, their 
@@ -199,15 +197,20 @@ cannot be removed from the log**, even if it is later identified as malicious
 or unauthorized. This characteristic is essential for ensuring the integrity of 
 the log, but it also creates the need for strong operational responses. To gain 
 the full benefits of CT, an **efficient detection and revocation mechanism** 
-must be in place. Detection ensures that malicious or misissued certificates 
+must be in place. Detection ensures that malicious or mis-issued certificates 
 are quickly identified, while revocation mechanisms ensure that these 
 certificates can no longer be used to impersonate domains or services. Without 
 such measures, the visibility provided by CT would not translate into 
 effective protection.
 
-- Should there be a process, besides the CT log, to handle misbehaving CA’s e.g. exclusion from Trusted Lists?
+Monitors shall notify both CA and RP of any suspicious registrations, such as an 
+entry for a RP that is not part of the authoritative registry or trusted list. 
 
-There might be other questions to be considered regarding Certificate Transparency?
+If an RP discovers an entry in the CT log stating that an access certificate has been issued to it incorrectly, the RP shall immediately request its revocation. 
+If revocation of the certificate is not done promptly and according to the CPS of 
+the CA, the incident can be escalated to the service operator of the Trusted List or MS.
+
+Only the RP to which an access certificate has been incorrectly issued can take any action.
 
 ## 4  High Level Requirements
 
@@ -218,23 +221,26 @@ Currently no High-Level Requirements for Certificate Transparency are included i
 | **Reference** | **Requirement specification** |
 |-----------|------------------|
 | CT_01 | A CA issuing access certificates SHALL register these in a CT log according to RFC 9162, if such a log is available. |
-| CT_02 | In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system |
-| CT_03 | The issuing CA SHALL include at least one Signed Certificate Timestamp (SCT) in the certificate|
-| CT_04 | The Wallet Unit SHALL check that the access certificate includes at least one Signed Certificate Timestamp (SCT) |
-| CT_05 | A Wallet Unit SHALL not communicate with a RP which access certificate does not include a SCT (Can this be “outsourced” to other entity?) |
-| CT_NN | ...|
+| CT_02 | A CA issuing access certificates SHALL include a description in its CPS how all access certificates are logged according to RFC 9162| 
+| CT_03 | In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system |
+| CT_04 | The issuing CA SHALL include at least one Signed Certificate Timestamp (SCT) in the certificate|
+| CT_05 | The Wallet Unit SHALL check that the access certificate includes at least one Signed Certificate Timestamp (SCT) |
+| CT_06 | A Wallet Unit SHALL not communicate with a RP which access certificate does not include a SCT |
+
 
 The HLRs should address:
-1. How the certificate verifier perform checks against the CT log? Directly or via a fraud detection system?
+1. How the certificate verifier performs checks against the CT log? Directly or via a fraud detection system?
 2. What checks that should be performed and what constitutes a malicious entry?
 3. What protocols that should be offered by a fraud detection system to all certificate verifiers?
 
-### 4.2 Proposed ARF changes 
+### 4.2 Version of RFC 9162 in CIR (EU) 2025/848
+The CIR clearly states that version 2 of RFC 9162 shall be used. From comments received it seems that the previous version is implemented and used. As version 2 includes substantial improvements and the Commission might be developing a European CT log infrastructure it should be a task for this initiative to decide which version to use. Consideration of which version to use is dependent on if existing services (version 1) from Cloudflare and Google are to be used.
+
+
+### 4.3 Proposed ARF changes 
 It is planned to introduce a new section in the ARF on Certificate Transparency. This new section will describe aspects of CA’s issuing access certificates.
 
 In addition to these planned changes, further changes on this subject will follow the outcome of the discussion.
-
-
 
 ## 5 References
 
