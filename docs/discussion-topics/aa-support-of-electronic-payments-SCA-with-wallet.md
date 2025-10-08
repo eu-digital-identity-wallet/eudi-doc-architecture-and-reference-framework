@@ -1,4 +1,4 @@
-# Version 0.95, updated 30 September 2025
+# Version 1.0, updated 6 October 2025
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/582)
@@ -26,7 +26,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 
 The document is structured as follows:
 
-- Chapter 2 presents the background and introduction the current discussion related to support of electronic payments customer authentication (SCA) with the Wallet.
+- Chapter 2 presents the background and introduction to the current discussion related to support of electronic payments customer authentication (SCA) with the Wallet.
 
 - Chapter 3 presents the use cases in the scope of discussion.
 
@@ -39,7 +39,7 @@ The document is structured as follows:
 
 ## 2 Background
 
-This topic (AA) is continuation of [Topic W (Transactional data for payments and other use cases)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md).
+This topic (AA) is a continuation of [Topic W (Transactional data for payments and other use cases)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md).
 
 The legal requirements applicable to Topic AA, were collected and discussed in Topic W related process.
 
@@ -54,7 +54,7 @@ Under the [European Digital Identity Regulation], a requirement has been introdu
 
 At the same time, application of strong user authentication for this sector is governed by [PSD2] and [RTS SCA], which require Strong Customer Authentication (SCA) where the User:
 + (1) initiates an electronic payment transaction, or
-+ (2) accesses its payment account online, or
++ (2) accesses their payment account online, or
 + (3) carries out any action through a remote channel which may imply a risk of payment fraud or other abuses.
 
 
@@ -100,9 +100,9 @@ Following the discussions and comments, it is proposed to add a new HLR:
 All the details related to the format, syntax, processing and rendering rules of transactional data are to be defined in the related technical specification. For payment/PSD2 related SCA use cases, the specification will be included in "Technical Specification 12", that is already planned for development.   
 
 
-### 4.2 Dialog messages(s)
+### 4.2 Dialogue messages(s)
 
-Depending on the transaction type, the User will be displayed corresponding dialog messages. The general concept of processing and rendering such messages is already contained in the existing SUA requirements in [Topic 20].
+Depending on the transaction type, the User will be displayed corresponding dialogue messages. The general concept of processing and rendering such messages is already contained in the existing SUA requirements in [Topic 20].
 
 However there are additional aspects to be considered, specific for payment/PSD2 context.
 
@@ -113,12 +113,12 @@ _**Question 2: Which of the following requirements should turn into HLRs?**_
 
 #### 4.2.1  Principle of Clarity and Unambiguity
 
-Transaction data may contain elements not meant to be visually displayed to the user (e.g. a technical transaction id) and elements that are meant to be displayed. To comply with Article 5(1)(a) of [RTS SCA], the Wallet Units must display the latter to the User with absolute clarity and in an understandable manner (this includes localisation).
+Transaction data may contain elements not meant to be visually displayed to the User (e.g. a technical transaction id) and elements that are meant to be displayed. To comply with Article 5(1)(a) of [RTS SCA], the Wallet Units must display the latter to the User with absolute clarity and in an understandable manner (this includes localisation).
 
 The following requirements are being considered:
-+ Information Hierarchy: The Transaction Amount (including its ISO 4217 currency code or symbol) and the Payee's Name SHALL be the most prominent elements on the authorization screen. A clear visual hierarchy must be established through the strategic use of typography, such as increased font size, bold weight, and sufficient negative space, to draw the user's immediate and primary attention to this critical information.
-+ Data Fidelity: The information displayed to the user SHALL be an exact, unaltered representation of the data received in the transaction_data object from the Relying Party. The truncation, abbreviation, or summarization of the Payee's name or the transaction amount is strictly prohibited to prevent any possibility of misinterpretation.
-+ Focused Interface: The authorization screen SHALL be a dedicated, modal view focused exclusively on the transaction details and the required user action (consent or cancellation). It MUST be free of extraneous or distracting elements, such as advertisements, non-contextual notifications, or unrelated navigation options, which could obscure or detract from the payment information.
++ Information Hierarchy: The Transaction Amount (including its ISO 4217 currency code or symbol) and the Payee's Name SHALL be the most prominent elements on the authorization screen. A clear visual hierarchy must be established through the strategic use of typography, such as increased font size, bold weight, and sufficient negative space, to draw the User's immediate and primary attention to this critical information.
++ Data Fidelity: The information displayed to the User SHALL be an exact, unaltered representation of the data received in the transaction_data object from the Relying Party. The truncation, abbreviation, or summarization of the Payee's name or the transaction amount is strictly prohibited to prevent any possibility of misinterpretation.
++ Focused Interface: The authorization screen SHALL be a dedicated, modal view focused exclusively on the transaction details and the required User action (consent or cancellation). It MUST be free of extraneous or distracting elements, such as advertisements, non-contextual notifications, or unrelated navigation options, which could obscure or detract from the payment information.
 + Payment Instrument Identification: The specific Payment Instrument being used for the transaction (e.g., "Visa ending in 1234" or "Savings Account") SHALL be clearly displayed. This ensures the Payer is fully aware of which financial account the transaction will be debited from. Information on the Payment Instrument may come as part of the transaction data or from the SUA attestation.
 
 _Note: In the opinion of the ARF team, the above requirements could be included a related Attestation Rulebook or Technical Specification potentially, but there is no need do introduce them as HLRs._
@@ -131,9 +131,9 @@ The user's action must constitute unambiguous consent to authorize a specific pa
 
 The following requirements are being considered:
 + Deliberate User Action: User consent SHALL be captured through an explicit and deliberate physical action (e.g., a tap on a button, a biometric verification). The interface MUST NOT utilize pre-selected checkboxes, toggles, or any design pattern that defaults to an affirmative consent state.
-+ Contextual Call-to-Action: The primary interactive element for granting consent (i.e., the confirmation button) SHALL have a descriptive label that explicitly states the user's intent and reiterates the core transaction detail. For example: "Confirm and Pay €100.00" or "Authorize Transaction". Generic labels such as "OK," "Continue," or "Submit", or misleading labels such as  “Present attestation”, are non-compliant as they lack the necessary context. This also applies in cases where the SUA Attestation is presented together with other attestations.
++ Contextual Call-to-Action: The primary interactive element for granting consent (i.e., the confirmation button) SHALL have a descriptive label that explicitly states the user's intent and reiterates the core transaction detail. For example: "Confirm and Pay €100.00" or "Authorize Transaction". Generic labels such as "OK," "Continue," or "Submit" or misleading labels such as  “Present attestation”, are non-compliant as they lack the necessary context. This also applies in cases where the SUA Attestation is presented together with other attestations.
 + Anti-fraud guidance: Wallets must be able to display a security hint on the transaction confirmation screen.
-+ Unambiguous Action Dichotomy: The interface must present a clear and balanced choice between approving and canceling the transaction. The interactive elements for these two distinct actions SHALL be visually differentiated in terms of style, color, and/or placement to prevent accidental authorization. The cancellation option must be equally prominent and accessible.
++ Unambiguous Action Dichotomy: The interface must present a clear and balanced choice between approving and canceling the transaction. The interactive elements for these two distinct actions SHALL be visually differentiated in terms of style, colour, and/or placement to prevent accidental authorization. The cancellation option must be equally prominent and accessible.
 
 
 _Note: In the opinion of the ARF team, the above requirements could be included in a related Attestation Rulebook or Technical Specification potentially, but there is no need do introduce them as HLRs._
@@ -183,6 +183,31 @@ _(Section added after the Focus Meeting 1)_
 The ARF does not envision any risk signals collection from the Wallet Units or making them available externally, there is no any HLRs related to the topic. Technically this is feasible and could be done at the Wallet Solution providers discretion. However, at the same time, there are strong legal requirements related to privacy protection directly in [European Digital Identity Regulation]. Finally, this aspect is outside the mandate for the ARF scope, and there is no intention to include any requirements related to risk signals. This does not however prevent Wallet Solution providers to include such additional features, the ARF does not prevent from doing so.  
 
 
+_(Section added after the Focus Meeting 2:)_
+
+Following the discussion it will be considered however to add requirements for the Wallet Solutions to check regularly a minimal set of security information about the User's device, as part of the support and maintenance of the Wallet Units. Such information would need to be taken into account to assess the security posture of a Wallet Unit, and in case the result is negative, to decide about possible invalidation (by revocation of WUA).
+
+So it is not envisied that the Relying Parties (financial institutions here) would get access such information direclty from the User device via the Wallet Instance, but the Wallet Solution Provider could do so instead. This would give financial institutions some possibility to manage transactional risks, as required by PSD2, with unified approach accross the EU (all Wallet Solutions) .
+
+Typical information and risk signals collected by the financtial institutions from User devices (in the context of SCA) are:
++ device information (OS, version, etc.),
++ behavioural information,
++ device fingerprinting,
++ geolocation (based on IP and GNSS positionning),
++ active phone call detection,
++ VPN detection,
++ incognito mode detection,
++ device rooting/jailbreaking detection,
++ emulator detection,
++ deepfake detection.
+
+However many of them are related to User behaviour patterns and thus will have no real value to the Wallet Solution Provider (to conlude on the security posture of the User's device). Taking into account this aspect, as well as priviacy issue, it seems to be reasonable to check (by the Wallet Solution Providers) only the following information:
++ device rooting/jailbreaking detection,
++ emulator detection,
++ incognito mode detection.
+
+This will be discussed in details in the context of Topic T - Support and maintenance by the Wallet Provider.
+
 
 ## 5 Current HLRs and Proposals of Changes
 
@@ -190,11 +215,11 @@ The ARF does not envision any risk signals collection from the Wallet Units or m
 | **Index** | **Requirement specification** | **Proposal** |
 |-----------|-----------------|---------------|
 | SUA_01 | The Wallet Units SHALL be able to process the transactional data included in a presentation request for ~~that an~~ a SUA attestation, according to all requirements in the ~~associated~~ Attestation Rulebook **associated with that SUA attestation**. | Keep with proposed changes  |
-| SUA_02 | The Attestation Rulebook (see [Topic 12](#a2312-topic-12---attestation-rulebooks) of a SUA attestation SHALL specify syntax and semantics of the transactional data associated with **and intended for** that attestation ~~, as well as all necessary requirements for Wallet Units to process that transactional data, at least regarding a) displaying the data to the User when obtaining consent for signing the data, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit~~. | Keep with proposed changes  |
+| SUA_02 | The Attestation Rulebook (see [Topic 12](#a2312-topic-12---attestation-rulebooks)) of a SUA attestation SHALL specify syntax and semantics of the transactional data associated with **and intended for** that attestation ~~, as well as all necessary requirements for Wallet Units to process that transactional data, at least regarding a) displaying the data to the User when obtaining consent for signing the data, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit~~. | Keep with proposed changes  |
 | **SUA_02a** | **The Technical Specification associated with the given SUA attestation SHALL specify all necessary requirements for Wallet Units to process  transactional data intended for this SUA attestation, at least regarding a) rendering and displaying the data to the User when obtaining consent for presentation, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit.** | New requirement  |
 | SUA_03 | The Attestation Provider of a SUA attestation SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the Attestation Rulebook for that attestation. | Keep as-is  |
 | SUA_04 | In the response to a presentation request that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.* | Keep as-is  |
-| SUA_05 | The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). *Notes: - The resulting signature value and constitutes a proof of transaction and fulfils the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in [Topic 1](#a231-topic-1---accessing-online-services-with-a-wallet-unit).* | Keep as-is  |
+| SUA_05 | The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). *Notes: - The resulting signature constitutes a proof of transaction. **This signature and/or other protocol items fulfil** ~~and fulfils~~ the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in [Topic 1](#a231-topic-1---accessing-online-services-with-a-wallet-unit).* | Keep as-is  |
 | SUA_06 | The Wallet Unit SHALL be able to adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to 'approve' or 'reject' a transaction), according to requirements in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. | Keep as-is  |
 | **SUA_07**    | **Upon receiving presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for  the given attestation and that the transactional data conforms to the related technical specification and/or attestation rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.** |  New requirement  |
 
@@ -203,6 +228,7 @@ The ARF does not envision any risk signals collection from the Wallet Units or m
 
 The dialogue messages shall follow accessibility rules, which are discussed in Topic Q.
 
+The fraud signals check, as presented in section 4.4, will be  discussed in details in the context of Topic T - Support and maintenance by the Wallet Provider.
 
 
 ## 7 Additions and Changes to the ARF 
