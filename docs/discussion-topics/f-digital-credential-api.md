@@ -1,6 +1,6 @@
-# F - Digital Credentials API
+# Topic F - Digital Credentials API
 
-Version 1.1, updated 20 February 2025
+Version 1.2, updated 8 October 2025
 
 ## 1. Introduction
 
@@ -34,7 +34,7 @@ Credentials API:
 
 |R5 Data theft |
 |---|
-| Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception (unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to lead in some cases to Data disclosure (R6). |
+| Data theft is defined as the unauthorised extraction of data. Data theft is also associated with threats, such as data interception (unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to lead in some cases to Data disclosure (R6). |
 
 | R6 Data disclosure |
 |---|
@@ -127,7 +127,7 @@ One approach considered by standardization bodies involves using custom URI sche
 or "openid4vp://". In this approach, the operating system would trigger the Wallet Unit
 when the Relying Party Instance requests a connection via a custom URI. However, relying on custom
 URI schemes introduces variability in user experiences across different browsers and operating systems,
-resulting in operational inefficiencies and potential security risks.
+leading to operational inefficiencies and potential security risks.
 - **4. Clear Origin Verification**: Protecting against relay attacks requires precise
 identification of the Relying Party Instance's origin.
 - **5. Session binding**: When presenting a PID or attestation to a remote Relying Party,
@@ -143,10 +143,8 @@ and security while providing a consistent and reliable user experience.
 Digital Credentials API is a Draft Community Group report of the
 Web Platform Incubator Community Group (WICG) that builds upon Credential
 Management Level 1 API W3C Working Draft [Cred_Man]. The goal of the Digital
-Credentials API is to enable user agents (i.e., browsers) to mediate access to,
-and presentation of, attestations. Currently, attestation issuance is not in the
-scope of this API, but future versions [will consider it](
-https://github.com/WICG/digital-credentials/issues/167). The Digital Credentials
+Credentials API is to enable user agents (i.e., browsers) to mediate issuance, access,
+and presentation of attestations. The Digital Credentials
 API can be used, for example, by a Relying Party website to request a PID or
 (Q)EAA stored in a Wallet Unit through the User's browser. The browser and the
 Wallet Unit may be in the same device (same-device flow) or in separate devices
@@ -183,7 +181,7 @@ protocol. The Digital Credentials API specifications will include a registry of
 supported protocols.
 
 As a next step, the browser sends the request to the operating system which
-searches matching attestations in installed Wallet Units. The cross-device
+searches for matching attestations in installed Wallet Units. The cross-device
 flow can be used to search for matching attestations in Wallet Units installed
 in a different device, located in close proximity to the browser. If more than
 one matching attestation is found, the browser prompts the User to select one.
@@ -192,21 +190,33 @@ Wallet Unit. Then, the Wallet Unit asks user consent and generates a
 presentation based on the selected exchange protocol. The presentation is
 relayed back to the Relying Party's website.
 
-As of January 2025, Digital Credentials API support is provided only by the Chrome
-browser and the Android mobile operating system. In this experimental implementation there
-exists a method for Wallet Units to indicate to a component, which is part of
-the Wallet Solution and it is referred to as the "matcher" in the current Android-specific
-implementation, the availability of attestations and,
-optionally, attributes included in the attestation. An example [can be found here](
-https://digitalcredentials.dev/docs/wallets/android/#the-provider-api). This
-Android-specific documentation mentions that the information provided by the Wallet Unit is used
-by the Android operating system to render a selector, allowing Users to make an
-informed choice about which attestation to proceed with.
+As of October 2025, attestation presentation using the DC API is supported
+by Chrome, Safari, and Edge (with a feature flag enabled). Attestation issuance 
+is available as an experimental feature in Chrome and Edge. However, DC API 
+implementations differ across browsers. Chrome and Edge are agnostic to the 
+attestation format and presentation protocol. Safari, on the other hand, 
+[supports only](https://developer.apple.com/documentation/identitydocumentservices/requesting-a-mobile-document-on-the-web) 
+the mdoc request profile as defined in ISO/IEC 18013-7 Annex C. 
 
-#### 2.2.1 Same-device flow
+#### 2.2.1 Attestation matching
+Mobile operating systems handle attestation matching
+differently. In Android, a Wallet must provide 
+a "matcher", which is Wallet-specific code executed in a sandboxed environment 
+and responsible for matching DC API requests to Wallet Instances. Android 
+provides a sample matcher that has to be configured with the attestation types 
+and attributes of all credentials in a Wallet Instance, although alternative matcher 
+implementations can be used. In iOS, Wallet Units register supported attestation 
+types with the operating system. 
 
-As of January 2025, the same-device flow is
-implemented using the following steps:
+It is highlighted that the method used by the operating system to 
+match credential requests to attestations is out of scope of the DC API 
+specification.
+
+
+#### 2.2.2 Same-device flow
+
+The same-device flow can be implemented using the following steps (the example 
+screenshots shown are based on the Chrome browser):
 
 - The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 - The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
@@ -219,29 +229,46 @@ implemented using the following steps:
 - The Wallet Unit processes the request according to the relevant specification (e.g., OpenID4VP) and returns the requested
 attributes through the browser, provided that the Wallet Unit contains the attributes, all required verifications pass and the User consents.
 
-#### 2.2.2 Cross-device flow
+#### 2.2.3 Cross-device flow
 
-The cross-device flow is implemented using the following steps:
+The cross-device flow can be implemented using the following steps (the example 
+screenshots shown are based on the Chrome browser):
 
 - The User visits the website of the Relying Party and indicates that they want to present some attributes from installed Wallet Units.
 - The browser asks permission from the User to allow Digital Credentials API invocation from this particular website.
 ![Website authorisation in cross device flow](img/cross-auth.png)
 - The Relying Party  indicates to the browser which attributes they want to request by
 creating a `presentation request`.
-- The browser uses CTAP 2.2 hybrid flow (section 11.5 of [Ctap]) to establish a tunnel between the
-browser and the device where the Wallet Unit is installed (this is the same flow used by WebAuthn/passkeys).
-From a high level this is implemented as follows: (i) The browser presents a QR code which
-includes information about the tunnel endpoint and keys that can be used for establishing
-a secure session, (ii) the user scans the QR code using the device camera, (iii) the device
-where the Wallet Unit is installed emits a BLE advertisement which is received by the
-browser. The advertisement includes in an encrypted form information required for
-establishing the secure tunnel. This advertisement is used as a proximity check,
-(iv) The tunnel is established.
+- Using a cross-device protocol (see section 2.3) the presentation request is
+transferred from the browser to the User device
+- The device operating system presents to the User a selector that includes a 
+list of potentially suitable attestations.
+
+### 2.3 Cross-device protocols
+The protocol used for communication between a browser and a (remote) User device 
+is out of scope of the DC API specification. Current implementations rely on 
+the CTAP 2.2 hybrid flow, as described in section 11.5 of [Ctap]. This flow 
+establishes a secure "tunnel" between the browser and the User device, which is 
+then used to exchange the credential request and the corresponding response. 
+In more detail:
+
+- The browser displays a QR code containing information about the tunnel 
+endpoint and cryptographic keys used to establish a secure session. Suitable 
+tunnel endpoints are currently defined in [Ctap]. As of October 2025, two 
+endpoints are defined: `cable.ua5v.com`, operated by Google, and 
+`cable.auth.com`, operated by Apple.
+- The User scans the QR code using the device’s camera.
+- The device emits a BLE advertisement, which is received by the browser. 
+This advertisement includes encrypted data required to establish the tunnel and 
+also serves as a proximity check.
+- A secure tunnel is established.
 
 ![QR Code display](img/cross-qr.png)
 
-- The presentation request is transferred through the tunnel to the device operating system.
-- The device operating system presents to the User a selector that includes a list of potentially suitable attestations.
+- The presentation request is transmitted through the tunnel to the device’s 
+operating system.
+- The device operating system displays a selector to the user with a list 
+of potentially suitable attestations.
 
 ![Attestation selection](img/cross-select.png)
 
@@ -315,7 +342,7 @@ removing protocols to the registry should follow established criteria and proces
 and involve multiple stakeholders. Adding or removing protocols to the registry
 should follow established criteria and processes, and involve multiple stakeholders.
 The criteria and processes should be transparent, objective and non-discriminatory;
-in other words well-governed.
+in other words, well-governed.
 
 2. **Cross-platform compatibility and interoperability**. The Digital Credentials
 API should be compatible with most browsers and operating systems, and should
@@ -331,21 +358,13 @@ those required by the EU.
 
 The use of the Digital Credentials API should not compromise User privacy. In more detail:
 
-1. **Privacy preserving searching**: Wallet Units may have to "indicate" to the Digital Credentials
-API framework the availability of attestations, to facilitate their discovery and use.
-However, this process should be designed and implemented in a way that it does not introduce
-privacy threats, such as exposing attribute values to any other party, including the OS/browser
-vendor, other applications on the same device, other users of the same device, or Relying Parties.
-Similarly, the OS should have access only to the bare minimum information required to
-implement the search functionality and must ensure that no third party can access this information.
 
-2. **Privacy preserving attestation relay**:  The use of a browser as an intermediary in the attestation
+1. **Privacy preserving attestation relay**:  The use of a browser as an intermediary in the attestation
 issuance and presentation process should not create privacy risks, such as those arising from malicious add-ons
-or unauthorised tracking mechanisms. Browsers should maintain strict privacy controls to ensure
-that attestation-related data is neither exposed nor accessible to unauthorised third parties.
+or unauthorised tracking mechanisms. Browsers should maintain strict privacy controls to ensure attestation-related data is neither exposed nor accessible to unauthorised third parties.
 This principle also extends to any tunneling services used to facilitate cross-device flow.
 
-3. **Protection against data theft**: Browsers and operating systems providing support for
+2. **Protection against data theft**: Browsers and operating systems providing support for
 the Digital Credentials API should minimise the threat of data theft and disclosure through
 eavesdropping on the communication between the Wallet Unit and the Attestation Provider or
 Relying Party's website.
@@ -360,76 +379,44 @@ Parties to perform Denial of Service attacks against Wallet Units, e.g., by enab
 to send multiple invalid requests. Similarly, the use of the Digital Credentials API should not enable
 attackers to block transactions by Relying Parties and Wallet Units.
 
+### 3.6 Implementation requirements
+DC API deployments rely on two external components: an attestation matching 
+mechanism (see Section 2.2.1) and a cross-device communication protocol (see 
+Section 2.3). Both components are out of scope of the DC API specification, 
+but they introduce privacy and availability concerns.
+
+1. **Privacy-preserving matching**: Wallet Units may need to indicate the 
+availability of attestations to the Digital Credentials API framework to 
+support their discovery and use. This process must be designed in a way that 
+does not compromise user privacy. The operating system should have access only 
+to the minimum information necessary to perform the matching functionality and 
+must ensure that no third party can access this data. The overall matching 
+mechanism SHALL be aligned in accordance with the applicable EU data 
+protection regulations.
+
+2. **Support for alternative tunnel endpoints**: The CTAP Hybrid flow 
+specification SHOULD be extended to support tunnel endpoints that are 
+regulated under EU legislation and supervised by EU authorities. Such 
+endpoints SHALL be supported by corresponding browsers and operating systems.
+
+
 ## 4 Additions and changes to the ARF
 
 ### 4.1 High-Level Requirements to be added to Annex 2
 
 The following High-Level Requirements will be added to Annex 2 of the ARF:
 
-#### 4.1.1 Requirements to be added (likely) to Topic 1
-
-##### REQUIREMENT 1
-
-A Wallet Unit and a Relying Party Instance receiving an attestation from the Wallet
-Unit SHALL ensure that the attributes included in the presented attestation are
-accessible only to the Relying Party, by encrypting the presentation response.
-This SHALL include preventing decryption of the presentation response or Man-in-the-Middle
-attacks by the browser, the operating system, or other components between the Wallet
-Unit and the Relying Party.
-
-##### Conditional Requirements
-
-Providing that the expectations set in chapter 3 are met, the following two
-High-Level Requirements will be added (likely) to Topic 1:
-
-###### REQUIREMENT 2 (conditional)
-
-Wallet Units and Relying Party Instances SHALL support the Digital Credentials API for remote
-presentation flows.
-
-###### REQUIREMENT 3 (conditional)
-
-A Wallet Unit SHALL disclose the presence of all stored attestations and attributes to the Digital
-Credentials API framework, but SHALL NOT disclose the value of the attributes in
-these attestations.
-
-Note: This restriction applies even if such disclosure would enhance the services
-provided by the operating system to the Wallet Unit, for example, attestation selection
-in the context of the Digital Credentials API.
-
-###### REQUIREMENT 4 (conditional)
-
-A Relying Party's request MAY be processed by the browser for searching available
-attestations, for preventing fraud targeting the user, or for troubleshooting purposes.
-It SHOULD be processed by the browser for user security purposes. It SHALL NOT be
-processed by the browser for market analysis purposes (including as a secondary
-purpose) or the browser’s own purposes.
-
-#### 4.1.2 Requirements to be added (likely) to Topic 10/23
-
-##### Conditional Requirements
-
-Providing that the expectations set in chapter 3 are met, the following
-High-Level Requirement will be added (likely) to Topic 10/23:
-
-###### REQUIREMENT 5  (conditional)
-
-Wallet Units and Attestation Providers SHALL support the Digital Credentials API
-for attestation issuance.
 
 ### 4.2 High-Level Requirements to be changed
 
-#### RPA_01
+#### OIA_08
 
-The following text will be appended to RPA_01 "The Wallet Unit SHALL retain full authority over
-this process, for example, this process SHALL NOT be handled by a third party, including the
-browser and the operating system."
-
-#### RPA_07
-
-The following text will be appended to RPA_07 "The Wallet Unit SHALL retain full authority over
-this process, for example, this process SHALL NOT be handled by a third party, including the
-browser and the operating system."
+Wallet Units and Relying Party Instances ~~SHOULD~~ SHALL support the 
+[W3C Digital Credentials API]](https://wicg.github.io/digital-credentials/) for 
+remote presentation flows, provided that: a) this API is fully standardised, 
+b) this API complies with the expectations outlined in Chapter 3 of the Topic 
+F discussion paper, and c) this API is broadly supported by relevant 
+browsers and operating systems.
 
 ## 6 References
 
