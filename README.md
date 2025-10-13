@@ -103,12 +103,18 @@ regarding peer reviews of eID schemes,
 regarding QEAAs and EAAs provided by or on behalf of a public sector body
 responsible for an authentic source,
 - [CIR 2025/1570](http://data.europa.eu/eli/reg_impl/2025/1570/oj)
-regarding notification of information on certified QSCDSs,
+regarding notification of information on certified QSCDs,
 - [CIR 2025/1571](http://data.europa.eu/eli/reg_impl/2025/1571/oj)
 regarding the formats and procedures for annual reports by supervisory bodies,
 - [CIR 2025/1572](http://data.europa.eu/eli/reg_impl/2025/1572/oj)
 regarding the format and procedures for notification of intention and
-verification with regard to the initiation of qualified trust services.
+verification with regard to the initiation of qualified trust services,
+- [CIR 2025/1929](http://data.europa.eu/eli/reg_impl/2025/1929/oj) regarding the binding of date and time to data and establishing the accuracy of the time sources for the provision of qualified electronic time stamps,
+- [CIR 2025/1942](http://data.europa.eu/eli/reg_impl/2025/1942/oj) regarding qualified validation services for qualified electronic signatures and qualified validation services for qualified electronic seals,
+- [CIR 2025/1943](http://data.europa.eu/eli/reg_impl/2025/1943/oj) regarding reference standards for qualified certificates for electronic signatures and qualified certificates for electronic seals,
+- [CIR 2025/1944](http://data.europa.eu/eli/reg_impl/2025/1944/oj) regarding reference standards for processes for sending and receiving data in qualified electronic registered delivery services and as regards interoperability of those services,
+- [CIR 2025/1945](http://data.europa.eu/eli/reg_impl/2025/1945/oj) regarding the validation of qualified electronic signatures and of qualified electronic seals and the validation of advanced electronic signatures based on qualified certificates and of advanced electronic seals based on qualified certificates,
+- [CIR 2025/1946](http://data.europa.eu/eli/reg_impl/2025/1946/oj) regarding qualified preservation services for qualified electronic signatures and for qualified electronic seals.
 
 ## Contents of the repository
 
