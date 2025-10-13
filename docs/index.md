@@ -75,40 +75,46 @@ concepts and specifications for the European Digital Identity Framework. The
 current ARF version is based on the [legal text adopted](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18)
 by the co-legislators, including the adopted Commission Implementing Regulations:
 
-* [CIR 2024/2977](https://data.europa.eu/eli/reg_impl/2024/2977/oj)
+- [CIR 2024/2977](https://data.europa.eu/eli/reg_impl/2024/2977/oj)
 regarding PID and EAA,
-* [CIR 2024/2979](https://data.europa.eu/eli/reg_impl/2024/2979/oj)
+- [CIR 2024/2979](https://data.europa.eu/eli/reg_impl/2024/2979/oj)
 regarding integrity and core functionalities,
-* [CIR 2024/2980](https://data.europa.eu/eli/reg_impl/2024/2980/oj)
+- [CIR 2024/2980](https://data.europa.eu/eli/reg_impl/2024/2980/oj)
 regarding ecosystem notifications,
-* [CIR 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj)
+- [CIR 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj)
 regarding certification of Wallet Solutions,
-* [CIR 2024/2982](https://data.europa.eu/eli/reg_impl/2024/2982/oj)
+- [CIR 2024/2982](https://data.europa.eu/eli/reg_impl/2024/2982/oj)
 regarding protocols and interfaces,
-* [CIR 2025/846](https://data.europa.eu/eli/reg_impl/2025/846/oj)
+- [CIR 2025/846](https://data.europa.eu/eli/reg_impl/2025/846/oj)
 regarding cross border identity matching,
-* [CIR 2025/847](https://data.europa.eu/eli/reg_impl/2025/847/oj)
+- [CIR 2025/847](https://data.europa.eu/eli/reg_impl/2025/847/oj)
 regarding security breaches of European Digital Identity Wallets,
-* [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)
+- [CIR 2025/848](https://data.europa.eu/eli/reg_impl/2025/848/oj)
 regarding registration of Wallet Relying Parties,
-* [CIR 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj)
+- [CIR 2025/849](https://data.europa.eu/eli/reg_impl/2025/849/oj)
 regarding the list of certified European Digital Identity Wallets,
-* [CIR 2025/1566](http://data.europa.eu/eli/reg_impl/2025/1566/oj)
+- [CIR 2025/1566](http://data.europa.eu/eli/reg_impl/2025/1566/oj)
 regarding the verification the identity and attributes of a QC or QEAA holder,
-* [CIR 2025/1567](http://data.europa.eu/eli/reg_impl/2025/1567/oj)
+- [CIR 2025/1567](http://data.europa.eu/eli/reg_impl/2025/1567/oj)
 regarding management of remote QSCDs as qualified trust services,
-* [CIR 2025/1568](http://data.europa.eu/eli/reg_impl/2025/1568/oj)
+- [CIR 2025/1568](http://data.europa.eu/eli/reg_impl/2025/1568/oj)
 regarding peer reviews of eID schemes,
-* [CIR 2025/1569](http://data.europa.eu/eli/reg_impl/2025/1569/oj)
+- [CIR 2025/1569](http://data.europa.eu/eli/reg_impl/2025/1569/oj)
 regarding QEAAs and EAAs provided by or on behalf of a public sector body
 responsible for an authentic source,
-* [CIR 2025/1570](http://data.europa.eu/eli/reg_impl/2025/1570/oj)
-regarding notification of information on certified QSCDSs,
-* [CIR 2025/1571](http://data.europa.eu/eli/reg_impl/2025/1571/oj)
+- [CIR 2025/1570](http://data.europa.eu/eli/reg_impl/2025/1570/oj)
+regarding notification of information on certified QSCDs,
+- [CIR 2025/1571](http://data.europa.eu/eli/reg_impl/2025/1571/oj)
 regarding the formats and procedures for annual reports by supervisory bodies,
-* [CIR 2025/1572](http://data.europa.eu/eli/reg_impl/2025/1572/oj)
+- [CIR 2025/1572](http://data.europa.eu/eli/reg_impl/2025/1572/oj)
 regarding the format and procedures for notification of intention and
-verification with regard to the initiation of qualified trust services.
+verification with regard to the initiation of qualified trust services,
+- [CIR 2025/1929](http://data.europa.eu/eli/reg_impl/2025/1929/oj) regarding the binding of date and time to data and establishing the accuracy of the time sources for the provision of qualified electronic time stamps,
+- [CIR 2025/1942](http://data.europa.eu/eli/reg_impl/2025/1942/oj) regarding qualified validation services for qualified electronic signatures and qualified validation services for qualified electronic seals,
+- [CIR 2025/1943](http://data.europa.eu/eli/reg_impl/2025/1943/oj) regarding reference standards for qualified certificates for electronic signatures and qualified certificates for electronic seals,
+- [CIR 2025/1944](http://data.europa.eu/eli/reg_impl/2025/1944/oj) regarding reference standards for processes for sending and receiving data in qualified electronic registered delivery services and as regards interoperability of those services,
+- [CIR 2025/1945](http://data.europa.eu/eli/reg_impl/2025/1945/oj) regarding the validation of qualified electronic signatures and of qualified electronic seals and the validation of advanced electronic signatures based on qualified certificates and of advanced electronic seals based on qualified certificates,
+- [CIR 2025/1946](http://data.europa.eu/eli/reg_impl/2025/1946/oj) regarding qualified preservation services for qualified electronic signatures and for qualified electronic seals.
 
 ## Contents of the repository
 
