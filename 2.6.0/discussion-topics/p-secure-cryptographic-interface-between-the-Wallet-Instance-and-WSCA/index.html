@@ -1,0 +1,695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.6.0/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.6.0/assets/images/social/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.6.0/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.6.0/assets/images/social/discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-p-secure-cryptographic-interface-between-the-wallet-instance-and-wsca" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="topic-p-secure-cryptographic-interface-between-the-wallet-instance-and-wsca">Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA</h1>
+<p>Version 0.4, updated 23 Sep. 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/578">Link to GitHub discussion</a></p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
+<p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding
+Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p>The need for harmonization of this interface needs to be discussed. If the WSCA is 
+delivered by the Wallet Provider, the situation is different than when the WSCA is delivered by 
+the WSCD provider.</p>
+<h2 id="12-key-words">1.2 Key words</h2>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.</p>
+<h2 id="13-document-structure">1.3 Document structure</h2>
+<p>This document is structured as follows:
+- Section 2 presents definition and existing High Level Requirements related to
+topic P
+- Section 3 discusses existing technologies
+- Section 4 presents the additions and changes that will be made to the ARF as 
+a result of discussing this topic with Member States.</p>
+<h2 id="2-definitions-and-existing-high-level-requirements">2. Definitions,  and existing High Level Requirements</h2>
+<p>Commission implementing regulation 2024/2979 defines Wallet Secure Cryptographic 
+Application (WSCA) as follows:</p>
+<blockquote>
+<p>'wallet secure cryptographic application' means an application that 
+manages critical assets by being linked to and using the cryptographic 
+and non-cryptographic functions provided by the wallet secure cryptographic 
+device;</p>
+</blockquote>
+<p>Furthermore, Article 5 of the same CIR sets the following requirements with respect to
+WSCA</p>
+<ol>
+<li>
+<p>Wallet providers shall ensure that wallet secure cryptographic applications:</p>
+<p>(a) perform wallet cryptographic operations involving critical assets other 
+than those needed for the wallet unit to authenticate the wallet user only 
+in cases where those applications have successfully authenticated wallet users;</p>
+<p>(b) where they authenticate wallet users in the context of performing 
+electronic identification at assurance level high; perform authentication of 
+wallet users, in accordance with, the requirements for the characteristics 
+and design of electronic identification means at assurance level high, as 
+set out in Implementing Regulation (EU) 2015/1502;</p>
+<p>(c) are able to securely generate new cryptographic keys;</p>
+<p>(d) are able to perform secure erasure of critical assets;</p>
+<p>(e) are able to generate a proof of possession of private keys;</p>
+<p>(f) protect the private keys generated by those wallet secure cryptographic 
+applications during the existence of the keys;</p>
+<p>(g) comply with the requirements for the characteristics and design of 
+electronic identification means at assurance level high, as set out in 
+Implementing Regulation (EU) 2015/1502;</p>
+<p>(h) are the only components able to execute wallet cryptographic operations 
+and any other operation with critical assets in the context of performing 
+electronic identification at assurance level high.</p>
+</li>
+<li>
+<p>Where wallet providers decide to provide a wallet secure cryptographic 
+application to an embedded secure element these wallet providers shall base 
+their technical solution on the technical specifications listed in Annex I or 
+on other equivalent technical specifications.</p>
+</li>
+</ol>
+<p>According to the ARF </p>
+<blockquote>
+<p>Wallet Secure Cryptographic Application (WSCA) (is) an application that manages 
+critical assets by being linked to and using the cryptographic and non-cryptographic 
+functions provided by the Wallet Secure Cryptographic Device. Different types of 
+WSCD generally use different types of WSCA. For example, if the WSCD is a remote 
+HSM, the WSCA may be (but does not have to be) a dedicated firmware module. If the
+WSCD is a external smartcard or an internal e-SIM or embedded Secure Element, 
+the WSCA takes the form of a dedicated JavaCard applet running on the e-SIM or SE. 
+If the WSCD is a local native WSCD, the WSCD is integrated into the OS of the User device. 
+The WSCA interfaces directly with the Wallet Instance</p>
+</blockquote>
+<p>In accordance with the High-Level Requirements outlined in Annex 2 of the ARF, the Wallet 
+Secure Cryptographic Application (WSCA) shall provide the following functionalities to the 
+Wallet Instance:</p>
+<ul>
+<li>A WSCA SHALL enable operations that enable the cryptographic device binding between a WSCA/WSCD
+and a PID or attestation [OIA_02]</li>
+<li>A WSCA SHALL provide functionality that enables the Wallet Instance to determine 
+whether the User has been successfully authenticated before allowing the User to provide 
+or withhold consent for the release of any attributes [RPA_08, WIAM_14, WIAM_17].</li>
+<li>A WSCA SHALL provide functionalities that enable the Wallet Instance to generate a 
+Wallet Unit Attestation (WUA) in accordance with the specifications defined in Topic 9 [WUA_01].</li>
+<li>A WSCA SHALL provide information that enable a Wallet Instance to determine if
+the WSCA complies with the requirements of a PID Provider or Attestation Provider regarding 
+User authentication and key storage [WUA_05].</li>
+<li>A WSCA SHOULD provide an interface allowing Wallet Instances to request a Cryptographic 
+Binding of Attestations, which SHALL prove that the WSCA manages two or more private keys, 
+paired with two or more public keys provided to it by the Wallet Unit [ACP_01].</li>
+<li>A WSCA SHALL provide the Wallet Instance with information indicating whether the export 
+of a private key is supported [WUA_16].</li>
+<li>A WSCA SHALL provide functionalites for generating new key pairs [ISSU_12b, WIAM_18].</li>
+<li>A WSCA SHALL provide the Wallet Instance with storage capabilities for storing information 
+required to authenticate using a Pseudonym [PA_14].</li>
+<li>A WSCA SHALL provide the Wallet Instance with information that can be used for Wallet
+Unit activation [WIAM_05].</li>
+<li>A WSCA SHALL enforce isolation mechanisms that ensure a Wallet Unit can access only 
+the cryptographic keys associated with that specific Wallet Unit, in case the WSCA contains keys 
+related to multiple Wallet Units [WIAM_09]. </li>
+<li>A WSCA SHALL provide the Wallet Instance with functionalites to securly destroy 
+generated cryptographic keys and sensitive data [WIAM_13, WIAM_21, PAD_04, PAD_06]. </li>
+<li>A WSCA/WSCD SHALL be able to prove possession of the private key corresponding to a 
+ public key on request of a Wallet Instance, for example by signing a challenge with that 
+ private key [WIAM_19].</li>
+</ul>
+<h2 id="3-existing-technologies">3. Existing technologies</h2>
+<p>In mobile devices, the Wallet Secure Cryptographic Device (WSCD) is often embedded within 
+the device hardware. The WSCA, in this case is platform-dependent and acts as the interface 
+layer between the Wallet Instance and the secure capabilities of the device.</p>
+<p>For example, on Android devices, the WSCA may be implemented as part of the Android
+Keystore system, which interfaces with hardware-backed security modules such as StrongBox 
+or TEE-backed Keymaster. For more details, see the Android documentation:</p>
+<ul>
+<li><a href="https://developer.android.com/training/articles/keystore">Android Keystore System</a></li>
+<li><a href="https://source.android.com/docs/security/features/keystore">Hardware-backed Keystore</a></li>
+</ul>
+<p>Similarly, on Apple iOS devices, the WSCA functionality is typically exposed through the 
+Secure Enclave, accessed via platform APIs such as Keychain Services and CryptoKit. 
+For more details, see the Apple documentation:</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/security/keychain_services">Keychain Services</a></li>
+<li><a href="hhttps://developer.apple.com/documentation/cryptokit">CryptoKit</a></li>
+<li><a href="https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave">Secure Enclave</a></li>
+</ul>
+<p>In some cases WSCD is implemented as an eSIM or a Secure Element (SE) that supports JavaCard technology. 
+In these cases, the WSCA can be deployed as a JavaCard applet running directly on the eSIM or SE. 
+JavaCard is a lightweight, Java-based platform designed to run on resource-constrained secure elements, 
+providing cryptographic services, secure storage, and access control in a tamper-resistant environment.</p>
+<p>GlobalPlatform maintains the <strong>Open Mobile API</strong> specification, which defines a standardized interface that 
+enables mobile applications to access Secure Elements (SEs) on the device—such as embedded Secure Elements (eSE), 
+UICCs (SIM cards), or eSIMs. The Open Mobile API was originally defined by the SIMalliance (now part of 
+GlobalPlatform) and has been implemented in some Android devices, either directly in the Android OS or 
+through vendor-specific middleware. More details can be found here:</p>
+<ul>
+<li><a href="https://globalplatform.org/specs-library/open-mobile-api-specification/">GlobalPlatform Open Mobile API Specification</a></li>
+</ul>
+<p>When WSCD functionality is provided by external HSMs, PKCS#11 can be considered.
+The PKCS#11 specification, also known as Cryptoki, defines a standard interface for cryptographic 
+okens such as hardware security modules (HSMs), smartcards, and other secure key containers. 
+It enables applications to perform operations such as key generation, digital signing, 
+encryption, and decryption using keys stored in a secure device, without exposing the 
+keys to application memory. </p>
+<p>The PKCS#11 standard is maintained by the OASIS consortium. More details can be found here:</p>
+<ul>
+<li><a href="https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html">PKCS#11 Current Version (v3.1)</a></li>
+</ul>
+<p>The Key Management Interoperability Protocol (KMIP) is an open standard that can be used 
+for interacting with remote HSMs. KMIP defines a protocol for communication between 
+clients (e.g., applications or middleware) and key management servers (e.g., HSMs, key vaults), 
+supporting operations such as key creation, retrieval, rotation, and deletion.
+KMIP is  supported in enterprise-grade hardware security modules and software-based key managers. 
+KMIP is maintained by the OASIS KMIP Technical Committee and the latest specifications are publicly available:</p>
+<ul>
+<li><a href="https://docs.oasis-open.org/kmip/kmip-spec/v2.1/os/kmip-spec-v2.1-os.html">KMIP Specification v2.1 (OASIS)</a></li>
+</ul>
+<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
+<h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
+<p>No HRL needs to be added in Annex 2</p>
+<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
+<p>No HLR needs to be changed</p>
+<h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
+<p>Section 4.5 of the ARF about WSCD architecture types will be updated to refer to
+Implementing Act 2024/2981, Annex IV, particularly to paragraph 3(3) which
+states:</p>
+<blockquote>
+<p>When the WSCA is not provided by the wallet provider, national certification 
+schemes shall formulate assumptions for this evaluation of the WSCA under 
+which resistance against attackers with high attack potential in accordance 
+with Implementing Regulation (EU) 2015/1502 [...]</p>
+</blockquote>
+<p>Similarly, in section 4.5 it will be made clearer that WSCA and WSCD do not have
+to be coupled. </p>
+<h2 id="5-references">5 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
