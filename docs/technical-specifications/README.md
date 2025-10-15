@@ -7,7 +7,7 @@ Each essential standard is referenced with a link to its corresponding GitHub ti
 ## Purpose
 
 The European Digital Identity Wallet (EUDI Wallet) relies on a comprehensive set of standards and technical specifications (STS).
-Out of nearly 200 STS tracked across the ecosystem, 35 have been identified as essential for the Wallet itself.
+Out of nearly 200 STS tracked across the ecosystem, a core subset has been identified as **essential** for the Wallet itself.
 
 These essentials form the backbone of the Wallet’s ability to securely issue, present, authenticate, sign, and certify digital identity credentials.
 They are marked in the GitHub tracker with both the `essential` and `Wallet` labels.
