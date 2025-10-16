@@ -1,8 +1,8 @@
-Version 0.9.1, updated 24 September 2025
+Version 1.0, date 14 October 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/585)
 
-# R - Authentication of the User to the device
+# Topic R - Authentication of the User to the device
 
 ## 1 Introduction
 

@@ -1,6 +1,6 @@
 # Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
 
-Version 0.4, updated 23 Sep. 2025
+Version 1.0, updated 14 Oct. 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/578)
 
@@ -131,7 +131,24 @@ generated cryptographic keys and sensitive data [WIAM_13, WIAM_21, PAD_04, PAD_0
  private key [WIAM_19].
 
 
+
 ## 3. Existing technologies
+This section presents a number of technologies that potentially can be used to 
+implement a WSCA. It is important to clarify that the ARF does not endorse any 
+specific technology. The Wallet Provider must ensure that its implementation of 
+the WSCA and WSCD in combination can be certified for security. Moreover, it is 
+possible that the Wallet Provider may need to develop some bespoke components to 
+be able to fulfill all requirements for a WSCA in the ARF and the CIRs. For 
+example, if the WSCD is a smart card, the Wallet Provider may develop a 
+dedicated JavaCard applet that runs on the WSCD and augments the native OS of 
+the smart card with additional functionalities. If so, the security of this 
+JavaCard applet needs to be considered during certification of the Wallet 
+Solution, whereas the OS of the WSCD itself (which is not provided by the Wallet 
+Provider) may be covered under an assumption regarding its resistance against 
+attackers with high attack potential, in accordance with CIR 2024/2981, Annex 
+IV, paragraph 3(3). Furthermore, in accordance with CIR 2024/2981 "every 
+architecture and implementation of wallets" shall properly address the security
+and privacy risks set in Annex I of CIR 2024/2981. 
 
 In mobile devices, the Wallet Secure Cryptographic Device (WSCD) is often embedded within 
 the device hardware. The WSCA, in this case is platform-dependent and acts as the interface 

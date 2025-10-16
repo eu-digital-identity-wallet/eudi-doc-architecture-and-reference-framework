@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
 ## [2.6.0] - 2025-10-13
 
-- The [Discussion Paper for Topic O](./discussion-topics/o-catalogues-for-attestations.md) was integrated into [Section 5.5](#55-catalogue-of-attributes-and-catalogue-of-attestation-schemes), and into [Topic 25](./annexes/annex-2/annex-2-high-level-requirements.md#a2325-topic-25---unified-definition-and-controlled-vocabularies-for-attributes-catalogue-of-attributes) and [Topic 26](./annexes/annex-2/annex-2-high-level-requirements.md#a2326-topic-26---catalogue-of-attestation-schemes) in Annex 2.
-- The [Discussion Paper for Topic Z](./discussion-topics/z-device-bound-attestations.md) was integrated into [Sections 6.6.2.3.3](#66233-verifies-that-pid-key-or-device-bound-attestation-key-is-protected-by-the-wscd) and [6.6.3.8](#6638-relying-party-instance-verifies-device-binding), among others. Moreover, multiple requirements in Annex 2 where changed or slightly adapted to account for the fact that device binding is now recommended, not mandatory.
+- The Discussion Paper for Topic O, and into Topic 25 and Topic 26 in Annex 2.
+- The Discussion Paper for Topic Z was integrated into Sections 6.6.2.3.3 and 6.6.3.8, among others. Moreover, multiple requirements in Annex 2 where changed or slightly adapted to account for the fact that device binding is now recommended, not mandatory.
 
 - Apart from these changes, a limited number of editorial mistakes were corrected.
 
