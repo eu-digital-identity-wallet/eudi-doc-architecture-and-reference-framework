@@ -430,7 +430,7 @@
 
 
 <h1 id="t-support-and-maintenance-by-the-wallet-provider">T - Support and Maintenance by the Wallet Provider</h1>
-<p>Version 0.2, 14 Oct 2025</p>
+<p>Version 0.3, 16 Oct 2025</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/583">Link to GitHub discussion</a></p>
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
@@ -564,11 +564,11 @@ fact.</p>
 <h2 id="3-discussion">3 Discussion</h2>
 <h3 id="31-non-functional-requirements">3.1 Non-functional requirements</h3>
 <p>The support and maintenance functions of the Wallet Provider are in the current ARF mostly implicit and embedded under technical topics that either link to issuance, revocation or lifecycle management of technical artefacts (functional requirements under various topics).</p>
-<p>Some functions of a Wallet Provider related to sustained customer support, data protection and active engineering towards keeping the Wallet Instances of an Wallet Solution up to date are part of Wallet certification. This is covered via implementing acts and by the Member States' national certification schemes, and are beyond the mandate of the [Regulation]. Thus, the ARF will not list non-functional requirements for the topic(s).</p>
+<p>Some functions of a Wallet Provider related to sustained customer support, data protection and active engineering towards keeping the Wallet Instances of an Wallet Solution up to date are part of Wallet certification. This is covered via implementing acts and by the Member States' national certification schemes, and are beyond the mandate of the [European Digital Identity Regulation]. Thus, the ARF will not list non-functional requirements for the topic(s).</p>
 <h3 id="32-wallet-instance-maintenance-related-data-collection">3.2 Wallet Instance maintenance related data collection</h3>
 <p>Wallet Solution maintenance requires monitoring of the solution functions by the Wallet Provider, including Wallet Instances used by the users. It is customary for the mobile application developers to collect limited bug and error reports at runtime for improvement purposes (the development team will receive these and prioritise error fixes according to professional error severity analysis). Error logs collected should never contain personal data of the User. Question of what data of the Wallet User, or of the Wallet Instance should be monitored for this purpose was discussed in the first meeting to collect suitable data points, and are documented in table 1. </p>
-<p>In case the Wallet Instance is run mostly remote (at the Wallet Solution Provider server with associated HSM), the Wallet Instance can be just a 'viewer' app, and therefore multiple apps can be viewed as the same Wallet Instance. Nevertheless, he ARF defines (see topic 38, WURevocation_09) how the Wallet Provider must handle situation where one 'viewer app', one part of its components is no longer secure - The Wallet Unit is revoked entirely in case the data collected from a single device/app triggers need to revoke an individual app instance.</p>
-<p>List of possible data type to be collected, reasons for collection and how the Wallet Instance monitoring should occur (frequency, mechanisms, should the collection require Wallet User's approval beyond standard app vendor practices) is collected in the following table, and is recommended to be added to <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#6532-wallet-provider-requests-data-about-the-users-device-from-the-wallet-instance">section 6.5.3.2</a> of the ARF:</p>
+<p>In case the Wallet Instance is run mostly remote (at the Wallet Solution Provider server with associated HSM), the Wallet Instance can be just a 'viewer' app, and therefore multiple apps can be viewed as the same Wallet Instance. Nevertheless, the ARF defines (see topic 38, WURevocation_09) how the Wallet Provider must handle situation where one 'viewer app', one part of its components is no longer secure - The Wallet Unit is revoked entirely in case the data collected from a single device/app triggers need to revoke an individual app instance.</p>
+<p>List of possible data types to be collected, reasons for collection and how the Wallet Instance monitoring should occur (frequency, mechanisms, should the collection require Wallet User's approval beyond standard app vendor practices) is collected in the following table, and is recommended to be added to <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#6532-wallet-provider-requests-data-about-the-users-device-from-the-wallet-instance">section 6.5.3.2</a> of the ARF:</p>
 <table>
 <thead>
 <tr>
@@ -619,7 +619,7 @@ fact.</p>
 <td>At Wallet Unit activation</td>
 </tr>
 <tr>
-<td>Unique device identifier such as IDFV or persisted UUID (iOS) or AndroidID)</td>
+<td>Unique device identifier such as IDFV or persisted UUID (iOS) or AndroidID (Android)</td>
 <td>Up-to-date list of Wallet Instance related device installations, potential malicious use (unrecognised identifier)</td>
 <td>At Wallet Unit activation</td>
 </tr>
@@ -629,7 +629,7 @@ fact.</p>
 <td>At Wallet Unit activation</td>
 </tr>
 <tr>
-<td>HW-level details on device</td>
+<td>Hardware-level details on device</td>
 <td>Identify known hardware-based problems or vulnerabilities</td>
 <td>At Wallet Unit activation</td>
 </tr>
@@ -645,12 +645,13 @@ fact.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Question 1</strong>: Are there monitoring needs for short-range radio (BLE, NFC) usage logs over proximity use cases regarding either maintenance monitoring (this section) or for Wallet Unit security posture analysis (next section)?</p>
+<p>Table 1. Data recommended for maintenance related Wallet Unit -level monitoring</p>
+<h4 id="crash-logs">Crash logs</h4>
 <p>Device OS-dependent app crash logs will probably collect a rich set of data (many of listed items above) automatically. App developers should write custom crash logs for sending them to Wallet Provider's server for further analysis. For iOS developers see article <a href="https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs">Acquiring crash reports and diagnostic logs</a>, and respectively <a href="https://support.google.com/googleplay/android-developer/answer/9844486?sjid=7862630290407449217-EU#zippy=">Android vitals</a> for Android/Google Play distributed apps. Beyond baseline tools, several third party tools exist for creating developer-friendly crash report analytics.</p>
-<p>A new HLR on custom crash logs is suggested for inclusion under the topic (see Section 4.1, WPSM_02).</p>
+<p>A new HLR on custom crash logs is suggested for inclusion under the topic (see <a href="#41-high-level-requirements-to-be-added-to-annex-2">section 4.1</a>, WPSM_02).</p>
 <h3 id="33-monitoring-data-for-the-wallet-units-security-posture">3.3 Monitoring data for the Wallet Unit's security posture</h3>
 <h4 id="331-backgrounder-the-pds2-directive">3.3.1 Backgrounder - the PDS2 Directive</h4>
-<p>The need to track the security posture of a Wallet Unit was initially raised in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md">topic AA</a> discussion on strong customer authentication and related requirements from the regulation that binds the European financial institutions, especially the Payment Service Providers (PSPs). The [RTS SCA] contains generic requirements for PSPs in Article 2 to have transaction monitoring mechanisms to detect unauthorised or fraudulent transactions:</p>
+<p>The need to track the security posture of a Wallet Unit was initially raised in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md">topic AA</a> discussion on strong customer authentication and related requirements from the regulation that applies to the European financial institutions, especially the Payment Service Providers (PSPs). The [RTS SCA] contains generic requirements for PSPs in Article 2 to have transaction monitoring mechanisms to detect unauthorised or fraudulent transactions:</p>
 <blockquote>
 <ol>
 <li>
@@ -670,7 +671,7 @@ fact.</p>
 <h4 id="332-basic-security-posture-of-wallet-unit">3.3.2 Basic security posture of Wallet Unit</h4>
 <p>Although complete fraud or risk signal collection is not in scope of the ARF, it is recommended for and in the interests of the Wallet Providers to keep an active understanding of individual Wallet Instances baseline security posture, if this can be done with a privacy-preserving approach. This offloads part of the detection tasks from PSPs when it comes to their regulatory tasks, and allows the Wallet Providers to take care of at-risk Wallet Instances through technical means: Although not monitored in runtime similar to the payment applications, the Wallet Instances with raised basic security posture level can be revoked at the Wallet Provider's earliest convenience (following at least the requirements set in the ARF <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation">Topic 38</a>).</p>
 <p>We suggest to add new high-level requirements on <strong>basic security posture monitoring</strong> for the Wallet Providers to <strong>check regularly a minimal set of security information about the Wallet Instance</strong> as part of the support and maintenance function.</p>
-<p>A collection of fraud or risk signal related information is collected below to table 2., with indication whether the data should be collected under the proposed new HLRs on basic security posture monitoring.</p>
+<p>A collection of fraud or risk signal related information is collected below to table 2, with indication whether the data should be collected under the proposed new HLRs on basic security posture monitoring.</p>
 <table>
 <thead>
 <tr>
@@ -698,7 +699,7 @@ fact.</p>
 <tr>
 <td>Device fingerprinting</td>
 <td>flag logins from unfamiliar devices, ATO</td>
-<td>? - WP has list of devices with WIs</td>
+<td>Not relevant - WP has list of devices with active WIs</td>
 </tr>
 <tr>
 <td>Geolocation (IP address)</td>
@@ -723,7 +724,7 @@ fact.</p>
 <tr>
 <td>Incognito mode detection</td>
 <td>hiding malicious activity or multiple login attempts</td>
-<td>OK</td>
+<td>Not relevant</td>
 </tr>
 <tr>
 <td>Device rooting/jailbreaking detection</td>
@@ -742,22 +743,15 @@ fact.</p>
 </tr>
 </tbody>
 </table>
-<p>Table 2. Information typically screened to execute fraud signal analysis</p>
-<p><strong>Question 2</strong>: Is detection of incognito mode usage on browser relevant (and even possible) on the Wallet Instance - Wallet Provider or Wallet Instance - Wallet-relying Party transaction contexts? </p>
-<p><strong>Question 3</strong>: What risks are present in incognito mode use?</p>
+<p>Table 2. Information typically screened to execute fraud signal analysis on mobile devices</p>
 <p>Several of the signals are related to User behaviour patterns and thus will have no real value to the Wallet Provider (to conclude on the security posture of the User's device). Taking into account this aspect, as well as expectation of strict Wallet User privacy preservation with their use of a Wallet Solution, it seems the minimal additional list of security posture information (compared to table 1 earlier) to be checked is the following:</p>
 <ol>
-<li>device rooting/jailbreaking detection</li>
+<li>device rooting/jailbreaking detection and</li>
 <li>emulator detection</li>
-<li>incognito mode detection (preliminary, pending conclusions of Questions 2 and 3 above)</li>
 </ol>
-<p>The Wallet Provider should therefore build software analysis mechanisms that allow detection of changes in basic security posture of a Wallet Unit. In case of <strong>raised risk</strong> the Wallet Provider shall disable the Wallet Instance from conducting transactions. The minimum mechanism specified by the ARF is revocation of the Wallet Unit Attestation (WUA) within 24 hours from identifying a risk. The Wallet Providers may have also other (more real-time) tools to disable a Wallet Unit when needed.</p>
-<p><strong>Question 4</strong>: When trying to identify a raised security posture risk - where is the borderline that triggers revocation of in, is it up to the Wallet Provider to decide, or shall this be standardised for all Wallet Providers?</p>
+<p>The Wallet Provider should therefore build software analysis mechanisms that allow detection of changes in basic security posture of a Wallet Unit. In case of raised risk the Wallet Provider shall disable the Wallet Instance from conducting transactions. The minimum mechanism specified by the ARF is revocation of the Wallet Unit Attestation (WUA) within 24 hours from identifying a risk. The Wallet Providers may have also other (more real-time) tools to disable a Wallet Unit when needed.</p>
 <p>The new HLRs are proposed in Section 4 below.</p>
 <h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
-<blockquote>
-<p>Note: Section 4 will be finalised after the focus group discussions have been concluded.</p>
-</blockquote>
 <h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
 <p>A new topic is suggested for discussing the monitoring functions as part of support and maintenance functions of the Wallet Provider. The following HLRs are suggested to be included:</p>
 <table>
@@ -771,7 +765,7 @@ fact.</p>
 <tbody>
 <tr>
 <td>WPSM_01</td>
-<td>The Wallet Provider SHALL monitor their installed base of operational Wallet Instances for maintenance purposes, as is described in [the ARF section TBA on Wallet Instance Maintenance monitoring] (<em>Note: New text to be based on section 3.2 of this paper, either as intro to new topic or on the ARF main text</em>).</td>
+<td>The Wallet Provider SHALL monitor their installed base of operational Wallet Instances for maintenance purposes. Recommended data or attributes that SHOULD be monitored include: runtime errors, UX and telemetry information, OS version and health information, Wallet Instance SDK and software library version information, user locale/localisation data, Wallet Instance version, supported WSCA/WSDCs and their supported capabilities, unique device identifier such as IDFV or persisted UUID (iOS) or AndroidID (Android), device sensor identifiers and patch levels, hardware-level details on device, BLE radio presence in device, NFC support in device.</td>
 <td>NEW - Add as new 'base' HLR to new Wallet Provider Support and Maintenance topic.</td>
 </tr>
 <tr>
@@ -781,18 +775,30 @@ fact.</p>
 </tr>
 <tr>
 <td>WPSM_03</td>
-<td>The Wallet Provider SHALL monitor the minimal basic security posture of operational Wallet Instances for the purpose of detecting increased security risks in the environment the Wallet Instance is run at. Allowed information to be monitored includes 1) detection of device rooting/jailbreaking, 2) emulator detection and 3) incognito mode detection.</td>
+<td>The Wallet Provider SHALL monitor the minimal basic security posture of operational Wallet Instances for the purpose of detecting increased security risks in the environment the Wallet Instance is run at. Information that SHOULD be monitored includes 1) detection of device rooting/jailbreaking and 2) emulator detection.</td>
 <td>NEW</td>
-</tr>
-<tr>
-<td>WPSM_04</td>
-<td>In case a raised security posture risk is analysed for a Wallet Instance due to monitoring of WPSM_03, the Wallet Provider SHALL revoke the WUA of this Wallet Instance according to principles defined in WURevocation_09.</td>
-<td>NEW, potentially assigned as WURevocation_08 under topic 38 instead of as a WPSM_xx HLR?</td>
 </tr>
 </tbody>
 </table>
 <h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
-<h4 id="421-topic-40">4.2.1 Topic 40</h4>
+<h4 id="421-topic-38">4.2.1 Topic 38</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_09</td>
+<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL administratively revoke or suspend the Wallet Unit and SHALL immediately revoke the corresponding WUA(s). The Wallet Provider SHALL do so at least in the following circumstances: - If the security of the Wallet Unit, or the security of the mobile device and OS on which the corresponding Wallet Instance is installed, or the security of a WSCA/WSCD it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability. - If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units. - If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability. - If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability. <strong>- If a raised security posture risk is analysed for a Wallet Instance due to monitoring done according to WPSM_03.</strong></td>
+<td>MODIFIED (addition of the text in <strong>bold</strong>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="422-topic-40">4.2.2 Topic 40</h4>
 <table>
 <thead>
 <tr>
@@ -805,15 +811,13 @@ fact.</p>
 <tr>
 <td>WIAM_11</td>
 <td>During the lifetime of the Wallet Unit, the Wallet Provider SHALL update the Wallet Unit as necessary to ensure its continued security and functionality.</td>
-<td>MOVE - Proposed to be moved as is into a new HLR (WPSM_05) under the wallet support and maintenance topic.</td>
+<td>MOVE - Proposed to be moved as is into a new HLR (WPSM_04) under the wallet support and maintenance topic.</td>
 </tr>
 </tbody>
 </table>
-<p>A list of the requirements that shall be removed follows:</p>
-<h4 id="422-topic-xx">4.2.2 <strong>Topic xx</strong></h4>
-<p>TBA</p>
 <h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
-<p>A new short paragraph on runtime Wallet Unit-level monitoring as part of maintenance and security posture analysis is suggested for the ARF main text, based on chapters 3.2 and 3.3 of this document. Details on monitored information can be left to be described under the introductory paragraphs of the new Annex 2 topic on Support and Maintenance.</p>
+<p>A new short paragraph on runtime Wallet Instance -level monitoring as part of maintenance and security posture analysis is suggested for the ARF main text section 6.5.3.2, based on chapters 3.2 and 3.3 of the updated topic T discussion paper.</p>
+<p>Details on monitorable Wallet Instance information (table 1 of the topic T discussion paper) is included into ARF section 6.5.3.2.</p>
 <h2 id="4-references">4 References</h2>
 <table>
 <thead>
