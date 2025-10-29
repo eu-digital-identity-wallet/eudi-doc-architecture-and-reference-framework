@@ -1,4 +1,4 @@
-Version 0.8, updated 26 September 2025
+Version 0.9, updated 24 October 2025
 
 [Link to GitHub discussion](https://www.github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/375)
 
@@ -6,10 +6,11 @@ Version 0.8, updated 26 September 2025
 
 ## Versioning
 
-| Version                 | Date       | Description                                                              |
-|-------------------------|------------|--------------------------------------------------------------------------|
-| `0.7` (part of ARF 2.5) | 03.04.2025 | Initial version after first rounds of discussion.                        |
-| `0.8`                   | 26.09.2025 | Restructuring, additional use cases added, and HLRs for future use cases |
+| Version                 | Date       | Description                                                               |
+|-------------------------|------------|---------------------------------------------------------------------------|
+| `0.7` (part of ARF 2.5) | 03.04.2025 | Initial version after first rounds of discussion.                         |
+| `0.8`                   | 26.09.2025 | Restructuring, additional use cases added, and HLRs for future use cases. |
+| `0.9`                   | 25.10.2025 | Optional to implement WebAuthn, revision of HLRs.                         |
 
 ## 1 Introduction
 
@@ -40,7 +41,7 @@ The document is structured as follows:
 
 - [Chapter 6](#6-relation-to-other-topics) relates the topic to other topics being discussed and previously identified risks.
 
-- [Chapter 7](#7-additions-and-changes-to-the-arf) presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
+- [Chapter 7](#7-changes-to-the-arf) presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.
 
 - [Chapter 8](#8-references) lists references used in this document. 
 
@@ -626,18 +627,35 @@ R14, SR1, TR39, and TR84 are particularly relevant to consider given the discuss
 
 TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.
 
-## 7 Additions and Changes to the ARF
+## 7 Changes to the ARF
 
-This chapter proposes changes and additions to the ARF. In particular, additions to  High Level Requirements (HLRs) for Annex 2 Topic 11 (Pseudonyms).
+This chapter proposes changes and additions to the ARF, specifically to the  High Level Requirements (HLRs) for Annex 2 Topic 11 (Pseudonyms).
 
-The existing HLRs in the ARF were already developed to support [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms). 
+The existing HLRs in the ARF (version 2.5.0) were developed to support [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms). 
 
 As previously noted, as it is possible to define custom types of (Q)EAAs in the ARF, [Use Case D](#44-Use-Case-D-Linkable-Pseudonymous-Authentication) is already supported by the current functionality already included in the ARF. 
-Hence, as an *addition* to the existing HLRs, this discussion paper proposes additional HLRs to guide future pseudonyms solutions to support also [Use Case C](#43-use-case-c-rate-limited-participation) in the context the EUDI Wallet ecosystem. 
 
-Note, however, that the EU Commission will not actively develop any such scheme fulfilling these HLRs. Instead, they are only meant as a guide for others to design and standardize protocols that may be included in a future version of the ARF.
+This discussion paper proposes changes in two categories: 
+1. *Changes* to existing HLRs making it *optional* for Wallet Units to support the pseudonyms functionality required by the legislation by letting them be WebAuthn Authenticators rather than mandatory. These are presented in [Section 7.1](#71-changes-to-existing-hlrs).
+2. *Additional* HLRs to guide future pseudonyms solutions to support also [Use Case C](#43-use-case-c-rate-limited-participation) in the context the EUDI Wallet ecosystem. These are presented in [Section 7.2](#72-new-guiding-hlrs-for-scope-rate-limited-pseudonyms). Note, however, that the EU Commission will not actively develop any such scheme fulfilling these HLRs. Instead, they are only meant as a guide for others to design and standardize protocols that may be included in a future version of the ARF.
 
-#### 7.1 New Guiding HLRs for Scope Rate Limited Pseudonyms
+#### 7.1 Changes to Existing HLRs
+
+The existing HLRs and [CIR.2024.2979] mandate that Wallet Units implement WebAuthn as an authenticator. However, as there already exists many WebAuthn authenticator implementations widely available to Users through their operating system, web browsers or specialized apps, we propose to weaken the requirements in the ARF and the CIR such that it becomes *optional* for a Wallet Unit to also be a WebAuthn authenticator and thereby free for Wallet Units to enable [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) using alternative technologies. 
+
+> Under Article 5a of the [European Digital Identity Regulation], EUDI Wallets must support the generation and storage of pseudonyms. This requirement remains intact. Our proposal only affects how this is achieved: implementing WebAuthn would remain one compliant approach, but not the only one. Wallet Units not following this path must use alternatives to live up to the legislation.
+
+In the ARF v.2.5.0, there are 23 requirements related to pseudonyms. 
+Of these, the first 20 requirements (PA\_01-PA\_19 and PA\_08a) are requirements to enable [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) remains unaffected
+The remaining three HLRs (PA\_20, PA\_21 and PA\_22) are specific to WebAuthn and we propose the following changes: 
+
+| **Index** | **ARF v.2.5.0 specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | **Proposed specification**                                                                                                                                                                                                                                                  |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PA_20     | The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym, provided the profile or extension of [W3C WebAuthn] meant in PA_21 enables the Wallet Unit to do this. In case the profile or extension does not enable this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity. *Notes: - [W3C WebAuthn] currently does not offer a way for an Authenticator (i.e., the Wallet Unit) to authenticate a Relying Party. Instead, the Client (i.e., the browser) will authenticate the Relying Party, using TLS.* | The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. If the provided the profile or extension of [W3C WebAuthn] meant in PA_21 does not enable the Wallet Unit to do this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity. *Notes: - [W3C WebAuthn] currently does not offer a way for an Authenticator (i.e., the Wallet Unit) to authenticate a Relying Party. Instead, the Client (i.e., the browser) will authenticate the Relying Party, using TLS.*                                                                                                                                                                                                                                                                             |
+| PA_21     | The Commission SHALL create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification compliant with the HLRs specified in this Topic. This specification SHALL contain all details necessary for Wallet Units and Relying Parties to generate, register, and use Pseudonyms.                                                                                                                                                                                                                                                                                                         | No changes.                                                                                                                                                                                                                                                                 |
+| PA_22     | Wallet Providers SHALL ensure that their Wallet Solution supports the [W3C WebAuthn] specification and the technical specification meant in requirement PA_21.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Wallet Providers MAY ensure that their Wallet Solution supports the HLRs defined for this topic by letting their Wallet Units perform the role of a WebAuthn authenticator following the [W3C WebAuthn] specification and the technical specification referenced in referenced in PA\_21. |
+
+#### 7.2 New Guiding HLRs for Scope Rate Limited Pseudonyms
 The below HLRs will be added to the existing HLR in Annex 2, Topic 11 of the ARF v.2.5.0.
 
 ##### Requirement 1
