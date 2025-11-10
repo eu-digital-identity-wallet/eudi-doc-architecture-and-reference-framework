@@ -234,7 +234,7 @@ Apart from these changes, a limited number of editorial mistakes were corrected.
 #### 1.6.1 Changed formats for Annex 2
 
 All high-level requirements in Annex 2
-are now included in the [high-level-requirements.csv file](../hltr/high-level-requirements.csv), which allows for easy sorting and filtering of
+are now included in the [high-level-requirements.csv file](https://raw.githubusercontent.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/refs/heads/main/hltr/high-level-requirements.csv), which allows for easy sorting and filtering of
 requirements. Insofar relevant, the texts in the introduction to each Topic in
 Annex 2 were moved to suitable sections in the ARF main document.
 
