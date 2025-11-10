@@ -17,7 +17,7 @@ Changes:
 - The Discussion Paper for Topic Q was integrated into Topic 54.
 - The Discussion Paper for Topic R was integrated into Sections 2.2, 4.3.2 and 6.5.3.3, and into Topic 40. Moreover, the distinction between the WSCA/WSCD and a keystore, which was introduced in this Topic, has been made throughout the ARF main document and Annex 2. A definition of 'keystore' was added to Annex 1.
 - The Discussion Paper for Topic S was integrated into Sections 6.3.2.3 and 6.4.2. In addition, in Annex 2, a new Topic 55 was created for the high-level requirements on Certificate Transparency for access certificates.
-- All figures in the ARF have been re-created using [draw.io](https://www.drawio.com), and the source files (in XML format) are made available in the GitHub repository of the ARF.
+- All figures in the ARF have been re-created using and the source files (in XML format) are made available in the GitHub repository of the ARF.
 - Several issues raised via Confluence and GitHub have been resolved.
 
 Apart from these changes, a limited number of editorial mistakes were corrected.
