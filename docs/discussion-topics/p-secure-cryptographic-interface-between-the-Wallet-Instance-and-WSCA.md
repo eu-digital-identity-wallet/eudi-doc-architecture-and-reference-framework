@@ -166,7 +166,7 @@ Secure Enclave, accessed via platform APIs such as Keychain Services and CryptoK
 For more details, see the Apple documentation:
 
 - [Keychain Services](https://developer.apple.com/documentation/security/keychain_services)
-- [CryptoKit](hhttps://developer.apple.com/documentation/cryptokit)
+- [CryptoKit](https://developer.apple.com/documentation/cryptokit)
 - [Secure Enclave](https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave)
 
 In some cases WSCD is implemented as an eSIM or a Secure Element (SE) that supports JavaCard technology. 

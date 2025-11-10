@@ -2928,7 +2928,7 @@ in fact registered for that type of attestation.
 Note that an Attestation Provider may simultaneously be a Relying Party, for
 instance in case it intends to request data from the User's PID during issuance
 of an attestation. Such an Attestation Provider would then register both as a
-Relying Party (which is called a Service Provider in [Technical Specification 5](../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md))
+Relying Party (which is called a Service Provider in [Technical Specification 5](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md))
 and as a QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider. In that
 case, the Attestation Provider will receive a single registration certificate
 including both roles. Registration certificates for Relying Parties are
