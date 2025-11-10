@@ -1,0 +1,153 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0" version="28.2.9">
+  <diagram name="Page-1" id="qLmDd2PQFrHfIVrGtLAO">
+    <mxGraphModel dx="978" dy="542" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-1" value="Installed" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Helvetica;fillColor=light-dark(#ff6a00, #e96b12);fontColor=light-dark(#ffffff, #ededed);strokeColor=#C73500;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-2" value="Valid" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-4" value="Uninstalled" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Helvetica;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-5" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-2" target="xPVAkh8Ksko-M2C2wA4D-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="510" />
+              <mxPoint x="580" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-6" value="The User uninstalls&lt;div&gt;the Wallet Unit&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-5">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-7" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;entryX=0.017;entryY=0.668;entryDx=0;entryDy=0;startArrow=none;startFill=0;entryPerimeter=0;exitX=-0.008;exitY=0.361;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-2" target="xPVAkh8Ksko-M2C2wA4D-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="410" as="sourcePoint" />
+            <mxPoint x="420" y="329.9999999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="422" />
+              <mxPoint x="320" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-8" value="The PID expires,&amp;nbsp;&lt;div&gt;the PID Provider revokes the PID,&lt;/div&gt;&lt;div&gt;or the User deletes the PID&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-7">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-9" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);entryX=1.004;entryY=0.336;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;entryPerimeter=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-17" target="xPVAkh8Ksko-M2C2wA4D-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="299.9999999999999" as="sourcePoint" />
+            <mxPoint x="780" y="420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="290" />
+              <mxPoint x="720" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-10" value="The User uninstalls&lt;div&gt;the Wallet Unit&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-9">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="-128" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-11" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;startArrow=none;startFill=0;exitX=0;exitY=0.672;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="450" as="sourcePoint" />
+            <mxPoint x="520" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="318" y="440" />
+              <mxPoint x="200" y="440" />
+              <mxPoint x="200" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-12" value="The Wallet Provider&lt;div&gt;revokes the WUA or&lt;/div&gt;&lt;div&gt;the WUA expires&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-11">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="125" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-13" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-1" target="xPVAkh8Ksko-M2C2wA4D-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="980" y="460" as="sourcePoint" />
+            <mxPoint x="580" y="240" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-14" value="The User activates the Wallet Unit:&lt;div&gt;the Wallet Provider issues a WUA&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-13">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-15" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=oval;startFill=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="40" as="sourcePoint" />
+            <mxPoint x="579.8" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="579.8" y="100" />
+              <mxPoint x="579.8" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-16" value="The User installs&lt;div&gt;the Wallet unit (app)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-15">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-17" value="Operational" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-18" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-17" target="xPVAkh8Ksko-M2C2wA4D-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="579.66" y="320" as="sourcePoint" />
+            <mxPoint x="579.66" y="400" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-19" value="The PID Provider&lt;div&gt;issues a new PID&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-18">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-20" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;startArrow=none;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-1" target="xPVAkh8Ksko-M2C2wA4D-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="140" as="sourcePoint" />
+            <mxPoint x="750" y="620" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="150" />
+              <mxPoint x="800" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-21" value="The User uninstalls&lt;div&gt;the Wallet Unit&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-20">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="-237" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-22" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;startArrow=none;startFill=0;entryX=0.002;entryY=0.673;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.003;exitY=0.328;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="xPVAkh8Ksko-M2C2wA4D-17" target="xPVAkh8Ksko-M2C2wA4D-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="411" y="291" as="sourcePoint" />
+            <mxPoint x="470" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="280" />
+              <mxPoint x="320" y="280" />
+              <mxPoint x="320" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-23" value="The Wallet Provider&lt;div&gt;revokes the WUA&lt;/div&gt;&lt;div&gt;or the WUA expires&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" vertex="1" connectable="0" parent="xPVAkh8Ksko-M2C2wA4D-22">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

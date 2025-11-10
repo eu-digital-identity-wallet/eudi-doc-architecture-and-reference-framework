@@ -1,0 +1,898 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/discussion-topics/t-support-and-maintenance-by-the-wallet-provider/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>T - Support and Maintenance by the Wallet Provider - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="T - Support and Maintenance by the Wallet Provider - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/assets/images/social/discussion-topics/t-support-and-maintenance-by-the-wallet-provider.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/discussion-topics/t-support-and-maintenance-by-the-wallet-provider/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="T - Support and Maintenance by the Wallet Provider - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/assets/images/social/discussion-topics/t-support-and-maintenance-by-the-wallet-provider.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#t-support-and-maintenance-by-the-wallet-provider" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T - Support and Maintenance by the Wallet Provider
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="t-support-and-maintenance-by-the-wallet-provider">T - Support and Maintenance by the Wallet Provider</h1>
+<p>Version 0.3, 16 Oct 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/583">Link to GitHub discussion</a></p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
+<p>This document is the Discussion Paper for European Digital Identity Cooperation Group
+on topic <strong>T - Support and Maintenance by the Wallet Provider</strong></p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Are specific requirements necessary to govern support and maintenance of the Wallet? For instance, guidelines could clarify what types of data the Wallet Provider is permitted or prohibited from collecting from Wallet Instances for support and maintenance purposes.</em></p>
+<p>Following the [European Digital Identity Regulation] (EU) 2024/1183 this document discusses high-level technical requirements and guidance and/or recommendations the ARF should include on Wallet Provider specific maintenance and support functions. It should be noted that the requirements covered here are different from certification-related security requirements - this paper focuses on post-certification maintenance and support that may mean active monitoring of the Wallet Instance and Wallet Unit elements and behaviour.</p>
+<h2 id="12-key-words">1.2 Key words</h2>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.</p>
+<h2 id="13-document-structure">1.3 Document structure</h2>
+<p>This document is structured as follows:</p>
+<ul>
+<li>Chapter 2 introduces support and maintenance expectations set on Wallet Providers based on the existing legislation and the ARF, and lists the Annex 2 HLRs found to relate (also, in addition to their home topic) with support and maintenance on the latest ARF version (2.6.0).</li>
+<li>Chapter 3 opens the discussion whether specific high-level requirements are desirable.</li>
+<li>Chapter 4 will list the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.</li>
+</ul>
+<h2 id="2-existing-requirements-related-to-wallet-providers-support-and-maintenance-duties">2. Existing requirements related to Wallet Provider's support and maintenance duties</h2>
+<h3 id="21-regulatory-requirements">2.1 Regulatory requirements</h3>
+<p>Article 5a (10) of the [European Digital Identity Regulation] specifies that Providers of European Digital Identity Wallets shall ensure that users can easily request technical support and report technical problems or any other incidents having a negative impact on the use of European Digital Identity Wallets.</p>
+<h3 id="22-sections-in-the-arf-related-to-wallet-solution-and-wallet-unit-lifecycle-management">2.2 Sections in the ARF related to Wallet Solution and Wallet Unit lifecycle management</h3>
+<p>The Trust model discussion in the ARF main text (Section 6) has the following lifecycle management related subsections, and although not directly mentioning the support duties of the Wallet Provider, may be relevant for this topic:</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#623-wallet-provider-suspension-or-cancellation">Section 6.2.3</a> of the main document discusses what happens on Wallet Unit level if a Wallet Provider is cancelled or suspended. Informing duty by the Wallet Provider of such event for the Wallet Users is defined in Annex 2/<a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation">Topic 38</a> part B part of the ARF.</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#65-trust-throughout-a-wallet-unit-lifecycle">Section 6.5</a> of the main document discusses Wallet Unit lifecycle related trust. Once a Wallet User has a Wallet Unit in Operational or Valid state, the Wallet Unit is managed by the User and the Wallet Provider, and this management includes at least revoking the Wallet Unit when necessary.</p>
+<p>The ARF sub-section <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#654-wallet-unit-management">6.5.4</a> covers the details (<strong>bold text</strong> effect added by the editor):</p>
+<p>The <strong>Wallet Provider</strong> is responsible at least to:</p>
+<ul>
+<li>perform <strong>installation of a new version of the Wallet Solution as necessary</strong> - this is mentioned in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a> part C, WIAM_11.</li>
+<li>update the WUAs as necessary - covered in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a239-topic-9---wallet-unit-attestation">Topic 9</a>.</li>
+<li>revoke the Wallet Unit in case its security is compromised - covered in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation">Topic 38</a>.</li>
+</ul>
+<p>Management will also include <strong>regular updates of the Wallet Instance application to ensure its continued security and functionality.</strong> </p>
+<p>No technical requirements are currently specified regarding e.g. automatic installation of Wallet Solution updates and their regularity, or on conducting constant monitoring on the health level of the overall Wallet Solution via analysis of the operational Wallet Instances in the installed base.</p>
+<h3 id="23-existing-high-level-requirements-in-the-arf">2.3 Existing high-level requirements in the ARF</h3>
+<p>The following HLRs were found relevant for the topic of support and maintenance (involving either the Solution management, informing the Wallet User or providing lifecycle support for the Wallet Solution) under existing Annex 2 topics.</p>
+<h4 id="231-topic-9">2.3.1 Topic 9</h4>
+<p>Topic 9 covers HLRs for Wallet Unit Attestation (WUA). WUA_03 below relates to (invisible to the Wallet User) readiness maintenance by the Wallet Provider (for ensuring a valid WUA at all times).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_03</td>
+<td>A Wallet Provider SHALL ensure that a non-revoked Wallet Unit at all times can present a WUA, when requested by a PID Provider or Attestation Provider.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="232-topic-38">2.3.2 Topic 38</h4>
+<p>Topic 38 covers HLRs addressing Wallet Unit revocation. HLRs having a link between the Wallet Provider and Wallet User have been picked for this topic discussion</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_14</td>
+<td>A Wallet Provider SHALL inform a User without delay, and within 24 hours at most, in case the Wallet Provider decided to revoke the User's Wallet Unit. The Wallet Provider SHALL also inform the User about the reason(s) for the revocation. This information SHALL be understandable for the general public. It SHALL include (a reference to) technical details about any security breach if applicable.</td>
+</tr>
+<tr>
+<td>WURevocation_16</td>
+<td>To inform a User about the revocation of their Wallet Unit, the Wallet Provider SHALL use a communication channel that is independent of the Wallet Unit. In addition, the Wallet Provider MAY use the Wallet Unit itself to inform the User.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="233-topic-40">2.3.3 Topic 40</h4>
+<p>Annex 2 <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a> discusses requirements related to the installation of a Wallet Instance by the User, the subsequent activation of the Wallet Unit by the User and the Wallet Provider, and the management of the Wallet Unit throughout its lifetime. Part C covers high-level technical requirements for Wallet Unit management in WIAM_11 - WIAM_21, of which the maintenance &amp; support related are listed below in <a href="#23-existing-high-level-requirements-in-the-arf">Section 2.3</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_01</td>
+<td>To ensure that the User can trust the Wallet Solution, a Wallet Provider SHOULD make its certified Wallet Solution available for installation only via the official app store of the relevant operating system (e.g., Android, iOS). <em>Note: This allows the operating system of the device to perform relevant checks regarding the authenticity of the Wallet Unit.</em></td>
+</tr>
+<tr>
+<td>WIAM_02</td>
+<td>If a Wallet Provider makes its certified Wallet Solution available for installation through other means than the official OS app store, it SHALL implement a mechanism allowing the User to verify the authenticity of the Wallet Unit. Moreover, it SHALL provide clear instructions to the User on how to install the Wallet Instance, including at least: - instructions on the verification of the authenticity of the Wallet Instance to be installed, - instructions on bypassing of any operating system limitations on side-loading of apps, if applicable, and ensuring that these limitations are restored after the Wallet Instance has been installed. <em>Note: This requirement also applies for the installation of a Wallet Instance on a User device that is not a mobile device, and for which no official operating system app store may exist.</em></td>
+</tr>
+<tr>
+<td>WIAM_05</td>
+<td>During the activation process of a new Wallet Unit, the Wallet Provider SHALL process information about the User device and the available WSCAs and WSCDs, as far as necessary to issue a Wallet Unit Attestation to the Wallet Unit conform all requirements in <a href="#a239-topic-9---wallet-unit-attestation">Topic 9</a> section A. The Wallet Provider MAY process additional information necessary for managing the Wallet Unit, but it SHALL NOT process more information than it reasonably needs for legitimate purposes. The Wallet Provider SHALL request User consent (through the Wallet Instance) for all information and data it will process, both during activation and throughout the lifetime of the Wallet Unit. The Wallet Provider SHALL inform the User about the purposes of data processing, in accordance with the General Data Protection Regulation.</td>
+</tr>
+<tr>
+<td>WIAM_06</td>
+<td>The Wallet Provider SHALL request the User, through the new Wallet Instance, to set up a User account at the Wallet Provider. The Wallet Provider SHALL explain to the User that this is necessary to enable the User to request revocation of the Wallet Unit in case of theft or loss. The Wallet Provider SHALL register one or more User authentication methods that the Wallet Provider will use to authenticate the User in the future. These methods SHALL be independent of the Wallet Unit and the User device. The Wallet Provider SHALL allow the User to register using an alias instead of true identity data. The Wallet Provider SHALL NOT use any registered User data for purposes other than User authentication, unless the User gives explicit consent to do so. The Wallet Provider SHALL register the relationship between the Wallet Unit and the corresponding User account.</td>
+</tr>
+<tr>
+<td>WIAM_10a</td>
+<td>During the activation process of a new Wallet Unit, the Wallet Provider SHALL offer the User a means to verify the formal certification information of their Wallet Solution.</td>
+</tr>
+<tr>
+<td>WIAM_11</td>
+<td>During the lifetime of the Wallet Unit, the Wallet Provider SHALL update the Wallet Unit as necessary to ensure its continued security and functionality.</td>
+</tr>
+<tr>
+<td>WIAM_13</td>
+<td>If the User uninstalls the Wallet Unit, the Wallet Unit SHALL ensure that all cryptographic key material in the WSCA(s) related to the Wallet Unit is securely destroyed. This includes all keys of the WUAs, PIDs and attestations stored in the Wallet Unit. <em>Note: Key deletion is a cryptographic key operation and requires User authentication, as specified in requirement WIAM_14.</em></td>
+</tr>
+<tr>
+<td>WIAM_13a</td>
+<td>If a Wallet Unit supports the [W3C Digital Credentials API] and the User uninstalls the Wallet Unit, the Wallet Unit SHALL disclose the fact that it no longer stores any PID(s) or attestation(s) to the Digital Credentials API framework.</td>
+</tr>
+<tr>
+<td>WIAM_15b</td>
+<td>During installation of the Wallet Unit, the Wallet Unit SHALL enable the User to indicate if they want to use a Wallet Unit-specific PIN for User authentication, or use the OS-level User authentication mechanism. The Wallet Unit SHALL enable the User to change this preference during the lifetime of the Wallet Unit.</td>
+</tr>
+<tr>
+<td>WIAM_21</td>
+<td>Whenever the WSCA/WSCD successfully authenticated the User according to WIAM_14, the Wallet Unit SHOULD check if there are any PIDs or attestations on the Wallet Unit that cannot be presented any longer to Relying Parties, for example because they have expired or because a once-only attestation (see <a href="#a2310-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>, section D, method A) was presented to a Relying Party already. The Wallet Unit SHOULD then request the WSCA/WSCD to destroy all cryptographic key material related to these PIDs or attestations. <em>Note: The reason for this recommendation is that probably, Wallet Providers will want to prevent an accumulation of unused private keys in the WSCA/WSCD, given that such devices typically do not have much storage space. However, deletion of private keys (and potentially other key material) is a cryptographic key operation and cannot be done without User authentication; see WIAM_14. At the same time, for usability reasons the User must not be involved in such 'cleaning up' processes, see also ISSU_42. The recommended solution is to take advantage of a User authentication event to also carry out any necessary cleaning operations.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-discussion">3 Discussion</h2>
+<h3 id="31-non-functional-requirements">3.1 Non-functional requirements</h3>
+<p>The support and maintenance functions of the Wallet Provider are in the current ARF mostly implicit and embedded under technical topics that either link to issuance, revocation or lifecycle management of technical artefacts (functional requirements under various topics).</p>
+<p>Some functions of a Wallet Provider related to sustained customer support, data protection and active engineering towards keeping the Wallet Instances of an Wallet Solution up to date are part of Wallet certification. This is covered via implementing acts and by the Member States' national certification schemes, and are beyond the mandate of the [European Digital Identity Regulation]. Thus, the ARF will not list non-functional requirements for the topic(s).</p>
+<h3 id="32-wallet-instance-maintenance-related-data-collection">3.2 Wallet Instance maintenance related data collection</h3>
+<p>Wallet Solution maintenance requires monitoring of the solution functions by the Wallet Provider, including Wallet Instances used by the users. It is customary for the mobile application developers to collect limited bug and error reports at runtime for improvement purposes (the development team will receive these and prioritise error fixes according to professional error severity analysis). Error logs collected should never contain personal data of the User. Question of what data of the Wallet User, or of the Wallet Instance should be monitored for this purpose was discussed in the first meeting to collect suitable data points, and are documented in table 1. </p>
+<p>In case the Wallet Instance is run mostly remote (at the Wallet Solution Provider server with associated HSM), the Wallet Instance can be just a 'viewer' app, and therefore multiple apps can be viewed as the same Wallet Instance. Nevertheless, the ARF defines (see topic 38, WURevocation_09) how the Wallet Provider must handle situation where one 'viewer app', one part of its components is no longer secure - The Wallet Unit is revoked entirely in case the data collected from a single device/app triggers need to revoke an individual app instance.</p>
+<p>List of possible data types to be collected, reasons for collection and how the Wallet Instance monitoring should occur (frequency, mechanisms, should the collection require Wallet User's approval beyond standard app vendor practices) is collected in the following table, and is recommended to be added to <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#6532-wallet-provider-requests-data-about-the-users-device-from-the-wallet-instance">section 6.5.3.2</a> of the ARF:</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Reason for monitoring (if applicable, regulation)</th>
+<th>Monitoring frequency etc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runtime errors</td>
+<td>Uncaught errors in production code</td>
+<td>runtime and crash logs</td>
+</tr>
+<tr>
+<td>UX and telemetry information</td>
+<td>UX field analysis</td>
+<td>runtime logs - <em>user consent preferred</em></td>
+</tr>
+<tr>
+<td>OS version and health data</td>
+<td>OS vulnerabilities</td>
+<td>At Wallet Unit activation (see ARF section 6.5.3.2)</td>
+</tr>
+<tr>
+<td>Wallet SDK and SW library versions</td>
+<td>Wallet Instance code vulnerabilities</td>
+<td>At Wallet Unit activation (see ARF section 6.5.3.2)</td>
+</tr>
+<tr>
+<td>User locale/localisation data</td>
+<td>Catching localisation related errors</td>
+<td>runtime and crash logs - <em>user consent preferred</em></td>
+</tr>
+<tr>
+<td>Wallet Instance version</td>
+<td>Old version related vulnerabilities or errors</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>Supported WSCA/WSCDs</td>
+<td>Cryptography related incompatibilities</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>WSCx capabilities supported</td>
+<td>Cryptography configuration for EUDI Wallet use cases</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>Unique device identifier such as IDFV or persisted UUID (iOS) or AndroidID (Android)</td>
+<td>Up-to-date list of Wallet Instance related device installations, potential malicious use (unrecognised identifier)</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>Sensor identifiers and patch levels</td>
+<td>Up-to-date sensor hardware</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>Hardware-level details on device</td>
+<td>Identify known hardware-based problems or vulnerabilities</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>BLE radio presence</td>
+<td>Security of proximity use cases</td>
+<td>At Wallet Unit activation</td>
+</tr>
+<tr>
+<td>NFC support</td>
+<td>Security of proximity use cases</td>
+<td>At Wallet Unit activation</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Data recommended for maintenance related Wallet Unit -level monitoring</p>
+<h4 id="crash-logs">Crash logs</h4>
+<p>Device OS-dependent app crash logs will probably collect a rich set of data (many of listed items above) automatically. App developers should write custom crash logs for sending them to Wallet Provider's server for further analysis. For iOS developers see article <a href="https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs">Acquiring crash reports and diagnostic logs</a>, and respectively <a href="https://support.google.com/googleplay/android-developer/answer/9844486?sjid=7862630290407449217-EU#zippy=">Android vitals</a> for Android/Google Play distributed apps. Beyond baseline tools, several third party tools exist for creating developer-friendly crash report analytics.</p>
+<p>A new HLR on custom crash logs is suggested for inclusion under the topic (see <a href="#41-high-level-requirements-to-be-added-to-annex-2">section 4.1</a>, WPSM_02).</p>
+<h3 id="33-monitoring-data-for-the-wallet-units-security-posture">3.3 Monitoring data for the Wallet Unit's security posture</h3>
+<h4 id="331-backgrounder-the-pds2-directive">3.3.1 Backgrounder - the PDS2 Directive</h4>
+<p>The need to track the security posture of a Wallet Unit was initially raised in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md">topic AA</a> discussion on strong customer authentication and related requirements from the regulation that applies to the European financial institutions, especially the Payment Service Providers (PSPs). The [RTS SCA] contains generic requirements for PSPs in Article 2 to have transaction monitoring mechanisms to detect unauthorised or fraudulent transactions:</p>
+<blockquote>
+<ol>
+<li>
+<p>Payment service providers shall have transaction monitoring mechanisms in place that enable them to detect unauthorised or fraudulent payment transactions for the purpose of the implementation of the security measures referred to in points (a) and (b) of Article 1. Those mechanisms shall be based on the analysis of payment transactions taking into account elements which are typical of the payment service user in the circumstances of a normal use of the personalised security credentials.</p>
+</li>
+<li>
+<p>Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors:
+(a) lists of compromised or stolen authentication elements;
+(b) the amount of each payment transaction;
+(c) known fraud scenarios in the provision of payment services;
+(d) signs of malware infection in any sessions of the authentication procedure;
+(e) in case the access device or the software is provided by the payment service provider, a log of the use of the access device or the software provided to the payment service user and the abnormal use of the access device or the software.</p>
+</li>
+</ol>
+</blockquote>
+<p>The ARF does not cover for fraud or risk signals collection from the Wallet Units or making them available to Relying Parties such as PSPs. Technically collection and delivery would be feasible and could be done at the Wallet Providers discretion, but the very intent of [European Digital Identity Regulation] to maximise privacy preservation in the EUDI ecosystem prevents this. Fraud signal detection for payment services is not in the ARF scope, and there is no intention to include a complete set of requirements related to this topic.  </p>
+<h4 id="332-basic-security-posture-of-wallet-unit">3.3.2 Basic security posture of Wallet Unit</h4>
+<p>Although complete fraud or risk signal collection is not in scope of the ARF, it is recommended for and in the interests of the Wallet Providers to keep an active understanding of individual Wallet Instances baseline security posture, if this can be done with a privacy-preserving approach. This offloads part of the detection tasks from PSPs when it comes to their regulatory tasks, and allows the Wallet Providers to take care of at-risk Wallet Instances through technical means: Although not monitored in runtime similar to the payment applications, the Wallet Instances with raised basic security posture level can be revoked at the Wallet Provider's earliest convenience (following at least the requirements set in the ARF <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2338-topic-38---wallet-unit-revocation">Topic 38</a>).</p>
+<p>We suggest to add new high-level requirements on <strong>basic security posture monitoring</strong> for the Wallet Providers to <strong>check regularly a minimal set of security information about the Wallet Instance</strong> as part of the support and maintenance function.</p>
+<p>A collection of fraud or risk signal related information is collected below to table 2, with indication whether the data should be collected under the proposed new HLRs on basic security posture monitoring.</p>
+<table>
+<thead>
+<tr>
+<th>Data or tool type</th>
+<th>Reason for security posture monitoring (if applicable, regulation)</th>
+<th>Monitoring at Wallet Instance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device OS</td>
+<td>potential OS vulnerabilities</td>
+<td>OK - see previous table</td>
+</tr>
+<tr>
+<td>Device type</td>
+<td>potential type-specific vulnerabilities</td>
+<td>OK - see previous table</td>
+</tr>
+<tr>
+<td>Behavioural data</td>
+<td>Unusual transaction detection, account takeovers (ATO)</td>
+<td>Not OK (privacy preservation)</td>
+</tr>
+<tr>
+<td>Device fingerprinting</td>
+<td>flag logins from unfamiliar devices, ATO</td>
+<td>Not relevant - WP has list of devices with active WIs</td>
+</tr>
+<tr>
+<td>Geolocation (IP address)</td>
+<td>Network-layer anomaly detection, ATO</td>
+<td>Not OK (privacy preservation)</td>
+</tr>
+<tr>
+<td>Geolocation (GNSS)</td>
+<td>Geospatial anomaly detection, ATO</td>
+<td>Not OK (privacy preservation)</td>
+</tr>
+<tr>
+<td>Active phone call detection</td>
+<td>Authorised push payment fraud / phishing / social engineering</td>
+<td>Not OK (privacy preservation)</td>
+</tr>
+<tr>
+<td>VPN detection</td>
+<td>attempted identity or location masking through VPN</td>
+<td>Not OK</td>
+</tr>
+<tr>
+<td>Incognito mode detection</td>
+<td>hiding malicious activity or multiple login attempts</td>
+<td>Not relevant</td>
+</tr>
+<tr>
+<td>Device rooting/jailbreaking detection</td>
+<td>Compromised device security as a whole</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Emulator detection</td>
+<td>Emulation of user device by fraudsters</td>
+<td>OK on the WU</td>
+</tr>
+<tr>
+<td>Malware detection</td>
+<td>identify and neutralise malicious software</td>
+<td>OK by default on the WU (WUA issuance)</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2. Information typically screened to execute fraud signal analysis on mobile devices</p>
+<p>Several of the signals are related to User behaviour patterns and thus will have no real value to the Wallet Provider (to conclude on the security posture of the User's device). Taking into account this aspect, as well as expectation of strict Wallet User privacy preservation with their use of a Wallet Solution, it seems the minimal additional list of security posture information (compared to table 1 earlier) to be checked is the following:</p>
+<ol>
+<li>device rooting/jailbreaking detection and</li>
+<li>emulator detection</li>
+</ol>
+<p>The Wallet Provider should therefore build software analysis mechanisms that allow detection of changes in basic security posture of a Wallet Unit. In case of raised risk the Wallet Provider shall disable the Wallet Instance from conducting transactions. The minimum mechanism specified by the ARF is revocation of the Wallet Unit Attestation (WUA) within 24 hours from identifying a risk. The Wallet Providers may have also other (more real-time) tools to disable a Wallet Unit when needed.</p>
+<p>The new HLRs are proposed in Section 4 below.</p>
+<h2 id="4-additions-and-changes-to-the-arf">4 Additions and changes to the ARF</h2>
+<h3 id="41-high-level-requirements-to-be-added-to-annex-2">4.1 High-Level Requirements to be added to Annex 2</h3>
+<p>A new topic is suggested for discussing the monitoring functions as part of support and maintenance functions of the Wallet Provider. The following HLRs are suggested to be included:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WPSM_01</td>
+<td>The Wallet Provider SHALL monitor their installed base of operational Wallet Instances for maintenance purposes. Recommended data or attributes that SHOULD be monitored include: runtime errors, UX and telemetry information, OS version and health information, Wallet Instance SDK and software library version information, user locale/localisation data, Wallet Instance version, supported WSCA/WSDCs and their supported capabilities, unique device identifier such as IDFV or persisted UUID (iOS) or AndroidID (Android), device sensor identifiers and patch levels, hardware-level details on device, BLE radio presence in device, NFC support in device.</td>
+<td>NEW - Add as new 'base' HLR to new Wallet Provider Support and Maintenance topic.</td>
+</tr>
+<tr>
+<td>WPSM_02</td>
+<td>Wallet Unit developers SHALL for maintenance purposes write custom crash logs for sending them to Wallet Provider's server for further analysis.</td>
+<td>NEW</td>
+</tr>
+<tr>
+<td>WPSM_03</td>
+<td>The Wallet Provider SHALL monitor the minimal basic security posture of operational Wallet Instances for the purpose of detecting increased security risks in the environment the Wallet Instance is run at. Information that SHOULD be monitored includes 1) detection of device rooting/jailbreaking and 2) emulator detection.</td>
+<td>NEW</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-high-level-requirements-to-be-changed">4.2 High-Level Requirements to be changed</h3>
+<h4 id="421-topic-38">4.2.1 Topic 38</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_09</td>
+<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL administratively revoke or suspend the Wallet Unit and SHALL immediately revoke the corresponding WUA(s). The Wallet Provider SHALL do so at least in the following circumstances: - If the security of the Wallet Unit, or the security of the mobile device and OS on which the corresponding Wallet Instance is installed, or the security of a WSCA/WSCD it uses for managing cryptographic keys and sensitive data, is breached or compromised in a manner that affects its trustworthiness or reliability. - If the security of the Wallet Solution is breached or compromised in a manner that affects the trustworthiness or reliability of all corresponding Wallet Units. - If the security of the common authentication and data protection mechanisms used by the Wallet Unit is breached or compromised in a manner that affects their trustworthiness or reliability. - If the security of the electronic identification scheme under which the Wallet Unit is provided is breached or compromised in a manner that affects its trustworthiness or reliability. <strong>- If a raised security posture risk is analysed for a Wallet Instance due to monitoring done according to WPSM_03.</strong></td>
+<td>MODIFIED (addition of the text in <strong>bold</strong>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="422-topic-40">4.2.2 Topic 40</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_11</td>
+<td>During the lifetime of the Wallet Unit, the Wallet Provider SHALL update the Wallet Unit as necessary to ensure its continued security and functionality.</td>
+<td>MOVE - Proposed to be moved as is into a new HLR (WPSM_04) under the wallet support and maintenance topic.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-descriptions-to-be-added-to-the-arf-main-document">4.3 Descriptions to be added to the ARF main document</h3>
+<p>A new short paragraph on runtime Wallet Instance -level monitoring as part of maintenance and security posture analysis is suggested for the ARF main text section 6.5.3.2, based on chapters 3.2 and 3.3 of the updated topic T discussion paper.</p>
+<p>Details on monitorable Wallet Instance information (table 1 of the topic T discussion paper) is included into ARF section 6.5.3.2.</p>
+<h2 id="4-references">4 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v0.91, final draft</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td>[RTS SCA]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj/eng">Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication</a></td>
+</tr>
+<tr>
+<td>[Topic AA]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md">AA - Support of Electronic Payments Customer Authentication (SCA) with the Wallet</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

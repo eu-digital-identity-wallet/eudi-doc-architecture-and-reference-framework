@@ -1,0 +1,741 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Version 1.0, updated 6 October 2025 - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Version 1.0, updated 6 October 2025 - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/assets/images/social/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Version 1.0, updated 6 October 2025 - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.0/assets/images/social/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#version-10-updated-6-october-2025" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Version 1.0, updated 6 October 2025
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="version-10-updated-6-october-2025">Version 1.0, updated 6 October 2025</h1>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/582">Link to GitHub discussion</a></p>
+<h1 id="aa-support-of-electronic-payments-customer-authentication-sca-with-the-wallet">AA - Support of Electronic Payments Customer Authentication (SCA) with the Wallet</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic AA: Support of Electronic Payments Customer Authentication (SCA) with the Wallet</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Support of Electronic Payments Customer Authentication (SCA) with the Wallet needs to be discussed further. Intention is to draft and finalise the minimally needed high-level technical requirements for the ARF.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p>Chapter 2 presents the background and introduction to the current discussion related to support of electronic payments customer authentication (SCA) with the Wallet.</p>
+</li>
+<li>
+<p>Chapter 3 presents the use cases in the scope of discussion.</p>
+</li>
+<li>
+<p>Chapter 4 presents and discusses new requirements.</p>
+</li>
+<li>
+<p>Chapter 5 refers to other topics related to support of electronic payments customer authentication (SCA) with the Wallet.</p>
+</li>
+<li>
+<p>Chapter 6 presents the additions and changes that will be made to the ARF main document as a result of discussions. </p>
+</li>
+</ul>
+<h2 id="2-background">2 Background</h2>
+<p>This topic (AA) is a continuation of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md">Topic W (Transactional data for payments and other use cases)</a>.</p>
+<p>The legal requirements applicable to Topic AA, were collected and discussed in Topic W related process.</p>
+<p>As an outcome of Topic W discussion, the set of new HLRs was introduced to ARF's [Topic 20].</p>
+<p>The purpose of Topic AA is to discuss further, detail, various aspects necessary to enable Wallet Solution Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 (payments and other use cases as defined by PSD2), basing on experience from the Large Scale Projects (EWC and Nobid).  </p>
+<h2 id="3-use-cases">3 Use Cases</h2>
+<p>Under the [European Digital Identity Regulation], a requirement has been introduced for providers in the banking and financial services sector to allow their users to perform strong user authentication with an EU Digital Identity Wallet (Article 5f(2)).</p>
+<p>At the same time, application of strong user authentication for this sector is governed by [PSD2] and [RTS SCA], which require Strong Customer Authentication (SCA) where the User:
++ (1) initiates an electronic payment transaction, or
++ (2) accesses their payment account online, or
++ (3) carries out any action through a remote channel which may imply a risk of payment fraud or other abuses.</p>
+<p>One important part of SCA is that the User’s consent is valid only for a specific action for which it has been requested, and must not be used to authorise another action (or the same action multiple times). This is known as "Dynamic Linking".</p>
+<p>In the case of initiating an electronic payment transaction or a series thereof, payers can further give their consent either directly to their Account Servicing Payment Service Provider (ASPSP) (eg. bank), or via a payee or a Payment Initiation Service Provider (PISP)  (Article 64(2) of [PSD2]).</p>
+<p>The ARF's [Topic 20] introduces the concept of dedicated SUA attestations issued into the User’s wallet by their ASPSP and then later presented in conjunction with transactional data to be signed by the Wallet Unit (for Dynamic Linking). </p>
+<p>In the PSD2 context, finally there will be two distinct usages for SUA attestations depending on the User’s counterparty: </p>
+<ul>
+<li>
+<p>Interaction between the User and their ASPSP: Here, the ASPSP acts as both the Attestation Issuer and Relying Party, effectively creating a <strong>2-party model</strong> (“<strong>issuer-requested flow</strong>”). In this scenario, <strong>all three SCA use cases are permitted</strong>;</p>
+</li>
+<li>
+<p>Interaction between the User and a payee or PISP: Here, the Attestation Issuer differs from the Relying Party, creating a <strong>3-party model</strong> (“<strong>payee-requested flow</strong>”). In this scenario, <strong>only the payment initiation SCA use case is permitted</strong>.</p>
+</li>
+</ul>
+<h2 id="4-new-requirements-discussion">4 New requirements discussion</h2>
+<p>This chapter contains various additional requirements for consideration and discussion, that may, as a result, turn into HLRs or may cause modification of existing ones in [Topic 20].</p>
+<h3 id="41-process-control">4.1 Process control</h3>
+<p>SUA attestation issuers should be able to express which of the three SCA use cases (as defined in chapter 3) are permitted for a given attestation. For this, it is proposed that issuers work with separate attestation types for the issuer-requested vs. payee-requested flows. They can then make information available in the attestation type’s metadata telling which transaction data types are allowed per attestation type.</p>
+<p>In consequence, the Wallet Unit must, when receiving a presentation request for a SUA attestation, validate if the transaction data type is permitted for a given SUA attestation type and conforms to the transaction data type’s schema.</p>
+<p><em><strong>Question 1: Should the Wallet Unit be able to validate if the transaction data type is permitted for a given SUA attestation type and conforms to the transaction data type schema?</strong></em></p>
+<p><em>Note: In the opinion of the ARF team, this is necessary that Wallet Unit is able to perform such validations, for any presentation request that involves transactional data. How the validation should be performed, will be specific per SUA attestation type, and should be specified in the related Attestation Rulebook(s) and/or Technical Specification(s).</em></p>
+<p><em>(Update after the Focus Meeting 1:)</em></p>
+<p>Following the discussions and comments, it is proposed to add a new HLR:  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SUA_07</strong></td>
+<td><strong>Upon receiving presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for  the given attestation and that the transactional data conforms to the related technical specification and/or attestation rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>All the details related to the format, syntax, processing and rendering rules of transactional data are to be defined in the related technical specification. For payment/PSD2 related SCA use cases, the specification will be included in "Technical Specification 12", that is already planned for development.   </p>
+<h3 id="42-dialogue-messagess">4.2 Dialogue messages(s)</h3>
+<p>Depending on the transaction type, the User will be displayed corresponding dialogue messages. The general concept of processing and rendering such messages is already contained in the existing SUA requirements in [Topic 20].</p>
+<p>However there are additional aspects to be considered, specific for payment/PSD2 context.</p>
+<p>The following chapters provide consideration on potential additional requirements. For each, the general question applies:</p>
+<p><em><strong>Question 2: Which of the following requirements should turn into HLRs?</strong></em></p>
+<h4 id="421-principle-of-clarity-and-unambiguity">4.2.1  Principle of Clarity and Unambiguity</h4>
+<p>Transaction data may contain elements not meant to be visually displayed to the User (e.g. a technical transaction id) and elements that are meant to be displayed. To comply with Article 5(1)(a) of [RTS SCA], the Wallet Units must display the latter to the User with absolute clarity and in an understandable manner (this includes localisation).</p>
+<p>The following requirements are being considered:
++ Information Hierarchy: The Transaction Amount (including its ISO 4217 currency code or symbol) and the Payee's Name SHALL be the most prominent elements on the authorization screen. A clear visual hierarchy must be established through the strategic use of typography, such as increased font size, bold weight, and sufficient negative space, to draw the User's immediate and primary attention to this critical information.
++ Data Fidelity: The information displayed to the User SHALL be an exact, unaltered representation of the data received in the transaction_data object from the Relying Party. The truncation, abbreviation, or summarization of the Payee's name or the transaction amount is strictly prohibited to prevent any possibility of misinterpretation.
++ Focused Interface: The authorization screen SHALL be a dedicated, modal view focused exclusively on the transaction details and the required User action (consent or cancellation). It MUST be free of extraneous or distracting elements, such as advertisements, non-contextual notifications, or unrelated navigation options, which could obscure or detract from the payment information.
++ Payment Instrument Identification: The specific Payment Instrument being used for the transaction (e.g., "Visa ending in 1234" or "Savings Account") SHALL be clearly displayed. This ensures the Payer is fully aware of which financial account the transaction will be debited from. Information on the Payment Instrument may come as part of the transaction data or from the SUA attestation.</p>
+<p><em>Note: In the opinion of the ARF team, the above requirements could be included a related Attestation Rulebook or Technical Specification potentially, but there is no need do introduce them as HLRs.</em></p>
+<h4 id="422-principle-of-explicit-and-informed-consent">4.2.2  Principle of Explicit and Informed Consent</h4>
+<p>The user's action must constitute unambiguous consent to authorize a specific payment transaction, as required by Article 64 of [PSD2].</p>
+<p>The following requirements are being considered:
++ Deliberate User Action: User consent SHALL be captured through an explicit and deliberate physical action (e.g., a tap on a button, a biometric verification). The interface MUST NOT utilize pre-selected checkboxes, toggles, or any design pattern that defaults to an affirmative consent state.
++ Contextual Call-to-Action: The primary interactive element for granting consent (i.e., the confirmation button) SHALL have a descriptive label that explicitly states the user's intent and reiterates the core transaction detail. For example: "Confirm and Pay €100.00" or "Authorize Transaction". Generic labels such as "OK," "Continue," or "Submit" or misleading labels such as  “Present attestation”, are non-compliant as they lack the necessary context. This also applies in cases where the SUA Attestation is presented together with other attestations.
++ Anti-fraud guidance: Wallets must be able to display a security hint on the transaction confirmation screen.
++ Unambiguous Action Dichotomy: The interface must present a clear and balanced choice between approving and canceling the transaction. The interactive elements for these two distinct actions SHALL be visually differentiated in terms of style, colour, and/or placement to prevent accidental authorization. The cancellation option must be equally prominent and accessible.</p>
+<p><em>Note: In the opinion of the ARF team, the above requirements could be included in a related Attestation Rulebook or Technical Specification potentially, but there is no need do introduce them as HLRs.</em></p>
+<h4 id="423-principle-of-information-integrity-and-security-wysiwys">4.2.3 Principle of Information Integrity and Security (WYSIWYS)</h4>
+<p>To comply with Article 5(2) of the [RTS SCA], the interface must ensure the integrity of the displayed information throughout the authentication process, guaranteeing that what the user sees is precisely what is being cryptographically signed.</p>
+<p>The following requirements are being considered:
++ Immutable Data Presentation: All elements of the transaction data presented to the user for authorization SHALL be rendered in a non-editable, read-only format. There must be no capability for the user or any other process to alter the displayed information on the authorization screen.
++ Secure Rendering Environment: The entire authorization screen must be rendered within a secure component of the EUDI Wallet application, isolated from other processes. This is to mitigate the risk of overlay attacks or other malicious software attempting to tamper with or obscure the displayed transaction details.
++ Visual Assurance of Dynamic Linking: The interface SHOULD provide a clear visual indicator (e.g., a padlock icon 🔒 or a security shield icon 🛡️) adjacent to the amount and payee fields. This serves as a visual affirmation to the user that these specific details are protected and are being dynamically linked to their authentication, reinforcing the WYSIWYS principle.</p>
+<p><em>Note: In the opinion of the ARF team, the "Visual Assurance" requirements could be potentially included in a related Technical Specification. Regarding the remaining two, these are security related ones. The security measures of the Wallet Solution are to be designed by the Provider and in principle will to be proven in the certification process, where the [CIR 2024/2979] lists relevant threats against which the Wallet Solution must provide countermeasures. In conclusion, there is no need do introduce above requirements as HLRs.</em></p>
+<h3 id="43-authentication-code">4.3 Authentication code</h3>
+<p><em>(Section added after the Focus Meeting 1)</em></p>
+<p>The current HLRs (by intention) do not specify how the authentication code is to be generated, its form or syntax. Following the discussion on Topic W, it was assumed that native mechanisms of the presentation protocols (like related to key binding and response signature) are sufficient here. The appropriate information is in SUA_05:</p>
+<blockquote>
+<p>The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). <em>Notes: - The resulting signature value and constitutes a proof of transaction and fulfils the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>.</em></p>
+</blockquote>
+<p>Following the discussions and comments, there is a need to re-discuss, how the authentication code can be created in an optimal way. For instance, the EWC and NOBID LSPs propose to use a <a href="https://www.rfc-editor.org/rfc/rfc7519.html#section-4.1.7">JTI</a> in the Key Binding JWT of OID4VP, as an easy-to-handle authentication code.</p>
+<p><em><strong>Question 3: Are the native mechanisms of SD-JWT and mDoc sufficient to deliver authentication code? Is there a need for change of HLR(s) in this respect?</strong></em></p>
+<h3 id="44-fraud-signals">4.4 Fraud signals</h3>
+<p><em>(Section added after the Focus Meeting 1)</em></p>
+<p>[RTS SCA] contains generic requirements for PSPs in Article 2 to have transaction monitoring mechanisms detect unauthorised or fraudulent transactions:</p>
+<blockquote>
+<ol>
+<li>
+<p>Payment service providers shall have transaction monitoring mechanisms in place that enable them to detect unauthorised or fraudulent payment transactions for the purpose of the implementation of the security measures referred to in points (a) and (b) of Article 1. Those mechanisms shall be based on the analysis of payment transactions taking into account elements which are typical of the payment service user in the circumstances of a normal use of the personalised security credentials.</p>
+</li>
+<li>
+<p>Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors:
+(a) lists of compromised or stolen authentication elements;
+(b) the amount of each payment transaction;
+(c) known fraud scenarios in the provision of payment services;
+(d) signs of malware infection in any sessions of the authentication procedure;
+(e) in case the access device or the software is provided by the payment service provider, a log of the use of the access device or the software provided to the payment service user and the abnormal use of the access device or the software.</p>
+</li>
+</ol>
+</blockquote>
+<p>The ARF does not envision any risk signals collection from the Wallet Units or making them available externally, there is no any HLRs related to the topic. Technically this is feasible and could be done at the Wallet Solution providers discretion. However, at the same time, there are strong legal requirements related to privacy protection directly in [European Digital Identity Regulation]. Finally, this aspect is outside the mandate for the ARF scope, and there is no intention to include any requirements related to risk signals. This does not however prevent Wallet Solution providers to include such additional features, the ARF does not prevent from doing so.  </p>
+<p><em>(Section added after the Focus Meeting 2:)</em></p>
+<p>Following the discussion it will be considered however to add requirements for the Wallet Solutions to check regularly a minimal set of security information about the User's device, as part of the support and maintenance of the Wallet Units. Such information would need to be taken into account to assess the security posture of a Wallet Unit, and in case the result is negative, to decide about possible invalidation (by revocation of WUA).</p>
+<p>So it is not envisied that the Relying Parties (financial institutions here) would get access such information direclty from the User device via the Wallet Instance, but the Wallet Solution Provider could do so instead. This would give financial institutions some possibility to manage transactional risks, as required by PSD2, with unified approach accross the EU (all Wallet Solutions) .</p>
+<p>Typical information and risk signals collected by the financtial institutions from User devices (in the context of SCA) are:
++ device information (OS, version, etc.),
++ behavioural information,
++ device fingerprinting,
++ geolocation (based on IP and GNSS positionning),
++ active phone call detection,
++ VPN detection,
++ incognito mode detection,
++ device rooting/jailbreaking detection,
++ emulator detection,
++ deepfake detection.</p>
+<p>However many of them are related to User behaviour patterns and thus will have no real value to the Wallet Solution Provider (to conlude on the security posture of the User's device). Taking into account this aspect, as well as priviacy issue, it seems to be reasonable to check (by the Wallet Solution Providers) only the following information:
++ device rooting/jailbreaking detection,
++ emulator detection,
++ incognito mode detection.</p>
+<p>This will be discussed in details in the context of Topic T - Support and maintenance by the Wallet Provider.</p>
+<h2 id="5-current-hlrs-and-proposals-of-changes">5 Current HLRs and Proposals of Changes</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUA_01</td>
+<td>The Wallet Units SHALL be able to process the transactional data included in a presentation request for ~~that an~~ a SUA attestation, according to all requirements in the ~~associated~~ Attestation Rulebook <strong>associated with that SUA attestation</strong>.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>SUA_02</td>
+<td>The Attestation Rulebook (see <a href="#a2312-topic-12---attestation-rulebooks">Topic 12</a>) of a SUA attestation SHALL specify syntax and semantics of the transactional data associated with <strong>and intended for</strong> that attestation ~~, as well as all necessary requirements for Wallet Units to process that transactional data, at least regarding a) displaying the data to the User when obtaining consent for signing the data, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit~~.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td><strong>SUA_02a</strong></td>
+<td><strong>The Technical Specification associated with the given SUA attestation SHALL specify all necessary requirements for Wallet Units to process  transactional data intended for this SUA attestation, at least regarding a) rendering and displaying the data to the User when obtaining consent for presentation, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit.</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>SUA_03</td>
+<td>The Attestation Provider of a SUA attestation SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the Attestation Rulebook for that attestation.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>SUA_04</td>
+<td>In the response to a presentation request that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook. <em>Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.</em></td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>SUA_05</td>
+<td>The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation, using the mechanisms provided for key binding in [SD-JWT-VC] and mdoc authentication in [ISO/IEC 18013-5], and complying with the applicable requirements in the Attestation Rulebook, see SUA_02 b). <em>Notes: - The resulting signature constitutes a proof of transaction. </em><em>This signature and/or other protocol items fulfil</em><em> ~~and fulfils~~ the requirement of the authentication code required in [PSD2]. - See also requirement OIA_02 in <a href="#a231-topic-1---accessing-online-services-with-a-wallet-unit">Topic 1</a>.</em></td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>SUA_06</td>
+<td>The Wallet Unit SHALL be able to adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to 'approve' or 'reject' a transaction), according to requirements in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the Attestation Rulebook.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td><strong>SUA_07</strong></td>
+<td><strong>Upon receiving presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for  the given attestation and that the transactional data conforms to the related technical specification and/or attestation rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.</strong></td>
+<td>New requirement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-relation-to-other-discussion-topics">6 Relation to Other Discussion Topics</h2>
+<p>The dialogue messages shall follow accessibility rules, which are discussed in Topic Q.</p>
+<p>The fraud signals check, as presented in section 4.4, will be  discussed in details in the context of Topic T - Support and maintenance by the Wallet Provider.</p>
+<h2 id="7-additions-and-changes-to-the-arf">7 Additions and Changes to the ARF</h2>
+<p>See sections 4 and 5 above. In addition, transactional data related aspects in the main text of the ARF will be updated accordingly.</p>
+<h2 id="8-references">8 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0</td>
+</tr>
+<tr>
+<td>[Topic 20]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2-high-level-requirements.md#a2320-topic-20---strong-user-authentication-for-electronic-payments">ARF Annex 2 Topic 20 - Strong User authentication for electronic payments</a></td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a></td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng">Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</a></td>
+</tr>
+<tr>
+<td>[CIR 2024/2979]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</a>)</td>
+</tr>
+<tr>
+<td>[CIR 2024/2981]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets</a></td>
+</tr>
+<tr>
+<td>[OID4VP]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID for Verifiable Presentations</a></td>
+</tr>
+<tr>
+<td>[ISO/IEC - 18013-5]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84">Mobile driving licence (mDL) application</a></td>
+</tr>
+<tr>
+<td>[PSD2]</td>
+<td><a href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng">Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC</a></td>
+</tr>
+<tr>
+<td>[RTS SCA]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj/eng">Commission Delegated Regulation (EU) 2018/389 of 27 November 2017 supplementing Directive (EU) 2015/2366 of the European Parliament and of the Council with regard to regulatory technical standards for strong customer authentication and common and secure open standards of communication</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
