@@ -6,7 +6,7 @@ subtitle: "Architecture and Reference Framework"
 # ANNEX 2 - High-Level Requirements <!-- omit from toc -->
 
 Since ARF 2.7.0, all high-level requirements in Annex 2
-are included in the [high-level-requirements.csv file](../../../hltr/high-level-requirements.csv), which allows for easy sorting and filtering of
+are included in the [high-level-requirements.csv file](https://raw.githubusercontent.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/refs/heads/main/hltr/high-level-requirements.csv), which allows for easy sorting and filtering of
 requirements. Insofar relevant, the texts in the introduction to each Topic in the original
 Annex 2 were moved to suitable sections in the ARF main document.
 
