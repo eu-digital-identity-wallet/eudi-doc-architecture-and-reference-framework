@@ -5,12 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.7.0] - 2025-11-10
+
+Changes:
+
+- The original Annex 2 has been removed. All high-level requirements in Annex 2 are now included in a .csv file, which allows for easy sorting and filtering of requirements. Insofar relevant, the texts in the introduction to each Topic in Annex 2 have been moved to suitable sections in the ARF main document.
+  
+  For the convenience of readers, Annex 2 is also included as a new .md file, which was generated from the .csv file. This new file contains the high-level requirements in the same order as the original Annex 2 file, and also contains the same Topic numbers and section indicators. However, Topics in the original file that did not contain any high-level requirements have been removed.
+- The latest version of the Discussion Paper for Topic F resulted in a number of changed High-Level Requirements in Annex 2 and in Section 4.4.3.1.
+- The Discussion Paper for Topic P was integrated into Section 4.5.
+- The Discussion Paper for Topic Q was integrated into Topic 54.
+- The Discussion Paper for Topic R was integrated into Sections 2.2, 4.3.2 and 6.5.3.3, and into Topic 40. Moreover, the distinction between the WSCA/WSCD and a keystore, which was introduced in this Topic, has been made throughout the ARF main document and Annex 2. A definition of 'keystore' was added to Annex 1.
+- The Discussion Paper for Topic S was integrated into Sections 6.3.2.3 and 6.4.2. In addition, in Annex 2, a new Topic 55 was created for the high-level requirements on Certificate Transparency for access certificates.
+- All figures in the ARF have been re-created using [draw.io](https://www.drawio.com), and the source files (in XML format) are made available in the GitHub repository of the ARF.
+- Several issues raised via Confluence and GitHub have been resolved.
+
+Apart from these changes, a limited number of editorial mistakes were corrected.
+
 ## [2.6.0] - 2025-10-13
+
+Changes:
 
 - The Discussion Paper for Topic O, and into Topic 25 and Topic 26 in Annex 2.
 - The Discussion Paper for Topic Z was integrated into Sections 6.6.2.3.3 and 6.6.3.8, among others. Moreover, multiple requirements in Annex 2 where changed or slightly adapted to account for the fact that device binding is now recommended, not mandatory.
 
-- Apart from these changes, a limited number of editorial mistakes were corrected.
+Apart from these changes, a limited number of editorial mistakes were corrected.
 
 ## [2.5.0] - 2025-09-12
 
@@ -22,8 +41,9 @@ moved to the [attestation rulebooks repository](https://github.com/eu-digital-id
     - The former accessibility content from Section 6.5.4 has been removed.  
     - In Annex 2, a new **Topic 54 on Accessibility** has been created, and
     relevant content has been moved from Topic 40 to Topic 54.  
-- Several issues raised via Confluence and GitHub have been resolved.  
-- In addition, a limited number of editorial corrections have been made.  
+- Several issues raised via Confluence and GitHub have been resolved.
+
+In addition, a limited number of editorial corrections have been made.  
 
 ## [2.4.0] - 2025-07-18
 
@@ -33,7 +53,8 @@ Changes:
 Topic 19 and Topic 40.
 - the discussion Paper for Topic H was integrated into Topic 19.
 - a number of issues raised via Confluence or GitHub were solved.
-- apart from these changes, a limited number of editorial mistakes were corrected.
+
+Apart from these changes, a limited number of editorial mistakes were corrected.
 
 ## [2.3.0] - 2025-07-04
 

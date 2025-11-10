@@ -26,7 +26,7 @@ SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 2.6.0
+VERSION        := 2.7.0
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -46,7 +46,7 @@ MKDOCS  := mkdocs
 
 # Pandoc Options
 PANDOC_OPTIONS      := --toc --from markdown+gfm_auto_identifiers --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
-PANDOC_PDF_OPTIONS  := --pdf-engine=pdflatex --template=$(PDF_TEMPLATE) --listings $(PANDOC_DATA_DIR)/metadata.yml
+PANDOC_PDF_OPTIONS  := --pdf-engine=pdflatex --template=$(PDF_TEMPLATE) --syntax-highlighting=idiomatic $(PANDOC_DATA_DIR)/metadata.yml
 PANDOC_DOCX_OPTIONS :=
 PANDOC_EPUB_OPTIONS := --to epub3
 

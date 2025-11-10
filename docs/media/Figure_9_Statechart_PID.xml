@@ -1,0 +1,80 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0" version="28.2.9">
+  <diagram name="Page-1" id="qLmDd2PQFrHfIVrGtLAO">
+    <mxGraphModel dx="810" dy="449" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-1" value="Issued" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Helvetica;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="320" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-2" value="Valid" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="320" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-3" value="Expired" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Helvetica;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="440" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-4" value="Revoked" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontFamily=Helvetica;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="200" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-5" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;" parent="1" source="xPVAkh8Ksko-M2C2wA4D-2" target="xPVAkh8Ksko-M2C2wA4D-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="270" as="sourcePoint" />
+            <mxPoint x="240" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-6" value="The Provider revokes&lt;div&gt;the PID or attestation&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" parent="xPVAkh8Ksko-M2C2wA4D-5" vertex="1" connectable="0">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-9" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;" parent="1" source="xPVAkh8Ksko-M2C2wA4D-2" target="xPVAkh8Ksko-M2C2wA4D-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="290" as="sourcePoint" />
+            <mxPoint x="300" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-10" value="The PID or attestation&lt;div&gt;expires&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" parent="xPVAkh8Ksko-M2C2wA4D-9" vertex="1" connectable="0">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-13" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;" parent="1" source="xPVAkh8Ksko-M2C2wA4D-1" target="xPVAkh8Ksko-M2C2wA4D-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="460" as="sourcePoint" />
+            <mxPoint x="720" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="220" />
+              <mxPoint x="380" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-14" value="The validity period of the PID or attestation starts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" parent="xPVAkh8Ksko-M2C2wA4D-13" vertex="1" connectable="0">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-15" value="" style="endArrow=block;html=1;rounded=1;strokeWidth=3;endFill=1;strokeColor=light-dark(#8c8c8c, #ededed);edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=oval;startFill=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="40" as="sourcePoint" />
+            <mxPoint x="379.8" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="379.8" y="100" />
+              <mxPoint x="379.8" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xPVAkh8Ksko-M2C2wA4D-16" value="The Provider issues the PID or attestation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;fontStyle=0" parent="xPVAkh8Ksko-M2C2wA4D-15" vertex="1" connectable="0">
+          <mxGeometry x="0.2625" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
