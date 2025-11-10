@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0" version="28.2.9">
+  <diagram id="diagram" name="Page-1">
+    <mxGraphModel dx="91" dy="-26" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-96" value="User Device (UD)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalAlign=top;align=left;strokeColor=#737373;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="760" y="570" width="420" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-58" value="&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;Wallet Instance&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;(WI)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=1;strokeColor=#d6b656;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="780" y="600" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#A0C0FF;strokeWidth=2;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="601" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Relying Party Instance (RPI)&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;or&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Wallet Unit&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="840" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AgY7hXo52zcuCKhdfbTI-98" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;curved=0;" parent="1" source="2" target="tklJ06Eg1gI686ZZUtUN-60" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="981" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-41" value="&amp;nbsp; UI&amp;nbsp;&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="AgY7hXo52zcuCKhdfbTI-98" vertex="1" connectable="0">
+          <mxGeometry x="0.0815" y="1" relative="1" as="geometry">
+            <mxPoint x="143" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OqG462VzuzaBs0EC9eQU-37" value="" style="shape=actor;whiteSpace=wrap;html=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="1286" y="611" width="28" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-60" value="User&lt;div&gt;Interface&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="819" y="614.5" width="80" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-71" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;User&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1275" y="647" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" value="Remote same-device&#xa;presentation&#xa;Digital Credentials API &#xa;+ OpenID4VP&#xa;" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.994;exitY=0.685;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="tklJ06Eg1gI686ZZUtUN-110" target="11" edge="1">
+          <mxGeometry x="0.4788" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1040" y="740" as="sourcePoint" />
+            <mxPoint x="1099" y="460" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="759" y="910" as="targetPoint" />
+            <mxPoint x="940" y="910" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-77" value="Common Interfaces that will be&amp;nbsp;&lt;div&gt;standardised in accordance&lt;/div&gt;&lt;div&gt;&amp;nbsp;with eIDAS (article 5a)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tklJ06Eg1gI686ZZUtUN-76" vertex="1" connectable="0">
+          <mxGeometry x="0.0815" y="1" relative="1" as="geometry">
+            <mxPoint y="-32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="910" as="targetPoint" />
+            <mxPoint x="1161.5" y="910" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-95" value="These interfaces will not be&lt;div&gt;standardised within the scope of the&amp;nbsp;&lt;/div&gt;&lt;div&gt;EUDI Wallet ecosystem. However,&amp;nbsp;&lt;/div&gt;&lt;div&gt;future versions of this ARF may&amp;nbsp;&lt;/div&gt;&lt;div&gt;define high-level requirements for&lt;/div&gt;&lt;div&gt;these interfaces&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tklJ06Eg1gI686ZZUtUN-94" vertex="1" connectable="0">
+          <mxGeometry x="0.0815" y="1" relative="1" as="geometry">
+            <mxPoint x="8" y="-51" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-110" value="Web browser or mobile app&lt;div&gt;(WB)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="697.5" width="90" height="62.5" as="geometry" />
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=1 1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="728.51" as="targetPoint" />
+            <mxPoint x="1060" y="728.51" as="sourcePoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-113" value="WI -&amp;nbsp;&lt;div&gt;platform&lt;div&gt;API&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tklJ06Eg1gI686ZZUtUN-111" vertex="1" connectable="0">
+          <mxGeometry x="-0.2212" relative="1" as="geometry">
+            <mxPoint x="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-114" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;dashed=1;dashPattern=1 1;entryX=0.983;entryY=0.357;entryDx=0;entryDy=0;entryPerimeter=0;curved=0;" parent="1" source="2" target="tklJ06Eg1gI686ZZUtUN-110" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1220" y="730" as="targetPoint" />
+            <mxPoint x="1611" y="700" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1300" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-115" value="&amp;nbsp; UI&amp;nbsp;&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tklJ06Eg1gI686ZZUtUN-114" vertex="1" connectable="0">
+          <mxGeometry x="0.0815" y="1" relative="1" as="geometry">
+            <mxPoint x="-26" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

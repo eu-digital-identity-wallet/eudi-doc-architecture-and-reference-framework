@@ -1,0 +1,964 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.1/discussion-topics/r-authentication-of-user-to-device/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>R authentication of user to device - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="R authentication of user to device - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.1/assets/images/social/discussion-topics/r-authentication-of-user-to-device.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.1/discussion-topics/r-authentication-of-user-to-device/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="R authentication of user to device - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.1/assets/images/social/discussion-topics/r-authentication-of-user-to-device.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-r-authentication-of-the-user-to-the-device" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R authentication of user to device
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 1.0, date 14 October 2025</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/585">Link to GitHub discussion</a></p>
+<h1 id="topic-r-authentication-of-the-user-to-the-device">Topic R - Authentication of the User to the device</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic R: Authentication of the User to the device.</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Requirements and guidance need to be provided to address the authentication methods available on modern mobile devices, such as PIN codes, swipe patterns, and biometrics (e.g., face or fingerprint recognition).</em></p>
+<p>The device here means the User's device where the Wallet Instance is installed.</p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p>Chapter 2 presents the legal requirements for functionality related to authentication of the User to the device.</p>
+</li>
+<li>
+<p>Chapter 3 presents and discusses a list of identified issues, with suggested changes and/or new High-Level Requirements related to this topic.</p>
+</li>
+<li>
+<p>Chapter 4 presents a log of the additions and changes that will be made to High Level Requirements in the ARF as a result of discussing this topic with the Member States.</p>
+</li>
+<li>
+<p>Chapter 5 refers to other topics related to authentication of the User to the device.</p>
+</li>
+<li>
+<p>Chapter 6 presents the additions and changes that will be made to the ARF main document and to Annex 2 as a result of discussions.</p>
+</li>
+</ul>
+<h2 id="2-legal-requirements-for-authentication-of-the-user-to-the-device">2 Legal Requirements for authentication of the User to the device</h2>
+<p>The following legal texts impose requirements on authentication of the User to the device:</p>
+<ul>
+<li>[European Digital Identity Regulation],</li>
+<li>[CIR 2024/2979] as regards the integrity and core functionalities of European Digital Identity Wallets,</li>
+<li>[CIR 2015/1502] on setting out minimum technical specifications and procedures for assurance levels for electronic identification means,</li>
+<li>[CIR 2024/2981] as regards the certification of European Digital Identity Wallets.</li>
+</ul>
+<p>This section recaps the respective legal requirements from these sources.</p>
+<h3 id="21-european-digital-identity-regulation-about-authentication-of-the-user-to-the-device">2.1  [European Digital Identity Regulation] about authentication of the User to the device</h3>
+<p>The [European Digital Identity Regulation] does not contain direct requirements for authentication of the User to the device, however it provides definition of Strong User Authentication in Article 3(51):</p>
+<blockquote>
+<p>‘strong user authentication’ means an authentication based on the use of at least two authentication factors from different categories of either knowledge, something only the user knows, possession, something only the user possesses or inherence, something the user is, that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data;</p>
+</blockquote>
+<p>The Wallet Unit is supposed to be a means of strong user authentication towards Wallet-Relying Parties and their services, while the authentication methods provided by the device to the User are part of this means.</p>
+<p>At the same time, the Wallet Unit with the PID is the electronic identification means, as defined by Article 3(2):</p>
+<blockquote>
+<p>“electronic identification means” means a material and/or immaterial unit containing person identification data and which is used for authentication for an online service or, where appropriate, for an offline service;</p>
+</blockquote>
+<p>and according to Article 5a(5)(d) shall:</p>
+<blockquote>
+<p>meet the requirements set out in Article 8 with regard to assurance level high, in particular as applied to the requirements for identity proofing and verification, and electronic identification means management and authentication;</p>
+</blockquote>
+<p>Therefore the authentication methods provided by the device to the User shall (in the applicable scope, meaning when a PID is issued or presented) comply with requirements for LoA High and strong customer authentication, set out by [European Digital Identity Regulation] and the implementing acts (see the next sections).</p>
+<h3 id="22-implementing-acts-about-authentication-of-the-user-to-the-device">2.2 Implementing acts about authentication of the User to the device</h3>
+<p>[CIR 2024/2979] contains general requirements stating that:</p>
+<ul>
+<li>the Wallet Unit shall authenticate the User prior to any further action with the Wallet Unit,</li>
+<li>the Wallet unit shall meet requirements for the characteristics and design of electronic identification means at assurance level high.</li>
+</ul>
+<p>Below are selected excerpts from the [CIR 2024/2979] that establish these requirements.</p>
+<p>Article 3(1):</p>
+<blockquote>
+<p>Wallet units shall not perform any functionality listed in Article 5a(4) of Regulation (EU) No 910/2014, except wallet user authentication to access the wallet unit, until the wallet unit has successfully authenticated the wallet user.</p>
+</blockquote>
+<p><em>Note: Functionality listed in Article 5a(4) comprises operations such as:</em></p>
+<ul>
+<li><em>issuance and presentation of attributes,</em> ​</li>
+<li><em>generation of pseudonyms,</em></li>
+<li><em>access a log of transactions (dashboard),</em> ​</li>
+<li><em>requests the erasure by a relying party of personal data,</em> ​</li>
+<li><em>reporting to a DPA,</em> ​</li>
+<li><em>signing/sealing,</em> ​</li>
+<li><em>data export and migration.</em></li>
+</ul>
+<p>Article 5(1):</p>
+<blockquote>
+<p>Wallet providers shall ensure that wallet secure cryptographic applications:</p>
+<p>(a) perform wallet cryptographic operations involving critical assets other than those needed for the wallet unit to authenticate the wallet user only in cases where those applications have successfully authenticated wallet users;</p>
+<p>(b) where they authenticate wallet users in the context of performing electronic identification at assurance level high; perform authentication of wallet users, in accordance with, the requirements for the characteristics and design of electronic identification means at assurance level high, as set out in Implementing Regulation (EU) 2015/1502;</p>
+</blockquote>
+<p>Additional and more detailed requirements to User authentication mechanisms are defined in: ​</p>
+<ul>
+<li>[CIR 2015/1502]​, which contains in particular requirements for eID means at LoA High, such as related to activation process, use of two factors and protection against attackers with high attack potential;</li>
+<li>[CIR 2024/2981], which provides list of threats in relation to i.a. User authentication, against which Wallet Solutions must provide proper security controls.</li>
+</ul>
+<p>Consequently, at least the following requirements needs to be taken into account from [CIR 2015/1502]:</p>
+<ul>
+<li>From section 2.2.1 Electronic identification means characteristics and design:</li>
+</ul>
+<blockquote>
+<p>The electronic identification means utilises at least two authentication factors from different categories.
+The electronic identification means is designed so that it can be assumed to be used only if under the control or possession of the person to whom it belongs.
+The electronic identification means protects against duplication and tampering as well as against attackers with high attack potential.
+The electronic identification means is designed so that it can be reliably protected by the person to whom it belongs against use by others.</p>
+</blockquote>
+<ul>
+<li>From section 2.2.2. Issuance, delivery and activation:</li>
+</ul>
+<blockquote>
+<p>The activation process verifies that the electronic identification means was delivered only into the possession of the person to whom it belongs.</p>
+</blockquote>
+<ul>
+<li>From section 2.3.1. Authentication mechanism:</li>
+</ul>
+<blockquote>
+<p>Where person identification data is stored as part of the authentication mechanism, that information is secured in order to protect against loss and against compromise, including analysis offline.
+The authentication mechanism implements security controls for the verification of the electronic identification means, so that it is highly unlikely that activities such as guessing, eavesdropping, replay or manipulation of communication by an attacker with enhanced-basic attack potential can subvert the authentication mechanisms.
+The authentication mechanism implements security controls for the verification of the electronic identification means, so that it is highly unlikely that activities such as guessing, eavesdropping, replay or manipulation of communication by an attacker with high attack potential can subvert the authentication mechanisms.</p>
+</blockquote>
+<p>Most of the above referenced security requirements are related to the robustness and reliability of the mechanisms offered by the Wallet Solution and the User's device, and are to be proven by certification of the Wallet Solution, as defined by [CIR 2024/2981].</p>
+<h2 id="3-discussion">3 Discussion</h2>
+<h1 id="31-interpretation-of-legal-requirements">3.1 Interpretation of legal requirements</h1>
+<p>The following contexts of the User authentication to the device can be distinguished:​</p>
+<ul>
+<li>(1) User authentication prior using any wallet functionality​,</li>
+<li>(2) Using the wallet as eID means​,</li>
+<li>(3) User authentication to the WSCA/WSCD.</li>
+</ul>
+<p>Using the Wallet as LoA High eID means (2)​, implies that the Wallet Unit (and its User authentication mechanism) must meet applicable LoA High requirements.
+In the remaining two contexts (1) and (3), the LoA of authentication does not require to comply with LoA High requirements, except if used as part of the context (1) at LoA High.  </p>
+<p>At the same time, there are the following layers of authentication of the User:​</p>
+<ul>
+<li>Authentication to the Wallet Unit (device's operating system level or Wallet Instance level),​</li>
+<li>Authentication to the WSCA/WSCD (which can rely on Wallet Unit's mechanisms or WSCA/WSCD native mechanisms, in particular for external WSCA/WSCD)​</li>
+</ul>
+<p>The effective authentication may use one or combine various authentication mechanisms, depending on the context and Wallet Solution design.</p>
+<p>The solution of "means of electronic identification" and "strong user authentication" offered by the (device-based) Wallet Solution is interpreted the following way.</p>
+<p>The first authentication factor (possession) is a PID or other device-bound attestation possibly (where the associated private key is stored in WSCD).</p>
+<p>The second authentication factor can be:</p>
+<ul>
+<li>a device built-in mechanism for authenticating the User to the device (such as a biometric factor, PIN or password), or</li>
+<li>a mechanism offered by the Wallet Instance itself (such as application PIN, password or other).</li>
+</ul>
+<p>For the sake of User experience and Wallet adoption, it is desirable that Wallet Solutions are designed to avoid redundant authentications of the User and whenever possible to rely on standard authentication mechanisms offered by the device, also when WSCA/WSCD is an external cloud service/HSM.​</p>
+<p>However, if the WSCA/WSCD is based on an external component (eg. cloud HSM), then the WSCA/WSCD will not play a role of the possession factor - this needs to be taken into account by the Wallet Solution designers.</p>
+<p>Ultimately, the design and technical implementation details are up to the Wallet Solution provider, and their correctness, compliance and robustness will be evaluated in the Wallet Solution certification process.</p>
+<h2 id="32-user-authentication-process">3.2 User authentication process</h2>
+<p>The current version of ARF (2.4) contains the following HLRs related to the User authentication process:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_14</td>
+<td>A WSCA/WSCD SHALL authenticate the User before performing any cryptographic operation involving a private or secret key of a Wallet Unit (i.e., a WUA key) or a private or secret key of a PID or an attestation stored in a Wallet Unit. For a PID key (which is part of the EUDI Wallet eID means), this WSCA/WSCD SHALL be certified to be compliant with applicable requirements for Level of Assurance High in Commission Implementing Regulation (EU) 2015/1502 section 2.2.1. <em>Note: Many actions of the Wallet Unit, such as processing a Relying Party presentation request and presenting an attestation, require multiple cryptographic operations, for example ephemeral key generation followed by key agreement and presentation signing and encryption. This requirement does not imply that a separate User authentication is necessary before each of these operations. Rather, a successful User authentication will be valid for all cryptographic operations necessary for a Wallet Unit action. It is up to the Wallet Provider to determine what constitutes a 'Wallet Unit action', finding a balance between security (more User authentications) and User convenience (fewer User authentications). During certification of the Wallet Solution, it will be verified that the solution provides an adequate level of security.</em></td>
+</tr>
+<tr>
+<td>WIAM_15</td>
+<td>Before performing any operation, a Wallet Unit SHALL authenticate the User. The Wallet Unit SHALL use the OS-level authentication mechanism according to WIAM_15a, unless this is technically impossible (for instance on some legacy devices), or the User prefers to use a Wallet Unit-specific PIN implemented by the Wallet Unit itself, as specified in WIAM_15b.</td>
+</tr>
+<tr>
+<td>WIAM_15a</td>
+<td>In order to ensure that operating system-level authentication can be used and is sufficiently secure, during installation of the Wallet Unit, the Wallet Unit SHALL enforce the activation of an OS-level User authentication mechanism with adequate security policies.</td>
+</tr>
+<tr>
+<td>WIAM_15b</td>
+<td>During installation of the Wallet Unit, the Wallet Unit SHALL enable the User to indicate if they want to use a Wallet Unit-specific PIN for User authentication, or use the OS-level User authentication mechanism. The Wallet Unit SHALL enable the User to change this preference during the lifetime of the Wallet Unit.</td>
+</tr>
+<tr>
+<td>WIAM_16</td>
+<td>For User authentication according to WIAM_15, a Wallet Unit SHALL implement an idle timeout, after which User authentication SHALL again be required. The Wallet Unit SHOULD provide the User with the option to set the idle timeout to a duration shorter than the default timeout.</td>
+</tr>
+<tr>
+<td>WIAM_17</td>
+<td>A WSCA/WSCD SHALL be able to authenticate a User in accordance with the requirements in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1.</td>
+</tr>
+</tbody>
+</table>
+<p>In the opinion of the ARF editors team, the above requirements are sufficient in principle, but they should be reworded and adapted for more clarity and for the reasons given under Question 2 below.</p>
+<p>The detailed requirements and the appropriate means or controls (eg. minimal length or complexity of the PIN/passwords, restricting the acceptable methods), are to be defined by the Wallet Solution providers to meet the requirements of LoA and the Wallet Solution certification (as set out by [CIR 2024/2981]).</p>
+<h2 id="33-question-1-is-there-a-need-to-update-the-requirements">3.3 Question 1: Is there a need to update the requirements?</h2>
+<p>It is imperative to ensure as good User experience as possible. Therefore authentication of the User in all possible contexts ideally should use always the same mechanisms/factors and avoid unnecessary or redundant authentication. For this reason the following new HLR was proposed:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WIAM_17a</strong></td>
+<td><strong>The Wallet Unit <em>SHALL</em> securely authenticate the User using a <em>multi-factor authentication mechanism</em>. The same authentication mechanism <em>SHOULD</em> also be used to unlock the local keystore, where applicable. User authentication <em>SHALL</em> support a <em>time-based control</em> (e.g., session timeout or re-authentication interval) to ensure that access is automatically revoked after a defined period of inactivity. To maintain a seamless User experience, the Wallet Unit <em>SHALL</em> avoid unnecessary re-authentication prompts within the defined validity period of a successful authentication</strong></td>
+</tr>
+</tbody>
+</table>
+<p>This proposal is evaluated as follows:</p>
+<p><strong>Contradiction with WIAM_14</strong></p>
+<p>Note that the second part of this requirement contradicts the existing requirement WIAM_14, which states that a WSCA/WSCD shall authenticate the User before performing any cryptographic operation involving a private or secret key related to <strong>any</strong> type of attestation. Therefore, we need to adapt WIAM_14 in such a way that User authentication by the WSCA/WSCD is only necessary if the Wallet Unit is used as an eID means, meaning when</p>
+<ul>
+<li>A PID is issued or presented to a Relying Party,</li>
+<li>A WUA is issued or presented to a PID Provider.</li>
+<li>The Attestation Provider of a certain type of attestation wants to achieve protection against a high attack potential.</li>
+</ul>
+<p>In conclusion, WIAM_14 should be split up in separate requirements addressing:</p>
+<ol>
+<li>PID,</li>
+<li>WUA,</li>
+<li>attestations needing protection against a high attack potential, and</li>
+<li>other attestations</li>
+</ol>
+<p>where User authentication by the WSCA/WSCD is not required for the last category.</p>
+<p><strong>Introduction of keystore component separate from WSCA/WSCD</strong></p>
+<p>Moreover, the second part of the proposed requirement WIAM_17a introduces the concept of a keystore, which has not been identified as a component of a Wallet Unit in the ARF thus far. The reason for introducing a keystore as a Wallet Unit component separate from the WSCA/WSCD is the following. From [CIR 2024/2981] it is clear that a WSCA/WSCD must be evaluated at Level of Assurance High. For example, Annex IV, section 2 (3) states</p>
+<blockquote>
+<p>As a prerequisite to the certification under national certification schemes, the WSCD shall be assessed against the requirements of assurance level high as set out in Implementing Regulation (EU) 2015/1502.</p>
+</blockquote>
+<p>Other requirements in [CIR 2024/2981] confirm this. This implies that the cryptographic assets belonging to attestations other than the PID and the WUA do not need to be managed by the WSCA/WSCD, since they do not need to achieve Level of Assurance High. Instead, these cryptographic assets are managed by a keystore. Therefore, the keystore should be introduced in the ARF main document, and all occurrences of the term 'WSCA/WSCD' should be reviewed to see if they apply to the WSCA/WSCD, the keystore, or both.</p>
+<p>In addition, the ARF editors team considers that the first, third, and fourth parts of the proposed requirement WIAM_17a are precisions or additions of existing requirements WIAM_14 - WIAM_17. It is therefore better to adapt these requirements than to add WIAM_17a as a separate requirement. See our proposal in section 4.1 below.</p>
+<p><strong>Certification of WSCA/WSCD is not required legally</strong></p>
+<p>Finally, in the public discussion in GitHub, it was pointed out that certification of the WSCA/WSCD is not required by the legislation, in contrast to what WIAM_14 currently says. According to Commission Implementing Regulation (EU) 2024/2981, an evaluation suffices. This will be added to WIAM_14.</p>
+<h3 id="34-security-considerations">3.4 Security considerations</h3>
+<p>In the discussions on this topic, it was raised that as of today the mobile devices have no means or basis to attest to Wallet-Relying Parties that the User authentication has been performed. Furthermore, in the opinion of some experts, device biometrics and other local authentication mechanisms of the devices are not fully reliable. In conclusion, today's Wallet Solutions would not achieve LoA High just based on device's authentication mechanisms - unless they are certified against an appropriate Protection Profile for Wallet Solutions (that is yet to be delivered). ​</p>
+<h2 id="4-proposals-for-changes">4 Proposals for changes</h2>
+<p>ARF (as of version 2.4) contains High-Level Requirements related to the topic included in the following sections:</p>
+<ul>
+<li>Topic 40 - Wallet Instance installation and Wallet Unit activation and management</li>
+</ul>
+<p>The existing HLRs were listed in section 3.2 above. The tables below contain the proposal for changing these HLRs.</p>
+<h3 id="41-topic-40-wallet-instance-installation-and-wallet-unit-activation-and-management">4.1 Topic 40 - Wallet Instance installation and Wallet Unit activation and management</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_14a</td>
+<td>A WSCA/WSCD managing the critical assets of a PID, such as private or secret cryptographic SHALL authenticate the User before performing any cryptographic operation involving any of these assets. <em>Note to WIAM_14a -  WIAM_14c: Many actions of the Wallet Unit, such as processing a Relying Party presentation request and presenting an attestation, require multiple cryptographic operations, for example ephemeral key generation followed by key agreement and presentation signing and encryption. These requirements does not imply that a separate User authentication is necessary before each of these operations. Rather, a successful User authentication will be valid for all cryptographic operations necessary for a Wallet Unit action. It is up to the Wallet Provider to determine what constitutes a 'Wallet Unit action', finding a balance between security (more User authentications) and User convenience (fewer User authentications). During certification of the Wallet Solution, it will be verified that the solution provides an adequate level of security.</em></td>
+</tr>
+<tr>
+<td>WIAM_14b</td>
+<td>A WSCA/WSCD managing the cryptographic assets of an attestation having a level of security High SHALL authenticate the User before performing any cryptographic operation involving any of these keys.  <em>Note: During issuance of an attestation, the Attestation Provider, in its Credential Issuer metadata, indicates the level of security it requires for the key storage and user authentication for this type of attestation; see [OpenID4VCI] section 12.2.4 and Appendix D.2.</em></td>
+</tr>
+<tr>
+<td>WIAM_14c</td>
+<td>A WSCA/WSCD managing the critical assets of a WUA SHALL authenticate the User before performing any cryptographic operation involving any of these keys. <em>Note: Since the WUA authenticates the Wallet Unit towards the PID Provider during PID issuance, WUAs must be managed at LoA High, and consequently WUA keys must be managed in the WSCD. See also ISSU_XX.</em></td>
+</tr>
+<tr>
+<td>WIAM_14d</td>
+<td>A Wallet Instance SHALL use a local key store provided by the User device to manage any cryptographic assets that are not considered to be critical assets. <em>Notes: - An example of such cryptographic assets are private and secret keys of attestations. - As mentioned in WIAM_14a and WIAM_14c, the private and secret keys of PIDs and WUAs are critical assets and therefore are stored in a WSCA/WSCD.</em></td>
+</tr>
+<tr>
+<td>WIAM_15</td>
+<td>Before performing any operation, a Wallet Instance SHALL securely authenticate the User using a multi-factor authentication mechanism provided by the User device. <em>Note: one of the authentication factors is the possession of the User device.</em></td>
+</tr>
+<tr>
+<td>WIAM_15a</td>
+<td>The Wallet Unit SHALL enforce the activation of an OS-level User authentication mechanism with adequate security policies. <em>Note: ‘Adequate’ here means adequate for any operation excluding the issuance or presentation of PIDs, WUAs, and potentially other attestations at level of security High. This includes but is not limited to generating pseudonyms, accessing the transaction log (dashboard), data export and migration, requesting the erasure of personal data by a Relying Party, and reporting a Relying Party to a DPA.</em></td>
+</tr>
+<tr>
+<td>WIAM_15b</td>
+<td>The Wallet Instance SHALL enable the User to optionally use a Wallet Instance-specific PIN for User authentication, in addition to the User authentication mechanism provided by the User device.</td>
+</tr>
+<tr>
+<td>WIAM_15c</td>
+<td>The User authentication mechanism provided by the User device SHOULD also be used to unlock the local keystore, where applicable.</td>
+</tr>
+<tr>
+<td>WIAM_16</td>
+<td>For the User authentication mechanism provided by the User device, the Wallet Instance SHALL force the User device to enable a time-based control (e.g., a session timeout or re-authentication interval), to ensure that access is automatically revoked after a defined period of inactivity.</td>
+</tr>
+<tr>
+<td>WIAM_17</td>
+<td>A WSCA/WSCD SHALL be able to authenticate a User in accordance with the requirements in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R1502">Commission Implementing Regulation (EU) 2015/1502</a> section 2.2.1.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-topic-10-issuing-a-pid-or-attestation-to-a-wallet-unit">4.2 Topic 10 -  Issuing a PID or attestation to a Wallet Unit</h3>
+<p>The following requirement will be added:</p>
+<p>| ISSU_XX | In its Credential Issuer metadata, a Wallet Provider SHALL indicate that the key storage and User authentication for a WUA must take place at Level of Assurance High. <em>Note: see [OpenID4VCI] section 12.2.4 and Appendix D.2.</em> |</p>
+<h3 id="43-changes-in-other-parts-of-the-arf">4.3 Changes in other parts of the ARF</h3>
+<p>As discussed in section 3.3</p>
+<ul>
+<li>the keystore will be introduced in the ARF main document,</li>
+<li>all occurrences of the term 'WSCA/WSCD' in the ARF main document and in Annex 2 will be reviewed to see if they apply to the WSCA/WSCD, the keystore, or both.</li>
+</ul>
+<p>Moreover, all references to requirement WIAM_14 will be updated.</p>
+<h2 id="5-relation-to-other-topics">5 Relation to Other Topics</h2>
+<h3 id="51-z-device-bound-attestations">5.1 Z - Device-bound Attestations</h3>
+<p>The issue of non device-bound attestation is a subject of comprehensive discussion within the Topic Z and the outcome of the discussion needs to be taken into account if needed.</p>
+<p>The current ARF requirements do not distinguish whether, in the context of attribute presentations, the authentication process of the User to the device concerns device-bound or non-device-bound attestation. At the same time, there are use cases such as event tickets or discount vouchers, where the bound to the device is not needed or even not wanted (eg. for ensuring easy portability). In such cases the level of assurance needed by the Wallet-Relying Party is minimal. Therefore, the requirements related to authentication of the User to the device might be significantly relaxed, but not avoided at all (see as Article 3(1) of [CIR 2024/2979] and section 2.2 of this document).
+At this stage, there are not envisioned any specific requirements / HLRs for non-device bound attestations - the current ARF implicitly allows already using the lower assurance level for authentication in such case.</p>
+<h3 id="52-relation-to-risk-register">5.2 Relation to Risk Register</h3>
+<p>The risk register for European Digital Identity Wallets [RiskRegister] contains (at least) the following risks that are related to the authentication of the User to the device:</p>
+<table>
+<thead>
+<tr>
+<th>Risk type</th>
+<th>Risk id</th>
+<th>Related risk titles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R4</td>
+<td>Identify theft</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R5</td>
+<td>Data theft</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R10</td>
+<td>Transaction manipulation</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R4 Identify theft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity theft is defined as the unauthorised acquisition of the wallet unit or loss of authentication factors enabling to impersonate a person.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R5 Data theft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception (unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to lead in some cases to Data disclosure (R6).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R6 Data disclosure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R9 Unauthorised transaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the wallet User. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R10 Transaction manipulation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction manipulation is defined as the unauthorised alteration of operations in the wallet. Transaction manipulation is an attack on integrity, and it is related to a data integrity breach.</td>
+</tr>
+</tbody>
+</table>
+<p>More specifically, [RiskRegister]  describes the following threats to a Wallet:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Threat description</th>
+<th>Related risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR35</td>
+<td>An attacker can obtain a knowledge factor used for user authenticating to the WSCA.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR55</td>
+<td>An attacker can bypass the user authentication method to use a pseudonym generated by a wallet unit.</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR57</td>
+<td>An attacker can export wallet data, including PID, (Q)EAAs or logs.</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR87</td>
+<td>An attacker can activate/take over the wallet remotely (e.g., a bank app embedding an authentication or attestation request) without the explicit consent or sole control of the user, in situations where the user is unaware of (e.g., asleep), or cannot see the relying party.</td>
+<td>Transaction manipulation (R10)</td>
+</tr>
+<tr>
+<td>TR95</td>
+<td>An attacker can issue a PID without the user’s consent.</td>
+<td>Unauthorised transaction (R9)</td>
+</tr>
+<tr>
+<td>TR98</td>
+<td>An attacker can use the wallet outside of the user’s control.</td>
+<td>Unauthorised transaction (R9)</td>
+</tr>
+<tr>
+<td>TR113</td>
+<td>An attacker can defeat the user authentication mechanism itself to bypass the authentication of the wallet user.</td>
+<td>Effect on various risks</td>
+</tr>
+<tr>
+<td>TR133</td>
+<td>An attacker can intercept communication between the wallet instance and the WSCA, or replay/imitate a user (e.g. by hijacking authentication mechanism).</td>
+<td>Effect on various risks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
+<p>See section 4. In addition, authentication of the User to the device aspects in the main text of the ARF will be updated accordingly.</p>
+<h2 id="7-references-tbd">7 References (tbd)</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0</td>
+</tr>
+<tr>
+<td>[Topic 40]</td>
+<td>Topic 40 - Wallet Instance installation and Wallet Unit activation and management</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td>[CIR 2024/2979]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</a></td>
+</tr>
+<tr>
+<td>[CIR 2015/1502]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2015/1502/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 8 September 2015 on setting out minimum technical specifications and procedures for assurance levels for electronic identification means pursuant to Article 8(3) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market</a></td>
+</tr>
+<tr>
+<td>[CIR 2024/2981]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets</a></td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2981/oj/eng">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, 28 November 2024</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
