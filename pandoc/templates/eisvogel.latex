@@ -47,6 +47,12 @@ $if(CJKmainfont)$
 \PassOptionsToPackage{space}{xeCJK}
 $endif$
 \documentclass[
+$for(babel-otherlangs)$
+  $babel-otherlangs$,
+$endfor$
+$if(babel-lang)$
+  $babel-lang$,
+$endif$
 $if(fontsize)$
   $fontsize$,
 $endif$
@@ -127,36 +133,36 @@ $endif$
 \ifPDFTeX\else
   % xetex/luatex font selection
 $if(mainfont)$
-  $if(mainfontfallback)$
-    \ifLuaTeX
-      \usepackage{luaotfload}
-      \directlua{luaotfload.add_fallback("mainfontfallback",{
-        $for(mainfontfallback)$"$mainfontfallback$"$sep$,$endfor$
-      })}
-    \fi
-  $endif$
+$if(mainfontfallback)$
+  \ifLuaTeX
+    \usepackage{luaotfload}
+    \directlua{luaotfload.add_fallback("mainfontfallback",{
+      $for(mainfontfallback)$"$mainfontfallback$"$sep$,$endfor$
+    })}
+  \fi
+$endif$
   \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$$if(mainfontfallback)$,RawFeature={fallback=mainfontfallback}$endif$]{$mainfont$}
 $endif$
 $if(sansfont)$
-  $if(sansfontfallback)$
-    \ifLuaTeX
-      \usepackage{luaotfload}
-      \directlua{luaotfload.add_fallback("sansfontfallback",{
-        $for(sansfontfallback)$"$sansfontfallback$"$sep$,$endfor$
-      })}
-    \fi
-  $endif$
+$if(sansfontfallback)$
+  \ifLuaTeX
+    \usepackage{luaotfload}
+    \directlua{luaotfload.add_fallback("sansfontfallback",{
+      $for(sansfontfallback)$"$sansfontfallback$"$sep$,$endfor$
+    })}
+  \fi
+$endif$
   \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$$if(sansfontfallback)$,RawFeature={fallback=sansfontfallback}$endif$]{$sansfont$}
 $endif$
 $if(monofont)$
-  $if(monofontfallback)$
-    \ifLuaTeX
-      \usepackage{luaotfload}
-      \directlua{luaotfload.add_fallback("monofontfallback",{
-        $for(monofontfallback)$"$monofontfallback$"$sep$,$endfor$
-      })}
-    \fi
-  $endif$
+$if(monofontfallback)$
+  \ifLuaTeX
+    \usepackage{luaotfload}
+    \directlua{luaotfload.add_fallback("monofontfallback",{
+      $for(monofontfallback)$"$monofontfallback$"$sep$,$endfor$
+    })}
+  \fi
+$endif$
   \setmonofont[$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$if(monofontfallback)$,RawFeature={fallback=monofontfallback}$endif$]{$monofont$}
 $endif$
 $for(fontfamilies)$
@@ -177,12 +183,12 @@ $if(CJKmainfont)$
   \ifXeTeX
     \usepackage{xeCJK}
     \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
-    $if(CJKsansfont)$
-      \setCJKsansfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKsansfont$}
-    $endif$
-    $if(CJKmonofont)$
-      \setCJKmonofont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmonofont$}
-    $endif$
+$if(CJKsansfont)$
+    \setCJKsansfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKsansfont$}
+$endif$
+$if(CJKmonofont)$
+    \setCJKmonofont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmonofont$}
+$endif$
   \fi
 $endif$
 $if(luatexjapresetoptions)$
@@ -231,7 +237,6 @@ $else$
 \usepackage{setspace}
 \setstretch{1.2}
 $endif$
-
 $--
 $-- paragraph formatting
 $--
@@ -276,14 +281,12 @@ $if(block-headings)$
 \makeatother
 $endif$
 $endif$
-
 $--
 $-- verbatim in notes
 $--
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 $endif$
-
 $-- highlighting
 $if(listings)$
 \usepackage{listings}
@@ -313,12 +316,12 @@ $highlighting-macros$
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,fontsize=$if(code-block-font-size)$$code-block-font-size$$else$\small$endif$,commandchars=\\\{\}}
 
 $endif$
-
 $--
 $-- tables
 $--
 $if(tables)$
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 $if(multirow)$
 \usepackage{multirow}
 $endif$
@@ -340,7 +343,6 @@ $else$
 \makesavenoteenv{longtable}
 $endif$
 $endif$
-
 $--
 $-- graphics
 $--
@@ -367,7 +369,6 @@ $endif$
 $if(svg)$
 \usepackage{svg}
 $endif$
-
 $--
 $-- strikeout/underline
 $--
@@ -395,7 +396,6 @@ $if(CJKmainfont)$
 $endif$
 \fi
 $endif$
-
 $--
 $-- CSL citations
 $--
@@ -434,18 +434,16 @@ $if(csl-refs)$
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
-
 $--
 $-- Babel language support
 $--
 $if(lang)$
 \ifLuaTeX
-\usepackage[bidi=basic]{babel}
+\usepackage[bidi=basic,shorthands=off,$for(babeloptions)$,$babeloptions$$endfor$]{babel}
 \else
-\usepackage[bidi=default]{babel}
+\usepackage[bidi=default,shorthands=off,$for(babeloptions)$,$babeloptions$$endfor$]{babel}
 \fi
 $if(babel-lang)$
-\babelprovide[main,import]{$babel-lang$}
 $if(mainfont)$
 \ifPDFTeX
 \else
@@ -453,47 +451,34 @@ $if(mainfont)$
 \fi
 $endif$
 $endif$
-$for(babel-otherlangs)$
-\babelprovide[import]{$babel-otherlangs$}
-$endfor$
 $for(babelfonts/pairs)$
 \babelfont[$babelfonts.key$]{rm}{$babelfonts.value$}
 $endfor$
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-$if(selnolig-langs)$
 \ifLuaTeX
-  \usepackage[$for(selnolig-langs)$$it$$sep$,$endfor$]{selnolig} % disable illegal ligatures
+  \usepackage{selnolig} % disable illegal ligatures
 \fi
 $endif$
-$endif$
-
 $--
 $-- pagestyle
 $--
 $if(pagestyle)$
 \pagestyle{$pagestyle$}
 $endif$
-
 $--
 $-- prevent overfull lines
 $--
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-
 $--
 $-- tight lists
 $--
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
 $--
 $-- subfigure support
 $--
 $if(subfigure)$
 \usepackage{subcaption}
 $endif$
-
 $--
 $-- text direction support for pdftex
 $--
@@ -506,7 +491,6 @@ $if(dir)$
   \newenvironment{LTR}{\beginL}{\endL}
 \fi
 $endif$
-
 $--
 $-- bibliography support support for natbib and biblatex
 $--
@@ -520,15 +504,11 @@ $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
 $endif$
-$if(nocite-ids)$
-\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
-$endif$
-
 $--
 $-- csquotes
 $--
 $if(csquotes)$
-\usepackage{csquotes}
+\usepackage[$for(csquotesoptions)$$csquotesoptions$$sep$,$endfor$]{csquotes}
 $endif$
 $for(header-includes)$
 $header-includes$
@@ -648,6 +628,11 @@ $endif$
 % 'default' option sets the default
 % font family to Source Sans Pro, not \sfdefault.
 %
+% Note that the font has been officially renamed to `Source Sans 3`, and
+% the version provided by the `sourcesanspro` package is slightly outdated.
+% You can install the newer version locally and use it, for example, with
+% `mainfont: "Source Sans 3"` in the YAML metadata (requires XeTeX or LuaTeX).
+%
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   $if(fontfamily)$
   $else$
@@ -685,10 +670,9 @@ $endif$
 % heading color
 %
 \definecolor{heading-color}{RGB}{40,40,40}
-\addtokomafont{section}{\color{heading-color}}
-% When using the classes report, scrreprt, book,
-% scrbook or memoir, uncomment the following line.
-%\addtokomafont{chapter}{\color{heading-color}}
+% By default, the KOMA-Script classes will typeset sectioning headings in
+% sans-serif. Use the normal body font for headings.
+\addtokomafont{disposition}{\normalfont\color{heading-color}\bfseries}
 
 %
 % variables for title, author and date
@@ -898,6 +882,15 @@ contents={%
 $endif$
 $endif$
 
+%
+% Define watermark
+%
+$if(watermark)$
+\usepackage{draftwatermark}
+\SetWatermarkText{$watermark$}
+\SetWatermarkScale{.5}
+$endif$
+
 \begin{document}
 
 $if(titlepage)$
@@ -1021,6 +1014,9 @@ $body$
 
 $if(has-frontmatter)$
 \backmatter
+$endif$
+$if(nocite-ids)$
+\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
 $endif$
 $if(natbib)$
 $if(bibliography)$

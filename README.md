@@ -112,9 +112,12 @@ verification with regard to the initiation of qualified trust services,
 - [CIR 2025/1929](http://data.europa.eu/eli/reg_impl/2025/1929/oj) regarding the binding of date and time to data and establishing the accuracy of the time sources for the provision of qualified electronic time stamps,
 - [CIR 2025/1942](http://data.europa.eu/eli/reg_impl/2025/1942/oj) regarding qualified validation services for qualified electronic signatures and qualified validation services for qualified electronic seals,
 - [CIR 2025/1943](http://data.europa.eu/eli/reg_impl/2025/1943/oj) regarding reference standards for qualified certificates for electronic signatures and qualified certificates for electronic seals,
-- [CIR 2025/1944](http://data.europa.eu/eli/reg_impl/2025/1944/oj) regarding reference standards for processes for sending and receiving data in qualified electronic registered delivery services and as regards interoperability of those services,
+- [CIR 2025/1944](http://data.europa.eu/eli/reg_impl/2025/1944/oj) regarding reference standards for processes for sending and receiving data in qualified electronic registered delivery services and as regarding interoperability of those services,
 - [CIR 2025/1945](http://data.europa.eu/eli/reg_impl/2025/1945/oj) regarding the validation of qualified electronic signatures and of qualified electronic seals and the validation of advanced electronic signatures based on qualified certificates and of advanced electronic seals based on qualified certificates,
-- [CIR 2025/1946](http://data.europa.eu/eli/reg_impl/2025/1946/oj) regarding qualified preservation services for qualified electronic signatures and for qualified electronic seals.
+- [CIR 2025/1946](http://data.europa.eu/eli/reg_impl/2025/1946/oj) regarding qualified preservation services for qualified electronic signatures and for qualified electronic seals,
+- [CIR 2025/2160](http://data.europa.eu/eli/reg_impl/2025/2160/oj) regarding reference standards, specifications and procedures for the management of risks to the provision of non-qualified trust services,
+- [CIR 2025/2162](http://data.europa.eu/eli/reg_impl/2025/2162/oj) regarding the accreditation of conformity assessment bodies performing the assessment of qualified trust service providers and the qualified trust services they provide, the conformity assessment report and the conformity assessment scheme, 
+- [CID 2025/2164](http://data.europa.eu/eli/dec_impl/2025/2164/oj) regarding the version of the standard on which the common template for the trusted lists is based.
 
 ## Contents of the repository
 
