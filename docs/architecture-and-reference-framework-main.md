@@ -197,7 +197,7 @@ meaningful interactions under the proposed use cases.
 The definitions used in this document can be found in
 [Annex 1](./annexes/annex-1/annex-1-definitions.md) of this document.
 
-### 1.6 Change Log
+### 1.6 Change Log v2.7.2
 
 #### 1.6.1 Overview
 
@@ -433,7 +433,7 @@ registration of the pseudonym or at a later interaction.
 See also [Topic 11](./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a238-topic-11---pseudonyms)
 and the [Discussion Paper on Topic E](./discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md).
 
-### 2.6 The role of use cases in the development of the Architecture and Reference Framework
+### 2.6 The role of Use Cases
 
 #### 2.6.1 Overview
 

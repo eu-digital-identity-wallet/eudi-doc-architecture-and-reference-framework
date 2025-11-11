@@ -87,7 +87,7 @@ if __name__ == '__main__':
     # Define the input and output filenames
     template_file = 'annex-2-high-level-requirements-by-category.jinja2'
     csv_file = '../high-level-requirements.csv'
-    output_file = '../../docs/annexes/annex-2/annex-2-high-level-requirements-by-category.md'
+    output_file = '../../docs/annexes/annex-2/annex-2.03-high-level-requirements-by-category.md'
 
     # Ensure you have the Jinja2 library installed: pip install Jinja2
 
