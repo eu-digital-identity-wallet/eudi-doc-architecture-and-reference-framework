@@ -1,5 +1,5 @@
 
-Version 0.5, updated 8 October 2025
+Version 1.0, updated 6 November 2025
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/584)
 
@@ -46,7 +46,7 @@ of a CA issuing access certificates that it should include:
 - *a description, where relevant, on how a provider of wallet-relying party 
 access certificates logs all wallet-relying party access certificates they 
 have issued, in compliance with internet engineering task force (‘IETF’) 
-request for comments (‘RFC’) 9162 Certificate Transparency version 2.0*
+request for comments (‘RFC’) 9162 Certificate Transparency Version 2.0*
 
 Note: “*…a provider of wallet-relying party access certificates*” – above is 
 a CA authorized to issue access certificates.
@@ -67,7 +67,11 @@ be changed or removed in a future version of this ARF.
 
 A CA issuing access certificates SHALL register these in a CT log according to 
 RFC 9162. Examples of CT log providers are Google and Cloudflare for SSL/TLS 
-certificates issued for a domain or subdomain.
+certificates issued for a domain or subdomain. Currently no CT log providers are available in Europe. How to address this situation is out of scope of the ARF.
+
+CT logs are used to ensure accuracy of issued access certificates with two or more log providers. This does not mean that the RP is registered or published twice. It only means that there is way to detect access certificates that were issued in error or fraudulently.
+
+Trust provided by CT logs is limited to the issuance of access certificates. They are two or more sources of truth stating who an access certificate has been issued to.
 
 ####  Certificate Transparency Logs
 
@@ -150,9 +154,8 @@ append-only, and that no unauthorized modifications or omissions go unnoticed.
 Finally, drawing from the Web PKI best practice, it is important that
  **each certificate be registered in at least two independent CT logs**. 
 
- It is assumed that the new European CT log infrastructure will define what 
- version of RFC 9162 and other implementation requirements such as the number 
- of CT logs a CA issuing access certificates shall register with is defined.
+ It is assumed that the new European CT log infrastructure will define 
+ which standard to use, version of RFC 9162 or RFC 6962, and other implementation requirements such as the number of CT logs a CA issuing access certificates shall register with is defined.
 
 
 #### 3.3.2 CT log usage
@@ -183,7 +186,7 @@ for detecting new domains (see for example, Kondracki et al. "Uninvited Guests:
 Analyzing the Identity and Behavior of Certificate Transparency Bots", in Usenix 
 Security, 2022)
 
-However, this is not expected to be case for CT logs for access certificates, 
+However, this is not expected to be the case for CT logs for access certificates, 
 as the list of access certificates is already public. Collating all access certificates in one or more CT logs does not seem to pose any threat as this information is already publicly available.
 
 #### 3.3.4 Incident response
@@ -220,21 +223,21 @@ Currently no High-Level Requirements for Certificate Transparency are included i
 
 | **Reference** | **Requirement specification** |
 |-----------|------------------|
-| CT_01 | A CA issuing access certificates SHALL register these in a CT log according to RFC 9162, if such a log is available. |
-| CT_02 | A CA issuing access certificates SHALL include a description in its CPS how all access certificates are logged according to RFC 9162| 
-| CT_03 | In case a CT log provider is available, the Access CA's SHALL act as monitors in the CT eco-system |
-| CT_04 | The issuing CA SHALL include at least one Signed Certificate Timestamp (SCT) in the certificate|
-| CT_05 | The Wallet Unit SHALL check that the access certificate includes at least one Signed Certificate Timestamp (SCT) |
-| CT_06 | A Wallet Unit SHALL not communicate with a RP which access certificate does not include a SCT |
-
+| CT_01 | An Access CA issuing access certificates SHALL register these in a CT log according to RFC 9162, if such a log is available for access certificates.|
+| CT_02 | An Access CA issuing access certificates SHALL describe in its CPS how it logs all access certificates.| 
+| CT_03 | In case a CT log provider for access certificates is available, all Access CAs SHALL act as monitors in the CT ecosystem. Access CAs SHOULD still monitor the CT logs in situations of temporary unavailability. |
+| CT_04 | An Access CA SHALL include at least one Signed Certificate Timestamp (SCT) in each access certificate.|
+| CT_05 | When verifying an access certificate during PID or attestation issuance or presentation, a Wallet Unit SHALL also verify that the access certificate includes at least one valid Signed Certificate Timestamp (SCT). |
+| CT_06 | If an access certificate does not include a valid SCT, a Wallet Unit SHALL handle this as a failure or Relying Party authentication, in compliance with all requirements in [[Topic 6](#a234-topic-6---relying-party-authentication-and-user-approval)] and in particular requirement RPI_06a. |
 
 The HLRs should address:
 1. How the certificate verifier performs checks against the CT log? Directly or via a fraud detection system?
 2. What checks that should be performed and what constitutes a malicious entry?
 3. What protocols that should be offered by a fraud detection system to all certificate verifiers?
 
-### 4.2 Version of RFC 9162 in CIR (EU) 2025/848
-The CIR clearly states that version 2 of RFC 9162 shall be used. From comments received it seems that the previous version is implemented and used. As version 2 includes substantial improvements and the Commission might be developing a European CT log infrastructure it should be a task for this initiative to decide which version to use. Consideration of which version to use is dependent on if existing services (version 1) from Cloudflare and Google are to be used.
+### 4.2 RFC 9162 in CIR (EU) 2025/848
+The CIR clearly states that RFC 9162 shall be used. From comments received it seems that the previous standard (RFC 6962) is implemented and used. As RFC 9162 includes substantial improvements and the Commission might be developing a European CT log infrastructure it should be a task for this initiative to decide which  standard
+to use. Consideration of which version to use is dependent on if existing services from Cloudflare and Google are to be used.
 
 
 ### 4.3 Proposed ARF changes 
@@ -242,9 +245,18 @@ It is planned to introduce a new section in the ARF on Certificate Transparency.
 
 In addition to these planned changes, further changes on this subject will follow the outcome of the discussion.
 
+Topic S will be integrated into ARF 2.7.0
+
 ## 5 References
 
 | **Reference** | **Description**|
 |-------------------|------------------|
 | [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v2.5.0 |
 | [CIR 2025/848] | Commission Implementing Regulation (EU) 2025/848 |
+| [RFC 9162] | IETF Certificate Transparency Version 2.0 |
+
+
+
+
+
+
