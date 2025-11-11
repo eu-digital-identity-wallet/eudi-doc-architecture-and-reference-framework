@@ -42,7 +42,7 @@ def load_requirements_by_category(csv_path):
     except Exception as e:
         print(f"An error occurred while reading the CSV file: {e}")
         return None
-        
+
     return dict(sorted(requirements.items(), key=lambda x: int(x[0])))
 
 def generate_markdown_file(template_name, csv_name, output_name):
@@ -56,7 +56,7 @@ def generate_markdown_file(template_name, csv_name, output_name):
     """
     # 1. Set up the Jinja2 environment to look for templates in the current directory
     env = Environment(loader=FileSystemLoader('.'), trim_blocks=True, lstrip_blocks=True)
-    
+
     try:
         template = env.get_template(template_name)
     except Exception as e:
@@ -88,9 +88,9 @@ if __name__ == '__main__':
     # Define the input and output filenames
     template_file = 'annex-2-high-level-requirements-by-topic.jinja2'
     csv_file = '../high-level-requirements.csv'
-    output_file = '../../docs/annexes/annex-2/annex-2-high-level-requirements-by-topic.md'
-    
+    output_file = '../../docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md'
+
     # Ensure you have the Jinja2 library installed: pip install Jinja2
-    
+
     # Run the generation process
     generate_markdown_file(template_file, csv_file, output_file)

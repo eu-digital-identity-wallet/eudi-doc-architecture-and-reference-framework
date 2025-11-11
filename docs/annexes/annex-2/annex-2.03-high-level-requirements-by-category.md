@@ -3,7 +3,7 @@ title: "European Digital Identity Wallet"
 subtitle: "Architecture and Reference Framework"
 ...
 
-# ANNEX 2 - High-Level Requirements
+# ANNEX 2.03 - High-Level Requirements by category <!-- omit from toc -->
 
 ## A.2 High-level requirements by category
 

@@ -3,7 +3,7 @@ title: "European Digital Identity Wallet"
 subtitle: "Architecture and Reference Framework"
 ...
 
-# ANNEX 2 - High-Level Requirements <!-- omit from toc -->
+# ANNEX 2.01 - High-Level Requirements <!-- omit from toc -->
 
 Since ARF 2.7.0, all high-level requirements in Annex 2
 are included in the [high-level-requirements.csv file](https://raw.githubusercontent.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/refs/heads/main/hltr/high-level-requirements.csv), which allows for easy sorting and filtering of
