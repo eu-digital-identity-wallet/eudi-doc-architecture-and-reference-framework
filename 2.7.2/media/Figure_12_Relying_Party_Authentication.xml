@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0" version="28.2.9">
+  <diagram name="Page-1" id="de4LEZXSZIaNopD2jWJH">
+    <mxGraphModel dx="714" dy="410" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="g8skeidzbHgNXhF_FQfh-1" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="40" width="100" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-2" value="Wallet Instance" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="100" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-5" value="Relying Party instance" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="40" width="100" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-6" value="Registering CA" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="710" y="40" width="100" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-7" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="530" y="140" as="sourcePoint" />
+            <mxPoint x="760" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-8" value="A. Register Relying Party and&lt;div&gt;obtain Relying Party Instance Certificate&lt;/div&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g8skeidzbHgNXhF_FQfh-7">
+          <mxGeometry x="-0.0782" y="-2" relative="1" as="geometry">
+            <mxPoint x="-96" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-9" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" edge="1" parent="1" target="g8skeidzbHgNXhF_FQfh-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="310" y="160" as="sourcePoint" />
+            <mxPoint x="570" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-10" value="B. Obtain Trust Anchor" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="g8skeidzbHgNXhF_FQfh-9">
+          <mxGeometry x="-0.0782" y="-2" relative="1" as="geometry">
+            <mxPoint x="-197" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-14" value="1. Prepare attribute request&lt;div&gt;including relying Party Instance&lt;/div&gt;&lt;div&gt;certificate and trust chain&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry x="-0.875" relative="1" as="geometry">
+            <mxPoint x="530" y="220" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="600" y="220" />
+              <mxPoint x="600" y="240" />
+            </Array>
+            <mxPoint x="530" y="240" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-15" value="2. Sign request using Relying&lt;div&gt;Party Instance private key&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry x="-0.875" relative="1" as="geometry">
+            <mxPoint x="530" y="290" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="600" y="290" />
+              <mxPoint x="600" y="310" />
+            </Array>
+            <mxPoint x="530" y="310" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-16" value="3. Attribute request" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" edge="1" parent="1">
+          <mxGeometry x="0.9092" width="80" relative="1" as="geometry">
+            <mxPoint x="530.19" y="330" as="sourcePoint" />
+            <mxPoint x="310" y="330" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-17" value="4. Verify signature using public&lt;div&gt;key from Relying Party Instance&amp;nbsp;&lt;/div&gt;&lt;div&gt;certificate&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry x="-0.875" relative="1" as="geometry">
+            <mxPoint x="310" y="390" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="380" y="390" />
+              <mxPoint x="380" y="410" />
+            </Array>
+            <mxPoint x="310" y="410" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-18" value="5. Verify Relying Party Instance&lt;div&gt;certificate and trust chain using&lt;/div&gt;&lt;div&gt;trust Anchor&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry x="-0.875" relative="1" as="geometry">
+            <mxPoint x="310" y="460" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="380" y="460" />
+              <mxPoint x="380" y="480" />
+            </Array>
+            <mxPoint x="310" y="480" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-19" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="310" y="541" as="sourcePoint" />
+            <mxPoint x="759.5" y="541" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-20" value="6. Validate that Relying Party&lt;div&gt;Instance certificate and trust&lt;/div&gt;&lt;div&gt;chain are not revoked&lt;/div&gt;" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="g8skeidzbHgNXhF_FQfh-19">
+          <mxGeometry x="-0.0782" y="-2" relative="1" as="geometry">
+            <mxPoint x="-197" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-21" value="7. Request approval for&lt;div&gt;presenting attributes&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" edge="1" parent="1">
+          <mxGeometry x="0.9092" width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="570" as="sourcePoint" />
+            <mxPoint x="140" y="570" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-22" value="8. Approval" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" edge="1" parent="1">
+          <mxGeometry x="-0.8799" width="80" relative="1" as="geometry">
+            <mxPoint x="139.81034482758616" y="600" as="sourcePoint" />
+            <mxPoint x="309.5000000000001" y="600" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-23" value="9. Send response with requested&lt;div&gt;attributes&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" edge="1" parent="1">
+          <mxGeometry x="-0.9072" width="80" relative="1" as="geometry">
+            <mxPoint x="309.81034482758616" y="620" as="sourcePoint" />
+            <mxPoint x="529.5" y="620" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
