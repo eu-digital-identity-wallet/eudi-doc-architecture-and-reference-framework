@@ -5790,7 +5790,9 @@ Roadmap, which contains the latest information regarding the targeted version.
 ## 11 Annexes
 
 - Definitions - [Annex 1](./annexes/annex-1/annex-1-definitions.md)
-- High Level Technical Requirements - [Annex 2](./annexes/annex-2/annex-2-high-level-requirements-by-topic.md)
+- High Level Technical Requirements - [Annex 2](./annexes/annex-2/annex-2.01-high-level-requirements.md)
+    -  High Level Technical Requirements by topic - [Annex 2.02](./annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md)
+    -  High Level Technical Requirements by category - [Annex 2.03](./annexes/annex-2/annex-2.03-high-level-requirements-by-category.md)
 - Rulebooks - Annex 3:
     - PID Rulebook - [Annex 3.1](./annexes/annex-3/annex-3.01-pid-rulebook.md)
     - mDL Rulebook - [Annex 3.2](./annexes/annex-3/annex-3.02-mDL-rulebook.md)
