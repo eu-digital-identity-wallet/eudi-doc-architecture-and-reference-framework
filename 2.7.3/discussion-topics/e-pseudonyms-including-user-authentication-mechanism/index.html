@@ -1,0 +1,1264 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.3/discussion-topics/e-pseudonyms-including-user-authentication-mechanism/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>E pseudonyms including user authentication mechanism - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="E pseudonyms including user authentication mechanism - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.3/assets/images/social/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.3/discussion-topics/e-pseudonyms-including-user-authentication-mechanism/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="E pseudonyms including user authentication mechanism - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.7.3/assets/images/social/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#e-pseudonyms-including-user-authentication-mechanism" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              E pseudonyms including user authentication mechanism
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/eu-logo.jpg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 0.9, updated 24 October 2025</p>
+<p><a href="https://www.github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/375">Link to GitHub discussion</a></p>
+<h1 id="e-pseudonyms-including-user-authentication-mechanism">E - Pseudonyms, including User authentication mechanism</h1>
+<h2 id="versioning">Versioning</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0.7</code> (part of ARF 2.5)</td>
+<td>03.04.2025</td>
+<td>Initial version after first rounds of discussion.</td>
+</tr>
+<tr>
+<td><code>0.8</code></td>
+<td>26.09.2025</td>
+<td>Restructuring, additional use cases added, and HLRs for future use cases.</td>
+</tr>
+<tr>
+<td><code>0.9</code></td>
+<td>25.10.2025</td>
+<td>Optional to implement WebAuthn, revision of HLRs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic E: Pseudonyms, including User authentication mechanism.
+The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>High-level requirements for pseudonyms in the ARF need to be further detailed, including
+specifying the use cases where pseudonyms should be applied.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHALL NOT', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, prohibitions, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p><a href="#2-types-of-pseudonyms">Chapter 2</a> presents a basic distinction between different types of pseudonyms as well as introducing terminology for these different types. </p>
+</li>
+<li>
+<p><a href="#3-legal-requirements-for-pseudonyms">Chapter 3</a> presents the legal requirements for functionality related to pseudonyms.</p>
+</li>
+<li>
+<p><a href="#4-use-cases">Chapter 4</a> explains envisioned use cases for pseudonyms and lists open questions related to these use cases.</p>
+</li>
+<li>
+<p><a href="#5-high-level-approach-to-pseudonyms-w3c-webauthn">Chapter 5</a> presents the current (as stated in [CIR.2024.2979] and version 0.7 of this paper) technical approach to pseudonyms and highlights its challenges.</p>
+</li>
+<li>
+<p><a href="#6-relation-to-other-topics">Chapter 6</a> relates the topic to other topics being discussed and previously identified risks.</p>
+</li>
+<li>
+<p><a href="#7-changes-to-the-arf">Chapter 7</a> presents the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.</p>
+</li>
+<li>
+<p><a href="#8-references">Chapter 8</a> lists references used in this document. </p>
+</li>
+</ul>
+<p>Finally, for completeness, in <a href="#appendix-b-questions-related-to-use-cases-a-and-b">Appendix A</a>, we include some of the previous questions that was discussed during the meetings for the basic use cases (<a href="#41-use-case-a-pseudonymous-authentication">Use Case A</a> and <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a>).</p>
+<h2 id="2-types-of-pseudonyms">2 Types of Pseudonyms</h2>
+<p>A pseudonym is a fictitious name taken by a person for a particular purpose.
+Before examining the legal requirements for the Pseudonyms functionality, we introduce three different types of pseudonyms that we will distinguish between in this paper. </p>
+<ul>
+<li><strong>Verifiable pseudonym:</strong> A verifiable pseudonym is a pseudonym that allows a User to prove possession over the pseudonym and thereby authenticate as the pseudonym.</li>
+<li><strong>Attested pseudonym:</strong> An attested pseudonym is a subtype of a verifiable pseudonym, allowing Relying Parties to verify that a third party has attested that pseudonym to a User. Further, the User can prove possession over this pseudonym towards such Relying Parties.</li>
+<li><strong>Scope rate limited pseudonym:</strong> A scope rate limited pseudonym is a subtype of a verifiable pseudonym guaranteeing that the user is limited to control only a certain number of pseudonyms within the rate for a given scope. </li>
+</ul>
+<p>A special case of a <em>scope rate limited pseudonym</em> occurs when the rate is set to 1. In that case, each User is guaranteed to have at most one valid pseudonym within the relevant scope, for example, in an electronic voting system. This is often referred to as a <em>scope unique</em> or <em>scope exclusive pseudonym</em>.</p>
+<p>Note also that the EUDI Wallet ecosystem already enables <em>attested pseudonyms</em> as there are no hindrances for an Attestation Provider to issue a (Q)EAA attesting to a particular pseudonym for a User. As such attestations are key-bound, a User could subsequently authenticate as such pseudonym by making a verifiable presentation to Relying Parties. There is however no EU-wide definition of such an attestation type. </p>
+<h2 id="3-legal-requirements-for-pseudonyms">3 Legal Requirements for Pseudonyms</h2>
+<p>There are two legal texts that impose direct requirements on the pseudonym functionality of the Wallet Units: the [European Digital Identity Regulation] and [CIR.2024.2979], the Implementing Act on PID and EAA.</p>
+<p>Below we recap the respective legal requirements from these sources.</p>
+<h3 id="31-the-european-digital-identity-regulation-about-pseudonyms">3.1 The [European Digital Identity Regulation] about Pseudonyms</h3>
+<p>There are two main requirements in the [European Digital Identity Regulation] about Pseudonyms in relation to Wallet Units:</p>
+<ol>
+<li>Wallet Units must be able to generate pseudonyms and store them encrypted and locally within the Wallet Unit.</li>
+<li>Relying Parties must accept identification via pseudonyms when there are no legal requirements for identification.</li>
+</ol>
+<p>Below are the actual parts of the regulation that establish these requirements.</p>
+<table>
+<thead>
+<tr>
+<th>Recitals/Articles</th>
+<th>Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recital 19</td>
+<td>... Reliance on the legal identity should not hinder European Digital Identity Wallet users to access services under a pseudonym, where there is no legal requirement for legal identity for authentication. ...</td>
+</tr>
+<tr>
+<td>Recital 22</td>
+<td>European Digital Identity Wallets should include a functionality to generate user-chosen and managed pseudonyms, to authenticate when accessing online services.</td>
+</tr>
+<tr>
+<td>Recital 57</td>
+<td>Where very large online platforms within the meaning of Article 33(1) of Regulation (EU) 2022/2065 of the European Parliament and of the Council require users to be authenticated in order to access online services, those platforms should be required to accept the use of European Digital Identity Wallets upon the voluntary request of the user. Users should be under no obligation to use a European Digital Identity Wallet to access private services and should not be restricted or hindered in their access to services on the grounds that they do not use a European Digital Identity Wallet. However, if users wish to do so, very large online platforms should accept them for that purpose, while respecting the principle of data minimisation and the right of the users to use freely chosen pseudonyms. ...</td>
+</tr>
+<tr>
+<td>Recital 60</td>
+<td>Unless specific rules of Union or national law require users to identify themselves, accessing services by using a pseudonym should not be prohibited.</td>
+</tr>
+<tr>
+<td>Article 5 Pseudonyms in electronic transaction</td>
+<td>Without prejudice to specific rules of Union or national law requiring users to identify themselves or to the legal effect given to pseudonyms under national law, the use of pseudonyms that are chosen by the user shall not be prohibited.</td>
+</tr>
+<tr>
+<td>Article 5a European Digital Identity Wallets</td>
+<td>... 4. European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to: ... (b) generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet; ...</td>
+</tr>
+<tr>
+<td>Article 5b European Digital Identity Wallet-Relying Parties</td>
+<td>... 9. ... Relying parties shall not refuse the use of pseudonyms, where the identification of the user is not required by Union or national law. ...</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Additionally, pseudonyms are mentioned in Article 32 and Annex IV about the validation of qualified electronic signatures and certificates. However, the use of pseudonyms in this context is completely independent from the notion of pseudonyms used by the Wallet Unit for authentication, as discussed in this discussion paper.</p>
+<h3 id="32-cir20242979-about-pseudonyms">3.2 [CIR.2024.2979] about Pseudonyms</h3>
+<p>[CIR.2024.2979] specifies three main requirements for pseudonyms:</p>
+<ol>
+<li>[W3C WebAuthn] defines the technical specification for pseudonyms.</li>
+<li>The pseudonyms the Wallet Unit generates must be unique for each Relying Party.</li>
+<li>The pseudonyms can be used either stand-alone or in combination with other attested attributes.</li>
+</ol>
+<p>Below are the actual excepts of the CIR that establish these requirements. </p>
+<table>
+<thead>
+<tr>
+<th>Recitals/Articles</th>
+<th>Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recital 14</td>
+<td>The generation of wallet-relying party specific pseudonyms should enable wallet users to authenticate themselves without providing wallet-relying parties with unnecessary information. As set out in Regulation (EU) No 910/2014, wallet users are not to be hindered from accessing services under a pseudonym, where there is no legal requirement for legal identity for authentication. Therefore, the wallets are to include a functionality to generate user-chosen and managed pseudonyms, to authenticate when accessing online services. The implementation of the specifications set out in Annex V should enable these functionalities accordingly. Further, wallet-relying parties are not to request users to provide any data other than those indicated for the intended use of wallets in the relying party register. Wallet users should be enabled to verify the registration data of relying parties at any point in time.</td>
+</tr>
+<tr>
+<td>Article 14</td>
+<td>1. Wallet units shall support the generation of pseudonyms for wallet users in compliance with the technical specifications set out in Annex V. 2. Wallet units shall support the generation, upon the request of a wallet-relying party, of a pseudonym which is specific and unique to that wallet-relying party and provide this pseudonym to the wallet-relying party, either standalone or in combination with any person identification data or electronic attribute attestation requested by that wallet-relying party.</td>
+</tr>
+<tr>
+<td>Annex V</td>
+<td>TECHNICAL SPECIFICATIONS FOR PSEUDONYM GENERATION REFERRED TO IN ARTICLE 14 Technical specifications: — WebAuthn Sch– W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-use-cases">4 Use Cases</h2>
+<p>This chapter introduces and elaborates on several use cases for pseudonyms. Use cases A and B are inferred from the above legal requirements, and the distinction between these two use cases follows from Article 14 (2) in [CIR.2024.2979]. The use cases C and D are additional use cases envisioned to be useful to support in the EUDI Wallet ecosystem. </p>
+<p>The use cases all exists in both cross-device and same device flows.</p>
+<h3 id="41-use-case-a-pseudonymous-authentication">4.1 Use Case A: Pseudonymous Authentication</h3>
+<p>Pseudonyms can be used to authenticate a User when it is not necessary for a Relying Party to learn the identity of a user.</p>
+<p>Concretely, the use case is as follows:</p>
+<ol>
+<li>A User registers a pseudonym at a Relying Party, using their Wallet Unit.</li>
+<li>The User can afterwards do a series of interactions with this Relying Party.</li>
+<li>If the User at a later point wishes to build upon previous interactions with this Relying Party, they should then be able to authenticate with the pseudonym used when registering. Thereby, the User "logs in" to the same account at the Relying Party. The User uses their Wallet Unit to perform this pseudonymous authentication.</li>
+</ol>
+<p>The Relying Party should be guaranteed that only the same User who registered the pseudonym can subsequently authenticate as this pseudonym towards the Relying Party. </p>
+<blockquote>
+<p>To support this use case verifiable pseudonyms must be supported. Alternatively, if the Relying Parties can also act as an Attestation Provider, then attested pseudonyms can also support this use case. In that case, the flow would be that the Relying Party (now acting as an issuer) either picks or let the User pick a pseudonym and attests this into a verifiable credential that the User stores. Later on the User can do a verifiable presentation to the Relying Party to authenticate as the pseudonym. </p>
+</blockquote>
+<h3 id="42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">4.2 Use Case B: Presentation of Attributes with Subsequent Authentication using Pseudonyms</h3>
+<p>Similar to use case A above, a User wishes to create an account with an associated pseudonym that can be used for subsequent authentication at later sessions. However, in this scenario the User additionally would like to register verifiable attributes in the form of either Person Identification Data (PID), Qualified Electronic Attestation of Attributes (QEAAs), Electronic Attestation of Attributes issued by or on behalf of a public sector body responsible for an authentic source (PuB-EAA), or non-qualified Electronic Attestation of Attributes (EAAs) while registering.</p>
+<p>Concretely, the use case goes as follows:</p>
+<ol>
+<li>A User registers a pseudonym at a Relying Party, using their Wallet Unit.</li>
+<li>In the same interaction, the User also presents attributes from a PID or attestation in their Wallet Unit to the Relying Party.</li>
+<li>The User can afterward do a series of interactions with this Relying Party.</li>
+<li>If the User at a later point wishes to build upon previous interactions with this Relying Party, they should then be able to authenticate with the pseudonym used when registering. Thereby, the User "logs in" to the same account at the Relying Party. The User uses their Wallet Unit to perform this pseudonymous authentication.</li>
+</ol>
+<p>Note that this is particularly useful when the disclosed attributes does not uniquely identify the User as this now allows the Relying Party to continue interactions with the same User at a later point (letting the User make a new presentation of attributes for subsequent interactions will not allow this because of the unlinkability requirements for presentations).</p>
+<p>In addition, to the basic guarantee that subsequent authentications can only be performed by the User registering the pseudonym and that presented attributes can be trusted to hold, ideally, the Relying Party should also be guaranteed that the registered pseudonym and the attributes are belonging (and controlled) by only one person (to prevent two person's collaborating to create an account and thereby circumvent for example restrictions on age). </p>
+<blockquote>
+<p>This use case is supported by verifiable pseudonyms. However, if the additional guarantee about the pseudonym and the presentation being tied to the same User is required, then neither of the pseudonym types introduced in <a href="#2-types-of-pseudonyms">Chapter 2</a> supports this by default, as it requires not only properties of the pseudonym, but rather a property of their combined presentation with the attested attributes. </p>
+</blockquote>
+<h3 id="43-use-case-c-rate-limited-participation">4.3 Use Case C: Rate Limited Participation</h3>
+<p>This use case builds on either use case A or B, adding an additional guarantee for the Relying Party: They are guaranteed that a particular person can only register a number of different pseudonyms (referred to as the rate) for a particular scope. The specific number and scope are determined by the Relying Party. </p>
+<p>Note that this rather abstract use case enables a wider range of concrete use cases. Notable examples include: 
++ It enables users to participate in online voting (guaranteeing that each individual can vote only once).
++ It enables Relying Parties to do reliable surveying (again ensuring users registers only once). 
++ It can be used to combat spam or bot accounts, for example to protect social media from so called "troll farms".</p>
+<blockquote>
+<p>Scope rate limited pseudonyms are the only of the pseudonyms types that will support this use case. </p>
+</blockquote>
+<h3 id="44-use-case-d-linkable-pseudonymous-authentication">4.4 Use Case D: Linkable Pseudonymous Authentication</h3>
+<p>This use case considers a case where a single pseudonym must be recognized and able to authenticate towards several different actors. That is, instead of having one or multiple pseudonyms pr. Relying Party, a user wishes to authenticate with the same pseudonym towards several different relying parties and allow these parties to exchange information based upon this pseudonym. I.e., a pseudonym that allowed specific Relying Parties to <em>link</em> the authentications.</p>
+<p>The use case goes as follows: 
+1. A User interacts with a Relying Party "A", registers a pseudonym at this Relying Party and may do a series of interactions with this Relying Party.
+2. If the User at a later point wishes to allow another Relying Party "B" to learn the pseudonym they used to interact with "A" to allow "A" and "B", then the User should be able to authenticate with the pseudonym used at "A" towards "B". </p>
+<p>This use case may be extended to let any number of Relying Parties (for example within a sector) link the User's pseudonym.
+Examples of this use case include: </p>
+<ul>
+<li><strong>e-Commerce:</strong> A User can register a pseudonym when ordering goods online and subsequently authenticate with this pseudonym towards the carrier to be allowed to pickup the goods. Note that if this is combined with for example an age verification upon registration of the pseudonym as in use case B, this can ensure that the person picking up the goods in fact also fulfills said age verification. </li>
+<li><strong>Health insurance:</strong> A User can register and associate a pseudonym at their health insurance company. Upon visits to a healthcare provider, the User can then choose to authenticate as their pseudonym. The healthcare provider can then use that pseudonym to contact the insurance company and facilitate for example payments for the provided service. </li>
+</ul>
+<p>Note that even though linkability is useful in some contexts as described above, it is also poses a threat to the User's privacy. If they are authenticating with pseudonym also used elsewhere when not necessary this may be used to track the User. </p>
+<blockquote>
+<p>These use cases can be supported by using just verifiable pseudonyms (by enabling the User to register the same verifiable pseudonym with multiple Relying Parties) or alternatively attested pseudonyms (by letting the Relying Party also take the role of an issuer and issue an Attested Pseudonym to the User's Wallet which the User can subsequently present to other Relying Parties).</p>
+</blockquote>
+<h2 id="5-high-level-approach-to-pseudonyms-w3c-webauthn">5 High-Level Approach to Pseudonyms: [W3C WebAuthn]</h2>
+<h3 id="51-introduction-to-passkeys">5.1 Introduction to Passkeys</h3>
+<p>As specified in [CIR.2024.2979], [W3C WebAuthn] defines the current technical specification for pseudonyms.</p>
+<p>Passkeys are a widely used type of credential that can serve as a verifiable pseudonym. They are created and asserted using the [W3C WebAuthn] API.</p>
+<p>Passkeys are to be seen as an alternative to passwords.
+The idea is that a User, when registering a user account at a service, uses a secure device to generate a public-private key pair, registers the public key at the service, and can then subsequently use the private key to authenticate towards the service at later points in time.</p>
+<p>In a bit more detail, the flow for using such passkeys follows the following blueprint:</p>
+<p><strong>Registration:</strong></p>
+<ol>
+<li>The User generates a public-private key pair and stores both the public and the private key at their secure device (referred to as an authenticator).</li>
+<li>The User registers the public key at the desired Relying Party service.</li>
+</ol>
+<p><strong>Authentication:</strong></p>
+<ol>
+<li>When the User wishes to authenticate towards a service, the service will send them a challenge consisting of a random value.</li>
+<li>The User uses the private key stored on their secure device to sign the challenge and sends this back to the service.</li>
+<li>The service verifies that the signature on the challenge can be verified using the registered public key. If the signature verifies and the origin matches the expected origin, the User is considered authenticated and thereby granted access to the service.</li>
+</ol>
+<h3 id="52-introduction-to-w3c-webauthn">5.2 Introduction to [W3C WebAuthn]</h3>
+<h4 id="521-overview">5.2.1 Overview</h4>
+<p>[W3C WebAuthn] defines an API for the creation and use of Passkeys. Conceptually, in addition to the User, there are four different logical components in this specification:</p>
+<ul>
+<li><strong>Relying Party Server:</strong> The Relying Party that wishes to offer a service based on authentication using Passkeys.</li>
+<li><strong>Relying Party Client:</strong> The program provided by the Relying Party that runs in the Client of the User and communicates with the Relying Party Server. The Relying Party Client is typically some JavaScript code, provided by the Relying Party, that runs on the Client (i.e., browser).</li>
+<li><strong>Client:</strong> The client that the User uses to interact with the Relying Party's server and with the User's authenticator. The Client can be thought of as the browser that the User uses to access the Relying Party's service.</li>
+<li><strong>Authenticator:</strong> The device controlled by the User to create, store, and use the Passkeys. In the context of the EUDI Wallet ecosystem, the Wallet Unit is the Authenticator.</li>
+</ul>
+<p>Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.</p>
+<p>[W3C WebAuthn] defines a model dividing the responsibilities between these different entities and defines an interface between the Relying Party Client and the Client. Additionally, it defines a challenge/response protocol to authenticate with Passkeys. The interface is referred to as the <em>WebAuthn API</em>.</p>
+<p>However, [W3C WebAuthn] does not specify how the Authenticator and the Client must communicate. In this context, <a href="#6-relation-to-other-topics">Chapter 6</a> briefly discuss the relation to <a href="../f-digital-credential-api/">Topic F (Digital Credential API)</a> .</p>
+<p>[W3C WebAuthn] relies on several different types of identifiers, including:</p>
+<ul>
+<li><strong>Relying Party ID:</strong> An identifier unique to the Relying Party, which must be a valid domain string. This what the User will identify the Relying Party by and let the Authenticator learn which Relying Party is asking for registration/authentication.</li>
+<li><strong>Credential ID:</strong> A unique identifier chosen by the Authenticator for each Passkey.</li>
+<li><strong>User ID:</strong> An identifier unique to each User, which is assigned by the Relying Party. This will be provided to the Authenticator when registering a new Passkey. Subsequently, it will be provided by the Authenticator when authenticating towards the Relying Party. The Authenticator will keep track of which Passkeys are available for which User IDs and Relying Party IDs. The Relying Party keeps track of a User Name for each User ID.</li>
+<li><strong>User Name:</strong> An alias that may be chosen by the User or the Relying Party and assigned to a specific Passkey on the Authenticator. This allows the User to easily distinguish and select which Passkey they want to authenticate with, if several are present in the Authenticator for the given Relying Party.</li>
+</ul>
+<p>The next sections elaborate on how the different components work together to allow the registration and subsequent authentication using Passkeys.</p>
+<h4 id="522-registration">5.2.2 Registration</h4>
+<p>The flow for registering a Passkey in [W3C WebAuthn] is the following:</p>
+<ol start="0">
+<li>The User requests (out of band of WebAuthn) the Relying Party to create a new Pseudonym.</li>
+<li>The Relying Party Server creates a challenge and sends this along with the User ID, the Relying Party ID, and the User Name to the Relying Party Client.</li>
+<li>The Relying Party Client forwards the information to the Client using the WebAuthnAPI.</li>
+<li>The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.</li>
+<li>The Authenticator authenticates the User (for example using a PIN or via biometrics). It then generates a new key pair with a new Credential ID and set the scope of this to the specific Relying Party ID and User ID. Finally, the Authenticator may generate an attestation (explained in <a href="#523-pseudonym-attestation">Section 5.2.3</a>) and sends this, as well as the public key and its Credential ID, to the Client.</li>
+<li>The Client then forwards the information to the Relying Party Client that again forwards it to the Relying Party Server.</li>
+<li>The Relying Party Server verifies the attestation and registers the received public key for this User ID.</li>
+</ol>
+<p>Note that the Authenticator stores the public key in a way such that it is scoped uniquely to a specific Relying Party, aligning with the requirements of [CIR.2024.2979], Article 14 (2), which states that the pseudonyms must be unique to each Relying Party.</p>
+<h4 id="523-pseudonym-attestation">5.2.3 Pseudonym Attestation</h4>
+<p>The term 'attestation' is here used differently than elsewhere in the ARF.
+In this context, the attestation is not about attributes of the User, but rather about attributes of the Authenticator. The attestation serves to ensure the Relying Party that they are talking with an Authenticator with certain attributes. The attestation often takes the form of a signature on the challenge as well as some other contextual data.</p>
+<p>In [W3C WebAuthn], five different types of attestations are mentioned:</p>
+<ul>
+<li>
+<p><strong>Basic Attestation:</strong> The Authenticator stores a single master public and private key. The private key is used to sign all attestations and a certificate on the public key is included in the attestation data to allow the Relying Party to verify the signature.</p>
+</li>
+<li>
+<p><strong>Attestation CA:</strong> Similar to the above, in the sense that the Authenticator stores a single master public and private key stored. However, instead of using this to attest Passkeys, the Authenticator uses this to authenticate towards a Certificate Authority (CA), which is then configured to issue certificates to the Authenticator on multiple attestation key pairs.</p>
+</li>
+<li>
+<p><strong>Anonymisation CA:</strong> Similar to the second bullet above, except that it is explicit that the Authenticator requests a certificate for a new attestation key pair per generated Passkey.</p>
+</li>
+<li>
+<p><strong>Self Attestation:</strong> The attestation is signed with the private key of the newly generated key pair in the Passkey. Note that this does not give any guarantees for the Relying Party about the authenticator they are interacting with.</p>
+</li>
+<li>
+<p><strong>No Attestation Statement:</strong> No attestation is given. Note that this does not give any guarantees for the Relying Party about the Authenticator they are interacting with.</p>
+</li>
+</ul>
+<p>Please note that Article 5a (5) a) viii) of the [European Digital Identity Regulation] states "<em>European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for relying parties to verify the authenticity and validity of European Digital Identity Wallets;...</em>". The latter two forms of attestation do not align with this requirement. <a href="#61-topic-a-privacy-risks-and-mitigations">Section 6.1</a>) discusses how the other three possibilities relate to previously identified privacy risks about user surveillance (see also <a href="../a-privacy-risks-and-mitigations/">Topic A</a>).</p>
+<h4 id="524-authentication">5.2.4 Authentication</h4>
+<p>The flow for authentication using a Passkey following [W3C WebAuthn] is:</p>
+<ol>
+<li>The Relying Party Server creates a challenge and sends this along with its Relying Party ID to the Relying Party Client.</li>
+<li>The Relying Party Client forwards the information to the Client using the WebAuthn API.</li>
+<li>The Client checks that the Relying Party ID is consistent with the caller's origin and forwards the information to the Authenticator along with other contextual data.</li>
+<li>The Authenticator authenticates the User (for example using a PIN or via biometrics). It then prompts the User to select one of the Passkeys scoped to this Relying Party ID, if there are multiple. For this step the User Name can be presented to the User. Finally, the Authenticator uses the private key of the chosen key pair (= Passkey) to sign the challenge as well as some contextual data including the User ID, Credential ID, and the Relying Party ID. The Authenticator then sends this to the Client.</li>
+<li>The Client forwards the information to the Relying Party Client, which again forwards it to the Relying Party Server.</li>
+<li>The Relying Party Server verifies the signature with the stored public key for this User ID and Credential ID, and, depending on the outcome of this verification, considers the User to be authenticated.</li>
+</ol>
+<h3 id="53-challenges-using-w3c-webauthn-for-pseudonyms-in-the-eudi-wallet">5.3 Challenges using [W3C WebAuthn] for Pseudonyms in the EUDI Wallet</h3>
+<p>This section list challenges related to the use of [W3C WebAuthn] as the technical specification for pseudonyms:</p>
+<ol>
+<li>On its own, [W3C WebAuthn] does not support enable a Relying Party to obtain a strong guarantee ensuring that presentation of attributes as well as the registering of a pseudonym is performed by the same User (which is useful for <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a>). </li>
+<li>[W3C WebAuthn] does not support scope rate limited pseudonyms and in particular does not allow Relying parties to verify pseudonyms are limited to a particular scope and rate. Hence, <a href="#43-#43-use-case-c-rate-limited-participation">Use Case C</a> is not supported. </li>
+<li>For privacy reasons, [W3C WebAuthn] does not allow passkeys to be used for multiple different Relying Parties. Hence, it cannot be used for <a href="#44-use-case-d-linkable-pseudonymous-authentication">Use Case D</a>. </li>
+<li>Attestations may be linkable; see discussion in <a href="#61-topic-a-privacy-risks-and-mitigations">Section 6.1</a> and also <a href="../a-privacy-risks-and-mitigations/">Topic A</a>. This risk depends on the chosen type of attestation.</li>
+<li>The information about the Relying Party is verified only by the Client and not by the Authenticator itself. This may be a problem, as in Article 5a (5) a) vii) of the [European Digital Identity Regulation] it is stated that "<em>European Digital Identity Wallets shall, in particular ... ensure that the relying parties can be authenticated and identified by implementing authentication mechanisms in accordance with Article 5b;...</em>".</li>
+</ol>
+<h2 id="6-relation-to-other-topics">6 Relation to Other Topics</h2>
+<p>This chapter discusses how pseudonyms relate to other topics being discussed.</p>
+<h3 id="61-topic-a-privacy-risks-and-mitigations">6.1 Topic A: Privacy Risks and Mitigations</h3>
+<h4 id="611-introduction">6.1.1 Introduction</h4>
+<p><a href="../a-privacy-risks-and-mitigations/">Topic A - Privacy Risks and Mitigations</a> discusses surveillance risks related to presenting PIDs and attestations. Similar concerns are relevant for the Pseudonym functionality defined by the [W3C WebAuthn] specification. In fact, from a linkability perspective, there are only minor differences between the attestations present in the registration flow of [WebAuthn] and other attestations such as PID and (Q)EAAs. <a href="#64-relation-to-risk-register">Section 6.4</a> discusses how this relates to the risks and threats identified in the [RiskRegister].</p>
+<p>The subsections below consider two different types of linkability concerns for the attestation types summarised in <a href="#523-pseudonym-attestation">Section 5.2.3</a>, namely Relying Party linkability and CA linkability. Note that the latter form of linkability is similar to what is dubbed Attestation Provider linkability in the discussion Paper for Topic A, but there is a mismatch between the use of the word "attestation" in the broader ARF framework and in [W3C WebAuthn] and to avoid confusion a different wording is used here.</p>
+<h4 id="612-relying-party-linkability">6.1.2 Relying Party Linkability</h4>
+<p>Relying Party linkability is the ability for Relying Parties to link together multiple authentications performed by a User using a Wallet Unit.
+Note that it is inherent for the use cases that the <strong>same</strong> Relying Party shall be able to link together multiple presentations of a pseudonym, as it must be unique per Relying Party. However, <strong>different</strong> Relying Parties should not be able to infer any information about whether they have interacted with one or multiple Users by comparing multiple authentications using pseudonyms.</p>
+<p>To prevent Relying Party linkability, it is necessary to ensure that no unique (per Wallet Unit) value is presented to multiple different Relying Parties. Depending on the type of attestation used for registration (see <a href="#523-pseudonym-attestation">Section 5.2.3</a>, this may or may not be the case for [W3C WebAuthn].</p>
+<p>If <em>Basic Attestations</em> are used, where each Wallet Unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be such a unique value that is presented to multiple Relying Parties. [W3C WebAuthn] suggests to ensure that multiple different Authenticators hold the same attestation key pair, thereby no longer making it a unique value for correlation. However, please note that this implies letting several different Wallet Units share the same private key. This is against best security practices, as it implies private keys must be transferred to or from Wallet Units, which increases the risk of keys being compromised.</p>
+<p>If an <em>Attestation CA</em> is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as an Authenticator uses a single attestation key more than once to sign a Pseudonym, the Relying Parties can still deduce some information by correlating attestation public keys. This mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.</p>
+<p>If an <em>Anonymisation CA</em> is used to issue certificates on single-use-only attestation keys, Relying Parties are not able to correlate information about multiple presentations. This can be referred to as being <em>Relying Party-unlinkable</em>.</p>
+<p>Neither <em>Self Attestation</em> nor <em>No Attestation</em> allows Relying Parties to correlate information about multiple presentations of pseudonyms, as no attestation public key is released to the Relying Party. That is, they are Relying Party-unlinkable.</p>
+<h4 id="613-ca-linkability">6.1.3 CA Linkability</h4>
+<p>Certificate Authority (CA) linkability is the ability for a CA to track a User's interactions at several different Relying Parties by combining the information from those Relying Parties with information hold by the CA.</p>
+<p>Note that all attestation types that are Relying Party-linkable also are CA-linkable by definition, as the information available to CAs and Relying Parties is a superset of the information available only to multiple Relying Parties.</p>
+<p>Both the types <em>Attestation CA</em> and <em>Anonymisation CA</em> are CA-linkable as CAs can store which public key they issue certificates to and share with which Wallet Unit. By correlating this with the information available at the Relying Parties, it is possible to track how a Wallet Unit uses the pseudonym functionality.</p>
+<p>Neither <em>Self Attestation</em> nor <em>No Attestation</em> includes any information from a CA and Relying Parties are therefore not able to correlate information about multiple presentations of pseudonyms with this form of attestation type. That is, they are both also CA-unlinkable.</p>
+<h4 id="614-drawbacks-of-different-attestation-types">6.1.4 Drawbacks of Different Attestation Types</h4>
+<p>The table below summarises information from the previous sections with regard to drawbacks of the different attestation types.</p>
+<table>
+<thead>
+<tr>
+<th>Attestation Type</th>
+<th>Drawbacks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic Attestations</td>
+<td>Relying Party-linkable and CA-linkable</td>
+</tr>
+<tr>
+<td>Attestation CA</td>
+<td>CA-linkable and to some degree Relying Party-linkable</td>
+</tr>
+<tr>
+<td>Anonymisation CA</td>
+<td>CA-linkable</td>
+</tr>
+<tr>
+<td>Self Attestation</td>
+<td>No assurances for Relying Parties</td>
+</tr>
+<tr>
+<td>No Attestation</td>
+<td>No assurances for Relying Parties</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-topic-c-wallet-unit-attestations">6.2 Topic C: Wallet Unit Attestations</h3>
+<p><a href="../c-wallet-unit-attestation/">Topic C - Wallet Unit Attestations (WUA) and Key Attestations</a> discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc.</p>
+<p>Certain WUA attributes are somewhat sensitive, as they may allow for linkability, and are only intended for PID Providers and Attestation Providers when performing issuance. Other metadata in the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive.</p>
+<p>When a Wallet Unit and a Relying Party perform registration of a pseudonym, key material will be stored on the Wallet Unit (in its role as Authenticator). During this registration, it may be possible to use the WUA similar to a pseudonym attestation (discussed in <a href="#523-pseudonym-attestation">Section 5.2.3</a>). </p>
+<p><strong>Revocation / invalidation of pseudonyms:</strong> Pseudonyms are local to each Relying Party, which makes revocation somewhat easy: The Relying Party can simply invalidate the pseudonym locally and the Wallet Unit will no longer be able to access that Relying Party. This revocation will not affect other functionality of the Wallet Unit, e.g., other Pseudonyms, PID and attestations will remain valid. In addition to local revocation, it was discussed at a Focus meeting, if it should be possible for a Relying Party to also revoke the entire Wallet Unit. The outcome of this discussion, was that it should not be possible for Relying Parties to request the revocation of a Wallet Unit.</p>
+<h3 id="63-topic-f-digital-credentials-api">6.3 Topic F: Digital Credentials API</h3>
+<p>As stated in <a href="#5-high-level-approach-to-pseudonyms-w3c-webauthn">Chapter 5</a>, [W3C WebAuthn] does not specify the interface between the Wallet Unit (i.e., Authenticator) and the Client used by the User to initiate the usage of the pseudonyms.</p>
+<p><a href="../f-digital-credential-api/">Discussion Topic F</a> must also take into account providing a seamless integration for the use of pseudonyms.</p>
+<h3 id="64-relation-to-risk-register">6.4 Relation to Risk Register</h3>
+<p>As pseudonyms may be used to provide authentication, a large number of the risks listed in the risk register for European Digital Identity Wallets [RiskRegister] are (at least indirectly) related to the use of pseudonyms:</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 14%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Risk type </strong></th>
+<th><strong>Risk ID </strong></th>
+<th><strong>Related risk titles </strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R2</td>
+<td>Creation or use of a fake electronic identity</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R4</td>
+<td>Identify theft</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R5</td>
+<td>Data theft</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R9</td>
+<td>Unauthorised transaction</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R10</td>
+<td>Transaction manipulation</td>
+</tr>
+<tr>
+<td><strong>High-level risks to the wallets</strong></td>
+<td>R14</td>
+<td>Surveillance</td>
+</tr>
+</tbody>
+</table>
+
+<p>Some of the Technical Threats from the [Risk Register] (threats labelled TTX.Y in its section III) are also relevant threats to consider in the context of pseudonyms. This is primarily TT5. Malicious actions, in which threats, such as TT5.1 Interception of information or TT5.3 Replay of messages, may lead to the risks expressed in the table above.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R2. Creation or use of a fake electronic identity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation or use of a fake electronic identity is defined as the creation of an electronic identity in a wallet that does not exist
+in the real world.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R4. Identity theft</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity theft is defined as the unauthorised acquisition of the wallet unit or loss of authentication factors enabling to
+impersonate a person.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R5. Data theft</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception
+(unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to
+lead in some cases to Data disclosure (R6).</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R6. Data Disclosure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal
+data including special categories of personal data. The privacy breach risk
+is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R9. Unauthorised transaction</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthorised transactions are defined as operational activities conducted without the permission or knowledge of the
+wallet user. In many cases, an unauthorised transaction can lead to Identity theft (R4) or Data disclosure (R6). It is also
+related to unauthorised transactions, such as the misuse of cryptographic keys.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R10. Transaction manipulation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction manipulation is defined as the unauthorised alteration of operations in the wallet. Transaction manipulation is
+an attack on integrity, and it is related to a data integrity breach.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>R14. Surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surveillance, or monitoring, is defined as the unauthorised tracking
+or observation of a wallet user's activities, communication, or data.
+Surveillance is often related to inference, which is defined as the
+deduction of sensitive or personal information from seemingly innocuous
+data.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>SR1. Wholesale surveillance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wholesale surveillance is defined as the tracking or observation of
+the activities of many users through their wallet's communication or
+data. Wholesale surveillance is often associated with surveillance (R14)
+and inference at a global scale, where information about many users is
+combined to deduce sensitive or personal data about users or to identify
+statistical trends that can be used to design further attacks.</td>
+</tr>
+</tbody>
+</table>
+
+<p>More specifically, [RiskRegister] describes the following threats in relation to pseudonyms:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 51%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>ID<br />
+</strong><em>Identifier</em></th>
+<th><strong>Threat description<br />
+</strong><em>Description of the identified threat</em> (*)</th>
+<th><strong>Risk title<br />
+</strong><em>Related risks</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR1</td>
+<td>An attacker can revoke pseudonyms without justified reason.</td>
+<td>Creation or use of a fake electronic identity (R2)
+</td>
+</tr>
+<tr>
+<td>TR26</td>
+<td>PID, (Q)EAAs or pseudonyms can be presented to a wrong relying party.</td>
+<td>Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR39</td>
+<td>An attacker can unlawfully trace wallet users using unique/traceable
+identifiers.</td>
+<td>Data disclosure (R6) and Surveillance (R14)</td>
+</tr>
+<td>TR51</td>
+<td>An attacker can convince a user to share personal data (i.e. PID, EAA-s, pseudonyms, electronic signatures, logs and other data) with the attacker or with a third party that the user did not intend to do so.</td>
+<td>Data theft (R5) / Data disclosure (R6)</td>
+</tr>
+<td>TR55</td>
+<td>An attacker can bypass the user authentication method to use
+a pseudonym generated by a wallet unit.
+</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR84</td>
+<td>A group of colluding relying parties or PID providers can derive the
+user's identity data beyond data known to them.</td>
+<td>Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR85</td>
+<td>An attacker can track and trace a user by using person
+identification data of the user where identification of the user
+is not required.</td>
+<td>Surveillance (R14)</td>
+</tr>
+<tr>
+<td>TR91</td>
+<td>A relying party can replay elements from a previous session in
+another session.</td>
+<td>Transaction manipulation (R10)</td>
+</tr>
+<tr>
+<td>TR102</td>
+<td>An attacker can impersonate relying parties during the
+connection to relying parties.</td>
+<td>Unauthorised transaction (R9) / Data
+disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR105</td>
+<td>An attacker can perform man-in-the-middle attacks.</td>
+<td>Unauthorised transaction (R9) / Data
+disclosure (R6) / Surveillance (R14)</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>Note that there is no threat corresponding to TR68-71 (Attacker can revoke without consent/reason) in relation to pseudonyms.</p>
+</blockquote>
+<p>R14, SR1, TR39, and TR84 are particularly relevant to consider given the discussion in Chapter 5.1, namely linkability of attestations in [W3C WebAuthn].</p>
+<p>TR26, TR102, and TR105 are particularly relevant for the challenge described in Chapter 4.3, namely that the Relying Party is only authenticated by the Client and not by the Wallet Unit.</p>
+<h2 id="7-changes-to-the-arf">7 Changes to the ARF</h2>
+<p>This chapter proposes changes and additions to the ARF, specifically to the  High Level Requirements (HLRs) for Annex 2 Topic 11 (Pseudonyms).</p>
+<p>The existing HLRs in the ARF (version 2.5.0) were developed to support <a href="#41-Use-Case-A-Pseudonymous-Authentication">Use Case A</a> and <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a>. </p>
+<p>As previously noted, as it is possible to define custom types of (Q)EAAs in the ARF, <a href="#44-Use-Case-D-Linkable-Pseudonymous-Authentication">Use Case D</a> is already supported by the current functionality already included in the ARF. </p>
+<p>This discussion paper proposes changes in two categories: 
+1. <em>Changes</em> to existing HLRs making it <em>optional</em> for Wallet Units to support the pseudonyms functionality required by the legislation by letting them be WebAuthn Authenticators rather than mandatory. These are presented in <a href="#71-changes-to-existing-hlrs">Section 7.1</a>.
+2. <em>Additional</em> HLRs to guide future pseudonyms solutions to support also <a href="#43-use-case-c-rate-limited-participation">Use Case C</a> in the context the EUDI Wallet ecosystem. These are presented in <a href="#72-new-guiding-hlrs-for-scope-rate-limited-pseudonyms">Section 7.2</a>. Note, however, that the EU Commission will not actively develop any such scheme fulfilling these HLRs. Instead, they are only meant as a guide for others to design and standardize protocols that may be included in a future version of the ARF.</p>
+<h4 id="71-changes-to-existing-hlrs">7.1 Changes to Existing HLRs</h4>
+<p>The existing HLRs and [CIR.2024.2979] mandate that Wallet Units implement WebAuthn as an authenticator. However, as there already exists many WebAuthn authenticator implementations widely available to Users through their operating system, web browsers or specialized apps, we propose to weaken the requirements in the ARF and the CIR such that it becomes <em>optional</em> for a Wallet Unit to also be a WebAuthn authenticator and thereby free for Wallet Units to enable <a href="#41-Use-Case-A-Pseudonymous-Authentication">Use Case A</a> and <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a> using alternative technologies. </p>
+<blockquote>
+<p>Under Article 5a of the [European Digital Identity Regulation], EUDI Wallets must support the generation and storage of pseudonyms. This requirement remains intact. Our proposal only affects how this is achieved: implementing WebAuthn would remain one compliant approach, but not the only one. Wallet Units not following this path must use alternatives to live up to the legislation.</p>
+</blockquote>
+<p>In the ARF v.2.5.0, there are 23 requirements related to pseudonyms. 
+Of these, the first 20 requirements (PA_01-PA_19 and PA_08a) are requirements to enable <a href="#41-Use-Case-A-Pseudonymous-Authentication">Use Case A</a> and <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a> remains unaffected
+The remaining three HLRs (PA_20, PA_21 and PA_22) are specific to WebAuthn and we propose the following changes: </p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>ARF v.2.5.0 specification</strong></th>
+<th><strong>Proposed specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PA_20</td>
+<td>The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym, provided the profile or extension of [W3C WebAuthn] meant in PA_21 enables the Wallet Unit to do this. In case the profile or extension does not enable this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity. <em>Notes: - [W3C WebAuthn] currently does not offer a way for an Authenticator (i.e., the Wallet Unit) to authenticate a Relying Party. Instead, the Client (i.e., the browser) will authenticate the Relying Party, using TLS.</em></td>
+<td>The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. If the provided the profile or extension of [W3C WebAuthn] meant in PA_21 does not enable the Wallet Unit to do this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity. <em>Notes: - [W3C WebAuthn] currently does not offer a way for an Authenticator (i.e., the Wallet Unit) to authenticate a Relying Party. Instead, the Client (i.e., the browser) will authenticate the Relying Party, using TLS.</em></td>
+</tr>
+<tr>
+<td>PA_21</td>
+<td>The Commission SHALL create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification compliant with the HLRs specified in this Topic. This specification SHALL contain all details necessary for Wallet Units and Relying Parties to generate, register, and use Pseudonyms.</td>
+<td>No changes.</td>
+</tr>
+<tr>
+<td>PA_22</td>
+<td>Wallet Providers SHALL ensure that their Wallet Solution supports the [W3C WebAuthn] specification and the technical specification meant in requirement PA_21.</td>
+<td>Wallet Providers MAY ensure that their Wallet Solution supports the HLRs defined for this topic by letting their Wallet Units perform the role of a WebAuthn authenticator following the [W3C WebAuthn] specification and the technical specification referenced in referenced in PA_21.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="72-new-guiding-hlrs-for-scope-rate-limited-pseudonyms">7.2 New Guiding HLRs for Scope Rate Limited Pseudonyms</h4>
+<p>The below HLRs will be added to the existing HLR in Annex 2, Topic 11 of the ARF v.2.5.0.</p>
+<h5 id="requirement-1">Requirement 1</h5>
+<p>The protocols and cryptography underlying the scope rate limited pseudonym functionality shall be standardized by a standardization organization recognized by the Commission or in a standard recognized by the Commission.</p>
+<blockquote>
+<p>Rationale: This is necessary to provide sufficient guarantees for the security of the functionality and to enable interoperability between different member states' implementations. </p>
+</blockquote>
+<h5 id="requirement-2">Requirement 2</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL enable a Wallet Unit to allow a User to generate a scope rate limited pseudonym, register this by a Relying Party, and prove that this is within the rate and scope restrictions determined by the Relying Party.</p>
+<blockquote>
+<p>Rationale: This is to support <a href="#43-use-case-c-rate-limited-participation">Use Case C</a>. </p>
+</blockquote>
+<h5 id="requirement-3">Requirement 3</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL allow a Relying Party to verify that the rate is not exceeded for a particular User when presented with a scope rate limited pseudonym.</p>
+<blockquote>
+<p>Rationale: This is to support <a href="#43-use-case-c-rate-limited-participation">Use Case C</a>. </p>
+</blockquote>
+<h5 id="requirement-4">Requirement 4</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL allow a Relying Party to choose the scope and rate when requesting a scope rate limited pseudonym from a User.</p>
+<blockquote>
+<p>Rationale: This is to support the widest possible range of use cases. </p>
+</blockquote>
+<h5 id="requirement-5">Requirement 5</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL NOT allow any entity or collusion of entities not including the User, to link scope rate limited pseudonyms of the same User when used across several different Relying Parties. This shall hold even if the scope and rate are identical across the different Relying Parties and both for registration and authentication of the scope rate limited pseudonym.</p>
+<blockquote>
+<p>Rationale: This is to protect the privacy of the user. In particular, this requirement also ensures that a Relying Party cannot choose the same scope as another Relying Party to break the unlinkability of the interactions between the Relying Parties. </p>
+</blockquote>
+<h5 id="requirement-6">Requirement 6</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL ensure that if the rate is larger than 1, then a User's different scope rate limited pseudonyms SHALL be unlinkable for the same scope. This SHALL hold against any entity or collusion of entities, not including the User. Further, such protocol SHALL ensure that during registration or authentication with such pseudonym it SHALL NOT be possible for the Relying Party to deduce any information about how many pseudonyms the particular User has already registered (except that it does not exceed the predetermined rate).</p>
+<blockquote>
+<p>Rationale: This is to protect the privacy of the user. </p>
+</blockquote>
+<h5 id="requirement-7">Requirement 7</h5>
+<p>A protocol enabling scope rate limited pseudonyms SHALL ensure that no entity or collusion of entities, not including a User, is able to authenticate or register with a scope rate limited pseudonym of this User.</p>
+<blockquote>
+<p>Rationale: This is to ensure that no one can impersonate the User. </p>
+</blockquote>
+<p><strong>Open Questions</strong>
+1. <strong>Backup:</strong> To ensure that only a specific User are able to authenticate as a scope rate limit pseudonym (i.e., Req. 29) it must rely on a secret kept by the User only. If this secret is backed up elsewhere the entity backing it up will also be able to authenticate as a pseudonym. However, the only alternative to making a backup of such a secret is to allow Users to be able to obtain a new secret. However, this may circumvent rate-limit restrictions. Is it more important to let the user's backup their secret or is it more important to enforce the rate limit? Alternatively, are there other approaches?</p>
+<h2 id="8-references">8 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[W3C WebAuthn]</td>
+<td>Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/</td>
+</tr>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0.</td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td>Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td>[CIR.2024.2979]</td>
+<td>Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-a-questions-related-to-use-cases-a-and-b">Appendix A Questions Related to Use Cases A and B</h2>
+<p>Below, we list questions that have been discussed at the focus meetings along with brief summaries of the conclusions.</p>
+<p><strong>Question 1:</strong> Should any other use cases be supported?</p>
+<blockquote>
+<p>It should be possible to register attributes to the pseudonym later than at registration. </p>
+</blockquote>
+<p><strong>Question 2:</strong> For both use cases: Should both cross-device and same-device flows be supported?
+I.e., should registration and authentication with pseudonyms be possible both when a user initiates the interactions with the Relying Party from the same device and with a device different from the one hosting the Wallet Unit? The answer to this question will impose requirements on the interfaces between the Wallet Unit and the client a user initiates the interaction with.</p>
+<blockquote>
+<p>Yes: Both cross-device and same-device flows should support pseudonyms</p>
+</blockquote>
+<p><strong>Question 3:</strong> For Use Case A: Should a single user be able to use their Wallet Unit to present several different pseudonyms to a single Relying Party? High-Level Requirements must be defined that enforces the answer to this question.</p>
+<blockquote>
+<p>Yes: It should be possible for a user to have several pseudonyms at the same Relying Party.</p>
+</blockquote>
+<p><strong>Question 4:</strong> For both use cases: What assurances must be given to the Relying Party? Such possible assurance exists on at least three levels:</p>
+<ol>
+<li>No assurances are given to the Relying Party. I.e., the Relying Party is not even guaranteed that it is interacting with the Wallet Unit.</li>
+<li>The Relying Party is assured that the private key corresponding to the pseudonym being stored/authenticated <em>was</em> originally stored in a Wallet Unit.</li>
+<li>The Relying Party is assured that the private key corresponding to the pseudonym being stored/authenticated <em>is</em> currently stored in a non-revoked Wallet Unit.</li>
+<li>For use case B: The Relying Party is assured that the private key corresponding to the pseudonym used to authenticate is stored on the same Wallet Unit as the originally presented PID or attestation.</li>
+</ol>
+<blockquote>
+<p>There should be some assurance that keys are stored securely and option 4.</p>
+</blockquote>
+<p>Note that, because the technical implementation of pseudonyms must rely on [W3C WebAuthn], the possibility for achieving such assurances is to use attestations (for an explanation of this see  <a href="#5-high-level-approach-to-pseudonyms-w3c-webauthn">Chapter 5</a>).
+Therefore, higher assurances comes with a trade-off in terms of surveillance risks.
+For a further discussion of these risks see <a href="#61-topic-a-privacy-risks-and-mitigations">Chapter 6.1</a>).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
