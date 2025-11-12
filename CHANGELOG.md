@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
-## [2.7.2] - 2025-11-11
+## [2.7.3] - 2025-11-12
+
+Changes:
+ - Updated links to new annex 2 file names.
+ 
+ ## [2.7.2] - 2025-11-11
 
 Changes:
  - Updated annexes 2 orders for pdf creation.
@@ -130,15 +135,14 @@ Editorial changes and fixing typos.
 
 ### Sections/topics with changes
 
-- [Main document](docs/architecture-and-reference-framework-main.md)
+- Main document
     - section 3.11, section 4.4,1, section 4.4.3.1, section 4.4.3.3, section
     4.6.4, section 4.6.6, section 6.1, section 6.3.1, section 6.3.2.1, section
     6.3.2.3, section 6.3.3, section 6.4.1, section 6.4.2, section 6.4.3, section
     6.6.2.2, section 6.6.2.7.2, section 6.6.3.3, section 6.6.3.4, section
     6.6.3.5, section 6.6.3.13,
 
-- [Annex 2](docs/annexes/annex-2/annex-2-high-level-requirements.md) (High-level
-Requirements)
+- Annex 2
     - Topic 3: PID_04, PID, 06, PID_07, PID_16
     - Topic 6: RPA_06, RPA_06a, RPA_06c, RPA_06d,
     - Topic 10: ISSU_24, ISSU_24a, ISSU_27, ISSU_34, ISSU_34a,

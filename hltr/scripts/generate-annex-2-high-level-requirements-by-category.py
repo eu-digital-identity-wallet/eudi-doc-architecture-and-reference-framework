@@ -85,7 +85,7 @@ def generate_markdown_file(template_name, csv_name, output_name):
 
 if __name__ == '__main__':
     # Define the input and output filenames
-    template_file = 'annex-2-high-level-requirements-by-category.jinja2'
+    template_file = 'annex-2.03-high-level-requirements-by-category.jinja2'
     csv_file = '../high-level-requirements.csv'
     output_file = '../../docs/annexes/annex-2/annex-2.03-high-level-requirements-by-category.md'
 
