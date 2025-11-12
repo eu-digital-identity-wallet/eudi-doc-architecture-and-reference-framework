@@ -3653,19 +3653,19 @@ resulted in a number of changed High-Level Requirements in Annex 2 and in
 <li>The <a href="../discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/">Discussion Paper for Topic P</a>
 was integrated into <a href="#45-wscd-architecture-types">Section 4.5</a>.</li>
 <li>The <a href="../discussion-topics/q-interface-user-wallet-instance/">Discussion Paper for Topic Q</a>
-was integrated into <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2332-topic-54---accessibility">Topic 54</a>.</li>
+was integrated into <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2332-topic-54---accessibility">Topic 54</a>.</li>
 <li>The <a href="../discussion-topics/r-authentication-of-user-to-device/">Discussion Paper for Topic R</a>
 was integrated into <a href="#22-identification-and-authentication">Sections 2.2</a>,
 <a href="#432-components-of-a-wallet-unit">4.3.2</a> and
 <a href="#6533-wallet-unit-requests-user-to-set-up-two-user-authentication-mechanisms">6.5.3.3</a>,
-and into <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>.
+and into <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>.
 Moreover, the distinction between the WSCA/WSCD and a keystore, which was
 introduced in this Topic, has been made throughout the ARF main document and
 Annex 2. A definition of 'keystore' was added to Annex 1.</li>
 <li>The <a href="../discussion-topics/s-certificate-transparancy/">Discussion Paper for Topic S</a>
 was integrated into <a href="#6323-pid-provider-or-attestation-provider-receives-an-access-certificate-and-a-registration-certificate">Sections 6.3.2.3</a>
 and <a href="#642-relying-party-registration">6.4.2</a>. In addition, in Annex 2, a new
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2333-topic-55---certificate-transparency">Topic 55</a>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2333-topic-55---certificate-transparency">Topic 55</a>
 was created for the high-level requirements on Certificate Transparency for
 access certificates.</li>
 <li>All figures in the ARF have been re-created using and the source files
@@ -3678,9 +3678,9 @@ access certificates.</li>
 are now included in the <a href="https://raw.githubusercontent.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/refs/heads/main/hltr/high-level-requirements.csv">high-level-requirements.csv file</a>, which allows for easy sorting and filtering of
 requirements. Insofar relevant, the texts in the introduction to each Topic in
 Annex 2 were moved to suitable sections in the ARF main document.</p>
-<p>or the convenience of readers, the high-level requirements in the .csv file are also included in two new .md files, called <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md">annex-2-high-level-requirements-by-topic.md</a> and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-category.md">annex-2-high-level-requirements-by-category.md</a>, which were generated from the .csv file. Note that in case of deviations between the .csv file and the .md files, the .csv file takes precedence.</p>
-<p>The requirements in these files are identical, but they are ordered in a different manner.  The file <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md">annex-2-high-level-requirements-by-topic.md</a> contains the high-level requirements in the same order as the original (i.e., pre-v2.7.0) Annex 2 file, meaning ordered per discussion topic. It also contains the same Topic numbers and section indicators. However, Topics in the original file that did not contain any high-level requirements have been removed from the .csv file and hence from the resulting .md file.</p>
-<p>The file <a href="./annexes/annex-2/annex-2-high-level-requirements-by-category.md">annex-2-high-level-requirements-by-category.md</a> orders the high-level requirements on the basis of their subject, meaning the entity that has to comply with each requirement. To enable this, a new system of requirement identifiers was developed, next to the existing identifiers which are based on topic. These new requirement identifiers have a simple, hierarchical format: PART-CATEGORY-SUBCATEGORY-ID, where</p>
+<p>or the convenience of readers, the high-level requirements in the .csv file are also included in two new .md files, called <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/">annex-2.02-high-level-requirements-by-topic.md</a> and <a href="../annexes/annex-2/annex-2.03-high-level-requirements-by-category/">annex-2.03-high-level-requirements-by-category.md</a>, which were generated from the .csv file. Note that in case of deviations between the .csv file and the .md files, the .csv file takes precedence.</p>
+<p>The requirements in these files are identical, but they are ordered in a different manner.  The file <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/">annex-2.02-high-level-requirements-by-topic.md</a> contains the high-level requirements in the same order as the original (i.e., pre-v2.7.0) Annex 2 file, meaning ordered per discussion topic. It also contains the same Topic numbers and section indicators. However, Topics in the original file that did not contain any high-level requirements have been removed from the .csv file and hence from the resulting .md file.</p>
+<p>The file <a href="../annexes/annex-2/annex-2.03-high-level-requirements-by-category/">annex-2.03-high-level-requirements-by-category.md</a> orders the high-level requirements on the basis of their subject, meaning the entity that has to comply with each requirement. To enable this, a new system of requirement identifiers was developed, next to the existing identifiers which are based on topic. These new requirement identifiers have a simple, hierarchical format: PART-CATEGORY-SUBCATEGORY-ID, where</p>
 <ul>
 <li>PART is either actor-specific requirements (AS) or ecosystem-wide requirements (EW).</li>
 <li>CATEGORY is a two or three-letter code based on the six main categories established below. This provides immediate context.</li>
@@ -3833,8 +3833,8 @@ accessibility and compliance with legal standards.</li>
 </ul>
 <p>These functionalities are implemented by using the authentication and signing
 capabilities of the Wallet Unit as a part of a local QSCD, or a remote QSCD
-managed by a QTSP. See <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>
-and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>.</p>
+managed by a QTSP. See <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>
+and <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>.</p>
 <h3 id="25-pseudonyms">2.5 Pseudonyms</h3>
 <p>Pseudonyms can be used to authenticate a User when it is not necessary for a
 Relying Party to learn the identity of the User. As specified in [CIR
@@ -3848,7 +3848,7 @@ the account, such that it can be used for subsequent authentication in later
 interactions with that Relying Party. The User may additionally present
 attributes from a PID or attestation to the Relying Party, either during
 registration of the pseudonym or at a later interaction.</p>
-<p>See also <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a238-topic-11---pseudonyms">Topic 11</a>
+<p>See also <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11---pseudonyms">Topic 11</a>
 and the <a href="../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/">Discussion Paper on Topic E</a>.</p>
 <h3 id="26-the-role-of-use-cases">2.6 The role of Use Cases</h3>
 <h4 id="261-overview">2.6.1 Overview</h4>
@@ -3903,7 +3903,7 @@ instance a police officer.</p>
 <p>Like any other attestation type, an mDL can be presented in proximity as well as
 online, over the internet.</p>
 <p>For more details and high-level requirements for this use case, please see
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a233-topic-4---mdl-rulebook">Topic 4</a>.</p>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a233-topic-4---mdl-rulebook">Topic 4</a>.</p>
 <h5 id="264-strong-user-authentication-for-electronic-payments">2.6.4 Strong User Authentication for electronic payments</h5>
 <p>Users would like to be able to authenticate themselves and their electronic
 payments securely and conveniently using their Wallet Units, so that
@@ -3960,7 +3960,7 @@ SUA attestation.</li>
 </ul>
 <p>For more information, please refer to <a href="#562-transactional-data-using-isoiec-18013-5-and-openid4vp">Sections 5.6.2</a>
 and <a href="#6638-relying-party-instance-verifies-device-binding">6.6.3.8</a>. For
-high-level requirements, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2313-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a>.</p>
+high-level requirements, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2313-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a>.</p>
 <h4 id="265-natural-person-representing-another-natural-person">2.6.5 Natural person representing another natural person</h4>
 <p>The [European Digital Identity Regulation] considers the representation of one
 natural person by another.</p>
@@ -3995,7 +3995,7 @@ either short-lived or revocable. In the case of revocable representation
 attestations, all entities that, according to applicable law, are entitled to
 revoke them have the capability to request the Attestation Provider to do so. It
 is emphasized that the high-level requirements concerning attestation
-revocation, as defined in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>,
+revocation, as defined in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>,
 also apply to this attestation type.</p>
 <p>A User holding a representation attestation is able to represent another natural
 person when interacting with a Relying Party. The Relying Party is always aware
@@ -4003,7 +4003,7 @@ that it is interacting with a legal representative or agent. This is ensured by
 the fact that the corresponding Wallet Unit presents an attestation having a
 distinct type, specifically for representation attestations.</p>
 <p>For more details and high-level requirements for this use case, please see
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2318-topic-29---representation-paradigm">Topic 29</a>.</p>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2318-topic-29---representation-paradigm">Topic 29</a>.</p>
 <h4 id="266-examples-of-other-use-cases">2.6.6 Examples of other use cases</h4>
 <h5 id="2661-health-data">2.6.6.1 Health data</h5>
 <p>Easy access to health data is crucial in both national and cross-border
@@ -4263,8 +4263,8 @@ are present on the relevant Trusted List. In order to be put on a Trusted List,
 relevant entities must be notified to the Commission by a Member State. This
 happens after the entity has been registered by a Registrar in the Member State,
 see <a href="#317-registrars">Section 3.17</a>.</p>
-<p>For more information and high-level requirements, please refer to <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>
-and to <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
+<p>For more information and high-level requirements, please refer to <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>
+and to <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
 <h3 id="36-qualified-electronic-attestation-of-attributes-qeaa-providers">3.6 Qualified Electronic Attestation of Attributes (QEAA) Providers</h3>
 <p>Qualified EAAs are provided by Qualified Trust Service Providers (QTSPs). The
 general trust framework for QTSPs (see Chapter III, Section 3 of the [European
@@ -4273,7 +4273,7 @@ for the Trust Service of issuing QEAAs may be defined as well.</p>
 <p>QEAA Providers maintain an interface to Wallet Units to provide QEAAs upon
 request. Potentially, they also maintain an interface towards Authentic Sources
 to verify the value of User attributes, as specified in
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>.</p>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>.</p>
 <p>It is likely that for most QEAAs, a QEAA Provider will need to verify the
 identity of a User when issuing a QEAA. It is up to each QEAA Provider to
 implement the necessary User authentication processes, in compliance with all
@@ -4861,7 +4861,7 @@ code or the NFC tag and sets up a connection towards the Wallet Unit. The QR
 code or NFC tag also contains the information necessary to create an
 authenticated and encrypted secure channel on top of the NFC, BLE, or Wi-Fi
 Aware connection between both entities.</p>
-<p>For high-level requirements, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2314-topic-24---user-identification-in-proximity-scenarios">Topic 24</a>.</p>
+<p>For high-level requirements, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2314-topic-24---user-identification-in-proximity-scenarios">Topic 24</a>.</p>
 <p>Note that a Wallet Unit and a Relying Party do not have to use proximity
 technologies if they are close together.  They are still free to use a remote
 flow according to <a href="#443-remote-presentation-transaction-flows">Section 4.4.3</a>.
@@ -5225,8 +5225,8 @@ re-issued, the Wallet Unit moves back to <strong>Installed</strong>.</p>
 <li>The Wallet Provider revokes the Wallet Unit, for instance at the User's
 request or if the security of the Wallet Instance is broken. Revocation of the
 Wallet Unit is accomplished by revoking the Wallet Unit Attestation (see
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>
-and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>).</li>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>
+and <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>).</li>
 <li>The User requests issuance of a PID, a QEAA, a PuB-EAA, or an EAA.</li>
 <li>The User presents attributes from a PID, a QEAA, a PuB-EAA, or an EAA to a
 Relying Party.</li>
@@ -5318,7 +5318,7 @@ using the registered public key. If the signature verifies and the origin
 matches the expected origin, the User is considered authenticated and thereby
 granted access to the service.</li>
 </ol>
-<p>For high-level requirements on the use of WebAuthn and Passkeys, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a238-topic-11---pseudonyms">Topic 11</a>.
+<p>For high-level requirements on the use of WebAuthn and Passkeys, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11---pseudonyms">Topic 11</a>.
 Note that the Commission will create or reference a technical specification
 containing all details necessary for Wallet Units and Relying Parties to
 generate, register, and use Pseudonyms.</p>
@@ -5632,7 +5632,7 @@ explained in <a href="#51-attestation-elements">Section 5.1</a> are defined for 
 attestation format.</p>
 <p>Within the EUDI Wallet ecosystem, Wallet Units will support the first two
 formats above. Support for the third format is optional and meant for
-non-qualified EAAs only. <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>
+non-qualified EAAs only. <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>
 states the detailed requirements regarding support by Wallet Units, PID
 Providers, and Attestation Providers for these formats and specifications.</p>
 <h4 id="532-isoiec-18013-5-and-isoiec-23220-2">5.3.2 ISO/IEC 18013-5 and ISO/IEC 23220-2</h4>
@@ -5779,7 +5779,7 @@ Rulebook</strong>, which, for each attestation type, <strong>specifies</strong>:
 <li>the <strong>unique identifiers, syntax/encodings, and semantics</strong> of all attributes
 that may appear in the attestation;  </li>
 <li>the <strong>presentation protocol(s)</strong> that relevant attestations must support.<br />
-The requirements for Rulebooks are defined in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>.</li>
+The requirements for Rulebooks are defined in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>.</li>
 </ul>
 <h4 id="542-who-defines-rulebooks-and-schemes">5.4.2 Who defines Rulebooks and schemes</h4>
 <p>Attestation Rulebooks are defined by <strong>Attestation Scheme Providers</strong> (see
@@ -5794,7 +5794,7 @@ unnecessary syntax/semantic divergence. Selection of the responsible
 organisation is out of scope for this document.  </li>
 <li><strong>Individual Attestation Providers</strong>, when they must include <strong>domestic or
 provider-specific attributes</strong> not covered by the EU-wide or sectoral Rulebook
-(see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>).</li>
+(see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>).</li>
 <li><strong>Single organisations</strong> for attestations intended solely for internal use.</li>
 </ul>
 <h4 id="543-publication-in-the-catalogue">5.4.3 Publication in the catalogue</h4>
@@ -5832,9 +5832,9 @@ Commission-run catalogues are defined:</p>
 <p>The catalogue of attributes is exclusively intended for use by QTSPs issuing
 QEAAs, and enables them to find the access point of the Authentication Source
 responsible for a given attribute, at which the QTSP can verify the value of that
-attribute for a given User. This verification is discussed in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>
+attribute for a given User. This verification is discussed in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>
 in Annex 2.</p>
-<p>See <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2315-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>
+<p>See <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2315-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>
 and <a href="http://data.europa.eu/eli/reg_impl/2025/1569/oj">Commission Implementing Regulation 2025/1569</a>,
 particularly Article 7, for the high-level requirements for the catalogue of attributes.</p>
 <p>For more details, see also the <a href="../discussion-topics/o-catalogues-for-attestations/">Discussion Paper on Topic O</a>.
@@ -5930,7 +5930,7 @@ and the creation of qualified electronic signatures, see <a href="#24-qualified-
 In the case of strong customer authentication for payments, the Relying Party
 sends payment information, such as the payment amount and the payee, to the
 Wallet Unit. In the case of electronic signatures, the Relying Party may send (a
-representation of) data to be signed to the Wallet Unit. In <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2313-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a>,
+representation of) data to be signed to the Wallet Unit. In <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2313-topic-20---strong-user-authentication-for-electronic-payments">Topic 20</a>,
 such data is called transactional data.</p>
 <p>The Wallet Unit will process the transactional data in a use-case specific way,
 and, after consulting the User, will sign a (representation of the)
@@ -6002,8 +6002,8 @@ may adopt alternative trust models and verification mechanisms.</li>
 <li>The model supports both remote and proximity use cases, though technical
 measures and authentication mechanisms may vary.</li>
 <li>This version of the ARF does not yet include trust interactions for
-qualified electronic signatures or seals; see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>
-and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>
+qualified electronic signatures or seals; see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>
+and <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>
 in Annex 2.</li>
 <li>Besides the trust relationships described in this chapter, other trust
 relations are established as well. For instance, Users, PID Providers,
@@ -6041,13 +6041,13 @@ Provider can use these trust anchors to verify the authenticity of a Wallet Unit
 Attestation signed by the Wallet Provider, so they can be sure they are dealing
 with an authentic Wallet Unit from a trusted Wallet Provider.
 See <a href="#6623-pid-provider-or-attestation-provider-validates-the-wallet-unit">Section 6.6.2.3</a>,
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>
-and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>.</p>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>
+and <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>.</p>
 <p>If a certain entity offers multiple Wallet Solutions, they will register as a
 separate Wallet Provider for each of these Wallet Solutions. This implies that
 such an entity will register different trust anchors for each of their Wallet
 Solutions.</p>
-<p>More details on the Wallet Provider notification process can be found in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
+<p>More details on the Wallet Provider notification process can be found in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
 <h4 id="623-wallet-provider-suspension-or-cancellation">6.2.3 Wallet Provider suspension or cancellation</h4>
 <p>Under specific conditions, a Member State may decide to suspend or cancel a
 Wallet Provider. This implies that the Wallet Provider's status in the
@@ -6098,7 +6098,7 @@ a Trusted List.</li>
 registers a set of data about the PID Provider or Attestation Provider in its
 register. The Registrar makes the contents of the register available to the
 general public, both in machine-readable and human-readable format. High-level
-requirements on the registration process can be found in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.</p>
+requirements on the registration process can be found in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.</p>
 <p>The data to be registered about a PID Provider, QEAA Provider, PuB-EAA Provider,
 or EAA Provider includes the attestation type(s) that the Provider intends to
 issue to Wallet Units. This enables Wallet Units and Relying Parties to verify
@@ -6124,7 +6124,7 @@ issued to a PID Provider or Attestation Provider erroneously or fraudulently, an
 Access Certificate Authority logs all access certificates in a Certificate
 Transparency (CT) log, once such a log is available for access certificates. For
 more information, see the <a href="../discussion-topics/s-certificate-transparancy/">Discussion Paper for Topic S</a>.
-For high-level requirements on CT, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2333-topic-55---certificate-transparency">Topic 55</a>.</p>
+For high-level requirements on CT, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2333-topic-55---certificate-transparency">Topic 55</a>.</p>
 <p>A PID Provider access certificate does not indicate that its subject is a PID
 Provider. Similarly, an Attestation Provider access certificate does not
 indicate that its subject is a QEAA Provider, a PuB-EAA Provider, or a
@@ -6165,17 +6165,17 @@ QEAAs, and PuB-EAAs they obtain from Wallet Units.</p>
 <p>Non-qualified EAA Providers are not included in a Trusted List by a Member
 State. However, if a Relying Party requests a non-qualified EAA from a Wallet
 Instance, it must know how to obtain the domain-specific trust anchor it needs
-to verify the signature over that EAA. To help with this, <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>
+to verify the signature over that EAA. To help with this, <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>
 recommends that the applicable Rulebook specifies the mechanisms enabling this.
 This mechanism may be similar to the one for PIDs, QEAAs, or PuB-EAAs, namely
 that the relevant non-qualified EAA Providers and their trust anchors are
 included in a trusted list. However, other methods may be used as well, and even
 if such a trusted list exists, it does not have to comply with the requirements
-in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
+in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
 <p>High-level requirements on the PID Provider or Attestation Provider notification
 process, as well as on the information registered and published in the PID
 Provider Trusted List or Attestation Provider Trusted List, can be found in
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>.</p>
 <h4 id="633-suspension-or-cancellation-of-the-registration-of-a-pid-provider-or-attestation-provider">6.3.3 Suspension or cancellation of the registration of a PID Provider or Attestation Provider</h4>
 <p>Under specific conditions, a Registrar may decide to suspend or cancel the
 registration of a PID Provider or Attestation Provider. The conditions for this
@@ -6187,7 +6187,7 @@ Provider will no longer be able to issue PIDs or attestations to Wallet Units.</
 cancellation also implies that its status in the respective Trusted List will be
 changed to Invalid. As a result, Relying Parties will no longer trust PIDs or
 attestations issued by that Provider. For non-qualified EAA Providers, the
-applicable Rulebook (see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>)
+applicable Rulebook (see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>)
 may define similar mechanisms ensuring that Relying Parties will no longer
 trust the trust anchors of EAA Providers of which the registration was suspended
 or cancelled.</p>
@@ -6244,9 +6244,9 @@ issued to a Relying Party erroneously or fraudulently, an Access Certificate
 Authority logs all access certificates in a Certificate Transparency (CT) log,
 once such a log is available for access certificates. For more information, see
 the <a href="../discussion-topics/s-certificate-transparancy/">Discussion Paper for Topic S</a>.
-For high-level requirements on CT, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2333-topic-55---certificate-transparency">Topic 55</a>.</p>
+For high-level requirements on CT, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2333-topic-55---certificate-transparency">Topic 55</a>.</p>
 <p>High-level requirements on the Relying Party registration process can be found
-in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.</p>
+in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>.</p>
 <h4 id="643-relying-party-suspension-or-cancellation">6.4.3 Relying Party suspension or cancellation</h4>
 <p>Under specific conditions, a Registrar may decide to suspend or cancel
 registration of a registered Relying Party. The conditions for this will be
@@ -6289,7 +6289,7 @@ Solution, the User will not be able to use the Wallet Unit for obtaining those
 PID(s).</li>
 </ol>
 <p>The next two sections discuss these trust relationships. For high-level
-requirements regarding Wallet Instance installation, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
+requirements regarding Wallet Instance installation, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
 section A.</p>
 <h5 id="6522-wallet-solution-authenticity-is-verified">6.5.2.2 Wallet Solution authenticity is verified</h5>
 <p>To ensure that the User can trust the Wallet Solution, Wallet Providers
@@ -6368,7 +6368,7 @@ Unit.</li>
 <li>The Wallet Provider sets up a User account for the User.</li>
 </ol>
 <p>These steps are described in the sections below. For high-level requirements
-regarding Wallet Unit activation, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
+regarding Wallet Unit activation, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
 section B.</p>
 <h5 id="6532-wallet-provider-requests-data-about-the-users-device-from-the-wallet-instance">6.5.3.2 Wallet Provider requests data about the User's device from the Wallet Instance</h5>
 <p>The Wallet Instance connects to the Wallet Provider to be activated. Then, the
@@ -6403,7 +6403,7 @@ Wallet Unit. The second mechanism is implemented by the WSCA/WSCD and will be
 used when a PID or an attestation at level of security High is issued,
 presented, or deleted.</p>
 <p>These two mechanisms are described in the next two subsections. See also the
-requirements on User authentication in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
+requirements on User authentication in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
 Section C.</p>
 <h6 id="65332-os-level-user-authentication-before-any-operation">6.5.3.3.2 OS-level User authentication before any operation</h6>
 <p>During Wallet Unit activation, the Wallet Instance forces the operating system
@@ -6471,7 +6471,7 @@ Wallet Unit als a valid Wallet Unit provided by a trusted Wallet Provider.</li>
 <li>Lastly, a WUA contains information allowing a PID Provider or an Attestation
 Provider to verify that the Wallet Provider did not revoke the Wallet Unit
 Attestation, and hence the Wallet Unit itself. The WUA and the revocation
-mechanisms for Wallet Units are described in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>.</li>
+mechanisms for Wallet Units are described in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>.</li>
 </ul>
 <p>Optionally, a fourth purpose of the WUA is the following. During the issuance of
 a PID or a device-bound attestation, the Wallet Unit will send a public key to
@@ -6481,14 +6481,14 @@ PID Provider or Attestation Provider that it manages both the private key
 belonging to this new public key and the private key belonging to the WUA public
 key. In that way, the PID Provider or Attestation Provider can trust that the
 level of security of this new key is the same as for the WUA key. A mechanism
-for providing such a proof is discussed in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>,
+for providing such a proof is discussed in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>,
 where it is used to give assurance to a Relying Party that multiple attestations
 originate from the same WSCA/WSCD and thus are related to the same User. The
 same mechanism could also be used here. Note that support for such a 'proof of
 cryptographic binding' between a WUA and a PID or attestation is not mandatory
 in this version of the ARF, since no such mechanism has been specified yet, let
 alone that this is widely supported by available WSCA/WSCDs.</p>
-<p>High-level requirements for the WUA can be found in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>.
+<p>High-level requirements for the WUA can be found in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>.
 More information on the WUA can also be found in the
 <a href="../discussion-topics/c-wallet-unit-attestation/">Discussion Paper for topic C</a>.
 The detailed format of the WUA is specified in the draft
@@ -6549,9 +6549,9 @@ European Commission.  The <a href="../technical-specifications/ts1-eudi-wallet-t
 on the EUDI Wallet Trust Mark concentrates on defining the exact technical
 contents and the provisioning process to enable the UI view rendering at the
 Wallet Instance.
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>
 sets the high-level requirements for the Trust Mark as part of the Wallet Unit
-dashboard functionality. <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>
+dashboard functionality. <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>
 specifies what is required regarding the Trust Mark upon Wallet Unit activation
 and maintenance.</p>
 <h4 id="654-wallet-unit-management">6.5.4 Wallet Unit management</h4>
@@ -6598,7 +6598,7 @@ Wallet Provider authenticates the PID Provider. <a href="#6622-wallet-unit-authe
 below describes how a Wallet Unit can do this during PID issuance; a Wallet
 Provider can use the same mechanism.</li>
 </ol>
-<p>For high-level requirements regarding Wallet Instance management, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
+<p>For high-level requirements regarding Wallet Instance management, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>,
 section C.</p>
 <h5 id="6542-wallet-unit-revocation">6.5.4.2 Wallet Unit revocation</h5>
 <p>The Wallet Provider will suspend or revoke the Wallet Unit in the following circumstances:</p>
@@ -6610,9 +6610,9 @@ Provider to revoke the Wallet Unit because the natural person using the Wallet
 Unit has died or the legal person using the Wallet Unit has ceased operations.
 To identify the Wallet Unit that is to be revoked, the PID Provider uses a
 Wallet Unit identifier provided by the Wallet Unit in the WUA during PID
-issuance; see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>.
+issuance; see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>.
 This can be the same identifier used for enabling WUA revocation, for example an
-URI to a Status List plus an index in that list; see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.</li>
+URI to a Status List plus an index in that list; see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.</li>
 <li>If the security of the Wallet Unit is breached or compromised.</li>
 </ul>
 <p>Suspension or revocation of a Wallet Unit involves revocation of all valid WUAs
@@ -6628,7 +6628,7 @@ the situation is remedied and the Wallet Unit can be re-instated, the Wallet
 Provider will issue one or more new WUAs to the Wallet Unit.</p>
 <p>See <a href="#6624-pid-provider-or-attestation-provider-verifies-that-wua-is-not-revoked">Section 6.6.2.4</a>
 and sections referenced there for explanations of how PID Providers, Attestation
-Providers, and Relying Parties deal with Wallet Unit revocation. See <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>
+Providers, and Relying Parties deal with Wallet Unit revocation. See <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>
 for high-level requirements on Wallet Unit revocation.</p>
 <h5 id="6543-migrating-the-pids-and-attestations-in-a-wallet-unit-to-a-different-wallet-solution">6.5.4.3 Migrating the PIDs and attestations in a Wallet Unit to a different Wallet Solution</h5>
 <p>Article 5a 4 (g) of the [European Digital Identity Regulation] ensures the
@@ -6679,7 +6679,7 @@ therefore either contains the same data as for device-bound attestations, or it
 contains all data including attribute identifiers.</p>
 <p>The Migration Object is stored in such a way that its confidentiality is ensured
 and that it can be used only by the User.</p>
-<p>See <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>
+<p>See <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>
 for high-level requirements regarding migration.</p>
 <p>The migration functionality of a Wallet Unit also enables backup and restore.
 Backup and restore is needed in case the User has lost access to their current
@@ -6692,7 +6692,7 @@ Wallet Unit, with as minimal an effort as possible.</p>
 <p>The [European Digital Identity Regulation] does not contain a requirement
 mandating backup and restore functionality in the Wallet. However, Wallet
 Providers will implement backup and restore functionality nevertheless,
-because it will be expected by Users. In fact, the requirements in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>
+because it will be expected by Users. In fact, the requirements in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>
 also ensure the possibility of backup and restore.</p>
 <h4 id="655-wallet-instance-uninstallation">6.5.5 Wallet Instance uninstallation</h4>
 <p>No trust relationships are required for Wallet Instance uninstallation; anybody
@@ -6779,7 +6779,7 @@ retrieves the policy and stores it locally, so that it can apply the policy in
 case a Relying Party requests attributes from the attestation. See <a href="#6627-provisioning-embedded-disclosure-policies">Section 6.6.2.7</a>.</li>
 </ol>
 <p>More detailed requirements for the issuance process of PIDs and attestations,
-for instance regarding the issuance protocol, are included in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</p>
+for instance regarding the issuance protocol, are included in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>.</p>
 <h5 id="6622-wallet-unit-authenticates-the-pid-provider-or-attestation-provider">6.6.2.2 Wallet Unit authenticates the PID Provider or Attestation Provider</h5>
 <p>As shown in <a href="#61-scope">Figure 11</a>, a Wallet Unit downloads the Access
 Certificate Authority Trusted List(s) it needs from the relevant Trusted List
@@ -6828,7 +6828,7 @@ over the WUA, using the Wallet Provider trust anchor obtained from the Trusted
 List. Next, the PID Provider or Attestation Provider verifies that the Wallet
 Unit possesses the private key belonging to the public key in the WUA. This
 proves that the Wallet Unit is authentic and is provided by a trusted Wallet
-Provider. For more details see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>.</p>
+Provider. For more details see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>.</p>
 <h6 id="66232-optionally-validates-the-properties-of-the-wscawscd-or-the-keystore">6.6.2.3.2 Optionally, validates the properties of the WSCA/WSCD or the keystore</h6>
 <p>The WUA describes the certifications and the other relevant properties of the
 WSCA/WSCD. The security level of the WSCA/WSCD is a key determinant for reaching
@@ -6876,7 +6876,7 @@ revocation status of the Wallet Unit. See <a href="../technical-specifications/t
 for more information.</p>
 <p>Attestation Providers can use the same mechanism as well, to provide the same assurance
 to Relying Parties, although this is not required by the CIR. See also <a href="#66312-relying-party-optionally-trusts-issuer-to-regularly-verify-that-wallet-unit-is-not-revoked">Section 6.6.3.12</a>.</p>
-<p><a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>
+<p><a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>
 describes Wallet Unit revocation in more detail.</p>
 <p>Once it has done all verifications, the PID Provider or Attestation Provider
 will issue the PID or attestation to the Wallet Unit.</p>
@@ -7067,9 +7067,9 @@ Wallet Unit. This is discussed in <a href="#66313-wallet-unit-enables-the-user-t
 <p>Relying Party authentication is a process whereby a Relying Party proves its
 identity to a Wallet Unit, in the context of an interaction in which the Relying
 Party requests the Wallet Unit to present some attributes. Relying Party
-authentication is discussed in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a>.</p>
+authentication is discussed in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a>.</p>
 <p>Relying Party authentication is included in the protocol used by a Wallet Unit
-and a Relying Party Instance to communicate. As documented in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>,
+and a Relying Party Instance to communicate. As documented in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>,
 at least two different protocols can be used within the EUDI Wallet ecosystem,
 namely the ones specified in [ISO/IEC 18013-5] and [OpenID4VP]. Both protocols
 include functionality allowing the Wallet Unit to authenticate the Relying Party
@@ -7160,7 +7160,7 @@ retrieve the Relying Party registration information.</p>
 <p>The format of the registration certificate, as well as the way in which the
 Wallet Unit can verify that the registration certificate belongs to the
 authenticated Relying Party, will be specified in a technical specification. For
-more information, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2326-topic-44---relying-party-registration-certificates">Topic 44</a>.</p>
+more information, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2326-topic-44---relying-party-registration-certificates">Topic 44</a>.</p>
 <h5 id="6634-wallet-unit-evaluates-embedded-disclosure-policy-if-present">6.6.3.4 Wallet Unit evaluates embedded disclosure policy, if present</h5>
 <p>During attestation issuance, an Attestation Provider optionally created an embedded
 disclosure policy for the attestation, see <a href="#6627-provisioning-embedded-disclosure-policies">Section 6.6.2.7</a>.
@@ -7174,7 +7174,7 @@ User when requesting User approval, see <a href="#66357-wallet-unit-informed-the
 For example, "The issuer of your medical data does not want you to present data
 from \&lt;attestation name&gt; to \&lt;Relying Party name&gt;. Do you want to continue?"
 Note that the User can overrule the disclosure policy evaluation outcome.</p>
-<p>For more details on the embedded disclosure policy, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2325-topic-43---embedded-disclosure-policies">Topic 43</a>.</p>
+<p>For more details on the embedded disclosure policy, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2325-topic-43---embedded-disclosure-policies">Topic 43</a>.</p>
 <h5 id="6635-wallet-unit-obtains-user-approval-for-presenting-selected-attributes">6.6.3.5 Wallet Unit obtains User approval for presenting selected attributes</h5>
 <h6 id="66351-introduction">6.6.3.5.1 Introduction</h6>
 <p><strong>Note: In this document the term 'User approval' exclusively refers to a User's
@@ -7215,7 +7215,7 @@ embedded disclosure policy, if any,</li>
 <p>These conditions are further discussed in the next subsections. After the User
 gives their approval, the Wallet Unit will present the approved User attributes
 to the Relying Party Instance.</p>
-<p>High-level requirements regarding User approval can be found in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a></p>
+<p>High-level requirements regarding User approval can be found in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a></p>
 <h6 id="66352-wallet-unit-authenticates-the-user">6.6.3.5.2 Wallet Unit authenticates the User</h6>
 <p>A prerequisite for requesting User approval is that the Wallet Unit is sure that
 the person using the Wallet Unit (and giving the approval) is in fact the User.
@@ -7228,7 +7228,7 @@ of the User authentication mechanisms set up during Wallet Unit activation, see
 identity of the Relying Party. The Wallet Unit shows the User at least the
 User-friendly name and the unique identifier registered by the Relying Party.</p>
 <p>The Wallet Unit obtains this information from the extension of the presentation
-request (see requirement RPRC_19a in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2326-topic-44---registration-certificates-for-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 44</a>
+request (see requirement RPRC_19a in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2326-topic-44---registration-certificates-for-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 44</a>
 in Annex 2), or from the registration certificate, if presented by the Relying
 Party Instance.</p>
 <p>If the Relying Party uses an intermediary (see <a href="#3113-intermediaries">Section 3.11.3</a>),
@@ -7324,7 +7324,7 @@ a way that, at the time of verification, it is able to distinguish between trust
 anchors usable either for PIDs, for QEAAs, for PuB-EAAs, or for non-qualified
 EAAs.</p>
 <p>The technical implementation of the signature verification process depends on
-which of the standards mentioned in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>
+which of the standards mentioned in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>
 is supported by the Wallet Unit. Each of these standards specifies in detail
 how to carry out signature verification.</p>
 <p>In addition, the Relying Party may want to verify that the Attestation Provider
@@ -7402,7 +7402,7 @@ accept or refuse the PID or attestation.</li>
 <li>It is recommended but not mandatory for a Relying Party Instance to verify the
 revocation status of a PID or attestation.</li>
 </ul>
-<p>For more details and requirements on revocation, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.</p>
+<p>For more details and requirements on revocation, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.</p>
 <h5 id="6638-relying-party-instance-verifies-device-binding">6.6.3.8 Relying Party Instance verifies device binding</h5>
 <p><strong>Device binding</strong> is the cryptographic link that ensures a PID or attestation
 belongs exclusively to the <strong>Wallet Secure Cryptographic Device (WSCD)</strong> in the
@@ -7438,7 +7438,7 @@ called 'mdoc authentication'. In [SD-JWT VC] it is called 'key binding'. Note
 that it is recommended but not mandatory for a Relying Party Instance to verify
 the device binding signature in the presentation response, if present.</p>
 <p>The technical implementation of this verification depends on which of the
-standards mentioned in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>
+standards mentioned in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>
 is supported by the Wallet Unit. Each of these standards specifies in detail how
 to carry out this verification.</p>
 <p>The data signed by the Wallet Unit may include (a representation of) some
@@ -7589,7 +7589,7 @@ presented attributes.</p>
 PIDs and device-bound attestations.</li>
 <li>This version of the ARF does not specify or reference a specific cryptographic
 mechanism to implement cryptographic binding between attestations. However,
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>
 specifies high-level requirements for a cryptographic binding between
 attestations scheme.  - This ARF assumes that each Wallet Unit (and therefore
 each WSCA/WSCD and keystore) contains attestations for only one User (see also
@@ -7647,7 +7647,7 @@ this, a Wallet Unit provides a dashboard displaying a log of all attestation
 presentation transactions (as well as all other types of transaction) performed
 by the Wallet Unit. For presentation transactions, this log includes the
 identifiers of the attributes that were requested and presented, but not their
-values. For high-level requirements on this transaction log, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>.</p>
+values. For high-level requirements on this transaction log, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>.</p>
 <p>The Wallet Unit enables the User to easily report a suspicious presentation
 request in the transaction log to a DPA. By default, this is the DPA that
 supervises the Relying Party, but if the Wallet Unit does not know which DPA
@@ -7660,7 +7660,7 @@ because Relying Party authentication failed, or if the User did not approve the
 presentation of any attributes, the User can still report the request to a Data
 Protection Authority.</p>
 <p>For more information and requirements on reporting presentation requests to a DPA,
-see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2328-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>.</p>
+see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2328-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>.</p>
 <p>The dashboard and the transaction log kept by the Wallet Unit also enable the
 User to request a Relying Party to delete personal data in accordance with
 Regulation (EU) 2016/679 (the GDPR). In the context of EUDI Wallet, this
@@ -7680,12 +7680,12 @@ in a web form provided by the Relying Party,</li>
 contains the necessary contact information, including the URL of a web form for
 privacy-related enquiries, an e-mail address, and/or a phone number.</p>
 <p>A Relying Party may use the services of an intermediary to request data
-from a Wallet Unit, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2330-topic-52-relying-party-intermediaries">Topic 52</a>.
+from a Wallet Unit, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2330-topic-52-relying-party-intermediaries">Topic 52</a>.
 However, such intermediaries are required to delete any data they obtain from a
 Wallet Unit immediately after sending it to the Relying Party. Data deletion
 requests are therefore always sent to the Relying Party, not the intermediary.</p>
 <p>For more information and requirements on requesting a Relying Party to delete
-personal data, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2327-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>.</p>
+personal data, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2327-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>.</p>
 <h4 id="664-pid-or-attestation-presentation-to-another-wallet-unit">6.6.4 PID or attestation presentation to another Wallet Unit</h4>
 <h5 id="6641-introduction">6.6.4.1 Introduction</h5>
 <p><a href="#663-pid-or-attestation-presentation-to-a-relying-party">Section 6.6.3</a> discussed
@@ -7725,7 +7725,7 @@ interacting with a legal entity.</li>
 </ul>
 <p>For more information and high-level requirements, please refer to
 <a href="../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a>
-and <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2319-topic-30---interaction-between-wallet-units">Topic 30</a>.
+and <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2319-topic-30---interaction-between-wallet-units">Topic 30</a>.
 The next section describes a Wallet-to-Wallet transaction flow on a high level.</p>
 <h5 id="6642-general-transaction-flow">6.6.4.2 General transaction flow</h5>
 <p>The following transaction flow will be used as the basis for Wallet-to-Wallet interactions:</p>
@@ -7913,7 +7913,7 @@ the previous step failed, the intermediary deletes the PIDs or attestations
 immediately after it has completed all necessary verifications.</p>
 <p>Note that this approach implies that an intermediated Relying Party using the
 services of an intermediary will not need an access certificate.</p>
-<p>For high-level requirements on intermediaries, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2330-topic-52-relying-party-intermediaries">Topic 52</a>.</p>
+<p>For high-level requirements on intermediaries, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2330-topic-52-relying-party-intermediaries">Topic 52</a>.</p>
 <h4 id="666-pid-or-attestation-management">6.6.6 PID or attestation management</h4>
 <h5 id="6661-overview">6.6.6.1 Overview</h5>
 <p>Starting from the issuance of a PID or attestation, the PID or attestation is
@@ -8050,12 +8050,12 @@ Relying Parties. The Wallet Unit then requests the WSCA/WSCD to destroy all
 cryptographic key material in the WSCA/WSCD related to these PIDs or
 attestations. Thus, the Wallet Unit takes advantage of the fact that the User
 authenticates for another purpose, for example because they want to present a
-PID, to also carry out any necessary key deletion operations. See also <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>
+PID, to also carry out any necessary key deletion operations. See also <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>
 in Annex 2.</p>
 <h5 id="6664-pid-or-attestation-revocation">6.6.6.4 PID or attestation revocation</h5>
 <p>PID or attestation management includes ensuring that PIDs and attestations can
 be revoked if necessary. Revocation of PIDs and attestations is discussed in
-<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.
+<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>.
 The User can request the PID Provider or Attestation Provider to revoke the PID
 or attestation at least in case of loss or theft. The PID Provider or
 Attestation Provider can also decide itself to revoke a PID or attestation, for example
@@ -8080,7 +8080,7 @@ will authenticate the User.</p>
 <p>If it supports the Digital Credentials API, see <a href="#443-remote-presentation-transaction-flows">Section 4.4.3</a>,
 the Wallet Unit also discloses the fact that it no longer contains the PID or
 attestation to the Digital Credentials API framework.</p>
-<p>For high-level requirements on this topic, see <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2329-topic-51---pid-or-attestation-deletion">Topic 51</a>.</p>
+<p>For high-level requirements on this topic, see <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2329-topic-51---pid-or-attestation-deletion">Topic 51</a>.</p>
 <h2 id="7-certification-and-risk-management">7 Certification and Risk Management</h2>
 <h3 id="71-introduction">7.1 Introduction</h3>
 <p>This chapter briefly describes the certification of Wallet Solutions and the eID
@@ -8429,13 +8429,13 @@ track User activity across multiple services. In this case, it's called
 Provider or Attestation Provider can mitigate Relying Party linkability fully by
 issuing multiple PIDs or attestations to the same User. Wallet Units can use
 these attestations as disposable (single-use) attestations, which ensures
-attestations can never be linked by Relying Parties. <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10 in Annex 2</a>
+attestations can never be linked by Relying Parties. <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10 in Annex 2</a>
 calls this method A, 'once-only attestations', and requires Wallet Solutions to support
 this method. It also specifies how a PID Provider or Attestation Provider can
 indicate that they want a Wallet Unit to treat their PIDs or attestations in
 this way.</p>
 <p>However, the 'once-only' approach increases issuance complexity and management
-overhead. Therefore, <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>
+overhead. Therefore, <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>
 also mandates support for another solution, where PIDs and attestations are
 valid for a limited time only. This limits the amount of PIDs and attestations
 to be issued, but only partially mitigates Relying Party linkability. Topic
@@ -8497,7 +8497,7 @@ Proof schemes and gives an overview of representative solutions. Finally, it
 discusses topics related to the integration of Zero-Knowledge Proof schemes into
 the EUDI Wallet ecosystem.</p>
 <p>High-level requirements for Zero-Knowledge Proofs to be used in the EUDI Wallet
-ecosystem are included in <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2331-topic-53-zero-knowledge-proofs">Topic 53</a>
+ecosystem are included in <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2331-topic-53-zero-knowledge-proofs">Topic 53</a>
 of Annex 2.</p>
 <h2 id="8-accessibility">8 Accessibility</h2>
 <h3 id="81-introduction">8.1 Introduction</h3>
@@ -8509,7 +8509,7 @@ with the applicable European legal and technical frameworks.  </p>
 <p>Accessibility is not only a matter of <strong>legal compliance</strong> but also a
 fundamental condition for <strong>equal access, User trust, and widespread adoption</strong>
 across all segments of the population, including persons with disabilities.  </p>
-<p>For high-level requirements on accessibility, please refer to <a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2332-topic-54---accessibility">Topic 54</a>.</p>
+<p>For high-level requirements on accessibility, please refer to <a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2332-topic-54---accessibility">Topic 54</a>.</p>
 <p>For more information, also see the <a href="../discussion-topics/q-interface-user-wallet-instance/">Discussion Paper for Topic Q</a>.</p>
 <h3 id="82-legal-instruments-and-standards">8.2 Legal instruments and standards</h3>
 <p>The following main legislative instruments and standards apply:</p>
@@ -8879,115 +8879,115 @@ Roadmap, which contains the latest information regarding the targeted version.</
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/391">IANA JSON Web Token Claims Registry</a></td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a234-topic-6---relying-party-authentication-and-user-approval">Topic 6</a>]</td>
 <td>Annex 2 - Relying Party authentication and User approval</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a>]</td>
 <td>Annex 2 - Attestation revocation and revocation checking</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a236-topic-9---wallet-unit-attestation">Topic 9</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9---wallet-unit-attestation">Topic 9</a>]</td>
 <td>Annex 2 - Wallet Unit Attestation</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>]</td>
 <td>Annex 2 -Issuing a PID or attestation to a Wallet Unit</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a238-topic-11---pseudonyms">Topic 11</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11---pseudonyms">Topic 11</a>]</td>
 <td>Annex 2 - Pseudonyms</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a239-topic-12---attestation-rulebooks">Topic 12</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12---attestation-rulebooks">Topic 12</a>]</td>
 <td>Annex 2 - Attestation Rulebooks</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2310-topic-16---signing-documents-with-a-wallet-unit">Topic 16</a>]</td>
 <td>Annex 2 - Signing documents with a Wallet Unit</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2311-topic-18---combined-presentations-of-attributes">Topic 18</a>]</td>
 <td>Annex 2 - Combined presentations of attributes</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>]</td>
 <td>Annex 2 - User Navigation requirements (Dashboard logs for transparency)</td>
 </tr>
 <tr>
-<td>[<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2314-topic-24---user-identification-in-proximity-scenarios">Topic 24</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2314-topic-24---user-identification-in-proximity-scenarios">Topic 24</a>]</td>
 <td>Annex 2 - User identification in proximity scenarios</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2315-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2315-topic-25---unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>]</td>
 <td>Annex 2 - Unified definition and controlled vocabularies for attributes</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>]</td>
 <td>Annex 2 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2318-topic-29---representation-paradigm">Topic 29</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2318-topic-29---representation-paradigm">Topic 29</a>]</td>
 <td>Annex 2 - Representation paradigm</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2319-topic-30---interaction-between-wallet-units">Topic 30</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2319-topic-30---interaction-between-wallet-units">Topic 30</a>]</td>
 <td>Annex 2 - Interaction between Wallet Units</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31---pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">Topic 31</a>]</td>
 <td>Annex 2 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2321-topic-34---migrate-to-a-different-wallet-solution">Topic 34</a>]</td>
 <td>Annex 2 - Migrate to a different Wallet solution</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2337-topic-37---qes----remote-signing---technical-requirements">Topic 37</a>]</td>
 <td>Annex 2 - QES -- Remote Signing - Technical Requirements</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2322-topic-38---wallet-unit-revocation">Topic 38</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38---wallet-unit-revocation">Topic 38</a>]</td>
 <td>Annex 2 - Wallet Unit revocation</td>
 </tr>
 <tr>
-<td>[<a href="./annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>]</td>
 <td>Annex 2 - Wallet Instance installation and Wallet Unit activation and management</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2324-topic-42---requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>]</td>
 <td>Annex 2 - Requirements for QTSPs to access Authentic Sources</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2325-topic-43---embedded-disclosure-policies">Topic 43</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2325-topic-43---embedded-disclosure-policies">Topic 43</a>]</td>
 <td>Annex 2 - Embedded disclosure policies</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2326-topic-44---relying-party-registration-certificates">Topic 44</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2326-topic-44---relying-party-registration-certificates">Topic 44</a>]</td>
 <td>Annex 2 - Relying Party registration certificates</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2327-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2327-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>]</td>
 <td>Annex 2 - Blueprint for requesting data deletion to Relying Parties</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2328-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2328-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>]</td>
 <td>Annex 2 - Blueprint to report unlawful or suspicious request of data</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2329-topic-51---pid-or-attestation-deletion">Topic 51</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2329-topic-51---pid-or-attestation-deletion">Topic 51</a>]</td>
 <td>Annex 2 - PID or attestation deletion</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2330-topic-52-relying-party-intermediaries">Topic 52</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2330-topic-52-relying-party-intermediaries">Topic 52</a>]</td>
 <td>Annex 2 - Relying Party intermediaries</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2331-topic-53-zero-knowledge-proofs">Topic 53</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2331-topic-53-zero-knowledge-proofs">Topic 53</a>]</td>
 <td>Annex 2 - Zero-Knowledge Proofs</td>
 </tr>
 <tr>
-<td>[<a href="annexes/annex-2/annex-2-high-level-requirements-by-topic.md#a2332-topic-54-accessibility">Topic 54</a>]</td>
+<td>[<a href="../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2332-topic-54-accessibility">Topic 54</a>]</td>
 <td>Annex 2 - Accessibility</td>
 </tr>
 </tbody>
