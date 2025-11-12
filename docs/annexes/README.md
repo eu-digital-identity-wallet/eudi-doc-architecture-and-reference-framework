@@ -5,7 +5,7 @@ If you prefer, you can download the annexes together with the main file as a
 single PDF from [this release page](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases).
 
 - [Annex 1 - Definitions](annex-1/annex-1-definitions.md)
-- [Annex 2 - High Level Technical Requirements](annex-2/annex-2-high-level-requirements.md)
+- [Annex 2 - High Level Technical Requirements](annex-2/annex-2.01-high-level-requirements.md)
 - [Annex 3.01 - PID Rulebook](annex-3/annex-3.01-pid-rulebook.md)
 - [Annex 3.02 - mDL Rulebook](annex-3/annex-3.02-mDL-rulebook.md)
 - [Annex 4.01 - eudi wallet initialisation and activation](annex-4/annex-4.01-eudi-wallet-initialisation-and-activation.pdf)
