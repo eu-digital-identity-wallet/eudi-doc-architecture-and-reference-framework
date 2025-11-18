@@ -533,7 +533,7 @@ any vendor, protocol, or format.
 ### A. What is the W3C Digital Credentials API?
 
 It's a Web API that lets wallets present and relying parties request and
-(optionally) issue digital credentials (e.g., ID cards, driving licenses,
+(optionally) issue digital credentials (e.g., ID cards, driving licences,
 diplomas) via the browser (user agent). It's protocol- and format-agnostic and
 builds on Credential Management Level 1.
 

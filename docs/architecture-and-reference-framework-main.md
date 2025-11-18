@@ -1082,7 +1082,7 @@ particular,
     Units, and if so, which one.
     - For a PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA
     Provider, the Registrar registers the attestation type(s) this entity wants
-    to issue to Wallet Units, for example, diplomas, driving licenses, or vehicle
+    to issue to Wallet Units, for example, diplomas, driving licences, or vehicle
     registration cards.
 - Registered entities receive an access certificate from an Access Certificate
 Authority, as described in [Section 3.18](#318-access-certificate-authorities).
