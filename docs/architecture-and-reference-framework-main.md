@@ -500,7 +500,7 @@ online, over the internet.
 For more details and high-level requirements for this use case, please see
 [Topic 4](./annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a233-topic-4---mdl-rulebook).
 
-##### 2.6.4 Strong User Authentication for electronic payments
+#### 2.6.4 Strong User Authentication for electronic payments
 
 Users would like to be able to authenticate themselves and their electronic
 payments securely and conveniently using their Wallet Units, so that
