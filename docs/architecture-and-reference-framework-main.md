@@ -1036,9 +1036,9 @@ PuB-EAA, or EAA) and publishes two complementary artefacts:
 1. A human-readable Attestation Rulebook; see [Section 5.4](#54-attestation-rulebooks-and-attestation-schemes),
 the authoritative documentation that explains what the attestation represents
 and how it works, detailing identifiers, semantics, encodings, constraints, and
-processing rules, trust model; and 2. A machine-readable attestation scheme that
-mirrors the Rulebook so software can build requests to Wallet Units and validate
-responses at runtime.
+processing rules, trust model; and
+2. A machine-readable attestation scheme that mirrors the Rulebook so software
+can build requests to Wallet Units and validate responses at runtime.
 
 Relying Parties use the Rulebook to decide whether and how to adopt an
 attestation and to prepare their systems, while their Relying Party Instances
