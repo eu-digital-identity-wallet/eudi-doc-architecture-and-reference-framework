@@ -1301,7 +1301,7 @@ which is an instance of a Wallet Solution and belongs to and is controlled by a
 User. This component implements the core business logic and interfaces as
 depicted in Figure 2. It directly interacts with the WSCA (which is interacting
 with the WSCD, see bullets hereafter) to securely manage critical assets and
-execute cryptographic functions. It interfaces with one or more key stores for
+execute cryptographic functions. It interfaces with one or more keystores for
 the management of non-critical cryptographic assets.
 
 - **Wallet Secure Cryptographic Device (WSCD)**: A tamper-resistant device that
