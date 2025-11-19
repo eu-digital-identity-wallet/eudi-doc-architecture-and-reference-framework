@@ -3300,7 +3300,7 @@ During the issuance of a PID or an attestation (see [Section 6.6.2.3](#6623-pid-
 a PID Provider or Attestation Provider can use this public key to verify that
 the Wallet Unit is in possession of the corresponding private key, and that this
 key is protected by the WSCA/WSCD described in the WUA. This authenticates the
-Wallet Unit als a valid Wallet Unit provided by a trusted Wallet Provider.
+Wallet Unit as a valid Wallet Unit provided by a trusted Wallet Provider.
 - Lastly, a WUA contains information allowing a PID Provider or an Attestation
 Provider to verify that the Wallet Provider did not revoke the Wallet Unit
 Attestation, and hence the Wallet Unit itself. The WUA and the revocation
