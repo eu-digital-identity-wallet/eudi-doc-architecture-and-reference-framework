@@ -2889,7 +2889,7 @@ fraudulently or as a result of an error.
 
 ##### 6.3.2.3 PID Provider or Attestation Provider receives an access certificate and a registration certificate
 
-When a PID Provider or Attestation Provider is registered by a Member State, a
+When a PID Provider or Attestation Provider is registered by a Member State, an
 Access Certificate Authority (see [Section 3.18](#318-access-certificate-authorities)
 issues one or more access certificates to the PID Provider or to the Attestation
 Provider. A PID Provider or an Attestation Provider needs such a certificate to
