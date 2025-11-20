@@ -3671,7 +3671,7 @@ authenticates the PID Provider or the Attestation Provider. To do so, the Wallet
 Unit verifies the access certificate presented to it by the PID Provider or
 Attestation Provider in its Issuer metadata according to [OpenID4VCI].
 Additionally, to verify the legal status of the Provider and the type(s) of
-attestation it issues), the Wallet Unit checks the registration information
+attestation it issues, the Wallet Unit checks the registration information
 contained in the registration certificate (if available in the Issuer metadata)
 or in the online service of the Registrar indicated in the access certificate.
 
