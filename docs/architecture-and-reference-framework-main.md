@@ -3426,7 +3426,7 @@ need to be vigilant as well, just as with any website on the internet.
 means that the Wallet Provider is sure that the User is indeed the User that was
 associated with the Wallet Unit during activation. For this, the Wallet Provider
 uses the authentication methods established in the User's account during
-activation, see [Section 6.5.3](#653-wallet-unit-activation).A
+activation, see [Section 6.5.3](#653-wallet-unit-activation).
 1. When the Wallet Unit and the Wallet Provider set up a communication channel,
 the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit
 is sure that it is dealing with the genuine Wallet Provider. Similarly, the
