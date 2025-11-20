@@ -3505,7 +3505,7 @@ implies the User must be able to authenticate towards the existing HSM from the
 new Wallet Unit, and be recognised as an existing User. For attestations bound
 to a keystore (rather than a WSCA/WSCD), the properties of the keystore
 determine if it's possible to export the attestation private keys to a location
-of the User's choosing. Most keystores will note allow this.
+of the User's choosing. Most keystores will not allow this.
 
 The fact that the Migration Object does not contain private keys means that PIDs
 and device-bound attestations cannot be backed up and restored from the object
