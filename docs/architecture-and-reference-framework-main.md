@@ -4490,7 +4490,7 @@ belong to the same User. This can be done in different ways, including (but not
 necessarily limited to):
 
 - **Presentation-Based Binding**: A Relying Party may assume that attributes
-presented in a single presentation response are belonging to the same User.
+presented in a single presentation response belong to the same User.
 However, this means that the Relying Party trusts that the Wallet Unit is not
 hacked or fraudulent. In some high-security use cases, such trust may not be
 warranted.
