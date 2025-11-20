@@ -4242,7 +4242,7 @@ User feels that the Relying Party is actually requesting more data than needed,
 that implies that the Relying Party is not trustworthy. The User should not
 approve the presentation of any data in that case.
 
-The Wallet Unit will present the all approved User attributes, and only these,
+The Wallet Unit will present the approved User attributes, and only these,
 to the Relying Party Instance.
 
 ##### 6.6.3.6 Relying Party Instance verifies the authenticity of the PID or attestation
