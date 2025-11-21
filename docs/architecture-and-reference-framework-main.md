@@ -4558,12 +4558,12 @@ PIDs and device-bound attestations.
 mechanism to implement cryptographic binding between attestations. However,
 [Topic 18](./annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2311-topic-18---combined-presentations-of-attributes)
 specifies high-level requirements for a cryptographic binding between
-attestations scheme.  - This ARF assumes that each Wallet Unit (and therefore
-each WSCA/WSCD and keystore) contains attestations for only one User (see also
-[Section 3.2](#32-users-of-wallet-units)). Therefore, a proof of cryptographic
-binding between two attestations proves that these attestations belong to the
-same User. However, some additional actions must be done to use such a mechanism
-in practice:
+attestations scheme.
+- This ARF assumes that each Wallet Unit (and therefore each WSCA/WSCD and
+keystore) contains attestations for only one User (see also [Section 3.2](#32-users-of-wallet-units)).
+Therefore, a proof of cryptographic binding between two attestations proves
+that these attestations belong to the same User. However, some additional
+actions must be done to use such a mechanism in practice:
     - During attestation issuance, an Attestation Provider must request the
     Wallet Unit to bind the new attestation to an existing PID or attestation.
     For this, the Attestation Provider must verify that the existing PID or
