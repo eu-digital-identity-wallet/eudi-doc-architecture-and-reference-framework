@@ -1,4 +1,4 @@
-Version 0.9, updated 24 October 2025
+Version 1.0, updated 19 November 2025
 
 [Link to GitHub discussion](https://www.github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/375)
 
@@ -11,6 +11,7 @@ Version 0.9, updated 24 October 2025
 | `0.7` (part of ARF 2.5) | 03.04.2025 | Initial version after first rounds of discussion.                         |
 | `0.8`                   | 26.09.2025 | Restructuring, additional use cases added, and HLRs for future use cases. |
 | `0.9`                   | 25.10.2025 | Optional to implement WebAuthn, revision of HLRs.                         |
+| `1.0`                   | 19.11.2025 | Revision after comments by member states                                  |
 
 ## 1 Introduction
 
@@ -48,16 +49,17 @@ The document is structured as follows:
 Finally, for completeness, in [Appendix A](#appendix-b-questions-related-to-use-cases-a-and-b), we include some of the previous questions that was discussed during the meetings for the basic use cases ([Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms)).
 
 ## 2 Types of Pseudonyms
-A pseudonym is a fictitious name taken by a person for a particular purpose.
-Before examining the legal requirements for the Pseudonyms functionality, we introduce three different types of pseudonyms that we will distinguish between in this paper. 
+A pseudonym is an alternative name or identifier used by a person for a particular purpose.
+Before examining the legal requirements for the Pseudonyms functionality, we introduce three different types of pseudonyms that can achieve different policy and technical goals and which we will use in this paper. 
 
 - **Verifiable pseudonym:** A verifiable pseudonym is a pseudonym that allows a User to prove possession over the pseudonym and thereby authenticate as the pseudonym.
-- **Attested pseudonym:** An attested pseudonym is a subtype of a verifiable pseudonym, allowing Relying Parties to verify that a third party has attested that pseudonym to a User. Further, the User can prove possession over this pseudonym towards such Relying Parties.
+- **Attested pseudonym:** An attested pseudonym is a subtype of a verifiable pseudonym, allowing Relying Parties to verify that a third party has attested that a pseudonym is owned by a User. 
 - **Scope rate limited pseudonym:** A scope rate limited pseudonym is a subtype of a verifiable pseudonym guaranteeing that the user is limited to control only a certain number of pseudonyms within the rate for a given scope. 
 
 A special case of a *scope rate limited pseudonym* occurs when the rate is set to 1. In that case, each User is guaranteed to have at most one valid pseudonym within the relevant scope, for example, in an electronic voting system. This is often referred to as a *scope unique* or *scope exclusive pseudonym*.
 
 Note also that the EUDI Wallet ecosystem already enables *attested pseudonyms* as there are no hindrances for an Attestation Provider to issue a (Q)EAA attesting to a particular pseudonym for a User. As such attestations are key-bound, a User could subsequently authenticate as such pseudonym by making a verifiable presentation to Relying Parties. There is however no EU-wide definition of such an attestation type. 
+The concept of Cryptographic Binding of Attestations scheme as discussed in [Topic K - Combined Presentation of Attributes](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/k-combined-presentation-of-attestations.md) would allow such attested pseudonyms to be cryptographically bound to the same User during issuance. 
 
 ## 3 Legal Requirements for Pseudonyms
 
@@ -69,7 +71,7 @@ Below we recap the respective legal requirements from these sources.
 There are two main requirements in the [European Digital Identity Regulation] about Pseudonyms in relation to Wallet Units:
 
 1. Wallet Units must be able to generate pseudonyms and store them encrypted and locally within the Wallet Unit.
-2. Relying Parties must accept identification via pseudonyms when there are no legal requirements for identification.
+2. Relying Parties must accept identification via pseudonyms when there are no legal requirements for legal identification.
 
 Below are the actual parts of the regulation that establish these requirements.
 
@@ -83,7 +85,9 @@ Below are the actual parts of the regulation that establish these requirements.
 | Article 5a European Digital Identity Wallets                | ... 4. European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to: ... (b) generate pseudonyms and store them encrypted and locally within the European Digital Identity Wallet; ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Article 5b European Digital Identity Wallet-Relying Parties | ... 9. ... Relying parties shall not refuse the use of pseudonyms, where the identification of the user is not required by Union or national law. ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-Note: Additionally, pseudonyms are mentioned in Article 32 and Annex IV about the validation of qualified electronic signatures and certificates. However, the use of pseudonyms in this context is completely independent from the notion of pseudonyms used by the Wallet Unit for authentication, as discussed in this discussion paper.
+Note that the choice given to the User when choosing their pseudonym (as pr. Recital 22, 57, and Article 5) necessarily must be subject to restrictions. Alternatively, it will be impossible to prevent two Users from choosing the same pseudonym and thus authentication as such pseudonym would not provide any meaningful guarantee. Such restriction may be to ensure that a pseudonym must contain sufficient entropy to prevent collisions which will still enable the User to choose their pseudonyms by using different randomness. A User can be given such a choice for any of the different pseudonym types presented in [Chapter 2](#2-types-of-pseudonyms).
+ 
+Additionally, pseudonyms are mentioned in Article 32 and Annex IV about the validation of qualified electronic signatures and certificates. However, the use of pseudonyms in this context is completely independent from the notion of pseudonyms used by the Wallet Unit for authentication, as discussed in this discussion paper.
 
 ### 3.2 [CIR.2024.2979] about Pseudonyms
 
@@ -101,6 +105,8 @@ Below are the actual excepts of the CIR that establish these requirements.
 | Article 14 | 1. Wallet units shall support the generation of pseudonyms for wallet users in compliance with the technical specifications set out in Annex V. 2. Wallet units shall support the generation, upon the request of a wallet-relying party, of a pseudonym which is specific and unique to that wallet-relying party and provide this pseudonym to the wallet-relying party, either standalone or in combination with any person identification data or electronic attribute attestation requested by that wallet-relying party. |
 | Annex V    | TECHNICAL SPECIFICATIONS FOR PSEUDONYM GENERATION REFERRED TO IN ARTICLE 14 Technical specifications: — WebAuthn Sch– W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/.|                                                                                        
 
+Please note that Article 1 of [CIR.2024.2979] stipulates that it can be updated in the future "to keep in line with technology […] in particular the Architecture and Reference Framework". This means that the text of the CIR and the standards references therein serve as starting point of the further development of the ARF, but that the ARF is not per definition constrained by the current version of [CIR.2024.2979].
+
 ## 4 Use Cases
 
 This chapter introduces and elaborates on several use cases for pseudonyms. Use cases A and B are inferred from the above legal requirements, and the distinction between these two use cases follows from Article 14 (2) in [CIR.2024.2979]. The use cases C and D are additional use cases envisioned to be useful to support in the EUDI Wallet ecosystem. 
@@ -109,7 +115,7 @@ The use cases all exists in both cross-device and same device flows.
 
 ### 4.1 Use Case A: Pseudonymous Authentication
 
-Pseudonyms can be used to authenticate a User when it is not necessary for a Relying Party to learn the identity of a user.
+Pseudonyms can be used to authenticate a User when it is not necessary for a Relying Party to learn the legal identity of a User.
 
 Concretely, the use case is as follows:
 
@@ -117,7 +123,7 @@ Concretely, the use case is as follows:
 2. The User can afterwards do a series of interactions with this Relying Party.
 3. If the User at a later point wishes to build upon previous interactions with this Relying Party, they should then be able to authenticate with the pseudonym used when registering. Thereby, the User "logs in" to the same account at the Relying Party. The User uses their Wallet Unit to perform this pseudonymous authentication.
 
-The Relying Party should be guaranteed that only the same User who registered the pseudonym can subsequently authenticate as this pseudonym towards the Relying Party. 
+The Relying Party should be guaranteed that only the same User who registered the pseudonym can subsequently authenticate as this pseudonym towards the Relying Party. This implies that pseudonyms across multiple Users must be collision free i.e., no two Users can have the same pseudonym. Additionally, note that no guarantee is given to the Relying Party about how many such pseudonyms a User may control. One User may Use this to control several different accounts at the same Relying Party. 
 
 > To support this use case verifiable pseudonyms must be supported. Alternatively, if the Relying Parties can also act as an Attestation Provider, then attested pseudonyms can also support this use case. In that case, the flow would be that the Relying Party (now acting as an issuer) either picks or let the User pick a pseudonym and attests this into a verifiable credential that the User stores. Later on the User can do a verifiable presentation to the Relying Party to authenticate as the pseudonym. 
 
@@ -128,11 +134,11 @@ Similar to use case A above, a User wishes to create an account with an associat
 Concretely, the use case goes as follows:
 
 1. A User registers a pseudonym at a Relying Party, using their Wallet Unit.
-2. In the same interaction, the User also presents attributes from a PID or attestation in their Wallet Unit to the Relying Party.
+2. In the same interaction, the User also presents attributes from a PID or attestation in their Wallet Unit to the Relying Party. This could for example be an "age over 18" attribute. 
 3. The User can afterward do a series of interactions with this Relying Party.
 4. If the User at a later point wishes to build upon previous interactions with this Relying Party, they should then be able to authenticate with the pseudonym used when registering. Thereby, the User "logs in" to the same account at the Relying Party. The User uses their Wallet Unit to perform this pseudonymous authentication.
 
-Note that this is particularly useful when the disclosed attributes does not uniquely identify the User as this now allows the Relying Party to continue interactions with the same User at a later point (letting the User make a new presentation of attributes for subsequent interactions will not allow this because of the unlinkability requirements for presentations).
+Note that this is particularly useful when the disclosed attributes do not uniquely identify the User as this now allows the Relying Party to continue interactions with the same User at a later point (letting the User make a new presentation of attributes for subsequent interactions will not allow this because of the unlinkability requirements for presentations). Similar to use case A, there are no guarantees on how many different pseudonyms a User may use for the same Relying Party. 
 
 In addition, to the basic guarantee that subsequent authentications can only be performed by the User registering the pseudonym and that presented attributes can be trusted to hold, ideally, the Relying Party should also be guaranteed that the registered pseudonym and the attributes are belonging (and controlled) by only one person (to prevent two person's collaborating to create an account and thereby circumvent for example restrictions on age). 
 
@@ -151,7 +157,7 @@ Note that this rather abstract use case enables a wider range of concrete use ca
 
 ### 4.4 Use Case D: Linkable Pseudonymous Authentication
 
-This use case considers a case where a single pseudonym must be recognized and able to authenticate towards several different actors. That is, instead of having one or multiple pseudonyms pr. Relying Party, a user wishes to authenticate with the same pseudonym towards several different relying parties and allow these parties to exchange information based upon this pseudonym. I.e., a pseudonym that allowed specific Relying Parties to *link* the authentications.
+This use case considers a case where a single pseudonym must be recognized and able to authenticate towards several different actors. That is, instead of having one or multiple pseudonyms pr. Relying Party, a user wishes to authenticate with the same pseudonym towards several different relying parties and allow these parties to exchange information based upon this pseudonym. I.e., a pseudonym that allow specific Relying Parties to *link* the authentications to provide integrated services in a collaborative way.
 
 The use case goes as follows: 
 1. A User interacts with a Relying Party "A", registers a pseudonym at this Relying Party and may do a series of interactions with this Relying Party.
@@ -171,7 +177,8 @@ Note that even though linkability is useful in some contexts as described above,
 
 ### 5.1 Introduction to Passkeys
 
-As specified in [CIR.2024.2979], [W3C WebAuthn] defines the current technical specification for pseudonyms.
+[CIR.2024.2979] and the standards referenced therein serve as starting point for the further development of the pseudonyms functionality, however, the ARF is not per definition contstrainted by the current version of [CIR.2024.2979]. 
+Therefore, as specified in [CIR.2024.2979], [W3C WebAuthn] defines the current technical specification for pseudonyms. 
 
 Passkeys are a widely used type of credential that can serve as a verifiable pseudonym. They are created and asserted using the [W3C WebAuthn] API.
 
@@ -200,7 +207,7 @@ In a bit more detail, the flow for using such passkeys follows the following blu
 - **Relying Party Server:** The Relying Party that wishes to offer a service based on authentication using Passkeys.
 - **Relying Party Client:** The program provided by the Relying Party that runs in the Client of the User and communicates with the Relying Party Server. The Relying Party Client is typically some JavaScript code, provided by the Relying Party, that runs on the Client (i.e., browser).
 - **Client:** The client that the User uses to interact with the Relying Party's server and with the User's authenticator. The Client can be thought of as the browser that the User uses to access the Relying Party's service.
-- **Authenticator:** The device controlled by the User to create, store, and use the Passkeys. In the context of the EUDI Wallet ecosystem, the Wallet Unit is the Authenticator.
+- **Authenticator:** The device controlled by the User to create, store, and use the Passkeys. In the context of the EUDI Wallet ecosystem, the Wallet Unit will act as the Authenticator.
 
 Note that the Relying Party Client and the Client are two programs that are executed on the same physical machine.
 
@@ -234,7 +241,7 @@ Note that the Authenticator stores the public key in a way such that it is scope
 #### 5.2.3 Pseudonym Attestation
 
 The term 'attestation' is here used differently than elsewhere in the ARF.
-In this context, the attestation is not about attributes of the User, but rather about attributes of the Authenticator. The attestation serves to ensure the Relying Party that they are talking with an Authenticator with certain attributes. The attestation often takes the form of a signature on the challenge as well as some other contextual data.
+In this context, the attestation is not about attributes of the User, but rather about attributes of the Authenticator. The attestation serves to ensure the Relying Party that they are talking with an Authenticator with certain properties. The attestation often takes the form of a signature on the challenge as well as some other contextual data.
 
 In [W3C WebAuthn], five different types of attestations are mentioned:
 
@@ -248,7 +255,9 @@ In [W3C WebAuthn], five different types of attestations are mentioned:
 
 - **No Attestation Statement:** No attestation is given. Note that this does not give any guarantees for the Relying Party about the Authenticator they are interacting with.
 
-Please note that Article 5a (5) a) viii) of the [European Digital Identity Regulation] states "*European Digital Identity Wallets shall, in particular support common protocols and interfaces: ... for relying parties to verify the authenticity and validity of European Digital Identity Wallets;...*". The latter two forms of attestation do not align with this requirement. [Section 6.1](#61-topic-a-privacy-risks-and-mitigations)) discusses how the other three possibilities relate to previously identified privacy risks about user surveillance (see also [Topic A](./a-privacy-risks-and-mitigations.md)).
+[Section 6.1](#61-topic-a-privacy-risks-and-mitigations)) discusses how these three possibilities relate to previously identified privacy risks about user surveillance (see also [Topic A](./a-privacy-risks-and-mitigations.md)).
+
+Note that in the EUDIW ecosystem Wallet Unit Attestations (WUAs) as defined in [TS3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md) serve a similar purpose to these types of attestations but in relation to issuance of PIDs or other attestations. 
 
 #### 5.2.4 Authentication
 
@@ -286,11 +295,11 @@ The subsections below consider two different types of linkability concerns for t
 #### 6.1.2 Relying Party Linkability
 
 Relying Party linkability is the ability for Relying Parties to link together multiple authentications performed by a User using a Wallet Unit.
-Note that it is inherent for the use cases that the **same** Relying Party shall be able to link together multiple presentations of a pseudonym, as it must be unique per Relying Party. However, **different** Relying Parties should not be able to infer any information about whether they have interacted with one or multiple Users by comparing multiple authentications using pseudonyms.
+Note that it is inherent for the use cases that the **same** Relying Party shall be able to link together multiple presentations of a pseudonym, as it must be unique per Relying Party and per User. However, **different** Relying Parties should not be able to infer any information about whether they have interacted with one or multiple Users by comparing multiple authentications using pseudonyms.
 
 To prevent Relying Party linkability, it is necessary to ensure that no unique (per Wallet Unit) value is presented to multiple different Relying Parties. Depending on the type of attestation used for registration (see [Section 5.2.3](#523-pseudonym-attestation), this may or may not be the case for [W3C WebAuthn].
 
-If *Basic Attestations* are used, where each Wallet Unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be such a unique value that is presented to multiple Relying Parties. [W3C WebAuthn] suggests to ensure that multiple different Authenticators hold the same attestation key pair, thereby no longer making it a unique value for correlation. However, please note that this implies letting several different Wallet Units share the same private key. This is against best security practices, as it implies private keys must be transferred to or from Wallet Units, which increases the risk of keys being compromised.
+If *Basic Attestations* are used, where each Wallet Unit holds only one attestation key pair and corresponding certificate, the public key of this attestation key pair may be such a unique value that is presented to multiple Relying Parties. [W3C WebAuthn] suggests to ensure that multiple different Authenticators hold the same attestation key pair, thereby no longer making it a unique value for correlation. However, please note that this implies letting several different Wallet Units share the same private key. This is against best security practices, as it implies private keys must be transferred to or from Wallet Units, which increases the risk of keys being compromised. It could however be deemed as a compromise to achieve better privacy properties – without necessarily ensuring it with high level of assurance. 
 
 If an *Attestation CA* is used to issue certificates on multiple attestation keys, the degree to which Relying Parties can correlate the different certificates can be reduced. However, as long as an Authenticator uses a single attestation key more than once to sign a Pseudonym, the Relying Parties can still deduce some information by correlating attestation public keys. This mitigation is similar to the proposals of Method B and Method C (Limited-time Attestations and Rotating-batch Attestations) from the discussion paper on topic A.
 
@@ -322,7 +331,7 @@ The table below summarises information from the previous sections with regard to
 
 ### 6.2 Topic C: Wallet Unit Attestations
 
-[Topic C - Wallet Unit Attestations (WUA) and Key Attestations](./c-wallet-unit-attestation.md) discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc.
+[Topic C - Wallet Unit Attestations (WUA) and Key Attestations](./c-wallet-unit-attestation.md) discusses how the Wallet Unit can document its functional and security capabilities, e.g., support for secure hardware, revocation status, etc. This is similar to the role of `attestations` in WebAuthn. 
 
 Certain WUA attributes are somewhat sensitive, as they may allow for linkability, and are only intended for PID Providers and Attestation Providers when performing issuance. Other metadata in the WUA is used to prove that the Wallet Unit has not been revoked. This information is less sensitive.
 
@@ -693,9 +702,15 @@ A protocol enabling scope rate limited pseudonyms SHALL ensure that no entity or
 
 > Rationale: This is to ensure that no one can impersonate the User. 
 
-**Open Questions**
-1. **Backup:** To ensure that only a specific User are able to authenticate as a scope rate limit pseudonym (i.e., Req. 29) it must rely on a secret kept by the User only. If this secret is backed up elsewhere the entity backing it up will also be able to authenticate as a pseudonym. However, the only alternative to making a backup of such a secret is to allow Users to be able to obtain a new secret. However, this may circumvent rate-limit restrictions. Is it more important to let the user's backup their secret or is it more important to enforce the rate limit? Alternatively, are there other approaches?
+##### Requirement 8
+A Wallet Unit SHALL store cryptographic material necessary for authenticating as a scope rate limited pseudonyms in either a WSCD or in a keystore.
 
+> Rationale: This is to ensure that the Wallet Unit takes measures to protect this material. It is however not given that it must be in a WSCD as it does not make sense to talk about LoA High for pseudonyms as these does not constitute an electronic means of identification.
+
+##### Requirement 9
+A User's scope rate limited pseudonyms for a particular scope and rate SHALL be persistent over time independently if whether they change Wallet Unit. 
+
+> Rationale: This is to ensure that the rate for a given scope can really be trusted by RP. Note that this has the implications that some of the cryptographic material necessary for authenticating as a pseudonym must necessarily be backed up outside the User's physical device. 
 
 ## 8 References
 
@@ -721,7 +736,7 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 
 **Question 3:** For Use Case A: Should a single user be able to use their Wallet Unit to present several different pseudonyms to a single Relying Party? High-Level Requirements must be defined that enforces the answer to this question.
 
-> Yes: It should be possible for a user to have several pseudonyms at the same Relying Party.
+> Yes: It should be possible for a user to have several pseudonyms at the same Relying Party (see [PA_04](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a-hlrs-related-to-use-cases-).
 
 **Question 4:** For both use cases: What assurances must be given to the Relying Party? Such possible assurance exists on at least three levels:
 
