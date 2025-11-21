@@ -4571,7 +4571,7 @@ actions must be done to use such a mechanism in practice:
     the Attestation Provider does this is out of scope of the ARF. For example,
     the Attestation Provider could request the User name and birth date from a
     PID on the Wallet Unit, verify that this information matches a record in its
-    database, issue a attestation corresponding to the information in that
+    database, issue an attestation corresponding to the information in that
     record, and then request the Wallet Unit to bind the public key in that
     attestation to the public key in the PID.
     - A Relying Party that has verified a proof of cryptographic binding between
