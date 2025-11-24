@@ -958,7 +958,7 @@ for issuance), an underscore and a numerator, e.g. ISSU_10.
 | -- | -- |
 | RPRC_13 | A Registrar MAY decide that, during the registration process for PID Providers, QEAA Providers, PuB-EAA Provider, or non-qualified EAA Providers, as specified in [Topic 27](./annex-2.02-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties), a Provider of registration certificates associated to the Member State Registrar must create and sign or seal a registration certificate and issue it to the registering party. If so, that registration certificate SHALL comply with the requirements in the technical specification mentioned in RPRC_02. |
 | RPRC_14 | If, during registration, a PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider received a registration certificate, it SHALL distribute it to all its service supply points. *Note: A service supply point is a system at which a Wallet Unit can start the process of requesting and obtaining a PID or attestation.* |
-| RPRC_15 | The contents of a registration certificate issued to a PID Provider, a QEAA Provider, a PuB-EAA Provider, or a non-qualified EAA Provider SHALL contain the type(s) of attestation that this entity intends to issue to Wallet Units. |
+| RPRC_15 | The contents of a registration certificate issued to a QEAA Provider, a PuB-EAA Provider, or a non-qualified EAA Provider SHALL contain the type(s) of attestation that this entity intends to issue to Wallet Units. |
 
 ##### D. Requirements on the presentation and verification of registration certificates of Relying Parties <!-- omit from toc -->
 
