@@ -19,7 +19,11 @@ theme:
     - navigation.top
     - toc.integrate
     - toc.follow
-  logo: media/eu-logo.jpg
+  logo: media/logo_eudi_white.svg
+  favicon: media/favicon.ico
+
+extra_css:
+  - media/extra.css
 
 markdown_extensions:
   - footnotes
@@ -35,6 +39,7 @@ nav:
   - Architecture and reference framework: architecture-and-reference-framework-main.md
   - Discussion topics: discussion-topics/README.md
   - Technical specifications: technical-specifications/README.md
+  - Reference Implementation: https://docs.eudi.dev/latest/
 
 extra:
   version:
