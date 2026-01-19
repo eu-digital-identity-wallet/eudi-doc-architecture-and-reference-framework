@@ -20,13 +20,13 @@
 
 # Source Files
 MAIN_DOC       := docs/architecture-and-reference-framework-main.md
-ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3]/*.md)
+ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3,5]/*.md)
 SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 1.6.1
+VERSION        := 2.7.3
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -46,7 +46,7 @@ MKDOCS  := mkdocs
 
 # Pandoc Options
 PANDOC_OPTIONS      := --toc --from markdown+gfm_auto_identifiers --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
-PANDOC_PDF_OPTIONS  := --pdf-engine=pdflatex --template=$(PDF_TEMPLATE) --listings $(PANDOC_DATA_DIR)/metadata.yml
+PANDOC_PDF_OPTIONS  := --pdf-engine=pdflatex --template=$(PDF_TEMPLATE) --syntax-highlighting=idiomatic $(PANDOC_DATA_DIR)/metadata.yml
 PANDOC_DOCX_OPTIONS :=
 PANDOC_EPUB_OPTIONS := --to epub3
 
@@ -66,14 +66,23 @@ PANDOC_EPUB_OPTIONS := --to epub3
 %.epub : %.md
 	@mkdir -p $(BUILD_DIR)/epub
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/$(notdir $@) $<
+
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all mkdocs serve copy-pdfs zip-pdfs clean
+.PHONY: all epub pdf mkdocs serve copy-pdfs zip-pdfs clean
 
 # Default target: build all exported documents and the MkDocs site.
-all: $(EXPORTED_DOCS) zip-pdfs mkdocs
+all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
 
+# EPUB combined main text + annexes
+epub :
+	@mkdir -p $(BUILD_DIR)/epub
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_EPUB_OPTIONS) -o $(BUILD_DIR)/epub/architecture-and-reference-framework-main-and-annexes.epub $(SOURCE_DOCS)
+
+pdf :
+	@mkdir -p $(BUILD_DIR)/pdf
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -M subtitle="Architecture and Reference Framework" -o $(BUILD_DIR)/pdf/architecture-and-reference-framework-main-and-annexes.pdf $(SOURCE_DOCS)
 # Build the MkDocs site
 mkdocs:
 	$(MKDOCS) build

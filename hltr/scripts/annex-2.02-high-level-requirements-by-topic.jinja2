@@ -1,0 +1,66 @@
+---
+title: "European Digital Identity Wallet"
+subtitle: "Architecture and Reference Framework"
+...
+
+# ANNEX 2.02 - High-Level Requirements by topic <!-- omit from toc -->
+
+## A.2 High-level requirements by topic
+
+### A.2.1 Introduction
+
+#### A.2.1.1 Overview
+
+This annex to the [ARF main document](../../architecture-and-reference-framework-main.md)
+includes high-level requirements (HLRs) related to the EUDI Wallet ecosystem.
+The requirements define the responsible actor that should implement each
+requirement. There are no requirements imposed on the Users.
+
+All requirements in this Annex only apply in the context of the EUDI Wallet
+ecosystem. Attestations that are not bound to Wallet Units, as described in
+[Section 6.6.3.8 of the ARF main document](../../architecture-and-reference-framework-main.md#6638-relying-party-instance-verifies-device-binding),
+ are not included in the scope of this Annex.
+
+#### A.2.1.2 Key words
+
+This Annex uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119), i.e., to
+indicate requirements, recommendations and options specified in this annex.
+
+In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, i.e., a requirement that is not mandated by this document,
+but, for instance, by an external standard or specification. The word
+'can' indicates a capability, whereas other words, such as 'will', and
+'is' or 'are', are intended as statements of fact.
+
+### A.2.2 Structure and order of presentation of the HLRs
+
+Topics presented in [Section A.2.3](#a23-high-level-requirements) are ordered by
+a Topic number.
+
+Each Topic includes a short description, followed by the High-Level
+Requirements (HLRs), identified by a unique identifier. The identifier
+includes a prefix which signifies the context of the HLRs (e.g. ISSU
+for issuance), an underscore and a numerator, e.g. ISSU_10.
+
+### A.2.3 High-Level Requirements
+{% for topic in requirements %}
+
+#### A.2.3.{{ loop.index }} {{requirements[topic]['topic']}}
+{% for subsection in requirements[topic] %}
+{% if subsection != "topic" %}
+{% if subsection != "" %}
+
+##### {{ subsection }} <!-- omit from toc -->
+{% endif %}
+
+| **Index** | **Requirement specification** |
+| -- | -- |
+{% for req in requirements[topic][subsection]%}
+| {{ req.Index }} | {{ req.Requirement_specification }}{% if req.Notes %} *Note: {{ req.Notes }}*{% endif %} |
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+

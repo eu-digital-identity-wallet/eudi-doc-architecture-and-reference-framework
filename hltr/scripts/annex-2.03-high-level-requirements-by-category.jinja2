@@ -1,0 +1,233 @@
+---
+title: "European Digital Identity Wallet"
+subtitle: "Architecture and Reference Framework"
+...
+
+# ANNEX 2.03 - High-Level Requirements by category<!-- omit from toc -->
+
+## A.2 High-level requirements by category
+
+### A.2.1 Introduction
+
+This annex to the ARF main document includes high-level requirements (HLRs)
+related to the EUDI Wallet ecosystem. The requirements define the responsible
+actor that should implement each requirement. There are no requirements imposed
+on the Users. All requirements in this Annex only apply in the context of the
+EUDI Wallet ecosystem.
+
+This Annex uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this annex.
+
+In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, i.e., a requirement that is not mandated by this document, but, for
+instance, by an external standard or specification. The word 'can' indicates a
+capability, whereas other words, such as 'will', and 'is' or 'are', are intended
+as statements of fact.
+
+---
+
+## Part 1: Actor-Specific Requirements
+
+### 1. Wallet Providers
+
+*These requirements are the responsibility of the entities building and managing*
+*the EUDI Wallet solutions. They cover the core functionalities, security, user*
+*interface elements, and lifecycle management of the wallet.*
+
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Wallet Providers'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+### 2. Member States & Registrars
+
+*These requirements are for the public bodies that establish the legal and trust*
+*infrastructure. They focus on establishing registries, notifying the*
+*Commission, and defining national policies.*
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Member States & Registrars'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+### 3. Attestation & PID Providers
+
+*These requirements are for the organizations that issue digital credentials to*
+*the wallet. This includes requirements for identity verification, issuance*
+*protocols, data formats, and revocation policies.*
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Attestation & PID Providers'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+### 4. Relying Parties
+
+*These requirements are for the services and entities that accept and use the*
+*EUDI Wallet. They cover how they must register, authenticate themselves to the*
+*wallet, request user attributes, and handle user data.*
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Relying Parties'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+## Part 2: Ecosystem-Wide Rules
+
+### 5. Protocols & Interoperability
+
+*These requirements define the common communication standards and protocols that*
+*ensure the entire system works together seamlessly across borders. This covers*
+*how different components talk to each other.*
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Protocols & Interoperability'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+### 6. Data Models & Attestation Rules
+
+*These requirements define the structure and meaning of the data being*
+*exchanged. This includes HLRs for PIDs, Attestation Rulebooks, and Catalogues,*
+*ensuring that the information exchanged is consistent and understandable across*
+*the entire ecosystem.*
+
+| **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
+|-----------|------------|------------|------------|
+{% for req in requirements['Data Models & Attestation Rules'] %}
+|{{ req.Harmonized_ID }} | {{ req.Index }} | {{ req.Requirement_specification }}| {{ req.Notes }} |
+{% endfor %}
+
+---
+
+## A.2.2 Backward Reference: Original Topics
+
+This section provides the titles and descriptions of the original topics from
+which the High-Level Requirements were sourced and restructured.
+
+- **Topic 1 - Accessing Online Services with a Wallet Unit**: One of the main
+use cases of the EUDI Wallet ecosystem is to enable Users to access online
+services and to enable Relying Parties offering such services to, where needed,
+identify and authenticate Users with a high level of assurance.
+- **Topic 2 - Mobile Driving Licence within the EUDI Wallet ecosystem**: A User
+can obtain their mobile Driving Licence (mDL) from an mDL Provider and store it
+in a Wallet Unit. The User can then present the mDL to a Relying Party upon
+request to prove their driving rights conveniently, securely, and in compliance
+with the Driving Licences Directive.
+- **Topic 3 - PID Rulebook**: The Person Identification Data (PID) Rulebook
+contains requirements specific to the PID within the EUDI Wallet ecosystem.
+- **Topic 4 - mDL Rulebook**: The mobile driving licence (mDL) Rulebook contains
+requirements specific to the mDL use case within the EUDI Wallet ecosystem.
+- **Topic 6 - Relying Party authentication and User approval**: Relying Party
+authentication is a process whereby a Relying Party proves its identity to a
+Wallet Unit, in the context of a transaction in which the Relying Party requests
+the Wallet Unit to release some attributes.
+- **Topic 7 - Attestation revocation and revocation checking**: This Topic
+contains the high-level requirements (HLRs) relating to the (possible)
+revocation of PIDs, QEAAs, PuB-EAAs, non-qualified EAAs, and WUAs by their
+providers.
+- **Topic 9 - Wallet Unit Attestation**: When a User's Wallet Unit interacts
+with other actors in the EUDI Wallet ecosystem, in particular PID Providers,
+Attestation Providers, or Relying Parties, these actors may want to verify if
+the Wallet Unit is authentic and has not been revoked.
+- **Topic 10 - Issuing a PID or attestation to a Wallet Unit**: PID Providers
+and Attestation Providers issue PIDs and attestations to Wallet Units. This
+Topic lists the high-level technical requirements related to PID and attestation
+issuance.
+- **Topic 11 - Pseudonyms**: Wallet Units will support generating pseudonyms for
+Users in compliance with the W3C WebAuthn API specification.
+- **Topic 12 - Attestation Rulebooks**: This Topic describes the high-level
+requirements for the Attestation Rulebooks that will specify the details of new
+types of attestations.
+- **Topic 16 - Signing documents with a Wallet Unit**: A Wallet Unit SHALL
+enable its User to create qualified electronic signatures or seals.
+- **Topic 17 - Identity matching**: Users would like to use their PID in their
+Wallet Unit to access their existing online account(s), even if their PID
+attribute values are not exactly the same as those in their account(s).
+- **Topic 18 - Combined presentations of attributes**: The concept of combined
+presentation refers to a process where a Relying Party requests multiple
+attributes concerning a single User, drawn from separate attestations, and
+receives a consolidated response.
+- **Topic 19 - User navigation requirements (Dashboard logs for transparency)**:
+The User is accessing a dashboard of the Wallet Unit, which provides a record of
+all transactions executed through the Wallet Unit.
+- **Topic 20 - Strong User authentication for electronic payments**: The
+[European Digital Identity Regulation] requires Wallet Units to provide a
+functionality of strong User authentication (SUA), among others in the context
+of payments.
+- **Topic 24 - User identification in proximity scenarios**: In this use case,
+the User is using their Wallet Unit for identification purposes in proximity
+scenarios.
+- **Topic 25 - Unified definition and controlled vocabularies for attributes**:
+This Topic defines high-level requirements regarding the catalogue for
+Attestation Rulebooks.
+- **Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and
+non-qualified EAAs, and Relying Parties**: PID Providers, QEAA Providers,
+PuB-EAA Providers, non-qualified EAA Providers, and Relying Parties register
+with a Registrar in their Member State.
+- **Topic 28 - Wallet Unit for legal persons**: This topic is focused on
+identifying high-level requirements for a legal-person Wallet Unit.
+- **Topic 29 - Representation paradigm**: It should be possible to issue a
+dedicated representation attestation for a natural person to a representative,
+in accordance with applicable national and European legislation.
+- **Topic 30 - Interaction between Wallet Units**: A User can request another
+User to present an attestation, where both Users use their Wallet Unit.
+- **Topic 31 - Notification and publication**: PID Providers, PuB-EAA Providers,
+Wallet Providers, Access Certificate Authorities, and Providers of registration
+certificates must be notified by a Member State to the Commission.
+- **Topic 33 - Wallet Unit backup and restore**: Backup and restore
+functionality is needed in case the User has lost access to their current Wallet
+Unit.
+- **Topic 34 - Migrate to a different Wallet Solution**: Data portability means
+that a User can migrate to a different Wallet Solution.
+- **Topic 35 - PID issuance service blueprint**: This Topic analyses the User
+journeys for PID issuance to a Wallet Unit.
+- **Topic 38 - Wallet Unit revocation**: This Topic discusses Wallet Unit
+revocation.
+- **Topic 40 - Wallet Instance installation and Wallet Unit activation and
+management**: This Topic discusses requirements related to the installation of a
+Wallet Instance by the User, the subsequent activation of the Wallet Unit, and
+the management of the Wallet Unit throughout its lifetime.
+- **Topic 42 - Requirements for QTSPs to access Authentic Sources**: This Topic
+discusses the ability of QTSPs to verify attributes by electronic means at the
+request of the User, wherever those attributes rely on Authentic Sources within
+the public sector.
+- **Topic 43 - Embedded disclosure policies**: This topic is focused on
+identifying high-level requirements for disclosure policies which may be
+embedded in an attestation.
+- **Topic 44 - Registration certificates**: This topic identifies high-level
+requirements for registration certificates.
+- **Topic 48 - Blueprint for requesting data deletion to Relying Parties**: A
+User requests the deletion of their personal attributes from Relying Parties
+with which they have interacted through their Wallet Unit.
+- **Topic 50 - Blueprint to report unlawful or suspicious request of data**: A
+User reports a Relying Party to the competent national data protection authority
+for an unlawful or inappropriate request for attributes.
+- **Topic 51 - PID or attestation deletion**: This topic lists high-level
+requirements related to a User deleting a PID or attestation from their Wallet
+Unit.
+- **Topic 52 - Relying Party intermediaries**: This topic lists high-level
+requirements regarding intermediaries, which form a special class of Relying
+Party.
+- **Topic 53 - Zero-Knowledge Proofs**: This topic lists high-level requirements
+for a Zero-Knowledge Proof scheme to be used within the EUDI Wallet ecosystem.
+- **Topic 54 - Accessibility**: It is essential to ensure that Wallet Units are
+inclusive by design and fully aligned with the applicable European legal and
+technical frameworks on accessibility.

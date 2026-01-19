@@ -7,17 +7,30 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    - navigation.top
     - toc.integrate
-  logo: media/eu-logo.jpg
+    - toc.follow
+  logo: media/logo_eudi_white.svg
+  favicon: media/favicon.ico
+
+extra_css:
+  - media/extra.css
 
 markdown_extensions:
   - footnotes
   - sane_lists
   - tables
+
+site_url: https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework
 repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 
@@ -26,6 +39,7 @@ nav:
   - Architecture and reference framework: architecture-and-reference-framework-main.md
   - Discussion topics: discussion-topics/README.md
   - Technical specifications: technical-specifications/README.md
+  - Reference Implementation: https://docs.eudi.dev/latest/
 
 extra:
   version:
@@ -35,3 +49,5 @@ extra:
 plugins:
   - mike
   - tags
+  - privacy
+  - social

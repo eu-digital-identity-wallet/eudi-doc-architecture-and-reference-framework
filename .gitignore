@@ -9,3 +9,10 @@ docs/arf.jpeg
 docs/arf.pdf
 docs/arf.png
 .vscode
+.cache
+
+docs/annexes/annex-2/high-level-requirements.xlsx
+docs/annexes/annex-2/~$high-level-requirements.xlsx
+docs/annexes/annex-2/DBA Notes on scripts.txt
+docs/media/arf-figures-source.md
+hltr/high-level-requirements.xlsx
