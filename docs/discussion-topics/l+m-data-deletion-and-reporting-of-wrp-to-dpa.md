@@ -425,7 +425,7 @@ before starting the present discussion:
 | DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past. |
 | DATA_DLT_03 | A Wallet Instance SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted. |
 | DATA_DLT_04 | A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit. |
-| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
+| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
 | DATA_DLT_06 | The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed. |
 
 ### 3.2 Existing High-Level Requirements specified in Topic 50
@@ -438,7 +438,7 @@ The following high-level requirements have been specified in [Topic 50](https://
 | RPT_DPA_02 | The User interface enabling a User to start the process of lodging a complaint SHALL be accessible via the Wallet Instance. |
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
-| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
+| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
 
 ## 4. Erasure of personal data at a wallet-relying party
 
@@ -672,7 +672,7 @@ update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-arch
 | DATA_DLT_02            | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.                                                                                  |
 | DATA_DLT_03            | A Wallet Instance SHALL provide a function where the User may select one Relying Party <s>**or multiple Relying Parties**</s> for which an attribute deletion request must be submitted.                                                                                                                                          |
 | <s>**DATA_DLT_04**</s> | <s>**A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.**</s>                                                                                                                                                                                               |
-| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
+| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
 | DATA_DLT_06            | The log SHALL **also document the initiation of a data deletion request and** include as a minimum: - Date **and time** of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.                                                                                       |
 | **DATA_DLT_07**        | **While the Wallet-Relying Party is responsible for choosing appropriate authentication mechanisms before executing a data deletion request, it is RECOMMENDED to use the authentication and signature facilities offered by the Wallet Solutions for this purpose.**                                                             |
 
