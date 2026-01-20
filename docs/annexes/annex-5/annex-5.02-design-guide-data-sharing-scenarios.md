@@ -51,7 +51,7 @@ the EUDI Wallet User is physically close to a Relying Party, the user does not
 necessarily have internet connectivity and the data presentation occurs using
 proximity protocols (NFC, Bluetooth, QR- Code, etc.). The key differentiator in
 the two proximity flows, is that in the supervised flow, the EUDI Wallet
-presents data (e.g. a mobile driving license) to, or under the supervision of, a
+presents data (e.g. a mobile driving licence) to, or under the supervision of, a
 human acting as a Relying Party (who may operate a device of their own). In the
 unsupervised flow, the EUDI Wallet presents verifiable attributes to a machine
 without human supervision.

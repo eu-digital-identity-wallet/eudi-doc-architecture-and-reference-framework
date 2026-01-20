@@ -208,7 +208,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KnphxpZkCZEyhS7vvOBB-25" value="Key Store (KS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="KnphxpZkCZEyhS7vvOBB-25" value="Keystore (KS)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="960" y="720" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KnphxpZkCZEyhS7vvOBB-29" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;dashed=1;dashPattern=1 1;exitX=0.58;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-58">
