@@ -500,7 +500,7 @@ online, over the internet.
 For more details and high-level requirements for this use case, please see
 [Topic 4](./annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a233-topic-4---mdl-rulebook).
 
-##### 2.6.4 Strong User Authentication for electronic payments
+#### 2.6.4 Strong User Authentication for electronic payments
 
 Users would like to be able to authenticate themselves and their electronic
 payments securely and conveniently using their Wallet Units, so that
@@ -1036,9 +1036,9 @@ PuB-EAA, or EAA) and publishes two complementary artefacts:
 1. A human-readable Attestation Rulebook; see [Section 5.4](#54-attestation-rulebooks-and-attestation-schemes),
 the authoritative documentation that explains what the attestation represents
 and how it works, detailing identifiers, semantics, encodings, constraints, and
-processing rules, trust model; and 2. A machine-readable attestation scheme that
-mirrors the Rulebook so software can build requests to Wallet Units and validate
-responses at runtime.
+processing rules, trust model; and
+2. A machine-readable attestation scheme that mirrors the Rulebook so software
+can build requests to Wallet Units and validate responses at runtime.
 
 Relying Parties use the Rulebook to decide whether and how to adopt an
 attestation and to prepare their systems, while their Relying Party Instances
@@ -2889,8 +2889,8 @@ fraudulently or as a result of an error.
 
 ##### 6.3.2.3 PID Provider or Attestation Provider receives an access certificate and a registration certificate
 
-When a PID Provider or Attestation Provider is registered by a Member State, a
-Access Certificate Authority (see [Section 3.18](#318-access-certificate-authorities)
+When a PID Provider or Attestation Provider is registered by a Member State, an
+Access Certificate Authority (see [Section 3.18](#318-access-certificate-authorities))
 issues one or more access certificates to the PID Provider or to the Attestation
 Provider. A PID Provider or an Attestation Provider needs such a certificate to
 authenticate itself towards a Wallet Unit when issuing a PID or an attestation
@@ -3300,7 +3300,7 @@ During the issuance of a PID or an attestation (see [Section 6.6.2.3](#6623-pid-
 a PID Provider or Attestation Provider can use this public key to verify that
 the Wallet Unit is in possession of the corresponding private key, and that this
 key is protected by the WSCA/WSCD described in the WUA. This authenticates the
-Wallet Unit als a valid Wallet Unit provided by a trusted Wallet Provider.
+Wallet Unit as a valid Wallet Unit provided by a trusted Wallet Provider.
 - Lastly, a WUA contains information allowing a PID Provider or an Attestation
 Provider to verify that the Wallet Provider did not revoke the Wallet Unit
 Attestation, and hence the Wallet Unit itself. The WUA and the revocation
@@ -3426,7 +3426,7 @@ need to be vigilant as well, just as with any website on the internet.
 means that the Wallet Provider is sure that the User is indeed the User that was
 associated with the Wallet Unit during activation. For this, the Wallet Provider
 uses the authentication methods established in the User's account during
-activation, see [Section 6.5.3](#653-wallet-unit-activation).A
+activation, see [Section 6.5.3](#653-wallet-unit-activation).
 1. When the Wallet Unit and the Wallet Provider set up a communication channel,
 the Wallet Unit authenticates the Wallet Provider, meaning that the Wallet Unit
 is sure that it is dealing with the genuine Wallet Provider. Similarly, the
@@ -3505,7 +3505,7 @@ implies the User must be able to authenticate towards the existing HSM from the
 new Wallet Unit, and be recognised as an existing User. For attestations bound
 to a keystore (rather than a WSCA/WSCD), the properties of the keystore
 determine if it's possible to export the attestation private keys to a location
-of the User's choosing. Most keystores will note allow this.
+of the User's choosing. Most keystores will not allow this.
 
 The fact that the Migration Object does not contain private keys means that PIDs
 and device-bound attestations cannot be backed up and restored from the object
@@ -3671,7 +3671,7 @@ authenticates the PID Provider or the Attestation Provider. To do so, the Wallet
 Unit verifies the access certificate presented to it by the PID Provider or
 Attestation Provider in its Issuer metadata according to [OpenID4VCI].
 Additionally, to verify the legal status of the Provider and the type(s) of
-attestation it issues), the Wallet Unit checks the registration information
+attestation it issues, the Wallet Unit checks the registration information
 contained in the registration certificate (if available in the Issuer metadata)
 or in the online service of the Registrar indicated in the access certificate.
 
@@ -4242,7 +4242,7 @@ User feels that the Relying Party is actually requesting more data than needed,
 that implies that the Relying Party is not trustworthy. The User should not
 approve the presentation of any data in that case.
 
-The Wallet Unit will present the all approved User attributes, and only these,
+The Wallet Unit will present the approved User attributes, and only these,
 to the Relying Party Instance.
 
 ##### 6.6.3.6 Relying Party Instance verifies the authenticity of the PID or attestation
@@ -4490,7 +4490,7 @@ belong to the same User. This can be done in different ways, including (but not
 necessarily limited to):
 
 - **Presentation-Based Binding**: A Relying Party may assume that attributes
-presented in a single presentation response are belonging to the same User.
+presented in a single presentation response belong to the same User.
 However, this means that the Relying Party trusts that the Wallet Unit is not
 hacked or fraudulent. In some high-security use cases, such trust may not be
 warranted.
@@ -4558,12 +4558,12 @@ PIDs and device-bound attestations.
 mechanism to implement cryptographic binding between attestations. However,
 [Topic 18](./annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2311-topic-18---combined-presentations-of-attributes)
 specifies high-level requirements for a cryptographic binding between
-attestations scheme.  - This ARF assumes that each Wallet Unit (and therefore
-each WSCA/WSCD and keystore) contains attestations for only one User (see also
-[Section 3.2](#32-users-of-wallet-units)). Therefore, a proof of cryptographic
-binding between two attestations proves that these attestations belong to the
-same User. However, some additional actions must be done to use such a mechanism
-in practice:
+attestations scheme.
+- This ARF assumes that each Wallet Unit (and therefore each WSCA/WSCD and
+keystore) contains attestations for only one User (see also [Section 3.2](#32-users-of-wallet-units)).
+Therefore, a proof of cryptographic binding between two attestations proves
+that these attestations belong to the same User. However, some additional
+actions must be done to use such a mechanism in practice:
     - During attestation issuance, an Attestation Provider must request the
     Wallet Unit to bind the new attestation to an existing PID or attestation.
     For this, the Attestation Provider must verify that the existing PID or
@@ -4571,7 +4571,7 @@ in practice:
     the Attestation Provider does this is out of scope of the ARF. For example,
     the Attestation Provider could request the User name and birth date from a
     PID on the Wallet Unit, verify that this information matches a record in its
-    database, issue a attestation corresponding to the information in that
+    database, issue an attestation corresponding to the information in that
     record, and then request the Wallet Unit to bind the public key in that
     attestation to the public key in the PID.
     - A Relying Party that has verified a proof of cryptographic binding between
