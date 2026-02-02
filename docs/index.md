@@ -117,7 +117,11 @@ verification with regard to the initiation of qualified trust services,
 - [CIR 2025/1946](http://data.europa.eu/eli/reg_impl/2025/1946/oj) regarding qualified preservation services for qualified electronic signatures and for qualified electronic seals,
 - [CIR 2025/2160](http://data.europa.eu/eli/reg_impl/2025/2160/oj) regarding reference standards, specifications and procedures for the management of risks to the provision of non-qualified trust services,
 - [CIR 2025/2162](http://data.europa.eu/eli/reg_impl/2025/2162/oj) regarding the accreditation of conformity assessment bodies performing the assessment of qualified trust service providers and the qualified trust services they provide, the conformity assessment report and the conformity assessment scheme, 
-- [CID 2025/2164](http://data.europa.eu/eli/dec_impl/2025/2164/oj) regarding the version of the standard on which the common template for the trusted lists is based.
+- [CID 2025/2164](http://data.europa.eu/eli/dec_impl/2025/2164/oj) regarding the version of the standard on which the common template for the trusted lists is based,
+- [CIR 2025/2527](http://data.europa.eu/eli/reg_impl/2025/2527/oj) regarding reference standards for qualified certificates for website authentication,
+- [CIR 2025/2530](http://data.europa.eu/eli/reg_impl/2025/2530/oj) regarding requirements for qualified trust service providers providing qualified trust services,
+- [CIR 2025/2531](http://data.europa.eu/eli/reg_impl/2025/2531/oj) regarding reference standards and specifications for qualified electronic ledgers,
+- [CIR 2025/2532](http://data.europa.eu/eli/reg_impl/2025/2532/oj) regarding reference standards and specifications for qualified electronic archiving services.
 
 
 ## Contents of the repository
