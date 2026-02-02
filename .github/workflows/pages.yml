@@ -25,7 +25,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v4
         with:
-           ref: 'feature/2.8.0'
+           ref: 'main'
            fetch-depth: 0
       - name: Get latest tag
         id: latest_tag
