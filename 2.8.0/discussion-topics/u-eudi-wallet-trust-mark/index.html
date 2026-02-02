@@ -1,0 +1,868 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/discussion-topics/u-eudi-wallet-trust-mark/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Topic U - EUDI Wallet Trust Mark - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Topic U - EUDI Wallet Trust Mark - European Digital Identity" />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/assets/images/social/discussion-topics/u-eudi-wallet-trust-mark.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/discussion-topics/u-eudi-wallet-trust-mark/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Topic U - EUDI Wallet Trust Mark - European Digital Identity" />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/assets/images/social/discussion-topics/u-eudi-wallet-trust-mark.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-u-eudi-wallet-trust-mark" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Topic U - EUDI Wallet Trust Mark
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and reference framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="topic-u-eudi-wallet-trust-mark">Topic U - EUDI Wallet Trust Mark</h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0.1</code></td>
+<td>21.05.2025</td>
+<td>Initial version</td>
+</tr>
+<tr>
+<td><code>0.2</code></td>
+<td>03.06.2025</td>
+<td>Updated version after the first session</td>
+</tr>
+<tr>
+<td><code>0.3</code></td>
+<td>05.06.2025</td>
+<td>Updated version after the second session</td>
+</tr>
+<tr>
+<td><code>1.0</code></td>
+<td>02.07.2025</td>
+<td>Final version for publication and inclusion in ARF Release 2.4</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/536">GitHub discussion</a></p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper topic description</h3>
+<p>This document is the Discussion Paper for European Digital Identity Cooperation Group regarding Topic U: EUDI Wallet Trust Mark.</p>
+<p>The European Commission has released a technical specification on the topic, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md">Specification of EUDI wallet Trust Mark</a>, hereafter the [Trust Mark Specification].</p>
+<h3 id="12-related-risks-in-the-risk-register">1.2 Related risks in the Risk Register</h3>
+<p>The risk register for European Digital Identity Wallets [RiskRegister]
+contains the following risks that are related to the EUDI Wallet Trust Mark:</p>
+<table>
+<thead>
+<tr>
+<th>Risk type</th>
+<th>Risk id</th>
+<th>Related risk titles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R4</td>
+<td>Identity theft</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R5</td>
+<td>Data theft</td>
+</tr>
+<tr>
+<td>High-level risks to the wallets</td>
+<td>R6</td>
+<td>Data disclosure</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R4 Identity theft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity theft is defined as the unauthorised acquisition of the wallet unit or loss of authentication factors enabling to impersonate a person.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R5 Data theft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data theft is defined as the unauthorised extraction of data. Data theft is also associated to threats, such as data interception (unauthorised capture of data in transit) and data decryption (unauthorised decoding of encrypted data), which are likely to lead in some cases to Data disclosure (R6).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>R6 Data disclosure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data disclosure is defined as the unauthorised exposure of personal data including special categories of personal data. The privacy breach risk is very similar when considered from a privacy rather than security viewpoint.</td>
+</tr>
+</tbody>
+</table>
+<p>More specifically, [RiskRegister]  describes the following threats to a Wallet:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Threat description</th>
+<th>Related risks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR51</td>
+<td>An attacker can convince a user to share personal data (i.e. PID, EAA-s, pseudonyms, electronic signatures, logs and other data) with the attacker or with a third party that the user did not intend to do so.</td>
+<td>Data theft (R5) / Data disclosure (R6)</td>
+</tr>
+<tr>
+<td>TR56</td>
+<td>An attacker can propose an application that mimics a specific legitimate wallet to users.</td>
+<td>Identity theft (R4)</td>
+</tr>
+<tr>
+<td>TR107</td>
+<td>An attacker can steal information from a user by spoofing a wallet.</td>
+<td>Effect on various risks</td>
+</tr>
+<tr>
+<td>TR124</td>
+<td>An attacker can use phishing to get users to a fake wallet and PID management web application.</td>
+<td>Effect on various risks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-key-words">1.3 Key words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in RFC 2119, i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, for instance a self-evident necessity or a requirement that is
+mandated by an external document. The word 'can' indicates a capability, whereas
+other words, such as 'will' and 'is' or 'are' are intended as statements of
+fact.</p>
+<h3 id="14-document-structure">1.4 Document structure</h3>
+<ul>
+<li>Chapter 2 introduces the legal requirements for EUDI Wallet Trust Mark.</li>
+<li>Chapter 3 describes the problem and objectives of this paper, and the existing HLRs on the topic.</li>
+<li>Chapter 4 presents the agreed technical specification for the EUDI Wallet Trust Mark.</li>
+<li>Chapter 5 discusses introduction of new, or update of existing HLRs in the ARF Annex 2 for realisation of the EUDI Wallet Trust Mark UI views in the Wallet Instances.</li>
+<li>Chapter 6 lists the additions and changes that will be made to the ARF as a result of discussing this topic with Member States.</li>
+</ul>
+<h2 id="2-legal-requirements-for-eudi-wallet-trust-mark-in-regulation-eu-20241183">2 Legal requirements for EUDI Wallet Trust Mark in Regulation EU 2024/1183</h2>
+<ul>
+<li>According to Article 3 (50), the EUDI Wallet Trust Mark is defined as <strong>"a verifiable, simple and recognisable indication which is communicated in a clear manner that a European Digital Identity Wallet has been provided in accordance with this Regulation.”</strong></li>
+<li>According to Article 5a (5)(a) (iv), <strong>the Trust Mark must be displayed to the User</strong>.</li>
+<li>According to Article 5a (8)(a), <strong>the Member States shall provide validation mechanisms free-of-charge, in order to: (a) ensure that the authenticity and validity of European Digital Identity Wallets can be verified;</strong></li>
+<li>According to the Article 5d, the European Commission publishes the list of certified EUDI Wallets as an official list in the Official Journal of the European Union, thus acting as a reference for which Wallet Solutions are certified. <strong>Removal from the list means certification is no longer valid</strong>.</li>
+</ul>
+<h2 id="3-problem-statement">3. Problem statement</h2>
+<p>The purpose of a visible and recognisable trust mark on the EUDI Wallet is to add trust in the EUDI Wallet ecosystem and help the Users to recognise and validate the certification status of the EUDI Wallet Solutions of their EUDI Wallet Provider.</p>
+<p>A technical solution exists to verify the certification status of each Wallet Unit before any digital transaction is carried out between the Wallet Unit and its counterparts - the <strong>Wallet Unit Attestation</strong>. As a technical and non-visible attestation towards the Wallet Users it doesn't provide the visibility and recognisability emphasised in the Regulation. A means to deliver a visible trust mark to the Wallet Unit needs therefore to be arranged, and the Users shall be provided means to personally verify the status of the Wallet Solution they depend on.</p>
+<p>Neither this discussion paper nor the technical specification is responsible for the visual elements of the EUDI Wallet Trust Mark realisation - responsible entity is a parallel European Commission project that takes input from the Member States and [Trust Mark Specification]. It is stated in the [Trust Mark Specification] that the European Commission is responsible for the EUDI Wallet Trust Mark in terms of graphic design, ownership of the logo registration process and takes responsibility for drafting rules and usage guidelines, and distribution to the designated actors within the ecosystem.</p>
+<p>The specification work, which is usually carried out once the HLRs have been defined in the ARF, has already been completed. The Section 3 of the [Trust Mark Specification] specifies the mandatory action-oriented high-level requirements for a simple solution that</p>
+<ul>
+<li>focuses on providing the EUDI Trust Mark logo only to valid Wallet Instances, and</li>
+<li>enables the Wallet Provider to equip each Wallet Instance with links to the EU list of certified EUDI Wallets and the individual (certified) Wallet Solution information page underneath the main list.</li>
+</ul>
+<p>The European Commission will provide the EUDI Wallet Trust Mark graphics elements and will host the Wallet Solution specific content that will be displayed to Wallet Users through a browser window opened from the Wallet Instance upon the User making an deliberate action (e.g. a tap/click of a provided link). Two types of URLs are defined; one to open the page containing the general list of certified EUDI Wallets at the time of reviewing the page, the other that contains information specific to the certified Wallet Solution.</p>
+<p><strong>The purpose of this discussion paper is to clarify which additional high-level requirements, if any, should be brought in as new, or updated in the Annex 2 of the Architecture Reference Framework and what should be stated about the EUDI Wallet Trust Mark in the main text of the ARF</strong> based on what has already been agreed to be implemented by the responsible actors in the EUDI ecosystem.</p>
+<h3 id="31-existing-high-level-requirements-in-the-arf">3.1 Existing high-level requirements in the ARF</h3>
+<p>In the current ARF main text, there is no elaboration on the EUDI Wallet Trust Mark. It is marked as item for future discussion - purpose of this discussion paper.</p>
+<p>Regarding Annex 2 of the ARF, a requirement to render the trust mark is covered in High Level Requirement DASH_09 in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">[Topic 19]</a> on <strong>User navigation requirements</strong>. DASH_08 provided below just to bring in the full context, the Dashboard User Interface:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH_08</td>
+<td>For a natural-person User, a Wallet Instance SHALL provide a User interface.</td>
+</tr>
+<tr>
+<td>DASH_09</td>
+<td>The User interface referred to in DASH_08 SHALL display an EU Digital Identity Wallet Trust Mark complying with technical specifications. <em>Note: The Commission will develop technical specifications for this Trust Mark.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-technical-specification-of-the-eudi-wallet-trust-mark">4 Technical specification of the EUDI Wallet Trust Mark</h2>
+<p>Section 2.1 the [Trust Mark Specification] covers the mandatory part of the EUDI Wallet Trust Mark solution, and the respective requirements for realisation of the solution are covered in Section 3 of the [Trust Mark Specification]. This section covers requirements from the perspectives of the EUDI Wallet Users, the Wallet Providers, the European Commission and the Member States. A few of those requirements may be worth raising in the ARF style of high-level requirements after they have been discussed with the Member States. Section 5 of this discussion paper will cover for this purpose, prior to that a few relevant pieces of the specification are discussed here.</p>
+<h3 id="41-solutions-actors-and-expected-outcomes">4.1 Solution's actors and expected outcomes</h3>
+<p>The system architecture for delivery of the specified solution is visualised in the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md#421-system-architecture">Section 4.2.1</a> of the [Trust Mark Specification], provided here as a copy for reference:</p>
+<p><img alt="Trust-Mark-Component-Architecture" src="../img/copy-of-ts1-eudiw-trust-mark-components-fig2.png" /></p>
+<p>Figure 1. EUDI Wallet Trust Mark System Architecture</p>
+<p>Similarly, a copy of the EU Commission and Wallet Provider -side actor descriptions  #5-7, #9-11 and #13-14 accompanying the system architecture picture (for complete listing see <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md#422">Section 4.2.2</a> of the [Trust Mark Specification]) is provided below for convenience:</p>
+<p>"The <strong>European Commission's</strong> responsible unit for the Trust Mark information and listing of certified EUDI Wallets manages that
+- (5) the EUDI Wallet Trust Mark materials are available online as required behind a web resource (TrustMarkResourceURL)
+- (6) the certified Wallet Solution is given a WalletSolutionID, information of the Wallet Solution is added to the official list of certified wallets
+- (7) a Wallet Solution specific information page is created and published online</p>
+<p>...</p>
+<ul>
+<li>(9) the Wallet Provider is sent information required for configuring the certified Wallet Solution and issuing the Wallet Unit Attestation: the assigned <em>WalletSolutionID</em>, the <em>TrustMarkResourceURL</em>, the <em>ListOfCertifiedWalletsURL</em>, the <em>WalletSolutionInfoPageURL</em>, and (OPTIONALLY) the <em>WalletVerifierToolURL</em>.</li>
+</ul>
+<p>...</p>
+<p>The <strong>Wallet Provider</strong>, after receiving the information,<br />
+- updates the Wallet Solution asset where needed (10) in order to
+- (11) be able to render the Wallet Solution specific EUDI Wallet UI view with expected graphics and other information of the Trust Mark.</p>
+<p>...</p>
+<p>The <strong>User</strong> can at their discretion
+- view (13) the official EUDI Trust Mark information from the UI view of the EUDI Wallet, and 
+- (14) access the EUDI Wallet listing and individual Wallet Solution pages."</p>
+<p>As such, with these guidelines present the technical specification is clear on how the solution is realised on the system level. It leaves out the definition required for providing 'standard' UI views towards the certification information on a Wallet Unit, as such information (with logo/trust mark graphics and readily localised pieces of information to render) is set for the European Commission to design and release.</p>
+<h2 id="5-high-level-requirements-for-arranging-the-eudi-wallet-trust-mark-view-in-the-wallet-instance-user-interface">5 High-Level Requirements for arranging the EUDI Wallet Trust Mark view in the Wallet Instance User Interface</h2>
+<p>The Wallet User related requirements EWTM-U4 - EWTM-U10 of the [Trust Mark Specification] contain action oriented requirements that bring in a few implementation aspects (for arranging the Wallet UI views, mostly). These requirements are collected to a table below, and a respective new ARF High-Level Requirement text is proposed on the right column, where such makes sense.</p>
+<p>The proposed locations for EUDI Wallet Trust Mark related HLRs in the ARF Annex 2, unless a totally new Topic # is wished for, are <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a> on User navigation requirements &amp; transport logs, and <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a> on Wallet Instance installation and Wallet Unit activation and management.</p>
+<p>The below table was evolved via discussions in the focus group meetings, the <strong>Bolded text</strong> are suggested modifications to existing HLRs.</p>
+<table>
+<thead>
+<tr>
+<th><strong>TS Index</strong></th>
+<th>TS Requirement</th>
+<th><strong>Proposed ARF Index</strong></th>
+<th><strong>Proposed ARF Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EWTM-U4</strong></td>
+<td>As a user of a EUDI Wallet, after installation, I want a means to check that the EUDI Wallet Solution certification is legitimate as part of the EUDI Wallet Instance activation. <em>Note: Certification related information is made available to the EUDI Wallet Unit via the WUA issuance.</em></td>
+<td>WIAM_04</td>
+<td>During the activation process of a new Wallet Unit, the Wallet Provider SHALL verify that the new Wallet Instance is a genuine instance of its Wallet Solution <strong>and as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution</strong>.</td>
+</tr>
+<tr>
+<td><strong>EWTM-U5</strong></td>
+<td>As a User of a EUDI Wallet, I want a means to check on demand if the EUDI Wallet Unit that I am currently using is a Certified EUDI Wallet.</td>
+<td>DASH_09</td>
+<td>The User interface referred to in DASH_08 SHALL ~~display~~ provide a view with the ~~an~~ EU Digital Identity Wallet Trust Mark <strong>and accompanying information of the certification status of the Wallet Solution</strong> complying with technical specification <strong>provided on the EUDI Wallet Trust Mark</strong>. (Original note to be removed.)</td>
+</tr>
+<tr>
+<td><strong>EWTM-U6</strong></td>
+<td>As a User of a EUDI Wallet, I want to be able to read fresh high-level information of the Certification status when I select (click or tap) a visual indicator (logo) of the EUDI Wallet Trust Mark in the EUDI Wallet Unit.</td>
+<td>DASH_13 (New)</td>
+<td>The view of DASH_09 SHALL in addition to the Trust Mark provide links to the certification information defined in the technical specification provided on the EUDI Wallet Trust Mark.</td>
+</tr>
+<tr>
+<td><strong>EWTM-U7</strong></td>
+<td>As a User of a EUDI Wallet, I want the EUDI Wallet Trust Mark to be always positioned in a standard location (such as UI view or menu item) in the EUDI Wallet Unit.</td>
+<td>DASH_14 (New)</td>
+<td>Positioning of the view of DASH_09 in the Wallet UI navigation should follow provided design guidelines from the European Commission. <em>Note: The information/UI view should probably be offered to the User at first upon Wallet Unit activation (see WIAM_05 in Topic 40) and be located under the 'Settings' or 'About' view or similar of the Wallet Instance. Guidance from the European Commission is expected to the Wallet Providers.</em></td>
+</tr>
+<tr>
+<td> <strong>EWTM-U10</strong></td>
+<td>As a physically impaired User of a EUDI Wallet, I want to have accessibility support within realisation of the requirements set in <strong>EWTM-U4</strong> - <strong>EWTM-U9</strong>. <em>Note: Accessibility considerations from <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> such as screen reader compatibility, color contrast, or keyboard navigation must to be addressed in the end-user implementation and guidelines to be provided. Users with visual impairments, cognitive disabilities, or low digital literacy may face challenges in: - perceiving the Trust Mark (e.g., reliance on visual-only indicators), - understanding certification status (e.g., clarity of meaning in B1-level local language) or - Reacting to certification changes (e.g., what actions should be taken if revoked?)</em></td>
+<td>(N/A)</td>
+<td><em>Note: Expecting a separate future discussion topic on Accessibility within the ARF, suggestion is NOT to define particular accessibility HLR/s for the EUDI Wallet Trust Mark.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and changes to the ARF</h2>
+<h3 id="61-high-level-requirements-to-be-added-to-annex-2">6.1 High-Level Requirements to be added to Annex 2</h3>
+<h4 id="611-new-requirements-to-be-added-to-topic-19">6.1.1 New requirements to be added to Topic 19</h4>
+<p>The following High-Level Requirements will be added in Annex 2 Topic <em>19</em> of the ARF:</p>
+<p><strong>REQUIREMENT 1</strong> (<strong>DASH_013</strong>, mandatory)</p>
+<p>Positioning of the view of DASH_09 in the Wallet UI navigation SHALL follow provided design guidelines from the European Commission.</p>
+<h4 id="612-new-requirements-to-be-added-to-topic-40">6.1.2 New requirements to be added to Topic 40</h4>
+<p>The following High-Level Requirements will be added in Annex 2 Topic <em>40</em> of the ARF:</p>
+<p><strong>REQUIREMENT 2</strong> (<strong>WIAM_10a</strong>, mandatory)</p>
+<p>During the activation process of a new Wallet Unit, the Wallet Provider SHALL as part of the User onboarding offer the User a means to check the formal certification information of their Wallet Solution.</p>
+<h3 id="62-high-level-requirements-to-be-changed-in-annex-2">6.2 High-Level Requirements to be changed in Annex 2</h3>
+<p>The following requirement is modified in Topic <em>19</em> (deletions in strikethrough, changes in bold):</p>
+<p><strong>DASH_09</strong></p>
+<p>The User interface referred to in DASH_08 SHALL ~~display~~ provide a view with the ~~an~~ EU Digital Identity Wallet Trust Mark <strong>, the accompanying general text information on certification of Wallet Solutions, and provide the links to the certification status information as defined in the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md">Specification of EUDI Wallet Trust Mark</a></strong>.</p>
+<p>Original note in DASH_09 is to be removed.</p>
+<h3 id="63-descriptions-to-be-added-to-the-arf-main-document">6.3 Descriptions to be added to the ARF main document</h3>
+<p>Proposed draft text for the description on the utility of EUDI Wallet Trust Mark:</p>
+<p>"According to the [European Digital Identity Regulation] the User needs to be provided a means to verify that they are installing or (after initialisation) are indeed using a trusted, certified EUDI Wallet Solution. The simple solution to arrange the requirement is a Trust Mark UI view. When invoked in the Wallet Instance, it
+* renders the official trust mark graphics/logo,
+* an informational text about certification localised for User's device language, and 
+* provides web links to trusted list of EUDI Wallets and the Wallet certification information page of User's Wallet Solution.</p>
+<p>The latter two are hosted and managed dynamically by the European Commission, therefore the use case depends on certain metadata that will be known to the Wallet Provider only when the Wallet certification process has been completed. That is, the Wallet needs to bypass certification with incomplete - or a test version of the - EUDI Wallet Trust Mark UI view.</p>
+<p>The <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md">Specification of EUDI Wallet Trust Mark</a> concentrates on defining the exact technical contents and the provisioning process to enable the UI view rendering at the Wallet Instance. The Annex 2 Topics 19 and 40 set the broad requirements as part of the EUDI Wallet Dashboard function and what is required upon Wallet Unit activation and maintenance phases."</p>
+<h2 id="7-references">7 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Risk Register]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024</a>, draft</td>
+</tr>
+<tr>
+<td>[WCAG 2.1]</td>
+<td><a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guide version 2.1</a></td>
+</tr>
+<tr>
+<td>[Trust Mark Specification]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts1-eudi-wallet-trust-mark.md">Specification of EUDI Wallet Trust Mark</a></td>
+</tr>
+<tr>
+<td>[Issuance WUA Specification]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
