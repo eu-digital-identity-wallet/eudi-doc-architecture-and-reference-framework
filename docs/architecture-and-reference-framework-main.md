@@ -613,7 +613,7 @@ Users would like to be able to authenticate themselves and their electronic
 payments securely and conveniently using their Wallet Units, so that
 they can enjoy a seamless and protected shopping and payment experience.
 
-A Wallet Unit may facilitate complying with strong customer authentication (SCA)
+A Wallet Unit facilitates complying with strong customer authentication (SCA)
 requirements for electronic payments, ensuring a high level of security and
 compliance with [Article 97 of the PSD2](https://eur-lex.europa.eu/eli/dir/2015/2366/oj#d1e5540-35-1)
 (and with the future PSD3/PSR).
