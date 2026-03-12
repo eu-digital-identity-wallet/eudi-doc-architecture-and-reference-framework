@@ -1552,7 +1552,7 @@ This section defines four distinct communication flows that can be used when a
 Wallet Unit presents a PID or attestation to a Relying Party Instance:
 
 - **Proximity Supervised Flow**: In this flow, the User and their User
-Device are physically near the Relying Part Instance. PIDs and attestations
+Device are physically near the Relying Party Instance. PIDs and attestations
 are exchanged using proximity technology (e.g., NFC, Bluetooth) between the
 Wallet Unit and the Relying Party Instance. Both devices may be with or without
 internet connectivity. A human representative of the Relying Party supervises
@@ -1562,7 +1562,7 @@ the Wallet Unit presents attestations to a machine, without human supervision.
 The interfaces and protocols used in this flow are the same as for the proximity
 supervised flow, and are described in [Section 4.4.2](#442-proximity-presentation-flows).
 - **Remote Same-Device Flow**: In this flow, the User utilises a web browser or
-another application on their User device to access a Relying Party's a service.
+another application on their User device to access a Relying Party's service.
 If consuming the service requires the Relying Party to obtain specific
 attributes from the User's Wallet Unit, the Relying Party sends a presentation
 request to the Wallet Unit. As explained in [Section 4.4.3.2](#4432-same-device-remote-presentation-flows),
@@ -1584,7 +1584,7 @@ described in more detail in one of the next sections.
 #### 4.4.2 Proximity presentation flows
 
 Figure 3 shows how attestation presentation works when the User and their User
-Device are physically near the Relying Part Instance and do not have (or do not
+Device are physically near the Relying Party Instance and do not have (or do not
 want to use) an internet connection between them. In this case, the [ISO/IEC
 18013-5] standard specifies how a communication channel is set up and how a
 presentation request and the corresponding response are exchanged using
