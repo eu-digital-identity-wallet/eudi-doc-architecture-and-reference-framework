@@ -40,6 +40,7 @@ nav:
   - Discussion topics: discussion-topics/README.md
   - Technical specifications: technical-specifications/README.md
   - Reference Implementation: https://docs.eudi.dev/latest/
+  - Functional Conformance: https://conformance.eudi.dev/latest/
 
 extra:
   version:
