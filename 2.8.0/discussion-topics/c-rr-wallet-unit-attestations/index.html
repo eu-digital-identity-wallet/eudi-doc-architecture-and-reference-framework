@@ -1,0 +1,1364 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/discussion-topics/c-rr-wallet-unit-attestations/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>C rr wallet unit attestations - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="C rr wallet unit attestations - European Digital Identity" />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/assets/images/social/discussion-topics/c-rr-wallet-unit-attestations.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/discussion-topics/c-rr-wallet-unit-attestations/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="C rr wallet unit attestations - European Digital Identity" />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.8.0/assets/images/social/discussion-topics/c-rr-wallet-unit-attestations.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-c-wallet-unit-attestations-wua-revision-round" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C rr wallet unit attestations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Conformance
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and reference framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 0.1, updated 26 March 2026</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/644">Link to GitHub discussion</a></p>
+<h1 id="topic-c-wallet-unit-attestations-wua-revision-round">Topic C - Wallet Unit Attestations (WUA) (Revision Round)</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is the 2026 revision round (RR) version of the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic C: Wallet Unit Attestations (WUA).</p>
+<p><strong>Please note that the title of Topic C used to be "Wallet Unit Attestation (WUA) and Key Attestation". However, since then terminology has slightly changed, see <a href="#21-proposal-1-introduce-wua-as-an-umbrella-term-covering-wia-and-ka">Section 2.1</a>. This has been reflected in the title of this version of the Discussion Paper.</strong></p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this the objective of this topic as follows:</p>
+<p><em>To refine and stabilize HLRs for the Wallet Unit Attestation (WUA) and Key Attestation in order to support certification, ensure trust in the EUDI Wallet ecosystem, and enable consistent implementation by Member State and wallet providers.</em></p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p><a href="#2-proposed-changes">Chapter 2</a> presents proposed conceptual changes to the ARF for this topic, together with their rationale.</p>
+</li>
+<li>
+<p><a href="#3-proposed-additions-and-changes-to-hlrs-in-arf-appendix-2">Chapter 3</a> keeps a log of the additions and changes that will be made to the High-Level Requirements in the ARF Annex 2 as a result of discussing this topic with Member States. The ARF version and HLRs referenced in this discussion paper is version 2.8.0. The chapter discusses changes to</p>
+<ul>
+<li><a href="#33-topic-7---attestation-revocation-and-revocation-checking">Topic 7</a> (Attestation revocation and revocation checking),</li>
+<li><a href="#31-topic-9---wallet-unit-attestation-and-wallet-instance-attestation">Topic 9</a> (Wallet Unit Attestation and Wallet Instance Attestation),</li>
+<li><a href="#32-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a> (Issuing a PID or attestation to a Wallet Unit),</li>
+<li><a href="#34-topic-31---notification-and-publication-of-wallet-providers">Topic 31</a> (Notification and publication of Wallet Providers),</li>
+<li><a href="#35-topic-38---wallet-unit-revocation">Topic 38</a> (Wallet Unit Revocation), and</li>
+<li><a href="#36-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a> (Wallet Instance installation and Wallet Unit activation and management).</li>
+</ul>
+</li>
+<li>Chapter 4 mentions the additions and changes that will be made to the ARF main document as a result of the discussions.</li>
+<li>Chapter 5 mentions the additions and changes that will be made to the ARF Annex 1 (Definitions)</li>
+</ul>
+<h2 id="2-proposed-changes">2 Proposed Changes</h2>
+<p>The technical specification relevant to this topic is <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> (TS03): <em>Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations</em>. Version 1.5 introduces terminology and concepts that this paper proposes to adopt in the ARF.</p>
+<h3 id="21-proposal-1-introduce-wua-as-an-umbrella-term-covering-wia-and-ka">2.1 Proposal 1: Introduce WUA as an Umbrella Term Covering WIA and KA</h3>
+<p>The ARF should adopt a two-level terminology for wallet-used attestations used during issuance:</p>
+<ul>
+<li><strong>Wallet Instance Attestation (WIA)</strong>: A WIA attests to the integrity and authenticity of the User's Wallet Instance. It is signed by the Wallet Provider. A Wallet Unit sends a WIA to the Authorization Server of a PID Provider or Attestation Provider, as specified in [OpenID4VCI]. WIAs are used during the issuance of PIDs and both device-bound and non-device-bound attestations.</li>
+<li><strong>Key Attestation (KA)</strong>: A KA attests to the security properties of cryptographic keys stored in a WSCA/WSCD or a keystore available to the Wallet Unit. It is signed by the Wallet Provider. A Wallet Unit sends a KA to the Credential Issuer of a PID Provider or Attestation Provider. KAs are used only during the issuance of PIDs and device-bound attestations.</li>
+<li><strong>Wallet Unit Attestations (WUA)</strong>: This is an umbrella term covering both types of attestations.</li>
+</ul>
+<p>In the current ARF (i.e., version 2.8.0) HLRs, Topic 9 uses "WUA" to refer to what is called here a Key Attestation, while Section E already uses the term "WIA". This paper proposes to adopt the two-level structure throughout Topic 9, replacing "WUA" with "KA" in sections A-D where the key attestation is meant, while using the umbrella term "WUA" where requirements apply to both types. WUA_04 and WUA_23, which both specify the same cryptographic algorithm requirement for KAs and WIAs respectively, are proposed to be merged into a single requirement using the umbrella "WUA" term.</p>
+<h3 id="22-proposal-2-separate-revocation-semantics-for-wia-and-ka">2.2 Proposal 2: Separate Revocation Semantics for WIA and KA</h3>
+<p>The ARF should clarify that the two different types of a WUAs serve different revocation purposes:</p>
+<ul>
+<li>The <strong>WIA</strong> carries the revocation reference for the User's <strong>Wallet Instance</strong>. This is the mechanism through which PID Providers and Attestation Providers will discover, among other, if a User requested revocation of their Wallet Instance via the Wallet Provider, or if the Wallet Instance was revoked due to a security issue involving the app or the mobile device on which it is installed.</li>
+<li>The <strong>KA</strong> carries a revocation reference for the WSCD or keystore used to store the cryptographic keys that a PID Provider or Attestation Provider will include in their PIDs or (device-bound) attestations. The revocation reference may represent the revocation status of a <strong>type</strong> of WSCD or keystore, shared across all Wallet Units using a WSCD/keystore of that type. In this case, the Wallet Provider would typically only revoke a KA in case a vulnerability is detected for that type of WSCD or keystore. Alternatively, a KA may represent the revocation state of a specific Wallet Unit's WSCD or keystore instance. This is up to the Wallet Provider to decide, and may depend on the type of WSCDs used by the Wallet Provider. For example, when the WSCD is a local external WSCD as defined in the ARF, for example an external smart card, it may make sense to let a key attestation represent an individual WSCD rather than a type of WSCD. This would enable the revocation of a WSCD that is lost or stolen.</li>
+</ul>
+<h3 id="23-proposal-3-require-wallet-solution-information-in-the-wia">2.3 Proposal 3: Require Wallet Solution Information in the WIA</h3>
+<p>The WIA should contain information about the Wallet Solution to which the Wallet Instance belongs, including its identity, version, and certification. This enables PID Providers and Attestation Providers to be informed about the properties of the Wallet Unit to which they are about to issue a PID or attestation. It also allows PID Providers and Attestation Providers to report problems with a specific Wallet Solution to the Wallet Provider in case problems are encountered during issuance (in an out-of-band manner).</p>
+<h3 id="24-proposal-4-introduce-the-concept-of-a-revocation-maintenance-period">2.4 Proposal 4: Introduce the Concept of a Revocation Maintenance Period</h3>
+<p>A WIA must have a short technical validity period -- it must be fresh at the time of use to confirm the current integrity of the Wallet Instance. <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> specifies that the validity period must be at most 24 hours. For a KA, it is up to the Wallet Provider to determine the validity period.</p>
+<p>However, PID Providers and Attestation Providers need to be able to check whether the Wallet Instance has been revoked (via the WIA) and whether the WSCD or keystore referenced in the KA has been revoked (via the KA). For PID Providers, there is a legal requirement that they must be able to do this for the entire validity period of the PID, which typically will be considerably longer than 24 hours. The ARF should therefore introduce the concept of a <strong>revocation maintenance period</strong>: the period during which the Wallet Provider commits to maintaining the revocation status information referenced in the WUA. This revocation maintenance period is independent of the expiry of the WIA or KA.</p>
+<p>An important conceptual distinction applies to the revocation of a WUA (i.e., WIAs or KAs): unlike PID or attestation revocation, where the PID or attestation itself is revoked, WUA revocation refers to the revocation of the <strong>underlying object</strong> attested by that WUA. Specifically, the revocation status referenced in a WIA signals whether the <strong>Wallet Instance</strong> has been revoked. Similarly, the revocation status referenced in a KA signals whether the WSCD or keystore used to store the attested keys is still trusted. The WUAs themselves do not need to be revoked, since the information in them has no value in itself.</p>
+<p>This leads to the following proposals:</p>
+<ul>
+<li>The WUA shall carry information on the revocation maintenance period.</li>
+<li>Wallet Providers shall ensure that WUAs have a sufficiently long revocation maintenance period remaining at the time of presentation by the Wallet Unit to a PID Provider or Attestation Provider (i.e., during PID or attestation issuance).</li>
+<li>Throughout the validity period of a PID they have issued, a PID Provider shall regularly check the revocation status of both the WIA and KA it received during PID issuance.</li>
+<li>The expiration date of a PID shall be equal to or earlier than the expiration date of the revocation maintenance period of the WIA and KA presented during issuance. (Note that the expiration date of a PID does not have be earlier than the WIA or KA expiry date.)</li>
+<li>PID Providers or Attestation Providers shall communicate their minimum revocation maintenance period requirements to the Wallet Unit during issuance of a PID or attestation.</li>
+<li>WIAs shall have a short technical validity period, to ensure Wallet Instance integrity is confirmed recently at the time of use.</li>
+</ul>
+<h3 id="25-proposal-5-remove-the-key-exportability-attribute-from-the-ka">2.5 Proposal 5: Remove the Key Exportability Attribute from the KA</h3>
+<p>The ARF currently requires Wallet Providers to specify in the WUA (now KA) whether private keys in the WSCA/WSCD or keystore are exportable (WUA_16). This attribute is proposed to be removed, for the following reasons: The underlying trust model of the EUDI Wallet ecosystem is that PID Providers and Attestation Providers trust certified Wallet Providers. Under this model, it is sufficient for the KA to describe the security level of the WSCD or keystore -- as attested and certified by the Wallet Provider -- rather than requiring PID Providers or Attestation Providers to make their own independent judgement about individual key properties such as exportability. The certification of the Wallet Solution and the WSCD or keystore provides the appropriate assurance. WUA_16 is therefore proposed to be deleted.</p>
+<h3 id="26-proposal-6-clarify-pid-provider-obligation-to-verify-wscd-backed-key-storage">2.6 Proposal 6: Clarify PID Provider Obligation to Verify WSCD-Backed Key Storage</h3>
+<p>PID private keys must be protected at Level of Assurance High, which requires key storage in a WSCA/WSCD. While the ARF requires a Wallet Unit to provide a KA describing the WSCA/WSCD when issuing a PID, there is no corresponding requirement explicitly obligating the PID Provider to verify that the KA attests keys stored in a WSCA/WSCD. This paper proposes to make this PID Provider obligation explicit.</p>
+<h2 id="3-proposed-additions-and-changes-to-hlrs-in-arf-appendix-2">3 Proposed Additions and Changes to HLRs in ARF Appendix 2</h2>
+<p>The HLRs referenced in this section are from ARF version 2.8.0. </p>
+<h3 id="31-topic-9-wallet-unit-attestation-and-wallet-instance-attestation">3.1 Topic 9 - Wallet Unit Attestation and Wallet Instance Attestation</h3>
+<p>Note: In view of the necessary re-ordering of HLRs over the different sections of Topic 9, we will consider renumbering all WUA_XX requirements.</p>
+<h4 id="a-general">A. General</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_04</td>
+<td>When issuing, presenting, or verifying a WUA, Wallet Providers, Wallet Units, PID Providers, and Attestation Providers SHALL only use cryptographic algorithms included in the [ECCG Agreed Cryptographic Mechanisms v2.0].</td>
+<td>When issuing, presenting, or verifying a WUA, Wallet Providers, Wallet Units, PID Providers, and Attestation Providers SHALL only use cryptographic algorithms included in the <a href="https://certification.enisa.europa.eu/document/download/a845662b-aee0-484e-9191-890c4cfa7aaa_en?filename=ECCG%20Agreed%20Cryptographic%20Mechanisms%20version%202.pdf">ECCG Agreed Cryptographic Mechanisms v2.0</a>. <em>Note: The umbrella term WUA covers both WIA and KA.</em></td>
+<td>Changed ("WUA" now used as umbrella term; WUA_23 merged into this requirement. Moved to Section A as this requirement covers all WUAs. See also WUA_23.)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b-key-attestations">B. Key Attestations</h4>
+<p><em>Note: This section replaces the previous section A "Wallet Unit Attestations". The term "WUA" (Wallet Unit Attestation) used in the previous version of this section has been updated to "KA" (Key Attestation) as proposed in Section 2.1.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_01</td>
+<td>A WUA SHALL contain information about the storage type and certification of the WSCA/WSCD or a keystore available to the Wallet Unit, and SHALL comply with the relevant requirements in [Technical Specification 3]. <em>Note: A PID Provider or Attestation Provider can use this information to take a well-grounded decision on whether to issue a PID or attestation to the Wallet Unit.</em></td>
+<td>A Key Attestation SHALL contain information about the certification of the WSCA/WSCD or a keystore available to the Wallet Unit, and SHALL comply with the relevant requirements in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>. <em>Note: A PID Provider or Attestation Provider can use this information to take a well-grounded decision on whether to issue a PID or attestation to the Wallet Unit.</em></td>
+<td>Changed ("WUA" replaced by "KA"; "storage type and certification" simplified to "certification" as the storage type attribute was removed in TS03 V1.5)</td>
+</tr>
+<tr>
+<td>WUA_02</td>
+<td>-</td>
+<td>A Key Attestation SHALL enable PID Providers and Attestation Providers to verify the authenticity of a WSCD or keystore and to check whether the WSCD or keystore has been revoked. <em>Note: A KA carries a revocation reference that is valid for the WSCD or keystore of the Wallet Unit. How this revocation reference is managed (individually or per type of WSCD/keystore) depends on the approach chosen by the Wallet Provider (see WUA_28), but this is not relevant for the PID Provider or Attestation Provider that receives the KA.</em></td>
+<td>New. Split from WUA_02 and changed to be about KA, as "WUA" now used as umbrella term covering both WIA and KA.</td>
+</tr>
+<tr>
+<td>WUA_03</td>
+<td>A Wallet Provider SHALL ensure that a non-revoked Wallet Unit at all times presents a temporally valid and non-revoked WUA to a PID Provider or Attestation Provider during the issuance process of a PID or device-bound attestation.</td>
+<td>A Wallet Provider SHALL ensure that a non-revoked Wallet Unit at all times can present a temporally valid and non-revoked KA to a PID Provider or Attestation Provider during the issuance process of a PID or device-bound attestation. <em>Note: Revocation refers to the attested WSCD/keystore, not to the KA itself.</em></td>
+<td>Changed</td>
+</tr>
+<tr>
+<td>WUA_05</td>
+<td>During issuance of a PID, the Wallet Unit SHALL provide the PID Provider with a valid WUA describing the WSCA/WSCD that generated the new PID private key. <em>Note: A PID private key is always generated and managed by the WSCA/WSCD, which by definition complies with requirements for Level of Assurance High.</em></td>
+<td>During issuance of a PID, the Wallet Unit SHALL provide the PID Provider with a valid KA describing the WSCA/WSCD that generated the new PID private key. <em>Note: A PID private key is always generated and managed by the WSCA/WSCD, which by definition complies with requirements for Level of Assurance High.</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_05a</td>
+<td>During issuance of a device-bound attestation, a Wallet Unit SHALL retrieve the requirements of the Attestation Provider regarding key storage from the Credential Issuer metadata (see ISSU_27). The Wallet Unit SHALL determine which of its WSCA/WSCD or keystore(s), if any, comply with these requirements. If a compliant WSCA/WSCD or keystore is available to the Wallet Unit, the Wallet Unit SHALL provide the Attestation Provider with a valid WUA describing the selected WSCA/WSCD or keystore. <em>Note: A WUA describes the properties of the WSCA/WSCD or a keystore (see WUA_01) and contains one or more public key(s) corresponding to private key(s) generated by and stored in that WSCA/WSCD or keystore (WUA_09).</em></td>
+<td>During issuance of a device-bound attestation, a Wallet Unit SHALL retrieve the requirements of the Attestation Provider regarding key storage from the Credential Issuer metadata (see ISSU_27). The Wallet Unit SHALL determine which of its WSCA/WSCD or keystore(s), if any, comply with these requirements. If a compliant WSCA/WSCD or keystore is available to the Wallet Unit, the Wallet Unit SHALL provide the Attestation Provider with a valid KA describing the selected WSCA/WSCD or keystore. <em>Note: A KA describes the certification properties of the WSCA/WSCD or a keystore (see WUA_01) and contains one or more public key(s) corresponding to private key(s) generated by and stored in that WSCA/WSCD or keystore (see WUA_09).</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_06</td>
+<td>If a Wallet Unit contains a WSCA/WSCD and one or more keystores, it SHALL, internally and securely, keep track of which PID(s) and attestation(s) are bound to which WSCA/WSCD or keystore.</td>
+<td>If a Wallet Unit contains a WSCA/WSCD and one or more keystores, it SHALL, internally and securely, keep track of which PID(s) and attestation(s) are bound to which WSCA/WSCD or keystore.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_07</td>
+<td>A Wallet Unit SHALL present a WUA only to a PID Provider or Attestation Provider, as part of the issuance process of a PID or a key-bound attestation, and not to a Relying Party or any other entity.</td>
+<td>A Wallet Unit SHALL present a KA only to a PID Provider or Attestation Provider, as part of the issuance process of a PID or a key-bound attestation, and not to a Relying Party or any other entity.</td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+</tbody>
+</table>
+<h4 id="c-key-attestation-in-relation-to-cryptographic-keys">C. Key Attestation in relation to Cryptographic Keys</h4>
+<p><em>Note: This section replaces the previous section B "WUA in relation to Cryptographic Keys". The term "WUA" has been updated to "KA" throughout this section as proposed in Section 2.1.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_09</td>
+<td>A WUA SHALL contain one or more public keys, and the corresponding private keys SHALL be generated by and stored in the WSCA/WSCD or the keystore described in the WUA. <em>Note: a) By signing the WUA, the Wallet Provider attests to the fact that the private key(s) corresponding to the public key(s) in the WUA are generated by and stored in this WSCA/WSCD or keystore. This implies that the Wallet Provider has verified that this is actually the case. However, neither the ARF nor [Technical Specification 3] specify at which moment the WSCA/WSCD or keystore generated the private keys, or how the Wallet Provider verified that it did so. b) After receiving a WUA during the issuance process for a (batch of) PID(s) or device-bound attestation(s), a PID Provider or Attestation Provider will include each of these public keys in a PID or attestation, thereby ensuring that this PID or attestation is bound to the WSCA/WSCD or keystore described in the WUA.</em></td>
+<td>A KA SHALL contain one or more public keys, and the corresponding private keys SHALL be generated by and stored in the WSCA/WSCD or the keystore described in the KA. <em>Note: a) By signing the KA, the Wallet Provider attests to the fact that the private key(s) corresponding to the public key(s) in the KA are generated by and stored in this WSCA/WSCD or keystore. This implies that the Wallet Provider has verified that this is actually the case. However, neither the ARF nor [Technical Specification 3] specify at which moment the WSCA/WSCD or keystore generated the private keys, or how the Wallet Provider verified that it did so. b) After receiving a KA during the issuance process for a (batch of) PID(s) or device-bound attestation(s), a PID Provider or Attestation Provider will include each of these public keys in a PID or attestation, thereby ensuring that this PID or attestation is bound to the WSCA/WSCD or keystore described in the KA.</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_10</td>
+<td>Wallet Providers SHALL ensure that the certificates they use for signing WUAs and WIAs comply with all applicable requirements in [ETSI TS 119 412-6], in particular Clause 5.</td>
+<td>Wallet Providers SHALL ensure that the certificates they use for signing WIAs and KAs comply with all applicable requirements in [ETSI TS 119 412-6], in particular Clause 5.</td>
+<td>Changed (updated to use "WIAs and KAs" to make explicit that this applies to both types)</td>
+</tr>
+<tr>
+<td>WUA_10a</td>
+<td>An Attestation Provider issuing non-device-bound attestations SHALL indicate in its Credential Issuer metadata that it does not need a WUA, as specified in [Technical Specification 3]. A Wallet Unit SHALL NOT send a WUA to an Attestation Provider when requesting a non-device-bound attestation. <em>Note: A Wallet Unit sends a WIA to the Attestation Provider regardless of whether the attestations it issues are device-bound or not.</em></td>
+<td>An Attestation Provider issuing non-device-bound attestations SHALL indicate in its Credential Issuer metadata that it does not need a KA, as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>. A Wallet Unit SHALL NOT send a KA to an Attestation Provider when requesting a non-device-bound attestation. <em>Note: A Wallet Unit sends a WIA to the Attestation Provider regardless of whether the attestations it issues are device-bound or not.</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_10b</td>
+<td>A Wallet Provider SHALL ensure that the presentation of a WUA is cryptographically bound to the specific context it is intended to be used in. <em>Note: As specified in [Technical Specification 3], this is achieved by letting the signed WUA itself contain a nonce provided by the PID Provider or Attestation Provider during the issuance process. Alternatively, the Wallet Unit presents the WUA along with a Proof-of-Possession consisting of a signature over that nonce, created by the private key corresponding to one of the public keys attested in the WUA.</em></td>
+<td>A Wallet Provider SHALL ensure that the presentation of a KA is cryptographically bound to the specific context it is intended to be used in. <em>Note: As specified in [Technical Specification 3], this is achieved by letting the signed KA itself contain a nonce provided by the PID Provider or Attestation Provider during the issuance process. Alternatively, the Wallet Unit presents the KA along with a Proof-of-Possession consisting of a signature over that nonce, created by the private key corresponding to one of the public keys attested in the KA.</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_11</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_11a</td>
+<td>During issuance of a PID or a device-bound attestation, the PID Provider or Attestation Provider SHALL verify the WUA in accordance with the requirements in [OpenID4VCI] Appendix F.4. <em>Note: As explained in the note to WUA_09, if the verification of the WUA is successful, the PID Provider or Attestation Provider can trust that all public keys in the WUA are bound to the WSCD or keystore described in the WUA.</em></td>
+<td>During issuance of a PID or a device-bound attestation, the PID Provider or Attestation Provider SHALL verify the KA in accordance with the requirements in [OpenID4VCI] Appendix F.4. <em>Note: If the verification of the KA is successful, the PID Provider or Attestation Provider can trust that all public keys in the KA are bound to the WSCD or keystore described in the KA (see WUA_09).</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_11b</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_12</td>
+<td>During issuance of a PID or a device-bound attestation, the PID Provider or Attestation Provider SHALL receive a proof that the Wallet Unit possesses the private keys corresponding to all public keys in the WUA. <em>Note: As specified in [Technical Specification 3], this proof consist of the signature of the Wallet Provider over the WUA in combination with the proof mentioned in WUA_10b.</em></td>
+<td>During issuance of a PID or a device-bound attestation, the PID Provider or Attestation Provider SHALL receive a proof that the Wallet Unit possesses the private keys corresponding to all public keys in the KA. <em>Note: As specified in [Technical Specification 3], this proof consists of the signature of the Wallet Provider over the KA in combination with the proof mentioned in WUA_10b.</em></td>
+<td>Changed ("WUA" replaced by "KA")</td>
+</tr>
+<tr>
+<td>WUA_13</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_14</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_15</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_16</td>
+<td>If the WSCA/WSCD is able to export a private key, the Wallet Provider SHALL specify this capability as an attribute in the WUA.</td>
+<td>Empty</td>
+<td>Changed (deleted: see Proposal 5 in Section 2.5)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="d-requirements-regarding-privacy">D. Requirements regarding privacy</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_17</td>
+<td>A Wallet Provider SHALL consider all relevant factors, including offline usage, interoperability, and the risk of a WUA becoming a vector to track the User, when deciding on the validity period of a WUA. <em>Note: Regarding interoperability, see ISSU_12c, which limits the validity period of PIDs issued based on the validity period of the WUA.</em></td>
+<td>A Wallet Provider SHALL consider all relevant factors, including offline usage, interoperability, and the risk of a WIA or KA becoming a vector to track the User, when deciding on the validity period of a WIA or KA. <em>Note: a) Regarding interoperability, see WUA_30, which limits the validity period of PIDs issued based on the revocation maintenance periods of the WIA and KA received during issuance. b) As specified in [Technical Specification 3], a PID Provider or Attestation Provider may communicate its preferences regarding the minimum revocation maintenance period of the WIA and KA to the Wallet Unit; the Wallet Unit and Wallet Provider should take this into account (see WUA_32). c) For the WIA specifically, a short technical validity period is required to ensure freshness; see WUA_33.</em></td>
+<td>Changed (requirement broadened to cover both WIA and KA validity period considerations; notes updated to reference WUA_30, WUA_32, and WUA_33)</td>
+</tr>
+<tr>
+<td>WUA_18</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+</tbody>
+</table>
+<h4 id="e-miscellaneous-requirements">E. Miscellaneous requirements</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_19</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_20</td>
+<td>A Wallet Provider SHALL ensure that its Wallet Units comply with all relevant requirements specified in [Technical Specification 3].</td>
+<td>A Wallet Provider SHALL ensure that its Wallet Units comply with all relevant requirements specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_20a</td>
+<td>A PID Provider or Attestation Provider SHALL comply with all relevant requirements specified in [Technical Specification 3].</td>
+<td>A PID Provider or Attestation Provider SHALL comply with all relevant requirements specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_21</td>
+<td>Empty</td>
+<td>Empty</td>
+<td>Keep</td>
+</tr>
+</tbody>
+</table>
+<h4 id="f-wallet-instance-attestations">F. Wallet Instance Attestations</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_22</td>
+<td>A Wallet Provider SHALL ensure that a non-revoked Wallet Unit at all times presents a temporally valid and non-revoked WIA to a PID Provider or Attestation Provider during the issuance process of a PID or attestation. <em>Note: This requirement applies to both device-bound and non-device-bound attestations.</em></td>
+<td>A Wallet Provider SHALL ensure that a non-revoked Wallet Unit at all times can present a temporally valid and non-revoked WIA to a PID Provider or Attestation Provider during the issuance process of a PID or attestation. <em>Notes: a) This requirement applies to both device-bound and non-device-bound attestations. b) Revocation refers to the attested Wallet Instance, not to the WIA itself.</em></td>
+<td>Changed (added note to make explicit that revocation refers to the Wallet Instance, not the WIA token itself)</td>
+</tr>
+<tr>
+<td>WUA_23</td>
+<td>When issuing, presenting, or verifying a WIA, Wallet Providers, Wallet Units, PID Providers, and Attestation Providers SHALL only use cryptographic algorithms included in the [ECCG Agreed Cryptographic Mechanisms v2.0].</td>
+<td>Empty</td>
+<td>Changed (merged into WUA_04, which now covers all WUAs using the umbrella term)</td>
+</tr>
+<tr>
+<td>WUA_24</td>
+<td>A Wallet Unit SHALL present a WIA only to a PID Provider or Attestation Provider, as part of the issuance process of a PID or an attestation, and not to a Relying Party or any other entity.</td>
+<td>A Wallet Unit SHALL present a WIA only to a PID Provider or Attestation Provider, as part of the issuance process of a PID or an attestation, and not to a Relying Party or any other entity.</td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_25</td>
+<td>During issuance of a PID or attestation, the PID Provider or Attestation Provider SHALL verify the WIA in accordance with the requirements in [OpenID4VCI] Appendix E. <em>Note: This requirement applies to both device-bound and non-device-bound attestations.</em></td>
+<td>During issuance of a PID or attestation, the PID Provider or Attestation Provider SHALL verify the WIA in accordance with the requirements in [OpenID4VCI] Appendix E. <em>Note: This requirement applies to both device-bound and non-device-bound attestations.</em></td>
+<td>Keep</td>
+</tr>
+<tr>
+<td>WUA_08</td>
+<td>A WUA SHALL enable PID Providers to request a Wallet Provider to revoke a Wallet Unit, in accordance with requirement WURevocation_11, by including an identifier for the Wallet Unit in the WUA. The Wallet Provider SHALL ensure that this Wallet Unit identifier does not enable tracking of the User. <em>Note: a) This is a legal requirement from [CIR 2024/2977]. See also Section 6.5.3.4 of the ARF main document. b) The Wallet Unit identifier meant here can be the same as the one used for revoking the WUA, for instance a URI and index to an Attestation Status List (see Topic 7).</em></td>
+<td>A WIA SHALL enable PID Providers to request a Wallet Provider to revoke a Wallet Unit, in accordance with requirement WURevocation_11, by including an identifier for the Wallet Instance in the WIA. The Wallet Provider SHALL ensure that this Wallet Instance identifier does not enable tracking of the User. <em>Note: a) This is a legal requirement from [CIR 2024/2977]. See also Section 6.5.3.4 of the ARF main document. b) Under TS03 V1.5, this Wallet Instance identifier is the URI and index to the Attestation Status List for WIAs.</em></td>
+<td>Changed (requirement updated to reference WIA instead of WUA/KA; terminology updated to reflect TS03 V1.5); moved to section F.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="g-new-hlrs">G. New HLRs</h4>
+<p>Note: These requirements will be moved to the applicable section of Topic 9.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WUA_26</td>
+<td>N/A</td>
+<td>A WIA SHALL enable PID Providers and Attestation Providers to verify the authenticity of a Wallet Instance and to check whether the Wallet Instance has been revoked. <em>Note: A WIA carries the revocation reference for a Wallet Instance; the revocation status of the Wallet Instance is maintained in a status list referenced in the WIA.</em></td>
+<td>New. Equivalent of WUA_02 for WIAs.</td>
+</tr>
+<tr>
+<td>WUA_27</td>
+<td>N/A</td>
+<td>A WIA SHALL contain information about the Wallet Solution, including its identity, version, and certification, and SHALL comply with the relevant requirements in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a>. <em>Note: This information allows PID Providers and Attestation Providers to verify that the Wallet Instance belongs to a trusted and certified Wallet Solution, as registered in the Wallet Provider Trusted List.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_28</td>
+<td>N/A</td>
+<td>A Wallet Provider SHALL select either the <strong>type-shared index</strong> approach or the <strong>per-KA index</strong> approach (as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#252-ka-revocation">Section 2.5.2 of Technical Specification 3</a>) for managing the revocation status of the WSCD or keystore referenced in a Key Attestation. <em>Notes: a) Under the type-shared index approach, the revocation reference is shared across all Wallet Units using the same type of WSCD or keystore, so that a single revocation action covers all affected Wallet Units (e.g., when a security vulnerability is identified in a hardware component type). Under the per-KA index approach, each KA carries a revocation reference scoped to the specific Wallet Unit's WSCD or keystore instance, enabling individual revocation that may also be triggered by user request. b) The detailed requirements for each approach are specified in [Technical Specification 3].</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_28a</td>
+<td>N/A</td>
+<td>If the per-KA index approach is used, the Wallet Provider SHALL ensure that the revocation reference in a KA cannot be used to link a Wallet Unit's interactions across different PID Providers or Attestation Providers.</td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_29</td>
+<td>N/A</td>
+<td>Throughout the entire validity period of an issued PID, the PID Provider SHALL verify the revocation status of both the Wallet Instance and WSCD or keystore using the information in the WIA and the KA (respectively) received during the issuance of that PID. If either is revoked, the PID Provider SHALL revoke the PID.</td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_30</td>
+<td>N/A</td>
+<td>The technical validity period of a PID SHALL be consistent with the period during which the Wallet Provider has committed to maintaining the revocation status of the Wallet Instance and the WSCD or keystore, as conveyed in the WIA and KA presented during issuance. <em>Note: a) This reflects the revocation chaining requirement: PID Providers must be able to check whether the Wallet Instance has been revoked (via the WIA) and whether the WSCD or keystore referenced in the KA has been revoked (WUA_29) for the entire PID validity period. b) The equivalent requirement in Topic 10, ISSU_12c, has been updated consistently.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_31</td>
+<td>N/A</td>
+<td>A Wallet Provider SHALL maintain the revocation status of a Wallet Instance during the entire revocation maintenance period indicated in the WIAs issued to that Wallet Instance.</td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_31a</td>
+<td>N/A</td>
+<td>A Wallet Provider SHALL maintain the revocation status of a WSCD or keystore during the entire revocation maintenance period indicated in the KAs issued to the Wallet Instance(s) using that WSCD or keystore.</td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_32</td>
+<td>N/A</td>
+<td>At the time of PID or attestation issuance, a PID Provider or Attestation Provider SHALL communicate to the Wallet Unit its minimum requirements regarding the remaining revocation maintenance period Wallet Instances (in WIAs) or WSCDs/keystores (in KAs), as specified in [Technical Specification 3]. <em>Note: This allows PID Providers and Attestation Providers to ensure that they receive WUAs with a sufficiently long remaining revocation maintenance period, enabling revocation chaining for the intended validity period of the PID or attestation to be issued.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_33</td>
+<td>N/A</td>
+<td>A Wallet Provider SHALL ensure that WIAs have a short technical validity period as specified in [Technical Specification 3], such that a WIA is fresh at the time of use. <em>Note: As specified in [Technical Specification 3], the technical validity period of a WIA SHALL be less than 24 hours. This ensures that the WIA reflects a recent integrity check of the Wallet Instance. The revocation maintenance period (see WUA_26 and WUA_31) is specified separately in the WIA and may be considerably longer than the technical validity period.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>WUA_34</td>
+<td>N/A</td>
+<td>During issuance of a PID, a PID Provider SHALL verify that the keys attested in the KA are stored in a WSCA/WSCD. <em>Note: PID private keys must be protected at Level of Assurance High, which requires key storage in a WSCA/WSCD. See also WUA_05, which requires the Wallet Unit to provide a KA describing the WSCA/WSCD that generated the PID private key.</em></td>
+<td>New</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-topic-10-issuing-a-pid-or-attestation-to-a-wallet-unit">3.2 Topic 10 - Issuing a PID or attestation to a Wallet Unit</h3>
+<h4 id="a-generic-hlrs">A - Generic HLRs</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISSU_12c</td>
+<td>The expiration date of a PID SHALL be no later than the expiration date of the WUA presented as part of the PID issuance process. <em>Note: This requirement is an implication of WURevocation_18 in [Topic 38]. If the PID would be valid for longer than the WUA, the PID Provider would not be able to use the revocation information in the WUA to verify the revocation status of the Wallet Unit.</em></td>
+<td>The expiration date of a PID SHALL be no later than the end of the revocation maintenance periods of the WIA and the KA presented as part of the PID issuance process. <em>Note: This requirement is an implication of WURevocation_18 in [Topic 38] and WUA_29-WUA_31. If the PID would be valid beyond the period for which the Wallet Provider has committed to maintaining the revocation status of the Wallet Instance and the WSCD or keystore, the PID Provider would not be able to fulfil its obligation to regularly check whether the Wallet Instance and WSCD or keystore have been revoked for the full PID validity period.</em></td>
+<td>Changed (previously required expiration date of PID to be no later than expiration date of the WUA token; updated to reference the revocation maintenance periods instead; consistent with WUA_30 in Topic 9)</td>
+</tr>
+<tr>
+<td>ISSU_12d</td>
+<td>If an Attestation Provider supports revocation chaining for its attestations per WURevocation_19 in [Topic 38], the expiration date of an attestation SHALL be no later than the expiration date of the WUA presented as part of the attestation issuance process. <em>Note: See note in ISSU_12c.</em></td>
+<td>If an Attestation Provider supports revocation chaining for its attestations per WURevocation_19 in [Topic 38], the expiration date of an attestation SHALL be no later than the end of the revocation maintenance periods of the WIA and the KA (if applicable) presented as part of the attestation issuance process. <em>Note: See note in ISSU_12c.</em></td>
+<td>Changed (same update as ISSU_12c: reference to revocation maintenance period instead of token expiry)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b-hlrs-for-pid-issuance">B - HLRs for PID issuance</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISSU_19</td>
+<td>For the verification of a WUA or WIA, a PID Provider SHALL accept the trust anchors in the Wallet Provider LoTE(s) it needs. <em>Note: a) The Wallet Provider LoTE is explained in [Topic 31]. b) It is not mandatory for a PID Provider to accept all Wallet Provider LoTEs, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which LoTEs they need to subscribe to.</em></td>
+<td>For the verification of a WIA or KA, a PID Provider SHALL accept the trust anchors in the Wallet Provider LoTE(s) it needs. <em>Note: a) The Wallet Provider LoTE is explained in [Topic 31]. b) It is not mandatory for a PID Provider to accept all Wallet Provider LoTEs, if there are multiple. This is because it is not mandatory for a PID Provider to accept all certified Wallet Solutions in the EUDI Wallet ecosystem. Each PID Provider will choose which LoTEs they need to subscribe to.</em></td>
+<td>Changed ("WUA or WIA" updated to "WIA or KA")</td>
+</tr>
+<tr>
+<td>ISSU_21</td>
+<td>Before issuing a PID, a PID Provider SHALL verify that the Wallet Provider mentioned in the Wallet Unit's WUA and WIA is present in a Wallet Provider LoTE. The PID Provider SHALL also authenticate and validate the WUA and WIA using the trust anchor(s) registered for the Wallet Provider in that LoTE. Moreover, it SHALL verify that the Wallet Unit's WUA is not revoked. <em>Note: a) For the WUA, see [Topic 9] and [Topic 38]. b) [CIR 2024/2977], Article 3 (9), also allows another authentication mechanism in accordance with an electronic identity scheme notified at assurance level high. However, the ARF does not further specify such other authentication mechanisms, which means that in general they will not be interoperable.</em></td>
+<td>Before issuing a PID, a PID Provider SHALL verify the Wallet Unit's WIA and KA using a trust anchor registered in the Wallet Provider LoTE. Moreover, it SHALL verify that the Wallet Instance referenced in the WIA has not been revoked, and that the WSCD or keystore referenced in the KA has not been revoked. <em>Note: a) For WIAs and KAs, see [Topic 9] and [Topic 38]. b) [CIR 2024/2977], Article 3 (9), also allows another authentication mechanism in accordance with an electronic identity scheme notified at assurance level high. However, the ARF does not further specify such other authentication mechanisms, which means that in general they will not be interoperable.</em></td>
+<td>Changed ("WUA and WIA" updated to "WIA and KA"; removed notion that Wallet Provider is mentioned explicitly in WIA or KA (since <code>iss</code> has been removed from them in [TS3] v1.5); revocation check now explicitly covers both WIA and KA.)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="c-hlrs-for-attestation-issuance">C - HLRs for Attestation Issuance</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISSU_28</td>
+<td>For the verification of a WUA or WIA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider LoTE. <em>Note: The Wallet Provider LoTE is explained in [Topic 31].</em></td>
+<td>For the verification of a WIA or KA, an Attestation Provider SHALL accept the trust anchors in the Wallet Provider LoTE. <em>Note: The Wallet Provider LoTE is explained in [Topic 31].</em></td>
+<td>Changed ("WUA or WIA" updated to "WIA or KA)" using the new umbrella terminology)</td>
+</tr>
+<tr>
+<td>ISSU_30</td>
+<td>Before issuing a device-bound attestation, an Attestation Provider SHALL: - verify that the Wallet Provider mentioned in the Wallet Unit's WUA is present in the Wallet Provider LoTE. - authenticate and validate the WUA using the trust anchor(s) registered for the Wallet Provider in that LoTE. - verify that the Wallet Unit's WUA is not revoked. <em>Note: For the WUA, see [Topic 9] and [Topic 38].</em></td>
+<td>Before issuing a device-bound attestation, an Attestation Provider SHALL verify the Wallet Unit's key attestation using a trust anchor registered in the Wallet Provider LoTE. Moreover, it SHALL verify that the WSCD or keystore referenced in the KA has not been revoked. <em>Note: This requirement applies specifically to the KA received during device-bound attestation issuance. The corresponding requirement for verifying the WIA is ISSU_30a.</em></td>
+<td>Changed ("WUA" replaced by "KA"; removed notion that Wallet Provider is mentioned explicitly in WIA or KA (since <code>iss</code> has been removed from them in [TS3] v1.5))</td>
+</tr>
+</tbody>
+</table>
+<h4 id="d-hlrs-for-privacy-risks-and-mitigation">D - HLRs for Privacy Risks and Mitigation</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISSU_35a</td>
+<td>A Wallet Provider SHALL ensure that all unique elements in a WUA or WIA have a negligible chance of having the same value across all WUAs and WIAs issued by that Wallet Provider. This SHALL include at least a) the attestation identifier or index used for WUA revocation purposes, b) the WUA and WIA public key used for device binding, and c) the value of the Wallet Provider signature over the WUA and WIA.</td>
+<td>A Wallet Provider SHALL ensure that all unique elements in a WUA (i.e., a WIA or KA) have a negligible chance of having the same value across all WUAs issued by that Wallet Provider and intended to be presented to different PID Providers or Attestation Providers. This SHALL include at least a) the attestation identifier or index, b) the WUA's public keys, and c) the value of the Wallet Provider signature over the WUA. This requirement does not apply to: i) WIAs presented to the same PID Provider or Attestation Provider; and ii) the revocation reference in a KA under the type-shared index approach (see WUA_28). Under the per-KA index approach (see WUA_28), the KA revocation reference is unique per KA or per KA-issuer pair and is subject to this requirement.</td>
+<td>Changed ("WUA or WIA" and "WUAs and WIAs" updated to "WUA (i.e., a WIA or KA)" and "WUAs (i.e., WIAs and KAs)" using the new umbrella terminology; note added to exempt WIAs presented to the same PID Provider or Attestation Provider from the unlinkability requirement)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-topic-7-attestation-revocation-and-revocation-checking">3.3 Topic 7 - Attestation revocation and revocation checking</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCR_01a</td>
+<td>A Wallet Provider SHALL use either the second or the third of the methods specified in VCR_01 for revocation of a WUA. <em>Note: Due to requirement WUA_08 in [Topic 9], it is not possible to issue short-lived WUAs. This implies that all WUAs are revocable.</em></td>
+<td>A Wallet Provider SHALL use the method specified in [Technical Specification 3] for maintaining the revocation status of the underlying objects referenced in a WIA or key attestation.</td>
+<td>Changed (main text updated from "revocation of a WUA" to "maintaining the revocation status of the underlying objects referenced in a WUA"; reference to VCR_01 replaced by TS03; note removed because VCR_01 is no longer mentioned an therefore it does no longer need tob e explained why the first option in VCR_01 is not applicable.)</td>
+</tr>
+<tr>
+<td>VCR_07</td>
+<td>A Wallet Provider SHALL revoke all valid WUAs issued to a Wallet Unit upon the explicit request of the User to revoke their Wallet Unit.</td>
+<td>A Wallet Provider SHALL revoke the Wallet Instance upon the explicit request of the User to revoke their Wallet Unit. <em>Note: See also WURevocation_10.</em></td>
+<td>Changed (requirement updated to reference revoking the Wallet Instance rather than the WIA tokens; note added on the separate semantics of WSCD or keystore type revocation)</td>
+</tr>
+<tr>
+<td>VCR_07a</td>
+<td>N/A</td>
+<td>If a Wallet Provider uses the per-KA approach for key attestation revocation (see WUA_28), it SHOULD revoke a WSCD or keystore upon the explicit request of the User to revoke their WSCD or keystore. <em>Notes: a) The most likely cause of such a request would be that the WSCD or keystore is a local external smart card and the User lost their WSCD or keystore. b) In contrast, under the type-shared index approach (see WUA_28), revoking the WSCD or keystore is not a per-Wallet Unit action possibly triggered by user requests.</em></td>
+<td>New</td>
+</tr>
+<tr>
+<td>VCR_19</td>
+<td>A Wallet Unit SHOULD regularly check the revocation status of its PIDs, attestations, and WUAs, and notify the User if a PID, attestation, or WUA (i.e, the Wallet Unit itself), is revoked.</td>
+<td>A Wallet Unit SHOULD regularly check the revocation status of its PIDs and attestations. In addition, the Wallet Unit SHOULD regularly check whether itself or any WSCD or keystore it uses has been revoked. In case of any revocation, the Wallet Unit SHALL notify the User accordingly. <em>Note: A Wallet Unit can check its own revocation status using its WIAs, and the revocation status of its WSCD and keystores using its key attestations.</em></td>
+<td>Changed (requirement updated to reference checking revocation of the underlying objects (the Wallet Instance and WSCD or keystore)rather than checking revocation of the WUA tokens; note updated accordingly)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-topic-31-notification-and-publication-of-wallet-providers">3.4 Topic 31 - Notification and publication of Wallet Providers</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WPNot_03</td>
+<td>Wallet Providers SHALL ensure that all WUAs and WIAs they issue can be authenticated using the trust anchors notified to the Commission.</td>
+<td>Wallet Providers SHALL ensure that all WIAs and KAs they issue can be authenticated using the trust anchors notified to the Commission.</td>
+<td>Changed ("WUAs and WIAs" updated to "WIAs and KAs")</td>
+</tr>
+<tr>
+<td>WPNot_06</td>
+<td>If a Wallet Provider is cancelled (see requirement GenNot_05 above), that Wallet Provider SHALL immediately revoke all of its valid WUAs, in accordance with the requirements in [Topic 38]. If a Wallet Provider is suspended, that Wallet Provider and the Member State SHALL agree on the necessary precautionary measures that need to be taken, which MAY include the immediate revocation of all or some of its valid WUAs. <em>Note: WIAs do not have to be revoked, since they are short-lived.</em></td>
+<td>If a Wallet Provider is cancelled (see requirement GenNot_05 above), that Wallet Provider SHALL immediately revoke all of its Wallet Instances and all associated WSCDs and keystores, in accordance with the requirements in [Topic 38]. If a Wallet Provider is suspended, that Wallet Provider and the Member State SHALL agree on the necessary precautionary measures that need to be taken, which MAY include the immediate revocation of the Wallet Instances and WSCDs or keystores for all or some of its valid Wallet Units.</td>
+<td>Changed (requirement updated from revoking WUA tokens to revoking the underlying Wallet Instances and WSCD or keystore types)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-topic-38-wallet-unit-revocation">3.5 Topic 38 - Wallet Unit Revocation</h3>
+<h4 id="a-issuing-a-wallet-unit-attestation">A. Issuing a Wallet Unit Attestation</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_03</td>
+<td>A Wallet Provider SHALL have a policy governing all aspects of WUA issuance and management. The policy SHALL distinguish between WUAs for WSCA/WSCDs and WUAs for keystores. For WUAs describing a WSCA/WSCD, the policy SHALL comply with at least the extended normalised certificate policy ('NCP+') requirements as specified in ETSI EN 319 411-1, insofar applicable for the issuance of WUAs rather than public key certificates. For WUAs describing a keystore, the policy SHALL comply with at least the normalised certificate policy ('NCP') requirements as specified in ETSI EN 319 411-1, insofar applicable for the issuance of WUAs rather than public key certificates.</td>
+<td>A Wallet Provider SHALL have a policy governing all aspects of WUA issuance and management. The policy SHALL distinguish between WIAs, KAs for WSCA/WSCDs, and KAs for keystores. For KAs describing a WSCA/WSCD, the policy SHALL comply with at least the extended normalised certificate policy ('NCP+') requirements as specified in ETSI EN 319 411-1, insofar applicable for the issuance of KAs rather than public key certificates. For KAs describing a keystore, the policy SHALL comply with at least the normalised certificate policy ('NCP') requirements as specified in ETSI EN 319 411-1, insofar applicable for the issuance of KAs rather than public key certificates.</td>
+<td>Changed ("WUAs for WSCA/WSCDs and WUAs for keystores" replaced by "WIAs, KAs for WSCA/WSCDs, and KAs for keystores"; WIA policy coverage added)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b-revoking-a-wallet-unit">B. Revoking a Wallet Unit</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_07</td>
+<td>A Wallet Provider SHALL be able to revoke a Wallet Unit by revoking its WUA(s), as specified in [Topic 7].</td>
+<td>A Wallet Provider SHALL be able to revoke a Wallet Unit by marking the corresponding Wallet Instance as revoked, as specified in [Topic 7].</td>
+<td>Changed (requirement updated from revoking WIA tokens to marking the Wallet Instance as revoked; note updated on the separate semantics of WSCD or keystore type revocation)</td>
+</tr>
+<tr>
+<td>WURevocation_09</td>
+<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL revoke the Wallet Unit and SHALL immediately revoke the corresponding WUA(s). The Wallet Provider SHALL do so at least in the following circumstances: [...]</td>
+<td>During the lifetime of a Wallet Unit, the Wallet Provider SHALL regularly verify that the security of the Wallet Unit is not breached or compromised. If the Wallet Provider detects a security breach or compromise, the Wallet Provider SHALL analyse its cause(s) and impact(s). If the breach or compromise affects the trustworthiness or reliability of the Wallet Unit, the Wallet Provider SHALL revoke the Wallet Unit by marking its Wallet Instance as revoked and, if the breach involves a WSCA/WSCD or keystore type, by revoking the corresponding WSCA/WSCD or keystore type. The Wallet Provider SHALL do so at least in the following circumstances: [...]</td>
+<td>Changed (partial: the phrase "revoke the corresponding WUA(s)" updated to distinguish between per-Wallet Unit WIA revocation and type-level KA revocation)</td>
+</tr>
+<tr>
+<td>WURevocation_09a</td>
+<td>If the Wallet Provider must revoke the entire Wallet Unit (e.g., for one of the reasons stated in WURevocation_09), then the Wallet Provider SHALL revoke all WUAs related to the WSCA/WSCD and to all keystores.</td>
+<td>If the Wallet Provider must revoke the entire Wallet Unit (e.g., for one of the reasons stated in WURevocation_09), then the Wallet Provider SHALL mark the Wallet Instance as revoked.</td>
+<td>Changed (requirement updated to only reference revoking the Wallet Instance; revocation of the WSCA/WSCD and keystores is addressed in WURevocation_09b and WURevocation_09c)</td>
+</tr>
+<tr>
+<td>WURevocation_09b</td>
+<td>If there is a security breach of the WSCA/WSCD, then the Wallet Provider SHALL revoke the entire Wallet Unit by revoking all WUAs related to the WSCA/WSCD and to all keystores.</td>
+<td>If there is a security breach of the WSCA/WSCD, then the Wallet Provider SHALL revoke the WSCA/WSCD and all keystores associated with the Wallet Unit.</td>
+<td>Changed (requirement updated to reference revoking the underlying WSCA/WSCD and keystores as referenced in the KAs, without conflating this with Wallet Instance revocation)</td>
+</tr>
+<tr>
+<td>WURevocation_09c</td>
+<td>If there is a security breach of a keystore, then the Wallet Provider SHALL at least revoke all WUAs related to that keystore. The Wallet Provider SHOULD also revoke the WUAs related to the WSCA/WSCD and to the other keystores (if any). If the Wallet Provider decides to only revoke the relevant keystore, the Wallet Provider SHALL create a risk analysis showing that this does not lead to unacceptable risks to the User, PID Providers and Attestation Providers, Relying Parties, or the Wallet Provider itself. <em>Note: If the Wallet Provider does not revoke the other WUAs, only the attestations bound to the revoked keystore will be impacted. Other functionalities of the Wallet Unit, including the presentation of a PID, will remain available to the User.</em></td>
+<td>If there is a security breach of a keystore, then the Wallet Provider SHALL at least revoke that keystore. The Wallet Provider SHOULD also revoke the WSCA/WSCD and the other keystores (if any). If the Wallet Provider decides to only revoke the relevant keystore, the Wallet Provider SHALL create a risk analysis showing that this does not lead to unacceptable risks to the User, PID Providers and Attestation Providers, Relying Parties, or the Wallet Provider itself. <em>Note: If the Wallet Provider does not revoke the other keystores, only the attestations bound to the revoked keystore will be impacted. Other functionalities of the Wallet Unit, including the presentation of a PID, will remain available to the User.</em></td>
+<td>Changed (requirement updated to reference revoking the underlying keystore as referenced in the KA; Wallet Instance revocation is not applicable in this case)</td>
+</tr>
+<tr>
+<td>WURevocation_10</td>
+<td>A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of the User registered during the Wallet Unit activation process, see [Topic 40]. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit. The Wallet Provider SHALL authenticate the User before accepting a request to revoke the Wallet Unit.</td>
+<td>A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of the User registered during the Wallet Unit activation process, see [Topic 40]. To do so, the Wallet Provider SHALL mark the Wallet Instance as revoked. The Wallet Provider SHALL authenticate the User before accepting a request to revoke the Wallet Unit.</td>
+<td>Changed (requirement updated from revoking WIA tokens to marking the Wallet Instance as revoked; note updated accordingly)</td>
+</tr>
+<tr>
+<td>WURevocation_11</td>
+<td>A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of a PID Provider, in case the natural person using the Wallet Unit has died. To do so, the Wallet Provider SHALL revoke all valid WUA(s) for that Wallet Unit. To identify the Wallet Unit that is to be revoked, the PID Provider SHALL use a Wallet Unit identifier provided by the Wallet Provider in the WUA during PID issuance. <em>Note: See the notes to WUA_08.</em></td>
+<td>A Wallet Provider SHALL revoke a Wallet Unit upon the explicit request of a PID Provider, in case the natural person using the Wallet Unit has died. To do so, the Wallet Provider SHALL mark the Wallet Instance as revoked. To identify the Wallet Unit that is to be revoked, the PID Provider SHALL use a Wallet Unit identifier provided by the Wallet Provider in the WIA during PID issuance. <em>Note: Under TS03 V1.5, the Wallet Unit identifier used for revocation is conveyed in the WIA (see WUA_08). See also the notes to WUA_08.</em></td>
+<td>Changed (requirement updated from revoking WIA tokens to marking the Wallet Instance as revoked; "WUA during PID issuance" updated to "WIA during PID issuance")</td>
+</tr>
+</tbody>
+</table>
+<h4 id="d-verifying-the-revocation-status-of-a-wallet-unit">D. Verifying the revocation status of a Wallet Unit</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WURevocation_18</td>
+<td>A PID Provider issuing revocable PIDs SHALL, for each of its valid PIDs, regularly verify whether the Wallet Provider revoked the Wallet Unit on which that PID is residing, using the revocation information in the WUA it received during issuance of that PID. If it turns out that the Wallet Unit is revoked, the PID Provider SHALL immediately revoke the respective PID in accordance with all requirements in [Topic 7].</td>
+<td>A PID Provider issuing revocable PIDs SHALL, for each of its valid PIDs, regularly verify whether the Wallet Instance has been revoked and whether the WSCD or keystore type has been revoked, using the WIA and KA received during issuance of that PID. If either the Wallet Instance or the WSCD or keystore has been revoked, the PID Provider SHALL immediately revoke the respective PID. <em>Note: a) This requirement aligns with WUA_29, which requires PID Providers to check the revocation status of both the WIA and KA throughout the PID validity period. b) This is a consequence of the legal requirement in [CIR 2024/2977], Article 5, 4.(b). c) See <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Technical Specification 3</a> for how the PID Provider can do this verification.</em></td>
+<td>Changed ("the WUA" replaced by "the WIA and KA"; requirement now explicitly covers both revocation triggers consistent with WUA_29)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-topic-40-wallet-instance-installation-and-wallet-unit-activation-and-management">3.6 Topic 40 - Wallet Instance installation and Wallet Unit activation and management</h3>
+<h4 id="b-hlrs-for-wallet-unit-activation">B. HLRs for Wallet Unit activation</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_10</td>
+<td>During the activation process of a new Wallet Unit, a Wallet Provider SHALL create and sign at least one Wallet Unit Attestation for the WSCA/WSCD and one Wallet Unit Attestation for each keystore, and issue them to the Wallet Unit. The Wallet Provider SHALL verify that the private key(s) corresponding to the public key(s) in each WUA are protected by the respective WSCA/WSCD or keystore, under control of the User.</td>
+<td>During the activation process of a new Wallet Unit, a Wallet Provider SHALL create and sign at least one Key Attestation for the WSCA/WSCD, at least one Key Attestation for each keystore, and at least one Wallet Instance Attestation, and issue them to the Wallet Unit. The Wallet Provider SHALL verify that the private key(s) corresponding to the public key(s) in each KA are protected by the respective WSCA/WSCD or keystore, under control of the User. The Wallet Provider SHALL take measures to verify the integrity of the Wallet Instance before issuing a Wallet Instance Attestation.</td>
+<td>Changed ("Wallet Unit Attestation" replaced by "Key Attestation" for WSCA/WSCD and keystore attestations; Wallet Instance Attestation explicitly added as a required output of the activation process; requirement added for the Wallet Provider to verify Wallet Instance integrity before issuing a WIA)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="c-hlrs-for-wallet-unit-management">C. HLRs for Wallet Unit management</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Current requirement (ARF v2.8.0)</strong></th>
+<th><strong>Proposed requirement specification</strong></th>
+<th><strong>Proposal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIAM_14a</td>
+<td>A WSCA/WSCD managing the critical assets of a WUA SHALL authenticate the User at Level of Assurance High before performing any cryptographic operation involving any of these assets.</td>
+<td>A WSCA/WSCD managing the critical assets of a KA SHALL authenticate the User at Level of Assurance High before performing any cryptographic operation involving any of these assets. <em>Note: The WSCA/WSCD manages the private key(s) corresponding to the public key(s) attested in the KA. In the updated terminology, KA is the term for what was previously called WUA in the context of key storage in a WSCA/WSCD.</em></td>
+<td>Changed ("WUA" replaced by "KA"; the WSCA/WSCD manages keys attested by the KA, not by the WIA)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-additions-and-changes-to-the-arf-main-document">4 Additions and Changes to the ARF Main Document</h2>
+<p>The agreed HLR changes will be listed in Chapter 3 above.</p>
+<p>In addition, the following changes to the ARF main document are proposed:</p>
+<ul>
+<li>Update Section 3 (Definitions and abbreviations) to introduce the updated terminology: WUA as the umbrella term covering WIA and KA, and KA as the new term for what was previously called WUA in the ARF.</li>
+<li>Update Section 6.5.3 (Wallet Unit Attestation) to reflect the new terminology, in particular the distinction between WIA (attesting Wallet Instance integrity and providing Wallet Instance revocation reference) and KA (attesting key storage security and providing a revocation reference for the WSCD or keystore used to store the attested keys, see WUA_28).</li>
+</ul>
+<h2 id="5-additions-and-changes-to-the-arf-appendix-1-definitions">5 Additions and Changes to the ARF Appendix 1 (Definitions)</h2>
+<p>The following changes will be made to Appendix 1</p>
+<ul>
+<li>Change the existing definition of Wallet Unit Attestation to the one in (the latest version of) the Implementing Act.</li>
+<li>Add a definition of Wallet Instance Attestation, in compliance with the IA.</li>
+<li>Add a definition of Key Attestation, in compliance with the IA.</li>
+</ul>
+<h2 id="6-references">6 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td><a href="https://ec.europa.eu/digital-building-blocks/wikis/spaces/CG/pages/835683474/a.+The+Architecture+and+Reference+Framework+Maintenance+and+Development+Workplan+for+2026">Architecture and Reference Framework Maintenance and Development Workplan for 2026, European Commission</a></td>
+</tr>
+<tr>
+<td>[Topic 38]</td>
+<td>Topic 38 - Wallet Unit Revocation</td>
+</tr>
+<tr>
+<td>[CIR 2024/2977]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2977/oj">Commission Implementing Regulation (EU) 2024/2977 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets</a></td>
+</tr>
+<tr>
+<td>[Technical Specification 3]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md">Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations, Version 1.5</a></td>
+</tr>
+<tr>
+<td>[OpenID4VCI]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/3">OpenID for Verifiable Credential Issuance</a></td>
+</tr>
+<tr>
+<td>[ETSI TS 119 412-6]</td>
+<td>ETSI Electronic Signatures and Infrastructures; Certificate Profiles; Part 6: Certificate profile for certificates issued to natural persons</td>
+</tr>
+<tr>
+<td>[ECCG Agreed Cryptographic Mechanisms v2.0]</td>
+<td><a href="https://certification.enisa.europa.eu/document/download/a845662b-aee0-484e-9191-890c4cfa7aaa_en?filename=ECCG%20Agreed%20Cryptographic%20Mechanisms%20version%202.pdf">ECCG Agreed Cryptographic Mechanisms version 2.0</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
