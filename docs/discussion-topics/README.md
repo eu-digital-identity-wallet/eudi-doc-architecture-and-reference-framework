@@ -63,12 +63,12 @@ process for the ARF.
 
 ### Iteration 1
 
-Iteration 1 is planned from 25 February 2026 to 22 April 2026 covering the
+Iteration 1 is planned from 25 February 2026 to 29 April 2026 covering the
 following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **C** | Wallet Unit Attestation (WUA) and Key Attestation (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/647) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/644) | Open |
+| **C** | Wallet Unit Attestation (WUA) and Key Attestation (Refinement Round) | [Paper](c-rr-wallet-unit-attestations.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/647) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/644) | Open |
 | **X** | Relying Party registration (Refinement Round) | [Paper](x-rr-relying-party-registration.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/648) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/645) | Open |
 
 ### Iteration 2
@@ -78,7 +78,7 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **J** | Wallet to Wallet interaction (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/650) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/656) | Open |
+| **J** | Wallet to Wallet interaction (Refinement Round) | [Paper](j-rr-wallet-to-wallet-interactions.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/650) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/656) | Open |
 | **U** | EUDI Wallet Trust Mark (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/651) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/657) | Open |
 
 ### Iteration 3
@@ -88,8 +88,7 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **E** | Pseudonyms, including User authentication mechanism (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/652) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658) | Open |
-| **F** | Digital Credential API (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/653) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/659) | Open |
+| **E** | Pseudonyms, including User Authentication Mechanism (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/652) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658) | Open |
 
 ### Iteration 4
 
@@ -98,10 +97,11 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
+| **F** | Digital Credentials API (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/653) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/659) | Open |
 | **AA** | Support of Electronic Payments Customer Authentication (SCA) with the Wallet (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/654) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660) | Open |
 | **AB** | Digital Signature using the EUDI Wallet (New) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/655) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661) | Open |
 
-### SUMMER BREAK
+### SUMMER BREAK  
 
 ### Iteration 5
 
