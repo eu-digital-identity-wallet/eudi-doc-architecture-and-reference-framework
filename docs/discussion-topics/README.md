@@ -88,7 +88,8 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **E** | Pseudonyms, including User Authentication Mechanism (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/652) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658) | Open |
+| **E** | Pseudonyms, including User authentication mechanism (Refinement Round) | [Paper](e-rr-pseudonyms-including-user-authentication-mechanism.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/652) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658) | Open |
+
 
 ### Iteration 4
 
