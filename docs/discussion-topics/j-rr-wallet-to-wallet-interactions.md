@@ -69,15 +69,15 @@ Section 3.2 below proposes a candidate phrasing for the corresponding high-level
 
 Candidate phrasings of the high-level requirements corresponding to the question scoped above are the following:
 
-> *When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHOULD include a cryptographic proof of its authenticity and validity.*
+> *When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include a cryptographic proof of its authenticity and validity.*
 
-> *Before presenting a received presentation request to its User, a Holder Wallet Unit SHOULD cryptographically verify, within the same protocol session as the presentation request, that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.*
+> *Before presenting a received presentation request to its User, a Holder Wallet Unit SHALL cryptographically verify, within the same protocol session as the presentation request, that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.*
 
-> *If this verification fails or cannot be performed, the Holder Wallet Unit SHOULD warn the Holder that it could not verify that the Verifier is using an authentic EUDI Wallet Unit, and SHOULD enable the Holder to continue or abort the transaction.*
+> *If this verification fails or cannot be performed, the Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options.*
 
-All three requirements are phrased as recommendations (SHOULD) rather than mandates (SHALL). Verifying the Verifier Wallet Unit within the same protocol session is broadly seen as desirable, but the benefit may not outweigh the additional complexity, and the appropriate strength of each requirement may also depend on which technical approach is ultimately chosen (see Chapter 4).
+All three requirements are tentatively phrased as mandatory (SHALL).
 
-The wording is deliberately mechanism-agnostic: it fixes the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session), while leaving the concrete technical realisation to the technical specification. Chapter 4 illustrates four approaches that would meet these requirements and the technical complexity each would involve. The exact phrasing, the HLR indices, and whether any of these SHOULDs should be strengthened to SHALL once a technical approach is selected are open questions for Member State discussion.
+The wording is deliberately mechanism-agnostic: it fixes the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session), while leaving the concrete technical realisation to the technical specification. Chapter 4 illustrates four approaches that would meet these requirements and the technical complexity each would involve. The exact phrasing, the HLR indices, and whether any of these SHALLs should be weakened to SHOULD once a technical approach is selected are open questions for Member State discussion.
 
 ### 3.3 Arguments Raised in Favour
 
@@ -286,9 +286,9 @@ The following three HLRs are proposed for addition to Topic 30 (Interaction betw
 
 | **Index** | **Requirement specification** |
 | -- | -- |
-| W2W_23 | When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHOULD include in that request a cryptographic proof of its authenticity and validity, bound to the protocol session in which the presentation request is sent. |
-| W2W_24 | Before presenting a received presentation request to the Holder, a Holder Wallet Unit SHOULD, within the same protocol session as the presentation request, cryptographically verify that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider. |
-| W2W_25 | If the verification required by W2W_24 fails or cannot be performed, a Holder Wallet Unit SHOULD warn the Holder that it could not verify the authenticity of the Verifier Wallet Unit, and SHOULD enable the Holder to continue or abort the transaction. |
+| W2W_23 | When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include in that request a cryptographic proof of its authenticity and validity, bound to the protocol session in which the presentation request is sent. |
+| W2W_24 | Before presenting a received presentation request to the Holder, a Holder Wallet Unit SHALL, within the same protocol session as the presentation request, cryptographically verify that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider. |
+| W2W_25 | If the verification required by W2W_24 fails or cannot be performed, a Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options. |
 
 These HLRs are mechanism-agnostic: they fix the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session) without prescribing how the cryptographic proof is constructed. [Chapter 4](#4-technical-approaches) describes four candidate mechanisms and their respective trade-offs.
 
