@@ -539,14 +539,14 @@
   
 
 
-<p>Version 0.1, updated 15 April 2026</p>
+<p>Version 0.2, updated 23 April 2026</p>
 <h1 id="topic-j-wallet-to-wallet-interactions-revision-round">Topic J - Wallet to Wallet Interactions (Revision Round)</h1>
 <h2 id="1-introduction">1 Introduction</h2>
 <h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
 <p>This document is the 2026 revision round (RR) version of the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic J: Wallet to Wallet Interactions.</p>
 <p>The ARF Development and Maintenance Workplan 2026 [ARF_DevPlan] describes the objective of this topic as follows:</p>
 <p><em>Refine requirements for wallet-to-wallet interaction, including authentication, data protection, and user experience considerations.</em></p>
-<p>This paper is currently scoped to discuss a single question: whether cryptographic device authentication of the Verifier Wallet Unit within the same protocol session as the presentation request should be introduced for Wallet to Wallet (W2W) interactions. Other items raised at the Focus Group Meeting (in particular, support for the SD-JWT VC attestation format in W2W interactions) may be added in future versions.</p>
+<p>This paper is scoped to a single question: whether cryptographic device authentication of the Verifier Wallet Unit within the same protocol session as the presentation request should be introduced for Wallet to Wallet (W2W) interactions.</p>
 <h3 id="12-key-words">1.2 Key Words</h3>
 <p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
 In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
@@ -560,7 +560,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p><a href="#3-cryptographic-device-authentication-within-the-same-protocol-session">Chapter 3</a> defines the specific question analysed in this paper, lists arguments that have been raised both for and against introducing cryptographic device authentication of the Verifier Wallet Unit within the same protocol session as the presentation request, and proposes a concrete candidate phrasing of the corresponding high-level requirement for Member State discussion.</p>
 </li>
 <li>
-<p><a href="#4-technical-approaches">Chapter 4</a> illustrates the kind of technical complexity that adopting such a requirement would entail, by outlining three technical approaches together with their respective advantages and disadvantages.</p>
+<p><a href="#4-technical-approaches">Chapter 4</a> illustrates the kind of technical complexity that adopting such a requirement would entail, by outlining four technical approaches together with their respective advantages and disadvantages.</p>
 </li>
 <li>
 <p><a href="#5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2">Chapter 5</a> is reserved for proposed additions and changes to the High-Level Requirements in ARF Annex 2, to be populated in a future version of this paper following the Member State discussion.</p>
@@ -588,12 +588,12 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <h3 id="32-proposed-high-level-requirement-for-discussion">3.2 Proposed High-Level Requirement for Discussion</h3>
 <p>Candidate phrasings of the high-level requirements corresponding to the question scoped above are the following:</p>
 <blockquote>
-<p><em>When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHOULD include a cryptographic proof of its authenticity and validity.</em></p>
+<p><em>When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include a cryptographic proof of its authenticity and validity.</em></p>
 <p><em>Before presenting a received presentation request to its User, a Holder Wallet Unit SHALL cryptographically verify, within the same protocol session as the presentation request, that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.</em></p>
-<p><em>If this verification fails, the Holder Wallet Unit SHALL warn the Holder that it could not verify that the Verifier is using an authentic EUDI Wallet Unit. The Holder Wallet Unit SHALL enable the Holder to continue or abort the transaction.</em></p>
+<p><em>If this verification fails or cannot be performed, the Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options.</em></p>
 </blockquote>
-<p>The first requirement is phrased as a recommendation (SHOULD) rather than a mandate (SHALL), reflecting the view that mandating cryptographic proof from the Verifier side may be disproportionate given the complexity involved (see Chapter 4). The second and third requirements address the Holder side: the Holder Wallet Unit verifies the proof if present, and if verification fails (or no proof is provided), the Holder is warned but retains the choice to proceed or abort.</p>
-<p>The wording is deliberately mechanism-agnostic: it fixes the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session), while leaving the concrete technical realisation to the technical specification. Chapter 4 illustrates three approaches that would meet these requirements and the technical complexity each would involve. The exact phrasing, the HLR indices, and the interaction between SHOULD and SHALL are open questions for Member State discussion.</p>
+<p>All three requirements are tentatively phrased as mandatory (SHALL).</p>
+<p>The wording is deliberately mechanism-agnostic: it fixes the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session), while leaving the concrete technical realisation to the technical specification. Chapter 4 illustrates four approaches that would meet these requirements and the technical complexity each would involve. The exact phrasing, the HLR indices, and whether any of these SHALLs should be weakened to SHOULD once a technical approach is selected are open questions for Member State discussion.</p>
 <h3 id="33-arguments-raised-in-favour">3.3 Arguments Raised in Favour</h3>
 <p>The following arguments have been raised in support of introducing cryptographic device authentication of the Verifier Wallet Unit within the same protocol session:</p>
 <ol>
@@ -624,7 +624,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </li>
 </ol>
 <h2 id="4-technical-approaches">4 Technical Approaches</h2>
-<p>The purpose of this chapter is to illustrate the kind of technical complexity that adopting a high-level requirement for cryptographic device authentication of the Verifier Wallet Unit within the same protocol session would entail. Three approaches have been identified for implementing such a requirement. Each is described below together with the infrastructure, standards impact, protocol changes, and operational obligations it would imply. The chapter does not recommend an approach, nor is the list necessarily exhaustive; its purpose is to give a concrete picture of the work involved should such a requirement be introduced.</p>
+<p>The purpose of this chapter is to illustrate the kind of technical complexity that adopting a high-level requirement for cryptographic device authentication of the Verifier Wallet Unit within the same protocol session would entail. Four approaches have been identified for implementing such a requirement. Each is described below together with the infrastructure, standards impact, protocol changes, and operational obligations it would imply. The chapter does not recommend an approach, nor is the list necessarily exhaustive; its purpose is to give a concrete picture of the work involved should such a requirement be introduced.</p>
 <h3 id="41-approach-a-wallet-unit-authentication-certificate-wuac">4.1 Approach A: Wallet Unit Authentication Certificate (WUAC)</h3>
 <h4 id="411-description">4.1.1 Description</h4>
 <p>In this approach, each Wallet Provider issues a dedicated X.509 certificate -- referred to as a Wallet Unit Authentication Certificate (WUAC) -- to each of its Wallet Units. The WUAC is used only to populate the <code>ReaderAuth</code> field in mdoc requests during W2W interactions. The certificate profile is compatible with the mdoc reader authentication certificate profile defined in [ISO/IEC 18013-5], Annex B, Table B.6.</p>
@@ -657,9 +657,6 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <li>
 <p><strong>Linkability risk from certificate reuse.</strong> A WUAC reused across multiple W2W sessions is linkable by its public key and signature. The Subject contains only the Wallet Provider and Wallet Solution names, so individual Users within the same Wallet Solution cannot be distinguished from one another through the certificate fields alone. However, an observer who participates in or collects multiple sessions can determine that the same Wallet Unit was involved. The risk can be mitigated by issuing a fresh WUAC with a new key pair for each session, at the cost of increased issuance frequency and an online round-trip before each interaction.</p>
 </li>
-<li>
-<p><strong>Limited offline capability.</strong> If WUACs are issued with a short validity (for instance, 24 hours), W2W interactions cannot be fully offline: the Verifier Wallet Unit must have been online within the validity period to obtain a fresh certificate.</p>
-</li>
 </ol>
 <h3 id="42-approach-b-verifier-pid-presentation-as-extension-to-isoiec-18013-5">4.2 Approach B: Verifier PID Presentation as Extension to ISO/IEC 18013-5</h3>
 <h4 id="421-description">4.2.1 Description</h4>
@@ -677,9 +674,6 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 </li>
 <li>
 <p><strong>No additional linkability.</strong> The privacy properties of the PID presentation are governed by the existing PID specification and selective disclosure mechanisms; no new linkability vector is introduced beyond what a normal PID presentation already involves.</p>
-</li>
-<li>
-<p><strong>Full offline capability.</strong> PID presentation does not require the Verifier Wallet Unit to have been online recently to obtain fresh authentication material.</p>
 </li>
 </ol>
 <h4 id="423-disadvantages">4.2.3 Disadvantages</h4>
@@ -723,9 +717,6 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p><strong>Authenticates both the Verifier Wallet Unit and the Verifier as a person.</strong> Like Approach B, the PID presentation authenticates the Verifier device as genuine (via revocation chaining) and identifies the Verifier (via the PID).</p>
 </li>
 <li>
-<p><strong>Full offline capability.</strong> PID presentation does not require the Verifier Wallet Unit to have been online recently to obtain fresh authentication material.</p>
-</li>
-<li>
 <p><strong>Smaller protocol extension than Approach B.</strong> The extension is limited to a session-binding field or a key-reuse constraint between two standard ISO/IEC 18013-5 runs, rather than embedding a full presentation in the mdoc request.</p>
 </li>
 <li>
@@ -753,8 +744,65 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p><strong>Requires a protocol extension for the session-binding mechanism.</strong> Although smaller than the extension required by Approach B, the session-binding mechanism (whether a new field or a key-reuse constraint) requires specification and implementation work.</p>
 </li>
 </ol>
-<h3 id="44-comparison">4.4 Comparison</h3>
-<p>The three approaches differ along several dimensions. The following table summarises the comparison.</p>
+<h3 id="44-approach-d-wallet-instance-attestation-as-reader-authentication-material">4.4 Approach D: Wallet Instance Attestation as Reader Authentication Material</h3>
+<h4 id="441-description">4.4.1 Description</h4>
+<p>In this approach, the Verifier Wallet Unit authenticates itself to the Holder Wallet Unit by presenting its Wallet Instance Attestation (WIA) -- the JWT issued by the Wallet Provider as defined in [Technical Specification 3] -- together with a signature over the ISO/IEC 18013-5 session transcript, produced with the private key corresponding to the public key in the WIA's <code>cnf</code> claim. This is structurally analogous to the Proof-of-Possession pattern that accompanies a WIA during credential issuance, repurposed as a reader authentication mechanism in the proximity context.</p>
+<p>The Holder Wallet Unit validates the WIA signature against the Wallet Provider trust anchors published in the Wallet Provider LoTE (the same LoTE already used for WIA validation during credential issuance), validates the Wallet Instance status via the status list mechanism defined in [Technical Specification 3], and verifies the session-transcript signature using the <code>cnf</code> public key. If any of these checks fails, the interaction is aborted; otherwise, the approval UI indicates that the Verifier has been authenticated as a valid EUDI Wallet Unit and identifies the Wallet Provider.</p>
+<p><strong>Wire-format sketch.</strong> Carrying a WIA and a session-transcript signature in a W2W mdoc request requires an extension to [ISO/IEC 18013-5]. Three candidate placements have been identified:</p>
+<ul>
+<li>
+<p><strong>(i) A new optional field in the device request.</strong> The WIA and the session-transcript signature are carried in a new CBOR field added to the device request (for example, <code>verifierWalletAttestation</code>), separate from the existing <code>ReaderAuth</code> field. The <code>ReaderAuth</code> field remains unused in W2W (STS9_30 is relaxed from an absolute prohibition to: "SHALL NOT include <code>ReaderAuth</code>; MAY include <code>verifierWalletAttestation</code>"). A CBOR decoder implementing vanilla [ISO/IEC 18013-5] tolerates unknown map keys and ignores the new field; vanilla mdoc readers do not populate it. A W2W-capable Holder Wallet Unit that supports the extension processes the field and applies the requirements of <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a>.</p>
+</li>
+<li>
+<p><strong>(ii) A new unprotected COSE header inside <code>ReaderAuth</code>.</strong> The prohibition on <code>ReaderAuth</code> in W2W is lifted, and the WIA is carried in a new unprotected COSE header (for example, labelled <code>wia</code>) inside the <code>ReaderAuth</code> COSE_Sign1 structure. The COSE_Sign1 signature is computed with the <code>cnf</code> private key over the session transcript, as [ISO/IEC 18013-5] already specifies. The validation path, however, differs: instead of chaining the signing key to an X.509 root via <code>x5chain</code>, the Holder Wallet Unit chains it to the Wallet Provider via the WIA.</p>
+</li>
+<li>
+<p><strong>(iii) WIA bound to a reader-auth certificate via <code>cnf.x5c</code>.</strong> The Wallet Provider issues a WIA whose <code>cnf</code> claim is a JWK that includes the standard <code>x5c</code> member ([RFC 7517], Section 4.7) carrying an X.509 reader-authentication certificate. The Verifier Wallet Unit signs the session transcript with the corresponding private key, populates <code>x5chain</code> in the unprotected COSE header of <code>ReaderAuth</code> with the same certificate, and adds an EUDI-defined <code>wia</code> attribute (for example, an additional unprotected COSE header) carrying the WIA JWT itself. A vanilla mdoc reader validates <code>ReaderAuth</code> along the standard [ISO/IEC 18013-5] path: it chains <code>x5chain</code> to a configured trust anchor and verifies the signature. An EUDI-aware Holder Wallet Unit additionally validates the WIA against the Wallet Provider trust anchors in the LoTE, confirms that <code>cnf.x5c</code> matches the certificate in <code>x5chain</code>, and checks the WIA's status via the attestation status list defined in [Technical Specification 3]. The reader-authentication certificate profile is at the discretion of the EUDI ecosystem: the recommended profile in [ISO/IEC 18013-5], Annex B.1.7 may be followed (which mandates <code>CRLDistributionPoints</code>), or a leaner profile may be defined that uses the WIA's attestation status list as the revocation channel and omits CRL DP. Since B.1.7 is recommended, not mandatory, for <code>ReaderAuth</code> (per [ISO/IEC 18013-5], Annex B.1.1), the latter remains conformant to clause 9.1.4 of [ISO/IEC 18013-5].</p>
+</li>
+</ul>
+<p>The three placements differ along two dimensions: whether they preserve interoperability with wallets implementing vanilla [ISO/IEC 18013-5], and whether they require the Wallet Provider to issue X.509 reader-authentication certificates.</p>
+<p>Placement (i) avoids the X.509 trust hierarchy entirely and depends purely on the WIA. Vanilla mdocs ignore the additive field and fall back to the unauthenticated W2W behaviour described in the current [Technical Specification 9]. Placement (ii) keeps the WIA inside <code>ReaderAuth</code> but omits <code>x5chain</code>, leaving a vanilla mdoc with no certificate to validate; vanilla interoperability is therefore not preserved in practice. Placement (iii) populates both <code>x5chain</code> and a <code>wia</code> attribute: a vanilla mdoc reader validates <code>ReaderAuth</code> exactly as today, while an EUDI-aware reader additionally consumes the WIA. Placement (iii) gives the strongest vanilla interoperability. It requires the Wallet Provider to issue an X.509 reader-authentication certificate alongside each WIA, but the marginal operational cost over the existing WIA issuance is modest, since the WIA infrastructure (signing key, issuance pipeline, lifecycle, trust-anchor publication via the Wallet Provider LoTE, and the attestation status list as revocation channel) is reused. Because B.1.7 is recommended rather than mandatory for <code>ReaderAuth</code>, an EUDI-defined certificate profile that relies on the WIA's attestation status list as the revocation channel and omits CRL Distribution Points remains conformant to clause 9.1.4 of [ISO/IEC 18013-5], so no separate CRL service is required. See disadvantage 5 in <a href="#443-disadvantages">Section 4.4.3</a> for a fuller discussion.</p>
+<p>The choice between placements (i) and (iii) reflects the same trade-off that distinguishes Approach A from a pure-WIA approach, exposed here as two placements within Approach D: avoid X.509 issuance entirely, or extend the existing WIA issuance pipeline to also produce a bound X.509 reader-authentication certificate so that vanilla [ISO/IEC 18013-5] readers can validate <code>ReaderAuth</code>. Placement (ii) is retained for completeness but is dominated by placement (iii) once <code>cnf.x5c</code> is used to bind the WIA to a certificate.</p>
+<p><strong>Relationship to [Technical Specification 3].</strong> [Technical Specification 3] currently scopes WIAs to the flows by which Wallet Units obtain PIDs and Attestations from credential issuers. Using a WIA as reader authentication material in a W2W proximity context is a new usage and requires a corresponding update to [Technical Specification 3] to permit this use. No new type of WIA is required: the binding between the WIA and the Verifier Wallet Unit's private key (via the <code>cnf</code> claim) combined with the session-transcript signature ensures that a WIA captured from a credential-issuance flow cannot be replayed as reader authentication in a W2W interaction, since a party that does not hold the <code>cnf</code> private key cannot produce the required signature over the session transcript.</p>
+<h4 id="442-advantages">4.4.2 Advantages</h4>
+<ol>
+<li>
+<p><strong>Reuses existing Wallet Unit Attestation infrastructure.</strong> WIAs are already issued by Wallet Providers for credential issuance. No new class of credential, no new trust model, and no new CA hierarchy is introduced.</p>
+</li>
+<li>
+<p><strong>No new CRL infrastructure required.</strong> WIA revocation is handled via the existing attestation status list mechanism mandated for Wallet Unit Attestations. In contrast to Approach A, no public CRL endpoint needs to be operated for W2W reader authentication.</p>
+</li>
+<li>
+<p><strong>Reuse of LoTE-based trust anchor distribution.</strong> Wallet Provider signing keys used to sign WIAs are already published in the Wallet Provider LoTE, so no new trust anchor distribution channel is needed.</p>
+</li>
+<li>
+<p><strong>Low Verifier privacy impact.</strong> No personal data of the Verifier is disclosed. The authentication asserts only that the device is a genuine Wallet Unit operated by a recognised Wallet Provider.</p>
+</li>
+<li>
+<p><strong>Vanilla ISO/IEC 18013-5 interoperability under placements (i) and (iii).</strong> Under placement (i), the WIA-bearing field is additive and vanilla decoders ignore it; vanilla mdocs fall back to unauthenticated W2W behaviour as in the current [Technical Specification 9], and a W2W-capable Holder Wallet Unit processing a request from a vanilla reader sees no WIA, so the <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a> SHOULDs trigger the user warning. Under placement (iii), vanilla mdoc readers validate <code>ReaderAuth</code> exactly as [ISO/IEC 18013-5] specifies, with the <code>x5chain</code> certificate chaining to a configured trust anchor; EUDI-aware readers additionally validate the WIA. Placement (ii) does not preserve vanilla interoperability and is retained only for completeness.</p>
+</li>
+</ol>
+<h4 id="443-disadvantages">4.4.3 Disadvantages</h4>
+<ol>
+<li>
+<p><strong>Requires an extension to ISO/IEC 18013-5.</strong> Even under the backward-compatible placement (i), the device-request schema is extended with a new optional field, and the semantics of the extension need to be standardised alongside [ISO/IEC 18013-5].</p>
+</li>
+<li>
+<p><strong>Requires an extension to [Technical Specification 3].</strong> The scope of [Technical Specification 3] needs to be widened so that WIAs are permitted for use as W2W reader authentication material, in addition to their current use in credential issuance.</p>
+</li>
+<li>
+<p><strong>Linkability risk from WIA reuse.</strong> A WIA reused across multiple W2W sessions is linkable by the Wallet Provider signature and by the <code>cnf</code> public key. As in Approach A, this risk can be mitigated by obtaining a fresh WIA with a new key pair for each session, at the cost of increased issuance frequency and an online round-trip before each interaction.</p>
+</li>
+<li>
+<p><strong>Limits of authentication.</strong> As with Approach A, the mechanism confirms that the Verifier device is a genuine Wallet Unit but does not authenticate the Verifier as a person, and cannot prevent out-of-band capture of disclosed attributes.</p>
+</li>
+<li>
+<p><strong>Under placement (iii), Wallet Providers also issue X.509 reader-authentication certificates.</strong> Placement (iii) requires the Wallet Provider to embed an X.509 reader-authentication certificate in the WIA's <code>cnf.x5c</code>. The marginal cost relative to existing WIA issuance is modest: a Wallet Provider already operates a signing key, an issuance pipeline, a short-lived credential lifecycle, a trust-anchor publication mechanism (the Wallet Provider LoTE), and a revocation channel (the attestation status list defined in [Technical Specification 3]). Placement (iii) reuses all of these. What is added is the cert profile and DER-encoded X.509 generation alongside the WIA, both ship-once design artefacts rather than ongoing infrastructure. Concretely, no new revocation feed is needed: the WIA's attestation status list serves as the revocation channel for the bound certificate. Since [ISO/IEC 18013-5] Annex B.1.7 is recommended (not mandatory) for <code>ReaderAuth</code>, an EUDI-defined certificate profile that omits <code>CRLDistributionPoints</code> and relies on the WIA's status list is conformant to clause 9.1.4. The genuinely additional concern is exposing the Wallet Provider's CA root to vanilla mdoc readers (which consume X.509-style trust lists rather than the Wallet Provider LoTE); this is a trust-framework-level coordination question, the same one Approach A would face, and it is the principal difference in cost between placement (i) and placement (iii). Vanilla mdoc readers may in practice still expect B.1.7-compliant certificates, which limits how aggressively the profile can be slimmed down without sacrificing interoperability.</p>
+</li>
+</ol>
+<h3 id="45-comparison">4.5 Comparison</h3>
+<p>The four approaches differ along several dimensions. The following table summarises the comparison.</p>
+<p>Offline capability has not been included as a criterion. The Wallet Units initially deployed are expected to use a remote HSM as their WSCD, so Wallet Unit operation requires network connectivity in any case; the distinction between online and offline presentations therefore does not initially apply in practice.</p>
 <table>
 <thead>
 <tr>
@@ -762,6 +810,7 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <th>Approach A (WUAC)</th>
 <th>Approach B (Verifier PID in request)</th>
 <th>Approach C (Session-bound reversed flow)</th>
+<th>Approach D (WIA as reader auth)</th>
 </tr>
 </thead>
 <tbody>
@@ -770,21 +819,25 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <td>The Verifier Wallet Unit (genuinity)</td>
 <td>Both the Verifier Wallet Unit (genuinity, via PID revocation chaining) and the Verifier as a person</td>
 <td>Both the Verifier Wallet Unit (genuinity, via PID revocation chaining) and the Verifier as a person</td>
+<td>The Verifier Wallet Unit (genuinity)</td>
 </tr>
 <tr>
 <td>Standards impact</td>
 <td>None (uses existing <code>ReaderAuth</code>)</td>
 <td>Requires extension of ISO/IEC 18013-5</td>
 <td>Small extension (session-binding field or key-reuse constraint)</td>
+<td>Additive extension of ISO/IEC 18013-5 (vanilla compatibility under placements (i) and (iii)) and a small extension of [Technical Specification 3]. Under placement (iii) the reader-auth certificate profile is at the EUDI ecosystem's discretion, since B.1.7 is recommended (not mandatory) for <code>ReaderAuth</code>.</td>
 </tr>
 <tr>
 <td>New infrastructure for Wallet Providers</td>
 <td>Yes (WUAC issuance endpoint and CRL service)</td>
 <td>No</td>
 <td>No</td>
+<td>Depends on placement: under (i)/(ii), no new infrastructure; under (iii), the existing WIA issuance pipeline is extended to also produce an X.509 reader-authentication certificate bound via <code>cnf.x5c</code>, with the WIA's attestation status list serving as the revocation channel.</td>
 </tr>
 <tr>
 <td>Reuse of existing LoTE-based trust anchor distribution</td>
+<td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -794,48 +847,75 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <td><code>ReaderAuth</code> code path already used for WRP interactions</td>
 <td>Existing attestation presentation and validation logic</td>
 <td>Existing ISO/IEC 18013-5 protocol (run twice)</td>
-</tr>
-<tr>
-<td>Offline capability</td>
-<td>Limited (depends on WUAC validity)</td>
-<td>Full</td>
-<td>Full</td>
+<td>Existing WIA issuance and validation logic; a new reader-authentication path is added</td>
 </tr>
 <tr>
 <td>Protocol complexity</td>
 <td>Low (one additional field in the mdoc request)</td>
 <td>Higher (request and presentation combined in one flow)</td>
 <td>Higher (two sequential protocol runs + session binding)</td>
+<td>Moderate (new additive field carrying WIA plus transcript signature)</td>
 </tr>
 <tr>
 <td>User interaction complexity</td>
 <td>Low (no additional steps for the User)</td>
 <td>Moderate (Verifier must approve a PID presentation)</td>
 <td>High (two-phase flow; both Users must select a specific mode and switch roles)</td>
+<td>Low (no additional steps for the User)</td>
 </tr>
 <tr>
 <td>Verifier privacy impact</td>
 <td>Low (no personal data of the Verifier disclosed)</td>
 <td>High (PID disclosure required; mitigable through selective disclosure)</td>
 <td>High (PID disclosure required; mitigable through selective disclosure)</td>
+<td>Low (no personal data of the Verifier disclosed)</td>
 </tr>
 <tr>
 <td>Linkability of the Verifier</td>
 <td>Moderate; mitigable through fresh certificates per session</td>
 <td>Same as for a normal PID presentation</td>
 <td>Same as for a normal PID presentation</td>
+<td>Moderate; mitigable through fresh WIAs per session</td>
 </tr>
 <tr>
 <td>Verifier discloses data before the Holder is authenticated</td>
 <td>No (no Verifier data disclosed)</td>
 <td>Yes (Verifier PID is sent together with the request)</td>
 <td>Yes (Verifier PID is presented in the reversed first run)</td>
+<td>No (no Verifier data disclosed)</td>
 </tr>
 </tbody>
 </table>
 <p>Whether any of the approaches should be mandatory, optional, or conditional, and whether a combined model is appropriate, are open questions for Member State discussion.</p>
 <h2 id="5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2">5 Proposed Additions and Changes to HLRs in ARF Annex 2</h2>
-<p><em>To be added in a future version of this paper, following the Member State discussion on the question scoped in <a href="#3-cryptographic-device-authentication-within-the-same-protocol-session">Chapter 3</a> and the technical approaches illustrated in <a href="#4-technical-approaches">Chapter 4</a>. A candidate phrasing for the core HLR is given in <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a>.</em></p>
+<p>This chapter turns the candidate phrasings presented in <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a> into concrete proposed HLRs for ARF Annex 2. The HLRs are formulated at the SHOULD level, consistent with the position developed in <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a>; their strength may be revisited once a technical approach is selected.</p>
+<h3 id="51-new-hlrs-to-be-added-to-topic-30">5.1 New HLRs to be added to Topic 30</h3>
+<p>The following three HLRs are proposed for addition to Topic 30 (Interaction between Wallet Units) of Annex 2 of ARF v2.8.0. Indexing continues from the current last entry in that version (W2W_22).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W2W_23</td>
+<td>When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include in that request a cryptographic proof of its authenticity and validity, bound to the protocol session in which the presentation request is sent.</td>
+</tr>
+<tr>
+<td>W2W_24</td>
+<td>Before presenting a received presentation request to the Holder, a Holder Wallet Unit SHALL, within the same protocol session as the presentation request, cryptographically verify that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.</td>
+</tr>
+<tr>
+<td>W2W_25</td>
+<td>If the verification required by W2W_24 fails or cannot be performed, a Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options.</td>
+</tr>
+</tbody>
+</table>
+<p>These HLRs are mechanism-agnostic: they fix the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session) without prescribing how the cryptographic proof is constructed. <a href="#4-technical-approaches">Chapter 4</a> describes four candidate mechanisms and their respective trade-offs.</p>
+<h3 id="52-existing-hlrs">5.2 Existing HLRs</h3>
+<p>No existing HLR in Topic 30 requires modification. The three HLRs above are additive and do not conflict with W2W_01 to W2W_22. </p>
 <h2 id="6-references">6 References</h2>
 <table>
 <thead>
@@ -856,6 +936,14 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <tr>
 <td>[ISO/IEC 18013-5]</td>
 <td>ISO/IEC 18013-5:2021, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application</td>
+</tr>
+<tr>
+<td>[RFC 7517]</td>
+<td>Jones, M., "JSON Web Key (JWK)", RFC 7517, May 2015</td>
+</tr>
+<tr>
+<td>[Technical Specification 3]</td>
+<td>Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations, v1.5, 2026-03-15</td>
 </tr>
 <tr>
 <td>[Technical Specification 9]</td>
