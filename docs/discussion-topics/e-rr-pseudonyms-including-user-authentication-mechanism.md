@@ -1,4 +1,4 @@
-Version 1.0, updated 22 April 2026
+Version 1.1, updated 18 May 2026
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658)
@@ -277,7 +277,6 @@ Herebelow is the list of HLRs relevant to the context, from the following topics
 |     ACP_01	 | A Cryptographic Binding of Attestations scheme SHALL enable a WSCA/WSCD to prove that it manages two or more private keys, paired with two or more public keys provided to it by the Wallet Unit. Note: a)These public keys may be included in WUAs, PIDs, attestations, or pseudonyms. b) The proof may be transitive, so a proof that two keys are stored/managed in the same WSCA/WSCD may be done by proving these keys relate to each other via a third key (also stored in the WSCA/WSCD). . |
 |    DASH_02	 | The Wallet Unit SHALL log all transactions executed through the Wallet Unit, including any transactions that were not completed successfully. This log SHALL include all types of transaction executed through the Wallet Unit: a) PID or attestation issuance and re-issuance transactions, b) PID or attestation presentation transactions, c) Wallet-to-Wallet transactions (see Topic 30), d) pseudonym registration or presentation transactions, e) signature or seal creation transactions (see Topic 16), f) data deletion requests sent to a Relying Party (see Topic 48), g) reports sent to a Data Protection Authority (see Topic 50), h) PID or attestation deletions by the User. Note: For the data to be logged for a data deletion request to a Relying Party or a report sent to a DPA, see Topic 48 and Topic 50, respectively. For other types of transaction, the data to be logged is specified in the requirements in this Topic. |
 |      DASH_03c	 | For a pseudonym registration or presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) identifying information about the Relying Party, if known to the Wallet Unit, c) whether it is a pseudonym registration or pseudonym presentation transaction, d) in the case of non-completed transactions, the reason for such non-completion. Note: Regarding point b), see PA_20 in Topic 11.  |
-|      DASH_03c	 | For a pseudonym registration or presentation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) identifying information about the Relying Party, if known to the Wallet Unit, c) whether it is a pseudonym registration or pseudonym presentation transaction, d) in the case of non-completed transactions, the reason for such non-completion. Note: Regarding point b), see PA_20 in Topic 11.  |
 |      WIAM_15a	 |For the purpose of WIAM_15, the Wallet Instance SHALL enforce the activation of an OS-level User authentication mechanism with adequate security policies. _Note: ‘Adequate’ here means adequate for any operation excluding the issuance or presentation of PIDs, WUAs, and potentially other attestations at level of security High. This includes but is not limited to generating pseudonyms, accessing the transaction log (dashboard), data export and migration, requesting the erasure of personal data by a Relying Party, and reporting a Relying Party to a DPA_.  |
 |      ZKP_04	 | A ZKP scheme SHOULD support the derivation of a verifiable User pseudonym, by combining an attribute value that is unique for the User with Relying Party-specific context (e.g., the Relying Party identifier) In addition to the generic functions defined in ZKP_01, for this use case, a ZKP scheme SHALL provide support for the following functions: (i) generation of a request for the issuance of an attestation that includes a secret attribute unique to the User, without revealing this attribute to the Attestation Provider, (ii) generation of an attestation presentation that includes a verifiable pseudonym derived from the secret attribute, a Relying Party identifier, and context-related information. _Note: See section 4.1.5 of the Discussion Paper for Topic G._   |
 
@@ -291,15 +290,21 @@ The current concept (as summarised in Section 4.2) does not natively support:
 - Presentation of Attributes with Subsequent Pseudonymous Authentication, 
 - Pseudonymous Authentication with Presentation of Attributes.
 
-This means that the pseudonym registration / pseudonymous authentication and presentations of attributes are separate processes, supported by unrelated specifications (WebAuthn/FIDO2 vs OID4VP/ISO18013-5). In consequence, there is no mechanism specified providing cryptographic binding of a pseudonym and (presented) attributes as a proof that they belong to the same User or come from the same Wallet Unit.
-The current approach in the ARF is that such binding may be ensured by the RP with own means. In addition, this approach may impact User experience and increase complexity of the process at the RP side.
+This means that the pseudonym registration / pseudonymous authentication and presentations of attributes are separate processes, supported by unrelated specifications (WebAuthn/FIDO2 versus OID4VP/ISO 18013-5). In consequence, there is no mechanism specified for providing cryptographic binding between a pseudonym and (presented) attributes as a proof that they belong to the same User or come from the same Wallet Unit.
+The current approach in the ARF is that such binding may be ensured by the RP by its own means. In addition, this approach may impact user experience and increase complexity of the process at the RP side.
 
-Such binding is out of the [WebAuthn] scope. And if the [WebAuthn] credential is stored in the Wallet’s key store (and not in WSCD as attestations keys), then such binding is even more problematic. However, this could be a possible area of future improvement and work at SDOs.
+Such binding is out of the [WebAuthn] scope. And if a [WebAuthn] credential is stored in the Wallet’s keystore (and not in the WSCD as attestations keys), then such binding is even more problematic. However, this could be possible area of future improvements and work at relevant SDOs.
 
 Therefore the following questions arise:
 
-**QUESTION 1: Is such cryptoraphic binding desired? If so, should SDO's take initiative to enable cryptographic binding mechanism inherently for WebAuthn/FIDO2-based implementation? 
+**QUESTION 1: Is such cryptographic binding desired? If so, should SDO's take initiative to enable cryptographic binding mechanism inherently for WebAuthn/FIDO2-based implementation? 
 Or should the ARF's concept evolve to use other types of pseudonyms (such as Pseudonym Attestation or ZKP-based pseudonyms) that may provide such capability instead?**
+
+
+(_Update after the Focus Meeting 1:_)
+
+The answer on this question depends on wanted long-term strategy, definition of targeted use cases and suitable types of pseudonyms to support them, and - finally - availability of relevant standards. Such a strategy is yet to be defined. At the same time, as of today, there are no final technical specifications available for Pseudonym Attestations or ZKP-based pseudonyms. Nevertheless, a cryptographic binding mechanism in the long run seems to be necessary to support some of the use cases (e.g. related to use of identity-derived pseudonyms or where the linking back to the User is required). 
+
 
 #### 4.1.2 Support of Scope Rate Limited Pseudonyms
 
@@ -308,20 +313,34 @@ The current concept (summarised in Section 4.2) does not support the Scope Rate 
 **QUESTION 2: Should SDO's take initiative to enable Scope Rate-Limited Pseudonyms inherently for WebAuthn/FIDO2-based implementation? 
 Or should the ARF's concept evolve to use other types of pseudonyms/solutions that would support such scenario instead?**
 
+
+(_Update after the Focus Meeting 1:_)
+
+The answer on this question depends on the long-term strategy, definition of targeted use cases and suitable types of pseudonyms to support them, and - finally - availability of relevant standards. Such a strategy is yet to be defined. At the same time, as of today, there are no final technical specifications available for Pseudonym Attestations or ZKP-based pseudonyms. Nevertheless, support of Scope Rate Limited Pseudonyms in the long run seems necessary.
+
+
 #### 4.1.3 Support of Linkable Pseudonymous Authentication
 
-The current concept (summarised in Section 4.2) does not (directly) support the Linkable Pseudonymous Authentication use case - WebAuthn/FIDO2 specification is not designed for it. A work around could be to use a shared FIDO server by a group of RPs (sectorally linkable pseudonyms).
+The current concept (summarised in Section 4.2) does not (directly) support the Linkable Pseudonymous Authentication use case - WebAuthn/FIDO2 specification is not designed for it. A work-around could be to use a shared FIDO server by a group of RPs (sectorally linkable pseudonyms).
 
-At the same time, linkable pseudonyms could be potentially implemented with other means, eg. use of Attested Pseudonyms.
+At the same time, linkable pseudonyms could be potentially implemented with other means, e.g. via use of Attested Pseudonyms.
 
 **QUESTION 3: Should SDO's take initiative to enable Linkable Pseudonymous Authentication use case inherently for WebAuthn/FIDO2-based implementation?
 Or should the ARF's concept evolve to use other types of pseudonyms/solutions (such as Pseudonym Attestation or ZKP-based pseudonyms) that would support such scenario instead?**
 
+
+
+(_Update after the Focus Meeting 1:_)
+
+The answer on this question depends on the long-term strategy, definition of targeted use cases and suitable types of pseudonyms to support them, and - finally - availability of relevant standards. Such a strategy is yet to be defined. At the same time, as of today, there are no final technical specifications available for Pseudonym Attestations or ZKP-based pseudonyms. Nevertheless, Support of Linkable Pseudonymous Authentication in the long run seems to be necessary, to support some of the use cases (e.g. related to use of identity-derived pseudonyms or where the linking back to the User is required). 
+
+
 #### 4.1.4 Credential Attestation
 
-As indicated in Section 4.3, there are five possible attestation schemes. Therefore it is desirable to indicate (profile) which of them are to be used or allowed.
+As indicated in Section 4.3 below, there are five possible attestation schemes. Therefore it is desirable to indicate (profile) which of them are to be used or allowed.
 
-**QUESTION 4: Which attestation options should or should not be allowed?**
+**QUESTION 4: Which attestation scheme options should, or should not be allowed?**
+
 
 ### 4.2 Long-Term Strategy Discussion
 
@@ -345,11 +364,16 @@ Therefore it is desirable to define which use cases are relevant and should / sh
 
 **QUESTION 5: What use cases are relevant / shall be supported by the wallets? Are there any other use cases to be considered, not mentioned above?**
 
+(_Update after the Focus Meeting 1:_)
+
+It seems that all the mentioned use cases shall be supported in the long run. The question is more about how to stage their introduction, taking into account availability and readiness of the relevant technical specifications. As of today, there are no ready technical specifications (fully) supporting Use Cases B, B', C and D.
+
+
 #### 4.2.2 Possible Implementations of Pseudonyms
 
-The following possible implementation options of pseudonyms in the Wallet Solutions exist:
+The following possible implementation options for pseudonyms in the Wallet Solutions exist:
 - WebAuthn/FIDO2 credentials,
-- Attested Pseudonyms,
+- Attested Pseudonyms or
 - ZKP-based Pseudonyms.
 
 They differ between each other in reference to supported types of pseudonyms, use cases and unlinkability level (and possibly in other privacy-related characteristics). 
@@ -361,20 +385,67 @@ The following table presents basic characteristics of each option.
 |     Attested Pseudonym         |  An EAA that contains pseudonym as an attribute. Limited, implementation dependent unlinkability. Cryptographic binding to (other) attributes in the wallet. | Pseudonymous Authentication, Presentation of Attributes with Subsequent Pseudonymous Authentication, Pseudonymous Authentication with Presentation of Attributes, Rate-Limited Participation, Sectoral Linkable Pseudonymous Authentication; plus Once-Only and Rotating Batch options| No dedicated specification.  |
 |     ZKP-based Pseudonyms         |  A ZKP proof derived from a PID or an attestation. Enables unlinkability across RPs. Cryptographic binding to (other) attributes in the wallet. | Pseudonymous Authentication, Presentation of Attributes with Subsequent Pseudonymous Authentication, Pseudonymous Authentication with Presentation of Attributes, Rate-Limited Participation, Sectoral Linkable Pseudonymous Authentication  | Concept mentioned in ARF, no specification ready (W3C VCDM with BBS Cryptosuites may fit, but under development).  |
 
-It is desirable to define which implementations are relevant and should or might not supported by the EUDI Wallets. 
+It is desirable to define which implementations are relevant and should, or should not, be supported by the EUDI Wallets. 
 
 **QUESTION 6: What implementations are relevant? Which shall be supported by the wallets? Are there any other implementation options to be considered, not mentioned above?** 
 
 **QUESTION 7: What standards are necessary to support the desired implementation options?**
 
+(_Update after the Focus Meeting 1:_)
+
+We identified two following generic types of pseudonyms that need to be supported by the Wallet Solutions in the long run: 
+- "User-chosen" pseudonym, where the generation of the pseudonym is done solely by the User / User's device, with no participation of any other party ("pseudonym issuer") and no linking to User's identity (or other attributes) may be ensured; WebAuthn/FIDO2 credentials are an example of such a pseudonym type;
+- Identity-bound pseudonym, where the pseudonym is generated from a PID or an attestation, and is therefore (cryptographically) linked to the identity (and thus may be potentially linked back to the User), and where there is a third party involved in the generation or use of such a pseudonym;
+
+Although the user-chosen pseudonyms are very useful and necessary in the Wallet Solutions to support the "recurring login" use case, taking into account the overall EUDI Wallet concept the identity-bound pseudonym seems to be a natural implementation path in the long term.   
+
+
 ## 5 Proposals of Changes of HLRs
 
-There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.
+Herebelow are presented draft proposals of high-level requirement changes up for further discussion.
+
+
+| **Index** |                **Requirement specification**                 | Proposal |
+|-----------|--------------------------------------------------------------|-----------------|
+|     PA_01      | A Wallet Unit SHALL enable a User to generate a **User-chosen** Pseudonym and register it at a Relying Party. ~~_Note: For an attested pseudonym, pseudonym generation takes place by requesting the issuance of a pseudonym attestation. Pseudonym registration takes place by presenting the attestation._~~ | Keep with the proposed change |
+|     **PA_01a**  | **A Wallet Unit SHALL enable a User to generate a Pseudonym derived from a PID or an Attestation, that ensures cryptographic linking to the User's identity or attributes held in the Wallet Unit.** | New requirement |
+|     PA_02      | A Wallet Unit SHALL enable a User to authenticate with a Pseudonym towards a Relying Party, **in at least the following modes: (a) with no linkability to the User's identity, (b) with no linkability to the PID or Attestation Provider, (c) with no linkability to the Wallet Solution Provider, (d) with no linkability between authentication transaction of the same User, (e) with no linkability between Relying Parties, (f) with linkability between selected Relying Parties. The Wallet Unit SHALL enable Relying Parties to request authentication with a selected type of Pseudonym and mode of authentication. _Note: The selection of Pseudonym type and authentication mode depends on the nature of the Relying Party's service and the use case for Pseudonym (required characteristics eg. linkability level, anonymity, cryptographic binding)._**  ~~if the Wallet Unit was used previously to register the Pseudonym for the same Relying Party~~ |  Keep with the proposed change |
+|     PA_03      | A Wallet Unit SHALL be able to perform ~~the actions specified in the above two requirements~~ **User authentication with use of Pseudonyms** independently of whether the interaction with the Relying Party is initiated on the same device hosting the Wallet Instance or on a device different from the one hosting the Wallet Instance. |  Keep with the proposed change |
+|     PA_04      | A Wallet Unit SHALL enable the User to use multiple different Pseudonyms at a given Relying Party. ~~, unless it is explicitly designed as a scope rate-limited attestation.~~  |  Keep with the proposed change | 
+|     **PA_04a**      | **A Wallet Unit SHALL enable the User to use a single Pseudonym at a given Relying Party.**  |   New requirement  |
+|     **PA_04b**      | **A Wallet Unit SHALL enable the User to use a single Pseudonym with multiple Relying Parties.**  |   New requirement  |
+|     PA_05      | A Wallet Unit SHOULD enable a User to freely choose a User alias for each Pseudonym ~~registered at a Relying Party~~. Setting an alias SHOULD be optional for the User. The User SHOULD be able to change the alias for any Pseudonym. |  Keep with the proposed change | 
+|     PA_06      | A Wallet Unit SHALL enable a User to choose ~~which~~ the Pseudonym to authenticate with towards a Relying Party **from all the applicable Pseudonyms meeting the criteria of the Relying Party's service, as defined in PA_02**. ~~, if multiple Pseudonyms are registered for this Relying Party.~~ The Wallet Unit SHOULD present the User with the aliases of the applicable Pseudonyms, if assigned, when making this choice. | Keep with the proposed change | 
+|     PA_07      | A Wallet Unit SHALL enable a User to delete a Pseudonym. | Keep as-is |
+|     PA_08      | A Wallet Unit SHALL enable the User to manage Pseudonyms within the Wallet Unit in a user-friendly and transparent manner. |Keep as-is |
+|     PA_09      | A Wallet Unit SHALL enable the User to see all existing pseudonyms, including the associated Relying Party (if any). |Keep as-is |
+|     PA_10      | A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
+|     PA_11      | A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
+|     PA_12      | If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID, attestation or WUA being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn] and/or presentation specifications, but this requires further discussion._** |  Keep with the proposed change |
+|     PA_13      | The Relying Party SHALL be able to validate that the pseudonym presented to them belongs to the User presenting it.  | Keep as-is |
+|     PA_14      | A Wallet Unit SHALL store the information necessary for authenticating with a Pseudonym in **WSCD/WSCA or in** a keystore. | Keep with the proposed change |
+|     PA_15      | A Relying Party SHALL NOT be able to derive the User's true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party. | Remove |
+|     PA_16      | ~~A Wallet Unit SHALL NOT reveal the same Pseudonym to different Relying Parties unless the User explicitly chooses otherwise.~~ | Remove |
+|     PA_17      | ~~It SHALL NOT be possible to correlate Pseudonyms based on their values nor on other metadata sent by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that different Pseudonyms belong to the same User.~~ **The Wallet Provider SHALL use method(s) and/or protocol(s) to implement pseudonyms which make it impossible to correlate Pseudonyms based on their values or on metadata sent by the Wallet Unit to Relying Parties during registration and authentication. *Note: This implies that colluding Relying Parties will not be able to conclude that different Pseudonyms belong to the same User.***  | Keep with the proposed change |
+|     PA_18      | The Wallet Unit SHALL ensure that Pseudonyms contain sufficient entropy to make the chance of colliding Pseudonyms (meaning two Users having the same Pseudonym value for the same Relying Party) negligible. | Keep as-is |
+|     PA_19      | A Wallet Unit SHALL NOT share the User's optionally assigned Pseudonym aliases with any Relying Party. | Keep as-is |
+| PA_20 | The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. If **currently available technical specifications** ~~the profile or extension of [W3C WebAuthn] meant in PA_21 does~~ **do** not enable the Wallet Unit to do this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity.  *Note: ~~[W3C WebAuthn] currently does~~ **Currently available technical specifications do** not offer a way for ~~an Authenticator (i.e., the Wallet Unit)~~ **a Wallet Unit** to authenticate a Relying Party. Instead, the Client (i.e., the browser) ~~will~~ **may** authenticate the Relying Party, using TLS. **The notion of trust is that the Wallet Unit receives the Relying Party identity from the browser and uses it without further verifications.** | Keep with the proposed change | 
+|     PA_21      | ~~The Commission SHALL create or reference a technical specification containing a profile or extension of the [W3C WebAuthn] specification compliant with the HLRs specified in this Topic. This specification SHALL contain all details necessary for Wallet Units and Relying Parties to generate, register, and use Pseudonyms.~~ | Remove |
+|     PA_22      | ~~Wallet Providers MAY ensure that their Wallet Solution supports the HLRs defined for this topic by letting their Wallet Units perform the role of a WebAuthn authenticator following  the [W3C WebAuthn] specification and the technical specification referenced in requirement PA_21.~~  | Remove |
+|     PA_23      | A protocol enabling scope rate-limited pseudonyms SHALL rely solely on algorithms included in the ECCG Agreed Cryptographic Mechanisms v2.0.  | Keep as-is  |
+|     PA_24      | A protocol enabling scope rate-limited pseudonyms SHALL enable a Wallet Unit to allow a User to generate a scope rate-limited pseudonym, register this by a Relying Party, and prove that this is within the rate and scope restrictions determined by the Relying Party.  | Keep as-is  |
+|     PA_25      | A protocol enabling scope rate-limited pseudonyms SHALL allow a Relying Party, when a User presents a scope rate-limited pseudonym, to verify that the rate is not exceeded for this User.  | Keep as-is  |
+|     PA_26      | A protocol enabling scope rate-limited pseudonyms SHALL allow a Relying Party to choose the scope and rate when requesting a scope rate-limited pseudonym from a User. | Keep as-is  |
+|     PA_27      | A protocol enabling scope rate-limited pseudonyms SHALL NOT allow any entity or collusion of entities not including the User, to link scope rate-limited pseudonyms of the same User when used across several different Relying Parties. This SHALL hold even if the scope and rate are identical across the different Relying Parties and both for registration and authentication of the scope rate-limited pseudonym. | Keep as-is |
+|     PA_28      | A protocol enabling scope rate-limited pseudonyms SHALL ensure that if the rate is larger than 1, a User's different pseudonyms SHALL be unlinkable for the same scope. This SHALL hold against any entity or collusion of entities, not including the User. Further, such protocol SHALL ensure that during registration or authentication with such pseudonym, it SHALL NOT be possible for the Relying Party to deduce any information about how many pseudonyms the User has already registered (except that it does not exceed the predetermined rate). | Keep as-is  |
+|     PA_29      | A protocol enabling scope rate-limited pseudonyms SHALL ensure that no entity or collusion of entities, not including a User, is able to authenticate or register with a scope rate-limited pseudonym of this User. | Keep as-is |
+|     PA_30      | ~~A Wallet Unit SHALL store cryptographic material necessary for authenticating as a scope rate-limited pseudonyms in either a WSCA/WSCD or in a keystore.~~ | Remove |
+|     PA_31      | A User's scope rate limited pseudonyms for a particular scope and rate SHALL be persistent over time even if they start using another Wallet Unit. | Keep as-is  |
 
 
 ## 6 Additions and Changes to the ARF 
 
-There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.
+There are no change proposals to the ARF main text at this stage. They may be defined as a result of the discussion this paper supports.
 
 
 ## 7 References
