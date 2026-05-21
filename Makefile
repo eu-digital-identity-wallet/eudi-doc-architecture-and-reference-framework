@@ -20,13 +20,13 @@
 
 # Source Files
 MAIN_DOC       := docs/architecture-and-reference-framework-main.md
-ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1-3,5]/*.md)
+ANNEXES_DOCS   := $(wildcard docs/annexes/annex-[1235]/*.md)
 SOURCE_DOCS    := $(MAIN_DOC) $(ANNEXES_DOCS)
 
 # Directories and Build Information
 BUILD_DIR      := ./build
 SITE_DIR       := ./site
-VERSION        := 2.8.0
+VERSION        := 2.9.0
 BUILD          := $(shell date +%Y%m%d.%H%M%S)
 
 # Pandoc configuration
@@ -102,7 +102,7 @@ copy-pdfs:
 zip-pdfs: copy-pdfs
 	@echo "Creating zip archive of PDFs in $(BUILD_DIR)/pdf..."
 	@cd $(BUILD_DIR) && zip -r arf-pdfs-v$(VERSION).zip pdf/*
-	@echo "Zip archive created at $(BUILD_DIR)/pdf.zip."
+	@echo "Zip archive created at $(BUILD_DIR)/arf-pdfs-v$(VERSION).zip."
 
 # Clean generated files and directories.
 clean:

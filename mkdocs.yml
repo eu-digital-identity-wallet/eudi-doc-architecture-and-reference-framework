@@ -5,12 +5,12 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: material/brightness-4
+        icon: material/brightness-7
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
-        icon: material/brightness-7
+        icon: material/brightness-4
         name: Switch to dark mode
   features:
     - navigation.tabs
@@ -46,6 +46,10 @@ extra:
   version:
     provider: mike
     alias: true
+
+validation:
+  nav:
+    omitted_files: ignore
 
 plugins:
   - mike

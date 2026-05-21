@@ -4,7 +4,7 @@
 
 On 3 June 2021, the European Commission adopted Recommendation (EU) 2021/946, calling on Member States to cooperate closely with the Commission on the development of a Common Union Toolbox for a European Digital Identity Framework. A core component of this Toolbox is the Architecture and Reference Framework (ARF), which defines high-level technical requirements, specifications, and procedures for the European Digital Identity (EUDI) Wallet ecosystem.  
 
-Since its initial publication, the ARF has been developed and maintained through iterative releases, supported by structured technical discussions within the European Digital Identity Cooperation Group (EDICG), its expert sub-groups, and public consultation via GitHub. 
+Since its initial publication, the ARF has been developed and maintained through iterative releases, supported by structured technical discussions within the European Digital Identity Cooperation Group (EDICG), its expert sub-groups, and public consultation via GitHub.
 
 In 2025, 24 topics were identified for discussion. In the 2026 iteration, 15 topics were identified: 11 are reopened topics requiring further refinement, while the remaining 4 are newly proposed discussions.
 
@@ -36,17 +36,17 @@ are always those in the latest version of **Annex 2 of the ARF**.
 
 The process of defining high-level requirements consists of six steps:
 
-1. In the [GitHub discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/categories/arf-discussion-topics) a discussion topic is created, with the reason why this refinement is planned and labelled as **refinement round** topic. 
-2.  A discussion paper on the topic is published on
+1. In the [GitHub discussion area](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/categories/arf-discussion-topics) a discussion topic is created, with the reason why this refinement is planned and labelled as **refinement round** topic.
+1. A discussion paper on the topic is published on
 [GitHub](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/tree/main/docs/discussion-topics)
 and [on this page](#topics) as soon it is available.
-3. The discussion paper includes the refinement reason, approach, and if applicable, proposed updated HLRs or updates for ARF main text.
-4. The discussion remains open for **three weeks**, and while responses to all the
+1. The discussion paper includes the refinement reason, approach, and if applicable, proposed updated HLRs or updates for ARF main text.
+2. The discussion remains open for **three weeks**, and while responses to all the
 comments may not be provided, all input will be carefully considered.
-5. Approximately **seven weeks** after the discussion paper is published, the
+1. Approximately **seven weeks** after the discussion paper is published, the
 Commission will release an updated ARF version on [GitHub](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases),
 incorporating revisions to the topic.
-6. The published ARF version remains open for further comments on GitHub.
+1. The published ARF version remains open for further comments on GitHub.
 
 The topics are subject to change, and the order of the topics may be adjusted
 based on the feedback received during the discussions. The progress of the
@@ -98,8 +98,6 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **F** | Digital Credentials API (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/653) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/659) | Open |
-| **AA** | Support of Electronic Payments Customer Authentication (SCA) with the Wallet (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/654) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660) | Open |
 | **AB** | Digital Signature using the EUDI Wallet (New) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/655) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661) | Open |
 
 ### SUMMER BREAK  
@@ -122,6 +120,7 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
+| **F** | Digital Credentials API (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/653) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/659) | Open |
 | **AC** | Cryptographic binding of attestations (New) | Open | Open | Open | Open |
 | **G** | Zero Knowledge Proof (Refinement Round) | Open | Open | Open | Open |
 
@@ -132,5 +131,6 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
+| **AA** | Support of Electronic Payments Customer Authentication (SCA) with the Wallet (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/654) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660) | Open |
 | **AD** | User binding in proximity flows (New) | Open | Open | Open | Open |
 | **AE** | Liveness tests in remote flows (New) | Open | Open | Open | Open |

@@ -27,7 +27,7 @@ remarks are not. Be concise, stay on topic, and provide concrete proposals
 
 ### 3.1 Open an issue
 
-- Use the issue templates where possible (bug, enhancement, question, editorial).
+- Use the issue templates where possible.
 - Provide context: affected section(s), concrete problem statements, and-if
 applicable-security or privacy impacts.
 - Link to prior discussions or related specs (ETSI, CEN, OIDF, ISO, IETF, W3C,
@@ -97,9 +97,9 @@ images and meaningful labels in examples.
 
 ## 8) Licensing & IPR
 
-- All contributions are subject to the repository **LICENSE**. By contributing,
-you confirm you have the right to do so under that license.
-- Avoid embedding third-party content unless its license is compatible and
+- All contributions are subject to the repository **LICENCE**. By contributing,
+you confirm you have the right to do so under that licence.
+- Avoid embedding third-party content unless its licence is compatible and
 clearly attributed.
 
 ## 9) Checklists
