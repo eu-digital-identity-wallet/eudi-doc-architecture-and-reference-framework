@@ -5,13 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [2.9.0] - 2026-05-11
+
+Changes:
+
+- Changes due to EUDI Wallet security-related comments received from ENISA on the HLRs in annex 2.
+- Relevant changes due to ENISA comments on the ARF main document. Several figures in the main text are updated.
+- Changes due to synchronisation with new version of European Commission Technical Specification TS3.
+- Changes due to the [final discussion paper for Topic C refinement round](/docs/discussion-topics/c-rr-wallet-unit-attestations.md): Wallet Unit Attestations (WUA) Revision Round (dated 8 May 2026).
+- Several non-security-related issues raised via Confluence and GitHub have been resolved.
+- Changes for consistency, such as adding missing references to chapter 10.
+- Apart from these changes, a limited number of editorial mistakes were corrected.
+
 ## [2.8.0] - 2026-02-02
 
 Changes:
 
-- Changes due to comments received from Member States on ARF 2.7.3 received before and after the Cooperation Group meeting of 2 December 2025. The 44 comments were mainly concerning annex 2 and resulted in changes in the annex 2 and in the main text. Four figures in the main text are updated and one new figure is introduced.   
+- Changes due to comments received from Member States on ARF 2.7.3 received before and after the Cooperation Group meeting of 2 December 2025. The 44 comments were mainly concerning annex 2 and resulted in changes in the annex 2 and in the main text. Four figures in the main text are updated and one new figure is introduced.
 - Changes due to comments received from the Certification workstream on the HLR in annex 2. A number of comments were processed.
-- Changes due to progress on Technical Specificatins and Standards.  
+- Changes due to progress on Technical Specifications and Standards.  
 - Changes due to the [final discussion paper for Topic T](/docs/discussion-topics/t-support-and-maintenance-by-the-wallet-provider.md): Support and maintenance by the Wallet Provider (dated 16 October 2025),
 - Changes due to the [final discussion paper for Topic AA](/docs/discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md): Support of Electronic Payments Customer Authentication (SCA) with the Wallet (dated 6 October 2025),
 - Changes due to the [final discussion paper for Topic E](/docs/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md): Pseudonyms, including User authentication mechanism (dated 24 October 2025),
@@ -19,21 +31,24 @@ Changes:
 - Several issues raised via Confluence and GitHub have been resolved.
 
 Apart from these changes, a limited number of editorial mistakes were corrected.
- 
+
 ## [2.7.3] - 2025-11-12
 
 Changes:
- - Updated links to new annex 2 file names.
- 
- ## [2.7.2] - 2025-11-11
+
+- Updated links to new annex 2 file names.
+
+## [2.7.2] - 2025-11-11
 
 Changes:
- - Updated annexes 2 orders for pdf creation.
+
+- Updated annexes 2 orders for pdf creation.
 
 ## [2.7.1] - 2025-11-10
 
 Changes:
- - Updated broken links.
+
+- Updated broken links.
 
 ## [2.7.0] - 2025-11-10
 
