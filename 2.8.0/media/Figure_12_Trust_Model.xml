@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.3.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0">
   <diagram id="diagram" name="Page-1">
-    <mxGraphModel dx="839" dy="883" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+    <mxGraphModel dx="1305" dy="974" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -43,7 +43,7 @@
         <mxCell id="14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Registrar&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;b&gt;Member States&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="1160" y="800" as="geometry" />
         </mxCell>
-        <mxCell id="36" edge="1" parent="1" source="19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="20" value="Issues&#xa;WUAs">
+        <mxCell id="36" edge="1" parent="1" source="19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="20" value="Issues&#xa;WIAs and KAs">
           <mxGeometry relative="1" x="0.0114" as="geometry">
             <mxPoint as="offset" />
             <mxPoint x="979.75" y="381" as="sourcePoint" />
@@ -77,10 +77,10 @@
             <mxPoint x="1160" y="489" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;" value="WUA" vertex="1">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;" value="WIAs KAs" vertex="1">
           <mxGeometry height="30" width="42" x="998" y="510" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-43" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.669;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.671;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endFill=1;" target="3" value="Send registration&#xa;certificate(s)&#xa;(optional)">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-43" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.669;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.671;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endFill=1;" target="3" value="Send registration&#xa;certificate(s)&#xa;(if available)">
           <mxGeometry relative="1" x="-0.0473" as="geometry">
             <mxPoint as="offset" />
             <mxPoint x="1290" y="530" as="sourcePoint" />
@@ -113,10 +113,10 @@
             <mxPoint x="1118" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Provider of registration&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;certificates&lt;/div&gt;" vertex="1">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Provider of registration&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;certificates&lt;/div&gt;" vertex="1">
           <mxGeometry height="50" width="100" x="1130" y="760" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-48" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;exitX=0.336;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tklJ06Eg1gI686ZZUtUN-47" value="Issue registration&#xa;certificates(s)&#xa;(optional)">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-48" edge="1" parent="1" source="3" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;exitX=0.336;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;" target="tklJ06Eg1gI686ZZUtUN-47" value="Issue registration&#xa;certificates(s)&#xa;(optional)">
           <mxGeometry relative="1" x="0.3204" y="-1" as="geometry">
             <mxPoint as="offset" />
             <Array as="points">
@@ -181,7 +181,7 @@
         <mxCell id="tklJ06Eg1gI686ZZUtUN-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Acces&lt;div&gt;CA&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="55" width="55" x="731.5" y="633" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-63" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Provider of registration&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;certificates&lt;/div&gt;" vertex="1">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-63" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;Provider of registration&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;certificates&lt;/div&gt;" vertex="1">
           <mxGeometry height="50" width="100" x="611.5" y="633" as="geometry" />
         </mxCell>
         <mxCell id="tklJ06Eg1gI686ZZUtUN-64" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;exitX=0.58;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tklJ06Eg1gI686ZZUtUN-62" value="Issue access&#xa;certificate(s)">
@@ -195,7 +195,7 @@
             <mxPoint x="730" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-65" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;exitX=0.143;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.481;entryY=-0.016;entryDx=0;entryDy=0;entryPerimeter=0;" target="tklJ06Eg1gI686ZZUtUN-63" value="Issue&#xa;registration&#xa;certificate(s)&#xa;(optional)">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-65" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;endArrow=oval;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;exitX=0.143;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.481;entryY=-0.016;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=1 1;" target="tklJ06Eg1gI686ZZUtUN-63" value="Issue&#xa;registration&#xa;certificate(s)&#xa;(optional)">
           <mxGeometry relative="1" x="0.1468" as="geometry">
             <mxPoint as="offset" />
             <Array as="points">
@@ -228,7 +228,7 @@
             <mxPoint x="568.58" y="940" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-70" edge="1" parent="1" source="19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=oval;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="tklJ06Eg1gI686ZZUtUN-68" value="Registers as&#xa;Wallet Provider">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-70" edge="1" parent="1" source="19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="tklJ06Eg1gI686ZZUtUN-68" value="Designated as&#xa;Wallet Provider">
           <mxGeometry relative="1" x="0.4485" as="geometry">
             <mxPoint as="offset" />
             <Array as="points" />
@@ -238,6 +238,12 @@
         </mxCell>
         <mxCell id="tklJ06Eg1gI686ZZUtUN-71" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;User&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="50" x="956" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="I7to5rTce0LnQP7jjDGX-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#ffdb70, #281d00);strokeColor=#d6b656;" value="API" vertex="1">
+          <mxGeometry height="20" width="38.5" x="761.5" y="713" as="geometry" />
+        </mxCell>
+        <mxCell id="I7to5rTce0LnQP7jjDGX-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#ffdb70, #281d00);strokeColor=#d6b656;" value="API" vertex="1">
+          <mxGeometry height="20" width="40" x="1280" y="840" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
