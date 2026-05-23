@@ -1,0 +1,192 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0" version="29.3.7">
+  <diagram name="Page-1" id="de4LEZXSZIaNopD2jWJH">
+    <mxGraphModel dx="1375" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="g8skeidzbHgNXhF_FQfh-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Holder" vertex="1">
+          <mxGeometry height="840" width="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Holder&lt;/div&gt;&lt;div&gt;Wallet Unit&lt;/div&gt;" vertex="1">
+          <mxGeometry height="840" width="100" x="170" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Verifier&amp;nbsp;&lt;/div&gt;&lt;div&gt;Wallet Unit&lt;/div&gt;" vertex="1">
+          <mxGeometry height="840" width="100" x="375" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-7" edge="1" parent="1" source="g8skeidzbHgNXhF_FQfh-1" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="424.5" y="124" as="sourcePoint" />
+            <mxPoint x="649.5" y="124" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-8" connectable="0" parent="g8skeidzbHgNXhF_FQfh-7" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="1. Agree (out of band) on attributes to be presented" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-16" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-16" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="&lt;div&gt;Device engagement QR code,&amp;nbsp;&lt;/div&gt;&lt;div&gt;including presentation offer (if any)&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="-0.8976" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="320.5" y="260" />
+            </Array>
+            <mxPoint x="220" y="260" as="sourcePoint" />
+            <mxPoint x="425" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-21" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="Request approval for&lt;div&gt;presenting attributes&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.9092" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="220" y="640" as="sourcePoint" />
+            <mxPoint x="50" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-22" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="Approval">
+          <mxGeometry relative="1" width="80" x="-0.8799" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="49.810344827586164" y="670" as="sourcePoint" />
+            <mxPoint x="219.5000000000001" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-23" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="&lt;div&gt;Send response with&amp;nbsp;&lt;/div&gt;&lt;div&gt;approved attributes&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="-0.9072" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="219.81034482758616" y="703" as="sourcePoint" />
+            <mxPoint x="424.5" y="703" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=110;height=30;" value="if presentation offer present&amp;nbsp;" vertex="1">
+          <mxGeometry height="90" width="370" x="310" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Verifier" vertex="1">
+          <mxGeometry height="840" width="100" x="600" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-3" edge="1" parent="1" style="endArrow=none;startArrow=block;endFill=0;startFill=1;html=1;rounded=0;" target="Q_9wWjG8hOZr-bmCtn9E-2" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="424.5" y="162" as="sourcePoint" />
+            <mxPoint x="774.5" y="162" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-4" connectable="0" parent="Q_9wWjG8hOZr-bmCtn9E-3" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="Select Verifier mode" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-78" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-6" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=110;height=30;" value="else&amp;nbsp;" vertex="1">
+          <mxGeometry height="90" width="370" x="310" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-7" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" value="&lt;div&gt;Check if requested attributes are&amp;nbsp;&lt;/div&gt;&lt;div&gt;subset of presentation offer (if any)&lt;/div&gt;">
+          <mxGeometry relative="1" x="-0.875" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="290" y="550" />
+              <mxPoint x="290" y="570" />
+            </Array>
+            <mxPoint x="220" y="550" as="sourcePoint" />
+            <mxPoint x="220" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-13" edge="1" parent="1" source="g8skeidzbHgNXhF_FQfh-2" style="endArrow=none;startArrow=block;endFill=0;startFill=1;html=1;rounded=0;" target="g8skeidzbHgNXhF_FQfh-1" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="160" />
+            </Array>
+            <mxPoint x="70" y="160" as="sourcePoint" />
+            <mxPoint x="295.5" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-14" connectable="0" parent="Q_9wWjG8hOZr-bmCtn9E-13" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="Select Holder mode" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-81" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-15" edge="1" parent="1" style="endArrow=none;startArrow=block;endFill=0;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="200" />
+            </Array>
+            <mxPoint x="220" y="200" as="sourcePoint" />
+            <mxPoint x="50" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-16" connectable="0" parent="Q_9wWjG8hOZr-bmCtn9E-15" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;Select attributes to be included&lt;/div&gt;&lt;div&gt;in&amp;nbsp; presentation offer&lt;/div&gt;&lt;div&gt;(recommended)&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-82" y="29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-21" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" target="Q_9wWjG8hOZr-bmCtn9E-2" value="Show presentation offer">
+          <mxGeometry relative="1" width="80" x="-0.8976" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="525.5" y="319.5" />
+            </Array>
+            <mxPoint x="425" y="319.5" as="sourcePoint" />
+            <mxPoint x="630" y="319.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-22" edge="1" parent="1" source="Q_9wWjG8hOZr-bmCtn9E-2" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" target="g8skeidzbHgNXhF_FQfh-5" value="&lt;div&gt;Select attributes to be requested&lt;/div&gt;&lt;div&gt;from presentation offer&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.8622" y="30" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="610" y="340" />
+            </Array>
+            <mxPoint x="649.5" y="360" as="sourcePoint" />
+            <mxPoint x="1095" y="360.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-23" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="Show predefined list of attributes">
+          <mxGeometry relative="1" width="80" x="-0.8976" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="525.5" y="410" />
+            </Array>
+            <mxPoint x="425" y="410" as="sourcePoint" />
+            <mxPoint x="650" y="410.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-24" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="&lt;div&gt;Select attributes to be requested&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.8667" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="610" y="430" />
+            </Array>
+            <mxPoint x="650" y="430" as="sourcePoint" />
+            <mxPoint x="425" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-26" edge="1" parent="1" style="endArrow=none;startArrow=block;endFill=0;startFill=1;html=1;rounded=0;" target="g8skeidzbHgNXhF_FQfh-5" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="220" y="480" as="sourcePoint" />
+            <mxPoint x="430" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-27" connectable="0" parent="Q_9wWjG8hOZr-bmCtn9E-26" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="Send presentation request over BLE" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-78" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-29" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" value="&lt;div&gt;Verify response &amp;amp; attributes&lt;/div&gt;">
+          <mxGeometry relative="1" x="-0.875" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="495" y="730" />
+              <mxPoint x="495" y="750" />
+            </Array>
+            <mxPoint x="425" y="730" as="sourcePoint" />
+            <mxPoint x="425" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-30" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="&lt;div&gt;Show attributes&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="-0.9072" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="425" y="790" as="sourcePoint" />
+            <mxPoint x="649.5" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-31" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=45;height=30;" value="if yes" vertex="1">
+          <mxGeometry height="220" width="675" x="5" y="590" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
