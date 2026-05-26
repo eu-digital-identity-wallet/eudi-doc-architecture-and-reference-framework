@@ -1,0 +1,1061 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/discussion-topics/ab-digital-signature-using-wallet/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ab digital signature using wallet - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ab digital signature using wallet - European Digital Identity" />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/discussion-topics/ab-digital-signature-using-wallet.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/discussion-topics/ab-digital-signature-using-wallet/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ab digital signature using wallet - European Digital Identity" />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/discussion-topics/ab-digital-signature-using-wallet.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-ab-digital-signature-using-the-eudi-wallet-new" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ab digital signature using wallet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../technical-specifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Conformance
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and reference framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>Version 0.1, updated 26 May 2026</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661">Link to GitHub discussion</a></p>
+<h1 id="topic-ab-digital-signature-using-the-eudi-wallet-new">Topic AB - Digital Signature using the EUDI Wallet (New)</h1>
+<h3 id="legal-notice-all-legal-information-and-excerpts-documented-in-chapter-2-are-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-integrity-and-core-functionalities-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.</h3>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<p>This document is related to a new discussion topic at the European Digital Identity Cooperation Group, related to electronic signature and electronic seal with the EUDI Wallet.</p>
+<p>The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
+<p><em>Electronic signing of documents or data, allowing Users to create legally recognized qualified electronic signatures and seals.</em></p>
+<p>while the reason why Topic AB is addressed is​ as follows:</p>
+<p><em>Revisit Digital signature using wallet as ETSI and CSC have released new versions of rQES-related specifications.</em> </p>
+<h3 id="12-key-words">1.2 Key Words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document. In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure</h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>Chapter 2 presents the legal requirements related to the topic.</li>
+<li>Chapter 3 summarises the current state of discussion and the ARF's concept, as well as lists related HLRs. The ARF version referenced in this discussion paper is 2.8.0. </li>
+<li>Chapter 4 discusses open issues and questions.</li>
+<li>Chapter 5 will, after completion of the discussion, present additions and changes that will be made to HLRs as a result of the discussions.</li>
+<li>Chapter 6 will, after completion of the discussion, present additions and changes that will be made to ARF main text or Technical Specifications as a result of the discussions.</li>
+</ul>
+<h3 id="14-abbreviations-and-definitions">1.4 Abbreviations and definitions</h3>
+<p>The table below presents key abbreviations and definitions used in this document.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Acronym</strong></th>
+<th><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DA</td>
+<td>Driving Application, as defined by ETSI ESI</td>
+</tr>
+<tr>
+<td>DTBS</td>
+<td>Data To Be Signed, as defined by ETSI ESI</td>
+</tr>
+<tr>
+<td>RSSP</td>
+<td>Remote Signing Server Provider, as defined by ETSI ESI</td>
+</tr>
+<tr>
+<td>SCA</td>
+<td>Signature Creation Application, as defined by ETSI ESI</td>
+</tr>
+<tr>
+<td>SIC</td>
+<td>Signer Interaction Component, as defined by CEN EN 419 241-2</td>
+</tr>
+<tr>
+<td>SAP</td>
+<td>Signature Activation Protocol, as defined by CEN EN 419 241-2</td>
+</tr>
+<tr>
+<td>SAD</td>
+<td>Signature Activation Data, as defined by CEN EN 419 241-2</td>
+</tr>
+<tr>
+<td>QES</td>
+<td>Qualified Electronic Signature</td>
+</tr>
+<tr>
+<td>rQES</td>
+<td>Remote Qualified Electronic Signature</td>
+</tr>
+<tr>
+<td>QSCD</td>
+<td>Qualified Signature Creation Device</td>
+</tr>
+<tr>
+<td>QTSP</td>
+<td>Qualified Trust Service Provider</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-legal-requirements-related-to-electronic-signature-with-wallet">2 Legal Requirements Related to Electronic Signature with Wallet</h2>
+<p>The following legal texts impose requirements related to electronic signature and electronic seal with the EUDI Wallet: 
+- <a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj">European Digital Identity Regulation</a>,
+- <a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">CIR for integrity and core functionalities</a>
+- <a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16112-European-Digital-Identity-Wallet-standards-and-technical-specifications-update-_en">CIR amendment draft</a></p>
+<p>Below sections recap the respective legal requirements from these sources.</p>
+<h3 id="21-the-european-digital-identity-regulation-about-electronic-signature-with-wallet">2.1 The European Digital Identity Regulation about Electronic Signature with Wallet</h3>
+<p>The following requirements in the [European Digital Identity Regulation] are related to electronic signature and electronic seal using the Wallets:</p>
+<ol>
+<li>A Wallet Solution <strong>shall</strong> "enable" the User to sign and seal with a qualified signature or seal.</li>
+<li>A Wallet Solution <strong>shall</strong> support common specifications of protocols and interfaces for certificate issuance and signature/seal creation.</li>
+<li>Technical specifications of (above mentioned) protocols and interfaces for certificate issuance and signature/seal creation with the Wallet Solutions <strong>shall</strong> be made available.</li>
+<li>A Wallet Solution <strong>shall</strong> enable natural persons to sign free-of-charge.</li>
+<li>A Wallet Solution <strong>may</strong> limit use of signing functionality to "non-professional purposes", with "proportionate measures".</li>
+<li>Wallet Solutions <strong>shall</strong> enable authorisation of signature creation (as an act of "strong user authentication").</li>
+</ol>
+<p>Below are the actual excerpts, including the recitals and the articles that establish these requirements.</p>
+<p><em>Recital (19)</em> </p>
+<p><em>European Digital Identity Wallets should also allow users to create and use qualified electronic signatures and seals which are accepted across the Union. Once on-boarded to a European Digital Identity Wallet, natural persons should be able to use it to sign with qualified electronic signatures, by default and free of charge, without having to go through any additional administrative procedures.</em></p>
+<p><em>Article 5a(4)(e)</em></p>
+<p><em>European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to [...] sign by means of qualified electronic signatures or seal by means of qualified electronic seals;</em> </p>
+<p><em>Article 5a(5)(a)(i)</em> </p>
+<p><em>European Digital Identity Wallets shall [...] support common protocols and interfaces [...] for issuance of [...] qualified and non-qualified certificates to the European Digital Identity Wallet;</em> </p>
+<p><em>Article 5a(5)(a)(xi)</em></p>
+<p><em>European Digital Identity Wallets shall [...] support common protocols and interfaces [...] for the creation of qualified electronic signatures or electronic seals by means of qualified electronic signature or electronic seal creation devices;</em></p>
+<p><em>Article 5a(5)(g)</em></p>
+<p><em>European Digital Identity Wallets shall [...] offer all natural persons the ability to sign by means of qualified electronic signatures by default and free of charge.</em></p>
+<p><em>Article 5a(5)</em></p>
+<p><em>[...] Notwithstanding point (g) of the first subparagraph, Member States may provide for proportionate measures to ensure that the use of qualified electronic signatures free-of-charge by natural persons is limited to non-professional purposes.</em></p>
+<p><em>Article 5f(2)</em>
+<em>Where private relying parties that provide services [...] are required by Union or national law to use strong user authentication for online identification or where strong user authentication for online identification is required by contractual obligation, including in the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications, those private relying parties shall [...] upon the voluntary request of the user, also accept European Digital Identity Wallets that are provided in accordance with this Regulation.</em></p>
+<h3 id="22-cirs-about-electronic-signature">2.2 CIRs about Electronic Signature</h3>
+<p>The following requirements from the Commission's Implementing Regulations ([CIR for integrity and core functionalities] and [CIR amendment draft]) are applicable to electronic signature and seals using the Wallet:</p>
+<ol>
+<li>QSCD may be local (embedded in a Wallet Solution), external (eg. as an external smart card) or remote (eg. as a remote HSM). A Wallet Solution <strong>shall</strong> support at least one option; the Wallet Solution  provider <strong>may</strong> choose wchich options to support.</li>
+<li>SCA may be provided either by Wallet Providers, by a QTSP or by a Relying Party. A Wallet Solution <strong>shall</strong> support at least one option; the Wallet Provider <strong>may</strong> choose wchich options to support.</li>
+<li>SCA may be integrated into the Wallet Solution or external to the Wallet. A Wallet Solution <strong>shall</strong> support at least one option; the Wallet Provider <strong>may</strong> choose wchich options to support.</li>
+<li>SCA <strong>shall</strong> enable provision of "data to be signed" by both: a (Wallet Unit) User and a Relying Party. If SCA is integrated into a Wallet Solution, the Wallet Solution <strong>shall</strong> support requesting a signature creation directly to the Wallet Unit by both again: the User ("user-provided data") and a Relying Party ("relying party-provided data"). This entails a requirement to <strong>make available "common protocols and interfaces" for this purpose, and support them by Wallet Solutions</strong>.</li>
+<li>A Wallet Solution <strong>shall</strong> support at least PAdES signature format. Other formats may be supported optionally.</li>
+<li>When an SCA is integrated in a Wallet Solution, and the Wallet Solution uses a remote signature service (RSSP) to provide signing/sealing, it <strong>shall</strong> support CSC API (<strong>this requirement is removed from by the [IA amendment proposal]</strong>).</li>
+<li>A Wallet Solution <strong>shall</strong> enable natural persons to sign free-of-charge.</li>
+<li>A Wallet Solution <strong>may</strong> limit use of signing functionality to "non-professional purposes", with "proportionate measures".</li>
+</ol>
+<p>Below are the actual excerpts, including the recitals and the articles that establish these requirements.</p>
+<p><em>Recital (12)</em> </p>
+<p><em>For a wallet user to be able to sign electronically, a qualified certificate, which is bound to a qualified electronic signature creation device, should be issued to the wallet user. The wallet user should have access to a signature creation application. While the issuance of qualified certificates is a service of qualified trust service providers, wallet providers or other entities should be able to provide the other components. For instance, qualified electronic signature creation devices may be managed by qualified trust service providers as a service or they may be local to the wallet user’s device, for example, as a smartcard. Similarly, signature creation applications may be integrated in the wallet instance, be a separate app on the wallet user’s device or be provided remotely.</em></p>
+<p><em>Article 11(1)</em></p>
+<p><em>Wallet providers shall ensure that wallet users are able to receive, qualified certificates for qualified electronic signatures or seals which are linked to qualified signature or seal creation devices that are either local, external, or remote in relation to the wallet instances.</em> </p>
+<p><em>Article 11(2)</em></p>
+<p><em>Wallet providers shall ensure that wallet solutions are able to securely interface with one of the following types of qualified signature or seal creation devices: local, external, or remotely managed qualified signature or seal creation devices for the purposes of using the qualified certificates [...].</em></p>
+<p><em>Article 11(3)</em>
+<em>Wallet providers shall ensure that wallet users who are natural persons have, at least for non-professional purposes, free-of-charge access to signature creation applications which allow the creation of free-of-charge qualified electronic signatures using the certificates referred to in paragraph 1.</em></p>
+<p><em>Article 12(1)</em></p>
+<p><em>The signature creation applications used by wallet units may be provided either by wallet providers, by providers of trust services or by wallet-relying parties.</em></p>
+<p><em>Article 12(2)</em></p>
+<p><em>Signature creation applications shall have the following functions:</em>
+<em>(a) signing or sealing wallet user-provided data;</em>
+<em>(b) signing or sealing relying party-provided data;</em>
+<em>(c) creating signatures or seals in accordance with at least the mandatory formats referred to in Annex IV;</em>
+<em>(d) informing wallet users about the result of the signature or seal creation process.</em></p>
+<p><em>Article 12(3)</em> <em>(Editor's note: IA amdendment draft modifies this clause.)</em></p>
+<p><em>The signature creation applications may either be integrated into or be external to wallet instances. Where signature creation applications rely on remote qualified signature creation devices and where they are integrated into wallet instances, they shall support the application programming interface referred to in Annex IV.</em></p>
+<p>For the legal requirement above (Article 12(3)), there is a <strong>pending proposal</strong> ([CIR amendment draft]) to change the text to as below:</p>
+<p><em>The signature creation applications may either be integrated into or be external to wallet instances.</em></p>
+<p><em>Annex IV</em> <em>(Editor's note: [CIR amendment draft] modifies this clause.)</em></p>
+<p><em>1.Mandatory signature or seal format:</em>
+<em>PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1 V1.1.1 (2016-04); Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures.</em></p>
+<p><em>2. List of optional signature or seal formats:</em></p>
+<p><em>(a) XAdES as specified in ‘ETSI EN 319 132-1 V1.2.1 (2022-02) Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES)’ for signing of XML format;</em></p>
+<p><em>(b) JAdES as specified in ‘ETSI TS 119 182-1 V1.2.1 (2024-07) Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures’ for signing of JSON format;</em></p>
+<p><em>(c) CAdES (CMS Advanced Electronic Signature) as specified in ‘ETSI EN 3191 22-1 V1.3.1 (2023-06) Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures’ for the signing of CMS format;</em></p>
+<p><em>(d) ASiC (Associated Signature Container) as specified in ‘ETSI EN 319 162-1 V1.1.1 (2016-04) Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers and ETSI EN 319 162-2 V1.1.1 (2016-04) Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 2: Additional ASiC containers’ for the signing of containers.</em></p>
+<p><em>3. Application programming interface:</em></p>
+<p><em>— Cloud Signature Consortium (CSC) specification v2.0 (20 April 2023).</em></p>
+<p>For the legal requirement above (Annex IV), there is a pending poposal ([CIR amendment draft]) to change to the text as below:</p>
+<p><em>1. Mandatory signature or seal format:</em></p>
+<p><em>(a) PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1 V1.2.1 (2024-01); Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures.</em></p>
+<h2 id="3-state-of-discussion-and-current-concept">3 State of Discussion and Current Concept</h2>
+<h3 id="31-use-cases-and-wallet-functionality">3.1 Use Cases and Wallet Functionality</h3>
+<p>Summarising the legal requirements, there are two general use cases for the Wallet in the context of electronic signature, mandated by eIDAS: 
+- (1) "enabling" the QES, as in Article 5a(4)(3) and other, 
+- (2) as a means of strong user authentication for QES, as in Article 5f(2). </p>
+<p>These requirements can be translated to the following Wallet Solution's (possible) functions:<br />
+- the Wallet Unit is used to initiate and drive the signing process,
+- the Wallet Unit stores locally (local QSCD) or provides access to (control over) an externally stored signing/sealing certificate and a key-pair (remote QSCD),
+- the Wallet Unit is used to generate signature/seal locally or interacts with a RSSP / QTSP,
+- the Wallet Unit provides with an embedded SCA or interacts with an external SCA (provided by the Wallet Provider or a QTSP or a RP),
+- (for remote signatures) the Wallet Unit is used to authorise signature creation (plays a role of SIC) or interacts with a RSSP / QTSP that carries out the authorisation process.</p>
+<p>It does not mean that all the above functions shall be supported mandatorily by Wallet Solutions - it defines the scope for discussion and potential need for standardisation works.</p>
+<h3 id="32-architectural-options">3.2 Architectural Options</h3>
+<p>The following architectural models are at stake:
+- <strong>Wallet-centric model</strong>, where the Wallet Unit drives the signing process and is a central point of interactions with other actors or components,
+- <strong>QTSP-centric model</strong>, where the QTSP drives the signing process and and is a central point of interactions with other actors or components,
+- <strong>RP-centric model</strong>, where the RP drives the signing process and and is a central point of interactions with other actors and components.</p>
+<p>The above models can be varied taking into account various aspects, such as:
+- SCA provider (a Wallet Provider, a RSSP/QTSP, a Relying Party),
+- SCA placement (embedded in a Wallet Unit or a Wallet Instance, external same-device, external remote),
+- Driving Application placement (at a RSSP/QTSP, at a Relying Party, in a Wallet Solution),
+- Signing initiator (a Wallet User, a Relying Party),
+- QSCD type and placement (local, external, remote),
+- Signature authorisation process and implementation, including SIC type and placement (with or w/o use of the Wallet Unit, with or w/o use of presentation protocol),
+- Certificate's life-time and life-cycle (long-term certificates vs one-time certificates and "on-the-fly" signatures).</p>
+<h3 id="33-signing-process">3.3 Signing Process</h3>
+<p>There are three main steps in the signing/sealing process:
+- certificate (signing/sealing credentials) issuance,
+- signing/sealing initiation (signature/seal creation request),
+- signature/seal creation, including signature/seal creation authorisation.</p>
+<p>Certificate issuance requesting (by a Wallet User) options:
+- in/via the Wallet Unit,
+- by sending a request to a RSSP/QTSP (directly or via a DA).</p>
+<p>Signing initiation options:
+- by a Wallet User
+  - in a Wallet Unit ("Wallet-channelled"),
+  - by sending a signature creation request to a RSSP/QTSP directly, eg. from a RSSP's/QTSP's service on-line or application ("QTSP-channelled"),
+  - by sending a request via a RP, eg. from RP's service on-line or application ("RP-channelled"), 
+- by an RP, by sending a signature creation request to a Wallet Unit ("Wallet-channelled") or directly to a RSSP/QTSP ("QTSP-channelled").</p>
+<p>Signature authorisation options (in case of remote signature):
+- with a Wallet Unit acting as SIC (in case of remote signature creation),
+- with other means, as per QTSP policy and solution.</p>
+<h3 id="34-certificate-lifetime">3.4 Certificate Lifetime</h3>
+<p>The solution architecture and implementation details may differ, depending on the certificate lifetime. There are two main scenarios relevant in the discussion: 
+- with use of a long-term certificate - where the user requests certificate issuance that will be next used to perform multiple signatures over longer time (such as one or two-year period),
+- with use of a short-term / one-time certificate ("on-the-fly" signature) - where in a single process / session, all steps related to signature are carried out - requesting and issuing a certificate (a one-time certificate), signature authorisation, signature creation, certificate revocation.</p>
+<h3 id="35-wallet-interfaces">3.5 Wallet Interfaces</h3>
+<p>Following the legal requirements and all architectural and process options (presented in Sections 3.1 - 3.4), various interfaces may be distinguished, such as:
+- (1) Wallet &lt;-&gt; RSSP/QTSP  (for certificate issuance and management, requesting signature creation, signature creation authorisation) 
+- (2) Wallet &lt;-&gt; RP (for requesting signature creation by a RP to a Wallet) 
+- (3) Wallet &lt;-&gt; SCA interface (in case an SCA is not integrated in the Wallet Solution) 
+- (4) Wallet &lt;-&gt; QSCD (in case QSCD is local) 
+- (5) Wallet &lt;-&gt; SAM (for signature authorisation in case a Wallet is used as SIC in a remote signature scenario)</p>
+<p>Support of given interfaces is Wallet Provider's implementation choice, that depends on various aspects such as national signature scheme (using the Wallets), actors, modes of operations, architecture, technical components, etc.</p>
+<p>It means that not all the interfaces shall be mandatorily supported by a Wallet Solution. However, to enable all necessary implementation options, it is desired that Wallet Providers are   made available related technical specifications for these interfaces. </p>
+<p>At the same time, following the legal requirements, to ensure minimal required interoperability level, <strong>all Wallet Solutions shall support (at minimum) a common specification for wallet &lt;-&gt; RP interface (2)</strong>. 
+In addition, it is strongly desired to standardise and support by all Wallet Solutions an interoperable interface for signature authorisation with the wallet too - wallet &lt;-&gt; SAM (5) or as a part of wallet &lt;-&gt; RSSP/QTSP (1). </p>
+<h3 id="36-protocols-and-technical-specifications">3.6 Protocols and Technical Specifications</h3>
+<p>The related technical specifications for Wallet Solutions to support electronic signature and sealing are generally delivered by SDOs (ETSI ESI and CSC). The key specifications are:</p>
+<ul>
+<li>[ETSI TS 119 432] (will turn to EN 319 432 in the future)</li>
+<li>[CSC API]</li>
+<li>[CSC DM]</li>
+<li>[CSC Bindings]</li>
+</ul>
+<p>As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet &lt;-&gt; RP and wallet's interface for signature auhtorisation (wallet &lt;-&gt; SAM or wallet &lt;-&gt; RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transacion_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
+This is worth to clarify, that PID cannot be used for these purposes, as it is not envisioned to handle transactional data.</p>
+<p>For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are at discretion of Wallet Providers eventually and their agreements with involved RSSPs/QTSPs or other actors.</p>
+<p>In any case, the related specifications are still under development (in particular ETSI TS 119 432 / EN 319 432), and <strong>may provide more than one implementation options for each the interfaces</strong> at stake, with or w/o use of the presentation protocols or "transactional data" parameter.</p>
+<p>The goal for the development of the specifications is to: enable all mandatory and desired options,​ give the choice to Wallet Providers to choose suitable options to build preferred architectures, and <strong>standardise and mandate selected options</strong> to ensure <strong>interoperability where necessary</strong> (wallet &lt;-&gt; RP interface for signature requesting and wallet's
+interface for signature authorisation at minimum)​.</p>
+<h3 id="37-list-of-hlrs">3.7 List of  HLRs</h3>
+<p>This section recaps all applicable HLRs, basing on ARF 2.8.0.</p>
+<h4 id="341-topic-16-signing-documents-with-a-wallet-unit">3.4.1 Topic 16 - Signing documents with a Wallet Unit</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QES_01</td>
+<td>Wallet Providers SHALL ensure that each User has the possibility to receive a qualified certificate for Qualified Electronic Signatures, bound to a QSCD, that is either local, external, or remotely managed in relation to the Wallet Instance.</td>
+</tr>
+<tr>
+<td>QES_02</td>
+<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01. Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. <em>Note: a) Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. 2) If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</em></td>
+</tr>
+<tr>
+<td>QES_03</td>
+<td>For the use of the qualified certificate referred to in QES_01, Wallet Providers SHALL ensure that a Wallet Unit implements secure authentication of the User, as well as signature or seal invocation capabilities, as a part of a local, external or remote QSCD.</td>
+</tr>
+<tr>
+<td>QES_04</td>
+<td>Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.</td>
+</tr>
+<tr>
+<td>QES_05</td>
+<td>Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a remote QES Provider (i.e., a QTSP offering remote QES), except where the Wallet Unit interfaces with local or external QSCDs.</td>
+</tr>
+<tr>
+<td>QES_06</td>
+<td>Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: - remote QES creation through secure authentication to a QTSP signature web portal, - remote QES creation channelled by the Wallet Unit, - remote QES creation channelled by a Relying Party.</td>
+</tr>
+<tr>
+<td>QES_07</td>
+<td>Wallet Providers SHALL ensure that, where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Instance, it supports the Cloud Signature Consortium API Specification 2.0 [CSC API].</td>
+</tr>
+<tr>
+<td>QES_08</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units are able to create signatures or seals in accordance with the mandatory PAdES format as specified in ETSI EN 319 142-1 V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in ETSI EN 319 132-1 V1.2.1 (2022-02), - JAdES as specified in ETSI TS 119 182-1 V1.2.1 (2024-07), - CAdES as specified in ETSI EN 3191 22-1 V1.3.1 (2023-06), and - ASiC as specified in ETSI EN 319 162-1 V1.1.1 (2016-04) and ETSI EN 319 162-2 V1.1.1 (2016-04).</td>
+</tr>
+<tr>
+<td>QES_09</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td>QES_10</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit and is used to generate signatures or seals of the representation of the document or data to be signed or sealed, the Wallet Unit presents the representation of the document or data to be signed or sealed to the User.</td>
+</tr>
+<tr>
+<td>QES_11</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit computes the hash or digest of the document or data to be signed through a Signature Create Application component.</td>
+</tr>
+<tr>
+<td>QES_12</td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit is able to create the signature value of the document or data to be signed either using a local or a remote signing application. <em>Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.</em></td>
+</tr>
+<tr>
+<td>QES_13</td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures or seals generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to requirement DASH_04 in <a href="./annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></td>
+</tr>
+<tr>
+<td>QES_14</td>
+<td>Wallet Providers SHALL ensure that the User will be able to explicitly authorise the creation of a qualified electronic signature or seal through their Wallet Unit.</td>
+</tr>
+<tr>
+<td>QES_15</td>
+<td>Wallet Providers SHALL ensure that a Wallet Unit can verify, in remote signature creation scenarios, that the qualified electronic signature or seal creation device is part of a qualified service, which is carried out by a qualified trust service provider.</td>
+</tr>
+<tr>
+<td>QES_16</td>
+<td>Wallet Providers SHOULD ensure that a Wallet Unit supports multiple-signing scenarios where multiple signatories are required to sign the same document or data.</td>
+</tr>
+<tr>
+<td>QES_17</td>
+<td>Wallet Providers SHALL ensure that Wallet Units provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. <em>Note: See also QES_17a.</em></td>
+</tr>
+<tr>
+<td>QES_17a</td>
+<td>If the Signature Creation Application is external to the Wallet Unit, after the User authorises the usage of the private signing key, the Signature Creation Application SHALL return the outcome of the signature creation process to the Wallet Unit.</td>
+</tr>
+<tr>
+<td>QES_18</td>
+<td>Wallet Providers SHALL configure at least one default qualified signing service in the Wallet Unit.</td>
+</tr>
+<tr>
+<td>QES_19</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit supports ETSI TS 119 101 (Electronic Signatures and Infrastructures (ESI) - Policy and security requirements for applications for signature creation and signature validation) when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance.</td>
+</tr>
+<tr>
+<td>QES_20</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td>QES_21</td>
+<td>Empty</td>
+</tr>
+<tr>
+<td>QES_22</td>
+<td>Empty</td>
+</tr>
+</tbody>
+</table>
+<h4 id="342-other-topics">3.4.2 Other Topics</h4>
+<p>At this stage, no HLRs from other topics were identified as applicable. </p>
+<h2 id="4-discussion">4 Discussion</h2>
+<h3 id="41-rp-driven-flow-and-wallet-rp-interface">4.1 RP-driven flow and Wallet &lt;-&gt; RP Interface</h3>
+<p>Following the legal requirements (presented in Section 3), the conclusion is that it is necessary to provide a "common protocol and interface" for Relying Parties to request signature creation to the Wallet Units. Such a standardised interface is currently being developed by ETSI ESI ([ETSI TS 119 432] and underpinning CSC specification).</p>
+<p>One of the possible technical approach is that this interface uses OID4VP presentation protocols (with "transactional data" parameter) as a transport mechanism to provide signature request data to a Wallet Unit. However other options are possible too, and may defined by SDOs. <strong>In any case, the intention is to indicate a specification and mandate support by all Wallet Solutions (a new HLR will be proposed).</strong> </p>
+<h3 id="42-signature-creation-authorisation-interface">4.2 Signature Creation Authorisation Interface</h3>
+<p>Authorisation (aka "activation") of a signature creation is considered as an act of strong user authentication. Therefore, the Wallet Solutions shall support such functionality, as mandated by Article 5f(2) of [European Digital Identity Regulation]. <strong>This requirement imposes a need for a dedicated specification for an appropraiate Wallet Unit interface for this purpose.</strong></p>
+<p>If a Wallet Provider chooses to provide the signature functionality basing on a remote service (a remote QSCD), it will entail complaince with CEN EN 419 241-2. This specification defines SAP protocol, that is used to authorise (activate) remote signature creation by the signatory (a Wallet User in this context), ensuring sole control of the User. </p>
+<p>There are two general options for signature creation authorisation:
+- directly with a Wallet Unit (Wallet Unit acting as SIC, communicating with a QTSP/SAM),
+- with other means (other SIC, suitable for QTSP).</p>
+<p>Although the liability on signature creation compliance is on the QTSP, the Wallet Unit shall follow applicable requirements to enable compliance of the involved QTSP. Therefore, it seems to be desired to make available (eg. in ETSI TS 119 432) the specification of wallet&lt;-&gt;SAM interface (or more generally wallet&lt;-&gt;RSSP/QTSP for SAP handling), where SAD is handled with OID4VP presentation request and with the use of a dedicated "transaction_data" parameter. </p>
+<h3 id="43-rendering-of-display-messages">4.3 Rendering of Display Messages</h3>
+<p>As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
+- signature creation requesting,
+- signature creation authorisation (activation).</p>
+<p>It entails a need of specification of rendering, to define the way the messages displayed to the Wallet Unit User are rendered (eg. display of the reference to the document, signing session or an involved RSSP/QTSP) - analogically to ARF's [TS12] in relation to SCA for payments. Such a specification should be provided by ETSI (and CSC possibly) - the currently available documents already contain partial specifications (i.a. in Annex A and B of [ETSI TS 119 432] and in [CSC Bindings]), but needs further improvement and completion.</p>
+<p>Therefore a question arises, <strong>what would be (high-level) requirements for rendering and display of user messages, for instance what information items would be necessary.</strong></p>
+<h3 id="44-signature-attestations-and-rulebooks">4.4 Signature Attestations and Rulebooks</h3>
+<p>As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
+- signature creation requesting,
+- signature creation authorisation (activation).</p>
+<p>To realise these scenarios, a dedicated Attestations should be used, and therefore appropriate rulebooks shall be delivered (by the market).</p>
+<h3 id="45-on-the-fly-signatures">4.5 On-The-Fly Signatures</h3>
+<p>One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation, certificate revocation.</p>
+<p>However, realisation of this scenario with the EUDI Wallet might be challenging. As PID is not envisioned to handle transactional data, the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. </p>
+<p>Therefore a question arises, <strong>how this scenario is important for Wallet Providers, and if it should be further explored and supported by a specification.</strong></p>
+<h3 id="46-non-professional-use">4.6 Non-professional Use</h3>
+<p>[European Digital Identity Regulation] allows Wallet Providers to limit use of signing functionality of their Wallet Solutions to "non-professional purposes" only, with "proportionate measures". At the same time, it leaves this aspect fully to the Member States, including development of the concepts and technical specifications for implementation if needed. </p>
+<p>Although this is a vital aspect, it is out of the scope of ARF and there is no intention (nor mandate) to provide/mandate provision of any technical specification here. At the same time, it is still possible to develop standards by SDOs at their own discretion too.   </p>
+<h2 id="5-proposals-of-changes-of-hlrs">5 Proposals of Changes of HLRs</h2>
+<p>There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.</p>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
+<p>There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.</p>
+<h2 id="7-references">7 References</h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Development plan 2025, European Commission, v1.0</td>
+</tr>
+<tr>
+<td>[European Digital Identity Regulation]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj">Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</a></td>
+</tr>
+<tr>
+<td>[CIR for integrity and core functionalities]</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng">Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</a></td>
+</tr>
+<tr>
+<td>[CIR amendment draft]</td>
+<td><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16112-European-Digital-Identity-Wallet-standards-and-technical-specifications-update-_en">Commission Implementing Regulation (EU) .../... of XXX amending Implementing Regulation (EU) 2024/2977, (EU) 2024/2979, (EU) 2024/2980 and (EU) 2024/2982 as regards applicable standards and specifications and correcting Implementing Regulation (EU) 2024/2980</a></td>
+</tr>
+<tr>
+<td>[ETSI TS 119 432]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68">Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, v1.3.1</a></td>
+</tr>
+<tr>
+<td>[CSC API]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29">Architectures and protocols for remotesignature applications, version 2.2.0.0</a></td>
+</tr>
+<tr>
+<td>[CSC DM]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/403">Data model for remote signature applications, version 1.0.0</a></td>
+</tr>
+<tr>
+<td>[CSC Bindings]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/450">CSC data model bindings, version 1.0.0</a></td>
+</tr>
+<tr>
+<td>[TS12]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md">Specification of Strong Customer Authentication (SCA) Implementation with the Wallet</a></td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
