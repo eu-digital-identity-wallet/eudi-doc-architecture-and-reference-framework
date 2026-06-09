@@ -1,4 +1,4 @@
-Version 0.2, updated 23 April 2026
+Version 1.0, updated 28 May 2026
 
 # Topic J - Wallet to Wallet Interactions (Revision Round)
 
