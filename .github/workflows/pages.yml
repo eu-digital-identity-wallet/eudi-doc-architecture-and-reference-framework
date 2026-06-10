@@ -78,12 +78,10 @@ jobs:
       contents: read
       packages: read # pull the GHCR build image
     # Reproducible toolchain: pandoc + Eisvogel + curated TeX Live + make, built
-    # and smoke-tested by the build-pdf-image workflow. Pin by @sha256 digest
-    # (reported in that workflow's run summary) so the toolchain can never drift.
-    # Until the first image is published, :latest resolves to the freshly built
-    # image; switch it to a digest once you have one.
+    # and smoke-tested by the build-pdf-image workflow. Pinned by @sha256 digest
+    # so the toolchain can never drift; bump it after the image is rebuilt.
     container:
-      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder:latest
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:ebe9c4f1369fe314c5bd4c8bca7908cf7518e82c510b9d456d8f3e3b17cd79ba
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}

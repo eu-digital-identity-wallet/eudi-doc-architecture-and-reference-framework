@@ -45,11 +45,11 @@ jobs:
       contents: read
       packages: read # pull the GHCR build image
     # Same reproducible toolchain (pandoc + Eisvogel + curated TeX Live + make) as
-    # the release build in pages.yml. Keep this pinned to the same image/digest.
+    # the release build in pages.yml — keep this digest in sync with pages.yml.
     # Note: pull requests opened from forks cannot read the org's GHCR package, so
     # this job only validates PRs from branches within this repository.
     container:
-      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder:latest
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:ebe9c4f1369fe314c5bd4c8bca7908cf7518e82c510b9d456d8f3e3b17cd79ba
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
