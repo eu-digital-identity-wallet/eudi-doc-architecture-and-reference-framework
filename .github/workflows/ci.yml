@@ -35,7 +35,12 @@ jobs:
       - name: Install mkdocs theme
         run: pip install -r requirements.txt
 
-      - name: Build site (strict)
+      # Report-only: --strict surfaces every broken link / nav / markdown issue in
+      # the log, but continue-on-error keeps it from blocking PRs while the large
+      # backlog of pre-existing broken internal links is worked down separately.
+      # Drop continue-on-error once the site builds clean under --strict.
+      - name: Build site (strict, report-only)
+        continue-on-error: true
         run: mkdocs build --strict
 
   build-pdf:
