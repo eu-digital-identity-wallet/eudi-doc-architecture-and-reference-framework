@@ -1,4 +1,5 @@
-# Deploy ARF as static content to GitHub Pages and publish PDF artifacts.
+# Deploy the ARF MkDocs site as static content to GitHub Pages.
+# (PDFs are built per-release by release-pdf.yml, not here.)
 name: Deploy ARF to Pages
 
 on:
@@ -71,31 +72,5 @@ jobs:
           mike deploy --push --update-aliases "${{ env.arf_version }}" latest
           mike set-default --allow-empty --push latest
 
-  pdf:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: read
-      packages: read # pull the GHCR build image
-    # Reproducible toolchain: pandoc + Eisvogel + curated TeX Live + make, built
-    # and smoke-tested by the build-pdf-image workflow. Pinned by @sha256 digest
-    # so the toolchain can never drift; bump it after the image is rebuilt.
-    container:
-      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:ebe9c4f1369fe314c5bd4c8bca7908cf7518e82c510b9d456d8f3e3b17cd79ba
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: 'main'
-
-      - name: Build pdf
-        run: make pdfs
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: architecture-and-reference-framework
-          path: build/pdf
+    # PDFs are no longer built here. They are produced once per release and
+    # attached as release assets by .github/workflows/release-pdf.yml.
