@@ -579,7 +579,7 @@
   
 
 
-<p>Version 0.1, updated 26 May 2026</p>
+<p>Version 0.7, updated 5 June 2026</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661">Link to GitHub discussion</a></p>
 <h1 id="topic-ab-digital-signature-using-the-eudi-wallet-new">Topic AB - Digital Signature using the EUDI Wallet (New)</h1>
 <h3 id="legal-notice-all-legal-information-and-excerpts-documented-in-chapter-2-are-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-integrity-and-core-functionalities-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.</h3>
@@ -822,7 +822,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_02</td>
-<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01. Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. <em>Note: a) Signature Creation Application (SCA): see definition in the ETSI TS 119 432 standard. 2) If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</em></td>
+<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01. Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing or sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. <em>Note: a) Signature Creation Application (SCA): see definition in [ETSI TS 119 432]. 2) If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</em></td>
 </tr>
 <tr>
 <td>QES_03</td>
@@ -830,7 +830,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_04</td>
-<td>Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.</td>
+<td>Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. <em>Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.</em></td>
 </tr>
 <tr>
 <td>QES_05</td>
@@ -842,11 +842,11 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_07</td>
-<td>Wallet Providers SHALL ensure that, where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Instance, it supports the Cloud Signature Consortium API Specification 2.0 [CSC API].</td>
+<td>Wallet Providers SHALL ensure that, where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Unit, it supports the Cloud Signature Consortium API Specification 2.0 [CSC API].</td>
 </tr>
 <tr>
 <td>QES_08</td>
-<td>Wallet Providers SHALL ensure that their Wallet Units are able to create signatures or seals in accordance with the mandatory PAdES format as specified in ETSI EN 319 142-1 V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in ETSI EN 319 132-1 V1.2.1 (2022-02), - JAdES as specified in ETSI TS 119 182-1 V1.2.1 (2024-07), - CAdES as specified in ETSI EN 3191 22-1 V1.3.1 (2023-06), and - ASiC as specified in ETSI EN 319 162-1 V1.1.1 (2016-04) and ETSI EN 319 162-2 V1.1.1 (2016-04).</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units are able to create signatures or seals in accordance with the mandatory PAdES format as specified in [ETSI EN 319 142-1[ V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in [ETSI EN 319 132-1] V1.2.1 (2022-02), - JAdES as specified in [ETSI TS 119 182-1] V1.2.1 (2024-07), - CAdES as specified in [ETSI EN 319 122-1] V1.3.1 (2023-06), and - ASiC as specified in [ETSI EN 319 162-1] V1.1.1 (2016-04) and [ETSI EN 319 162-2] V1.1.1 (2016-04).</td>
 </tr>
 <tr>
 <td>QES_09</td>
@@ -858,31 +858,31 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_11</td>
-<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit computes the hash or digest of the document or data to be signed through a Signature Create Application component.</td>
+<td>Where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit SHALL compute the hash or digest of the document or data to be signed through its Signature Create Application component.</td>
 </tr>
 <tr>
 <td>QES_12</td>
-<td>Wallet Providers SHALL ensure that a Wallet Unit is able to create the signature value of the document or data to be signed either using a local or a remote signing application. <em>Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.</em></td>
+<td>A Wallet Unit SHALL be able to create a signature over a document or data to be signed, either by using a local QSCD or by interfacing with a remote QES Provider. <em>Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.</em></td>
 </tr>
 <tr>
 <td>QES_13</td>
-<td>Wallet Providers SHALL ensure that a Wallet Unit provides a log of transactions related to qualified electronic signatures or seals generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to requirement DASH_04 in <a href="./annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></td>
+<td>A Wallet Unit SHALL provide a log of transactions related to qualified electronic signatures or seals generated by or through the Wallet Unit, allowing the User to view the history of previously signed data or documents, according to requirement DASH_04 in <a href="./annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></td>
 </tr>
 <tr>
 <td>QES_14</td>
-<td>Wallet Providers SHALL ensure that the User will be able to explicitly authorise the creation of a qualified electronic signature or seal through their Wallet Unit.</td>
+<td>A Wallet Unit SHALL enable the User to explicitly authorise the creation of a qualified electronic signature or seal through their Wallet Unit.</td>
 </tr>
 <tr>
 <td>QES_15</td>
-<td>Wallet Providers SHALL ensure that a Wallet Unit can verify, in remote signature creation scenarios, that the qualified electronic signature or seal creation device is part of a qualified service, which is carried out by a qualified trust service provider.</td>
+<td>In remote signature creation scenarios, a Wallet Unit SHALL verify that the qualified electronic signature or seal creation device is part of a qualified service, which is carried out by a qualified trust service provider.</td>
 </tr>
 <tr>
 <td>QES_16</td>
-<td>Wallet Providers SHOULD ensure that a Wallet Unit supports multiple-signing scenarios where multiple signatories are required to sign the same document or data.</td>
+<td>A Wallet Unit SHOULD support multiple-signing scenarios, where multiple signatories are required to sign the same document or data.</td>
 </tr>
 <tr>
 <td>QES_17</td>
-<td>Wallet Providers SHALL ensure that Wallet Units provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. <em>Note: See also QES_17a.</em></td>
+<td>A Wallet Unit SHALL provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. <em>Note: See also QES_17a.</em></td>
 </tr>
 <tr>
 <td>QES_17a</td>
@@ -894,7 +894,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_19</td>
-<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit supports ETSI TS 119 101 (Electronic Signatures and Infrastructures (ESI) - Policy and security requirements for applications for signature creation and signature validation) when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance.</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit supports [ETSI TS 119 101] when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance.</td>
 </tr>
 <tr>
 <td>QES_20</td>
@@ -927,7 +927,7 @@ interface for signature authorisation at minimum)​.</p>
 <p>As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
 - signature creation requesting,
 - signature creation authorisation (activation).</p>
-<p>It entails a need of specification of rendering, to define the way the messages displayed to the Wallet Unit User are rendered (eg. display of the reference to the document, signing session or an involved RSSP/QTSP) - analogically to ARF's [TS12] in relation to SCA for payments. Such a specification should be provided by ETSI (and CSC possibly) - the currently available documents already contain partial specifications (i.a. in Annex A and B of [ETSI TS 119 432] and in [CSC Bindings]), but needs further improvement and completion.</p>
+<p>It entails a need of specification of rendering, to define the way the messages displayed to the Wallet Unit User are rendered (eg. display of the reference to the document, signing session or an involved RSSP/QTSP) - analogically to ARF's [TS12] in relation to SCA for payments. Such a specification should be provided by ETSI (and CSC possibly) - the currently available documents already contain partial specifications (i.a. in Annex A and B of [ETSI TS 119 432] and in [CSC Bindings]), but needs completion possibly.</p>
 <p>Therefore a question arises, <strong>what would be (high-level) requirements for rendering and display of user messages, for instance what information items would be necessary.</strong></p>
 <h3 id="44-signature-attestations-and-rulebooks">4.4 Signature Attestations and Rulebooks</h3>
 <p>As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
@@ -942,9 +942,169 @@ interface for signature authorisation at minimum)​.</p>
 <p>[European Digital Identity Regulation] allows Wallet Providers to limit use of signing functionality of their Wallet Solutions to "non-professional purposes" only, with "proportionate measures". At the same time, it leaves this aspect fully to the Member States, including development of the concepts and technical specifications for implementation if needed. </p>
 <p>Although this is a vital aspect, it is out of the scope of ARF and there is no intention (nor mandate) to provide/mandate provision of any technical specification here. At the same time, it is still possible to develop standards by SDOs at their own discretion too.   </p>
 <h2 id="5-proposals-of-changes-of-hlrs">5 Proposals of Changes of HLRs</h2>
-<p>There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.</p>
-<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
-<p>There are no change proposals at this stage. They may be defined as a result of the discussion this paper supports.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th>Proposal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QES_01</td>
+<td>Wallet Providers SHALL ensure that each User has the possibility to receive a qualified certificate for Qualified Electronic Signatures, bound to a QSCD, that is either local, external, or remotely managed in relation to the Wallet Instance.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>QES_02</td>
+<td>Wallet Providers SHALL ensure that each User who is a natural person has, at least for non-professional purposes, free-of-charge access to a Signature Creation Application which allows the creation of free-of-charge Qualified Electronic Signatures using the certificates referred to in QES_01. Wallet Providers SHALL ensure that: - The Signature Creation Application SHALL, as a minimum, be capable of signing ~~or~~ <strong>and</strong> sealing User-provided data and Relying Party-provided data. - The Signature Creation Application SHALL be implemented as part of a Wallet Solution or external to it (by providers of trust services or by Relying Parties). - The Signature Creation Application SHALL be able to generate signatures or seals in formats compliant with at least the mandatory formats referred to in QES_08. <em>Note: a) Signature Creation Application (SCA): see definition in [ETSI TS 119 432]. 2) If the SCA is external to the Wallet Solution, it may be for example a separate mobile application, or be hosted remotely, for instance by the QTSP or by a Relying Party.</em></td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_03</td>
+<td>For the use of the qualified certificate referred to in QES_01, ~~Wallet Providers SHALL ensure that a~~ Wallet Unit <strong>SHALL</strong> implement~~s~~ secure authentication of the User, as well as signature ~~or~~ <strong>/</strong> seal  ~~invocation~~ <strong>creation requesting and authorisation</strong>  capabilities ~~, as a part of a local, external or remote QSCD~~.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td><strong>QES_03a</strong></td>
+<td><strong>A Wallet Unit SHALL enable Relying Parties to request signature creation directly to the Wallet Unit. The interface of the Wallet Unit for this SHOULD be based on [OID4VP] for remote mode and [ISO/IEC 18013-5] for proximity mode, and comply with [ETSI TS 119 432].</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>QES_04</td>
+<td>Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. <em>Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.</em></td>
+<td>Remove</td>
+</tr>
+<tr>
+<td><strong>QES_04a</strong></td>
+<td><strong>When a Wallet Unit uses a remote QSCD for signature or seal creation, it SHALL ensure signature creation authorisation and User's sole control of the signing keys. The interface SHOULD use [OID4VP], in compliance with [ETSI TS 119 432] and [CEN EN 419 241-2]. The Wallet Provider SHOULD ensure compliance with [CEN EN 419 241-1] where applicable.</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>QES_05</td>
+<td>Wallet Providers SHALL enable their Wallet Units to be used for User enrolment to a remote QES Provider (i.e., a QTSP offering remote QES), except where the Wallet Unit interfaces with local or external QSCDs.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_05</td>
+<td>~~Wallet Providers SHALL enable their Wallet Units~~ <strong>A Wallet Unit SHALL enable</strong> ~~to be used for~~ User enrolment to a remote QES Provider (i.e., a QTSP offering remote QES), except where the Wallet Unit interfaces with local or external QSCDs.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_06</td>
+<td>Wallet Providers SHALL ensure that their Wallet Solution supports at least one of the following options for remote QES signature creation: - remote QES creation through secure authentication to a QTSP signature web portal, - remote QES creation channelled by the Wallet Unit, - remote QES creation channelled by a Relying Party.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_07</td>
+<td>~~Wallet Providers SHALL ensure that, where a Signature Creation Application relies on a remote Qualified Signature Creation Device and where it is integrated into a Wallet Unit, it supports the Cloud Signature Consortium API Specification 2.0 [CSC API].~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td><strong>QES_07a</strong></td>
+<td><strong>When a Wallet Unit interacts with a QTSP or a remote QES Provider to issue certificates, it SHOULD use [CSC-API], in compliance with [ETSI TS 119 432].</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td><strong>QES_07b</strong></td>
+<td><strong>When a Wallet Unit interacts with a QTSP or a remote QES Provider to create signatures or seals, it SHOULD use [CSC-API], in compliance with [ETSI TS 119 432] and [CEN EN 419 241-2]. The Wallet Provider SHOULD ensure compliance with [CEN EN 419 241-1] where applicable.</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>QES_08</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units are able to create signatures ~~or~~ <strong>and</strong> seals in accordance with the mandatory PAdES format as specified in [ETSI EN 319 142-1[ V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in [ETSI EN 319 132-1] V1.2.1 (2022-02), - JAdES as specified in [ETSI TS 119 182-1] V1.2.1 (2024-07), - CAdES as specified in [ETSI EN 319 122-1] V1.3.1 (2023-06), and - ASiC as specified in [ETSI EN 319 162-1] V1.1.1 (2016-04) and [ETSI EN 319 162-2] V1.1.1 (2016-04).</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_09</td>
+<td>Empty</td>
+<td></td>
+</tr>
+<tr>
+<td>QES_10</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit and is used to generate signatures or seals of the representation of the document or data to be signed or sealed, the Wallet Unit presents the representation of the document or data to be signed or sealed to the User.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td><strong>QES_10a</strong></td>
+<td><strong>When a Relying Party sends a signature or seal creation request to a Wallet Unit, and the Wallet Solution uses a remote QES creation service, the Wallet Unit SHALL display an appropriate message to the User and ensure that User gives consent for proceeding such a request, in compliance with [ETSI TS 119 432].</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>QES_11</td>
+<td>~~Where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit SHALL compute the hash or digest of the document or data to be signed through its Signature Create Application component.~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_12</td>
+<td>~~A Wallet Unit SHALL be able to create a signature over a document or data to be signed, either by using a local QSCD or by interfacing with a remote QES Provider. <em>Note: a local signing application is on-device. It may either be embedded in the Wallet Unit or be an external application.</em>~~</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_13</td>
+<td>A Wallet Unit SHALL provide a log of transactions related to <strong>certificate issuance</strong>, qualified electronic signatures ~~or~~ <strong>and</strong> seals generated by or through the Wallet Unit, allowing the User to view the history of previously <strong>issued certificates,</strong> signed data or documents, according to requirement DASH_04 in <a href="./annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19---user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. ~~<em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em>~~</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_14</td>
+<td>A Wallet Unit SHALL enable the User to explicitly authorise the creation of a qualified electronic signature or seal through their Wallet Unit.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td><strong>QES_14a</strong></td>
+<td><strong>When a Wallet Unit is used to authorise a signature or seal creation, it SHALL display an appropriate message to the User and ensure that User gives consent for signature or seal creation, in compliance with [ETSI TS 119 432].</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td>QES_15</td>
+<td>In remote signature creation scenarios, a Wallet Unit SHALL verify that the qualified electronic signature or seal creation device is part of a qualified <strong>trust</strong> service, which is carried out by a qualified trust service provider. <strong><em>Note: This verification entails i.a. checking presence at Trusted Lists, validation authenticity and integrity of a Trusted List.</em></strong></td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_16</td>
+<td>A Wallet Unit SHOULD support multiple-signing scenarios, where multiple signatories are required to sign the same document or data.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_17</td>
+<td>A Wallet Unit SHALL provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. <em>Note: See also QES_17a.</em></td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>QES_17a</td>
+<td>If the Signature Creation Application is external to the Wallet Unit, after the User authorises the usage of the private signing key, the Signature Creation Application SHALL return the outcome of the signature creation process to the Wallet Unit.</td>
+<td>Remove</td>
+</tr>
+<tr>
+<td>QES_18</td>
+<td>Wallet Providers SHALL configure at least one default qualified signing service in the Wallet Unit.</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>QES_19</td>
+<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet ~~Unit~~ <strong>Solution</strong>, ~~a Wallet Unit supports~~ <strong>it complies and is operated in compliance with</strong> [ETSI TS 119 101] ~~when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance~~.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_20</td>
+<td>Empty</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>QES_21</td>
+<td>Empty</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td>QES_22</td>
+<td>Empty</td>
+<td>Keep as-is</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-additions-and-changes-to-arf">6 Additions and Changes to ARF</h2>
+<p>A new content will be added to the ARF's main document, aiming to explain key terminology, specifications, architectures and implementation options, as discussed in this document.</p>
 <h2 id="7-references">7 References</h2>
 <table>
 <thead>
@@ -971,8 +1131,24 @@ interface for signature authorisation at minimum)​.</p>
 <td><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16112-European-Digital-Identity-Wallet-standards-and-technical-specifications-update-_en">Commission Implementing Regulation (EU) .../... of XXX amending Implementing Regulation (EU) 2024/2977, (EU) 2024/2979, (EU) 2024/2980 and (EU) 2024/2982 as regards applicable standards and specifications and correcting Implementing Regulation (EU) 2024/2980</a></td>
 </tr>
 <tr>
+<td>[ISO/IEC 18013-5]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84">ISO/IEC 18013-5:2021 Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application</a>,</td>
+</tr>
+<tr>
+<td>[OpenID4VP]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID for Verifiable Presentations 1.0</a></td>
+</tr>
+<tr>
 <td>[ETSI TS 119 432]</td>
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68">Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, v1.3.1</a></td>
+</tr>
+<tr>
+<td>[CEN EN 419 241-1]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/101">CEN EN 419 241-1: Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements</a></td>
+</tr>
+<tr>
+<td>[CEN EN 419 241-2]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/100">CEN EN 419 241-2:2019 - Protection profile for QSCD for Server Signing</a></td>
 </tr>
 <tr>
 <td>[CSC API]</td>
