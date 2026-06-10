@@ -1,0 +1,61 @@
+# Validate documentation changes on pull requests, before they reach main.
+# Two checks run in parallel:
+#   build-docs : fast MkDocs --strict build (broken nav / dead links / bad markdown)
+#   build-pdf  : the full Pandoc/LaTeX PDF build, using the same pinned image as the
+#                deploy workflow, so a PR that breaks the PDF fails here instead of
+#                only surfacing on the post-merge release build.
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup python environment
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Install mkdocs theme
+        run: pip install -r requirements.txt
+
+      - name: Build site (strict)
+        run: mkdocs build --strict
+
+  build-pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: read # pull the GHCR build image
+    # Same reproducible toolchain (pandoc + Eisvogel + curated TeX Live + make) as
+    # the release build in pages.yml. Keep this pinned to the same image/digest.
+    # Note: pull requests opened from forks cannot read the org's GHCR package, so
+    # this job only validates PRs from branches within this repository.
+    container:
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Build pdf
+        run: make pdfs

@@ -1,4 +1,4 @@
-# Deploy ARF as static content to GitHub Pages
+# Deploy ARF as static content to GitHub Pages and publish PDF artifacts.
 name: Deploy ARF to Pages
 
 on:
@@ -9,67 +9,95 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Least-privilege default; the deploy job opts into what it needs.
 permissions:
-  contents: write
+  contents: read
 
-# Allow one concurrent deployment
+# Publishing must not be interrupted mid-push, or the gh-pages branch can be
+# left in an inconsistent state. Queue concurrent runs instead of cancelling.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+    # mike pushes the built site to the gh-pages branch.
+    permissions:
+      contents: write
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-           ref: 'main'
-           fetch-depth: 0
+          ref: 'main'
+          fetch-depth: 0 # full history + tags required by mike and get-previous-tag
+
       - name: Get latest tag
         id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: WyriHaximus/github-action-get-previous-tag@04e8485ecb6487243907e330d522ff60f02283ce # v1
+
       - name: Setup python environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - name: Setup cache
-        uses: actions/cache@v4
+          cache: pip
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
+
+      - name: Setup mkdocs-material cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
+
       - name: Install mkdocs theme
-        run: pip install mkdocs-material mike "mkdocs-material[imaging]"
-      - name: Configure fetch and merge
+        run: pip install -r requirements.txt
+
+      - name: Configure git author for mike
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git fetch origin
-          git merge origin
+
       - name: Setup version number
         run: |
           VERSION=${{ steps.latest_tag.outputs.tag }}
-          echo "arf_version=${VERSION:1}" >> $GITHUB_ENV
+          echo "arf_version=${VERSION:1}" >> "$GITHUB_ENV"
+
       - name: Deploy mkdocs
         run: |
-          mike deploy --push --update-aliases ${{ env.arf_version }} latest
+          mike deploy --push --update-aliases "${{ env.arf_version }}" latest
           mike set-default --allow-empty --push latest
-      - name: Setup pandoc
-        uses: r-lib/actions/setup-pandoc@v2
+
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: read # pull the GHCR build image
+    # Reproducible toolchain: pandoc + Eisvogel + curated TeX Live + make, built
+    # and smoke-tested by the build-pdf-image workflow. Pin by @sha256 digest
+    # (reported in that workflow's run summary) so the toolchain can never drift.
+    # Until the first image is published, :latest resolves to the freshly built
+    # image; switch it to a digest once you have one.
+    container:
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          pandoc-version: latest
-      - name: Install latex
-        run: |
-          sudo apt update -y
-          sudo apt install -y texlive-full texlive-xetex
+          ref: 'main'
+
       - name: Build pdf
-        run: make
+        run: make pdfs
+
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: architecture-and-reference-framework
           path: build/pdf

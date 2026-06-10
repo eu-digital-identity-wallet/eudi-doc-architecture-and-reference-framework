@@ -70,10 +70,15 @@ PANDOC_EPUB_OPTIONS := --to epub3
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all epub pdf mkdocs serve copy-pdfs zip-pdfs clean
+.PHONY: all pdfs epub pdf mkdocs serve copy-pdfs zip-pdfs clean
 
 # Default target: build all exported documents and the MkDocs site.
 all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
+
+# PDF-only artifacts (per-document + combined + zip), without DOCX/EPUB or the
+# MkDocs site. Used by the CI PDF build, which runs in a pandoc/LaTeX container
+# that has no mkdocs and only needs build/pdf.
+pdfs: $(SOURCE_DOCS:.md=.pdf) pdf zip-pdfs
 
 # EPUB combined main text + annexes
 epub :

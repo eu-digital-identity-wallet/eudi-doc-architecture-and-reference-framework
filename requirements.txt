@@ -1,0 +1,5 @@
+# Documentation build tooling (MkDocs site + versioning).
+# Used by the GitHub Actions workflows and for local builds:
+#   pip install -r requirements.txt
+mkdocs-material[imaging]>=9.5
+mike>=2.1
