@@ -8,7 +8,7 @@ name: Build PDF builder image
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "feature/better-ci"] # TODO: drop feature branch before merge
     paths:
       - "docker/Dockerfile"
       - ".github/workflows/build-pdf-image.yml"
