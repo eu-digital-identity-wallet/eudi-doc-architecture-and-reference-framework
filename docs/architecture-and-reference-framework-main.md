@@ -6000,7 +6000,7 @@ Note: All Technical Specifications listed in this section are undated. A link is
 | [Technical Specification 9](./technical-specifications/ts9-wallet-to-wallet-interactions.md) | Specification of Wallet to Wallet interactions |
 | [Technical Specification 10](./technical-specifications/ts10-data-portability-and-download-(export).md) | Data Portability and Download (Export) |
 | [Technical Specification 11](./technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes.md) | Specification of interfaces and formats for the catalogue of attributes and the catalogue of attestations |
-| [Technical Specification 12](./technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) | Specification of Strong Customer Authentication (SCA) Implementation with the Wallet |
+| [Technical Specification 12](./technical-specifications/ts12-specification-of-strong-customer-authentication-(sca)-Implementation-with-the-Wallet.md) | Specification of Strong Customer Authentication (SCA) Implementation with the Wallet |
 
 ## 11 Annexes
 

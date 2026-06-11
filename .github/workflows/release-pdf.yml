@@ -1,0 +1,60 @@
+# Build the ARF PDFs when a release is published and attach them as release assets.
+#
+# PDFs are produced once per release (not on every push), using the same pinned
+# toolchain image as the PR check, and uploaded to the release that triggered the
+# run. The version baked into the documents and the zip name is taken from the
+# release tag (e.g. v2.10.0 -> 2.10.0), overriding the Makefile default.
+name: Publish release PDFs
+
+on:
+  release:
+    types: [published]
+  # Manual re-build of the PDFs for an existing release tag.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to (re)build PDFs for, e.g. v2.10.0"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-pdf-${{ github.event.release.tag_name || inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write # upload assets to the release
+      packages: read  # pull the GHCR build image
+    # Same reproducible toolchain (pandoc + Eisvogel + curated TeX Live + make) as
+    # the PR check in ci.yml — keep this digest in sync with ci.yml.
+    container:
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:ebe9c4f1369fe314c5bd4c8bca7908cf7518e82c510b9d456d8f3e3b17cd79ba
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - name: Checkout the release tag
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - name: Build PDFs (version from release tag)
+        run: |
+          VER="${TAG#v}"
+          echo "Building ARF PDFs for version $VER"
+          make pdfs VERSION="$VER"
+
+      - name: Attach PDFs to the release
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: ${{ env.TAG }}
+          files: |
+            build/pdf/*.pdf
+            build/*.zip
