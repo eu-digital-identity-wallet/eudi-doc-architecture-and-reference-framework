@@ -1,5 +1,10 @@
-# Documentation build tooling (MkDocs site + versioning).
-# Used by the GitHub Actions workflows and for local builds:
-#   pip install -r requirements.txt
-mkdocs-material[imaging]>=9.5
-mike>=2.1
+# Documentation toolchain for the ARF website (eudi.dev).
+#
+# MkDocs 1.x is unmaintained and MkDocs 2.0 will be incompatible with
+# Material for MkDocs, so versions are pinned defensively. For full
+# supply-chain integrity, compile with hashes:
+#   pip-compile --generate-hashes requirements.txt
+mkdocs==1.6.1
+mkdocs-material==9.7.6
+mkdocs-material[imaging]==9.7.6
+mike==2.1.3

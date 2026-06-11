@@ -1,6 +1,21 @@
+# European Digital Identity - Architecture and Reference Framework
+# Compatible with both MkDocs Material 9.7.x and Zensical (>= 0.0.45).
+
 site_name: European Digital Identity
+site_description: >-
+  Architecture and Reference Framework (ARF) of the European Digital
+  Identity Wallet: main narrative, annexes with normative high-level
+  requirements, technical specifications, and discussion topics.
+site_url: https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework
+repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+edit_uri: edit/main/docs/
+copyright: European Union, 2025 - Licensed under the EUPL-1.2 or later
+
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -17,8 +32,15 @@ theme:
     - navigation.tabs.sticky
     - navigation.path
     - navigation.top
+    - navigation.footer
+    - navigation.tracking
     - toc.integrate
     - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.action.view
   logo: media/logo_eudi_white.svg
   favicon: media/favicon.ico
 
@@ -29,18 +51,27 @@ markdown_extensions:
   - footnotes
   - sane_lists
   - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+  - pymdownx.snippets:
+      auto_append:
+        - includes/references.md
+      check_paths: true
 
-site_url: https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework
-repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
-repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+watch:
+  - includes
 
-nav:
-  - European Digital Identity Wallet: index.md
-  - Architecture and reference framework: architecture-and-reference-framework-main.md
-  - Discussion topics: discussion-topics/README.md
-  - Technical specifications: technical-specifications/README.md
-  - Reference Implementation: https://docs.eudi.dev/latest/
-  - Functional Conformance: https://conformance.eudi.dev/latest/
+plugins:
+  - search
+  - privacy
+  - social
+  - mike
 
 extra:
   version:
@@ -49,11 +80,72 @@ extra:
 
 validation:
   nav:
-    omitted_files: ignore
+    omitted_files: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
 
-plugins:
-  - mike
-  - tags
-  - privacy
-  - social
-  - search
+nav:
+  - European Digital Identity Wallet: index.md
+  - Architecture and Reference Framework: architecture-and-reference-framework-main.md
+  - Annexes:
+      - annexes/README.md
+      - annexes/annex-1/annex-1-definitions.md
+      - High-Level Requirements:
+          - annexes/annex-2/annex-2.01-high-level-requirements.md
+          - annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md
+          - annexes/annex-2/annex-2.03-high-level-requirements-by-category.md
+      - Rulebooks:
+          - annexes/annex-3/annex-3.01-pid-rulebook.md
+          - annexes/annex-3/annex-3.02-mDL-rulebook.md
+      - Design Guides:
+          - annexes/annex-5/annex-5.01-design-guide.md
+          - annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.md
+  - Discussion Topics:
+      - discussion-topics/README.md
+      - discussion-topics/a-privacy-risks-and-mitigations.md
+      - discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md
+      - discussion-topics/ab-digital-signature-using-wallet.md
+      - discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations.md
+      - discussion-topics/c-wallet-unit-attestation.md
+      - discussion-topics/c-rr-wallet-unit-attestations.md
+      - discussion-topics/d-embedded-disclosure-policies.md
+      - discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md
+      - discussion-topics/e-rr-pseudonyms-including-user-authentication-mechanism.md
+      - discussion-topics/f-digital-credential-api.md
+      - discussion-topics/g-zero-knowledge-proof.md
+      - discussion-topics/h-transaction-logs-kept-by-the-wallet.md
+      - discussion-topics/i-natural-person-representing-another-natural-person.md
+      - discussion-topics/j-wallet-to-wallet-interactions.md
+      - discussion-topics/j-rr-wallet-to-wallet-interactions.md
+      - discussion-topics/k-combined-presentation-of-attestations.md
+      - discussion-topics/l+m-data-deletion-and-reporting-of-wrp-to-dpa.md
+      - discussion-topics/n-export-and-data-portability.md
+      - discussion-topics/o-catalogues-for-attestations.md
+      - discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA.md
+      - discussion-topics/q-interface-user-wallet-instance.md
+      - discussion-topics/r-authentication-of-user-to-device.md
+      - discussion-topics/s-certificate-transparancy.md
+      - discussion-topics/t-support-and-maintenance-by-the-wallet-provider.md
+      - discussion-topics/u-eudi-wallet-trust-mark.md
+      - discussion-topics/v-pid-rulebook.md
+      - discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md
+      - discussion-topics/x-relying-party-registration.md
+      - discussion-topics/x-rr-relying-party-registration.md
+      - discussion-topics/z-device-bound-attestations.md
+  - Technical Specifications:
+      - technical-specifications/README.md
+      - technical-specifications/ts1-eudi-wallet-trust-mark.md
+      - technical-specifications/ts2-notification-publication-provider-information.md
+      - technical-specifications/ts3-wallet-unit-attestation.md
+      - technical-specifications/ts4-zkp.md
+      - technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md
+      - technical-specifications/ts6-common-set-of-rp-information-to-be-registered.md
+      - technical-specifications/ts7-common-interface-for-data-deletion-request.md
+      - technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa.md
+      - technical-specifications/ts9-wallet-to-wallet-interactions.md
+      - technical-specifications/ts10-data-portability-and-download-(export).md
+      - technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes.md
+      - technical-specifications/ts12-specification-of-strong-customer-authentication-(sca)-Implementation-with-the-Wallet.md
+  - Reference Implementation: https://docs.eudi.dev/latest/
+  - Functional Conformance: https://conformance.eudi.dev/latest/

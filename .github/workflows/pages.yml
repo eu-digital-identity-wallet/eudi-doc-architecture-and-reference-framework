@@ -57,6 +57,11 @@ jobs:
       - name: Install mkdocs theme
         run: pip install -r requirements.txt
 
+      # Regenerate includes/references.md from the Section 10 reference tables before
+      # mike builds and publishes the site (kept in sync with the committed copy).
+      - name: Generate reference link definitions
+        run: python3 tools/gen_references.py
+
       - name: Configure git author for mike
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

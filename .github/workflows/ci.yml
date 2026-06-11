@@ -35,6 +35,12 @@ jobs:
       - name: Install mkdocs theme
         run: pip install -r requirements.txt
 
+      # Regenerate includes/references.md from the Section 10 reference tables so
+      # shorthand links like [OpenID4VCI] resolve. The file is also committed, but
+      # regenerating here keeps it in sync if the tables change without a rerun.
+      - name: Generate reference link definitions
+        run: python3 tools/gen_references.py
+
       # Report-only: --strict surfaces every broken link / nav / markdown issue in
       # the log, but continue-on-error keeps it from blocking PRs while the large
       # backlog of pre-existing broken internal links is worked down separately.
