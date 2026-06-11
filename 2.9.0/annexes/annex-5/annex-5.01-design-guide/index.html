@@ -6,11 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
+      
       
       
         <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/annexes/annex-5/annex-5.01-design-guide/">
       
       
+        <link rel="prev" href="../../annex-3/annex-3.02-mDL-rulebook/">
+      
+      
+        <link rel="next" href="../annex-5.02-design-guide-data-sharing-scenarios/">
       
       
         
@@ -58,6 +64,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="European Digital Identity Wallet - European Digital Identity" />
+<meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
 <meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/annexes/annex-5/annex-5.01-design-guide.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -65,6 +72,7 @@
 <meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/annexes/annex-5/annex-5.01-design-guide/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="European Digital Identity Wallet - European Digital Identity" />
+<meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
 <meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/annexes/annex-5/annex-5.01-design-guide.png" />
 </head>
   
@@ -181,11 +189,18 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -207,7 +222,7 @@
         <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
@@ -254,7 +269,7 @@
   
     
   
-  Architecture and reference framework
+  Architecture and Reference Framework
 
       </a>
     </li>
@@ -265,18 +280,21 @@
   
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../../../discussion-topics/" class="md-tabs__link">
-        
+    
   
   
     
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
   
-  Discussion topics
+  
+  Annexes
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -285,17 +303,38 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../../technical-specifications/" class="md-tabs__link">
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../discussion-topics/" class="md-tabs__link">
+          
+  
+  
+  Discussion Topics
+
+        </a>
+      </li>
+    
+  
+
+      
         
   
   
-    
   
-  Technical specifications
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../technical-specifications/" class="md-tabs__link">
+          
+  
+  
+  Technical Specifications
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -379,7 +418,7 @@
       <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
@@ -430,7 +469,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture and reference framework
+    Architecture and Reference Framework
   
 
     
@@ -445,6 +484,1322 @@
     
       
       
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and Reference Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-1/annex-1-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 1 - Definitions</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Level Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High-Level Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-2/annex-2.01-high-level-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-2/annex-2.02-high-level-requirements-by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-2/annex-2.03-high-level-requirements-by-category/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rulebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rulebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-3/annex-3.01-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.01 - PID Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex-3/annex-3.02-mDL-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.02 - mDL Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-purpose-of-the-design-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Purpose of the design guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-boundaries-of-the-design-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Boundaries of the design guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-importance-of-design-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Importance of design consistency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Importance of design consistency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Familiarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-overview-of-design-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Overview of design criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-design-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Design criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Design criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-visibility-of-system-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Visibility of system status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Visibility of system status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1 Indicative examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.1 Indicative examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Document management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-match-between-system-and-the-real-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Match between system and the real world
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Match between system and the real world">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1 Indicative examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.1 Indicative examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-user-control-and-freedom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 User control and freedom
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 User control and freedom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1 Indicative examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-consistency-and-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Consistency and standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-error-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Error prevention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Error prevention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1 Indicative examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.1 Indicative examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flexible-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-recognition-rather-than-recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Recognition rather than recall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-flexibility-and-efficiency-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Flexibility and efficiency of use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 Flexibility and efficiency of use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.1 Indicative examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7.1 Indicative examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bookmarked-or-recently-used-documents-on-homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bookmarked or Recently used documents on homepage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-aesthetic-and-minimalist-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Aesthetic and minimalist design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-help-users-recognize-diagnose-and-recover-from-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Help users recognize, diagnose, and recover from errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.9 Help users recognize, diagnose, and recover from errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#291-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9.1 Indicative examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-help-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 Help and documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.10 Help and documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2101-indicative-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10.1 Indicative examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11 Accessibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.11 Accessibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.1 Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112-target-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.2 Target sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113-colour-contrast-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.3 Colour contrast guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2114-font-size-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.4 Font size guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2115-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.5 Animations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2116-screen-readers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11.6 Screen readers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12 Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.12 Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121-write-in-the-present-tense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12.1 Write in the present tense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122-begin-with-the-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12.2 Begin with the objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123-avoid-combining-first-and-second-person" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12.3 Avoid combining first and second person
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-eudi-wallet-design-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 EUDI Wallet - Design Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 EUDI Wallet - Design Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-user-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 User authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-browsing-credentialsdocuments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Browsing credentials/documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-qr-code-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 QR code presentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-confirmationsummaryauthentication-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Confirmation/Summary/Authentication results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Error Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-privacysecurity-by-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Privacy/Security by Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-trust-mark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Trust Mark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-notification-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8 Notification guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annex-5.02-design-guide-data-sharing-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.02 -  Design Guide - Data Sharing Scenarios</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discussion Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -469,9 +1824,907 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/a-privacy-risks-and-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A privacy risks and mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aa support of electronic payments SCA with wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/ab-digital-signature-using-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ab digital signature using wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B re issuance and batch issuance of pids and attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/c-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C wallet unit attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/c-rr-wallet-unit-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C rr wallet unit attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/d-embedded-disclosure-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D - Embedded Disclosure Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/e-rr-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E rr pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/f-digital-credential-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic F - Digital Credentials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/g-zero-knowledge-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G - Zero Knowledge Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/h-transaction-logs-kept-by-the-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic H - Transaction logs kept by the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/i-natural-person-representing-another-natural-person/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I - Natural person representing another natural person
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/j-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J - Wallet to Wallet Interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/j-rr-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/k-combined-presentation-of-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K - Combined presentation of Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/n-export-and-data-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N export and data portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/o-catalogues-for-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic O - Catalogues for Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/q-interface-user-wallet-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q interface user wallet instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/r-authentication-of-user-to-device/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R authentication of user to device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/s-certificate-transparancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S certificate transparancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/t-support-and-maintenance-by-the-wallet-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T - Support and Maintenance by the Wallet Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/u-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic U - EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/v-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V - PID Rulebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/w-transactional-data-for-payments-and-other-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W transactional data for payments and other use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/x-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/x-rr-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X rr relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discussion-topics/z-device-bound-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic Z - Device-bound Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -484,7 +2737,7 @@
   <span class="md-ellipsis">
     
   
-    Technical specifications
+    Essential Standards and Technical Specifications (STS)
   
 
     
@@ -493,6 +2746,350 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts1-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts2-notification-publication-provider-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of systems enabling the notification and subsequent publication of Provider information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts3-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts4-zkp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common formats and API for Relying Party Registration information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Set of Relying Party Information to be Registered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts7-common-interface-for-data-deletion-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for Data Deletion Requests to Relying Parties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts9-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet to Wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts10-data-portability-and-download-%28export%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Data Portability and Download (Export)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of interfaces and formats for catalogue of attributes and catalogue of attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -569,6 +3166,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Annexes
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Design Guides
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -576,10 +3231,23 @@
 
 
   
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/annexes/annex-5/annex-5.01-design-guide.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/annexes/annex-5/annex-5.01-design-guide.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
   
 
 
-<h1 id="eudi-wallet-design-guide">EUDI Wallet - Design Guide</h1>
+<h1 id="eudi-wallet-design-guide">EUDI Wallet - Design Guide<a class="headerlink" href="#eudi-wallet-design-guide" title="Link to this section">&para;</a></h1>
 <p><em>For the EUDI Wallet ecosystem</em></p>
 <p><em>November 2024</em>
 <em>v1.1.0</em></p>
@@ -587,8 +3255,8 @@
 common agreement or position of the co-legislators. It presents a state-of-play
 of ongoing work of the eIDAS Expert Group. This document is being continuously
 updated and should not be considered final.</em></p>
-<h2 id="1-introduction">1 Introduction</h2>
-<h3 id="11-purpose-of-the-design-guide">1.1 Purpose of the design guide</h3>
+<h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Link to this section">&para;</a></h2>
+<h3 id="11-purpose-of-the-design-guide">1.1 Purpose of the design guide<a class="headerlink" href="#11-purpose-of-the-design-guide" title="Link to this section">&para;</a></h3>
 <p>This design guide outlines the principles, guidelines, and best practices for
 creating consistent and effective design solutions for the EUDI wallet. The
 purpose of a design guide is to ensure that all design work produced by a team
@@ -599,7 +3267,7 @@ includes guidelines to assist in creating a user interface that is useful,
 usable, and enjoyable to use. It also provides specific instructions and tips
 for creating accessible and inclusive designs.</p>
 <hr />
-<h3 id="12-boundaries-of-the-design-guide">1.2 Boundaries of the design guide</h3>
+<h3 id="12-boundaries-of-the-design-guide">1.2 Boundaries of the design guide<a class="headerlink" href="#12-boundaries-of-the-design-guide" title="Link to this section">&para;</a></h3>
 <p>It shall be highlighted that this design guide does not aim to provide detailed
 design elements to be adopted by national EUDI Wallet implementations. Overall,
 the objective of the EUDI Wallet Design Guide is to:</p>
@@ -613,28 +3281,28 @@ mandatory towards the implementations of the EUDI Wallet, but rather stand as
 recommendations to ensure a common user experience across the different national
 implementations.</p>
 <hr />
-<h3 id="13-importance-of-design-consistency">1.3 Importance of design consistency</h3>
+<h3 id="13-importance-of-design-consistency">1.3 Importance of design consistency<a class="headerlink" href="#13-importance-of-design-consistency" title="Link to this section">&para;</a></h3>
 <p>UI (User Interface) consistency is important because it provides a better user
 experience and helps users navigate a mobile application more easily. When
 elements such as icons, colours, and fonts are consistent throughout an
 application, users can quickly learn how to use it and understand the
 application's intention.</p>
-<h4 id="familiarity">Familiarity</h4>
+<h4 id="familiarity">Familiarity<a class="headerlink" href="#familiarity" title="Link to this section">&para;</a></h4>
 <p>Consistent UI elements give users a sense of familiarity and they can feel more
 comfortable using the application. If the user interface changes too often, it
 can cause confusion and frustration.</p>
-<h4 id="efficiency">Efficiency</h4>
+<h4 id="efficiency">Efficiency<a class="headerlink" href="#efficiency" title="Link to this section">&para;</a></h4>
 <p>Consistency in the user interface can make navigation easier and more efficient.
 Users will know where to find the features they need, and they reduce cognitive
 load.</p>
-<h4 id="accessibility">Accessibility</h4>
+<h4 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Link to this section">&para;</a></h4>
 <p>Consistent UI elements make it easier for users with disabilities to navigate
 the application. Users with visual impairments, for example, can more easily use
 screen readers when consistent UI elements are used.</p>
 <p>Overall, UI consistency is an essential aspect of good user interface design. It
 makes the application more user-friendly, efficient, and accessible.</p>
 <hr />
-<h3 id="14-overview-of-design-criteria">1.4 Overview of design criteria</h3>
+<h3 id="14-overview-of-design-criteria">1.4 Overview of design criteria<a class="headerlink" href="#14-overview-of-design-criteria" title="Link to this section">&para;</a></h3>
 <p>Twelve design criteria have been selected which we go over in details in
 'Section 2'. The first 10 are the usability heuristics from the <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen Norman
 group</a>. They are
@@ -660,58 +3328,58 @@ principles are:</p>
 <li>Writing</li>
 </ul>
 <hr />
-<h2 id="2-design-criteria">2 Design criteria</h2>
-<pre><code class="language-text">Disclaimer: The design guidelines listed in this document shall not be
+<h2 id="2-design-criteria">2 Design criteria<a class="headerlink" href="#2-design-criteria" title="Link to this section">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Disclaimer: The design guidelines listed in this document shall not be
 considered as mandatory towards the implementations of the EUDI Wallet, but
 rather stand as recommendations to ensure a common user experience across the
 different national implementations. Any design elements included in the
 following chapter are indicative and are only used to better illustrate the
 corresponding design criteria.
-</code></pre>
+</code></pre></div>
 <hr />
-<h3 id="21-visibility-of-system-status">2.1 Visibility of system status</h3>
-<pre><code class="language-text">The design should always keep users informed about what is going on through
+<h3 id="21-visibility-of-system-status">2.1 Visibility of system status<a class="headerlink" href="#21-visibility-of-system-status" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>The design should always keep users informed about what is going on through
 appropriate feedback within a reasonable amount of time.
-</code></pre>
-<h4 id="211-indicative-examples">2.1.1 Indicative examples</h4>
-<h5 id="document-management">Document management</h5>
+</code></pre></div>
+<h4 id="211-indicative-examples">2.1.1 Indicative examples<a class="headerlink" href="#211-indicative-examples" title="Link to this section">&para;</a></h4>
+<h5 id="document-management">Document management<a class="headerlink" href="#document-management" title="Link to this section">&para;</a></h5>
 <p>When adding  or removing a document the application should let the user know
 whether the process was completed successfully of not.</p>
 <p><img alt="Document Management example showing success and failure states" src="../media/5.01/Figure_1_Document_Management_example.png" />
 <em>Figure 1: Document Management example</em></p>
-<h6 id="interactive-elements">Interactive elements</h6>
+<h6 id="interactive-elements">Interactive elements<a class="headerlink" href="#interactive-elements" title="Link to this section">&para;</a></h6>
 <p>Interactive elements such as buttons must have a pressed and focused state.</p>
 <p><img alt="Interactive Elements example showing button states" src="../media/5.01/Figure_2_Interactive_Elements_example.png" />
 <em>Figure 2: Interactive Elements example</em></p>
 <hr />
-<h3 id="22-match-between-system-and-the-real-world">2.2 Match between system and the real world</h3>
-<pre><code class="language-text">The design should speak the users' language. Use words, phrases, and concepts
+<h3 id="22-match-between-system-and-the-real-world">2.2 Match between system and the real world<a class="headerlink" href="#22-match-between-system-and-the-real-world" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>The design should speak the users&#39; language. Use words, phrases, and concepts
 familiar to the user, rather than internal jargon. Follow real-world
 conventions, making information appear in a natural and logical order.
-</code></pre>
-<h4 id="221-indicative-examples">2.2.1 Indicative examples</h4>
-<h5 id="document-representation">Document representation</h5>
+</code></pre></div>
+<h4 id="221-indicative-examples">2.2.1 Indicative examples<a class="headerlink" href="#221-indicative-examples" title="Link to this section">&para;</a></h4>
+<h5 id="document-representation">Document representation<a class="headerlink" href="#document-representation" title="Link to this section">&para;</a></h5>
 <p>Documents should be (where possible) represented in the UI by what is familiar
 to the user instead of generic / ambiguous icons.</p>
 <p><img alt="Document Presentation Example showing realistic document representations" src="../media/5.01/Figure_3_Document_Presentation_Example.png" />
 <em>Figure 3: Document Presentation Example</em></p>
-<h5 id="labels">Labels</h5>
+<h5 id="labels">Labels<a class="headerlink" href="#labels" title="Link to this section">&para;</a></h5>
 <p>Stay away from technical terms and jargon. Use labels that people use in their
 everyday life.</p>
 <p><img alt="Labels example showing user-friendly terminology" src="../media/5.01/Figure_4_Labels_example.png" />
 <em>Figure 4: Labels example</em></p>
-<h5 id="icons">Icons</h5>
+<h5 id="icons">Icons<a class="headerlink" href="#icons" title="Link to this section">&para;</a></h5>
 <p>People spend most of their time in other apps/websites. Use icons that are
 familiar and clear to them instead on ambiguous ones.</p>
 <p><img alt="Icons Example showing clear vs ambiguous icons" src="../media/5.01/Figure_5_Icons_Example.png" />
 <em>Figure 5: Icons Example</em></p>
 <hr />
-<h3 id="23-user-control-and-freedom">2.3 User control and freedom</h3>
-<pre><code class="language-text">Users often perform actions by mistake. They need a clearly marked &quot;emergency
+<h3 id="23-user-control-and-freedom">2.3 User control and freedom<a class="headerlink" href="#23-user-control-and-freedom" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Users often perform actions by mistake. They need a clearly marked &quot;emergency
 exit&quot; to leave the unwanted action without having to go through an extended
 process.
-</code></pre>
-<h4 id="231-indicative-examples">2.3.1 Indicative examples</h4>
+</code></pre></div>
+<h4 id="231-indicative-examples">2.3.1 Indicative examples<a class="headerlink" href="#231-indicative-examples" title="Link to this section">&para;</a></h4>
 <p>Undo &amp; Redo</p>
 <p>The third principle talks about giving the freedom to the user to navigate and
 perform actions</p>
@@ -721,27 +3389,27 @@ perform actions</p>
 <p><img alt="Undo and Redo Example showing action reversibility" src="../media/5.01/Figure_6_Undo_and_Redo_Example.png" />
 <em>Figure 6: Undo and Redo Example</em></p>
 <hr />
-<h3 id="24-consistency-and-standards">2.4 Consistency and standards</h3>
-<pre><code class="language-text">Users should not have to wonder whether different words, situations, or actions
+<h3 id="24-consistency-and-standards">2.4 Consistency and standards<a class="headerlink" href="#24-consistency-and-standards" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Users should not have to wonder whether different words, situations, or actions
 mean the same thing. Follow platform and industry conventions.
-</code></pre>
+</code></pre></div>
 <p>App should follow interface standards and platform conventions. Conventions have
 been established that users are familiar with. This knowledge should be
 capitalised upon to make the app have a higher level of intuitiveness.</p>
 <p>E.g. Position of menu, Navigation bar, Search location</p>
 <hr />
-<h3 id="25-error-prevention">2.5 Error prevention</h3>
-<pre><code class="language-text">Good error messages are important, but the best designs carefully prevent
+<h3 id="25-error-prevention">2.5 Error prevention<a class="headerlink" href="#25-error-prevention" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Good error messages are important, but the best designs carefully prevent
 problems from occurring in the first place. Either eliminate error-prone
 conditions or check for them and present users with a confirmation option before
 they commit to the action.
-</code></pre>
-<h4 id="251-indicative-examples">2.5.1 Indicative examples</h4>
+</code></pre></div>
+<h4 id="251-indicative-examples">2.5.1 Indicative examples<a class="headerlink" href="#251-indicative-examples" title="Link to this section">&para;</a></h4>
 <p>Confirmation dialogue</p>
 <p>For accidental actions such as miss-clicks</p>
 <p><img alt="Confirmation Dialogue Example showing user verification before action" src="../media/5.01/Figure_7_Confirmation_Dialogs_Example.png" />
 <em>Figure 7: Confirmation Dialogues Example</em></p>
-<h5 id="flexible-inputs">Flexible inputs</h5>
+<h5 id="flexible-inputs">Flexible inputs<a class="headerlink" href="#flexible-inputs" title="Link to this section">&para;</a></h5>
 <p>Flexible inputs allow people to answer questions the way they want instead of
 the way a database requires them to. But these input fields come with a promise
 to users: "whatever format you choose, we'll take it." For example, a phone
@@ -751,48 +3419,48 @@ instead of producing in-line errors or result in guesswork.</p>
 <p><img alt="Flexible Inputs Example showing different input format acceptance" src="../media/5.01/Figure_8_Flexible_Inputs_Example.png" />
 <em>Figure 8: Flexible Inputs Example</em></p>
 <hr />
-<h3 id="26-recognition-rather-than-recall">2.6 Recognition rather than recall</h3>
-<pre><code class="language-text">Minimize the user's memory load by making elements, actions, and options
+<h3 id="26-recognition-rather-than-recall">2.6 Recognition rather than recall<a class="headerlink" href="#26-recognition-rather-than-recall" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Minimize the user&#39;s memory load by making elements, actions, and options
 visible. The user should not have to remember information from one part of the
 interface to another. Information required to use the design (e.g. field labels
 or menu items) should be visible or easily retrievable when needed.
-</code></pre>
+</code></pre></div>
 <hr />
-<h3 id="27-flexibility-and-efficiency-of-use">2.7 Flexibility and efficiency of use</h3>
-<pre><code class="language-text">Offer shortcuts quick ways to get one or more tasks done with your apps. They
+<h3 id="27-flexibility-and-efficiency-of-use">2.7 Flexibility and efficiency of use<a class="headerlink" href="#27-flexibility-and-efficiency-of-use" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Offer shortcuts quick ways to get one or more tasks done with your apps. They
 should speed up the interaction with an app for the expert user
-</code></pre>
-<h4 id="271-indicative-examples">2.7.1 Indicative examples</h4>
+</code></pre></div>
+<h4 id="271-indicative-examples">2.7.1 Indicative examples<a class="headerlink" href="#271-indicative-examples" title="Link to this section">&para;</a></h4>
 <p>It's possible to improve the efficiency of interaction with an app for
 experienced users with ways that will allow them to complete frequent actions
 faster.</p>
-<h5 id="bookmarked-or-recently-used-documents-on-homepage">Bookmarked or Recently used documents on homepage</h5>
+<h5 id="bookmarked-or-recently-used-documents-on-homepage">Bookmarked or Recently used documents on homepage<a class="headerlink" href="#bookmarked-or-recently-used-documents-on-homepage" title="Link to this section">&para;</a></h5>
 <p>Users can customise their home screens with the documents most relevant for them.</p>
 <hr />
-<h3 id="28-aesthetic-and-minimalist-design">2.8 Aesthetic and minimalist design</h3>
-<pre><code class="language-text">Interfaces should not contain information which is irrelevant or rarely needed.
+<h3 id="28-aesthetic-and-minimalist-design">2.8 Aesthetic and minimalist design<a class="headerlink" href="#28-aesthetic-and-minimalist-design" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Interfaces should not contain information which is irrelevant or rarely needed.
 Every extra unit of information in an interface competes with the relevant units
 of information and diminishes their relative visibility. Use whitespace in
 harmony with your content.
-</code></pre>
+</code></pre></div>
 <hr />
-<h3 id="29-help-users-recognize-diagnose-and-recover-from-errors">2.9 Help users recognize, diagnose, and recover from errors</h3>
-<pre><code class="language-text">Error messages should be expressed in plain language (no error codes), precisely
+<h3 id="29-help-users-recognize-diagnose-and-recover-from-errors">2.9 Help users recognize, diagnose, and recover from errors<a class="headerlink" href="#29-help-users-recognize-diagnose-and-recover-from-errors" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Error messages should be expressed in plain language (no error codes), precisely
 indicate the problem, and constructively suggest a solution.
-</code></pre>
-<h4 id="291-indicative-examples">2.9.1 Indicative examples</h4>
+</code></pre></div>
+<h4 id="291-indicative-examples">2.9.1 Indicative examples<a class="headerlink" href="#291-indicative-examples" title="Link to this section">&para;</a></h4>
 <p><img alt="Error Messages Examples showing clear problem indications and solutions" src="../media/5.01/Figure_9_Error_Messages_Examples.png" />
 <em>Figure 9: Error Messages Examples</em></p>
 <hr />
-<h3 id="210-help-and-documentation">2.10 Help and documentation</h3>
-<pre><code class="language-text">It's best if the system doesn't need any additional explanation. However, it may
+<h3 id="210-help-and-documentation">2.10 Help and documentation<a class="headerlink" href="#210-help-and-documentation" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>It&#39;s best if the system doesn&#39;t need any additional explanation. However, it may
 be necessary to provide documentation to help users understand how to complete
 their tasks.
-</code></pre>
-<h4 id="2101-indicative-examples">2.10.1 Indicative examples</h4>
+</code></pre></div>
+<h4 id="2101-indicative-examples">2.10.1 Indicative examples<a class="headerlink" href="#2101-indicative-examples" title="Link to this section">&para;</a></h4>
 <p>This can come in the form of App-onboarding, tutorials, F.A.Q.s or a Help section.</p>
 <hr />
-<h3 id="211-accessibility">2.11 Accessibility</h3>
+<h3 id="211-accessibility">2.11 Accessibility<a class="headerlink" href="#211-accessibility" title="Link to this section">&para;</a></h3>
 <p>An estimated 100 million people in the EU have some form of disability, and so
 represent an important segment of its population and a large user group.</p>
 <p><em>With Europe's ageing population this number is only going to rise. Keeping this
@@ -812,7 +3480,7 @@ basis with others. By delivering the user experience in a way that is accessible
 to people with the aforementioned needs, we are providing equal access to
 information for all citizens regardless of their situation or condition</em>.</p>
 <hr />
-<h4 id="2111-layout">2.11.1 Layout</h4>
+<h4 id="2111-layout">2.11.1 Layout<a class="headerlink" href="#2111-layout" title="Link to this section">&para;</a></h4>
 <p>Aim to have at least the main controls for the app at the bottom half of the
 screen when they are easily reachable with the thumb when operating the phone
 with one hand. The top half should be used for displaying information,
@@ -820,7 +3488,7 @@ documents, QR codes etc.</p>
 <p><img alt="Layout diagram showing thumb reachable areas on mobile screen" src="../media/5.01/Figure_10_Layout.png" />
 <em>Figure 10: Layout</em></p>
 <hr />
-<h4 id="2112-target-sizes">2.11.2 Target sizes</h4>
+<h4 id="2112-target-sizes">2.11.2 Target sizes<a class="headerlink" href="#2112-target-sizes" title="Link to this section">&para;</a></h4>
 <p>A target size is the area that can be activated in order to interact with an
 element. Individuals with dexterity challenges may find it more challenging to
 utilize a website if the target size is smaller. In this section, we'll examine
@@ -834,15 +3502,15 @@ as while walking or commuting.</p>
 <p><img alt="Target Sizes diagram showing recommended touch target dimensions" src="../media/5.01/Figure_11_Target_Sizes.png" />
 <em>Figure 11 : Target Sizes</em></p>
 <hr />
-<h4 id="2113-colour-contrast-guidelines">2.11.3 Colour contrast guidelines</h4>
+<h4 id="2113-colour-contrast-guidelines">2.11.3 Colour contrast guidelines<a class="headerlink" href="#2113-colour-contrast-guidelines" title="Link to this section">&para;</a></h4>
 <p>Text to background colour contrast should meet a 4.5:1 ratio.</p>
 <p>How to check: enter the hex codes for the foreground and background colours
 using: <a href="https://whocanuse.com/">https://whocanuse.com/</a></p>
 <hr />
-<h4 id="2114-font-size-guidelines">2.11.4 Font size guidelines</h4>
+<h4 id="2114-font-size-guidelines">2.11.4 Font size guidelines<a class="headerlink" href="#2114-font-size-guidelines" title="Link to this section">&para;</a></h4>
 <p>The UI should be designed to support up to x 2 the text size without breaking.</p>
 <hr />
-<h4 id="2115-animations">2.11.5 Animations</h4>
+<h4 id="2115-animations">2.11.5 Animations<a class="headerlink" href="#2115-animations" title="Link to this section">&para;</a></h4>
 <p>Avoid adding flashing, blinking, and rotating animations on the background.
 Excessive screen movement with no mechanism to control can make it difficult for
 users to gather information.</p>
@@ -856,17 +3524,17 @@ distraction.)</li>
 interactions, and can express a brand's style.)</li>
 </ul>
 <hr />
-<h4 id="2116-screen-readers">2.11.6 Screen readers</h4>
+<h4 id="2116-screen-readers">2.11.6 Screen readers<a class="headerlink" href="#2116-screen-readers" title="Link to this section">&para;</a></h4>
 <p>Make sure you provide the relative support for screen readers. Consider how the
 reader is going to read the screen and place items accordingly for convenience.
 In case of having to read through a lot of content to get to the main controls,
 consider providing a skip button.</p>
 <hr />
-<h3 id="212-writing">2.12 Writing</h3>
+<h3 id="212-writing">2.12 Writing<a class="headerlink" href="#212-writing" title="Link to this section">&para;</a></h3>
 <p>Text should be understandable by anyone, anywhere, regardless of their culture
 or language. UI text can make interfaces more usable and build trust. Text
 should be clear, accurate, and concise.</p>
-<h4 id="2121-write-in-the-present-tense">2.12.1 Write in the present tense</h4>
+<h4 id="2121-write-in-the-present-tense">2.12.1 Write in the present tense<a class="headerlink" href="#2121-write-in-the-present-tense" title="Link to this section">&para;</a></h4>
 <p>Use the present tense to describe product behaviour. Avoid using the future
 tense as this usually requires later updates.</p>
 <p>Use the present tense to describe product behaviour. Avoid using the future
@@ -880,39 +3548,39 @@ clarity.</p>
 <p>Don't write in different variations of the present tense, such as the present
 perfect tense.</p>
 <hr />
-<h4 id="2122-begin-with-the-objective">2.12.2 Begin with the objective</h4>
+<h4 id="2122-begin-with-the-objective">2.12.2 Begin with the objective<a class="headerlink" href="#2122-begin-with-the-objective" title="Link to this section">&para;</a></h4>
 <p>When a phrase describes a goal and the action needed to achieve it, start the
 sentence with the goal.</p>
-<pre><code class="language-text">To add a document, click +
-</code></pre>
+<div class="highlight"><pre><span></span><code>To add a document, click +
+</code></pre></div>
 <p><img alt="Example showing &quot;To add a document, click +&quot; text" src="../media/5.01/To_add_a_document.png" /></p>
 <p>Start a statement with the objective ("to add a document") and end it with the
 user action ("click + ").</p>
-<pre><code class="language-text">Click + to add a document
-</code></pre>
+<div class="highlight"><pre><span></span><code>Click + to add a document
+</code></pre></div>
 <p><img alt="Example showing &quot;Click + to add a document&quot; text" src="../media/5.01/Click_to_add_a_document.png" /></p>
 <p>Don't state the action the user takes ("Click + ") before the objective ("to add
 a document").</p>
 <hr />
-<h4 id="2123-avoid-combining-first-and-second-person">2.12.3 Avoid combining first and second person</h4>
+<h4 id="2123-avoid-combining-first-and-second-person">2.12.3 Avoid combining first and second person<a class="headerlink" href="#2123-avoid-combining-first-and-second-person" title="Link to this section">&para;</a></h4>
 <p>To avoid confusing the user, avoid using "me" or "my," and "you" or "your," in
 the same phrase.</p>
-<pre><code class="language-text">Change your preferences in My Account
-</code></pre>
+<div class="highlight"><pre><span></span><code>Change your preferences in My Account
+</code></pre></div>
 <p><img alt="Example showing &quot;Change your preferences in My Account&quot; text" src="../media/5.01/Change_your_preferences_in_My_Account.png" /></p>
 <p>Don't refer to the user in both the second person and the first person within
 the same phrase.</p>
-<pre><code class="language-text">Change your preferences in Account
-</code></pre>
+<div class="highlight"><pre><span></span><code>Change your preferences in Account
+</code></pre></div>
 <p><img alt="Example showing &quot;Change your preferences in Account&quot; text" src="../media/5.01/Change_your_preferences_in_Account.png" /></p>
 <hr />
-<h2 id="3-eudi-wallet-design-considerations">3 EUDI Wallet - Design Considerations</h2>
+<h2 id="3-eudi-wallet-design-considerations">3 EUDI Wallet - Design Considerations<a class="headerlink" href="#3-eudi-wallet-design-considerations" title="Link to this section">&para;</a></h2>
 <p>This section lists specific areas/features on which design considerations are
 deemed important to ensure a common user experience across the national
 implementations of the EUDI Wallets. It shall be noted that this list highlights
 specific areas which are prioritised as important but does not aim to be an
 exhaustive list.</p>
-<h3 id="31-user-authentication">3.1 User authentication</h3>
+<h3 id="31-user-authentication">3.1 User authentication<a class="headerlink" href="#31-user-authentication" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Covering common user authentication aspects, e.g. PIN, biometrics etc.</li>
 <li>Exploring the balance between the corresponding security aspects comparing to
@@ -922,19 +3590,19 @@ the point of sharing data? Or at login as well?)</li>
 user consent, enforcing trust)</li>
 </ul>
 <hr />
-<h3 id="32-browsing-credentialsdocuments">3.2 Browsing credentials/documents</h3>
+<h3 id="32-browsing-credentialsdocuments">3.2 Browsing credentials/documents<a class="headerlink" href="#32-browsing-credentialsdocuments" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Guidelines in relation to displaying a list of credentials/attestations in the
 EUDI Wallet</li>
 </ul>
 <hr />
-<h3 id="33-qr-code-presentation">3.3 QR code presentation</h3>
+<h3 id="33-qr-code-presentation">3.3 QR code presentation<a class="headerlink" href="#33-qr-code-presentation" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Guidelines in relation to presenting the QR code for the corresponding
 proximity use cases</li>
 </ul>
 <hr />
-<h3 id="34-confirmationsummaryauthentication-results">3.4 Confirmation/Summary/Authentication results</h3>
+<h3 id="34-confirmationsummaryauthentication-results">3.4 Confirmation/Summary/Authentication results<a class="headerlink" href="#34-confirmationsummaryauthentication-results" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Guidelines in relation to the authentication results presentation, i.e.
 successful/unsuccessful identification and authentication</li>
@@ -944,7 +3612,7 @@ cases, i.e. successful/unsuccessful data transfer)</li>
 the user</li>
 </ul>
 <hr />
-<h3 id="35-error-messages">3.5 Error Messages</h3>
+<h3 id="35-error-messages">3.5 Error Messages<a class="headerlink" href="#35-error-messages" title="Link to this section">&para;</a></h3>
 <ul>
 <li>
 <p>Handling/Display of error messages in different scenarios</p>
@@ -960,25 +3628,25 @@ the user</li>
 </li>
 </ul>
 <hr />
-<h3 id="36-privacysecurity-by-design">3.6 Privacy/Security by Design</h3>
+<h3 id="36-privacysecurity-by-design">3.6 Privacy/Security by Design<a class="headerlink" href="#36-privacysecurity-by-design" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Covering applicability of privacy/security aspects in the data sharing process
 (e.g. visual representation _of 'password' field)</li>
 </ul>
 <hr />
-<h3 id="37-trust-mark">3.7 Trust Mark</h3>
+<h3 id="37-trust-mark">3.7 Trust Mark<a class="headerlink" href="#37-trust-mark" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Establish trust through the use of the EUDI Wallet Trust Mark</li>
 <li>Applicability and placement in the corresponding sharing processes</li>
 </ul>
 <hr />
-<h3 id="38-notification-guidelines">3.8 Notification guidelines</h3>
+<h3 id="38-notification-guidelines">3.8 Notification guidelines<a class="headerlink" href="#38-notification-guidelines" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Guidelines in relation to displaying user notifications (where applicable) in
 the EUDI Wallet</li>
 </ul>
 <hr />
-<h2 id="4-conclusion">4 Conclusion</h2>
+<h2 id="4-conclusion">4 Conclusion<a class="headerlink" href="#4-conclusion" title="Link to this section">&para;</a></h2>
 <p>In conclusion, this EUDI Wallet Design Guide document represents the first
 iteration of what intends to be a 'living' document, which will be further
 elaborated for the specificities of the EUDI Wallet functionalities, as listed
@@ -996,6 +3664,9 @@ implementations, while at the same time meets the user expectations. We
 encourage stakeholders to review this EUDI Wallet Design Guide document
 thoroughly and kindly provide feedback that will assist if further shaping this
 design guide.</p>
+<!-- Auto-generated from Section 10 (References) of the ARF main
+     document by tools/gen_references.py. Do not edit by hand.
+     Appended to every page via pymdownx.snippets auto_append. -->
 
 
 
@@ -1029,9 +3700,53 @@ design guide.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../annex-3/annex-3.02-mDL-rulebook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: European Digital Identity Wallet">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                European Digital Identity Wallet
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../annex-5.02-design-guide-data-sharing-scenarios/" class="md-footer__link md-footer__link--next" aria-label="Next: European Digital Identity Wallet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                European Digital Identity Wallet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      European Union, 2025 - Licensed under the EUPL-1.2 or later
+    </div>
   
   
     Made with
@@ -1054,7 +3769,7 @@ design guide.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -6,11 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
+      
       
       
         <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/discussion-topics/x-relying-party-registration/">
       
       
+        <link rel="prev" href="../w-transactional-data-for-payments-and-other-use-cases/">
+      
+      
+        <link rel="next" href="../x-rr-relying-party-registration/">
       
       
         
@@ -58,6 +64,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="X relying party registration - European Digital Identity" />
+<meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
 <meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/discussion-topics/x-relying-party-registration.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -65,6 +72,7 @@
 <meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/discussion-topics/x-relying-party-registration/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="X relying party registration - European Digital Identity" />
+<meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
 <meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/discussion-topics/x-relying-party-registration.png" />
 </head>
   
@@ -181,11 +189,18 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -207,7 +222,7 @@
         <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
@@ -254,7 +269,7 @@
   
     
   
-  Architecture and reference framework
+  Architecture and Reference Framework
 
       </a>
     </li>
@@ -266,17 +281,40 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../annexes/" class="md-tabs__link">
+          
+  
+  
+  Annexes
+
+        </a>
+      </li>
+    
+  
+
+      
         
+  
   
   
     
   
-  Discussion topics
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Discussion Topics
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -285,17 +323,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../technical-specifications/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../technical-specifications/" class="md-tabs__link">
+          
   
-  Technical specifications
+  
+  Technical Specifications
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -379,7 +418,7 @@
       <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
@@ -430,7 +469,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture and reference framework
+    Architecture and Reference Framework
   
 
     
@@ -445,6 +484,568 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and Reference Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-1/annex-1-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 1 - Definitions</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Level Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High-Level Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.01-high-level-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.03-high-level-requirements-by-category/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rulebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rulebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.01-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.01 - PID Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.02-mDL-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.02 - mDL Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.01-design-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.02 -  Design Guide - Data Sharing Scenarios</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discussion Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -469,9 +1070,1348 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a-privacy-risks-and-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A privacy risks and mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aa-support-of-electronic-payments-SCA-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aa support of electronic payments SCA with wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ab-digital-signature-using-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ab digital signature using wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../b-re-issuance-and-batch-issuance-of-pids-and-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B re issuance and batch issuance of pids and attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C wallet unit attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-rr-wallet-unit-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C rr wallet unit attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d-embedded-disclosure-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D - Embedded Disclosure Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-rr-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E rr pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f-digital-credential-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic F - Digital Credentials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../g-zero-knowledge-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G - Zero Knowledge Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h-transaction-logs-kept-by-the-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic H - Transaction logs kept by the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i-natural-person-representing-another-natural-person/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I - Natural person representing another natural person
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../j-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J - Wallet to Wallet Interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../j-rr-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k-combined-presentation-of-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K - Combined presentation of Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n-export-and-data-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N export and data portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../o-catalogues-for-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic O - Catalogues for Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../q-interface-user-wallet-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q interface user wallet instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r-authentication-of-user-to-device/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R authentication of user to device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s-certificate-transparancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S certificate transparancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-support-and-maintenance-by-the-wallet-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T - Support and Maintenance by the Wallet Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic U - EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V - PID Rulebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w-transactional-data-for-payments-and-other-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W transactional data for payments and other use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-discussion-paper-topic-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Discussion Paper Topic Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Key Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-document-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Document Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-legal-requirements-for-relying-party-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Legal Requirements for Relying Party registration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Legal Requirements for Relying Party registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-european-digital-identity-regulation-about-relying-party-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 European Digital Identity Regulation about Relying Party registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-draft-cir-on-relying-party-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Draft CIR on Relying Party registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-proximity-use-case-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Proximity use case support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-access-certificates-with-multiple-relying-party-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Access certificates with multiple Relying Party instances
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-registration-certificate-per-intended-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Registration certificate per intended use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-addressing-the-pid-providers-and-attestation-providers-on-rprcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Addressing the PID Providers and Attestation Providers on RPRCs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-registration-certificate-for-intermediaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Registration certificate for intermediaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Registration certificate for intermediaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-registration-on-behalf-of-the-end-relying-parties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.1 Registration on-behalf of the End-Relying Parties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-use-of-certificates-upon-on-behalf-operation-towards-wallet-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.2 Use of certificates upon on-behalf operation towards Wallet Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-registration-and-registration-certificate-life-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Registration and Registration Certificate life cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-current-hlrs-and-proposals-of-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Current HLRs and Proposals of Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Current HLRs and Proposals of Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-topic-44-relying-party-registration-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Topic 44 - Relying Party Registration Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-topic-52-relying-party-intermediaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Topic 52 - Relying Party Intermediaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-relation-to-other-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Relation to Other Topics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Relation to Other Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-topic-6-relying-party-authentication-and-user-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Topic 6 - Relying Party authentication and User approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-topic-31-pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Topic 31 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-use-of-certificate-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Use of Certificate Transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-user-requesting-data-deletion-to-relying-parties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 User requesting data deletion to relying parties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-user-reporting-unlawful-or-suspicious-request-of-data-to-dpas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 User reporting unlawful or suspicious request of data to DPAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-relation-to-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Relation to Risk Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-additions-and-changes-to-the-arf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Additions and Changes to the ARF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Additions and Changes to the ARF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impact-analysis-to-the-arf-of-making-the-rprc-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact analysis to the ARF of making the RPRC optional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-but-related-changes-to-be-done-in-the-arf-when-updating-texts-on-the-rprc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other but related changes to be done in the ARF when updating texts on the RPRC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x-rr-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X rr relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../z-device-bound-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic Z - Device-bound Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -484,7 +2424,7 @@
   <span class="md-ellipsis">
     
   
-    Technical specifications
+    Essential Standards and Technical Specifications (STS)
   
 
     
@@ -493,6 +2433,350 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts1-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts2-notification-publication-provider-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of systems enabling the notification and subsequent publication of Provider information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts3-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts4-zkp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common formats and API for Relying Party Registration information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Set of Relying Party Information to be Registered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts7-common-interface-for-data-deletion-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for Data Deletion Requests to Relying Parties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts9-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet to Wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts10-data-portability-and-download-%28export%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Data Portability and Download (Export)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of interfaces and formats for catalogue of attributes and catalogue of attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -569,6 +2853,46 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Discussion Topics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -576,22 +2900,35 @@
 
 
   
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/discussion-topics/x-relying-party-registration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/discussion-topics/x-relying-party-registration.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
   
 
 
 <p>Version 0.4, updated 25 April 2025</p>
 <p><a href="https://www.github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/431">Link to GitHub discussion</a></p>
-<h1 id="topic-x-relying-party-registration">Topic X - Relying Party Registration</h1>
-<h3 id="legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.</h3>
-<h2 id="1-introduction">1 Introduction</h2>
-<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description</h3>
+<h1 id="topic-x-relying-party-registration">Topic X - Relying Party Registration<a class="headerlink" href="#topic-x-relying-party-registration" title="Link to this section">&para;</a></h1>
+<h3 id="legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.<a class="headerlink" href="#legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir" title="Link to this section">&para;</a></h3>
+<h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Link to this section">&para;</a></h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description<a class="headerlink" href="#11-discussion-paper-topic-description" title="Link to this section">&para;</a></h3>
 <p>This document is the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic X: Relying Party registration.
 The ARF Development Plan [ARF_DevPlan] describes this Topic as follows:</p>
 <p><em>This topic is to gather High level Requirements (HLR) for Relying Party registration. The HLR relate to information necessary for authentication to access European Digital Identity Wallets, and to relying parties’ contact details and their intended use of wallets, including what data relying parties may ask users for</em>.</p>
-<h3 id="12-key-words">1.2 Key Words</h3>
+<h3 id="12-key-words">1.2 Key Words<a class="headerlink" href="#12-key-words" title="Link to this section">&para;</a></h3>
 <p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
 In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
-<h3 id="13-document-structure">1.3 Document Structure</h3>
+<h3 id="13-document-structure">1.3 Document Structure<a class="headerlink" href="#13-document-structure" title="Link to this section">&para;</a></h3>
 <p>The document is structured as follows:</p>
 <ul>
 <li>
@@ -610,10 +2947,10 @@ In addition, 'must' (non-capitalised) is used to indicate an external constraint
 <p>Chapter 6 presents the additions and changes that will be made to the ARF main document as a result of discussions.</p>
 </li>
 </ul>
-<h2 id="2-legal-requirements-for-relying-party-registration">2 Legal Requirements for Relying Party registration</h2>
-<p>Two legal texts impose direct requirements on the Relying Party registration: The evolving <a href="https://tinyurl.com/IA-5b-draft">Draft of the CIR for RP-Registration</a> and the [European Digital Identity Regulation]. This section recaps the respective legal requirements from these sources.</p>
-<h3 id="21-european-digital-identity-regulation-about-relying-party-registration">2.1 [European Digital Identity Regulation] about Relying Party registration</h3>
-<p>The [European Digital Identity Regulation] requires the Relying Parties to be registered. It specifies the following requirements related to Relying Party registration:</p>
+<h2 id="2-legal-requirements-for-relying-party-registration">2 Legal Requirements for Relying Party registration<a class="headerlink" href="#2-legal-requirements-for-relying-party-registration" title="Link to this section">&para;</a></h2>
+<p>Two legal texts impose direct requirements on the Relying Party registration: The evolving <a href="https://tinyurl.com/IA-5b-draft">Draft of the CIR for RP-Registration</a> and the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a>. This section recaps the respective legal requirements from these sources.</p>
+<h3 id="21-european-digital-identity-regulation-about-relying-party-registration">2.1 <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a> about Relying Party registration<a class="headerlink" href="#21-european-digital-identity-regulation-about-relying-party-registration" title="Link to this section">&para;</a></h3>
+<p>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a> requires the Relying Parties to be registered. It specifies the following requirements related to Relying Party registration:</p>
 <ol>
 <li>Setting up national registers of registered wallet-relying parties in each Member State</li>
 <li>Registering Relying Party needs to provide at minimum, a definite set of information necessary to authenticate to EUDI Wallets including the intended use and indication of data requested for this use from the user</li>
@@ -673,7 +3010,7 @@ Registration should apply exclusively to relying parties providing services by m
 <em>to in Article 48(2).</em>
 <em>...</em></li>
 </ol>
-<h3 id="22-draft-cir-on-relying-party-registration">2.2 Draft CIR on Relying Party registration</h3>
+<h3 id="22-draft-cir-on-relying-party-registration">2.2 Draft CIR on Relying Party registration<a class="headerlink" href="#22-draft-cir-on-relying-party-registration" title="Link to this section">&para;</a></h3>
 <p>The public consultation version of the [Draft of the CIR for RP-Registration] specifies the following requirements related to Relying Party registration:</p>
 <ol>
 <li>The roles:</li>
@@ -890,7 +3227,7 @@ Suspension and cancellation</p>
 <li>expresses attributes in way compliant with IETF RFC 5755;</li>
 <li>plus additional requirements set out in the Annex V.</li>
 </ul>
-<h2 id="3-discussion">3 Discussion</h2>
+<h2 id="3-discussion">3 Discussion<a class="headerlink" href="#3-discussion" title="Link to this section">&para;</a></h2>
 <p>The Relying Party registration covers from functional perspective of the ARF and the European Digital Identity ecosystem the following aspects: </p>
 <p>1) the <strong>Registrar function</strong> for which the Member States are responsible to organise this function, register and a publicly accessible API at a national level (based on the future technical specifications and the CIR provided by the European Commission),
 2) the registration process mandated to be be followed by all Relying Parties resulting in issuance of one or more <strong>Wallet-Relying Party Access Certificates</strong> (RPAC) and as many <strong>Wallet-Relying Party Registration Certificates</strong> (RPRC) as the Relying Party has dedicated intended uses (use cases, services provided to the EUDI Wallet Users),
@@ -910,7 +3247,7 @@ Suspension and cancellation</p>
 <li>Impacts on the HLRs under other Topics of ARF Annex 2 (Topic 6 &amp; Topic 31, at least)</li>
 </ul>
 <p>This document is ONLY intended to clarify the high-level requirements related to the Relying Party registration topic. The necessary technical specifications (including any policy documents) will be developed by the European Commission after agreement over the requirements has been reached.</p>
-<h3 id="31-proximity-use-case-support">3.1 Proximity use case support</h3>
+<h3 id="31-proximity-use-case-support">3.1 Proximity use case support<a class="headerlink" href="#31-proximity-use-case-support" title="Link to this section">&para;</a></h3>
 <p>The Annex IV and V of the [Draft CIR on Relying Party registration] will bind legally what certificate standards are applicable for the RPAC and RPRC to be issued by the registrar. Use of the RPRC in context of proximity use case is mentioned in the ARF indirectly in (6.6.3.5), but necessary technical requirements for RPRC issuance are pointing at use of JOSE for signing/sealing the certificate, and the data format of the certificate contents being JSON (Annex V of the draft CIR). Requirement for the Registrar to support provisioning of registration certificates in both JWT and CWT format was agreed to be added to the requirements.</p>
 <p>A new HLR is proposed to extend the scope of registration to apply over both online and proximity use cases:</p>
 <table>
@@ -929,7 +3266,7 @@ Suspension and cancellation</p>
 </tr>
 </tbody>
 </table>
-<h3 id="32-access-certificates-with-multiple-relying-party-instances">3.2 Access certificates with multiple Relying Party instances</h3>
+<h3 id="32-access-certificates-with-multiple-relying-party-instances">3.2 Access certificates with multiple Relying Party instances<a class="headerlink" href="#32-access-certificates-with-multiple-relying-party-instances" title="Link to this section">&para;</a></h3>
 <p>When addressing the RPACs, the Regulation does not recognise the need for multiple instances of Relying Party services in modern IT architectures (replication of RP servers and common dependance on multiple geographical cloud provider regions to ensure availability and continuity of RP services). Multi-instance Relying Parties will also be commonplace in proximity use cases with handheld or mounted verification devices interacting with the Wallet Units. The fact that multiple access certificates with individual private keys can be requested and issued by the Access Certificate Authorities should be clarified in the ARF requirements on registering access certificates, and in the policy documents to be created based on the ARF high-level requirements.</p>
 <p>The HLR Reg_15 on policy for revocation is revised to mention multiple RPACs (<em>all</em> RPACS of a Relying Party), and a new HLR Reg_15b is brought to clarify the need for controlled revocation of individual instance RPACs (when the Relying Party still has at least one or more valid RPACs after revoking one or more RPACs assigned to its Relying Party Instances). Related to the existing HLRs on relying party access certificates Reg_31 and Reg_32, the requirements with their contextual notes should be moved under Topic 44 with rewording to mean RPRCs. To ensure binding of the RPAC and RPRC with the unique identifier of the Relying Party, a new HLR Reg_33 is introduced.</p>
 <table>
@@ -968,7 +3305,7 @@ Suspension and cancellation</p>
 </tr>
 </tbody>
 </table>
-<h3 id="33-registration-certificate-per-intended-use">3.3 Registration certificate per intended use</h3>
+<h3 id="33-registration-certificate-per-intended-use">3.3 Registration certificate per intended use<a class="headerlink" href="#33-registration-certificate-per-intended-use" title="Link to this section">&para;</a></h3>
 <p>The Relying Party registration requires Relying Parties to provide information necessary for authentication, their contact details, and the intended use of the European Digital Identity Wallets, including the specific data they will request from users. The RPAC (wallet Relying Party Access Certificate) authenticates who the Relying Party is, while the RPRC (wallet-Relying Party Registration Certificate) specifies what data that authenticated the Relying Party is entitled to request for a particular registered purpose (intended use). Crucially, Relying Parties are explicitly prohibited from requesting any data beyond what is indicated in their registration. This is a key mechanism for enforcing data minimisation and purpose limitation.</p>
 <p>According to the [Draft CIR on Relying Party registration] a Relying Party will get issued a unique RPRC for each of its registered intended uses, and these registration certificates may be revoked independent of each other or of the associated RPAC. The access certificates are the Relying Party's 'master switches' to the EUDI ecosystem, whilst registration certificates are used to register and document the use case/s provided to the Wallet User. The registration certificate will not be a X.509 certificate, and thus the required certificate policies for RPRCs should be clarified both in the IA draft and the ARF. </p>
 <p>Current RPRC_2 and RPC_3 in the ARF should be updated to reflect the text of the draft CIR on RPR, a new requirement on use of unique RP identifier across the RPRCs, and a new HLR on creating applicable certificate policies is suggested for Topic 44 as follows:</p>
@@ -1016,7 +3353,7 @@ Suspension and cancellation</p>
 <blockquote>
 <p>Note: The modifications suggested for RPRC_01 and RPRC_03 above include also the changes required from discussion on intermediaries at Section 3.5.</p>
 </blockquote>
-<h3 id="34-addressing-the-pid-providers-and-attestation-providers-on-rprcs">3.4 Addressing the PID Providers and Attestation Providers on RPRCs</h3>
+<h3 id="34-addressing-the-pid-providers-and-attestation-providers-on-rprcs">3.4 Addressing the PID Providers and Attestation Providers on RPRCs<a class="headerlink" href="#34-addressing-the-pid-providers-and-attestation-providers-on-rprcs" title="Link to this section">&para;</a></h3>
 <p>The [Draft of the CIR for RP-Registration] implies that among all other roles defined in the ARF also the PID Providers and Attestation Providers will receive registration certificates, with the role registered as part of the registration and reflected in the certificate information (the specific entitlement being one or more of the set PID_Provider, QEAA_Provider, Non_Q_EAA_Provider or PUB_EAA_Provider). This needs to be reflected in the ARF, which so far has separated these roles from the Relying Parties (per definition of the ARF).</p>
 <p>Section 6.3.2.2 of the ARF says that "<em>A PID Provider access certificate indicates that its subject is a PID Provider. Similarly, an Attestation Provider access certificate indicates that its subject is a QEAA Provider, a PuB-EAA Provider or a non-qualified EAA Provider.</em>"</p>
 <p>This is not the case per the draft CIR, the entitlements indicating the registered role are only present in the Relying Party registration certificate.</p>
@@ -1037,8 +3374,8 @@ Suspension and cancellation</p>
 </tr>
 </tbody>
 </table>
-<h3 id="35-registration-certificate-for-intermediaries">3.5 Registration certificate for intermediaries</h3>
-<h4 id="351-registration-on-behalf-of-the-end-relying-parties">3.5.1 Registration on-behalf of the End-Relying Parties</h4>
+<h3 id="35-registration-certificate-for-intermediaries">3.5 Registration certificate for intermediaries<a class="headerlink" href="#35-registration-certificate-for-intermediaries" title="Link to this section">&para;</a></h3>
+<h4 id="351-registration-on-behalf-of-the-end-relying-parties">3.5.1 Registration on-behalf of the End-Relying Parties<a class="headerlink" href="#351-registration-on-behalf-of-the-end-relying-parties" title="Link to this section">&para;</a></h4>
 <p>The intention reflected in the [Draft of the CIR for RP-Registration] is that the intermediaries are to receive the RPRC of their End-Relying Parties. If an End-Relying Party uses an intermediary, it (the End-RP) will not need to itself apply or receive its Wallet-Relying Party certificate from the Registrar, if the intermediary (as part of their service towards the End-Relying Parties) registers for it and possesses the RPRCs for all of its customers. This will simplify the process of End-Relying Parties, who can This model is not mandated by the ARF, the processes how registration will be organised in Member States is left for national discretion.</p>
 <blockquote>
 <p>Note: The means to indicate to the national registry/ies that an entity is registering as an Intermediary is left for national discretion (see RPI_04), there is no such role/entitlement recognised in the Regulation.</p>
@@ -1048,7 +3385,7 @@ Suspension and cancellation</p>
 <blockquote>
 <p>Note: Attention must be paid towards compliance of principles such as lawfulness, fairness, transparency, storage limitation or accountability, and of requirements such as those related to data subject rights when using an Intermediary. The compliance against requirements of RPI_10 are therefore essential to be audited when defining the national registration and security policies for Intermediaries. There is no such intention from the Commission, as this (no EU-level policy setting) is already the case for the proxying TSPs since enforcement of (EU) 2014/910.</p>
 </blockquote>
-<h4 id="352-use-of-certificates-upon-on-behalf-operation-towards-wallet-units">3.5.2 Use of certificates upon on-behalf operation towards Wallet Units</h4>
+<h4 id="352-use-of-certificates-upon-on-behalf-operation-towards-wallet-units">3.5.2 Use of certificates upon on-behalf operation towards Wallet Units<a class="headerlink" href="#352-use-of-certificates-upon-on-behalf-operation-towards-wallet-units" title="Link to this section">&para;</a></h4>
 <p>When operating on behalf of its End-Relying Parties, the intermediary will possess as many RPRCs as number of its intermediated End-RPs entities (multiplied by the number of services/intended uses for each entity possibly). The ARF describes already how the certificates are to be used by the Intermediary and the Wallet Unit in RPI_06 to RPI_10. For clarity, the process of presenting the Intermediary RPAC and the End-Relying Party RPRC with necessary technical level binding is illustrated in Figure 1 below.</p>
 <p><img alt="Intermediary-certificate-presentation-to-wu" src="../img/intermediary-certificate-presentation-to-wu.png" /></p>
 <p>Figure 1 - Validation of identifiers between Intermediary RPAC and End-Relying Party RPRC.</p>
@@ -1090,7 +3427,7 @@ Suspension and cancellation</p>
 </tr>
 </tbody>
 </table>
-<h3 id="36-registration-and-registration-certificate-life-cycles">3.6 Registration and Registration Certificate life cycles</h3>
+<h3 id="36-registration-and-registration-certificate-life-cycles">3.6 Registration and Registration Certificate life cycles<a class="headerlink" href="#36-registration-and-registration-certificate-life-cycles" title="Link to this section">&para;</a></h3>
 <p>The Article 9 of [Draft of the CIR for RP-Registration]  envisions 'suspension' and 'cancellation' of the registration (apart from the non-specified "active" state after the registration). 
 At the same time the RP registration certificate has its own life cycle, which envisions only 'revocation' (apart from the "valid" state after issuance).</p>
 <p>In addition, the IA draft text lists the following reasons of suspension/cancellation:
@@ -1137,11 +3474,11 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h2 id="4-current-hlrs-and-proposals-of-changes">4 Current HLRs and Proposals of Changes</h2>
+<h2 id="4-current-hlrs-and-proposals-of-changes">4 Current HLRs and Proposals of Changes<a class="headerlink" href="#4-current-hlrs-and-proposals-of-changes" title="Link to this section">&para;</a></h2>
 <p>The ARF, Annex 2, Topic 27, Topic 44 and Topic 52, contains a number of High-Level Requirements related to the topic.</p>
 <p>The Topic 27 requirements cover general requirements for Member State registration processes and specific requirements for the registration of Relying Parties, whereas Topic 44 covers issuance of Relying Party registration certificates. Topic 52 focuses on the intermediaries.</p>
 <p>The existing HLRs are listed in the tables below, along with a proposal to keep, change, add, or remove the HLR.</p>
-<h3 id="41-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">4.1 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties</h3>
+<h3 id="41-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">4.1 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties<a class="headerlink" href="#41-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties" title="Link to this section">&para;</a></h3>
 <p>A.  General requirements for Member State registration processes</p>
 <table>
 <thead>
@@ -1164,7 +3501,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>Reg_03</td>
-<td>Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the [European Digital Identity Regulation] Article 5b 5, for the purpose of transparency to Users and other stakeholders.</td>
+<td>Member States SHALL publish the registry entries online, in a sealed or signed machine-readable common format suitable for automated processing, according to the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a> Article 5b 5, for the purpose of transparency to Users and other stakeholders.</td>
 <td>Keep</td>
 </tr>
 <tr>
@@ -1337,7 +3674,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 <tbody>
 <tr>
 <td>Reg_23</td>
-<td>The Commission SHALL establish a technical specification for a common set of Relying Party information to be registered in Member State registries. This set SHALL include at least the information defined in [European Digital Identity Regulation] article 5b 2 (c).</td>
+<td>The Commission SHALL establish a technical specification for a common set of Relying Party information to be registered in Member State registries. This set SHALL include at least the information defined in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a> article 5b 2 (c).</td>
 <td>Keep</td>
 </tr>
 <tr>
@@ -1404,7 +3741,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h3 id="42-topic-44-relying-party-registration-certificates">4.2 Topic 44 - Relying Party Registration Certificates</h3>
+<h3 id="42-topic-44-relying-party-registration-certificates">4.2 Topic 44 - Relying Party Registration Certificates<a class="headerlink" href="#42-topic-44-relying-party-registration-certificates" title="Link to this section">&para;</a></h3>
 <p>A. Issuance of Relying Party registration certificates</p>
 <table>
 <thead>
@@ -1447,7 +3784,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td>RPRC_05</td>
-<td>The Commission SHALL ensure that extensions are specified for [ISO/IEC 18013-5] and for [OpenID4VP], allowing a Relying Party to transfer a Relying Party registration certificate to a Wallet Unit. These extensions SHALL comply with applicable requirements in these standards.</td>
+<td>The Commission SHALL ensure that extensions are specified for <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> and for [OpenID4VP], allowing a Relying Party to transfer a Relying Party registration certificate to a Wallet Unit. These extensions SHALL comply with applicable requirements in these standards.</td>
 <td>Keep</td>
 </tr>
 <tr>
@@ -1482,7 +3819,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h3 id="43-topic-52-relying-party-intermediaries">4.3 Topic 52 - Relying Party Intermediaries</h3>
+<h3 id="43-topic-52-relying-party-intermediaries">4.3 Topic 52 - Relying Party Intermediaries<a class="headerlink" href="#43-topic-52-relying-party-intermediaries" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1534,14 +3871,14 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h2 id="5-relation-to-other-topics">5 Relation to Other Topics</h2>
+<h2 id="5-relation-to-other-topics">5 Relation to Other Topics<a class="headerlink" href="#5-relation-to-other-topics" title="Link to this section">&para;</a></h2>
 <p>Below we discuss how Relying Party registration relates to the other topics being discussed.</p>
 <p>As indicated in the chapter 3, several changes are proposed in the context of the Relying Party registration. The changes introduced in the respective HLRs are to be also reflected in the remaining topics/HLRs, at least in reference to Topic 6 and Topic 31. Note that term <strong>Registration Certificate Authority</strong> has been introduced, aside the formerly used Access Certificate Authority.</p>
 <p>In result, the following modification are therefore proposed:</p>
 <blockquote>
 <p>Note: only affected HLRs are listed, not exhaustive lists as in Section 4.</p>
 </blockquote>
-<h3 id="51-topic-6-relying-party-authentication-and-user-approval">5.1 Topic 6 - Relying Party authentication and User approval</h3>
+<h3 id="51-topic-6-relying-party-authentication-and-user-approval">5.1 Topic 6 - Relying Party authentication and User approval<a class="headerlink" href="#51-topic-6-relying-party-authentication-and-user-approval" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1558,7 +3895,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h3 id="52-topic-31-pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">5.2 Topic 31 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication</h3>
+<h3 id="52-topic-31-pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication">5.2 Topic 31 - PID Provider, Wallet Provider, Attestation Provider, and Access Certificate Authority notification and publication<a class="headerlink" href="#52-topic-31-pid-provider-wallet-provider-attestation-provider-and-access-certificate-authority-notification-and-publication" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1630,14 +3967,14 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 </tbody>
 </table>
-<h3 id="53-use-of-certificate-transparency">5.3 Use of Certificate Transparency</h3>
+<h3 id="53-use-of-certificate-transparency">5.3 Use of Certificate Transparency<a class="headerlink" href="#53-use-of-certificate-transparency" title="Link to this section">&para;</a></h3>
 <p>[Topic S] refers to use of Certificate Transparencey (CT) in the context of access certificates. There is no decision yet whether CT will be used at all, as the initial intention of CT use was the context of browsers/QWACs. Regulation has no requirement for use of Certificate Transparency with registration certificates.</p>
-<h3 id="54-user-requesting-data-deletion-to-relying-parties">5.4 User requesting data deletion to relying parties</h3>
+<h3 id="54-user-requesting-data-deletion-to-relying-parties">5.4 User requesting data deletion to relying parties<a class="headerlink" href="#54-user-requesting-data-deletion-to-relying-parties" title="Link to this section">&para;</a></h3>
 <p>[Topic L] will discuss requirements related to the EUDI Wallet User's means to request data deletion from any Relying Parties that they've provided with attestation data. This will be using the contact details which are required to be registered as part of the registration data set.</p>
-<h3 id="55-user-reporting-unlawful-or-suspicious-request-of-data-to-dpas">5.5 User reporting unlawful or suspicious request of data to DPAs</h3>
+<h3 id="55-user-reporting-unlawful-or-suspicious-request-of-data-to-dpas">5.5 User reporting unlawful or suspicious request of data to DPAs<a class="headerlink" href="#55-user-reporting-unlawful-or-suspicious-request-of-data-to-dpas" title="Link to this section">&para;</a></h3>
 <p>[Topic M] will cover requirements on EUDI Wallet Users means to report evidently or potentially unlawful presentation requests by a Relying Party to relevant data protection authority/-ies (DPAs). This reporting would be actuated if a Relying Party is trying to ask attestations or attributes beyond its reported Intended Use -specific data set that is present in the related Registration Certificate. </p>
 <p>If found in breach and not corrected promptly by the Relying Party, the DPA and national authorities are allowed to request revocation of the access and registration certificates of the Relying Party in breach of their registration data.</p>
-<h3 id="56-relation-to-risk-register">5.6 Relation to Risk Register</h3>
+<h3 id="56-relation-to-risk-register">5.6 Relation to Risk Register<a class="headerlink" href="#56-relation-to-risk-register" title="Link to this section">&para;</a></h3>
 <p>The risk register for European Digital Identity Wallets [RiskRegister]
 contains the following risks that are related to the Relying Party registration:</p>
 <table>
@@ -1717,10 +4054,10 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
-<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF</h2>
+<h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF<a class="headerlink" href="#6-additions-and-changes-to-the-arf" title="Link to this section">&para;</a></h2>
 <p>The agreed Annex 2 HLR changes are listed in Section 4 and Section 5.1-5.2 above. In addition, discussions of the Relying Party registration in the main part of the ARF will be updated accordingly.</p>
 <p><em>Note: In addition, the latest changes of [Draft of the CIR for RP-Registration] make the issuance of the Relying Party registration certificates optional. This impacts this paper and the ARF. Therefore an impact analysis has been conducted, presented below. The changes that are needed will be included in ARF 1.10.0 that will be published until the end of next week.</em> </p>
-<h3 id="impact-analysis-to-the-arf-of-making-the-rprc-optional">Impact analysis to the ARF of making the RPRC optional</h3>
+<h3 id="impact-analysis-to-the-arf-of-making-the-rprc-optional">Impact analysis to the ARF of making the RPRC optional<a class="headerlink" href="#impact-analysis-to-the-arf-of-making-the-rprc-optional" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1776,7 +4113,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
-<h3 id="other-but-related-changes-to-be-done-in-the-arf-when-updating-texts-on-the-rprc">Other but related changes to be done in the ARF when updating texts on the RPRC</h3>
+<h3 id="other-but-related-changes-to-be-done-in-the-arf-when-updating-texts-on-the-rprc">Other but related changes to be done in the ARF when updating texts on the RPRC<a class="headerlink" href="#other-but-related-changes-to-be-done-in-the-arf-when-updating-texts-on-the-rprc" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1813,7 +4150,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
-<h2 id="7-references">7 References</h2>
+<h2 id="7-references">7 References<a class="headerlink" href="#7-references" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1855,7 +4192,7 @@ contains the following risks that are related to the Relying Party registration:
 <td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a></td>
 </tr>
 <tr>
-<td>[European Digital Identity Regulation]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a></td>
 <td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
 </tr>
 <tr>
@@ -1888,6 +4225,9 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 </tbody>
 </table>
+<!-- Auto-generated from Section 10 (References) of the ARF main
+     document by tools/gen_references.py. Do not edit by hand.
+     Appended to every page via pymdownx.snippets auto_append. -->
 
 
 
@@ -1918,9 +4258,53 @@ contains the following risks that are related to the Relying Party registration:
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../w-transactional-data-for-payments-and-other-use-cases/" class="md-footer__link md-footer__link--prev" aria-label="Previous: W transactional data for payments and other use cases">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                W transactional data for payments and other use cases
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../x-rr-relying-party-registration/" class="md-footer__link md-footer__link--next" aria-label="Next: X rr relying party registration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                X rr relying party registration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      European Union, 2025 - Licensed under the EUPL-1.2 or later
+    </div>
   
   
     Made with
@@ -1943,7 +4327,7 @@ contains the following risks that are related to the Relying Party registration:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
