@@ -20,20 +20,16 @@ FROM pandoc/extra:latest
 USER root
 RUN apk add --no-cache make zip
 
-# The PDF/A-2b output configured via `pdfstandard` in pandoc/metadata.yml needs
-# pdfmanagement-testphase on LaTeX kernels older than 2025-11 (where the
-# functionality was integrated into the kernel and the package retired from
-# current CTAN mirrors). The base image's TeX Live has such a kernel, but its
-# tlmgr points at a current mirror that no longer carries the package, so
-# install it from the frozen archive matching the installed TeX Live year.
-# The kpsewhich guard makes this a no-op once a future base ships the
-# integrated kernel.
-RUN kpsewhich pdfmanagement-testphase.sty >/dev/null 2>&1 || { \
-      TLYEAR=$(tlmgr --version | sed -n 's/.*version \([0-9]\{4\}\).*/\1/p') && \
-      tlmgr option repository "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TLYEAR}/tlnet-final" && \
-      tlmgr install pdfmanagement-testphase && \
-      tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet ; \
-    }
+# \DocumentMetadata (used for the PDF/A-2b output configured via `pdfstandard`
+# in pandoc/metadata.yml) loads pdfmanagement-testphase.sty, which is not in
+# the TeX Live set curated for Eisvogel. In TL2026 the file ships in the
+# `pdfmanagement` package (the standalone `pdfmanagement-testphase` package
+# was retired and is kept only as a catalogue alias / compat file); older TeX
+# Live releases still use the old package name, hence the fallback. The
+# kpsewhich guard skips the install once a base ships the file out of the box.
+RUN kpsewhich pdfmanagement-testphase.sty >/dev/null 2>&1 || \
+    tlmgr install pdfmanagement || \
+    tlmgr install pdfmanagement-testphase
 
 # pandoc/extra sets ENTRYPOINT to `pandoc`; reset it so `make` and shell commands
 # run normally when the image is used as a CI job container or via `docker run`.
