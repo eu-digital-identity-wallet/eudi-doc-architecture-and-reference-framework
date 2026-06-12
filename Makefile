@@ -5,6 +5,7 @@
 #
 # Usage:
 #   make             - Convert Markdown files to PDF, DOCX, EPUB and build the MkDocs site.
+#   make hltr        - Regenerate the Annex 2 requirements markdown from the HLTR CSV.
 #   make mkdocs      - Build the MkDocs site.
 #   make serve       - Serve the MkDocs site locally.
 #   make copy-pdfs   - Copy all PDF files from the docs folder to build/pdf.
@@ -43,6 +44,7 @@ EXPORTED_DOCS  := \
 RM      := /bin/rm
 PANDOC  := pandoc
 MKDOCS  := mkdocs
+PYTHON  := python3
 
 # Pandoc Options
 PANDOC_OPTIONS      := --toc --from markdown+gfm_auto_identifiers --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
@@ -70,7 +72,7 @@ PANDOC_EPUB_OPTIONS := --to epub3
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all pdfs epub pdf mkdocs serve copy-pdfs zip-pdfs clean
+.PHONY: all pdfs epub pdf mkdocs serve copy-pdfs zip-pdfs clean hltr
 
 # Default target: build all exported documents and the MkDocs site.
 all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
@@ -88,6 +90,13 @@ epub :
 pdf :
 	@mkdir -p $(BUILD_DIR)/pdf
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -M subtitle="Architecture and Reference Framework" -o $(BUILD_DIR)/pdf/architecture-and-reference-framework-main-and-annexes.pdf $(SOURCE_DOCS)
+# Regenerate the Annex 2 high-level-requirements markdown (annex-2.02 and
+# annex-2.03) from hltr/high-level-requirements.csv. Run after editing the CSV
+# and commit the result; CI fails if the markdown is out of sync with the CSV.
+hltr:
+	$(PYTHON) hltr/scripts/generate-annex-2-high-level-requirements-by-topic.py
+	$(PYTHON) hltr/scripts/generate-annex-2-high-level-requirements-by-category.py
+
 # Build the MkDocs site
 mkdocs:
 	$(MKDOCS) build

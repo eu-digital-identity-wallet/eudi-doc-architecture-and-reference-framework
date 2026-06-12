@@ -41,6 +41,18 @@ jobs:
       - name: Generate reference link definitions
         run: python3 tools/gen_references.py
 
+      # annex-2.02 and annex-2.03 are generated from hltr/high-level-requirements.csv
+      # but committed, since the PDF build consumes them directly. Regenerate and fail
+      # if a PR changed the CSV (or hand-edited the markdown) without running the
+      # generator, so the committed files never drift from the CSV.
+      - name: Check Annex 2 requirements markdown is in sync with the HLTR CSV
+        run: |
+          make hltr
+          git diff --exit-code docs/annexes/annex-2/ || {
+            echo "::error::docs/annexes/annex-2 is out of sync with hltr/high-level-requirements.csv. Run 'make hltr' and commit the regenerated markdown."
+            exit 1
+          }
+
       # Report-only: --strict surfaces every broken link / nav / markdown issue in
       # the log, but continue-on-error keeps it from blocking PRs while the large
       # backlog of pre-existing broken internal links is worked down separately.

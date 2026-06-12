@@ -2,6 +2,9 @@ import csv
 from jinja2 import Environment, FileSystemLoader
 import os
 
+# Anchor all paths to this file's location so the script works from any CWD.
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def load_requirements_by_category(csv_path):
     """
     Loads requirements from a CSV file and organizes them into a dictionary
@@ -54,8 +57,8 @@ def generate_markdown_file(template_name, csv_name, output_name):
         csv_name (str): The filename of the CSV data source.
         output_name (str): The filename for the output markdown file.
     """
-    # 1. Set up the Jinja2 environment to look for templates in the current directory
-    env = Environment(loader=FileSystemLoader('.'), trim_blocks=True, lstrip_blocks=True)
+    # 1. Set up the Jinja2 environment to look for templates next to this script
+    env = Environment(loader=FileSystemLoader(SCRIPT_DIR), trim_blocks=True, lstrip_blocks=True)
 
     try:
         template = env.get_template(template_name)
@@ -87,8 +90,8 @@ def generate_markdown_file(template_name, csv_name, output_name):
 if __name__ == '__main__':
     # Define the input and output filenames
     template_file = 'annex-2.02-high-level-requirements-by-topic.jinja2'
-    csv_file = '../high-level-requirements.csv'
-    output_file = '../../docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md'
+    csv_file = os.path.join(SCRIPT_DIR, '..', 'high-level-requirements.csv')
+    output_file = os.path.join(SCRIPT_DIR, '..', '..', 'docs', 'annexes', 'annex-2', 'annex-2.02-high-level-requirements-by-topic.md')
 
     # Ensure you have the Jinja2 library installed: pip install Jinja2
 

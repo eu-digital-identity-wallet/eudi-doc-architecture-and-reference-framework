@@ -8,3 +8,7 @@ mkdocs==1.6.1
 mkdocs-material==9.7.6
 mkdocs-material[imaging]==9.7.6
 mike==2.1.3
+# Renders the Annex 2 high-level-requirements markdown from the HLTR CSV
+# (hltr/scripts/, run via `make hltr`). Also an mkdocs dependency, pinned
+# here explicitly because the generator depends on it directly.
+jinja2==3.1.6
