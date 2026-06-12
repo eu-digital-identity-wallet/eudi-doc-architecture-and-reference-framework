@@ -23,12 +23,14 @@ RUN apk add --no-cache make zip
 # The PDF/A-2b output configured via `pdfstandard` in pandoc/metadata.yml needs
 # pdfmanagement-testphase on LaTeX kernels older than 2025-11 (where the
 # functionality was integrated into the kernel and the package retired from
-# CTAN/TL2026). The base image's TeX Live still has the older kernel, but its
-# tlmgr already points at a TL2026 mirror that no longer carries the package,
-# so install it from the frozen TL2025 archive. The kpsewhich guard makes this
-# a no-op once a future base ships the integrated kernel.
+# current CTAN mirrors). The base image's TeX Live has such a kernel, but its
+# tlmgr points at a current mirror that no longer carries the package, so
+# install it from the frozen archive matching the installed TeX Live year.
+# The kpsewhich guard makes this a no-op once a future base ships the
+# integrated kernel.
 RUN kpsewhich pdfmanagement-testphase.sty >/dev/null 2>&1 || { \
-      tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2025/tlnet-final && \
+      TLYEAR=$(tlmgr --version | sed -n 's/.*version \([0-9]\{4\}\).*/\1/p') && \
+      tlmgr option repository "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${TLYEAR}/tlnet-final" && \
       tlmgr install pdfmanagement-testphase && \
       tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet ; \
     }
