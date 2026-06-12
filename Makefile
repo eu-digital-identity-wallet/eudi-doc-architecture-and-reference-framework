@@ -48,7 +48,9 @@ PYTHON  := python3
 
 # Pandoc Options
 PANDOC_OPTIONS      := --toc --from markdown+gfm_auto_identifiers --data-dir $(PANDOC_DATA_DIR) --metadata date="v$(VERSION)  $(BUILD)"
-PANDOC_PDF_OPTIONS  := --pdf-engine=pdflatex --template=$(PDF_TEMPLATE) --syntax-highlighting=idiomatic $(PANDOC_DATA_DIR)/metadata.yml
+# LuaLaTeX (not pdflatex) is required for the tagged / PDF/A output configured
+# via the pdfstandard option in pandoc/metadata.yml.
+PANDOC_PDF_OPTIONS  := --pdf-engine=lualatex --template=$(PDF_TEMPLATE) --syntax-highlighting=idiomatic $(PANDOC_DATA_DIR)/metadata.yml
 PANDOC_DOCX_OPTIONS :=
 PANDOC_EPUB_OPTIONS := --to epub3
 

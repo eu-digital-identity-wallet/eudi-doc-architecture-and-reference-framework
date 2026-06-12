@@ -20,6 +20,12 @@ FROM pandoc/extra:latest
 USER root
 RUN apk add --no-cache make zip
 
+# colorprofiles provides the ICC profile that LaTeX embeds as the output intent
+# of the PDF/A-2b documents configured via `pdfstandard` in pandoc/metadata.yml.
+# It is not part of the TeX Live set curated for Eisvogel; without it the build
+# still succeeds but the PDFs are not fully PDF/A compliant.
+RUN tlmgr install colorprofiles
+
 # pandoc/extra sets ENTRYPOINT to `pandoc`; reset it so `make` and shell commands
 # run normally when the image is used as a CI job container or via `docker run`.
 ENTRYPOINT []
