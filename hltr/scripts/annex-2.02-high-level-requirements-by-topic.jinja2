@@ -50,7 +50,7 @@ for issuance), an underscore and a numerator, e.g. ISSU_10.
 {% endif %}
 
 | **Index** | **Requirement specification** |
-| -- | -- |
+|:-------|:-----------------------------------|
 {% for req in requirements[topic][subsection]%}
 | {{ req.Index }} | {{ req.Requirement_specification }}{% if req.Notes %} *Note: {{ req.Notes }}*{% endif %} |
 {% endfor %}
