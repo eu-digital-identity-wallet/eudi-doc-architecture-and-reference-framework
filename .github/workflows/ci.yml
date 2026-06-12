@@ -72,7 +72,7 @@ jobs:
     # Note: pull requests opened from forks cannot read the org's GHCR package, so
     # this job only validates PRs from branches within this repository.
     container:
-      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:ebe9c4f1369fe314c5bd4c8bca7908cf7518e82c510b9d456d8f3e3b17cd79ba
+      image: ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:e0d19dabca3a03ba8c716976b72f6b819751ff41ea223fb7fb3468122aa3ef05
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
