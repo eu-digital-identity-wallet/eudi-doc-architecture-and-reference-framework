@@ -21,11 +21,17 @@ USER root
 RUN apk add --no-cache make zip
 
 # The PDF/A-2b output configured via `pdfstandard` in pandoc/metadata.yml needs
-# a TeX Live with kernel-integrated \DocumentMetadata support and the
-# colorprofiles package (ICC profile embedded as the PDF/A output intent).
-# Current pandoc/extra satisfies both out of the box; images built from base
-# tags older than TeX Live 2025 do not, and fail with "File
-# pdfmanagement-testphase.sty not found" when building the PDFs.
+# pdfmanagement-testphase on LaTeX kernels older than 2025-11 (where the
+# functionality was integrated into the kernel and the package retired from
+# CTAN/TL2026). The base image's TeX Live still has the older kernel, but its
+# tlmgr already points at a TL2026 mirror that no longer carries the package,
+# so install it from the frozen TL2025 archive. The kpsewhich guard makes this
+# a no-op once a future base ships the integrated kernel.
+RUN kpsewhich pdfmanagement-testphase.sty >/dev/null 2>&1 || { \
+      tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2025/tlnet-final && \
+      tlmgr install pdfmanagement-testphase && \
+      tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet ; \
+    }
 
 # pandoc/extra sets ENTRYPOINT to `pandoc`; reset it so `make` and shell commands
 # run normally when the image is used as a CI job container or via `docker run`.
