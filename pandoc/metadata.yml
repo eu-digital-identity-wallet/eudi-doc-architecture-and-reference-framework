@@ -9,8 +9,37 @@ fontsize: "12pt"
 titlepage-rule-color: "1F3695"
 titlepage-rule-height: "3"
 titlepage-logo: "media/eu-logo.jpg"
-logo-width: 50pt
+logo-width: 80pt
 block-headings: true
 listings-no-page-break: true
+# Put the table of contents on its own page(s) so content starts on a fresh page.
+toc-own-page: true
+# Colour internal and external links in the EU corporate blue defined below,
+# instead of Eisvogel's default dark red / light blue pair.
+colorlinks: true
+linkcolor: "eublue"
+urlcolor: "eublue"
+# Subtle zebra striping for the long requirement tables in the annexes.
+table-use-row-colors: true
+# Archivable PDF/A-2b output with embedded XMP metadata. Requires LuaLaTeX
+# (see PANDOC_PDF_OPTIONS in the Makefile) and LaTeX 2023 or newer.
+# Declaring \DocumentMetadata makes every build log a benign "Command
+# \@footnotemark has changed" warning: it switches LaTeX to the new
+# kernel-integrated hyperref code, whose \@footnotemark definition fails the
+# \CheckCommand probe of the footnotebackref package loaded by Eisvogel. The
+# patch is still applied, and no document currently contains footnotes; if
+# footnotes are ever added, verify their back-references in the PDF.
+# tagging (accessible/tagged PDF) stays off for now: Eisvogel hardcodes the
+# KOMA-Script scrartcl class, and KOMA tagging support is still broken at
+# \tableofcontents as of KOMA-Script v3.48 / TeX Live 2025 ("Missing
+# \endcsname" errors). Re-test with future TeX Live releases.
+pdfstandard:
+  standards: ["A-2b"]
+  tagging: false
+header-includes:
+- |
+  ```{=latex}
+  \definecolor{eublue}{HTML}{1F3695}
+  ```
 ...
 

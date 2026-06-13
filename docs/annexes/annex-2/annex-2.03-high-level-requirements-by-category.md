@@ -37,7 +37,7 @@ as statements of fact.
 
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |AS-WP-06-001 | RPA_01 | The Wallet Unit used by a User, as well as the Relying Party Instance used by the Relying Party, SHALL implement a mechanism for Relying Party authentication in PID or attestation presentation transactions. This mechanism SHALL: - enable the Wallet Unit to identify and authenticate the Relying Party, - enable the Wallet Unit to verify that the request from the Relying Party was not copied and replayed, - use an access certificate issued in accordance with [[Topic 27](./annex-2.02-high-level-requirements-by-topic.md#a2316-topic-27---registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties)].| Wallet Units and Relying Parties comply with this requirement if they comply with the requirements in this Topic. |
 |AS-WP-06-002 | RPA_01a | If a Wallet Unit supports the [W3C Digital Credentials API] for remote presentation flows, it SHALL retain full authority over the process meant in RPA_01. In particular, this process SHALL NOT be handled by a third party, including the browser and the operating system.|  |
 |AS-WP-06-003 | RPA_02 | For performing Relying Party authentication, Wallet Units and Relying Party Instances SHALL support access certificates as specified in [ETSI TS 119 475] and [ETSI TS 119 411-8].| In [ISO/IEC 18013-5], the Relying Party authentication mechanism is called mdoc reader authentication and uses an X.509 certificate. For [OpenID4VP], [HAIP] specifies that Client Identifier Prefix ``x509_hash`` must be used to authenticate the Relying Party; this also uses an X.509 certificate. |
@@ -338,7 +338,7 @@ as statements of fact.
 *Commission, and defining national policies.*
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |AS-MS-18-001 | ACP_02 | A Cryptographic Binding of Attestations scheme SHALL rely solely on algorithms included in the [ECCG Agreed Cryptographic Mechanisms v2.0].|  |
 |AS-MS-25-001 | CAT_01 | Empty|  |
 |AS-MS-25-002 | CAT_01a | Empty|  |
@@ -426,7 +426,7 @@ as statements of fact.
 *protocols, data formats, and revocation policies.*
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |AS-AP-07-001 | VCR_01 | A PID Provider, QEAA Provider, or PuB-EAA Provider SHALL use one of the following methods for revocation of a PID, QEAA, or PuB-EAA: - Only issue short-lived attestations having a validity period of 24 hours or less, such that revocation will never be necessary, - Use an Attestation Status List mechanism specified per VCR_11, or - Use an Attestation Revocation List mechanism specified per VCR_11.| The 24-hour period originates from [ETSI EN 319 411-1] V1.4.1, requirement REV-6.2.4-03A. This requires that the process of revocation must take at most 24 hours. Consequently, revocation may make no sense if the attestation is valid for less than 24 hours, because it may reach the end of its validity period before it is revoked. |
 |AS-AP-07-002 | VCR_01a | A Wallet Provider SHALL use the method specified in [Technical Specification 3](../../technical-specifications/ts3-wallet-unit-attestation.md) for maintaining the revocation status of the underlying objects referenced in a WIA or key attestation.| The 'underlying object' is the object that is actually revoked by revoking the WIA or key attestation, i.e., the Wallet Instance in case of a WIA and a WSCA/WSCD or keystore in case of a key attestation. |
 |AS-AP-07-003 | VCR_02 | For non-qualified EAAs, the relevant Rulebook SHALL specify whether that type of EAA must be revocable. If a non-qualified EAA type must be revocable, the relevant Rulebook SHALL determine which of the methods mentioned in VCR_01 must be implemented by the relevant EAA Providers for the revocation of such an EAA.|  |
@@ -590,7 +590,7 @@ as statements of fact.
 *wallet, request user attributes, and handle user data.*
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |EW-PIO-01-020 | OIA_12 | For both proximity and remote presentation flows, a Relying Party SHALL validate the signature of a PID using a trust anchor provided in a PID Provider LoTE made available in accordance with [[Topic 31](./annex-2.02-high-level-requirements-by-topic.md#a2320-topic-31---notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates)].|  |
 |AS-RP-01-002 | OIA_16 | When receiving a PID or attestation, a Relying Party Instance SHALL discard the values of all unique elements, including at least the ones mentioned in requirement ISSU_35 in [Topic 10](./annex-2.02-high-level-requirements-by-topic.md#a237-topic-10---issuing-a-pid-or-attestation-to-a-wallet-unit), as well as any timestamps, as soon as they are no longer needed. The Relying Party Instance SHALL NOT communicate these values to the Relying Party or to any other party inside or outside the EUDI Wallet ecosystem.|  |
 |AS-RP-01-003 | OIA_17 | A Relying Party Instance SHOULD verify the device-binding signature or Message Authentication Code provided in the presentation response of the Wallet Unit during the presentation of a PID or device-bound attestation, following the steps specified per [ISO/IEC 18013-5] or [SD-JWT VC], as applicable.|  |
@@ -625,7 +625,7 @@ as statements of fact.
 *how different components talk to each other.*
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |EW-PIO-01-001 | OIA_01 | A Wallet Unit SHALL support [OpenID4VP] for remote presentation flows and [ISO/IEC 18013-5] for proximity presentation flows, to receive and respond to presentation requests for person identification data (PID) and attestations by Relying Parties.|  |
 |EW-PIO-01-002 | OIA_02 | A Wallet Unit SHALL support proving cryptographic device binding between the WSCA/WSCD or a keystore included in the Wallet Unit and a PID or attestation, in accordance with [SD-JWT VC] or [ISO/IEC 18013-5].| Such a mechanism is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' in [SD-JWT VC]. |
 |EW-PIO-01-003 | OIA_03 | When issuing, presenting, or verifying an attestation, Wallet Units, PID Providers, Attestation Providers, and Relying Parties SHALL only use cryptographic algorithms included in the [ECCG Agreed Cryptographic Mechanisms v2.0].|  |
@@ -670,7 +670,7 @@ as statements of fact.
 *the entire ecosystem.*
 
 | **Identifier** | **Legacy Identifier** | **Description** | **Notes** |
-|-----------|------------|------------|------------|
+|:-------|:------|:-------------------------|:-------------|
 |EW-DM-03-01 | PID_01 | PIDs and PID Providers SHALL comply with all requirements in [PID Rulebook].|  |
 |EW-DM-03-02 | PID_02 | A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC].| [CIR 2024/2977] mentions the W3C Verifiable Credentials Data Model v1.1 instead of [SD-JWT VC]. The latest stable version of this standard is [W3C VCDM 2.0]. However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, such as those in [W3C VC-JOSE-COSE] or [W3C VC Data Integrity], and making further choices, it is impossible to implement a PID based on W3C VCDM. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification. See also [Section 5.3.4](../../architecture-and-reference-framework-main.md#534-w3c-verifiable-credentials) of the ARF main document. |
 |EW-DM-03-03 | PID_03 | The portrait in a PID SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG).|  |

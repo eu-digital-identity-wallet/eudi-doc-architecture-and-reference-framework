@@ -20,6 +20,19 @@ FROM pandoc/extra:latest
 USER root
 RUN apk add --no-cache make zip
 
+# \DocumentMetadata (used for the PDF/A-2b output configured via `pdfstandard`
+# in pandoc/metadata.yml) loads pdfmanagement-testphase.sty, which is not in
+# the TeX Live set curated for Eisvogel. In TL2026 the file ships in the
+# `pdfmanagement` package (the standalone `pdfmanagement-testphase` package
+# was retired and is kept only as a catalogue alias / compat file); older TeX
+# Live releases still use the old package name, hence the fallback. The
+# kpsewhich guard skips the install once a base ships the file out of the box.
+# tagpdf provides tagpdf-base.sty, which pdfmanagement loads even when PDF
+# tagging is off.
+RUN kpsewhich pdfmanagement-testphase.sty >/dev/null 2>&1 || \
+    tlmgr install pdfmanagement tagpdf || \
+    tlmgr install pdfmanagement-testphase tagpdf
+
 # pandoc/extra sets ENTRYPOINT to `pandoc`; reset it so `make` and shell commands
 # run normally when the image is used as a CI job container or via `docker run`.
 ENTRYPOINT []
