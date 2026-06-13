@@ -23,6 +23,12 @@ urlcolor: "eublue"
 table-use-row-colors: true
 # Archivable PDF/A-2b output with embedded XMP metadata. Requires LuaLaTeX
 # (see PANDOC_PDF_OPTIONS in the Makefile) and LaTeX 2023 or newer.
+# Declaring \DocumentMetadata makes every build log a benign "Command
+# \@footnotemark has changed" warning: it switches LaTeX to the new
+# kernel-integrated hyperref code, whose \@footnotemark definition fails the
+# \CheckCommand probe of the footnotebackref package loaded by Eisvogel. The
+# patch is still applied, and no document currently contains footnotes; if
+# footnotes are ever added, verify their back-references in the PDF.
 # tagging (accessible/tagged PDF) stays off for now: Eisvogel hardcodes the
 # KOMA-Script scrartcl class, and KOMA tagging support is still broken at
 # \tableofcontents as of KOMA-Script v3.48 / TeX Live 2025 ("Missing
