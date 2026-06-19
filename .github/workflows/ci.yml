@@ -81,4 +81,6 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Build pdf
-        run: make pdfs
+        # -j"$(nproc)": the per-document and combined PDFs are independent
+        # LuaLaTeX compiles; build them in parallel (Makefile orders the zip last).
+        run: make -j"$(nproc)" pdfs
