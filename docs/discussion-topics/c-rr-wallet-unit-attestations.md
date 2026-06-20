@@ -39,7 +39,7 @@ The document is structured as follows:
 
 ## 2 Proposed Changes
 
-The technical specification relevant to this topic is [Technical Specification 3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md) (TS03): *Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations*. Version 1.5 introduces terminology and concepts that this paper proposes to adopt in the ARF.
+The technical specification relevant to this topic is [Technical Specification 3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md) (TS03): *Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations*. Version 1.5 introduces terminology and concepts that this paper proposes to adopt in the ARF.
 
 ### 2.1 Proposal 1: Introduce WUA as an Umbrella Term Covering WIA and KA
 
@@ -64,7 +64,7 @@ The WIA should contain information about the Wallet Solution to which the Wallet
 
 ### 2.4 Proposal 4: Introduce the Concept of a Revocation Maintenance Period
 
- A WIA must have a short technical validity period -- it must be fresh at the time of use to confirm the current integrity of the Wallet Instance. [Technical Specification 3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications-private/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md) specifies that the validity period must be at most 24 hours. For a KA, it is up to the Wallet Provider to determine the validity period.
+ A WIA must have a short technical validity period -- it must be fresh at the time of use to confirm the current integrity of the Wallet Instance. [Technical Specification 3](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md) specifies that the validity period must be at most 24 hours. For a KA, it is up to the Wallet Provider to determine the validity period.
 
  However, PID Providers and Attestation Providers need to be able to check whether the Wallet Instance has been revoked (via the WIA) and whether the WSCD or keystore referenced in the KA has been revoked (via the KA). For PID Providers, there is a legal requirement that they must be able to do this for the entire validity period of the PID, which typically will be considerably longer than 24 hours. The ARF should therefore introduce the concept of a **revocation maintenance period**: the period during which the Wallet Provider commits to maintaining the revocation status information referenced in the WUA. This revocation maintenance period is independent of the expiry of the WIA or KA.
 

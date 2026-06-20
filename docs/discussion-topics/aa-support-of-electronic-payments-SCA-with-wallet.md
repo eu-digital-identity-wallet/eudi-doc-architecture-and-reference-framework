@@ -39,7 +39,7 @@ The document is structured as follows:
 
 ## 2 Background
 
-This topic (AA) is a continuation of [Topic W (Transactional data for payments and other use cases)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md).
+This topic (AA) is a continuation of [Topic W (Transactional data for payments and other use cases)](w-transactional-data-for-payments-and-other-use-cases.md).
 
 The legal requirements applicable to Topic AA, were collected and discussed in Topic W related process.
 
