@@ -84,6 +84,11 @@ validation:
   links:
     not_found: warn
     unrecognized_links: warn
+    # Broken section anchors and absolute links are validated repo-wide. The
+    # backlog was cleared (see tools/check_doc_links.py history), so any new
+    # one fails `mkdocs build --strict` and the docs-quality gate.
+    anchors: warn
+    absolute_links: warn
 
 nav:
   - European Digital Identity Wallet: index.md
