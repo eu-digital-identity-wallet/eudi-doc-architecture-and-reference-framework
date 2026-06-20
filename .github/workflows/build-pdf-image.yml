@@ -48,7 +48,7 @@ jobs:
       - name: Smoke test — build the ARF PDFs inside the image
         run: |
           docker run --rm -v "${{ github.workspace }}:/data" -w /data \
-            ${{ env.IMAGE }}:ci make pdfs
+            ${{ env.IMAGE }}:ci make -j"$(nproc)" pdfs
           test -s build/pdf/architecture-and-reference-framework-main-and-annexes.pdf
 
       - name: Log in to GHCR

@@ -84,6 +84,11 @@ all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
 # PDF-only artifacts (per-document + combined + zip), without DOCX/EPUB or the
 # MkDocs site. Used by the CI PDF build, which runs in a pandoc/LaTeX container
 # that has no mkdocs and only needs build/pdf.
+#
+# Each PDF is an independent LuaLaTeX compile, so this is the slow part of the
+# build. It is safe to run with `make -j` (e.g. `make -j"$(nproc)" pdfs`): the
+# per-document PDFs and the combined PDF build concurrently, and the order-only
+# barrier on zip-pdfs (see below) holds the archive back until every PDF exists.
 pdfs: $(SOURCE_DOCS:.md=.pdf) pdf zip-pdfs
 
 # EPUB combined main text + annexes
@@ -117,7 +122,11 @@ copy-pdfs:
 	@echo "PDF files have been copied."
 
 # Create a zip archive of all files in the build/pdf folder.
-zip-pdfs: copy-pdfs
+# copy-pdfs (a normal prerequisite) brings in the committed annex-4/annex-6
+# PDFs; the order-only prerequisites after | force every *generated* PDF to be
+# built first. Together they guarantee a complete build/pdf/ before we archive
+# it, so `make -j pdfs` can never zip a partial build.
+zip-pdfs: copy-pdfs | $(SOURCE_DOCS:.md=.pdf) pdf
 	@echo "Creating zip archive of PDFs in $(BUILD_DIR)/pdf..."
 	@cd $(BUILD_DIR) && zip -r arf-pdfs-v$(VERSION).zip pdf/*
 	@echo "Zip archive created at $(BUILD_DIR)/arf-pdfs-v$(VERSION).zip."
