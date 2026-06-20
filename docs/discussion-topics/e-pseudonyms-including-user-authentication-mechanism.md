@@ -46,7 +46,7 @@ The document is structured as follows:
 
 - [Chapter 8](#8-references) lists references used in this document. 
 
-Finally, for completeness, in [Appendix A](#appendix-b-questions-related-to-use-cases-a-and-b), we include some of the previous questions that was discussed during the meetings for the basic use cases ([Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms)).
+Finally, for completeness, in [Appendix A](#appendix-a-questions-related-to-use-cases-a-and-b), we include some of the previous questions that was discussed during the meetings for the basic use cases ([Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms)).
 
 ## 2 Types of Pseudonyms
 A pseudonym is an alternative name or identifier used by a person for a particular purpose.
@@ -275,7 +275,7 @@ The flow for authentication using a Passkey following [W3C WebAuthn] is:
 This section list challenges related to the use of [W3C WebAuthn] as the technical specification for pseudonyms:
 
 1. On its own, [W3C WebAuthn] does not support enable a Relying Party to obtain a strong guarantee ensuring that presentation of attributes as well as the registering of a pseudonym is performed by the same User (which is useful for [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms)). 
-2. [W3C WebAuthn] does not support scope rate limited pseudonyms and in particular does not allow Relying parties to verify pseudonyms are limited to a particular scope and rate. Hence, [Use Case C](#43-#43-use-case-c-rate-limited-participation) is not supported. 
+2. [W3C WebAuthn] does not support scope rate limited pseudonyms and in particular does not allow Relying parties to verify pseudonyms are limited to a particular scope and rate. Hence, [Use Case C](#43-use-case-c-rate-limited-participation) is not supported. 
 3. For privacy reasons, [W3C WebAuthn] does not allow passkeys to be used for multiple different Relying Parties. Hence, it cannot be used for [Use Case D](#44-use-case-d-linkable-pseudonymous-authentication). 
 4. Attestations may be linkable; see discussion in [Section 6.1](#61-topic-a-privacy-risks-and-mitigations) and also [Topic A](./a-privacy-risks-and-mitigations.md). This risk depends on the chosen type of attestation.
 5. The information about the Relying Party is verified only by the Client and not by the Authenticator itself. This may be a problem, as in Article 5a (5) a) vii) of the [European Digital Identity Regulation] it is stated that "*European Digital Identity Wallets shall, in particular ... ensure that the relying parties can be authenticated and identified by implementing authentication mechanisms in accordance with Article 5b;...*".
@@ -640,9 +640,9 @@ TR26, TR102, and TR105 are particularly relevant for the challenge described in 
 
 This chapter proposes changes and additions to the ARF, specifically to the  High Level Requirements (HLRs) for Annex 2 Topic 11 (Pseudonyms).
 
-The existing HLRs in the ARF (version 2.5.0) were developed to support [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms). 
+The existing HLRs in the ARF (version 2.5.0) were developed to support [Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms). 
 
-As previously noted, as it is possible to define custom types of (Q)EAAs in the ARF, [Use Case D](#44-Use-Case-D-Linkable-Pseudonymous-Authentication) is already supported by the current functionality already included in the ARF. 
+As previously noted, as it is possible to define custom types of (Q)EAAs in the ARF, [Use Case D](#44-use-case-d-linkable-pseudonymous-authentication) is already supported by the current functionality already included in the ARF. 
 
 This discussion paper proposes changes in two categories: 
 1. *Changes* to existing HLRs making it *optional* for Wallet Units to support the pseudonyms functionality required by the legislation by letting them be WebAuthn Authenticators rather than mandatory. These are presented in [Section 7.1](#71-changes-to-existing-hlrs).
@@ -650,12 +650,12 @@ This discussion paper proposes changes in two categories:
 
 #### 7.1 Changes to Existing HLRs
 
-The existing HLRs and [CIR.2024.2979] mandate that Wallet Units implement WebAuthn as an authenticator. However, as there already exists many WebAuthn authenticator implementations widely available to Users through their operating system, web browsers or specialized apps, we propose to weaken the requirements in the ARF and the CIR such that it becomes *optional* for a Wallet Unit to also be a WebAuthn authenticator and thereby free for Wallet Units to enable [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) using alternative technologies. 
+The existing HLRs and [CIR.2024.2979] mandate that Wallet Units implement WebAuthn as an authenticator. However, as there already exists many WebAuthn authenticator implementations widely available to Users through their operating system, web browsers or specialized apps, we propose to weaken the requirements in the ARF and the CIR such that it becomes *optional* for a Wallet Unit to also be a WebAuthn authenticator and thereby free for Wallet Units to enable [Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) using alternative technologies. 
 
 > Under Article 5a of the [European Digital Identity Regulation], EUDI Wallets must support the generation and storage of pseudonyms. This requirement remains intact. Our proposal only affects how this is achieved: implementing WebAuthn would remain one compliant approach, but not the only one. Wallet Units not following this path must use alternatives to live up to the legislation.
 
 In the ARF v.2.5.0, there are 23 requirements related to pseudonyms. 
-Of these, the first 20 requirements (PA\_01-PA\_19 and PA\_08a) are requirements to enable [Use Case A](#41-Use-Case-A-Pseudonymous-Authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) remains unaffected
+Of these, the first 20 requirements (PA\_01-PA\_19 and PA\_08a) are requirements to enable [Use Case A](#41-use-case-a-pseudonymous-authentication) and [Use Case B](#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms) remains unaffected
 The remaining three HLRs (PA\_20, PA\_21 and PA\_22) are specific to WebAuthn and we propose the following changes: 
 
 | **Index** | **ARF v.2.5.0 specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | **Proposed specification**                                                                                                                                                                                                                                                  |
