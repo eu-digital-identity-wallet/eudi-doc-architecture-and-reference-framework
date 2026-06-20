@@ -148,7 +148,7 @@ jobs:
         if: ${{ !cancelled() && steps.changed.outputs.count != '0' }}
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
         with:
-          lycheeVersion: lychee-v0.24.2 # pin the checker binary too
+          lycheeVersion: v0.24.2 # pinned; the action prepends the 'lychee-' tag prefix
           args: "--config lychee.toml --no-progress ${{ steps.changed.outputs.files }}"
           fail: true
         env:
