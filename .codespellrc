@@ -1,0 +1,15 @@
+# codespell configuration for the ARF docs typo gate.
+# Run locally with:  codespell docs/
+# CI runs it only on the files a PR changes (burn-down rollout).
+[codespell]
+# Allowlist: valid terminology / house style that codespell mis-flags. These
+# are NOT typos, so they must not block:
+#   re-use / re-using / re-uses / re-used / pre-selected
+#                 -> the ARF consistently uses the hyphenated spelling
+#   requestor(s)  -> spec terminology used throughout the document
+#   fulfilment    -> British spelling (the site language is en-IE)
+# Keep this list tight: only add words that are genuinely correct here, never
+# real misspellings, or the gate stops catching them.
+ignore-words-list = re-use,re-using,re-uses,re-used,pre-selected,requestor,requestors,fulfilment
+# Never spell-check binary or vector assets, or build output.
+skip = ./.git,./build,./site,./node_modules,*.svg,*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.ico

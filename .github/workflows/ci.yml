@@ -1,9 +1,13 @@
 # Validate documentation changes on pull requests, before they reach main.
-# Two checks run in parallel:
-#   build-docs : fast MkDocs --strict build (broken nav / dead links / bad markdown)
-#   build-pdf  : the full Pandoc/LaTeX PDF build, using the same pinned image as the
-#                deploy workflow, so a PR that breaks the PDF fails here instead of
-#                only surfacing on the post-merge release build.
+# Three checks run in parallel:
+#   build-docs    : fast MkDocs --strict build (broken nav / dead links / bad markdown)
+#   build-pdf     : the full Pandoc/LaTeX PDF build, using the same pinned image as the
+#                   deploy workflow, so a PR that breaks the PDF fails here instead of
+#                   only surfacing on the post-merge release build.
+#   docs-quality  : blocking link / reference / typo gate — internal links + section
+#                   anchors (MkDocs), external URLs (lychee) and typos (codespell),
+#                   scoped to the files a PR changes so the pre-existing backlog is
+#                   burned down incrementally instead of blocking unrelated PRs.
 name: CI
 
 on:
@@ -84,3 +88,68 @@ jobs:
         # -j"$(nproc)": the per-document and combined PDFs are independent
         # LuaLaTeX compiles; build them in parallel (Makefile orders the zip last).
         run: make -j"$(nproc)" pdfs
+
+  docs-quality:
+    # Link / reference / typo gate. PR-only: it diffs against the PR base to
+    # scope the checks to the Markdown a PR changes. New problems in touched
+    # files block the merge; the pre-existing backlog (broken section anchors,
+    # typos) is fixed incrementally as files are touched. See
+    # tools/check_doc_links.py, .codespellrc and lychee.toml.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0 # need history back to the PR base to compute the diff
+
+      - name: Setup python environment
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Install docs toolchain (mkdocs + codespell)
+        # Pin codespell so a new release's dictionary can't change the gate's
+        # verdict without an intentional bump.
+        run: pip install -r requirements.txt codespell==2.4.2
+
+      # The link build resolves [shorthand] references from includes/references.md,
+      # so regenerate it first (same as build-docs).
+      - name: Generate reference link definitions
+        run: python3 tools/gen_references.py
+
+      - name: Determine changed Markdown files
+        id: changed
+        run: |
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          git diff --name-only --diff-filter=ACMR "$base_sha" HEAD \
+            | grep -E '^(docs|includes)/.*\.md$' > changed_md.txt || true
+          echo "Changed Markdown files:"; cat changed_md.txt || true
+          echo "count=$(wc -l < changed_md.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          echo "files=$(paste -sd' ' changed_md.txt)" >> "$GITHUB_OUTPUT"
+
+      # 1) Internal links + section anchors (MkDocs). not-found / unrecognized /
+      #    nav links block repo-wide; broken #anchors block only for changed files.
+      - name: Check internal links and anchors
+        if: ${{ !cancelled() }}
+        run: python3 tools/check_doc_links.py --changed-from changed_md.txt
+
+      # 2) Typos on the changed Markdown (allowlist of house terminology lives in
+      #    .codespellrc, which codespell picks up from the repo root).
+      - name: Check typos
+        if: ${{ !cancelled() && steps.changed.outputs.count != '0' }}
+        run: codespell $(cat changed_md.txt)
+
+      # 3) External http(s) URLs on the changed Markdown (config in lychee.toml,
+      #    skip-list in .lycheeignore). GITHUB_TOKEN avoids github.com rate limits.
+      - name: Check external links
+        if: ${{ !cancelled() && steps.changed.outputs.count != '0' }}
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
+        with:
+          lycheeVersion: lychee-v0.24.2 # pin the checker binary too
+          args: "--config lychee.toml --no-progress ${{ steps.changed.outputs.files }}"
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

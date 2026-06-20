@@ -1,0 +1,10 @@
+# URLs the external-link gate should skip (one regex per line).
+#
+# Add a host here when it is known-good but blocks automated checkers
+# (persistent HTTP 403 / anti-bot challenge), so the gate stays green without
+# weakening checking for every other URL. Keep the list short and justified.
+
+# Local / placeholder / example hosts that are never meant to resolve.
+^https?://localhost
+^https?://127\.0\.0\.1
+^https?://example\.(com|org)
