@@ -193,7 +193,7 @@ Typical information and risk signals collected by the financial institutions fro
 + device information (OS, version, etc.),
 + behavioural information,
 + device fingerprinting,
-+ geolocation (based on IP and GNSS positionning),
++ geolocation (based on IP and GNSS positioning),
 + active phone call detection,
 + VPN detection,
 + incognito mode detection,

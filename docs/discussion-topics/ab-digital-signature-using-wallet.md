@@ -176,7 +176,7 @@ _3. Application programming interface:_
 
 _— Cloud Signature Consortium (CSC) specification v2.0 (20 April 2023)._
 
- For the legal requirement above (Annex IV), there is a pending poposal ([CIR amendment draft]) to change to the text as below:
+ For the legal requirement above (Annex IV), there is a pending proposal ([CIR amendment draft]) to change to the text as below:
 
 _1. Mandatory signature or seal format:_
 
@@ -270,7 +270,7 @@ The related technical specifications for Wallet Solutions to support electronic 
 - [CSC DM]
 - [CSC Bindings]
 
-As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet <-> RP and wallet's interface for signature auhtorisation (wallet <-> SAM or wallet <-> RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transacion_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
+As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet <-> RP and wallet's interface for signature authorisation (wallet <-> SAM or wallet <-> RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transaction_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
 This is worth to clarify, that PID cannot be used for these purposes, as it is not envisioned to handle transactional data.
 
 For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are at discretion of Wallet Providers eventually and their agreements with involved RSSPs/QTSPs or other actors.
@@ -328,7 +328,7 @@ One of the possible technical approach is that this interface uses OID4VP presen
 
 Authorisation (aka "activation") of a signature creation is considered as an act of strong user authentication. Therefore, the Wallet Solutions shall support such functionality, as mandated by Article 5f(2) of [European Digital Identity Regulation]. **This requirement imposes a need for a dedicated specification for an appropraiate Wallet Unit interface for this purpose.**
 
-If a Wallet Provider chooses to provide the signature functionality basing on a remote service (a remote QSCD), it will entail complaince with CEN EN 419 241-2. This specification defines SAP protocol, that is used to authorise (activate) remote signature creation by the signatory (a Wallet User in this context), ensuring sole control of the User. 
+If a Wallet Provider chooses to provide the signature functionality basing on a remote service (a remote QSCD), it will entail compliance with CEN EN 419 241-2. This specification defines SAP protocol, that is used to authorise (activate) remote signature creation by the signatory (a Wallet User in this context), ensuring sole control of the User. 
 
 There are two general options for signature creation authorisation:
 - directly with a Wallet Unit (Wallet Unit acting as SIC, communicating with a QTSP/SAM),

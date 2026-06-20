@@ -116,7 +116,7 @@ Binding of Attestations, which SHALL prove that the WSCA manages two or more pri
 paired with two or more public keys provided to it by the Wallet Unit [ACP_01].
 - A WSCA SHALL provide the Wallet Instance with information indicating whether the export 
 of a private key is supported [WUA_16].
-- A WSCA SHALL provide functionalites for generating new key pairs [ISSU_12b, WIAM_18].
+- A WSCA SHALL provide functionalities for generating new key pairs [ISSU_12b, WIAM_18].
 - A WSCA SHALL provide the Wallet Instance with storage capabilities for storing information 
 required to authenticate using a Pseudonym [PA_14].
 - A WSCA SHALL provide the Wallet Instance with information that can be used for Wallet
@@ -124,7 +124,7 @@ Unit activation [WIAM_05].
 - A WSCA SHALL enforce isolation mechanisms that ensure a Wallet Unit can access only 
 the cryptographic keys associated with that specific Wallet Unit, in case the WSCA contains keys 
 related to multiple Wallet Units [WIAM_09]. 
-- A WSCA SHALL provide the Wallet Instance with functionalites to securly destroy 
+- A WSCA SHALL provide the Wallet Instance with functionalities to securely destroy 
 generated cryptographic keys and sensitive data [WIAM_13, WIAM_21, PAD_04, PAD_06]. 
 - A WSCA/WSCD SHALL be able to prove possession of the private key corresponding to a 
  public key on request of a Wallet Instance, for example by signing a challenge with that 

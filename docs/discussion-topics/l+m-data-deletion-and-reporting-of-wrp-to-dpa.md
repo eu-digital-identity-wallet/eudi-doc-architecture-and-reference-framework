@@ -609,7 +609,7 @@ Furthermore, it was discussed that Article 5a (4) (d) (i) of the regulation
 with which the user has established a connection **and, where applicable, all data exchanged**".
 The related storage requirements seem to be rather modest, as the digital signatures are usually
 rather small. On the other hand, it was also argued, that it is questionable that submitting
-the signatures with the initial report migth not be necessary, as this kind of information could
+the signatures with the initial report might not be necessary, as this kind of information could
 be provided after an explicit request of the DPA in a subsequent step. In this case the wallet unit
 could also be used to sign an export from the log to provide non-repudiation.
 
@@ -659,7 +659,7 @@ the following high level requirement as **RPT_DPA_06**:
 >
 > The contact information includes  at least one of email address, phone number, or a URL of a webform.
 
-## 6. Updated set of High Level Requriements 
+## 6. Updated set of High Level Requirements 
 
 ### 6.1 Update for Topic 48 (Erasure of personal data at a wallet-relying party)
 

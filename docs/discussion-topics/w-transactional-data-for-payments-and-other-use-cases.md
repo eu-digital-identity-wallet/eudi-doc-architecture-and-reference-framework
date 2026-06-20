@@ -96,7 +96,7 @@ In general the life cycle of a Wallet Unit in the role of an authenticator, comp
 As the result of registration, a specific Attestation ("service credentials") is issued by the Service Provider or other Wallet-Relying Party (depending on the scheme) to the Wallet Unit. The registration relies on the standard Attestation issuance processes, and the data included in this Attestation are defined by the Service Provider.
 
 In the authentication phase, the Wallet Unit will receive the presentation request of the "service credentials". The presentation is a standard process for the Wallet User, however the request should include transactional data (unique for each service transaction).
-In some cases, like payment authentication, the Wallet Unit should display to the User (some) transaction related data (that should be inlcuded in the transactional data).
+In some cases, like payment authentication, the Wallet Unit should display to the User (some) transaction related data (that should be included in the transactional data).
 
 After the User accepts the presentation request, the Wallet response should include the transactional data, as well as piece of data generated dynamically by the Wallet Unit, for each such presentation, to provide a proof of the User's approval and meet compliance needs where necessary (eg. PSD2 dynamic linking). 
 

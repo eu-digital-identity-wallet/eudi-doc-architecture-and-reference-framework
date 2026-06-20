@@ -224,7 +224,7 @@ A Verifier Wallet Unit SHALL not persistently store the content of a received pr
 > Rationale: This requirements ensures that the Holder obtains similar privacy guarantees to what they would have achieved by showing a physical card to another natural person. I.e., if no explicit actions are taken to store the (such as the Verifier taking a photo of the attributes), then the presentation is only ephemeral. 
 
 ##### Requirement 14
-Wallet Providers SHOULD take measures to prevent a Verifier from taking screenshots of a received presenation in their Wallet Units. 
+Wallet Providers SHOULD take measures to prevent a Verifier from taking screenshots of a received presentation in their Wallet Units. 
 
 > Rationale: This is to make it more difficult to circumvent Requirement 13. 
 
