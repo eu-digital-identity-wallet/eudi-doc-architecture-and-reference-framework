@@ -112,7 +112,7 @@ There are the following requirements in the [CIR for integrity and core function
 
 1. [WebAuthn] is the technical specification for pseudonyms, the only as of now,
 2. The pseudonyms the Wallet Unit generates must be unique for each Relying Party,
-3. Inititation of pseudonym generation process comes from a Relying Party,
+3. Initiation of pseudonym generation process comes from a Relying Party,
 4. The pseudonyms can be used either stand-alone or in combination with presentation of attributes held in the Wallet Unit.
 
 Below are the actual excerpts, including the recitals and the articles that establish these requirements.
@@ -354,9 +354,9 @@ Pseudonyms can be used in various contexts and use cases, such as:
 - Sectoral Linkable Pseudonymous Authentication (Use Case D).
 
 The use cases differ i.a. depending on the desired level of privacy protection and unlinkability:
-- unlinkability accross RPs,
-- unlinkability accross sectors (linkability inside a sector),
-- unlinkability accross transactions,
+- unlinkability across RPs,
+- unlinkability across sectors (linkability inside a sector),
+- unlinkability across transactions,
 - unlinkability from issuers,
 - unlinkability from infrastructure players (eg. revocation status service providers, intermediaries).
 
@@ -419,9 +419,9 @@ Herebelow are presented draft proposals of high-level requirement changes up for
 |     PA_07      | A Wallet Unit SHALL enable a User to delete a Pseudonym. | Keep as-is |
 |     PA_08      | A Wallet Unit SHALL enable the User to manage Pseudonyms within the Wallet Unit in a user-friendly and transparent manner. |Keep as-is |
 |     PA_09      | A Wallet Unit SHALL enable the User to see all existing pseudonyms, including the associated Relying Party (if any). |Keep as-is |
-|     PA_10      | A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
-|     PA_11      | A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
-|     PA_12      | If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID, attestation or WUA being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions. **_Note: Currently availabe technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn] and/or presentation specifications, but this requires further discussion._** |  Keep with the proposed change |
+|     PA_10      | A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
+|     PA_11      | A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit. **_Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion._**   | Keep with the proposed change |
+|     PA_12      | If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID, attestation or WUA being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions. **_Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn] and/or presentation specifications, but this requires further discussion._** |  Keep with the proposed change |
 |     PA_13      | The Relying Party SHALL be able to validate that the pseudonym presented to them belongs to the User presenting it.  | Keep as-is |
 |     PA_14      | A Wallet Unit SHALL store the information necessary for authenticating with a Pseudonym in **WSCD/WSCA or in** a keystore. | Keep with the proposed change |
 |     PA_15      | A Relying Party SHALL NOT be able to derive the User's true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party. | Remove |

@@ -128,7 +128,7 @@ These attributes typically originate from different issuers and must be validate
 belonging to the same applicant. A combined presentation enables the university to 
 efficiently pre-screen candidates based on custom admission criteria, while avoiding 
 the processing of unnecessary data. If the evaluation is positive and the student is 
-deemed admissable to the study they desire to follow, the registration can start, 
+deemed admissible to the study they desire to follow, the registration can start, 
 in which case the identification information can be requested in a new, combined presentation. 
 This shows how secure combined presentation is a privacy preserving technology that 
 can for example prevent discrimination, e.g., based on the cultural origin of a last name.
