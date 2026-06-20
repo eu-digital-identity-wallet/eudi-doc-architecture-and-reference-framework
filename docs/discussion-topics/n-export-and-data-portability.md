@@ -359,7 +359,7 @@ There are no identified impact to other ARF topics than mentioned in chapters 3 
 
 The data export and portability topic may have relation with the WUA requirements, as the private key handling for PIDs and attestation has relevance for the discussion on the scope and technical feasibility of data to be exported/imported from/to a wallet.
 
-There were several changes introduced to the Topic C (and the related ARF Annex II [Topic 9]) in the earlier stages of the ARF work (see the [Topic C Discussion Paper](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework-private/blob/main/docs/discussion-topics/c-wallet-unit-attestation.md), resulting in reduction and simplification of the requirements. 
+There were several changes introduced to the Topic C (and the related ARF Annex II [Topic 9]) in the earlier stages of the ARF work (see the [Topic C Discussion Paper](c-wallet-unit-attestation.md), resulting in reduction and simplification of the requirements. 
 
 In result there is only one requirement with potential relevance:
 
