@@ -87,20 +87,21 @@ validation:
 
 nav:
   - European Digital Identity Wallet: index.md
-  - Architecture and Reference Framework: architecture-and-reference-framework-main.md
-  - Annexes:
-      - annexes/README.md
-      - annexes/annex-1/annex-1-definitions.md
-      - High-Level Requirements:
-          - annexes/annex-2/annex-2.01-high-level-requirements.md
-          - annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md
-          - annexes/annex-2/annex-2.03-high-level-requirements-by-category.md
-      - Rulebooks:
-          - annexes/annex-3/annex-3.01-pid-rulebook.md
-          - annexes/annex-3/annex-3.02-mDL-rulebook.md
-      - Design Guides:
-          - annexes/annex-5/annex-5.01-design-guide.md
-          - annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.md
+  - Architecture and Reference Framework:
+      - Main Document: architecture-and-reference-framework-main.md
+      - Annexes:
+          - annexes/README.md
+          - annexes/annex-1/annex-1-definitions.md
+          - High-Level Requirements:
+              - annexes/annex-2/annex-2.01-high-level-requirements.md
+              - annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md
+              - annexes/annex-2/annex-2.03-high-level-requirements-by-category.md
+          - Rulebooks:
+              - annexes/annex-3/annex-3.01-pid-rulebook.md
+              - annexes/annex-3/annex-3.02-mDL-rulebook.md
+          - Design Guides:
+              - annexes/annex-5/annex-5.01-design-guide.md
+              - annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios.md
   - Discussion Topics:
       - discussion-topics/README.md
       - discussion-topics/a-privacy-risks-and-mitigations.md
