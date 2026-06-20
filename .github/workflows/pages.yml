@@ -29,17 +29,17 @@ jobs:
       contents: write
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: 'main'
           fetch-depth: 0 # full history + tags required by mike and get-previous-tag
 
       - name: Get latest tag
         id: latest_tag
-        uses: WyriHaximus/github-action-get-previous-tag@04e8485ecb6487243907e330d522ff60f02283ce # v1
+        uses: WyriHaximus/github-action-get-previous-tag@61819f33034117e6c686e6a31dba995a85afc9de # v2.0.0
 
       - name: Setup python environment
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: 3.x
           cache: pip
@@ -47,7 +47,7 @@ jobs:
       - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - name: Setup mkdocs-material cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache

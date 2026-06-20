@@ -28,10 +28,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Setup python environment
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: 3.x
           cache: pip
@@ -82,10 +82,12 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Build pdf
-        run: make pdfs
+        # -j"$(nproc)": the per-document and combined PDFs are independent
+        # LuaLaTeX compiles; build them in parallel (Makefile orders the zip last).
+        run: make -j"$(nproc)" pdfs
 
   docs-quality:
     # Link / reference / typo gate. PR-only: it diffs against the PR base to
