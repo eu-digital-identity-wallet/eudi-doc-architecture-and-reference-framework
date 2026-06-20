@@ -356,7 +356,7 @@ B. Restore Requirements
 
 | **Index** | **Requirement specification** | **Proposal** |
 |-----------|-------------------------------|--------------|
-| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](#41-topic-19---user-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
+| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](#41-topic-19-user-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
 
 ### 4.3 Topic 16 - Signing documents with a Wallet Unit
 

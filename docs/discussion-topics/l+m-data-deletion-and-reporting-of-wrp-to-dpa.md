@@ -12,12 +12,12 @@ The present discussion paper discusses how a wallet user can use her wallet unit
 erasure of personal data at a wallet-relying party and for reporting a relying party to the competent 
 data protection supervisory authority. 
 
-The present paper builds upon and recalls (see [clause 3](#3-existing-high-level-requirements)) 
+The present paper builds upon and recalls (see [clause 3](#3-recalling-the-previously-existing-high-level-requirements)) 
 the existing high level requirements from [**Topic 48** (Blueprint for requesting data deletion to Relying Parties)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties)
 and [**Topic 50** (Blueprint to report unlawful or suspicious request of data)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data), before it 
 discusses these topics in [clause 4](#4-erasure-of-personal-data-at-a-wallet-relying-party) and [clause 5](#5-reporting-a-wallet-relying-party-to-the-competent-data-protection-supervisory-authority). 
 
-The result of the discussions documented in the present paper is the updated set of high level requirements as laid down in [clause 6](#6-updated-set-of-high-level-requriements-).
+The result of the discussions documented in the present paper is the updated set of high level requirements as laid down in [clause 6](#6-updated-set-of-high-level-requriements).
 
 ### 1.2 Related risks in the Risk Register
 
@@ -425,7 +425,7 @@ before starting the present discussion:
 | DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past. |
 | DATA_DLT_03 | A Wallet Instance SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted. |
 | DATA_DLT_04 | A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit. |
-| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
+| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)). |
 | DATA_DLT_06 | The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed. |
 
 ### 3.2 Existing High-Level Requirements specified in Topic 50
@@ -438,7 +438,7 @@ The following high-level requirements have been specified in [Topic 50](https://
 | RPT_DPA_02 | The User interface enabling a User to start the process of lodging a complaint SHALL be accessible via the Wallet Instance. |
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
-| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)). |
+| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)). |
 
 ## 4. Erasure of personal data at a wallet-relying party
 
@@ -509,7 +509,7 @@ for the specific case, as requesting the data deletion is a rather sensitive pro
 During the discussions with the delegated experts from the EU Member States the following
 aspect related to DATA_DLT_04 was discussed:
 
-It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency).
+It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency).
 
 #### 4.4 Discussions related to DATA_DLT_05
 
@@ -672,7 +672,7 @@ update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-arch
 | DATA_DLT_02            | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.                                                                                  |
 | DATA_DLT_03            | A Wallet Instance SHALL provide a function where the User may select one Relying Party <s>**or multiple Relying Parties**</s> for which an attribute deletion request must be submitted.                                                                                                                                          |
 | <s>**DATA_DLT_04**</s> | <s>**A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.**</s>                                                                                                                                                                                               |
-| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2319-topic-19---user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
+| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
 | DATA_DLT_06            | The log SHALL **also document the initiation of a data deletion request and** include as a minimum: - Date **and time** of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.                                                                                       |
 | **DATA_DLT_07**        | **While the Wallet-Relying Party is responsible for choosing appropriate authentication mechanisms before executing a data deletion request, it is RECOMMENDED to use the authentication and signature facilities offered by the Wallet Solutions for this purpose.**                                                             |
 
