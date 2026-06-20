@@ -147,8 +147,12 @@ jobs:
       - name: Check external links
         if: ${{ !cancelled() && steps.changed.outputs.count != '0' }}
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
+        # Don't set lycheeVersion: this action's installer untars without
+        # --strip-components and expects the binary at the archive root, which
+        # only holds for the version it ships (v0.23.0). lychee >= v0.24 nests
+        # the binary in a platform subdir, so a newer pin fails to install. The
+        # pinned action SHA keeps the default lychee version reproducible.
         with:
-          lycheeVersion: v0.24.2 # pinned; the action prepends the 'lychee-' tag prefix
           args: "--config lychee.toml --no-progress ${{ steps.changed.outputs.files }}"
           fail: true
         env:
