@@ -17,7 +17,7 @@ the existing high level requirements from [**Topic 48** (Blueprint for requestin
 and [**Topic 50** (Blueprint to report unlawful or suspicious request of data)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data), before it 
 discusses these topics in [clause 4](#4-erasure-of-personal-data-at-a-wallet-relying-party) and [clause 5](#5-reporting-a-wallet-relying-party-to-the-competent-data-protection-supervisory-authority). 
 
-The result of the discussions documented in the present paper is the updated set of high level requirements as laid down in [clause 6](#6-updated-set-of-high-level-requriements).
+The result of the discussions documented in the present paper is the updated set of high level requirements as laid down in [clause 6](#6-updated-set-of-high-level-requirements).
 
 ### 1.2 Related risks in the Risk Register
 
