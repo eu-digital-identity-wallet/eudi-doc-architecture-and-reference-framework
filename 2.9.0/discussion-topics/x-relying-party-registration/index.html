@@ -3267,7 +3267,7 @@ Suspension and cancellation</p>
 </tbody>
 </table>
 <h3 id="32-access-certificates-with-multiple-relying-party-instances">3.2 Access certificates with multiple Relying Party instances<a class="headerlink" href="#32-access-certificates-with-multiple-relying-party-instances" title="Link to this section">&para;</a></h3>
-<p>When addressing the RPACs, the Regulation does not recognise the need for multiple instances of Relying Party services in modern IT architectures (replication of RP servers and common dependance on multiple geographical cloud provider regions to ensure availability and continuity of RP services). Multi-instance Relying Parties will also be commonplace in proximity use cases with handheld or mounted verification devices interacting with the Wallet Units. The fact that multiple access certificates with individual private keys can be requested and issued by the Access Certificate Authorities should be clarified in the ARF requirements on registering access certificates, and in the policy documents to be created based on the ARF high-level requirements.</p>
+<p>When addressing the RPACs, the Regulation does not recognise the need for multiple instances of Relying Party services in modern IT architectures (replication of RP servers and common dependence on multiple geographical cloud provider regions to ensure availability and continuity of RP services). Multi-instance Relying Parties will also be commonplace in proximity use cases with handheld or mounted verification devices interacting with the Wallet Units. The fact that multiple access certificates with individual private keys can be requested and issued by the Access Certificate Authorities should be clarified in the ARF requirements on registering access certificates, and in the policy documents to be created based on the ARF high-level requirements.</p>
 <p>The HLR Reg_15 on policy for revocation is revised to mention multiple RPACs (<em>all</em> RPACS of a Relying Party), and a new HLR Reg_15b is brought to clarify the need for controlled revocation of individual instance RPACs (when the Relying Party still has at least one or more valid RPACs after revoking one or more RPACs assigned to its Relying Party Instances). Related to the existing HLRs on relying party access certificates Reg_31 and Reg_32, the requirements with their contextual notes should be moved under Topic 44 with rewording to mean RPRCs. To ensure binding of the RPAC and RPRC with the unique identifier of the Relying Party, a new HLR Reg_33 is introduced.</p>
 <table>
 <thead>
@@ -3295,7 +3295,7 @@ Suspension and cancellation</p>
 </tr>
 <tr>
 <td> Reg_32</td>
-<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinguished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
 <td>Move modified HLR text under Topic 44 (new RPRC_03b). <em>Note: Identicality is covered in new HLR RPRC_09 - see Section 3.3</em></td>
 </tr>
 <tr>
@@ -3436,7 +3436,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 + the wallet-relying party is requesting more attributes than they have registered; 
 + the wallet-relying party is otherwise acting in breach of Union or national law in a manner related to their role as wallet-relying party;
 + by a supervisory body European Digital Identity Wallet Framework in the case of illegal or fraudulent use of the European Digital Identity Wallet.</p>
-<p>The technical specifications and policy documents that base their requirements on the ARF must specify the RPRC specific policies on lifecycle management (e.g., updates for and revocation of the existing RPRCs as indended uses and their data requirements change over time) and policies for eventual multi-registration (per intended use, per Member State) and cross-border registration. </p>
+<p>The technical specifications and policy documents that base their requirements on the ARF must specify the RPRC specific policies on lifecycle management (e.g., updates for and revocation of the existing RPRCs as intended uses and their data requirements change over time) and policies for eventual multi-registration (per intended use, per Member State) and cross-border registration. </p>
 <p>Defined policies should also address how to execute post-registration analysis and audits against the registered intended uses, unless the audits are to be left entirely for the EUDI Wallet Unit level functions - such as already introduced in the ARF <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md#66313-wallet-unit-enables-the-user-to-report-suspicious-requests-by-a-relying-party-and-to-request-a-relying-party-to-erase-personal-data">Section 6.6.3.13</a>, and the functionalities to be defined via Topic M - User reporting unlawful or suspicious request of data to DPAs.</p>
 <table>
 <thead>
@@ -3731,7 +3731,7 @@ At the same time the RP registration certificate has its own life cycle, which e
 </tr>
 <tr>
 <td> Reg_32</td>
-<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinquished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
+<td>The common Relying Party Registration Certificate Policy SHALL require that a Relying Party registration certificate contains an EU-wide unique identifier for the Relying Party, and SHALL specify a method for deriving such identifiers. <em>Note: - The Wallet Instance needs such an identifier at least to lodge a complaint of suspicious Relying Party presentation requests to a data protection authority according to Topic 50. - The EU-wide unique identifier could, for example, be a concatenated list of one or more registered official wallet-relying party identifiers listed in Annex I(3) of the [Draft of the CIR for RP-Registration], expressed in semantic form defined in [ETSI EN319 412-1] Sections 5.1.4 or 5.1.5 and used as the Distinguished Name (DN) of the Certificate subject in both access and registration certificates of the Relying Party</em></td>
 <td>Move modified HLR text under Topic 44 (<strong>new RPRC_03b</strong>).</td>
 </tr>
 <tr>
@@ -4209,7 +4209,7 @@ contains the following risks that are related to the Relying Party registration:
 </tr>
 <tr>
 <td>[German non-paper on WRP with attestations]</td>
-<td>DE non-paper on use fo OID4VC with Wallet-Relying Party Attestations (architecture concept)</td>
+<td>DE non-paper on use of OID4VC with Wallet-Relying Party Attestations (architecture concept)</td>
 </tr>
 <tr>
 <td>[ETSI EN 319 401]</td>
