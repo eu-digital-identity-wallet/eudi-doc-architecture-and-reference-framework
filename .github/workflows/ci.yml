@@ -46,16 +46,11 @@ jobs:
         run: python3 tools/gen_references.py
 
       # annex-2.02 and annex-2.03 are generated from hltr/high-level-requirements.csv
-      # but committed, since the PDF build consumes them directly. Regenerate and fail
-      # if a PR changed the CSV (or hand-edited the markdown) without running the
-      # generator, so the committed files never drift from the CSV.
-      - name: Check Annex 2 requirements markdown is in sync with the HLTR CSV
-        run: |
-          make hltr
-          git diff --exit-code docs/annexes/annex-2/ || {
-            echo "::error::docs/annexes/annex-2 is out of sync with hltr/high-level-requirements.csv. Run 'make hltr' and commit the regenerated markdown."
-            exit 1
-          }
+      # but committed, since the PDF build consumes them directly. Regenerate so the
+      # build validates fresh content; the regenerate-hltr job commits the result
+      # back to the PR branch, so contributors only ever edit the CSV.
+      - name: Regenerate Annex 2 requirements markdown from the HLTR CSV
+        run: make hltr
 
       # Report-only: --strict surfaces every broken link / nav / markdown issue in
       # the log, but continue-on-error keeps it from blocking PRs while the large
@@ -157,3 +152,44 @@ jobs:
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  regenerate-hltr:
+    # The Annex 2 high-level-requirements pages (annex-2.02 / annex-2.03) are
+    # generated from hltr/high-level-requirements.csv. Regenerate on every PR and
+    # commit the result back to the PR branch, so contributors only edit the CSV
+    # and the committed markdown is always derived from it. No-op when already in
+    # sync. Same-repo PRs only — GITHUB_TOKEN can't push to a fork's branch.
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # commit the regenerated markdown to the PR branch
+    steps:
+      - name: Checkout the PR branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.head_ref }} # the PR's source branch, so we can push to it
+
+      - name: Setup python environment
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Install the generator dependency
+        run: pip install jinja2==3.1.6 # the only non-stdlib import in hltr/scripts
+
+      - name: Regenerate Annex 2 markdown from the HLR CSV
+        run: make hltr
+
+      - name: Commit regenerated markdown if it changed
+        run: |
+          if git diff --quiet -- docs/annexes/annex-2/; then
+            echo "Annex 2 markdown already in sync with the CSV; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/annexes/annex-2/
+          git commit -m "chore(hltr): regenerate Annex 2 markdown from CSV"
+          git push origin HEAD:"${{ github.head_ref }}"
+          echo "::notice::Regenerated Annex 2 markdown from the CSV and committed it to the PR."
