@@ -1,0 +1,30 @@
+# lychee configuration for the external-URL half of the docs CI gate.
+#
+# Only http/https URLs are checked here; relative/internal links and section
+# anchors are validated by MkDocs (tools/check_doc_links.py), and the
+# [shorthand] reference style (e.g. [OpenID4VCI]) is resolved by MkDocs at
+# build time from includes/references.md, so lychee never sees it as a link.
+#
+# The gate runs lychee on the Markdown a PR changes (the same changed-files
+# burn-down model as the link and typo checks).
+
+# Restrict checking to real web URLs.
+scheme = ["https", "http"]
+
+# Tolerate transient failures so a momentarily slow or throttled host does not
+# turn the gate red for reasons unrelated to the change.
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+max_concurrency = 8
+
+# Many official sites reject non-browser clients; present a common user agent.
+user_agent = "Mozilla/5.0 (compatible; lychee/docs-ci; +https://github.com/lycheeverse/lychee)"
+
+# 429 = rate limited: the link is live, we are just being throttled -> not a
+# failure. 200-299 are the normal successes.
+accept = ["200..=299", "429"]
+
+# Cache results between runs to cut network load and flakiness.
+cache = true
+max_cache_age = "2d"
