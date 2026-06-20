@@ -57,12 +57,10 @@ jobs:
             exit 1
           }
 
-      # Report-only: --strict surfaces every broken link / nav / markdown issue in
-      # the log, but continue-on-error keeps it from blocking PRs while the large
-      # backlog of pre-existing broken internal links is worked down separately.
-      # Drop continue-on-error once the site builds clean under --strict.
-      - name: Build site (strict, report-only)
-        continue-on-error: true
+      # --strict fails on any broken link / nav / section anchor / markdown
+      # issue. The backlog is cleared and mkdocs.yml now validates anchors and
+      # absolute links, so this is a hard gate (blocking) on the real site config.
+      - name: Build site (strict)
         run: mkdocs build --strict
 
   build-pdf:
@@ -90,11 +88,11 @@ jobs:
         run: make -j"$(nproc)" pdfs
 
   docs-quality:
-    # Link / reference / typo gate. PR-only: it diffs against the PR base to
-    # scope the checks to the Markdown a PR changes. New problems in touched
-    # files block the merge; the pre-existing backlog (broken section anchors,
-    # typos) is fixed incrementally as files are touched. See
-    # tools/check_doc_links.py, .codespellrc and lychee.toml.
+    # Link / reference / typo gate (PR-only). Internal links and section anchors
+    # are validated repo-wide (the backlog is cleared). Typos and external URLs
+    # are scoped to the Markdown a PR changes — typos because the allowlist is
+    # young, external URLs because pre-existing link rot must not block unrelated
+    # PRs. See tools/check_doc_links.py, .codespellrc and lychee.toml.
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -130,11 +128,11 @@ jobs:
           echo "count=$(wc -l < changed_md.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
           echo "files=$(paste -sd' ' changed_md.txt)" >> "$GITHUB_OUTPUT"
 
-      # 1) Internal links + section anchors (MkDocs). not-found / unrecognized /
-      #    nav links block repo-wide; broken #anchors block only for changed files.
+      # 1) Internal links + section anchors (MkDocs), repo-wide: not-found /
+      #    unrecognized / nav / anchors / absolute links all block, anywhere.
       - name: Check internal links and anchors
         if: ${{ !cancelled() }}
-        run: python3 tools/check_doc_links.py --changed-from changed_md.txt
+        run: python3 tools/check_doc_links.py
 
       # 2) Typos on the changed Markdown (allowlist of house terminology lives in
       #    .codespellrc, which codespell picks up from the repo root).
