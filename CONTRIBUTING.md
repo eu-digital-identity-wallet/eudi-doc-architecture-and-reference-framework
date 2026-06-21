@@ -58,6 +58,10 @@ in the description.
 traceability notes.
 - Add/update diagrams and tables as needed; include sources for figures.
 - Update the **Change Log** when the change is externally visible.
+- Your PR must pass the **CI gates** (link/anchor/typo/lint checks and the
+strict site and PDF builds). See
+[CI gates and release workflow](CI_AND_RELEASE_WORKFLOW.md) for what runs, how
+to run it locally, and the branch model to follow for a release.
 
 ## 4) Versioning & change log
 
