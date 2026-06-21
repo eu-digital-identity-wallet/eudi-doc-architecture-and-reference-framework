@@ -136,7 +136,7 @@ _Annex V_ _(Note: the current text in [CIR for integrity and core functionalitie
 
 _Technical specifications for pseudonym generation referred to in Article 14 
 Technical specifications: 
-— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn- 2-20210408/._
+— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/._
 
 
 _Annex V_ _(Note: the new text proposed in the IA draft amending [CIR for integrity and core functionalities])_
@@ -186,7 +186,7 @@ Additionally, other types of pseudonyms are possible, such as:
 
 ### 3.2 Use Cases
 
-The following use cases were considered in the initial discussion (see [Topic E initial discussion paper](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md)):
+The following use cases were considered in the initial discussion (see [Topic E initial discussion paper](e-pseudonyms-including-user-authentication-mechanism.md)):
 - Pseudonymous Authentication (Use Case A in the initial discussion) - where the User is authenticated to an RP with use of a pseudonym, previously generated and registered at the RP;
 - Presentation of Attributes with Subsequent Pseudonymous Authentication (Use Case B in the initial discussion) - same as pseudonymous authentication, but where at generation/ registration of a new pseudonym some additional attributes are presented and registered by the RP (e.g. age over 18); 
 - Pseudonymous Authentication with Presentation of Attributes (Use Case B')- Pseudonymous Authentication combined with presentation of attributes; similar to Use Case B, but where the attributes are presented at the time of a pseudonymous authentication; 
@@ -212,7 +212,7 @@ The FIDO2 credentials may be attested by a third party, confirming its origin; [
 - Anonymisation CA,
 - Self-Attestation,
 - No Attestation
-(see [Section 6.1](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md#61-topic-a-privacy-risks-and-mitigations) of [Topic E Initial Discussion Paper]). 
+(see [Section 6.1](e-pseudonyms-including-user-authentication-mechanism.md#61-topic-a-privacy-risks-and-mitigations) of [Topic E Initial Discussion Paper]). 
 
 This concept supports:
 -  Verifiable and Attested pseudonym types,
@@ -457,5 +457,5 @@ There are no change proposals to the ARF main text at this stage. They may be de
 | [CIR for protocols and interfaces] | [Commission Implementing Regulation (EU) 2024/2982 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg_impl/2024/2982/oj/eng) |
 | [CIR for integrity and core functionalities] | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng) |
 | [WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
-| [Topic E Initial Discussion Paper] |   [E - Pseudonyms, including User authentication mechanism](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md)  |
+| [Topic E Initial Discussion Paper] |   [E - Pseudonyms, including User authentication mechanism](e-pseudonyms-including-user-authentication-mechanism.md)  |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
