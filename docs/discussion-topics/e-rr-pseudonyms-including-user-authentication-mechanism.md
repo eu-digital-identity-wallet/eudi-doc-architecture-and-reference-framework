@@ -136,14 +136,14 @@ _Annex V_ _(Note: the current text in [CIR for integrity and core functionalitie
 
 _Technical specifications for pseudonym generation referred to in Article 14 
 Technical specifications: 
-— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn- 2-20210408/._
+— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, <https://www.w3.org/TR/2021/REC-webauthn-> 2-20210408/._
 
 
 _Annex V_ _(Note: the new text proposed in the IA draft amending [CIR for integrity and core functionalities])_
 
 _Technical specifications for pseudonym generation referred to in Article 14 
 REQ-1: A wallet unit shall enable the user to store and generate a pseudonym by using any WebAuthn Authenticator of the user's choice. 
-NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public Key Credentials Level 2 – W3C Recommendation, 8 April 2021, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/._
+NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public Key Credentials Level 2 – W3C Recommendation, 8 April 2021, <https://www.w3.org/TR/2021/REC-webauthn-2-20210408/>._
 
 
 ### 2.3 CIR for Protocols and Interfaces about Pseudonyms
@@ -456,6 +456,6 @@ There are no change proposals to the ARF main text at this stage. They may be de
 | [European Digital Identity Regulation] | [Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg/2024/1183/oj) |
 | [CIR for protocols and interfaces] | [Commission Implementing Regulation (EU) 2024/2982 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg_impl/2024/2982/oj/eng) |
 | [CIR for integrity and core functionalities] | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng) |
-| [WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
+| [WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, <https://www.w3.org/TR/webauthn-2/> |
 | [Topic E Initial Discussion Paper] |   [E - Pseudonyms, including User authentication mechanism](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/e-pseudonyms-including-user-authentication-mechanism.md)  |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |

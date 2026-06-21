@@ -257,7 +257,7 @@ will be modified to reflect that non device-bound attestation can exist
 The Rulebook template will be modified according to the new HRL **ARB_30**. TS 10
 will be modified according to the new HRL **Mig_03**. 
 
-##  5. References
+## 5. References
 
 | Reference | Description |
 | --- | --- |
