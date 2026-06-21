@@ -1778,7 +1778,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="7.1 Changes to Existing HLRs">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#72-new-guiding-hlrs-for-scope-rate-limited-pseudonyms" class="md-nav__link">
@@ -1888,6 +1889,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3771,7 +3777,7 @@ disclosure (R6) / Surveillance (R14)</td>
 <p>This discussion paper proposes changes in two categories: 
 1. <em>Changes</em> to existing HLRs making it <em>optional</em> for Wallet Units to support the pseudonyms functionality required by the legislation by letting them be WebAuthn Authenticators rather than mandatory. These are presented in <a href="#71-changes-to-existing-hlrs">Section 7.1</a>.
 2. <em>Additional</em> HLRs to guide future pseudonyms solutions to support also <a href="#43-use-case-c-rate-limited-participation">Use Case C</a> in the context the EUDI Wallet ecosystem. These are presented in <a href="#72-new-guiding-hlrs-for-scope-rate-limited-pseudonyms">Section 7.2</a>. Note, however, that the EU Commission will not actively develop any such scheme fulfilling these HLRs. Instead, they are only meant as a guide for others to design and standardize protocols that may be included in a future version of the ARF.</p>
-<h4 id="71-changes-to-existing-hlrs">7.1 Changes to Existing HLRs<a class="headerlink" href="#71-changes-to-existing-hlrs" title="Link to this section">&para;</a></h4>
+<h3 id="71-changes-to-existing-hlrs">7.1 Changes to Existing HLRs<a class="headerlink" href="#71-changes-to-existing-hlrs" title="Link to this section">&para;</a></h3>
 <p>The existing HLRs and [CIR.2024.2979] mandate that Wallet Units implement WebAuthn as an authenticator. However, as there already exists many WebAuthn authenticator implementations widely available to Users through their operating system, web browsers or specialized apps, we propose to weaken the requirements in the ARF and the CIR such that it becomes <em>optional</em> for a Wallet Unit to also be a WebAuthn authenticator and thereby free for Wallet Units to enable <a href="#41-use-case-a-pseudonymous-authentication">Use Case A</a> and <a href="#42-use-case-b-presentation-of-attributes-with-subsequent-authentication-using-pseudonyms">Use Case B</a> using alternative technologies. </p>
 <blockquote>
 <p>Under Article 5a of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a>, EUDI Wallets must support the generation and storage of pseudonyms. This requirement remains intact. Our proposal only affects how this is achieved: implementing WebAuthn would remain one compliant approach, but not the only one. Wallet Units not following this path must use alternatives to live up to the legislation.</p>
