@@ -16,6 +16,10 @@
   "MD039": true, // no spaces inside link text
   "MD042": true, // no empty links
   "MD045": true, // images have alt text
-  "MD051": true, // link fragments point at an existing heading
+  // MD051 (link-fragments) is off: it slugifies headings the GitHub way
+  // (triple-dash around " - "), but this is an MkDocs site (single-dash), so it
+  // false-positives. Section anchors are validated correctly by
+  // tools/check_doc_links.py instead.
+  "MD051": false,
   "MD056": true  // tables have a consistent column count
 }
