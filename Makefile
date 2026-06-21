@@ -8,9 +8,20 @@
 #   make hltr        - Regenerate the Annex 2 requirements markdown from the HLTR CSV.
 #   make mkdocs      - Build the MkDocs site.
 #   make serve       - Serve the MkDocs site locally.
+#   make pdfs        - Build the release PDFs (build-pdf job; needs pandoc + LaTeX).
 #   make copy-pdfs   - Copy all PDF files from the docs folder to build/pdf.
 #   make zip-pdfs    - Create a zip file of all files in the build/pdf folder.
 #   make clean       - Delete all generated files.
+#
+# CI gate targets (mirror .github/workflows/ci.yml; see CI_AND_RELEASE_WORKFLOW.md):
+#   make gate                - Run the repo-wide docs-quality checks (all must pass).
+#   make build-strict        - build-docs job: strict MkDocs build (needs imaging libs).
+#   make check-links         - Internal links + section anchors (repo-wide).
+#   make check-csv           - HLR CSV structure (repo-wide).
+#   make lint-md             - Markdown lint (repo-wide; needs Node.js / npx).
+#   make check-private-links - Reject links to *-private repositories (repo-wide).
+#   make check-typos  FILES="docs/a.md"  - Typos (codespell) on the given files.
+#   make check-external FILES="docs/a.md" - External links (lychee) on the given files.
 #
 # Prerequisites:
 #   - pandoc (Ubuntu: `sudo apt-get install pandoc`)
@@ -76,7 +87,9 @@ PANDOC_EPUB_OPTIONS := --to epub3
 # Targets
 # -----------------------------------------------------------------------------
 
-.PHONY: all pdfs epub pdf mkdocs serve copy-pdfs zip-pdfs clean hltr
+.PHONY: all pdfs epub pdf mkdocs serve copy-pdfs zip-pdfs clean hltr \
+        gate build-strict references check-links check-csv lint-md \
+        check-private-links check-typos check-external
 
 # Default target: build all exported documents and the MkDocs site.
 all: $(EXPORTED_DOCS) epub pdf zip-pdfs mkdocs
@@ -135,3 +148,57 @@ zip-pdfs: copy-pdfs | $(SOURCE_DOCS:.md=.pdf) pdf
 clean:
 	@echo "Cleaning build and site directories..."
 	-$(RM) -rf $(BUILD_DIR) $(SITE_DIR)
+
+# CI gate targets
+# -----------------------------------------------------------------------------
+# Run the same checks as .github/workflows/ci.yml locally. The repo-wide checks
+# (links, anchors, markdown, CSV, private-repo links) must be clean everywhere.
+# Typos and external links are scoped in CI to a PR's changed files; run them
+# here on FILES (default: every Markdown file under docs/ and includes/), e.g.
+#   make check-typos FILES="docs/discussion-topics/x.md"
+# See CI_AND_RELEASE_WORKFLOW.md for environment setup.
+FILES ?= $(shell find docs includes -name '*.md' 2>/dev/null)
+
+# Regenerate includes/references.md so [shorthand] links resolve (used below).
+references:
+	$(PYTHON) tools/gen_references.py
+
+# build-docs job: strict MkDocs build (broken nav / dead links / anchors /
+# markdown). Uses the full site config (social/privacy plugins), so it needs the
+# imaging libraries — see CI_AND_RELEASE_WORKFLOW.md.
+build-strict: references hltr
+	$(MKDOCS) build --strict
+
+# docs-quality: internal links + section anchors (repo-wide; imaging-free).
+check-links: references
+	$(PYTHON) tools/check_doc_links.py
+
+# docs-quality: HLR CSV structure (repo-wide).
+check-csv:
+	$(PYTHON) tools/check_hltr_csv.py
+
+# docs-quality: markdown lint (repo-wide; needs Node.js / npx).
+lint-md:
+	npx --yes markdownlint-cli2 "docs/**/*.md"
+
+# docs-quality: no links to *-private repositories (repo-wide).
+check-private-links:
+	@if grep -rnE --include='*.md' --include='*.csv' \
+		'github\.com/eu-digital-identity-wallet/[a-z0-9-]+-private' docs includes hltr; then \
+		echo "ERROR: link(s) to a *-private repo — use the public URL or a relative link."; \
+		exit 1; \
+	fi
+
+# docs-quality: typos (codespell, allowlist in .codespellrc).
+check-typos:
+	codespell $(FILES)
+
+# docs-quality: external http(s) links (lychee config in lychee.toml).
+check-external:
+	lychee --config lychee.toml --no-progress $(FILES)
+
+# Run the repo-wide docs-quality checks (everything that must be clean
+# everywhere). Typos and external links are changed-files in CI, so run them
+# separately on your edits with check-typos / check-external.
+gate: check-private-links check-links check-csv lint-md
+	@echo "All repo-wide docs-quality checks passed."

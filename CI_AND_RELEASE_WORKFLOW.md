@@ -74,26 +74,76 @@ edit `docs/annexes/annex-2/annex-2.02-*.md` or `annex-2.03-*.md` directly — th
 are generated from the CSV. Edit the CSV; run `make hltr` to preview locally, and
 the `regenerate-hltr` job will regenerate and commit the Markdown on your PR.
 
-## 4. Running the gate locally
+## 4. Setting up a local environment
+
+The gate needs a Python toolchain and Node.js (for the markdown lint); the strict
+site build and the PDFs need some extra tooling. Install only what you need for
+the checks you want to run.
+
+### Python toolchain
 
 ```bash
-# one-time: install the toolchain (Python; markdown lint also needs Node.js)
+python3 -m venv .venv
+source .venv/bin/activate            # Windows (PowerShell): .venv\Scripts\Activate.ps1
 pip install -r requirements.txt codespell==2.4.2
-
-# build-docs: references + generated Annex 2 + strict site build
-python3 tools/gen_references.py
-make hltr
-mkdocs build --strict
-
-# docs-quality
-python3 tools/check_doc_links.py                 # internal links & anchors (repo-wide)
-python3 tools/check_hltr_csv.py                   # HLR CSV structure (repo-wide)
-npx markdownlint-cli2 "docs/**/*.md"              # markdown lint (repo-wide)
-codespell docs/path/to/changed.md                 # typos (your changed files)
-lychee --config lychee.toml docs/path/to/changed.md  # external links (optional)
 ```
 
-Common fixes:
+`requirements.txt` pins MkDocs, Material (with the `imaging` extra), `mike` and
+`jinja2`; `codespell` is pinned separately to match CI.
+
+### Node.js (markdown lint)
+
+`make lint-md` runs `npx markdownlint-cli2`, which needs
+[Node.js](https://nodejs.org); `npx` downloads the linter on first use.
+
+### Imaging libraries (for `make build-strict`)
+
+The strict build renders social cards (the `social` / `privacy` plugins), which
+need the Cairo/Pango libraries:
+
+- **macOS:** `brew install cairo freetype libffi libjpeg libpng pango`
+- **Debian/Ubuntu:** `sudo apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libpango1.0-dev`
+
+`make gate` and `make check-links` use an imaging-free configuration and do
+**not** need these.
+
+### lychee (for `make check-external`, optional)
+
+External-link checking uses [lychee](https://github.com/lycheeverse/lychee)
+(`brew install lychee`, `cargo install lychee`, or a prebuilt release binary).
+
+### PDF toolchain (for `make pdfs`)
+
+The PDFs build with Pandoc + LuaLaTeX + the Eisvogel template and a curated TeX
+Live set. The simplest way is the **same container CI uses** (you may need to
+`docker login ghcr.io` first):
+
+```bash
+docker run --rm -v "$PWD":/work -w /work \
+  ghcr.io/eu-digital-identity-wallet/arf-pdf-builder@sha256:e0d19dabca3a03ba8c716976b72f6b819751ff41ea223fb7fb3468122aa3ef05 \
+  make pdfs
+```
+
+PDFs land in `build/pdf/`. Alternatively, install Pandoc and a LaTeX distribution
+locally and run `make pdfs` directly (heavier).
+
+## 5. Running the gate locally
+
+The Makefile targets mirror the CI jobs (the full list is in the Makefile
+header):
+
+```bash
+make gate                                     # docs-quality: links, anchors, lint, CSV, private-links
+make build-strict                             # build-docs: strict MkDocs build
+make pdfs                                     # build-pdf: the release PDFs
+make check-typos    FILES="docs/your-edit.md" # typos on your changed files
+make check-external FILES="docs/your-edit.md" # external links on your changed files
+```
+
+The individual repo-wide checks are also available: `make check-links`,
+`make check-csv`, `make lint-md`, `make check-private-links`.
+
+### Common fixes
 
 - **Bare URL flagged (MD034):** wrap it as `<https://example.org/>`.
 - **Broken anchor:** MkDocs slugifies `## Topic 9 - X` to `#topic-9-x` (single
@@ -102,7 +152,7 @@ Common fixes:
 - **`…-private` link:** use the public repository URL (drop the `-private`
   suffix) or a relative link.
 
-## 5. Release workflow
+## 6. Release workflow
 
 ### Branch model
 
