@@ -509,7 +509,7 @@ for the specific case, as requesting the data deletion is a rather sensitive pro
 During the discussions with the delegated experts from the EU Member States the following
 aspect related to DATA_DLT_04 was discussed:
 
-It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency).
+It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency).
 
 #### 4.4 Discussions related to DATA_DLT_05
 

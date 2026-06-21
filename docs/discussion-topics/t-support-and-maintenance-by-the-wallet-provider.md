@@ -62,7 +62,7 @@ The ARF sub-section [6.5.4](https://github.com/eu-digital-identity-wallet/eudi-d
 The **Wallet Provider** is responsible at least to:
 
 - perform **installation of a new version of the Wallet Solution as necessary** - this is mentioned in [Topic 40](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2340-topic-40---wallet-instance-installation-and-wallet-unit-activation-and-management) part C, WIAM_11.
-- update the WUAs as necessary - covered in [Topic 9](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a236-topic-9-wallet-unit-attestation-and-wallet-instance-attestation).
+- update the WUAs as necessary - covered in [Topic 9](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a236-topic-9-wallet-unit-attestation-and-wallet-instance-attestation).
 - revoke the Wallet Unit in case its security is compromised - covered in [Topic 38](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2338-topic-38---wallet-unit-revocation).
 
 Management will also include **regular updates of the Wallet Instance application to ensure its continued security and functionality.**
