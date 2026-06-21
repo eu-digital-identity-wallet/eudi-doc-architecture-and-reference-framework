@@ -209,12 +209,12 @@ Commission's approval.)
 
 ```mermaid
 flowchart LR
-  M[main] -->|1. branch| F[feature/&lt;release&gt;]
-  I([public issues / PRs<br/>Cooperation Group feedback]) -. 2. small gated PRs .-> F
-  M -->|3. branch fresh| R[review/&lt;release&gt;]
-  F -->|3. one PR: full release diff<br/>4. review cycle<br/>5. merge| R
-  R -->|6. push + merge to public repo| P[(public main)]
-  P -->|7. sync| M
+  M["main"] -->|"1. branch"| F["feature/&lt;release&gt;"]
+  I["public issues / PRs<br>Cooperation Group feedback"] -.->|"2. small gated PRs"| F
+  M -->|"3. branch fresh"| R["review/&lt;release&gt;"]
+  F -->|"3. release-diff PR<br>4. review<br>5. merge"| R
+  R -->|"6. push + merge to public repo"| P[("public main")]
+  P -->|"7. sync"| M
 ```
 
 ---
