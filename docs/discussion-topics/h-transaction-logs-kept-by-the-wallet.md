@@ -134,7 +134,7 @@ _Data export and portability objects can log the person identification data and 
 
 ### 3.1 Introduction  
 
-This topic has been discussed already in the context of Topic N - Export and Data Portability. Refer to [Discussion Paper](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/n-export-and-data-portability.md) for more. The outcome of that discussion has been taken into account in this paper.
+This topic has been discussed already in the context of Topic N - Export and Data Portability. Refer to [Discussion Paper](n-export-and-data-portability.md) for more. The outcome of that discussion has been taken into account in this paper.
 
 As presented in the chapter 2, the purpose of the transaction log is clearly defined: to enable user to view the history of transactions (together with information what Relying Parties received User's data and types of data) and to execute data protection rights. Other possible purposes, like using the log to investigate identity theft or other frauds, are out of the scope of ARF.
 

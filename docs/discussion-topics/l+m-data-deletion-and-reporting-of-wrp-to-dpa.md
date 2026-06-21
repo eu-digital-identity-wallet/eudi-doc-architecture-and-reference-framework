@@ -13,15 +13,15 @@ erasure of personal data at a wallet-relying party and for reporting a relying p
 data protection supervisory authority. 
 
 The present paper builds upon and recalls (see [clause 3](#3-recalling-the-previously-existing-high-level-requirements)) 
-the existing high level requirements from [**Topic 48** (Blueprint for requesting data deletion to Relying Parties)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties)
-and [**Topic 50** (Blueprint to report unlawful or suspicious request of data)](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data), before it 
+the existing high level requirements from [**Topic 48** (Blueprint for requesting data deletion to Relying Parties)](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties)
+and [**Topic 50** (Blueprint to report unlawful or suspicious request of data)](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data), before it 
 discusses these topics in [clause 4](#4-erasure-of-personal-data-at-a-wallet-relying-party) and [clause 5](#5-reporting-a-wallet-relying-party-to-the-competent-data-protection-supervisory-authority). 
 
 The result of the discussions documented in the present paper is the updated set of high level requirements as laid down in [clause 6](#6-updated-set-of-high-level-requirements).
 
 ### 1.2 Related risks in the Risk Register
 
-Risks considered in [Topic_A](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/a-privacy-risks-and-mitigations.md) are also applicable here and additional risks
+Risks considered in [Topic_A](a-privacy-risks-and-mitigations.md) are also applicable here and additional risks
 may be added in this discussion paper, if this turns out to be necessary.
 
 ### 1.3 Key words
@@ -416,7 +416,7 @@ The present document discusses topics related to these protocols and interfaces,
 
 ### 3.1 Existing High-Level Requirements specified in Topic 48 
 
-The following high-level requirements have been specified in [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties)
+The following high-level requirements have been specified in [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties)
 before starting the present discussion:
 
 | **Index** | **Requirement specification** |
@@ -430,7 +430,7 @@ before starting the present discussion:
 
 ### 3.2 Existing High-Level Requirements specified in Topic 50
 
-The following high-level requirements have been specified in [Topic 50](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data) before starting the discussion:
+The following high-level requirements have been specified in [Topic 50](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data) before starting the discussion:
 
 | **Index** | **Requirement specification** |
 |-----------|--------------------|
@@ -664,7 +664,7 @@ the following high level requirement as **RPT_DPA_06**:
 ### 6.1 Update for Topic 48 (Erasure of personal data at a wallet-relying party)
 
 The updated set of high-level requirements after the discussion will give rise to an 
-update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2348-topic-48---blueprint-for-requesting-data-deletion-to-relying-parties):
+update of [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties):
 
 | **Index**              | **Requirement specification**                                                                                                                                                                                                                                                                                                     |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -680,7 +680,7 @@ update of [Topic 48](https://github.com/eu-digital-identity-wallet/eudi-doc-arch
 ### 6.2 Update for Topic 50 (Reporting a wallet-relying party to the competent data protection supervisory authority)
 
 The updated set of high-level requirements after the discussion will give rise to an update of 
-[Topic 50](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2350-topic-50---blueprint-to-report-unlawful-or-suspicious-request-of-data):
+[Topic 50](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data):
 
 | **Index**             | **Requirement specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
