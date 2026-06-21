@@ -1,4 +1,5 @@
-# Validate documentation changes on pull requests, before they reach main.
+# Validate documentation changes on pull requests to main and to the release /
+# review branches (feature/**, review/**), before they are merged.
 # Three checks run in parallel:
 #   build-docs    : fast MkDocs --strict build (broken nav / dead links / bad markdown)
 #   build-pdf     : the full Pandoc/LaTeX PDF build, using the same pinned image as the
@@ -12,7 +13,7 @@ name: CI
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "feature/**", "review/**"]
   workflow_dispatch:
 
 permissions:
@@ -83,13 +84,13 @@ jobs:
         run: make -j"$(nproc)" pdfs
 
   docs-quality:
-    # Link / reference / typo / lint gate (PR-only). Internal links and section
-    # anchors are validated repo-wide (backlog cleared), as is the HLR CSV
-    # structure. Typos, external URLs and markdown lint are scoped to the
-    # Markdown a PR changes, so their pre-existing backlogs burn down
-    # incrementally instead of blocking unrelated PRs. See
-    # tools/check_doc_links.py, tools/check_hltr_csv.py, .codespellrc,
-    # lychee.toml and .markdownlint-cli2.jsonc.
+    # Link / reference / typo / lint gate (PR-only). Internal links, section
+    # anchors (MkDocs), markdown lint and the HLR CSV structure are validated
+    # repo-wide (their backlogs are cleared). External URLs (lychee) and typos
+    # (codespell) are scoped to the Markdown a PR changes, so their younger
+    # backlogs burn down incrementally. See tools/check_doc_links.py,
+    # tools/check_hltr_csv.py, .codespellrc, lychee.toml and
+    # .markdownlint-cli2.jsonc.
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -136,11 +137,6 @@ jobs:
           echo "Changed Markdown files:"; cat changed_md.txt || true
           echo "count=$(wc -l < changed_md.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
           echo "files=$(paste -sd' ' changed_md.txt)" >> "$GITHUB_OUTPUT"
-          # markdownlint target: changed Markdown minus the generated annex-2
-          # pages (their lint issues live in the CSV/template, not the .md).
-          grep -vE 'docs/annexes/annex-2/annex-2\.0[23]' changed_md.txt > md_lint.txt || true
-          echo "md_lint=$(paste -sd' ' md_lint.txt)" >> "$GITHUB_OUTPUT"
-          echo "md_lint_count=$(wc -l < md_lint.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
 
       # 1) Internal links + section anchors (MkDocs), repo-wide: not-found /
       #    unrecognized / nav / anchors / absolute links all block, anywhere.
@@ -170,14 +166,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4) Markdown lint on the changed files (config in .markdownlint-cli2.jsonc
-      #    — a curated, correctness-only rule set; stylistic rules are off).
-      #    Changed-files scoped so the existing backlog burns down incrementally.
+      # 4) Markdown lint, repo-wide (config in .markdownlint-cli2.jsonc — a curated,
+      #    correctness-only rule set; stylistic rules are off). The backlog is
+      #    cleared, so this is a hard gate everywhere; the generated annex-2 pages
+      #    are excluded via the config's "ignores" (their lint lives in the CSV).
       - name: Lint markdown
-        if: ${{ !cancelled() && steps.changed.outputs.md_lint_count != '0' }}
+        if: ${{ !cancelled() }}
         uses: DavidAnson/markdownlint-cli2-action@ded1f9488f68a970bc66ea5619e13e9b52e601cd # v23.2.0
         with:
-          globs: ${{ steps.changed.outputs.md_lint }}
+          globs: "docs/**/*.md"
 
       # 5) Structural check of the HLR CSV that generates annex-2.02 / 2.03.
       #    Malformed rows (field count / header) fail; data-quality issues
