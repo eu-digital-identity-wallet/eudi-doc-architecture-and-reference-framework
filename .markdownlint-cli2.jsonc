@@ -26,5 +26,11 @@
   // Recognise pandoc YAML front matter that closes with '...' (used by the PDF
   // build) as well as '---', so the linter skips it instead of mis-reading the
   // document's '---' thematic breaks (which otherwise mis-fires MD001).
-  "frontMatter": "^---$[\\s\\S]*?^(?:---|\\.\\.\\.)$"
+  "frontMatter": "^---$[\\s\\S]*?^(?:---|\\.\\.\\.)$",
+  // The lint runs repo-wide; exclude the generated Annex 2 pages — their content
+  // (and so any lint) comes from hltr/high-level-requirements.csv, not the .md.
+  "ignores": [
+    "docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md",
+    "docs/annexes/annex-2/annex-2.03-high-level-requirements-by-category.md"
+  ]
 }
