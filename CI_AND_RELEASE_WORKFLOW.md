@@ -9,9 +9,14 @@ PR checklist.
 > gates. Edit the **CSV**, never the generated Annex 2 Markdown. Never link to a
 > `*-private` repository. When the feature branch is ready, review it through a
 > single `feature/<release> → review/<release>` PR, then publish to the public
-> `main` and sync back.
+> `main` and sync the two `main` branches.
 
 ---
+
+> **Governance.** The ARF is informative guidance that supports the legally
+> binding Implementing Regulations. All **content** changes are subject to the
+> **opinion of the European Digital Identity Cooperation Group** and **approval
+> by the European Commission**, regardless of how they reach the repository.
 
 ## 1. When the gates run
 
@@ -42,7 +47,7 @@ anchors and malformed Markdown.
 
 Builds the PDFs with the same pinned Pandoc/LaTeX image used by the release
 deploy, so a change that breaks the PDF fails here instead of at release time.
-(PRs opened from forks cannot pull the private build image, so this job only
+(PRs opened from forks cannot pull the org's GHCR build image, so this job only
 validates branches within this repository.)
 
 ### 2.3 `docs-quality` — link / reference / typo / lint gate
@@ -154,46 +159,62 @@ The individual repo-wide checks are also available: `make check-links`,
 
 ## 6. Release workflow
 
+### Why this workflow
+
+The ARF is maintained across **two synchronized repositories** and takes
+contributions from two sources:
+
+- **Public** issues and pull requests; and
+- **Member State** feedback channelled through the **European Digital Identity
+  Cooperation Group**.
+
+The branch model below consolidates both streams into a single, reviewable
+release, gates every change, and keeps the two repositories in sync. (As noted
+above, the content itself is subject to the Cooperation Group's opinion and the
+Commission's approval.)
+
 ### Branch model
 
 | Branch | Role |
 |--------|------|
-| `main` | Mirrors the **public** repository's `main`; authoritative, updated only by syncing from the public twin. |
-| `feature/<release>` | Working branch where a release's changes accumulate (e.g. `feature/2.10.0`). |
+| `main` | The released ARF — mirrored across the two synchronized repositories. |
+| `feature/<release>` | Working branch where a release's changes accumulate (e.g. `feature/2.10.0`), branched from `main`. |
 | `review/<release>` | A snapshot branched from `main`, used to present the full release diff for review. |
-| public `main` | The public twin where releases are published, then synced back to `main`. |
 
 ### Steps
 
 1. **Start the release.** Branch `main` → `feature/<release>`.
 2. **Do the work as small, focused PRs.** For each unit of work, open an issue
    and a PR **targeting `feature/<release>`**, linked to the issue (e.g.
-   `Closes #123`). Each PR runs the full gate; merge it when green. Repeat until
+   `Closes #123`); public contributions and Cooperation Group feedback both land
+   here. Each PR runs the full gate; merge it when green. Repeat until
    `feature/<release>` holds the complete release.
 3. **Open the review.** When `feature/<release>` is ready, branch `main` →
    `review/<release>` (fresh from `main`), then open **one** PR:
    `feature/<release>` → `review/<release>`. Because `review/<release>` starts
    from `main`, this PR's diff is the **entire release versus `main`** — it
-   simulates the eventual merge into `main` and gives reviewers the full picture
-   in one place. The gate runs on this PR too.
+   previews how `main` will look after the release and gives reviewers the full
+   picture in one place. The gate runs on this PR too.
 4. **Review cycle.** Address review feedback with further small PRs into
    `feature/<release>`.
-5. **Land the review branch.** When review is complete, merge
-   `feature/<release>` → `review/<release>`.
-6. **Publish.** Push `review/<release>` to the **public** repository's `main`.
-7. **Sync back.** Open a PR against (private) `main` to bring it level with the
-   published public `main`.
+5. **Land the review branch.** When the review is complete, merge
+   `feature/<release>` → `review/<release>`; `review/<release>` now holds the
+   final release.
+6. **Publish.** Push `review/<release>` to the **public** repository and merge it
+   into its `main`.
+7. **Sync the two mains.** Sync the two repositories' `main` branches so both are
+   identical again.
 
 ### At a glance
 
 ```mermaid
 flowchart LR
   M[main] -->|1. branch| F[feature/&lt;release&gt;]
-  I([issues]) -. 2. small gated PRs .-> F
+  I([public issues / PRs<br/>Cooperation Group feedback]) -. 2. small gated PRs .-> F
   M -->|3. branch fresh| R[review/&lt;release&gt;]
   F -->|3. one PR: full release diff<br/>4. review cycle<br/>5. merge| R
-  R -->|6. push| P[(public main)]
-  P -->|7. sync PR| M
+  R -->|6. push + merge to public repo| P[(public main)]
+  P -->|7. sync| M
 ```
 
 ---
