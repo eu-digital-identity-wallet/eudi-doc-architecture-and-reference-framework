@@ -414,7 +414,7 @@ See sections 4 and 5 above. In addition, data export and portability aspects in 
 | Reference                              | Description                                                  |
 |----------------------------------------|--------------------------------------------------------------|
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
-| [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |                                                |
+| [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [Topic 9]                             | Topic 9 - Wallet Unit Attestation |
 | [Topic 16]                               | Topic 16 - Signing documents with a Wallet Unit
 | [Topic 19]                             | Topic 19 - User navigation requirements (Dashboard logs for transparency) |

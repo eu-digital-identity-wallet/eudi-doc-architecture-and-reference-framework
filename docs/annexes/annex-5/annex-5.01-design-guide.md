@@ -16,9 +16,9 @@ of ongoing work of the eIDAS Expert Group. This document is being continuously
 updated and should not be considered final._
 
 
-##  1 Introduction 
+## 1 Introduction 
 
-###  1.1 Purpose of the design guide 
+### 1.1 Purpose of the design guide 
 
 This design guide outlines the principles, guidelines, and best practices for
 creating consistent and effective design solutions for the EUDI wallet. The

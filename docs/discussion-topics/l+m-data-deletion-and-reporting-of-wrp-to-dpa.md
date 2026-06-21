@@ -442,7 +442,7 @@ The following high-level requirements have been specified in [Topic 50](../annex
 
 ## 4. Erasure of personal data at a wallet-relying party
 
-#### 4.1 Discussions related to DATA_DLT_01 and DATA_DLT_02
+### 4.1 Discussions related to DATA_DLT_01 and DATA_DLT_02
 
 During the discussions with the delegated experts from the EU Member States the following
 aspects related to DATA_DLT_01 and DATA_DLT_02 have been discussed:
@@ -690,7 +690,6 @@ The updated set of high-level requirements after the discussion will give rise t
 | RPT_DPA_04            | **Wallet providers SHALL ensure that wallet units allow wallet users to substantiate the reports, including by attaching relevant information to identify the wallet-relying parties, and the wallet users’ claims in machine-readable format.</br> Note: The log kept by the Wallet Unit will be standardized and is machine-readable in order to enable data portability. An excerpt from this log therefore can be used to substantiate the report.**                                                                                                                                                                                                                                                         |
 | RPT_DPA_05            | A Wallet Unit SHALL log the **initiation of a** report sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in Topic 19).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **RPT_DPA_06**        | **The Wallet Unit SHALL take the contact details of the DPA, which supervises the Relying Party, either (in this order) from a) included in  the RPRC in the log entry, b) included in the RPAC in the log entry, c) looked up by the Wallet Unit from the RP Registry, based on the Subject of the RPAC in the log entry. </br> The contact information includes  at least one of email address, phone number, or a URL of a webform.**                                                                                                                                                                                                                                                                         
-|
 
 
 
