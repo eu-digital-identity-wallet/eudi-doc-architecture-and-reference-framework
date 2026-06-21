@@ -83,11 +83,13 @@ jobs:
         run: make -j"$(nproc)" pdfs
 
   docs-quality:
-    # Link / reference / typo gate (PR-only). Internal links and section anchors
-    # are validated repo-wide (the backlog is cleared). Typos and external URLs
-    # are scoped to the Markdown a PR changes — typos because the allowlist is
-    # young, external URLs because pre-existing link rot must not block unrelated
-    # PRs. See tools/check_doc_links.py, .codespellrc and lychee.toml.
+    # Link / reference / typo / lint gate (PR-only). Internal links and section
+    # anchors are validated repo-wide (backlog cleared), as is the HLR CSV
+    # structure. Typos, external URLs and markdown lint are scoped to the
+    # Markdown a PR changes, so their pre-existing backlogs burn down
+    # incrementally instead of blocking unrelated PRs. See
+    # tools/check_doc_links.py, tools/check_hltr_csv.py, .codespellrc,
+    # lychee.toml and .markdownlint.jsonc.
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -134,6 +136,11 @@ jobs:
           echo "Changed Markdown files:"; cat changed_md.txt || true
           echo "count=$(wc -l < changed_md.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
           echo "files=$(paste -sd' ' changed_md.txt)" >> "$GITHUB_OUTPUT"
+          # markdownlint target: changed Markdown minus the generated annex-2
+          # pages (their lint issues live in the CSV/template, not the .md).
+          grep -vE 'docs/annexes/annex-2/annex-2\.0[23]' changed_md.txt > md_lint.txt || true
+          echo "md_lint=$(paste -sd' ' md_lint.txt)" >> "$GITHUB_OUTPUT"
+          echo "md_lint_count=$(wc -l < md_lint.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
 
       # 1) Internal links + section anchors (MkDocs), repo-wide: not-found /
       #    unrecognized / nav / anchors / absolute links all block, anywhere.
@@ -162,6 +169,22 @@ jobs:
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4) Markdown lint on the changed files (rules in .markdownlint.jsonc — a
+      #    curated, correctness-only set; stylistic rules are off). Changed-files
+      #    scoped so the existing backlog is burned down incrementally.
+      - name: Lint markdown
+        if: ${{ !cancelled() && steps.changed.outputs.md_lint_count != '0' }}
+        uses: DavidAnson/markdownlint-cli2-action@ded1f9488f68a970bc66ea5619e13e9b52e601cd # v23.2.0
+        with:
+          globs: ${{ steps.changed.outputs.md_lint }}
+
+      # 5) Structural check of the HLR CSV that generates annex-2.02 / 2.03.
+      #    Malformed rows (field count / header) fail; data-quality issues
+      #    (duplicate IDs, empties) are reported as warnings.
+      - name: Check the HLR CSV
+        if: ${{ !cancelled() }}
+        run: python3 tools/check_hltr_csv.py
 
   regenerate-hltr:
     # The Annex 2 high-level-requirements pages (annex-2.02 / annex-2.03) are
