@@ -73,7 +73,7 @@ CT logs are used to ensure accuracy of issued access certificates with two or mo
 
 Trust provided by CT logs is limited to the issuance of access certificates. They are two or more sources of truth stating who an access certificate has been issued to.
 
-####  Certificate Transparency Logs
+#### Certificate Transparency Logs
 
 Certificate Transparency (CT) is an open framework designed to improve the 
 security and accountability of the Public Key Infrastructure (PKI) used on the 

@@ -103,7 +103,7 @@ Below are the actual excepts of the CIR that establish these requirements.
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Recital 14 | The generation of wallet-relying party specific pseudonyms should enable wallet users to authenticate themselves without providing wallet-relying parties with unnecessary information. As set out in Regulation (EU) No 910/2014, wallet users are not to be hindered from accessing services under a pseudonym, where there is no legal requirement for legal identity for authentication. Therefore, the wallets are to include a functionality to generate user-chosen and managed pseudonyms, to authenticate when accessing online services. The implementation of the specifications set out in Annex V should enable these functionalities accordingly. Further, wallet-relying parties are not to request users to provide any data other than those indicated for the intended use of wallets in the relying party register. Wallet users should be enabled to verify the registration data of relying parties at any point in time. |
 | Article 14 | 1. Wallet units shall support the generation of pseudonyms for wallet users in compliance with the technical specifications set out in Annex V. 2. Wallet units shall support the generation, upon the request of a wallet-relying party, of a pseudonym which is specific and unique to that wallet-relying party and provide this pseudonym to the wallet-relying party, either standalone or in combination with any person identification data or electronic attribute attestation requested by that wallet-relying party. |
-| Annex V    | TECHNICAL SPECIFICATIONS FOR PSEUDONYM GENERATION REFERRED TO IN ARTICLE 14 Technical specifications: — WebAuthn Sch– W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/.|                                                                                        
+| Annex V    | TECHNICAL SPECIFICATIONS FOR PSEUDONYM GENERATION REFERRED TO IN ARTICLE 14 Technical specifications: — WebAuthn Sch– W3C Recommendation, 8 April 2021, Level 2, <https://www.w3.org/TR/2021/REC-webauthn-2-20210408/>.|                                                                                        
 
 Please note that Article 1 of [CIR.2024.2979] stipulates that it can be updated in the future "to keep in line with technology […] in particular the Architecture and Reference Framework". This means that the text of the CIR and the standards references therein serve as starting point of the further development of the ARF, but that the ARF is not per definition constrained by the current version of [CIR.2024.2979].
 
@@ -692,7 +692,7 @@ A protocol enabling scope rate limited pseudonyms SHALL NOT allow any entity or 
 
 > Rationale: This is to protect the privacy of the user. In particular, this requirement also ensures that a Relying Party cannot choose the same scope as another Relying Party to break the unlinkability of the interactions between the Relying Parties. 
 
-#####  Requirement 6
+##### Requirement 6
 A protocol enabling scope rate limited pseudonyms SHALL ensure that if the rate is larger than 1, then a User's different scope rate limited pseudonyms SHALL be unlinkable for the same scope. This SHALL hold against any entity or collusion of entities, not including the User. Further, such protocol SHALL ensure that during registration or authentication with such pseudonym it SHALL NOT be possible for the Relying Party to deduce any information about how many pseudonyms the particular User has already registered (except that it does not exceed the predetermined rate).
 
 > Rationale: This is to protect the privacy of the user. 
@@ -716,7 +716,7 @@ A User's scope rate limited pseudonyms for a particular scope and rate SHALL be 
 
 | Reference | Description |
 |-----------------|-----------------|
-| [W3C WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, https://www.w3.org/TR/webauthn-2/ |
+| [W3C WebAuthn] | Web Authentication: An API for accessing Public Key Credentials Level 2 W3C Recommendation, 8 April 2021, <https://www.w3.org/TR/webauthn-2/> |
 | [ARF_DevPlan] | Architecture and Reference Framework Development plan 2025, European Commission, v1.0.|
 | [RiskRegister] | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |

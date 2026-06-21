@@ -143,7 +143,7 @@ _Annex V_ _(Note: the new text proposed in the IA draft amending [CIR for integr
 
 _Technical specifications for pseudonym generation referred to in Article 14 
 REQ-1: A wallet unit shall enable the user to store and generate a pseudonym by using any WebAuthn Authenticator of the user's choice. 
-NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public Key Credentials Level 2 – W3C Recommendation, 8 April 2021, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/._
+NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public Key Credentials Level 2 – W3C Recommendation, 8 April 2021, <https://www.w3.org/TR/2021/REC-webauthn-2-20210408/>._
 
 
 ### 2.3 CIR for Protocols and Interfaces about Pseudonyms
