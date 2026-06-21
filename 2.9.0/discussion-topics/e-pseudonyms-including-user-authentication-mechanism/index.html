@@ -3191,7 +3191,7 @@ Before examining the legal requirements for the Pseudonyms functionality, we int
 </ul>
 <p>A special case of a <em>scope rate limited pseudonym</em> occurs when the rate is set to 1. In that case, each User is guaranteed to have at most one valid pseudonym within the relevant scope, for example, in an electronic voting system. This is often referred to as a <em>scope unique</em> or <em>scope exclusive pseudonym</em>.</p>
 <p>Note also that the EUDI Wallet ecosystem already enables <em>attested pseudonyms</em> as there are no hindrances for an Attestation Provider to issue a (Q)EAA attesting to a particular pseudonym for a User. As such attestations are key-bound, a User could subsequently authenticate as such pseudonym by making a verifiable presentation to Relying Parties. There is however no EU-wide definition of such an attestation type. 
-The concept of Cryptographic Binding of Attestations scheme as discussed in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/k-combined-presentation-of-attestations.md">Topic K - Combined Presentation of Attributes</a> would allow such attested pseudonyms to be cryptographically bound to the same User during issuance. </p>
+The concept of Cryptographic Binding of Attestations scheme as discussed in <a href="../k-combined-presentation-of-attestations/">Topic K - Combined Presentation of Attributes</a> would allow such attested pseudonyms to be cryptographically bound to the same User during issuance. </p>
 <h2 id="3-legal-requirements-for-pseudonyms">3 Legal Requirements for Pseudonyms<a class="headerlink" href="#3-legal-requirements-for-pseudonyms" title="Link to this section">&para;</a></h2>
 <p>There are two legal texts that impose direct requirements on the pseudonym functionality of the Wallet Units: the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the Europe">European Digital Identity Regulation</a> and [CIR.2024.2979], the Implementing Act on PID and EAA.</p>
 <p>Below we recap the respective legal requirements from these sources.</p>
@@ -3896,7 +3896,7 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 </blockquote>
 <p><strong>Question 3:</strong> For Use Case A: Should a single user be able to use their Wallet Unit to present several different pseudonyms to a single Relying Party? High-Level Requirements must be defined that enforces the answer to this question.</p>
 <blockquote>
-<p>Yes: It should be possible for a user to have several pseudonyms at the same Relying Party (see <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a-hlrs-related-to-use-cases-">PA_04</a>.</p>
+<p>Yes: It should be possible for a user to have several pseudonyms at the same Relying Party (see <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a-hlrs-related-to-use-cases-a-and-b">PA_04</a>.</p>
 </blockquote>
 <p><strong>Question 4:</strong> For both use cases: What assurances must be given to the Relying Party? Such possible assurance exists on at least three levels:</p>
 <ol>
