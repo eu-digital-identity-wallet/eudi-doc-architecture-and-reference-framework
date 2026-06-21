@@ -59,7 +59,7 @@ Before examining the legal requirements for the Pseudonyms functionality, we int
 A special case of a *scope rate limited pseudonym* occurs when the rate is set to 1. In that case, each User is guaranteed to have at most one valid pseudonym within the relevant scope, for example, in an electronic voting system. This is often referred to as a *scope unique* or *scope exclusive pseudonym*.
 
 Note also that the EUDI Wallet ecosystem already enables *attested pseudonyms* as there are no hindrances for an Attestation Provider to issue a (Q)EAA attesting to a particular pseudonym for a User. As such attestations are key-bound, a User could subsequently authenticate as such pseudonym by making a verifiable presentation to Relying Parties. There is however no EU-wide definition of such an attestation type. 
-The concept of Cryptographic Binding of Attestations scheme as discussed in [Topic K - Combined Presentation of Attributes](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/k-combined-presentation-of-attestations.md) would allow such attested pseudonyms to be cryptographically bound to the same User during issuance. 
+The concept of Cryptographic Binding of Attestations scheme as discussed in [Topic K - Combined Presentation of Attributes](k-combined-presentation-of-attestations.md) would allow such attested pseudonyms to be cryptographically bound to the same User during issuance. 
 
 ## 3 Legal Requirements for Pseudonyms
 
@@ -736,7 +736,7 @@ I.e., should registration and authentication with pseudonyms be possible both wh
 
 **Question 3:** For Use Case A: Should a single user be able to use their Wallet Unit to present several different pseudonyms to a single Relying Party? High-Level Requirements must be defined that enforces the answer to this question.
 
-> Yes: It should be possible for a user to have several pseudonyms at the same Relying Party (see [PA_04](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a-hlrs-related-to-use-cases-).
+> Yes: It should be possible for a user to have several pseudonyms at the same Relying Party (see [PA_04](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a-hlrs-related-to-use-cases-a-and-b).
 
 **Question 4:** For both use cases: What assurances must be given to the Relying Party? Such possible assurance exists on at least three levels:
 
