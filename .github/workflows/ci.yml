@@ -89,7 +89,7 @@ jobs:
     # Markdown a PR changes, so their pre-existing backlogs burn down
     # incrementally instead of blocking unrelated PRs. See
     # tools/check_doc_links.py, tools/check_hltr_csv.py, .codespellrc,
-    # lychee.toml and .markdownlint.jsonc.
+    # lychee.toml and .markdownlint-cli2.jsonc.
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -170,9 +170,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4) Markdown lint on the changed files (rules in .markdownlint.jsonc — a
-      #    curated, correctness-only set; stylistic rules are off). Changed-files
-      #    scoped so the existing backlog is burned down incrementally.
+      # 4) Markdown lint on the changed files (config in .markdownlint-cli2.jsonc
+      #    — a curated, correctness-only rule set; stylistic rules are off).
+      #    Changed-files scoped so the existing backlog burns down incrementally.
       - name: Lint markdown
         if: ${{ !cancelled() && steps.changed.outputs.md_lint_count != '0' }}
         uses: DavidAnson/markdownlint-cli2-action@ded1f9488f68a970bc66ea5619e13e9b52e601cd # v23.2.0

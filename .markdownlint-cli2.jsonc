@@ -1,0 +1,30 @@
+{
+  // markdownlint-cli2 config: curated, correctness-only rule set plus handling
+  // for the pandoc-style YAML front matter the PDF build uses. Most stylistic
+  // rules are off (these prose docs use long lines, inline HTML and varied
+  // table/emphasis styles); only rules that catch real defects are on.
+  "config": {
+    "default": false,
+    "MD001": true, // heading levels increment by one (no skipped levels)
+    "MD005": true, // consistent list indentation
+    "MD011": true, // no reversed link syntax (text)(url)
+    "MD018": true, // space after # in ATX headings
+    "MD019": true, // no multiple spaces after # in ATX headings
+    "MD023": true, // headings start at the line beginning
+    "MD034": true, // no bare URLs (wrap in <> or a link)
+    "MD037": true, // no spaces inside emphasis markers
+    "MD038": true, // no spaces inside code span markers
+    "MD039": true, // no spaces inside link text
+    "MD042": true, // no empty links
+    "MD045": true, // images have alt text
+    // MD051 (link-fragments) off: it slugifies headings the GitHub way
+    // (triple-dash), but this is an MkDocs site (single-dash); anchors are
+    // validated correctly by tools/check_doc_links.py instead.
+    "MD051": false,
+    "MD056": true  // tables have a consistent column count
+  },
+  // Recognise pandoc YAML front matter that closes with '...' (used by the PDF
+  // build) as well as '---', so the linter skips it instead of mis-reading the
+  // document's '---' thematic breaks (which otherwise mis-fires MD001).
+  "frontMatter": "^---$[\\s\\S]*?^(?:---|\\.\\.\\.)$"
+}

@@ -87,4 +87,4 @@ Besides these planned changes, further changes on this subject will follow the d
 | Reference                              | Description                                                  |
 |----------------------------------------|----------------------------|
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
-| [Web Content Accessibility Guidelines (WCAG) 2 requirements and techniques]                         | A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques. |                                                |
+| [Web Content Accessibility Guidelines (WCAG) 2 requirements and techniques]                         | A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques. |

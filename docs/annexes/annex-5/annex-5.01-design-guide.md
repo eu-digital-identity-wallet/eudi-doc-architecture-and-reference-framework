@@ -16,9 +16,9 @@ of ongoing work of the eIDAS Expert Group. This document is being continuously
 updated and should not be considered final._
 
 
-##  1 Introduction 
+## 1 Introduction 
 
-###  1.1 Purpose of the design guide 
+### 1.1 Purpose of the design guide 
 
 This design guide outlines the principles, guidelines, and best practices for
 creating consistent and effective design solutions for the EUDI wallet. The
@@ -364,7 +364,7 @@ A target size is the area that can be activated in order to interact with an
 element. Individuals with dexterity challenges may find it more challenging to
 utilize a website if the target size is smaller. In this section, we'll examine
 methods ([Apple's HIG](https://developer.apple.com/design/human-interface-guidelines/layout)
-and [Google's Material](https://m3.material.io/foundations/layout/understanding-layout/overview))
+and [Google's Material](https://m3.material.io/foundations/layout/layout-overview/overview)
 for generating target sizes that are user-friendly, uniform, and properly
 spaced. A person's ability to interact with smaller controls may be impacted by
 a disability or a combination of disabilities that affect their motor movements

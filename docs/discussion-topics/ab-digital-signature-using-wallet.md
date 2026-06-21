@@ -6,7 +6,7 @@ Version 0.7, updated 5 June 2026
 
 # Topic AB - Digital Signature using the EUDI Wallet (New)
 
-### Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
+## Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
 
 
 ## 1 Introduction
@@ -386,7 +386,7 @@ Although this is a vital aspect, it is out of the scope of ARF and there is no i
 | **QES_07a** | **When a Wallet Unit interacts with a QTSP or a remote QES Provider to issue certificates, it SHOULD use [CSC-API], in compliance with [ETSI TS 119 432].** | New requirement |
 | **QES_07b** | **When a Wallet Unit interacts with a QTSP or a remote QES Provider to create signatures or seals, it SHOULD use [CSC-API], in compliance with [ETSI TS 119 432] and [CEN EN 419 241-2]. The Wallet Provider SHOULD ensure compliance with [CEN EN 419 241-1] where applicable.** | New requirement |
 | QES_08 | Wallet Providers SHALL ensure that their Wallet Units are able to create signatures ~~or~~ **and** seals in accordance with the mandatory PAdES format as specified in [ETSI EN 319 142-1[ V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in [ETSI EN 319 132-1] V1.2.1 (2022-02), - JAdES as specified in [ETSI TS 119 182-1] V1.2.1 (2024-07), - CAdES as specified in [ETSI EN 319 122-1] V1.3.1 (2023-06), and - ASiC as specified in [ETSI EN 319 162-1] V1.1.1 (2016-04) and [ETSI EN 319 162-2] V1.1.1 (2016-04). | Keep with proposed changes |
-| QES_09 | Empty |
+| QES_09 | Empty | Deleted |
 | QES_10 | Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit and is used to generate signatures or seals of the representation of the document or data to be signed or sealed, the Wallet Unit presents the representation of the document or data to be signed or sealed to the User. | Remove |
 | **QES_10a** | **When a Relying Party sends a signature or seal creation request to a Wallet Unit, and the Wallet Solution uses a remote QES creation service, the Wallet Unit SHALL display an appropriate message to the User and ensure that User gives consent for proceeding such a request, in compliance with [ETSI TS 119 432].**  | New requirement |
 | QES_11 | ~~Where the Signature Creation Application is implemented as part of the Wallet Unit, a Wallet Unit SHALL compute the hash or digest of the document or data to be signed through its Signature Create Application component.~~ | Remove |
