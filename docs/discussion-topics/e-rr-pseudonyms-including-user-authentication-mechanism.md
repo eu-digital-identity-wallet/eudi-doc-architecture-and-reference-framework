@@ -136,7 +136,7 @@ _Annex V_ _(Note: the current text in [CIR for integrity and core functionalitie
 
 _Technical specifications for pseudonym generation referred to in Article 14 
 Technical specifications: 
-— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn- 2-20210408/._
+— WebAuthn – W3C Recommendation, 8 April 2021, Level 2, https://www.w3.org/TR/2021/REC-webauthn-2-20210408/._
 
 
 _Annex V_ _(Note: the new text proposed in the IA draft amending [CIR for integrity and core functionalities])_
