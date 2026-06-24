@@ -9,6 +9,8 @@
         <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
       
       
+        <meta name="author" content="European Commission - DG CNECT">
+      
       
         <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/discussion-topics/x-rr-relying-party-registration/">
       
@@ -53,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
       <link rel="stylesheet" href="../../media/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -84,7 +88,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -111,17 +115,30 @@
 
   
 
+
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <a
+      href="../.."
+      title="European Digital Identity"
+      class="md-header__button md-logo"
+      aria-label="European Digital Identity"
+      data-md-component="logo"
+    >
       
   <img src="../../media/logo_eudi_white.svg" alt="logo">
 
     </a>
+
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
+
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
@@ -138,6 +155,7 @@
         </div>
       </div>
     </div>
+
     
       
         <form class="md-header__option" data-md-component="palette">
@@ -145,7 +163,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -155,7 +173,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -165,10 +183,13 @@
 </form>
       
     
+
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+
     
+
     
       
       
@@ -217,6 +238,11 @@
 </div>
       
     
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" title="Download the ARF as PDF" class="md-header__button md-icon" aria-label="Download the ARF as PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"/></svg>
+      </a>
+    
+
     
       <div class="md-header__source">
         <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
@@ -231,6 +257,7 @@
       </div>
     
   </nav>
+
   
     
       
@@ -269,6 +296,8 @@
           
   
   
+    
+  
   Architecture and Reference Framework
 
         </a>
@@ -291,6 +320,8 @@
           
   
   
+    
+  
   Discussion Topics
 
         </a>
@@ -310,6 +341,8 @@
         <a href="../../technical-specifications/" class="md-tabs__link">
           
   
+  
+    
   
   Technical Specifications
 
@@ -444,6 +477,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -522,6 +561,20 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -535,8 +588,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../annexes/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,8 +604,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
@@ -564,32 +624,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../annexes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture and Reference Annexes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -630,6 +664,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -782,6 +824,12 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
@@ -901,6 +949,12 @@
   
   
     
+    
+      
+        
+      
+        
+      
     
     
     
@@ -1039,6 +1093,72 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1055,8 +1175,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1070,8 +1191,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
@@ -1084,32 +1211,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Discussion topics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -2696,6 +2797,36 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -2709,8 +2840,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../technical-specifications/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2724,8 +2856,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -2738,32 +2876,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../technical-specifications/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Essential Standards and Technical Specifications (STS)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -3776,7 +3888,7 @@ provider;</li>
 </tr>
 <tr>
 <td>Reg_06</td>
-<td>Member States SHALL support the common API specified in <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a> ~~for~~ to enable automated retrieval of registry entries from the Member States' registries. <em>Note: [Technical Specification 5] specifies the use of a secure channel protecting the authenticity and integrity of the information in the registry during transport, and does not require authentication or prior registration and authorisation of any entity wishing to retrieve the information in the registry.</em></td>
+<td>Member States SHALL support the common API specified in <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a> <del>for</del> to enable automated retrieval of registry entries from the Member States' registries. <em>Note: [Technical Specification 5] specifies the use of a secure channel protecting the authenticity and integrity of the information in the registry during transport, and does not require authentication or prior registration and authorisation of any entity wishing to retrieve the information in the registry.</em></td>
 <td><strong>Modify</strong></td>
 </tr>
 <tr>
@@ -3813,7 +3925,7 @@ provider;</li>
 </tr>
 <tr>
 <td>Reg_10a</td>
-<td>~~A Member State SHALL ensure that an Access Certificate Authority notified according to [[Topic 31]] issues one or more access certificates to all Relying Parties registered in one of the Member State's registries. A Relying Party SHALL receive a separate access certificate for each of its Relying Party Instances.~~ Empty</td>
+<td><del>A Member State SHALL ensure that an Access Certificate Authority notified according to [[Topic 31]] issues one or more access certificates to all Relying Parties registered in one of the Member State's registries. A Relying Party SHALL receive a separate access certificate for each of its Relying Party Instances.</del> Empty</td>
 <td>Deleted, see Reg_10</td>
 </tr>
 <tr>
@@ -4037,7 +4149,7 @@ provider;</li>
 </tbody>
 </table>
 <h3 id="43-topic-44-relying-party-registration-certificates">4.3 Topic 44 - Relying Party Registration Certificates<a class="headerlink" href="#43-topic-44-relying-party-registration-certificates" title="Link to this section">&para;</a></h3>
-<p>A. Issuance of ~~Relying Party~~ registration certificates</p>
+<p>A. Issuance of <del>Relying Party</del> registration certificates</p>
 <table>
 <thead>
 <tr>
@@ -4064,7 +4176,7 @@ provider;</li>
 </tr>
 <tr>
 <td>RPRC_04</td>
-<td>If the subject of the registration certificate uses the services of an intermediary (see [Topic 52]), the 'association to the intermediary' mentioned in Annex I (15) of <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj" title="Commission Implementing Regulation 2025/848 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of">CIR 2025/848</a> SHALL consist of the ~~user-friendly name and~~ unique identifier of this intermediary, as meant in requirement~~s~~ Reg_31 ~~and Reg_32,~~ <strong>and the intermediary's Relying Party Service identifier as meant in Reg_33</strong>.  <em>Note: ~~This~~<strong>These</strong> identifier<strong>s</strong> are identical to those in the access certificate of the intermediary.</em></td>
+<td>If the subject of the registration certificate uses the services of an intermediary (see [Topic 52]), the 'association to the intermediary' mentioned in Annex I (15) of <a href="https://data.europa.eu/eli/reg_impl/2025/848/oj" title="Commission Implementing Regulation 2025/848 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of">CIR 2025/848</a> SHALL consist of the <del>user-friendly name and</del> unique identifier of this intermediary, as meant in requirement<sub>~s</sub>~ Reg_31 <del>and Reg_32,</del> <strong>and the intermediary's Relying Party Service identifier as meant in Reg_33</strong>.  <em>Note: <del>This</del><strong>These</strong> identifier<strong>s</strong> are identical to those in the access certificate of the intermediary.</em></td>
 <td><strong>Modify</strong> by adding Relying Party Service identifier and removing Relying Party trade name. The trade name is not necessary for matching the intermediated RP to the intermediary.</td>
 </tr>
 <tr>
@@ -4079,12 +4191,12 @@ provider;</li>
 </tr>
 <tr>
 <td>RPRC_06</td>
-<td>The contents of a registration certificate SHALL include a name for the subject of the certificate, in a format suitable for presenting to a User <strong>, which SHALL be identical to the trade name in the access certificates of the entity, see Reg_31</strong>. ~~Notes: <em>b) This name is identical to the name in the access certificate(s) of the entity, see Reg_31.</em>~~.</td>
+<td>The contents of a registration certificate SHALL include a name for the subject of the certificate, in a format suitable for presenting to a User <strong>, which SHALL be identical to the trade name in the access certificates of the entity, see Reg_31</strong>. <del>Notes: <em>b) This name is identical to the name in the access certificate(s) of the entity, see Reg_31.</em></del>.</td>
 <td><strong>Modify</strong> by moving note b) into the requirement itself for more clarity.</td>
 </tr>
 <tr>
 <td>RPRC_07</td>
-<td>The contents of a registration certificate SHALL include an EU-wide unique identifier for the subject of the certificate <strong>, which SHALL be identical to the identifier in the access certificates of that entity, see Reg_32</strong>. ~~<em>Notes: c) This identifier is identical to the identifier in the access certificate(s) of the entity, see Reg_32.~~</em></td>
+<td>The contents of a registration certificate SHALL include an EU-wide unique identifier for the subject of the certificate <strong>, which SHALL be identical to the identifier in the access certificates of that entity, see Reg_32</strong>. <del>_Notes: c) This identifier is identical to the identifier in the access certificate(s) of the entity, see Reg_32.</del>_</td>
 <td><strong>Modify</strong> by moving note c) into the requirement itself for more clarity. Also, we will delete note b, which is superfluous.</td>
 </tr>
 <tr>
@@ -4111,12 +4223,12 @@ provider;</li>
 <tbody>
 <tr>
 <td>RPRC_09</td>
-<td>A Member State Registrar MAY decide that, during the registration process for Relying Parties, as specified in <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, a Provider of registration certificates associated to the Registrar must create and sign or seal one or more registration certificates. If the Registrar decides to do so, the Provider of registration certificates SHALL create and sign or seal a separate registration certificate for each <strong>combination of</strong> intended use <strong>and Relying Party service, as registered by the Relying Party per Reg_10d,</strong> and issue it to the Relying Party. Each registration certificate SHALL comply with the requirements in the technical specification mentioned in RPRC_0~~2~~<strong>1</strong>.</td>
+<td>A Member State Registrar MAY decide that, during the registration process for Relying Parties, as specified in <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, a Provider of registration certificates associated to the Registrar must create and sign or seal one or more registration certificates. If the Registrar decides to do so, the Provider of registration certificates SHALL create and sign or seal a separate registration certificate for each <strong>combination of</strong> intended use <strong>and Relying Party service, as registered by the Relying Party per Reg_10d,</strong> and issue it to the Relying Party. Each registration certificate SHALL comply with the requirements in the technical specification mentioned in RPRC_0<sub>~2</sub>~<strong>1</strong>.</td>
 <td><strong>Modify</strong> to take Relying Party services into consideration</td>
 </tr>
 <tr>
 <td>RPRC_10</td>
-<td>If, during registration, a Relying Party received one or more registration certificates, it SHALL distribute these to all ~~its~~ Relying Party Instances having an access certificate containing the same Relying Party Service identifier.</td>
+<td>If, during registration, a Relying Party received one or more registration certificates, it SHALL distribute these to all <del>its</del> Relying Party Instances having an access certificate containing the same Relying Party Service identifier.</td>
 <td><strong>Modify</strong> to take Relying Party services into consideration</td>
 </tr>
 <tr>
@@ -4143,12 +4255,12 @@ provider;</li>
 <tbody>
 <tr>
 <td>RPRC_13</td>
-<td>A Registrar MAY decide that, during the registration process for PID Providers, QEAA Providers, PuB-EAA Provider, or non-qualified EAA Providers, as specified in <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, a Provider of registration certificates associated to the Member State Registrar must create and sign or seal ~~a registration certificate~~ <strong>one or more registration certificates. If the Registrar decides to do so, the Provider of registration certificates SHALL sign or seal a separate registration certificate for each of the registered services of the registering entity</strong> and issue it to the registering entity. ~~If so,~~<strong>Each</strong> ~~that~~ registration certificate SHALL comply with the requirements in the technical specification mentioned in RPRC_0~~2~~<strong>1</strong>.</td>
+<td>A Registrar MAY decide that, during the registration process for PID Providers, QEAA Providers, PuB-EAA Provider, or non-qualified EAA Providers, as specified in <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>, a Provider of registration certificates associated to the Member State Registrar must create and sign or seal <del>a registration certificate</del> <strong>one or more registration certificates. If the Registrar decides to do so, the Provider of registration certificates SHALL sign or seal a separate registration certificate for each of the registered services of the registering entity</strong> and issue it to the registering entity. <del>If so,</del><strong>Each</strong> <del>that</del> registration certificate SHALL comply with the requirements in the technical specification mentioned in RPRC_0<sub>~2</sub>~<strong>1</strong>.</td>
 <td>Change to take into account registered services, and to correct reference</td>
 </tr>
 <tr>
 <td>RPRC_14</td>
-<td>If, during registration, a PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider received a registration certificate, it SHALL distribute it to all ~~its~~ service supply points <strong>having an access certificate containing the same Relying Party Service identifier</strong>. <strong>_Notes: a) A service supply point is a system at which a Wallet Unit can start the process of requesting and obtaining a PID or attestation.</strong>_</td>
+<td>If, during registration, a PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider received a registration certificate, it SHALL distribute it to all <del>its</del> service supply points <strong>having an access certificate containing the same Relying Party Service identifier</strong>. <strong>_Notes: a) A service supply point is a system at which a Wallet Unit can start the process of requesting and obtaining a PID or attestation.</strong>_</td>
 <td><strong>Modify</strong> to take Relying Party services into consideration.</td>
 </tr>
 <tr>
@@ -4175,7 +4287,7 @@ provider;</li>
 </tr>
 <tr>
 <td>RPRC_17</td>
-<td>If the User indicated that they want to verify the information registered about the Relying Party <strong>and the Relying Party Service</strong> and the Relying Party sent a registration certificate to the Wallet Unit, the Wallet Unit SHALL verify the authenticity and validity of the registration certificate according to the technical specification meant in RPRC_02. If the outcome of the verification is negative, the Wallet Unit SHALL, when asking for User approval according to RPA_07, notify the User that it could not obtain the information registered about the ~~entity~~<strong>the Relying Party and the Relying Party Service</strong>.</td>
+<td>If the User indicated that they want to verify the information registered about the Relying Party <strong>and the Relying Party Service</strong> and the Relying Party sent a registration certificate to the Wallet Unit, the Wallet Unit SHALL verify the authenticity and validity of the registration certificate according to the technical specification meant in RPRC_02. If the outcome of the verification is negative, the Wallet Unit SHALL, when asking for User approval according to RPA_07, notify the User that it could not obtain the information registered about the <del>entity</del><strong>the Relying Party and the Relying Party Service</strong>.</td>
 <td><strong>Modify</strong></td>
 </tr>
 <tr>
@@ -4190,7 +4302,7 @@ provider;</li>
 </tr>
 <tr>
 <td>RPRC_19a</td>
-<td>A Relying Party Instance SHALL include in each presentation request the following information, according to the applicable standard's extension mentioned in RPRC_20a: a) the ~~user-friendly~~ <strong>trade</strong> name of the Relying Party, b) the unique identifier of the Relying Party, <strong>c)the trade name of the Relying Party Service, d) the identifier of the Relying Party Service,</strong> e) a User-friendly description of the intended use of the ~~Relying Party~~ <strong>current use case</strong>, f) the URL of the Registrar of the Relying Party, and g) the identifier of the intended use of ~~the Relying Party~~<strong>this use case</strong>. <em>Notes: <strong>a)</strong> Including items a) and ~~b~~<strong>c</strong>) enables the Wallet Unit to show to the User the name of the Relying Party <strong>and Relying Party Service</strong>. Including ~~c~~<strong>e</strong>) enables the Wallet Unit to inform the User about the intended use. Including ~~c) and d)~~<strong>b), d) and g)</strong> enables the Wallet Unit, if desired by the User, to request from the Registrar the attributes registered by the Relying Party for this <strong>Service and</strong> intended use, as well as the corresponding privacy policy and other registered information. See <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a> for the definition of this information. <strong>b)</strong> ~~Note that~~ in case the Relying Party Instance is operated by an intermediary, items a) - g) pertain to the intermediated Relying Party, see also RPI_06.</em></td>
+<td>A Relying Party Instance SHALL include in each presentation request the following information, according to the applicable standard's extension mentioned in RPRC_20a: a) the <del>user-friendly</del> <strong>trade</strong> name of the Relying Party, b) the unique identifier of the Relying Party, <strong>c)the trade name of the Relying Party Service, d) the identifier of the Relying Party Service,</strong> e) a User-friendly description of the intended use of the <del>Relying Party</del> <strong>current use case</strong>, f) the URL of the Registrar of the Relying Party, and g) the identifier of the intended use of <del>the Relying Party</del><strong>this use case</strong>. <em>Notes: <strong>a)</strong> Including items a) and <del>b</del><strong>c</strong>) enables the Wallet Unit to show to the User the name of the Relying Party <strong>and Relying Party Service</strong>. Including <del>c</del><strong>e</strong>) enables the Wallet Unit to inform the User about the intended use. Including <del>c) and d)</del><strong>b), d) and g)</strong> enables the Wallet Unit, if desired by the User, to request from the Registrar the attributes registered by the Relying Party for this <strong>Service and</strong> intended use, as well as the corresponding privacy policy and other registered information. See <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a> for the definition of this information. <strong>b)</strong> <del>Note that</del> in case the Relying Party Instance is operated by an intermediary, items a) - g) pertain to the intermediated Relying Party, see also RPI_06.</em></td>
 <td><strong>Modify</strong></td>
 </tr>
 <tr>
@@ -4222,12 +4334,12 @@ provider;</li>
 <tbody>
 <tr>
 <td>RPRC_22</td>
-<td>If a PID Provider or Attestation Provider received a registration certificate <strong>for one of its services</strong> (see RPRC_1<strong>3</strong>~~4~~), it SHALL include the <strong>applicable</strong> registration certificate in its Credential Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01 and the extension thereof in ETSI TS 119 472-3. The registration certificate SHALL be included in the metadata by value, not by reference. <em>Note: This ensures that no external requests are necessary to validate the PID Provider or Attestation Provider, and that issuance transactions are atomic and self-contained.</em></td>
+<td>If a PID Provider or Attestation Provider received a registration certificate <strong>for one of its services</strong> (see RPRC_1<strong>3</strong><del>4</del>), it SHALL include the <strong>applicable</strong> registration certificate in its Credential Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01 and the extension thereof in ETSI TS 119 472-3. The registration certificate SHALL be included in the metadata by value, not by reference. <em>Note: This ensures that no external requests are necessary to validate the PID Provider or Attestation Provider, and that issuance transactions are atomic and self-contained.</em></td>
 <td><strong>Modified</strong></td>
 </tr>
 <tr>
 <td>RPRC_22a</td>
-<td>A PID Provider or Attestation Provider SHALL include the ~~the~~ following information in its Credential Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01 and the extension thereof in ETSI TS 119 472-3: a) the ~~user-friendly~~<strong>trade</strong> name of the PID Provider or Attestation Provider, b) the unique identifier of the PID Provider or Attestation Provider, <strong>c)the trade name of the Relying Party Service, d) the identifier of the Relying Party Service,</strong> e) a User-friendly description of the PID(s) or attestation(s) issued by this <strong>Service of the</strong> PID Provider or Attestation Provider, f) the URL of the Registrar of the PID Provider or Attestation Provider, and g) the attestation type(s) that <strong>this Service of</strong> the PID Provider or Attestation Provider intends to issue to Wallet Units.</td>
+<td>A PID Provider or Attestation Provider SHALL include the <del>the</del> following information in its Credential Issuer metadata used in the common OpenID4VCI protocol referenced in ISSU_01 and the extension thereof in ETSI TS 119 472-3: a) the <del>user-friendly</del><strong>trade</strong> name of the PID Provider or Attestation Provider, b) the unique identifier of the PID Provider or Attestation Provider, <strong>c)the trade name of the Relying Party Service, d) the identifier of the Relying Party Service,</strong> e) a User-friendly description of the PID(s) or attestation(s) issued by this <strong>Service of the</strong> PID Provider or Attestation Provider, f) the URL of the Registrar of the PID Provider or Attestation Provider, and g) the attestation type(s) that <strong>this Service of</strong> the PID Provider or Attestation Provider intends to issue to Wallet Units.</td>
 <td><strong>Modified</strong></td>
 </tr>
 <tr>
@@ -4269,7 +4381,7 @@ provider;</li>
 </tr>
 <tr>
 <td>RPI_05</td>
-<td>When an intermediated Relying Party asks its intermediary to request some attributes from a Wallet Unit, it SHALL specify a) its ~~user-friendly~~<strong>trade</strong> name, b) its unique identifier, <strong>c) its Service identifier, d) the trade name of its Service, e</strong>~~c~~) the URL of its Registrar. f) the identifier of its intended use, g) a User-friendly  description of its intended use. In addition, if the intermediated Relying Party has registration certificates, it SHALL indicate which single registration certificate the intermediary must include in the presentation request. <em>Note: a) See RPRC_19a for why the intermediary needs this information. b) Since a), b) and ~~c~~<strong>e</strong>) will not change for each request, specification of this information can be done once. The same is true for c) and d) if the intermediated Relying Party has only one registered <strong>Service, and for f) and g) in case it has only one</strong> intended use.</em></td>
+<td>When an intermediated Relying Party asks its intermediary to request some attributes from a Wallet Unit, it SHALL specify a) its <del>user-friendly</del><strong>trade</strong> name, b) its unique identifier, <strong>c) its Service identifier, d) the trade name of its Service, e</strong><del>c</del>) the URL of its Registrar. f) the identifier of its intended use, g) a User-friendly  description of its intended use. In addition, if the intermediated Relying Party has registration certificates, it SHALL indicate which single registration certificate the intermediary must include in the presentation request. <em>Note: a) See RPRC_19a for why the intermediary needs this information. b) Since a), b) and <del>c</del><strong>e</strong>) will not change for each request, specification of this information can be done once. The same is true for c) and d) if the intermediated Relying Party has only one registered <strong>Service, and for f) and g) in case it has only one</strong> intended use.</em></td>
 <td><strong>Modify</strong></td>
 </tr>
 <tr>
@@ -4304,7 +4416,7 @@ provider;</li>
 </tr>
 <tr>
 <td>RPI_09</td>
-<td>When a Wallet Unit presents to an intermediary any attributes from a PID or attestation, the intermediary SHALL verify the authenticity of the PID or attestation, its revocation status, device binding, and User binding, as well as any combined presentation of attributes, if applicable, as specified in this ARF and if agreed with the Relying Party. Furthermore, the intermediary SHALL verify the authenticity of the Wallet Unit and its revocation status, as specified in this ARF, if agreed with the Relying Party. <em>Note: ~~This~~<strong>The</strong> ARF does not mandate that a Relying Party must carry out all of these verifications. Therefore, the intermediary and any Relying Party using its services must agree on what verifications the intermediary will carry out.</em></td>
+<td>When a Wallet Unit presents to an intermediary any attributes from a PID or attestation, the intermediary SHALL verify the authenticity of the PID or attestation, its revocation status, device binding, and User binding, as well as any combined presentation of attributes, if applicable, as specified in this ARF and if agreed with the Relying Party. Furthermore, the intermediary SHALL verify the authenticity of the Wallet Unit and its revocation status, as specified in this ARF, if agreed with the Relying Party. <em>Note: <del>This</del><strong>The</strong> ARF does not mandate that a Relying Party must carry out all of these verifications. Therefore, the intermediary and any Relying Party using its services must agree on what verifications the intermediary will carry out.</em></td>
 <td><strong>Modify</strong></td>
 </tr>
 <tr>
@@ -4416,6 +4528,38 @@ provider;</li>
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-06-20T14:05:54+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-06-20</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-03-23T16:20:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-03-23</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -4426,6 +4570,8 @@ provider;</li>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4508,10 +4654,14 @@ provider;</li>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
   </body>
