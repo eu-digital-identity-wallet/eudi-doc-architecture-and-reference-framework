@@ -46,7 +46,6 @@ theme:
     - navigation.top
     - navigation.footer
     - navigation.tracking
-    - toc.integrate
     - toc.follow
     - search.suggest
     - search.highlight
@@ -82,6 +81,7 @@ markdown_extensions:
   - toc:
       permalink: true
       permalink_title: Link to this section
+      toc_depth: 3
   # --- ARF-specific: shared snippet of references appended to every page ---
   - pymdownx.snippets:
       auto_append:
