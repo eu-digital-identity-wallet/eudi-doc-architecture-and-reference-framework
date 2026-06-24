@@ -1,3 +1,7 @@
+---
+template: home.html
+---
+
 # European Digital Identity Wallet
 
 ![Digital Identity for all Europeans - A personal digital wallet for EU citizens and residents](./media/top-banner-arf.png)

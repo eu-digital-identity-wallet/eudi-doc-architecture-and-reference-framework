@@ -1,0 +1,60 @@
+{#-
+  EUDI Wallet — homepage template (Hero A + navigation cards)
+  Apply only to the landing page by adding to its front matter:
+
+      ---
+      template: home.html
+      ---
+
+  Requires in mkdocs.yml:
+      theme:
+        custom_dir: overrides
+  Card links below are relative to the ARF site root (eudi.dev/latest/).
+  Adjust the hrefs if you reuse this template in another repo.
+-#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="eudi-hero">
+    <div class="eudi-hero__inner">
+      <span class="eudi-hero__eyebrow">★ eIDAS 2.0 · Regulation (EU) 2024/1183</span>
+      <h1>Architecture and Reference Framework for the EU Digital Identity Wallet</h1>
+      <p>The single source of truth: main narrative, normative high-level
+         requirements, technical specifications and open discussion topics.</p>
+      <a href="architecture-and-reference-framework-main/" class="md-button md-button--primary">Read the Main Document</a>
+      <a href="annexes/" class="md-button">Browse the Annexes</a>
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" class="md-button">Download PDF</a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div class="md-typeset eudi-home-cards">
+    <div class="grid cards">
+      <ul>
+        <li class="eudi-feature">
+          <p><strong>Main Document</strong></p>
+          <p>Start here — the narrative description of the architecture, roles and trust model.</p>
+          <p><a href="architecture-and-reference-framework-main/">Open →</a></p>
+        </li>
+        <li>
+          <p><strong>Annexes &amp; HLRs</strong></p>
+          <p>Definitions, high-level requirements by topic and category, rulebooks and design guides.</p>
+          <p><a href="annexes/">Open →</a></p>
+        </li>
+        <li>
+          <p><strong>Discussion Topics</strong></p>
+          <p>Open questions: privacy risks, zero-knowledge proof, wallet-to-wallet and more.</p>
+          <p><a href="discussion-topics/">Open →</a></p>
+        </li>
+        <li>
+          <p><strong>Technical Specifications</strong></p>
+          <p>TS1–TS12 — the normative technical specifications for interoperability.</p>
+          <p><a href="technical-specifications/">Open →</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  {{ super() }}
+{% endblock %}

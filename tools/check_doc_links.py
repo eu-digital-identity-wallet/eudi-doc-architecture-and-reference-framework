@@ -34,6 +34,34 @@ MKDOCS_CONFIG = os.path.join(REPO_ROOT, "mkdocs.yml")
 # deploy (mike); none affect link validation, all are dropped for this build.
 DROP_PLUGINS = {"social", "privacy", "mike"}
 
+# mkdocs.yml uses Python-specific YAML tags (e.g. the superfences custom fence
+# `format: !!python/name:pymdownx.superfences.fence_code_format`). MkDocs' own
+# loader resolves them to live objects, but yaml.safe_load can't construct them
+# and yaml.safe_dump can't re-serialize them. We don't need their values here —
+# only to round-trip them verbatim into the derived config so the MkDocs build
+# below parses them exactly as the real site does. Carry each as an opaque tag.
+_PY_TAG_PREFIX = "tag:yaml.org,2002:python/"
+
+
+class _OpaqueTag:
+    """A YAML node with a Python-specific tag, preserved tag-and-value as-is."""
+
+    def __init__(self, tag: str, value: str) -> None:
+        self.tag = tag
+        self.value = value
+
+
+def _construct_opaque_tag(loader, tag_suffix, node):
+    return _OpaqueTag(_PY_TAG_PREFIX + tag_suffix, loader.construct_scalar(node))
+
+
+def _represent_opaque_tag(dumper, data):
+    return dumper.represent_scalar(data.tag, data.value)
+
+
+yaml.SafeLoader.add_multi_constructor(_PY_TAG_PREFIX, _construct_opaque_tag)
+yaml.SafeDumper.add_representer(_OpaqueTag, _represent_opaque_tag)
+
 
 def derive_config() -> str:
     """Write a temp config: real mkdocs.yml minus DROP_PLUGINS, validation forced on.

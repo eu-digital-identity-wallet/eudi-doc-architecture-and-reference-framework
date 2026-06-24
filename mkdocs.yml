@@ -1,7 +1,12 @@
-# European Digital Identity - Architecture and Reference Framework
-# Compatible with both MkDocs Material 9.7.x and Zensical (>= 0.0.45).
+# ============================================================
+# CANONICAL config — eudi-doc-architecture-and-reference-framework
+# (eudi.dev). The theme / markdown / plugins blocks below are the
+# shared baseline; docs.eudi.dev and conformance.eudi.dev mirror them.
+# Compatible with MkDocs Material 9.7.x and Zensical (>= 0.0.45).
+# ============================================================
 
 site_name: European Digital Identity
+site_author: European Commission - DG CNECT
 site_description: >-
   Architecture and Reference Framework (ARF) of the European Digital
   Identity Wallet: main narrative, annexes with normative high-level
@@ -12,18 +17,24 @@ repo_name: eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framew
 edit_uri: edit/main/docs/
 copyright: European Union, 2025 - Licensed under the EUPL-1.2 or later
 
+# ---------------- SHARED THEME BLOCK (keep identical across repos) ----------------
 theme:
   name: material
+  custom_dir: overrides          # holds home.html (ARF) + any future partials
   icon:
     repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom            # EC blue #004494 — defined in extra.css
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
@@ -31,6 +42,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    - navigation.indexes
     - navigation.top
     - navigation.footer
     - navigation.tracking
@@ -41,12 +53,16 @@ theme:
     - search.share
     - content.action.edit
     - content.action.view
+    - content.code.copy
+    - content.code.annotate     # quick win: annotated code blocks
+    - content.tabs.link         # quick win: linked content tabs
   logo: media/logo_eudi_white.svg
   favicon: media/favicon.ico
 
 extra_css:
-  - media/extra.css
+  - media/extra.css              # site-specific path; same file contents everywhere
 
+# ---------------- SHARED MARKDOWN BLOCK (keep identical) ----------------
 markdown_extensions:
   - footnotes
   - sane_lists
@@ -55,28 +71,46 @@ markdown_extensions:
   - md_in_html
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:           # quick win: content tabs (e.g. Android / iOS)
+      alternate_style: true
   - toc:
       permalink: true
       permalink_title: Link to this section
+  # --- ARF-specific: shared snippet of references appended to every page ---
   - pymdownx.snippets:
       auto_append:
         - includes/references.md
       check_paths: true
 
-watch:
-  - includes
-
+# ---------------- SHARED PLUGINS BLOCK (keep identical) ----------------
 plugins:
   - search
+  - tags
   - privacy
   - social
   - mike
+  - git-revision-date-localized:   # quick win: "last updated" (pip: mkdocs-git-revision-date-localized-plugin; CI needs full git history, fetch-depth: 0)
+      enable_creation_date: true
+      type: timeago
 
 extra:
+  # PDF button in the header (rendered by overrides/partials/header.html).
+  # Stable URL: always resolves to the asset of the latest GitHub release.
+  pdf_url: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf
+  pdf_title: Download the ARF as PDF
   version:
     provider: mike
     alias: true
+
+# ---------------- ARF-specific ----------------
+watch:
+  - includes
 
 validation:
   nav:
@@ -84,9 +118,6 @@ validation:
   links:
     not_found: warn
     unrecognized_links: warn
-    # Broken section anchors and absolute links are validated repo-wide. The
-    # backlog was cleared (see tools/check_doc_links.py history), so any new
-    # one fails `mkdocs build --strict` and the docs-quality gate.
     anchors: warn
     absolute_links: warn
 
