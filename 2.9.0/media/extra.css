@@ -182,3 +182,9 @@
 .md-typeset .eudi-hlr__body { padding: .7rem 0; }
 .md-typeset .eudi-hlr__body > :first-child { margin-top: 0; }
 .md-typeset .eudi-hlr__body > :last-child  { margin-bottom: 0; }
+
+/* Legacy-ID meta line above a requirement (by-category view) */
+.md-typeset .eudi-hlr__meta {
+  font-size: .68rem; color: var(--md-default-fg-color--light);
+  text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .2rem;
+}
