@@ -13,4 +13,4 @@ share attributes securely, fully under the user's control. The Architecture and
 Reference Framework (ARF) is the common technical baseline behind it, built on the
 adopted legal text and its Commission Implementing Regulations.
 
-[Read the full background and legal basis →](background.md)
+[About the EUDI Wallet and the ARF →](about.md)
