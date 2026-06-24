@@ -112,6 +112,19 @@
 .eudi-hero .md-button:not(.md-button--primary) { color: #fff; border-color: rgba(255, 255, 255, .5); }
 .eudi-hero .md-button:not(.md-button--primary):hover { background: rgba(255, 255, 255, .12); border-color: #fff; }
 
+/* Homepage version strip (slim release bar under the hero) */
+.md-typeset .eudi-verstrip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.1rem;
+  background: var(--md-default-fg-color--lightest);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px; padding: .55rem 1rem; margin: 0 0 1.8rem; font-size: .8rem;
+}
+.md-typeset .eudi-verstrip .dot {
+  width: .5rem; height: .5rem; border-radius: 50%; background: #2bb673;
+  display: inline-block; margin-right: .4rem;
+}
+.md-typeset .eudi-verstrip .sp { margin-left: auto; }
+
 /* ============================================================
    Navigation cards (Material ".grid.cards")
    "Card 4": add class .eudi-feature to a card for the filled-blue variant

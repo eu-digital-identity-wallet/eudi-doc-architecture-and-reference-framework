@@ -1,60 +1,86 @@
-{#-
-  EUDI Wallet — homepage template (Hero A + navigation cards)
-  Apply only to the landing page by adding to its front matter:
-
-      ---
-      template: home.html
-      ---
-
-  Requires in mkdocs.yml:
-      theme:
-        custom_dir: overrides
-  Card links below are relative to the ARF site root (eudi.dev/latest/).
-  Adjust the hrefs if you reuse this template in another repo.
--#}
 {% extends "main.html" %}
 
 {% block tabs %}
   {{ super() }}
   <section class="eudi-hero">
     <div class="eudi-hero__inner">
-      <span class="eudi-hero__eyebrow">★ eIDAS 2.0 · Regulation (EU) 2024/1183</span>
+      <span class="eudi-hero__eyebrow">★ EUDI Regulation (EU) 2024/1183</span>
       <h1>Architecture and Reference Framework for the EU Digital Identity Wallet</h1>
       <p>The single source of truth: main narrative, normative high-level
          requirements, technical specifications and open discussion topics.</p>
       <a href="architecture-and-reference-framework-main/" class="md-button md-button--primary">Read the Main Document</a>
       <a href="annexes/" class="md-button">Browse the Annexes</a>
-      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" class="md-button">Download PDF</a>
+      {% if config.extra.pdf_url %}
+      <a href="{{ config.extra.pdf_url }}" class="md-button">Download PDF</a>
+      {% endif %}
     </div>
   </section>
 {% endblock %}
 
 {% block content %}
-  <div class="md-typeset eudi-home-cards">
-    <div class="grid cards">
-      <ul>
-        <li class="eudi-feature">
-          <p><strong>Main Document</strong></p>
-          <p>Start here — the narrative description of the architecture, roles and trust model.</p>
-          <p><a href="architecture-and-reference-framework-main/">Open →</a></p>
-        </li>
-        <li>
-          <p><strong>Annexes &amp; HLRs</strong></p>
-          <p>Definitions, high-level requirements by topic and category, rulebooks and design guides.</p>
-          <p><a href="annexes/">Open →</a></p>
-        </li>
-        <li>
-          <p><strong>Discussion Topics</strong></p>
-          <p>Open questions: privacy risks, zero-knowledge proof, wallet-to-wallet and more.</p>
-          <p><a href="discussion-topics/">Open →</a></p>
-        </li>
-        <li>
-          <p><strong>Technical Specifications</strong></p>
-          <p>TS1–TS12 — the normative technical specifications for interoperability.</p>
-          <p><a href="technical-specifications/">Open →</a></p>
-        </li>
-      </ul>
-    </div>
+<div class="md-content__inner md-typeset">
+
+  <div class="eudi-verstrip">
+    <span><span class="dot"></span>Latest release <strong>v2.9.0</strong> · 21 May 2026</span>
+    <span class="sp"></span>
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/CHANGELOG.md">Changelog</a>
+    {% if config.extra.pdf_url %}<a href="{{ config.extra.pdf_url }}">Download PDF</a>{% endif %}
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases">All releases</a>
   </div>
-  {{ super() }}
+
+  <h2>Explore the documentation</h2>
+  <div class="grid cards eudi-home-cards">
+    <ul>
+      <li class="eudi-feature">
+        <p><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> <strong>Main Document</strong></p>
+        <p>Start here — the architecture, roles and trust model of the ecosystem.</p>
+        <p><a href="architecture-and-reference-framework-main/">Open →</a></p>
+      </li>
+      <li>
+        <p><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h7v16h-7zM9 11V4h5v16H9z"/></svg> <strong>Annexes &amp; HLRs</strong></p>
+        <p>Definitions, high-level requirements, rulebooks and design guides.</p>
+        <p><a href="annexes/">Open →</a></p>
+      </li>
+      <li>
+        <p><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <strong>Discussion Topics</strong></p>
+        <p>Open questions: privacy, zero-knowledge proof, wallet-to-wallet and more.</p>
+        <p><a href="discussion-topics/">Open →</a></p>
+      </li>
+      <li>
+        <p><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg> <strong>Technical Specifications</strong></p>
+        <p>TS1–TS12, the normative specifications for interoperability.</p>
+        <p><a href="technical-specifications/">Open →</a></p>
+      </li>
+    </ul>
+  </div>
+
+  {{ page.content }}
+
+  <h2>Key resources</h2>
+  <div class="grid cards">
+    <ul>
+      <li>
+        <p><strong>EU Digital Identity Regulation</strong></p>
+        <p>Regulation (EU) 2024/1183.</p>
+        <p><a href="https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18">Open →</a></p>
+      </li>
+      <li>
+        <p><strong>European Commission</strong></p>
+        <p>EUDI Wallet policy page.</p>
+        <p><a href="https://digital-strategy.ec.europa.eu/en/policies/eudi-wallet-toolbox">Open →</a></p>
+      </li>
+      <li>
+        <p><strong>Reference Implementation</strong></p>
+        <p>Build, test and explore working components.</p>
+        <p><a href="https://docs.eudi.dev/latest/">Open →</a></p>
+      </li>
+      <li>
+        <p><strong>Functional Conformance</strong></p>
+        <p>The conformance assessment framework.</p>
+        <p><a href="https://conformance.eudi.dev/latest/">Open →</a></p>
+      </li>
+    </ul>
+  </div>
+
+</div>
 {% endblock %}
