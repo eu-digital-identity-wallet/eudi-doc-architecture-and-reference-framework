@@ -124,8 +124,8 @@ validation:
 nav:
   - European Digital Identity Wallet: index.md
   - Architecture and Reference Framework:
+      - About: about.md
       - Main Document: architecture-and-reference-framework-main.md
-      - Background and legal basis: background.md
       - Annexes:
           - annexes/README.md
           - annexes/annex-1/annex-1-definitions.md
