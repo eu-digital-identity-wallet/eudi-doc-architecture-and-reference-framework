@@ -3,12 +3,11 @@
 ## The EU Digital Identity Wallet
 
 The **European Digital Identity Regulation** (EUDI Regulation,
-[Regulation (EU) 2024/1183](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18))
-gives every EU citizen, resident and business the right to a **European Digital
-Identity Wallet**: a secure app, under the user's control, to identify themselves
-and share verified attributes across the Union. It strengthens the EU's earlier
-electronic identification framework (Regulation (EU) No 910/2014), making
-cross-border recognition effective and opening it to the private sector.
+[Regulation (EU) No 910/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02014R0910-20241018),
+consolidated as amended in 2024) gives every EU citizen, resident and business the
+right to a **European Digital Identity Wallet**: a secure app, under the user's
+control, to identify themselves and share verified attributes across the Union. It
+makes cross-border recognition effective and opens it to the private sector.
 
 A Wallet can be provided directly by a Member State or by a private company it
 officially recognises. By design, the EU Digital Identity Wallet is:
@@ -36,9 +35,9 @@ Implementing Regulations listed below.
 
 ## Commission Implementing Regulations
 
-The ARF builds on the
-[adopted legal text](https://eur-lex.europa.eu/eli/reg/2014/910/2024-10-18) and
-the following Commission Implementing Regulations (CIRs):
+The ARF builds on
+[Regulation (EU) No 910/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02014R0910-20241018)
+and the following Commission Implementing Regulations (CIRs):
 
 | Reference | Subject |
 | --- | --- |
