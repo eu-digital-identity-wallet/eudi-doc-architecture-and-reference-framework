@@ -8,11 +8,13 @@
       <h1>Architecture and Reference Framework for the EU Digital Identity Wallet</h1>
       <p>The single source of truth: main narrative, normative high-level
          requirements, technical specifications and open discussion topics.</p>
-      <a href="architecture-and-reference-framework-main/" class="md-button md-button--primary">Read the Main Document</a>
-      <a href="annexes/" class="md-button">Browse the Annexes</a>
-      {% if config.extra.pdf_url %}
-      <a href="{{ config.extra.pdf_url }}" class="md-button">Download PDF</a>
-      {% endif %}
+      <span class="md-typeset">
+        <a href="architecture-and-reference-framework-main/" class="md-button md-button--primary">Read the Main Document</a>
+        <a href="annexes/" class="md-button">Browse the Annexes</a>
+        {% if config.extra.pdf_url %}
+        <a href="{{ config.extra.pdf_url }}" class="md-button">Download PDF</a>
+        {% endif %}
+      </span>
     </div>
   </section>
 {% endblock %}

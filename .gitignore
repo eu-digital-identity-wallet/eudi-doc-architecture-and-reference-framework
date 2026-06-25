@@ -11,6 +11,7 @@ docs/arf.png
 .vscode
 .cache
 .lycheecache
+.venv
 
 docs/annexes/annex-2/high-level-requirements.xlsx
 docs/annexes/annex-2/~$high-level-requirements.xlsx
