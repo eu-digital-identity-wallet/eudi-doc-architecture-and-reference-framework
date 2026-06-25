@@ -102,6 +102,8 @@
   background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 999px; padding: .25rem .85rem; font-size: .72rem; font-weight: 600; margin-bottom: 1rem;
 }
+a.eudi-hero__eyebrow { color: #fff; text-decoration: none; transition: background .15s, border-color .15s; }
+a.eudi-hero__eyebrow:hover { background: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .55); }
 .eudi-hero h1 { color: #fff; font-weight: 800; font-size: 2.3rem; line-height: 1.12; margin: 0 0 .7rem; max-width: 20ch; }
 .eudi-hero p  { color: rgba(255, 255, 255, .85); font-size: 1rem; max-width: 60ch; margin: 0 0 1.4rem; }
 .eudi-hero .md-button { margin: .2rem .6rem .2rem 0; }
