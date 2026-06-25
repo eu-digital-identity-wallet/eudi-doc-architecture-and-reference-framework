@@ -94,9 +94,15 @@
    HERO  (homepage) — "Hero A": solid blue, left aligned
    Rendered by overrides/home.html (index page only)
    ============================================================ */
-.eudi-hero { background: var(--eudi-blue); color: #fff; padding: 3.4rem 1.2rem 3.8rem; }
+.eudi-hero { position: relative; overflow: hidden; background: var(--eudi-blue); color: #fff; padding: 3.4rem 1.2rem 3.8rem; }
 [data-md-color-scheme="slate"] .eudi-hero { background: var(--eudi-blue-dark); }
-.eudi-hero__inner { max-width: 61rem; margin: 0 auto; padding: 0 .8rem; }
+/* Faint full-bleed wallet logo watermark behind the hero text */
+.eudi-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("logo_eudi_white.svg") no-repeat center / 120% auto;
+  opacity: .06;
+}
+.eudi-hero__inner { position: relative; z-index: 1; max-width: 61rem; margin: 0 auto; padding: 0 .8rem; }
 .eudi-hero__eyebrow {
   display: inline-flex; gap: .4rem; align-items: center;
   background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .25);
