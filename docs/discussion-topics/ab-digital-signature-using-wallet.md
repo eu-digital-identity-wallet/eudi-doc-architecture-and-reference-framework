@@ -117,7 +117,7 @@ The following requirements from the Commission's Implementing Regulations ([CIR 
 3. SCA may be integrated into the Wallet Solution or external to the Wallet. A Wallet Solution **shall** support at least one option; the Wallet Provider **may** choose wchich options to support.
 4. SCA **shall** enable provision of "data to be signed" by both: a (Wallet Unit) User and a Relying Party. If SCA is integrated into a Wallet Solution, the Wallet Solution **shall** support requesting a signature creation directly to the Wallet Unit by both again: the User ("user-provided data") and a Relying Party ("relying party-provided data"). This entails a requirement to **make available "common protocols and interfaces" for this purpose, and support them by Wallet Solutions**.
 5. A Wallet Solution **shall** support at least PAdES signature format. Other formats may be supported optionally.
-6. When an SCA is integrated in a Wallet Solution, and the Wallet Solution uses a remote signature service (RSSP) to provide signing/sealing, it **shall** support CSC API (**this requirement is removed from by the [IA amendment proposal]**).
+6. When an SCA is integrated in a Wallet Solution, and the Wallet Solution uses a remote signature service (RSSP) to provide signing/sealing, it **shall** support CSC API (**_Note: this requirement is removed from by the [IA amendment proposal] and is to be most likely replaced with a modified clause, referring to ETSI TS 119 432, that is underpinned by CSC-API._**).
 7. A Wallet Solution **shall** enable natural persons to sign free-of-charge.
 8. A Wallet Solution **may** limit use of signing functionality to "non-professional purposes", with "proportionate measures".
 
@@ -273,7 +273,7 @@ The related technical specifications for Wallet Solutions to support electronic 
 - [CSC Bindings]
 
 As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet <-> RP and wallet's interface for signature authorisation (wallet <-> SAM or wallet <-> RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transaction_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
-This is worth to clarify, that PID cannot be used for these purposes, as it is not envisioned to handle transactional data.
+_Note: This is worth to clarify, that use a PID for these purposes provides to some challenges that needs to be carefully considered by implementers. Any use case for PID with transactional data in a presentation request shall not require any specific content in the PID rulebook. In addition, each use case needs individual legal assessment and confirmation about legal meaning of a such a presentation and its permissibility._
 
 For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are at discretion of Wallet Providers eventually and their agreements with involved RSSPs/QTSPs or other actors.
 
