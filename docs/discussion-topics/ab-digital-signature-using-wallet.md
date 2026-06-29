@@ -1,4 +1,4 @@
-Version 1.0, updated 26 June 2026
+Version 1.0, updated 29 June 2026
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661)
@@ -260,7 +260,8 @@ Support of given interfaces is Wallet Provider's implementation choice, that dep
 It means that not all the interfaces shall be mandatorily supported by a Wallet Solution. However, to enable all necessary implementation options, it is desired that Wallet Providers are   made available related technical specifications for these interfaces. 
 
 At the same time, following the legal requirements, to ensure minimal required interoperability level, **all Wallet Solutions shall support (at minimum) a common specification for wallet <-> RP interface (2)**. 
-In addition, it is strongly desired to standardise and support by all Wallet Solutions an interoperable interface for signature authorisation with the wallet too - wallet <-> SAM (5) or as a part of wallet <-> RSSP/QTSP (1). 
+In addition, it is strongly desired to standardise and support by all Wallet Solutions an interoperable interface for signature authorisation with the wallet too - wallet <-> SAM (5) (or as a part of wallet <-> RSSP/QTSP (1)). 
+Finally, having a complete standardisation of all interfaces, in particular wallet <-> RSSP/QTSP or wallet <-> SCA in addition, would be welcomed as beneficial and a good practice.
 
 ### 3.6 Protocols and Technical Specifications
 
