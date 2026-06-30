@@ -1,4 +1,4 @@
-Version 1.0, updated 29 June 2026
+Version 1.0, updated 30 June 2026
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661)
@@ -397,6 +397,7 @@ Although this is a vital aspect, it is out of the scope of ARF and there is no i
 | QES_14 | A Wallet Unit SHALL enable the User to explicitly authorise the creation of a qualified electronic signature or seal through their Wallet Unit. | Remove | 
 | **QES_14a** | **When a Wallet Unit is used to authorise a signature or seal creation, it SHALL display an appropriate message to the User and SHALL ensure that User gives consent for signature or seal creation, in compliance with [ETSI TS 119 432].**  | New requirement |
 | QES_15 | In remote signature creation scenarios, a Wallet Unit SHALL verify that the qualified electronic signature or seal creation device is part of a qualified **trust** service, which is carried out by a qualified trust service provider. **_Note: This verification entails i.a. checking presence at Trusted Lists, validation authenticity and integrity of a Trusted List._** | Keep with proposed changes |
+| QES_15 (variant) | ~~In remote signature creation scenarios, a Wallet Unit SHALL verify that the qualified electronic signature or seal creation device is part of a qualified service, which is carried out by a qualified trust service provider.~~ | Remove |
 | QES_16 | ~~A Wallet Unit SHOULD support multiple-signing scenarios, where multiple signatories are required to sign the same document or data.~~ | Remove |
 | QES_17 | A Wallet Unit SHALL provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. ~~*Note: See also QES_17a.*~~ | Keep with proposed changes |
 | QES_17a | ~~If the Signature Creation Application is external to the Wallet Unit, after the User authorises the usage of the private signing key, the Signature Creation Application SHALL return the outcome of the signature creation process to the Wallet Unit.~~ | Remove |
