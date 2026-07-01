@@ -3,11 +3,9 @@ Version 1.0, updated 30 June 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661)
 
-
 # Topic AB - Digital Signature using the EUDI Wallet (New)
 
 ## Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
-
 
 ## 1 Introduction
 
@@ -22,8 +20,6 @@ _Electronic signing of documents or data, allowing Users to create legally recog
 while the reason why Topic AB is addressed is​ as follows:
 
 _Revisit Digital signature using wallet as ETSI and CSC have released new versions of rQES-related specifications._ 
-
-
 
 ### 1.2 Key Words
 
@@ -56,7 +52,6 @@ The table below presents key abbreviations and definitions used in this document
 |     QSCD    | Qualified Signature Creation Device |
 |     QTSP    | Qualified Trust Service Provider |
 |     QESRC    | Qualified Electronic Signature Remote Creation, as defined in ARF​ |
-
 
 ## 2 Legal Requirements Related to Electronic Signature with Wallet
 
@@ -183,8 +178,6 @@ _1. Mandatory signature or seal format:_
 
 _(a) PAdES (PDF Advanced Electronic Signature) as specified in ETSI EN 319 142-1 V1.2.1 (2024-01); Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures._
 
-
-
 ## 3 State of Discussion and Current Concept  
 
 ### 3.1 Use Cases and Wallet Functionality
@@ -244,7 +237,7 @@ Signature authorisation options (in case of remote signature):
 
 The solution architecture and implementation details may differ, depending on the certificate lifetime. There are two main scenarios relevant in the discussion: 
 - with use of a long-term certificate - where the user requests certificate issuance that will be next used to perform multiple signatures over longer time (such as one or two-year period),
-- with use of a short-term / one-time certificate ("on-the-fly" signature) - where in a single process / session, all steps related to signature are carried out - requesting and issuing a certificate (a one-time certificate), signature authorisation, signature creation, certificate revocation.
+- with use of a short-term / one-time certificate ("on-the-fly" signature) - where in a single process / session, all steps related to signature are carried out - requesting and issuing a certificate (a one-time certificate), signature authorisation, signature creation and certificate revocation.
 
 ### 3.5 Wallet Interfaces
 
@@ -273,11 +266,11 @@ The related technical specifications for Wallet Solutions to support electronic 
 - [CSC Bindings]
 
 As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet <-> RP and wallet's interface for signature authorisation (wallet <-> SAM or wallet <-> RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transaction_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
-_Note: This is worth to clarify, that use a PID for these purposes provides to some challenges that needs to be carefully considered by implementers. Any use case for PID with transactional data in a presentation request shall not require any specific content in the PID rulebook. In addition, each use case needs individual legal assessment and confirmation about legal meaning of a such a presentation and its permissibility._
+_Note: This is worth to clarify, that use of a PID for these purposes provides to some challenges that need to be carefully considered by implementers. Any use case for PID with transactional data in a presentation request shall not require any specific content in the PID rulebook. In addition, each such use case needs individual legal assessment and confirmation about legal meaning of a such a presentation and its permissibility._
 
-For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are at discretion of Wallet Providers eventually and their agreements with involved RSSPs/QTSPs or other actors.
+For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are eventually at discretion of Wallet Providers and their agreements with involved RSSPs/QTSPs or other actors.
 
-In any case, the related specifications are still under development (in particular ETSI TS 119 432 / EN 319 432), and **may provide more than one implementation options for each the interfaces** at stake, with or w/o use of the presentation protocols or "transactional data" parameter.
+In any case, the related specifications are still under development (in particular ETSI TS 119 432 / EN 319 432), and **may provide more than one implementation options for each the interfaces** at stake, with or without use of the presentation protocols or "transactional data" parameter.
 
 The goal for the development of the specifications is to: enable all mandatory and desired options,​ give the choice to Wallet Providers to choose suitable options to build preferred architectures, and **standardise and mandate selected options** to ensure **interoperability where necessary** (wallet <-> RP interface for signature requesting and wallet's
 interface for signature authorisation at minimum)​.
@@ -324,7 +317,7 @@ At this stage, no HLRs from other topics were identified as applicable.
 
 Following the legal requirements (presented in Section 3), the conclusion is that it is necessary to provide a "common protocol and interface" for Relying Parties to request signature creation to the Wallet Units. Such a standardised interface is currently being developed by ETSI ESI ([ETSI TS 119 432] and underpinning CSC specification).
 
-One of the possible technical approach is that this interface uses OID4VP presentation protocols (with "transactional data" parameter) as a transport mechanism to provide signature request data to a Wallet Unit. However other options are possible too, and may defined by SDOs. **In any case, the intention is to indicate a specification and mandate support by all Wallet Solutions (a new HLR will be proposed).** 
+One of the possible technical approaches is that this interface uses OID4VP presentation protocols (with "transactionnal data" parameter) as a transport mechanism to provide signature request data to a Wallet Unit. However other options are possible too, and may defined by SDOs. **In any case, the intention is to indicate a specification and mandate support by all Wallet Solutions (a new HLR will be proposed).** 
 
 ### 4.2 Signature Creation Authorisation Interface
 
@@ -336,7 +329,7 @@ There are two general options for signature creation authorisation:
 - directly with a Wallet Unit (Wallet Unit acting as SIC, communicating with a QTSP/SAM),
 - with other means (other SIC, suitable for QTSP).
 
-Although the liability on signature creation compliance is on the QTSP, the Wallet Unit shall follow applicable requirements to enable compliance of the involved QTSP. Therefore, it seems to be desired to make available (eg. in ETSI TS 119 432) the specification of wallet<->SAM interface (or more generally wallet<->RSSP/QTSP for SAP handling), where SAD is handled with OID4VP presentation request and with the use of a dedicated "transaction_data" parameter. 
+Although the liability on signature creation compliance is on the QTSP, the Wallet Unit shall follow applicable requirements to enable compliance of the involved QTSP. Therefore, it seems desirable to make available (eg. in ETSI TS 119 432) the specification of wallet<->SAM interface (or more generally wallet<->RSSP/QTSP for SAP handling), where SAD is handled with OID4VP presentation request and with the use of a dedicated "transaction_data" parameter. 
 
 ### 4.3 Rendering of Display Messages  
 
@@ -351,25 +344,24 @@ Therefore a question arises, **what would be (high-level) requirements for rende
 ### 4.4 Signature Attestations and Rulebooks
 
 As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
-- signature creation requesting,
+- signature creation requesting, and
 - signature creation authorisation (activation).
 
-To realise these scenarios, a dedicated Attestations should be used, and therefore appropriate rulebooks shall be delivered (by the market).
+To realise these scenarios, a dedicated Attestation should be used, and therefore appropriate rulebooks shall be delivered (by the market).
 
 ### 4.5 On-The-Fly Signatures
 
-One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation, certificate revocation.
+One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation and certificate revocation.
 
 However, realisation of this scenario with the EUDI Wallet might be challenging. As PID is not envisioned to handle transactional data, the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. 
 
-Therefore a question arises, **how this scenario is important for Wallet Providers, and if it should be further explored and supported by a specification.**
+Therefore a question arises, **how important this scenario is for the Wallet Providers, and if it should be further explored and supported by a specification.**
 
 ### 4.6 Non-professional Use
 
 [European Digital Identity Regulation] allows Wallet Providers to limit use of signing functionality of their Wallet Solutions to "non-professional purposes" only, with "proportionate measures". At the same time, it leaves this aspect fully to the Member States, including development of the concepts and technical specifications for implementation if needed. 
 
 Although this is a vital aspect, it is out of the scope of ARF and there is no intention (nor mandate) to provide/mandate provision of any technical specification here. At the same time, it is still possible to develop standards by SDOs at their own discretion too.   
-
 
 ## 5 Proposals of Changes of HLRs
 
@@ -407,11 +399,9 @@ Although this is a vital aspect, it is out of the scope of ARF and there is no i
 | QES_21 | Empty | Keep as-is |
 | QES_22 | Empty | Keep as-is |
 
-
 ## 6 Additions and Changes to ARF 
 
-A new content will be added to the ARF's main document, aiming to explain key terminology, specifications, architectures and implementation options, as discussed in this document.
-
+New content will be added to the ARF's main document, aiming to explain key terminology, specifications, architectures and implementation options discussed in this document.
 
 ## 7 References
 
