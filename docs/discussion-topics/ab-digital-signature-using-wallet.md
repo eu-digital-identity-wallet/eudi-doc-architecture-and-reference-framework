@@ -317,7 +317,7 @@ At this stage, no HLRs from other topics were identified as applicable.
 
 Following the legal requirements (presented in Section 3), the conclusion is that it is necessary to provide a "common protocol and interface" for Relying Parties to request signature creation to the Wallet Units. Such a standardised interface is currently being developed by ETSI ESI ([ETSI TS 119 432] and underpinning CSC specification).
 
-One of the possible technical approaches is that this interface uses OID4VP presentation protocols (with "transactionnal data" parameter) as a transport mechanism to provide signature request data to a Wallet Unit. However other options are possible too, and may defined by SDOs. **In any case, the intention is to indicate a specification and mandate support by all Wallet Solutions (a new HLR will be proposed).** 
+One of the possible technical approaches is that this interface uses OID4VP presentation protocols (with "transactional data" parameter) as a transport mechanism to provide signature request data to a Wallet Unit. However other options are possible too, and may defined by SDOs. **In any case, the intention is to indicate a specification and mandate support by all Wallet Solutions (a new HLR will be proposed).** 
 
 ### 4.2 Signature Creation Authorisation Interface
 
