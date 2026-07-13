@@ -3216,7 +3216,7 @@
   
 
 
-<p>Version 1.1, updated 18 May 2026</p>
+<p>Version 1.2, updated 26 June 2026</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/658">Link to GitHub discussion</a></p>
 <h1 id="topic-e-pseudonyms-including-user-authentication-mechanism-refinement-round">Topic E - Pseudonyms, including User authentication mechanism (Refinement Round)<a class="headerlink" href="#topic-e-pseudonyms-including-user-authentication-mechanism-refinement-round" title="Link to this section">&para;</a></h1>
 <h2 id="legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.<a class="headerlink" href="#legal-notice-all-legal-information-and-excerpts-documented-in-section-2-is-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-relying-party-registration-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir" title="Link to this section">&para;</a></h2>
@@ -3315,11 +3315,11 @@ NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public K
 - Verifiable Pseudonym: a pseudonym that allows a User to prove possession over the pseudonym and thereby authenticate as/under the pseudonym (perform pseudonymous authentication);
 - Attested Pseudonym: a subtype of a Verifiable Pseudonym, allowing Relying Parties to verify that a third party has attested that the pseudonym is owned by a User;
 - Scope Rate-Limited Pseudonym: a subtype of a Verifiable Pseudonym guaranteeing that the user is limited to control only a certain number of pseudonyms / pseudonymous authentications within the rate for a given scope. </p>
-<p>Additionally, other types of pseudonyms are possible, such as:
+<p>Additionally, the following classification of pseudonyms applicable too:
 - Identity Derived Certified Pseudonym: a ZKP-based pseudonym, derived from an identity (a PID or an attestation), where ownership and link to the identity (PID/attestation) can be cryptographically verified, 
 - Identity Derived Scope-Exclusive Pseudonym: same as Certified Pseudonym, where uniqueness can be cryptographically verified additionally. </p>
 <h3 id="32-use-cases">3.2 Use Cases<a class="headerlink" href="#32-use-cases" title="Link to this section">&para;</a></h3>
-<p>The following use cases were considered in the initial discussion (see <a href="../e-pseudonyms-including-user-authentication-mechanism/">Topic E initial discussion paper</a>):
+<p>The following (abstract) use cases were considered in the initial discussion (see <a href="../e-pseudonyms-including-user-authentication-mechanism/">Topic E initial discussion paper</a>):
 - Pseudonymous Authentication (Use Case A in the initial discussion) - where the User is authenticated to an RP with use of a pseudonym, previously generated and registered at the RP;
 - Presentation of Attributes with Subsequent Pseudonymous Authentication (Use Case B in the initial discussion) - same as pseudonymous authentication, but where at generation/ registration of a new pseudonym some additional attributes are presented and registered by the RP (e.g. age over 18); 
 - Pseudonymous Authentication with Presentation of Attributes (Use Case B')- Pseudonymous Authentication combined with presentation of attributes; similar to Use Case B, but where the attributes are presented at the time of a pseudonymous authentication; 
@@ -3402,7 +3402,7 @@ NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public K
 </tr>
 <tr>
 <td>PA_12</td>
-<td>If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID, attestation or WUA being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions.</td>
+<td>If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID or attestation being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions.</td>
 </tr>
 <tr>
 <td>PA_13</td>
@@ -3410,7 +3410,7 @@ NOTE: WebAuthn is specified in Web Authentication: An API for accessing Public K
 </tr>
 <tr>
 <td>PA_14</td>
-<td>A Wallet Unit SHALL store the information necessary for authenticating with a Pseudonym in a keystore.</td>
+<td>A Wallet Unit SHALL store the information necessary for authenticating with a Pseudonym in either a WSCA/WSCD or in a keystore.</td>
 </tr>
 <tr>
 <td>PA_15</td>
@@ -3548,8 +3548,10 @@ Or should the ARF's concept evolve to use other types of pseudonyms/solutions (s
 <p>(<em>Update after the Focus Meeting 1:</em>)</p>
 <p>The answer on this question depends on the long-term strategy, definition of targeted use cases and suitable types of pseudonyms to support them, and - finally - availability of relevant standards. Such a strategy is yet to be defined. At the same time, as of today, there are no final technical specifications available for Pseudonym Attestations or ZKP-based pseudonyms. Nevertheless, Support of Linkable Pseudonymous Authentication in the long run seems to be necessary, to support some of the use cases (e.g. related to use of identity-derived pseudonyms or where the linking back to the User is required). </p>
 <h4 id="414-credential-attestation">4.1.4 Credential Attestation<a class="headerlink" href="#414-credential-attestation" title="Link to this section">&para;</a></h4>
-<p>As indicated in Section 4.3 below, there are five possible attestation schemes. Therefore it is desirable to indicate (profile) which of them are to be used or allowed.</p>
+<p>As indicated in Section 3.3 above, there are five possible attestation schemes (for WebAuthn credentials). Therefore it is desirable to indicate (profile) which of them are to be used or allowed.</p>
 <p><strong>QUESTION 4: Which attestation scheme options should, or should not be allowed?</strong></p>
+<p>(<em>Update after the Focus Meeting 2:</em>)</p>
+<p>The general approach is to enabling various implementation (not only WebAuthn-based) and create more universal HLRs. Therefore this particular aspect is left for implementers to decide, if they choose to implement a WebAuthn-based solution.  </p>
 <h3 id="42-long-term-strategy-discussion">4.2 Long-Term Strategy Discussion<a class="headerlink" href="#42-long-term-strategy-discussion" title="Link to this section">&para;</a></h3>
 <h4 id="421-use-cases-anonymity-and-unlinkability">4.2.1 Use Cases, Anonymity and Unlinkability<a class="headerlink" href="#421-use-cases-anonymity-and-unlinkability" title="Link to this section">&para;</a></h4>
 <p>Pseudonyms can be used in various contexts and use cases, such as:
@@ -3611,8 +3613,10 @@ The following table presents basic characteristics of each option.</p>
 <p>(<em>Update after the Focus Meeting 1:</em>)</p>
 <p>We identified two following generic types of pseudonyms that need to be supported by the Wallet Solutions in the long run: 
 - "User-chosen" pseudonym, where the generation of the pseudonym is done solely by the User / User's device, with no participation of any other party ("pseudonym issuer") and no linking to User's identity (or other attributes) may be ensured; WebAuthn/FIDO2 credentials are an example of such a pseudonym type;
-- Identity-bound pseudonym, where the pseudonym is generated from a PID or an attestation, and is therefore (cryptographically) linked to the identity (and thus may be potentially linked back to the User), and where there is a third party involved in the generation or use of such a pseudonym;</p>
+- Identity-bound pseudonym, where the pseudonym is generated from a PID or an attestation, and is therefore (cryptographically) linked to the identity (and thus may be potentially linked back to the User), and where there is a third party involved in the generation or use of such a pseudonym.</p>
 <p>Although the user-chosen pseudonyms are very useful and necessary in the Wallet Solutions to support the "recurring login" use case, taking into account the overall EUDI Wallet concept the identity-bound pseudonym seems to be a natural implementation path in the long term.   </p>
+<p>(<em>Update after the Focus Meeting 2:</em>)</p>
+<p>The implementation and characteristics of the pseudonyms strongly depend on the use case. The real life use cases being discussed and tested by Member States currently are for instance recurrent login and account recovery. The general approach is to enable various implementations, and do not focus on WebAuthn-based solution. As consequence, the proposals of HLRs changes aim to make them more universal and inclusive in this respect, while leaving implementers a decision about technical implementation and applied specifications.  </p>
 <h2 id="5-proposals-of-changes-of-hlrs">5 Proposals of Changes of HLRs<a class="headerlink" href="#5-proposals-of-changes-of-hlrs" title="Link to this section">&para;</a></h2>
 <p>Herebelow are presented draft proposals of high-level requirement changes up for further discussion.</p>
 <table>
@@ -3626,18 +3630,38 @@ The following table presents basic characteristics of each option.</p>
 <tbody>
 <tr>
 <td>PA_01</td>
-<td>A Wallet Unit SHALL enable a User to generate a <strong>User-chosen</strong> Pseudonym and register it at a Relying Party. <del><em>Note: For an attested pseudonym, pseudonym generation takes place by requesting the issuance of a pseudonym attestation. Pseudonym registration takes place by presenting the attestation.</em></del></td>
+<td>A Wallet Unit SHALL enable a User to generate a Pseudonym and register it at a Relying Party. <del>For an attested pseudonym, pseudonym generation takes place by requesting the issuance of a pseudonym attestation. Pseudonym registration takes place by presenting the attestation._</del></td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
 <td><strong>PA_01a</strong></td>
-<td><strong>A Wallet Unit SHALL enable a User to generate a Pseudonym derived from a PID or an Attestation, that ensures cryptographic linking to the User's identity or attributes held in the Wallet Unit.</strong></td>
+<td><strong>A Wallet Unit SHALL support User-chosen or identity-derived Pseudonyms or both.</strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td><strong>PA_01b</strong></td>
+<td><strong>When a Pseudonym is User-chosen, its value SHALL be generated fully by the User or User's Wallet Unit. When a user-chosen Pseudonym is generated by a Wallet Unit, its value SHALL NOT be derived from  User's attributes in PID or other Attestations present in the Wallet Unit. <em>Note: A WebAuthn/FIDO2 authenticator is an example of a user-chosen Pseudonym.</em></strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td><strong>PA_01c</strong></td>
+<td><strong>When a Pseudonym is identity-derived, it SHALL be cryptographically derived from attributes present in User's Wallet Unit or other external User-related attribute. The derivation method SHALL be specified in a publicly available technical specification. <em>Note: A Pseudonym Attestation is a Pseudonym issued to a Wallet Unit in the form of an Attestation  and is an example of an identity-derived Pseudonym. For a Pseudonym Attestation, pseudonym generation takes place by requesting the issuance of a the Pseudonym Attestation, and Pseudonym registration (at a Relying Party) takes place by presenting the Attestation.</em></strong></td>
 <td>New requirement</td>
 </tr>
 <tr>
 <td>PA_02</td>
-<td>A Wallet Unit SHALL enable a User to authenticate with a Pseudonym towards a Relying Party, <strong>in at least the following modes: (a) with no linkability to the User's identity, (b) with no linkability to the PID or Attestation Provider, (c) with no linkability to the Wallet Solution Provider, (d) with no linkability between authentication transaction of the same User, (e) with no linkability between Relying Parties, (f) with linkability between selected Relying Parties. The Wallet Unit SHALL enable Relying Parties to request authentication with a selected type of Pseudonym and mode of authentication. <em>Note: The selection of Pseudonym type and authentication mode depends on the nature of the Relying Party's service and the use case for Pseudonym (required characteristics eg. linkability level, anonymity, cryptographic binding).</em></strong>  <del>if the Wallet Unit was used previously to register the Pseudonym for the same Relying Party</del></td>
+<td>A Wallet Unit SHALL enable a User to authenticate with a Pseudonym towards a Relying Party <del>if the Wallet Unit was used previously to register the Pseudonym for the same Relying Party</del>. <strong>When a Pseudonym is used for recurrent login to Relying Party's service, a Wallet Unit SHALL enable the Relying Party initiate generation and to register a Pseudonym.</strong></td>
 <td>Keep with the proposed change</td>
+</tr>
+<tr>
+<td><strong>PA_02a</strong></td>
+<td><strong>A Wallet Unit SHALL ensure unlinkability of Pseudonyms. <em>Note: The charachteristics of unlinkability property results from use cases and it may mean one or more from the following: (a) unlinkability to any value in the User's PID or attestations, i.e. as for a User-chosen pseudonym, (b) unlinkability with respect to the pseudonym provider, i.e. for a Pseudonym Attestation Provider, (c) unlinkability with respect to the Wallet Provider, (d) unlinkability between authentication transactions of the same User, (e) unlinkability between Relying Parties. Unlinkability does not categorically rule out linkability between a group of Relying Parties or linkability with the User's attributes under certain conditions, for instant for law enforcement purposes. Most likely, it will technically be impossible to satisfy all of these properties with a single Pseudonym or Pseudonym type.</em></strong></td>
+<td>New requirement</td>
+</tr>
+<tr>
+<td><strong>PA_02b</strong></td>
+<td><strong>The Wallet Unit SHOULD enable Relying Parties to request authentication with a Pseudonym that meets specific criteria for unlinkability characteristics, if a related technical specification is publicly available; the technical specification SHOULD specify the syntax and semantics of such a request, as well as enumerate different Pseudonym types and their unlinkability characteristics._</strong></td>
+<td>New requirement</td>
 </tr>
 <tr>
 <td>PA_03</td>
@@ -3646,18 +3670,8 @@ The following table presents basic characteristics of each option.</p>
 </tr>
 <tr>
 <td>PA_04</td>
-<td>A Wallet Unit SHALL enable the User to use multiple different Pseudonyms at a given Relying Party. <del>, unless it is explicitly designed as a scope rate-limited attestation.</del></td>
+<td>A Wallet Unit SHALL enable the User to use multiple different Pseudonyms at a given Relying Party, unless it is explicitly designed as a scope rate-limited attestation. <strong><em>Note: A WebAuthn/FIDO2 authenticator is an example of a Pseudonym meeting this requirement.</em></strong></td>
 <td>Keep with the proposed change</td>
-</tr>
-<tr>
-<td><strong>PA_04a</strong></td>
-<td><strong>A Wallet Unit SHALL enable the User to use a single Pseudonym at a given Relying Party.</strong></td>
-<td>New requirement</td>
-</tr>
-<tr>
-<td><strong>PA_04b</strong></td>
-<td><strong>A Wallet Unit SHALL enable the User to use a single Pseudonym with multiple Relying Parties.</strong></td>
-<td>New requirement</td>
 </tr>
 <tr>
 <td>PA_05</td>
@@ -3666,7 +3680,7 @@ The following table presents basic characteristics of each option.</p>
 </tr>
 <tr>
 <td>PA_06</td>
-<td>A Wallet Unit SHALL enable a User to choose <del>which</del> the Pseudonym to authenticate with towards a Relying Party <strong>from all the applicable Pseudonyms meeting the criteria of the Relying Party's service, as defined in PA_02</strong>. <del>, if multiple Pseudonyms are registered for this Relying Party.</del> The Wallet Unit SHOULD present the User with the aliases of the applicable Pseudonyms, if assigned, when making this choice.</td>
+<td>A Wallet Unit SHALL enable a User to choose <del>which</del> the Pseudonym to authenticate with towards a Relying Party <strong>from all the applicable Pseudonyms, meeting the criteria of the Relying Party's service, as defined in PA_02a</strong>. <del>, if multiple Pseudonyms are registered for this Relying Party.</del> The Wallet Unit SHOULD present the User with the aliases of the applicable Pseudonyms, if assigned, when making this choice.</td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
@@ -3681,48 +3695,48 @@ The following table presents basic characteristics of each option.</p>
 </tr>
 <tr>
 <td>PA_09</td>
-<td>A Wallet Unit SHALL enable the User to see all existing pseudonyms, including the associated Relying Party (if any).</td>
-<td>Keep as-is</td>
+<td>A Wallet Unit SHALL enable the User to see all existing Pseudonyms. <strong>For each Pseudonym, the Wallet Unit SHOULD enable the User to see</strong>  <del>including the</del> associated Relying <del>Party</del> Parties (if any), <strong>if a common technical specification enabling this is available</strong>.</td>
+<td>Keep with the proposed change</td>
 </tr>
 <tr>
 <td>PA_10</td>
-<td>A Relying Party SHALL be able to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit. <strong><em>Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion.</em></strong></td>
+<td><del>A Relying Party SHALL be able</del>  <strong>A Wallet Unit SHALL enable a Relying Party</strong> to verify that a User is registering a Pseudonym using a non-revoked Wallet Unit <strong>, if a common technical specification enabling this is available</strong>.</td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
 <td>PA_11</td>
-<td>A Relying Party SHALL be able to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit. <strong><em>Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn], but this requires further discussion.</em></strong></td>
+<td><del>A Relying Party SHALL be able</del> <strong>A Wallet Unit SHALL enable a Relying Party</strong> to verify that a User is authenticating with a Pseudonym using a non-revoked Wallet Unit <strong>, if a common technical specification enabling this is available</strong>.</td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
 <td>PA_12</td>
-<td>If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID, attestation or WUA being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions. <strong><em>Note: Currently available technical specification related to pseudonyms do not enable such a verification. This could be done for instance by extension of [WebAuthn] and/or presentation specifications, but this requires further discussion.</em></strong></td>
+<td>If Wallet Unit is used to register a Pseudonym at a Relying Party in combination with a PID or attestation being presented to the same Relying Party, then this Relying Party SHALL be able to verify that the same User performed both actions <strong>, if a common technical specification enabling this is available</strong>.</td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
 <td>PA_13</td>
-<td>The Relying Party SHALL be able to validate that the pseudonym presented to them belongs to the User presenting it.</td>
-<td>Keep as-is</td>
-</tr>
-<tr>
-<td>PA_14</td>
-<td>A Wallet Unit SHALL store the information necessary for authenticating with a Pseudonym in <strong>WSCD/WSCA or in</strong> a keystore.</td>
+<td><del>The Relying Party SHALL be able to validate that the pseudonym presented to them belongs to the User presenting it.</del> <strong>A Wallet Unit SHALL enable a Relying Party to verify that a Pseudonym belongs to the User using it, if a common technical specification enabling this is available</strong>.</td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
-<td>PA_15</td>
-<td>A Relying Party SHALL NOT be able to derive the User's true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party.</td>
+<td>PA_14</td>
+<td><del>A Wallet Unit SHALL store a Pseudonym in either WSCD/WSCA or a keystore.</del></td>
 <td>Remove</td>
+</tr>
+<tr>
+<td>PA_15</td>
+<td><del>A Relying Party SHALL NOT be able to derive the User's true identity, or any data identifying the User, from the Pseudonym value received by the Relying Party.</del></td>
+<td>Remove (as covered by the new HLRs PA_2a, PA_2b and PA_2c)</td>
 </tr>
 <tr>
 <td>PA_16</td>
 <td><del>A Wallet Unit SHALL NOT reveal the same Pseudonym to different Relying Parties unless the User explicitly chooses otherwise.</del></td>
-<td>Remove</td>
+<td>Remove (as covered by the new HLRs PA_2a, PA_2b and PA_2c)</td>
 </tr>
 <tr>
 <td>PA_17</td>
-<td><del>It SHALL NOT be possible to correlate Pseudonyms based on their values nor on other metadata sent by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that different Pseudonyms belong to the same User.</del> <strong>The Wallet Provider SHALL use method(s) and/or protocol(s) to implement pseudonyms which make it impossible to correlate Pseudonyms based on their values or on metadata sent by the Wallet Unit to Relying Parties during registration and authentication. <em>Note: This implies that colluding Relying Parties will not be able to conclude that different Pseudonyms belong to the same User.</em></strong></td>
-<td>Keep with the proposed change</td>
+<td><del>It SHALL NOT be possible to correlate Pseudonyms based on their values nor on other metadata sent by the Wallet Unit during registration and authentication, meaning that colluding Relying Parties SHALL NOT able to conclude that different Pseudonyms belong to the same User.</del></td>
+<td>Remove (as covered by the new HLRs PA_2a, PA_2b and PA_2c)</td>
 </tr>
 <tr>
 <td>PA_18</td>
@@ -3736,7 +3750,7 @@ The following table presents basic characteristics of each option.</p>
 </tr>
 <tr>
 <td>PA_20</td>
-<td>The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. If <strong>currently available technical specifications</strong> <del>the profile or extension of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a> meant in PA_21 does</del> <strong>do</strong> not enable the Wallet Unit to do this, the Wallet Unit SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity.  <em>Note: <del><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a> currently does</del> </em><em>Currently available technical specifications do</em><em> not offer a way for <del>an Authenticator (i.e., the Wallet Unit)</del> </em><em>a Wallet Unit</em><em> to authenticate a Relying Party. Instead, the Client (i.e., the browser) <del>will</del> </em><em>may</em><em> authenticate the Relying Party, using TLS. </em><em>The notion of trust is that the Wallet Unit receives the Relying Party identity from the browser and uses it without further verifications.</em>*</td>
+<td>The Wallet Unit SHALL verify the identity of a Relying Party when a User registers a Pseudonym or authenticates with a Pseudonym. If <strong>available technical specifications for Pseudonym</strong> <del>the profile or extension of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a> meant in PA_21 does</del> <strong>do</strong> not <strong>inherently</strong> enable the Wallet Unit to do this, the Wallet Unit <del>SHALL trust the WebAuthn Client (i.e., the browser) to verify the Relying Party identity</del> <strong>MAY trust a web browser's verification of the Relying Party's identity</strong>.  <em>Note: <del><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a> currently does an Authenticator (i.e., the Wallet Unit) to authenticate a Relying Party. Instead, the Client (i.e., the browser) will authenticate the Relying Party, using TLS.</del> The notion of trust is that the Wallet Unit receives the Relying Party<strong>'s</strong> identity from the browser <strong>(eg.via TLS authentication)</strong> and uses it without further verifications.</em></td>
 <td>Keep with the proposed change</td>
 </tr>
 <tr>
@@ -3797,7 +3811,7 @@ The following table presents basic characteristics of each option.</p>
 </tbody>
 </table>
 <h2 id="6-additions-and-changes-to-the-arf">6 Additions and Changes to the ARF<a class="headerlink" href="#6-additions-and-changes-to-the-arf" title="Link to this section">&para;</a></h2>
-<p>There are no change proposals to the ARF main text at this stage. They may be defined as a result of the discussion this paper supports.</p>
+<p>In consequence of the proposed changes to HRLs (in Section 5), the main text of the ARF will be reviewed and changes may be applied to keep consistency.</p>
 <h2 id="7-references">7 References<a class="headerlink" href="#7-references" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
@@ -3862,7 +3876,7 @@ The following table presents basic characteristics of each option.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-06-21T18:21:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-06-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-06-29T06:56:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-06-29</span>
   </span>
 
     
