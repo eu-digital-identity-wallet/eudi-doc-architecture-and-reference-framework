@@ -37,22 +37,15 @@
 .md-header__button.md-logo svg { height: 2.7rem; }
 
 /* ============================================================
-   Tabs — yellow EU accent on the active/hovered tab
+   Tabs
    ============================================================ */
 .md-tabs { border-bottom: 3px solid var(--eudi-yellow); }
-.md-tabs__link {
-  border-bottom: 3px solid transparent;
-  margin-bottom: -3px;
-  padding-bottom: .4rem;
-  opacity: .85;
-  transition: border-color .15s, opacity .15s;
-}
-.md-tabs__item--active .md-tabs__link,
-.md-tabs__link:hover {
-  opacity: 1;
-  border-bottom-color: var(--eudi-yellow);
-}
-.md-tabs__item--active .md-tabs__link { font-weight: 700; }
+.md-tabs__link { opacity: .85; transition: opacity .15s; }
+.md-tabs__link:hover,
+.md-tabs__item--active .md-tabs__link { opacity: 1; }
+.md-tabs__item--active { background: var(--eudi-yellow); }
+.md-tabs__item--active .md-tabs__link { color: var(--eudi-blue) !important; font-weight: 700; }
+.md-tabs__item:not(.md-tabs__item--active):hover { background: rgba(255,255,255,.1); }
 
 /* ============================================================
    Tables — branded header, zebra rows, soft corners
