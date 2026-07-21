@@ -5,15 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
-## [3.0.0] - Unreleased
+## [3.0.0] - 2026-07-21
 
 Changes:
 
-- Changes due to the CIR amending CIR 2025/848.
-- Changes due to the CIR amending CIR 2024/2977, 2024/2979, 2024/2980, and 2024/2982.
-- Changes due to the [revision-round discussion paper for Topic X](/docs/discussion-topics/x-rr-relying-party-registration.md) (Relying Party registration), which introduced the concept of Relying Party Services, especially in Section 3.11.2 and Topic 44.
-- The main document was split into one page per chapter for the website; the combined PDF is unchanged.
+- Alignment with the amending Commission Implementing Regulations for the core EUDI Wallet framework: PID and EAA (amending CIR 2024/2977), integrity and core functionalities (amending CIR 2024/2979), ecosystem notifications (amending CIR 2024/2980), and protocols and interfaces (amending CIR 2024/2982).
+- Alignment with the amending Commission Implementing Regulation on the registration of Wallet-Relying Parties (amending CIR 2025/848).
+- Introduction of the concept of Relying Party Services, from the [revision-round discussion paper for Topic X](/docs/discussion-topics/x-rr-relying-party-registration.md) (Relying Party registration) — especially in Section 3.11.2 and Topic 44.
+- Changes from the [revision-round discussion paper for Topic J](/docs/discussion-topics/j-rr-wallet-to-wallet-interactions.md) (Wallet-to-wallet interactions).
+- New requirements for Wallets, Relying Parties, and issuers to retrieve and manage trust anchors from both Trusted Lists (ETSI TS 119 612) and Lists of Trusted Entities (LoTEs, ETSI TS 119 602).
 - Several issues raised via Confluence and GitHub have been resolved, plus a number of editorial corrections.
+
+The main document was also split into one page per chapter for the website; the combined PDF is unchanged.
 
 ## [2.9.0] - 2026-05-11
 
