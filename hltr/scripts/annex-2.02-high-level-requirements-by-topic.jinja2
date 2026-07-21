@@ -43,6 +43,7 @@ is anchorable: link directly to it with `#<identifier>`, e.g. `#ISSU_10`.
 {% for topic in requirements %}
 
 [](){ #topic-{{ topic }} }
+
 #### A.2.3.{{ loop.index }} {{requirements[topic]['topic']}}
 {% for subsection in requirements[topic] %}
 {% if subsection != "topic" %}
