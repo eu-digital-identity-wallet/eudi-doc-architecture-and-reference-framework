@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0">
+  <diagram name="Page-1" id="de4LEZXSZIaNopD2jWJH">
+    <mxGraphModel dx="1186" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="g8skeidzbHgNXhF_FQfh-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="User" vertex="1">
+          <mxGeometry height="690" width="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Wallet Instance" vertex="1">
+          <mxGeometry height="690" width="100" x="170" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Relying Party&lt;/div&gt;" vertex="1">
+          <mxGeometry height="690" width="100" x="473" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-6" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Provider of registration certificates&amp;nbsp;" vertex="1">
+          <mxGeometry height="690" width="130" x="808" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-7" edge="1" parent="1" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="522.5" y="124" as="sourcePoint" />
+            <mxPoint x="747.5" y="124" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-8" connectable="0" parent="g8skeidzbHgNXhF_FQfh-7" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="A.1 Register Relying Party" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-82" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-9" edge="1" parent="1" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" target="Q_9wWjG8hOZr-bmCtn9E-5" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="220" y="240" as="sourcePoint" />
+            <mxPoint x="1002.5000000000005" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-10" connectable="0" parent="g8skeidzbHgNXhF_FQfh-9" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" value="&lt;div&gt;B. Obtain trust anchor&amp;nbsp;&lt;/div&gt;&lt;div&gt;of Provider of registration&lt;/div&gt;&lt;div&gt;certificates&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-355" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-14" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" value="1. Prepare presentation request&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Include&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;registration certificate&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;plus&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;t&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;rust chain&lt;/span&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" x="-1" y="4" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="440.37" y="339" />
+              <mxPoint x="440.37" y="359" />
+            </Array>
+            <mxPoint x="375.00043478260875" y="339.0000000000001" as="sourcePoint" />
+            <mxPoint x="375.00043478260875" y="359.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-16" edge="1" parent="1" source="0uQRNzBB0iFUdbAK8cKh-1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="2. Presentation request">
+          <mxGeometry relative="1" width="80" x="0.9092" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="389.5" y="394" as="sourcePoint" />
+            <mxPoint x="220" y="394" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-17" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" value="&lt;div&gt;3. Verify registration&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;certificate&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;and&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;trust chain using&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;trust anchor&lt;/span&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="290" y="454" />
+              <mxPoint x="290" y="474" />
+            </Array>
+            <mxPoint x="220" y="454" as="sourcePoint" />
+            <mxPoint x="220" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-18" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;verticalAlign=bottom;" value="&lt;div&gt;5. Verify that all requested&lt;/div&gt;&lt;div&gt;attributes were registered&amp;nbsp;&lt;/div&gt;">
+          <mxGeometry relative="1" x="-1" y="4" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="290" y="577" />
+              <mxPoint x="290" y="597" />
+            </Array>
+            <mxPoint x="220" y="577" as="sourcePoint" />
+            <mxPoint x="220" y="597" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-19" edge="1" parent="1" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="220" y="532" as="sourcePoint" />
+            <mxPoint x="872.5000000000005" y="532" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-20" connectable="0" parent="g8skeidzbHgNXhF_FQfh-19" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" value="&lt;div&gt;4. Validate that registration&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;certificate&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;and trust&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;chain are&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;not revoked&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-301" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-21" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="6. Request approval for&lt;div&gt;presenting attributes, informing&amp;nbsp;&lt;/div&gt;&lt;div&gt;User about outcome of verifications&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="0.9092" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="220" y="647" as="sourcePoint" />
+            <mxPoint x="50" y="647" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DvtQDR2SEQ-_SOq-O_aA-1" connectable="0" parent="g8skeidzbHgNXhF_FQfh-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&#xa;7. Approval&#xa;&#xa;" vertex="1">
+          <mxGeometry relative="1" x="0.8719" y="24" as="geometry">
+            <mxPoint x="27" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-22" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="">
+          <mxGeometry relative="1" width="80" x="-0.8799" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="49.810344827586164" y="677" as="sourcePoint" />
+            <mxPoint x="219.5000000000001" y="677" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8skeidzbHgNXhF_FQfh-23" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=left;" value="8. Send response with approved&lt;div&gt;attributes&lt;/div&gt;">
+          <mxGeometry relative="1" width="80" x="-0.9072" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="219.81034482758616" y="697" as="sourcePoint" />
+            <mxPoint x="374.5" y="697" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Registrar" vertex="1">
+          <mxGeometry height="690" width="100" x="698" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-3" edge="1" parent="1" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="159" />
+            </Array>
+            <mxPoint x="522.5" y="159" as="sourcePoint" />
+            <mxPoint x="872.5" y="159" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-4" connectable="0" parent="Q_9wWjG8hOZr-bmCtn9E-3" style="edgeLabel;align=left;verticalAlign=middle;resizable=0;points=[];" value="A.2 Obtain registration certificate(s)" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-144" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q_9wWjG8hOZr-bmCtn9E-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="LoTE" vertex="1">
+          <mxGeometry height="690" width="130" x="948" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0uQRNzBB0iFUdbAK8cKh-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Relying Party&lt;/div&gt;&lt;div&gt;Instance&lt;/div&gt;" vertex="1">
+          <mxGeometry height="690" width="100" x="325" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0uQRNzBB0iFUdbAK8cKh-2" edge="1" parent="1" source="0uQRNzBB0iFUdbAK8cKh-1" style="endArrow=none;startArrow=block;endFill=0;startFill=1;html=1;rounded=0;dashed=1;dashPattern=1 1;" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="390" y="211" as="sourcePoint" />
+            <mxPoint x="522.5" y="211" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0uQRNzBB0iFUdbAK8cKh-3" connectable="0" parent="0uQRNzBB0iFUdbAK8cKh-2" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;A.3 Distribute registration&lt;/div&gt;&lt;div&gt;certificates to relevant&amp;nbsp;&lt;/div&gt;&lt;div&gt;Relying Party Instances&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0782" y="-2" as="geometry">
+            <mxPoint x="-54" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

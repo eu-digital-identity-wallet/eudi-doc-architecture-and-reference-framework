@@ -1,0 +1,4087 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
+      
+      
+        <meta name="author" content="European Commission - DG CNECT">
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/main/10-references/">
+      
+      
+        <link rel="prev" href="../09-document-development/">
+      
+      
+        <link rel="next" href="../11-annexes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>10 References - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="10 References - European Digital Identity" />
+<meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/assets/images/social/main/10-references.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/main/10-references/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="10 References - European Digital Identity" />
+<meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/assets/images/social/main/10-references.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10-references" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <a
+      href="../.."
+      title="European Digital Identity"
+      class="md-header__button md-logo"
+      aria-label="European Digital Identity"
+      data-md-component="logo"
+    >
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10 References
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    
+
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" title="Download the ARF as PDF" class="md-header__button md-icon" aria-label="Download the ARF as PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"/></svg>
+      </a>
+    
+
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Architecture and Reference Framework
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../discussion-topics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discussion Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical-specifications/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technical Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Conformance
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and Reference Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture and Reference Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Document
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main Document
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-eudi-wallet-functionalities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 EUDI Wallet functionalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-roles-within-the-eudi-wallet-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Roles within the EUDI Wallet ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-high-level-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 High-level architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-model-and-data-exchange-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Data model and data exchange protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-trust-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Trust model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-wallet-solution-certification-and-risk-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Wallet Solution Certification and Risk Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-document-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Document development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 References
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-commission-regulations-and-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Commission Regulations and Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-international-and-european-standards-and-technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 International and European standards and technical specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-topics-from-annex-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Topics from Annex 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-technical-specifications-published-by-the-commission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Technical Specifications published by the Commission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-annexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../annexes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-1/annex-1-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 1 - Definitions</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Level Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High-Level Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.01-high-level-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.03-high-level-requirements-by-category/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rulebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rulebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.01-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.01 - PID Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.02-mDL-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.02 - mDL Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.01-design-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.02 -  Design Guide - Data Sharing Scenarios</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../discussion-topics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Topics
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discussion Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/a-privacy-risks-and-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A privacy risks and mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aa support of electronic payments SCA with wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/ab-digital-signature-using-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ab digital signature using wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B re issuance and batch issuance of pids and attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/c-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C wallet unit attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/c-rr-wallet-unit-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C rr wallet unit attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/d-embedded-disclosure-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D - Embedded Disclosure Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/e-rr-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E rr pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/f-digital-credential-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic F - Digital Credentials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/g-zero-knowledge-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G - Zero Knowledge Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/h-transaction-logs-kept-by-the-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic H - Transaction logs kept by the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/i-natural-person-representing-another-natural-person/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I - Natural person representing another natural person
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/j-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J - Wallet to Wallet Interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/j-rr-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/k-combined-presentation-of-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K - Combined presentation of Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/n-export-and-data-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N export and data portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/o-catalogues-for-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic O - Catalogues for Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/q-interface-user-wallet-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q interface user wallet instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/r-authentication-of-user-to-device/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R authentication of user to device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/s-certificate-transparancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S certificate transparancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/t-support-and-maintenance-by-the-wallet-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T - Support and Maintenance by the Wallet Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/u-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic U - EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/v-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V - PID Rulebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/w-transactional-data-for-payments-and-other-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W transactional data for payments and other use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/x-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/x-rr-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X rr relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/z-device-bound-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic Z - Device-bound Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../technical-specifications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts1-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts2-notification-publication-provider-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of systems enabling the notification and subsequent publication of Provider information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts3-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts4-zkp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common formats and API for Relying Party Registration information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Set of Relying Party Information to be Registered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts7-common-interface-for-data-deletion-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for Data Deletion Requests to Relying Parties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts9-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet to Wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts10-data-portability-and-download-%28export%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Data Portability and Download (Export)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of interfaces and formats for catalogue of attributes and catalogue of attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts13-zksnark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts14-zkps-from-mms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-commission-regulations-and-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Commission Regulations and Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-international-and-european-standards-and-technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 International and European standards and technical specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-topics-from-annex-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Topics from Annex 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-technical-specifications-published-by-the-commission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Technical Specifications published by the Commission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../about/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Architecture and Reference Framework
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Main Document
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/main/10-references.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/main/10-references.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>10 References</h1>
+
+<h2 id="10-references">10 References<a class="headerlink" href="#10-references" title="Link to this section">&para;</a></h2>
+<h3 id="101-commission-regulations-and-decisions">10.1 Commission Regulations and Decisions<a class="headerlink" href="#101-commission-regulations-and-decisions" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Item Reference</strong></th>
+<th><strong>Regulation name/details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015D1505" title="Commission Implementing Decision (EU) 2015/1505 of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to">CID 2015/1505</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015D1505">Commission Implementing Decision (EU) 2015/1505</a> of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market.</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/dir/2016/2102/oj" title="Directive (EU) 2016/2102 of the European Parliament and of the Council of 26 October 2016 on the accessibility of the websites and mobile applications of">Directive 2016/2102</a></td>
+<td><a href="http://data.europa.eu/eli/dir/2016/2102/oj">Directive (EU) 2016/2102</a> of the European Parliament and of the Council of 26 October 2016 on the accessibility of the websites and mobile applications of public sector bodies</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/dir/2019/882/oj" title="Directive (EU) 2019/882 of the European Parliament and of the Council of 17 April 2019 on the accessibility requirements for products and services">Directive 2019/882</a></td>
+<td><a href="http://data.europa.eu/eli/dir/2019/882/oj">Directive (EU) 2019/882</a> of the European Parliament and of the Council of 17 April 2019 on the accessibility requirements for products and services</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183">Regulation (EU) 2024/1183</a> of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I" title="Commission Implementing Regulation (EU) 2024/2981, Annex I of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the">Risk Register</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Commission Implementing Regulation (EU) 2024/2981, Annex I</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977" title="Commission Implementing Regulation (EU) 2024/2977 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2024/2977</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402977">Commission Implementing Regulation (EU) 2024/2977</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards person identification data and electronic attestations of attributes issued to European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979" title="Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2024/2979</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402979">Commission Implementing Regulation (EU) 2024/2979</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980" title="Commission Implementing Regulation (EU) 2024/2980 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2024/2980</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402980">Commission Implementing Regulation (EU) 2024/2980</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notifications to the Commission concerning the European Digital Identity Wallet ecosystem</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981" title="Commission Implementing Regulation (EU) 2024/2981 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2024/2981</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981">Commission Implementing Regulation (EU) 2024/2981</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402982" title="Commission Implementing Regulation (EU) 2024/2982 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2024/2982</a></td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402982">Commission Implementing Regulation (EU) 2024/2982</a> of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards protocols and interfaces to be supported by the European Digital Identity Wallet Framework</td>
+</tr>
+<tr>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/846/oj" title="Commission Implementing Regulation (EU) 2025/846 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament">CIR 2025/846</a></td>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/846/oj">Commission Implementing Regulation (EU) 2025/846</a> of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards cross-border identity matching of natural persons</td>
+</tr>
+<tr>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/847/oj" title="Commission Implementing Regulation (EU) 2025/847 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament">CIR 2025/847</a></td>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/847/oj">Commission Implementing Regulation (EU) 2025/847</a> of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reactions to security breaches of European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/848/oj" title="Commission Implementing Regulation (EU) 2025/848 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament">CIR 2025/848</a></td>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/848/oj">Commission Implementing Regulation (EU) 2025/848</a> of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the registration of wallet-relying parties</td>
+</tr>
+<tr>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/849/oj" title="Commission Implementing Regulation (EU) 2025/849 of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament">CIR 2025/849</a></td>
+<td><a href="https://data.europa.eu/eli/reg_impl/2025/849/oj">Commission Implementing Regulation (EU) 2025/849</a> of 6 May 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the submission of information to the Commission and to the Cooperation Group for the list of certified European Digital Identity Wallets</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1566/oj" title="Commission Implementing Regulation (EU) 2025/1566 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1566</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1566/oj">Commission Implementing Regulation (EU) 2025/1566</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards for the verification of the identity and attributes of the person to whom the qualified certificate or the qualified electronic attestation of attributes is to be issued</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1567/oj" title="Commission Implementing Regulation (EU) 2025/1567 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1567</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1567/oj">Commission Implementing Regulation (EU) 2025/1567</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the management of remote qualified electronic signature creation devices and of remote qualified electronic seal creation devices as qualified trust services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1568/oj" title="Commission Implementing Regulation (EU) 2025/1568 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1568</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1568/oj">Commission Implementing Regulation (EU) 2025/1568</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards procedural arrangements for peer reviews of electronic identification schemes and for cooperation on the organisation of such reviews within the Cooperation Group and repealing Commission Implementing Decision (EU) 2015/296</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1569/oj" title="Commission Implementing Regulation (EU) 2025/1569 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1569</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1569/oj">Commission Implementing Regulation (EU) 2025/1569</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards qualified electronic attestations of attributes and electronic attestations of attributes provided by or on behalf of a public sector body responsible for an authentic source</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1570/oj" title="Commission Implementing Regulation (EU) 2025/1570 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1570</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1570/oj">Commission Implementing Regulation (EU) 2025/1570</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards notification of information on certified qualified electronic signature creation devices and certified qualified electronic seal creation devices</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1571/oj" title="Commission Implementing Regulation (EU) 2025/1571 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1571</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1571/oj">Commission Implementing Regulation (EU) 2025/1571</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the formats and procedures for annual reports by supervisory bodies</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1572/oj" title="Commission Implementing Regulation (EU) 2025/1572 of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1572</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1572/oj">Commission Implementing Regulation (EU) 2025/1572</a> of 29 July 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the format and procedures for notification of intention and verification with regard to the initiation of qualified trust services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1929/oj" title="Commission Implementing Regulation (EU) 2025/1929 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1929</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1929/oj">Commission Implementing Regulation (EU) 2025/1929</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the binding of date and time to data and establishing the accuracy of the time sources for the provision of qualified electronic time stamps</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1942/oj" title="Commission Implementing Regulation (EU) 2025/1942 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1942</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1942/oj">Commission Implementing Regulation (EU) 2025/1942</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards qualified validation services for qualified electronic signatures and qualified validation services for qualified electronic seals</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1943/oj" title="Commission Implementing Regulation (EU) 2025/1943 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1943</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1943/oj">Commission Implementing Regulation (EU) 2025/1943</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards for qualified certificates for electronic signatures and qualified certificates for electronic seals</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1944/oj" title="Commission Implementing Regulation (EU) 2025/1944 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1944</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1944/oj">Commission Implementing Regulation (EU) 2025/1944</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards for processes for sending and receiving data in qualified electronic registered delivery services and as regards interoperability of those services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1945/oj" title="Commission Implementing Regulation (EU) 2025/1945 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1945</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1945/oj">Commission Implementing Regulation (EU) 2025/1945</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the validation of qualified electronic signatures and of qualified electronic seals and the validation of advanced electronic signatures based on qualified certificates and of advanced electronic seals based on qualified certificates</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1946/oj" title="Commission Implementing Regulation (EU) 2025/1946 of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/1946</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/1946/oj">Commission Implementing Regulation (EU) 2025/1946</a> of 29 September 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards qualified preservation services for qualified electronic signatures and for qualified electronic seals</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2160/oj" title="Commission Implementing Regulation (EU) 2025/2160 of 27 October 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2160</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2160/oj">Commission Implementing Regulation (EU) 2025/2160</a> of 27 October 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards, specifications and procedures for the management of risks to the provision of non-qualified trust services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2162/oj" title="Commission Implementing Regulation (EU) 2025/2162 of 27 October 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2162</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2162/oj">Commission Implementing Regulation (EU) 2025/2162</a> of 27 October 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the accreditation of conformity assessment bodies performing the assessment of qualified trust service providers and the qualified trust services they provide, the conformity assessment report and the conformity assessment scheme</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/dec_impl/2025/2164/oj" title="Commission Implementing Decision (EU) 2025/2164 of 27 October 2025 amending Implementing Decision (EU) 2015/1505 as regards the version of the standard on">CID 2025/2164</a></td>
+<td><a href="http://data.europa.eu/eli/dec_impl/2025/2164/oj">Commission Implementing Decision (EU) 2025/2164</a> of 27 October 2025 amending Implementing Decision (EU) 2015/1505 as regards the version of the standard on which the common template for the trusted lists is based</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2527/oj" title="Commission Implementing Regulation (EU) 2025/2527 of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2527</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2527/oj">Commission Implementing Regulation (EU) 2025/2527</a> of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards for qualified certificates for website authentication</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2530/oj" title="Commission Implementing Regulation (EU) 2025/2530 of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2530</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2530/oj">Commission Implementing Regulation (EU) 2025/2530</a> of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards requirements for qualified trust service providers providing qualified trust services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2531/oj" title="Commission Implementing Regulation (EU) 2025/2531 of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2531</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2531/oj">Commission Implementing Regulation (EU) 2025/2531</a> of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards and specifications for qualified electronic ledgers</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2532/oj" title="Commission Implementing Regulation (EU) 2025/2532 of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2025/2532</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2025/2532/oj">Commission Implementing Regulation (EU) 2025/2532</a> of 16 December 2025 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards and specifications for qualified electronic archiving services</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2026/248/oj" title="Commission Implementing Regulation (EU) 2026/248 of 2 February 2026 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2026/248</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2026/248/oj">Commission Implementing Regulation (EU) 2026/248</a> of 2 February 2026 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the formats of advanced electronic signatures and advanced electronic seals recognised by public sector bodies</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/reg_impl/2026/798/oj" title="Commission Implementing Regulation (EU) 2026/798 of 7 April 2026 laying down rules for the application of Regulation (EU) No 910/2014 of the European">CIR 2026/798</a></td>
+<td><a href="http://data.europa.eu/eli/reg_impl/2026/798/oj">Commission Implementing Regulation (EU) 2026/798</a> of 7 April 2026 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards reference standards and specifications for the remote onboarding of users to the European Digital Identity Wallet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-international-and-european-standards-and-technical-specifications">10.2 International and European standards and technical specifications<a class="headerlink" href="#102-international-and-european-standards-and-technical-specifications" title="Link to this section">&para;</a></h3>
+<p>Note: All standards and technical specifications listed in this section are undated. A link is added to the entry for the respective document on the Standards and Technical Specifications Roadmap, which contains the latest information regarding the targeted version.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item Reference</strong></th>
+<th><strong>Standard name/details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84">ISO/IEC 18013-5</a>, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/1" title="ISO/IEC 18013-7, Personal identification - ISO-compliant driving licence - Part 7: Mobile driving licence (mDL) add-on functions">ISO/IEC 18013-7</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/1">ISO/IEC 18013-7</a>, Personal identification - ISO-compliant driving licence - Part 7: Mobile driving licence (mDL) add-on functions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/388" title="ISO/IEC 23220-2, - Cards and security devices for personal identification — Building blocks for identity management via mobile devices - Part 2: Data objects">ISO/IEC 23220-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/388">ISO/IEC 23220-2</a>, - Cards and security devices for personal identification — Building blocks for identity management via mobile devices - Part 2: Data objects and encoding rules for generic eID systems</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/39" title="ISO 3166-1: Codes for the representation of names of countries and their subdivisions - Part 1: Country codes: alpha-2 country">ISO 3166-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/39">ISO 3166-1</a>: Codes for the representation of names of countries and their subdivisions - Part 1: Country codes: alpha-2 country</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/40" title="ISO 3166-2: Codes for the representation of names of countries and their subdivisions - Part 2: Country subdivision code">ISO 3166-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/40">ISO 3166-2</a>: Codes for the representation of names of countries and their subdivisions - Part 2: Country subdivision code</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/400" title="ISO/IEC 5218 Codes for the representation of human sexes">ISO/IEC 5218</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/400">ISO/IEC 5218</a> Codes for the representation of human sexes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/399" title="ISO/IEC 19794-5 Biometric data interchange formats — Part 5: Face image data">ISO/IEC 19794-5</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/399">ISO/IEC 19794-5</a> Biometric data interchange formats — Part 5: Face image data</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/412" title="ISO/IEC 39794-5 Extensible biometric data interchange formats — Part 5: Face image data">ISO/IEC 39794-5</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/412">ISO/IEC 39794-5</a> Extensible biometric data interchange formats — Part 5: Face image data</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151" title="ETSI TS 119 101 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for applications for signature creation and signature">ETSI TS 119 101</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151">ETSI TS 119 101</a> - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for applications for signature creation and signature validation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/278" title="ETSI TS 119 602: Electronic Signatures and Infrastructures (ESI); Lists of trusted entities; Data model">ETSI TS 119 602</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/278">ETSI TS 119 602</a>: Electronic Signatures and Infrastructures (ESI); Lists of trusted entities; Data model</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/41" title="ETSI TS 119 612: Electronic Signatures and Infrastructures (ESI); Trusted Lists">ETSI TS 119 612</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/41">ETSI TS 119 612</a>: Electronic Signatures and Infrastructures (ESI); Trusted Lists</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/175" title="ETSI EN 319 411-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1">ETSI EN 319 411-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/175">ETSI EN 319 411-1</a> - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176" title="ETSI EN 319 411-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2">ETSI EN 319 411-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176">ETSI EN 319 411-2</a> - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2: Requirements for trust service providers issuing EU qualified certificates</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/286" title="ETSI TS 119 411-8 - Electronic Signatures and Trust Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates">ETSI TS 119 411-8</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/286">ETSI TS 119 411-8</a> - Electronic Signatures and Trust Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 8: Access Certificate Policy for EUDI Wallet Relying Parties</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/421" title="ETSI TS 119 412-6 - Electronic Signatures and Trust Infrastructures (ESI); Certificate Profiles; Part 6: Certificate profile requirements for PID, Wallet, EAA">ETSI TS 119 412-6</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/421">ETSI TS 119 412-6</a> - Electronic Signatures and Trust Infrastructures (ESI); Certificate Profiles; Part 6: Certificate profile requirements for PID, Wallet, EAA, QEAA, and PSBEAA providers</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66" title="ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service">ETSI TS 119 431-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66">ETSI TS 119 431-1</a> - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/67" title="ETSI TS 119 431-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service">ETSI TS 119 431-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/67">ETSI TS 119 431-2</a> - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 2: TSP service components supporting AdES digital signature creation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68">ETSI TS 119 432</a> - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/283" title="ETSI TS 119 471 - Electronic Signatures and Trust Infrastructures (ESI); Policy and Security requirements for Providers of Electronic Attestation of Attribute">ETSI TS 119 471</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/283">ETSI TS 119 471</a> - Electronic Signatures and Trust Infrastructures (ESI); Policy and Security requirements for Providers of Electronic Attestation of Attribute Services</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/316" title="ETSI TS 119 472-1 - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestations of Attributes; Part 1: General requirements">ETSI TS 119 472-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/316">ETSI TS 119 472-1</a> - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestations of Attributes; Part 1: General requirements</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/285" title="ETSI TS 119 472-2 - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestation of Attributes; Part 2: Profiles for EAA/PID">ETSI TS 119 472-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/285">ETSI TS 119 472-2</a> - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestation of Attributes; Part 2: Profiles for EAA/PID Presentations to Relying Party</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/398" title="ETSI TS 119 472-3 - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestation of Attributes; Part 3: Profiles for issuance of">ETSI TS 119 472-3</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/398">ETSI TS 119 472-3</a> - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestation of Attributes; Part 3: Profiles for issuance of EAA or PID</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/287" title="ETSI TS 119 475 - Electronic Signatures and Trust Infrastructures (ESI); Relying party attributes supporting EUDI Wallet user's authorisation decisions">ETSI TS 119 475</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/287">ETSI TS 119 475</a> - Electronic Signatures and Trust Infrastructures (ESI); Relying party attributes supporting EUDI Wallet user's authorisation decisions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/26" title="ETSI TS 119 478 - Electronic Signatures and Trust Infrastructures (ESI); Specification of interfaces related to Authentic Sources">ETSI TS 119 478</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/26">ETSI TS 119 478</a> - Electronic Signatures and Trust Infrastructures (ESI); Specification of interfaces related to Authentic Sources</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/422" title="ETSI EN 301 549 - Accessibility requirements for ICT products and services">ETSI EN 301 549</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/422">ETSI EN 301 549</a> - Accessibility requirements for ICT products and services</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/70" title="ETSI EN 319 132-1 - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES)">ETSI EN 319 132-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/70">ETSI EN 319 132-1</a> - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/71" title="ETSI TS 119 182-1 - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures">ETSI TS 119 182-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/71">ETSI TS 119 182-1</a> - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/72" title="ETSI EN 319 122-1 - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures">ETSI EN 319 122-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/72">ETSI EN 319 122-1</a> - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-1 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline">ETSI EN 319 162-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73">ETSI EN 319 162-1</a> - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-2 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 2: Additional ASiC container types">ETSI EN 319 162-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73">ETSI EN 319 162-2</a> - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 2: Additional ASiC container types</td>
+</tr>
+<tr>
+<td><a href="http://data.europa.eu/eli/dir/2015/2366/oj" title="Directive (EU) 2015/2366 of the European Parliament and of the Council on payment services in the internal market (PSD2)">PSD2</a></td>
+<td><a href="http://data.europa.eu/eli/dir/2015/2366/oj">Directive (EU) 2015/2366</a> of the European Parliament and of the Council on payment services in the internal market (PSD2)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/69" title="ETSI EN 319 142-1 - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures">ETSI EN 319 142-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/69">ETSI EN 319 142-1</a> - Electronic Signatures and Infrastructures (ESI); PAdES digital signatures; Part 1: Building blocks and PAdES baseline signatures</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/416" title="ECCG Agreed Cryptographic Mechanisms v2.0">ECCG Agreed Cryptographic Mechanisms v2.0</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/416">ECCG Agreed Cryptographic Mechanisms v2.0</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/101" title="CEN EN 419 241-1 - Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements">CEN EN 419 241-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/101">CEN EN 419 241-1</a> - Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/9" title="SD-JWT-based Verifiable Credentials (SD-JWT VC).">SD-JWT VC</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/9">SD-JWT-based Verifiable Credentials</a> (SD-JWT VC).</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/74" title="RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels">RFC 2119</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/74">RFC 2119</a> - Key words for use in RFCs to Indicate Requirement Levels</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/75" title="RFC 3339 - Date and Time on the Internet: Timestamps">RFC 3339</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/75">RFC 3339</a> - Date and Time on the Internet: Timestamps</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/324" title="RFC 9562 - Universally Unique IDentifiers (UUIDs)">RFC 9562</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/324">RFC 9562</a> - Universally Unique IDentifiers (UUIDs)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/77" title="RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC 5280</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/77">RFC 5280</a> - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/401" title="RFC 5322 - Internet Message Format">RFC 5322</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/401">RFC 5322</a> - Internet Message Format</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/78" title="RFC 3647 - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework">RFC 3647</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/78">RFC 3647</a> - Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/312" title="RFC 7519 - JSON Web Token (JWT)">RFC 7519</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/312">RFC 7519</a> - JSON Web Token (JWT)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/79" title="RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format">RFC 8259</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/79">RFC 8259</a> - The JavaScript Object Notation (JSON) Data Interchange Format</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/413" title="RFC 8392 - CBOR Web Token (CWT)">RFC 8392</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/413">RFC 8392</a> - CBOR Web Token (CWT)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/80" title="RFC 8610 - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures">RFC 8610</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/80">RFC 8610</a> - Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/81" title="RFC 8943 - Concise Binary Object Representation (CBOR) Tags for Date">RFC 8943</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/81">RFC 8943</a> - Concise Binary Object Representation (CBOR) Tags for Date</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/82" title="RFC 8949 - Concise Binary Object Representation (CBOR)">RFC 8949</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/82">RFC 8949</a> - Concise Binary Object Representation (CBOR)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/11" title="Token Status List - Token Status List (TSL)">Token Status List</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/11">Token Status List</a> - Token Status List (TSL)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29" title="Cloud Signature Consortium API Specification v2.0">CSC API</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29">Cloud Signature Consortium API Specification v2.0</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/248" title="GPDSPE075 Open Mobile API Specification, GlobalPlatform">GP OMAPI</a></td>
+<td>GPD_SPE_075 <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/248">Open Mobile API Specification</a>, GlobalPlatform</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/243" title="GPCSPE034 Card Specification, GlobalPlatform">GP CS</a></td>
+<td>GPC_SPE_034 <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/243">Card Specification</a>, GlobalPlatform</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/241" title="GSMA Secured Applications for Mobile, GSM Association">GSMA SAM</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/241">GSMA Secured Applications for Mobile</a>, GSM Association</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/115" title="Sporny, M. et al, Verifiable Credentials Data Model v2.0, W3C Recommendation">W3C VCDM v2.0</a></td>
+<td>Sporny, M. <em>et al,</em> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/115">Verifiable Credentials Data Model v2.0</a>, W3C Recommendation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/389" title="Jones, M. et al, Securing Verifiable Credentials using JOSE and COSE, W3C Recommendation">W3C VC-JOSE-COSE</a></td>
+<td>Jones, M. <em>et al,</em> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/389">Securing Verifiable Credentials using JOSE and COSE</a>, W3C Recommendation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/390/" title="Sporny, M. et al, Verifiable Credential Data Integrity 1.0, W3C Recommendation">W3C VC Data Integrity</a></td>
+<td>Sporny, M. <em>et al,</em> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/390/">Verifiable Credential Data Integrity 1.0</a>, W3C Recommendation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/10" title="Caceres, M., Cappalli, T., Goto, S. et al, W3C Digital Credentials API, Draft Community Group Report">W3C Digital Credentials API</a></td>
+<td>Caceres, M., Cappalli, T., Goto, S. <em>et al,</em> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/10">W3C Digital Credentials API</a>, Draft Community Group Report</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a></td>
+<td>Jeff Hodges <em>et al,</em> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314">Web Authentication</a>, An API for accessing Public Key Credentials Level 2, W3C Recommendation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/365" title="John Bradley et al,Client to Authenticator Protocol (CTAP), FIDO Alliance">CTAP</a></td>
+<td>John Bradley <em>et al,</em><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/365">Client to Authenticator Protocol (CTAP)</a>, FIDO Alliance</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/3" title="Lodderstedt, T. et al., OpenID for Verifiable Credential Issuance, OpenID Foundation.">OpenID4VCI</a></td>
+<td>Lodderstedt, T. <em>et al.</em>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/3">OpenID for Verifiable Credential Issuance</a>, OpenID Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2" title="Terbu, O. et al., OpenID Connect for Verifiable Presentations, OpenID Foundation.">OpenID4VP</a></td>
+<td>Terbu, O. <em>et al.</em>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2">OpenID Connect for Verifiable Presentations</a>, OpenID Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/386" title="Sakimura, N. et al., OpenID Connect Core 1.0, OpenID Foundation.">OIDC</a></td>
+<td>Sakimura, N. <em>et al.</em>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/386">OpenID Connect Core 1.0</a>, OpenID Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/385" title="Lodderstedt, T. et al., OpenID Connect for Identity Assurance Claims Registration 1.0, OpenID Foundation.">EKYC</a></td>
+<td>Lodderstedt, T. <em>et al.</em>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/385">OpenID Connect for Identity Assurance Claims Registration 1.0</a>, OpenID Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/387" title="Lodderstedt, T. et al., OpenID Identity Assurance Schema Definition 1.0, OpenID Foundation.">EKYC Schema</a></td>
+<td>Lodderstedt, T. et al., <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/387">OpenID Identity Assurance Schema Definition 1.0</a>, OpenID Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/4" title="Yasuda, K. et al, OpenID4VC High Assurance Interoperability Profile, OpenId Foundation.">HAIP</a></td>
+<td>Yasuda, K. <em>et al</em>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/4">OpenID4VC High Assurance Interoperability Profile</a>, OpenId Foundation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/391" title="IANA JSON Web Token Claims Registry">IANA-JWT-Claims</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/391">IANA JSON Web Token Claims Registry</a></td>
+</tr>
+<tr>
+<td><a href="https://conformance.eudi.dev" title="Functional Conformance Assessment Framework, governed by the European Commission in cooperation with the Member States through the EDICG">FCAF</a></td>
+<td><a href="https://conformance.eudi.dev">Functional Conformance Assessment Framework</a>, governed by the European Commission in cooperation with the Member States through the EDICG</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103-topics-from-annex-2">10.3 Topics from Annex 2<a class="headerlink" href="#103-topics-from-annex-2" title="Link to this section">&para;</a></h3>
+<p>Note: All topics listed in this section are undated. The ARF main document and Annex 2 are always updated  in combination. A link is added to the respective Topic in the latest version of Annex 2.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item Reference</strong></th>
+<th><strong>Standard name/details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.3 Topic 4 - mDL Rulebook" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a233-topic-4-mdl-rulebook">Topic 4</a>]</td>
+<td>Annex 2 - mDL Rulebook</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.4 Topic 6 - Relying Party authentication and User approval" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a234-topic-6-relying-party-authentication-and-user-approval">Topic 6</a>]</td>
+<td>Annex 2 - Relying Party authentication and User approval</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.5 Topic 7 - Attestation revocation and revocation checking" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7-attestation-revocation-and-revocation-checking">Topic 7</a>]</td>
+<td>Annex 2 - Attestation revocation and revocation checking</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.6 Topic 9 - Key Attestation and Wallet Instance Attestation" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a236-topic-9-key-attestation-and-wallet-instance-attestation">Topic 9</a>]</td>
+<td>Annex 2 - Key Attestation and Wallet Instance Attestation</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.7 Topic 10 - Issuing a PID or attestation to a Wallet Unit" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a237-topic-10-issuing-a-pid-or-attestation-to-a-wallet-unit">Topic 10</a>]</td>
+<td>Annex 2 - Issuing a PID or attestation to a Wallet Unit</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.8 Topic 11 - Pseudonyms" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11-pseudonyms">Topic 11</a>]</td>
+<td>Annex 2 - Pseudonyms</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.9 Topic 12 - Attestation Rulebooks" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a239-topic-12-attestation-rulebooks">Topic 12</a>]</td>
+<td>Annex 2 - Attestation Rulebooks</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.10 Topic 16 - Signing documents with a Wallet Unit" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2310-topic-16-signing-documents-with-a-wallet-unit">Topic 16</a>]</td>
+<td>Annex 2 - Signing documents with a Wallet Unit</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.11 Topic 18 - Combined presentations of attributes" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2311-topic-18-combined-presentations-of-attributes">Topic 18</a>]</td>
+<td>Annex 2 - Combined presentations of attributes</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.12 Topic 19 - User navigation requirements (Dashboard logs for transparency)" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>]</td>
+<td>Annex 2 - User Navigation requirements (Dashboard logs for transparency)</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.13 Topic 20 - Strong User authentication for electronic payments" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2313-topic-20-strong-user-authentication-for-electronic-payments">Topic 20</a>]</td>
+<td>Annex 2 - Strong User authentication for electronic payments</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.14 Topic 24 - User identification in proximity scenarios" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2314-topic-24-user-identification-in-proximity-scenarios">Topic 24</a>]</td>
+<td>Annex 2 - User identification in proximity scenarios</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.15 Topic 25 - Unified definition and controlled vocabularies for attributes" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2315-topic-25-unified-definition-and-controlled-vocabularies-for-attributes">Topic 25</a>]</td>
+<td>Annex 2 - Unified definition and controlled vocabularies for attributes</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.16 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and non-qualified EAAs, and Relying Parties" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2316-topic-27-registration-of-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 27</a>]</td>
+<td>Annex 2 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and (non-qualified) EAAs, and Relying Parties</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.18 Topic 29 - Representation paradigm" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2318-topic-29-representation-paradigm">Topic 29</a>]</td>
+<td>Annex 2 - Representation paradigm</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.19 Topic 30 - Interaction between Wallet Units" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2319-topic-30-interaction-between-wallet-units">Topic 30</a>]</td>
+<td>Annex 2 - Interaction between Wallet Units</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.20 Topic 31 - Notification and publication of PID Provider, Wallet Provider, Attestation Provider, Access Certificate Authority, and Provider of registration certificates" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2320-topic-31-notification-and-publication-of-pid-provider-wallet-provider-attestation-provider-access-certificate-authority-and-provider-of-registration-certificates">Topic 31</a>]</td>
+<td>Annex 2 - PID Provider, Wallet Provider, Attestation Provider, Access Certificate Authority, and Provider of registration certificates notification and publication</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.21 Topic 34 - Migrate to a different Wallet Solution" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2321-topic-34-migrate-to-a-different-wallet-solution">Topic 34</a>]</td>
+<td>Annex 2 - Migrate to a different Wallet solution</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.22 Topic 38 - Wallet Unit revocation" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2322-topic-38-wallet-unit-revocation">Topic 38</a>]</td>
+<td>Annex 2 - Wallet Unit revocation</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.23 Topic 40 - Wallet Instance installation and Wallet Unit activation and management" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2323-topic-40-wallet-instance-installation-and-wallet-unit-activation-and-management">Topic 40</a>]</td>
+<td>Annex 2 - Wallet Instance installation and Wallet Unit activation and management</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.24 Topic 42 - Requirements for QTSPs to access Authentic Sources" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2324-topic-42-requirements-for-qtsps-to-access-authentic-sources">Topic 42</a>]</td>
+<td>Annex 2 - Requirements for QTSPs to access Authentic Sources</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.25 Topic 43 - Embedded disclosure policies" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2325-topic-43-embedded-disclosure-policies">Topic 43</a>]</td>
+<td>Annex 2 - Embedded disclosure policies</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.26 Topic 44 - Registration certificates for PID Providers, Providers of QEAAs, PuB-EAAs, and non-qualified EAAs, and Relying Parties" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2326-topic-44-registration-certificates-for-pid-providers-providers-of-qeaas-pub-eaas-and-non-qualified-eaas-and-relying-parties">Topic 44</a>]</td>
+<td>Annex 2 - Relying Party registration certificates</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.27 Topic 48 - Blueprint for requesting data deletion to Relying Parties" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties">Topic 48</a>]</td>
+<td>Annex 2 - Blueprint for requesting data deletion to Relying Parties</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.28 Topic 50 - Blueprint to report unlawful or suspicious request of data" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data">Topic 50</a>]</td>
+<td>Annex 2 - Blueprint to report unlawful or suspicious request of data</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.29 Topic 51 - PID or attestation deletion" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2329-topic-51-pid-or-attestation-deletion">Topic 51</a>]</td>
+<td>Annex 2 - PID or attestation deletion</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.30 Topic 52 - Relying Party intermediaries" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2330-topic-52-relying-party-intermediaries">Topic 52</a>]</td>
+<td>Annex 2 - Relying Party intermediaries</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.31 Topic 53 - Zero-Knowledge Proofs" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2331-topic-53-zero-knowledge-proofs">Topic 53</a>]</td>
+<td>Annex 2 - Zero-Knowledge Proofs</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.32 Topic 54 - Accessibility" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2332-topic-54-accessibility">Topic 54</a>]</td>
+<td>Annex 2 - Accessibility</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.33 Topic 55 - Certificate Transparency" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2333-topic-55-certificate-transparency">Topic 55</a>]</td>
+<td>Annex 2 - Certificate Transparency</td>
+</tr>
+<tr>
+<td>[<a class="autorefs autorefs-internal" title="A.2.3.34 Topic 56 - Wallet Provider Support and Maintenance" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2334-topic-56-wallet-provider-support-and-maintenance">Topic 56</a>]</td>
+<td>Annex 2 - Wallet Provider Support and Maintenance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="104-technical-specifications-published-by-the-commission">10.4 Technical Specifications published by the Commission<a class="headerlink" href="#104-technical-specifications-published-by-the-commission" title="Link to this section">&para;</a></h3>
+<p>Note: All Technical Specifications listed in this section are undated. A link is added to the latest version of the respective Technical Specification, published by the Commission.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item Reference</strong></th>
+<th><strong>Technical Specification name/details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../technical-specifications/ts1-eudi-wallet-trust-mark/">Technical Specification 1</a></td>
+<td>Specification of EUDI Wallet Trust Mark</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts2-notification-publication-provider-information/">Technical Specification 2</a></td>
+<td>Specification of systems enabling the notification and subsequent publication of Provider information</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts3-wallet-unit-attestation/">Technical Specification 3</a></td>
+<td>Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts4-zkp/">Technical Specification 4</a></td>
+<td>Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/">Technical Specification 5</a></td>
+<td>Specification of common formats and API for Relying Party Registration information</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/">Technical Specification 6</a></td>
+<td>Common Set of Relying Party Information to be Registered</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts7-common-interface-for-data-deletion-request/">Technical Specification 7</a></td>
+<td>Specification of Common Interface for Data Deletion Requests to Relying Parties</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/">Technical Specification 8</a></td>
+<td>Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts9-wallet-to-wallet-interactions/">Technical Specification 9</a></td>
+<td>Specification of Wallet to Wallet interactions</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts10-data-portability-and-download-%28export%29/">Technical Specification 10</a></td>
+<td>Data Portability and Download (Export)</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/">Technical Specification 11</a></td>
+<td>Specification of interfaces and formats for the catalogue of attributes and the catalogue of attestations</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/">Technical Specification 12</a></td>
+<td>Specification of Strong Customer Authentication (SCA) Implementation with the Wallet</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts13-zksnark/">Technical Specification 13</a></td>
+<td>Specification for the implementation of Zero-Knowledge Proofs based on arithmetic circuits in the EUDI Wallet</td>
+</tr>
+<tr>
+<td><a href="../../technical-specifications/ts14-zkps-from-mms/">Technical Specification 14</a></td>
+<td>Specification for the implementation of Zero-Knowledge Proofs based on multi-message signatures in the EUDI Wallet</td>
+</tr>
+</tbody>
+</table>
+<!-- Auto-generated from Section 10 (References) of the ARF main
+     document by tools/gen_references.py. Do not edit by hand.
+     Appended to every page via pymdownx.snippets auto_append. -->
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-07-21T07:12:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-07-21</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-07-21T07:12:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-07-21</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-document-development/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9 Document development">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9 Document development
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-annexes/" class="md-footer__link md-footer__link--next" aria-label="Next: 11 Annexes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11 Annexes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © European Commission, 2026. Licensed under CC BY 4.0.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>

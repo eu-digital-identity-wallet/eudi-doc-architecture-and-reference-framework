@@ -1,0 +1,4277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
+      
+      
+        <meta name="author" content="European Commission - DG CNECT">
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/discussion-topics/j-rr-wallet-to-wallet-interactions/">
+      
+      
+        <link rel="prev" href="../j-wallet-to-wallet-interactions/">
+      
+      
+        <link rel="next" href="../k-combined-presentation-of-attestations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>J rr wallet to wallet interactions - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="J rr wallet to wallet interactions - European Digital Identity" />
+<meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/assets/images/social/discussion-topics/j-rr-wallet-to-wallet-interactions.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/discussion-topics/j-rr-wallet-to-wallet-interactions/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="J rr wallet to wallet interactions - European Digital Identity" />
+<meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/3.0.0/assets/images/social/discussion-topics/j-rr-wallet-to-wallet-interactions.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-j-wallet-to-wallet-interactions-revision-round" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <a
+      href="../.."
+      title="European Digital Identity"
+      class="md-header__button md-logo"
+      aria-label="European Digital Identity"
+      data-md-component="logo"
+    >
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              J rr wallet to wallet interactions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    
+
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" title="Download the ARF as PDF" class="md-header__button md-icon" aria-label="Download the ARF as PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"/></svg>
+      </a>
+    
+
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Architecture and Reference Framework
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discussion Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical-specifications/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technical Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Conformance
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and Reference Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture and Reference Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../main/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Document
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main Document
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/02-eudi-wallet-functionalities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 EUDI Wallet functionalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/03-roles-within-the-eudi-wallet-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Roles within the EUDI Wallet ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/04-high-level-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 High-level architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/05-data-model-and-data-exchange-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Data model and data exchange protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/06-trust-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Trust model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/07-wallet-solution-certification-and-risk-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Wallet Solution Certification and Risk Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/08-accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/09-document-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Document development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/10-references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/11-annexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../annexes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-1/annex-1-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 1 - Definitions</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Level Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High-Level Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.01-high-level-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.03-high-level-requirements-by-category/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rulebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rulebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.01-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.01 - PID Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.02-mDL-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.02 - mDL Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.01-design-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.02 -  Design Guide - Data Sharing Scenarios</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Topics
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discussion Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a-privacy-risks-and-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A privacy risks and mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aa-support-of-electronic-payments-SCA-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aa support of electronic payments SCA with wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ab-digital-signature-using-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ab digital signature using wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../b-re-issuance-and-batch-issuance-of-pids-and-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B re issuance and batch issuance of pids and attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C wallet unit attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c-rr-wallet-unit-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C rr wallet unit attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../d-embedded-disclosure-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D - Embedded Disclosure Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-rr-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E rr pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../f-digital-credential-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic F - Digital Credentials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../g-zero-knowledge-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G - Zero Knowledge Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h-transaction-logs-kept-by-the-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic H - Transaction logs kept by the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i-natural-person-representing-another-natural-person/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I - Natural person representing another natural person
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../j-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J - Wallet to Wallet Interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-discussion-paper-topic-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Discussion Paper Topic Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Key Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-document-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Document Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Background
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-current-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Current Situation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-legal-provisions-relevant-to-verifier-wallet-unit-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Legal Provisions Relevant to Verifier Wallet Unit Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cryptographic-device-authentication-within-the-same-protocol-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Cryptographic Device Authentication Within the Same Protocol Session
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Cryptographic Device Authentication Within the Same Protocol Session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-proposed-high-level-requirement-for-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Proposed High-Level Requirement for Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-arguments-raised-in-favour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Arguments Raised in Favour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-arguments-raised-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Arguments Raised Against
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-technical-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Technical Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Technical Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-approach-a-wallet-unit-authentication-certificate-wuac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Approach A: Wallet Unit Authentication Certificate (WUAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-approach-b-verifier-pid-presentation-as-extension-to-isoiec-18013-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Approach B: Verifier PID Presentation as Extension to ISO/IEC 18013-5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-approach-c-session-bound-reversed-prior-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Approach C: Session-Bound Reversed Prior Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-approach-d-wallet-instance-attestation-as-reader-authentication-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Approach D: Wallet Instance Attestation as Reader Authentication Material
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Proposed Additions and Changes to HLRs in ARF Annex 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Proposed Additions and Changes to HLRs in ARF Annex 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-new-hlrs-to-be-added-to-topic-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 New HLRs to be added to Topic 30
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-existing-hlrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Existing HLRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k-combined-presentation-of-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K - Combined presentation of Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n-export-and-data-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N export and data portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../o-catalogues-for-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic O - Catalogues for Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../q-interface-user-wallet-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q interface user wallet instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r-authentication-of-user-to-device/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R authentication of user to device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s-certificate-transparancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S certificate transparancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-support-and-maintenance-by-the-wallet-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T - Support and Maintenance by the Wallet Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../u-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic U - EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V - PID Rulebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w-transactional-data-for-payments-and-other-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W transactional data for payments and other use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x-rr-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X rr relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../z-device-bound-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic Z - Device-bound Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../technical-specifications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts1-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts2-notification-publication-provider-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of systems enabling the notification and subsequent publication of Provider information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts3-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts4-zkp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common formats and API for Relying Party Registration information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Set of Relying Party Information to be Registered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts7-common-interface-for-data-deletion-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for Data Deletion Requests to Relying Parties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts9-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet to Wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts10-data-portability-and-download-%28export%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Data Portability and Download (Export)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of interfaces and formats for catalogue of attributes and catalogue of attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts13-zksnark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts14-zkps-from-mms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-discussion-paper-topic-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Discussion Paper Topic Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Key Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-document-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Document Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Background
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-current-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Current Situation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-legal-provisions-relevant-to-verifier-wallet-unit-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Legal Provisions Relevant to Verifier Wallet Unit Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cryptographic-device-authentication-within-the-same-protocol-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Cryptographic Device Authentication Within the Same Protocol Session
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Cryptographic Device Authentication Within the Same Protocol Session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-proposed-high-level-requirement-for-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Proposed High-Level Requirement for Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-arguments-raised-in-favour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Arguments Raised in Favour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-arguments-raised-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Arguments Raised Against
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-technical-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Technical Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Technical Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-approach-a-wallet-unit-authentication-certificate-wuac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Approach A: Wallet Unit Authentication Certificate (WUAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-approach-b-verifier-pid-presentation-as-extension-to-isoiec-18013-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Approach B: Verifier PID Presentation as Extension to ISO/IEC 18013-5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-approach-c-session-bound-reversed-prior-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Approach C: Session-Bound Reversed Prior Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-approach-d-wallet-instance-attestation-as-reader-authentication-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Approach D: Wallet Instance Attestation as Reader Authentication Material
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Proposed Additions and Changes to HLRs in ARF Annex 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Proposed Additions and Changes to HLRs in ARF Annex 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-new-hlrs-to-be-added-to-topic-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 New HLRs to be added to Topic 30
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-existing-hlrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Existing HLRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Discussion Topics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/discussion-topics/j-rr-wallet-to-wallet-interactions.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/discussion-topics/j-rr-wallet-to-wallet-interactions.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<p>Version 1.0, updated 28 May 2026</p>
+<h1 id="topic-j-wallet-to-wallet-interactions-revision-round">Topic J - Wallet to Wallet Interactions (Revision Round)<a class="headerlink" href="#topic-j-wallet-to-wallet-interactions-revision-round" title="Link to this section">&para;</a></h1>
+<h2 id="1-introduction">1 Introduction<a class="headerlink" href="#1-introduction" title="Link to this section">&para;</a></h2>
+<h3 id="11-discussion-paper-topic-description">1.1 Discussion Paper Topic Description<a class="headerlink" href="#11-discussion-paper-topic-description" title="Link to this section">&para;</a></h3>
+<p>This document is the 2026 revision round (RR) version of the Discussion Paper for the European Digital Identity Cooperation Group regarding Topic J: Wallet to Wallet Interactions.</p>
+<p>The ARF Development and Maintenance Workplan 2026 [ARF_DevPlan] describes the objective of this topic as follows:</p>
+<p><em>Refine requirements for wallet-to-wallet interaction, including authentication, data protection, and user experience considerations.</em></p>
+<p>This paper is scoped to a single question: whether cryptographic device authentication of the Verifier Wallet Unit within the same protocol session as the presentation request should be introduced for Wallet to Wallet (W2W) interactions.</p>
+<h3 id="12-key-words">1.2 Key Words<a class="headerlink" href="#12-key-words" title="Link to this section">&para;</a></h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document.
+In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.</p>
+<h3 id="13-document-structure">1.3 Document Structure<a class="headerlink" href="#13-document-structure" title="Link to this section">&para;</a></h3>
+<p>The document is structured as follows:</p>
+<ul>
+<li>
+<p><a href="#2-background">Chapter 2</a> describes the current treatment of Verifier Wallet Unit authentication in the technical specification and recalls the relevant legal provisions.</p>
+</li>
+<li>
+<p><a href="#3-cryptographic-device-authentication-within-the-same-protocol-session">Chapter 3</a> defines the specific question analysed in this paper, lists arguments that have been raised both for and against introducing cryptographic device authentication of the Verifier Wallet Unit within the same protocol session as the presentation request, and proposes a concrete candidate phrasing of the corresponding high-level requirement for Member State discussion.</p>
+</li>
+<li>
+<p><a href="#4-technical-approaches">Chapter 4</a> illustrates the kind of technical complexity that adopting such a requirement would entail, by outlining four technical approaches together with their respective advantages and disadvantages.</p>
+</li>
+<li>
+<p><a href="#5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2">Chapter 5</a> is reserved for proposed additions and changes to the High-Level Requirements in ARF Annex 2, to be populated in a future version of this paper following the Member State discussion.</p>
+</li>
+<li>
+<p><a href="#6-references">Chapter 6</a> lists references.</p>
+</li>
+</ul>
+<h2 id="2-background">2 Background<a class="headerlink" href="#2-background" title="Link to this section">&para;</a></h2>
+<h3 id="21-current-situation">2.1 Current Situation<a class="headerlink" href="#21-current-situation" title="Link to this section">&para;</a></h3>
+<p>W2W interactions are interactions between two natural persons in physical proximity, in which one User (the Holder) presents person identification data or attestations to another User (the Verifier). Technically, the Holder Wallet Unit acts as an mdoc and the Verifier Wallet Unit acts as an mdoc reader, both as defined in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>.</p>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> defines an optional mdoc reader authentication mechanism (<code>ReaderAuth</code>) by which the reader signs the session transcript with a private key bound to an X.509 certificate. The mdoc validates this signature and the certificate chain before disclosing any attributes. In interactions between a Wallet Unit and a Wallet-Relying Party (WRP), this mechanism is used together with the access certificate the WRP obtains during registration.</p>
+<p>In W2W interactions, [Technical Specification 9] currently specifies in STS9_30 that the <code>ReaderAuth</code> field SHALL NOT be included in mdoc requests. Consequently, the Holder Wallet Unit does not perform a cryptographic check that the requesting device is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider. The reasoning recorded in [Technical Specification 9], Annex A.2 is that Wallet Units do not currently hold X.509 certificates suitable for <code>ReaderAuth</code>, and that the security objectives related to the Verifier in W2W can be addressed by out-of-band measures: the physical proximity of the parties, rate limiting (STS9_31, STS9_32), non-persistence of received presentations (STS9_35), and a prohibition on communicating presentation contents to third parties (STS9_37).</p>
+<p>In addition, [Technical Specification 9], Annex A.2.1 notes that the parties may opt to perform a <em>reversed prior flow</em>: before the main W2W interaction proceeds, the Holder and Verifier swap roles and run the ISO/IEC 18013-5 protocol so that the Verifier presents a PID to the Holder. Because a PID can only be issued to, and presented from, a genuine EUDI Wallet Unit -- the PID is issued by a certified PID Provider and is cryptographically bound to keys held in the Wallet Unit's WSCA/WSCD -- successful validation of the presented PID provides the Holder with a high-assurance indication that the Verifier is operating a genuine EUDI Wallet Unit, and at the same time reveals the Verifier's identity. This mechanism is available as an optional, out-of-band technique within the current specification. It should be noted that, because the reversed round and the main W2W flow are two separate protocol runs, the Verifier authentication is not cryptographically bound to the subsequent request: in principle, a malicious Verifier could authenticate using a genuine EUDI Wallet Unit in the reversed round and then issue the actual presentation request from a different application.</p>
+<h3 id="22-legal-provisions-relevant-to-verifier-wallet-unit-authentication">2.2 Legal Provisions Relevant to Verifier Wallet Unit Authentication<a class="headerlink" href="#22-legal-provisions-relevant-to-verifier-wallet-unit-authentication" title="Link to this section">&para;</a></h3>
+<p>The following provision of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a> is directly relevant to this discussion.</p>
+<p>Article 5a(4):</p>
+<p><em>European Digital Identity Wallets shall enable the user, in a manner that is user-friendly, transparent, and traceable by the user, to: ... (c) securely authenticate another person's European Digital Identity Wallet, and receive and share person identification data and electronic attestations of attributes in a secured way between the two European Digital Identity Wallets ...</em></p>
+<h2 id="3-cryptographic-device-authentication-within-the-same-protocol-session">3 Cryptographic Device Authentication Within the Same Protocol Session<a class="headerlink" href="#3-cryptographic-device-authentication-within-the-same-protocol-session" title="Link to this section">&para;</a></h2>
+<h3 id="31-scope">3.1 Scope<a class="headerlink" href="#31-scope" title="Link to this section">&para;</a></h3>
+<p>This chapter considers whether <strong>cryptographic device authentication</strong> of the Verifier Wallet Unit, performed <strong>within the same protocol session</strong> as the Verifier's presentation request, should be introduced in W2W interactions.</p>
+<p><em>Cryptographic device authentication</em> is understood here as a mechanism by which the Holder Wallet Unit can verify, by cryptographic means, that the Verifier is using a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider. This is narrower than the out-of-band measures discussed in Section 2.1 (physical proximity, rate limiting, non-persistence, and reversed-flow), which do not provide cryptographic assurance.</p>
+<p><em>Within the same protocol session</em> distinguishes the analysis from the reversed prior flow described in Section 2.1. In the reversed prior flow, the Verifier is authenticated through a separate, earlier protocol run, so the authentication is not cryptographically bound to the subsequent presentation request. The arguments presented in this chapter concern mechanisms that bind the Verifier Wallet Unit authentication to the session in which the request is made.</p>
+<p>Section 3.2 below proposes a candidate phrasing for the corresponding high-level requirement; Sections 3.3 and 3.4 summarise the arguments that have been raised in favour of and against introducing such a requirement.</p>
+<h3 id="32-proposed-high-level-requirement-for-discussion">3.2 Proposed High-Level Requirement for Discussion<a class="headerlink" href="#32-proposed-high-level-requirement-for-discussion" title="Link to this section">&para;</a></h3>
+<p>Candidate phrasings of the high-level requirements corresponding to the question scoped above are the following:</p>
+<blockquote>
+<p><em>When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include a cryptographic proof of its authenticity and validity.</em></p>
+<p><em>Before presenting a received presentation request to its User, a Holder Wallet Unit SHALL cryptographically verify, within the same protocol session as the presentation request, that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.</em></p>
+<p><em>If this verification fails or cannot be performed, the Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options.</em></p>
+</blockquote>
+<p>All three requirements are tentatively phrased as mandatory (SHALL).</p>
+<p>The wording is deliberately mechanism-agnostic: it fixes the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session), while leaving the concrete technical realisation to the technical specification. Chapter 4 illustrates four approaches that would meet these requirements and the technical complexity each would involve. The exact phrasing, the HLR indices, and whether any of these SHALLs should be weakened to SHOULD once a technical approach is selected are open questions for Member State discussion.</p>
+<h3 id="33-arguments-raised-in-favour">3.3 Arguments Raised in Favour<a class="headerlink" href="#33-arguments-raised-in-favour" title="Link to this section">&para;</a></h3>
+<p>The following arguments have been raised in support of introducing cryptographic device authentication of the Verifier Wallet Unit within the same protocol session:</p>
+<ol>
+<li>
+<p><strong>Enforcement of other data minimization measures.</strong> Rate limiting, non-persistence of presentations, and other behavioural controls are enforceable only on a genuine Wallet Unit. A device that is not a genuine Wallet Unit is not bound by these controls. Cryptographic device authentication of the Verifier Wallet Unit ensures that the device on the receiving end is one to which these obligations apply.</p>
+</li>
+<li>
+<p><strong>Informed consent.</strong> Confirming, prior to disclosure, that the Verifier device is a genuine EUDI Wallet Unit operated by a recognised Wallet Provider gives the Holder a basis on which to make an informed decision. This information can be presented in the approval UI alongside the description of the requested attributes.</p>
+</li>
+</ol>
+<h3 id="34-arguments-raised-against">3.4 Arguments Raised Against<a class="headerlink" href="#34-arguments-raised-against" title="Link to this section">&para;</a></h3>
+<p>The following arguments have been raised against introducing a mandatory cryptographic device authentication mechanism within the same protocol session, as recorded in [Technical Specification 9], Annex A.2:</p>
+<ol>
+<li>
+<p><strong>Out-of-band controls may be sufficient.</strong> W2W interactions take place in physical proximity between natural persons. The Holder can observe the Verifier's device and behaviour, and the parties may already know each other. Combined with rate limiting and non-persistence requirements, and the option to do a reversed presentation flow may be considered sufficient to deter mass abuse.</p>
+</li>
+<li>
+<p><strong>Ecosystem complexity.</strong> Introducing a cryptographic device authentication mechanism requires additional infrastructure (for example, a new type of X.509 certificates for Wallet Units and the supporting issuance and revocation services, or extensions to the underlying ISO standard). This adds complexity to an ecosystem that already involves multiple credential and trust management mechanisms.</p>
+</li>
+<li>
+<p><strong>Operational burden on Wallet Providers.</strong> Any cryptographic mechanism implies additional operational obligations on Wallet Providers (issuance, lifecycle management, revocation services, or support for new protocol elements).</p>
+</li>
+<li>
+<p><strong>Limits of authentication.</strong> A cryptographic device authentication mechanism confirms that the Verifier device is a genuine Wallet Unit, but cannot by itself prevent a registered Relying Party from operating a Wallet Unit to receive W2W presentations, nor prevent out-of-band capture of disclosed attributes (for example by photograph or transcription). Complementary controls remain necessary in either case.</p>
+</li>
+<li>
+<p><strong>Practical difficulty of using a fake Wallet Unit.</strong> Using a non-genuine Wallet Unit as a Verifier in a W2W interaction is not straightforward in practice. While generic mdoc reader applications are available in mobile app stores, they typically cannot handle a presentation offer, are limited to requesting a predefined set of attributes (which may not include the PID), may not offer the data export capabilities an attacker would need, and do not visually resemble an EUDI Wallet -- which matters in a proximity setting where the Holder can see the Verifier's screen. An application that does implement these features, especially one that mimics the appearance of a genuine EUDI Wallet, would likely be taken down from the app store after a complaint by a Member State. An attacker would therefore need to build a bespoke application, which requires software development skills or funding. While this does not eliminate the threat, it raises the barrier to the point where the attack is not available to casual adversaries.</p>
+</li>
+</ol>
+<p><em>It should be noted that the strength of these arguments varies. In particular, the observation and relational-trust considerations in Point 1 do not address the case of a silently compromised Verifier device, and the app-store and development-effort considerations in Point 5 do not address a determined attacker who sideloads a modified or open-source-based wallet.</em></p>
+<h2 id="4-technical-approaches">4 Technical Approaches<a class="headerlink" href="#4-technical-approaches" title="Link to this section">&para;</a></h2>
+<p>The purpose of this chapter is to illustrate the kind of technical complexity that adopting a high-level requirement for cryptographic device authentication of the Verifier Wallet Unit within the same protocol session would entail. Four approaches have been identified for implementing such a requirement. Each is described below together with the infrastructure, standards impact, protocol changes, and operational obligations it would imply. The chapter does not recommend an approach, nor is the list necessarily exhaustive; its purpose is to give a concrete picture of the work involved should such a requirement be introduced.</p>
+<h3 id="41-approach-a-wallet-unit-authentication-certificate-wuac">4.1 Approach A: Wallet Unit Authentication Certificate (WUAC)<a class="headerlink" href="#41-approach-a-wallet-unit-authentication-certificate-wuac" title="Link to this section">&para;</a></h3>
+<h4 id="411-description">4.1.1 Description<a class="headerlink" href="#411-description" title="Link to this section">&para;</a></h4>
+<p>In this approach, each Wallet Provider issues a dedicated X.509 certificate -- referred to as a Wallet Unit Authentication Certificate (WUAC) -- to each of its Wallet Units. The WUAC is used only to populate the <code>ReaderAuth</code> field in mdoc requests during W2W interactions. The certificate profile is compatible with the mdoc reader authentication certificate profile defined in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, Annex B, Table B.6.</p>
+<p>The trust anchor for WUAC validation is the Wallet Provider's CA certificate, which is published in the Wallet Provider List of Trusted Entities (LoTE) -- the same mechanism used to publish trust anchors for Wallet Unit Attestation (WIA and KA) signing (see WUA_10 in Topic 9). A Holder Wallet Unit accepts WUACs whose certificate chain validates against any Wallet Provider CA in a LoTE the Wallet Unit subscribes to.</p>
+<p>The W2W interaction flow is updated as follows. After the BLE session is established and before the mdoc request is sent, the Verifier Wallet Unit signs the session transcript with the WUAC private key and includes the signature and the WUAC in the <code>ReaderAuth</code> field of the mdoc request. The Holder Wallet Unit, on receiving the request, validates: (a) the WUAC certificate chain against the LoTE trust anchors; (b) the WUAC revocation status; and (c) the signature over the session transcript. If any of these checks fail, the interaction is aborted. Otherwise, the Holder is prompted to approve the disclosure, and the approval UI indicates that the Verifier has been authenticated as a valid EUDI Wallet Unit and identifies the Wallet Provider.</p>
+<p>This approach changes STS9_30 from a prohibition on <code>ReaderAuth</code> to a mandate to include it.</p>
+<h4 id="412-advantages">4.1.2 Advantages<a class="headerlink" href="#412-advantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Cryptographic enforcement of Verifier Wallet Unit genuinity.</strong> The Holder Wallet Unit gains an automated mechanism to verify, before any user prompt, that the Verifier is a valid, non-revoked EUDI Wallet Unit.</p>
+</li>
+<li>
+<p><strong>Full ISO/IEC 18013-5 compliance.</strong> The approach uses the existing <code>ReaderAuth</code> mechanism without modification. No changes to the standard are required. Wallet implementations that already support <code>ReaderAuth</code> for WRP (Wallet-Relying Parties) interactions can reuse the same code path with a different certificate type.</p>
+</li>
+<li>
+<p><strong>Reuse of existing LoTE-based trust anchor distribution.</strong> The Wallet Provider's certificate used for signing Wallet Unit Attestations (WIAs and KAs) is already published in the Wallet Provider LoTE. The same LoTE can be used to distribute trust anchors for WUAC validation, so no new trust anchor distribution channel is needed.</p>
+</li>
+</ol>
+<h4 id="413-disadvantages">4.1.3 Disadvantages<a class="headerlink" href="#413-disadvantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Additional operational burden on Wallet Providers.</strong> Wallet Providers must issue and manage WUACs as a second class of credential alongside JWT-based WUAs (WIAs and KAs). This entails operating an additional certificate issuance endpoint and handling WUAC renewal on Wallet Units.</p>
+</li>
+<li>
+<p><strong>CRL infrastructure required.</strong> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, Annex B requires a CRL Distribution Points extension in reader authentication certificates. Wallet Providers must therefore operate and maintain a publicly accessible CRL endpoint for WUACs. This is infrastructure that does not exist for JWT-based WUAs (WIAs and KAs), whose revocation is handled through the attestation status list mechanism. The CRL must be accessible to all Holder Wallet Units that may need to validate a WUAC, including across borders and Wallet Provider boundaries.</p>
+</li>
+<li>
+<p><strong>Certificate lifecycle management.</strong> Short-lived WUACs require frequent re-issuance. Wallet Units must obtain renewed certificates before expiry, which requires connectivity at intervals aligned with the validity period. A rotation and renewal strategy -- including behaviour during offline periods -- must be defined.</p>
+</li>
+<li>
+<p><strong>Linkability risk from certificate reuse.</strong> A WUAC reused across multiple W2W sessions is linkable by its public key and signature. The Subject contains only the Wallet Provider and Wallet Solution names, so individual Users within the same Wallet Solution cannot be distinguished from one another through the certificate fields alone. Tracking a person across encounters in physical proximity is already possible by non-cryptographic means (for example, visual recognition by a single observer present at each encounter). However, the WUAC enables tracking across encounters that share no common physical observer: multiple Verifiers can collaborate after the fact to correlate their sessions with the same Holder by comparing the WUAC public keys they have seen. The risk can be mitigated by issuing a fresh WUAC with a new key pair for each session, at the cost of increased issuance frequency and an online round-trip before each interaction.</p>
+</li>
+</ol>
+<p><em>It should be noted that a short-lived WUAC variant could reduce the impact of Point 2 by relying on expiry rather than active revocation, at the cost of amplifying Point 1 through more frequent issuance. This would however not follow <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> Annex B CRL Distribution Points requirement.</em></p>
+<h3 id="42-approach-b-verifier-pid-presentation-as-extension-to-isoiec-18013-5">4.2 Approach B: Verifier PID Presentation as Extension to ISO/IEC 18013-5<a class="headerlink" href="#42-approach-b-verifier-pid-presentation-as-extension-to-isoiec-18013-5" title="Link to this section">&para;</a></h3>
+<h4 id="421-description">4.2.1 Description<a class="headerlink" href="#421-description" title="Link to this section">&para;</a></h4>
+<p>In this approach, the W2W protocol is extended so that the Verifier Wallet Unit presents its own PID to the Holder Wallet Unit together with the presentation request. This requires an extension to <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> to allow a presentation to be carried in the same flow as a request, in addition to the response. Compared with the reversed prior flow described in Section 2.1, this approach provides a stronger guarantee: because the Verifier PID presentation is carried within the same protocol session as the mdoc request, the Verifier authentication is cryptographically bound to the subsequent request. In the reversed prior flow, by contrast, the Verifier authentication and the main W2W interaction are two separate protocol runs, which leaves open the possibility that a malicious Verifier authenticates using one application (for example, a genuine EUDI Wallet Unit) and then sends the actual presentation request from a different application.</p>
+<p>When the request arrives at the Holder Wallet Unit, the embedded PID presentation is validated against the PID Provider trust anchors in the corresponding LoTE. If validation succeeds, the Holder is prompted to approve the disclosure, and the approval UI displays the Verifier's identity (as derived from the validated PID). If validation fails, the interaction is aborted. The approach can be specified as mandatory (a Verifier PID presentation is always required) or as a Holder-initiated option (the Holder Wallet Unit can require the Verifier to present a PID before proceeding).</p>
+<p>Because PIDs are issued only to genuine EUDI Wallet Units and, under the revocation chaining requirement from Topic C, the PID Provider is obligated to revoke a PID when the underlying Wallet Instance or WSCD/keystore is revoked, successful validation of a non-revoked PID also guarantees the Holder that the Verifier device is a genuine, non-revoked EUDI Wallet Unit. A Verifier PID presentation therefore authenticates both the Verifier as a person and the Verifier device as a genuine Wallet Unit in a single step.</p>
+<p>It should be noted that the Verifier can make a PID presentation without disclosing any PID attributes. The issuer signature and the device authentication are sufficient for the Holder Wallet Unit to verify that the Verifier holds a valid, non-revoked PID -- and therefore operates a genuine EUDI Wallet Unit -- without learning anything about the Verifier's identity. The Verifier can thus choose to present zero attributes (proving only device genuinity), a minimal set of attributes, or a fuller set, depending on the use case and the Verifier's willingness to disclose.</p>
+<h4 id="422-advantages">4.2.2 Advantages<a class="headerlink" href="#422-advantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>No new certificate infrastructure.</strong> The approach does not require Wallet Providers to issue or manage a new class of certificate, and no new CRL or OCSP services are required.</p>
+</li>
+<li>
+<p><strong>Authentication of the Verifier as a person.</strong> The Holder learns the identity of the Verifier (subject to selective disclosure of the PID), which is a stronger basis for the consent decision than knowing only that the device is a genuine Wallet Unit.</p>
+</li>
+<li>
+<p><strong>No additional linkability.</strong> The privacy properties of the PID presentation are governed by the existing PID specification and selective disclosure mechanisms; no new linkability vector is introduced beyond what a normal PID presentation already involves.</p>
+</li>
+</ol>
+<h4 id="423-disadvantages">4.2.3 Disadvantages<a class="headerlink" href="#423-disadvantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Requires an extension to ISO/IEC 18013-5.</strong> Carrying a Verifier PID presentation in the same flow as the mdoc request is not part of the current standard, so adoption of this approach depends on a corresponding extension to ISO/IEC 18013-5.</p>
+</li>
+<li>
+<p><strong>Higher protocol complexity.</strong> Combining a request and a presentation in one flow increases the complexity of the W2W exchange and of the wallet implementations.</p>
+</li>
+<li>
+<p><strong>Increased user interaction.</strong> The Verifier must approve a PID presentation in order to make a request. This adds a step to every W2W interaction in which the Verifier acts. Moreover, for selective disclosure to be meaningful, the Verifier must be given the opportunity to indicate which PID attributes to include in the presentation. The Verifier must also be able to refuse presenting any PID attributes altogether.</p>
+</li>
+<li>
+<p><strong>Verifier privacy.</strong> A Verifier PID presentation requires the Verifier to disclose person identification data in order to make a request, which may be disproportionate for use cases where the Verifier does not need to be identified personally (for example, casual age verification at the door of a private event). Since PIDs are selectively disclosable, the Verifier Wallet Unit can in principle give the Verifier the option to choose which PID attributes to include in the presentation, which mitigates this concern.</p>
+</li>
+<li>
+<p><strong>Verifier PID is disclosed before the Holder is authenticated.</strong> The Verifier Wallet Unit transmits the Verifier's PID together with the presentation request, i.e., before the Holder Wallet Unit has been cryptographically authenticated as a genuine, non-revoked EUDI Wallet Unit. The Verifier therefore discloses person identification data to a device whose genuinity has not been established at the point of disclosure.</p>
+</li>
+<li>
+<p><strong>PID consumption in batch-issued architectures.</strong> The Verifier's PID presentation consumes one PID from the batch on every W2W interaction in which the Verifier acts, even though no PID presentation may have been planned.</p>
+</li>
+</ol>
+<h3 id="43-approach-c-session-bound-reversed-prior-flow">4.3 Approach C: Session-Bound Reversed Prior Flow<a class="headerlink" href="#43-approach-c-session-bound-reversed-prior-flow" title="Link to this section">&para;</a></h3>
+<h4 id="431-description">4.3.1 Description<a class="headerlink" href="#431-description" title="Link to this section">&para;</a></h4>
+<p>This approach starts from the reversed prior flow described in Section 2.1 and addresses its session-binding weakness by cryptographically tying the two protocol runs together. As in the reversed prior flow, the Verifier first presents a PID to the Holder in a reversed ISO/IEC 18013-5 protocol run; the main W2W interaction (in which the Holder presents to the Verifier) then follows as a second run. The difference is that a session-binding mechanism ensures the Holder Wallet Unit can verify that the same application performed both runs, preventing a malicious Verifier from authenticating with a genuine EUDI Wallet Unit in the first run and then switching to a different application for the second.</p>
+<p>Two candidate session-binding mechanisms have been identified:</p>
+<ol>
+<li>
+<p><strong>Proof of knowledge of the first session's key material.</strong> After the first (reversed) protocol run, the Verifier Wallet Unit retains the session key SKDevice (see <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, Section 9.1.1.5) it derived when acting as the mdoc. In the second (main) protocol run, the Verifier Wallet Unit includes a proof of knowledge of this key -- for example, an HMAC keyed with SKDevice -- in the device request. The Holder Wallet Unit, which also derived SKDevice during the first run (acting as the mdoc reader), verifies this HMAC before proceeding. (Note: this is not a zero-knowledge proof; both parties derived the same session keys during the first run.) Because SKDevice is derived via ECDH from the ephemeral private keys of both parties, a second application on the Verifier's device cannot obtain it even if it intercepts the plaintext device engagement or session establishment messages, which contain only public keys. This requires specifying an additional field in the device request.</p>
+</li>
+<li>
+<p><strong>Reuse of the same ephemeral public key across both runs.</strong> The Verifier Wallet Unit uses the same ephemeral public key when acting as the mdoc in the first run and as the mdoc reader in the second run. The Holder Wallet Unit checks that the key matches. This avoids introducing new protocol fields, but the reuse of an ephemeral key across two different protocol runs is cryptographically unorthodox and requires further scrutiny.</p>
+</li>
+</ol>
+<p><em>Note: The session-binding mechanisms described above are preliminary proposals. Further cryptographic analysis is required to establish their soundness, in particular regarding the security properties of the key material reused or derived across the two protocol runs.</em></p>
+<p>As with Approach B, the PID revocation chaining argument applies: successful validation of a non-revoked PID in the first run guarantees the Holder that the Verifier device is a genuine, non-revoked EUDI Wallet Unit, and simultaneously identifies the Verifier as a person. As noted in Section 4.2.1, the Verifier can also make a PID presentation without disclosing any attributes, proving only device genuinity without revealing the Verifier's identity.</p>
+<h4 id="432-advantages">4.3.2 Advantages<a class="headerlink" href="#432-advantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>No new certificate infrastructure.</strong> The approach does not require Wallet Providers to issue or manage a new class of certificate, and no new CRL or OCSP services are required.</p>
+</li>
+<li>
+<p><strong>Authenticates both the Verifier Wallet Unit and the Verifier as a person.</strong> Like Approach B, the PID presentation authenticates the Verifier device as genuine (via revocation chaining) and identifies the Verifier (via the PID).</p>
+</li>
+<li>
+<p><strong>Smaller protocol extension than Approach B.</strong> The extension is limited to a session-binding field or a key-reuse constraint between two standard ISO/IEC 18013-5 runs, rather than embedding a full presentation in the mdoc request.</p>
+</li>
+<li>
+<p><strong>Reuses existing wallet logic.</strong> Both protocol runs are standard ISO/IEC 18013-5 sessions; the only addition is the session-binding verification.</p>
+</li>
+</ol>
+<h4 id="433-disadvantages">4.3.3 Disadvantages<a class="headerlink" href="#433-disadvantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Difficult user flow.</strong> Both Wallet Units need to know they are participating in a two-phase reversed prior flow. This is not visible from the ISO/IEC 18013-5 protocol messages themselves; the respective Users must explicitly tell their Wallet Units (for example, by selecting a specific mode). The resulting interaction -- select reversed-flow mode, Verifier presents PID, switch roles, Verifier sends request -- is considerably more complex than a single-run W2W flow and may be confusing for Users.</p>
+</li>
+<li>
+<p><strong>Two sequential protocol runs increase interaction time.</strong> The W2W interaction requires two full ISO/IEC 18013-5 sessions to be established and completed, including two separate BLE handshakes and device engagements. This roughly doubles the time required compared to a single-run approach.</p>
+</li>
+<li>
+<p><strong>Verifier must approve a PID disclosure.</strong> As in Approach B, the Verifier must approve the PID presentation in the first (reversed) run. This adds a step to every W2W interaction.</p>
+</li>
+<li>
+<p><strong>Verifier privacy.</strong> As in Approach B, the Verifier is required to disclose person identification data in order to make a request. Selective disclosure of PID attributes can mitigate this concern.</p>
+</li>
+<li>
+<p><strong>Verifier PID is disclosed before the Holder is authenticated.</strong> The Verifier presents the PID in the first (reversed) run, at which point the Holder Wallet Unit has not been cryptographically authenticated as a genuine EUDI Wallet Unit.</p>
+</li>
+<li>
+<p><strong>Requires a protocol extension for the session-binding mechanism.</strong> Although smaller than the extension required by Approach B, the session-binding mechanism (whether a new field or a key-reuse constraint) requires specification and implementation work.</p>
+</li>
+<li>
+<p><strong>PID consumption in batch-issued architectures.</strong> As in Approach B, the Verifier's PID presentation in the first (reversed) run consumes one PID from the batch on every W2W interaction, even though no PID presentation may have been planned.</p>
+</li>
+</ol>
+<h3 id="44-approach-d-wallet-instance-attestation-as-reader-authentication-material">4.4 Approach D: Wallet Instance Attestation as Reader Authentication Material<a class="headerlink" href="#44-approach-d-wallet-instance-attestation-as-reader-authentication-material" title="Link to this section">&para;</a></h3>
+<h4 id="441-description">4.4.1 Description<a class="headerlink" href="#441-description" title="Link to this section">&para;</a></h4>
+<p>In this approach, the Verifier Wallet Unit authenticates itself to the Holder Wallet Unit by presenting its Wallet Instance Attestation (WIA) -- the JWT issued by the Wallet Provider as defined in [Technical Specification 3] -- together with a signature over the ISO/IEC 18013-5 session transcript, produced with the private key corresponding to the public key in the WIA's <code>cnf</code> claim. This is structurally analogous to the Proof-of-Possession pattern that accompanies a WIA during credential issuance, repurposed as a reader authentication mechanism in the proximity context.</p>
+<p>The Holder Wallet Unit validates the WIA signature against the Wallet Provider trust anchors published in the Wallet Provider LoTE (the same LoTE already used for WIA validation during credential issuance), validates the Wallet Instance status via the status list mechanism defined in [Technical Specification 3], and verifies the session-transcript signature using the <code>cnf</code> public key. If any of these checks fails, the interaction is aborted; otherwise, the approval UI indicates that the Verifier has been authenticated as a valid EUDI Wallet Unit and identifies the Wallet Provider.</p>
+<p><strong>Wire-format sketch.</strong> Carrying a WIA and a session-transcript signature in a W2W mdoc request requires an extension to <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>. Three candidate placements have been identified:</p>
+<ul>
+<li>
+<p><strong>(i) A new optional field in the device request.</strong> The WIA and the session-transcript signature are carried in a new CBOR field added to the device request (for example, <code>verifierWalletAttestation</code>), separate from the existing <code>ReaderAuth</code> field. The <code>ReaderAuth</code> field remains unused in W2W (STS9_30 is relaxed from an absolute prohibition to: "SHALL NOT include <code>ReaderAuth</code>; MAY include <code>verifierWalletAttestation</code>"). A CBOR decoder implementing vanilla <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> tolerates unknown map keys and ignores the new field; vanilla mdoc readers do not populate it. A W2W-capable Holder Wallet Unit that supports the extension processes the field and applies the requirements of <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a>.</p>
+</li>
+<li>
+<p><strong>(ii) A new unprotected COSE header inside <code>ReaderAuth</code>.</strong> The prohibition on <code>ReaderAuth</code> in W2W is lifted, and the WIA is carried in a new unprotected COSE header (for example, labelled <code>wia</code>) inside the <code>ReaderAuth</code> COSE_Sign1 structure. The COSE_Sign1 signature is computed with the <code>cnf</code> private key over the session transcript, as <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> already specifies. The validation path, however, differs: instead of chaining the signing key to an X.509 root via <code>x5chain</code>, the Holder Wallet Unit chains it to the Wallet Provider via the WIA.</p>
+</li>
+<li>
+<p><strong>(iii) WIA bound to a reader-auth certificate via <code>cnf.x5c</code>.</strong> The Wallet Provider issues a WIA whose <code>cnf</code> claim is a JWK that includes the standard <code>x5c</code> member ([RFC 7517], Section 4.7) carrying an X.509 reader-authentication certificate. The Verifier Wallet Unit signs the session transcript with the corresponding private key, populates <code>x5chain</code> in the unprotected COSE header of <code>ReaderAuth</code> with the same certificate, and adds an EUDI-defined <code>wia</code> attribute (for example, an additional unprotected COSE header) carrying the WIA JWT itself. A vanilla mdoc reader validates <code>ReaderAuth</code> along the standard <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> path: it chains <code>x5chain</code> to a configured trust anchor and verifies the signature. An EUDI-aware Holder Wallet Unit additionally validates the WIA against the Wallet Provider trust anchors in the LoTE, confirms that <code>cnf.x5c</code> matches the certificate in <code>x5chain</code>, and checks the WIA's status via the attestation status list defined in [Technical Specification 3]. The reader-authentication certificate profile is at the discretion of the EUDI ecosystem: the recommended profile in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, Annex B.1.7 may be followed (which mandates <code>CRLDistributionPoints</code>), or a leaner profile may be defined that uses the WIA's attestation status list as the revocation channel and omits CRL DP. Since B.1.7 is recommended, not mandatory, for <code>ReaderAuth</code> (per <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, Annex B.1.1), the latter remains conformant to clause 9.1.4 of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>.</p>
+</li>
+</ul>
+<p>The three placements differ along two dimensions: whether they preserve interoperability with wallets implementing vanilla <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, and whether they require the Wallet Provider to issue X.509 reader-authentication certificates.</p>
+<p>Placement (i) avoids the X.509 trust hierarchy entirely and depends purely on the WIA. Vanilla mdocs ignore the additive field and treat the request as unauthenticated. Placement (ii) keeps the WIA inside <code>ReaderAuth</code> but omits <code>x5chain</code>, leaving a vanilla mdoc with no certificate to validate; vanilla interoperability is therefore not preserved in practice. Placement (iii) populates both <code>x5chain</code> and a <code>wia</code> attribute: a vanilla mdoc reader validates <code>ReaderAuth</code> exactly as today, while an EUDI-aware reader additionally consumes the WIA. Placement (iii) gives the strongest vanilla interoperability. It requires the Wallet Provider to issue an X.509 reader-authentication certificate alongside each WIA, but the marginal operational cost over the existing WIA issuance is modest, since the WIA infrastructure (signing key, issuance pipeline, lifecycle, trust-anchor publication via the Wallet Provider LoTE, and the attestation status list as revocation channel) is reused. Because B.1.7 is recommended rather than mandatory for <code>ReaderAuth</code>, an EUDI-defined certificate profile that relies on the WIA's attestation status list as the revocation channel and omits CRL Distribution Points remains conformant to clause 9.1.4 of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>, so no separate CRL service is required. See disadvantage 5 in <a href="#443-disadvantages">Section 4.4.3</a> for a fuller discussion.</p>
+<p>The choice between placements (i) and (iii) reflects the same trade-off that distinguishes Approach A from a pure-WIA approach, exposed here as two placements within Approach D: avoid X.509 issuance entirely, or extend the existing WIA issuance pipeline to also produce a bound X.509 reader-authentication certificate so that vanilla <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> readers can validate <code>ReaderAuth</code>. Placement (ii) is retained for completeness but is dominated by placement (iii) once <code>cnf.x5c</code> is used to bind the WIA to a certificate.</p>
+<p><strong>Relationship to [Technical Specification 3].</strong> [Technical Specification 3] currently scopes WIAs to the flows by which Wallet Units obtain PIDs and Attestations from credential issuers. Using a WIA as reader authentication material in a W2W proximity context is a new usage and requires a corresponding update to [Technical Specification 3] to permit this use. No new type of WIA is required: the binding between the WIA and the Verifier Wallet Unit's private key (via the <code>cnf</code> claim) combined with the session-transcript signature ensures that a WIA captured from a credential-issuance flow cannot be replayed as reader authentication in a W2W interaction, since a party that does not hold the <code>cnf</code> private key cannot produce the required signature over the session transcript.</p>
+<h4 id="442-advantages">4.4.2 Advantages<a class="headerlink" href="#442-advantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Reuses existing Wallet Unit Attestation infrastructure.</strong> WIAs are already issued by Wallet Providers for credential issuance. No new class of credential, no new trust model, and no new CA hierarchy is introduced.</p>
+</li>
+<li>
+<p><strong>No new CRL infrastructure required.</strong> WIA revocation is handled via the existing attestation status list mechanism mandated for Wallet Unit Attestations. In contrast to Approach A, no public CRL endpoint needs to be operated for W2W reader authentication.</p>
+</li>
+<li>
+<p><strong>Reuse of LoTE-based trust anchor distribution.</strong> Wallet Provider signing keys used to sign WIAs are already published in the Wallet Provider LoTE, so no new trust anchor distribution channel is needed.</p>
+</li>
+<li>
+<p><strong>Low Verifier privacy impact.</strong> No personal data of the Verifier is disclosed. The authentication asserts only that the device is a genuine Wallet Unit operated by a recognised Wallet Provider.</p>
+</li>
+<li>
+<p><strong>Vanilla ISO/IEC 18013-5 interoperability under placements (i) and (iii).</strong> Under placement (i), the WIA-bearing field is additive and vanilla decoders ignore it; vanilla mdocs treat the request as unauthenticated, and a W2W-capable Holder Wallet Unit processing a request from a vanilla reader sees no WIA, which triggers the verification-failure branch of the <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a> requirements (notify the User, and either not present the requested attributes or give the User the choice). Under placement (iii), vanilla mdoc readers validate <code>ReaderAuth</code> exactly as <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> specifies, with the <code>x5chain</code> certificate chaining to a configured trust anchor; EUDI-aware readers additionally validate the WIA. Placement (ii) does not preserve vanilla interoperability and is retained only for completeness.</p>
+</li>
+</ol>
+<h4 id="443-disadvantages">4.4.3 Disadvantages<a class="headerlink" href="#443-disadvantages" title="Link to this section">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Requires an extension to ISO/IEC 18013-5.</strong> Even under the backward-compatible placement (i), the device-request schema is extended with a new optional field, and the semantics of the extension need to be standardised alongside <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a>.</p>
+</li>
+<li>
+<p><strong>Requires an extension to [Technical Specification 3].</strong> The scope of [Technical Specification 3] needs to be widened so that WIAs are permitted for use as W2W reader authentication material, in addition to their current use in credential issuance.</p>
+</li>
+<li>
+<p><strong>Linkability risk from WIA reuse.</strong> A WIA reused across multiple W2W sessions is linkable by the Wallet Provider signature and by the <code>cnf</code> public key. As in Approach A, tracking a person across encounters in physical proximity is already possible by non-cryptographic means (for example, visual recognition by a single observer present at each encounter). However, the WIA enables tracking across encounters that share no common physical observer: multiple Verifiers can collaborate after the fact to correlate their sessions with the same Holder by comparing the WIAs they have seen. The risk can be mitigated by obtaining a fresh WIA with a new key pair for each session, at the cost of increased issuance frequency and an online round-trip before each interaction.</p>
+</li>
+<li>
+<p><strong>Limits of authentication.</strong> As with Approach A, the mechanism confirms that the Verifier device is a genuine Wallet Unit but does not authenticate the Verifier as a person, and cannot prevent out-of-band capture of disclosed attributes.</p>
+</li>
+<li>
+<p><strong>Under placement (iii), Wallet Providers also issue X.509 reader-authentication certificates.</strong> Placement (iii) requires the Wallet Provider to embed an X.509 reader-authentication certificate in the WIA's <code>cnf.x5c</code>. The marginal cost relative to existing WIA issuance is modest: a Wallet Provider already operates a signing key, an issuance pipeline, a short-lived credential lifecycle, a trust-anchor publication mechanism (the Wallet Provider LoTE), and a revocation channel (the attestation status list defined in [Technical Specification 3]). Placement (iii) reuses all of these. What is added is the cert profile and DER-encoded X.509 generation alongside the WIA, both ship-once design artefacts rather than ongoing infrastructure. Concretely, no new revocation feed is needed: the WIA's attestation status list serves as the revocation channel for the bound certificate. Since <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a> Annex B.1.7 is recommended (not mandatory) for <code>ReaderAuth</code>, an EUDI-defined certificate profile that omits <code>CRLDistributionPoints</code> and relies on the WIA's status list is conformant to clause 9.1.4. The genuinely additional concern is exposing the Wallet Provider's CA root to vanilla mdoc readers (which consume X.509-style trust lists rather than the Wallet Provider LoTE); this is a trust-framework-level coordination question, the same one Approach A would face, and it is the principal difference in cost between placement (i) and placement (iii). Vanilla mdoc readers may in practice still expect B.1.7-compliant certificates, which limits how aggressively the profile can be slimmed down without sacrificing interoperability.</p>
+</li>
+</ol>
+<h3 id="45-comparison">4.5 Comparison<a class="headerlink" href="#45-comparison" title="Link to this section">&para;</a></h3>
+<p>The four approaches differ along several dimensions. The following table summarises the comparison.</p>
+<p>Offline capability has not been included as a criterion. The Wallet Units initially deployed are expected to use a remote HSM as their WSCD, so Wallet Unit operation requires network connectivity in any case; the distinction between online and offline presentations therefore does not initially apply in practice.</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Approach A (WUAC)</th>
+<th>Approach B (Verifier PID in request)</th>
+<th>Approach C (Session-bound reversed flow)</th>
+<th>Approach D (WIA as reader auth)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What is authenticated</td>
+<td>The Verifier Wallet Unit (genuinity)</td>
+<td>Both the Verifier Wallet Unit (genuinity, via PID revocation chaining) and the Verifier as a person</td>
+<td>Both the Verifier Wallet Unit (genuinity, via PID revocation chaining) and the Verifier as a person</td>
+<td>The Verifier Wallet Unit (genuinity)</td>
+</tr>
+<tr>
+<td>Standards impact</td>
+<td>None (uses existing <code>ReaderAuth</code>)</td>
+<td>Requires extension of ISO/IEC 18013-5</td>
+<td>Small extension (session-binding field or key-reuse constraint)</td>
+<td>Additive extension of ISO/IEC 18013-5 (vanilla compatibility under placements (i) and (iii)) and a small extension of [Technical Specification 3]. Under placement (iii) the reader-auth certificate profile is at the EUDI ecosystem's discretion, since B.1.7 is recommended (not mandatory) for <code>ReaderAuth</code>.</td>
+</tr>
+<tr>
+<td>New infrastructure for Wallet Providers</td>
+<td>Yes (WUAC issuance endpoint and CRL service)</td>
+<td>No</td>
+<td>No</td>
+<td>Depends on placement: under (i)/(ii), no new infrastructure; under (iii), the existing WIA issuance pipeline is extended to also produce an X.509 reader-authentication certificate bound via <code>cnf.x5c</code>, with the WIA's attestation status list serving as the revocation channel.</td>
+</tr>
+<tr>
+<td>Reuse of existing LoTE-based trust anchor distribution</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Reuse of existing wallet logic</td>
+<td><code>ReaderAuth</code> code path already used for WRP interactions</td>
+<td>Existing attestation presentation and validation logic</td>
+<td>Existing ISO/IEC 18013-5 protocol (run twice)</td>
+<td>Existing WIA issuance and validation logic; a new reader-authentication path is added</td>
+</tr>
+<tr>
+<td>Protocol complexity</td>
+<td>Low (one additional field in the mdoc request)</td>
+<td>Higher (request and presentation combined in one flow)</td>
+<td>Higher (two sequential protocol runs + session binding)</td>
+<td>Moderate (new additive field carrying WIA plus transcript signature)</td>
+</tr>
+<tr>
+<td>User interaction complexity</td>
+<td>Low (no additional steps for the User)</td>
+<td>Moderate (Verifier must approve a PID presentation)</td>
+<td>High (two-phase flow; both Users must select a specific mode and switch roles)</td>
+<td>Low (no additional steps for the User)</td>
+</tr>
+<tr>
+<td>Verifier privacy impact</td>
+<td>Low (no personal data of the Verifier disclosed)</td>
+<td>High (PID disclosure required; mitigable through selective disclosure)</td>
+<td>High (PID disclosure required; mitigable through selective disclosure)</td>
+<td>Low (no personal data of the Verifier disclosed)</td>
+</tr>
+<tr>
+<td>Linkability of the Verifier</td>
+<td>Moderate; mitigable through fresh certificates per session</td>
+<td>Same as for a normal PID presentation</td>
+<td>Same as for a normal PID presentation</td>
+<td>Moderate; mitigable through fresh WIAs per session</td>
+</tr>
+<tr>
+<td>Verifier discloses data before the Holder is authenticated</td>
+<td>No (no Verifier data disclosed)</td>
+<td>Yes (Verifier PID is sent together with the request)</td>
+<td>Yes (Verifier PID is presented in the reversed first run)</td>
+<td>No (no Verifier data disclosed)</td>
+</tr>
+</tbody>
+</table>
+<p>Whether any of the approaches should be mandatory, optional, or conditional, and whether a combined model is appropriate, are open questions for Member State discussion.</p>
+<h2 id="5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2">5 Proposed Additions and Changes to HLRs in ARF Annex 2<a class="headerlink" href="#5-proposed-additions-and-changes-to-hlrs-in-arf-annex-2" title="Link to this section">&para;</a></h2>
+<p>This chapter turns the candidate phrasings presented in <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a> into concrete proposed HLRs for ARF Annex 2. The HLRs are formulated at the SHOULD level, consistent with the position developed in <a href="#32-proposed-high-level-requirement-for-discussion">Section 3.2</a>; their strength may be revisited once a technical approach is selected.</p>
+<h3 id="51-new-hlrs-to-be-added-to-topic-30">5.1 New HLRs to be added to Topic 30<a class="headerlink" href="#51-new-hlrs-to-be-added-to-topic-30" title="Link to this section">&para;</a></h3>
+<p>The following three HLRs are proposed for addition to Topic 30 (Interaction between Wallet Units) of Annex 2 of ARF v2.8.0. Indexing continues from the current last entry in that version (W2W_22).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W2W_23</td>
+<td>When sending a presentation request to a Holder Wallet Unit, a Verifier Wallet Unit SHALL include in that request a cryptographic proof of its authenticity and validity, bound to the protocol session in which the presentation request is sent.</td>
+</tr>
+<tr>
+<td>W2W_24</td>
+<td>Before presenting a received presentation request to the Holder, a Holder Wallet Unit SHALL, within the same protocol session as the presentation request, cryptographically verify that the Verifier Wallet Unit is a genuine, non-revoked EUDI Wallet Unit operated by a recognised Wallet Provider.</td>
+</tr>
+<tr>
+<td>W2W_25</td>
+<td>If the verification required by W2W_24 fails or cannot be performed, a Holder Wallet Unit SHALL notify the User. In addition, the Wallet Unit SHALL either not present the requested attributes to the Verifier Wallet Unit, or give the User the choice to present the requested attributes or not. Note: It is up to the Wallet Provider to make a choice for one of these two options.</td>
+</tr>
+</tbody>
+</table>
+<p>These HLRs are mechanism-agnostic: they fix the assurance objective (genuine, non-revoked Verifier Wallet Unit, verified within the same protocol session) without prescribing how the cryptographic proof is constructed. <a href="#4-technical-approaches">Chapter 4</a> describes four candidate mechanisms and their respective trade-offs.</p>
+<h3 id="52-existing-hlrs">5.2 Existing HLRs<a class="headerlink" href="#52-existing-hlrs" title="Link to this section">&para;</a></h3>
+<p>No existing HLR in Topic 30 requires modification. The three HLRs above are additive and do not conflict with W2W_01 to W2W_22. </p>
+<h2 id="6-references">6 References<a class="headerlink" href="#6-references" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ARF_DevPlan]</td>
+<td>Architecture and Reference Framework Maintenance and Development Workplan for 2026, European Commission</td>
+</tr>
+<tr>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a></td>
+<td>Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84" title="ISO/IEC 18013-5, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application">ISO/IEC 18013-5</a></td>
+<td>ISO/IEC 18013-5:2021, Personal identification - ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application</td>
+</tr>
+<tr>
+<td>[RFC 7517]</td>
+<td>Jones, M., "JSON Web Key (JWK)", RFC 7517, May 2015</td>
+</tr>
+<tr>
+<td>[Technical Specification 3]</td>
+<td>Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations, v1.5, 2026-03-15</td>
+</tr>
+<tr>
+<td>[Technical Specification 9]</td>
+<td>Specification of Wallet to Wallet Interactions, v1.0.1, 2026-01-30</td>
+</tr>
+</tbody>
+</table>
+<!-- Auto-generated from Section 10 (References) of the ARF main
+     document by tools/gen_references.py. Do not edit by hand.
+     Appended to every page via pymdownx.snippets auto_append. -->
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-06-10T12:43:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-06-10</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-04-20T19:36:11+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-04-20</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../j-wallet-to-wallet-interactions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: J - Wallet to Wallet Interactions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                J - Wallet to Wallet Interactions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../k-combined-presentation-of-attestations/" class="md-footer__link md-footer__link--next" aria-label="Next: K - Combined presentation of Attestations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                K - Combined presentation of Attestations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © European Commission, 2026. Licensed under CC BY 4.0.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>

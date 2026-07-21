@@ -1,0 +1,191 @@
+/* ============================================================
+   EUDI Wallet — shared documentation theme
+   Material for MkDocs · official EC brand colours (Europa Component Library)
+   Canonical file: copy verbatim into each repo (see README).
+   Primary blue  #004494  · Accent/EU yellow  #ffd617
+   ============================================================ */
+
+:root {
+  --eudi-blue:       #004494;  /* EC primary (ECL) */
+  --eudi-blue-700:   #003776;
+  --eudi-blue-dark:  #002554;
+  --eudi-blue-vivid: #1f5fd1;
+  --eudi-link:       #0e63c4;
+  --eudi-yellow:     #ffd617;  /* EC yellow */
+  --eudi-yellow-ink: #3a3000;
+}
+
+/* ---- Brand palette wiring (mkdocs: palette primary/accent = custom) ---- */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color:        var(--eudi-blue);
+  --md-primary-fg-color--light: var(--eudi-blue-vivid);
+  --md-primary-fg-color--dark:  var(--eudi-blue-dark);
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, .72);
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--eudi-link);
+}
+
+/* Link colour, per scheme */
+[data-md-color-scheme="default"] { --md-typeset-a-color: var(--eudi-link); }
+[data-md-color-scheme="slate"]   { --md-typeset-a-color: #71a8ff; }
+
+/* ---- Logo sizing (preserved from existing theme) ---- */
+.md-header__button.md-logo { margin: 0; padding: 0; }
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg { height: 2.7rem; }
+
+/* ============================================================
+   Tabs
+   ============================================================ */
+.md-tabs { border-bottom: 3px solid var(--eudi-yellow); }
+.md-tabs__link { opacity: .85; transition: opacity .15s; }
+.md-tabs__link:hover,
+.md-tabs__item--active .md-tabs__link { opacity: 1; }
+.md-tabs__item--active { background: var(--eudi-yellow); }
+.md-tabs__item--active .md-tabs__link { color: var(--eudi-blue) !important; font-weight: 700; }
+.md-tabs__item:not(.md-tabs__item--active):hover { background: rgba(255,255,255,.1); }
+
+/* ============================================================
+   Tables — branded header, zebra rows, soft corners
+   ============================================================ */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.md-typeset table:not([class]) th {
+  background: var(--eudi-blue);
+  color: #fff;
+  font-weight: 600;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th { background: var(--eudi-blue-dark); }
+.md-typeset table:not([class]) tr:nth-child(even) { background: var(--md-default-fg-color--lightest); }
+
+/* Helper for very wide tables (kept from docs-site) */
+.responsive-table { width: 100%; display: block; overflow-x: auto; white-space: nowrap; }
+.responsive-table th:nth-child(1), .responsive-table td:nth-child(1) { width: 20%; }
+.responsive-table th:nth-child(2), .responsive-table td:nth-child(2) { width: 15%; }
+.responsive-table th:nth-child(3), .responsive-table td:nth-child(3) { width: 65%; }
+
+/* ============================================================
+   Code blocks & admonitions — softer corners, brand "note"
+   ============================================================ */
+.md-typeset pre > code { border-radius: 8px; }
+.md-typeset .admonition,
+.md-typeset details { border-radius: 8px; }
+
+.md-typeset .admonition.note,
+.md-typeset details.note { border-color: var(--eudi-link); }
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary { background-color: rgba(14, 99, 196, .1); }
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before { background-color: var(--eudi-link); }
+
+/* ============================================================
+   HERO  (homepage) — "Hero A": solid blue, left aligned
+   Rendered by overrides/home.html (index page only)
+   ============================================================ */
+.eudi-hero { position: relative; overflow: hidden; background: var(--eudi-blue); color: #fff; padding: 3.4rem 1.2rem 3.8rem; }
+[data-md-color-scheme="slate"] .eudi-hero { background: var(--eudi-blue-dark); }
+/* Faint full-bleed wallet logo watermark behind the hero text */
+.eudi-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("logo_eudi_white.svg") no-repeat center / 120% auto;
+  opacity: .06;
+}
+.eudi-hero__inner { position: relative; z-index: 1; max-width: 61rem; margin: 0 auto; padding: 0 .8rem; }
+.eudi-hero__eyebrow {
+  display: inline-flex; gap: .4rem; align-items: center;
+  background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 999px; padding: .25rem .85rem; font-size: .72rem; font-weight: 600; margin-bottom: 1rem;
+}
+a.eudi-hero__eyebrow { color: #fff; text-decoration: none; transition: background .15s, border-color .15s; }
+a.eudi-hero__eyebrow:hover { background: rgba(255, 255, 255, .2); border-color: rgba(255, 255, 255, .55); }
+.eudi-hero h1 { color: #fff; font-weight: 800; font-size: 2.3rem; line-height: 1.12; margin: 0 0 .7rem; max-width: 20ch; }
+.eudi-hero p  { color: rgba(255, 255, 255, .85); font-size: 1rem; max-width: 60ch; margin: 0 0 1.4rem; }
+.eudi-hero .md-button { margin: .2rem .6rem .2rem 0; }
+.eudi-hero .md-button--primary {
+  background: var(--eudi-yellow); color: var(--eudi-yellow-ink); border-color: var(--eudi-yellow);
+}
+.eudi-hero .md-button--primary:hover { filter: brightness(1.06); }
+.eudi-hero .md-button:not(.md-button--primary) { color: #fff; border-color: rgba(255, 255, 255, .5); }
+.eudi-hero .md-button:not(.md-button--primary):hover { background: rgba(255, 255, 255, .12); border-color: #fff; }
+
+/* Homepage version strip (slim release bar under the hero) */
+.md-typeset .eudi-verstrip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.1rem;
+  background: var(--md-default-fg-color--lightest);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px; padding: .55rem 1rem; margin: 0 0 1.8rem; font-size: .8rem;
+}
+.md-typeset .eudi-verstrip .dot {
+  width: .5rem; height: .5rem; border-radius: 50%; background: #2bb673;
+  display: inline-block; margin-right: .4rem;
+}
+.md-typeset .eudi-verstrip .sp { margin-left: auto; }
+
+/* ============================================================
+   Navigation cards (Material ".grid.cards")
+   "Card 4": add class .eudi-feature to a card for the filled-blue variant
+   ============================================================ */
+.eudi-home-cards { margin-top: 2.2rem; }
+.md-typeset .grid.cards > ul > li {
+  border-radius: 12px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: transform .18s, border-color .18s;
+}
+.md-typeset .grid.cards > ul > li:hover { transform: translateY(-3px); border-color: var(--eudi-blue); }
+
+.md-typeset .grid.cards > ul > li.eudi-feature {
+  background: var(--eudi-blue); border-color: var(--eudi-blue); color: #fff;
+}
+.md-typeset .grid.cards > ul > li.eudi-feature:hover { background: var(--eudi-blue-700); }
+.md-typeset .grid.cards > ul > li.eudi-feature :is(p, strong, h1, h2, h3, h4) { color: #fff; }
+.md-typeset .grid.cards > ul > li.eudi-feature a { color: var(--eudi-yellow); }
+
+/* ============================================================
+   HLR — high-level requirement callout (custom component)
+   Needs markdown_extensions: attr_list + md_in_html
+   Usage:
+     <div class="eudi-hlr" markdown>
+     <div class="eudi-hlr__id">PID_01<span>MUST</span></div>
+     <div class="eudi-hlr__body" markdown>
+     The PID Provider **shall** issue PID only at level of assurance high.
+     </div>
+     </div>
+   ============================================================ */
+.md-typeset .eudi-hlr {
+  display: grid; grid-template-columns: auto 1fr; gap: 0 1rem; align-items: stretch;
+  border: 1px solid var(--md-default-fg-color--lightest); border-radius: 10px; overflow: hidden; margin: 1rem 0;
+}
+.md-typeset .eudi-hlr__id {
+  background: var(--eudi-blue); color: #fff; font-weight: 700; padding: .8rem;
+  display: flex; flex-direction: column; gap: .3rem; align-items: center; justify-content: center;
+  min-width: 5.4rem; text-align: center;
+}
+/* Keyword badge — colour by RFC 2119 strength.
+   .kw-shall  = mandatory (SHALL / SHALL NOT / MUST)      → yellow
+   .kw-should = recommended (SHOULD / SHOULD NOT)         → white
+   .kw-may    = optional (MAY)                            → outline
+   A bare <span> (no class) defaults to the SHALL style. */
+.md-typeset .eudi-hlr__id span {
+  background: var(--eudi-yellow); color: var(--eudi-yellow-ink);
+  border-radius: 5px; padding: 0 .4rem; font-size: .6rem; font-weight: 700; letter-spacing: .02em;
+}
+.md-typeset .eudi-hlr__id span.kw-should {
+  background: #ffffff; color: var(--eudi-blue);
+}
+.md-typeset .eudi-hlr__id span.kw-may {
+  background: transparent; color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6);
+}
+.md-typeset .eudi-hlr__body { padding: .7rem 0; }
+.md-typeset .eudi-hlr__body > :first-child { margin-top: 0; }
+.md-typeset .eudi-hlr__body > :last-child  { margin-bottom: 0; }
+
+/* Legacy-ID meta line above a requirement (by-category view) */
+.md-typeset .eudi-hlr__meta {
+  font-size: .68rem; color: var(--md-default-fg-color--light);
+  text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .2rem;
+}
