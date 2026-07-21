@@ -73,6 +73,10 @@ jobs:
           echo "arf_version=${VERSION:1}" >> "$GITHUB_ENV"
 
       - name: Deploy mkdocs
+        # DISABLE_MKDOCS_2_WARNING: keep Material for MkDocs' MkDocs-2.0
+        # deprecation notice out of the deploy log.
+        env:
+          DISABLE_MKDOCS_2_WARNING: "true"
         run: |
           mike deploy --push --update-aliases "${{ env.arf_version }}" latest
           mike set-default --allow-empty --push latest

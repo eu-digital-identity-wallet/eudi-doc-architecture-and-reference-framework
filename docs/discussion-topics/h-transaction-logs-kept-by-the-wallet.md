@@ -230,7 +230,7 @@ See chapter 4 for the proposed new text of DASH_03, DASH_03c and WIAM_12a.
 
 [European Digital Identity Regulation] (eg. Recital (19), Article 5) gives the right to Users to use pseudonyms in transactions with the Wallet.
 
-In ARF, this is addressed by the [Topic 11]. In particular, as presented in PA_08
+In ARF, this is addressed by the [Topic 11][topic-11]. In particular, as presented in PA_08
 
 | **Index** | **Requirement specification** |
 |-----------|-------------------------------|
@@ -356,7 +356,7 @@ B. Restore Requirements
 
 | **Index** | **Requirement specification** | **Proposal** |
 |-----------|-------------------------------|--------------|
-| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](#41-topic-19-user-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
+| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19][topic-19]. |    Keep as-is        |
 
 ### 4.3 Topic 16 - Signing documents with a Wallet Unit
 
@@ -426,12 +426,12 @@ See sections 4 and 5 above. In addition, transactional data related aspects in t
 |----------------------------------------|--------------------------------------------------------------|
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
 | [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
-| [Topic 11]                             | Topic 11 - Pseudonyms  |
-| [Topic 16]                             | Topic 16 - Signing documents with a Wallet Unit |
-| [Topic 19]                             | Topic 19 - User navigation requirements (Dashboard logs for transparency)  |
-| [Topic 34]                             | Topic 34 - Migrate to a different Wallet Solution  |
-| [Topic 48]                             | Topic 48 - Blueprint for requesting data deletion to Relying Parties |
-| [Topic 50]                             | Topic 50 - Blueprint to report unlawful or suspicious request of data |
+| [Topic 11][topic-11]                             | Topic 11 - Pseudonyms  |
+| [Topic 16][topic-16]                             | Topic 16 - Signing documents with a Wallet Unit |
+| [Topic 19][topic-19]                             | Topic 19 - User navigation requirements (Dashboard logs for transparency)  |
+| [Topic 34][topic-34]                             | Topic 34 - Migrate to a different Wallet Solution  |
+| [Topic 48][topic-48]                             | Topic 48 - Blueprint for requesting data deletion to Relying Parties |
+| [Topic 50][topic-50]                             | Topic 50 - Blueprint to report unlawful or suspicious request of data |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | [Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng) |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |

@@ -89,8 +89,12 @@ markdown_extensions:
       check_paths: true
 
 # ---------------- SHARED PLUGINS BLOCK (keep identical) ----------------
+hooks:
+  - hooks/main_doc_redirect.py
+
 plugins:
   - search
+  - autorefs   # resolves [Topic N][topic-N] cross-references from any page depth
   - tags
   - privacy
   - social
@@ -125,7 +129,19 @@ nav:
   - European Digital Identity Wallet: index.md
   - Architecture and Reference Framework:
       - About: about.md
-      - Main Document: architecture-and-reference-framework-main.md
+      - Main Document:
+          - main/index.md
+          - "1 Introduction": main/01-introduction.md
+          - "2 EUDI Wallet functionalities": main/02-eudi-wallet-functionalities.md
+          - "3 Roles within the EUDI Wallet ecosystem": main/03-roles-within-the-eudi-wallet-ecosystem.md
+          - "4 High-level architecture": main/04-high-level-architecture.md
+          - "5 Data model and data exchange protocols": main/05-data-model-and-data-exchange-protocols.md
+          - "6 Trust model": main/06-trust-model.md
+          - "7 Wallet Solution Certification and Risk Management": main/07-wallet-solution-certification-and-risk-management.md
+          - "8 Accessibility": main/08-accessibility.md
+          - "9 Document development": main/09-document-development.md
+          - "10 References": main/10-references.md
+          - "11 Annexes": main/11-annexes.md
       - Annexes:
           - annexes/README.md
           - annexes/annex-1/annex-1-definitions.md
@@ -184,6 +200,8 @@ nav:
       - technical-specifications/ts9-wallet-to-wallet-interactions.md
       - technical-specifications/ts10-data-portability-and-download-(export).md
       - technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes.md
-      - technical-specifications/ts12-specification-of-strong-customer-authentication-(sca)-Implementation-with-the-Wallet.md
+      - technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md
+      - technical-specifications/ts13-zksnark.md
+      - technical-specifications/ts14-zkps-from-mms.md
   - Reference Implementation: https://docs.eudi.dev/latest/
   - Functional Conformance: https://conformance.eudi.dev/latest/

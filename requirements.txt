@@ -13,3 +13,6 @@ mike==2.1.3
 # here explicitly because the generator depends on it directly.
 jinja2==3.1.6
 mkdocs-git-revision-date-localized-plugin==1.3.0
+# Resolves [Topic N][topic-N] internal cross-references from any page depth
+# (used by the HLRs and discussion topics). Pinned defensively like the rest.
+mkdocs-autorefs==1.4.4

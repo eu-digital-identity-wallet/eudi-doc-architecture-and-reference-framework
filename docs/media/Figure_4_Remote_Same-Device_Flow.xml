@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.6.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0">
   <diagram id="diagram" name="Page-1">
-    <mxGraphModel dx="259" dy="23" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+    <mxGraphModel dx="964" dy="379" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -35,7 +35,7 @@
         <mxCell id="tklJ06Eg1gI686ZZUtUN-71" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;User&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="50" x="1275" y="647" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-110" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.994;exitY=0.685;exitDx=0;exitDy=0;exitPerimeter=0;" target="11" value="Remote same-device&#xa;presentation&#xa;Digital Credentials API &#xa;+ OpenID4VP">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-110" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.994;exitY=0.685;exitDx=0;exitDy=0;exitPerimeter=0;" target="11" value="Remote same-device presentation&#xa;Digital Credentials API &#xa;+ OpenID4VP or ISO/IEC 18013-7">
           <mxGeometry relative="1" x="0.5657" as="geometry">
             <mxPoint as="offset" />
             <Array as="points" />

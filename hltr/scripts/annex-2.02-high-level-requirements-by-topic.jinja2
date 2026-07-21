@@ -11,7 +11,7 @@ subtitle: "Architecture and Reference Framework"
 
 #### A.2.1.1 Overview
 
-This annex to the [ARF main document](../../architecture-and-reference-framework-main.md)
+This annex to the [ARF main document](../../main/index.md)
 includes high-level requirements (HLRs) related to the EUDI Wallet ecosystem.
 The requirements define the responsible actor that should implement each
 requirement. There are no requirements imposed on the Users.
@@ -42,6 +42,7 @@ is anchorable: link directly to it with `#<identifier>`, e.g. `#ISSU_10`.
 ### A.2.3 High-Level Requirements
 {% for topic in requirements %}
 
+[](){ #topic-{{ topic }} }
 #### A.2.3.{{ loop.index }} {{requirements[topic]['topic']}}
 {% for subsection in requirements[topic] %}
 {% if subsection != "topic" %}

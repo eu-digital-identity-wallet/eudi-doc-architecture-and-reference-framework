@@ -29,7 +29,7 @@ every pull request whose **target branch** is:
 
 GitHub runs a PR's workflow from its **target branch's** copy of `ci.yml`, so a
 branch is only gated once that branch carries these triggers and the gate
-tooling. `main`, `feature/2.10.0` and `review/2.10.0` are set up; new release and
+tooling. `main`, `feature/3.0.0` and `review/3.0.0` are set up; new release and
 review branches inherit the gate automatically when they are cut from `main`.
 
 ## 2. What runs — three parallel jobs
@@ -178,7 +178,7 @@ Commission's approval.)
 | Branch | Role |
 |--------|------|
 | `main` | The released ARF — mirrored across the two synchronized repositories. |
-| `feature/<release>` | Working branch where a release's changes accumulate (e.g. `feature/2.10.0`), branched from `main`. |
+| `feature/<release>` | Working branch where a release's changes accumulate (e.g. `feature/3.0.0`), branched from `main`. |
 | `review/<release>` | A snapshot branched from `main`, used to present the full release diff for review. |
 
 ### Steps

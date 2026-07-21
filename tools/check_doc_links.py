@@ -101,12 +101,17 @@ def run_mkdocs(config_path: str) -> str:
     Non-strict so we collect *every* warning and report them together, rather
     than aborting at the first one.
     """
+    # DISABLE_MKDOCS_2_WARNING: Material for MkDocs emits a MkDocs-2.0 ecosystem
+    # deprecation notice at WARNING level that is unrelated to link validation and
+    # would otherwise count as a warning here (and fail --strict). Suppress it.
+    env = {**os.environ, "DISABLE_MKDOCS_2_WARNING": "true"}
     with tempfile.TemporaryDirectory() as site_dir:
         proc = subprocess.run(
             ["mkdocs", "build", "-f", config_path, "-d", site_dir],
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
+            env=env,
         )
     return proc.stderr + proc.stdout
 

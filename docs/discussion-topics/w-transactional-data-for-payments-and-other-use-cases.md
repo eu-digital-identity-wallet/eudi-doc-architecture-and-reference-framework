@@ -116,7 +116,7 @@ Note: This document is ONLY intended to clarify or create the high-level require
 Here below is the list of the fundamental questions that needs answering prior to drafting HLRs.
 
 As the outcome:
-+ the set of new HLRs requirements is to be delivered in the ARF Annex 2 for [Topic 20] (Strong User authentication for electronic payments),
++ the set of new HLRs requirements is to be delivered in the ARF Annex 2 for [Topic 20][topic-20] (Strong User authentication for electronic payments),
 + new Topics may be introduced in the ARF Annex 2 (to cover non-payment use cases),
 + modification or amendments of other HLRs and Topics may be proposed.
 
@@ -165,7 +165,7 @@ The HLRs set out in the Topic 16 have been reviewed too, however no changes have
 
 **Index** | **Requirement specification**                                | **Proposal** |
 |-----------|--------------------------------------------------------------|--------------|
-| TD_01  | The Wallet **Unit** SHALL be able to process and render transactional data included in a presentation request. **The Wallet Unit SHALL be able to display transactional data (or parts of it) to the User in a clear, understandable and accurate manner when obtaining the User's confirmation for the transaction.** **Specific** rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12]). |      New     |
+| TD_01  | The Wallet **Unit** SHALL be able to process and render transactional data included in a presentation request. **The Wallet Unit SHALL be able to display transactional data (or parts of it) to the User in a clear, understandable and accurate manner when obtaining the User's confirmation for the transaction.** **Specific** rules for representing the content, structure, rendering and scope of information to be logged in a Wallet Unit is to be defined by an industry sector or a Relying Party in an Attestation Rulebook (according to [Topic 12][topic-12]). |      New     |
 | ~~TD_02~~  | ~~The Wallet Unit SHALL be able to sign the transactional data with the private key of the attestation that was the subject of the presentation request and return it in the response to the Relying Party as a proof of transaction.~~ |      ~~New~~     |
 | TD_02  | The Wallet Unit SHALL deliver to the requesting Relying Party a response, that (if required in a given use case) includes transactional data (or parts of it). The ~~scope~~**format and content** of transactional data included in the response SHALL be set out in an Attestation Rulebook or in information provided to the Wallet Unit in the presentation request.    |      New     |
 | **TD_03**  | **The Wallet Unit SHALL sign the response, including transactional data, with the private key of the Attestation, using the mechanisms provided by [SD-JWT-VC] and [ISO/IEC 18013-5].   _Note: Such a response constitutes a proof of transaction, as well as fulfils the requirement of the authentication code required in [PSD2]._**   |      **New**     |
@@ -207,8 +207,8 @@ See sections 4 and 5 above. In addition, transactional data related aspects in t
 |----------------------------------------|--------------------------------------------------------------|
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
 | [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
-| [Topic 20]                             | Topic 20 - Strong User authentication for electronic payments |
-| [Topic 16]                             | Topic 16 - Signing documents with a Wallet Unit |
+| [Topic 20][topic-20]                             | Topic 20 - Strong User authentication for electronic payments |
+| [Topic 16][topic-16]                             | Topic 16 - Signing documents with a Wallet Unit |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | [Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng) |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |

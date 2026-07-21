@@ -15,7 +15,7 @@ import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-MAIN = ROOT / "docs" / "architecture-and-reference-framework-main.md"
+MAIN = ROOT / "docs" / "main" / "10-references.md"
 OUT = ROOT / "includes" / "references.md"
 
 ROW = re.compile(r"^\|\s*\[([^\]]+)\]\s*\|\s*(.+?)\s*\|\s*$", re.M)
@@ -37,7 +37,11 @@ def main() -> None:
             url = bare.group(0).rstrip("|).,")
         title = LINK.sub(r"\1", desc)
         title = re.sub(r"[*_`|]", "", title).strip()
-        title = title[:160].replace('"', "'")
+        if len(title) > 160:
+            # Cut on a word boundary: a mid-word cut produces non-words such as
+            # "Artic" (from "Article"), which the spell-check step rejects.
+            title = title[:160].rsplit(" ", 1)[0].rstrip(" ,;:-")
+        title = title.replace('"', "'")
         defs[label] = (url, title)
 
     lines = [

@@ -48,6 +48,9 @@ jobs:
       - name: Generate reference link definitions
         run: python3 tools/gen_references.py
 
+      - name: Generate pandoc reference definitions
+        run: python3 tools/gen_pandoc_refs.py
+
       # annex-2.02 and annex-2.03 are generated from hltr/high-level-requirements.csv
       # but committed, since the PDF build consumes them directly. Regenerate so the
       # build validates fresh content; the regenerate-hltr job commits the result
@@ -59,6 +62,10 @@ jobs:
       # issue. The backlog is cleared and mkdocs.yml now validates anchors and
       # absolute links, so this is a hard gate (blocking) on the real site config.
       - name: Build site (strict)
+        # DISABLE_MKDOCS_2_WARNING: Material for MkDocs emits a MkDocs-2.0
+        # ecosystem deprecation notice that --strict would treat as a failure.
+        env:
+          DISABLE_MKDOCS_2_WARNING: "true"
         run: mkdocs build --strict
 
   build-pdf:
@@ -130,12 +137,20 @@ jobs:
       - name: Generate reference link definitions
         run: python3 tools/gen_references.py
 
+      - name: Generate pandoc reference definitions
+        run: python3 tools/gen_pandoc_refs.py
+
       - name: Determine changed Markdown files
         id: changed
         run: |
           base_sha="${{ github.event.pull_request.base.sha }}"
+          # Exclude the generated reference-definition includes: pandoc-refs.md
+          # has only internal [topic-N]: #topic-N anchors (no external links, which
+          # makes lychee exit 1 with "No links were found"), and references.md's
+          # URLs are validated at their source in Section 10 of the main document.
           git diff --name-only --diff-filter=ACMR "$base_sha" HEAD \
-            | grep -E '^(docs|includes)/.*\.md$' > changed_md.txt || true
+            | grep -E '^(docs|includes)/.*\.md$' \
+            | grep -vE '^includes/(references|pandoc-refs)\.md$' > changed_md.txt || true
           echo "Changed Markdown files:"; cat changed_md.txt || true
           echo "count=$(wc -l < changed_md.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
           echo "files=$(paste -sd' ' changed_md.txt)" >> "$GITHUB_OUTPUT"
@@ -145,6 +160,15 @@ jobs:
       - name: Check internal links and anchors
         if: ${{ !cancelled() }}
         run: python3 tools/check_doc_links.py
+
+      # 1b) [Topic N] cross-reference convention, repo-wide: every
+      #     [Topic N][topic-N] resolves to a #topic-N anchor, and no inline
+      #     [Topic N](...) link creeps back. The strict build also catches an
+      #     unresolved reference; this restates it with a Topic-specific message
+      #     and additionally forbids inline links, which no build gate flags.
+      - name: Check Topic references
+        if: ${{ !cancelled() }}
+        run: python3 tools/check_topic_refs.py
 
       # 2) Typos on the changed Markdown (allowlist of house terminology lives in
       #    .codespellrc, which codespell picks up from the repo root).
