@@ -322,6 +322,17 @@ A Relying Party SHALL perform regular trust anchor management, meaning it SHALL 
 </div>
 </div>
 
+<div class="eudi-hlr" id="OIA_15b" markdown>
+<div class="eudi-hlr__id">OIA_15b<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+For the retrieval and management of trust anchors, Relying Parties and Relying Party Instances SHALL support both Trusted Lists complying with [ETSI TS 119 612] and LoTEs complying with [ETSI TS 119 602].
+
+*Note: Trusted Lists complying with [ETSI TS 119 612] are used for the distribution of trust anchors of QEAA Providers. LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of PID Providers, PuB-EAA Providers, Access Certificate Authorities, and Providers of registration certificates.*
+
+</div>
+</div>
+
 <div class="eudi-hlr" id="OIA_16" markdown>
 <div class="eudi-hlr__id">OIA_16<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
@@ -1703,6 +1714,17 @@ A Wallet Provider SHALL perform regular trust anchor management, meaning it SHAL
 </div>
 </div>
 
+<div class="eudi-hlr" id="ISSU_10b" markdown>
+<div class="eudi-hlr__id">ISSU_10b<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+For the retrieval and management of trust anchors, Wallet Providers and Wallet Units SHALL support both Trusted Lists complying with [ETSI TS 119 612] and LoTEs complying with [ETSI TS 119 602].
+
+*Note: Trusted Lists complying with [ETSI TS 119 612] are used for the distribution of trust anchors of QEAA Providers. LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of PID Providers, PuB-EAA Providers, Access Certificate Authorities, and Providers of registration certificates.*
+
+</div>
+</div>
+
 <div class="eudi-hlr" id="ISSU_11" markdown>
 <div class="eudi-hlr__id">ISSU_11<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
@@ -1873,6 +1895,17 @@ For the verification of a WIA or KA, a PID Provider SHALL accept the Wallet Prov
 <div class="eudi-hlr__body" markdown>
 
 A PID Provider SHALL support all Wallet Solutions recognised under the corresponding notified eID scheme, meaning that it is willing and able to issue a PID to a Wallet Unit on request of the User.
+
+</div>
+</div>
+
+<div class="eudi-hlr" id="ISSU_19b" markdown>
+<div class="eudi-hlr__id">ISSU_19b<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+For the retrieval and management of trust anchors, PID Providers SHALL support LoTEs complying with [ETSI TS 119 602].
+
+*Note: LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of Wallet Providers.*
 
 </div>
 </div>
@@ -2076,6 +2109,17 @@ An Attestation Provider issuing device-bound attestations SHALL indicate the des
 For the verification of a WIA or KA, an Attestation Provider SHALL accept all Wallet Provider trust anchors published by the Commission in the relevant LoTE, and only those.
 
 *Note: The Wallet Provider LoTE is explained in [Topic 31][topic-31].*
+
+</div>
+</div>
+
+<div class="eudi-hlr" id="ISSU_28a" markdown>
+<div class="eudi-hlr__id">ISSU_28a<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+For the retrieval and management of trust anchors, Attestation Providers SHALL support LoTEs complying with [ETSI TS 119 602].
+
+*Note: LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of Wallet Providers.*
 
 </div>
 </div>
@@ -3298,7 +3342,7 @@ An Attribute Schema Provider SHALL include in its Attestation Rulebook the attri
 
 The Scheme Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD define in the Rulebook the mechanism(s) allowing a Relying Party to obtain, in a trustworthy manner, the trust anchor(s) of the EAA Providers issuing this type of EAA.
 
-*Note: [Technical Specification 11][ts11], section 4.3.1, recommends the use of the List of trusted entities (LoTE) data model as defined in [ETSI TS 119 602](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/278) for non-qualified EAAs.*
+*Note: [Technical Specification 11][ts11], section 4.3.1, recommends the use of the List of trusted entities (LoTE) data model as defined in [ETSI TS 119 602] for non-qualified EAAs.*
 
 </div>
 </div>
@@ -5079,7 +5123,7 @@ Wallet Units and other relevant actors SHALL accept Access Certificate Authority
 <div class="eudi-hlr__id">PPNot_07<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
-The format of a PID Provider LoTE SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex D.
+The format of a PID Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex D.
 
 </div>
 </div>
@@ -5138,7 +5182,7 @@ PID Providers, Attestation Providers, and other relevant actors SHALL accept Wal
 <div class="eudi-hlr__id">WPNot_05<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
-The format of a Wallet Provider LoTE SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex E.
+The format of a Wallet Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex E.
 
 </div>
 </div>
@@ -5179,7 +5223,7 @@ The common set of information to be notified by Member States about PuB-EAA Prov
 <div class="eudi-hlr__id">PuBPNot_03<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
-The format of the PuB-EAA Provider LoTE SHALL comply with [ETSI TS 119 602] v2.1.1, including Annex H.
+The format of the PuB-EAA Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex H.
 
 </div>
 </div>
@@ -5274,7 +5318,7 @@ The trust anchors of Access Certificate Authorities and Providers of registratio
 <div class="eudi-hlr__id">RPACANot_05<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
-The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex F.
+The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI TS 119 602], including Annex F.
 
 </div>
 </div>
@@ -5283,7 +5327,7 @@ The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI 
 <div class="eudi-hlr__id">RPACANot_05a<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
-The format of a LoTE for Providers of registration certificates SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex G.
+The format of a LoTE for Providers of registration certificates SHALL comply with [ETSI TS 119 602], including Annex G.
 
 </div>
 </div>
