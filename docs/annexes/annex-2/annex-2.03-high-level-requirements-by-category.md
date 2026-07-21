@@ -2637,7 +2637,7 @@ PID Providers, Attestation Providers, and other relevant actors SHALL accept Wal
 Legacy ID: WPNot_05
 {: .eudi-hlr__meta }
 
-The format of a Wallet Provider LoTE SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex E.
+The format of a Wallet Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex E.
 
 </div>
 </div>
@@ -5043,7 +5043,7 @@ Wallet Units and other relevant actors SHALL accept Access Certificate Authority
 Legacy ID: PPNot_07
 {: .eudi-hlr__meta }
 
-The format of a PID Provider LoTE SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex D.
+The format of a PID Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex D.
 
 </div>
 </div>
@@ -5069,7 +5069,7 @@ Empty
 Legacy ID: PuBPNot_03
 {: .eudi-hlr__meta }
 
-The format of the PuB-EAA Provider LoTE SHALL comply with [ETSI TS 119 602] v2.1.1, including Annex H.
+The format of the PuB-EAA Provider LoTE SHALL comply with [ETSI TS 119 602], including Annex H.
 
 </div>
 </div>
@@ -5186,7 +5186,7 @@ The trust anchors of Access Certificate Authorities and Providers of registratio
 Legacy ID: RPACANot_05
 {: .eudi-hlr__meta }
 
-The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex F.
+The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI TS 119 602], including Annex F.
 
 </div>
 </div>
@@ -5199,7 +5199,7 @@ The format of a LoTE for Access Certificate Authorities SHALL comply with [ETSI 
 Legacy ID: RPACANot_05a
 {: .eudi-hlr__meta }
 
-The format of a LoTE for Providers of registration certificates SHALL comply with [ETSI TS 119 602] v1.1.1, including Annex G.
+The format of a LoTE for Providers of registration certificates SHALL comply with [ETSI TS 119 602], including Annex G.
 
 </div>
 </div>
@@ -5885,6 +5885,21 @@ A Wallet Provider SHALL perform regular trust anchor management, meaning it SHAL
 <div class="eudi-hlr__id">AS-AP-10-012<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
+Legacy ID: ISSU_10b
+{: .eudi-hlr__meta }
+
+For the retrieval and management of trust anchors, Wallet Providers and Wallet Units SHALL support both Trusted Lists complying with [ETSI TS 119 612] and LoTEs complying with [ETSI TS 119 602].
+
+*Note: Trusted Lists complying with [ETSI TS 119 612] are used for the distribution of trust anchors of QEAA Providers. LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of PID Providers, PuB-EAA Providers, Access Certificate Authorities, and Providers of registration certificates.*
+
+</div>
+</div>
+
+
+<div class="eudi-hlr" id="AS-AP-10-013" markdown>
+<div class="eudi-hlr__id">AS-AP-10-013<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
 Legacy ID: ISSU_11
 {: .eudi-hlr__meta }
 
@@ -5894,8 +5909,8 @@ A Wallet Unit SHALL request the User's approval before storing a PID or attestat
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-013" markdown>
-<div class="eudi-hlr__id">AS-AP-10-013<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-014" markdown>
+<div class="eudi-hlr__id">AS-AP-10-014<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_11a
@@ -5909,8 +5924,8 @@ In case a PID or attestation is issued in batches, the Wallet Unit SHALL verify 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-014" markdown>
-<div class="eudi-hlr__id">AS-AP-10-014<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-015" markdown>
+<div class="eudi-hlr__id">AS-AP-10-015<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_11b
@@ -5922,8 +5937,8 @@ In case one or more of the verifications in ISSU_06 - ISSU_11a fail, the Wallet 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-015" markdown>
-<div class="eudi-hlr__id">AS-AP-10-015<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-016" markdown>
+<div class="eudi-hlr__id">AS-AP-10-016<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_12
@@ -5937,8 +5952,8 @@ A PID Provider or Attestation Provider SHALL offer its PIDs or attestations in a
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-016" markdown>
-<div class="eudi-hlr__id">AS-AP-10-016<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-017" markdown>
+<div class="eudi-hlr__id">AS-AP-10-017<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_12a
@@ -5952,8 +5967,8 @@ When a User instructs their Wallet Unit to request a PID or attestation from a P
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-017" markdown>
-<div class="eudi-hlr__id">AS-AP-10-017<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-018" markdown>
+<div class="eudi-hlr__id">AS-AP-10-018<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_12b
@@ -5967,8 +5982,8 @@ The WSCA/WSCD or a keystore SHALL generate a new key pair for a new PID or attes
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-018" markdown>
-<div class="eudi-hlr__id">AS-AP-10-018<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-019" markdown>
+<div class="eudi-hlr__id">AS-AP-10-019<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_12c
@@ -5982,8 +5997,8 @@ The expiration date of a PID SHALL be no later than the end of the revocation ma
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-019" markdown>
-<div class="eudi-hlr__id">AS-AP-10-019<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-020" markdown>
+<div class="eudi-hlr__id">AS-AP-10-020<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_12d
@@ -5997,8 +6012,8 @@ If an Attestation Provider supports revocation chaining for its attestations per
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-020" markdown>
-<div class="eudi-hlr__id">AS-AP-10-020<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-021" markdown>
+<div class="eudi-hlr__id">AS-AP-10-021<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_13
@@ -6010,8 +6025,8 @@ A Wallet Provider SHALL ensure that at least one PID Provider is willing to issu
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-021" markdown>
-<div class="eudi-hlr__id">AS-AP-10-021<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-022" markdown>
+<div class="eudi-hlr__id">AS-AP-10-022<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_14
@@ -6023,8 +6038,8 @@ A PID Provider SHALL ensure that all PIDs it issues to Wallet Units comply with 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-022" markdown>
-<div class="eudi-hlr__id">AS-AP-10-022<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-023" markdown>
+<div class="eudi-hlr__id">AS-AP-10-023<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_15
@@ -6036,8 +6051,8 @@ A PID Provider SHALL support the OpenID4VCI protocol referenced in ISSU_01 for i
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-023" markdown>
-<div class="eudi-hlr__id">AS-AP-10-023</div>
+<div class="eudi-hlr" id="AS-AP-10-024" markdown>
+<div class="eudi-hlr__id">AS-AP-10-024</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_16
@@ -6049,8 +6064,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-024" markdown>
-<div class="eudi-hlr__id">AS-AP-10-024<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-025" markdown>
+<div class="eudi-hlr__id">AS-AP-10-025<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_17
@@ -6064,8 +6079,8 @@ A PID Provider SHALL implement device binding for all PIDs it issues, meaning it
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-025" markdown>
-<div class="eudi-hlr__id">AS-AP-10-025<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-026" markdown>
+<div class="eudi-hlr__id">AS-AP-10-026<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_18
@@ -6079,8 +6094,8 @@ A PID Provider SHALL verify the identity of the subject of the PID in compliance
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-026" markdown>
-<div class="eudi-hlr__id">AS-AP-10-026</div>
+<div class="eudi-hlr" id="AS-AP-10-027" markdown>
+<div class="eudi-hlr__id">AS-AP-10-027</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_18a
@@ -6092,8 +6107,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-027" markdown>
-<div class="eudi-hlr__id">AS-AP-10-027<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-028" markdown>
+<div class="eudi-hlr__id">AS-AP-10-028<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_19
@@ -6107,8 +6122,8 @@ For the verification of a WIA or KA, a PID Provider SHALL accept the Wallet Prov
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-028" markdown>
-<div class="eudi-hlr__id">AS-AP-10-028<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-029" markdown>
+<div class="eudi-hlr__id">AS-AP-10-029<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_19a
@@ -6120,8 +6135,23 @@ A PID Provider SHALL support all Wallet Solutions recognised under the correspon
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-029" markdown>
-<div class="eudi-hlr__id">AS-AP-10-029<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-030" markdown>
+<div class="eudi-hlr__id">AS-AP-10-030<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+Legacy ID: ISSU_19b
+{: .eudi-hlr__meta }
+
+For the retrieval and management of trust anchors, PID Providers SHALL support LoTEs complying with [ETSI TS 119 602].
+
+*Note: LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of Wallet Providers.*
+
+</div>
+</div>
+
+
+<div class="eudi-hlr" id="AS-AP-10-031" markdown>
+<div class="eudi-hlr__id">AS-AP-10-031<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_20
@@ -6135,8 +6165,8 @@ To inform its potential PID subjects about the Wallet Solution(s) they can use f
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-030" markdown>
-<div class="eudi-hlr__id">AS-AP-10-030<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-032" markdown>
+<div class="eudi-hlr__id">AS-AP-10-032<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_21
@@ -6150,8 +6180,8 @@ Before issuing a PID, a PID Provider SHALL verify the Wallet Unit's WIA and KA u
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-031" markdown>
-<div class="eudi-hlr__id">AS-AP-10-031<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-033" markdown>
+<div class="eudi-hlr__id">AS-AP-10-033<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_22
@@ -6163,8 +6193,8 @@ A PID Provider SHALL sign its Credential Issuer metadata as specified in section
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-032" markdown>
-<div class="eudi-hlr__id">AS-AP-10-032</div>
+<div class="eudi-hlr" id="AS-AP-10-034" markdown>
+<div class="eudi-hlr__id">AS-AP-10-034</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_22a
@@ -6176,8 +6206,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-033" markdown>
-<div class="eudi-hlr__id">AS-AP-10-033</div>
+<div class="eudi-hlr" id="AS-AP-10-035" markdown>
+<div class="eudi-hlr__id">AS-AP-10-035</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_22b
@@ -6189,8 +6219,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-034" markdown>
-<div class="eudi-hlr__id">AS-AP-10-034<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-036" markdown>
+<div class="eudi-hlr__id">AS-AP-10-036<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_23
@@ -6204,8 +6234,8 @@ For the verification of a PID Provider's access certificates, a Wallet Unit SHAL
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-035" markdown>
-<div class="eudi-hlr__id">AS-AP-10-035<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-037" markdown>
+<div class="eudi-hlr__id">AS-AP-10-037<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_23a
@@ -6217,8 +6247,8 @@ A Wallet Provider SHALL support at least one PID Provider, meaning that its Wall
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-036" markdown>
-<div class="eudi-hlr__id">AS-AP-10-036<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-038" markdown>
+<div class="eudi-hlr__id">AS-AP-10-038<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_23b
@@ -6230,8 +6260,8 @@ Prior to or during installation of a Wallet Instance, the Wallet Provider SHALL 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-037" markdown>
-<div class="eudi-hlr__id">AS-AP-10-037<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-039" markdown>
+<div class="eudi-hlr__id">AS-AP-10-039<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_23c
@@ -6245,8 +6275,8 @@ For the verification of a PID Provider's registration certificates, a Wallet Uni
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-038" markdown>
-<div class="eudi-hlr__id">AS-AP-10-038<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-040" markdown>
+<div class="eudi-hlr__id">AS-AP-10-040<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_24
@@ -6258,8 +6288,8 @@ A Wallet Unit SHALL authenticate and validate the access certificate of the PID 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-039" markdown>
-<div class="eudi-hlr__id">AS-AP-10-039<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-041" markdown>
+<div class="eudi-hlr__id">AS-AP-10-041<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_24a
@@ -6273,8 +6303,8 @@ Before requesting the issuance of a PID, the Wallet Unit SHALL verify that the P
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-040" markdown>
-<div class="eudi-hlr__id">AS-AP-10-040<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-042" markdown>
+<div class="eudi-hlr__id">AS-AP-10-042<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_24b
@@ -6288,8 +6318,8 @@ Before requesting the issuance of a PID, the Wallet Unit SHALL verify whether th
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-041" markdown>
-<div class="eudi-hlr__id">AS-AP-10-041<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-043" markdown>
+<div class="eudi-hlr__id">AS-AP-10-043<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_25
@@ -6301,8 +6331,8 @@ An Attestation Provider SHALL ensure all attestations issued to Wallet Units com
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-042" markdown>
-<div class="eudi-hlr__id">AS-AP-10-042<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-044" markdown>
+<div class="eudi-hlr__id">AS-AP-10-044<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_26
@@ -6314,8 +6344,8 @@ An Attestation Provider SHALL support the OpenID4VCI protocol referenced in ISSU
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-043" markdown>
-<div class="eudi-hlr__id">AS-AP-10-043<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-045" markdown>
+<div class="eudi-hlr__id">AS-AP-10-045<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_27
@@ -6329,8 +6359,8 @@ An Attestation Provider SHOULD implement device binding for all attestations it 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-044" markdown>
-<div class="eudi-hlr__id">AS-AP-10-044<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-046" markdown>
+<div class="eudi-hlr__id">AS-AP-10-046<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_27a
@@ -6344,8 +6374,8 @@ If the subject of the attestation is a natural person, an Attestation Provider S
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-045" markdown>
-<div class="eudi-hlr__id">AS-AP-10-045<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-047" markdown>
+<div class="eudi-hlr__id">AS-AP-10-047<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_27b
@@ -6357,8 +6387,8 @@ If applicable, an Attestation Provider SHALL ensure that the attributes attested
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-046" markdown>
-<div class="eudi-hlr__id">AS-AP-10-046<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-048" markdown>
+<div class="eudi-hlr__id">AS-AP-10-048<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_27c
@@ -6370,8 +6400,8 @@ The Attestation Provider SHALL verify that the User requesting the attestation h
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-047" markdown>
-<div class="eudi-hlr__id">AS-AP-10-047<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-049" markdown>
+<div class="eudi-hlr__id">AS-AP-10-049<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_27d
@@ -6385,8 +6415,8 @@ An Attestation Provider issuing device-bound attestations SHALL indicate the des
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-048" markdown>
-<div class="eudi-hlr__id">AS-AP-10-048<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-050" markdown>
+<div class="eudi-hlr__id">AS-AP-10-050<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_28
@@ -6400,8 +6430,23 @@ For the verification of a WIA or KA, an Attestation Provider SHALL accept all Wa
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-049" markdown>
-<div class="eudi-hlr__id">AS-AP-10-049<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-051" markdown>
+<div class="eudi-hlr__id">AS-AP-10-051<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+Legacy ID: ISSU_28a
+{: .eudi-hlr__meta }
+
+For the retrieval and management of trust anchors, Attestation Providers SHALL support LoTEs complying with [ETSI TS 119 602].
+
+*Note: LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of Wallet Providers.*
+
+</div>
+</div>
+
+
+<div class="eudi-hlr" id="AS-AP-10-052" markdown>
+<div class="eudi-hlr__id">AS-AP-10-052<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_29
@@ -6415,8 +6460,8 @@ A QEAA Provider or PuB-EAA Provider SHALL support all Wallet Solutions, except i
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-050" markdown>
-<div class="eudi-hlr__id">AS-AP-10-050<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-053" markdown>
+<div class="eudi-hlr__id">AS-AP-10-053<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_30
@@ -6430,8 +6475,8 @@ Before issuing a device-bound attestation, an Attestation Provider SHALL verify 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-051" markdown>
-<div class="eudi-hlr__id">AS-AP-10-051<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-054" markdown>
+<div class="eudi-hlr__id">AS-AP-10-054<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_30a
@@ -6445,8 +6490,8 @@ Before issuing an attestation, an Attestation Provider SHALL: - verify that the 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-052" markdown>
-<div class="eudi-hlr__id">AS-AP-10-052</div>
+<div class="eudi-hlr" id="AS-AP-10-055" markdown>
+<div class="eudi-hlr__id">AS-AP-10-055</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_31
@@ -6458,8 +6503,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-053" markdown>
-<div class="eudi-hlr__id">AS-AP-10-053<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-056" markdown>
+<div class="eudi-hlr__id">AS-AP-10-056<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_32
@@ -6471,8 +6516,8 @@ An Attestation Provider SHALL sign its Credential Issuer metadata as specified i
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-054" markdown>
-<div class="eudi-hlr__id">AS-AP-10-054</div>
+<div class="eudi-hlr" id="AS-AP-10-057" markdown>
+<div class="eudi-hlr__id">AS-AP-10-057</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_32a
@@ -6484,8 +6529,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-055" markdown>
-<div class="eudi-hlr__id">AS-AP-10-055<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-058" markdown>
+<div class="eudi-hlr__id">AS-AP-10-058<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_33
@@ -6499,8 +6544,8 @@ For the verification of access certificates, a Wallet Unit SHALL accept all trus
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-056" markdown>
-<div class="eudi-hlr__id">AS-AP-10-056<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-059" markdown>
+<div class="eudi-hlr__id">AS-AP-10-059<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_33a
@@ -6514,8 +6559,8 @@ For the verification of the registration certificates of Attestation Providers, 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-057" markdown>
-<div class="eudi-hlr__id">AS-AP-10-057<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-060" markdown>
+<div class="eudi-hlr__id">AS-AP-10-060<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_33b
@@ -6527,8 +6572,8 @@ A Wallet Provider SHALL support all Attestation Providers, except possibly if th
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-058" markdown>
-<div class="eudi-hlr__id">AS-AP-10-058<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-061" markdown>
+<div class="eudi-hlr__id">AS-AP-10-061<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_34
@@ -6540,8 +6585,8 @@ A Wallet Unit SHALL authenticate and validate the access certificate of the Atte
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-059" markdown>
-<div class="eudi-hlr__id">AS-AP-10-059<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-062" markdown>
+<div class="eudi-hlr__id">AS-AP-10-062<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_34a
@@ -6555,8 +6600,8 @@ Before requesting the issuance of an attestation, the Wallet Unit SHALL verify t
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-060" markdown>
-<div class="eudi-hlr__id">AS-AP-10-060<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-063" markdown>
+<div class="eudi-hlr__id">AS-AP-10-063<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_34b
@@ -6570,8 +6615,8 @@ Before requesting the issuance of an attestation, the Wallet Unit SHALL verify w
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-061" markdown>
-<div class="eudi-hlr__id">AS-AP-10-061<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-064" markdown>
+<div class="eudi-hlr__id">AS-AP-10-064<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_35
@@ -6585,8 +6630,8 @@ A PID Provider or Attestation Provider SHALL ensure that all unique elements in 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-062" markdown>
-<div class="eudi-hlr__id">AS-AP-10-062<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-065" markdown>
+<div class="eudi-hlr__id">AS-AP-10-065<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_35a
@@ -6600,8 +6645,8 @@ A Wallet Provider SHALL ensure that all unique elements in a WIA or KA have a ne
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-063" markdown>
-<div class="eudi-hlr__id">AS-AP-10-063<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-066" markdown>
+<div class="eudi-hlr__id">AS-AP-10-066<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_35b
@@ -6613,8 +6658,8 @@ After issuing a PID, attestation, KA, or WIA, a PID Provider, Attestation Provid
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-064" markdown>
-<div class="eudi-hlr__id">AS-AP-10-064<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-067" markdown>
+<div class="eudi-hlr__id">AS-AP-10-067<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_36
@@ -6628,8 +6673,8 @@ When issuing PIDs, attestations, or WIAs or KAs in a batch to a Wallet Unit, a P
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-065" markdown>
-<div class="eudi-hlr__id">AS-AP-10-065<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-068" markdown>
+<div class="eudi-hlr__id">AS-AP-10-068<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_36a
@@ -6643,8 +6688,8 @@ If the exact time of the issuance of an attestation or the beginning or end of i
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-066" markdown>
-<div class="eudi-hlr__id">AS-AP-10-066<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-069" markdown>
+<div class="eudi-hlr__id">AS-AP-10-069<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_37
@@ -6658,8 +6703,8 @@ A Wallet Provider SHALL ensure that its Wallet Solution supports the following m
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-067" markdown>
-<div class="eudi-hlr__id">AS-AP-10-067<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-070" markdown>
+<div class="eudi-hlr__id">AS-AP-10-070<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_38
@@ -6673,8 +6718,8 @@ A PID Provider or Attestation Provider SHALL have a policy describing which meth
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-068" markdown>
-<div class="eudi-hlr__id">AS-AP-10-068<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-071" markdown>
+<div class="eudi-hlr__id">AS-AP-10-071<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_39
@@ -6688,8 +6733,8 @@ PID Providers and Attestation Providers SHALL include the `credential_reuse_poli
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-069" markdown>
-<div class="eudi-hlr__id">AS-AP-10-069<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-072" markdown>
+<div class="eudi-hlr__id">AS-AP-10-072<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_39a
@@ -6701,8 +6746,8 @@ Wallet Units SHALL support the `credential_reuse_policy` Credential Issuer Metad
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-070" markdown>
-<div class="eudi-hlr__id">AS-AP-10-070<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-073" markdown>
+<div class="eudi-hlr__id">AS-AP-10-073<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_40
@@ -6716,8 +6761,8 @@ A PID Provider or Attestation Provider SHALL indicate in their OpenID4VCI Issuer
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-071" markdown>
-<div class="eudi-hlr__id">AS-AP-10-071<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-074" markdown>
+<div class="eudi-hlr__id">AS-AP-10-074<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_40a
@@ -6729,8 +6774,8 @@ When implementing any of the methods mentioned in ISSU_37, a Wallet Unit, PID Pr
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-072" markdown>
-<div class="eudi-hlr__id">AS-AP-10-072<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-075" markdown>
+<div class="eudi-hlr__id">AS-AP-10-075<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_41
@@ -6742,8 +6787,8 @@ To the maximum extent possible, Wallet Providers, PID Providers, and Attestation
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-073" markdown>
-<div class="eudi-hlr__id">AS-AP-10-073<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-076" markdown>
+<div class="eudi-hlr__id">AS-AP-10-076<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_42
@@ -6757,8 +6802,8 @@ To the maximum extent possible, Wallet Providers, PID Providers, and Attestation
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-074" markdown>
-<div class="eudi-hlr__id">AS-AP-10-074<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-077" markdown>
+<div class="eudi-hlr__id">AS-AP-10-077<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_43
@@ -6770,8 +6815,8 @@ If Method A is used, the Wallet Unit SHALL request the PID Provider or Attestati
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-075" markdown>
-<div class="eudi-hlr__id">AS-AP-10-075<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-078" markdown>
+<div class="eudi-hlr__id">AS-AP-10-078<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_44
@@ -6783,8 +6828,8 @@ If Method A is used, the Wallet Unit SHALL present each technical PID or attesta
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-076" markdown>
-<div class="eudi-hlr__id">AS-AP-10-076<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-079" markdown>
+<div class="eudi-hlr__id">AS-AP-10-079<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_45
@@ -6796,8 +6841,8 @@ If Method A is used, the Wallet Unit SHALL have a lower limit for the number of 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-077" markdown>
-<div class="eudi-hlr__id">AS-AP-10-077<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-080" markdown>
+<div class="eudi-hlr__id">AS-AP-10-080<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_46
@@ -6809,8 +6854,8 @@ If Method A is used and the Wallet Unit must request a new batch of technical PI
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-078" markdown>
-<div class="eudi-hlr__id">AS-AP-10-078<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-081" markdown>
+<div class="eudi-hlr__id">AS-AP-10-081<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_47
@@ -6822,8 +6867,8 @@ If Method A is used and the Wallet Unit has run out of unused technical PIDs or 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-079" markdown>
-<div class="eudi-hlr__id">AS-AP-10-079<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-082" markdown>
+<div class="eudi-hlr__id">AS-AP-10-082<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_48
@@ -6835,8 +6880,8 @@ If Method B is used, the Wallet Unit SHALL request the PID Provider or Attestati
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-080" markdown>
-<div class="eudi-hlr__id">AS-AP-10-080<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-083" markdown>
+<div class="eudi-hlr__id">AS-AP-10-083<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_49
@@ -6848,8 +6893,8 @@ If Method B is used, the Wallet Unit SHALL present a technical PID or attestatio
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-081" markdown>
-<div class="eudi-hlr__id">AS-AP-10-081<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-084" markdown>
+<div class="eudi-hlr__id">AS-AP-10-084<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_50
@@ -6863,8 +6908,8 @@ If Method B is used, the Wallet Unit SHALL request the PID Provider or Attestati
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-082" markdown>
-<div class="eudi-hlr__id">AS-AP-10-082<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-085" markdown>
+<div class="eudi-hlr__id">AS-AP-10-085<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_51
@@ -6876,8 +6921,8 @@ If Method C is used, the Wallet Unit SHALL request the PID Provider or Attestati
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-083" markdown>
-<div class="eudi-hlr__id">AS-AP-10-083<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-086" markdown>
+<div class="eudi-hlr__id">AS-AP-10-086<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_52
@@ -6889,8 +6934,8 @@ If Method C is used, the Wallet Unit SHALL present each technical PID or attesta
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-084" markdown>
-<div class="eudi-hlr__id">AS-AP-10-084</div>
+<div class="eudi-hlr" id="AS-AP-10-087" markdown>
+<div class="eudi-hlr__id">AS-AP-10-087</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_53
@@ -6902,8 +6947,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-085" markdown>
-<div class="eudi-hlr__id">AS-AP-10-085<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-088" markdown>
+<div class="eudi-hlr__id">AS-AP-10-088<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_54
@@ -6915,8 +6960,8 @@ If Method C is used, the Wallet Unit SHALL request the PID Provider or Attestati
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-086" markdown>
-<div class="eudi-hlr__id">AS-AP-10-086<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-089" markdown>
+<div class="eudi-hlr__id">AS-AP-10-089<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_55
@@ -6930,8 +6975,8 @@ If Method D is used, the Wallet Unit SHALL present a different technical PID or 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-087" markdown>
-<div class="eudi-hlr__id">AS-AP-10-087<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-090" markdown>
+<div class="eudi-hlr__id">AS-AP-10-090<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_56
@@ -6943,8 +6988,8 @@ If Method D is used and a given Relying Party requests attributes from a given l
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-088" markdown>
-<div class="eudi-hlr__id">AS-AP-10-088</div>
+<div class="eudi-hlr" id="AS-AP-10-091" markdown>
+<div class="eudi-hlr__id">AS-AP-10-091</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_56a
@@ -6956,8 +7001,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-089" markdown>
-<div class="eudi-hlr__id">AS-AP-10-089<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-092" markdown>
+<div class="eudi-hlr__id">AS-AP-10-092<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_57
@@ -6971,8 +7016,8 @@ If Method D is used, the Wallet Unit SHALL keep track of which technical PID or 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-090" markdown>
-<div class="eudi-hlr__id">AS-AP-10-090</div>
+<div class="eudi-hlr" id="AS-AP-10-093" markdown>
+<div class="eudi-hlr__id">AS-AP-10-093</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_57a
@@ -6984,8 +7029,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-091" markdown>
-<div class="eudi-hlr__id">AS-AP-10-091<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-094" markdown>
+<div class="eudi-hlr__id">AS-AP-10-094<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_58
@@ -6999,8 +7044,8 @@ A Wallet Unit SHALL give its User the option to manually initiate a re-issuance 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-092" markdown>
-<div class="eudi-hlr__id">AS-AP-10-092<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-095" markdown>
+<div class="eudi-hlr__id">AS-AP-10-095<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_59
@@ -7014,8 +7059,8 @@ After a successful re-issuance, a Wallet Unit SHALL compare the attribute values
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-093" markdown>
-<div class="eudi-hlr__id">AS-AP-10-093<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-096" markdown>
+<div class="eudi-hlr__id">AS-AP-10-096<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_60
@@ -7027,8 +7072,8 @@ A Wallet Unit SHALL gracefully handle situations in which re-issuance of a PID, 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-094" markdown>
-<div class="eudi-hlr__id">AS-AP-10-094<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-097" markdown>
+<div class="eudi-hlr__id">AS-AP-10-097<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_61
@@ -7042,8 +7087,8 @@ A Wallet Unit SHALL support PID or attestation first-time batch issuance with a 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-095" markdown>
-<div class="eudi-hlr__id">AS-AP-10-095<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-098" markdown>
+<div class="eudi-hlr__id">AS-AP-10-098<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_62
@@ -7057,8 +7102,8 @@ If a technical PID or attestation was successfully re-issued because the value o
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-096" markdown>
-<div class="eudi-hlr__id">AS-AP-10-096<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-099" markdown>
+<div class="eudi-hlr__id">AS-AP-10-099<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_63
@@ -7070,8 +7115,8 @@ PID Providers and Attestation Providers, and Wallet Units SHALL support the feat
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-097" markdown>
-<div class="eudi-hlr__id">AS-AP-10-097<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-100" markdown>
+<div class="eudi-hlr__id">AS-AP-10-100<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_64
@@ -7083,8 +7128,8 @@ PID Providers, Attestation Providers, and Wallet Units SHALL support the feature
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-098" markdown>
-<div class="eudi-hlr__id">AS-AP-10-098<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-101" markdown>
+<div class="eudi-hlr__id">AS-AP-10-101<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_65
@@ -7098,8 +7143,8 @@ A PID Provider or an Attestation Provider of device-bound attestations SHALL ver
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-099" markdown>
-<div class="eudi-hlr__id">AS-AP-10-099</div>
+<div class="eudi-hlr" id="AS-AP-10-102" markdown>
+<div class="eudi-hlr__id">AS-AP-10-102</div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_66
@@ -7111,8 +7156,8 @@ Empty
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-100" markdown>
-<div class="eudi-hlr__id">AS-AP-10-100<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-103" markdown>
+<div class="eudi-hlr__id">AS-AP-10-103<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_67
@@ -7126,8 +7171,8 @@ A PID Provider SHALL have a policy governing all aspects of PID issuance and man
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-101" markdown>
-<div class="eudi-hlr__id">AS-AP-10-101<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-104" markdown>
+<div class="eudi-hlr__id">AS-AP-10-104<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_68
@@ -7139,8 +7184,8 @@ PID Providers SHALL ensure that the certificates they use for signing PIDs compl
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-102" markdown>
-<div class="eudi-hlr__id">AS-AP-10-102<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-105" markdown>
+<div class="eudi-hlr__id">AS-AP-10-105<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_69
@@ -7154,8 +7199,8 @@ A QEAA Provider SHALL have a policy governing all aspects of QEAA issuance and m
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-103" markdown>
-<div class="eudi-hlr__id">AS-AP-10-103<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-106" markdown>
+<div class="eudi-hlr__id">AS-AP-10-106<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_70
@@ -7167,8 +7212,8 @@ QEAA Providers SHALL ensure that the certificates they use for signing QEAAs com
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-104" markdown>
-<div class="eudi-hlr__id">AS-AP-10-104<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-107" markdown>
+<div class="eudi-hlr__id">AS-AP-10-107<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_71
@@ -7180,8 +7225,8 @@ Providers of non-qualified EAAs SHALL ensure that the certificates they use for 
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-105" markdown>
-<div class="eudi-hlr__id">AS-AP-10-105<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-108" markdown>
+<div class="eudi-hlr__id">AS-AP-10-108<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_72
@@ -7195,8 +7240,8 @@ A PuB-EAA Provider SHALL have a policy governing all aspects of PuB-EAA issuance
 </div>
 
 
-<div class="eudi-hlr" id="AS-AP-10-106" markdown>
-<div class="eudi-hlr__id">AS-AP-10-106<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr" id="AS-AP-10-109" markdown>
+<div class="eudi-hlr__id">AS-AP-10-109<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
 
 Legacy ID: ISSU_73
@@ -8210,6 +8255,21 @@ A Relying Party SHALL perform regular trust anchor management, meaning it SHALL 
 </div>
 
 
+<div class="eudi-hlr" id="EW-PIO-01-029" markdown>
+<div class="eudi-hlr__id">EW-PIO-01-029<span class="kw-shall">SHALL</span></div>
+<div class="eudi-hlr__body" markdown>
+
+Legacy ID: OIA_15b
+{: .eudi-hlr__meta }
+
+For the retrieval and management of trust anchors, Relying Parties and Relying Party Instances SHALL support both Trusted Lists complying with [ETSI TS 119 612] and LoTEs complying with [ETSI TS 119 602].
+
+*Note: Trusted Lists complying with [ETSI TS 119 612] are used for the distribution of trust anchors of QEAA Providers. LoTEs complying with [ETSI TS 119 602] are used for the distribution of trust anchors of PID Providers, PuB-EAA Providers, Access Certificate Authorities, and Providers of registration certificates.*
+
+</div>
+</div>
+
+
 <div class="eudi-hlr" id="EW-PIO-10-001" markdown>
 <div class="eudi-hlr__id">EW-PIO-10-001<span class="kw-shall">SHALL</span></div>
 <div class="eudi-hlr__body" markdown>
@@ -9095,7 +9155,7 @@ Legacy ID: ARB_26
 
 The Scheme Provider for an Attestation Rulebook describing a type of attestation that is a non-qualified EAA SHOULD define in the Rulebook the mechanism(s) allowing a Relying Party to obtain, in a trustworthy manner, the trust anchor(s) of the EAA Providers issuing this type of EAA.
 
-*Note: [Technical Specification 11][ts11], section 4.3.1, recommends the use of the List of trusted entities (LoTE) data model as defined in [ETSI TS 119 602](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/278) for non-qualified EAAs.*
+*Note: [Technical Specification 11][ts11], section 4.3.1, recommends the use of the List of trusted entities (LoTE) data model as defined in [ETSI TS 119 602] for non-qualified EAAs.*
 
 </div>
 </div>
