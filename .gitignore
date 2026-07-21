@@ -12,6 +12,7 @@ docs/arf.png
 .cache
 .lycheecache
 .venv
+.DS_Store
 
 docs/annexes/annex-2/high-level-requirements.xlsx
 docs/annexes/annex-2/~$high-level-requirements.xlsx
@@ -20,3 +21,5 @@ docs/media/arf-figures-source.md
 hltr/high-level-requirements.xlsx
 hltr/~$high-level-requirements.xlsx
 hltr/high-level-requirements_bck.xlsx
+hltr/high-level-requirements_bck.csv
+__pycache__/

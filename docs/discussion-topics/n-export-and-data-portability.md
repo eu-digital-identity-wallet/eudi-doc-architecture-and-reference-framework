@@ -315,8 +315,8 @@ B. Restore Requirements
 |-----------|--------------------------------------------------------------|--------------|
 | Mig_06    | Directly after installation of a new Wallet Instance, the Wallet Instance SHALL enable the User to import a Migration Object from an external storage or remote location indicated by the User **(from the options supported by the Wallet Solution)**. |     Keep with proposed changes         |
 | Mig_07 | For each PID and attestation listed in the Migration Object, the Wallet Unit SHALL enable the User to select that PID or attestation. When selected, the Wallet Unit SHALL request the respective PID Provider or Attestation Provider to re-issue that PID or attestation. If the Migration Object lists a PID, the PID SHALL be the first to be restored. |      Keep as-is      |
-| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency). |    Keep as-is        |
-| Mig_11 | The processes and interfaces used for ~~re-issuance~~**issuance** of a **new** PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in [Topic 10](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a237-topic-10-issuing-a-pid-or-attestation-to-a-wallet-unit). |      Keep with proposed changes      |
+| Mig_07a | The Wallet Unit SHALL ask the User whether they want to restore the log from the Migration Object. When the User agrees, the Wallet Unit SHALL restore the log, and SHALL append future transactions to this log according to the requirements in [Topic 19][topic-19]. |    Keep as-is        |
+| Mig_11 | The processes and interfaces used for ~~re-issuance~~**issuance** of a **new** PID or attestation (as part of a migration process) SHALL be the same as those used for their issuance, as specified in [Topic 10][topic-10]. |      Keep with proposed changes      |
 
 
 
@@ -359,7 +359,7 @@ There are no identified impact to other ARF topics than mentioned in chapters 3 
 
 The data export and portability topic may have relation with the WUA requirements, as the private key handling for PIDs and attestation has relevance for the discussion on the scope and technical feasibility of data to be exported/imported from/to a wallet.
 
-There were several changes introduced to the Topic C (and the related ARF Annex II [Topic 9]) in the earlier stages of the ARF work (see the [Topic C Discussion Paper](c-wallet-unit-attestation.md), resulting in reduction and simplification of the requirements. 
+There were several changes introduced to the Topic C (and the related ARF Annex II [Topic 9][topic-9]) in the earlier stages of the ARF work (see the [Topic C Discussion Paper](c-wallet-unit-attestation.md), resulting in reduction and simplification of the requirements. 
 
 In result there is only one requirement with potential relevance:
 
@@ -367,7 +367,7 @@ In result there is only one requirement with potential relevance:
 |-----------|--------------------------------------------------------------|--------------|
 | WUA_16    | If a WSCA is able to export a private key, the Wallet Provider SHALL specify this capability as an attribute in the WUA. |       Keep as-is       |
 
-At the same time the Migration Object is assumed not to contain any private keys (refer to Topic 34). Therefore it is finally assumed, that there is no impacts to any of the WUA / [Topic 9] requirements. 
+At the same time the Migration Object is assumed not to contain any private keys (refer to Topic 34). Therefore it is finally assumed, that there is no impacts to any of the WUA / [Topic 9][topic-9] requirements. 
 
 
 ### 5.3 Topic L - User requesting data deletion to relying parties 
@@ -415,10 +415,10 @@ See sections 4 and 5 above. In addition, data export and portability aspects in 
 |----------------------------------------|--------------------------------------------------------------|
 | [ARF_DevPlan]                          | Architecture and Reference Framework Development plan 2025, European Commission, v1.0 |
 | [RiskRegister]                         | Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft |
-| [Topic 9]                             | Topic 9 - Wallet Unit Attestation |
-| [Topic 16]                               | Topic 16 - Signing documents with a Wallet Unit
-| [Topic 19]                             | Topic 19 - User navigation requirements (Dashboard logs for transparency) |
-| [Topic 34]                             | Topic 34 - Migrate to a different Wallet Solution                      |
+| [Topic 9][topic-9]                             | Topic 9 - Wallet Unit Attestation |
+| [Topic 16][topic-16]                               | Topic 16 - Signing documents with a Wallet Unit
+| [Topic 19][topic-19]                             | Topic 19 - User navigation requirements (Dashboard logs for transparency) |
+| [Topic 34][topic-34]                             | Topic 34 - Migrate to a different Wallet Solution                      |
 |[Topic 50 ]                            |  Topic 50 - Blueprint to report unlawful or suspicious request of data |
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework |

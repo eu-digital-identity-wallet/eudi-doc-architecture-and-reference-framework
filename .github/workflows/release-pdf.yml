@@ -3,7 +3,7 @@
 # PDFs are produced once per release (not on every push), using the same pinned
 # toolchain image as the PR check, and uploaded to the release that triggered the
 # run. The version baked into the documents and the zip name is taken from the
-# release tag (e.g. v2.10.0 -> 2.10.0), overriding the Makefile default.
+# release tag (e.g. v3.0.0 -> 3.0.0), overriding the Makefile default.
 name: Publish release PDFs
 
 on:
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Existing release tag to (re)build PDFs for, e.g. v2.10.0"
+        description: "Existing release tag to (re)build PDFs for, e.g. v3.0.0"
         required: true
 
 permissions:

@@ -22,7 +22,7 @@
         <mxCell id="2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#A0C0FF;strokeWidth=2;strokeColor=none;" value="" vertex="1">
           <mxGeometry height="80" width="80" x="1120" y="601" as="geometry" />
         </mxCell>
-        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Relying Party Instance&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;or&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Wallet Unit&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Relying Party Instance&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;or&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Verifier Wallet Unit&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="140" x="1091" y="821" as="geometry" />
         </mxCell>
         <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeWidth=1;strokeColor=#6c8ebf;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;PID Providers&lt;/span&gt;&lt;/div&gt;" vertex="1">
@@ -41,7 +41,7 @@
         <mxCell id="OqG462VzuzaBs0EC9eQU-37" parent="1" style="shape=actor;whiteSpace=wrap;html=1;strokeWidth=1;" value="" vertex="1">
           <mxGeometry height="36" width="28" x="1146" y="611" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-39" edge="1" parent="1" style="endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.102;exitY=0.959;exitDx=0;exitDy=0;dashed=1;dashPattern=1 1;exitPerimeter=0;entryX=0.137;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="Issue WUAs &amp; WIAs &#xa;Support &amp; Maintenance">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-39" edge="1" parent="1" style="endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;exitX=0.102;exitY=0.959;exitDx=0;exitDy=0;dashed=1;dashPattern=1 1;exitPerimeter=0;entryX=0.137;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="Issue KAs &amp; WIAs. &#xa;Support &amp; Maintenance.">
           <mxGeometry relative="1" x="0.4889" as="geometry">
             <mxPoint as="offset" />
             <mxPoint x="813.46" y="404.36" as="sourcePoint" />
@@ -54,7 +54,7 @@
         <mxCell id="tklJ06Eg1gI686ZZUtUN-71" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;User&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="50" x="1135" y="647" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-58" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.991;exitY=0.834;exitDx=0;exitDy=0;exitPerimeter=0;" target="11" value="Presentation&#xa;OpenID4VP&#xa;ISO/IEC 18013-5">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-58" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.991;exitY=0.834;exitDx=0;exitDy=0;exitPerimeter=0;" target="11" value="Presentation&#xa;(ISO/IEC 18013-5,&#xa;OpenID4VP,&#xa;ISO/IEC 18013-7)">
           <mxGeometry relative="1" x="0.4533" y="-2" as="geometry">
             <mxPoint as="offset" />
             <Array as="points" />

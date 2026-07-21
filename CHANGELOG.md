@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semverdoc.org/).
 
+## [3.0.0] - Unreleased
+
+Changes:
+
+- Changes due to the CIR amending CIR 2025/848.
+- Changes due to the CIR amending CIR 2024/2977, 2024/2979, 2024/2980, and 2024/2982.
+- Changes due to the [revision-round discussion paper for Topic X](/docs/discussion-topics/x-rr-relying-party-registration.md) (Relying Party registration), which introduced the concept of Relying Party Services, especially in Section 3.11.2 and Topic 44.
+- The main document was split into one page per chapter for the website; the combined PDF is unchanged.
+- Several issues raised via Confluence and GitHub have been resolved, plus a number of editorial corrections.
+
 ## [2.9.0] - 2026-05-11
 
 Changes:

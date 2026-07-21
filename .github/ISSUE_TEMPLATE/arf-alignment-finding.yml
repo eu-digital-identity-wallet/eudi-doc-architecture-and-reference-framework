@@ -1,0 +1,85 @@
+name: ARF alignment finding
+description: Record a single ARF alignment change (driver, source, gap, fix), modelled on the 2.x review-finding style.
+title: "[ARF 3.0.0 alignment] "
+labels: ["area:main-doc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One finding per issue. Keep it self-contained so it can become a single PR against `feature/3.0.0`.
+        Naming rule: use "EUDI Regulation" or "Regulation (EU) No 910/2014".
+        After submitting, set Project = ARF Drafting (Backlog), Milestone = v3.0.0, and add the matching `severity:*`, `area:*`, chapter/annex and topic labels.
+  - type: dropdown
+    id: epic
+    attributes:
+      label: Epic
+      description: Which alignment epic does this belong to?
+      options:
+        - "5a23 (CIR 2024/2977, 2979, 2980, 2982)"
+        - "5b (CIR 2025/848, Relying Party registration)"
+        - "FCAF (functional conformance)"
+        - "Other"
+    validations:
+      required: true
+  - type: input
+    id: driver
+    attributes:
+      label: Driver
+      description: Amending instrument and article, or "FCAF".
+      placeholder: "5b, new Article 8(2)(c)-(d) of CIR 2025/848"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Same scale as the 2.x review (also add the matching severity:* label after submitting).
+      options:
+        - "blocker - factually wrong, legally misaligned, or breaks interoperability"
+        - "major - significant clarity/consistency or alignment issue"
+        - "minor - substantive but small"
+        - "nit - style or wording"
+    validations:
+      required: true
+  - type: input
+    id: epic-link
+    attributes:
+      label: Epic issue
+      description: Link to the parent epic issue.
+      placeholder: "#<epic issue number>"
+  - type: input
+    id: source
+    attributes:
+      label: Source file(s) and IDs
+      description: ARF file(s), sections, and HLR identifiers affected.
+      placeholder: "docs/main/06-trust-model.md §6.4.2; hltr/high-level-requirements.csv (new AS-RP HLRs)"
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Gap
+      description: What the ARF says today, or does not say.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Consequence for interoperability or legal alignment.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: The concrete edit. For HLR changes, edit hltr/high-level-requirements.csv then run `make hltr` and `make check-csv`.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: What to confirm before drafting normative text.
+    validations:
+      required: false

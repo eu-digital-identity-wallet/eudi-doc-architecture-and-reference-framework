@@ -193,7 +193,7 @@ this support should be.~~
 
 **ISSU_17** A PID Provider SHALL implement device binding for all PIDs it issues, 
 meaning it SHALL ensure that a PID is cryptographically bound to a WSCA/WSCD included 
-in the Wallet Unit, as specified in requirement WUA_11 in [Topic 9]. Notes: 
+in the Wallet Unit, as specified in requirement WUA_11 in [Topic 9][topic-9]. Notes: 
 Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] and 'key binding' 
 in [SD-JWT-VC]. ~~Discussions on device binding are ongoing, in particular regarding 
 whether non-device-bound PIDs or attestations should be supported by a Wallet Unit, 
@@ -202,7 +202,7 @@ and if so, what the requirements for this support should be.~~
 **ISSU_27** ~~An Attestation Provider SHALL implement device binding for all 
 attestations it issues, meaning it SHALL ensure that an attestation is cryptographically 
 bound to a WSCA/WSCD included in the Wallet Unit, as specified in requirement WUA_11 in 
-[Topic 9]. Notes: -Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] 
+[Topic 9][topic-9]. Notes: -Device binding is called 'mdoc authentication' in [ISO/IEC 18013-5] 
 and 'key binding' in [SD-JWT-VC]. - Discussions on device binding are ongoing, 
 in particular regarding whether non-device-bound PIDs or attestations should be 
 supported by a Wallet Unit, and if so, what the requirements for this support should be.~~
@@ -210,7 +210,7 @@ supported by a Wallet Unit, and if so, what the requirements for this support sh
 **ISSU_27** An Attestation Provider SHOULD implement device binding for all attestations it issues. When an issued
 attestation is device-bound, an Attestation Provider SHALL ensure that the attestation is
 cryptographically bound to a WSCA/WSCD included in the Wallet Unit, as specified in requirement
-WUA_11 in [Topic 9]
+WUA_11 in [Topic 9][topic-9]
 
 **ISSU_65** The common OpenID4VCI protocol referenced in requirement ISSU_01, or an 
 EUDI Wallet-specific extension or profile thereof, SHALL enable a PID Provider, 

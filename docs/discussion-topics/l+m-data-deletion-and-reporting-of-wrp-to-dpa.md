@@ -416,7 +416,7 @@ The present document discusses topics related to these protocols and interfaces,
 
 ### 3.1 Existing High-Level Requirements specified in Topic 48 
 
-The following high-level requirements have been specified in [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties)
+The following high-level requirements have been specified in [Topic 48][topic-48]
 before starting the present discussion:
 
 | **Index** | **Requirement specification** |
@@ -425,12 +425,12 @@ before starting the present discussion:
 | DATA_DLT_02 | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past. |
 | DATA_DLT_03 | A Wallet Instance SHALL provide a function where the User may select one Relying Party or multiple Relying Parties for which an attribute deletion request must be submitted. |
 | DATA_DLT_04 | A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit. |
-| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)). |
+| DATA_DLT_05 | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19][topic-19]). |
 | DATA_DLT_06 | The log SHALL include as a minimum: - Date of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed. |
 
 ### 3.2 Existing High-Level Requirements specified in Topic 50
 
-The following high-level requirements have been specified in [Topic 50](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data) before starting the discussion:
+The following high-level requirements have been specified in [Topic 50][topic-50] before starting the discussion:
 
 | **Index** | **Requirement specification** |
 |-----------|--------------------|
@@ -438,7 +438,7 @@ The following high-level requirements have been specified in [Topic 50](../annex
 | RPT_DPA_02 | The User interface enabling a User to start the process of lodging a complaint SHALL be accessible via the Wallet Instance. |
 | RPT_DPA_03 | A Wallet Provider SHALL implement the interface in compliance with national procedural law and administrative practices. |
 | RPT_DPA_04 | A Wallet Unit SHALL enable the lodged complaint to be substantiated, including information to identify the Relying Party, their presentation request, and the User's allegation. |
-| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)). |
+| RPT_DPA_05 | A Wallet Unit SHALL keep reports sent to the DPA in a log file so that it can be presented to the User in the dashboard (as specified in [Topic 19][topic-19]). |
 
 ## 4. Erasure of personal data at a wallet-relying party
 
@@ -509,7 +509,7 @@ for the specific case, as requesting the data deletion is a rather sensitive pro
 During the discussions with the delegated experts from the EU Member States the following
 aspect related to DATA_DLT_04 was discussed:
 
-It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency).
+It was suggested to **delete this requirement**, as the detailed requirements of the common dashboard are handled in [Topic 19][topic-19].
 
 #### 4.4 Discussions related to DATA_DLT_05
 
@@ -664,7 +664,7 @@ the following high level requirement as **RPT_DPA_06**:
 ### 6.1 Update for Topic 48 (Erasure of personal data at a wallet-relying party)
 
 The updated set of high-level requirements after the discussion will give rise to an 
-update of [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2327-topic-48-blueprint-for-requesting-data-deletion-to-relying-parties):
+update of [Topic 48][topic-48]:
 
 | **Index**              | **Requirement specification**                                                                                                                                                                                                                                                                                                     |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -672,7 +672,7 @@ update of [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-to
 | DATA_DLT_02            | The Commission SHALL, in cooperation with the Member States, develop technical specifications for a Wallet Unit interface allowing a Wallet Unit to send attribute deletion requests to Relying Parties with whom it has interacted in the past.                                                                                  |
 | DATA_DLT_03            | A Wallet Instance SHALL provide a function where the User may select one Relying Party <s>**or multiple Relying Parties**</s> for which an attribute deletion request must be submitted.                                                                                                                                          |
 | <s>**DATA_DLT_04**</s> | <s>**A Wallet Instance SHALL be able to display the attribute deletion requests previously submitted through the Wallet Unit.**</s>                                                                                                                                                                                               |
-| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency)).                                                                                             |
+| DATA_DLT_05            | A Wallet Unit SHALL include attribute deletion requests in a log so they can be presented to the User via the dashboard (as specified in [Topic 19][topic-19]).                                                                                             |
 | DATA_DLT_06            | The log SHALL **also document the initiation of a data deletion request and** include as a minimum: - Date **and time** of attribute deletion request, - Relying Party to which the request was made, - Attributes requested to be removed.                                                                                       |
 | **DATA_DLT_07**        | **While the Wallet-Relying Party is responsible for choosing appropriate authentication mechanisms before executing a data deletion request, it is RECOMMENDED to use the authentication and signature facilities offered by the Wallet Solutions for this purpose.**                                                             |
 
@@ -680,7 +680,7 @@ update of [Topic 48](../annexes/annex-2/annex-2.02-high-level-requirements-by-to
 ### 6.2 Update for Topic 50 (Reporting a wallet-relying party to the competent data protection supervisory authority)
 
 The updated set of high-level requirements after the discussion will give rise to an update of 
-[Topic 50](../annexes/annex-2/annex-2.02-high-level-requirements-by-topic.md#a2328-topic-50-blueprint-to-report-unlawful-or-suspicious-request-of-data):
+[Topic 50][topic-50]:
 
 | **Index**             | **Requirement specification**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.6.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0">
   <diagram id="diagram" name="Page-1">
-    <mxGraphModel dx="259" dy="23" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
+    <mxGraphModel dx="964" dy="379" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#FFFFFF)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -35,12 +35,12 @@
         <mxCell id="tklJ06Eg1gI686ZZUtUN-71" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;User&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="50" x="1275" y="647" as="geometry" />
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" source="tklJ06Eg1gI686ZZUtUN-110" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=0;exitX=0.994;exitY=0.685;exitDx=0;exitDy=0;exitPerimeter=0;" target="11" value="Remote cross-device&#xa;presentation&#xa;Digital Credentials API &#xa;+ OpenID4VP">
-          <mxGeometry relative="1" x="0.477" as="geometry">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-73" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;startArrow=block;startFill=1;strokeColor=light-dark(#7a7a7a, #4B5C6B);labelBackgroundColor=default;fontColor=light-dark(#000000,#000000);textShadow=0;strokeWidth=2;fontStyle=0;exitX=0.994;exitY=0.685;exitDx=0;exitDy=0;exitPerimeter=0;" value="Remote cross-device presentation&#xa;Digital Credentials API &#xa;+ OpenID4VP or ISO/.IEC 18013-7">
+          <mxGeometry relative="1" x="0.556" as="geometry">
             <mxPoint as="offset" />
             <Array as="points" />
-            <mxPoint x="1040" y="740" as="sourcePoint" />
-            <mxPoint x="1099" y="460" as="targetPoint" />
+            <mxPoint x="1199.52" y="748.3125" as="sourcePoint" />
+            <mxPoint x="1280" y="840" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tklJ06Eg1gI686ZZUtUN-76" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#7a7a7a, #7a8896);startArrow=block;startFill=1;strokeWidth=2;endArrow=block;endFill=1;">
@@ -104,7 +104,7 @@
             <mxPoint x="1000" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tklJ06Eg1gI686ZZUtUN-119" connectable="0" parent="tklJ06Eg1gI686ZZUtUN-118" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="CTAP 2.2 hybrid&lt;div&gt;flow&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;including&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;proximity&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;check&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;via BLE&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="tklJ06Eg1gI686ZZUtUN-119" connectable="0" parent="tklJ06Eg1gI686ZZUtUN-118" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="CTAP-based&lt;div&gt;flow&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;including&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;proximity&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;check&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry relative="1" x="-0.2212" as="geometry">
             <mxPoint x="-24" y="-33" as="offset" />
           </mxGeometry>

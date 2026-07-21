@@ -68,8 +68,8 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **C** | Wallet Unit Attestation (WUA) and Key Attestation (Refinement Round) | [Paper](c-rr-wallet-unit-attestations.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/647) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/644) | Open |
-| **X** | Relying Party registration (Refinement Round) | [Paper](x-rr-relying-party-registration.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/648) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/645) | Open |
+| **C** | Wallet Unit Attestation (WUA) and Key Attestation (Refinement Round) | [Paper](c-rr-wallet-unit-attestations.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/647) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/644) | 2.9.0 |
+| **X** | Relying Party registration (Refinement Round) | [Paper](x-rr-relying-party-registration.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/648) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/645) | 3.0.0 |
 
 ### Iteration 2
 
@@ -78,8 +78,8 @@ following topics:
 
 | Topic | Title | Link to Paper | Link to Roadmap | Link to Discussion | Integrated into ARF version |
 |:----:|:-------|:---:|:---:|:---:|:---:|
-| **J** | Wallet to Wallet interaction (Refinement Round) | [Paper](j-rr-wallet-to-wallet-interactions.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/650) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/656) | Open |
-| **U** | EUDI Wallet Trust Mark (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/651) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/657) | Open |
+| **J** | Wallet to Wallet interaction (Refinement Round) | [Paper](j-rr-wallet-to-wallet-interactions.md) | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/650) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/656) | 3.0.0 |
+| **U** | EUDI Wallet Trust Mark (Refinement Round) | Open | [Roadmap](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/651) | [Discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/657) | 3.0.0 (no changes necessary) |
 
 ### Iteration 3
 
