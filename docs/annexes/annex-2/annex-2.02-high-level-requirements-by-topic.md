@@ -42,6 +42,7 @@ is anchorable: link directly to it with `#<identifier>`, e.g. `#ISSU_10`.
 ### A.2.3 High-Level Requirements
 
 [](){ #topic-1 }
+
 #### A.2.3.1 Topic 1 - Accessing Online Services with a Wallet Unit
 
 <div class="eudi-hlr" id="OIA_01" markdown>
@@ -353,6 +354,7 @@ A Relying Party Instance SHOULD verify the device-binding signature or Message A
 
 
 [](){ #topic-3 }
+
 #### A.2.3.2 Topic 3 - PID Rulebook
 
 ##### A. Generic HLRs <!-- omit from toc -->
@@ -585,6 +587,7 @@ When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL make all cla
 
 
 [](){ #topic-4 }
+
 #### A.2.3.3 Topic 4 - mDL Rulebook
 
 <div class="eudi-hlr" id="mDL_01" markdown>
@@ -598,6 +601,7 @@ mDLs and mDL Providers SHALL comply with all requirements in [mDL Rulebook][mdl-
 
 
 [](){ #topic-6 }
+
 #### A.2.3.4 Topic 6 - Relying Party authentication and User approval
 
 ##### A. Relying Party authentication <!-- omit from toc -->
@@ -800,6 +804,7 @@ When asking for User approval, the Wallet Unit MAY indicate to the User whether 
 
 
 [](){ #topic-7 }
+
 #### A.2.3.5 Topic 7 - Attestation revocation and revocation checking
 
 <div class="eudi-hlr" id="VCR_01" markdown>
@@ -1097,6 +1102,7 @@ A Wallet Instance SHOULD regularly check the revocation status of its PIDs and a
 
 
 [](){ #topic-9 }
+
 #### A.2.3.6 Topic 9 - Key Attestation and Wallet Instance Attestation
 
 ##### A. Key attestations <!-- omit from toc -->
@@ -1588,6 +1594,7 @@ A Wallet Provider SHALL maintain, for each Wallet Unit it has activated, the set
 
 
 [](){ #topic-10 }
+
 #### A.2.3.7 Topic 10 - Issuing a PID or attestation to a Wallet Unit
 
 ##### A - Generic HLRs <!-- omit from toc -->
@@ -2723,6 +2730,7 @@ PuB-EAAs Providers SHALL ensure that the certificates they use for signing PuB-E
 
 
 [](){ #topic-11 }
+
 #### A.2.3.8 Topic 11 - Pseudonyms
 
 ##### A. HLRs related to Use Cases A and B <!-- omit from toc -->
@@ -3035,6 +3043,7 @@ A User's scope rate limited pseudonyms for a particular scope and rate SHALL be 
 
 
 [](){ #topic-12 }
+
 #### A.2.3.9 Topic 12 - Attestation Rulebooks
 
 ##### A. Requirements regarding attestation formats <!-- omit from toc -->
@@ -3429,6 +3438,7 @@ The Scheme Provider for an Attestation Rulebook SHALL specify whether that attes
 
 
 [](){ #topic-16 }
+
 #### A.2.3.10 Topic 16 - Signing documents with a Wallet Unit
 
 ##### A. Requirement for Wallet Providers <!-- omit from toc -->
@@ -3706,6 +3716,7 @@ Empty
 
 
 [](){ #topic-18 }
+
 #### A.2.3.11 Topic 18 - Combined presentations of attributes
 
 <div class="eudi-hlr" id="ACP_01" markdown>
@@ -3777,6 +3788,7 @@ Before making a request according to ACP_05, an Attestation Provider SHALL verif
 
 
 [](){ #topic-19 }
+
 #### A.2.3.12 Topic 19 - User navigation requirements (Dashboard logs for transparency)
 
 <div class="eudi-hlr" id="DASH_01" markdown>
@@ -4013,6 +4025,7 @@ The User interface referred to in DASH_08 SHALL enable the User, for each presen
 
 
 [](){ #topic-20 }
+
 #### A.2.3.13 Topic 20 - Strong User authentication for electronic payments
 
 <div class="eudi-hlr" id="SUA_01" markdown>
@@ -4095,6 +4108,7 @@ Upon receiving a presentation request with transactional data, the Wallet Unit S
 
 
 [](){ #topic-24 }
+
 #### A.2.3.14 Topic 24 - User identification in proximity scenarios
 
 <div class="eudi-hlr" id="ProxId_01" markdown>
@@ -4168,6 +4182,7 @@ Empty
 
 
 [](){ #topic-25 }
+
 #### A.2.3.15 Topic 25 - Unified definition and controlled vocabularies for attributes
 
 <div class="eudi-hlr" id="CAT_01" markdown>
@@ -4237,6 +4252,7 @@ A request to include or to modify an attribute in the catalogue of attributes SH
 
 
 [](){ #topic-27 }
+
 #### A.2.3.16 Topic 27 - Registration of PID Providers, Providers of QEAAs, PuB-EAAs, and non-qualified EAAs, and Relying Parties
 
 ##### A. General requirements for Member State registration processes <!-- omit from toc -->
@@ -4710,6 +4726,7 @@ The access certificate format SHALL provide for the data elements to carry the e
 
 
 [](){ #topic-28 }
+
 #### A.2.3.17 Topic 28 - Wallet Unit for legal persons
 
 <div class="eudi-hlr" id="LP_01" markdown>
@@ -4741,6 +4758,7 @@ Empty
 
 
 [](){ #topic-29 }
+
 #### A.2.3.18 Topic 29 - Representation paradigm
 
 <div class="eudi-hlr" id="RP_01" markdown>
@@ -4763,6 +4781,7 @@ An Attestation Provider issuing representation attestations to a natural person 
 
 
 [](){ #topic-30 }
+
 #### A.2.3.19 Topic 30 - Interaction between Wallet Units
 
 <div class="eudi-hlr" id="W2W_01" markdown>
@@ -4998,6 +5017,7 @@ If the verification required by W2W_24 fails or cannot be performed, a Holder Wa
 
 
 [](){ #topic-31 }
+
 #### A.2.3.20 Topic 31 - Notification and publication of PID Provider, Wallet Provider, Attestation Provider, Access Certificate Authority, and Provider of registration certificates
 
 ##### A. Generic requirements for notification <!-- omit from toc -->
@@ -5431,6 +5451,7 @@ As part of the specifications referred to in TLPub_01, the European Commission S
 
 
 [](){ #topic-34 }
+
 #### A.2.3.21 Topic 34 - Migrate to a different Wallet Solution
 
 ##### A. Back-up requirements <!-- omit from toc -->
@@ -5626,6 +5647,7 @@ Empty
 
 
 [](){ #topic-38 }
+
 #### A.2.3.22 Topic 38 - Wallet Unit revocation
 
 ##### A. Issuing a Wallet Unit Attestation <!-- omit from toc -->
@@ -5902,6 +5924,7 @@ Empty
 
 
 [](){ #topic-40 }
+
 #### A.2.3.23 Topic 40 - Wallet Instance installation and Wallet Unit activation and management
 
 ##### A. HLRs for Wallet Instance installation <!-- omit from toc -->
@@ -6254,6 +6277,7 @@ Whenever the WSCA/WSCD successfully authenticated the User, the Wallet Unit SHOU
 
 
 [](){ #topic-42 }
+
 #### A.2.3.24 Topic 42 - Requirements for QTSPs to access Authentic Sources
 
 <div class="eudi-hlr" id="QTSPAS_01" markdown>
@@ -6339,6 +6363,7 @@ A QTSP SHALL obtain approval from the User to verify the authenticity of the att
 
 
 [](){ #topic-43 }
+
 #### A.2.3.25 Topic 43 - Embedded disclosure policies
 
 <div class="eudi-hlr" id="EDP_01" markdown>
@@ -6450,6 +6475,7 @@ An Attestation Provider SHALL revoke an attestation if a corresponding embedded 
 
 
 [](){ #topic-44 }
+
 #### A.2.3.26 Topic 44 - Registration certificates for PID Providers, Providers of QEAAs, PuB-EAAs, and non-qualified EAAs, and Relying Parties
 
 ##### A. Generic requirements on the specification and contents of registration certificates <!-- omit from toc -->
@@ -6810,6 +6836,7 @@ Before requesting the issuance of a PID or an attestation, a Wallet Unit SHALL v
 
 
 [](){ #topic-48 }
+
 #### A.2.3.27 Topic 48 - Blueprint for requesting data deletion to Relying Parties
 
 <div class="eudi-hlr" id="DATA_DLT_01" markdown>
@@ -6897,6 +6924,7 @@ Wallet Units, Relying Parties, and Registrars SHALL comply with the relevant req
 
 
 [](){ #topic-50 }
+
 #### A.2.3.28 Topic 50 - Blueprint to report unlawful or suspicious request of data
 
 <div class="eudi-hlr" id="RPT_DPA_01" markdown>
@@ -6975,6 +7003,7 @@ Wallet Units, Data Protection Authorities, and Registrars SHALL comply with the 
 
 
 [](){ #topic-51 }
+
 #### A.2.3.29 Topic 51 - PID or attestation deletion
 
 <div class="eudi-hlr" id="PAD_01" markdown>
@@ -7039,6 +7068,7 @@ Empty
 
 
 [](){ #topic-52 }
+
 #### A.2.3.30 Topic 52 - Relying Party intermediaries
 
 <div class="eudi-hlr" id="RPI_01" markdown>
@@ -7170,6 +7200,7 @@ The intermediary SHALL delete any PIDs or attestations it obtained from the Wall
 
 
 [](){ #topic-53 }
+
 #### A.2.3.31 Topic 53 - Zero-Knowledge Proofs
 
 <div class="eudi-hlr" id="ZKP_01" markdown>
@@ -7263,6 +7294,7 @@ Use of a ZKP scheme SHALL NOT prevent the Wallet Unit's ability to provide User 
 
 
 [](){ #topic-54 }
+
 #### A.2.3.32 Topic 54 - Accessibility
 
 <div class="eudi-hlr" id="ACC_01" markdown>
@@ -7289,6 +7321,7 @@ Wallet Providers SHALL ensure that their Wallet Units comply with accessibility 
 
 
 [](){ #topic-55 }
+
 #### A.2.3.33 Topic 55 - Certificate Transparency
 
 <div class="eudi-hlr" id="CT_01" markdown>
@@ -7347,6 +7380,7 @@ If an access certificate does not include a valid SCT, a Wallet Unit SHALL handl
 
 
 [](){ #topic-56 }
+
 #### A.2.3.34 Topic 56 - Wallet Provider Support and Maintenance
 
 <div class="eudi-hlr" id="WPSM_01" markdown>
