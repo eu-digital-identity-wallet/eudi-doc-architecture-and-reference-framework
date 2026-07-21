@@ -12,11 +12,13 @@
         <meta name="author" content="European Commission - DG CNECT">
       
       
-        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet/">
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/">
       
       
         <link rel="prev" href="../ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/">
       
+      
+        <link rel="next" href="../ts13-zksnark/">
       
       
         
@@ -67,15 +69,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Specification of Strong Customer Authentication (SCA) Implementation with the Wallet - European Digital Identity" />
 <meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
-<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet.png" />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet/" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Specification of Strong Customer Authentication (SCA) Implementation with the Wallet - European Digital Identity" />
 <meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
-<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/technical-specifications/ts12-specification-of-strong-customer-authentication-%28sca%29-Implementation-with-the-Wallet.png" />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.png" />
 </head>
   
   
@@ -557,9 +559,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../architecture-and-reference-framework-main/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../main/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -573,7 +618,339 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main Document
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/02-eudi-wallet-functionalities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 EUDI Wallet functionalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/03-roles-within-the-eudi-wallet-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Roles within the EUDI Wallet ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/04-high-level-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 High-level architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/05-data-model-and-data-exchange-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Data model and data exchange protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/06-trust-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Trust model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/07-wallet-solution-certification-and-risk-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Wallet Solution Certification and Risk Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/08-accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/09-document-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Document development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/10-references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main/11-annexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2120,6 +2497,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2521,6 +2902,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts13-zksnark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts14-zkps-from-mms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2665,7 +3102,7 @@
 
 
   
-    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/technical-specifications/ts12-specification-of-strong-customer-authentication-(sca)-Implementation-with-the-Wallet.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2674,7 +3111,7 @@
     
       
     
-    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/technical-specifications/ts12-specification-of-strong-customer-authentication-(sca)-Implementation-with-the-Wallet.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
@@ -2770,6 +3207,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../ts13-zksnark/" class="md-footer__link md-footer__link--next" aria-label="Next: Specification of Strong Customer Authentication (SCA) Implementation with the Wallet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

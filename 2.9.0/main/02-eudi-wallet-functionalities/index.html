@@ -1,0 +1,3866 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics.">
+      
+      
+        <meta name="author" content="European Commission - DG CNECT">
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/main/02-eudi-wallet-functionalities/">
+      
+      
+        <link rel="prev" href="../01-introduction/">
+      
+      
+        <link rel="next" href="../03-roles-within-the-eudi-wallet-ecosystem/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../media/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>2 EUDI Wallet functionalities - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../media/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="2 EUDI Wallet functionalities - European Digital Identity" />
+<meta property="og:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="og:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/main/02-eudi-wallet-functionalities.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/main/02-eudi-wallet-functionalities/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="2 EUDI Wallet functionalities - European Digital Identity" />
+<meta property="twitter:description" content="Architecture and Reference Framework (ARF) of the European Digital Identity Wallet: main narrative, annexes with normative high-level requirements, technical specifications, and discussion topics." />
+<meta property="twitter:image" content="https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/2.9.0/assets/images/social/main/02-eudi-wallet-functionalities.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-eudi-wallet-functionalities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <a
+      href="../.."
+      title="European Digital Identity"
+      class="md-header__button md-logo"
+      aria-label="European Digital Identity"
+      data-md-component="logo"
+    >
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 EUDI Wallet functionalities
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    
+
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/releases/latest/download/architecture-and-reference-framework-main-and-annexes.pdf" title="Download the ARF as PDF" class="md-header__button md-icon" aria-label="Download the ARF as PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"/></svg>
+      </a>
+    
+
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Architecture and Reference Framework
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../discussion-topics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Discussion Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical-specifications/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technical Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Conformance
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../media/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture and Reference Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture and Reference Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Document
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main Document
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 EUDI Wallet functionalities
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 EUDI Wallet functionalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-eudi-wallet-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 EUDI Wallet functionalities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 EUDI Wallet functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-identification-and-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Identification and authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-attribute-exchange-mechanism-using-attestations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Attribute exchange mechanism using attestations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-qualified-electronic-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Qualified electronic signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pseudonyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pseudonyms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-the-role-of-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 The role of Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-roles-within-the-eudi-wallet-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Roles within the EUDI Wallet ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-high-level-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 High-level architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-model-and-data-exchange-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Data model and data exchange protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-trust-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Trust model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-wallet-solution-certification-and-risk-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Wallet Solution Certification and Risk Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-document-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Document development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-annexes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../annexes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annexes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annexes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-1/annex-1-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 1 - Definitions</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Level Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    High-Level Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.01-high-level-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-2/annex-2.03-high-level-requirements-by-category/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>Architecture and Reference Framework</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rulebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rulebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.01-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.01 - PID Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-3/annex-3.02-mDL-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 3.02 - mDL Rulebook</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.01-design-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.01 - Design Guide</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annexes/annex-5/annex-5.02-design-guide-data-sharing-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    European Digital Identity Wallet
+  
+
+    
+      <br>
+      <small>ARF Annex 5.02 -  Design Guide - Data Sharing Scenarios</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../discussion-topics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discussion Topics
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Discussion Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/a-privacy-risks-and-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A privacy risks and mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aa support of electronic payments SCA with wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/ab-digital-signature-using-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ab digital signature using wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B re issuance and batch issuance of pids and attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/c-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C wallet unit attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/c-rr-wallet-unit-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C rr wallet unit attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/d-embedded-disclosure-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D - Embedded Disclosure Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/e-rr-pseudonyms-including-user-authentication-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E rr pseudonyms including user authentication mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/f-digital-credential-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic F - Digital Credentials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/g-zero-knowledge-proof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G - Zero Knowledge Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/h-transaction-logs-kept-by-the-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic H - Transaction logs kept by the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/i-natural-person-representing-another-natural-person/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I - Natural person representing another natural person
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/j-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J - Wallet to Wallet Interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/j-rr-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    J rr wallet to wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/k-combined-presentation-of-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K - Combined presentation of Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/l%2Bm-data-deletion-and-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L+M - Requesting erasure of personal data at a wallet-relying party and reporting a wallet-relying party to the competent data protection supervisory authority
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/n-export-and-data-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N export and data portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/o-catalogues-for-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic O - Catalogues for Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/p-secure-cryptographic-interface-between-the-Wallet-Instance-and-WSCA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic P - Secure Cryptographic Interface between the Wallet Instance and WSCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/q-interface-user-wallet-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q interface user wallet instance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/r-authentication-of-user-to-device/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R authentication of user to device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/s-certificate-transparancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S certificate transparancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/t-support-and-maintenance-by-the-wallet-provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T - Support and Maintenance by the Wallet Provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/u-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic U - EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/v-pid-rulebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    V - PID Rulebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/w-transactional-data-for-payments-and-other-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W transactional data for payments and other use cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/x-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/x-rr-relying-party-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X rr relying party registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussion-topics/z-device-bound-attestations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topic Z - Device-bound Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../technical-specifications/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts1-eudi-wallet-trust-mark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of EUDI Wallet Trust Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts2-notification-publication-provider-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of systems enabling the notification and subsequent publication of Provider information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts3-wallet-unit-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts4-zkp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Zero-Knowledge Proof (ZKP) Implementation in EUDI Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts5-common-formats-and-api-for-rp-registration-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common formats and API for Relying Party Registration information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts6-common-set-of-rp-information-to-be-registered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Set of Relying Party Information to be Registered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts7-common-interface-for-data-deletion-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for Data Deletion Requests to Relying Parties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts8-common-interface-for-reporting-of-wrp-to-dpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Common Interface for reporting of Relying Parties to Data Protection Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts9-wallet-to-wallet-interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Wallet to Wallet interactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts10-data-portability-and-download-%28export%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Data Portability and Download (Export)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of interfaces and formats for catalogue of attributes and catalogue of attestations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts13-zksnark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-specifications/ts14-zkps-from-mms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification of Strong Customer Authentication (SCA) Implementation with the Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://conformance.eudi.dev/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-eudi-wallet-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 EUDI Wallet functionalities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 EUDI Wallet functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-identification-and-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Identification and authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-attribute-exchange-mechanism-using-attestations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Attribute exchange mechanism using attestations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-qualified-electronic-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Qualified electronic signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pseudonyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pseudonyms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-the-role-of-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 The role of Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../about/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Architecture and Reference Framework
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Main Document
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/edit/main/docs/main/02-eudi-wallet-functionalities.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/raw/main/docs/main/02-eudi-wallet-functionalities.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>2 EUDI Wallet functionalities</h1>
+
+<h2 id="2-eudi-wallet-functionalities">2 EUDI Wallet functionalities<a class="headerlink" href="#2-eudi-wallet-functionalities" title="Link to this section">&para;</a></h2>
+<h3 id="21-introduction">2.1 Introduction<a class="headerlink" href="#21-introduction" title="Link to this section">&para;</a></h3>
+<p>The EUDI Wallet ecosystem is designed as a secure, User-controlled digital
+environment that enables Users to use their Wallet Unit to manage and present
+their person identification data (PID) and attestations across both public and
+private services in the EU. Its functionalities are built around security,
+privacy, and User control, ensuring seamless interactions with Relying Parties
+and other entities, while adhering to data
+protection principles.</p>
+<p>This chapter outlines the core functionalities of the Wallet, as defined
+by the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a>, and examines how the requirements
+for its implementation align with real-world use cases where Users will use
+their Wallet Unit.</p>
+<p>The functionalities of a Wallet can be grouped into the following
+categories:</p>
+<ul>
+<li><strong>Secure identification and authentication</strong>, ensuring that Users can present
+person identification data in a trusted environment.</li>
+<li><strong>Exchanging qualified and non-qualified User attributes</strong> through secure and
+verifiable electronic attestations of attributes.</li>
+<li><strong>Electronic signing of documents or data</strong>, allowing Users to create
+legally recognised qualified electronic signatures and seals.</li>
+<li><strong>Generate and use pseudonyms</strong> for authentication, to enhance privacy and
+prevent tracking.</li>
+</ul>
+<p>These functionalities are discussed in the next four sections.</p>
+<h3 id="22-identification-and-authentication">2.2 Identification and authentication<a class="headerlink" href="#22-identification-and-authentication" title="Link to this section">&para;</a></h3>
+<p>Using their Wallet, Users are able to:</p>
+<ul>
+<li><strong>Identify and authenticate</strong> to online and offline services, while using
+<strong>selective disclosure</strong> of attributes as well as <strong>User approval</strong>. This
+ensures that only necessary and User-approved attributes are presented to
+Relying Parties, which minimises exposure of personal information.</li>
+<li><strong>Securely authenticate Relying Parties or other Wallet Units</strong>, making sure
+that attributes are only presented to trusted entities.</li>
+<li><strong>Onboard seamlessly with PID Providers or attestation Providers</strong> by
+leveraging existing electronic identification schemes, for a smooth and secure
+registration process.</li>
+<li><strong>Be informed</strong> whether a Relying Party is registered to receive
+the attributes it requests.</li>
+<li><strong>Access a transaction log via a dashboard</strong>, allowing Users to:  <ul>
+<li><strong>Review past interactions</strong> with Relying Parties and other Wallets.</li>
+<li><strong>Request data erasure</strong> under Regulation (EU) 2016/679, Article 17 (right to erasure), to maintain privacy.</li>
+<li><strong>Report suspicious Relying Parties</strong> to the relevant national data
+protection authority.</li>
+</ul>
+</li>
+</ul>
+<p>These identification and authentication functions are closely linked to the
+concept of the Wallet as an <strong>electronic identity (eID) means</strong>. Article
+3(42) of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a> defines the European Digital Identity Wallet as an
+electronic identification means. As explained in this ARF, a Wallet Provider provides a
+Wallet Unit (a unique technical configuration of its generic Wallet Solution) to a User. The Wallet Unit, together with
+the PID issued to it and operated under the relevant eID scheme, implements the
+functionality of the European Digital Identity Wallet as the eID means.</p>
+<p>Article 5a(5), point (d), requires that the European Digital Identity Wallet,
+provided under the relevant eID scheme, meets the requirements for Level of Assurance
+high. In this ARF, this is implemented through a Wallet Provider providing
+a Wallet Unit to which a PID is issued by a PID Provider. The Wallet Unit is operated under an eID scheme at
+Level of Assurance high.</p>
+<p>The concept of Level of Assurance (LoA) is defined for electronic identification means
+(and the corresponding eID scheme). In the context of the EUDI Wallet ecosystem, this means that the LoA concept only applies to PID. For other attestations held and managed in
+the Wallet Unit, assurance and trust are expressed through other mechanisms
+(e.g., the security controls required for issuance and lifecycle management) and
+the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a> does not prescribe any specific level to be reached.</p>
+<p>To reflect this, the ARF uses the term 'level of security' for non-PID
+attestations, to indicate that different attestations may be subject to
+different security requirements. Each Attestation Provider specifies the
+required level of security for its attestations (including, where applicable,
+requirements on issuance, storage, presentation, and lifecycle management).</p>
+<h3 id="23-attribute-exchange-mechanism-using-attestations">2.3 Attribute exchange mechanism using attestations<a class="headerlink" href="#23-attribute-exchange-mechanism-using-attestations" title="Link to this section">&para;</a></h3>
+<p>Using their Wallet Unit, Users are able to:</p>
+<ul>
+<li><strong>Request, store, and present</strong> personal identification data and electronic
+attestations of attributes under their sole
+control, ensuring secure usage in both online and offline scenarios.</li>
+<li><strong>Backup a list of their attributes, attestations, and configurations</strong>,
+guaranteeing compliance with data portability rights.</li>
+<li><strong>Prevent tracking by Relying Parties</strong> when using attestations,
+ensuring privacy-preserving interactions.</li>
+</ul>
+<h3 id="24-qualified-electronic-signatures">2.4 Qualified electronic signatures<a class="headerlink" href="#24-qualified-electronic-signatures" title="Link to this section">&para;</a></h3>
+<p>Using their Wallet Unit, Users are able to:</p>
+<ul>
+<li><strong>Create qualified electronic signatures and seals</strong> for legally binding
+digital transactions.</li>
+<li><strong>Sign documents using qualified electronic signatures</strong>, which are provided
+by default and free of charge to natural persons using the Wallet (Regulation (EU) No 910/2014, Article 5a(5), point (g)). Member States may provide for proportionate measures to limit the free-of-charge use to non-professional purposes.</li>
+</ul>
+<p>These functionalities are implemented by using the authentication and signing
+capabilities of the Wallet as part of a local QSCD, or by involving a
+remote QSCD managed by a QTSP (called a Qualified Electronic Signature Remote
+Creation (QESRC) Provider). Local QSCDs are discussed in <a class="autorefs autorefs-internal" title="4.3.2 Components of a Wallet Unit" href="../04-high-level-architecture/#432-components-of-a-wallet-unit">Section 4.3.2</a>.
+QESRC Providers are discussed in <a class="autorefs autorefs-internal" title="3.9 Qualified Electronic Signature Remote Creation (QESRC) Providers" href="../03-roles-within-the-eudi-wallet-ecosystem/#39-qualified-electronic-signature-remote-creation-qesrc-providers">Section 3.9</a>.</p>
+<p>For high-level requirements regarding the creation of qualified electronic
+signatures, see <a class="autorefs autorefs-internal" title="A.2.3.10 Topic 16 - Signing documents with a Wallet Unit" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2310-topic-16-signing-documents-with-a-wallet-unit">Topic 16</a>.</p>
+<h3 id="25-pseudonyms">2.5 Pseudonyms<a class="headerlink" href="#25-pseudonyms" title="Link to this section">&para;</a></h3>
+<h4 id="251-overview">2.5.1 Overview<a class="headerlink" href="#251-overview" title="Link to this section">&para;</a></h4>
+<p>Using the Wallet, Users are able to present a pseudonym to a Relying Party
+to authenticate in situations where it is not necessary for the Relying Party to
+learn the User's identity. A pseudonym enables the Relying Party to recognise
+the same User across sessions within a defined scope, while avoiding unnecessary
+identification. This aligns with the general principle in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital
+Identity Regulation</a>, Article 5, that the use of user-chosen pseudonyms shall
+not be prohibited.</p>
+<p>In the European Digital Identity Wallet context, Wallet Units must support the
+generation of pseudonyms and store them encrypted and locally (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital
+Identity Regulation</a>, Article 5a(4)(b)). In addition, Relying Parties
+must not refuse the use of pseudonyms where identification of the user is not
+required by Union or national law (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a>, Article 5b(9)).</p>
+<p>The <a href="../../discussion-topics/e-pseudonyms-including-user-authentication-mechanism/">Discussion Paper for Topic E</a>
+introduced four possible use cases for pseudonyms within
+the EUDI Wallet ecosystem:</p>
+<ul>
+<li>A. Pseudonymous authentication,</li>
+<li>B. Attribute registration with subsequent authentication using a pseudonym,</li>
+<li>C. Rate-limited participation and</li>
+<li>D. Linkable pseudonymous authentication.</li>
+</ul>
+<p>These use cases are described in the next sections. <a class="autorefs autorefs-internal" title="4.7 Possible implementations of pseudonyms" href="../04-high-level-architecture/#47-possible-implementations-of-pseudonyms">Section 4.7</a> provides further
+information on how pseudonyms can be implemented to support these use cases.</p>
+<p>For high-level requirements, see <a class="autorefs autorefs-internal" title="A.2.3.8 Topic 11 - Pseudonyms" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11-pseudonyms">Topic 11</a>
+in Annex 2.</p>
+<h4 id="252-use-case-a-pseudonymous-authentication">2.5.2 Use case A: Pseudonymous authentication<a class="headerlink" href="#252-use-case-a-pseudonymous-authentication" title="Link to this section">&para;</a></h4>
+<p>A User authenticates to a Relying Party using a pseudonym when the Relying Party
+does not need to know the User's identity. The Relying Party typically links the
+pseudonym to an account and afterwards grants access to that account when the
+User can successfully authenticate using that pseudonym.  To be reliable for
+account access, pseudonyms must be unique within the relevant scope (i.e., no
+collisions between different Users for the same Relying Party scope). A User may
+hold multiple pseudonyms at the same Relying Party (e.g., multiple accounts).</p>
+<h4 id="253-use-case-b-attribute-registration-with-subsequent-authentication-using-a-pseudonym">2.5.3 Use case B: Attribute registration with subsequent authentication using a pseudonym<a class="headerlink" href="#253-use-case-b-attribute-registration-with-subsequent-authentication-using-a-pseudonym" title="Link to this section">&para;</a></h4>
+<p>This use case builds on use case A. In addition to pseudonymous authentication,
+the User may wish to register verifiable attributes (e.g., by presenting a PID
+or attestation) in the account. The Relying Party receives evidence that the
+attributes provided are associated with the same User who controls the
+pseudonym. Where available, a cryptographic binding mechanism, as discussed in
+<a class="autorefs autorefs-internal" title="6.6.3.10 Relying Party Instance verifies combined presentation of attributes" href="../06-trust-model/#66310-relying-party-instance-verifies-combined-presentation-of-attributes">Section 6.6.3.10.2</a>,
+can be used to strengthen the assurance of that association while avoiding
+unnecessary disclosure.</p>
+<h4 id="254-use-case-c-rate-limited-participation">2.5.4 Use case C: Rate-limited participation<a class="headerlink" href="#254-use-case-c-rate-limited-participation" title="Link to this section">&para;</a></h4>
+<p>This use case builds on use case A or B, but adds the guarantee that a User can
+register only a limited number of distinct pseudonyms (called the 'rate') for a
+given scope, as defined by the Relying Party. This supports scenarios such as
+limiting spam or bot registrations or enforcing "one participation per person"
+patterns, while still avoiding disclosure of the User's identity.</p>
+<h4 id="255-use-case-d-linkable-pseudonymous-authentication-across-multiple-actors">2.5.5 Use case D: Linkable pseudonymous authentication across multiple actors<a class="headerlink" href="#255-use-case-d-linkable-pseudonymous-authentication-across-multiple-actors" title="Link to this section">&para;</a></h4>
+<p>In this use case, a single pseudonym is used to authenticate towards multiple
+actors, so that these actors can recognise the User and (where intended)
+exchange information based on that pseudonym for a specific purpose. A typical
+example is an e-commerce flow where a User uses one pseudonym with a merchant
+and later authenticates with the same pseudonym to a carrier for delivery or
+pick-up. Because this introduces cross-party linkability, it should be supported
+only where necessary for the use case and with appropriate safeguards and User
+choice.</p>
+<h4 id="256-use-case-support">2.5.6 Use case support<a class="headerlink" href="#256-use-case-support" title="Link to this section">&para;</a></h4>
+<p>Commission Implementing Regulation (EU) 2024/2979 sets the baseline obligations
+for pseudonyms: Wallet Units must support pseudonym generation and, upon request of a
+wallet-relying party, generate a pseudonym that is specific and unique to that
+wallet-relying party, and provide it to the wallet-relying party either
+stand-alone or in combination with a requested PID or attestation (CIR
+2024/2979, Article 14 (2)).</p>
+<p>With regard to the use cases identified above, this implies the following:</p>
+<ul>
+<li>Wallet Units support use case A (Pseudonymous authentication), since this is
+required in the CIR. The technical specifications in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/314" title="Jeff Hodges et al, Web Authentication, An API for accessing Public Key Credentials Level 2, W3C Recommendation">W3C WebAuthn</a> can be used to implement this use case, although other mechanisms can be used as well.</li>
+<li>Use case B (Attribute registration with subsequent authentication using a
+pseudonym) is partially supported, insofar as Article 14(2) enables Wallet Units
+to provide the pseudonym in combination with a PID or attestation, but
+additional technical specification work is needed to specify a common
+cryptographic binding mechanism to bind the PID or attestation to the pseudonym.</li>
+<li>Use case C (Rate-limited participation) requires the specification of an
+additional mechanism to ensure interoperability. <a href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a238-topic-11-pseudonyms">Section E in Topic 11</a>
+contains a set of expectations for such a mechanism.</li>
+<li>Use case D (Linkable pseudonymous authentication) can be supported by issuing
+pseudonyms in the form of an attestation, see <a class="autorefs autorefs-internal" title="4.7.3 Attested pseudonyms" href="../04-high-level-architecture/#473-attested-pseudonyms">Section 4.7.3</a>.
+However, no common specification of pseudonym attestations is available currently.</li>
+</ul>
+<p>Future ARF iterations will therefore develop and/or reference additional
+technical specifications to support the use cases B - D in a
+harmonised way (including conformance expectations), building on the baseline
+established by CIR 2024/2979.</p>
+<h3 id="26-the-role-of-use-cases">2.6 The role of Use Cases<a class="headerlink" href="#26-the-role-of-use-cases" title="Link to this section">&para;</a></h3>
+<h4 id="261-overview">2.6.1 Overview<a class="headerlink" href="#261-overview" title="Link to this section">&para;</a></h4>
+<p>The development of the Architecture and Reference Framework (ARF) is strategically
+driven by real-world use cases, ensuring that the User experience, value
+proposition, and requirements of the EUDI Wallet ecosystem are
+effectively addressed. To achieve this, the European Digital Identity
+Cooperation Group initially created service blueprints for each use case, which
+detail service touch points, components, and processes.</p>
+<p>These blueprints serve a dual purpose: they play a crucial role in service
+design, enhancing both User experience and operational efficiency, while also
+identifying areas for improvement. As a foundational element, these blueprints
+shape the development of common specifications, providing comprehensive yet
+flexible solutions that can accommodate alternative approaches and optional
+steps.</p>
+<p>User journeys may vary based on the specific implementation approach,
+influencing aspects such as data retrieval and User approval processes. The
+Annexes contain detailed descriptions of these blueprints, ensuring transparency
+and adaptability.</p>
+<p>The European Digital Identity Cooperation Group has outlined service blueprints
+for the following main use cases:</p>
+<ul>
+<li>Identification and authentication to access online services, see <a class="autorefs autorefs-internal" title="2.6.2 Identification and authentication to access online services using PID" href="#262-identification-and-authentication-to-access-online-services-using-pid">Section 2.6.2</a>,</li>
+<li>Qualified Electronic Signature, see <a class="autorefs autorefs-internal" title="2.4 Qualified electronic signatures" href="#24-qualified-electronic-signatures">Section 2.4</a>,</li>
+<li>Mobile Driving Licence, see <a class="autorefs autorefs-internal" title="2.6.3 Mobile Driving Licence" href="#263-mobile-driving-licence">Section 2.6.3</a>,</li>
+<li>Strong User Authentication for electronic payments, see <a class="autorefs autorefs-internal" title="2.6.4 Strong User Authentication for electronic payments" href="#264-strong-user-authentication-for-electronic-payments">Section 2.6.4</a></li>
+<li>A natural person representing another natural person, see <a class="autorefs autorefs-internal" title="2.6.5 Natural person representing another natural person" href="#265-natural-person-representing-another-natural-person">Section 2.6.5</a>.</li>
+<li>Additional use cases that will be introduced in the future, see <a class="autorefs autorefs-internal" title="2.6.6 Examples of other use cases" href="#266-examples-of-other-use-cases">Section 2.6.6</a>.</li>
+</ul>
+<p>These blueprints, along with all relevant information on use cases
+implementation, will be compiled in a standardised format within a dedicated
+document titled the "Use Cases Manual", and distributed together with this document.</p>
+<h4 id="262-identification-and-authentication-to-access-online-services-using-pid">2.6.2 Identification and authentication to access online services using PID<a class="headerlink" href="#262-identification-and-authentication-to-access-online-services-using-pid" title="Link to this section">&para;</a></h4>
+<p>One of the main use cases of the EUDI Wallet ecosystem is secure User
+identification and authentication. In this context, 'User identification' means that a User presents data from their PID, which is
+issued and managed at Level of Assurance High, to various online services,
+both public and private. 'Authentication' means that these services verify that the presented attributes originated from a trusted PID Provider and have not been changed. This capability is crucial, as it allows Relying
+Parties to confidently verify the identity of Users they interact with.</p>
+<p>In this use case, a User utilises their Wallet Unit to present specific
+attributes from a PID to a Relying Party in order to access online services.
+Before doing so, the Wallet Unit first authenticates the User. The User is
+particularly mindful of the privacy and security implications of presenting data
+when accessing online services. Their primary objective is to securely and
+reliably access online services that require PID attributes, while maintaining
+full control over how their personal data is presented.</p>
+<h4 id="263-mobile-driving-licence">2.6.3 Mobile Driving Licence<a class="headerlink" href="#263-mobile-driving-licence" title="Link to this section">&para;</a></h4>
+<p>A significant use case for the Wallet Unit involves allowing Users to request,
+store, and present a mobile Driving Licence (mDL) as an attestation in their
+Wallet Unit, allowing them mainly to prove their driving privileges. In this use
+case, the User employs a Wallet Unit to present an mDL to a Relying Party, for
+instance a police officer.</p>
+<p>Like any other attestation type, an mDL can be presented in proximity as well as
+online, over the internet.</p>
+<p>For more details and high-level requirements for this use case, please see
+<a class="autorefs autorefs-internal" title="A.2.3.3 Topic 4 - mDL Rulebook" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a233-topic-4-mdl-rulebook">Topic 4</a>.</p>
+<h4 id="264-strong-user-authentication-for-electronic-payments">2.6.4 Strong User Authentication for electronic payments<a class="headerlink" href="#264-strong-user-authentication-for-electronic-payments" title="Link to this section">&para;</a></h4>
+<p>Users would like to be able to authenticate themselves and their electronic
+payments securely and conveniently using their Wallet Units, so that
+they can enjoy a seamless and protected shopping and payment experience.</p>
+<p>A Wallet Unit facilitates complying with strong customer authentication (SCA)
+requirements for electronic payments, ensuring a high level of security and
+compliance with <a href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj#d1e5540-35-1">Article 97 of the PSD2</a>
+(and with the future PSD3/PSR).</p>
+<p>Note: Whereas the PSD2 speaks about 'strong <em>customer</em> authentication', the
+<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a>, Article 5f(2), uses the term 'strong
+<em>user</em> authentication'. The ARF assumes that this means that Wallet Units must
+comply with the requirements for SCA in the PSD2.</p>
+<p><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj">Commission Delegated Regulation (EU) 2018/389</a>
+lays down the requirements for strong customer authentication (SCA), which needs
+to be complied with when accessing a payment account online and for initiating
+electronic payments, or carrying out any action through a remote channel which
+may imply a risk of payment fraud or other abuses. The use of a Wallet Unit for
+SCA will be in full compliance with those requirements. This implies that the
+Wallet Unit must enable the User to authenticate payment information, such as
+amount and payee, originating from a Relying Party, and to return the
+authenticated data to the Relying Party.</p>
+<p>In general, the life cycle of a Wallet Unit in the role of an authenticator for
+Strong User Authentication comprises the following phases:</p>
+<ul>
+<li><strong>Registration</strong>: The User registers the Wallet Unit as an authenticator for a
+service. This process includes:<ul>
+<li>User identification and authentication, for example by presenting a PID,</li>
+<li>User consent for the registration,</li>
+<li>Linking a Wallet Unit with the service and a User account in that service.
+  This happens by issuing a dedicated SUA attestation to the Wallet Unit,
+  containing User attributes relevant for the service. The issuance process
+  for this SUA attestation complies with all requirements for attestation
+  issuance in this ARF. The SUA attestation is device-bound, which means it
+  contains a public key and the associated private key is stored in a
+  WSCA/WSCD or in a keystore.</li>
+</ul>
+</li>
+<li><strong>Strong User Authentication</strong>: A Relying Party sends a presentation request
+to the Wallet Unit to request relevant attributes from the SUA attestation. This
+presentation request includes transactional data. In the context of electronic
+payments, the transactional data will include at least the payment amount and
+the payee. After presenting the data to the User and obtaining the User's
+approval, the Wallet Unit signs the transactional data. It does so by including
+(a representation of) the transactional data in the signature creation process
+used for device binding. Note that the syntax and semantics of the transactional
+data, as well as rules for how the data must be presented to the User and how
+the data will be prepared for inclusion in the device binding signature, will be
+defined in the Attestation Rulebook (or a Technical Specification) for the SUA attestation.</li>
+<li><strong>De-registration</strong>: Unlinking the Wallet Unit from the service and/or the
+User's account in that service. This will involve deletion or revocation of the
+SUA attestation.</li>
+</ul>
+<p>For more information, please refer to <a class="autorefs autorefs-internal" title="5.7.5 Transactional data using " href="../05-data-model-and-data-exchange-protocols/#575-transactional-data-using-isoiec-18013-5-and-openid4vp">Sections 5.7.5</a>
+and <a class="autorefs autorefs-internal" title="6.6.3.8 Relying Party Instance verifies device binding" href="../06-trust-model/#6638-relying-party-instance-verifies-device-binding">6.6.3.8</a>. For
+high-level requirements, see <a class="autorefs autorefs-internal" title="A.2.3.13 Topic 20 - Strong User authentication for electronic payments" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2313-topic-20-strong-user-authentication-for-electronic-payments">Topic 20</a>.</p>
+<h4 id="265-natural-person-representing-another-natural-person">2.6.5 Natural person representing another natural person<a class="headerlink" href="#265-natural-person-representing-another-natural-person" title="Link to this section">&para;</a></h4>
+<p>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a> considers the representation of one
+natural person by another.</p>
+<p>One common use case is the legal representation of minors or individuals with
+diminished legal capacity. For example, parents or legal guardians must be
+empowered to make decisions and act on behalf of their children and represent
+them when accessing educational platforms, healthcare services, government
+benefits, or other services. The EUDI Wallet ecosystem must therefore
+accommodate such representation in a secure, verifiable manner.</p>
+<p>Another significant use case is the management of affairs for elderly or
+incapacitated individuals. In these cases, individuals can be assigned as legal
+representatives to manage healthcare, financial, and personal matters. For
+instance, a caregiver or relative could hold a delegation to access health
+records or submit applications for social care services on behalf of the person
+they represent.</p>
+<p>Power of attorney is another use case of a natural person (the agent) acting on
+behalf of another natural person (the principal).</p>
+<p>It should therefore be possible to issue a dedicated representation attestation
+for a natural person to a representative, in accordance with applicable national
+and European legislation. For certain use cases (e.g., parent-child
+relationships), the Attestation Provider of such attestations will be able to
+retrieve the relevant information from Authentic Sources at the national level.
+In other cases (e.g., power of attorney), the represented natural person may be
+required to explicitly authorize the representative.</p>
+<p>Representation attestations for a natural person issued to a representative have
+a distinct attestation type. The Attestation Rulebook describing this
+attestation type specifies the nature of the representation and clearly defines
+the operations that the representative is authorized to perform, thereby
+restricting the scope of their authority.</p>
+<p>Furthermore, representation attestations (like any other attestations) are
+either short-lived or revocable. In the case of revocable representation
+attestations, all entities that, according to applicable law, are entitled to
+revoke them have the capability to request the Attestation Provider to do so. It
+is emphasized that the high-level requirements concerning attestation
+revocation, as defined in <a class="autorefs autorefs-internal" title="A.2.3.5 Topic 7 - Attestation revocation and revocation checking" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a235-topic-7-attestation-revocation-and-revocation-checking">Topic 7</a>,
+also apply to this attestation type.</p>
+<p>A User holding a representation attestation is able to represent another natural
+person when interacting with a Relying Party. The Relying Party is always aware
+that it is interacting with a legal representative or agent. This is ensured by
+the fact that the corresponding Wallet Unit presents an attestation having a
+distinct type, specifically for representation attestations.</p>
+<p>For more details and high-level requirements for this use case, please see
+<a class="autorefs autorefs-internal" title="A.2.3.18 Topic 29 - Representation paradigm" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2318-topic-29-representation-paradigm">Topic 29</a>.</p>
+<h4 id="266-examples-of-other-use-cases">2.6.6 Examples of other use cases<a class="headerlink" href="#266-examples-of-other-use-cases" title="Link to this section">&para;</a></h4>
+<h5 id="2661-health-data">2.6.6.1 Health data<a class="headerlink" href="#2661-health-data" title="Link to this section">&para;</a></h5>
+<p>Easy access to health data is crucial in both national and cross-border
+contexts. A Wallet Unit may enable access to patient summary, ePrescriptions,
+etc.</p>
+<h5 id="2662-educational-attestations-and-professional-qualifications">2.6.6.2 Educational attestations and professional qualifications<a class="headerlink" href="#2662-educational-attestations-and-professional-qualifications" title="Link to this section">&para;</a></h5>
+<p>Providing credentials for qualification recognition procedures can be costly and
+time-consuming for Users, Relying Parties (such as companies and employers), and
+Attestation Providers (such as education and training providers or academic
+institutions). A Wallet Unit may be a repository for educational credentials and
+a means for presenting them by the User to relevant Relying Parties.</p>
+<h5 id="2663-digital-travel-credential">2.6.6.3 Digital Travel Credential<a class="headerlink" href="#2663-digital-travel-credential" title="Link to this section">&para;</a></h5>
+<p>Digital Travel Credential (DTC) Providers may issue DTCs to Wallet Units in a
+supported format, to enable Relying Parties to identify Users, thus facilitating
+a smooth travel experience and User journey. Relying Parties for a DTC may
+include governments, transportation providers, hospitality agents, or any other
+actors operating in a regulated environment which requires the use of a DTC.</p>
+<h5 id="2664-central-bank-digital-currencies">2.6.6.4 Central Bank Digital Currencies<a class="headerlink" href="#2664-central-bank-digital-currencies" title="Link to this section">&para;</a></h5>
+<p>In the future, a Wallet Unit could also be used for payments with Central Bank
+Digital Currencies.</p>
+<h5 id="2665-social-security">2.6.6.5 Social Security<a class="headerlink" href="#2665-social-security" title="Link to this section">&para;</a></h5>
+<p>Documents related to social security are important for many EU citizens to prove
+their rights and obligations under social security legislation in the EU.
+Examples include:</p>
+<ul>
+<li><strong>Portable Document ("PDA1")</strong> This is a statement of applicable legislation
+which is useful to prove that a person pays social contributions in another EU
+country, for example if they are a posted worker or work in several countries at
+the same time.</li>
+<li><strong>Electronic Health Insurance Card ("EHIC")</strong> This is a free card that provides
+every citizen with access to medically necessary government-provided healthcare
+during a temporary stay in one of the 27 EU countries, Iceland, Liechtenstein,
+Norway, and Switzerland, under the same conditions and at the same cost (free in
+some countries) as persons insured in that country. This includes, for example,
+services related to chronic or existing illnesses, as well as in connection with
+pregnancy and childbirth.</li>
+</ul>
+<!-- Auto-generated from Section 10 (References) of the ARF main
+     document by tools/gen_references.py. Do not edit by hand.
+     Appended to every page via pymdownx.snippets auto_append. -->
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-07-21T07:12:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-07-21</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-07-21T07:12:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-07-21</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1 Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1 Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-roles-within-the-eudi-wallet-ecosystem/" class="md-footer__link md-footer__link--next" aria-label="Next: 3 Roles within the EUDI Wallet ecosystem">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3 Roles within the EUDI Wallet ecosystem
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © European Commission, 2026. Licensed under CC BY 4.0.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>
