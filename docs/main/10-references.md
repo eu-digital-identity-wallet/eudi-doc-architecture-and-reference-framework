@@ -2,6 +2,8 @@
 
 ### 10.1 Commission Regulations and Decisions
 
+Several of the Commission Implementing Regulations listed below have since been amended by Commission Implementing Regulation (EU) [2026/1730](http://data.europa.eu/eli/reg_impl/2026/1730/oj), (EU) [2026/1731](http://data.europa.eu/eli/reg_impl/2026/1731/oj), and (EU) [2026/1735](http://data.europa.eu/eli/reg_impl/2026/1735/oj); the title of each amending act identifies the Implementing Regulation it amends. The references below point to the original acts and will be updated to the consolidated versions once these are available.
+
 | **Item Reference** | **Regulation name/details** |
 | ------------------ | ------------------------- |
 | [CID 2015/1505] | [Commission Implementing Decision (EU) 2015/1505](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015D1505) of 8 September 2015 laying down technical specifications and formats relating to trusted lists pursuant to Article 22(5) of Regulation (EU) No 910/2014 of the European Parliament and of the Council on electronic identification and trust services for electronic transactions in the internal market. |
