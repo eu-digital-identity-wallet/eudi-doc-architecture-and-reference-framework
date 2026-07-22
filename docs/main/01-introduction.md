@@ -162,12 +162,14 @@ The definitions used in this document can be found in
 
 In this version of the ARF, the following changes were made:
 
-- Changes due to the CIRs amending [CIR 2025/848],
-- Changes due to the CIRs amending [CIR 2024/2977], [CIR 2024/2979], [CIR 2024/2980], and [CIR 2024/2982],
+- Alignment with the amending Commission Implementing Regulations for the core EUDI Wallet framework: PID and EAA (amending [CIR 2024/2977]), integrity and core functionalities (amending [CIR 2024/2979]), ecosystem notifications (amending [CIR 2024/2980]), and protocols and interfaces (amending [CIR 2024/2982]).
+- Alignment with the amending Commission Implementing Regulation on the registration of Wallet-Relying Parties (amending [CIR 2025/848]).
 - Changes due to the [revision round discussion paper for Topic J](../discussion-topics/j-rr-wallet-to-wallet-interactions.md)
 (Wallet-to-wallet interactions).
 - Changes due to the [revision round discussion paper for Topic X](../discussion-topics/x-rr-relying-party-registration.md)
 (Relying Party registration), which introduced the concept of Relying Party Services, especially in [Section 3.11.2][3112-relying-party-services] and in [Topic 44][topic-44].
+- New requirements for Wallets, Relying Parties, and issuers to retrieve and manage trust anchors from both Trusted Lists ([ETSI TS 119 612]) and Lists of Trusted Entities (LoTEs, [ETSI TS 119 602]).
+- New [Section 7.5][75-functional-conformance-fcaf] introducing the Functional Conformance Assessment Framework (FCAF) — a shared, reusable set of test cases for the functional requirements that Wallet Solutions must support (per Annex III of [CIR 2024/2981]), published and maintained at [conformance.eudi.dev](https://conformance.eudi.dev/). It complements, and does not replace, the security evaluation in Sections 7.2 and 7.3.
 - Several issues raised via Confluence and GitHub have been resolved.
 
 Apart from these changes, a number of editorial mistakes were corrected.
