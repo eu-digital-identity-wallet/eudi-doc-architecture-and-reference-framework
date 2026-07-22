@@ -71,6 +71,8 @@ and the following Commission Implementing Regulations (CIRs):
 | [CIR 2025/2531](http://data.europa.eu/eli/reg_impl/2025/2531/oj) | Qualified electronic ledgers |
 | [CIR 2025/2532](http://data.europa.eu/eli/reg_impl/2025/2532/oj) | Qualified electronic archiving services |
 
+Several of these Commission Implementing Regulations have since been amended by Commission Implementing Regulation (EU) [2026/1730](http://data.europa.eu/eli/reg_impl/2026/1730/oj), (EU) [2026/1731](http://data.europa.eu/eli/reg_impl/2026/1731/oj), and (EU) [2026/1735](http://data.europa.eu/eli/reg_impl/2026/1735/oj); the title of each amending act identifies the Implementing Regulation it amends. The references above point to the original acts and will be updated to the consolidated versions once these are available.
+
 ## Contributing and versioning
 
 Contributions are welcome — see
