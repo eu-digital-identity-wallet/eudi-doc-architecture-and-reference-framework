@@ -14,6 +14,7 @@ Changes:
 - Introduction of the concept of Relying Party Services, from the [revision-round discussion paper for Topic X](/docs/discussion-topics/x-rr-relying-party-registration.md) (Relying Party registration) — especially in Section 3.11.2 and Topic 44.
 - Changes from the [revision-round discussion paper for Topic J](/docs/discussion-topics/j-rr-wallet-to-wallet-interactions.md) (Wallet-to-wallet interactions).
 - New requirements for Wallets, Relying Parties, and issuers to retrieve and manage trust anchors from both Trusted Lists (ETSI TS 119 612) and Lists of Trusted Entities (LoTEs, ETSI TS 119 602).
+- New Section 7.5 (Functional Conformance) introducing the Functional Conformance Assessment Framework (FCAF) — a shared, reusable set of test cases for the functional requirements that Wallet Solutions must support (per Annex III of CIR 2024/2981), published and maintained at [conformance.eudi.dev](https://conformance.eudi.dev/). It complements, and does not replace, the security evaluation in Sections 7.2 and 7.3.
 - Several issues raised via Confluence and GitHub have been resolved, plus a number of editorial corrections.
 
 The main document was also split into one page per chapter for the website; the combined PDF is unchanged.
