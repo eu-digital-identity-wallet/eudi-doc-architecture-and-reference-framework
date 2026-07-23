@@ -6566,7 +6566,7 @@ For the verification of the registration certificates of Attestation Providers, 
 Legacy ID: ISSU_33b
 {: .eudi-hlr__meta }
 
-A Wallet Provider SHALL support all Attestation Providers, except possibly if the attestation in question is a Strong User Authentication (SUA) attestation as meant in [Topic 20][topic-20] and the Wallet Provider chooses to not support processing of the transactional data associated with that attestation. Except for such cases, Wallet Units SHALL be capable of requesting the issuance of a QEAA, PuB-EAA, or non-qualified EAA from all Attestation Providers at the User's request.
+A Wallet Provider SHALL ensure that its Wallet Units support all attestations listed in the catalogue of attestation schemes managed by the Commission according to Article 8 of [Commission Implementing Regulation 2025/1569](http://data.europa.eu/eli/reg_impl/2025/1569/oj). Support implies at least that Wallet Units SHALL be capable of requesting the issuance of these applications from the respective Attestation Providers at the User's request, to display these attestations and their attributes to the User, and to present attributes from these attestations to Relying Parties upon User approval.
 
 </div>
 </div>
