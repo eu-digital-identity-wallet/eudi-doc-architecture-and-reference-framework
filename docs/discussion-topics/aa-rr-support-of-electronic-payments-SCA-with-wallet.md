@@ -587,7 +587,7 @@ As part of the discussion, the following questions are to be answered:
 The [TS12] model has some characteristics by design that can be considered as limitations:
 - fixed transactional data types, which means hardcoding therefore Wallet Solutions capable to support only fixed use cases,
 - it requires update of [TS12] and Wallet Unit software to support any new use case or change of transactional data type specification,   
-- semi-static rendering rules - the number of available UI elements and their parameters are fixed, while banks and payment sector stakeholders are eager to have more flexibility, to optimise user experience or meet business requirements eg. related to branding,
+- semi-static rendering rules - the number of available UI elements and their parameters are fixed, while banks and payment sector stakeholders eager to have more flexibility, to optimise user experience or meet business requirements eg. related to branding,
 - as a general rule, Wallet Units are not allowed to provide any additional information about the User or its device as "fraud signals". This may not be sufficient to implement best practices related to payment transaction risk monitoring (requirement of [PSD2]), equivalent to today's SCA solutions used by banks, 
 - related to the point above, the response to presentation provides a limited "proof package" (see Section 4.6) that could be extended to improve bank's process for transaction risk monitoring.
 
