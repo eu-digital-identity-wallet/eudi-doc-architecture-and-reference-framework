@@ -518,7 +518,7 @@ As [TS12] provides some mandatory requirements for SCA Attestation content and i
 
 At the same time, the SCA Attestation Rulebooks may provide additional requirements and specifications extending [TS12] (for instance to improve user experience or customise the scenarios) that may be implemented by Wallet Solutions on a voluntary basis.
 
-### 4.4 Transactional Data Types  
+### 4.5 Transactional Data Types  
 
 To enable the use cases (presented in Section 4.2) and ensure interoperability between Wallet Providers, [TS12] standardises data schemas of `transaction_data` parameter content. 
 
@@ -532,7 +532,7 @@ The transactional data is used to render a display message to the user and to pr
 
 The transactional data schemas are fixed, and modifying them or adding new types (eg. to address new cases) requires updating of [TS12] and Wallet Units in the field.
 
-### 4.5 Transactional Validation
+### 4.6 Transactional Validation
 
 To avoid unexpected wallet behaviour and to prevent misuse and frauds, the type of transactional data used in an SCA presentation request shall match to a specific SCA Attestation. 
 
@@ -544,18 +544,18 @@ Therefore the Wallet Unit, after reception of a presentation request with `trans
 
 If any of these verifications fail the Wallet Unit shall cease processing.
 
-### 4.5 User Message Rendering
+### 4.7 User Message Rendering
 
 To meet requirements of [PSD2] the Wallet Unit shall ensure the User is able to give ab explicit and informed consent to the transaction, that is a payment transaction. Therefore, the Wallet Unit shall display transactional data and some related information, in conjunction with the requested attributes of an SCA Attestation, to the User. The information shall be displayed in a clear, understandable and accurate manner, for review before obtaining the User's confirmation for the transaction.
 
-[TS12] defines mandatory and optional user interface labels that may appear on the screen of the User's device. The rendering mechanism is partially customisable and dynamic: the number of available UI elements and their parameters are fixed, but an SCA Attestation Provider (which normally is a bank/PSP) may define own content (e.g., labels of the confirmation and denial actions buttons, transaction title or security hint, including localisation and support of language multiple languages). 
+[TS12] defines mandatory and optional user interface visual elements that may appear on the screen of the User's device. The rendering mechanism is partially customisable and dynamic: the number of available UI elements and their parameters are fixed, but an SCA Attestation Provider (which normally is a bank/PSP) may define own content (e.g., labels of the confirmation and denial actions buttons, transaction title or security hint, including localisation and support of language multiple languages). 
 
-### 4.6 Response and Proof Package
+### 4.8 Response and Proof Package
 
 The presentation response provides not only the attributes being presented, but also the "authentication code" (`jti` parameter), being a part of dynamic linking mechanism, the response mode (whether direct or via DC-API) and authentication method information.
 Such a response constitutes a proof for the User's consent to an SCA transaction.
 
-### 4.7 SCA-related HLRs
+### 4.9 SCA-related HLRs
 
 The relevant High Level Requirements are defined in ARF's [Topic 20] - Strong User authentication for electronic payments.
 
