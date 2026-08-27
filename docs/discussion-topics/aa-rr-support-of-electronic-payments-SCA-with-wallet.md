@@ -1,4 +1,4 @@
-Version 0.8, updated 25 August 2026
+Version 0.8, updated 27 August 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -578,9 +578,9 @@ As of now there is no SCA Attestation rulebook available. In general, such a rul
 
 As part of the discussion, the following questions are to be answered:
 
-**QUESTION1**: Are there any Member States or other stakeholders working on the SCA rulebook? 
+**QUESTION 1**: Are there any Member States or other stakeholders working on the SCA rulebook? 
 
-**QUESTION2**: Who should provide the SCA rulebook(s)? Is it expected that the Commission takes initiative and provide such a rulebook? 
+**QUESTION 2**: Who should provide the SCA rulebook(s)? Is it expected that the Commission takes initiative and provide such a rulebook? 
 
 ### 5.2 Limitations of TS12 and Market Needs
 
@@ -613,9 +613,9 @@ There might be more limitations or business needs for TS12 improvements; identif
 
 To conclude, the following questions arise as part of the discussion:
 
-**QUESTION5**: What experience with TS12 and wallet-based SCA (and payment initiation relevant to [TS12]) are drawn from the Large Scale Pilots?
+**QUESTION 5**: What experience with TS12 and wallet-based SCA (and payment initiation relevant to [TS12]) are drawn from the Large Scale Pilots?
 
-**QUESTION6**: What experience from TS12 implementation the Member States and other stakeholders have?
+**QUESTION 6**: What experience from TS12 implementation the Member States and other stakeholders have?
 
 ### 5.4 Standardisation Initiatives
 
@@ -641,11 +641,11 @@ The main changes compared to [TS12] are:
 
 To conclude, the following questions arise as part of the discussion:
 
-**QUESTION7**: Are there any other standardisation initiatives worth looking at at this time?
+**QUESTION 7**: Are there any other standardisation initiatives worth looking at at this time?
 
-**QUESTION8**: Is there an impact from these standardisation initiatives to wallet-based SCA concept and [TS12] implementation? 
+**QUESTION 8**: Is there an impact from these standardisation initiatives to wallet-based SCA concept and [TS12] implementation? 
 
-**QUESTION9**: Is there a need to coordinate efforts or align [TS12] development with these other initiatives? If so, in what scope? 
+**QUESTION 9**: Is there a need to coordinate efforts or align [TS12] development with these other initiatives? If so, in what scope? 
 
 ### 5.5 Impact of PSR
 
@@ -654,7 +654,7 @@ According to the current PSR text ([PSR Provisional Agreement]), the Wallet Prov
 
 To conclude, the following question is to be answered along the discussion:
 
-**QUESTION10**: What is the impact of PSR to the ARF concept, HLRs and [TS12]? Are changes required based on it? 
+**QUESTION 10**: What is the impact of PSR to the ARF concept, HLRs and [TS12]? Are changes required based on it? 
 
 ## 6 Proposals of Changes to HLRs
 
