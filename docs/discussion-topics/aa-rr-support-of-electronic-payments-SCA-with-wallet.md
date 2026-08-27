@@ -55,7 +55,7 @@ The legal requirements applicable to Topic AA were collected and discussed in To
 
 As an outcome of Topic W and Topic AA the set of new or modified HLRs was introduced to [Topic 20] of the ARF.
 
-The purpose of Topic AA Refinement Round is to discuss further, in detail, various aspects necessary to enable Wallet Solution Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 and future PSR, based on the experience from the Large Scale Projects, especially from the current ones carried out by WeBuild and Aptitude consortiums.
+The purpose of Topic AA Refinement Round is to discuss further, in detail, various aspects necessary to enable Wallet Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 and future PSR, based on the experience from the Large Scale Projects, especially from the current ones carried out by WeBuild and Aptitude consortiums.
 
 ## 3 Legal requirements 
 
@@ -502,7 +502,7 @@ In this context, there will be two base flow models, depending on what entity th
 
 In 2025, the European Commission provided [TS12] specification that has been developed with strong contribution from representatives of Large Scale Pilot consortiums - WeBuild and Aptitude.  
 
-In general [TS12] aims to define behaviour of the Wallet Units when receiving a presentation request of attributes from an SCA Attestation (that contains payment transaction data as a payload, and where a presentation of the attributes effectively constitutes an act of SCA). Therefore, the Wallet Solution Providers shall implement their Wallet Solutions in compliance with [TS12].
+In general [TS12] aims to define behaviour of the Wallet Units when receiving a presentation request of attributes from an SCA Attestation (that contains payment transaction data as a payload, and where a presentation of the attributes effectively constitutes an act of SCA). Therefore, the Wallet Providers shall implement their Wallet Solutions in compliance with [TS12].
 
 [TS12] contains:
 + overview of the SCA scenarios at stake,
