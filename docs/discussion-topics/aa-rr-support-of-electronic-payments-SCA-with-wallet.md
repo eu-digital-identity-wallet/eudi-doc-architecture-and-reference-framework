@@ -500,7 +500,7 @@ In this context, there will be two base flow models, depending on what entity th
 
 ### 4.3 Technical Specification for SCA with the Wallet
 
-In 2025, the European Commission provided [TS12] specification that has been developed with with strong contribution from representatives of Large Scale Pilot consortiums - WeBuild and Aptitude.  
+In 2025, the European Commission provided [TS12] specification that has been developed with strong contribution from representatives of Large Scale Pilot consortiums - WeBuild and Aptitude.  
 
 In general [TS12] aims to define behaviour of the Wallet Units when receiving a presentation request of attributes from an SCA Attestation (that contains payment transaction data as a payload, and where a presentation of the attributes effectively constitutes an act of SCA). Therefore, the Wallet Solution Providers shall implement their Wallet Solutions in compliance with [TS12].
 
