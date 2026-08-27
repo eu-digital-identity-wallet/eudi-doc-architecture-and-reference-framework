@@ -494,9 +494,9 @@ In the case of initiating an electronic payment transaction or a series thereof,
 The ARF [Topic 20] introduces the concept of SCA that is based on dedicated SUA attestations issued into the User’s Wallet Unit by their ASPSP and later presented by the Wallet Unit to a Relying Party, constituting SCA (more details in the later part of this chapter). 
 In this context, there will be two base flow models, depending on what entity the User interacts with in the SCA process (SUA attestation presentation): 
 
-+ **2-Party Model** (aka **Issuer-Requested Flow**”), where the ASPSP acts as both the Attestation Issuer and Relying Party; in this scenario **all three SCA use cases are permitted**;
++ **2-Party Model** (aka **Issuer-Requested Flow**), where the ASPSP acts as both the Attestation Issuer and Relying Party; in this scenario **all three SCA use cases are permitted**;
 
-+ **3-Party Model** (aka **Payee-Requested Flow**”), where the Attestation Issuer differs from the Relying Party; in this scenario **only the payment initiation SCA use case is permitted**.
++ **3-Party Model** (aka **Payee-Requested Flow**), where the Attestation Issuer differs from the Relying Party; in this scenario **only the payment initiation SCA use case is permitted**.
 
 ### 4.3 Technical Specification for SCA with the Wallet
 
