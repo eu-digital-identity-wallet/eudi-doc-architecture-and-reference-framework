@@ -605,7 +605,7 @@ To conclude, the following questions arise as part of the discussion:
 
 ### 5.3 Feedback from LSP and TS12 implementers 
 
-The two Large Scale Pilot consortiums, WeBuild and Aptitude, are currently experimenting with [TS12] implementations with aim to carry out their test of wallet-based SCA (as well as payment initiation). Their experience is crucial to the discussion in the context of limitations and needs related to [TS12].
+The two Large Scale Pilot consortiums, WeBuild and Aptitude, are currently experimenting with [TS12] implementations and aim carrying out their test of wallet-based SCA (as well as payment initiation). Their experience is crucial to the discussion in the context of limitations and needs related to [TS12] development.
 
 The experience from the LSPs at least partially resulted in development of [PaSO] specification, delivered by Aptitude consortium (see the next section).
 
