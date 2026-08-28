@@ -20,7 +20,7 @@ _Although payment use cases are not mandatory for initial EUDI Wallet deployment
 
 ### 1.2 Key Words
 
-This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document. In addition, 'must' (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word 'can' indicates a capability, whereas other words, such as 'will', 'is' or 'are' are intended as statements of fact.
+This document uses the capitalised key words "SHALL", "SHOULD" and "MAY" as specified in RFC 2119, i.e., to indicate requirements, recommendations and options specified in this document. In addition, "must" (non-capitalised) is used to indicate an external constraint, for instance a self-evident necessity or a requirement that is mandated by an external document. The word "can" indicates a capability, whereas other words, such as "will", "is" or "are" are intended as statements of fact.
 
 ### 1.3 Document Structure
 
@@ -74,7 +74,7 @@ _Secure electronic identification and the provision of attestation of attributes
 
 **Article 3 (Definitions)**
 
-(51) _'strong user authentication' means an authentication based on the use of at least two authentication factors from different categories of either knowledge, something only the user knows, possession, something only the user possesses or inherence, something the user is, that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data;_
+(51) _"strong user authentication" means an authentication based on the use of at least two authentication factors from different categories of either knowledge, something only the user knows, possession, something only the user possesses or inherence, something the user is, that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data;_
 
 **Article 5f(2)**
 
@@ -101,7 +101,7 @@ Below are the actual excerpts from the [PSD2] and [RTS SCA], including the recit
 
 **PSD2 Article 4**
 
-_(30) ‘strong customer authentication’ means an authentication based on the use of two or more elements categorised as knowledge (something only the user knows), possession (something only the user possesses) and inherence (something the user is) that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data;_
+_(30) "strong customer authentication" means an authentication based on the use of two or more elements categorised as knowledge (something only the user knows), possession (something only the user possesses) and inherence (something the user is) that are independent, in that the breach of one does not compromise the reliability of the others, and is designed in such a way as to protect the confidentiality of the authentication data;_
 
 **PSD2 Article 64(1)**  
 (Consent and withdrawal of consent) 
@@ -213,7 +213,7 @@ _Note: To following excerpts come from the latest proposal ([PSR Provisional Agr
 
 **Recital (22)** 
 
-_Despite the fact that Near-Field Communication (NFC) enables the initiation of a payment transaction, considering it as a fully-fledged ‘payment instrument’ would pose some challenges, for example for the application of strong customer authentication for contactless payments at the point of sale and of the payment service provider’s liability regime. NFC should therefore rather be considered as a functionality of a payment instrument and not as a payment instrument as such._
+_Despite the fact that Near-Field Communication (NFC) enables the initiation of a payment transaction, considering it as a fully-fledged "payment instrument" would pose some challenges, for example for the application of strong customer authentication for contactless payments at the point of sale and of the payment service provider’s liability regime. NFC should therefore rather be considered as a functionality of a payment instrument and not as a payment instrument as such._
 
 **Recital (73c)**
 
@@ -232,7 +232,7 @@ was authorised by the payer. The authentication or the use of the strong custome
 
 **Recital (79)** 
 
-_Payment service users should be adequately protected in the context of so-called social engineering fraud, where a fraudster manipulates a payment service user in performing a certain action, such as initiating a payment transaction, or handing over the payment service user’s security credentials to the fraudsters. The number of such type of ‘social engineering’ cases has significantly increased in recent years. Those new types of fraud are blurring the difference that existed in Directive (EU) 2015/2366 between authorised and unauthorised transactions. Means through which the consent may be assumed to be granted are also becoming more complex to identify, as fraudsters can take control of the whole consent and authentication process including of the strong customer authentication completion. The conditions under which the customer authorised a transaction by giving his or her consent to it should be taken into due consideration, including by courts, to qualify a transaction as being authorised or unauthorised. A transaction may indeed have been authorised in circumstances where such authorisation was granted on manipulated premises affecting the integrity of the consent. It is therefore no longer possible, as was the case in Directive (EU) 2015/2366, to limit refunds to unauthorised transactions only. It would however be disproportionate and financially very costly to payment services providers to open every fraudulent transaction, authorised or unauthorised, to a systematic refund right. It might also cause moral hazard and a reduction in the customer’s vigilance. It is therefore necessary to define the
+_Payment service users should be adequately protected in the context of so-called social engineering fraud, where a fraudster manipulates a payment service user in performing a certain action, such as initiating a payment transaction, or handing over the payment service user’s security credentials to the fraudsters. The number of such type of "social engineering" cases has significantly increased in recent years. Those new types of fraud are blurring the difference that existed in Directive (EU) 2015/2366 between authorised and unauthorised transactions. Means through which the consent may be assumed to be granted are also becoming more complex to identify, as fraudsters can take control of the whole consent and authentication process including of the strong customer authentication completion. The conditions under which the customer authorised a transaction by giving his or her consent to it should be taken into due consideration, including by courts, to qualify a transaction as being authorised or unauthorised. A transaction may indeed have been authorised in circumstances where such authorisation was granted on manipulated premises affecting the integrity of the consent. It is therefore no longer possible, as was the case in Directive (EU) 2015/2366, to limit refunds to unauthorised transactions only. It would however be disproportionate and financially very costly to payment services providers to open every fraudulent transaction, authorised or unauthorised, to a systematic refund right. It might also cause moral hazard and a reduction in the customer’s vigilance. It is therefore necessary to define the
 conditions under which a payment service user has a right to a refund._
 
 **Recital (100)** 
@@ -274,7 +274,7 @@ _Account servicing payment service providers shall ensure that their dedicated i
 [...]
 (h) requiring that strong customer authentication is applied more times in comparison with the strong customer authentication as required by the account servicing payment service provider when the payment service user is directly accessing their payment account or initiating a payment with the account servicing payment services provider;
 (i) providing a dedicated interface that does not support all the authentication procedures made available by the account servicing payment service provider to its payment service user;
-(j) imposing an account information or payment initiation journey, in a ‘redirection’ or ‘decoupled’ approach, where the authentication of the payment service user with the account
+(j) imposing an account information or payment initiation journey, in a "redirection’ or "decoupled’ approach, where the authentication of the payment service user with the account
 servicing payment service provider adds additional steps or required actions in the user journey compared to the equivalent authentication procedure offered to payment service users when directly accessing their payment accounts or initiating a payment with the account servicing payment service provider;
 (k) imposing that the user be automatically redirected, at the stage of authentication, to the account servicing payment service provider’s web page address, when the dedicated interface does not support all the authentication procedures made available by the account servicing payment service provider to its payment service users;
 (l) requiring two strong customer authentications in a payment initiation service-only journey where the payment initiation service provider transmits to the account servicing payment service provider all the information necessary to initiate the payment, namely one strong customer authentication for the yes/no confirmation and a second strong customer authentication for payment initiation._
@@ -509,7 +509,7 @@ In general [TS12] aims to define behaviour of the Wallet Units when receiving a 
 + minimum requirements and specifications for transactional data sent in a presentation request,
 + minimum requirements and specifications for metadata of the SCA Attestation,
 + transactional data processing and display message rendering requirements,
-+ other necessary requirements related to Wallet Solutions' functionality, interoperability or security.
++ other necessary requirements related to Wallet Solutions" functionality, interoperability or security.
 
 ### 4.4 Rulebook for SCA Attestation  
 
@@ -567,7 +567,7 @@ The relevant High Level Requirements are defined in ARF's [Topic 20] - Strong Us
 |   SUA_03  |         The Attestation Provider of a SUA attestation other than the one(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the SUA Attestation Rulebook and the technical specification for that attestation.      |
 |   SUA_04  |    In the response to a presentation request for a SUA attestation that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the associated technical specification or Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the associated technical specification or Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.*           |
 |   SUA_05  |   The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation and the mechanisms specified for key binding in [SD-JWT VC] or mdoc authentication in [ISO/IEC 18013-5], as applicable. For this process, the Wallet Unit SHALL comply with the applicable requirements in the technical specification and the Attestation Rulebook for the requested SUA attestation, see SUA_01 or SUA_02. *Note: a) The resulting signature value constitutes a proof of transaction. This signature value, possibly in combination with other protocols items, fulfils the requirements for the authentication code required in [PSD2]. b) See also requirement OIA_02 in [Topic 1][topic-1].*            |
-|   SUA_06  |      The Wallet Unit SHALL render or adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to 'approve' or 'reject' a transaction), according to requirements in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md).         |
+|   SUA_06  |      The Wallet Unit SHALL render or adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to "approve" or "reject" a transaction), according to requirements in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md).         |
 |   SUA_07  |      Upon receiving a presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for the given attestation and that the transactional data conforms to the related technical specification and/or Attestation Rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.         |
 
 ## 5 Discussion Items
