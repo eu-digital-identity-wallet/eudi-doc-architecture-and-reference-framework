@@ -53,7 +53,7 @@ Below we recap the respective legal requirements from these sources.
 
 There are the following requirements in the [European Digital Identity Regulation] about pseudonyms in relation to Wallet Units:
 
-1. Wallet Units must be able to generate pseudonyms and store them "encrypted" and "locally" within the Wallet Unit,
+1. Wallet Units must enable the Users to generate pseudonyms and store them "encrypted" and "locally" within the Wallet Unit,
 2. The User must be able to "choose" and "manage" pseudonyms,
 3. Relying Parties must accept authentication with pseudonyms, when there are no legal requirements for identification.
 
