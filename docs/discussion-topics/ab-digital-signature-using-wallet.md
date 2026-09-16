@@ -348,13 +348,13 @@ As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional
 - signature creation requesting, and
 - signature creation authorisation (activation).
 
-To realise these scenarios, a dedicated Attestation should be used, and therefore appropriate rulebooks shall be delivered (by the market).
+To realise these scenarios, an Attestation should be used, and therefore appropriate rulebooks shall be delivered (by the market) where necessary.
 
 ### 4.5 On-The-Fly Signatures
 
 One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation and certificate revocation.
 
-However, realisation of this scenario with the EUDI Wallet might be challenging. As using PID with transactional data has some limitations and challenges (see Section 3.6), the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. 
+However, realisation of this scenario with the EUDI Wallet might be challenging. As using PID with transactional data has some limitations and challenges (see Section 3.6), the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a suitable Attestation for signature creation requesting or authorisation (with use of "transactional data" parameter). The Attestation have to be issued prior to signature requesting. 
 
 Therefore a question arises, **how important this scenario is for the Wallet Providers, and if it should be further explored and supported by a specification.**
 
