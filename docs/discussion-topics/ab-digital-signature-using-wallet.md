@@ -1,4 +1,4 @@
-Version 1.0, updated 30 June 2026
+Version 1.1, updated 16 September 2026
 
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661)
@@ -266,7 +266,7 @@ The related technical specifications for Wallet Solutions to support electronic 
 - [CSC Bindings]
 
 As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet <-> RP and wallet's interface for signature authorisation (wallet <-> SAM or wallet <-> RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transacion_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
-This is worth to clarify, that PID cannot be used for these purposes, as it is not envisioned to handle transactional data.
+This is worth to clarify, that use of the PID with transactional data has some known limitations and challenges. The PID rulebook does not envision this option in general; in consequence, the processes design (involving use of PID presentation and transactional data), should not require modification of the PID rulebook. In addition, each such a use case should be analysed and confirmed from the legal perspective - its permissibility and possible legal consequences. 
 
 For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are eventually at discretion of Wallet Providers and their agreements with involved RSSPs/QTSPs or other actors.
 
@@ -353,7 +353,7 @@ To realise these scenarios, a dedicated Attestation should be used, and therefor
 
 One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation and certificate revocation.
 
-However, realisation of this scenario with the EUDI Wallet might be challenging. As PID is not envisioned to handle transactional data, the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. 
+However, realisation of this scenario with the EUDI Wallet might be challenging. As using PID with transactional data has some limitations and challenges (see Section 3.6), the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. 
 
 Therefore a question arises, **how important this scenario is for the Wallet Providers, and if it should be further explored and supported by a specification.**
 
