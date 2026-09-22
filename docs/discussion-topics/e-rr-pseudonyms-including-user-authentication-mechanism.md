@@ -6,7 +6,7 @@ Version 1.3, updated 16 September 2026
 
 # Topic E - Pseudonyms, including User authentication mechanism (Refinement Round)
 
-## Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for Relying Party registration. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
+## Legal notice: All legal information and excerpts documented in Section 2 is based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities (CIR 2024/2979). The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.
 
 
 ## 1 Introduction
