@@ -402,7 +402,7 @@ Although this is a vital aspect, it is out of the scope of ARF and there is no i
 | QES_20 | Empty | Keep as-is |
 | QES_21 | Empty | Keep as-is |
 | QES_22 | Empty | Keep as-is |
-
+| **QES_23** | **A Wallet Unit MAY offer the User the possibility to disable the signing and sealing functionality. If such a feature is implemented, when this functionality is disabled, the Wallet Unit SHALL always decline a signing or sealing request, and SHALL notify the User that such a request was received and declined.** | New requirement |
 
 ### 5.2 Changes to other topics
 
