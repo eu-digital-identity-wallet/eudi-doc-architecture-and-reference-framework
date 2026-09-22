@@ -409,6 +409,8 @@ Although the user-chosen pseudonyms are very useful and necessary in the Wallet 
 
 The implementation and characteristics of the pseudonyms strongly depend on the use case. The real life use cases being discussed and tested by Member States currently are for instance recurrent login and account recovery. The general approach is to enable various implementations, and do not focus on WebAuthn-based solution. As consequence, the proposals of HLRs changes aim to make them more universal and inclusive in this respect, while leaving implementers a decision about technical implementation and applied specifications.  
 
+Note: The use of User-chosen pseudonyms, as specified above, is not the only way to comply with the Article 5's requirement that "the use of pseudonyms that are chosen by the User shall not be prohibited." Another way to do so, for example, is to enable the User to select it from a list of previously generated identity-bound pseudonyms, a specific pseudonym to authenticate to a particular Relying Party.
+
 
 ## 5 Proposals of Changes of HLRs
 
