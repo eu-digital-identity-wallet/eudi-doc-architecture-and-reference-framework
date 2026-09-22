@@ -399,17 +399,18 @@ It is desirable to define which implementations are relevant and should, or shou
 (_Update after the Focus Meeting 1:_)
 
 We identified two following generic types of pseudonyms that need to be supported by the Wallet Solutions in the long run: 
-- "User-chosen" pseudonym, where the generation of the pseudonym is done solely by the User / User's device, with no participation of any other party ("pseudonym issuer") and no linking to User's identity (or other attributes) may be ensured; WebAuthn/FIDO2 credentials are an example of such a pseudonym type;
-- Identity-bound pseudonym, where the pseudonym is generated from a PID or an attestation, and is therefore (cryptographically) linked to the identity (and thus may be potentially linked back to the User), and where there is a third party involved in the generation or use of such a pseudonym.
+- "User-chosen pseudonym", where the generation of the pseudonym is done solely by the User / User's device, with no participation of any other party ("pseudonym issuer") and no linking to User's identity (or other attributes) may be ensured; WebAuthn/FIDO2 credentials are an example of such a pseudonym type;
+- "Identity-bound pseudonym", where the pseudonym is generated from a PID or an attestation, and is therefore (cryptographically) linked to the identity (and thus may be potentially linked back to the User), and where there is a third party involved in the generation or use of such a pseudonym.
 
 Although the user-chosen pseudonyms are very useful and necessary in the Wallet Solutions to support the "recurring login" use case, taking into account the overall EUDI Wallet concept the identity-bound pseudonym seems to be a natural implementation path in the long term.   
+
+The use of User-chosen pseudonyms, as defined above, is not the only way to comply with the Article 5's requirement that "the use of pseudonyms that are chosen by the User shall not be prohibited." Another way to do so, for example, is to enable the User to select it from a list of previously generated identity-bound pseudonyms, a specific pseudonym to authenticate to a particular Relying Party.
 
 
 (_Update after the Focus Meeting 2:_)
 
 The implementation and characteristics of the pseudonyms strongly depend on the use case. The real life use cases being discussed and tested by Member States currently are for instance recurrent login and account recovery. The general approach is to enable various implementations, and do not focus on WebAuthn-based solution. As consequence, the proposals of HLRs changes aim to make them more universal and inclusive in this respect, while leaving implementers a decision about technical implementation and applied specifications.  
 
-Note: The use of User-chosen pseudonyms, as specified above, is not the only way to comply with the Article 5's requirement that "the use of pseudonyms that are chosen by the User shall not be prohibited." Another way to do so, for example, is to enable the User to select it from a list of previously generated identity-bound pseudonyms, a specific pseudonym to authenticate to a particular Relying Party.
 
 
 ## 5 Proposals of Changes of HLRs
