@@ -415,7 +415,7 @@ The implementation and characteristics of the pseudonyms strongly depend on the 
 
 ## 5 Proposals of Changes of HLRs
 
-Herebelow are presented draft proposals of high-level requirement changes up for further discussion.
+Herebelow are presented proposals of high-level requirement changes, as the outcome of the discussion.
 
 
 | **Index** |                **Requirement specification**                 | Proposal |
