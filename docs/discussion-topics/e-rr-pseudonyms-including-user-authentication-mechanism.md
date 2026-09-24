@@ -460,7 +460,13 @@ Herebelow are presented draft proposals of high-level requirement changes up for
 
 ## 6 Additions and Changes to the ARF 
 
-In consequence of the proposed changes to HRLs (in Section 5), the main text of the ARF will be reviewed and changes may be applied to keep consistency.
+In consequence of the proposed changes to HRLs (in Section 5), the main text of the ARF will be reviewed and changes may be applied to keep consistency, in particular Sections 2.5 and 4.7 of the ARF.
+
+The following changes are being considered:
+- general changes related to the modification of the overall concept, where various implementations of pseudonyms are allowed and can coexist, and where the WebAuthn is not the only (but still allowed) technical specification,
+- adding definitions of User-chosen and Identity derived pseudonyms,
+- update of the list of use cases.
+
 
 
 ## 7 References
