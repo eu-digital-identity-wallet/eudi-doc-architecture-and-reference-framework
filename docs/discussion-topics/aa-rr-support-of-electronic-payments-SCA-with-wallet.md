@@ -152,12 +152,17 @@ _Those mechanisms shall be based on the analysis of payment transactions taking 
 
 **RTS Article 1(2)**
 
-_Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors: 
-(a) lists of compromised or stolen authentication elements; 
-(b) the amount of each payment transaction; 
-(c) known fraud scenarios in the provision of payment services; 
-(d) signs of malware infection in any sessions of the authentication procedure; 
-(e) in case the access device or the software is provided by the payment service provider, a log of the use of the access device or the software provided to the payment service user and the abnormal use of the access device or the software._
+_Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors:_
+
+_(a) lists of compromised or stolen authentication elements;_
+
+_(b) the amount of each payment transaction;_
+
+_(c) known fraud scenarios in the provision of payment services;_
+
+_(d) signs of malware infection in any sessions of the authentication procedure;_
+
+_(e) in case the access device or the software is provided by the payment service provider, a log of the use of the access device or the software provided to the payment service user and the abnormal use of the access device or the software._
 
 **RTS Article 4(1)** 
 (Authentication code)  
