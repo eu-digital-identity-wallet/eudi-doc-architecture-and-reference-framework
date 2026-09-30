@@ -2035,6 +2035,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5 Proposals of Changes of HLRs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-changes-to-topic-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Changes to Topic 16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-changes-to-other-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Changes to other topics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3700,6 +3728,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5 Proposals of Changes of HLRs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-changes-to-topic-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Changes to Topic 16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-changes-to-other-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Changes to other topics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3805,7 +3861,7 @@
   
 
 
-<p>Version 1.0, updated 30 June 2026</p>
+<p>Version 1.1, updated 16 September 2026</p>
 <p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/661">Link to GitHub discussion</a></p>
 <h1 id="topic-ab-digital-signature-using-the-eudi-wallet-new">Topic AB - Digital Signature using the EUDI Wallet (New)<a class="headerlink" href="#topic-ab-digital-signature-using-the-eudi-wallet-new" title="Link to this section">&para;</a></h1>
 <h2 id="legal-notice-all-legal-information-and-excerpts-documented-in-chapter-2-are-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-integrity-and-core-functionalities-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir">Legal notice: All legal information and excerpts documented in Chapter 2 are based on the European Digital Identity Regulation (EU) 2024/1183 and the current public consultation draft of the Commission Implementing Regulation for integrity and core functionalities. The latter is undergoing changes due to consultation process, and thus this document may need modification after the publication and approval of the final CIR.<a class="headerlink" href="#legal-notice-all-legal-information-and-excerpts-documented-in-chapter-2-are-based-on-the-european-digital-identity-regulation-eu-20241183-and-the-current-public-consultation-draft-of-the-commission-implementing-regulation-for-integrity-and-core-functionalities-the-latter-is-undergoing-changes-due-to-consultation-process-and-thus-this-document-may-need-modification-after-the-publication-and-approval-of-the-final-cir" title="Link to this section">&para;</a></h2>
@@ -4026,8 +4082,8 @@ Finally, having a complete standardisation of all interfaces, in particular wall
 <li>[CSC DM]</li>
 <li>[CSC Bindings]</li>
 </ul>
-<p>As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet &lt;-&gt; RP and wallet's interface for signature authorisation (wallet &lt;-&gt; SAM or wallet &lt;-&gt; RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transacion_data') and dedicated Attestations ("QES Attestation"). For these Attestations, dedicated rulebooks shall be made available too.
-This is worth to clarify, that PID cannot be used for these purposes, as it is not envisioned to handle transactional data.</p>
+<p>As a general rule, the interfaces (mentioned in section 3.5) should, where applicable, rely on or follow already defined mechanisms envisioned for EUDI wallets - especially related to issuance and presentation of verifiable credentials. This means that wallet &lt;-&gt; RP and wallet's interface for signature authorisation (wallet &lt;-&gt; SAM or wallet &lt;-&gt; RSSP/QTSP for SAP handling), may (and should preferably) use the presentation protocols envisioned in ARF, with dedicated "transactional data" parameters (in OID4VP specification, this parameter is named 'transacion_data') and an Attestation. For the Attestation, a suitable rulebook shall be available too.</p>
+<p>This is worth to clarify, that use of the PID with transactional data has some known limitations and challenges. The PID rulebook does not envision this option in general; in consequence, the processes design (involving use of PID presentation and transactional data), should not require modification of the PID rulebook. In addition, each such a use case should be analysed and confirmed from the legal perspective - its permissibility and possible legal consequences. </p>
 <p>For other interfaces, although it is useful to have them specified and supported by Wallet Units to improve interoperability, their implementation and technical specifications are eventually at discretion of Wallet Providers and their agreements with involved RSSPs/QTSPs or other actors.</p>
 <p>In any case, the related specifications are still under development (in particular ETSI TS 119 432 / EN 319 432), and <strong>may provide more than one implementation options for each the interfaces</strong> at stake, with or without use of the presentation protocols or "transactional data" parameter.</p>
 <p>The goal for the development of the specifications is to: enable all mandatory and desired options,​ give the choice to Wallet Providers to choose suitable options to build preferred architectures, and <strong>standardise and mandate selected options</strong> to ensure <strong>interoperability where necessary</strong> (wallet &lt;-&gt; RP interface for signature requesting and wallet's
@@ -4160,15 +4216,16 @@ interface for signature authorisation at minimum)​.</p>
 <p>As outlined in Sections 4.1 and 4.2, a presentation protocol with "transactional data" parameter may be used in two scenarios:
 - signature creation requesting, and
 - signature creation authorisation (activation).</p>
-<p>To realise these scenarios, a dedicated Attestation should be used, and therefore appropriate rulebooks shall be delivered (by the market).</p>
+<p>To realise these scenarios, an Attestation should be used, and therefore appropriate rulebooks shall be delivered (by the market) where necessary.</p>
 <h3 id="45-on-the-fly-signatures">4.5 On-The-Fly Signatures<a class="headerlink" href="#45-on-the-fly-signatures" title="Link to this section">&para;</a></h3>
 <p>One of the scenarios desired by the market is related to use of short-term / one-time certificates and "on-the-fly" signatures. This refers to the situation, where all steps related to certificate issuance and signature creation are carried out in a single flow: requesting and issuing a certificate (a one-time certificate), signature requesting, signature authorisation, signature creation and certificate revocation.</p>
-<p>However, realisation of this scenario with the EUDI Wallet might be challenging. As PID is not envisioned to handle transactional data, the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a dedicated Attestation ("QES Attestation") for signature creation requesting or authorisation (with use of "transactional data" parameter). The QES Attestation needs to be issued prior to signature requesting. </p>
+<p>However, realisation of this scenario with the EUDI Wallet might be challenging. As using PID with transactional data has some limitations and challenges (see Section 3.6), the full process should always involve use of PID for user identification and authentication (at least) for certificate issuance, as well as a suitable Attestation for signature creation requesting or authorisation (with use of "transactional data" parameter). The Attestation have to be issued prior to signature requesting. </p>
 <p>Therefore a question arises, <strong>how important this scenario is for the Wallet Providers, and if it should be further explored and supported by a specification.</strong></p>
 <h3 id="46-non-professional-use">4.6 Non-professional Use<a class="headerlink" href="#46-non-professional-use" title="Link to this section">&para;</a></h3>
 <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401183" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the">European Digital Identity Regulation</a> allows Wallet Providers to limit use of signing functionality of their Wallet Solutions to "non-professional purposes" only, with "proportionate measures". At the same time, it leaves this aspect fully to the Member States, including development of the concepts and technical specifications for implementation if needed. </p>
 <p>Although this is a vital aspect, it is out of the scope of ARF and there is no intention (nor mandate) to provide/mandate provision of any technical specification here. At the same time, it is still possible to develop standards by SDOs at their own discretion too.   </p>
 <h2 id="5-proposals-of-changes-of-hlrs">5 Proposals of Changes of HLRs<a class="headerlink" href="#5-proposals-of-changes-of-hlrs" title="Link to this section">&para;</a></h2>
+<h3 id="51-changes-to-topic-16">5.1 Changes to Topic 16<a class="headerlink" href="#51-changes-to-topic-16" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -4190,7 +4247,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_03</td>
-<td>For the use of the qualified certificate referred to in QES_01, <del>Wallet Providers SHALL ensure that a</del> Wallet Unit <strong>SHALL</strong> implement<sub>~s</sub>~ secure authentication of the User, as well as signature <del>or</del> <strong>/</strong> seal  <del>invocation</del> <strong>creation requesting and authorisation</strong>  capabilities <del>, as a part of a local, external or remote QSCD</del>.</td>
+<td>For the use of the qualified certificate referred to in QES_01, <del>Wallet Providers SHALL ensure that a</del> Wallet Unit <strong>SHALL</strong> implement<del>s</del> secure authentication of the User, as well as signature <del>or</del> <strong>/</strong> seal  <del>invocation</del> <strong>creation requesting and authorisation</strong>  capabilities <del>, as a part of a local, external or remote QSCD</del>.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -4200,7 +4257,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_04</td>
-<td><del>Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. *Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.</del>*</td>
+<td>~~Wallet Providers SHALL enable their Wallet Units to interface with QSCDs using protocols and interfaces necessary for the implementation of secure User authentication and signature or seal functionality. <em>Note: In a Relying Party-centric flow, the remote QTSP will likely be selected by the Relying Party, which implies the QSCD is managed by the remote QTSP. In a Wallet Unit-driven flow, the User should be able to choose the QSCD.~~</em></td>
 <td>Remove</td>
 </tr>
 <tr>
@@ -4240,7 +4297,7 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_08</td>
-<td>Wallet Providers SHALL ensure that their Wallet Units are able to create signatures <del>or</del> <strong>and</strong> seals in accordance with the mandatory PAdES format as specified in [ETSI EN 319 142-1[ V1.1.1 (2016-04). In addition, Wallet Providers SHOULD ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/70" title="ETSI EN 319 132-1 - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES)">ETSI EN 319 132-1</a> V1.2.1 (2022-02), - JAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/71" title="ETSI TS 119 182-1 - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures">ETSI TS 119 182-1</a> V1.2.1 (2024-07), - CAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/72" title="ETSI EN 319 122-1 - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures">ETSI EN 319 122-1</a> V1.3.1 (2023-06), and - ASiC as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-1 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline">ETSI EN 319 162-1</a> V1.1.1 (2016-04) and <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-2 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 2: Additional ASiC container types">ETSI EN 319 162-2</a> V1.1.1 (2016-04).</td>
+<td>Wallet Providers SHALL ensure that their Wallet Units <strong>allow their Users</strong> <del>are able</del> to create signatures <del>or</del> <strong>and</strong> seals in accordance with the mandatory PAdES format as specified in [ETSI EN 319 142-1[ V1.1.1 (2016-04). In addition, Wallet Providers <del>SHOULD</del> <strong>MAY</strong> ensure that their Wallet Units are able to create signatures or seals in accordance with the following formats: - XAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/70" title="ETSI EN 319 132-1 - Electronic Signatures and Infrastructures (ESI); XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures (XAdES)">ETSI EN 319 132-1</a> V1.2.1 (2022-02), - JAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/71" title="ETSI TS 119 182-1 - Electronic Signatures and Infrastructures (ESI); JAdES digital signatures; Part 1: Building blocks and JAdES baseline signatures">ETSI TS 119 182-1</a> V1.2.1 (2024-07), - CAdES as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/72" title="ETSI EN 319 122-1 - Electronic Signatures and Infrastructures (ESI); CAdES digital signatures; Part 1: Building blocks and CAdES baseline signatures">ETSI EN 319 122-1</a> V1.3.1 (2023-06), and - ASiC as specified in <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-1 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline">ETSI EN 319 162-1</a> V1.1.1 (2016-04) and <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/73" title="ETSI EN 319 162-2 - Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 2: Additional ASiC container types">ETSI EN 319 162-2</a> V1.1.1 (2016-04).</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -4250,12 +4307,12 @@ interface for signature authorisation at minimum)​.</p>
 </tr>
 <tr>
 <td>QES_10</td>
-<td>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit and is used to generate signatures or seals of the representation of the document or data to be signed or sealed, the Wallet Unit presents the representation of the document or data to be signed or sealed to the User.</td>
+<td><del>Wallet Providers SHALL ensure that, where the Signature Creation Application is implemented as part of the Wallet Unit and is used to generate signatures or seals of the representation of the document or data to be signed or sealed, the Wallet Unit presents the representation of the document or data to be signed or sealed to the User.</del></td>
 <td>Remove</td>
 </tr>
 <tr>
 <td><strong>QES_10a</strong></td>
-<td><strong>When a Relying Party sends a signature or seal creation request to a Wallet Unit, and the Wallet Unit uses a remote QES creation service, the Wallet Unit SHALL display an appropriate message to the User and SHALL ensure that User gives consent for proceeding such a request, in compliance with <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a>.</strong></td>
+<td><strong>When a Relying Party sends a signature or seal creation request to a Wallet Unit, and the Wallet Unit uses a remote QES creation service, the Wallet Unit SHALL display an appropriate message to the User and SHALL ensure that the User gives consent for proceeding the request, in compliance with <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a>. <em>Note: A newer version of this specification is being processed, as an "EN" norm ([ETSI EN 319 432]), which provides improved specifications ia. for rendering. It is therefore suggested to follow the latest version once available, and where it is not in conflict with <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a> clauses referenced by the amended [CIR for integrity and core functionalities].</em></strong></td>
 <td>New requirement</td>
 </tr>
 <tr>
@@ -4269,8 +4326,13 @@ interface for signature authorisation at minimum)​.</p>
 <td>Remove</td>
 </tr>
 <tr>
-<td>QES_13</td>
+<td>QES_13 old proposal</td>
 <td>A Wallet Unit SHALL provide a log of transactions related to <strong>certificate issuance</strong>, qualified electronic signatures <del>or</del> <strong>and</strong> seals generated by or through the Wallet Unit, allowing the User to view the history of previously <strong>issued certificates,</strong> signed data or documents, according to requirement DASH_04 in <a class="autorefs autorefs-internal" title="A.2.3.12 Topic 19 - User navigation requirements (Dashboard logs for transparency)" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <del><em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></del></td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_13 new proposal</td>
+<td>A Wallet Unit SHALL provide a log of transactions related to <strong>certificate issuance</strong>, qualified electronic signatures <del>or</del> <strong>and</strong> seals <strong>, whenever these transactions were carried out</strong> <del>generated</del> by or through the Wallet Unit, allowing the User to view the history of previously <strong>issued certificates,</strong> <del>signed data or documents</del> <strong>signatures and seals</strong>, according to requirement DASH_04 in <a class="autorefs autorefs-internal" title="A.2.3.12 Topic 19 - User navigation requirements (Dashboard logs for transparency)" href="../../annexes/annex-2/annex-2.02-high-level-requirements-by-topic/#a2312-topic-19-user-navigation-requirements-dashboard-logs-for-transparency">Topic 19</a>. <del><em>Note: If the signature is generated by a remote Signature Creation Application, the Wallet is at minimum used to authenticate the User to the remote QTSP and to obtain the User's consent for the usage of the private signing key. The logs then record information about these processes.</em></del></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -4294,8 +4356,13 @@ interface for signature authorisation at minimum)​.</p>
 <td>Remove</td>
 </tr>
 <tr>
-<td>QES_17</td>
+<td>QES_17 old proposal</td>
 <td>A Wallet Unit SHALL provide a signature creation confirmation upon the creation of a qualified electronic signature, informing the User about the outcome of the signature creation process. <del><em>Note: See also QES_17a.</em></del></td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
+<td>QES_17 new proposal</td>
+<td>A Wallet Unit SHALL provide a <del>signature creation</del> confirmation upon the creation of a qualified electronic signature <strong>/seal</strong>, informing the User about the outcome of the signature <strong>/seal</strong> creation process, <strong>whenever the signature or seal was created by or through the Wallet Unit</strong>. <del><em>Note: See also QES_17a.</em></del></td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -4304,13 +4371,18 @@ interface for signature authorisation at minimum)​.</p>
 <td>Remove</td>
 </tr>
 <tr>
-<td>QES_18</td>
+<td>QES_18 old proposal</td>
 <td><strong>A Wallet Unit SHALL provide</strong> <del>Wallet Providers SHALL configure</del> at least one <del>default</del> qualified signing service in the Wallet Unit.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
+<td>QES_18 new proposal</td>
+<td>Wallet Providers SHALL <strong>provide to the Users of their Wallet Units</strong> <del>configure</del> at least one <del>default</del> qualified signing service <strong>available through</strong> <del>in</del> the Wallet Units.</td>
+<td>Keep with proposed changes</td>
+</tr>
+<tr>
 <td>QES_19</td>
-<td><del>Wallet Providers SHALL ensure that, where the</del> <strong>Where a</strong> Signature Creation Application is implemented as part of a Wallet Unit, <del>a Wallet Unit supports</del> <strong>the Wallet Unit SHALL comply with applicable requirements set out in</strong> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151" title="ETSI TS 119 101 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for applications for signature creation and signature">ETSI TS 119 101</a> <strong>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176" title="ETSI EN 319 411-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2">ETSI EN 319 411-2</a> and <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66" title="ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service">ETSI TS 119 431-1</a>.</strong> <del>when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance</del>.</td>
+<td><del>Wallet Providers SHALL ensure that, where the</del> <strong>Where a</strong> Signature Creation Application is implemented as part of a Wallet Unit, <del>a Wallet Unit supports</del> <strong>the Wallet Unit SHALL comply with applicable requirements set out in</strong> <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151" title="ETSI TS 119 101 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for applications for signature creation and signature">ETSI TS 119 101</a> <strong>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176" title="ETSI EN 319 411-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2">ETSI EN 319 411-2</a>, <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66" title="ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service">ETSI TS 119 431-1</a> and <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a>. <em>Note: A newer versions of <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a> is being processed, as an "EN" norm ([ETSI EN 319 432]), which provides multiple improvements. It is therefore suggested to follow the latest version once available and where it is not in conflict with <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68" title="ETSI TS 119 432 - Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation">ETSI TS 119 432</a> clauses referenced by the amended [CIR for integrity and core functionalities].</em></strong> <del>when using signing keys managed by the QSCD, whether locally, externally, or remotely in relation to the Wallet Instance</del>.</td>
 <td>Keep with proposed changes</td>
 </tr>
 <tr>
@@ -4326,6 +4398,28 @@ interface for signature authorisation at minimum)​.</p>
 <tr>
 <td>QES_22</td>
 <td>Empty</td>
+<td>Keep as-is</td>
+</tr>
+<tr>
+<td><strong>QES_23</strong></td>
+<td><strong>A Wallet Unit MAY offer the User the possibility to disable the signing and sealing functionality. If such a feature is implemented, when this functionality is disabled, the Wallet Unit SHALL always decline a signing or sealing request, and SHALL notify the User that such a request was received and declined.</strong></td>
+<td>New requirement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-changes-to-other-topics">5.2 Changes to other topics<a class="headerlink" href="#52-changes-to-other-topics" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+<th>Proposal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH_04</td>
+<td>For a signature or seal creation transaction executed through the Wallet Unit, the log SHALL contain at least: a) the date and time of the transaction, b) the document or data signed or sealed (if available to the Wallet Unit), c) in the case of non-completed transactions, the reason for such non-completion <strong>, in particular in case the User rejected the creation of the signature or seal.</strong></td>
 <td>Keep as-is</td>
 </tr>
 </tbody>
@@ -4370,6 +4464,10 @@ interface for signature authorisation at minimum)​.</p>
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/68">Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, v1.3.1</a></td>
 </tr>
 <tr>
+<td>[ETSI EN 319 432]</td>
+<td><a href="https://docbox.etsi.org/esi/open/latest_drafts/ETSI%20DRAFT%20EN_319_432v1.3.3-public.pdf">Electronic Signatures and Infrastructures (ESI); Protocols for remote digital signature creation, v1.3.3</a></td>
+</tr>
+<tr>
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/101" title="CEN EN 419 241-1 - Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements">CEN EN 419 241-1</a></td>
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/101">CEN EN 419 241-1: Trustworthy Systems Supporting Server Signing - Part 1: General System Security Requirements</a></td>
 </tr>
@@ -4377,15 +4475,40 @@ interface for signature authorisation at minimum)​.</p>
 <td>[CEN EN 419 241-2]</td>
 <td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/100">CEN EN 419 241-2:2019 - Protection profile for QSCD for Server Signing</a></td>
 </tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151" title="ETSI TS 119 101 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for applications for signature creation and signature">ETSI TS 119 101</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/151">ETSI TS 119 101 V1.1.1 - Policy and security requirements for applications for signature creation and signature validation</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176" title="ETSI EN 319 411-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2">ETSI EN 319 411-2</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/142">ETSI EN 319 411-2 v2.6.1 - Policy and security requirements for Trust Service Providers issuing certificates; Part 2: Requirements for trust service providers issuing EU qualified certificates</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66" title="ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service">ETSI TS 119 431-1</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66">ETSI TS 119 431-1 v1.3.1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service components operating a remote QSCD / SCDev</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29" title="Cloud Signature Consortium API Specification v2.0">CSC API</a></td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29">Architectures and protocols for remotesignature applications, version 2.2.0.0</a></td>
+</tr>
+<tr>
+<td>[CSC DM]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/403">Data model for remote signature applications, version 1.0.0</a></td>
+</tr>
+<tr>
+<td>[CSC Bindings]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/450">CSC data model bindings, version 1.0.0</a></td>
+</tr>
+<tr>
+<td>[TS12]</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md">Specification of Strong Customer Authentication (SCA) Implementation with the Wallet</a></td>
+</tr>
+<tr>
+<td>[RiskRegister]</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a></td>
+</tr>
 </tbody>
 </table>
-<p><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/176" title="ETSI EN 319 411-2 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 2">ETSI TS 119 101</a> 
-<a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/66" title="ETSI TS 119 431-1 - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers; Part 1: TSP service">ETSI TS 119 431-1</a></p>
-<p>| <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29" title="Cloud Signature Consortium API Specification v2.0">CSC API</a> | <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29">Architectures and protocols for remotesignature applications, version 2.2.0.0</a> |
-| [CSC DM] | <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/403">Data model for remote signature applications, version 1.0.0</a> |
-| [CSC Bindings] | <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/450">CSC data model bindings, version 1.0.0</a> |
-| [TS12] | <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md">Specification of Strong Customer Authentication (SCA) Implementation with the Wallet</a> |
-| [RiskRegister]                         | <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I">Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft</a> |</p>
 <!-- Auto-generated from Section 10 (References) of the ARF main
      document by tools/gen_references.py. Do not edit by hand.
      Appended to every page via pymdownx.snippets auto_append. -->
@@ -4411,7 +4534,7 @@ interface for signature authorisation at minimum)​.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-07-21T07:12:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-07-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-09-22T16:40:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-09-22</span>
   </span>
 
     
