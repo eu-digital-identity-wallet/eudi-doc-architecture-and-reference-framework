@@ -111,7 +111,7 @@ _Note: the term "pseudonyms" is also mentioned  in Article 32, Annex IV, V and V
 There are the following requirements in the [CIR for integrity and core functionalities] about pseudonyms in relation to Wallet Units:
 
 1. [WebAuthn] is the technical specification for pseudonyms, the only as of now,
-2. Wallet Unit shall enable the User to generate unique pseudonyms for each Relying Party,
+2. Wallet Units shall enable the Users to generate unique pseudonyms for each Relying Party,
 3. Initiation of pseudonym generation process comes from a Relying Party,
 4. The pseudonyms can be used either stand-alone or in combination with presentation of attributes held in the Wallet Unit.
 
