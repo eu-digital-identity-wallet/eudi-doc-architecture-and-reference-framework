@@ -159,6 +159,7 @@ nav:
       - discussion-topics/README.md
       - discussion-topics/a-privacy-risks-and-mitigations.md
       - discussion-topics/aa-support-of-electronic-payments-SCA-with-wallet.md
+      - discussion-topics/aa-rr-support-of-electronic-payments-SCA-with-wallet.md
       - discussion-topics/ab-digital-signature-using-wallet.md
       - discussion-topics/b-re-issuance-and-batch-issuance-of-pids-and-attestations.md
       - discussion-topics/c-wallet-unit-attestation.md
