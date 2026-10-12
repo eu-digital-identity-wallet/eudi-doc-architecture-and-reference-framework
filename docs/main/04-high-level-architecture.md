@@ -245,7 +245,7 @@ standardised in the scope of the EUDI Wallet ecosystem.
 request and receive PIDs, QEAAs, PuB-EAAs, and EAAs from Wallet Units. This
 interface accommodates both remote and proximity interactions.  
 
-  For proximity presentation flows to a Relying Party Instance, the Wallet Instance implements the the protocol specified in [ISO/IEC 18013-5], see [Section 5.7.2][572-proximity-attestation-presentation-using-isoiec-18013-5]. This interface can, with some extensions, also be used by a Wallet Unit to request User attributes from another Wallet Unit, see [Section 6.6.4][664-pid-or-attestation-presentation-to-another-wallet-unit].
+  For proximity presentation flows to a Relying Party Instance, the Wallet Instance implements the protocol specified in [ISO/IEC 18013-5], see [Section 5.7.2][572-proximity-attestation-presentation-using-isoiec-18013-5]. This interface can, with some extensions, also be used by a Wallet Unit to request User attributes from another Wallet Unit, see [Section 6.6.4][664-pid-or-attestation-presentation-to-another-wallet-unit].
 
   For remote presentation flows to a Relying Party Instance, the Wallet Instance implements the following (see [Sections 5.7.3][573-remote-attestation-presentation-using-isoiec-18013-7] and [5.7.4][574-remote-attestation-presentation-using-openid4vp-and-haip]):
 

@@ -1052,7 +1052,7 @@ The Wallet Unit obtains the registration certificate from the Credential Issuer 
   
 If any of these checks fail, the Wallet Unit warns the User that it could not obtain or validate the information registered about the PID Provider or Attestation Provider, and does not request the issuance of a PID or attestation.
 
-If all of the above checks pass, the Wallet Unit retrieves from the registration certificate the entitlements and the list of attestations registered by the PID Provider or Attestation Provider. The Wallet Unit verifies that the entitlement (i.e.,  PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider) matches with its expectations, for example based on the the type of PID or attestation it wants to receive. Next, the Wallet Unit verifies that the type of attestation it wants to receive is included in the list of attestation types in the registration certificate. If one of these verifications comes out negative, the Wallet Unit warns the User and does not request the issuance of a PID or attestation.
+If all of the above checks pass, the Wallet Unit retrieves from the registration certificate the entitlements and the list of attestations registered by the PID Provider or Attestation Provider. The Wallet Unit verifies that the entitlement (i.e.,  PID Provider, QEAA Provider, PuB-EAA Provider, or non-qualified EAA Provider) matches with its expectations, for example based on the type of PID or attestation it wants to receive. Next, the Wallet Unit verifies that the type of attestation it wants to receive is included in the list of attestation types in the registration certificate. If one of these verifications comes out negative, the Wallet Unit warns the User and does not request the issuance of a PID or attestation.
 
 > Note: The requirement for Wallet Units to verify and validate registration certificates only applies as of 24 months after entry into force of the Regulation amending [CIR 2024/2982].
 
@@ -1755,7 +1755,7 @@ has properly authenticated the User before allowing the User to present the
 attributes. Note that:
 
     - This trust is not based on the outcome of any verification by the Relying
-    Party itself, but on a a-priori trust in the certified Wallet Unit and (for PIDs and
+    Party itself, but on an a-priori trust in the certified Wallet Unit and (for PIDs and
     attestations with a security level High) the certified WSCA/WSCD.
     - Using this method implies that Relying Parties must verify device binding,
     as described in [Section 6.6.3.8][6638-relying-party-instance-verifies-device-binding].
