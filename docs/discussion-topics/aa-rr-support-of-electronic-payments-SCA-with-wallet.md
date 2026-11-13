@@ -629,7 +629,7 @@ To conclude, the following questions arise as part of the discussion:
 
 **QUESTION 4**: What improvement and business needs should be addressed by a future version, or a successor of TS12?
 
-The key issue is lack of the "fraud signals" form the client side (User device) in the SCA process with a Wallet Unit. ARF and TS12 do not envision delivery of such signals to Relying Parties (being PSPs here), as this is out of legal frame set by eIDAS (and GDPR). At the same time, there is no way to fully compensate it with information from other channels. In consequence, this may entail frequent step up authentications (additional authentication, via another means or channels), and in worst case for all SCA transactions with the Wallet. This may impact UX and adoption of Wallets. Although this could be solved at the technical level (eg. [PaSO] provides a proposal), it cannot be applied with the current legislation.
+Following the discussion, the key issue is lack of the "fraud signals" form the client side (User device) in the SCA process with a Wallet Unit. ARF and TS12 do not envision delivery of such signals to Relying Parties (being PSPs here), as this is out of legal frame set by eIDAS (and GDPR). At the same time, there is no way to fully compensate it with information from other channels. In consequence, this may entail frequent step up authentications (additional authentication, via another means or channels), and in worst case for all SCA transactions with the Wallet. This may impact UX and adoption of Wallets. Although this could be solved at the technical level (eg. [PaSO] provides a proposal), it cannot be applied with the current legislation.
 
 Other expectations for ARF evolution of and related specifications are:
 - Tiering of Wallet Unit's processing, which means different transaction processing requirements (eg. in respect to User message rendering or risk signals scope), depending on the type or risk level of a transaction.
@@ -685,7 +685,7 @@ To conclude, the following questions arise as part of the discussion:
 
 **QUESTION 9**: Is there a need to coordinate efforts or align [TS12] development with these other initiatives? If so, in what scope? 
 
-TS12 specification requires an update, to address market needs, as presented in Section 5.2. TS12 may take inspirations or reuse or reference some contents of the [PaSO] specification. 
+The outcome of the discussion is that TS12 specification requires an update to address market needs, as presented in Section 5.2. TS12 may take inspirations, reuse some content or reference [PaSO] specification. 
 
 
 ### 5.5 Impact of PSR
