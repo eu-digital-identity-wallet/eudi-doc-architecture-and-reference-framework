@@ -1,4 +1,4 @@
-Version 0.9, updated 13 November 2026
+Version 0.9, updated 16 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -509,6 +509,7 @@ In this context, there will be two base flow models, depending on what entity th
 
 + **3-Party Model** (aka **Payee-Requested Flow**), where the Attestation Issuer differs from the Relying Party; in this scenario **only the payment initiation SCA use case is permitted**.
 
+
 ### 4.3 Technical Specification for SCA with the Wallet
 
 In 2025, the European Commission provided [TS12] specification that has been developed with strong contribution from representatives of Large Scale Pilot consortiums - WeBuild and Aptitude.  
@@ -605,6 +606,9 @@ As part of the discussion, the following questions are to be answered:
 
 **QUESTION 2**: Who should provide the SCA rulebook(s)? Is it expected that the Commission takes initiative and provide such a rulebook? 
 
+
+_(Update after the Cooperation Group Meetings:)_
+
 In September 2026, the European Payment Council announced launch of the SCARLET project which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". In the scope of the SCARLET project an SCA Attestation Rulebook may be delivered, but this is yet to be confirmed. 
 
 
@@ -629,6 +633,9 @@ To conclude, the following questions arise as part of the discussion:
 
 **QUESTION 4**: What improvement and business needs should be addressed by a future version, or a successor of TS12?
 
+
+_(Update after the Cooperation Group Meetings:)_
+
 Following the discussion, the key issue is lack of the "fraud signals" form the client side (User device) in the SCA process with a Wallet Unit. ARF and TS12 do not envision delivery of such signals to Relying Parties (being PSPs here), as this is out of legal frame set by eIDAS (and GDPR). At the same time, there is no way to fully compensate it with information from other channels. In consequence, this may entail frequent step up authentications (additional authentication, via another means or channels), and in worst case for all SCA transactions with the Wallet. This may impact UX and adoption of Wallets. Although this could be solved at the technical level (eg. [PaSO] provides a proposal), it cannot be applied with the current legislation.
 
 Other expectations for ARF evolution of and related specifications are:
@@ -652,6 +659,8 @@ To conclude, the following questions arise as part of the discussion:
 
 **QUESTION 6**: What experience from TS12 implementation the Member States and other stakeholders have?
 
+
+_(Update after the Cooperation Group Meetings:)_
 See Section 5.2 for conclusions.
 
 
@@ -697,7 +706,10 @@ To conclude, the following question is to be answered along the discussion:
 
 **QUESTION 10**: What is the impact of PSR to the ARF concept, HLRs and [TS12]? Are changes required based on it? 
 
-[PSR Provisional Agreement] does not impact ARF or TS12 directly. At the same time, eIDAS, ARF and PSR (and related RTS) should be aligned in reference to fraud signals, transaction risk monitoring, as well as and outsourcing aspects. 
+
+_(Update after the Cooperation Group Meetings:)_
+
+The conclusion from the discussion is that [PSR Provisional Agreement] does not impact ARF or TS12 directly. At the same time, eIDAS, ARF and PSR (and related RTS) should be aligned in reference to application of SCA, in particular fraud signals, transaction risk monitoring, as well as outsourcing aspects. 
 
 
 ## 6 Proposals of Changes to HLRs
@@ -716,6 +728,7 @@ As the outcome of the discussion, the following changes to HLRs are poposed:
 |   SUA_05  |   The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation and the mechanisms specified for key binding in [SD-JWT VC] or mdoc authentication in [ISO/IEC 18013-5], as applicable. For this process, the Wallet Unit SHALL comply with the applicable requirements in the technical specification and the Attestation Rulebook for the requested SUA attestation, see SUA_01 or SUA_02. *Note: a) The resulting signature value constitutes a proof of transaction. This signature value, possibly in combination with other protocols items, fulfils the requirements for the authentication code required in [PSD2]. b) See also requirement OIA_02 in [Topic 1].*            |      |
 |   SUA_06  |      The Wallet Unit SHALL render or adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to "approve" or "reject" a transaction), according to requirements in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md).         |          |
 |   SUA_07  |      Upon receiving a presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for the given attestation and that the transactional data conforms to the related technical specification and/or Attestation Rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.         |    |
+|   .....  |      ....         |  New requirement  |
 |   ISSU_33b​  |   A Wallet Provider SHALL ensure that its Wallet Units support all attestations conforming to attestation schemes registered in the catalogue of schemes for the attestation of attributes established by the Commission pursuant to Article 8 of Commission Implementing Regulation (EU) 2025/1569, where such attestations use a format and issuance protocol supported by Wallet Units pursuant to Commission Implementing Regulations (EU) 2024/2977, 2024/2979 and 2024/2982.​     |    |
 
 
