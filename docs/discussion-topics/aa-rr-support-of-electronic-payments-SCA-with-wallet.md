@@ -1,4 +1,4 @@
-Version 0.9, updated 16 November 2026
+Version 0.95, updated 18 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -568,6 +568,8 @@ Such a response constitutes a proof for the User's consent to an SCA transaction
 
 ### 4.9 SCA-related HLRs
 
+#### 4.9.1 List of Applicable HLRs
+
 The relevant High Level Requirements are defined in ARF's [Topic 20] - Strong User authentication for electronic payments:
 
  **Index**  | **Requirement specification** | 
@@ -588,11 +590,18 @@ In addition, the following HLRs, from other topcis, are applicable too:
 |-----------|-------------------------------|
 |   ISSU_33b​  |   A Wallet Provider SHALL ensure that its Wallet Units support all attestations conforming to attestation schemes registered in the catalogue of schemes for the attestation of attributes established by the Commission pursuant to Article 8 of Commission Implementing Regulation (EU) 2025/1569, where such attestations use a format and issuance protocol supported by Wallet Units pursuant to Commission Implementing Regulations (EU) 2024/2977, 2024/2979 and 2024/2982.​     | 
 
+
+
+#### 4.9.2 Summary of HLRs 
+
 The current HLRs can be summarised as below:
-- each Wallet Solution shall comply with [TS12], that ensures processing requests associated with SCA attestations (being a specific type of SUA attestation);
-- at least one SCA Attestation Rulebook needs to be made available and this rulebook shall be aligned with TS12; such a rulebook needs to be delivered by the market;
-- there may be other specifications and rulebooks for SUA attestations, but their support by Wallet Solutions may not be guaranteed; before issuing of such a SUA attestation, the Attestation Provider shall make sure a Wallet Unit supports it;
-- if a SUA attestation rulebook is registered in the catalogue of schemes published by the Commission, Wallet Providers shall ensure their Wallet Solutions support them (may entail additional compliance with associated technical specifications).
+- Each Wallet Solution shall comply with [TS12], that ensures processing requests associated with SCA attestations (being a specific type of SUA attestation);
+- At least one SCA Attestation Rulebook needs to be made available and this rulebook shall be aligned with TS12; such a rulebook needs to be delivered by the "market";
+- There may be other technical specifications and rulebooks for SUA attestations, but their support by Wallet Solutions/Units may not be guaranteed; before issuing of such a SUA attestation, the Attestation Provider shall make sure a given Wallet Unit supports it;
+- If a Schema Provider provides a rulebook for a SUA Attestation, it shall indicate the related technical specification (necessary for Wallet Solutions to properly process the presentation request with the associated transactional data type). 
+- If a SUA attestation rulebook is registered in the catalogue of schemes published by the Commission, Wallet Providers shall ensure their Wallet Solutions support them (this may entail compliance with  additional technical specifications, other than TS12);
+- Once a Wallet Unit receives a presentation request for a SUA Attestation (and containing transactional data parameter), the Wallet Unit shall perform vetting: recognise transactional data type, validate transactional data parameter compliance with the applicable Rulebooks and/or technical specification, check if the given transactional data type is intended for the SUA Attestation at stake; if the vetting result is negative (or vetting process fails for any reason) - it shall stop processing such a request.     
+
 
 ## 5 Discussion Items
 
@@ -661,6 +670,7 @@ To conclude, the following questions arise as part of the discussion:
 
 
 _(Update after the Cooperation Group Meetings:)_
+
 See Section 5.2 for conclusions.
 
 
@@ -720,8 +730,10 @@ As the outcome of the discussion, the following changes to HLRs are poposed:
 
  **Index**  | **Requirement specification**       | **Proposal**  |
 |-----------|-------------------------------------|----------------------|
-|   SUA_01  |    A Wallet Unit SHALL be able to process the transactional data included in a presentation request for the SUA attestation(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md), according to all requirements in that Technical Specification. *Note: Technical Specification 12 specifies a SUA attestation intended for performing SCA as specified in the PSD2 Regulation. The related Rulebook is called "SCA Attestation Rulebook".*             | Keep with the proposed change |
-|   SUA_02  |        Scheme Providers MAY specify Attestation Rulebooks (see [Topic 12] and associated technical specifications for SUA attestations other that the ones specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md)). The Attestation Rulebook or the technical specification of such of a SUA attestation SHALL specify the syntax and semantics of the transactional data associated with that attestation.       |          |
+|   SUA_01  |    A Wallet Unit SHALL be able to process the transactional data included in a presentation request for the SUA attestation(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md), according to all requirements in that Technical Specification. *Note: Technical Specification 12 ~~specifies~~ **refers to presentation of** a SUA attestation intended for performing SCA **,** as specified in the PSD2 Regulation. The related Rulebook is called "SCA Attestation Rulebook".*             | Keep with the proposed change |
+|   **SUA_01a**  |        Scheme Providers that intends to deliver an "SCA Attestation Rulebook" SHALL ensure compliance with [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md).       |      New requirement    |
+
+|   SUA_02  |        Scheme Providers MAY specify Attestation Rulebooks (see [Topic 12]) and associated technical specifications for SUA attestations other that the ones specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md)). The Attestation Rulebook or the technical specification of such of a SUA attestation SHALL specify the syntax and semantics of the transactional data associated with that attestation.       |      Keep with the proposed change    |
 |   SUA_02a  |     The Technical Specification associated with a given SUA attestation SHALL specify all necessary requirements for Wallet Units to process transactional data intended for this SUA attestation, at least regarding a) rendering and displaying the data to the User when obtaining approval for presentation, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit.          |            |
 |   SUA_03  |         The Attestation Provider of a SUA attestation other than the one(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the SUA Attestation Rulebook and the technical specification for that attestation.      |  |
 |   SUA_04  |    In the response to a presentation request for a SUA attestation that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the associated technical specification or Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the rules to interpret such information SHALL be included in the associated technical specification or Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if the requested SUA attestation is present on the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes.*           |   |
@@ -730,8 +742,7 @@ As the outcome of the discussion, the following changes to HLRs are poposed:
 |   SUA_07  |      Upon receiving a presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for the given attestation and that the transactional data conforms to the related technical specification and/or Attestation Rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.         |    |
 |   .....  |      ....         |  New requirement  |
 |   ISSU_33b​  |   A Wallet Provider SHALL ensure that its Wallet Units support all attestations conforming to attestation schemes registered in the catalogue of schemes for the attestation of attributes established by the Commission pursuant to Article 8 of Commission Implementing Regulation (EU) 2025/1569, where such attestations use a format and issuance protocol supported by Wallet Units pursuant to Commission Implementing Regulations (EU) 2024/2977, 2024/2979 and 2024/2982.​     |    |
-
-
+|    ARB_22     |   The Scheme Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, ~~and~~ privacy of that attestation, **or proper processing of a presentation request**. _Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User, **or how to process transactional data, if involved (see [Topic 20])**._ | Keep with the proposed change |
 
 
 ## 7 Additions and Changes to the ARF 
