@@ -1,4 +1,4 @@
-Version 0.95, updated 18 November 2026
+Version 0.95, updated 19 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -589,7 +589,9 @@ In addition, the following HLRs, from other topcis, are applicable too:
  **Index**  | **Requirement specification** | 
 |-----------|-------------------------------|
 |   ISSU_33b​  |   A Wallet Provider SHALL ensure that its Wallet Units support all attestations conforming to attestation schemes registered in the catalogue of schemes for the attestation of attributes established by the Commission pursuant to Article 8 of Commission Implementing Regulation (EU) 2025/1569, where such attestations use a format and issuance protocol supported by Wallet Units pursuant to Commission Implementing Regulations (EU) 2024/2977, 2024/2979 and 2024/2982.​     | 
+|    ARB_22    |   The Scheme Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, and privacy of that attestation.   |
 
+Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User.
 
 
 #### 4.9.2 Summary of HLRs 
