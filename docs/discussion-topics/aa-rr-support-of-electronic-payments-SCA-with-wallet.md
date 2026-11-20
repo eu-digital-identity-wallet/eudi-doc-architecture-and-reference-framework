@@ -49,7 +49,7 @@ The table below presents the key acronyms used in this document.
 |     PSR     | Payment Services Regulation         | 
 |     RTS     | Regulatory Technical Standards      |
 |     MIT     | Merchant-Initiated Transaction, as defined in [PSR Provisional Agreement]  |​
-
+|     EBA     | European Banking Authority     |
 
 
 ## 2 Background
@@ -60,16 +60,16 @@ The legal requirements applicable to Topic AA were collected and discussed in To
 
 As an outcome of Topic W and Topic AA the set of new or modified HLRs was introduced to [Topic 20] of the ARF.
 
-The purpose of Topic AA Refinement Round is to discuss further, in detail, various aspects necessary to enable Wallet Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 and future PSR, based on the experience from the Large Scale Projects, especially from the current ones carried out by WeBuild and Aptitude consortiums.
+The purpose of Topic AA Refinement Round is to discuss in further detail, various aspects necessary to enable Wallet Providers to build harmonised and interoperable solutions for Strong Customer Authentication in the context of PSD2 and the future PSR, based on the experience from the Large Scale Pilots, especially from the current ones carried out by the WeBuild and Aptitude consortiums.
 
 ## 3 Legal requirements 
 
 ### 3.1 European Digital Identity Regulation
 
-The [European Digital Identity Regulation] requires the Wallets to support and provide a function of Strong User Authentication (SUA) that could be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or local law or by contractual obligation).
-The online services might be of any type, provided by public or private Service Providers in particular from the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications (but not limited to these ones only). Examples of use cases include logging to an online service, giving a consent to an action which imposes a higher risk of fraud (eg. password change, change of a payment transaction limits) or authentication of a payment.
+The [European Digital Identity Regulation] requires Wallets to support and provide a Strong User Authentication (SUA) function that can be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or national law or by contractual obligation).
+The online services might be of any type, provided by public or private Service Providers in particular in the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications (but not limited to these). Examples of use cases include logging to an online service, giving a consent to an action which poses a higher risk of fraud (e.g. password change, change of a payment transaction limits) or authentication of a payment.
 
-Therefore the Wallet Solutions shall provide functionality that enables Relying Parties (which are various service providers) to use the Wallet Units as means of SUA, including payment authentication use case.
+Therefore Wallet Solutions shall provide functionality that enables Relying Parties (which are various service providers) to use Wallet Units as a means of SUA, including for the payment authentication use case.
 
 Below are the actual excerpts from the Regulation, including the recitals and the articles that establish these requirements.
 
@@ -87,17 +87,17 @@ _Where private relying parties that provide services, with the exception of micr
 
 ### 3.2 PSD2
 
-The [PSD2] introduces and defines requirements for application of Strong Customer Authentication (SCA). This is an example of a law that mandates use of SUA, and therefore Relying Parties which are Payment Service Providers (usually banks), and some other entities in some cases (as defined by [PSD2]), fall under the obligation set out by Article 5f(2) of [European Digital Identity Regulation]. 
+The [PSD2] introduces and defines requirements for the application of Strong Customer Authentication (SCA). This is an example of a law that mandates the use of SUA, and therefore Relying Parties which are Payment Service Providers (usually banks), and some other entities in some cases (as defined by [PSD2]), fall under the obligation set out in Article 5f(2) of [European Digital Identity Regulation]. 
 
-Therefore the Wallet Solutions shall provide functionality that enables Relying Parties to use Wallets Units as a means of SCA.
+Therefore Wallet Solutions shall provide functionality that enables Relying Parties to use Wallet Units as a means of SCA.
 
-To complement [PSD2], a dedicated so called "regulatory technical standard" (commonly called as "RTS") has been delivered [RTS SCA]. It defines technical requirements for implementation and use of SCA.
+To complement [PSD2], a dedicated so called "regulatory technical standard" (commonly referred to as "RTS") has been adopted [RTS SCA]. It defines technical requirements for the implementation and use of SCA.
 
 The main requirements related to SCA can be summarised as follows:
-- SCA requires use of (at least) two elements from three categories (knowledge, possession, inherence);  there is no requirement that they must be from different categories,
+- SCA requires the use of (at least) two elements from three categories (knowledge, possession, inherence);  there is no requirement that they must be from different categories,
 - means of SCA and the procedure shall be agreed between the payer and the PSP,
-- the use case where the SCA shall be applied are: accesses to a payment account online, initiation of an electronic payment transaction, carrying out any action through a remote channel which may imply a risk of payment fraud or other abuses,
-- SCA shall apply "dynamic linking" - a procedure that links the transaction to a specific transaction data (amount, payee), with use of an authentication code specific to this transaction, and use of cryptography,
+- the use case where the SCA shall be applied are: access to a payment account online, initiation of an electronic payment transaction, carrying out any action through a remote channel which may imply a risk of payment fraud or other abuses,
+- for electronic remote payment transactions, SCA shall apply "dynamic linking" - a procedure that links the transaction to a specific transaction data (amount, payee), with the use of an authentication code specific to this transaction, and the use of cryptography,
 - there are only generic requirements related to display message to the User - to make the User aware of the transaction being consented (amount and payee).
 - SCA can be realised prior or after the execution of the payment transaction,
 - SCA can be realised via PSP, payee or PISP.
@@ -113,19 +113,20 @@ _(30) "strong customer authentication" means an authentication based on the use 
 
 _Member States shall ensure that a payment transaction is considered to be authorised only if the payer has given consent to execute the payment transaction. A payment transaction may be authorised by the payer prior to or, if agreed between the payer and the payment service provider, after the execution of the payment transaction._ 
 
-**PSD2 article 64(2)**  
+**PSD2 Article 64(2)**  
 (Consent and withdrawal of consent) 
 
 _Consent to execute a payment transaction or a series of payment transactions shall be given in the form agreed between the payer and the payment service provider. Consent to execute a payment transaction may also be given via the payee or the payment initiation service provider._ 
 
-**PSD2 article 64(4)** 
+**PSD2 Article 64(4)** 
+(Consent and withdrawal of consent) 
 
 _The procedure for giving consent shall be agreed between the payer and the relevant payment service provider(s)._ 
 
 **PSD2 Article 72(1)**  
 (Evidence on authentication and execution of payment transactions) 
 
-_Member States shall require that, where a payment service user denies having authorised an  executed payment transaction or claims that the payment transaction was not correctly executed, it is for the payment service provider to prove that the payment transaction was authenticated, accurately recorded, entered in the accounts and not affected by a technical breakdown or some other deficiency of the service provided by the payment service provider_ 
+_Member States shall require that, where a payment service user denies having authorised an  executed payment transaction or claims that the payment transaction was not correctly executed, it is for the payment service provider to prove that the payment transaction was authenticated, accurately recorded, entered in the accounts and not affected by a technical breakdown or some other deficiency of the service provided by the payment service provider._ 
 
 **PSD2 Article 72(2)**  
 (Evidence on authentication and execution of payment transactions) 
@@ -150,12 +151,12 @@ _Member States shall  ensure that, for electronic remote  payment  transactions,
 
 _Dynamic linking is possible through the generation of authentication codes which is subject to a set of strict security requirements. To remain technologically neutral a specific technology for the implementation of authenti­cation codes should not be required. Therefore authentication codes should be based on solutions such as generating and validating one-time passwords, digital signatures or other cryptographically underpinned validity assertions using keys or cryptographic material stored in the authentication elements, as long as the security requirements are fulfilled._
 
-**RTS Article 1(1)** 
+**RTS Article 2(1)** 
 
 _Payment service providers shall have transaction monitoring mechanisms in place that enable them to detect unauthorised or fraudulent payment transactions for the purpose of the implementation of the security measures referred to in points (a) and (b) of Article 1._
 _Those mechanisms shall be based on the analysis of payment transactions taking into account elements which are typical of the payment service user in the circumstances of a normal use of the personalised security credentials._
 
-**RTS Article 1(2)**
+**RTS Article 2(2)**
 
 _Payment service providers shall ensure that the transaction monitoring mechanisms take into account, at a minimum, each of the following risk-based factors:_
 
@@ -198,29 +199,29 @@ _Where payment service providers apply strong customer authentication in accorda
 
 ### 3.3 PSR
 
-The Payment Services Regulation (PSR) aims to replace [PSD2] in the scope related to SCA. The first PSR text proposal ([PSR Proposal]) was published in 2023 and is a subject of further works within the legislative process of the European Union. As a result, a new proposal was presented in May 2026 ([PSR Provisional Agreement]). 
-In general, PSR keeps the same concept of SCA as [PSD2] and [RTS SCA], but introduces some minor changes to application of SCA. The main aspects and changes to SCA can be summarised as follows:
+The Payment Services Regulation (PSR) aims to replace [PSD2] in the scope related to SCA. The first PSR text proposal ([PSR Proposal]) was published in 2023 and has since been a subject to further work within the legislative process of the European Union. As a result, a new proposal was presented in May 2026 ([PSR Provisional Agreement]). 
+In general, PSR keeps the same concept of SCA as [PSD2] and [RTS SCA], but introduces some minor changes to the application of SCA. The main aspects and changes to SCA can be summarised as follows:
 
-- definition of SCA provides an exception that the authentication elements can be from the same category if the category is "inherence"; EBA is pointed to develop guidelines on this,
-- adding new cases requiring explicitly application of SCA (tokenised payment instrument creation, change of a spending limit, password or contact information, mobile application activation, proximity payments that require connection with internet),
-- introduction of a term "mobile application", which refers to a means of payment initiation or giving a consent by a User, 
-- provision of requirements related to activation of the mobile application (delay in activation, use of a different channel, SCA),
-- requirement to display payee's commercial trade name and legal name in transaction information displayed to the user (apart from amount),
+- the definition of SCA provides an exception whereby the authentication elements can be from the same category if that category is "inherence"; EBA is tasked with developing guidelines on this,
+- adding new cases explicitly requiring application of SCA (tokenised payment instrument creation, change of a spending limit, password or contact information, mobile application activation, proximity payments that require an internet connection),
+- introduction of the term "mobile application", which refers to a means of payment initiation or of giving consent by a User, 
+- provision of requirements related to the activation of the mobile application (delay in activation, use of a different channel, SCA),
+- requirement to display the payee's commercial trade name and legal name in the transaction information displayed to the User (in addition to the amount),
 - adding accessibility requirements,
-- stating that carrying out a SCA process is not alone a sufficient evidence for authorisation of a transaction,
-- adding liability for the payment transaction of technical service providers (which may refer to SCA providers/operators), proportionately to their failure,
-- requiring to have an outsourcing agreement with technical service providers providing SCA,
-- forbidding ASPSPs (banks) putting obstacles to PISPs and AISPs in reference to application of SCA (such obstacles could be e.g. requiring more SCA steps, limiting SCA methods), 
-- introduction of a concept of Merchant Initiated Transactions (MIT), where the payment initiation and SCA can be applied together at the check-out at the merchant side,
-- adding possible liability shifts to: PSPs of payees (if they fail to "develop or amend" systems necessary for SCA), "another PSPs" or "intermediaries" (if they participate in the process),
-- extending/detailing transaction monitoring requirements - allowing i.a. collection of "environmental and behavioural characteristics", session data (e.g. device internet protocol address-range), User's device data (eg. an identifier),
-- requirement of transaction monitoring put on both sides: payer's and payee's PSPs,
-- option for AISPs to apply own SCA (entails shift of liability),
+- stating that carrying out an SCA process is not in itself a sufficient evidence of the authorisation of a transaction,
+- adding liability of technical service providers (which may include SCA providers/operators) for the payment transaction, proportionate to their failure,
+- requiring an outsourcing agreement with technical service providers providing SCA,
+- forbidding ASPSPs (banks) from creating obstacles for PISPs and AISPs with regard to the application of SCA (such obstacles could be e.g. requiring more SCA steps, or limiting SCA methods), 
+- introduction of a concept of the Merchant-Initiated Transactions (MITs), where the payment initiation and SCA can be applied together at check-out on the merchant side,
+- adding possible liability shifts to: PSPs of payees (if they fail to "develop or amend" systems necessary for SCA), "another PSP" or an "intermediary" (if they participate in the process),
+- extending/detailing transaction monitoring requirements - allowing i.a. the collection of "environmental and behavioural characteristics", session data (e.g. device internet protocol address-range), and User's device data (e.g. an identifier),
+- transaction monitoring requirements imposed on both sides: the payer's and the payee's PSPs,
+- option for AISPs to apply their own SCA (which entails a shift of liability),
 - acknowledges Wallet Units as a means of SCA and obligation for PSPs to accept them.
 
 Below are the actual excerpts from the [PSR Provisional Agreement], including the recitals and the articles that establish these requirements.
 
-_Note: To following excerpts come from the latest proposal ([PSR Provisional Agreement]), that is a subject of further legislative works and therefore may change._
+_Note: The following excerpts come from the latest proposal ([PSR Provisional Agreement]), which is subject to further legislative work and therefore may change._
 
 **Recital (22)** 
 
@@ -267,7 +268,7 @@ _In the interest of establishing a level-playing field among different payment i
 
 **Recital (111)** 
 
-_European Digital Identity Wallets implemented under Regulation (EU) No 910/201418 of the European Parliament and of the Council, as amended by Regulation [XXX], are electronic identification means that offer identification and authentication tools for accessing financial services across borders, including payment services. The introduction of the European Digital Identity Wallet would further facilitate cross-border digital identification and authentication for secure digital payments and facilitate the development of a pan-European digital payments landscape. Pursuant to Art. 5f(2) of Regulation (EU) No 910/2014, payment service providers will be under an obligation to accept the use of the EU Digital Identity Wallets for supporting the fulfilment of SCA requirements for online identification for the purposes of account login and of initiation of transactions in the field of payment services. The EBA should be tasked with the drafting of regulatory technical standards which should specifically take into account the use of EU Digital Identity Wallets to support the fulfilment of SCA requirements for the purposes above._
+_European Digital Identity Wallets implemented under Regulation (EU) No 910/2014 of the European Parliament and of the Council, as amended by Regulation [XXX], are electronic identification means that offer identification and authentication tools for accessing financial services across borders, including payment services. The introduction of the European Digital Identity Wallet would further facilitate cross-border digital identification and authentication for secure digital payments and facilitate the development of a pan-European digital payments landscape. Pursuant to Art. 5f(2) of Regulation (EU) No 910/2014, payment service providers will be under an obligation to accept the use of the EU Digital Identity Wallets for supporting the fulfilment of SCA requirements for online identification for the purposes of account login and of initiation of transactions in the field of payment services. The EBA should be tasked with the drafting of regulatory technical standards which should specifically take into account the use of EU Digital Identity Wallets to support the fulfilment of SCA requirements for the purposes above._
 
 **Recital (114)** 
 
@@ -290,7 +291,7 @@ servicing payment service provider adds additional steps or required actions in 
 (k) imposing that the user be automatically redirected, at the stage of authentication, to the account servicing payment service provider’s web page address, when the dedicated interface does not support all the authentication procedures made available by the account servicing payment service provider to its payment service users;
 (l) requiring two strong customer authentications in a payment initiation service-only journey where the payment initiation service provider transmits to the account servicing payment service provider all the information necessary to initiate the payment, namely one strong customer authentication for the yes/no confirmation and a second strong customer authentication for payment initiation._
 
-**Article 4a**
+**Article 51(4a)**
 
 _Where the payment service provider offers the payment service user the possibility to initiate or give consent to payment transactions by means of a mobile application, the payment
 service provider shall require strong customer authentication and the use of different communication channels to activate the mobile application._
@@ -481,40 +482,40 @@ _In accordance with Article 10 of Regulation (EU) No 1093/2010, the EBA shall re
 
 ## 4 Current Concept of Wallet-Based SCA 
 
-This chapter contains recap of the current ARF concept and requirements for the wallet-based SCA.
+This chapter contains a recap of the current ARF concept and requirements for wallet-based SCA.
 
 ### 4.1 SCA Attestations and Presentation
 
-The general concept of SCA with use of the Wallet is based on a dedicated attestation ("SCA Attestation") that represents a means of SCA for a given payment instrument (card payment, account to account payment, etc.).
+The general concept of SCA with the use of the Wallet is based on a dedicated attestation ("SCA Attestation") that represents a means of SCA for a given payment instrument (card payment, account to account payment, etc.).
 
-Presentation of an attribute from an SCA Attestation is associated with inclusion of payment-related transactional data as a part of the payload of the presentation request (`transaction_data` parameter as defined in [OID4VP]).
+Presentation of an attribute from an SCA Attestation is associated with the inclusion of payment-related transactional data as a part of the payload of the presentation request (the `transaction_data` parameter as defined in [OID4VP]).
 
-Such a presentation is therefore not a "normal" presentation of an attribute - by presenting an attribute, the user gives consent to execution of a payment. 
+Such a presentation is therefore not a "normal" presentation of an attribute - by presenting an attribute, the User gives consent to the execution of a payment. 
 
-At the same time, a presentation of attributes from an SCA Attestation may be combined with presentation of other attributes from non-SCA Attestations (eg. age).
+At the same time, a presentation of attributes from an SCA Attestation may be combined with presentation of other attributes from non-SCA Attestations (e.g. age).
 
 ### 4.2 Use Cases
 
-The current concept of SCA in ARF and related [TS12] specification takes into account the use cases defined by [PSD2] and [RTS SCA], where application of SCA is required when a User:
+The current concept of SCA in ARF and the related [TS12] specification takes into account the use cases defined by [PSD2] and [RTS SCA], where the application of SCA is required when a User:
 + initiates an electronic payment transaction, 
 + accesses their payment account online,
 + carries out any action through a remote channel which may imply a risk of payment fraud or other abuses.
 
-In the case of initiating an electronic payment transaction or a series thereof, payers can further give their consent either directly to their ASPSP (e.g. a bank), or via a payee (eg. a merchant) or a PISP (eg. an acquirer).
+In the case of initiating an electronic payment transaction or a series thereof, payers can further give their consent either directly to their ASPSP (e.g. a bank), or via a payee (e.g. a merchant) or a PISP (e.g. an acquirer).
 
-The ARF [Topic 20] introduces the concept of SCA that is based on dedicated SUA attestations issued into the User’s Wallet Unit by their ASPSP and later presented by the Wallet Unit to a Relying Party, constituting SCA (more details in the later part of this chapter). 
-In this context, there will be two base flow models, depending on what entity the User interacts with in the SCA process (SUA attestation presentation): 
+The ARF [Topic 20] introduces a concept of SCA based on dedicated SUA attestations issued to the User’s Wallet Unit by their ASPSP and later presented by the Wallet Unit to a Relying Party, constituting SCA (more details in the later part of this chapter). 
+In this context, there are two basic flow models, depending on which entity the User interacts with in the SCA process (SUA attestation presentation): 
 
-+ **2-Party Model** (aka **Issuer-Requested Flow**), where the ASPSP acts as both the Attestation Issuer and Relying Party; in this scenario **all three SCA use cases are permitted**;
++ **2-Party Model** (aka **Issuer-Requested Flow**), where the ASPSP acts as both the Attestation Provider and the Relying Party; in this scenario **all three SCA use cases are permitted**;
 
-+ **3-Party Model** (aka **Payee-Requested Flow**), where the Attestation Issuer differs from the Relying Party; in this scenario **only the payment initiation SCA use case is permitted**.
++ **3-Party Model** (aka **Payee-Requested Flow**), where the Attestation Provider differs from the Relying Party; in this scenario **only the payment initiation SCA use case is permitted**.
 
 
 ### 4.3 Technical Specification for SCA with the Wallet
 
-In 2025, the European Commission provided [TS12] specification that has been developed with strong contribution from representatives of Large Scale Pilot consortiums - WeBuild and Aptitude.  
+In 2025, the European Commission published the [TS12] specification, which was developed with a strong contribution from representatives of the Large Scale Pilot consortiums - WeBuild and Aptitude.  
 
-In general [TS12] aims to define behaviour of the Wallet Units when receiving a presentation request of attributes from an SCA Attestation (that contains payment transaction data as a payload, and where a presentation of the attributes effectively constitutes an act of SCA). Therefore, the Wallet Providers shall implement their Wallet Solutions in compliance with [TS12].
+In general [TS12] aims to define the behaviour of Wallet Units when receiving a presentation request for attributes from an SCA Attestation (which contains payment transaction data as a payload, and where a presentation of the attributes effectively constitutes an act of SCA). Therefore, Wallet Providers shall implement their Wallet Solutions in compliance with [TS12].
 
 [TS12] contains:
 + overview of the SCA scenarios at stake,
@@ -525,46 +526,46 @@ In general [TS12] aims to define behaviour of the Wallet Units when receiving a 
 
 ### 4.4 Rulebook for SCA Attestation  
 
-To complement [TS12] an SCA Attestation Rulebook, at least one, shall be made available. Such a rulebook is yet to be delivered. As [TS12] provides some mandatory requirements for SCA Attestation content and issuance, the SCA Attestation Rulebooks shall conform with [TS12] specification. 
+To complement [TS12], at least one an SCA Attestation Rulebook, shall be made available. Such a rulebook is yet to be delivered. As [TS12] provides some mandatory requirements for SCA Attestation content and issuance, the SCA Attestation Rulebooks shall conform to the [TS12] specification. 
 
 At the same time, the SCA Attestation Rulebooks may provide additional requirements and specifications extending [TS12] (for instance to improve user experience or customise the scenarios) that may be implemented by Wallet Solutions on a voluntary basis.
 
 ### 4.5 Transactional Data Types  
 
-To enable the use cases (presented in Section 4.2) and ensure interoperability between Wallet Providers, [TS12] standardises data schemas of `transaction_data` parameter content. 
+To enable the use cases (presented in Section 4.2) and ensure interoperability between Wallet Providers, [TS12] standardises the data schemas of the `transaction_data` parameter content. 
 
-It defines effectively four types of `transaction_data` payload, for the following scenarios:
+It effectively defines four types of `transaction_data` payload, for the following scenarios:
 + payment confirmation,
 + login and confirmation of actions carrying a risk of fraud or abuse,
 + accessing payment account information, and
 + e-mandates for Payee-initiated transactions.
 
-The transactional data is used to render a display message to the user and to provide the "dynamic linking" mechanism, as required by [PSD2].
+The transactional data is used to render a display message to the User and to provide the "dynamic linking" mechanism, as required by [PSD2].
 
-The transactional data schemas are fixed, and modifying them or adding new types (eg. to address new cases) requires updating of [TS12], as well as the Wallet Units in the field.
+The transactional data schemas are fixed, and modifying them or adding new types (e.g. to address new cases) requires updating of [TS12], as well as the Wallet Units in the field.
 
 ### 4.6 Transactional Validation
 
-To avoid unexpected wallet behaviour and to prevent misuse and frauds, the type of transactional data used in an SCA presentation request shall match to a specific SCA Attestation. 
+To avoid unexpected wallet behaviour and to prevent misuse and fraud, the type of transactional data used in an SCA presentation request shall match a specific SCA Attestation. 
 
-Therefore the Wallet Unit, after reception of a presentation request with `transaction_data` parameter present, shall: 
+Therefore the Wallet Unit, after receiving of a presentation request with the `transaction_data` parameter present, shall: 
 
 + Verify that the requested attestation type is an SCA Attestation
 + Verify that the `transaction_data` payload type matches the type of the SCA Attestation
 + Validate that the `transaction_data` payload conforms to the transactional data type schema
 
-If any of these verifications fail the Wallet Unit shall cease processing.
+If any of these verifications fails the Wallet Unit shall cease processing.
 
 ### 4.7 User Message Rendering
 
-To meet requirements of [PSD2] the Wallet Unit shall ensure the User is able to give ab explicit and informed consent to the transaction, that is a payment transaction. Therefore, the Wallet Unit shall display transactional data and some related information, in conjunction with the requested attributes of an SCA Attestation, to the User. The information shall be displayed in a clear, understandable and accurate manner, for review before obtaining the User's confirmation for the transaction.
+To meet the requirements of [PSD2] the Wallet Unit shall ensure that the User is able to give explicit and informed consent to the transaction, that is a payment transaction. Therefore, the Wallet Unit shall display transactional data and some related information, in conjunction with the requested attributes of an SCA Attestation, to the User. The information shall be displayed in a clear, understandable and accurate manner, for review before obtaining the User's confirmation of the transaction.
 
-[TS12] defines mandatory and optional user interface visual elements that may appear on the screen of the User's device. The rendering mechanism is partially customisable and dynamic: the number of available UI elements and their parameters are fixed, but an SCA Attestation Provider (which normally is a bank/PSP) may define own content (e.g., labels of the confirmation and denial actions buttons, transaction title or security hint, including localisation and support of language multiple languages). 
+[TS12] defines mandatory and optional user interface visual elements that may appear on the screen of the User's device. The rendering mechanism is partially customisable and dynamic: the number of available UI elements and their parameters are fixed, but an SCA Attestation Provider (which is normally a bank/PSP) may define its own content (e.g., labels of the confirmation and denial actions buttons, transaction title or security hint, including localisation and support for multiple languages). 
 
 ### 4.8 Response and Proof Package
 
-The presentation response provides not only the attributes being presented, but also the "authentication code" (`jti` parameter), being a part of dynamic linking mechanism, the response mode (whether direct or via DC-API) and authentication method information.
-Such a response constitutes a proof for the User's consent to an SCA transaction.
+The presentation response provides not only the attributes being presented, but also the "authentication code" (the `jti` parameter), which is a part of the dynamic linking mechanism, the response mode (whether direct or via DC-API) and authentication method information.
+Such a response constitutes a proof of the User's consent to an SCA transaction.
 
 ### 4.9 SCA-related HLRs
 
@@ -584,7 +585,7 @@ The relevant High Level Requirements are defined in ARF's [Topic 20] - Strong Us
 |   SUA_07  |      Upon receiving a presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for the given attestation and that the transactional data conforms to the related technical specification and/or Attestation Rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.         |
 
 
-In addition, the following HLRs, from other topcis, are applicable too:
+In addition, the following HLRs, from other topics, are also applicable:
 
  **Index**  | **Requirement specification** | 
 |-----------|-------------------------------|
@@ -597,78 +598,78 @@ Note: An Attestation Rulebook may also specify requirements regarding how the Wa
 #### 4.9.2 Summary of HLRs 
 
 The current HLRs can be summarised as below:
-- Each Wallet Solution shall comply with [TS12], that ensures processing requests associated with SCA attestations (being a specific type of SUA attestation);
-- At least one SCA Attestation Rulebook needs to be made available and this rulebook shall be aligned with TS12; such a rulebook needs to be delivered by the "market";
-- There may be other technical specifications and rulebooks for SUA attestations, but their support by Wallet Solutions/Units may not be guaranteed; before issuing of such a SUA attestation, the Attestation Provider shall make sure a given Wallet Unit supports it;
-- If a Schema Provider provides a rulebook for a SUA Attestation, it shall indicate the related technical specification (necessary for Wallet Solutions to properly process the presentation request with the associated transactional data type). 
-- If a SUA attestation rulebook is registered in the catalogue of schemes published by the Commission, Wallet Providers shall ensure their Wallet Solutions support them (this may entail compliance with  additional technical specifications, other than TS12);
-- Once a Wallet Unit receives a presentation request for a SUA Attestation (and containing transactional data parameter), the Wallet Unit shall perform vetting: recognise transactional data type, validate transactional data parameter compliance with the applicable Rulebooks and/or technical specification, check if the given transactional data type is intended for the SUA Attestation at stake; if the vetting result is negative (or vetting process fails for any reason) - it shall stop processing such a request.     
+- Each Wallet Solution shall comply with [TS12], which ensures the processing of requests associated with SCA attestations (a specific type of SUA attestation);
+- At least one SCA Attestation Rulebook needs to be made available and this rulebook shall be aligned with [TS12]; such a rulebook needs to be delivered by the "market";
+- There may be other technical specifications and rulebooks for SUA attestations, but their support by Wallet Solutions/Units may not be guaranteed; before issuing such a SUA attestation, the Attestation Provider shall make sure a given Wallet Unit supports it;
+- If a Scheme Provider provides a rulebook for a SUA Attestation, it shall indicate the related technical specification (necessary for Wallet Solutions to properly process the presentation request with the associated transactional data type). 
+- If a SUA attestation rulebook is registered in the catalogue of schemes published by the Commission, Wallet Providers shall ensure their Wallet Solutions support it (this may entail compliance with  additional technical specifications, other than [TS12]);
+- Once a Wallet Unit receives a presentation request for a SUA Attestation (containing the transactional data parameter), the Wallet Unit shall perform vetting: recognise the transactional data type, validate the compliance of the transactional data parameter with the applicable Rulebooks and/or technical specification, and check if the given transactional data type is intended for the SUA Attestation at stake; if the vetting result is negative (or the vetting process fails for any reason) - it shall stop processing such a request.     
 
 
 ## 5 Discussion Items
 
 ### 5.1 Rulebooks 
 
-As of now there is no SCA Attestation rulebook available. In general, such a rulebook (on or more) should be normally provided by the market. 
+As of now there is no SCA Attestation Rulebook available. In general, such a rulebook (one or more) should normally be provided by the market. 
 
 As part of the discussion, the following questions are to be answered:
 
 **QUESTION 1**: Are there any Member States or other stakeholders working on the SCA rulebook? 
 
-**QUESTION 2**: Who should provide the SCA rulebook(s)? Is it expected that the Commission takes initiative and provide such a rulebook? 
+**QUESTION 2**: Who should provide the SCA rulebook(s)? Is it expected that the Commission takes initiative and provides such a rulebook? 
 
 
 _(Update after the Cooperation Group Meetings:)_
 
-In September 2026, the European Payment Council announced launch of the SCARLET project which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". In the scope of the SCARLET project an SCA Attestation Rulebook may be delivered, but this is yet to be confirmed. 
+In September 2026, the European Payments Council announced the launch of the SCARLET project which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". Within the scope of the SCARLET project an SCA Attestation Rulebook may be delivered, but this is yet to be confirmed. 
 
 
 ### 5.2 Limitations of TS12 and Market Needs
 
-The [TS12] model has some characteristics by design that can be considered as limitations:
-- fixed transactional data types, which means hardcoding therefore Wallet Solutions capable to support only fixed use cases,
-- it requires update of [TS12] and Wallet Unit software to support any new use case or change of transactional data type specification,   
-- semi-static rendering rules - the number of available UI elements and their parameters are fixed, while banks and payment sector stakeholders eager to have more flexibility, to optimise user experience or meet business requirements eg. related to branding,
-- as a general rule, Wallet Units are not allowed to provide any additional information about the User or its device as "fraud signals". This may not be sufficient to implement best practices related to payment transaction risk monitoring (requirement of [PSD2]), equivalent to today's SCA solutions used by banks, 
-- related to the point above, the response to presentation provides a limited "proof package" (see Section 4.6) that could be extended to improve bank's transaction risk monitoring process.
+The [TS12] model has some characteristics by design that can be considered limitations:
+- fixed transactional data types, which means hardcoding and therefore Wallet Solutions capable supporting of only fixed use cases,
+- the need to update [TS12] and Wallet Unit software to support any new use case or any change to a transactional data type specification,   
+- semi-static rendering rules - the number of available UI elements and their parameters are fixed, while banks and payment sector stakeholders are eager to have more flexibility, to optimise user experience or meet business requirements e.g. related to branding,
+- as a general rule, Wallet Units are not allowed to provide any additional information about the User or its device as "fraud signals". This may not implementallow for the implementation of best practices related to payment transaction risk monitoring (a requirement of [PSD2]), equivalent to today's SCA solutions used by banks, 
+- related to the point above, the response to a presentation request provides a limited "proof package" (see Section 4.8) that could be extended to improve banks' transaction risk monitoring processes.
 
-Simultaneously the market takes initiatives to reuse the [TS12] wallet-based SCA concept for payment initiation processes, in particular in the 3-Party Model (Payee-Requested Flow) in so called Merchant Initiated Transactions (as defined in [PSR Provisional Agreement]). 
+Simultaneously the market is taking initiatives to reuse the [TS12] wallet-based SCA concept for payment initiation processes, in particular in the 3-Party Model (Payee-Requested Flow) for so-called Merchant-Initiated Transactions (as defined in [PSR Provisional Agreement]). 
 
-Yet another aspect for consideration is the similarity with a remote signature authorisation process as another use case for SUA Attestation and transactional data. As of now, there is another standard being independently developed by ETSI (TS 119 432) that addresses similar need of a user consent. As of now, the two specifications (TS12 and ETSI TS 119 432) have to be implemented by Wallet Providers independently while some parts are common, and could potentially rely on a common specification (e.g., for core functionality such as display screen rendering).  
+Yet another aspect for consideration is the similarity with the remote signature authorisation process as another use case for SUA atestations and transactional data. Currently, another standard is being independently developed by ETSI (TS 119 432) that addresses a similar need for user consent. As of now, the two specifications (TS12 and ETSI TS 119 432) have to be implemented by Wallet Providers independently, although some requirements are common and could potentially rely on a common specification (e.g. for core functionality such as display screen rendering).  
 
-There might exist more limitations or business needs for improving the TS12; identification of them is one goal of the Topic AA RR discussion process.
+There may be further limitations or business needs for improving TS12; identifying them is one of the goals of the Topic AA RR discussion process.
 
 To conclude, the following questions arise as part of the discussion:
 
-**QUESTION 3**: What are identified limitations of TS12?
+**QUESTION 3**: What are the identified limitations of TS12?
 
-**QUESTION 4**: What improvement and business needs should be addressed by a future version, or a successor of TS12?
+**QUESTION 4**: What improvements and business needs should be addressed by a future version, or a successor of TS12?
 
 
 _(Update after the Cooperation Group Meetings:)_
 
-Following the discussion, the key issue is lack of the "fraud signals" form the client side (User device) in the SCA process with a Wallet Unit. ARF and TS12 do not envision delivery of such signals to Relying Parties (being PSPs here), as this is out of legal frame set by eIDAS (and GDPR). At the same time, there is no way to fully compensate it with information from other channels. In consequence, this may entail frequent step up authentications (additional authentication, via another means or channels), and in worst case for all SCA transactions with the Wallet. This may impact UX and adoption of Wallets. Although this could be solved at the technical level (eg. [PaSO] provides a proposal), it cannot be applied with the current legislation.
+Following the discussion, the key issue identified is the lack of "fraud signals" from the client side (User device) in the SCA process with a Wallet Unit. ARF and TS12 do not envisage the delivery of such signals to Relying Parties (PSPs in this case), as this is outside the legal frames set by eIDAS (and GDPR). At the same time, there is no way to fully compensate for it with information from other channels. As a consequence, this may entail frequent step up authentications (additional authentication, via other means or channels), and in worst case for all SCA transactions with the Wallet. This may impact the user experience (UX) and the adoption of Wallets. Although this could be solved at the technical level (e.g. [PaSO] provides a proposal), such a solution cannot be applied under the current legislation.
 
-Other expectations for ARF evolution of and related specifications are:
-- Tiering of Wallet Unit's processing, which means different transaction processing requirements (eg. in respect to User message rendering or risk signals scope), depending on the type or risk level of a transaction.
-- Standardisation of Wallet Provider’s monitoring of Wallet Solutions and Units in the field – set of information/risk signals, frequency of verification, assessment criterias, in order to harmonise Wallet Unit revocations decisions.
-- More strict “access control” to SCA attestations in Wallet Units - verification of Attestation Providers (at issuance time) and Relying Parties (at SCA presentation) by Wallet Units. This aims to make sure that only entitled Wallet-Relying Parties issue or verify SCA attestations.
-- Support of new use cases (new transaction types) w/o the need of updating TS12 or hardcoding in the Wallet Solutions.
+Other expectations for the evolution of ARF and related specifications are:
+- Tiering of Wallet Unit's processing, which means different transaction processing requirements (e.g. with respect to User message rendering or the scope  of risk signals), depending on the type or risk level of a transaction.
+- Standardisation of Wallet Providers’ monitoring of Wallet Solutions and Units in the field – set of information/risk signals, frequency of verification, assessment criteria, in order to harmonise Wallet Unit revocation decisions.
+- Strictet “access control” to SCA attestations in Wallet Units - verification of Attestation Providers (at issuance time) and Relying Parties (at SCA presentation) by Wallet Units. This aims to make sure that only entitled Wallet-Relying Parties issue or verify SCA attestations.
+- Support for new use cases (new transaction types) without the need to update [TS12] or to hardcode them in the Wallet Solutions.
 
 
-### 5.3 Feedback from LSP and TS12 implementers 
+### 5.3 Feedback from LSPs and TS12 Implementers 
 
-The two Large Scale Pilot consortiums, WeBuild and Aptitude, are currently experimenting with [TS12] implementations and aim at carrying out their test of wallet-based SCA (as well as payment initiation). Their experience is crucial to the discussion in the context of limitations and needs related to [TS12] development.
+The two Large Scale Pilot consortiums, WeBuild and Aptitude, are currently experimenting with [TS12] implementations and aim to carry out their tests of wallet-based SCA (as well as payment initiation). Their experience is crucial to the discussion in the context of limitations and needs related to [TS12] development.
 
-The experience from the LSPs at least partially resulted in development of [PaSO] specification, delivered by Aptitude consortium (see the next section).
+The experience from the LSPs at least partially resulted in the development of the [PaSO] specification, delivered by Aptitude consortium (see the next section).
 
-There might be more limitations or business needs for TS12 improvements; identification of them is one of the goals of the Topic AA RR discussion process.
+There may be further limitations or business needs for [TS12] improvements; identifying them is one of the goals of the Topic AA RR discussion process.
 
 To conclude, the following questions arise as part of the discussion:
 
-**QUESTION 5**: What experience with TS12 and wallet-based SCA (and payment initiation relevant to [TS12]) are drawn from the Large Scale Pilots?
+**QUESTION 5**: What experience with [TS12] and wallet-based SCA (and payment initiation relevant to [TS12]) has been drawn from the Large Scale Pilots?
 
-**QUESTION 6**: What experience from TS12 implementation the Member States and other stakeholders have?
+**QUESTION 6**: What experience from [TS12] implementation do the Member States and other stakeholders have?
 
 
 _(Update after the Cooperation Group Meetings:)_
@@ -678,25 +679,25 @@ See Section 5.2 for conclusions.
 
 ### 5.4 Standardisation Initiatives
 
-There are standardisation initiatives related to payment initiation and authentication, that may be relevant for this discussion and the future of [TS12]:
+There are standardisation initiatives related to payment initiation and authentication, that may be relevant to this discussion and the future of [TS12]:
 
-- [PaSO] (Payment and SCA for OpenID) 
+- [PaSO] (Payments and SCA for OpenID) 
 - [DPC] (EMV Digital Payment Credentials)
 - [SPC] (W3C Secure Payment Confirmation)
 
-[PaSO] is a specification developed by Aptitude basing on the implementation experience. It is based on [TS12] but it splits it into several pieces, extends and improves it. 
+[PaSO] is a specification developed by Aptitude based on implementation experience. It is based on [TS12] but it splits it into several parts, extends and improves it. 
 The main changes compared to [TS12] are: 
-- universal core engine, that provides fully dynamic messages rendering option,
+- universal core engine, that provides fully dynamic message rendering option,
 - extended proof package and more extensive logging for strengthened evidence,
 - additional policy requirements for Relying Parties, to ensure proper proof package preparation , 
-- introduction of a new role - the "Authorising Party", that is between a Wallet Relying Party verifying an SCA Attestation (eg. merchant) and a PSP/bank liable for SCA,
+- introduction of a new role - the "Authorising Party", which sits between a Wallet Relying Party verifying an SCA Attestation (e.g. merchant) and a the PSP/bank liable for SCA,
 - it supports payment initiation (Merchant Initiated Transaction scenario),
-- it is extensible - allows for adding new transactional data types with no need to modify Wallet's logic thanks to the core engine, 
-[PaSO] seems to be more complex in implementation by Wallet Providers, but gives more flexibility and is "future-proven".  
+- it is extensible - it allows new transactional data types to be added without the to modify the Wallet's logic, thanks to the core engine, 
+- [PaSO] seems to be more complex for Wallet Providers to implement, but gives more flexibility and is "future-proof".  
 
-[DPC] is a fresh initiative of EMVCo, the first draft has just been published in May 2026. It contains a rulebook for SCA Attestations called Digital Payment Credentials, as well as additional specifications or policy requirements for the SCA process flow to ensure proper proof package preparation and create trust. Similarly to [PaSO], it envisions an additional role of the "Verifier", analogical to PaSO's "Authorising Party". Although the DPC concept is universal, the specification focuses on card payments.
+[DPC] is a recent initiative of EMVCo; the first draft was published in May 2026. It contains a rulebook for SCA Attestations called Digital Payment Credentials, as well as additional specifications or policy requirements for the SCA process flow to ensure proper proof package preparation and create trust. Similarly to [PaSO], it envisages an additional role, the "Verifier", analogous to PaSO's "Authorising Party". Although the DPC concept is universal, the specification focuses on card payments.
 
-[SPC] is a specification being developed by W3C, still in "draft" status. It provides a web API specification for payment authentication. It extends the WebAuthn API to provide a streamlined, secure and compliant with PSD2 (dynamic linking) payment authentication with FIDO2 authenticators. [SPC] is not yet supported by all of the (main) browsers, and its use in the field is marginal.
+[SPC] is a specification being developed by W3C, still in "draft" status. It provides a web API specification for payment authentication. It extends the WebAuthn API to provide streamlined, secure and PSD2-compliant (dynamic linking) payment authentication with FIDO2 authenticators. [SPC] is not yet supported by all (main) browsers, and its use in the field is marginal.
 
 To conclude, the following questions arise as part of the discussion:
 
@@ -706,56 +707,59 @@ To conclude, the following questions arise as part of the discussion:
 
 **QUESTION 9**: Is there a need to coordinate efforts or align [TS12] development with these other initiatives? If so, in what scope? 
 
-The outcome of the discussion is that TS12 specification requires an update to address market needs, as presented in Section 5.2. TS12 may take inspirations, reuse some content or reference [PaSO] specification. 
+
+_(Update after the Cooperation Group Meetings:)_
+
+The outcome of the discussion is that the [TS12] specification requires an update to address market needs, as presented in Section 5.2. [TS12] may take inspiration from, reuse some content or reference the [PaSO] specification. 
 
 
 ### 5.5 Impact of PSR
 
-The upcoming PSR (see Section 3.3) does not fundamentally change the wallet-based SCA concept and [TS12]. However a detailed assessment of [TS12] against PSR requirements would be desirable after adoption of the PSR. 
-According to the current PSR text ([PSR Provisional Agreement]), the Wallet Providers and SCA solution implementers (PSPs/banks and their providers) may need to take into account requirements related e.g. to mobile application activation, display and accessibility, liability and outsourcing aspects (wallet as an SCA means delivered by an external "technical service provider").
+The upcoming PSR (see Section 3.3) does not fundamentally change the wallet-based SCA concept and [TS12]. However a detailed assessment of [TS12] against PSR requirements would be desirable after the adoption of the PSR. 
+According to the current PSR text ([PSR Provisional Agreement]), Wallet Providers and SCA solution implementers (PSPs/banks and their providers) may need to take into account requirements related e.g. to mobile application activation, display and accessibility, liability and outsourcing aspects (the Wallet as a means of SCA delivered by an external "technical service provider").
 
-To conclude, the following question is to be answered along the discussion:
+To conclude, the following question is to be answered during the discussion:
 
-**QUESTION 10**: What is the impact of PSR to the ARF concept, HLRs and [TS12]? Are changes required based on it? 
+**QUESTION 10**: What is the impact of PSR to the ARF concept, HLRs and [TS12]? Are any changes required as a result? 
 
 
 _(Update after the Cooperation Group Meetings:)_
 
-The conclusion from the discussion is that [PSR Provisional Agreement] does not impact ARF or TS12 directly. At the same time, eIDAS, ARF and PSR (and related RTS) should be aligned in reference to application of SCA, in particular fraud signals, transaction risk monitoring, as well as outsourcing aspects. 
+The conclusion from the discussion is that [PSR Provisional Agreement] does not directly impact ARF or [TS12]. At the same time, eIDAS, ARF and PSR (and the related RTS) should be aligned in reference to application of SCA, in particular fraud signals, transaction risk monitoring, and outsourcing aspects. 
 
 
 ## 6 Proposals of Changes to HLRs
 
 
-As the outcome of the discussion, the following changes to HLRs are poposed:
+As the outcome of the discussion, the following changes to HLRs are proposed:
 
 
  **Index**  | **Requirement specification**       | **Proposal**  |
 |-----------|-------------------------------------|----------------------|
-|   SUA_01  |    A Wallet Unit SHALL be able to process the transactional data included in a presentation request for the SUA attestation(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md), according to all requirements in that Technical Specification. *Note: Technical Specification 12 ~~specifies~~ **refers to presentation of** a SUA attestation intended for performing SCA **,** as specified in the PSD2 Regulation. The related Rulebook is called "SCA Attestation Rulebook".*             | Keep with the proposed change |
-|   **SUA_01a**  |        **A Scheme Provider that delivers a SUA Attestation Rulebook specified in SUA_01, it SHALL ensure that this Rulebook is compliant with [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md). _Note: [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) contains some requirements related to the attestation itself._**       |      New requirement    |
-|   SUA_02  |        Scheme Providers MAY specify Attestation Rulebooks (see [Topic 12]) ~~and associated technical specifications~~ for SUA attestations other that the ones ~~specified~~ mentioned in **SUA_01** ~~[Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md))~~. The Attestation Rulebook SHALL **indicate a** ~~or the~~ technical specification ~~of such of a SUA attestation SHALL specify~~ **that specifies** the syntax and semantics of the transactional data associated with that attestation.       |      Keep with the proposed change  |
+|   SUA_01  |    A Wallet Unit SHALL be able to process the transactional data included in a presentation request for the SUA attestation(s) specified in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md), according to all requirements in that Technical Specification. *Note: Technical Specification 12 ~~specifies~~ **refers to the presentation of** a SUA attestation intended for performing SCA **,** as specified in the PSD2 Regulation. The related Rulebook is called "SCA Attestation Rulebook".*             | Keep with the proposed change |
+|   **SUA_01a**  |        **A Scheme Provider that delivers a SUA Attestation Rulebook as specified in SUA_01, it SHALL ensure that this Rulebook is compliant with [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md). _Note: [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) contains some requirements related to the attestation itself._**       |      New requirement    |
+|   SUA_02  |        Scheme Providers MAY specify Attestation Rulebooks (see [Topic 12]) ~~and associated technical specifications~~ for SUA attestations other ~~that~~ **than** the ones ~~specified~~ mentioned in **SUA_01** ~~[Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md))~~. The Attestation Rulebook SHALL **indicate a** ~~or the~~ technical specification ~~of such of a SUA attestation SHALL specify~~ **that specifies** the syntax and semantics of the transactional data associated with that attestation.       |      Keep with the proposed change  |
 |   SUA_02a  |     The technical specification associated with a given SUA attestation SHALL specify all necessary requirements for Wallet Units to process transactional data intended for this SUA attestation, at least regarding a) rendering and displaying the data to the User when obtaining approval for presentation, b) processing (e.g., hashing) the data for inclusion in the device binding signature, and c) the scope of information to be logged about a SUA attestation presentation transaction by a Wallet Unit.          |      Keep as-is     |
 |   SUA_03  |         The Attestation Provider of a SUA attestation ~~other than the one(s) mentioned [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md)~~ SHALL NOT issue such an attestation to a Wallet Unit that does not comply with all relevant requirements in the SUA Attestation Rulebook and the technical specification for that attestation.      |  Keep with the proposed change |
-|   SUA_04  |    In the response to a presentation request for a SUA attestation that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the associated technical specification ~~or Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the~~ The rules **for how** to interpret such information SHALL be included in the associated technical specification or Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if ~~the~~ **a** requested SUA attestation is present ~~on~~ **in** the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes **from the SUA attestation**.*           |  Keep with the proposed change  |
+|   SUA_04  |    In the response to a presentation request for a SUA attestation that includes transactional data, a Wallet Unit SHALL include (a representation of) that data, according to requirements included in the associated technical specification ~~or Attestation Rulebook or in information provided to the Wallet Unit in the presentation request. In the latter case, the~~ The rules **on how** to interpret such information SHALL be included in the associated technical specification or Attestation Rulebook. *Note: This requirement, as well as SUA_05, only applies if ~~the~~ **a** requested SUA attestation is present ~~on~~ **in** the Wallet Unit and if the User consents to signing the transactional data and presenting the requested attributes **from the SUA attestation**.*           |  Keep with the proposed change  |
 |   SUA_05  |   The Wallet Unit SHALL include (a representation of) the transactional data received in a presentation request in the signature creation process used for device binding, using the private key of the requested SUA attestation and the mechanisms specified for key binding in [SD-JWT VC] or mdoc authentication in [ISO/IEC 18013-5], as applicable. For this process, the Wallet Unit SHALL comply with the applicable requirements in the technical specification and the Attestation Rulebook for the requested SUA attestation, see SUA_01 or SUA_02. *Note: a) The resulting signature value constitutes a proof of transaction. This signature value, possibly in combination with other protocols items, fulfils the requirements for the authentication code required in [PSD2]. b) See also requirement OIA_02 in [Topic 1].*            |    Keep as-is  |
 |   SUA_06  |      The Wallet Unit SHALL render or adapt the dialogue message(s) displayed to the User (like font size and colour, background colour, text position, labels in the buttons to "approve" or "reject" a transaction), according to requirements in [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md).         |     Keep as-is     |
 |   SUA_07  |      Upon receiving a presentation request with transactional data, the Wallet Unit SHALL validate if the transactional data is intended for the given attestation and that the transactional data conforms to the related technical specification and/or Attestation Rulebook. In case the validation result is positive, the Wallet Unit SHALL process the transactional data in compliance with the related technical specification.         |   Keep as-is  |
-|   **SUA_08**  |      **Upon receiving a presentation request related to a SUA attestation indicated in SUA_01, the Wallet Unit SHALL validate if the requesting Relying Party is pemitted to make such a request for the given attestation, if [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) or another common technical specification accepted by the Cooperation Group enables this. _Note: Such a specification could be an extension of the generic Embedded Disclosure Policy mechanism._**         |   New requirement |
-|   **SUA_09**  |      **Upon receiving a presentation request related to a SUA attestation indicated in SUA_01, the Wallet Unit SHALL make available to the requesting Relying Party risk signals if allowed by law and if [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) or another common technical specification accepted by the Cooperation Group enables this. _Note: PSD2 and PSR proposal oblige Payment Service Providers to monitor and assess risk for each payment transaction; collecting risk signals from the User's device is key and a market standard._**      |   New requirement  |
+|   **SUA_08**  |      **Upon receiving a presentation request related to a SUA attestation indicated in SUA_01, the Wallet Unit SHALL validate whether the requesting Relying Party is permitted to make such a request for the given attestation, if [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) or another common technical specification accepted by the Cooperation Group enables this. _Note: Such a specification could be an extension of the generic Embedded Disclosure Policy mechanism._**         |   New requirement |
+|   **SUA_09**  |      **Upon receiving a presentation request related to a SUA attestation indicated in SUA_01, the Wallet Unit SHALL make risk signals available to the requesting Relying Party if allowed by law and if [Technical Specification 12](../technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md) or another common technical specification accepted by the Cooperation Group enables this. _Note: PSD2 and the PSR proposal oblige Payment Service Providers to monitor and assess risk for each payment transaction; collecting risk signals from the User's device is key and a market standard._**      |   New requirement  |
 |   ISSU_33b​  |   A Wallet Provider SHALL ensure that its Wallet Units support all attestations conforming to attestation schemes registered in the catalogue of schemes for the attestation of attributes established by the Commission pursuant to Article 8 of Commission Implementing Regulation (EU) 2025/1569, where such attestations use a format and issuance protocol supported by Wallet Units pursuant to Commission Implementing Regulations (EU) 2024/2977, 2024/2979 and 2024/2982.​     |   Keep as-is  |
-|    ARB_22     |   The Scheme Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, ~~and~~ privacy of that attestation, **or proper processing of a presentation request**. _Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User, **or how to process transactional data, if involved (see [Topic 20])**._ | Keep with the proposed change |
-|     **WPSM_05**   |  **A Wallet Provider SHALL perform activities defined in WPSM_01, WPSM_02, WPSM_03 and WPSM_04 according a common technical specification accepted by the Cooperation Group enables this. Note: See the note in SUA_09. Wallet Solution or Wallet Unit status  is one of the important risk assessment factors for PSPs. This is therefore desired to have harmonised policies of Wallet Providers related to Wallet Units security posture monitoring and revocations (eg. scope and frequency of Wallet Units monitoring, assessment criterias) accross the EU, to simplify/unify PSPs' risk assessment procedures, regardless the origin of a Wallet Unit.**  |   New requirement  |
+|    ARB_22     |   The Scheme Provider for an Attestation Rulebook SHALL specify all technical details necessary to ensure interoperability, security, ~~and~~ privacy of that attestation, **and proper processing of a presentation request**. _Note: An Attestation Rulebook may also specify requirements regarding how the Wallet Unit must display the attestation and the attributes in it to the User, **or how to process transactional data, if involved (see [Topic 20])**._ | Keep with the proposed change |
+|     **WPSM_05**   |  **A Wallet Provider SHALL perform activities defined in WPSM_01, WPSM_02, WPSM_03 and WPSM_04 according to a common technical specification if such a specification is available and accepted by the Cooperation Group. _Note: See the note in SUA_09. Wallet Solution and Wallet Unit status is one of the important risk assessment factors for Relying Parties, in particular PSPs. This is therefore desirable to have harmonised policies of Wallet Providers related to Wallet Units security posture monitoring and revocations across the EU, to simplify and unify PSPs' risk assessment procedures, without differences related to the Wallet Unit's origin._**  |   New requirement  |
 
 
 ## 7 Additions and Changes to the ARF 
 
-There are no proposals at this stage. The changes to ARF will be (possibly) proposed as the outcome of the discussion process.
+There are no proposals at this stage. Changes to ARF may be proposed as the outcome of the discussion process.
 
 At the same time, there are the following aspects should be considered as potentially relevant: 
-- accessibility in wallet-based SCA - to define how the dialogue messages shall meet accessibility rules, which were discussed in [Topic Q] Discussion Paper
-- the fraud signals issue, as presented in section 5.2, was discussed in detail in the context of [Topic T] - Support and maintenance by the Wallet Provider. 
-- following the outcome of the Topic AA RR discussion, the transaction log content may be extended, and thus may impact [TS10] specification. 
+- Accessibility in wallet-based SCA - to define how the dialogue messages shall meet accessibility rules, which were discussed in [Topic Q] Discussion Paper;
+- Following the outcome of the Topic AA RR discussion, the transaction log content may be extended, which may thus impact the [TS10] specification. 
+
 
 ## 8 References
 
@@ -767,7 +771,7 @@ At the same time, there are the following aspects should be considered as potent
 | [RiskRegister]                         | [Annex 1 to the Commission Implementing Regulation laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the certification of the European Digital Identity Wallets, European Commission, October 2024, draft](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402981#anx_I) |
 | [European Digital Identity Regulation] | [Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework](https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng) |
 | [CIR 2024/2979]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and of the Council as regards the integrity and core functionalities of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng)) |
-| [CIR 2024/2981]                      | [Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2979/oj/eng) |
+| [CIR 2024/2981]                      | [Commission Implementing Regulation (EU) 2024/2981 of 28 November 2024 laying down rules for the application of Regulation (EU) No 910/2014 of the European Parliament and the Council as regards the certification of European Digital Identity Wallets](https://eur-lex.europa.eu/eli/reg_impl/2024/2981/oj/eng) |
 | [OID4VP] | [OpenID for Verifiable Presentations](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/2) |
 | [ISO/IEC - 18013-5]   |  [Mobile driving licence (mDL) application](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/84) |
 | [PSD2]   |  [Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and repealing Directive 2007/64/EC](https://eur-lex.europa.eu/eli/dir/2015/2366/oj/eng) |
