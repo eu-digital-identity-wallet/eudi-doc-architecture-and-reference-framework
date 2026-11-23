@@ -1,4 +1,4 @@
-Version 0.95, updated 20 November 2026
+Version 0.95, updated 21 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -27,7 +27,7 @@ This document uses the capitalised key words "SHALL", "SHOULD" and "MAY" as spec
 The document is structured as follows:
 
 - Chapter 2 provides the background of the current discussion related to support of electronic payments customer authentication (SCA) with the Wallet.
-- Chapter 3 presents the legal requirements for functionality related to electronic payments authentication (SCA) with the Wallet - this part is the same as in Topic W Discussion Paper, amended with the latest PSR proposal ([PSR Provisional Agreement]) requirements.
+- Chapter 3 presents the legal requirements for functionality related to electronic payments authentication (SCA) with the Wallet - this part is the same as in [Topic W Discussion Paper](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/discussion-topics/w-transactional-data-for-payments-and-other-use-cases.md), amended with the latest PSR proposal ([PSR Provisional Agreement]) requirements.
 - Chapter 4 summarises the current concept related to electronic payments authentication (SCA) with the Wallet and lists current HLRs. The ARF version referenced in this discussion paper is 3.0.0. 
 - Chapter 5 provides discussion items for the refinement round discussion
 - Chapter 6 will, as a result of the refinement round discussion, provide a list of suggested changes and/or new High-Level Requirements proposals.
