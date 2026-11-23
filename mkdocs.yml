@@ -103,8 +103,7 @@ plugins:
       enable_creation_date: true
       type: timeago
       fallback_to_build_date: true
-      exclude:
-        - generated/*
+      strict: false
 
 extra:
   # PDF button in the header (rendered by overrides/partials/header.html).
