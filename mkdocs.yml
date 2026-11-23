@@ -102,6 +102,9 @@ plugins:
   - git-revision-date-localized:   # quick win: "last updated" (pip: mkdocs-git-revision-date-localized-plugin; CI needs full git history, fetch-depth: 0)
       enable_creation_date: true
       type: timeago
+      fallback_to_build_date: true
+      exclude:
+        - generated/*
 
 extra:
   # PDF button in the header (rendered by overrides/partials/header.html).

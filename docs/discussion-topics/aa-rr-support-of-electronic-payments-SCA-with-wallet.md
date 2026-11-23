@@ -48,7 +48,7 @@ The table below presents the key acronyms used in this document.
 |     PSD     | Payment Services Directive         | 
 |     PSR     | Payment Services Regulation         | 
 |     RTS     | Regulatory Technical Standards      |
-|     MIT     | Merchant-Initiated Transaction, as defined in [PSR Provisional Agreement]  |​
+|     MIT     | Merchant-Initiated Transaction, as defined in [PSR Provisional Agreement]  |
 |     EBA     | European Banking Authority     |
 
 
