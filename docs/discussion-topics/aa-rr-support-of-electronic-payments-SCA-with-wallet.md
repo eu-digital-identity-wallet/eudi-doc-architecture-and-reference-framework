@@ -621,7 +621,7 @@ As part of the discussion, the following questions are to be answered:
 
 _(Update after the Cooperation Group Meetings:)_
 
-In September 2026, the European Payments Council announced the launch of the SCARLET project which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". Within the scope of the SCARLET project an SCA Attestation Rulebook may be delivered, but this is yet to be confirmed. 
+In September 2026, the European Payments Council announced the launch of the SCARLET task force which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". The EPC Taskforce SCARLET is expected to deliver a Rulebook (version 1.0) by the end of 2027.
 
 
 ### 5.2 Limitations of TS12 and Market Needs
