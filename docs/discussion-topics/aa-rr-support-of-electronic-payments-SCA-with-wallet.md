@@ -1,4 +1,4 @@
-Version 0.95, updated 23 November 2026
+Version 0.95, updated 25 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -66,12 +66,21 @@ The purpose of Topic AA Refinement Round is to discuss in further detail, variou
 
 ### 3.1 European Digital Identity Regulation
 
-The [European Digital Identity Regulation] requires Wallets to support and provide a Strong User Authentication (SUA) function that can be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or national law or by contractual obligation).
+The [European Digital Identity Regulation] (Article 5f(2)) requires Wallets to support and provide a Strong User Authentication (SUA) function that can be used to authenticate the User accessing or using an online service that requires identification and strong authentication (by EU or national law or by contractual obligation).
 The online services might be of any type, provided by public or private Service Providers in particular in the areas of transport, energy, banking, financial services, social security, health, drinking water, postal services, digital infrastructure, education or telecommunications (but not limited to these). Examples of use cases include logging to an online service, giving a consent to an action which poses a higher risk of fraud (e.g. password change, change of a payment transaction limits) or authentication of a payment.
 
 Therefore Wallet Solutions shall provide functionality that enables Relying Parties (which are various service providers) to use Wallet Units as a means of SUA, including for the payment authentication use case.
 
+_Note: See also [Digital Identity Wallet Frequently Asked Questions](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/713526976/FAQ):_ 
+
+_Is there a requirement for all wallets to offer SCA (strong customer authentication) to facilitate online payments by the end of 2027?_
+
+_Yes, indeed. The objective of the European Digital Identity Regulation is to offer all EU citizens a secure and trustworthy means of identification, authentication and to share digital documents. The Regulation also requires Member States to offer European Digital Identity Wallets to all EU citizens by end 2026 and obliges private service providers to accept the wallet for SCA (strong customer authentication) by end 2027. Consequently, all wallets must be able to offer this possibility._
+
+
+
 Below are the actual excerpts from the Regulation, including the recitals and the articles that establish these requirements.
+
 
 **Recital (62)**
 
