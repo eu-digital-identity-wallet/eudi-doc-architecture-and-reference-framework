@@ -630,7 +630,7 @@ As part of the discussion, the following questions are to be answered:
 
 _(Update after the Cooperation Group Meetings:)_
 
-In September 2026, the European Payments Council announced the launch of the SCARLET task force which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". The EPC Taskforce SCARLET is expected to deliver a Rulebook (version 1.0) by the end of 2027.
+In September 2026, the European Payments Council announced the launch of the SCARLET task force (see [EPC's press release](https://www.europeanpaymentscouncil.eu/news-insights/news/epc-launches-scarlet-initiative-support-consistent-use-eu-digital-identity)) which is "a new standardisation framework designed to support the consistent acceptance of EU Digital Identity Wallets by payment service providers (PSPs) in the context of SCA". The EPC Taskforce SCARLET is expected to deliver a Rulebook (version 1.0) by the end of 2027.
 
 
 ### 5.2 Limitations of TS12 and Market Needs
@@ -791,3 +791,4 @@ At the same time, there are the following aspects should be considered as potent
 | [PaSO]   |  [Payments and SCA for OpenID](https://aptitude-consortium.github.io/payments-and-sca-for-openid/latest/)  |
 | [DPC]   |  [EMV Digital Payment Credential Specification – Schema Framework – v1.0 DRAFT 2](https://www.emvco.com/specifications/emv-digital-payment-credential-specification-schema-framework-v1-0-draft-associate-review-2-comment-period-ends-22-may-2026/)  |
 | [SPC]   |  [Secure Payment Confirmation W3C Candidate Recommendation Draft, 2 July 2026](https://www.w3.org/TR/secure-payment-confirmation/)  |
+|  EPC press release  |   https://www.europeanpaymentscouncil.eu/news-insights/news/epc-launches-scarlet-initiative-support-consistent-use-eu-digital-identity  |
