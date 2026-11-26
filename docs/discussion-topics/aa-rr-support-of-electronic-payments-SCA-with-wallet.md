@@ -763,11 +763,11 @@ As the outcome of the discussion, the following changes to HLRs are proposed:
 
 ## 7 Additions and Changes to the ARF 
 
-There are no proposals at this stage. Changes to ARF may be proposed as the outcome of the discussion process.
+Following the discussion outcome and changes to HLRs in Section 6, subsequent modifications in the ARF main text may be introduced.
 
-At the same time, there are the following aspects should be considered as potentially relevant: 
+In addition, the following aspects will be revised: 
 - Accessibility in wallet-based SCA - to define how the dialogue messages shall meet accessibility rules, which were discussed in [Topic Q] Discussion Paper;
-- Following the outcome of the Topic AA RR discussion, the transaction log content may be extended, which may thus impact the [TS10] specification. 
+- The transaction log content alignment with the modified HLRs (which may thus impact the [TS10] specification). 
 
 
 ## 8 References
