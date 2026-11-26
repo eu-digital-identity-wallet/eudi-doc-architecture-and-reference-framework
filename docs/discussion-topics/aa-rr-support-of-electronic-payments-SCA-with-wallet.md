@@ -791,4 +791,3 @@ In addition, the following aspects will be revised:
 | [PaSO]   |  [Payments and SCA for OpenID](https://aptitude-consortium.github.io/payments-and-sca-for-openid/latest/)  |
 | [DPC]   |  [EMV Digital Payment Credential Specification – Schema Framework – v1.0 DRAFT 2](https://www.emvco.com/specifications/emv-digital-payment-credential-specification-schema-framework-v1-0-draft-associate-review-2-comment-period-ends-22-may-2026/)  |
 | [SPC]   |  [Secure Payment Confirmation W3C Candidate Recommendation Draft, 2 July 2026](https://www.w3.org/TR/secure-payment-confirmation/)  |
-|  EPC press release  |   https://www.europeanpaymentscouncil.eu/news-insights/news/epc-launches-scarlet-initiative-support-consistent-use-eu-digital-identity  |
