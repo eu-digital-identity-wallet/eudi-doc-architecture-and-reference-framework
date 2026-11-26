@@ -1,4 +1,4 @@
-Version 0.95, updated 25 November 2026
+Version 0.95, updated 26 November 2026
 
 [Link to GitHub discussion](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions/660)
 
@@ -211,22 +211,22 @@ _Where payment service providers apply strong customer authentication in accorda
 The Payment Services Regulation (PSR) aims to replace [PSD2] in the scope related to SCA. The first PSR text proposal ([PSR Proposal]) was published in 2023 and has since been a subject to further work within the legislative process of the European Union. As a result, a new proposal was presented in May 2026 ([PSR Provisional Agreement]). 
 In general, PSR keeps the same concept of SCA as [PSD2] and [RTS SCA], but introduces some minor changes to the application of SCA. The main aspects and changes to SCA can be summarised as follows:
 
-- the definition of SCA provides an exception whereby the authentication elements can be from the same category if that category is "inherence"; EBA is tasked with developing guidelines on this,
-- adding new cases explicitly requiring application of SCA (tokenised payment instrument creation, change of a spending limit, password or contact information, mobile application activation, proximity payments that require an internet connection),
-- introduction of the term "mobile application", which refers to a means of payment initiation or of giving consent by a User, 
-- provision of requirements related to the activation of the mobile application (delay in activation, use of a different channel, SCA),
-- requirement to display the payee's commercial trade name and legal name in the transaction information displayed to the User (in addition to the amount),
-- adding accessibility requirements,
-- stating that carrying out an SCA process is not in itself a sufficient evidence of the authorisation of a transaction,
-- adding liability of technical service providers (which may include SCA providers/operators) for the payment transaction, proportionate to their failure,
-- requiring an outsourcing agreement with technical service providers providing SCA,
-- forbidding ASPSPs (banks) from creating obstacles for PISPs and AISPs with regard to the application of SCA (such obstacles could be e.g. requiring more SCA steps, or limiting SCA methods), 
-- introduction of a concept of the Merchant-Initiated Transactions (MITs), where the payment initiation and SCA can be applied together at check-out on the merchant side,
-- adding possible liability shifts to: PSPs of payees (if they fail to "develop or amend" systems necessary for SCA), "another PSP" or an "intermediary" (if they participate in the process),
-- extending/detailing transaction monitoring requirements - allowing i.a. the collection of "environmental and behavioural characteristics", session data (e.g. device internet protocol address-range), and User's device data (e.g. an identifier),
-- transaction monitoring requirements imposed on both sides: the payer's and the payee's PSPs,
-- option for AISPs to apply their own SCA (which entails a shift of liability),
-- acknowledges Wallet Units as a means of SCA and obligation for PSPs to accept them.
+- Acknowledgment EUDI Wallet as a means of SCA and obligation for PSPs to accept them,
+- RTS on SCA are to be reviewed and updated taking into account European Digital Identity Wallets among other developments,
+- More detailed rules on SCA application:
+  - When: tokenization of payment instrument, increase of spending limit, opting-out of delay period, mobile application activation, remote payments incl. proximity payments requiring internet connection, set-up of mandate for payments initiated by the payee;
+  - How: the two elements of SCA must be from different categories; solutions based on two ‘inherence’ elements may be used if independence fully preserved (assessment by NCAs);
+- Introduction of the term "mobile application", which refers to a means of payment initiation or of giving consent by a User, 
+- Provision of requirements related to the activation of the mobile application (delay in activation, use of a different channel, SCA),
+- Requirement to display the payee's commercial trade name and legal name in the transaction information displayed to the User (in addition to the amount),
+- Adding liability of technical service providers (which may include SCA providers/operators) for the payment transaction, proportionate to their failure,
+- Requirement of outsourcing agreements with technical service providers providing SCA,
+- Introduction of a concept of the Merchant-Initiated Transactions (MITs), where the payment initiation and SCA can be applied together at check-out on the merchant side,
+- Option of liability shift to: PSPs of payees (if they fail to "develop or amend" systems necessary for SCA), "another PSP" or an "intermediary" (if they participate in the process),
+- Extending/detailing transaction monitoring requirements - allowing i.a. the collection of "environmental and behavioural characteristics", session data (e.g. device internet protocol address-range), and User's device data (e.g. an identifier),
+- extending/detailing transaction monitoring requirements - allowing i.a., collection of "environmental and behavioral characteristics", session data (e.g., device internet protocol address-range), User's device data (e.g., an identifier),
+- option for AISPs to apply own SCA (entails shift of liability).
+
 
 Below are the actual excerpts from the [PSR Provisional Agreement], including the recitals and the articles that establish these requirements.
 
